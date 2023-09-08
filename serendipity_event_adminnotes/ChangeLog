@@ -1,3 +1,9 @@
+0.30:
+-----
+ * Fix setupDB() on reinstall cases adding IF NOT EXISTS to CREATE TABLE,
+   which will be supported in all MySQL / SQLite databases and for PostgreSQL up from 9.3 versions.
+ * PHP 8.2 type fixes
+
 0.29:
 -----
  * Always indicate source of where frontend_display is called (as Standard since 07/2007)

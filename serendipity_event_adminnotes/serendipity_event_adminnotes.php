@@ -19,10 +19,10 @@ class serendipity_event_adminnotes extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.0.0',
             'smarty'      => '3.1.5',
-            'php'         => '7.0.0'
+            'php'         => '7.4.0'
         ));
 
-        $propbag->add('version',       '0.29');
+        $propbag->add('version',       '0.30');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -106,7 +106,7 @@ class serendipity_event_adminnotes extends serendipity_event
             return true;
         }
 
-        $sql = "CREATE TABLE {$serendipity['dbPrefix']}adminnotes (
+        $sql = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}adminnotes (
                       noteid {AUTOINCREMENT} {PRIMARY},
                       authorid int(10) {UNSIGNED} default null,
                       notetime int(10) {UNSIGNED} default null,
@@ -117,7 +117,7 @@ class serendipity_event_adminnotes extends serendipity_event
 
         serendipity_db_schema_import($sql);
 
-        $sql = "CREATE TABLE {$serendipity['dbPrefix']}adminnotes_to_groups (
+        $sql = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}adminnotes_to_groups (
                       noteid int(10) {UNSIGNED} default null,
                       groupid int(10) {UNSIGNED} default null
                     );";
@@ -296,7 +296,7 @@ class serendipity_event_adminnotes extends serendipity_event
                 echo "</div>\n";
                 echo '<div class="form_buttons"><input type="submit" name="submit" value="' . SAVE . '"></div>'."\n";
 
-                echo '</form>';
+                echo "</form>\n";
 
                 break;
 
@@ -429,7 +429,7 @@ function fulltext_toggle(id) {
                     break;
 
                 case 'backend_dashboard':
-                    $cutoff = $this->get_config('cutoff');
+                    $cutoff = (int) $this->get_config('cutoff');
                     $notes  = $this->getMyNotes();
                     if (is_array($notes)) {
 ?>
