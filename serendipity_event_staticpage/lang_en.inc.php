@@ -150,7 +150,7 @@
 @define('STATICPAGE_TEMPLATE','Backend template');
 @define('STATICPAGE_TEMPLATE_EXTERNAL', 'Default Template');
 
-@define('STATICPAGE_SECTION_META', 'Metadata');
+@define('STATICPAGE_SECTION_META', 'HTML Metadata');// As container title only in old default form template
 @define('STATICPAGE_SECTION_BASIC', 'Basic Content');
 @define('STATICPAGE_SECTION_OPT', 'Options');
 @define('STATICPAGE_SECTION_STRUCT', 'Structural');

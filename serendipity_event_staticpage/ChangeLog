@@ -1,3 +1,7 @@
+6.66:
+-----
+ * Change german [de] container toggle and fieldset legend titles
+
 6.65:
 -----
  * Improve and Fix building fake bool (0|1) values of config items for strict_types

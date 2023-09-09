@@ -117,10 +117,15 @@
 @define('STATICPAGE_ARTICLE_OVERVIEW','Artikelübersicht');
 @define('STATICPAGE_NEW_HEADLINES','Aktuelle Schlagzeilen:');
 
-@define('STATICPAGES_CUSTOMEXAMPLE_OPTION_SHOW', 'Zeige benutzerdefinierte Optionen');
-@define('STATICPAGES_CUSTOM_OPTION_SHOW', 'Zeige KONFIGURATIONS Optionen');
-@define('STATICPAGES_CUSTOM_STRUCTURE_SHOW', 'Zeige STRUKTUR Optionen');
-@define('STATICPAGES_CUSTOM_META_SHOW', 'Zeige META FELD Optionen');
+@define('STATICPAGE_SECTION_META', 'HTML Metadaten');// As container title only in old default form template
+@define('STATICPAGE_SECTION_BASIC', 'Seiteninhalt');
+@define('STATICPAGE_SECTION_OPT', 'Konfigurieren');
+@define('STATICPAGE_SECTION_STRUCT', 'Strukturieren');
+
+@define('STATICPAGES_CUSTOMEXAMPLE_OPTION_SHOW', 'Benutzerdefinierte Optionen anzeigen');
+@define('STATICPAGES_CUSTOM_OPTION_SHOW', 'KONFIGURATIONS Optionen anzeigen');
+@define('STATICPAGES_CUSTOM_STRUCTURE_SHOW', 'STRUKTUR Optionen anzeigen');
+@define('STATICPAGES_CUSTOM_META_SHOW', 'META FELD Optionen anzeigen');
 @define('STATICPAGES_CUSTOM_META_TITLE', 'HTML META Seitentitel (optional)');
 @define('STATICPAGES_CUSTOM_META_DESC', 'HTML META Seitenbeschreibung (optional)');
 @define('STATICPAGES_CUSTOM_META_KEYS', 'HTML META Seiten Schlüsselwörter (optional)');
