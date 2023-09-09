@@ -1,7 +1,7 @@
 6.67:
 -----
  * Improve staticpage recommended (responsive/custom) backend form templates to be able to toggle OFF / ON
-   the top navigation container, since in most cases you don't need this extra stuff.
+   the top navigation container box, since in most cases you don't need this extra stuff.
    Your chosen setting will be remembered in your browsers "Local Store" web storage tools.
    For the old (!) abandoned "default" named form template this is not supported.
 
