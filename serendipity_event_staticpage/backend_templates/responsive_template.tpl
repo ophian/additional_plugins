@@ -5,7 +5,10 @@
 
     <fieldset id="sp_main_data" class="sect_basic">
         <legend>{$CONST.STATICPAGE_SECTION_BASIC}</legend>
-        <span class="sp_legend_submit"><input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="serendipityPrettyButton input_button state_submit"></span>
+        <span class="sp_legend_submit">
+            <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="serendipityPrettyButton input_button state_submit">
+            <span class="sp_toggle_navigator"><button class="toggle_info button_link" type="button" data-href="#sp_navigator"><span class="icon-right-dir" aria-hidden="true"></span> {$CONST.TOGGLE_TOP_NAV}</button></span>
+        </span>
         <div id="entry_main_headline" class="form_field_long sp_sect">
             <label class="sp_label" title="{staticpage_input item="headline" what="desc"}">{staticpage_input item="headline" what="name"}</label>
                 {staticpage_input item="headline"}
@@ -216,6 +219,26 @@
         } else {
             $('#'+$id+' > .icon-right-dir').removeClass('icon-right-dir').addClass('icon-down-dir');
             setLocalStorage($name, true);
+        }
+    });
+
+    const TOPNAV = '.sp_toggle_navigator > .toggle_info';
+
+    // remember stored top nav toggled true
+    if (localStorage.getItem('staticpage_topnav_toggle') !== null) {
+        $('#sp_navigator').removeClass('additional_info');
+        $(TOPNAV+' > .icon-right-dir').removeClass('icon-right-dir').addClass('icon-up-dir');
+    }
+    $(TOPNAV).click(function () {
+        var $tnt  = 'staticpage_topnav_toggle';
+        var nb    = localStorage.getItem($tnt);
+        // on click true case
+        if ( nb !== null ) {
+            $(TOPNAV+' > .icon-up-dir').removeClass('icon-up-dir').addClass('icon-right-dir');
+            localStorage.removeItem($tnt);
+        } else {
+            $(TOPNAV+' > .icon-right-dir').removeClass('icon-right-dir').addClass('icon-up-dir');
+            setLocalStorage($tnt, true);
         }
     });
 </script>

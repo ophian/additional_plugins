@@ -327,6 +327,9 @@
     margin-right: .5rem;
 }
 
+#sp_main_data .sp_toggle_navigator > button {
+    padding: .25em .5em;
+}
 #backend_sp_respond #sp_main_data,
 #backend_sp_respond #sp_metafield_data,
 #backend_sp_respond #sp_structure_data,

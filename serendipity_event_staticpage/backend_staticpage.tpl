@@ -188,7 +188,7 @@
     </script>
     {/if}
 
-    <div id="sp_navigator">
+    <div id="sp_navigator" class="clearfix additional_info">
         <div class="sp_templateselector">
             <label for="sp_templateselector">{$CONST.STATICPAGE_TEMPLATE}</label>
             <select id="sp_templateselector" name="serendipity[backend_template]">

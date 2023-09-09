@@ -239,6 +239,7 @@
             setLocalStorage($name, true);
         }
     });
+    $('#sp_navigator').addClass('additional_info ping'); // overwrite toggle re-movement of the better forms
 </script>
 
 <!-- DEFAULT_STATICPAGE_BACKEND.TPL end -->
