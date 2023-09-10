@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.38, 2022-06-25 *}
+{* backend_staticpage template file v. 1.40, 2023-09-10 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -188,7 +188,7 @@
     </script>
     {/if}
 
-    <div id="sp_navigator" class="clearfix additional_info">
+    <div id="sp_navigator" class="additional_info">
         <div class="sp_templateselector">
             <label for="sp_templateselector">{$CONST.STATICPAGE_TEMPLATE}</label>
             <select id="sp_templateselector" name="serendipity[backend_template]">

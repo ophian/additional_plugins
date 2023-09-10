@@ -1,3 +1,7 @@
+6.68:
+-----
+ * Improve the new panel button by using a svg
+
 6.67:
 -----
  * Improve staticpage recommended (responsive/custom) backend form templates to be able to toggle OFF / ON

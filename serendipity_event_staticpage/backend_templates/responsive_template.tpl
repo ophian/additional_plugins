@@ -7,7 +7,15 @@
         <legend>{$CONST.STATICPAGE_SECTION_BASIC}</legend>
         <span class="sp_legend_submit">
             <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="serendipityPrettyButton input_button state_submit">
-            <span class="sp_toggle_navigator"><button class="toggle_info button_link" type="button" data-href="#sp_navigator"><span class="icon-right-dir" aria-hidden="true"></span> {$CONST.TOGGLE_TOP_NAV}</button></span>
+            <span class="sp_toggle_navigator">
+                <button class="toggle_info button_link" type="button" data-href="#sp_navigator">
+                    <span class="icon-right-dir" aria-hidden="true"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                      <title>{$CONST.TOGGLE_TOP_NAV}</title>
+                      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                    </svg>
+                </button>
+            </span>
         </span>
         <div id="entry_main_headline" class="form_field_long sp_sect">
             <label class="sp_label" title="{staticpage_input item="headline" what="desc"}">{staticpage_input item="headline" what="name"}</label>

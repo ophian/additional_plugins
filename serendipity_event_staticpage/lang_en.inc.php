@@ -155,7 +155,7 @@
 @define('STATICPAGE_SECTION_OPT', 'Options');
 @define('STATICPAGE_SECTION_STRUCT', 'Structural');
 
-@define('TOGGLE_TOP_NAV', 'Top-Nav');
+@define('TOGGLE_TOP_NAV', 'Navigator Panel');
 
 @define('PLUGIN_STATICPAGELIST_SMARTIFY', 'Smartify Sidebar list');
 @define('PLUGIN_STATICPAGELIST_SMARTIFY_BLAHBLAH', 'Use Smarty template file: "plugin_staticpage_sidebar.tpl" for sidebar output (allows to truncate length via Smarty).');
