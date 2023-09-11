@@ -851,7 +851,7 @@ class serendipity_event_twitter extends serendipity_plugin
                     }
                     $parts = explode('=',$eventData);
                     $command = $parts[0];
-                    $fparts = explode('&', $parts[1]);
+                    $fparts = explode('&', $parts[1] ?? '');
                     if ($command=="tweetback") {
                         if (!$_SESSION['serendipityAuthedUser']) {
                             echo "DON'T HACK!<br>";
@@ -1072,20 +1072,22 @@ class serendipity_event_twitter extends serendipity_plugin
                         $checked_dontannounce = "checked='checked'";
                     }
 ?>
-                        <fieldset class="entryproperties">
-                            <a name="microbloggingAnchor"></a>
-                            <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_TWITTER_NAME; ?></legend></span>
 
-                            <div class="entryproperties_microblogging_dontannounce form_check">
-                                <input id="properties_microblogging_dontannounce" name="serendipity[properties][microblogging_dontannounce]" type="checkbox" <?php echo $checked_dontannounce; ?>>
-                                <label for="properties_microblogging_dontannounce"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_DONTANNOUNCE; ?></label>
-                            </div>
+                    <fieldset id="edit_entry_twitter" class="entryproperties">
+                        <a name="microbloggingAnchor"></a>
+                        <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_TWITTER_NAME; ?></legend></span>
 
-                            <div class="form_field">
-                                <label for="serendipity[properties][microblogging_tagList]" class="block_level"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC; ?></label>
-                                <input id="properties_microblogging_tagList"  class="wickEnabled" name="serendipity[properties][microblogging_tagList]" type="text" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tagList) : htmlspecialchars($tagList, ENT_COMPAT, LANG_CHARSET)); ?>">
-                            </div>
-                        </fieldset>
+                        <div class="entryproperties_microblogging_dontannounce form_check">
+                            <input id="properties_microblogging_dontannounce" name="serendipity[properties][microblogging_dontannounce]" type="checkbox" <?php echo $checked_dontannounce; ?>>
+                            <label for="properties_microblogging_dontannounce"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_DONTANNOUNCE; ?></label>
+                        </div>
+
+                        <div class="form_field">
+                            <label for="serendipity[properties][microblogging_tagList]" class="block_level"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC; ?></label>
+                            <input id="properties_microblogging_tagList"  class="wickEnabled" name="serendipity[properties][microblogging_tagList]" type="text" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tagList) : htmlspecialchars($tagList, ENT_COMPAT, LANG_CHARSET)); ?>">
+                        </div>
+                    </fieldset>
+
 <?php
                     break;
 

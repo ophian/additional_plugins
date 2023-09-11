@@ -9,6 +9,11 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+2.1.3:
+------
+ * Fix ALTER DB for known to fail (installation) case
+ * Fix undefinied array key usage
+
 2.1.2:
 ------
  * PHP 8.2 compatibility

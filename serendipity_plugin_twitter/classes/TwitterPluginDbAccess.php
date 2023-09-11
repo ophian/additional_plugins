@@ -1,6 +1,7 @@
 <?php
 /*
  * Created on 26.06.2009
+ * Last modified: 2023/09/11
  *
  * To change the template for this generated file go to
  * Window - Preferences - PHPeclipse - PHP - Code Templates
@@ -123,7 +124,7 @@ class TwitterPluginDbAccess
 
         if ((int)$obj->get_config('tweetbackhistory_v') < 1) {
             $obj->set_config('tweetbackhistory_v', 2);
-            serendipity_db_query("ALTER TABLE {$serendipity['dbPrefix']}tweetbackhistory CHANGE lasttweetid lasttweetid varchar(20) not null");
+            serendipity_db_query("ALTER TABLE {$serendipity['dbPrefix']}tweetbackhistory CHANGE lasttweetid lasttweetid varchar(20) not null", true, 'both', false, false, false, true); // set single true and last expectError true, since table is known to fail when field(s) do(es) not exist (yet)
         }
 
         if (!TwitterPluginDbAccess::table_created('tweetbackhistory')) {
