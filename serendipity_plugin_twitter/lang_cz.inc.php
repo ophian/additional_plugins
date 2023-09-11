@@ -193,13 +193,13 @@
 @define('PLUGIN_EVENT_TWITTER_CONSUMER_SECRET',         'Zákaznické heslo');
 @define('PLUGIN_EVENT_TWITTER_TIMELINE',                'Casová osa statutu');
 @define('PLUGIN_EVENT_TWITTER_TIMELINE_DESC',           '');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_OK',           'Pripojeno');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL',          'Smazat odkaz');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL_OK',       'Twitter OAuth token odstranen');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_OK',           'Pripojeno');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_DEL',          'Smazat odkaz');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_DEL_OK',       'Twitter OAuth token odstranen');
 @define('PLUGIN_EVENT_TWITTER_CLOSEWINDOW',             'Zavrít okno');
 @define('PLUGIN_EVENT_TWITTER_REGISTER',                'Registrovat');
 @define('PLUGIN_EVENT_TWITTER_CALLBACKURL',             'Zpetná URL adresa (zadejte ve Twitteru)');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_ERROR',        'Chyba zpetného volání Twitteru');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_ERROR',        'Chyba zpetného volání Twitteru');
 
 // Next lines were translated on 2011/03/09
 

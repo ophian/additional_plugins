@@ -192,15 +192,15 @@ You have to be logged out or logged in with the <b>matching twitter account</b> 
 <a href="#" onclick="window.open(\'http://twitter.com\',\'\',\'width=1000,height=400\'); return false">Please affirm this before connecting</a>.</p>');
 @define('PLUGIN_EVENT_TWITTER_TIMELINE',                'Status Timeline');
 @define('PLUGIN_EVENT_TWITTER_TIMELINE_DESC',           '');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_OK',           'Connected');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL',          'Delete link');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_OK',           'Connected');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_DEL',          'Delete link');
 
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL_OK',        'Twitter OAuth token removed');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_DEL_OK',        'Twitter OAuth token removed');
 @define('PLUGIN_EVENT_TWITTER_CLOSEWINDOW',              'Close window');
 @define('PLUGIN_EVENT_TWITTER_REGISTER',                 'Register');
 @define('PLUGIN_EVENT_TWITTER_SIGNIN',                   'Connect');
 @define('PLUGIN_EVENT_TWITTER_CALLBACKURL',              'Call Back URL (enter in twitter)');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_ERROR',         'Twitter Callback Error');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_ERROR',         'Twitter Callback Error');
 
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_ARTICLES_NO', 'By default, disable checkbox for announcing an article');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_ARTICLES_NO_DESC', 'Enabled means, a new blog entry must explicitly be published to a microservice. Disabled means, by default an entry will get published to the microservice.');

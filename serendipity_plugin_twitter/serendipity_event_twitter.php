@@ -260,7 +260,7 @@ class serendipity_event_twitter extends serendipity_plugin
                         // OAuth token and key is setup: Delete connection
                         $linkdel = $serendipity['baseURL'] . $serendipity['indexFile'] . '?/' . TwitterPluginFileAccess::get_permaplugin_path() . '/twitteroa-del=' . $idx;
                         $propbag->add('type', 'content');
-                        $propbag->add('default', PLUGIN_EVENT_TWITTER_VERBINDUNG_OK . ' <a padding-left: 30px;" href="' . $linkdel . '" target="_blank" rel="noopener" onclick="window.open(\''.$linkdel.'\',\'\',\'width=800,height=400\'); return false">'.PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL.'</a>');
+                        $propbag->add('default', PLUGIN_EVENT_TWITTER_CONNECT_OK . ' <a padding-left: 30px;" href="' . $linkdel . '" target="_blank" rel="noopener" onclick="window.open(\''.$linkdel.'\',\'\',\'width=800,height=400\'); return false">'.PLUGIN_EVENT_TWITTER_CONNECT_DEL.'</a>');
                     } else {
                         // OAuth not yet setup, but we have consumer key/secret: Login and connect application
                         $url = $serendipity['baseURL'] . $serendipity['indexFile'] . '?/' . TwitterPluginFileAccess::get_permaplugin_path() . '/twitteroa-redirect=' . $idx;
@@ -900,7 +900,7 @@ class serendipity_event_twitter extends serendipity_plugin
                         $ckey = $this->set_config('twitteroa_consumer_key' . $idx, '');
 
                         serendipity_die('<div align="center">
-                        <h1>' . PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL_OK . '</h1>
+                        <h1>' . PLUGIN_EVENT_TWITTER_CONNECT_DEL_OK . '</h1>
                         <a href="javascript:window.close()">' . PLUGIN_EVENT_TWITTER_CLOSEWINDOW . '</a>
                         </div>');
 
@@ -950,7 +950,7 @@ class serendipity_event_twitter extends serendipity_plugin
                             break;
                             default:
                                 serendipity_die('<div align="center">
-                                <h1>' . PLUGIN_EVENT_TWITTER_VERBINDUNG_ERROR . '</h1>
+                                <h1>' . PLUGIN_EVENT_TWITTER_CONNECT_ERROR . '</h1>
                                 <div align="left"><pre>' . print_r($connection, true) . '</pre>
                                 <pre>' . print_r($request_token, true) . '</pre>
                                 <pre>' . print_r($_SESSION, true) . '</pre>
@@ -1002,12 +1002,12 @@ class serendipity_event_twitter extends serendipity_plugin
                         /* If HTTP response is 200 continue otherwise send to connect page to retry */
                         if (200 == $connection->http_code) {
                             serendipity_die('<div align="center">
-                            <h1>' . PLUGIN_EVENT_TWITTER_VERBINDUNG_OK . '</h1>
+                            <h1>' . PLUGIN_EVENT_TWITTER_CONNECT_OK . '</h1>
                             <a href="javascript:window.close()">' . PLUGIN_EVENT_TWITTER_CLOSEWINDOW . '</a>
                             </div>');
                         } else {
                             serendipity_die('<div align="center">
-                            <h1>' . PLUGIN_EVENT_TWITTER_VERBINDUNG_ERROR . '</h1>
+                            <h1>' . PLUGIN_EVENT_TWITTER_CONNECT_ERROR . '</h1>
                             <pre>' . print_r($connection, true) . '</pre>
                             <pre>' . print_r($access_token, true) . '</pre>
                             <pre>' . print_r($_SESSION, true) . '</pre>

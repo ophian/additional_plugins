@@ -188,15 +188,15 @@ Du must aktuell bei Twitter entweder ausgeloggt oder mit dem <b>richtigen Twitte
 <a href="#" onclick="window.open(\'http://twitter.com\',\'\',\'width=1000,height=400\'); return false">Bitte vergewissere Dich vorher hier</a>.</p>');
 @define('PLUGIN_EVENT_TWITTER_TIMELINE',                'Status Timeline');
 @define('PLUGIN_EVENT_TWITTER_TIMELINE_DESC',           '');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_OK',           'Verbindung hergestellt');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL',          'Verbindung löschen');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_OK',           'Verbindung hergestellt');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_DEL',          'Verbindung löschen');
 
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_DEL_OK',        'Twitter OAuth token entfernt');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_DEL_OK',        'Twitter OAuth token entfernt');
 @define('PLUGIN_EVENT_TWITTER_CLOSEWINDOW',              'Fenster schließen');
 @define('PLUGIN_EVENT_TWITTER_REGISTER',                 'Registrieren');
 @define('PLUGIN_EVENT_TWITTER_SIGNIN',                   'Verbinden');
 @define('PLUGIN_EVENT_TWITTER_CALLBACKURL',              'Call Back URL (bei Twitter angeben)');
-@define('PLUGIN_EVENT_TWITTER_VERBINDUNG_ERROR',         'Fehler im Twitter Callback');
+@define('PLUGIN_EVENT_TWITTER_CONNECT_ERROR',         'Fehler im Twitter Callback');
 
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_ARTICLES_NO',     'Artikel standardmäßig nicht via Microblogging veröffentlichen');
 @define('PLUGIN_EVENT_TWITTER_ANNOUNCE_ARTICLES_NO_DESC','Wenn aktiviert, werden neue Artikel nur dann via Microblogging veröffentlicht, wenn dies ausdrücklich angegeben wird.');
