@@ -693,7 +693,7 @@ class serendipity_event_twitter extends serendipity_plugin
                 $propbag->add('type',           'string');
                 $propbag->add('name',           PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL);
                 $propbag->add('description',    PLUGIN_EVENT_TWITTER_PLUGIN_EVENT_REL_URL_DESC);
-                $propbag->add('default',        str_replace('//', '/', $serendipity['serendipityHTTPPath'] . preg_replace('@^.*(/plugins.*)@', '$1', dirname(__FILE__))));
+                $propbag->add('default',        str_replace(array("\\","//"), "/", $serendipity['serendipityHTTPPath'] . preg_replace('@^.*(plugins.*)@', '$1', dirname(__FILE__))));
                 break;
 
             case 'general_oa_consumerdesc':

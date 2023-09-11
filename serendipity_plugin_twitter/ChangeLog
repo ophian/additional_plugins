@@ -9,6 +9,10 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+2.1.4:
+------
+ * Fix borked Plugin rel. Path default preset on WIN OS (Check your settings!)
+
 2.1.3:
 ------
  * Fix ALTER DB for known to fail (installation) case
