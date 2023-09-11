@@ -1346,7 +1346,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Mikroblogování (Twitter, Identica)&lt;/b&gt;&lt;br /&gt;Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 11 Sep 2023 18:34:49 +0200</pubDate>
+<pubDate>Mon, 11 Sep 2023 18:47:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
