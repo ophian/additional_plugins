@@ -286,7 +286,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
             case 'answer_retrieval_method':
                 $propbag->add('type',          'select');
                 $propbag->add('name',          PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL);
-                $propbag->add('description',   PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC);
+                $propbag->add('description',   PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC . ' ------------------------------------------------------------------ ' . PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC_ADD);
                 $propbag->add('select_values', $retrievalMethod);
                 $propbag->add('default',       'default');
                 break;
@@ -318,7 +318,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
             case 'use_regexp':
                 $propbag->add('type',          'boolean');
                 $propbag->add('name',          PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP);
-                $propbag->add('description',   PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC);
+                $propbag->add('description',   PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC . ' ------------------------------------------------------------------ ' . PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC_ADD);
                 $propbag->add('default',       'false');
                 break;
 
