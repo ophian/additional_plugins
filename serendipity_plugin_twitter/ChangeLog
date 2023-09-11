@@ -9,6 +9,11 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+2.1.5:
+------
+ * Remove serendipity version series 1. workarounds
+ * Encapsulate for the Serendipity Styx backend frontpage dashboard
+
 2.1.4:
 ------
  * Fix borked Plugin rel. Path default preset on WIN OS (Check your settings!)

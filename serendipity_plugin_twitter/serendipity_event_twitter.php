@@ -53,7 +53,7 @@ class serendipity_event_twitter extends serendipity_plugin
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
-            'php'         => '7.3'
+            'php'         => '7.4'
         ));
         $propbag->add('version',       PLUGIN_TWITTER_VERSION);
         $propbag->add('groups', array('FRONTEND_VIEWS'));
@@ -2028,13 +2028,13 @@ a.twitter_update_time {
         return $identities;
     }
 
-    function display_twitter_client($tweeter_in_sidbar = false)
+    function display_twitter_client($tweeter_in_sidebar = false)
     {
         $identities             = $this->load_identities();
         $status_timeline     = $this->load_timeline();
         $tweeter_has_timeline = ($this->get_config('tweeter_history', false) === true);
 
-        if ($_POST['tweeter_timeline']){
+        if (!empty($_POST['tweeter_timeline'])){
             $pstatus_timeline = $_POST['tweeter_timeline'];
         } else {
             $pstatus_timeline = $this->get_config('tweeter_timeline');
@@ -2056,13 +2056,13 @@ a.twitter_update_time {
         }
 
         // Display client
-        if($this->get_config('tweeter_show', 'disable') != 'disable'){
+        if ($this->get_config('tweeter_show', 'disable') != 'disable'){
             if (isset($_POST['tweeter_submit'])) {
-                if(isset($_POST['tweet'], $_POST['shorturl'])){
-                    if($_POST['shorturl'] !== 'http://' && !empty($_POST['shorturl'])){
+                if (isset($_POST['tweet'], $_POST['shorturl'])){
+                    if ($_POST['shorturl'] !== 'http://' && !empty($_POST['shorturl'])){
                         $val_short = $this->default_shorturl($_POST['shorturl']);
 
-                        if($val_short == $_POST['shorturl']){
+                        if ($val_short == $_POST['shorturl']){
                             $val_short = 'ERROR';
                         }
 
@@ -2070,7 +2070,7 @@ a.twitter_update_time {
                         $val_short = '';
 
                     }
-                    elseif(!empty($_POST['tweet'])){
+                    elseif (!empty($_POST['tweet'])){
                         $update = $_POST['tweet'];
                         // Change encoding of update to UTF-8
                         if (LANG_CHARSET!='UTF-8' && function_exists("mb_convert_encoding")) {
@@ -2124,7 +2124,7 @@ a.twitter_update_time {
         }
 
         // Display history
-        if($tweeter_has_timeline){
+        if ($tweeter_has_timeline){
             if ($account_type == "identica"){
                 $count = $this->get_config('tweeter_history_count', 10);
                 $api = new Twitter($account_type=='identica');
@@ -2206,8 +2206,22 @@ a.twitter_update_time {
                 }
             }
 
-            // Display the history
+            // Display the history in backend frontpage or in sidebar
+            if (!$tweeter_in_sidebar) {
+                ob_start();
+                echo '
+        <section id="dashboard_tweeter" class="quick_list dashboard_widget">
+';
+            }
             include dirname(__FILE__) . '/tweeter/tweeter_history.inc.php';
+            if (!$tweeter_in_sidebar) {
+                $eventData['more'] = ob_get_contents();
+                ob_end_clean();
+                echo '
+        </section>
+';
+            }
+
             $return = true;
         }
     }
