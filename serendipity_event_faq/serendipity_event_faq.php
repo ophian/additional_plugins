@@ -78,7 +78,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.54');
+        $propbag->add('version',      '1.55');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -996,16 +996,16 @@ class serendipity_event_faq extends serendipity_event
                         'category'   => $faq['category']
                     ),
                     'next_faq' => array(
-                        'faqid'      => $nfaq['id'],
-                        'question'   => $nfaq['question'],
-                        'categoryid' => $nfaq['cid'],
-                        'category'   => $nfaq['category']
+                        'faqid'      => $nfaq['id'] ?? null,
+                        'question'   => $nfaq['question'] ?? null,
+                        'categoryid' => $nfaq['cid'] ?? null,
+                        'category'   => $nfaq['category'] ?? null
                     ),
                     'prev_faq' => array(
-                        'faqid'      => $pfaq['id'],
-                        'question'   => $pfaq['question'],
-                        'categoryid' => $pfaq['cid'],
-                        'category'   => $pfaq['category']
+                        'faqid'      => $pfaq['id'] ?? null,
+                        'question'   => $pfaq['question'] ?? null,
+                        'categoryid' => $pfaq['cid'] ?? null,
+                        'category'   => $pfaq['category'] ?? null
                     )
                 ));
 

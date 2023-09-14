@@ -1,3 +1,7 @@
+1.55:
+-----
+ * PHP 8+: Fix next and prev array item on false
+
 1.54:
 -----
  * Flag and deny mixing of PLAIN TEXT editor default buttons in the FAQ entry forms
