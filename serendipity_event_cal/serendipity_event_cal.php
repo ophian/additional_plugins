@@ -557,7 +557,7 @@ class serendipity_event_cal extends serendipity_event
         // else return db error
 
         if (is_array($result) && $asCalDays) {
-            for($i=1; $i<32; ++$i) { $events[$i][] = $i; } // this is for undefinied offsets in all non db result days
+            for($i=1; $i<32; ++$i) { $events[$i][] = $i; } // this is for undefined offsets in all non db result days
             $last = $this->last_day($year,$month);         // set last day of current month
 
             foreach($result AS $row) {
