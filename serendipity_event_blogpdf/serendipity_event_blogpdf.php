@@ -26,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.4.5');
+        $propbag->add('version',       '2.4.6');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -153,7 +153,7 @@ class serendipity_event_blogpdf extends serendipity_event
                             if (!isset($eventData['add_footer'])) $eventData['add_footer'] = '';
                             $eventData['add_footer'] .= '<div class="serendipity_blogpdf"><strong>' . PLUGIN_EVENT_BLOGPDF_VIEW . '</strong>' . implode(' | ', $links) . '</div>';
                         } else {
-                            if ($eventData['GET']['hidefooter'] && $eventData['smarty']->tpl_vars['footer_totalEntries']->value > 0) {
+                            if (isset($eventData['GET']['hidefooter']) && $eventData['GET']['hidefooter'] && $eventData['smarty']->tpl_vars['footer_totalEntries']->value > 0) {
                                 echo '<div class="serendipity_blogpdf mt-n4 mb-4 no-bp4">' . PLUGIN_EVENT_BLOGPDF_VIEW . implode(' | ' , $links) . '</div>';
                             }
                         }

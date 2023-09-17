@@ -1,3 +1,7 @@
+2.4.6:
+-----
+ * Better check footer builds
+
 2.4.5:
 -----
  * Fix to avoid eventData footer builds on empty entries pages
