@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Export blogu do PDF&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům blogu stáhnout obsah blogu ve formátu PDF&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 18 Jun 2023 19:52:07 +0200</pubDate>
+<pubDate>Sun, 17 Sep 2023 15:12:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -104,7 +104,7 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Kalendář akcí&lt;/b&gt;&lt;br /&gt;Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 19 Aug 2023 11:32:51 +0200</pubDate>
+<pubDate>Sun, 17 Sep 2023 12:50:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
