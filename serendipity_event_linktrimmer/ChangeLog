@@ -1,3 +1,7 @@
+1.7.7:
+-----
+ * Check some vars on string type, not NULL
+
 1.7.6:
 -----
  * Add changes for Styx 3.5 DARK MODE
