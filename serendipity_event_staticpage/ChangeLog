@@ -1,3 +1,9 @@
+6.69:
+-----
+ * Improve for strict types
+ * Cleanup and Consistency
+ * Remove some unused global bindings
+
 6.68:
 -----
  * Improve the new panel button by using a svg
@@ -11,7 +17,7 @@
 
 6.66:
 -----
- * Change german [de] container toggle and fieldset legend titles
+ * Change German [de] container toggle and fieldset legend titles
 
 6.65:
 -----

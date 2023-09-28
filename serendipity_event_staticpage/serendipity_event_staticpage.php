@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.68');
+        $propbag->add('version', '6.69');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -143,8 +143,6 @@ class serendipity_event_staticpage extends serendipity_event
      */
     public function introspect_config_item($name, &$propbag)
     {
-        global $serendipity;
-
         switch($name) {
             case 'listpp':
                 $propbag->add('type',           'string');
@@ -495,8 +493,6 @@ class serendipity_event_staticpage extends serendipity_event
      */
     function introspect_item_type($name, &$propbag)
     {
-        global $serendipity;
-
         switch($name) {
             case 'description':
                 $propbag->add('type',           'string');
@@ -634,7 +630,9 @@ class serendipity_event_staticpage extends serendipity_event
     {
         global $serendipity;
 
-        if (!isset($serendipity['serendipityUserlevel']) && !isset($serendipity['authorid'])) return false;
+        if (!isset($serendipity['serendipityUserlevel']) && !isset($serendipity['authorid'])) {
+            return false;
+        }
         return (($user['userlevel'] < $serendipity['serendipityUserlevel']) || ($user['authorid'] == $serendipity['authorid']) || ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) || ($serendipity['serendipityUserlevel'] == USERLEVEL_CHIEF && $serendipity['right_publish'] === true));
     }
 
@@ -1940,8 +1938,6 @@ class serendipity_event_staticpage extends serendipity_event
      */
     function show()
     {
-        global $serendipity;
-
         if ($this->selected()) {
             if ($this->error_404 === FALSE) {
                 serendipity_header($_SERVER['SERVER_PROTOCOL'].' 200 OK');
@@ -2502,7 +2498,7 @@ class serendipity_event_staticpage extends serendipity_event
                                             WHERE staticpage = " . (int)$pid . "
                                               AND name = '" . serendipity_db_escape_string($custom_name) . "'");
 
-                if (strtolower($custom_value) != 'none' && trim($custom_value) != '') {
+                if (strtolower((string) $custom_value) != 'none' && trim((string) $custom_value) != '') {
                     serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}staticpage_custom (staticpage, name, value)
                                            VALUES (" . (int)$pid . ", '" . serendipity_db_escape_string($custom_name) . "', '" . serendipity_db_escape_string($custom_value) . "')");
                 }
