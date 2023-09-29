@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.6.2');
+        $propbag->add('version',       '2.6.3');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -1020,7 +1020,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                                 $t[$j]['thumbwidth']  = round($thumb_size*$w/$h);
                             }
 
-                            if (strlen($t[$j]['comment1']) == 0) {
+                            if (!isset($t[$j]['comment1']) || strlen($t[$j]['comment1']) == 0) {
                                 #$t[$j][6] = $t[$j]['name'];// add missing new num key if not using assoc select
                                 $t[$j]['comment1'] = $t[$j]['name'];
                             }

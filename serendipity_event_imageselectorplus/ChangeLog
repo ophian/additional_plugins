@@ -1,3 +1,7 @@
+2.6.3:
+-----
+ * Better check on NULL
+
 2.6.2:
 -----
  * Better check for $serendipity['GET']['subpage'] on entry preview
