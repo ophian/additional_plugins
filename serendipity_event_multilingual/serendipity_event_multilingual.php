@@ -28,7 +28,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '7.4'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.10');
+        $propbag->add('version',        '3.11');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -326,7 +326,7 @@ class serendipity_event_multilingual extends serendipity_event
         }
 
         if (!isset($langs[$default_lang])) {
-            $langs[$default_lang] = '<a class="multilingual_default multilingual_' . $default_lang . '" href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($id, 'Default', 'serendipityHTTPPath', false, array('timestamp' => time())) . '&amp;' . $this->urlparam('default') . '">' . $lang_title . '</a>';
+            $langs[$default_lang] = '<a class="multilingual_default multilingual_' . $default_lang . '" href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($id, 'Default', 'serendipityHTTPPath', false, array('timestamp' => time())) . '&amp;' . $this->urlparam('default') . '">' . ($lang_title ?? '') . '</a>';
         }
         $lang = implode(', ', $langs);
 
