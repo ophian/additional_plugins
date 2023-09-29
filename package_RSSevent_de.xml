@@ -981,15 +981,6 @@
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
-<title>Textformatierung: Smarty Parsing: Parst Smarty-Anweisungen im Artikeltext. Dies ist nicht nutzbar in Kombination mit Syntax Code-Highlightern oder Multilingual tags in Textfeldern!</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_smartymarkup</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_smartymarkup&lt;br /&gt;Textformatierung: Smarty Parsing&lt;/b&gt;&lt;br /&gt;Parst Smarty-Anweisungen im Artikeltext. Dies ist nicht nutzbar in Kombination mit Syntax Code-Highlightern oder Multilingual tags in Textfeldern!&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:39:32 +0100</pubDate>
-<guid isPermaLink="false">serendipity_event_smartymarkup</guid>
-</item>
-<item>
 <title>SMTP Mail: Nutze einen beliebigen SMTP Server zum Versenden deiner Mails</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_smtpmail</link>
 <category>Event Plugins</category>
