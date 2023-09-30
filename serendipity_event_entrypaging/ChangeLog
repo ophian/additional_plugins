@@ -1,6 +1,6 @@
 1.85:
 -----
- * Add a .sep(-erator) class selector to mid epicon pipe for individual tuning i.e.
+ * Add a .sep(-arator) class selector to mid epicon pipe for individual tuning i.e.
    ( span.epicon.sep { margin: auto 3%; } )
 
 1.84:
