@@ -21,7 +21,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.84');
+        $propbag->add('version',       '1.85');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -311,9 +311,9 @@ class serendipity_event_entrypaging extends serendipity_event
                             $serendipity['smarty']->assign('smarty_entrypaging', true);
                             $serendipity['smarty']->assign($this->smartylinks);
                         } elseif ($disp == '1' && $event == 'entries_header') {
-                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon">|</span> ', $links) . '</div>';
+                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon sep">|</span> ', $links) . '</div>';
                         } elseif ($disp == '2' && $event == 'entries_footer') {
-                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon">|</span> ', $links) . '</div>';
+                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon sep">|</span> ', $links) . '</div>';
                         } else {
                             return false;
                         }
