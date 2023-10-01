@@ -10,11 +10,11 @@ This will fully work with **Styx** only, which has some bugs fixed in core.
 
 Here you see all removed plugins from *styx/additional_plugins*, which were set deprecated or got sorted out for better replacements or ended lifetime.
 
-If you need them shown for **idea** works, please run [https://github.com/search?q=repo%3Aophian%2Fadditional_plugins+Remove+%2B+plugin&type=commits](this search query), which should include them all in their latest state of retirement (, which might not match current API or consistency usage these days). This search also shows some very few (search request expression) matches of existing plugin commits. But you'll sort this this out by yourself. This is the best I can do for you to punch you back some decades. 😁
+If you need them shown for (plugin) **idea** works, please run [this search query](https://github.com/search?q=repo%3Aophian%2Fadditional_plugins+Remove+%2B+plugin&type=commits), which should include them all in their latest state of retirement (_which might not match current API or consistency usage these days_). This search also shows some very few (search request expression) matches of existing plugin commits. But you'll sort this this out by yourself. This is the best I can do for you to punch you back some decades. 😁
 
 This is the list of retired plugins for Styx:
 
-´´´
+```php
 $n = array (
   0 => 'serendipity_event_advtypes',
   1 => 'serendipity_event_autosave',
@@ -58,7 +58,7 @@ $n = array (
   39 => 'serendipity_event_xinha',
   40 => 'serendipity_plugin_zooomr',
 )
-´´´
+```
 
 
 ## Spartacus related changes for connects
