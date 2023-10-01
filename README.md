@@ -5,6 +5,62 @@ The XML sidebar or event plugin files in question are synced to contain new or u
 
 This will fully work with **Styx** only, which has some bugs fixed in core.
 
+
+## Outdated and retired plugins
+
+Here you see all removed plugins from *styx/additional_plugins*, which were set deprecated or got sorted out for better replacements or ended lifetime.
+
+If you need them shown for **idea** works, please run [https://github.com/search?q=repo%3Aophian%2Fadditional_plugins+Remove+%2B+plugin&type=commits](this search query), which should include them all in their latest state of retirement (, which might not match current API or consistency usage these days). This search also shows some very few (search request expression) matches of existing plugin commits. But you'll sort this this out by yourself. This is the best I can do for you to punch you back some decades. 😁
+
+This is the list of retired plugins for Styx:
+
+´´´
+$n = array (
+  0 => 'serendipity_event_advtypes',
+  1 => 'serendipity_event_autosave',
+  2 => 'serendipity_event_babelfish',
+  3 => 'serendipity_event_browserid',
+  4 => 'serendipity_event_cachesimple',
+  5 => 'serendipity_event_cleanspam',
+  6 => 'serendipity_event_dashboard',
+  7 => 'serendipity_event_deletelink',
+  8 => 'serendipity_event_feedflare',
+  9 => 'serendipity_event_fckeditor'
+  10 => 'serendipity_event_findmore',
+  11 => 'serendipity_event_g2embed',
+  12 => 'serendipity_event_galleryimage',
+  13 => 'serendipity_event_gravatar',
+  14 => 'serendipity_event_htmlvalidator',
+  15 => 'serendipity_event_jquery',
+  16 => 'serendipity_event_layout_linkmarkup',
+  17 => 'serendipity_event_layout_quotemarkup',
+  18 => 'serendipity_event_motm',
+  19 => 'serendipity_event_phpopentracker',
+  20 => 'serendipity_event_picasa',
+  21 => 'serendipity_event_smartymarkup',
+  22 => 'serendipity_event_snapshotlinks',
+  23 => 'serendipity_event_sort',
+  24 => 'serendipity_event_webpasties',
+  25 => 'serendipity_event_wrapurl',
+  26 => 'serendipity_event_yq',
+  27 => 'serendipity_plugin_audioscrobbler',
+  28 => 'serendipity_plugin_delicious',
+  29 => 'serendipity_plugin_frappr',
+  30 => 'serendipity_plugin_gallery_menalto_random',
+  31 => 'serendipity_plugin_google_last_query',
+  32 => 'serendipity_plugin_hitmaps',
+  33 => 'serendipity_plugin_ipv6',
+  34 => 'serendipity_plugin_quicksearch',
+  35 => 'serendipity_event_sidebaritemcollapse',
+  36 => 'serendipity_plugin_smiletag',
+  37 => 'serendipity_plugin_topreferers',
+  38 => 'serendipity_plugin_weather',
+  39 => 'serendipity_event_xinha',
+  40 => 'serendipity_plugin_zooomr',
+)
+´´´
+
+
 ## Spartacus related changes for connects
 * **Ignore** the following since the **Serendipity Styx 2.6-beta1** release, see [4th list element](https://ophian.github.io/2018/08/06/Serendipity-Styx-2.6-beta1-released/) Spartacus notes!
 * - - -
