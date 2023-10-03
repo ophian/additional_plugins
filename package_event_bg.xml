@@ -7689,7 +7689,7 @@
 <description>Provides an interactive map for *.gpx uploads and geo-tagged entries</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
+  <version>2.6.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
@@ -7745,7 +7745,7 @@
 <description>Includes scripts and stylesheets for OpenStreetMap support</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
+  <version>2.6.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
