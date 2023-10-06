@@ -1,3 +1,8 @@
+2.4.0:
+-----
+ * Prepare the 'frontend_fetcharchives' hook to NOT multi count entries (in the entries_archives (month) counter) that are assigned to multiple categories.
+   This will start working correct up from Serendipity Styx v.4.3.0.
+
 2.3.8:
 ------
  * Fix class property $usesDefaultTemplate definition
