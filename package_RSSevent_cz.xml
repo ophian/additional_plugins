@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Vlastnosti/šablona vzhledu pro kategorie&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
-<pubDate>Wed, 08 Feb 2023 13:03:38 +0100</pubDate>
+<pubDate>Fri, 06 Oct 2023 14:26:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
