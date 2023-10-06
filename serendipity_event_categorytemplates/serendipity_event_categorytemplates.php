@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.4.0');
+        $propbag->add('version',       '2.4.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.4.0'
@@ -864,11 +864,8 @@ class serendipity_event_categorytemplates extends serendipity_event
                         $conds = array();
                         if ($event == 'frontend_fetcharchives') {
                             $eventData['joins'] = "LEFT JOIN {$serendipity['dbPrefix']}entrycat AS ec ON (ec.entryid IS NULL OR ec.entryid = e.id)";
-                            #$eventData['group'] = "\n        GROUP BY ec.entryid"; // avoid counting entries that are placed in multiple categories
-                            // Well, NO, we better do this by just adding DISTINCT directly in the entries API serendipity_printArchives() while this fits all SQL layers.
-                            // Actually, we better do this by sending the distinct here INTO the hook stream and use the correct table.field like we would do for GROUP BY,
-                            // though it works with the default DISTINCT e.timestamp too... so using just DISTINCT would match.
-                            $eventData['distinct'] = 'DISTINCT ec.entryid,';
+                            // Send distinct usage request. The default SELECT DISTINCT e.timestamp is enough for all related cases
+                            $eventData['distinct'] = true;
                         }
                         $tp = ($event == 'frontend_fetchcategories') ? 'c' : 'ec';  // table prefix
                         foreach ($this->bycategory AS $bcat) {

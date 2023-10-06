@@ -1,5 +1,9 @@
+2.4.1:
+------
+ * Simplify 2.4.0 distinct request for the archives counter query
+
 2.4.0:
------
+------
  * Prepare the 'frontend_fetcharchives' hook to NOT multi count entries (in the entries_archives (month) counter) that are assigned to multiple categories.
    This will start working correct up from Serendipity Styx v.4.3.0.
 
