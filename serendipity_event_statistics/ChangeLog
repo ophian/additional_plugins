@@ -1,3 +1,9 @@
+3.9.0:
+-----
+ * Improve the visitor stats rolling year by a second - one year back - rolling year sibling, as a gray scaled statistic for comparison
+ * Improve Referrers for 'unknown' case, when a user has disabled its browsers Referrers send header (sendRefererHeader) 
+ * Catch a configure table check case where DB tables are installed, but haven't seen a single visitor yet and throw an Exception
+
 3.8.1:
 -----
  * Improve and fix for strict_types

@@ -21,10 +21,10 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '3.8.1');
+        $propbag->add('version',       '3.9.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
-            'php'         => '7.3'
+            'php'         => '7.4'
         ));
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('event_hooks',   array(
@@ -147,15 +147,22 @@ class serendipity_event_statistics extends serendipity_event
                     }
 
                     // checking if db tables exists, otherwise install them
-                    $tableChecker = serendipity_db_query("SELECT counter_id FROM {$serendipity['dbPrefix']}visitors LIMIT 1", true);
-                    if (!is_array($tableChecker)) {
+                    try {
+                        $tableChecker = serendipity_db_query("SELECT counter_id FROM {$serendipity['dbPrefix']}visitors LIMIT 1", true);
+                    } catch (\Throwable|\Error|\Exception $e) {
+                        // catch a case where tables are installed but haven't seen a single visitor yet
+                        if ($e->getMessage() == "Table '{$serendipity['dbName']}.{$serendipity['dbPrefix']}visitors' already exist") {
+                            $tableChecker = [];
+                        }
+                    }
+                    if (isset($tableChecker) && !is_array($tableChecker)) {
                         $this->createTables();
                     }
 
-                    if ((int)$this->get_config('db_indices_created', '0') == 0) {
+                    if ((int)$this->get_config('db_indices_created', '0') === 0) {
                         $this->updateTables();
                     }
-                    if ((int)$this->get_config('db_indices_created', '1') == 1) {
+                    if ((int)$this->get_config('db_indices_created', '1') === 1) {
                         $this->updateTables(1);
                     }
 
@@ -525,8 +532,23 @@ class serendipity_event_statistics extends serendipity_event
     color: var(--color-text-primary);
     text-shadow: none;
 }
-.stats_imagecell {
+.stats_imagecell, .stats_imagecell img {
     vertical-align: bottom;
+}
+#statistics_yearbox table tr:nth-child(4) td {
+  color: #533753;
+  text-shadow: 1px 2px 3px #bbb;
+}
+[data-color-mode="dark"] #statistics_yearbox table tr:nth-child(4) td {
+  color: var(--color-counter-text);
+  text-shadow: none;
+}
+.stats_imagecell .co_mo img {
+  background-image: linear-gradient(#666, #aaa);
+}
+[data-color-mode="dark"] .stats_imagecell .co_mo img {
+  /*transform: scaleY(-1);*/
+  background-image: linear-gradient(var(--color-auto-gray-8), var(--color-auto-gray-3));
 }
 .stats_header {
     width: auto;
@@ -1064,7 +1086,8 @@ class serendipity_event_statistics extends serendipity_event
     {
         $date = mktime(0, 0, 0, date('n'), 1);
         $months[] = [date('m', $date), date('Y', $date)];
-        for($i = -1; $i >= -11; $i--) {
+        // get 24 months as 2 rolling years for comparison
+        for($i = -1; $i >= -23; $i--) {
             list($year, $month) = explode('-', date('Y-m', strtotime($i.' month', $date)));
             $months[] = [$month, $year];
         }
@@ -1116,6 +1139,15 @@ class serendipity_event_statistics extends serendipity_event
 
         $today = (date('Y')-1).'-'.date('m-d');
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}visitors WHERE day < '$today'", true);
+    }
+
+    /**
+     * Helper method to get the percentage of the current rolling year highest MAX var
+     * against the MAX var of the comparison year.
+     */
+    function percent($num, $total)
+    {
+        return number_format((100.0*$num)/$total, 2);
     }
 
     /**
@@ -1189,7 +1221,11 @@ class serendipity_event_statistics extends serendipity_event
             if (is_array($top_refs)) {
                 echo "<ol>\n";
                 foreach($top_refs AS $key => $row) {
-                    echo '<li><a href="//'.$row['refs'].'" target="_blank" rel="noopener">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
+                    if ($row['refs'] == 'unknown') {
+                        echo '<li>'.$row['refs'].' ('.$row['count'].")</li>\n";
+                    } else {
+                        echo '<li><a href="//'.$row['refs'].'" target="_blank" rel="noopener">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
+                    }
                 }
                 echo "</ol>\n";
             } else {
@@ -1203,13 +1239,15 @@ class serendipity_event_statistics extends serendipity_event
 
         <?php if ($visitors_count_all[0] > 0) {
                 $num = $this->statistics_getmonthlystats();
+                // split out the added old comparison year from $num to a current_rolling_year ($cry) and a last_rolling_year ($lry)
+                list($cry, $lry) = array_chunk($num, ceil(count($num) / 2));
             ?>
                 <table>
                     <tbody>
                     <tr>
                         <th scope="row"><?php echo MONTHS; ?></th>
                 <?php
-                    foreach (array_reverse($num) AS $month) {
+                    foreach (array_reverse($cry) AS $month) {
                         echo '<td>' . serendipity_strftime('%b', mktime(0, 0, 0, $month[0], 1, 2000)) . "</td>\n";
                     }
                 ?>
@@ -1217,7 +1255,7 @@ class serendipity_event_statistics extends serendipity_event
                     <tr>
                         <th scope="row">Visits</th>
                 <?php
-                    foreach (array_reverse($num) AS $visits) {
+                    foreach (array_reverse($cry) AS $visits) {
                         echo '<td>' . $visits[1] . "</td>\n";
                     }
                 ?>
@@ -1225,16 +1263,35 @@ class serendipity_event_statistics extends serendipity_event
                     <tr>
                         <th scope="row">+/~/-</th>
                 <?php
-                    foreach (array_reverse($num) AS $r) {
+                    foreach (array_reverse($cry) AS $r) {
                         $rep[(int)$r[0]] = $r[1]; // flatten array for max
                     }
                     $max = max(array_values($rep)); // Get the highest entry visitor stat
 
-                    foreach (array_reverse($num) AS $n) {
-                        $maxVisHeigh = 100/$max*2;
+                    foreach (array_reverse($lry) AS $r) {
+                        $rep2[(int)$r[0]] = $r[1]; // flatten array for max2
+                    }
+                    $max2 = max(array_values($rep2)); // Get the highest entry visitor stat
+                    $max2 = $max2 ?? 1; // avoids Division by Zero error and further on issues with empty $lry[1}
+
+                    // merge old current year sums into the current rolling year array as an additional key 2
+                    $combined = [];
+                    foreach($cry as $key=>$val){
+                        $combined[$key] = $val + [2 => $lry[$key][1]];
+                    }
+
+                    $perc = @round($this->percent($max2, $max));
+                    $maxVisHeigh = 100/$max*2;
+                    $maxVisHeighex = $perc/$max2*2;
+
+                    foreach (array_reverse($combined) AS $n) {
                         $monthHeight = @round($n[1]*$maxVisHeigh);
+                        $mhex = @round($n[2]*$maxVisHeighex);
                         $numCountInt = @($n[1]*$maxVisHeigh/2);
-                        echo '<td class="stats_imagecell"><img src="plugins/serendipity_event_statistics/';
+                        echo '<td class="stats_imagecell">
+                                <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.$mhex.'" style="height:'.$mhex.'px" alt="o" /></span>
+                                <span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="200" style="height:200px" alt="°" /></span>
+                                <span class="cu_mo"><img src="plugins/serendipity_event_statistics/';
                         if ($numCountInt <= 33) {
                             echo 'red.png';
                         } else if ($numCountInt > 33 && $numCountInt < 66) {
@@ -1242,7 +1299,7 @@ class serendipity_event_statistics extends serendipity_event
                         } else {
                             echo 'green.png';
                         }
-                        echo '" width="8" height="'.$monthHeight.'" style="height:'.$monthHeight.'px" alt="';
+                        echo '" title="'.$n[1].'" width="8" height="'.$monthHeight.'" style="height:'.$monthHeight.'px" alt="';
                         if ($numCountInt <= 33) {
                             echo '-';
                         } else if ($numCountInt > 33 && $numCountInt < 66) {
@@ -1250,7 +1307,26 @@ class serendipity_event_statistics extends serendipity_event
                         } else {
                             echo '+';
                         }
-                        echo '" /></td>'."\n";
+                        echo '" /></span>
+                            </td>'."\n";
+                    }
+                ?>
+                    </tr>
+                <?php
+                    if ($maxVisHeighex > 0) {
+                ?>
+                    <tr>
+                        <th scope="row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-range" viewBox="0 0 16 16">
+                              <title>Gray scaled Visits -1 year in past for comparison</title>
+                              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
+                              <path d="M9 7.5a.5.5 0 0 1 .5-.5H15v2H9.5a.5.5 0 0 1-.5-.5v-1zm-2 3v1a.5.5 0 0 1-.5.5H1v-2h5.5a.5.5 0 0 1 .5.5z"/>
+                            </svg>
+                        </th>
+                <?php
+                    }
+                    foreach (array_reverse($lry) AS $visits) {
+                        echo '<td>' . $visits[1] . "</td>\n";
                     }
                 ?>
                     </tr>
@@ -1340,7 +1416,6 @@ class serendipity_event_statistics extends serendipity_event
             }
             echo '    <dd>'.$row['browser']."</dd>\n";
         }
-        #echo '<pre>'.print_r($address,1).'</pre>';
         if ($debug) { $serendipity['logger']->debug("L_".__LINE__.":: $logtag CACHED IP DNS check for last_visitors [20] array ".print_r($address,true)); }
     }
 ?>
