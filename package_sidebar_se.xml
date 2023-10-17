@@ -1028,6 +1028,7 @@
       <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
+      <file>gray.png</file>
       <file>green.png</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
@@ -1049,6 +1050,7 @@
       <file>red.png</file>
       <file>serendipity_event_statistics.php</file>
       <file>serendipity_plugin_statistics.php</file>
+      <file>transparent.png</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cn.inc.php</file>
@@ -1075,6 +1077,7 @@
     <file>serendipity_event_statistics/ChangeLog</file>
     <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>
+    <file>serendipity_event_statistics/gray.png</file>
     <file>serendipity_event_statistics/green.png</file>
     <file>serendipity_event_statistics/lang_bg.inc.php</file>
     <file>serendipity_event_statistics/lang_cn.inc.php</file>
@@ -1096,6 +1099,7 @@
     <file>serendipity_event_statistics/red.png</file>
     <file>serendipity_event_statistics/serendipity_event_statistics.php</file>
     <file>serendipity_event_statistics/serendipity_plugin_statistics.php</file>
+    <file>serendipity_event_statistics/transparent.png</file>
     <file>serendipity_event_statistics/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_event_statistics/UTF-8/lang_cn.inc.php</file>
     <file>serendipity_event_statistics/UTF-8/lang_cs.inc.php</file>
