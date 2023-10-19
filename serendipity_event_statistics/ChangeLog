@@ -1,3 +1,8 @@
+4.0.0:
+-----
+ * Update banned bots list since 7/2020
+ * Improve autoCleanStats access by 12 h cookie
+
 3.9.0:
 -----
  * Improve the visitor stats rolling year by a second - one year back - rolling year sibling, as a gray scaled statistic for comparison
