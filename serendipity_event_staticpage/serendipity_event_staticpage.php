@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.69');
+        $propbag->add('version', '6.70');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -3296,6 +3296,9 @@ class serendipity_event_staticpage extends serendipity_event
                     'form_values'    => (isset($serendipity['POST']['plugin']) && is_array($serendipity['POST']['plugin']) ? $serendipity['POST']['plugin'] : $this->staticpage)
                 )
         );
+        // fallback until requirement >= Styx 4.3
+        @define('ENTRY_PAGE_PASSWORD_INFO_SET', 'Static page restricted passwords are - unlike login passwords - stored unencrypted, thus simple and unsecured. You should not want to operate a security-relevant access system with them!');
+
         echo $serendipity['smarty']->fetch('file:'. $tfile);
 
     }

@@ -290,7 +290,7 @@ class serendipity_event_adminnotes extends serendipity_event
                 echo '<label for="note_body" class="block_level">' . ENTRY_BODY . "</label>\n";
                 echo '<textarea id="note_body" rows=10 cols=80 name="note_body">' . serendipity_specialchars(($entry['body'] ?? '')) . "</textarea>\n";
                 if (($allow_html === 'admin' && $serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) && isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
-                    @include_once $serendipity['serendipityPath'] . 'include/functions_entries_admin.inc.php';
+                    include_once $serendipity['serendipityPath'] . 'include/functions_entries_admin.inc.php';
                     serendipity_emit_htmlarea_code('note_body','');
                 }
                 echo "</div>\n";

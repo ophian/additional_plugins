@@ -123,7 +123,7 @@
             </div>
 
             <div id="entry_struc_password" class="form_field sp_sect">{* O8 *}
-                <label class="sp_label" title="{staticpage_input item="pass" what="desc"}">{staticpage_input item="pass" what="name"}</label>
+                <label class="sp_label" title="{staticpage_input item="pass" what="desc"}">{staticpage_input item="pass" what="name"} <i class="icon-info-circled" aria-hidden="true" title="{$CONST.ENTRY_PAGE_PASSWORD_INFO_SET|escape}"></i></label>
                     {staticpage_input item="pass"}
             </div>
 
