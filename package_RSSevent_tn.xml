@@ -14,7 +14,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Fri, 08 Sep 2023 17:57:33 +0200</pubDate>
+<pubDate>Sat, 21 Oct 2023 13:19:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Static Pages&lt;/b&gt;&lt;br /&gt;Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Thu, 28 Sep 2023 10:10:12 +0200</pubDate>
+<pubDate>Sat, 21 Oct 2023 15:46:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
