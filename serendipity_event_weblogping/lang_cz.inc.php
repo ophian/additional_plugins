@@ -6,13 +6,13 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Oznamovat vydání pøíspìvku pøes XML-RPC na "%s"?');
+@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Oznamovat položky (prostrednictvím XML-RPC ping) na:');
 @define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Posílám XML-RPC oznámení na hosta %s');
 @define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Oznamování pøíspìvkù');
-@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Posílá oznámení o nových pøíspìvcích na on-line internetové slu¾by.');
-@define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(odstraòování %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Vlastní oznamovací slu¾by');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jedna nebo více oznamovacích slu¾eb oddìlené èárkou ",". Formát slu¾by je "host.domena/cesta". Pokud je na zaèátku slu¾by uvedená hvìzdièka "*", budou na tuto adresu posílány ro¹íøená XML-RPC oznámení. You have to submit this form several times, until the new entries are placed into the upper list.');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Nezdaøilo se (Dùvod: %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Úspìch!');
+@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Posílá oznámení o nových príspevcích na on-line internetové služby.');
+@define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(odstranování %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Vlastní oznamovací služby');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jedna nebo více oznamovacích služeb oddelené cárkou ",". Formát služby je "host.domena/cesta". Pokud je na zacátku služby uvedená hvezdicka "*", budou na tuto adresu posílány rošírená XML-RPC oznámení. You have to submit this form several times, until the new entries are placed into the upper list.');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Nezdaøilo se (Duvod: %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Úspech!');
 

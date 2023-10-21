@@ -13,6 +13,6 @@
 @define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(supersedes %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Custom ping-services');
 @define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'One or more special ping services, separated by ",". The entries need to be formatted like: "host.domain/path". If a "*" is entered at the beginning of the hostname, the extended XML-RPC options will be sent to that host (only if supported by the host). You have to submit this form several times, until the new entries are placed into the upper list.');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Failure(Reason: %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Failure (Reason: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Success!!');
 
