@@ -12085,11 +12085,11 @@
 <description>傳送新文章的通知到線上服務功能</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.21</version>
+  <version>1.22</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
-  <date>2023-01-18</date>
+  <date>2023-10-21</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>

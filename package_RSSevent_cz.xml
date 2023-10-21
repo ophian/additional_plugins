@@ -1251,12 +1251,12 @@
 <guid isPermaLink="false">serendipity_event_vgwort</guid>
 </item>
 <item>
-<title>Oznamování příspěvků: Posílá oznámení o nových příspěvcích na on-line internetové služby.</title>
+<title>Oznamování pøíspìvkù: Posílá oznámení o nových příspěvcích na on-line internetové služby.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Oznamování příspěvků&lt;/b&gt;&lt;br /&gt;Posílá oznámení o nových příspěvcích na on-line internetové služby.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 18 Jan 2023 15:32:54 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Oznamování pøíspìvkù&lt;/b&gt;&lt;br /&gt;Posílá oznámení o nových příspěvcích na on-line internetové služby.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
+<pubDate>Sat, 21 Oct 2023 12:33:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
