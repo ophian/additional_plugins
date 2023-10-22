@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.0.0');
+        $propbag->add('version',       '4.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -558,6 +558,10 @@ class serendipity_event_statistics extends serendipity_event
 }
 .stats_imagecell, .stats_imagecell img {
     vertical-align: bottom;
+}
+.stats_imagecell > span {
+    height: 100%;
+    display: inline-block;
 }
 #statistics_yearbox table tr:nth-child(4) td {
   color: #533753;
@@ -1311,11 +1315,11 @@ class serendipity_event_statistics extends serendipity_event
                     $maxVisHeighex = $perc/$max2*2;
 
                     foreach (array_reverse($combined) AS $n) {
-                        $monthHeight = @round($n[1]*$maxVisHeigh);
-                        $mhex = @round($n[2]*$maxVisHeighex);
+                        $monthHeight = @round($n[1]*$maxVisHeigh, 3); // be as precise as possible eg. 12.321px
+                        $mhex = @round($n[2]*$maxVisHeighex, 3); // ditto
                         $numCountInt = @($n[1]*$maxVisHeigh/2);
                         echo '<td class="stats_imagecell">
-                                <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.$mhex.'" style="height:'.$mhex.'px" alt="o" /></span>
+                                <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.@round($mhex).'" style="height:'.$mhex.'px" alt="o" /></span>
                                 <span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="200" style="height:200px" alt="°" /></span>
                                 <span class="cu_mo"><img src="plugins/serendipity_event_statistics/';
                         if ($numCountInt <= 33) {
@@ -1325,7 +1329,7 @@ class serendipity_event_statistics extends serendipity_event
                         } else {
                             echo 'green.png';
                         }
-                        echo '" title="'.$n[1].'" width="8" height="'.$monthHeight.'" style="height:'.$monthHeight.'px" alt="';
+                        echo '" title="'.$n[1].'" width="8" height="'.@round($monthHeight).'" style="height:'.$monthHeight.'px" alt="';
                         if ($numCountInt <= 33) {
                             echo '-';
                         } else if ($numCountInt > 33 && $numCountInt < 66) {

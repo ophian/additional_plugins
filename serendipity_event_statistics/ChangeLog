@@ -1,3 +1,7 @@
+4.0.1:
+-----
+ * Round v.3.9.0 max relation precision to be as precise as possible for the compared image px height, which support 3 decimals
+
 4.0.0:
 -----
  * Update banned bots list since 7/2020
