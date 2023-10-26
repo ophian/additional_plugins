@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.0.2');
+        $propbag->add('version',       '4.0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -1294,7 +1294,7 @@ class serendipity_event_statistics extends serendipity_event
                         <th scope="row">Visits</th>
                 <?php
                     foreach (array_reverse($cry) AS $visits) {
-                        echo '<td>' . $visits[1] . "</td>\n";
+                        echo '<td>' . (empty($visits[1]) ? '-' : $visits[1]) . "</td>\n";
                     }
                 ?>
                     </tr>
@@ -1364,7 +1364,7 @@ class serendipity_event_statistics extends serendipity_event
                 <?php
                     }
                     foreach (array_reverse($lry) AS $visits) {
-                        echo '<td>' . $visits[1] . "</td>\n";
+                        echo '<td>' . (empty($visits[1]) ? 0 : $visits[1]) . "</td>\n";
                     }
                 ?>
                     </tr>

@@ -1,3 +1,7 @@
+4.0.3:
+-----
+ * Show -/0 on empty visits in monthly visitors diagram table
+
 4.0.2:
 -----
  * Fixup the new visitors diagram table for mobiles below 550px width
