@@ -1,3 +1,7 @@
+0.31:
+-----
+ * Testing version for new legacy branch (just changing version)
+
 0.30:
 -----
  * Fix setupDB() on reinstall cases adding IF NOT EXISTS to CREATE TABLE,
