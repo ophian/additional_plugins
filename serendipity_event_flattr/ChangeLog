@@ -1,3 +1,7 @@
+1.20:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 1.19:
 ------
  * Fix undefined dynamic property errors on PHP 8.2

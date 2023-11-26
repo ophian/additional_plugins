@@ -62,7 +62,7 @@ class serendipity_event_flattr extends serendipity_event
             'add_to_feed',
         ));
         $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '1.19');
+        $propbag->add('version', '1.20');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -276,8 +276,8 @@ class serendipity_event_flattr extends serendipity_event
 
                 case 'backend_display':
 ?>
-                    <fieldset id="edit_entry_flattr" class="entryproperties_flattr">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_FLATTR_NAME; ?></legend></span>
+            <fieldset id="edit_entry_flattr" class="entryproperties_flattr">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_FLATTR_NAME; ?></legend></span>
 <?php
                     foreach($this->flattr_attrs AS $attr => $attr_desc) {
                         if (isset($serendipity['POST']['properties']['ep_' . $attr])) {
@@ -288,33 +288,36 @@ class serendipity_event_flattr extends serendipity_event
                             $val = '';
                         }
 ?>
-                        <div class="form_field">
+                <div class="form_field">
 <?php
-                        echo '<label for="serendipity[properties][ep_' . $attr . ']" title="' . PLUGIN_FLATTR_NAME . '">
+                        echo '                    <label for="serendipity[properties][ep_' . $attr . ']" title="' . PLUGIN_FLATTR_NAME . '">
                             ' . $attr_desc . ':</label><br/>';
 
                         if ($attr == 'flattr_active' || $attr == 'flattr_lng' || $attr == 'flattr_cat') { 
-                            echo '<select name="serendipity[properties][ep_' . $attr . ']" id="properties_' . $attr . '" class="input_select">';
+                            echo '                    <select name="serendipity[properties][ep_' . $attr . ']" id="properties_' . $attr . '" class="input_select">';
                             if ($attr == 'flattr_lng') {
                                 $opt = $this->flattr_langs;
-                                echo '<option value=""></option>' . "\n";
+                                echo '                        <option value=""></option>' . "\n";
                             } elseif ($attr == 'flattr_cat') {
                                 $opt = $this->flattr_cats;
-                                echo '<option value=""></option>' . "\n";
+                                echo '                        <option value=""></option>' . "\n";
                             } elseif ($attr == 'flattr_active') {
                                 $opt = array('1' => YES, '-1' => NO);
                             }
                             foreach($opt AS $key => $kval) {
-                                echo '<option value="' . $key . '" ' . ((string)$val == (string)$key ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($kval) : htmlspecialchars($kval, ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+                                echo '                        <option value="' . $key . '"' . ((string)$val == (string)$key ? ' selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($kval) : htmlspecialchars($kval, ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
                             }
-                            echo '</select>';
+                            echo '                    </select>';
                         } else {
-                            echo '<input type="text" name="serendipity[properties][ep_' . $attr . ']" id="properties_' . $attr . '" class="input_textbox" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET)) . '" style="width: 100%" />' . "\n";
+                            echo '                    <input type="text" name="serendipity[properties][ep_' . $attr . ']" id="properties_' . $attr . '" class="input_textbox" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET)) . '" style="width: 100%" />' . "\n";
                         }
-                        echo "</div>\n";
+?>
+                </div>
+<?php
                     }
 ?>
-                    </fieldset>
+            </fieldset>
+
 <?php
                     break;
 
