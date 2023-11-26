@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '7.4.0'
         ));
 
-        $propbag->add('version',       '0.31');
+        $propbag->add('version',       '0.32');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -176,7 +176,7 @@ class serendipity_event_adminnotes extends serendipity_event
     {
         global $serendipity;
 
-        echo '<h2>' . PLUGIN_ADMINNOTES_TITLE . '</h2>';
+        echo '<h2>' . PLUGIN_ADMINNOTES_TITLE . "</h2>\n";
 
         if (!serendipity_db_bool($this->get_config('feedback')) && $serendipity['serendipityUserlevel'] < USERLEVEL_CHIEF) {
             return false;
@@ -243,23 +243,24 @@ class serendipity_event_adminnotes extends serendipity_event
                     echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . DONE . ': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . "</span>\n";
                 }
 
-                echo '<p>' . PLUGIN_ADMINNOTES_FEEDBACK_INFO . "</p>\n\n";
+                echo '
+<p>' . PLUGIN_ADMINNOTES_FEEDBACK_INFO . '</p>
 
-                echo '<form action="?" method="post">';
-                echo serendipity_setFormToken();
-                echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
-                echo '<input type="hidden" name="serendipity[adminAction]" value="adminnotes" />'."\n";
-                echo '<input type="hidden" name="action" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['action']) : htmlspecialchars($_REQUEST['action'], ENT_COMPAT, LANG_CHARSET)) . '" />'."\n";
-                echo '<input type="hidden" name="note" value="' . ($entry['noteid'] ?? '') . '" />'."\n";
-                echo '<input type="hidden" name="note_notetype" value="note" />'."\n";
+<form name="serendipity[adminnotes]" action="?" method="post">
+    '. serendipity_setFormToken() .'
+    <input type="hidden" name="serendipity[adminModule]" value="event_display">
+    <input type="hidden" name="serendipity[adminAction]" value="adminnotes">
+    <input type="hidden" name="action" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['action']) : htmlspecialchars($_REQUEST['action'], ENT_COMPAT, LANG_CHARSET)) . '">
+    <input type="hidden" name="note" value="' . ($entry['noteid'] ?? '') . '">
+    <input type="hidden" name="note_notetype" value="note">
 
-                echo '<div class="form_field">'."\n";
-                echo '<label for="note_subject" class="block_level">' . TITLE . "</label>\n";
-                echo '<input id="note_subject" type="text" name="note_subject" value="' . serendipity_specialchars(($entry['subject'] ?? '')) . '">'."\n";
-                echo "</div>\n";
+    <div class="form_field">
+        <label for="note_subject" class="block_level">' . TITLE . '</label>
+        <input id="note_subject" type="text" name="note_subject" value="' . serendipity_specialchars(($entry['subject'] ?? '')) . '">
+    </div>
 
-                echo '<div class="form_multiselect">'."\n";
-                echo '<label for="note_target" class="block_level">' . USERCONF_GROUPS . "</label>\n";
+    <div class="form_multiselect">
+        <label for="note_target" class="block_level">' . USERCONF_GROUPS . '</label>';
 
                 $valid_groups = serendipity_getAllGroups($serendipity['authorid']);
                 if (isset($_REQUEST['note_target'])) {
@@ -274,30 +275,36 @@ class serendipity_event_adminnotes extends serendipity_event
                     $selected = array();
                 }
 
-                echo '<select id="note_target" name="note_target[]" multiple="multiple" size="5">'."\n";
+                echo '
+        <select id="note_target" name="note_target[]" multiple="multiple" size="5">'."\n";
                 foreach($valid_groups AS $group) {
                     # PRESELECT!
                     if (in_array($group['confkey'], (array)$selected) || count($selected) == 0) {
-                        $is_selected = 'selected="selected"';
+                        $is_selected = ' selected="selected"';
                     } else {
                         $is_selected = '';
                     }
-                    echo '    <option ' . $is_selected . ' value="' . $group['confkey'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($group['confvalue']) : htmlspecialchars($group['confvalue'], ENT_COMPAT, LANG_CHARSET)) . "</option>\n";
+                    echo '            <option' . $is_selected . ' value="' . $group['confkey'] . '">' . serendipity_specialchars($group['confvalue']) . "</option>\n";
                 }
-                echo "</select>\n</div>\n";
+                echo '        </select>
+    </div>
 
-                echo '<div class="form_area">'."\n";
-                echo '<label for="note_body" class="block_level">' . ENTRY_BODY . "</label>\n";
-                echo '<textarea id="note_body" rows=10 cols=80 name="note_body">' . serendipity_specialchars(($entry['body'] ?? '')) . "</textarea>\n";
-                if (($allow_html === 'admin' && $serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) && isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
-                    include_once $serendipity['serendipityPath'] . 'include/functions_entries_admin.inc.php';
-                    serendipity_emit_htmlarea_code('note_body','');
-                }
-                echo "</div>\n";
-                echo '<div class="form_buttons"><input type="submit" name="submit" value="' . SAVE . '"></div>'."\n";
+    <div class="form_area">
+        <label for="note_body" class="block_level">' . ENTRY_BODY . '</label>
+        <textarea id="note_body" rows=10 cols=80 name="note_body">
+' . serendipity_specialchars(($entry['body'] ?? '')) . "
+        </textarea>\n";
+        if (($allow_html === 'admin' && $serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) && isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
+            include_once $serendipity['serendipityPath'] . 'include/functions_entries_admin.inc.php';
+            serendipity_emit_htmlarea_code('note_body','');
+        }
+        echo "\n";
+?>
 
-                echo "</form>\n";
-
+    </div>
+    <div class="form_buttons"><input type="submit" name="submit" value="<?= SAVE ?>"></div>
+</form>
+<?php
                 break;
 
             case 'delete':
@@ -329,21 +336,34 @@ class serendipity_event_adminnotes extends serendipity_event
                 }
                 echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ';
                 printf(RIP_ENTRY, $entry['noteid'] . ' - ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['subject']) : htmlspecialchars($entry['subject'], ENT_COMPAT, LANG_CHARSET)));
-                echo '</span>';
+                echo "</span>\n";
                 break;
 
             default:
                 $notes = $this->getMyNotes(false);
-                echo '<ol class="note_list plainList">';
+                echo '
+<ol class="note_list plainList">'."\n";
                 if (is_array($notes)) {
                     foreach($notes AS $note) {
-                        echo '<li><h3>' . $note['subject'] . '</h3><p>' . POSTED_BY . ' ' . $note['realname'] . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime']) . '</p>';
-                        echo '<div class="form_buttons"><a class="button_link state_submit" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=edit&amp;note=' . $note['noteid'] . '">' . EDIT . '</a> ';
-                        echo '<a class="button_link state_cancel" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=delete&amp;note=' . $note['noteid'] . '">' . DELETE . '</a></div></li>';
+                        echo '
+    <li>
+        <h3>' . $note['subject'] . '</h3>
+        <p>' . POSTED_BY . ' ' . $note['realname'] . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime']) . '</p>
+        <div class="form_buttons">
+            <a class="button_link state_submit" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=edit&amp;note=' . $note['noteid'] . '">' . EDIT . '</a>
+            <a class="button_link state_cancel" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=delete&amp;note=' . $note['noteid'] . '">' . DELETE . '</a>
+        </div>
+    </li>
+';
                     }
                 }
-                echo '</ol>';
-                echo '<div class="form_buttons"><a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=new">' . NEW_ENTRY . '</a></div>';
+                echo '
+</ol>
+
+<div class="form_buttons">
+    <a class="button_link" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=new">' . NEW_ENTRY . '</a>
+</div>
+';
                 break;
         }
     }
@@ -434,45 +454,46 @@ function fulltext_toggle(id) {
                     if (is_array($notes)) {
 ?>
 
-        <section id="dashboard_quicknotes" class="equal_heights quick_list dashboard_widget">
-            <h3><?php echo PLUGIN_ADMINNOTES_TITLE ?></h3>
-            <ol class="plainList">
+    <section id="dashboard_quicknotes" class="equal_heights quick_list dashboard_widget">
+        <h3><?php echo PLUGIN_ADMINNOTES_TITLE ?></h3>
+        <ol class="plainList">
 <?php
             foreach($notes AS $id => $note) {
 ?>
-                <li class="serendipity_note note_<?php echo $this->output($note['notetype']) ?> note_owner_<?php echo $note['authorid'] . (isset($serendipity['COOKIE']['lastnote']) && $serendipity['COOKIE']['lastnote'] < $note['noteid'] ? ' note_new' : ''); ?>">
-                    <div class="note_subject">
-                        <h3><?php echo $this->output($note['subject']) ?></h3>
-                        <?php echo POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime'])."\n"; ?>
-                    </div>
+            <li class="serendipity_note note_<?php echo $this->output($note['notetype']) ?> note_owner_<?php echo $note['authorid'] . (isset($serendipity['COOKIE']['lastnote']) && $serendipity['COOKIE']['lastnote'] < $note['noteid'] ? ' note_new' : ''); ?>">
+                <div class="note_subject">
+                    <h3><?php echo $this->output($note['subject']) ?></h3>
+                    <?php echo POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime'])."\n"; ?>
+                </div>
 <?php
                     if (strlen(strip_tags($note['body'])) > $cutoff) {
                         $output = $this->output($note['body']);
 ?>
-                    <div id="<?php echo $id ?>_full" style="display: none" class="note_body">
-                        <?php echo $output . "\n"; ?>
-                    </div>
-                    <div id="<?php echo $id ?>_summary" class="note_body">
-                        <?php echo serendipity_mb('substr', strip_tags($output), 0, $cutoff) . "&hellip;\n"; ?>
-                    </div>
-                    <div class="note_summarylink">
-                        <button class="button_link toggle_comment_full" type="button" onclick="fulltext_toggle(<?php echo $id ?>); return false;" data-href="#qn<?php echo $id ?>_full" title="<?php echo TOGGLE_OPTION ?>"><span class="icon-right-dir" aria-hidden="true"></span><span id="<?php echo $id ?>_text" class="visuallyhidden"> <?php echo TOGGLE_OPTION ?></span></button>
-                    </div>
+                <div id="<?php echo $id ?>_full" style="display: none" class="note_body">
+                    <?php echo $output . "\n"; ?>
+                </div>
+                <div id="<?php echo $id ?>_summary" class="note_body">
+                    <?php echo serendipity_mb('substr', strip_tags($output), 0, $cutoff) . "&hellip;\n"; ?>
+                </div>
+                <div class="note_summarylink">
+                    <button class="button_link toggle_comment_full" type="button" onclick="fulltext_toggle(<?php echo $id ?>); return false;" data-href="#qn<?php echo $id ?>_full" title="<?php echo TOGGLE_OPTION ?>"><span class="icon-right-dir" aria-hidden="true"></span><span id="<?php echo $id ?>_text" class="visuallyhidden"> <?php echo TOGGLE_OPTION ?></span></button>
+                </div>
 <?php
                     } else {
 ?>
-                    <div class="note_body">
-                        <?php echo $this->output($note['body']) . "\n"; ?>
-                    </div>
+                <div class="note_body">
+                    <?php echo $this->output($note['body']) . "\n"; ?>
+                </div>
 <?php
                     }
 ?>
-                </li>
+            </li>
 <?php
             }
 ?>
-            </ol>
-        </section>
+        </ol>
+    </section>
+
 <?php
 
                         serendipity_JSsetCookie('lastnote', $notes[0]['noteid']);

@@ -1,3 +1,7 @@
+0.32:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 0.31:
 -----
  * Testing version for new legacy branch (just changing version)
