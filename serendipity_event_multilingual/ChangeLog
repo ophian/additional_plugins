@@ -1,3 +1,7 @@
+3.12:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 3.11:
 -----
  * Fix an undefined variable usage
