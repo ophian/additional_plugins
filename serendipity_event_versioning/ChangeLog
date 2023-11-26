@@ -1,3 +1,7 @@
+0.15:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 0.14:
 -----
  * Fix some uninitialized variable check for PHP 8

@@ -27,7 +27,7 @@ class serendipity_event_versioning extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '0.14');
+        $propbag->add('version', '0.15');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -292,10 +292,10 @@ class serendipity_event_versioning extends serendipity_event
                     }
                     if (is_array($versions) && !empty($versions)) {
 ?>
-                    <fieldset id="edit_entry_versioning" class="entryproperties_versioning">
-                        <span class="wrap_legend"><legend><?php echo VERSIONING_TITLE; ?></legend></span>
-                        <div class="form_select">
-                            <select name="serendipity[versioning]">
+            <fieldset id="edit_entry_versioning" class="entryproperties_versioning">
+                <span class="wrap_legend"><legend><?php echo VERSIONING_TITLE; ?></legend></span>
+                <div class="form_select">
+                    <select name="serendipity[versioning]">
 <?php
                         foreach($versions AS $version) {
                             $text = (function_exists('serendipity_specialchars') ? serendipity_specialchars(sprintf(VERSIONING_REVISION,
@@ -306,13 +306,14 @@ class serendipity_event_versioning extends serendipity_event
                                         serendipity_strftime($date_time_format, $version['version_date'], true),
                                         $version['realname']), ENT_COMPAT, LANG_CHARSET));
 
-                            echo '<option value="' . $version['id'] . '" ' . ($serendipity['POST']['versioning'] == $version['id'] ? 'selected="selected"' : '') . '>' . $text . '</option>' . "\n";
+                            echo '                        <option value="' . $version['id'] . '"' . ($serendipity['POST']['versioning'] == $version['id'] ? ' selected="selected"' : '') . '>' . $text . '</option>' . "\n";
                         }
 ?>
-                            </select>
-                            <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", (function_exists('serendipity_specialchars') ? serendipity_specialchars(VERSIONING_CHANGE_WARNING) : htmlspecialchars(VERSIONING_CHANGE_WARNING, ENT_COMPAT, LANG_CHARSET))); ?>');" />
-                        </div>
-                    </fieldset>
+                    </select>
+                    <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", (function_exists('serendipity_specialchars') ? serendipity_specialchars(VERSIONING_CHANGE_WARNING) : htmlspecialchars(VERSIONING_CHANGE_WARNING, ENT_COMPAT, LANG_CHARSET))); ?>');" />
+                </div>
+            </fieldset>
+
 <?php
                     }
                     break;
