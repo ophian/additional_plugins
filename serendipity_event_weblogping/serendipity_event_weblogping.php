@@ -19,7 +19,7 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.22');
+        $propbag->add('version',       '1.23');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -119,9 +119,9 @@ class serendipity_event_weblogping extends serendipity_event
 
                 case 'backend_display':
 ?>
-                    <fieldset id="edit_entry_weblogping" class="entryproperties_weblogping">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_WEBLOGPING_PING; ?></legend></span>
-                        <div class="ping_services">
+            <fieldset id="edit_entry_weblogping" class="entryproperties_weblogping">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_WEBLOGPING_PING; ?></legend></span>
+                <div class="ping_services">
 <?php
                     $noneclick = '';
                     foreach($this->services AS $index => $service) {
@@ -147,19 +147,20 @@ class serendipity_event_weblogping extends serendipity_event
                         $title    = sprintf(PLUGIN_EVENT_WEBLOGPING_SENDINGPING, $service['name'])
                                   . (!empty($service['supersedes']) ?  ' ' . sprintf(PLUGIN_EVENT_WEBLOGPING_SUPERSEDES, implode(',', $service['supersedes'])) : '');
 ?>
-                            <div class="form_check">
-                                <input id="serendipity[announce_entries_<?php echo $service['name']; ?>]" <?php echo $onclick; ?> type="checkbox" name="serendipity[announce_entries_<?php echo $service['name']; ?>]" value="true" <?php echo $selected; ?>>
-                                <label title="<?php echo $title; ?>" for="serendipity[announce_entries_<?php echo $service['name']; ?>]"><?php echo $service['name']; ?></label>
-                            </div>
+                    <div class="form_check">
+                        <input id="serendipity[announce_entries_<?php echo $service['name']; ?>]" <?php echo $onclick; ?> type="checkbox" name="serendipity[announce_entries_<?php echo $service['name']; ?>]" value="true" <?php echo $selected; ?>>
+                        <label title="<?php echo $title; ?>" for="serendipity[announce_entries_<?php echo $service['name']; ?>]"><?php echo $service['name']; ?></label>
+                    </div>
 <?php
     }
 ?>
-                            <div class="form_check">
-                                <input onclick="<?php echo $noneclick; ?>" type="checkbox" value="none" id="serendipity[announce_entries_none]">
-                                <label title="<?php echo NONE; ?>" for="serendipity[announce_entries_none]"><?php echo NONE; ?></label>
-                            </div>
-                        </div>
-                    </fieldset>
+                    <div class="form_check">
+                        <input onclick="<?php echo $noneclick; ?>" type="checkbox" value="none" id="serendipity[announce_entries_none]">
+                        <label title="<?php echo NONE; ?>" for="serendipity[announce_entries_none]"><?php echo NONE; ?></label>
+                    </div>
+                </div>
+            </fieldset>
+
 <?php
                     break;
 
