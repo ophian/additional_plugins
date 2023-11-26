@@ -1,3 +1,7 @@
+1.19:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 1.18 && 1.2.3 (sidebar):
 ------------------------
  * Some small fixes to run without errors on startup
