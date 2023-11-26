@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.31');
+        $propbag->add('version',       '5.32');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -474,7 +474,7 @@ class serendipity_event_freetag extends serendipity_event
             self::addTagsToEntry($entry['entryid'], $tags);
 
             printf(PLUGIN_FREETAG_UPGRADE1_2, count($tags), $entry['entryid']);
-            echo '<br />';
+            echo '<br>';
         }
 
         $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE property = 'ep_freetag_name'";
@@ -739,7 +739,7 @@ class serendipity_event_freetag extends serendipity_event
             $scale = 1;
         }
 
-        $key = uniqid(rand());
+        $key = uniqid((string) rand());
 
         if ($useRotCanvas) {
 
@@ -786,7 +786,7 @@ class serendipity_event_freetag extends serendipity_event
             // don't use with canvas cloud elements!
             if ($xml && !$useRotCanvas && !$useWordCloud) {
                 $html .= '<li class="serendipity_freeTag_xmlTagEntry"><a rel="tag" class="serendipity_xml_icon" href="' . $rsslink . urlencode($name) . '" title="' . $title . '">'.
-                         '<img alt="xml" src="' . $xmlImg . '" class="serendipity_freeTag_xmlButton" /></a> ';
+                         '<img alt="xml" src="' . $xmlImg . '" class="serendipity_freeTag_xmlButton"></a> ';
             }
             if ($useRotCanvas) {
                 $html .= '<li>';
@@ -823,7 +823,7 @@ class serendipity_event_freetag extends serendipity_event
             }
 
             if ($nl && !$useRotCanvas && !$useWordCloud) {
-                $html .= "<br />\n";
+                $html .= "<br>\n";
             }
 
             $first = false;
@@ -1848,7 +1848,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             echo serendipity_specialchars($r['tag']);
         }
-        echo "\" />\n";
+        echo "\">\n";
     }
 
     /**
@@ -2292,46 +2292,47 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 ?>
 
-            <h2 id="freetag_adminer_title"><?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?></h2>
+<h2 id="freetag_adminer_title"><?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?></h2>
 
-            <div class="freetagMenu">
-                <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <defs>
-                        <symbol id="icon-tags" viewBox="0 0 1024 1024">
-                            <title>tags</title>
-                            <path glyph-name="tags" unicode="&#xe805;" d="M250 600q0 30-21 51t-50 20-51-20-21-51 21-50 51-21 50 21 21 50z m595-321q0-30-20-51l-274-274q-22-21-51-21-30 0-50 21l-399 399q-21 21-36 57t-15 65v232q0 29 21 50t50 22h233q29 0 65-15t57-36l399-399q20-21 20-50z m215 0q0-30-21-51l-274-274q-22-21-51-21-20 0-33 8t-29 25l262 262q21 21 21 51 0 29-21 50l-399 399q-21 21-57 36t-65 15h125q29 0 65-15t57-36l399-399q21-21 21-50z" horiz-adv-x="1071.4" />
-                        </symbol>
-                        <symbol id="icon-tag" viewBox="0 0 1024 1024">
-                            <title>tag</title>
-                            <path glyph-name="tag" unicode="&#xe804;" d="M250 600q0 30-21 51t-50 20-51-20-21-51 21-50 51-21 50 21 21 50z m595-321q0-30-20-51l-274-274q-22-21-51-21-30 0-50 21l-399 399q-21 21-36 57t-15 65v232q0 29 21 50t50 22h233q29 0 65-15t57-36l399-399q20-21 20-50z" horiz-adv-x="857.1" />
-                        </symbol>
-                        <symbol id="icon-notag" viewBox="0 0 1024 1024">
-                            <title>entries-notag</title>
-                            <path glyph-name="notag" unicode="&#xf0f6;" d="M819 638q16-16 27-42t11-50v-642q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h500q22 0 49-11t42-27z m-248 136v-210h210q-5 16-12 23l-175 175q-6 7-23 12z m215-853v572h-232q-23 0-38 15t-16 38v233h-429v-858h715z m-572 483q0 7 5 12t13 5h393q8 0 13-5t5-12v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36z m411-125q8 0 13-5t5-13v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36q0 8 5 13t13 5h393z m0-143q8 0 13-5t5-13v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36q0 8 5 13t13 5h393z" horiz-adv-x="857.1" />
-                        </symbol>
-                        <symbol id="icon-leaftag" viewBox="0 0 1024 1024">
-                            <title>entries-leaftag</title>
-                            <path glyph-name="leaftag" unicode="&#xf15c;" d="M819 584q8-7 16-20h-264v264q13-8 21-16z m-265-91h303v-589q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h446v-304q0-22 16-38t38-15z m89-411v36q0 8-5 13t-13 5h-393q-8 0-13-5t-5-13v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z m0 143v36q0 8-5 13t-13 5h-393q-8 0-13-5t-5-13v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z m0 143v36q0 7-5 12t-13 5h-393q-8 0-13-5t-5-12v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z" horiz-adv-x="857.1" />
-                        </symbol>
-                        <symbol id="icon-keytag" viewBox="0 0 1024 1024">
-                            <title>key-to-tag</title>
-                            <path glyph-name="keytag" unicode="&#xe803;" d="M464 564q0 45-31 76t-76 31-76-31-31-76q0-23 11-46-23 11-47 11-44 0-76-32t-31-76 31-75 76-32 76 32 31 75q0 24-10 47 23-11 46-11 45 0 76 31t31 76z m475-393q0-9-27-36t-37-28q-5 0-16 9t-20 19-22 22-13 14l-54-53 123-123q15-16 15-38 0-23-21-45t-46-22q-22 0-38 16l-374 374q-98-73-204-73-91 0-148 57t-57 149q0 89 53 174t138 139 175 53q91 0 148-58t57-148q0-105-73-203l198-199 54 54q-2 2-15 14t-22 21-18 21-9 15q0 10 27 37t37 28q7 0 13-6 3-3 26-25t45-44 49-48 40-44 16-23z" horiz-adv-x="1000" />
-                        </symbol>
-                        <symbol id="icon-ctag" fill="#3aaadf" viewBox="0 0 1024 1024">
-                            <title>category-tags</title>
-                            <path glyph-name="ctag" unicode="&#xe807;" d="M429 493q0 59-42 101t-101 42-101-42-42-101 42-101 101-42 101 42 42 101z m142 0q0-61-18-100l-203-432q-9-18-27-29t-37-11-38 11-26 29l-204 432q-18 39-18 100 0 118 84 202t202 84 202-84 83-202z" horiz-adv-x="571.4" />
-                        </symbol>
-                        <symbol id="icon-autotag" fill="#3aaadf" viewBox="0 0 1024 1024">
-                            <title>automatic-key-tags</title>
-                            <path glyph-name="autotag" unicode="&#xe802;" d="M620 294v2l-13 179q-1 7-7 13t-12 5h-104q-7 0-13-5t-6-13l-14-179v-2q0-6 5-11t12-4h136q7 0 12 4t4 11z m424-260q0-41-26-41h-393q7 0 12 5t5 13l-11 143q-1 7-7 12t-12 5h-152q-7 0-13-5t-6-12l-11-143q-1-8 4-13t12-5h-392q-26 0-26 41 0 30 14 64l233 583q5 11 15 18t21 8h189q-7 0-13-5t-6-13l-8-107q-1-8 4-13t12-5h93q7 0 12 5t5 13l-9 107q0 8-6 13t-13 5h190q11 0 21-8t14-18l233-583q15-34 15-64z" horiz-adv-x="1071.4" />
-                        </symbol>
-                        <symbol id="icon-cleantag" fill="#e5534b" viewBox="0 0 1024 1024">
-                            <title>clean-unused-tags</title>
-                            <path glyph-name="cleantag" unicode="&#xe806;" d="M286 439v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m143 0v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m142 0v-321q0-8-5-13t-12-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q7 0 12-5t5-13z m72-404v529h-500v-529q0-12 4-22t8-15 6-5h464q2 0 6 5t8 15 4 22z m-375 601h250l-27 65q-4 5-9 6h-177q-6-1-10-6z m518-18v-36q0-8-5-13t-13-5h-54v-529q0-46-26-80t-63-34h-464q-37 0-63 33t-27 79v531h-53q-8 0-13 5t-5 13v36q0 8 5 13t13 5h172l39 93q9 21 31 35t44 15h178q22 0 44-15t30-35l39-93h173q8 0 13-5t5-13z" horiz-adv-x="785.7" />
-                        </symbol>
-                    </defs>
-                </svg>
-                <ul class="plainList clearfix">
+<div class="freetagMenu">
+    <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-tags" viewBox="0 0 1024 1024">
+                <title>tags</title>
+                <path glyph-name="tags" unicode="&#xe805;" d="M250 600q0 30-21 51t-50 20-51-20-21-51 21-50 51-21 50 21 21 50z m595-321q0-30-20-51l-274-274q-22-21-51-21-30 0-50 21l-399 399q-21 21-36 57t-15 65v232q0 29 21 50t50 22h233q29 0 65-15t57-36l399-399q20-21 20-50z m215 0q0-30-21-51l-274-274q-22-21-51-21-20 0-33 8t-29 25l262 262q21 21 21 51 0 29-21 50l-399 399q-21 21-57 36t-65 15h125q29 0 65-15t57-36l399-399q21-21 21-50z" horiz-adv-x="1071.4" />
+            </symbol>
+            <symbol id="icon-tag" viewBox="0 0 1024 1024">
+                <title>tag</title>
+                <path glyph-name="tag" unicode="&#xe804;" d="M250 600q0 30-21 51t-50 20-51-20-21-51 21-50 51-21 50 21 21 50z m595-321q0-30-20-51l-274-274q-22-21-51-21-30 0-50 21l-399 399q-21 21-36 57t-15 65v232q0 29 21 50t50 22h233q29 0 65-15t57-36l399-399q20-21 20-50z" horiz-adv-x="857.1" />
+            </symbol>
+            <symbol id="icon-notag" viewBox="0 0 1024 1024">
+                <title>entries-notag</title>
+                <path glyph-name="notag" unicode="&#xf0f6;" d="M819 638q16-16 27-42t11-50v-642q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h500q22 0 49-11t42-27z m-248 136v-210h210q-5 16-12 23l-175 175q-6 7-23 12z m215-853v572h-232q-23 0-38 15t-16 38v233h-429v-858h715z m-572 483q0 7 5 12t13 5h393q8 0 13-5t5-12v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36z m411-125q8 0 13-5t5-13v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36q0 8 5 13t13 5h393z m0-143q8 0 13-5t5-13v-36q0-8-5-13t-13-5h-393q-8 0-13 5t-5 13v36q0 8 5 13t13 5h393z" horiz-adv-x="857.1" />
+            </symbol>
+            <symbol id="icon-leaftag" viewBox="0 0 1024 1024">
+                <title>entries-leaftag</title>
+                <path glyph-name="leaftag" unicode="&#xf15c;" d="M819 584q8-7 16-20h-264v264q13-8 21-16z m-265-91h303v-589q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h446v-304q0-22 16-38t38-15z m89-411v36q0 8-5 13t-13 5h-393q-8 0-13-5t-5-13v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z m0 143v36q0 8-5 13t-13 5h-393q-8 0-13-5t-5-13v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z m0 143v36q0 7-5 12t-13 5h-393q-8 0-13-5t-5-12v-36q0-8 5-13t13-5h393q8 0 13 5t5 13z" horiz-adv-x="857.1" />
+            </symbol>
+            <symbol id="icon-keytag" viewBox="0 0 1024 1024">
+                <title>key-to-tag</title>
+                <path glyph-name="keytag" unicode="&#xe803;" d="M464 564q0 45-31 76t-76 31-76-31-31-76q0-23 11-46-23 11-47 11-44 0-76-32t-31-76 31-75 76-32 76 32 31 75q0 24-10 47 23-11 46-11 45 0 76 31t31 76z m475-393q0-9-27-36t-37-28q-5 0-16 9t-20 19-22 22-13 14l-54-53 123-123q15-16 15-38 0-23-21-45t-46-22q-22 0-38 16l-374 374q-98-73-204-73-91 0-148 57t-57 149q0 89 53 174t138 139 175 53q91 0 148-58t57-148q0-105-73-203l198-199 54 54q-2 2-15 14t-22 21-18 21-9 15q0 10 27 37t37 28q7 0 13-6 3-3 26-25t45-44 49-48 40-44 16-23z" horiz-adv-x="1000" />
+            </symbol>
+            <symbol id="icon-ctag" fill="#3aaadf" viewBox="0 0 1024 1024">
+                <title>category-tags</title>
+                <path glyph-name="ctag" unicode="&#xe807;" d="M429 493q0 59-42 101t-101 42-101-42-42-101 42-101 101-42 101 42 42 101z m142 0q0-61-18-100l-203-432q-9-18-27-29t-37-11-38 11-26 29l-204 432q-18 39-18 100 0 118 84 202t202 84 202-84 83-202z" horiz-adv-x="571.4" />
+            </symbol>
+            <symbol id="icon-autotag" fill="#3aaadf" viewBox="0 0 1024 1024">
+                <title>automatic-key-tags</title>
+                <path glyph-name="autotag" unicode="&#xe802;" d="M620 294v2l-13 179q-1 7-7 13t-12 5h-104q-7 0-13-5t-6-13l-14-179v-2q0-6 5-11t12-4h136q7 0 12 4t4 11z m424-260q0-41-26-41h-393q7 0 12 5t5 13l-11 143q-1 7-7 12t-12 5h-152q-7 0-13-5t-6-12l-11-143q-1-8 4-13t12-5h-392q-26 0-26 41 0 30 14 64l233 583q5 11 15 18t21 8h189q-7 0-13-5t-6-13l-8-107q-1-8 4-13t12-5h93q7 0 12 5t5 13l-9 107q0 8-6 13t-13 5h190q11 0 21-8t14-18l233-583q15-34 15-64z" horiz-adv-x="1071.4" />
+            </symbol>
+            <symbol id="icon-cleantag" fill="#e5534b" viewBox="0 0 1024 1024">
+                <title>clean-unused-tags</title>
+                <path glyph-name="cleantag" unicode="&#xe806;" d="M286 439v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m143 0v-321q0-8-5-13t-13-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q8 0 13-5t5-13z m142 0v-321q0-8-5-13t-12-5h-36q-8 0-13 5t-5 13v321q0 8 5 13t13 5h36q7 0 12-5t5-13z m72-404v529h-500v-529q0-12 4-22t8-15 6-5h464q2 0 6 5t8 15 4 22z m-375 601h250l-27 65q-4 5-9 6h-177q-6-1-10-6z m518-18v-36q0-8-5-13t-13-5h-54v-529q0-46-26-80t-63-34h-464q-37 0-63 33t-27 79v531h-53q-8 0-13 5t-5 13v36q0 8 5 13t13 5h172l39 93q9 21 31 35t44 15h178q22 0 44-15t30-35l39-93h173q8 0 13-5t5-13z" horiz-adv-x="785.7" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <ul class="plainList clearfix">
 <?php
         $taction  = array('all', 'leaf', 'entryuntagged', 'entryleaf', 'keywords', 'cat2tag', 'tagupdate', 'cleanupmappings'); //re-ordered for button usage (see above)
         $tagtitle = array(PLUGIN_EVENT_FREETAG_MANAGE_ALL, PLUGIN_EVENT_FREETAG_MANAGE_LEAF, PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED, PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED, PLUGIN_EVENT_FREETAG_KEYWORDS, PLUGIN_EVENT_FREETAG_GLOBALLINKS, PLUGIN_EVENT_FREETAG_REBUILD, PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP);
@@ -2343,20 +2344,21 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             $active  = (isset($serendipity['GET']['tagview']) && $serendipity['GET']['tagview'] == $tv) ? ' tagview_active' : '';
             $confirm = ($tk == 6 && $tv == 'tagupdate') ? ' onclick="return confirm(\'' . htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_DESC, ENT_COMPAT, LANG_CHARSET) . '\')"' : '';
-            echo '<li><a class="button_link' . $active . '" href="' . FREETAG_MANAGE_URL . '&amp;serendipity[tagview]=' . $tv . '"' . $confirm . ' title="'. $tagtitle[$tk] .'"><svg class="icon icon-' . $svgsrc[$tk] . '" title="' . $svgtitle[$tk] . '"><use xlink:href="#icon-' . $svgsrc[$tk] . '"></use></svg></a></li>'."\n";
+            echo '        <li><a class="button_link' . $active . '" href="' . FREETAG_MANAGE_URL . '&amp;serendipity[tagview]=' . $tv . '"' . $confirm . ' title="'. $tagtitle[$tk] .'"><svg class="icon icon-' . $svgsrc[$tk] . '" title="' . $svgtitle[$tk] . '"><use xlink:href="#icon-' . $svgsrc[$tk] . '"></use></svg></a></li>'."\n";
         }
 ?>
-                </ul>
-            </div>
-            <script type="text/javascript">
-                var deftitle = "<?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?>";
-                $('.freetagMenu .button_link').mouseover( function() {
-                  $('#freetag_adminer_title').empty().append( '<span>' + this.title + '</span>' );
-                });
-                $('.freetagMenu .button_link').mouseout( function() {
-                  $('#freetag_adminer_title').empty().append( '<span>' + deftitle + '</span>' );
-                });
-            </script>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var deftitle = "<?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?>";
+    $('.freetagMenu .button_link').mouseover( function() {
+      $('#freetag_adminer_title').empty().append( '<span>' + this.title + '</span>' );
+    });
+    $('.freetagMenu .button_link').mouseout( function() {
+      $('#freetag_adminer_title').empty().append( '<span>' + deftitle + '</span>' );
+    });
+</script>
 
 <?php
         if (isset($this->_eventData['GET']['tagaction']) && !empty($this->_eventData['GET']['tagaction'])) {
@@ -2446,34 +2448,33 @@ document.addEventListener("DOMContentLoaded", function() {
         $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']);
 ?>
 
-        <table class="freetags_manage">
-            <thead>
-                <tr>
-                    <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG ?></th>
-                    <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_WEIGHT ?></th>
-                    <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS ?></th>
-                </tr>
-            </thead>
-            <tbody>
+<table class="freetags_manage">
+    <thead>
+        <tr>
+            <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG ?></th>
+            <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_WEIGHT ?></th>
+            <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS ?></th>
+        </tr>
+    </thead>
+    <tbody>
 <?php
             foreach($taglist AS $tag => $weight) {
 ?>
-
-                <tr>
-                    <td><?php echo $tag; ?></td>
-                    <td><?php echo $weight; ?></td>
-                    <td>
-                        <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></span></a>
-                        <a class="button_link" title="<?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-resize-full" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></span></a>
-                        <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></span></a>
-                    </td>
-                </tr>
+        <tr>
+            <td><?php echo $tag; ?></td>
+            <td><?php echo $weight; ?></td>
+            <td>
+                <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></span></a>
+                <a class="button_link" title="<?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-resize-full" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></span></a>
+                <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></span></a>
+            </td>
+        </tr>
 <?php
             }
 ?>
 
-            </tbody>
-        </table>
+    </tbody>
+</table>
 
 <?php
     }
@@ -2542,9 +2543,9 @@ document.addEventListener("DOMContentLoaded", function() {
             echo '<ul class="plainList freetags_list">'."\n";
             foreach ($r AS $row) {
                 echo '    <li class="' . (++$index%2 ? "odd" : "even") . '">
-                        <a class="button_link" title="' . EDIT . '" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
-                        ' . $row['title'] . (!empty($row['tag']) ? ' ( <strong>Single-Tag:</strong> <em>' . $row['tag'] . '</em> )' : '') . '
-                    </li>'."\n"; // i18n?
+        <a class="button_link" title="' . EDIT . '" href="' . FREETAG_EDITENTRY_URL . $row['id'] . '"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> ' . EDIT . '</span></a>
+        ' . $row['title'] . (!empty($row['tag']) ? ' ( <strong>Single-Tag:</strong> <em>' . $row['tag'] . '</em> )' : '') . '
+    </li>'."\n"; // i18n?
             }
             echo "</ul>\n";
         }
@@ -2576,54 +2577,54 @@ document.addEventListener("DOMContentLoaded", function() {
 
         echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . "</span>\n";
 ?>
-        <form action="<?php echo $url; ?>" method="post">
-        <table class="freetags_manage">
-            <thead>
-                <tr>
-                    <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG ?></th>
-                    <th><?php echo PLUGIN_EVENT_FREETAG_KEYWORDS ?></th>
-                    <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS ?></th>
-                </tr>
-            </thead>
-            <tbody>
+<form action="<?php echo $url; ?>" method="post">
+    <table class="freetags_manage">
+        <thead>
+            <tr>
+                <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG ?></th>
+                <th><?php echo PLUGIN_EVENT_FREETAG_KEYWORDS ?></th>
+                <th><?php echo PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS ?></th>
+            </tr>
+        </thead>
+        <tbody>
 <?php
             foreach($taglist AS $tag => $weight) {
 ?>
-                <tr>
-                    <td> <?php echo $tag; ?> </td>
-                    <td>
+            <tr>
+                <td> <?php echo $tag; ?> </td>
+                <td>
 <?php
                 if (isset($serendipity['GET']['tag']) && urldecode($serendipity['GET']['tag']) == $tag) {
 ?>
-                        <a id="edit"></a>
-                        <textarea rows="4" cols="40" name="serendipity[keywords]"><?php echo serendipity_specialchars((isset($keys[$tag]) ? $keys[$tag] :'')) ?></textarea>
+                    <a id="edit"></a>
+                    <textarea rows="4" cols="40" name="serendipity[keywords]"><?php echo serendipity_specialchars((isset($keys[$tag]) ? $keys[$tag] :'')) ?></textarea>
 <?php
                 } else {
                         if (isset($keys[$tag])) echo $keys[$tag];
                 }
 ?>
-                    </td>
-                    <td>
+                </td>
+                <td>
 <?php
                 if (isset($serendipity['GET']['tag']) && urldecode($serendipity['GET']['tag']) == $tag) {
 ?>
-                        <input type="hidden" name="serendipity[tag]" value="<?php echo urlencode(urldecode($serendipity['GET']['tag'])); ?>" />
-                        <input type="submit" name="serendipity[keywordsubmit]" value="<?php echo SAVE; ?>">
+                    <input type="hidden" name="serendipity[tag]" value="<?php echo urlencode(urldecode($serendipity['GET']['tag'])); ?>">
+                    <input type="submit" name="serendipity[keywordsubmit]" value="<?php echo SAVE; ?>">
 <?php
                 } else {
 ?>
-                        <a class="button_link" title="<?php echo EDIT ?>" href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode($tag)?>#edit"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo EDIT ?></span></a>
+                    <a class="button_link" title="<?php echo EDIT ?>" href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode($tag)?>#edit"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo EDIT ?></span></a>
 <?php
                 }
 ?>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 <?php
         }
 ?>
-            </tbody>
-        </table>
-        </form>
+        </tbody>
+    </table>
+</form>
 <?php
 
     }
@@ -2682,14 +2683,14 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             $this->addTagsToEntry($id, $newtags);
-            echo '<li>';
+            echo '    <li>';
             printf(
                 PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY,
                 $id,
                 serendipity_specialchars($props['title']),
                 serendipity_specialchars(implode(', ', $newtags))
             );
-            echo "</li>\n";
+            echo "    </li>\n";
         }
         echo "</ul>\n";
         echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG . "</span>\n";
@@ -2827,10 +2828,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Display submit form to start cleanup process
                 echo '<form action="" method="GET">'."\n";
-                echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display" />';
-                echo '    <input type="hidden" name="serendipity[adminAction]" value="managetags" />';
+                echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display">';
+                echo '    <input type="hidden" name="serendipity[adminAction]" value="managetags">';
                 echo '    <input type="hidden" name="serendipity[tagview]" value="' . serendipity_specialchars($this->_eventData['GET']['tagview']) . '">'."\n";
-                echo '    <input type="hidden" name="serendipity[perform]" value="true" />'."\n";
+                echo '    <input type="hidden" name="serendipity[perform]" value="true">'."\n";
                 echo '    <input type="submit" name="submit" value="'.PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM.'">'."\n";
                 echo "</form>\n";
             }
@@ -3040,8 +3041,7 @@ document.addEventListener("DOMContentLoaded", function() {
             foreach ($tagsArray AS $k => $v) {
                 $wicktags[] = '\'' . addslashes($k) . '\'';
             }
-            echo '
-            <link rel="stylesheet" type="text/css" href="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.css" />
+            echo '            <link rel="stylesheet" type="text/css" href="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.css">
             <script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.js"></script>
             <script type="text/javascript">
                 var tags = [' . implode(',', $wicktags) . '];
@@ -3072,7 +3072,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <?php
 
         if ($admin_show_taglist) {
-            echo '                <div id="backend_freetag_list">'."\n";
+?>
+                <div id="backend_freetag_list">
+<?php
             $index = serendipity_db_bool($this->get_config('admin_delimiter', 'true'));
             $class = $index ? 'class="tagzoom" ' : '';
             $lastletter = '';
@@ -3084,15 +3086,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 if ($index && $upc != $lastletter) {
                     // HEY - do NOT remove this FEATURE(!) for 2.0+!! Is configurable by option!
-                    echo "<strong>|" . $upc . ':</strong> ';
+                    echo "                    <strong>|" . $upc . ":</strong>\n";
                 }
-                echo "<a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$tag}')\">{$tag}</a> ";
+                echo "                    <a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$tag}')\">{$tag}</a>\n";
                 $lastletter = $upc;
             }
-            echo "\n                </div>\n";
+?>
+                </div>
+<?php
         }
+?>
+            </fieldset>
 
-        echo "            </fieldset>\n\n";
+<?php
     }
 
     /**
@@ -3140,15 +3146,15 @@ document.addEventListener("DOMContentLoaded", function() {
     {
 ?>
 
-        <form action="" method="GET">
-            <input type="hidden" name="serendipity[adminModule]" value="event_display" />
-            <input type="hidden" name="serendipity[adminAction]" value="managetags" />
-            <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->_eventData['GET']['tagview']) ?>">
-            <input type="hidden" name="serendipity[tagaction]" value="rename" />
-            <input type="hidden" name="serendipity[commit]" value="true" />
-            <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>" />
-            <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]" /> <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" />
-        </form>
+<form action="" method="GET">
+    <input type="hidden" name="serendipity[adminModule]" value="event_display">
+    <input type="hidden" name="serendipity[adminAction]" value="managetags">
+    <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->_eventData['GET']['tagview']) ?>">
+    <input type="hidden" name="serendipity[tagaction]" value="rename">
+    <input type="hidden" name="serendipity[commit]" value="true">
+    <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>">
+    <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]"> <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>">
+</form>
 
 <?php
     }
@@ -3250,16 +3256,16 @@ document.addEventListener("DOMContentLoaded", function() {
 ?>
 
         <form action="" method="GET">
-            <input type="hidden" name="serendipity[adminModule]" value="event_display" />
-            <input type="hidden" name="serendipity[adminAction]" value="managetags" />
+            <input type="hidden" name="serendipity[adminModule]" value="event_display">
+            <input type="hidden" name="serendipity[adminAction]" value="managetags">
             <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->_eventData['GET']['tagview']) ?>">
-            <input type="hidden" name="serendipity[tagaction]" value="split" />
-            <input type="hidden" name="serendipity[commit]" value="true" />
-            <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>" />
-            <p> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?> <br/>
+            <input type="hidden" name="serendipity[tagaction]" value="split">
+            <input type="hidden" name="serendipity[commit]" value="true">
+            <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>">
+            <p> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?> <br>
                 foobarbaz =&gt; foo,bar,baz</p>
-            <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo serendipity_specialchars($newtag) ?>" />
-            <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="split" />
+            <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo serendipity_specialchars($newtag) ?>">
+            <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="split">
         </form>
 
 <?php

@@ -1,3 +1,7 @@
+5.32:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 5.31:
 -----
  * Update jquery.autocomplete script for JQuery removed/replaced properties throwing errors
