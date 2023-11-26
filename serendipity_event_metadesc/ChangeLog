@@ -1,3 +1,7 @@
+0.31:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 0.30:
 -----
  * Fix extract_description() missing variable usage

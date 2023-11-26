@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
-        $propbag->add('version',       '0.30');
+        $propbag->add('version',       '0.31');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'php'         => '7.4'
@@ -321,32 +321,33 @@ class serendipity_event_metadesc extends serendipity_event
                         $meta_head_title = '';
                     }
 ?>
-                    <fieldset id="edit_entry_metadesc" class="entryproperties_metadesc">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_METADESC_NAME; ?></legend></span>
+            <fieldset id="edit_entry_metadesc" class="entryproperties_metadesc">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_METADESC_NAME; ?></legend></span>
 
-                        <div class="form_field">
-                            <label for="serendipity[properties][meta_description]"><?php echo PLUGIN_METADESC_DESCRIPTION; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_description) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_description) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
-                            <button class="toggle_info button_link" type="button" data-href="#metadesc_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden">Mehr</span></button>
-                            <div id="metadesc_tab_info" class="clearfix field_info additional_info">
-                                <?php echo PLUGIN_METADESC_FORM; ?>
-                            </div>
-                            <input id="properties_meta_description" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_description]" type="text">
-                            <br />
-                            <label for="serendipity[properties][meta_keywords]"><?php echo PLUGIN_METADESC_KEYWORDS; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_keywords) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_keywords) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
-                            <input id="properties_meta_keywords" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_keywords]" type="text">
-                        </div>
+                <div class="form_field">
+                    <label for="serendipity[properties][meta_description]"><?php echo PLUGIN_METADESC_DESCRIPTION; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_description) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_description) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
+                    <button class="toggle_info button_link" type="button" data-href="#metadesc_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden">Mehr</span></button>
+                    <div id="metadesc_tab_info" class="clearfix field_info additional_info">
+                        <?php echo PLUGIN_METADESC_FORM; ?>
+                    </div>
+                    <input id="properties_meta_description" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_description]" type="text">
+                    <br />
+                    <label for="serendipity[properties][meta_keywords]"><?php echo PLUGIN_METADESC_KEYWORDS; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_keywords) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_keywords) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
+                    <input id="properties_meta_keywords" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_keywords]" type="text">
+                </div>
 
-                        <div class="form_field">
-                            <label for="serendipity[properties][meta_head_title]"><?php echo PLUGIN_METADESC_HEADTITLE; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_head_title) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_head_title) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
-                            <button class="toggle_info button_link" type="button" data-href="#metaheadtitle_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden">Mehr</span></button>
-                            <div id="metaheadtitle_tab_info" class="clearfix field_info additional_info">
-                                <?php echo PLUGIN_METADESC_HEADTITLE_DESC; ?>
-                            </div>
-                            <input id="properties_headtitle" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_head_title, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_head_title]" type="text">
-                        </div>
+                <div class="form_field">
+                    <label for="serendipity[properties][meta_head_title]"><?php echo PLUGIN_METADESC_HEADTITLE; ?></label> <span class="meta_string_length">(<?php echo PLUGIN_METADESC_LENGTH . ': ' . str_word_count($meta_head_title) . ' '. PLUGIN_METADESC_WORDS . ', ' . strlen($meta_head_title) . ' ' . PLUGIN_METADESC_CHARACTERS; ?>)</span>
+                    <button class="toggle_info button_link" type="button" data-href="#metaheadtitle_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden">Mehr</span></button>
+                    <div id="metaheadtitle_tab_info" class="clearfix field_info additional_info">
+                        <?php echo PLUGIN_METADESC_HEADTITLE_DESC; ?>
+                    </div>
+                    <input id="properties_headtitle" class="input_textbox" style="width: 100%" value="<?php echo htmlspecialchars($meta_head_title, ENT_COMPAT, LANG_CHARSET); ?>" name="serendipity[properties][meta_head_title]" type="text">
+                </div>
 
-                        <span class="meta_stringlength_disclaimer"><sup>(*)</sup> <em><?php echo PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></span>
-                    </fieldset>
+                <span class="meta_stringlength_disclaimer"><sup>(*)</sup> <em><?php echo PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER; ?></em></span>
+            </fieldset>
+
 <?php
                     break;
 
