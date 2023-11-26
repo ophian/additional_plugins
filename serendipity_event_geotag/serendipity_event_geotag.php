@@ -397,151 +397,152 @@ class serendipity_event_geotag extends serendipity_event
                         }
                     </script>
 
-                    <fieldset id="edit_entry_geotag" class="entryproperties_geotag">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_GEOTAG_TITLE; ?></legend></span>
-                        <div class="form_field">
-                            <input class="input_textbox" type="text" name="serendipity[properties][geo_lat]" id="properties_geo_lat" value="<?php echo $geo_lat ?>"  onkeydown="if (event.keyCode == 13) {updateMap(); return false}" onpaste="return paste.call(this, arguments[0])"/>
-                            <label title="<?php echo PLUGIN_EVENT_GEOTAG_LAT; ?>" for="properties_geo_lat">&nbsp;<?php echo PLUGIN_EVENT_GEOTAG_LAT; ?>&nbsp;&nbsp;</label>
-                            <input class="input_textbox" type="text" name="serendipity[properties][geo_long]" id="properties_geo_long" value="<?php echo $geo_long ?>"  onkeydown="if (event.keyCode == 13) {updateMap(); return false}" onpaste="return paste.call(this, arguments[0])"/>
-                            <label title="<?php echo PLUGIN_EVENT_GEOTAG_LONG; ?>" for="properties_geo_long">&nbsp;<?php echo PLUGIN_EVENT_GEOTAG_LONG; ?>&nbsp;&nbsp;</label>
-                            <?php if ($this->get_config('api_key') !== ''): ?>
-                            <input type="button" onClick="getCurrentPosition(true)" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_GET_CODE; ?>" />
-                            <input type="button" onClick="clearLocation();" value="<?php echo PLUGIN_EVENT_CLEAR_LOCATION; ?>" />
-                            <input type="text" id="geoTagAddress" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_TYPE_ADDRESS; ?>" onkeydown="if (event.keyCode == 13) {geoCode(); return false;}" onClick="clearAdressInput();"/>
-                            <input type="button" onClick="geoCode()" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE; ?>" />
-                            <?php endif; ?>
-                        </div>
-                        <span id="geoCodeMsg"> </span>
+            <fieldset id="edit_entry_geotag" class="entryproperties_geotag">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_GEOTAG_TITLE; ?></legend></span>
+                <div class="form_field">
+                    <input class="input_textbox" type="text" name="serendipity[properties][geo_lat]" id="properties_geo_lat" value="<?php echo $geo_lat ?>"  onkeydown="if (event.keyCode == 13) {updateMap(); return false}" onpaste="return paste.call(this, arguments[0])"/>
+                    <label title="<?php echo PLUGIN_EVENT_GEOTAG_LAT; ?>" for="properties_geo_lat">&nbsp;<?php echo PLUGIN_EVENT_GEOTAG_LAT; ?>&nbsp;&nbsp;</label>
+                    <input class="input_textbox" type="text" name="serendipity[properties][geo_long]" id="properties_geo_long" value="<?php echo $geo_long ?>"  onkeydown="if (event.keyCode == 13) {updateMap(); return false}" onpaste="return paste.call(this, arguments[0])"/>
+                    <label title="<?php echo PLUGIN_EVENT_GEOTAG_LONG; ?>" for="properties_geo_long">&nbsp;<?php echo PLUGIN_EVENT_GEOTAG_LONG; ?>&nbsp;&nbsp;</label>
+                    <?php if ($this->get_config('api_key') !== ''): ?>
+                    <input type="button" onClick="getCurrentPosition(true)" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_GET_CODE; ?>" />
+                    <input type="button" onClick="clearLocation();" value="<?php echo PLUGIN_EVENT_CLEAR_LOCATION; ?>" />
+                    <input type="text" id="geoTagAddress" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_TYPE_ADDRESS; ?>" onkeydown="if (event.keyCode == 13) {geoCode(); return false;}" onClick="clearAdressInput();"/>
+                    <input type="button" onClick="geoCode()" value="<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE; ?>" />
+                    <?php endif; ?>
+                </div>
+                <span id="geoCodeMsg"> </span>
 <?php
                     if (($this->get_config('api_key'))!="") {
 ?>
 
-                            <div id="locationpicker" style="width: 690px; height: 350px"></div>
-                            <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<?php echo $this->get_config('api_key') ?>" type="text/javascript"></script>
-                            <script type="text/javascript">
-                            //<![CDATA[
-                                function clearLocation() {
-                                    document.getElementById('properties_geo_lat').value = '#';
-                                    document.getElementById('properties_geo_long').value = '#';
-                                }
+                    <div id="locationpicker" style="width: 690px; height: 350px"></div>
+                    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<?php echo $this->get_config('api_key') ?>" type="text/javascript"></script>
+                    <script type="text/javascript">
+                    //<![CDATA[
+                        function clearLocation() {
+                            document.getElementById('properties_geo_lat').value = '#';
+                            document.getElementById('properties_geo_long').value = '#';
+                        }
 
-                                var map;
-                                function GLocationPicker(
-                                        pickerDivId,
-                                        latitudeFieldId,
-                                        longitudeFieldId,
-                                        initLatitude,
-                                        initLongitude,
-                                        initZoom
-                                        ) {
-
-
-                                    map = new GMap2(document.getElementById(pickerDivId));
-                                    var initPoint = new GLatLng(initLatitude, initLongitude);
-                                    map.addControl(new GSmallMapControl());
-                                    map.addControl(new GMapTypeControl());
-                                    map.setCenter(initPoint, initZoom);
-                                    map.addOverlay(new GMarker(initPoint));
+                        var map;
+                        function GLocationPicker(
+                                pickerDivId,
+                                latitudeFieldId,
+                                longitudeFieldId,
+                                initLatitude,
+                                initLongitude,
+                                initZoom
+                                ) {
 
 
-                                    GEvent.addListener(map, "click", function(overlay, point) {
-                                        document.getElementById(latitudeFieldId).value = point.y.toFixed(5);
-                                        document.getElementById(longitudeFieldId).value = point.x.toFixed(5);
+                            map = new GMap2(document.getElementById(pickerDivId));
+                            var initPoint = new GLatLng(initLatitude, initLongitude);
+                            map.addControl(new GSmallMapControl());
+                            map.addControl(new GMapTypeControl());
+                            map.setCenter(initPoint, initZoom);
+                            map.addOverlay(new GMarker(initPoint));
+
+
+                            GEvent.addListener(map, "click", function(overlay, point) {
+                                document.getElementById(latitudeFieldId).value = point.y.toFixed(5);
+                                document.getElementById(longitudeFieldId).value = point.x.toFixed(5);
+                                map.clearOverlays();
+                                map.addOverlay(new GMarker(point));
+                            });
+                        }
+
+                        // References to DOM elements to use
+                        var pickerDivId = "locationpicker";
+                        var latitudeFieldId = "properties_geo_lat";
+                        var longitudeFieldId = "properties_geo_long";
+
+                        // Startup parameters
+                        var initLatitude = document.getElementById(latitudeFieldId).value;
+                        if (initLatitude == 0) initLatitude = <?php echo $this->get_config('init_latitude',0);?>;
+                        var initLongitude = document.getElementById(longitudeFieldId).value
+                        if (initLongitude == 0) initLongitude = <?php echo $this->get_config('init_longitude',0);?>;
+                        var initZoom = <?php echo $initZoom; ?>;
+
+                        GLocationPicker(
+                            pickerDivId,
+                            latitudeFieldId,
+                            longitudeFieldId,
+                            initLatitude,
+                            initLongitude,
+                            initZoom
+                            );
+                        function geoCode() {
+                            var address = document.getElementById('geoTagAddress').value;
+                            if (GBrowserIsCompatible()) {
+
+
+                            document.getElementById('geoCodeMsg').innerHTML = '<span class="msg_notice"><span class="icon-info-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_MSG_PROGRESS; ?></span>';
+                            geocoder = new GClientGeocoder();
+                            if (geocoder) {
+                                geocoder.getLatLng(
+                                address,
+                                function(point) {
+                                    if (!point) {
+                                    document.getElementById('geoCodeMsg').innerHTML = address + '<span class="msg_error"><span class="icon-attention-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_NOT_FOUND; ?></span>';
+                                    } else {
+                                        map.setCenter(point);
                                         map.clearOverlays();
                                         map.addOverlay(new GMarker(point));
-                                    });
-                                }
-
-                                // References to DOM elements to use
-                                var pickerDivId = "locationpicker";
-                                var latitudeFieldId = "properties_geo_lat";
-                                var longitudeFieldId = "properties_geo_long";
-
-                                // Startup parameters
-                                var initLatitude = document.getElementById(latitudeFieldId).value;
-                                if (initLatitude == 0) initLatitude = <?php echo $this->get_config('init_latitude',0);?>;
-                                var initLongitude = document.getElementById(longitudeFieldId).value
-                                if (initLongitude == 0) initLongitude = <?php echo $this->get_config('init_longitude',0);?>;
-                                var initZoom = <?php echo $initZoom; ?>;
-
-                                GLocationPicker(
-                                    pickerDivId,
-                                    latitudeFieldId,
-                                    longitudeFieldId,
-                                    initLatitude,
-                                    initLongitude,
-                                    initZoom
-                                    );
-                                function geoCode() {
-                                    var address = document.getElementById('geoTagAddress').value;
-                                    if (GBrowserIsCompatible()) {
-
-
-                                    document.getElementById('geoCodeMsg').innerHTML = '<span class="msg_notice"><span class="icon-info-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_MSG_PROGRESS; ?></span>';
-                                    geocoder = new GClientGeocoder();
-                                    if (geocoder) {
-                                        geocoder.getLatLng(
-                                        address,
-                                        function(point) {
-                                            if (!point) {
-                                            document.getElementById('geoCodeMsg').innerHTML = address + '<span class="msg_error"><span class="icon-attention-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_NOT_FOUND; ?></span>';
-                                            } else {
-                                                map.setCenter(point);
-                                                map.clearOverlays();
-                                                map.addOverlay(new GMarker(point));
-                                                document.getElementById(latitudeFieldId).value = point.lat();
-                                                document.getElementById(longitudeFieldId).value = point.lng();
-                                                document.getElementById('geoCodeMsg').innerHTML = '<span class="msg_success"><span class="icon-ok-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_OK; ?></span>';
-                                            }
-                                        });
+                                        document.getElementById(latitudeFieldId).value = point.lat();
+                                        document.getElementById(longitudeFieldId).value = point.lng();
+                                        document.getElementById('geoCodeMsg').innerHTML = '<span class="msg_success"><span class="icon-ok-circled"></span> <?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_OK; ?></span>';
                                     }
-                                    }
+                                });
+                            }
+                            }
 
-                                }
-                                function updateMap() {
-                                    var lat = document.getElementById(latitudeFieldId).value;
-                                    var lng = document.getElementById(longitudeFieldId).value;
-                                    var point = new GLatLng(lat, lng);
-                                    map.setCenter(point);
-                                    map.clearOverlays();
-                                    map.addOverlay(new GMarker(point));
-                                }
+                        }
+                        function updateMap() {
+                            var lat = document.getElementById(latitudeFieldId).value;
+                            var lng = document.getElementById(longitudeFieldId).value;
+                            var point = new GLatLng(lat, lng);
+                            map.setCenter(point);
+                            map.clearOverlays();
+                            map.addOverlay(new GMarker(point));
+                        }
 
-                                function getCurrentPosition(forced) {
-                                    if (!forced && (document.getElementById(latitudeFieldId).value!="" || document.getElementById(longitudeFieldId).value!="")) {
-                                        return; // Already setup some stuff
-                                    }
-                                    if (navigator.geolocation) {
-                                        navigator.geolocation.getCurrentPosition(function(position) {
-                                            document.getElementById(latitudeFieldId).value = position.coords.latitude;
-                                            document.getElementById(longitudeFieldId).value = position.coords.longitude;
-                                            updateMap();
-                                        });
-                                    }
-                                    else {
-                                        alert('Your browser does not support geo locations');
-                                    }
-                                }
-                                function clearAdressInput() {
-                                    var input = document.getElementById('geoTagAddress').value;
-                                    if (input == '<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_TYPE_ADDRESS; ?>') {
-                                        document.getElementById('geoTagAddress').value = '';
-                                    }
-                                }
+                        function getCurrentPosition(forced) {
+                            if (!forced && (document.getElementById(latitudeFieldId).value!="" || document.getElementById(longitudeFieldId).value!="")) {
+                                return; // Already setup some stuff
+                            }
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(function(position) {
+                                    document.getElementById(latitudeFieldId).value = position.coords.latitude;
+                                    document.getElementById(longitudeFieldId).value = position.coords.longitude;
+                                    updateMap();
+                                });
+                            }
+                            else {
+                                alert('Your browser does not support geo locations');
+                            }
+                        }
+                        function clearAdressInput() {
+                            var input = document.getElementById('geoTagAddress').value;
+                            if (input == '<?php echo PLUGIN_GEOTAG_GMAP_GEOCODE_TYPE_ADDRESS; ?>') {
+                                document.getElementById('geoTagAddress').value = '';
+                            }
+                        }
 <?php
                         if ($autofill_editor) {
 ?>
-                                // Call it
-                                getCurrentPosition(false);
+                        // Call it
+                        getCurrentPosition(false);
 <?php
                         } // PHP: if autodetect position
 ?>
-                            //]]>
-                            </script>
+                    //]]>
+                    </script>
 <?php
                         } // PHP: apikey !=null
 ?>
-                        </fieldset>
+                </fieldset>
+
 <?php
                     return true;
 
