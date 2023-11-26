@@ -1,3 +1,7 @@
+2.4.2:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 2.4.1:
 ------
  * Simplify 2.4.0 distinct request for the archives counter query

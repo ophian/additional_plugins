@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.4.1');
+        $propbag->add('version',       '2.4.2');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.4.0'
@@ -618,89 +618,84 @@ class serendipity_event_categorytemplates extends serendipity_event
                     } else $hide = false;
 ?>
 
-            <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, PLUGIN_CATEGORYTEMPLATES_NAME) : 'Additional properties by Plugin: ' . PLUGIN_CATEGORYTEMPLATES_NAME; ?></h3>
+        <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, PLUGIN_CATEGORYTEMPLATES_NAME) : 'Additional properties by Plugin: ' . PLUGIN_CATEGORYTEMPLATES_NAME; ?></h3>
 
-            <div id="category_templates" class="clearfix">
-                <div class="form_field">
-                    <label for="category_template" class="wrap_legend"><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE; ?><a class="toggle_info button_link" href="#hide_templates_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?=MORE?></span></a></label>
-                    <input id="category_template" class="input_textbox" name="serendipity[cat][template]" type="text" data-configitem="category_template" value="<?php echo $template; ?>">
-                </div>
-                <div class="select_field">
-                    <legend>- <?php echo WORD_OR; ?> -</legend>
-                    <select name="serendipity[cat][drop_template]">
-                        <option value=""><?php echo NONE; ?></option>
+        <div id="category_templates" class="clearfix">
+            <div class="form_field">
+                <label for="category_template" class="wrap_legend"><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT_TEMPLATE; ?><a class="toggle_info button_link" href="#hide_templates_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?=MORE?></span></a></label>
+                <input id="category_template" class="input_textbox" name="serendipity[cat][template]" type="text" data-configitem="category_template" value="<?php echo $template; ?>">
+            </div>
+            <div class="select_field">
+                <legend>- <?php echo WORD_OR; ?> -</legend>
+                <select name="serendipity[cat][drop_template]">
+                    <option value=""><?php echo NONE; ?></option>
 <?php
                     foreach ($styles AS $style => $path) {
                         $templateInfo = serendipity_fetchTemplateInfo($style);
 ?>
-                        <option value="<?php echo htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET); ?>" <?php echo ($style == $template? 'selected="selected"' : ''); ?>><?php echo htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET, false); ?></option>
+                    <option value="<?php echo htmlspecialchars($style, ENT_COMPAT, LANG_CHARSET); ?>"<?php echo ($style == $template? ' selected="selected"' : ''); ?>><?php echo htmlspecialchars($templateInfo['name'], ENT_COMPAT, LANG_CHARSET, false); ?></option>
 <?php
                     }
 ?>
-                    </select>
-                </div>
+                </select>
+            </div>
 <?php if (!empty($template)) { ?>
-                <div><a class="button_link" href="serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=cattemplate&amp;serendipity[catid]=<?php echo $eventData; ?>&amp;serendipity[cat_template]=<?php echo urlencode($template);?>"><?php echo STYLE_OPTIONS; ?></a></div>
+            <div><a class="button_link" href="serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=cattemplate&amp;serendipity[catid]=<?php echo $eventData; ?>&amp;serendipity[cat_template]=<?php echo urlencode($template);?>"><?php echo STYLE_OPTIONS; ?></a></div>
 <?php } ?>
-                <span id="hide_templates_info" class="field_info category_field_info additional_info">
-                    <span class="icon-info-circled"></span> <em><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT; ?></em>
-                </span>
-            </div>
-
+            <span id="hide_templates_info" class="field_info category_field_info additional_info">
+                <span class="icon-info-circled"></span> <em><?php echo PLUGIN_CATEGORYTEMPLATES_SELECT; ?></em>
+            </span>
+        </div>
 <?php /* TODO: This does not work easily. ... Ian: Why not?
-            <div id="category_language" class="clearfix">
-                <div class="select_field">
-                    <label for="language"><?php echo INSTALL_LANG; ?></label>
-                    <select id="language" name="serendipity[cat][lang]">
-                        <option value="default"><?php echo USE_DEFAULT; ?></option>
+        <div id="category_language" class="clearfix">
+            <div class="select_field">
+                <label for="language"><?php echo INSTALL_LANG; ?></label>
+                <select id="language" name="serendipity[cat][lang]">
+                    <option value="default"><?php echo USE_DEFAULT; ?></option>
 <?php foreach($serendipity['languages'] AS $langkey => $lang) { ?>
-                        <option value="<?php echo $lang; ?>" <?php echo ($langkey == $clang ? 'selected="selected"' : ''); ?>><?php echo htmlspecialchars($lang, ENT_COMPAT, LANG_CHARSET); ?></option>
+                    <option value="<?php echo $lang; ?>" <?php echo ($langkey == $clang ? 'selected="selected"' : ''); ?>><?php echo htmlspecialchars($lang, ENT_COMPAT, LANG_CHARSET); ?></option>
 <?php } ?>
-                    </select>
-                </div>
+                </select>
             </div>
+        </div>
 */ ?>
-            <div id="category_future" class="clearfix">
-                <div class="radio_field">
-                    <label for="language"><?php echo INSTALL_SHOWFUTURE; ?></label>
-                    <input id="futureentries_default" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="0"<?php echo (empty($cfuture) || $cfuture === 0) ? ' checked="checked"' : ''; ?>><label for="futureentries_default" class="wrap_legend"><?php echo USE_DEFAULT; ?></label>
-                    <input id="futureentries_no" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="1"<?php echo $cfuture === false ? ' checked="checked"' : ''; ?>><label for="futureentries_no" class="wrap_legend"><?php echo NO; ?></label>
-                    <input id="futureentries_yes" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="2"<?php echo $cfuture === true ? ' checked="checked"' : ''; ?>><label for="futureentries_yes" class="wrap_legend"><?php echo YES; ?></label>
+        <div id="category_future" class="clearfix">
+            <div class="radio_field">
+                <label for="language"><?php echo INSTALL_SHOWFUTURE; ?></label>
+                <input id="futureentries_default" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="0"<?php echo (empty($cfuture) || $cfuture === 0) ? ' checked="checked"' : ''; ?>><label for="futureentries_default" class="wrap_legend"><?php echo USE_DEFAULT; ?></label>
+                <input id="futureentries_no" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="1"<?php echo $cfuture === false ? ' checked="checked"' : ''; ?>><label for="futureentries_no" class="wrap_legend"><?php echo NO; ?></label>
+                <input id="futureentries_yes" class="input_radio" name="serendipity[cat][futureentries]" type="radio" value="2"<?php echo $cfuture === true ? ' checked="checked"' : ''; ?>><label for="futureentries_yes" class="wrap_legend"><?php echo YES; ?></label>
+            </div>
+        </div>
+        <div id="category_fetchlimit" class="clearfix">
+            <div class="radio_field">
+                <label for="fetchlimit"><?php echo PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT; ?></label>
+                <input id="fetchlimit" class="input_textbox" name="serendipity[cat][fetchlimit]" type="text" value="<?php echo $this->fetchLimit($eventData, ''); ?>">
+            </div>
+        </div>
+        <div id="category_sortorder" class="clearfix">
+            <div class="radio_field">
+                <label for="sort_order"><?php echo SORT_ORDER; ?></label>
+                <input id="sort_order" class="input_textbox" name="serendipity[cat][sort_order]" type="text" value="<?php echo $this->fetchSortOrder($eventData, $this->get_config('sort_order')); ?>">
+            </div>
+        </div>
+        <div id="category_hide" class="clearfix">
+            <div class="radio_field">
+                <label for="hide"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDE; ?></label>
+                <div>
+                    <input class="input_radio" type="radio" id="hide_yes" name="serendipity[cat][hide]" value="1" <?php echo ($hide ? 'checked="checked"' : ''); ?>><label for="hide_yes"><?php echo YES; ?></label>
+                    <input class="input_radio" type="radio" id="hide_no"  name="serendipity[cat][hide]" value="0" <?php echo ($hide ? '' : 'checked="checked"'); ?>><label for="hide_no"><?php echo NO; ?></label>
                 </div>
             </div>
-
-
-            <div id="category_fetchlimit" class="clearfix">
-                <div class="radio_field">
-                    <label for="fetchlimit"><?php echo PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT; ?></label>
-                    <input id="fetchlimit" class="input_textbox" name="serendipity[cat][fetchlimit]" type="text" value="<?php echo $this->fetchLimit($eventData, ''); ?>">
-                </div>
-            </div>
-
-            <div id="category_sortorder" class="clearfix">
-                <div class="radio_field">
-                    <label for="sort_order"><?php echo SORT_ORDER; ?></label>
-                    <input id="sort_order" class="input_textbox" name="serendipity[cat][sort_order]" type="text" value="<?php echo $this->fetchSortOrder($eventData, $this->get_config('sort_order')); ?>">
-                </div>
-            </div>
-
-            <div id="category_hide" class="clearfix">
-                <div class="radio_field">
-                    <label for="hide"><?php echo PLUGIN_CATEGORYTEMPLATES_HIDE; ?></label>
-                    <div>
-                        <input class="input_radio" type="radio" id="hide_yes" name="serendipity[cat][hide]" value="1" <?php echo ($hide ? 'checked="checked"' : ''); ?>><label for="hide_yes"><?php echo YES; ?></label>
-                        <input class="input_radio" type="radio" id="hide_no"  name="serendipity[cat][hide]" value="0" <?php echo ($hide ? '' : 'checked="checked"'); ?>><label for="hide_no"><?php echo NO; ?></label>
-                    </div>
-                </div>
-            </div>
+        </div>
 <?php if (serendipity_db_bool($this->get_config('pass', 'false'))) { ?>
-
-            <div id="category_pass" class="clearfix">
-                <div class="radio_field">
-                    <label for="pass"><?php echo PLUGIN_CATEGORYTEMPLATES_PASS; ?></label>
-                    <input class="input_textbox" id="pass" type="text" name="serendipity[cat][pass]" value="<?php echo $this->fetchProp($eventData, 'pass'); ?>">
-                </div>
+        <div id="category_pass" class="clearfix">
+            <div class="radio_field">
+                <label for="pass"><?php echo PLUGIN_CATEGORYTEMPLATES_PASS; ?></label>
+                <input class="input_textbox" id="pass" type="text" name="serendipity[cat][pass]" value="<?php echo $this->fetchProp($eventData, 'pass'); ?>">
+                <i class="icon-info-circled" aria-hidden="true" title="<?php echo serendipity_specialchars(ENTRY_PAGE_PASSWORD_INFO_SET); ?>"></i>
             </div>
+        </div>
 <?php }
                     break;
 
