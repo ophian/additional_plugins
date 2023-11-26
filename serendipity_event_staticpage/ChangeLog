@@ -1,3 +1,9 @@
+6.71:
+-----
+ * Improve backend main content markup indents for Styx 4.3,
+   while not having touched the old default template which is set deprecated.
+ * Other minors
+
 6.70:
 -----
  * Add info icon to password field for additional notes about security

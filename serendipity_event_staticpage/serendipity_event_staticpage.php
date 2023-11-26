@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.70');
+        $propbag->add('version', '6.71');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1786,6 +1786,7 @@ class serendipity_event_staticpage extends serendipity_event
         global $serendipity;
 
         $filename = $this->get_static('filename');
+
         if (empty($filename) || $filename == 'none.html') {
             $filename = $template;
         }
@@ -2910,7 +2911,7 @@ class serendipity_event_staticpage extends serendipity_event
                                 // new files follow naming scheme in sp_templateselector select form:
                                 // eg. 'responsive_template.tpl', to show up as 'Responsive Template'
                                 if ($templateName == 'Default Staticpage Backend') $templateName = STATICPAGE_TEMPLATE_EXTERNAL;
-                                $ts_option[] = '<option' . ($file == $serendipity['POST']['backend_template'] ? ' selected="selected" ' : ' ') . 'value="' . self::html_specialchars($file) . '">' . self::html_specialchars($templateName) . '</option>'."\n";
+                                $ts_option[] = '<option' . ($file == $serendipity['POST']['backend_template'] ? ' selected="selected" ' : ' ') . 'value="' . self::html_specialchars($file) . '">' . self::html_specialchars($templateName) . '</option>';
                             }
                         }
                     }
@@ -2922,7 +2923,7 @@ class serendipity_event_staticpage extends serendipity_event
                                 if (isset($m[1]) && !empty($m[1])) $templateName = ucwords(str_replace('_', ' ', $m[1]));
                                 // see upper naming convention note
                                 if ($templateName == 'Default Staticpage Backend') $templateName = STATICPAGE_TEMPLATE_EXTERNAL;
-                                $ts_option[] = '<option' . ($file == $serendipity['POST']['backend_template'] ? ' selected="selected" ' : ' ') . 'value="' . self::html_specialchars($file) . '">' . self::html_specialchars($templateName) .'</option>'."\n";
+                                $ts_option[] = '<option' . ($file == $serendipity['POST']['backend_template'] ? ' selected="selected" ' : ' ') . 'value="' . self::html_specialchars($file) . '">' . self::html_specialchars($templateName) .'</option>';
                             }
                         }
                     }
@@ -2935,7 +2936,7 @@ class serendipity_event_staticpage extends serendipity_event
                         $pages = serendipity_walkRecursive($pages);
                         foreach ($pages AS $page) {
                             if ($this->checkPageUser($page['authorid'])) {
-                                $ps_option[] = '<option value="' . $page['id'] . '"' . ((isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] == $page['id']) ? ' selected="selected"' : '') . '>' . str_repeat('&nbsp;&nbsp;', $page['depth']) . self::html_specialchars($page['pagetitle']) . '</option>'."\n";
+                                $ps_option[] = '<option value="' . $page['id'] . '"' . ((isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] == $page['id']) ? ' selected="selected"' : '') . '>' . str_repeat('&nbsp;&nbsp;', $page['depth']) . self::html_specialchars($page['pagetitle']) . '</option>';
                                 if (isset($serendipity['POST']['staticpage']) && $serendipity['POST']['staticpage'] == $page['id']) {
                                     $this_selected_id = $page['id'];
                                     $this_selected_name = self::html_specialchars($page['pagetitle']);
@@ -3100,7 +3101,11 @@ class serendipity_event_staticpage extends serendipity_event
         if ($type) {
             if ($type == 'html') $type = 'text'; // since a type class redirector errors and we only need a simple type text box creator class object for both
             if ($type == 'boolean' || $type == 'tristate') $type = 'radio'; // we only need a simple type radio creator class object
-            echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
+            if ($type == 'text') {
+                echo "<!-- modul-type::$type - class_inspectConfig.php - (build for root indent) -->\n"; // tag dynamic form items
+            } else {
+                echo "<!-- modul-type::$type - class_inspectConfig.php -->\n"; // tag dynamic form items
+            }
             $ctype = 'ic'.ucfirst($type);
             ${$ctype} = new $ctype();
             if ($type == 'text' && $conf['pdata']['wysiwyg']) {
@@ -3159,6 +3164,8 @@ class serendipity_event_staticpage extends serendipity_event
         $cname = self::html_specialchars($cbag->get('name'));
         $cdesc = self::html_specialchars($cbag->get('description'));
         $value = empty($this->pagetype) ? $this->get_static($config_item, 'unset') : $this->get_type($config_item, 'unset');
+
+        $cdesc = rtrim($cdesc, '.'); // remove a trailing DOT
 
         $lang_direction = self::html_specialchars($cbag->get('lang_direction'));
         if (empty($lang_direction)) {
@@ -3586,29 +3593,30 @@ class serendipity_event_staticpage extends serendipity_event
                     }
                     // hooked into category.inc.tpl
 ?>
-<h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, 'StaticPage') : 'Additional properties by Plugin: StaticPage'; ?></h3>
 
-<div id="category_staticpage" class="clearfix">
-    <div class="form_field">
-        <label for="staticpage_categorypage"><?php echo STATICPAGE_CATEGORYPAGE; ?></label>
-        <select name="serendipity[cat][staticpage_categorypage]">
-                <option value=""><?php echo NONE; ?></option>
+        <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, 'StaticPage') : 'Additional properties by Plugin: StaticPage'; ?></h3>
+
+        <div id="category_staticpage" class="clearfix">
+            <div class="form_field">
+                <label for="staticpage_categorypage"><?php echo STATICPAGE_CATEGORYPAGE; ?></label>
+                <select name="serendipity[cat][staticpage_categorypage]">
+                    <option value=""><?php echo NONE; ?></option>
 <?php
                 $pages = $this->fetchStaticPages();
                 if (is_array($pages)) {
                     $pages = serendipity_walkRecursive($pages);
                     foreach ($pages AS $page) {
                         if ($this->checkPageUser($page['authorid'])) {
-                            echo ' <option value="' . $page['id'] . '"' . ($page['id'] == $this->fetchCatProp((int)$eventData) ? ' selected="selected"' : '') . '>';
+                            echo '                    <option value="' . $page['id'] . '"' . ($page['id'] == $this->fetchCatProp((int)$eventData) ? ' selected="selected"' : '') . '>';
                             echo str_repeat('&nbsp;&nbsp;', $page['depth']) . self::html_specialchars($page['pagetitle']) . '</option>'."\n";
                         }
                     }
                 }
 
 ?>
-        </select>
-    </div>
-</div>
+                </select>
+            </div>
+        </div>
 <?php
                     break;
 
@@ -3807,7 +3815,7 @@ class serendipity_event_staticpage extends serendipity_event
                     if (!$access_granted) {
                         break;
                     }
-                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages">' . STATICPAGE_TITLE . '</a></li>'."\n";
+                    echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages">' . STATICPAGE_TITLE . '</a></li>';
                     break;
 
                 case 'backend_sidebar_entries_event_display_staticpages':
