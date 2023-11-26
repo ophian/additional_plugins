@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.36');
+        $propbag->add('version',       '1.37');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -198,21 +198,23 @@ class serendipity_event_trackback extends serendipity_event
                         }
                     }
                     $debugcheck = (isset($serendipity['logLevel']) && $serendipity['logLevel'] === 'debug')
-? '                        <input class="input_checkbox" type="checkbox" id="checkbox_enable_trackback_4" name="serendipity[trackback_resend]" value="true" /><label for="checkbox_enable_trackback_4">A forced resend of all trackbacks, if one sending option is chosen. (Debug purpose only!)</label><br />'
+? '                <input class="input_checkbox" type="checkbox" id="checkbox_enable_trackback_4" name="serendipity[trackback_resend]" value="true" /><label for="checkbox_enable_trackback_4">A forced resend of all trackbacks, if one sending option is chosen. (Debug purpose only!)</label><br />'
 : '';
 ?>
-                    <fieldset id="edit_entry_trackbacks" class="entryproperties_trackbacks">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETITLE; ?></legend></span>
-<?= $debugcheck ?>
-                        <input class="input_radio" type="radio" id="checkbox_enable_trackback_1" <?php echo ($serendipity['POST']['enable_trackback'] == 'on'        ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="on" /><label for="checkbox_enable_trackback_1"><?php echo ACTIVATE_AUTODISCOVERY; ?></label><br />
-                        <input class="input_radio" type="radio" id="checkbox_enable_trackback_2" <?php echo ($serendipity['POST']['enable_trackback'] == 'off'       ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="off" /><label for="checkbox_enable_trackback_2"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL; ?></label><br />
-                        <input class="input_radio" type="radio" id="checkbox_enable_trackback_3" <?php echo ($serendipity['POST']['enable_trackback'] == 'selective' ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="selective" /><label for="checkbox_enable_trackback_3"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETRACKSEL; ?></label>
-                        <button class="toggle_info button_link" type="button" data-href="#trackback_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span></button><br />
-                        <div id="trackback_tab_info" class="clearfix field_info additional_info" style="width: 100%;"><span class="icon-info-circled"></span> <?= PLUGIN_EVENT_MTRACKBACK_CONTROL ?></div><br>
 
-                        <span class="wrap_legend"><label for="input_additional_trackbacks"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL; ?></label></span>
-                        <textarea rows="5" cols="50" id="input_additional_trackbacks" name="serendipity[additional_trackbacks]"><?php echo trim(implode("\n", $trackbackURLs)); ?></textarea>
-                    </fieldset>
+            <fieldset id="edit_entry_trackbacks" class="entryproperties_trackbacks">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETITLE; ?></legend></span>
+<?= $debugcheck ?>
+                <input class="input_radio" type="radio" id="checkbox_enable_trackback_1" <?php echo ($serendipity['POST']['enable_trackback'] == 'on'        ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="on" /><label for="checkbox_enable_trackback_1"><?php echo ACTIVATE_AUTODISCOVERY; ?></label><br />
+                <input class="input_radio" type="radio" id="checkbox_enable_trackback_2" <?php echo ($serendipity['POST']['enable_trackback'] == 'off'       ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="off" /><label for="checkbox_enable_trackback_2"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL; ?></label><br />
+                <input class="input_radio" type="radio" id="checkbox_enable_trackback_3" <?php echo ($serendipity['POST']['enable_trackback'] == 'selective' ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="selective" /><label for="checkbox_enable_trackback_3"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETRACKSEL; ?></label>
+                <button class="toggle_info button_link" type="button" data-href="#trackback_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span></button><br />
+                <div id="trackback_tab_info" class="clearfix field_info additional_info" style="width: 100%;"><span class="icon-info-circled"></span> <?= PLUGIN_EVENT_MTRACKBACK_CONTROL ?></div><br>
+
+                <span class="wrap_legend"><label for="input_additional_trackbacks"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL; ?></label></span>
+                <textarea rows="5" cols="50" id="input_additional_trackbacks" name="serendipity[additional_trackbacks]"><?php echo trim(implode("\n", $trackbackURLs)); ?></textarea>
+            </fieldset>
+
 <?php
                     break;
 
