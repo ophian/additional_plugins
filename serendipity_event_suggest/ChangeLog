@@ -1,3 +1,7 @@
+0.21:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 0.20:
 -----
  * Better check for $serendipity['GET']['subpage'] on entry preview

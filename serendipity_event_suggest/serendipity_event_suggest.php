@@ -26,7 +26,7 @@ class serendipity_event_suggest extends serendipity_event
                                         ));
         $propbag->add('configuration',  array('permalink', 'pagetitle', 'authorid', 'email'));
         $propbag->add('author',         'Garvin Hicking, Ian Styx');
-        $propbag->add('version',        '0.20');
+        $propbag->add('version',        '0.21');
         $propbag->add('groups',         array('FRONTEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -403,21 +403,22 @@ class serendipity_event_suggest extends serendipity_event
                     $res = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}suggestmails WHERE entry_id = " . (int)($eventData['id'] ?? null), true, 'assoc');
                     if (isset($res) && !is_array($res)) {
 ?>
-                    <fieldset id="edit_entry_suggest" class="entryproperties_suggest">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend></span>
-                        <div><?php echo PLUGIN_SUGGEST_INTERNAL; ?></div>
-                    </fieldset>
+            <fieldset id="edit_entry_suggest" class="entryproperties_suggest">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend></span>
+                <div><?php echo PLUGIN_SUGGEST_INTERNAL; ?></div>
+            </fieldset>
 
 <?php
                     } else {
                         //  CUSTOMIZE
 ?>
-                    <fieldset id="edit_entry_suggest" class="entryproperties_suggest">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend></span>
-                        <div>
-                            <?php printf(PLUGIN_SUGGEST_META, serendipity_specialchars($res['name']), strftime('%d.%m.%Y %H:%M', $res['submitted']), serendipity_specialchars($res['ip']), serendipity_specialchars($res['email'])); ?>
-                        </div>
-                    </fieldset>
+            <fieldset id="edit_entry_suggest" class="entryproperties_suggest">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_SUGGEST_TITLE; ?></legend></span>
+                <div>
+                    <?php printf(PLUGIN_SUGGEST_META, serendipity_specialchars($res['name']), strftime('%d.%m.%Y %H:%M', $res['submitted']), serendipity_specialchars($res['ip']), serendipity_specialchars($res['email'])); ?>
+                </div>
+            </fieldset>
+
 <?php
                     }
                     break;
