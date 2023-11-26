@@ -1,3 +1,7 @@
+2.30:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 2.29:
 -----
  * Follow a consistency cleanup for fetching serendipity_fetchEntry() calls

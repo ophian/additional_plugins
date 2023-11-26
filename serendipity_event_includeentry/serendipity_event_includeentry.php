@@ -32,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.29');
+        $propbag->add('version',       '2.30');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -778,15 +778,16 @@ class serendipity_event_includeentry extends serendipity_event
                         $attach_block = '';
                     }
 ?>
-                    <fieldset id="edit_entry_staticblock" class="entryproperties_staticblock" style="margin: 1em 0">
-                        <span class="wrap_legend"><legend><?php echo STATICBLOCK_ATTACH; ?></legend></span>
-                        <div style="margin-top: 0.5em">
-                            <select id="attach_static_block" name="serendipity[properties][attach_block]">
-                            <option value=""></option>
-                            <?php echo $this->getPages($attach_block); ?>
-                            </select>
-                        </div>
-                    </fieldset>
+            <fieldset id="edit_entry_staticblock" class="entryproperties_staticblock">
+                <span class="wrap_legend"><legend><?php echo STATICBLOCK_ATTACH; ?></legend></span>
+                <div class="form_field">
+                    <select id="attach_static_block" name="serendipity[properties][attach_block]">
+                        <option value=""></option>
+                        <?php echo $this->getPages($attach_block); ?>
+                    </select>
+                </div>
+            </fieldset>
+
 <?php
                     break;
 
