@@ -20,7 +20,7 @@ class serendipity_event_mymood extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.0'
         ));
-        $propbag->add('version',       '0.15');
+        $propbag->add('version',       '0.16');
         $propbag->add('author',       'Brett Profitt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -418,32 +418,41 @@ class serendipity_event_mymood extends serendipity_event
             }
         }
 ?>
-                    <fieldset id="edit_entry_mymood" class="entryproperties_mymood">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_MYMOOD_TITLE; ?></legend></span>
-<?php
-        echo "  <table class=\"mood_select\" cellpadding=\"3\" cellspacing=\"0\" width=\"100%\">  \n";
+            <fieldset id="edit_entry_mymood" class="entryproperties_mymood">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_MYMOOD_TITLE; ?></legend></span>
 
+                <table class="mood_select" cellpadding="3" cellspacing="0" width="100%">
+<?php
         $c = 0;
         $max = 5;
         foreach ($moods AS $mood) {
             $checked = (in_array($mood['mood_id'], $used_moods)) ? 'checked="checked"' : '';
             $label = $this->format_mood($mood, true);
             if ($c == 0) {
-                echo "  <tr>\n";
-                echo "    <td>\n";
+?>
+                    <tr>;
+                        <td>
+<?php
             } else {
-                echo "    <td>\n";
+?>
+                        <td>
+<?php
             }
+?>
+                            <input class="input_checkbox" type="checkbox" id="<?=$mood['mood_id']?>" name="serendipity[mymood][]" value="<?=$mood['mood_id']?>" <?=$checked?>>
+                            <label for="<?=$mood['mood_id']?>">$label?></label>
 
-            echo "      <input class=\"input_checkbox\" type=\"checkbox\" id=\"{$mood['mood_id']}\" name=\"serendipity[mymood][]\" value=\"{$mood['mood_id']}\" $checked>\n";
-            echo "      <label for=\"{$mood['mood_id']}\">$label</label>\n";
-
+<?php
             if ($c == $max-1) {
-                echo "    </td>\n";
-                echo "  </tr>\n";
+?>
+                        </td>
+                    <tr>
+<?php
                 $c = 0;
             } else {
-                echo "    </td>\n";
+?>
+                        </td>
+<?php
                 $c++;
             }
         }
@@ -451,46 +460,47 @@ class serendipity_event_mymood extends serendipity_event
         # fill out the rest of the table and close it off...
         if ($c != 0) {
             while ($c<$max) {
-                echo "    <td> &nbsp; </td>\n";
+?>
+                        <td> &nbsp; </td>
+<?php
                 $c++;
             }
-
-            echo "  </tr>\n";
+?>
+                    <tr>
+<?php
         }
-        echo "  </table>\n";
-
+?>
+                 </table>
+<?php
         # letting them add moods.
         #fixme:  if they list a mood that's already there, should we update??
         #some people said they want to be able to have crazy and cRaZy point to two different
         #imgs.  Just keep adding them, I guess....
         $id = count ($new_moods) + 1;
     echo'
+                <script type="text/javascript">
+                    var id='.$id.';
+                    function mymood_new_entry() {
+                        var form="";
+                        var id_test="";
 
-<script type="text/javascript">
-    var id='.$id.';
-    function mymood_new_entry() {
-        var form="";
-        var id_test="";
-
-        form="'.PLUGIN_MYMOOD_NEW_MOOD.': <input class=\"input_textbox\" type=\"text\" name=\"serendipity[mymood_new][" + id + "][mood_name]\" size=\"10\">" +
-             " '.PLUGIN_MYMOOD_NEW_ASCII.': <input class=\"input_textbox\" type=\"text\" size=\"3\" name=\"serendipity[mymood_new][" + id + "][mood_ascii]\">" +
-             " '.PLUGIN_MYMOOD_NEW_IMAGE.': <input class=\"input_textbox\" type=\"text\" size=\"20\" name=\"serendipity[mymood_new][" + id + "][mood_img]\"><br />" +
-             "<div id=\"mymood_new_mood_" + (id+1) + "\"></div>";
-        id_t="mymood_new_mood_" + (id);
-        document.getElementById(id_t).innerHTML=form;
-        id++;
-    }
-</script>
-';
+                        form="'.PLUGIN_MYMOOD_NEW_MOOD.': <input class=\"input_textbox\" type=\"text\" name=\"serendipity[mymood_new][" + id + "][mood_name]\" size=\"10\">" +
+                             " '.PLUGIN_MYMOOD_NEW_ASCII.': <input class=\"input_textbox\" type=\"text\" size=\"3\" name=\"serendipity[mymood_new][" + id + "][mood_ascii]\">" +
+                             " '.PLUGIN_MYMOOD_NEW_IMAGE.': <input class=\"input_textbox\" type=\"text\" size=\"20\" name=\"serendipity[mymood_new][" + id + "][mood_img]\"><br />" +
+                             "<div id=\"mymood_new_mood_" + (id+1) + "\"></div>";
+                        id_t="mymood_new_mood_" + (id);
+                        document.getElementById(id_t).innerHTML=form;
+                        id++;
+                    }
+                </script>';
         $i=0;
         foreach ($new_moods AS $mood) {
             echo '
-                        <div class="form_field">
-                            <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'">'.PLUGIN_MYMOOD_NEW_MOOD.'_'.$i.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'" class="input_textbox" type="text" name="serendipity[mymood_new]['.$i.'][mood_name]" value="{$mood[\'mood_name\']}" size="10">
-                            <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'">'.PLUGIN_MYMOOD_NEW_ASCII.'_'.$i.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'" class="input_textbox" type="text" size="3" name="serendipity[mymood_new]['.$i.'][mood_ascii]" value="{$mood[\'mood_ascii\']}" size="3">
-                            <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'">'.PLUGIN_MYMOOD_NEW_IMAGE.'_'.$i.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'" class="input_textbox" type="text" size="30" name="serendipity[mymood_new]['.$i.'][mood_img]" value="{$mood[\'mood_img\']}">
-                        </div>
-';
+                <div class="form_field">
+                    <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'">'.PLUGIN_MYMOOD_NEW_MOOD.'_'.$i.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'" class="input_textbox" type="text" name="serendipity[mymood_new]['.$i.'][mood_name]" value="{$mood[\'mood_name\']}" size="10">
+                    <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'">'.PLUGIN_MYMOOD_NEW_ASCII.'_'.$i.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'" class="input_textbox" type="text" size="3" name="serendipity[mymood_new]['.$i.'][mood_ascii]" value="{$mood[\'mood_ascii\']}" size="3">
+                    <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'">'.PLUGIN_MYMOOD_NEW_IMAGE.'_'.$i.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'" class="input_textbox" type="text" size="30" name="serendipity[mymood_new]['.$i.'][mood_img]" value="{$mood[\'mood_img\']}">
+                </div>';
             $i++;
         }
 
@@ -498,17 +508,16 @@ class serendipity_event_mymood extends serendipity_event
         $new_moods = PLUGIN_MYMOOD_MORE_NEW_MOODS;
         $cur_id = $id-1;
         echo '
-                        <div class="form_field">
-                            <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'">'.PLUGIN_MYMOOD_NEW_MOOD.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'" class="input_textbox" type="text" name="serendipity[mymood_new]['.$cur_id.'][mood_name]" size="10">
-                            <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'">'.PLUGIN_MYMOOD_NEW_ASCII.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'" class="input_textbox" type="text" size="3" name="serendipity[mymood_new]['.$cur_id.'][mood_ascii]" size="3">
-                            <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'">'.PLUGIN_MYMOOD_NEW_IMAGE.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'" class="input_textbox" type="text" size=\"30\" name="serendipity[mymood_new]['.$cur_id.'][mood_img]">
-                        </div>
-                        <div id="mymood_new_mood_'.$id.'"></div>
-                        <div class="form_field">
-                            <input type="button" class="serendipityPrettyButton input_button" value="'.$new_moods.'" onClick="javascript:mymood_new_entry()" />
-                        </div>
-                    </fieldset>
-
+                <div class="form_field">
+                    <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'">'.PLUGIN_MYMOOD_NEW_MOOD.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_MOOD)).'" class="input_textbox" type="text" name="serendipity[mymood_new]['.$cur_id.'][mood_name]" size="10">
+                    <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'">'.PLUGIN_MYMOOD_NEW_ASCII.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_ASCII)).'" class="input_textbox" type="text" size="3" name="serendipity[mymood_new]['.$cur_id.'][mood_ascii]" size="3">
+                    <label for="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'">'.PLUGIN_MYMOOD_NEW_IMAGE.':</label> <input id="'.str_replace(' ', '_', strtolower(PLUGIN_MYMOOD_NEW_IMAGE)).'" class="input_textbox" type="text" size=\"30\" name="serendipity[mymood_new]['.$cur_id.'][mood_img]">
+                </div>
+                <div id="mymood_new_mood_'.$id.'"></div>
+                <div class="form_field">
+                    <input type="button" class="serendipityPrettyButton input_button" value="'.$new_moods.'" onClick="javascript:mymood_new_entry()" />
+                </div>
+            </fieldset>
 ';
     }
 

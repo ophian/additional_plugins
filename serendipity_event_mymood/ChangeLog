@@ -1,3 +1,7 @@
+0.16:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 0.15:
 ----
  * Fix some entry form markup for 2.0 consistency
