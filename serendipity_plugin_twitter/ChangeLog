@@ -9,6 +9,11 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+2.1.7:
+------
+ * Improve backend main content markup indents for Styx 4.3
+ * Better check a variable usage
+
 2.1.6:
 ------
  * Renamed some constants to their English expression

@@ -1073,20 +1073,20 @@ class serendipity_event_twitter extends serendipity_plugin
                     }
 ?>
 
-                    <fieldset id="edit_entry_twitter" class="entryproperties">
-                        <a name="microbloggingAnchor"></a>
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_TWITTER_NAME; ?></legend></span>
+            <fieldset id="edit_entry_twitter" class="entryproperties">
+                <a name="microbloggingAnchor"></a>
+                <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_TWITTER_NAME; ?></legend></span>
 
-                        <div class="entryproperties_microblogging_dontannounce form_check">
-                            <input id="properties_microblogging_dontannounce" name="serendipity[properties][microblogging_dontannounce]" type="checkbox" <?php echo $checked_dontannounce; ?>>
-                            <label for="properties_microblogging_dontannounce"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_DONTANNOUNCE; ?></label>
-                        </div>
+                <div class="entryproperties_microblogging_dontannounce form_check">
+                    <input id="properties_microblogging_dontannounce" name="serendipity[properties][microblogging_dontannounce]" type="checkbox" <?php echo $checked_dontannounce; ?>>
+                    <label for="properties_microblogging_dontannounce"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_DONTANNOUNCE; ?></label>
+                </div>
 
-                        <div class="form_field">
-                            <label for="serendipity[properties][microblogging_tagList]" class="block_level"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC; ?></label>
-                            <input id="properties_microblogging_tagList"  class="wickEnabled" name="serendipity[properties][microblogging_tagList]" type="text" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tagList) : htmlspecialchars($tagList, ENT_COMPAT, LANG_CHARSET)); ?>">
-                        </div>
-                    </fieldset>
+                <div class="form_field">
+                    <label for="serendipity[properties][microblogging_tagList]" class="block_level"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC; ?></label>
+                    <input id="properties_microblogging_tagList"  class="wickEnabled" name="serendipity[properties][microblogging_tagList]" type="text" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tagList) : htmlspecialchars($tagList, ENT_COMPAT, LANG_CHARSET)); ?>">
+                </div>
+            </fieldset>
 
 <?php
                     break;
@@ -2041,7 +2041,7 @@ a.twitter_update_time {
         }
 
         // Always remember last set identity
-        $val_identitiy = $_POST['tweeter_account'];
+        $val_identitiy = $_POST['tweeter_account'] ?? '';
         $acc_number = '';
         if (empty($val_identitiy) || $val_identitiy==0) {
             $account_name = $this->get_config('twittername','');
