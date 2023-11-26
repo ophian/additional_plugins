@@ -1,11 +1,14 @@
+2.03:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+ * Remove Pragma header
+
 2.02:
 -----
-
  * Fix 2.00 script default details for fresh installs
 
 2.01:
 -----
-
  * Change cookieconsent company owner name change: "Insite" to "Osano"
 
 2.00:

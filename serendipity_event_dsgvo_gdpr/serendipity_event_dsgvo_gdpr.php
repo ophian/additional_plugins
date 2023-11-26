@@ -18,7 +18,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '2.02');
+        $propbag->add('version',       '2.03');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.0',
@@ -440,7 +440,6 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     $csvdata  = '';
                     header('Content-Type: application/csv; charset=' . LANG_CHARSET);
                     header('Content-Disposition: attachment; filename=blog-userData.csv');
-                    header('Pragma: no-cache');
                     $csvdata .= '#';
                     foreach($clist[0] AS $key => $val) {
                         $csvdata .= '"' . $key . '";';
@@ -457,40 +456,41 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                 }
             }
         }
-
-        echo '<form action="?" method="post">'."\n";
-        echo serendipity_setFormToken();
-        echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
-        echo '<input type="hidden" name="serendipity[adminAction]" value="dsgvo" />'."\n";
-
-        echo '<p>' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO . "</p>\n";
-
 ?>
-        <fieldset id="filter_dsgvo" class="filter_pane">
-            <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_DSGVO_GDPR_BACKEND; ?></legend>
-            <div class="clearfix inputs">
-                <div class="form_field">
-                    <label for="filter_author"><?php echo AUTHOR; ?></label>
-                    <textarea id="filter_author" name="serendipity[filter][author]"><?php echo isset($serendipity['POST']['filter']['author']) ? serendipity_specialchars($serendipity['POST']['filter']['author']) : ''; ?></textarea>
-                </div>
 
-                <div class="form_field">
-                    <label for="filter_email"><?php echo EMAIL; ?></label>
-                    <textarea id="filter_email" name="serendipity[filter][email]"><?php echo isset($serendipity['POST']['filter']['email']) ? serendipity_specialchars($serendipity['POST']['filter']['email']) : ''; ?></textarea>
-                </div>
+<form action="?" method="post">
+    <?= serendipity_setFormToken() ?>
 
+    <input type="hidden" name="serendipity[adminModule]" value="event_display">
+    <input type="hidden" name="serendipity[adminAction]" value="dsgvo">
+
+    <p><?= PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO ?></p>
+
+    <fieldset id="filter_dsgvo" class="filter_pane">
+        <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_DSGVO_GDPR_BACKEND; ?></legend>
+        <div class="clearfix inputs">
+            <div class="form_field">
+                <label for="filter_author"><?php echo AUTHOR; ?></label>
+                <textarea id="filter_author" name="serendipity[filter][author]"><?php echo isset($serendipity['POST']['filter']['author']) ? serendipity_specialchars($serendipity['POST']['filter']['author']) : ''; ?></textarea>
             </div>
 
-            <div class="form_buttons">
-                <input name="serendipity[export]" value="CSV" type="submit">
-                <input name="serendipity[delete]" class="state_cancel comments_multidelete" data-delmsg="<?php echo COMMENTS_DELETE_CONFIRM; ?>" value="<?php echo DELETE; ?>" type="submit">
+            <div class="form_field">
+                <label for="filter_email"><?php echo EMAIL; ?></label>
+                <textarea id="filter_email" name="serendipity[filter][email]"><?php echo isset($serendipity['POST']['filter']['email']) ? serendipity_specialchars($serendipity['POST']['filter']['email']) : ''; ?></textarea>
             </div>
-        </fieldset>
+
+        </div>
+
+        <div class="form_buttons">
+            <input name="serendipity[export]" value="CSV" type="submit">
+            <input name="serendipity[delete]" class="state_cancel comments_multidelete" data-delmsg="<?php echo COMMENTS_DELETE_CONFIRM; ?>" value="<?php echo DELETE; ?>" type="submit">
+        </div>
+    </fieldset>
+
+</form>
+
+<p><em><?= PLUGIN_EVENT_DSGVO_GDPR_BACKEND_CHECK_REQUESTS ?></em></p>
 <?php
-
-        echo "</form>\n";
-
-        echo '<p><em>' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_CHECK_REQUESTS . "</em></p>\n";
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
@@ -507,9 +507,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
                     if ($serendipity['serendipityUserlevel'] < USERLEVEL_ADMIN) {
                         break;
                     }
-?>
-                    <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dsgvo"><?php echo PLUGIN_EVENT_DSGVO_GDPR_BACKEND_SB_TITLE; ?></a></li>
-<?php
+                    echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=dsgvo">' . PLUGIN_EVENT_DSGVO_GDPR_BACKEND_SB_TITLE . '</a></li>';
                     break;
 
                 case 'backend_sidebar_entries_event_display_dsgvo':
