@@ -18,12 +18,12 @@ class serendipity_plugin_nugget_multilingual extends serendipity_plugin
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Wesley Hwang-Chung');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '2.0',
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
 
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.20');
         $propbag->add('configuration', array('language', 'title', 'content', 'markup', 'show_where'));
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
 
@@ -35,37 +35,10 @@ class serendipity_plugin_nugget_multilingual extends serendipity_plugin
         switch($name) {
 
             case 'language':
-                $select = array('all' => PLUGIN_NUGGET_MULTI_ALL,
-                    'en' => 'English',
-                    'de' => 'German',
-                    'da' => 'Danish',
-                    'es' => 'Spanish',
-                    'fr' => 'French',
-                    'fi' => 'Finnish',
-                    'cs' => 'Czech (Win-1250)',
-                    'cz' => 'Czech (ISO-8859-2)',
-                    'nl' => 'Dutch',
-                    'is' => 'Icelandic',
-                    'se' => 'Swedish',
-                    'pt' => 'Portuguese Brazilian',
-                    'pt_PT' => 'Portuguese European',
-                    'bg' => 'Bulgarian',
-                    'hu' => 'Hungarian',
-                    'no' => 'Norwegian',
-                    'ro' => 'Romanian',
-                    'it' => 'Italian',
-                    'ru' => 'Russian',
-                    'fa' => 'Persian',
-                    'tw' => 'Traditional Chinese (Big5)',
-                    'tn' => 'Traditional Chinese (UTF-8)',
-                    'zh' => 'Simplified Chinese (GB2312)',
-                    'cn' => 'Simplified Chinese (UTF-8)',
-                    'ja' => 'Japanese',
-                    'ko' => 'Korean');
-                $propbag->add('type',        'select');
-                $propbag->add('select_values', $select);
-                $propbag->add('name',        PLUGIN_NUGGET_MULTI_LANG);
-                $propbag->add('default',     'all');
+                $propbag->add('type',           'select');
+                $propbag->add('name',           PLUGIN_NUGGET_MULTI_LANG);
+                $propbag->add('select_values',  $this->getLanguages());
+                $propbag->add('default',        LANG_ALL);
                 break;
 
             case 'title':
@@ -101,6 +74,21 @@ class serendipity_plugin_nugget_multilingual extends serendipity_plugin
                 return false;
         }
         return true;
+    }
+
+    /**
+     * Get Serendipity languages
+     *
+     * @access  private
+     * @return  array
+     */
+    function getLanguages()
+    {
+        global $serendipity;
+
+        $lang['all'] = LANG_ALL;
+        $lang = array_merge($lang, $serendipity['languages']);
+        return $lang;
     }
 
     function generate_content(&$title)
