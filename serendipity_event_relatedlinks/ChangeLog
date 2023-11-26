@@ -1,3 +1,7 @@
+1.11:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 1.10:
 ----
  * Change to Serendipity Styx 2.x+ backend entry form fieldset markup for consistency

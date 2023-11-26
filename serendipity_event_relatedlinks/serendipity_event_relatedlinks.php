@@ -23,7 +23,7 @@ class serendipity_event_relatedlinks extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '5.2.0'
         ));
-        $propbag->add('version',       '1.10');
+        $propbag->add('version',       '1.11');
         $propbag->add('event_hooks',    array(
             'frontend_display:html:per_entry'                   => true,
             'backend_publish'                                   => true,
@@ -194,15 +194,16 @@ class serendipity_event_relatedlinks extends serendipity_event
                     }
 
 ?>
-                    <fieldset id="edit_entry_relatedlinks" class="entryproperties_relatedlinks">
-                        <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_RELATEDLINKS_TITLE; ?></legend></span>
-                        <div class="form_field">
-                            <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_RELATEDLINKS_ENTERDESC; ?></span>
-                        </div>
-                        <div class="form_area">
-                            <textarea name="serendipity[properties][relatedentries]" style="width: 90%; height: 100px" id="properties_relatedentries"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($links) : htmlspecialchars($links, ENT_COMPAT, LANG_CHARSET)); ?></textarea>
-                        </div>
-                    </fieldset>
+            <fieldset id="edit_entry_relatedlinks" class="entryproperties_relatedlinks">
+                <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_RELATEDLINKS_TITLE; ?></legend></span>
+                <div class="form_field">
+                    <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_RELATEDLINKS_ENTERDESC; ?></span>
+                </div>
+                <div class="form_area">
+                    <textarea name="serendipity[properties][relatedentries]" style="width: 90%; height: 100px" id="properties_relatedentries"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($links) : htmlspecialchars($links, ENT_COMPAT, LANG_CHARSET)); ?></textarea>
+                </div>
+            </fieldset>
+
 <?php
                     break;
 
