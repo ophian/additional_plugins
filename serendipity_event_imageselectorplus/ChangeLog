@@ -1,3 +1,8 @@
+2.6.4:
+-----
+ * Fix a case of missing end div container tag
+ * Improve markup indent for backend consistency up from Styx 4.3.0
+
 2.6.3:
 -----
  * Better check on NULL

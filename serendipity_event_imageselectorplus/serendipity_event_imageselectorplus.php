@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.6.3');
+        $propbag->add('version',       '2.6.4');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -247,6 +247,7 @@ if ($quickblog && $serendipity['wysiwyg']) {
         }
     </script>
 <?php } ?>
+
     <div id="imageselectorplus" class="checkpoint">
         <h3 class="additional_properties"><?php echo defined('ADDITIONAL_PROPERTIES_BY_PLUGIN') ? sprintf(ADDITIONAL_PROPERTIES_BY_PLUGIN, 'ImageSelectorPlus') : 'Additional properties by Plugin: ImageSelectorPlus'; ?></h3>
 
@@ -262,7 +263,7 @@ if (class_exists('ZipArchive')) {
         <fieldset id="isp_archives" class="clearfix isp_archives radio_field">
             <span class="wrap_legend">
                 <legend class="visuallyhidden"><?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES;?></legend>
-                <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC;?>
+                <?php echo PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC ."\n";?>
                 <span class="isp_zip actions"><a class="media_show_info button_link" href="#media_zip_warning" title="Zip file Information"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> Zip file Information</span></a></span>
             </span>
             <div>
@@ -314,7 +315,9 @@ if ($serendipity['wysiwyg']) {
                             extraAllowedContent: 'div(*);p(*);ul(*);'
                         });
                     </script>
-<?php } ?>
+<?php
+}
+?>
                 </div>
 
                 <div class="quickblog_form_field">
@@ -329,7 +332,6 @@ if (is_array($cats = serendipity_fetchCategories())) {
     }
 }
 ?>
-
                     </select>
                 </div>
 
@@ -363,9 +365,11 @@ if (is_array($cats = serendipity_fetchCategories())) {
                 </div>
             </div>
         </fieldset>
+<?php
+}
+?>
     </div>
-
-<?php }
+<?php
                     break;
 
                 case 'backend_image_add':
