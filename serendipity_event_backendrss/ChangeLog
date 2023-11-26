@@ -1,3 +1,7 @@
+1.8:
+-----
+ * Improve backend main content markup indents for Styx 4.3
+
 1.7:
 -----
  * Fix output for using API

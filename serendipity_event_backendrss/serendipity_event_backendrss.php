@@ -22,7 +22,7 @@ class serendipity_event_backendrss extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_BACKENDRSS_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Sebastian Nohn, Ian Styx');
-        $propbag->add('version',       '1.7');
+        $propbag->add('version',       '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'php'         => '7.4.0'
@@ -167,14 +167,14 @@ class serendipity_event_backendrss extends serendipity_event
                                 $content .= $this->decode($item['title']) . "</a></li>\n";
                                 ++$i;
                             }
-                            $content .= "</ul>\n";
+                            $content .= "                </ul>\n";// needs the indent since li has none
 
                             $fp = @fopen($feedcache, 'w');
                             if ($fp) {
                                 fwrite($fp, $content);
                                 fclose($fp);
                             } else {
-                                echo '<!-- Cache failed to ' . $feedcache . ' in ' . getcwd() . ' -->';
+                                echo '                <!-- Cache failed to ' . $feedcache . ' in ' . getcwd() . ' -->'; // Ditto
                             }
 
                         } else {
@@ -182,13 +182,12 @@ class serendipity_event_backendrss extends serendipity_event
                         }
                     }
 
-                    $eventData['more'] = '
-        <section id="dashboard_backendrss" class="quick_list dashboard_widget">
-            <h3>' . $title . '</h3>
-            <div class="backendrss">
-                ' . ($content ?? PLUGIN_REMOTERSS_NOURI) . '
-            </div>
-        </section>';
+                    $eventData['more'] = '    <section id="dashboard_backendrss" class="quick_list dashboard_widget">
+        <h3>' . $title . '</h3>
+        <div class="backendrss">
+            ' . ($content ?? PLUGIN_REMOTERSS_NOURI) . '
+        </div>
+    </section>';
                     break;
 
                 default:
