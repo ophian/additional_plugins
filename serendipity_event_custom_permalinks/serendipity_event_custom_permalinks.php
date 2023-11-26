@@ -28,7 +28,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.26');
+        $propbag->add('version', '1.27');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -177,22 +177,23 @@ meta_properties_permalink {
                                    : $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?/permalink/' . serendipity_makeFilename($title) . '.html';
                     }
 ?>
-                    <fieldset id="edit_entry_custompermalinks" class="entryproperties_custompermalinks">
-                        <span class="wrap_legend">
-                            <legend>
-                                <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL; ?>
-                                <button class="toggle_info button_link active" type="button" data-href="#meta_properties_permalink">
-                                    <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span>
-                                </button>
-                            </legend>
-                        </span>
-                        <div class="form_field">
-                            <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo serendipity_specialchars($permalink); ?>" />
-                        </div>
-                        <div id="meta_properties_permalink" class="clearfix xfield_info additional_info">
-                            <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>
-                        </div>
-                    </fieldset>
+            <fieldset id="edit_entry_custompermalinks" class="entryproperties_custompermalinks">
+                <span class="wrap_legend">
+                    <legend>
+                        <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL; ?>
+                        <button class="toggle_info button_link active" type="button" data-href="#meta_properties_permalink">
+                            <span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span>
+                        </button>
+                    </legend>
+                </span>
+                <div class="form_field">
+                    <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo serendipity_specialchars($permalink); ?>">
+                </div>
+                <div id="meta_properties_permalink" class="clearfix xfield_info additional_info">
+                    <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>
+                </div>
+            </fieldset>
+
 <?php
                     break;
 
