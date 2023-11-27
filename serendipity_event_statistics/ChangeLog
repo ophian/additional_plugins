@@ -1,3 +1,7 @@
+4.1.0:
+------
+ * Improve markup indent for backend consistency up from Styx 4.3.0
+
 4.0.3:
 -----
  * Show -/0 on empty visits in monthly visitors diagram table

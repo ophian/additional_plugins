@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.0.3');
+        $propbag->add('version',       '4.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -643,7 +643,7 @@ class serendipity_event_statistics extends serendipity_event
 
                 case 'backend_sidebar_admin_appearance':
 ?>
-                        <li><a id="#plugin_stats" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=statistics"><?php echo PLUGIN_EVENT_STATISTICS_NAME; ?></a></li>
+<li><a id="#plugin_stats" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=statistics"><?php echo PLUGIN_EVENT_STATISTICS_NAME; ?></a></li>
 <?php
                     break;
 
@@ -735,116 +735,116 @@ class serendipity_event_statistics extends serendipity_event
                         $first_entry[0] = $first_entry[0] ?? 0; // init
                         $last_entry[0] = $last_entry[0] ?? 0; // ditto
 ?>
-    <h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_STATISTICS; ?></h2>
+<h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_STATISTICS; ?></h2>
 
-    <div class="serendipity_statistics clearfix">
-        <section>
-            <h3><?php echo ENTRIES; ?></h3>
+<div class="serendipity_statistics clearfix">
+    <section>
+        <h3><?php echo ENTRIES; ?></h3>
 
-            <dl>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_FIRST_ENTRY; ?></dt>
-                <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', $first_entry[0]); ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_LAST_ENTRY; ?></dt>
-                <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', $last_entry[0]); ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_ENTRIES; ?></dt>
-                <dd><?php echo $total_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?>
-                    <dl>
-                        <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_PUBLIC; ?></dt>
-                        <dd><?php echo $publish_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?></dd>
-                        <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_DRAFTS; ?></dt>
-                        <dd><?php echo ($draft_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?></dd>
-                    </dl>
-                </dd>
-            </dl>
-        </section>
+        <dl>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_FIRST_ENTRY; ?></dt>
+            <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', $first_entry[0]); ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_LAST_ENTRY; ?></dt>
+            <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', $last_entry[0]); ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_ENTRIES; ?></dt>
+            <dd><?php echo $total_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?>
+                <dl>
+                    <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_PUBLIC; ?></dt>
+                    <dd><?php echo $publish_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?></dd>
+                    <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_DRAFTS; ?></dt>
+                    <dd><?php echo ($draft_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?></dd>
+                </dl>
+            </dd>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_PER_AUTHOR; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_PER_AUTHOR; ?></h3>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($author_rows)) {
                         foreach($author_rows AS $author => $author_stat) {
 ?>
-                <dt><?php echo $author_stat['author']; ?></dt>
-                <dd><?php echo $author_stat['entries']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?> (<?php echo 100*round($author_stat['entries'] / max($total_count[0], 1), 3); ?>%)</dd>
+            <dt><?php echo $author_stat['author']; ?></dt>
+            <dd><?php echo $author_stat['entries']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?> (<?php echo 100*round($author_stat['entries'] / max($total_count[0], 1), 3); ?>%)</dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES; ?></h3>
 
-            <p><?php echo ($category_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2; ?></p>
+        <p><?php echo ($category_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2; ?></p>
 
-            <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES; ?></h4>
+        <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES; ?></h4>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($category_rows)) {
                         foreach($category_rows AS $category => $cat_stat) {
 ?>
-                <dt><?php echo $cat_stat['category_name']; ?></dt>
-                <dd><?php echo $cat_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES2; ?></dd>
+            <dt><?php echo $cat_stat['category_name']; ?></dt>
+            <dd><?php echo $cat_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES; ?></h3>
 
-            <p><?php echo ($image_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES2; ?></p>
+        <p><?php echo ($image_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES2; ?></p>
 
-            <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES; ?></h4>
+        <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES; ?></h4>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($image_rows)) {
                         foreach($image_rows AS $image => $image_stat) {
 ?>
-                <dt><?php echo $image_stat['extension']; ?></dt>
-                <dd><?php echo $image_stat['images']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES2; ?></dd>
+            <dt><?php echo $image_stat['extension']; ?></dt>
+            <dd><?php echo $image_stat['images']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo COMMENTS; ?></h3>
+    <section>
+        <h3><?php echo COMMENTS; ?></h3>
 
-            <dl>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS; ?></dt>
-                <dd><?php echo ($comment_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
-            </dl>
+        <dl>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS; ?></dt>
+            <dd><?php echo ($comment_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
+        </dl>
 
-            <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS3; ?></h4>
+        <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS3; ?></h4>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($comment_rows)) {
                         foreach($comment_rows AS $comment => $com_stat) {
 ?>
-                <dt><a href="<?php echo serendipity_archiveURL($com_stat['id'], $com_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $com_stat['timestamp'])); ?>"><?php echo $com_stat['title']; ?></a></dt>
-                <dd><?php echo $com_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
+            <dt><a href="<?php echo serendipity_archiveURL($com_stat['id'], $com_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $com_stat['timestamp'])); ?>"><?php echo $com_stat['title']; ?></a></dt>
+            <dd><?php echo $com_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPCOMMENTS; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPCOMMENTS; ?></h3>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($commentor_rows)) {
                         foreach($commentor_rows AS $comment => $com_stat) {
@@ -869,61 +869,61 @@ class serendipity_event_statistics extends serendipity_event
                                 $com_stat['author'] = ANONYMOUS;
                             }
 ?>
-                <dt><?php echo $link_start . $com_stat['author'] . $link_end . $link_url; ?> </dt>
-                <dd><?php echo $com_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
+            <dt><?php echo $link_start . $com_stat['author'] . $link_end . $link_url; ?> </dt>
+            <dd><?php echo $com_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS; ?></h3>
 
-            <p><?php echo ($subscriber_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2; ?></p>
+        <p><?php echo ($subscriber_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2; ?></p>
 
-            <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS; ?></h4>
+        <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS; ?></h4>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($subscriber_rows)) {
                         foreach($subscriber_rows AS $subscriber => $subscriber_stat) {
 ?>
-                <dt><a href="<?php echo serendipity_archiveURL($subscriber_stat['id'], $subscriber_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $subscriber_stat['timestamp'])); ?>"><?php echo $subscriber_stat['title']; ?></a></dt>
-                <dd><?php echo $subscriber_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS2; ?></dd>
+            <dt><a href="<?php echo serendipity_archiveURL($subscriber_stat['id'], $subscriber_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $subscriber_stat['timestamp'])); ?>"><?php echo $subscriber_stat['title']; ?></a></dt>
+            <dd><?php echo $subscriber_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS; ?></h3>
 
-            <p><?php echo ($tb_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS2; ?></p>
+        <p><?php echo ($tb_count[0] ?? 0); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS2; ?></p>
 
-            <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK; ?></h4>
+        <h4><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK; ?></h4>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($tb_rows)) {
                         foreach($tb_rows AS $tb => $tb_stat) {
 ?>
-                <dt><a href="<?php echo serendipity_archiveURL($tb_stat['id'], $tb_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $tb_stat['timestamp'])); ?>"><?php echo $tb_stat['title']; ?></a></dt>
-                <dd><?php echo $tb_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK2; ?></dd>
+            <dt><a href="<?php echo serendipity_archiveURL($tb_stat['id'], $tb_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $tb_stat['timestamp'])); ?>"><?php echo $tb_stat['title']; ?></a></dt>
+            <dd><?php echo $tb_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACKS3; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACKS3; ?></h3>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($tbr_rows)) {
                         foreach($tbr_rows AS $tb => $tb_stat) {
@@ -931,66 +931,66 @@ class serendipity_event_statistics extends serendipity_event
                                 $tb_stat['author'] = ANONYMOUS;
                             }
 ?>
-                <dt><a href="<?php echo serendipity_specialchars($tb_stat['url']); ?>"><?php echo serendipity_specialchars($tb_stat['author']); ?></a></dt>
-                <dd><?php echo $tb_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK2; ?></dd>
+            <dt><a href="<?php echo serendipity_specialchars($tb_stat['url']); ?>"><?php echo serendipity_specialchars($tb_stat['author']); ?></a></dt>
+            <dd><?php echo $tb_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_AVERAGES; ?></h3>
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_OUT_AVERAGES; ?></h3>
 
-            <dl>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE; ?></dt>
-                <dd><?php echo round($comment_count[0] / max($publish_count[0], 1), 2); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE2; ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE; ?></dt>
-                <dd><?php echo round($tb_count[0] / max($publish_count[0], 1), 2); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE2; ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY; ?></dt>
-                <dd><?php echo round($publish_count[0] / ((time() - $first_entry[0]) / (60*60*24)), 2);?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY2; ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK; ?></dt>
-                <dd><?php echo round($publish_count[0] / ((time() - $first_entry[0]) / (60*60*24*7)), 2);?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK2; ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH; ?></dt>
-                <dd><?php echo round($publish_count[0] / ((time() - $first_entry[0]) / (60*60*24*31)), 2);?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH2; ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS; ?></dt>
-                <dd><?php echo $length[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS2; ?></dd>
-                <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE; ?></dt>
-                <dd><?php echo round($length[0] / max($publish_count[0], 1), 2); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE2; ?></dd>
-            </dl>
-        </section>
+        <dl>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE; ?></dt>
+            <dd><?php echo round($comment_count[0] / max($publish_count[0], 1), 2); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE2; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE; ?></dt>
+            <dd><?php echo round($tb_count[0] / max($publish_count[0], 1), 2); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE2; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY; ?></dt>
+            <dd><?php echo round($publish_count[0] / ((time() - $first_entry[0]) / (60*60*24)), 2);?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY2; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK; ?></dt>
+            <dd><?php echo round($publish_count[0] / ((time() - $first_entry[0]) / (60*60*24*7)), 2);?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK2; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH; ?></dt>
+            <dd><?php echo round($publish_count[0] / ((time() - $first_entry[0]) / (60*60*24*31)), 2);?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH2; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS; ?></dt>
+            <dd><?php echo $length[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS2; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE; ?></dt>
+            <dd><?php echo round($length[0] / max($publish_count[0], 1), 2); ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE2; ?></dd>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php printf(PLUGIN_EVENT_STATISTICS_OUT_LONGEST_ARTICLES, $max_items); ?></h3>
+    <section>
+        <h3><?php printf(PLUGIN_EVENT_STATISTICS_OUT_LONGEST_ARTICLES, $max_items); ?></h3>
 
-            <dl>
+        <dl>
 <?php
                     if (is_array($length_rows)) {
                         foreach($length_rows AS $tb => $length_stat) {
 ?>
-                <dt><a href="<?php echo serendipity_archiveURL($length_stat['id'], $length_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $length_stat['timestamp'])); ?>"><?php echo $length_stat['title']; ?></a></dt>
-                <dd><?php echo $length_stat['full_length']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS2; ?></dd>
+            <dt><a href="<?php echo serendipity_archiveURL($length_stat['id'], $length_stat['title'], 'serendipityHTTPPath', true, array('timestamp' => $length_stat['timestamp'])); ?>"><?php echo $length_stat['title']; ?></a></dt>
+            <dd><?php echo $length_stat['full_length']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_CHARS2; ?></dd>
 <?php
                         }
                     }
 ?>
-            </dl>
-        </section>
+        </dl>
+    </section>
 
-        <section>
-            <h3><?php echo TOP_REFERRER; ?></h3>
+    <section>
+        <h3><?php echo TOP_REFERRER; ?></h3>
 
-            <?php echo serendipity_displayTopReferrers($max_items, true); ?>
-        </section>
+        <?php echo serendipity_displayTopReferrers($max_items, true); ?>
+    </section>
 
-        <section>
-            <h3><?php echo TOP_EXITS; ?></h3>
+    <section>
+        <h3><?php echo TOP_EXITS; ?></h3>
 
-            <?php echo serendipity_displayTopExits($max_items, true); ?>
-        </section>
-    <?php serendipity_plugin_api::hook_event('event_additional_statistics', $eventData, array('maxitems' => $max_items)); ?>
-    </div>
+        <?php echo serendipity_displayTopExits($max_items, true); ?>
+    </section>
+<?php serendipity_plugin_api::hook_event('event_additional_statistics', $eventData, array('maxitems' => $max_items)); ?>
+</div>
 <?php
                     }
 
@@ -1216,91 +1216,92 @@ class serendipity_event_statistics extends serendipity_event
         $hits_count_all          = serendipity_db_query("SELECT SUM(hits) FROM {$serendipity['dbPrefix']}visitors_count", true);
         $visitors_latest         = serendipity_db_query("SELECT counter_id, day, time, ref, browser, ip FROM {$serendipity['dbPrefix']}visitors ORDER BY counter_id DESC LIMIT $max_items");
         $top_refs                = serendipity_db_query("SELECT refs, count FROM {$serendipity['dbPrefix']}refs ORDER BY count DESC LIMIT 20");
-        ?>
-        <h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS; ?></h2>
+?>
+<h2><?php echo PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS; ?></h2>
 
-        <div class="serendipity_statistics extended_statistics clearfix">
-            <section>
-                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISITORS; ?></h3>
+<div class="serendipity_statistics extended_statistics clearfix">
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISITORS; ?></h3>
 
-                <dl>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISTODAY; ?></dt>
-                    <dd><?php echo $visitors_count_today[0]; ?></dd>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISCURYR; ?></dt>
-                    <dd><?php echo $visitors_count_curryear[0]; ?></dd>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR; ?></dt>
-                    <dd><?php echo $visitors_count_lastyear[0]; ?></dd>
-                    <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
-                    <dd><?php echo $visitors_count_all[0]; ?></dd>
-                    <dd>-------------------------------------
-                        <a class="statistics_info toggle_info button_link" href="#statstics_countdesc" title="Statistics Count description Information">
-                            <span class="icon-info-circled" aria-hidden="true"></span>
-                            <span class="visuallyhidden"> Statistics Count description Information</span>
-                        </a>
-                    </dd>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY; ?></dt>
-                    <dd><?php echo $hits_count_today[0]; ?></dd>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR; ?></dt>
-                    <dd><?php echo $hits_count_curryear[0]; ?></dd>
-                    <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR; ?></dt>
-                    <dd><?php echo $hits_count_lastyear[0]; ?></dd>
-                    <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
-                    <dd><?php echo $hits_count_all[0]; ?></dd>
-                </dl>
+        <dl>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISTODAY; ?></dt>
+            <dd><?php echo $visitors_count_today[0]; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISCURYR; ?></dt>
+            <dd><?php echo $visitors_count_curryear[0]; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR; ?></dt>
+            <dd><?php echo $visitors_count_lastyear[0]; ?></dd>
+            <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
+            <dd><?php echo $visitors_count_all[0]; ?></dd>
+            <dd>-------------------------------------
+                <a class="statistics_info toggle_info button_link" href="#statstics_countdesc" title="Statistics Count description Information">
+                    <span class="icon-info-circled" aria-hidden="true"></span>
+                    <span class="visuallyhidden"> Statistics Count description Information</span>
+                </a>
+            </dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY; ?></dt>
+            <dd><?php echo $hits_count_today[0]; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR; ?></dt>
+            <dd><?php echo $hits_count_curryear[0]; ?></dd>
+            <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR; ?></dt>
+            <dd><?php echo $hits_count_lastyear[0]; ?></dd>
+            <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
+            <dd><?php echo $hits_count_all[0]; ?></dd>
+        </dl>
 
-                <footer id="statstics_countdesc" class="statistics_info additional_info">
-                    <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC; ?></span>
-                </footer>
-            </section>
+        <footer id="statstics_countdesc" class="statistics_info additional_info">
+            <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC; ?></span>
+        </footer>
+    </section>
 
-            <section>
-                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_TOPREFS; ?></h3>
-        <?php
+    <section>
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_TOPREFS; ?></h3>
+<?php
             if (is_array($top_refs)) {
-                echo "<ol>\n";
+                echo "            <ol>\n";
                 foreach($top_refs AS $key => $row) {
                     if ($row['refs'] == 'unknown') {
-                        echo '<li>'.$row['refs'].' ('.$row['count'].")</li>\n";
+                        echo '                <li>'.$row['refs'].' ('.$row['count'].")</li>\n";
                     } else {
-                        echo '<li><a href="//'.$row['refs'].'" target="_blank" rel="noopener">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
+                        echo '                <li><a href="//'.$row['refs'].'" target="_blank" rel="noopener">'.$row['refs'].'</a> ('.$row['count'].")</li>\n";
                     }
                 }
-                echo "</ol>\n";
+                echo "            </ol>\n";
             } else {
-                echo '<span class="msg_notice"><span class="icon-info-circled"></span> '.PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE."</span>\n";
+                echo '            <span class="msg_notice"><span class="icon-info-circled"></span> '.PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE."</span>\n";
             }
-        ?>
-            </section>
+?>
+    </section>
 
-            <section id="statistics_yearbox" class="wide_box">
-                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH;?> (<em>rolling year</em>)</h3>
+    <section id="statistics_yearbox" class="wide_box">
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH;?> (<em>rolling year</em>)</h3>
 
-        <?php if ($visitors_count_all[0] > 0) {
+<?php
+            if ($visitors_count_all[0] > 0) {
                 $num = $this->statistics_getmonthlystats();
                 // split out the added old comparison year from $num to a current_rolling_year ($cry) and a last_rolling_year ($lry)
                 list($cry, $lry) = array_chunk($num, ceil(count($num) / 2));
-            ?>
-                <table>
-                    <tbody>
-                    <tr>
-                        <th scope="row"><?php echo MONTHS; ?></th>
-                <?php
+?>
+        <table>
+            <tbody>
+            <tr>
+                <th scope="row"><?php echo MONTHS; ?></th>
+<?php
                     foreach (array_reverse($cry) AS $month) {
-                        echo '<td>' . serendipity_strftime('%b', mktime(0, 0, 0, $month[0], 1, 2000)) . "</td>\n";
+                        echo '                <td>' . serendipity_strftime('%b', mktime(0, 0, 0, $month[0], 1, 2000)) . "</td>\n";
                     }
-                ?>
-                    </tr>
-                    <tr>
-                        <th scope="row">Visits</th>
-                <?php
+?>
+            </tr>
+            <tr>
+                <th scope="row">Visits</th>
+<?php
                     foreach (array_reverse($cry) AS $visits) {
-                        echo '<td>' . (empty($visits[1]) ? '-' : $visits[1]) . "</td>\n";
+                        echo '                <td>' . (empty($visits[1]) ? '-' : $visits[1]) . "</td>\n";
                     }
-                ?>
-                    </tr>
-                    <tr>
-                        <th scope="row">+/~/-</th>
-                <?php
+?>
+            </tr>
+            <tr>
+                <th scope="row">+/~/-</th>
+<?php
                     foreach (array_reverse($cry) AS $r) {
                         $rep[(int)$r[0]] = $r[1]; // flatten array for max
                     }
@@ -1326,10 +1327,10 @@ class serendipity_event_statistics extends serendipity_event
                         $monthHeight = @round($n[1]*$maxVisHeigh, 3); // be as precise as possible eg. 12.321px
                         $mhex = @round($n[2]*$maxVisHeighex, 3); // ditto
                         $numCountInt = @($n[1]*$maxVisHeigh/2);
-                        echo '<td class="stats_imagecell">
-                                <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.@round($mhex).'" style="height:'.$mhex.'px" alt="o" /></span>
-                                <span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="200" style="height:200px" alt="°" /></span>
-                                <span class="cu_mo"><img src="plugins/serendipity_event_statistics/';
+                        echo '                <td class="stats_imagecell">
+                    <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.@round($mhex).'" style="height:'.$mhex.'px" alt="o" /></span>
+                    <span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="200" style="height:200px" alt="°" /></span>
+                    <span class="cu_mo"><img src="plugins/serendipity_event_statistics/';
                         if ($numCountInt <= 33) {
                             echo 'red.png';
                         } else if ($numCountInt > 33 && $numCountInt < 66) {
@@ -1346,59 +1347,63 @@ class serendipity_event_statistics extends serendipity_event
                             echo '+';
                         }
                         echo '" /></span>
-                            </td>'."\n";
+                </td>'."\n";
                     }
-                ?>
-                    </tr>
-                <?php
+?>
+            </tr>
+<?php
                     if ($maxVisHeighex > 0) {
-                ?>
-                    <tr>
-                        <th scope="row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-range" viewBox="0 0 16 16">
-                              <title>Gray scaled Visits -1 year in past for comparison</title>
-                              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
-                              <path d="M9 7.5a.5.5 0 0 1 .5-.5H15v2H9.5a.5.5 0 0 1-.5-.5v-1zm-2 3v1a.5.5 0 0 1-.5.5H1v-2h5.5a.5.5 0 0 1 .5.5z"/>
-                            </svg>
-                        </th>
-                <?php
+?>
+            <tr>
+                <th scope="row">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-range" viewBox="0 0 16 16">
+                      <title>Gray scaled Visits -1 year in past for comparison</title>
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
+                      <path d="M9 7.5a.5.5 0 0 1 .5-.5H15v2H9.5a.5.5 0 0 1-.5-.5v-1zm-2 3v1a.5.5 0 0 1-.5.5H1v-2h5.5a.5.5 0 0 1 .5.5z"/>
+                    </svg>
+                </th>
+<?php
                     }
                     foreach (array_reverse($lry) AS $visits) {
-                        echo '<td>' . (empty($visits[1]) ? 0 : $visits[1]) . "</td>\n";
+                        echo '                <td>' . (empty($visits[1]) ? 0 : $visits[1]) . "</td>\n";
                     }
-                ?>
-                    </tr>
-                    </tbody>
-                </table>
-        <?php } ?>
-            </section>
+?>
+            </tr>
+            </tbody>
+        </table>
+<?php
+            }
+?>
+    </section>
 
-            <section class="wide_box">
-                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH;?></h3>
+    <section class="wide_box">
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH;?></h3>
 
-        <?php if ($visitors_count_all[0] > 0) { ?>
-                <table>
-                    <tbody>
-                    <tr>
-                        <th scope="row"><?php echo DAYS; ?></th>
-                <?php
+<?php
+            if ($visitors_count_all[0] > 0) {
+?>
+        <table>
+            <tbody>
+            <tr>
+                <th scope="row"><?php echo DAYS; ?></th>
+<?php
                     for ($i=1; $i < 32; $i++) {
-                        echo '<td>'. $i ."</td>\n";
+                        echo '                <td>'. $i ."</td>\n";
                     }
-                ?>
-                    </tr>
-                    <tr>
-                        <th scope="row">Visits</th>
-                <?php
+?>
+            </tr>
+            <tr>
+                <th scope="row">Visits</th>
+<?php
                     $num = $this->statistics_getdailystats();
                     for ($i=1; $i < 32; $i++) {
-                        echo '<td>' . $num[$i] . "</td>\n";
+                        echo '                <td>' . $num[$i] . "</td>\n";
                     }
-                ?>
-                    </tr>
-                    <tr>
-                        <th scope="row">+/~/-</th>
-                <?php
+?>
+            </tr>
+            <tr>
+                <th scope="row">+/~/-</th>
+<?php
                     $rep = $num;
                     rsort($rep); // Now $ret[0] is the highest max vis height
 
@@ -1406,7 +1411,7 @@ class serendipity_event_statistics extends serendipity_event
                         $maxVisHeigh = 100/$rep[0]*2;
                         $dailyHeight = @round($num[$i]*$maxVisHeigh);
                         $numCountInt = @($num[$i]*$maxVisHeigh/2);
-                        echo '<td class="stats_imagecell"><img src="plugins/serendipity_event_statistics/';
+                        echo '                <td class="stats_imagecell"><img src="plugins/serendipity_event_statistics/';
                         if ($numCountInt <= 33) {
                             echo 'red.png';
                         } else if ($numCountInt > 33 && $numCountInt < 66) {
@@ -1424,16 +1429,18 @@ class serendipity_event_statistics extends serendipity_event
                         }
                         echo '" /></td>'."\n";
                     }
-                ?>
-                    </tr>
-                </table>
-        <?php } ?>
-            </section>
+?>
+            </tr>
+        </table>
+<?php
+            }
+?>
+    </section>
 
-            <section class="wide_box">
-                <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLATEST;?> (TZ <?=date('e')?>)</h3>
+    <section class="wide_box">
+        <h3><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLATEST;?> (TZ <?=date('e')?>)</h3>
 
-                <dl>
+        <dl>
 <?php
     $checkdns = serendipity_db_bool($this->get_config('gethostbyaddr', 'true'));
     if (is_array($visitors_latest)) {
@@ -1442,24 +1449,24 @@ class serendipity_event_statistics extends serendipity_event
             if ($checkdns && !in_array($row['ip'], $address)) {
                 $address[$row['ip']] = gethostbyaddr($row['ip']);
             }
-            echo '    <dt class="stats_header">'.$row['day'].' ('.$row['time'].')';
+            echo '            <dt class="stats_header">'.$row['day'].' ('.$row['time'].')';
             echo $checkdns ? '<span>' . ($address[$row['ip']] ?? '-') . '</span>' : '<span>' . $row['ip'] . '</span>';
             echo "</dt>\n";
 
             if ($row['ref'] != 'unknown') {
-                echo "    <dd><a href=\"{$row['ref']}\">{$row['ref']}</a></dd>\n";
+                echo "            <dd><a href=\"{$row['ref']}\">{$row['ref']}</a></dd>\n";
             }
             if ($row['ref'] == 'unknown') {
-                echo '    <dd>'.$row['ref']."</dd>\n";
+                echo '            <dd>'.$row['ref']."</dd>\n";
             }
-            echo '    <dd>'.$row['browser']."</dd>\n";
+            echo '            <dd>'.$row['browser']."</dd>\n";
         }
         if ($debug) { $serendipity['logger']->debug("L_".__LINE__.":: $logtag CACHED IP DNS check for last_visitors [20] array ".print_r($address,true)); }
     }
 ?>
-                </dl>
-            </section>
-        </div>
+        </dl>
+    </section>
+</div>
 <?php
     } //end of function extendedVisitorStatistics()
 
