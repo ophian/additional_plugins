@@ -2541,7 +2541,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-11-25</date>
+  <date>2023-11-26</date>
   <filelist>
     <dir name="serendipity_plugin_nugget_multilingual">
       <file>ChangeLog</file>
