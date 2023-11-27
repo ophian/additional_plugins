@@ -4,9 +4,9 @@
 <form action="?" method="get">
     <input type="hidden" name="serendipity[subpage]" value="userprofiles" />
     <select name="serendipity[groupid]">
-    {foreach $userprofile_groups AS $group}
+{foreach $userprofile_groups AS $group}
     <option value="{$group.id}" {if $selected_group == $group.id}selected="selected"{/if}>{$group.name|escape}</option>
-    {/foreach}
+{/foreach}
     </select> <input type="submit" name="submit" value="{$CONST.GO}" />
 </form>
 </div>
@@ -22,14 +22,14 @@
             <th>E-Mail</th>
         </tr>
 
-        {foreach $selected_members AS $member}
+{foreach $selected_members AS $member}
         <tr>
             <td>{$member.username}</td>
             <td>{$member.posts}</td>
             <td>{$member.realname}</td>
             <td>{$member.email}</td>
         </tr>
-        {/foreach}
+{/foreach}
     </table>
 </div>
 {/if}

@@ -93,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.3.6');
+        $propbag->add('version', '1.3.7');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -404,12 +404,12 @@ class serendipity_event_userprofiles extends serendipity_event
 
     function showCol($property, &$info, &$user)
     {
-        echo "<tr>\n";
-        echo '  <td>' . $info['desc'] . "</td>\n";
-        echo "  <td>\n";
+        echo "           <tr>\n";
+        echo '             <td>' . $info['desc'] . "</td>\n";
+        echo "             <td>\n";
         switch($info['type']) {
             case 'html':
-                echo '<textarea rows="10" name="serendipity[profile' . $property . ']">' . serendipity_specialchars($user[$property]) . "</textarea>\n";
+                echo '               <textarea rows="10" name="serendipity[profile' . $property . ']">' . serendipity_specialchars($user[$property]) . "</textarea>\n";
                 break;
 
             case 'boolean':
@@ -421,18 +421,19 @@ class serendipity_event_userprofiles extends serendipity_event
                 break;
 
             case 'date':
-                ?> <input type="text" name="serendipity[profile<?php echo $property; ?>_day]" value="<?php echo date("d", $user[$property]); ?>" size="2" maxlength="2">.
-                   <input type="text" name="serendipity[profile<?php echo $property; ?>_month]" value="<?php echo date("m", $user[$property]); ?>" size="2" maxlength="2">.
-                   <input type="text" name="serendipity[profile<?php echo $property; ?>_year]" value="<?php echo date("Y", $user[$property]); ?>" size="4" maxlength="4">
-                <?php
+?>
+                <input type="text" name="serendipity[profile<?php echo $property; ?>_day]" value="<?php echo date("d", $user[$property]); ?>" size="2" maxlength="2">
+                <input type="text" name="serendipity[profile<?php echo $property; ?>_month]" value="<?php echo date("m", $user[$property]); ?>" size="2" maxlength="2">
+                <input type="text" name="serendipity[profile<?php echo $property; ?>_year]" value="<?php echo date("Y", $user[$property]); ?>" size="4" maxlength="4">
+<?php
                 break;
 
             case 'string':
             default:
-                echo '<input type="text" name="serendipity[profile' . $property . ']" value="' . serendipity_specialchars($user[$property]) . '">'."\n";
+                echo '                <input type="text" name="serendipity[profile' . $property . ']" value="' . serendipity_specialchars($user[$property]) . '">'."\n";
         }
-        echo "  </td>\n";
-        echo "</tr>\n";
+        echo "             </td>\n";
+        echo "           </tr>\n";
     }
 
     /**
@@ -454,11 +455,11 @@ class serendipity_event_userprofiles extends serendipity_event
             }
             unset($serendipity['POST']['profilebirthday_month'], $serendipity['POST']['profilebirthday_day'], $serendipity['POST']['profilebirthday_year']);
         }
-
-        echo '<div class="userprofiles_wrap">'."\n";
-        echo '<table class="userprofiles_table">'."\n";
+?>
+    <div class="userprofiles_wrap">
+        <table class="userprofiles_table">
+<?php
         $local_properties = $this->getLocalProperties(); /* no more & */
-
         foreach($local_properties AS $property => $info) {
             if (isset($serendipity['POST']['submitProfile']) && isset($serendipity['POST']['profile' . $property])) {
                 $user[$property] = $serendipity['POST']['profile' . $property];
@@ -481,18 +482,23 @@ class serendipity_event_userprofiles extends serendipity_event
 
             $this->showCol($property, $info, $user);
         }
+?>
 
-        echo "</table>\n";
-        echo "</div>\n";
-        echo '<input type="submit" name="serendipity[submitProfile]" value="' . SAVE . '">' . "\n";
+        </table>
+    </div>
+    <input type="submit" name="serendipity[submitProfile]" value="<?=SAVE?>">
+
+<?php
     }
 
     function editOptions(&$user)
     {
         global $serendipity;
 
-        echo '<div class="userprofiles_wrap">'."\n";
-        echo '<table class="userprofiles_table">'."\n";
+?>
+    <div class="userprofiles_wrap">
+        <table class="userprofiles_table">
+<?php
         $profile =& $this->getConfigVars($user['authorid']);
 
         foreach($this->option_properties AS $property => $info) {
@@ -506,9 +512,13 @@ class serendipity_event_userprofiles extends serendipity_event
 
             $this->showCol($property, $info, $user);
         }
-        echo "</table>\n";
-        echo "</div>\n";
-        echo '<input type="submit" name="serendipity[submitProfileOptions]" value="' . SAVE . '">' . "\n";
+?>
+
+        </table>
+    </div>
+    <input type="submit" name="serendipity[submitProfileOptions]" value="<?=SAVE?>">
+
+<?php
     }
 
     function &getConfigVars($authorid)
@@ -738,7 +748,7 @@ section > .serendipityAuthorProfile,
                 case 'backend_sidebar_users':// Up from Styx 3.6
                     if (version_compare($serendipity['version'], '3.6', '>=')) {
 ?>
-                    <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=profiles"><?php echo PLUGIN_EVENT_USERPROFILES_TITLE ?></a></li>
+<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=profiles"><?php echo PLUGIN_EVENT_USERPROFILES_TITLE ?></a></li>
 <?php
                     }
                     break;
