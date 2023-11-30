@@ -67,9 +67,9 @@ class serendipity_event_aggregator extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.2',
             'smarty'      => '3.1.0',
-            'php'         => '7.0.0'
+            'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '1.13');
+        $propbag->add('version',       '1.14');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -627,15 +627,16 @@ class serendipity_event_aggregator extends serendipity_event
         global $serendipity;
 
         $n = "\n";
-        $cat_list = '<select name="' . $name . '" multiple="multiple" size="4">';
-        $cat_list .= '    <option value="0"' . (empty($selected) ? ' selected="selected"' : '') . '>[' . NO_CATEGORY . ']</option>' . $n;
+        $cat_list = '
+                    <select name="' . $name . '" multiple="multiple" size="4">'.$n;
+        $cat_list .= '                        <option value="0"' . (empty($selected) ? ' selected="selected"' : '') . '>[' . NO_CATEGORY . ']</option>' . $n;
         if (is_array($cats = serendipity_fetchCategories())) {
             $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
             foreach ($cats AS $cat) {
-                $cat_list .= '<option value="'. $cat['categoryid'] .'"'. (in_array($cat['categoryid'], $selected) ? ' selected="selected"' : '') .'>'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
+                $cat_list .= '                        <option value="'. $cat['categoryid'] .'"'. (in_array($cat['categoryid'], $selected) ? ' selected="selected"' : '') .'>'. str_repeat('&nbsp;', $cat['depth']) . $cat['category_name'] .'</option>' . "\n";
             }
         }
-        $cat_list .= '</select>';
+        $cat_list .= '                    </select>';
 
         return $cat_list;
     }
@@ -645,7 +646,7 @@ class serendipity_event_aggregator extends serendipity_event
         # Shows feeds in admin area
         global $serendipity;
 
-        echo '<h2>' . PLUGIN_AGGREGATOR_TITLE . '</h2>';
+        echo '<h2>' . PLUGIN_AGGREGATOR_TITLE . "</h2>\n\n";
 
         if (!empty($serendipity['POST']['aggregatorAction'])) {
             $this->createFeeds();
@@ -667,30 +668,30 @@ class serendipity_event_aggregator extends serendipity_event
 
         echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ';
         echo PLUGIN_AGGREGATOR_DESC;
-        echo '</span>';
+        echo "</span>\n";
         echo '<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> ';
         echo PLUGIN_AGGREGATOR_FEEDLIST;
-        echo '</span>';
+        echo "</span>\n";
 
         echo '
-            <form action="?" method="post">
-            <div>
-                <input type="hidden" name="serendipity[adminModule]" value="event_display" />
-                <input type="hidden" name="serendipity[adminAction]" value="aggregator" />
-            </div>';
-        echo '<style> table th:nth-child(n+2) { min-width: 8em; } .ag_legend { display: block; line-height: 2; font-weight: bold; } .ag_long { width: 100%; } .ag_short { width: 90%; margin-top: 2px; } .ag_tiny { font-size: 8pt; } </style>';
-        echo '<table>';
+<form action="?" method="post">
+    <div>
+        <input type="hidden" name="serendipity[adminModule]" value="event_display">
+        <input type="hidden" name="serendipity[adminAction]" value="aggregator">
+    </div>';
+        echo '    <style> table th:nth-child(n+2) { min-width: 8em; } .ag_legend { display: block; line-height: 2; font-weight: bold; } .ag_long { width: 100%; } .ag_short { width: 90%; margin-top: 2px; } .ag_tiny { font-size: 8pt; } </style>';
+        echo '    <table>';
         echo '
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>' . PLUGIN_AGGREGATOR_FEEDNAME . '</th>
-                    <th>' . PLUGIN_AGGREGATOR_FEEDURI . '</th>
-                    <th>' . PLUGIN_AGGREGATOR_CATEGORIES . '</th>
-                    <th>' . PLUGIN_AGGREGATOR_MATCH_EXPRESSION . '</th>
-                </tr>
-            </thead>
-            <tbody>';
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>' . PLUGIN_AGGREGATOR_FEEDNAME . '</th>
+                <th>' . PLUGIN_AGGREGATOR_FEEDURI . '</th>
+                <th>' . PLUGIN_AGGREGATOR_CATEGORIES . '</th>
+                <th>' . PLUGIN_AGGREGATOR_MATCH_EXPRESSION . '</th>
+            </tr>
+        </thead>
+        <tbody>';
 
         $evenidx = 0;
         foreach($feeds AS $idx => $feed) {
@@ -701,15 +702,17 @@ class serendipity_event_aggregator extends serendipity_event
             <tr style="padding: 10px;" class="serendipity_admin_list_item serendipity_admin_list_item_' . $even . '">
                 <td valign="top"><em>' . $idx . '</em></td>
                 <td valign="top">
-                    <input class="input_textbox" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedname]" value="' . serendipity_specialchars($feed['feedname']) . '" />
+                    <input class="input_textbox" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedname]" value="' . serendipity_specialchars($feed['feedname']) . '">
                     <span class="ag_legend">' . PLUGIN_AGGREGATOR_HTMLURI . ':</span>
                     ' . serendipity_specialchars($feed['charset']) . '
                 </td>
                 <td width="100%" valign="top">
-                    <input class="input_textbox ag_long" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedurl]" value="' . serendipity_specialchars($feed['feedurl']) . '" />
-                    <input class="input_textbox ag_short" type="text" name="serendipity[feed][' . $feed['feedid'] . '][htmlurl]" value="' . serendipity_specialchars($feed['htmlurl']) . '" />
+                    <input class="input_textbox ag_long" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedurl]" value="' . serendipity_specialchars($feed['feedurl']) . '">
+                    <input class="input_textbox ag_short" type="text" name="serendipity[feed][' . $feed['feedid'] . '][htmlurl]" value="' . serendipity_specialchars($feed['htmlurl']) . '">
                 </td>
-                <td valign="top" rowspan="2">' . $cat . '</td>
+                <td valign="top" rowspan="2">'
+                . $cat . '
+                </td>
                 <td valign="top" rowspan="2"><textarea rows=6 cols=25 name="serendipity[feed][' . $feed['feedid'] . '][match_expression]">' . serendipity_specialchars($feed['match_expression']) . '</textarea></td>
             </tr>
             <tr style="padding: 10px;" class="serendipity_admin_list_item serendipity_admin_list_item_' . $even . '">
@@ -723,37 +726,40 @@ class serendipity_event_aggregator extends serendipity_event
         echo '
             <tr>
                 <td colspan="4"><br />
-                    <input type="submit" name="serendipity[aggregatorAction]" value="' . GO . '" class="serendipityPrettyButton input_button" />
+                    <input type="submit" name="serendipity[aggregatorAction]" value="' . GO . '" class="input_button">
                 </td>
             </tr>
-            </tbody>
-            </table>
-            * ' . PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC . '
-            </form>';
+        </tbody>
+    </table>
+    * ' . PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC . '
+</form>
+';
 
         echo '
-            <form action="?" method="post">
-            <div>
-                <input type="hidden" name="serendipity[adminModule]" value="event_display" />
-                <input type="hidden" name="serendipity[adminAction]" value="aggregator" />
-            </div>';
+<form action="?" method="post">
+    <div>
+        <input type="hidden" name="serendipity[adminModule]" value="event_display">
+        <input type="hidden" name="serendipity[adminAction]" value="aggregator">
+    </div>';
 
         echo '
-            <h3>' . PLUGIN_AGGREGATOR_IMPORTFEEDLIST . '</h3>
-            <span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> ' . PLUGIN_AGGREGATOR_IMPORTFEEDLIST_DESC . '</span>
-            <div class="form_field">
-                <label for="serendipity_aggregator_opml">URL</label>
-                <input id="serendipity_aggregator_opml" type="text" name="serendipity[aggregatorOPML]" value="http://">
-            </div>
-            <div class="form_check">
-                <input type="checkbox" id="import_categories" name="serendipity[aggregatorOPMLCategories]" value="true"><label for="import_categories">' . PLUGIN_AGGREGATOR_IMPORTCATEGORIES . '</label>
-                <input type="checkbox" id="import_categories2" name="serendipity[aggregatorOPMLCategoriesNoNesting]" value="true"><label for="import_categories2">' . PLUGIN_AGGREGATOR_IMPORTCATEGORIES2 . '</label>
-            </div>';
+    <h3>' . PLUGIN_AGGREGATOR_IMPORTFEEDLIST . '</h3>
+    <span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> ' . PLUGIN_AGGREGATOR_IMPORTFEEDLIST_DESC . '</span>
+    <div class="form_field">
+        <label for="serendipity_aggregator_opml">URL</label>
+        <input id="serendipity_aggregator_opml" type="text" name="serendipity[aggregatorOPML]" value="http://">
+    </div>
+    <div class="form_check">
+        <input type="checkbox" id="import_categories" name="serendipity[aggregatorOPMLCategories]" value="true">
+        <label for="import_categories">' . PLUGIN_AGGREGATOR_IMPORTCATEGORIES . '</label>
+        <input type="checkbox" id="import_categories2" name="serendipity[aggregatorOPMLCategoriesNoNesting]" value="true">
+        <label for="import_categories2">' . PLUGIN_AGGREGATOR_IMPORTCATEGORIES2 . '</label>
+    </div>';
 
         echo '
-            <h3>' . PLUGIN_AGGREGATOR_EXPORTFEEDLIST . '</h3>
-            <a class="button_link" href="' . serendipity_rewriteURL('plugin/opmlfeeds.xml') .'"><span class="icon-rss" aria-hidden="true"></span> ' . PLUGIN_AGGREGATOR_EXPORTFEEDLIST_BUTTON . '</a>
-            </form>';
+    <h3>' . PLUGIN_AGGREGATOR_EXPORTFEEDLIST . '</h3>
+    <a class="button_link" href="' . serendipity_rewriteURL('plugin/opmlfeeds.xml') .'"><span class="icon-rss" aria-hidden="true"></span> ' . PLUGIN_AGGREGATOR_EXPORTFEEDLIST_BUTTON . '</a>
+</form>';
     }
 
     function importOPML()
@@ -1567,9 +1573,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 case 'backend_sidebar_entries':
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
-?>
-                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=aggregator"><?php echo PLUGIN_AGGREGATOR_TITLE; ?></a></li>
-<?php
+                        echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=aggregator">' . PLUGIN_AGGREGATOR_TITLE . "</a></li>\n";
                     }
                     break;
 
