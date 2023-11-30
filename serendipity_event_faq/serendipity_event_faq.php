@@ -78,7 +78,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.55');
+        $propbag->add('version',      '1.56');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -664,18 +664,18 @@ class serendipity_event_faq extends serendipity_event
                 echo "</div>\n\n";
 
                 echo '<div id="backend_faq_formpage">'."\n";
-                echo '<form action="serendipity_admin.php" method="post" name="serendipityEntry">'."\n";
-                echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
-                echo '    <input type="hidden" name="serendipity[adminAction]" value="faq" />'."\n";
-                echo '    <input type="hidden" name="serendipity[action]" value="faqs" />'."\n";
-                echo '    <input type="hidden" name="serendipity[typeSave]" value="true" />'."\n";
-                echo '    <div class="default_faq_faqforms">'."\n";
+                echo '    <form action="serendipity_admin.php" method="post" name="serendipityEntry">'."\n";
+                echo '        <input type="hidden" name="serendipity[adminModule]" value="event_display" />'."\n";
+                echo '        <input type="hidden" name="serendipity[adminAction]" value="faq" />'."\n";
+                echo '        <input type="hidden" name="serendipity[action]" value="faqs" />'."\n";
+                echo '        <input type="hidden" name="serendipity[typeSave]" value="true" />'."\n";
+                echo '        <div class="default_faq_faqforms">'."\n";
 
                 $this->showFAQForm(); // gathers inspectConfig items
 
-                echo "    </div><!-- faq_faqforms end -->\n";
-                echo "</form>\n";
-                echo "</div>\n\n";
+                echo "        </div><!-- faq_faqforms end -->\n";
+                echo "    </form>\n";
+                echo "</div>\n";
                 break;
 
             case 'categories':
@@ -729,9 +729,9 @@ class serendipity_event_faq extends serendipity_event
                 break;
 
             case 'show_faqs':
-                echo '    <div class="faq_navigator">'."\n\n";
-                echo '        <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=faq">' . FAQ_CATEGORIES.'</a> :: ' . FAQS . "\n";
-                echo "    </div>\n\n";
+                echo '<div class="faq_navigator">'."\n";
+                echo '    <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=faq">' . FAQ_CATEGORIES.'</a> :: ' . FAQS . "\n";
+                echo "</div>\n\n";
 
                 if ((!empty($serendipity['POST']['faqDelete'])) && (is_numeric($serendipity['POST']['id']))) {
                     $result = $this->deleteFAQ($serendipity['POST']['id']);
@@ -856,7 +856,7 @@ class serendipity_event_faq extends serendipity_event
                     } else $lang_links .= "\n";
 
                 }
-                echo '    <div class="faq_lang_navigation">'."\n\n";
+                echo '    <div class="faq_lang_navigation">'."\n";
                 echo $lang_links;
                 echo "    </div>\n\n";
 
@@ -1260,11 +1260,11 @@ class serendipity_event_faq extends serendipity_event
             if ($ev['skip_nuggets'] === false) {
 ?>
         <script type="text/javascript">
-        function Spawnnugget() {
-        <?php foreach($htmlnugget AS $htmlnuggetid) { ?>
-            if (window.Spawnnuggets) Spawnnuggets('<?php echo $htmlnuggetid; ?>');
-        <?php } ?>
-        }
+            function Spawnnugget() {
+<?php foreach($htmlnugget AS $htmlnuggetid) { ?>
+                if (window.Spawnnuggets) Spawnnuggets('<?php echo $htmlnuggetid; ?>');
+<?php } ?>
+            }
         </script>
 
 <?php
@@ -1417,7 +1417,7 @@ class serendipity_event_faq extends serendipity_event
                     #    break;
                     #}
                     $this->setupDB();
-                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . '</a></li>'."\n";
+                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . "</a></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_faq':

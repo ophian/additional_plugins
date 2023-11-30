@@ -198,30 +198,30 @@ class icText extends inspectConfig
         <div class="form_editor">
             <div class="form_field clear plain_editor">
 
-            <nobr><span id="tools_<?php echo $inspectConfig['config_item']; ?>" class="editor_toolbar" style="display: none">
-            <?php if ( isset($inspectConfig['pdata']['markupeditor']) ) { ?>
-                <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
-                <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
-                <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]<?php } ?>
-            <?php } else { ?>
-            <?php if ( $inspectConfig['pdata']['nl2br']['iso2br'] ) { ?>
-                <button class="wrap_selection lang-html" type="button" name="insX" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="nl" data-tag-close="nl">NoBR</button>
-            <?php } ?>
-                <button class="hilite_i wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="em" data-tag-close="em" name="insI">i</button>
-                <button class="hilite_b wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="strong" data-tag-close="strong" name="insB">b</button>
-                <button class="wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="blockquote" data-tag-close="blockquote" name="insQ"><?php echo QUOTE ?></button>
-                <button class="wrap_insimg" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insJ">img</button>
-                <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
-                <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
-                <button class="wrap_insurl" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insURL">URL</button>
-                <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]<?php } ?>
-            <?php } ?>
-            </span></nobr>
+                <nobr><span id="tools_<?php echo $inspectConfig['config_item']; ?>" class="editor_toolbar" style="display: none">
+                <?php if ( isset($inspectConfig['pdata']['markupeditor']) ) { ?>
+                    <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
+                    <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
+                    <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]<?php } ?>
+                <?php } else { ?>
+                <?php if ( $inspectConfig['pdata']['nl2br']['iso2br'] ) { ?>
+                    <button class="wrap_selection lang-html" type="button" name="insX" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="nl" data-tag-close="nl">NoBR</button>
+                <?php } ?>
+                    <button class="hilite_i wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="em" data-tag-close="em" name="insI">i</button>
+                    <button class="hilite_b wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="strong" data-tag-close="strong" name="insB">b</button>
+                    <button class="wrap_selection lang-html" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="blockquote" data-tag-close="blockquote" name="insQ"><?php echo QUOTE ?></button>
+                    <button class="wrap_insimg" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insJ">img</button>
+                    <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
+                    <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
+                    <button class="wrap_insurl" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insURL">URL</button>
+                    <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]<?php } ?>
+                <?php } ?>
+                </span></nobr>
 
-            <script type="text/javascript">
-                var tb_<?php echo $inspectConfig['config_item']; ?> = document.getElementById('tools_<?php echo $inspectConfig['config_item']; ?>');
-                    tb_<?php echo $inspectConfig['config_item']; ?>.style.display = '';
-            </script>
+                <script type="text/javascript">
+                    var tb_<?php echo $inspectConfig['config_item']; ?> = document.getElementById('tools_<?php echo $inspectConfig['config_item']; ?>');
+                        tb_<?php echo $inspectConfig['config_item']; ?>.style.display = '';
+                </script>
 
 <?php
 
@@ -229,14 +229,13 @@ class icText extends inspectConfig
             // behaves well with WYSIWYG-editors, then clean up ;-) (same applies below)
             $entry['backend_entry_toolbar_body:nugget'] = 'nuggets' . $inspectConfig['elcount'];
             $entry['backend_entry_toolbar_body:textarea'] = 'serendipity[plugin]['.$inspectConfig['config_item'].']';
-            echo "            <div class=\"hook_buttons\">\n\n"; // append inlined
-
-            serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry); // add hooked buttons
-
-            echo "\n            </div>\n\n";
-            echo "        </div>\n"; // close the plain_editor box
 ?>
-
+                <div class="hook_buttons">
+<?php
+            serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry); // add hooked buttons
+?>
+                </div>
+            </div>
         </div><!-- form_editor end -->
 
 <?php
@@ -254,19 +253,20 @@ class icText extends inspectConfig
         </div>
 
         <div class="form_field clear plain_editor">
-
+            <div class="hook_buttons">
 <?php
-            echo "            <div class=\"hook_buttons\">\n"; // append inlined
-
             serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry);
-
-            echo "            </div>\n\n";
-            echo "        </div>\n"; // close the plain_editor box
+?>
+            </div>
+        </div>
+<?php
         }
 ?>
 
         <div class="form_field clear">
-            <textarea id="nuggets<?php echo $inspectConfig['elcount']; ?>" class="direction_<?php echo $inspectConfig['lang_direction']; ?>"<?php echo $tdimension; ?> name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]"><?php echo $inspectConfig['hvalue']; ?></textarea>
+            <textarea id="nuggets<?php echo $inspectConfig['elcount']; ?>" class="direction_<?php echo $inspectConfig['lang_direction']; ?>"<?php echo $tdimension; ?> name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]">
+<?php echo $inspectConfig['hvalue']; ?>
+            </textarea>
         </div>
 
 <?php
