@@ -18,11 +18,11 @@ class serendipity_event_mycalendar extends serendipity_event
         $propbag->add('description',   PLUGIN_MYCALENDAR_DESC);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
 
-        $propbag->add('version',       '0.22');
+        $propbag->add('version',       '0.23');
         $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -374,10 +374,7 @@ class serendipity_event_mycalendar extends serendipity_event
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'backend_sidebar_admin_appearance':
-?>
-                    <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=mycalendar"><?php echo PLUGIN_MYCALENDAR_TITLE; ?></a></li>
-<?php
-
+                    echo '                        <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=mycalendar">' . PLUGIN_MYCALENDAR_TITLE . "</a></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_mycalendar':

@@ -14,11 +14,11 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_MYCALENDAR_SIDE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Ian Styx');
-        $propbag->add('version',       '0.15');
+        $propbag->add('version',       '0.16');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'smarty'      => '3.1',
+            'php'         => '7.4'
         ));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
         $propbag->add('configuration', array('title', 'items', 'datefm', 'datefm2', 'showtime', 'autoprune', 'countdown', 'skipfirst', 'rss'));
@@ -124,7 +124,8 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
             $filter = "WHERE eventdate2 > " . $timeout;
         }
 
-        $items = serendipity_db_query("SELECT * from {$serendipity['dbPrefix']}mycalendar " . $filter . " ORDER BY eventdate LIMIT " . $this->get_config('items', 5));
+        $q = "SELECT * from {$serendipity['dbPrefix']}mycalendar " . $filter . " ORDER BY eventdate LIMIT " . $this->get_config('items', 5);
+        $items = serendipity_db_query($q, false, "both", false, false, false, true); // do not error or throw exception if not installed
         if (!is_array($items)) {
             return true;
         }
