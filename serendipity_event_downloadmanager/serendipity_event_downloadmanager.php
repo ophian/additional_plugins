@@ -38,7 +38,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '7.0.0'
         ));
 
-        $propbag->add('version',       '1.61');
+        $propbag->add('version',       '1.62');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1946,7 +1946,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     if (!serendipity_userLoggedIn() && $_SESSION['serendipityAuthedUser'] !== true && $_SESSION['serendipityUserlevel'] != '255') {
                         break;
                     }
-                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager">' . PLUGIN_DOWNLOADMANAGER_TITLE . '</a></li>'."\n";
+                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager">' . PLUGIN_DOWNLOADMANAGER_TITLE . "</a></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_downloadmanager':
