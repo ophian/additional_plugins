@@ -56,7 +56,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '4.1.3');
+        $propbag->add('version',      '4.1.5');
         $propbag->add('requirements', array(
                         'serendipity' => '2.0',
                         'smarty'      => '3.1',
@@ -1410,7 +1410,7 @@ class serendipity_event_guestbook extends serendipity_event
                     if (!$access_granted) {
                         break;
                     }
-                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook">' . PLUGIN_GUESTBOOK_ADMIN_NAME . '</a></li>'."\n";
+                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=guestbook">' . PLUGIN_GUESTBOOK_ADMIN_NAME . "</a></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_guestbook':
