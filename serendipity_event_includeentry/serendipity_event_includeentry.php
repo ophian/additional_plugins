@@ -32,12 +32,12 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.30');
+        $propbag->add('version',       '2.31');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+            'php'         => '7.4.0'
         ));
         $propbag->add('page_configuration', $this->config);
         $propbag->add('event_hooks',   array(
@@ -739,7 +739,7 @@ class serendipity_event_includeentry extends serendipity_event
                         break;
                     }
                     $this->check();
-                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticblocks">' . PLUGIN_EVENT_INCLUDEENTRY_BLOCKS . '</a></li>'."\n";
+                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticblocks">' . PLUGIN_EVENT_INCLUDEENTRY_BLOCKS . "</a></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_staticblocks':
