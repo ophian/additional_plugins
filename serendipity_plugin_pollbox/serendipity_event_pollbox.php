@@ -28,11 +28,11 @@ class serendipity_event_pollbox extends serendipity_event
         $propbag->add('configuration', array('permalink', "articleformat", "pagetitle", "articleformattitle"));
         $propbag->add('author', 'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('groups', array('STATISTICS'));
-        $propbag->add('version', '2.25');
+        $propbag->add('version', '2.26');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
-            'php'         => '7.0'
+            'php'         => '7.4'
         ));
         $propbag->add('stackable', false);
         $propbag->add('legal',  array(
@@ -423,7 +423,7 @@ class serendipity_event_pollbox extends serendipity_event
 
                 case 'backend_sidebar_entries':
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
-                        echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=poll">' . PLUGIN_POLL_TITLE . '</a></li>';
+                        echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=poll">' . PLUGIN_POLL_TITLE . "</a></li>\n";
                     }
                     break;
 
