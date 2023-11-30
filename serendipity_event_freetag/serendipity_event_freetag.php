@@ -1003,7 +1003,7 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries':
-                    echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags">' . PLUGIN_EVENT_FREETAG_MANAGETAGS . '</a></li>'."\n";
+                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags">' . PLUGIN_EVENT_FREETAG_MANAGETAGS . "</a></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_managetags':
