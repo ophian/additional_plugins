@@ -1,3 +1,7 @@
+3.34:
+-----
+ * Raise requirements
+
 3.33:
 -----
  * Implement correct performConfig() method usage

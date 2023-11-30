@@ -29,9 +29,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.8',
-            'php'         => '5.3.0'
+            'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '3.33');
+        $propbag->add('version',       '3.34');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
