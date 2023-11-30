@@ -18,9 +18,9 @@ class serendipity_event_mymood extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
-            'php'         => '7.0'
+            'php'         => '7.4'
         ));
-        $propbag->add('version',       '0.16');
+        $propbag->add('version',       '0.17');
         $propbag->add('author',       'Brett Profitt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -602,9 +602,7 @@ class serendipity_event_mymood extends serendipity_event
         if (isset($hooks[$event])) {
             switch($event) {
                 case 'backend_sidebar_entries':
-?>
-                    <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=mymood"><?php echo PLUGIN_MYMOOD_TITLE; ?></a></li>
-<?php
+                    echo '                        <li> class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=mymood">' . PLUGIN_MYMOOD_TITLE . "</a></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_mymood':
