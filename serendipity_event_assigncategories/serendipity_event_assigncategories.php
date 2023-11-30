@@ -18,7 +18,7 @@ class serendipity_event_assigncategories extends serendipity_event
         $propbag->add('description',   PLUGIN_ASSIGNCATEGORIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.7');
+        $propbag->add('version',       '1.8');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '7.0'
@@ -41,7 +41,7 @@ class serendipity_event_assigncategories extends serendipity_event
             switch($event) {
                 case 'backend_sidebar_entries':
                     if ($this->check()) {
-                        echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=assigncategories">' . PLUGIN_ASSIGNCATEGORIES_NAME . '</a></li>';
+                        echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=assigncategories">' . PLUGIN_ASSIGNCATEGORIES_NAME . "</a></li>\n";
                     }
                     break;
 
