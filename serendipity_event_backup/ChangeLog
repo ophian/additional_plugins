@@ -1,3 +1,7 @@
+1.2.3:
+-----
+ * Improve and fix markup indents for Serendipity Styx 4.3.0
+
 1.2.2:
 -----
  * Fix for PHP 8.2 explicit type of string in trim()

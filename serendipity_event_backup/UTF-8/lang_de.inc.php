@@ -44,7 +44,7 @@
 @define("PLUGIN_BACKUP_DEL_OLD_BACKUPS", "Alte Backups löschen");
 @define("PLUGIN_BACKUP_ACTIVATE_AUTO_DELETE", "Automatisches Löschen alter Backups aktivieren");
 @define("PLUGIN_BACKUP_OLDER_THAN", "Backups älter als");
-@define("PLUGIN_BACKUP_WILL_BE_DELETED", "werden gelöscht werden");
+@define("PLUGIN_BACKUP_WILL_BE_DELETED", " werden gelöscht");
 @define("PLUGIN_BACKUP_FILENAME", "Dateiname");
 @define("PLUGIN_BACKUP_FILESIZE", "Dateigröße");
 @define("PLUGIN_BACKUP_DATE", "Datum");
