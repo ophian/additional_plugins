@@ -56,7 +56,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '4.1.5');
+        $propbag->add('version',      '4.1.6');
         $propbag->add('requirements', array(
                         'serendipity' => '2.0',
                         'smarty'      => '3.1',
