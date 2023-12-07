@@ -1,3 +1,7 @@
+4.2.1:
+------
+ * Fix backend sidebar link markup indent for Styx 4.3.1
+
 4.2.0:
 ------
  * Fixed and improved the visitors_count_firstday (by) UNIX TIMESTAMP query for SQLite and PostgreSQL
