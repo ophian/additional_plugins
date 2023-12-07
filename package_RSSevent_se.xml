@@ -14,7 +14,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Displays information for authors on the administration panel&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 30 Nov 2023 15:05:10 +0100</pubDate>
+<pubDate>Wed, 06 Dec 2023 12:06:01 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -248,7 +248,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_dbclean&lt;br /&gt;DBClean&lt;/b&gt;&lt;br /&gt;Cleanup database&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 14 Aug 2022 09:39:28 +0200</pubDate>
+<pubDate>Thu, 07 Dec 2023 12:51:51 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_dbclean</guid>
 </item>
 <item>
@@ -833,7 +833,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Hide/delete entries after a specific timespan&lt;/b&gt;&lt;br /&gt;Hides all entries which are older than a specified age, so that they are only visible for registered users/authors. And similar more.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 17 Jun 2022 10:39:01 +0200</pubDate>
+<pubDate>Wed, 06 Dec 2023 19:01:01 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistics&lt;/b&gt;&lt;br /&gt;Adds a link to interesting statistics in your entries panel, including a visitors counter&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 27 Nov 2023 09:57:20 +0100</pubDate>
+<pubDate>Wed, 06 Dec 2023 18:51:39 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
