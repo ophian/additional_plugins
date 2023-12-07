@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Alexander &#039;dma147&#039; Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Discussion forum / phpBB comment mirroring&lt;/b&gt;&lt;br /&gt;Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 06 Dec 2021 20:05:58 +0100</pubDate>
+<pubDate>Thu, 07 Dec 2023 13:38:13 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistieken&lt;/b&gt;&lt;br /&gt;Voegt een link toe aan het controlepaneel waar je interessante statistieken kunt lezen&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 06 Dec 2023 18:51:39 +0100</pubDate>
+<pubDate>Thu, 07 Dec 2023 16:18:54 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1229,7 +1229,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;User Profiles&lt;/b&gt;&lt;br /&gt;Shows simple user profiles and allows to embed author pictures.&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Mon, 27 Nov 2023 09:57:20 +0100</pubDate>
+<pubDate>Thu, 07 Dec 2023 16:11:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
