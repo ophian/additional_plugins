@@ -93,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.3.7');
+        $propbag->add('version', '1.3.8');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -748,7 +748,7 @@ section > .serendipityAuthorProfile,
                 case 'backend_sidebar_users':// Up from Styx 3.6
                     if (version_compare($serendipity['version'], '3.6', '>=')) {
 ?>
-<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=profiles"><?php echo PLUGIN_EVENT_USERPROFILES_TITLE ?></a></li>
+                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=profiles"><?php echo PLUGIN_EVENT_USERPROFILES_TITLE ?></a></li>
 <?php
                     }
                     break;
