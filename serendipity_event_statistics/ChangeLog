@@ -1,3 +1,7 @@
+4.3.1:
+------
+ * Fix an old [ en ] lang typo
+
 4.3.0:
 ------
  * Fix inits for fresh install
