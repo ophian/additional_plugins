@@ -3,6 +3,12 @@
 * 
 
 
+2.2.0:
+-----
+ * Improve (Smarty) markup indent consistency for Styx 4.3.0+
+ * Remove some outdated old "mysql" type conditions
+ * Refactored for deprecated <big> HTML element
+
 2.1.4:
 -----
  * Improve and fix for strict_types

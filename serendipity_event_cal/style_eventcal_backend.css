@@ -103,6 +103,9 @@ img.backend_attention { width:22px; height:22px; border:0px none; padding-right:
     color: #F5DEB3; /* Wheat */
     padding: 6px;
 }
+.eventcal_bigger {
+    font-size: larger;
+}
 
 
 /*******************************/

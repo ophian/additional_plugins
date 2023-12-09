@@ -574,6 +574,9 @@ input.eventcal_appform_move {
     border: 1px solid #999;
     background-color: #F0F0F0;
 }
+.eventcal_bigger {
+    font-size: larger;
+}
 .eventcal_bg {
     padding: 6px;
     border: 1px solid #333;
