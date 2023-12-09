@@ -1,4 +1,4 @@
-{* file: plugin_eventcal_cal.tpl - 2023-12-08, Ian Styx *}
+{* file: plugin_eventcal_cal.tpl - 2023-12-09, Ian Styx *}
 {if NOT empty($is_eventcal_articleformat) AND $is_eventcal_articleformat == true}
 
 <div class="serendipity_Entry_Date">
@@ -145,7 +145,7 @@
 {if empty($is_eventcal_cal_admin_clear) OR $is_eventcal_cal_admin_clear != true}
             <tr>
                 <td>
-                {if $plugin_eventcal_cal_sed}
+{if $plugin_eventcal_cal_sed}
                     <!--- TABLE eventcal START -->
                     <table class="innereventborder">
                         <thead>
@@ -177,15 +177,15 @@
                                         <td class="eventcal_{$day.col} eventcal_rgt">{$day.label|default:'&nbsp;'}</td>
                                     </tr>
                                     <tr>
-                                        <td class="eventcal_{$day.col} eventcal_lft" colspan="2">{if empty($day.arrdata)}&nbsp;{/if}
+                                        <td class="eventcal_{$day.col} eventcal_lft" colspan="2">{if empty($day.arrdata)}&nbsp;</td>{/if}
 {if isset($day.arrdata) AND is_array($day.arrdata)}
 {foreach from=$day.arrdata item="r"}{* start=1 *}
                                             <span{if $r.tipo == 1 || $r.tipo == 6} class="mono{elseif $r.tipo == 2} class="multi{elseif $r.tipo == 3} class="recm{elseif $r.tipo == 4 || $r.tipo == 5} class="recw{/if} eventtype">
                                                 <a class="small_eventcal_link" href="{$plugin_eventcal_cal_path}{$eventcal_permalink_add}calendar[a]={$r.a}&amp;calendar[ap]={$r.ap}&amp;calendar[cm]={$r.m}&amp;calendar[cy]={$r.y}&amp;calendar[ev]={$r.id}" title="open event entry {$r.sdesc}"><b class="eventcal_tab">{$r.sdesc}</b></a><br>
                                             </span>
 {/foreach}
-{/if}
                                         </td>
+{/if}
                                     </tr>
                                     </tbody>
                                 </table>
