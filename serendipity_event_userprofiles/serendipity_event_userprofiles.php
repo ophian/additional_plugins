@@ -93,7 +93,7 @@ class serendipity_event_userprofiles extends serendipity_event
             'genpage'                                         => true
         ));
         $propbag->add('author', 'Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx');
-        $propbag->add('version', '1.3.8');
+        $propbag->add('version', '1.3.9');
         $propbag->add('requirements', array(
             'serendipity' => '3.5',
             'smarty'      => '3.1.0',
@@ -258,7 +258,7 @@ class serendipity_event_userprofiles extends serendipity_event
         echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display">'."\n";
         echo '    <input type="hidden" name="serendipity[adminAction]" value="profiles">'."\n";
         echo "    <div class='form_select'>\n";
-        echo '        <label for="serendipity_profile_user">' . USER . '</label>';
+        echo '        <label for="serendipity_profile_user">' . USER . '</label>'."\n";
         echo '        <select id="serendipity_profile_user" name="serendipity[profileUser]">'."\n";
         foreach($avail_users AS $user) {
             echo '          <option value="' . $user['authorid'] . '" ' . (((empty($serendipity['POST']['profileUser']) && ($serendipity['authorid'] == $user['authorid'])) || (isset($serendipity['POST']['profileUser']) && $serendipity['POST']['profileUser'] == $user['authorid'])) ? 'selected="selected"' : '') . '>' . serendipity_specialchars($user['realname']) . '</option>'."\n";
@@ -483,7 +483,6 @@ class serendipity_event_userprofiles extends serendipity_event
             $this->showCol($property, $info, $user);
         }
 ?>
-
         </table>
     </div>
     <input type="submit" name="serendipity[submitProfile]" value="<?=SAVE?>">
@@ -513,7 +512,6 @@ class serendipity_event_userprofiles extends serendipity_event
             $this->showCol($property, $info, $user);
         }
 ?>
-
         </table>
     </div>
     <input type="submit" name="serendipity[submitProfileOptions]" value="<?=SAVE?>">
