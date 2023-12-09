@@ -1206,19 +1206,22 @@ class serendipity_event_statistics extends serendipity_event
         list($year, $month, $day) = explode('-', $day);
         // for first command use with serendipity_db_get_byUnixTimestamp on Styx 5
         if ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
-            $cvt2UT = "EXTRACT(EPOCH FROM TO_DATE(CONCAT(year, '-', month, '-', day), 'YYYY-MM-DD'))";
+            $cvtDateToUTS = "EXTRACT(EPOCH FROM TO_DATE(CONCAT(year, '-', month, '-', day), 'YYYY-MM-DD'))";
         } elseif ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
             // SQLite 3.38.0 (released 22 Feb 2022)
-            //      - deprecated the STRFTIME function for UNIXEPOCH(). The STRFTIME() is kept for some time for backwards compatibility.
-            //      - renamed the PRINTF() function to FORMAT(). The original PRINTF() name is retained as an alias for backwards compatibility.
-            #$cvt2UT = "UNIXEPOCH((year || '-' || FORMAT('%02d', '0'+month) || '-' || FORMAT('%02d', '0'+day)))"; Up from Styx 5 !!
-            // The concatenation SQLite removes the leading 0 by design.
-            // With this workaround if the digit is only 1-9 the prefix added leading zero '0'+ is kept else the last 2-digits will be chosen.
-            $cvt2UT = "STRFTIME('%s', (year || '-' || PRINTF('%02d', '0'+month) || '-' || PRINTF('%02d', '0'+day)))";
+            //      - deprecated the STRFTIME function for UNIXEPOCH().
+            //          The STRFTIME() is kept for some time for backwards compatibility.
+            //      - renamed the PRINTF() function to FORMAT().
+            //          The original PRINTF() name is retained as an alias for backwards compatibility.
+            // The concatenation and/or SQLite removes the leading 0 by design.
+            // With this workaround, when the digit is a single num 1-9,
+            // the prefix added leading zero of '0'+ is kept, else the last 2-digits will be chosen.
+            #$cvtDateToUTS = "UNIXEPOCH((year || '-' || FORMAT('%02d', '0'+month) || '-' || FORMAT('%02d', '0'+day)))"; Up from Styx 5 !!
+            $cvtDateToUTS = "STRFTIME('%s', (year || '-' || PRINTF('%02d', '0'+month) || '-' || PRINTF('%02d', '0'+day)))";
         } else {
-            $cvt2UT = "UNIX_TIMESTAMP(STR_TO_DATE(CONCAT(year,'-',month,'-',day), '%Y-%m-%d'))";
+            $cvtDateToUTS = "UNIX_TIMESTAMP(STR_TO_DATE(CONCAT(year,'-',month,'-',day), '%Y-%m-%d'))";
         }
-        $visitors_count_firstday = serendipity_db_query("SELECT $cvt2UT AS tdate FROM {$serendipity['dbPrefix']}visitors_count ORDER BY year, month, day ASC LIMIT 1", true);
+        $visitors_count_firstday = serendipity_db_query("SELECT $cvtDateToUTS AS tdate FROM {$serendipity['dbPrefix']}visitors_count ORDER BY year, month, day ASC LIMIT 1", true);
         $visitors_count_today    = serendipity_db_query("SELECT visits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year' AND month = '$month' AND day = '$day'", true);
         $visitors_count_curryear = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year'", true);
         $visitors_count_lastyear = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '".($year-1)."'", true);
