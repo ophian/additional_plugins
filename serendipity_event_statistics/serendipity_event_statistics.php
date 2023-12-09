@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.2.1');
+        $propbag->add('version',       '4.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -1143,7 +1143,7 @@ class serendipity_event_statistics extends serendipity_event
             $myDay = ($i < 10) ? "0" . $i : $i;
             $sqlfire = $sql . " = '$myDay' AND year = '$year' AND month = '$month'";
             $res = serendipity_db_query($sqlfire, true);
-            $container[$i] = $res['dailyvisit'];
+            $container[$i] = $res['dailyvisit'] ?? null;
         }
         return $container;
     }
@@ -1160,7 +1160,7 @@ class serendipity_event_statistics extends serendipity_event
         foreach ($this->statistics_rollingYear() AS $month) {
             $sqlfire = $sql . " = '$month[0]' AND year = '$month[1]'";
             $res = serendipity_db_query($sqlfire, true);
-            $container[$i] = [$month[0], $res['monthlyvisit']];
+            $container[$i] = [$month[0], $res['monthlyvisit'] ?? null];
             $i++;
         }
         return $container;
@@ -1245,7 +1245,7 @@ class serendipity_event_statistics extends serendipity_event
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISCURYR; ?></dt>
             <dd><?php echo $visitors_count_curryear[0]; ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR; ?></dt>
-            <dd><?php echo $visitors_count_lastyear[0]; ?></dd>
+            <dd><?php echo $visitors_count_lastyear[0] ?? '-'; ?></dd>
             <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
             <dd><?php echo $visitors_count_all[0]; ?></dd>
             <dd>-------------------------------------
@@ -1259,7 +1259,7 @@ class serendipity_event_statistics extends serendipity_event
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR; ?></dt>
             <dd><?php echo $hits_count_curryear[0]; ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR; ?></dt>
-            <dd><?php echo $hits_count_lastyear[0]; ?></dd>
+            <dd><?php echo $hits_count_lastyear[0] ?? '-'; ?></dd>
             <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
             <dd><?php echo $hits_count_all[0]; ?></dd>
         </dl>

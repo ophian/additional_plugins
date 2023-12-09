@@ -1,3 +1,7 @@
+4.3.0:
+------
+ * Fix inits for fresh install
+
 4.2.1:
 ------
  * Fix backend sidebar link markup indent for Styx 4.3.1
