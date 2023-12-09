@@ -3,6 +3,10 @@
 * 
 
 
+2.2.1:
+-----
+ * Improve more markup indents for Styx 4.3.0+
+
 2.2.0:
 -----
  * Improve (Smarty) markup indent consistency for Styx 4.3.0+
