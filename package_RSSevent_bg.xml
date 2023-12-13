@@ -833,7 +833,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Скриване на статии от нерегистрирани посетители на блога&lt;/b&gt;&lt;br /&gt;Скрива всички статии, които са по-стари от определена възраст, така че те да бъдат виждани само от регистирани посетители и автори&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 06 Dec 2023 19:01:01 +0100</pubDate>
+<pubDate>Wed, 13 Dec 2023 13:28:58 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Статистика&lt;/b&gt;&lt;br /&gt;Добавя връзка към интересни статистически данни в страницата на постингите, включително и брояч на посетителите&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sat, 09 Dec 2023 13:05:13 +0100</pubDate>
+<pubDate>Wed, 13 Dec 2023 13:39:06 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
