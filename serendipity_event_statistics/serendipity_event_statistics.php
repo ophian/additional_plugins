@@ -1204,7 +1204,7 @@ class serendipity_event_statistics extends serendipity_event
         // ---------------QUERIES for Viewing statistics ----------------------------------------------
         $day = date('Y-m-d');
         list($year, $month, $day) = explode('-', $day);
-        // for first command use with serendipity_db_get_byUnixTimestamp on Styx 5
+        // for first command use with serendipity_db_get_unixTimestamp() on Styx 5
         if ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
             $cvtDateToUTS = "EXTRACT(EPOCH FROM TO_DATE(CONCAT(year, '-', month, '-', day), 'YYYY-MM-DD'))";
         } elseif ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
