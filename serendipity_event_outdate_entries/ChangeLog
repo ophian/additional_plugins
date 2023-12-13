@@ -1,6 +1,10 @@
+2.1.1:
+------
+ * Fix 2.1.0 for PostgreSQL
+
 2.1.0:
 ------
- * Fix 1.6 for differently used timestamp commands by db layers
+ * Fix 1.6 for differently used UNIX timestamp commands by db layers
 
 2.0.0:
 ------
