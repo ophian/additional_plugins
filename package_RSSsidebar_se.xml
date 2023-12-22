@@ -32,7 +32,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Visa artiklar med etiketter&lt;/b&gt;&lt;br /&gt;Visar en lista med existerande etiketter på artiklar&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 03 Jan 2021 13:55:37 +0100</pubDate>
+<pubDate>Mon, 18 Dec 2023 16:48:08 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_freetag</guid>
 </item>
 <item>
@@ -122,7 +122,7 @@
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;Serendipity Authors&lt;/b&gt;&lt;br /&gt;Shows a list for all Authors&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 25 Aug 2021 17:36:54 +0200</pubDate>
+<pubDate>Sat, 16 Dec 2023 19:23:27 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
 </item>
 <item>
@@ -281,7 +281,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to access a Coppermine database directory (MySQL only), or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 03 Jul 2022 13:50:53 +0200</pubDate>
+<pubDate>Fri, 22 Dec 2023 11:23:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
