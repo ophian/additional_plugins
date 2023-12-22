@@ -812,17 +812,17 @@ EOS;
         $this->close_page();
 
         // this is working for me.... is it for you?
-        if (die('<script type="text/javascript">alert("' . PLUGIN_AUTOUPD_MSG_DUNNE_JS . '"); window.location = "' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade";</script>'."\n    </body>\n</html>")) {
+        if (die('<script type="text/javascript">alert("' . PLUGIN_AUTOUPD_MSG_DUNNE_JS . '"); window.location = "' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php";</script>'."\n    </body>\n</html>")) {
             return;
         } else {
             if (!headers_sent()) {
-                if (header('Location: http://' . $_SERVER['HTTP_HOST'] . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade')) exit;
+                if (header('Location: http://' . $_SERVER['HTTP_HOST'] . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php')) exit;
             } else {
                 echo '<script type="text/javascript">';
-                echo '    window.location.href="' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade' . '"';
+                echo '    window.location.href="' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php' . '"';
                 echo '</script>'."\n";
                 echo '<noscript>';
-                echo '    <meta http-equiv="refresh" content="0;url=' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade' . '">';
+                echo '    <meta http-equiv="refresh" content="0;url=' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php' . '">';
                 echo '</noscript>';
                 exit;
             }
