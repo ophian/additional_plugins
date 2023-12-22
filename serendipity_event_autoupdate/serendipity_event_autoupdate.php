@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.9.7');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -326,7 +326,7 @@ EOS;
                                             sleep(2);
                                             echo '<script type="text/javascript"> var el = document.getElementById("loader"); el.style.display = "none"; </script>';
                                             sleep(2);
-                                            $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_FLUSH_INST_GO, $serendipity['serendipityHTTPPath']) . '</p>');
+                                            $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_FLUSH_INST_GO, $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade') . '</p>');
                                             sleep(1);
                                             $this->show_message('', 'finish'); // send a last fake entry for the document.documentElement.scrollTop = getDocHeight()
                                             #$this->doUpdate(); // not used anymore for the 1.5.0 rewrite, maybe later...
@@ -812,17 +812,17 @@ EOS;
         $this->close_page();
 
         // this is working for me.... is it for you?
-        if (die('<script type="text/javascript">alert("' . PLUGIN_AUTOUPD_MSG_DUNNE_JS . '"); window.location = "' . $serendipity['serendipityHTTPPath'] . '";</script>'."\n    </body>\n</html>")) {
+        if (die('<script type="text/javascript">alert("' . PLUGIN_AUTOUPD_MSG_DUNNE_JS . '"); window.location = "' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade";</script>'."\n    </body>\n</html>")) {
             return;
         } else {
             if (!headers_sent()) {
-                if (header('Location: http://' . $_SERVER['HTTP_HOST'] . $serendipity['serendipityHTTPPath'])) exit;
+                if (header('Location: http://' . $_SERVER['HTTP_HOST'] . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade')) exit;
             } else {
                 echo '<script type="text/javascript">';
-                echo '    window.location.href="' . $serendipity['serendipityHTTPPath'] . '"';
+                echo '    window.location.href="' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade' . '"';
                 echo '</script>'."\n";
                 echo '<noscript>';
-                echo '    <meta http-equiv="refresh" content="0;url=' . $serendipity['serendipityHTTPPath'] . '">';
+                echo '    <meta http-equiv="refresh" content="0;url=' . $serendipity['serendipityHTTPPath'] . 'serendipity_admin.php?serendipity[action]=upgrade' . '">';
                 echo '</noscript>';
                 exit;
             }

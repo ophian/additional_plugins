@@ -1,3 +1,9 @@
+2.0.0:
+------
+
+ * Link to self on end-of-autoupdate page to proceed with the update,
+   since some systems did not automatically redirect to the BACKEND to finish the autoupdate UPGRADE.
+
 1.9.7:
 ------
 
