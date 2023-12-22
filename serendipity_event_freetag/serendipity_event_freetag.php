@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.32');
+        $propbag->add('version',       '5.40');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -288,7 +288,7 @@ class serendipity_event_freetag extends serendipity_event
             case 'rotacloud_tag_color':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR);
-                $propbag->add('description', '');
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR_DESC);
                 $propbag->add('default',     '3E5F81');
                 break;
 
@@ -535,7 +535,7 @@ class serendipity_event_freetag extends serendipity_event
             if (empty($tag)) {
                 continue;
             }
-            $links[] = "\n".'    <a href="' . $taglink . self::makeURLTag($tag) . '" title="' . serendipity_specialchars($tag) . '" rel="tag">' . serendipity_specialchars($tag) . '</a>';
+            $links[] = '<a href="' . $taglink . self::makeURLTag($tag) . '" title="' . serendipity_specialchars($tag) . '" rel="tag">' . serendipity_specialchars($tag) . '</a>';
         }
 
         if ($extended_smarty) {
@@ -744,20 +744,19 @@ class serendipity_event_freetag extends serendipity_event
         if ($useRotCanvas) {
 
             echo '
-                <div id="freeTagCanvas' . $key . '" class="freetag_rotacloud">
-                    <canvas id="tagCanvas' . $key . '" class="rotaCanvas" width="' . $rcTagWidth .'" height="' . round($rcTagWidth * 0.75) . '">
-                        <!--<p style="color:#222">Sorry! Your browser is too old to support this canvas element!</p>-->
-                    </canvas>
-                </div>
-                <div id="tags" style="z-index: -1; margin-top: -' . round($rcTagWidth * 0.33) . 'rem">
-                    <ul class="plainList">
-                ';// Remember: Why do we set a #tags -margin-top height here? Since it prevents an empty block in case the rotacloud could not display and this taglist is used as a fallback!
+                    <div id="freeTagCanvas' . $key . '" class="freetag_rotacloud theme_color_mode">
+                        <canvas id="tagCanvas' . $key . '" class="rotaCanvas" width="' . $rcTagWidth .'" height="' . round($rcTagWidth * 0.75) . '">
+                        </canvas>
+                    </div>
+                    <div id="tags" style="z-index: -1; position: fixed; margin-top: -' . round($rcTagWidth * 0.33) . 'rem">
+                        <ul class="plainList">
+';// Remember: Why do we set a #tags -margin-top height here? Since it prevents an empty block in case the rotacloud could not display and this taglist is used as a fallback!
 
         } elseif ($useWordCloud) {
 
             echo '
-                <div id="freetag_wordcloud' . $key . '" class="freetag_wordcloud">
-                ';
+                    <div id="freetag_wordcloud' . $key . '" class="freetag_wordcloud">
+';
 
         } else {
             echo "<ul class=\"plainList\">\n";
@@ -765,8 +764,6 @@ class serendipity_event_freetag extends serendipity_event
 
         $tagparam = '';
         $html     = '';
-
-        echo "\n ";
 
         foreach($tags AS $name => $quantity) {
             if (empty($name)) {
@@ -779,17 +776,17 @@ class serendipity_event_freetag extends serendipity_event
                 if (!$scaling) {
                     $html .= ', ';
                 } else {
-                    $html .= ' ';
+                    $html .= '';
                 }
             }
 
             // don't use with canvas cloud elements!
             if ($xml && !$useRotCanvas && !$useWordCloud) {
-                $html .= '<li class="serendipity_freeTag_xmlTagEntry"><a rel="tag" class="serendipity_xml_icon" href="' . $rsslink . urlencode($name) . '" title="' . $title . '">'.
-                         '<img alt="xml" src="' . $xmlImg . '" class="serendipity_freeTag_xmlButton"></a> ';
+                $html .= '                        <li class="serendipity_freeTag_xmlTagEntry"><a rel="tag" class="serendipity_xml_icon" href="' . $rsslink . urlencode($name) . '" title="' . $title . '">
+                            <img alt="xml" src="' . $xmlImg . '" class="serendipity_freeTag_xmlButton"></a>'."\n";
             }
             if ($useRotCanvas) {
-                $html .= '<li>';
+                $html .= "                            <li>";
             }
 
             // scaling does not work with jquery rotating Canvas
@@ -803,10 +800,10 @@ class serendipity_event_freetag extends serendipity_event
                 }
                 if ($useWordCloud) {
                     $weight = round(($fontSize / 10) * $multiply);
-                    $xmlweight = $xml ? ' style="font-size: '. $fontSize .'%; white-space: normal;"' : '';
-                    $html .= '<span class="tag_weight_' . $fontSize . '" data-weight="' . $weight . '" title="' . $title . '"'.$xmlweight.'>';
+                    $xmlweight = $xml ? ' style="font-size: '. $fontSize .'%; white-space: normal"' : '';
+                    $html .= '                        <span class="tag_weight_' . $fontSize . '" data-weight="' . $weight . '" title="' . $title . '"'.$xmlweight.'>';
                 } else {
-                    $html .= '<span class="tag tag_weight_' . $fontSize . '" style="font-size: '. $fontSize .'%; white-space: normal;">';
+                    $html .= '                        <span class="tag tag_weight_' . $fontSize . '" style="font-size: '. $fontSize .'%; white-space: normal">';
                 }
             } else {
                 $fontSize = 100;
@@ -833,51 +830,60 @@ class serendipity_event_freetag extends serendipity_event
         echo $html;
 
         if ($useRotCanvas) {
-            echo '
-                    </ul>
-                </div>
-                <script type="text/javascript">
-                    window.onload = function() {
-                        if (!jQuery.isFunction(jQuery.fn.tagcanvas) ) { return false; }
-                        if(!jQuery("#tagCanvas' . $key . '").tagcanvas({
-                                textColour: "#'.$rcTagColor.'",
-                                outlineColour: "#'.$rcTagOLColor.'",
-                                reverse: true,
-                                depth: 0.8,
-                                maxSpeed: 0.05
-                                },"tags")) {
-                            // something went wrong, hide the canvas container
-                            jQuery("#freeTagCanvas' . $key . '").hide();
-                        }
-                    };
-                </script>
-                ';
+            echo '                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                        window.onload = function() {
+                            if (!jQuery.isFunction(jQuery.fn.tagcanvas) ) { return false; }
+                            // check B53+ theme color mode
+                            let bstr = localStorage.getItem("theme");
+                            // check default pure theme color mode
+                            let mode = bstr ? bstr : sessionStorage.getItem("dark_mode");
+                            let color = (mode == "light") ? "#'.$rcTagColor.'" : "#'.$rcTagOLColor.'";
+                            let outcolor = (mode == "light") ? "#'.$rcTagOLColor.'" : "#'.$rcTagColor.'";
+                            if (!jQuery("#tagCanvas' . $key . '").tagcanvas({
+                                    textColour: color,
+                                    outlineColour: outcolor,
+                                    reverse: true,
+                                    depth: 0.8,
+                                    maxSpeed: 0.05
+                                    },"tags")) {
+                                // something went wrong, hide the canvas container
+                                jQuery("#freeTagCanvas' . $key . '").hide();
+                            }
+                        };
+                    </script>
+';
         } elseif ($useWordCloud) {
 
             $grid = ($multiply == 3) ? 3 : 9; // reverse for the grid to reduce render slowdowns with too many tags
             $grid = ($multiply == 2) ? 6 : $grid;  // with a small amount of tags grid could be set to 1 too
-            echo '
-                </div>
-                <script type="text/javascript">
-                    window.onload = function() {
-                        if (!jQuery.isFunction(jQuery.fn.awesomeCloud) ) { return false; }
-                        jQuery("#freetag_wordcloud' . $key . '").awesomeCloud({
-                            "size" : {
-                                "grid" : '.$grid.',
-                                "factor" : 0
-                            },
-                            "options" : {
-                                "color" : "random-dark",
-                                "rotationRatio" : 0.35
-                            },
-                            "font" : "\'Times New Roman\', Times, serif",
-                            "shape" : "circle"
-                        });
-                    };
-                </script>
-                ';
+            echo '                    </div>
+                    <script type="text/javascript">
+                        window.onload = function() {
+                            if (!jQuery.isFunction(jQuery.fn.awesomeCloud) ) { return false; }
+                            // check B53+ theme color mode
+                            let bstr = localStorage.getItem("theme");
+                            // check default pure theme color mode
+                            let mode = bstr ? bstr : sessionStorage.getItem("dark_mode");
+                                mode = (mode == "light") ? "random-dark" : "random-light";
+                            jQuery("#freetag_wordcloud' . $key . '").awesomeCloud({
+                                "size" : {
+                                    "grid" : '.$grid.',
+                                    "factor" : 0
+                                },
+                                "options" : {
+                                    "color" : mode,
+                                    "rotationRatio" : 0.35
+                                },
+                                "font" : "\'Times New Roman\', Times, serif",
+                                "shape" : "circle"
+                            });
+                        };
+                    </script>
+';
         } else {
-            echo "</ul>\n";
+            echo "                    </ul>\n";
         }
     }
 
@@ -1295,7 +1301,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         if (!is_array($eventData['plugin_vars']['tag'])) {
                             $this->displayTagCloud($eventData['plugin_vars']['tag']); // single url tag only
                         } else {
-                            $serendipity['smarty']->assign('freetag_tagTitle', serendipity_specialchars(is_array($this->displayTag) ? implode(', ',$this->displayTag) : $this->displayTag));
+                            $thistags = is_array($this->displayTag) ? implode(', ', $this->displayTag) : $this->displayTag;
+                            $serendipity['smarty']->assign('freetag_tagTitle', serendipity_specialchars($thistags));
                             $serendipity['smarty']->assign('freetag_isList', true); // do not show the related tags cloud markup itself!
                             echo $this->parseTemplate('plugin_freetag.tpl');
                         }
@@ -1618,7 +1625,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $tags = $this->getTagCloudTags($tag);
 
-        $serendipity['smarty']->assign('freetag_tagTitle', serendipity_specialchars(is_array($this->displayTag) ? implode(', ',$this->displayTag) : $this->displayTag));
+        // fixes entries header cloud on certain clicked $tag occurrences
+        if (!empty($tag) && $this->displayTag === false) {
+            $this->displayTag = $tag;
+        }
+        $thistags = is_array($this->displayTag) ? implode(', ', $this->displayTag) : $this->displayTag;
+        $serendipity['smarty']->assign('freetag_tagTitle', serendipity_specialchars($thistags));
 
         if (!empty($tags)) {
             $useRotCanvas = serendipity_db_bool($this->get_config('use_rotacloud', 'false'));
@@ -2803,7 +2815,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 $cleanup = serendipity_db_query($q_cleanup);
 
                 if ($cleanup === TRUE) {
-                    echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL . "</span>\n";
+                    echo '<p class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL . "</p>\n";
                 }
                 else {
                     echo '<div class="msg_error"><p><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED . '</p><strong>DB-Error:</strong> ' . $cleanup . "</div>\n";
@@ -2820,11 +2832,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Display list of found inconsistencies
                 echo "<table class=\"freetags_manage\">\n<thead>\n";
                 echo "    <tr><th>".PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG."</th><th>".PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_ENTRIES."</th></tr>\n";
-                echo "</thead><tbody>\n";
+                echo "</thead>\n<tbody>\n";
                 foreach ($cleanup_tags AS $tag => $entries) {
                     echo "<tr><td>$tag</td><td>".implode(', ', $entries)."</tr>\n";
                 }
-                echo "</tbody></table>\n";
+                echo "</tbody>\n</table>\n";
 
                 // Display submit form to start cleanup process
                 echo '<form action="" method="GET">'."\n";
@@ -2838,7 +2850,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         elseif ($mappings === TRUE) {
             // No inconsistencies found
-            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING . "</span>\n";
+            echo '<p class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING . "</p>\n";
         }
         else {
             // An error occurs while searching for inconsistencies

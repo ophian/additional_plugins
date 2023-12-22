@@ -172,7 +172,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             case 'rotacloud_tag_color':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR);
-                $propbag->add('description', '');
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR_DESC);
                 $propbag->add('default',     '3E5F81');
                 break;
 
