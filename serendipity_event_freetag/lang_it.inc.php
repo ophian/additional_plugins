@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Consente il libero tagging dei post');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Inserisci i tag. I tag diversi vanno separati con la virgola (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tags: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Post con tag %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Post con tag <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tag simili a %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Non ci sono tag associati.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Tutti i tag');

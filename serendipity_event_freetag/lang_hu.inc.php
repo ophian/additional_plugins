@@ -9,11 +9,11 @@
 //
 //  serendipity_event_freetag.php
 //
-@define('PLUGIN_EVENT_FREETAG_TITLE', 'Bejegyzések címkézése');
+@define('PLUGIN_EVENT_FREETAG_TITLE', 'Ingyenes cikk címkék');
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Címkék megadását teszi lehetõvé tetszõleges kombinációban');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Adj meg tetszõleges számú címkét, vesszõvel (,) elválasztva');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Címkék: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Bejegyzések %s címkével');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Cikk címkével: <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', '%s címke kapcsolódó címkéi');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED','Nincsenek kapcsolódó címkék.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Összes címke');

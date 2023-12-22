@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Umożliwia dowolne tagowanie wpisów');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Wprowadź dowolne pasujące tagi. Rozdzielaj tagi przecinkami (,).');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tagi dla tego wpisu: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Wpisy otagowane jako %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Wpisy otagowane jako <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tagi powiązane z tagiem %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Brak powiązanych tagów.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Wszystkie zdefiniowane tagi');

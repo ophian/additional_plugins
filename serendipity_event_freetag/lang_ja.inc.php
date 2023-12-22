@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'エントリーの自由なタグを許可します。');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'いくつかのタグをエントリーに適用します。カンマ(「,」)で複数のタグを分割します。');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'このエントリーに定義されたタグ: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', '「%s」としてタグ付けされたエントリー');
+@define('PLUGIN_EVENT_FREETAG_USING', '「<span class="freetag_current">%s</span>」としてタグ付けされたエントリー');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'タグ「%s」に関連したタグ');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED','関連したタグはありません。');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'すべての定義済みタグ');

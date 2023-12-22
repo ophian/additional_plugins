@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Позволява свободно маркиране на статиите');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Въведете маркери, подходящи за тази статия. Разделете маркерите със запетайка (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Маркери, дефинирани към тази статия: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Статии, маркирани с \'%s\'');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Статии, маркирани с <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Маркери, свързани с маркер \'%s\'');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED','Няма свързани маркери.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Всички дефинирани маркери');
