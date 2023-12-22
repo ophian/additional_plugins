@@ -698,7 +698,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 shuffle($jsPropertiesKeys);
                 $jsProperties = array_merge(array_flip($jsPropertiesKeys) , $jsProperties);
 
-                echo '<script>var spamBeeData = function() { var ' . $spamBeeVar . ' = {};';
+                echo '    <script>var spamBeeData = function() { var ' . $spamBeeVar . ' = {};';
 
                 $jsVars       = array();
                 $existingKeys = array($spamBeeVar);
@@ -722,10 +722,10 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 }
 
                 echo 'return ' . $spamBeeVar . '; }();';
-                echo "</script>\n";
+                echo "    </script>\n";
             }
 
-            echo '<script src="' . $path . 'serendipity_event_spamblock_bee.js"></script>' . "\n";
+            echo '    <script src="' . $path . 'serendipity_event_spamblock_bee.js"></script>' . "\n";
         }
     }
 
