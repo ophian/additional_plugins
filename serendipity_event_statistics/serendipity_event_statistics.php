@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.1.0');
+        $propbag->add('version',       '4.4.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -155,6 +155,10 @@ class serendipity_event_statistics extends serendipity_event
                             $tableChecker = [];
                         }
                     }
+                    // No Exception error? Check for boolean return too on case where tables are installed but haven't seen a single visitor yet
+                    if (false === $tableChecker) {
+                        $tableChecker = [];
+                    }
                     if (isset($tableChecker) && !is_array($tableChecker)) {
                         $this->createTables();
                     }
@@ -187,7 +191,7 @@ class serendipity_event_statistics extends serendipity_event
 
                         // avoiding banned browsers
                         if ($this->get_config('banned_bots') == 'yes') {
-                            // excludelist spider/botagents
+                            // exclude-list spider/botagents
                             /**
                              * # MIT License
                              * https://github.com/atmire/COUNTER-Robots/
@@ -559,6 +563,7 @@ class serendipity_event_statistics extends serendipity_event
 .stats_imagecell, .stats_imagecell img {
     vertical-align: bottom;
 }
+.stats_imagecell.stats_day > img,
 .stats_imagecell > span > img {
   width: 4px;
 }
@@ -616,6 +621,8 @@ class serendipity_event_statistics extends serendipity_event
     margin-left: 2em;
 }
 @media only screen and (min-width: 550px) {
+    .stats_imagecell.stats_day > img {
+      width: 8px; }
     .stats_imagecell > span > img {
       width: 8px;
       width: max-content; }
@@ -643,7 +650,7 @@ class serendipity_event_statistics extends serendipity_event
 
                 case 'backend_sidebar_admin_appearance':
 ?>
-<li><a id="#plugin_stats" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=statistics"><?php echo PLUGIN_EVENT_STATISTICS_NAME; ?></a></li>
+                        <li><a id="plugin_stats" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=statistics"><?php echo PLUGIN_EVENT_STATISTICS_NAME; ?></a></li>
 <?php
                     break;
 
@@ -1143,7 +1150,7 @@ class serendipity_event_statistics extends serendipity_event
             $myDay = ($i < 10) ? "0" . $i : $i;
             $sqlfire = $sql . " = '$myDay' AND year = '$year' AND month = '$month'";
             $res = serendipity_db_query($sqlfire, true);
-            $container[$i] = $res['dailyvisit'];
+            $container[$i] = $res['dailyvisit'] ?? null;
         }
         return $container;
     }
@@ -1160,7 +1167,7 @@ class serendipity_event_statistics extends serendipity_event
         foreach ($this->statistics_rollingYear() AS $month) {
             $sqlfire = $sql . " = '$month[0]' AND year = '$month[1]'";
             $res = serendipity_db_query($sqlfire, true);
-            $container[$i] = [$month[0], $res['monthlyvisit']];
+            $container[$i] = [$month[0], $res['monthlyvisit'] ?? null];
             $i++;
         }
         return $container;
@@ -1175,15 +1182,6 @@ class serendipity_event_statistics extends serendipity_event
 
         $todaY = (date('Y')-1).'-'.date('m-d');
         serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}visitors WHERE day < '$todaY'", true);
-    }
-
-    /**
-     * Helper method to get the percentage of the current rolling year highest MAX var
-     * against the MAX var of the comparison year.
-     */
-    function percent($num, $total)
-    {
-        return number_format((100.0*$num)/$total, 2);
     }
 
     /**
@@ -1204,8 +1202,24 @@ class serendipity_event_statistics extends serendipity_event
         // ---------------QUERIES for Viewing statistics ----------------------------------------------
         $day = date('Y-m-d');
         list($year, $month, $day) = explode('-', $day);
-
-        $visitors_count_firstday = serendipity_db_query("SELECT UNIX_TIMESTAMP(STR_TO_DATE(CONCAT(year,'-',month,'-',day), '%Y-%m-%d')) AS tdate FROM {$serendipity['dbPrefix']}visitors_count ORDER BY year, month, day ASC LIMIT 1", true);
+        // for first command use with serendipity_db_get_unixTimestamp() on Styx 5
+        if ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
+            $cvtDateToUTS = "EXTRACT(EPOCH FROM TO_DATE(CONCAT(year, '-', month, '-', day), 'YYYY-MM-DD'))";
+        } elseif ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
+            // SQLite 3.38.0 (released 22 Feb 2022)
+            //      - deprecated the STRFTIME function for UNIXEPOCH().
+            //          The STRFTIME() is kept for some time for backwards compatibility.
+            //      - renamed the PRINTF() function to FORMAT().
+            //          The original PRINTF() name is retained as an alias for backwards compatibility.
+            // The concatenation and/or SQLite removes the leading 0 by design.
+            // With this workaround, when the digit is a single num 1-9,
+            // the prefix added leading zero of '0'+ is kept, else the last 2-digits will be chosen.
+            #$cvtDateToUTS = "UNIXEPOCH((year || '-' || FORMAT('%02d', '0'+month) || '-' || FORMAT('%02d', '0'+day)))"; Up from Styx 5 !!
+            $cvtDateToUTS = "STRFTIME('%s', (year || '-' || PRINTF('%02d', '0'+month) || '-' || PRINTF('%02d', '0'+day)))";
+        } else {
+            $cvtDateToUTS = "UNIX_TIMESTAMP(STR_TO_DATE(CONCAT(year,'-',month,'-',day), '%Y-%m-%d'))";
+        }
+        $visitors_count_firstday = serendipity_db_query("SELECT $cvtDateToUTS AS tdate FROM {$serendipity['dbPrefix']}visitors_count ORDER BY year, month, day ASC LIMIT 1", true);
         $visitors_count_today    = serendipity_db_query("SELECT visits FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year' AND month = '$month' AND day = '$day'", true);
         $visitors_count_curryear = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '$year'", true);
         $visitors_count_lastyear = serendipity_db_query("SELECT SUM(visits) FROM {$serendipity['dbPrefix']}visitors_count WHERE year = '".($year-1)."'", true);
@@ -1229,7 +1243,7 @@ class serendipity_event_statistics extends serendipity_event
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISCURYR; ?></dt>
             <dd><?php echo $visitors_count_curryear[0]; ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR; ?></dt>
-            <dd><?php echo $visitors_count_lastyear[0]; ?></dd>
+            <dd><?php echo $visitors_count_lastyear[0] ?? '-'; ?></dd>
             <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
             <dd><?php echo $visitors_count_all[0]; ?></dd>
             <dd>-------------------------------------
@@ -1243,7 +1257,7 @@ class serendipity_event_statistics extends serendipity_event
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR; ?></dt>
             <dd><?php echo $hits_count_curryear[0]; ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR; ?></dt>
-            <dd><?php echo $hits_count_lastyear[0]; ?></dd>
+            <dd><?php echo $hits_count_lastyear[0] ?? '-'; ?></dd>
             <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
             <dd><?php echo $hits_count_all[0]; ?></dd>
         </dl>
@@ -1282,7 +1296,7 @@ class serendipity_event_statistics extends serendipity_event
                 list($cry, $lry) = array_chunk($num, ceil(count($num) / 2));
 ?>
         <table>
-            <tbody>
+          <tbody>
             <tr>
                 <th scope="row"><?php echo MONTHS; ?></th>
 <?php
@@ -1319,34 +1333,34 @@ class serendipity_event_statistics extends serendipity_event
                         $combined[$key] = $val + [2 => $lry[$key][1]];
                     }
 
-                    $perc = @round($this->percent($max2, $max));
-                    $maxVisHeigh = 100/$max*2;
-                    $maxVisHeighex = $perc/$max2*2;
+                    $absmax = $max2 > $max ? $max2 : $max;
+                    $maxVisHeigh = (150/$absmax)*2; // maximizes to 300px, which is the absolute orientation
+                    $maxHeigh = (100/$absmax)*2; // maximizes to 100, for the coloring division
 
                     foreach (array_reverse($combined) AS $n) {
-                        $monthHeight = @round($n[1]*$maxVisHeigh, 3); // be as precise as possible eg. 12.321px
-                        $mhex = @round($n[2]*$maxVisHeighex, 3); // ditto
-                        $numCountInt = @($n[1]*$maxVisHeigh/2);
-                        echo '                <td class="stats_imagecell">
-                    <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.@round($mhex).'" style="height:'.$mhex.'px" alt="o" /></span>
-                    <span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="200" style="height:200px" alt="°" /></span>
+                        $monthHeight = @round(($n[1]*$maxVisHeigh), 3); // be as precise as possible eg. 12.321px
+                        $lryMoHeight = @round(($n[2]*$maxVisHeigh), 3); // ditto
+                        $numCountInt = @round(($n[1]*$maxHeigh/2),3); // scale by 100
+                        echo '                <td class="stats_imagecell stats_month" data-color-height="'.$numCountInt.'">
+                    <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.@round($lryMoHeight).'" style="height:'.$lryMoHeight.'px" alt="o"></span>
+                    <span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="260" style="height:260px" alt="^"></span>
                     <span class="cu_mo"><img src="plugins/serendipity_event_statistics/';
-                        if ($numCountInt <= 33) {
+                        if ($numCountInt <= 33.333) {
                             echo 'red.png';
-                        } else if ($numCountInt > 33 && $numCountInt < 66) {
+                        } else if ($numCountInt > 33.333 && $numCountInt < 66.666) {
                             echo 'yellow.png';
                         } else {
                             echo 'green.png';
                         }
                         echo '" title="'.$n[1].'" width="8" height="'.@round($monthHeight).'" style="height:'.$monthHeight.'px" alt="';
-                        if ($numCountInt <= 33) {
+                        if ($numCountInt <= 33.333) {
                             echo '-';
-                        } else if ($numCountInt > 33 && $numCountInt < 66) {
+                        } else if ($numCountInt > 33.333 && $numCountInt < 66.666) {
                             echo '~';
                         } else {
                             echo '+';
                         }
-                        echo '" /></span>
+                        echo '"></span>
                 </td>'."\n";
                     }
 ?>
@@ -1369,7 +1383,7 @@ class serendipity_event_statistics extends serendipity_event
                     }
 ?>
             </tr>
-            </tbody>
+          </tbody>
         </table>
 <?php
             }
@@ -1411,7 +1425,7 @@ class serendipity_event_statistics extends serendipity_event
                         $maxVisHeigh = 100/$rep[0]*2;
                         $dailyHeight = @round($num[$i]*$maxVisHeigh);
                         $numCountInt = @($num[$i]*$maxVisHeigh/2);
-                        echo '                <td class="stats_imagecell"><img src="plugins/serendipity_event_statistics/';
+                        echo '                <td class="stats_imagecell stats_day"><img src="plugins/serendipity_event_statistics/';
                         if ($numCountInt <= 33) {
                             echo 'red.png';
                         } else if ($numCountInt > 33 && $numCountInt < 66) {

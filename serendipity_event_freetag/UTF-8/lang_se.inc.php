@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Medger fri etikettering av artiklar');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Mata in de etiketter som passar. Flera etiketter separeras med komma (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Etiketter på denna artikel: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Artiklar med etiketterna %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Artiklar med etiketterna <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Etiketter relaterade till etiketten %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Inga relaterade etiketter.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Alla etiketter');

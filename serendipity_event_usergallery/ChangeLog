@@ -1,3 +1,7 @@
+3.12:
+-----
+ * Convert single tag (asset) elements to HTML5
+
 3.11:
 -----
  * Follow consistency for selected::subpage checkup

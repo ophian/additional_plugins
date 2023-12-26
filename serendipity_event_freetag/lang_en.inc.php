@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Allows freestyle tagging of entries');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Enter any tags that apply. Separate multiple tags with a comma (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Defined tags for this entry: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Entries tagged as: %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Entries tagged as: <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tags related to tag: %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'No related tags.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'All defined tags');
@@ -129,6 +129,7 @@
 @define('PLUGIN_EVENT_FREETAG_USE_CAROC', 'Use a modern Canvas rotating cloud?');
 @define('PLUGIN_EVENT_FREETAG_USE_CAROC_DESC', 'A rotating JavaScript canvas cloud in %s! (Limited in use, since it needs more or less "squared" environments.)');
 @define('PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR', 'Rotating Canvas-Cloud tag color (rrggbb)');
+@define('PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR_DESC', 'Carefully select the two colors. For the "pure" and "B53+" themes, they are automatically exchanged for the text color in "dark" theme mode, so that light text is formed on a dark background and dark text on a light background.');
 @define('PLUGIN_EVENT_FREETAG_CAROC_TAG_BORDER_COLOR', 'Rotating Canvas-Cloud tag border color (rrggbb)');
 @define('PLUGIN_EVENT_FREETAG_CAROC_BOXWIDTH', 'Rotating Canvas-Cloud width');
 

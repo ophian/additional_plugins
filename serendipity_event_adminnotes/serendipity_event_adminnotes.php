@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '7.4.0'
         ));
 
-        $propbag->add('version',       '0.33');
+        $propbag->add('version',       '0.34');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -135,7 +135,14 @@ class serendipity_event_adminnotes extends serendipity_event
 
         $expire = (int)$this->get_config('expire', 0);
         $and    = is_int($limited) ? " AND" : "WHERE";
-        $where  = ($expire > 0) ? "$and a.notetime > (UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL $expire DAY)))" : '';
+        if ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
+            $exbydb = "(CURRENT_TIMESTAMP - INTERVAL '$expire DAY')"; // CURRENT_TIMESTAMP is a synonym for NOW
+        } elseif ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
+            $exbydb = "DATETIME('NOW', '-$expire DAY')"; // SQLite has no NOW() function
+        } else {
+            $exbydb = "(UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL $expire DAY)))";
+        }
+        $where  = ($expire > 0) ? "$and a.notetime > $exbydb" : '';
 
         $sql = "SELECT a.noteid, a.authorid, a.notetime, a.subject, a.body, a.notetype,
                        ar.realname

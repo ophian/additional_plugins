@@ -27,7 +27,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Umožòuje libovolné pøidávání klíèových slov k pøíspìvkùm');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Vložte libovolné množství klíèových slov, která se k èlánku vztahují. Oddìlujte èárkou (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Klíèová slova tohoto pøíspìvku: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Pøíspìvky oznaèené %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Pøíspìvky oznaèené <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Klíèová slova pøíbuzná ke slovu %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Žádná pøíbuzná klíèová slova');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Všechna definovaná klíèová slova');

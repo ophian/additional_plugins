@@ -1,3 +1,13 @@
+5.40:
+-----
+ * Fix missing entries_header link selected tagcloud tag for the current chosen tag (on some)
+ * Improve frontend content and sidebar markup indents for Styx 4.3+ and the [ 'pure' ] standard theme, which indents are the default
+ * Add freetag_current selector to entries cloud "date" header. Also applies to the serendipty_banner h2 subheader. So they can get styled.
+ * Implement sidebar theme dark mode conversion for the
+        - canvas rotacloud and the
+        - awesome wordcloud scriptlets
+    for the [ 'pure' ] standard and the bootstrap [ B53+ ] theme.
+
 5.32:
 -----
  * Improve backend main content markup indents for Styx 4.3

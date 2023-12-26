@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Autorise le marquage libre des billets');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Entrez tous les tags s\'appliquant. Séparer les tags multiples par des virgules (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tags pour ce billet: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Billets marqués comme %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Billets marqués comme <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tags se rapportant au tag %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED','Pas de tags en rapport.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Tous les tags définis');

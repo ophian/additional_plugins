@@ -69,14 +69,15 @@ class serendipity_plugin_userprofiles extends serendipity_plugin
 
         $title = $this->get_config('title');
 
+        echo '<ul class="plainList">'."\n";
         if (serendipity_db_bool($this->get_config('show_users', 'true'))) {
             echo $this->displayUserList();
         }
 
         if (serendipity_db_bool($this->get_config('show_groups', 'false'))) {
-            echo "<br />\n";
-            echo '<a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?/serendipity[subpage]=userprofiles">' . USERCONF_GROUPS . '</a>';
+            echo '                        <li><a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?/serendipity[subpage]=userprofiles">' . USERCONF_GROUPS . "</a></li>\n";
         }
+        echo "                    </ul>\n";
     }
 
     function displayUserList()
@@ -88,7 +89,7 @@ class serendipity_plugin_userprofiles extends serendipity_plugin
         $content = "";
         foreach($userlist AS $user) {
             $entryLink = serendipity_authorURL($user);
-            $content .= sprintf("<a href=\"%s\" title=\"%s\">%s</a><br />\n",
+            $content .= sprintf("                        <li><a href=\"%s\" title=\"%s\">%s</a></li>\n",
                       $entryLink,
                       serendipity_specialchars($user['realname']),
                       serendipity_specialchars($user['realname']));

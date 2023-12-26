@@ -186,7 +186,7 @@
 
         {if $plugin_usergallery_lightbox_script == 'colorbox'}
 
-        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/colorbox/colorbox.css" />
+        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/colorbox/colorbox.css">
         <script type="text/javascript" src="{$plugin_usergallery_lightbox_dir}/colorbox/jquery.colorbox-min.js" charset="utf-8"></script>
         <script type="text/javascript">
             jQuery('a[rel^="colorbox"]').colorbox({
@@ -200,13 +200,13 @@
 
         {elseif $plugin_usergallery_lightbox_script == 'lightbox'}
 
-        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/lightbox2-jquery/css/lightbox.css" />
+        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/lightbox2-jquery/css/lightbox.css">
         <script type="text/javascript"> jQuery(document).ready(function(){ jQuery(\'a[rel^="lightbox"]\').removeAttr("onclick"); }); </script>
         <script type="text/javascript" src="{$plugin_usergallery_lightbox_dir}/lightbox2-jquery/js/lightbox.min.js" charset="utf-8"></script>
 
         {elseif $plugin_usergallery_lightbox_script == 'magnific'}
 
-        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/magnific-popup/magnific-popup.css" />
+        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/magnific-popup/magnific-popup.css">
         <script type="text/javascript" src="{$plugin_usergallery_lightbox_dir}/magnific-popup/jquery.magnific-popup.min.js" charset="utf-8"></script>
         <script type="text/javascript">
             jQuery(document).ready(function(){
@@ -221,7 +221,7 @@
 
         {elseif $plugin_usergallery_lightbox_script == 'prettyphoto'}
 
-        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/prettyphoto/css/prettyPhoto.css" />
+        <link rel="stylesheet" type="text/css" href="{$plugin_usergallery_lightbox_dir}/prettyphoto/css/prettyPhoto.css">
         <script type="text/javascript" src="{$plugin_usergallery_lightbox_dir}/prettyphoto/js/jquery.prettyPhoto.min.js" charset="utf-8"></script>
         <script type="text/javascript">
             jQuery(document).ready(function(){

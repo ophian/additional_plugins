@@ -311,9 +311,9 @@ class serendipity_event_entrypaging extends serendipity_event
                             $serendipity['smarty']->assign('smarty_entrypaging', true);
                             $serendipity['smarty']->assign($this->smartylinks);
                         } elseif ($disp == '1' && $event == 'entries_header') {
-                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon sep">|</span> ', $links) . '</div>';
+                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon sep">|</span> ', $links) . "</div>\n";
                         } elseif ($disp == '2' && $event == 'entries_footer') {
-                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon sep">|</span> ', $links) . '</div>';
+                            echo '<div class="serendipity_entrypaging">' . $randomlink . implode(' <span class="epicon sep">|</span> ', $links) . "</div>\n";
                         } else {
                             return false;
                         }

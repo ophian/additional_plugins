@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '2.12.0');
+        $propbag->add('version',        '2.13.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '7.0.0'
@@ -212,8 +212,8 @@ class serendipity_event_lightbox extends serendipity_event
                     // ColorBox code (https://github.com/jackmoore/colorbox) - init with :visible to ensure to not show hidden elements via hideafter function in imageselectorplus ranges
                     if ($type == 'colorbox') {
                         if (!empty($headcss) && $headcss) {
-                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/colorbox/colorboxScreens.css" />' . "\n";
-                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/colorbox/colorbox.css" />' . "\n";
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/colorbox/colorboxScreens.css">' . "\n";
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/colorbox/colorbox.css">' . "\n";
                         } else {
                             if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
@@ -225,7 +225,7 @@ class serendipity_event_lightbox extends serendipity_event
                     // LightBox2 jQuery based - https://lokeshdhakar.com/projects/lightbox2/ - this lightbox does not allow to show :visible anchors only - it shows and counts all gallery images, if set to view galleries
                     elseif ($type == 'lightbox2jq') {
                         if (!empty($headcss) && $headcss) {
-                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/lightbox2-jquery/css/lightbox.min.css" />' . "\n";
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/lightbox2-jquery/css/lightbox.min.css">' . "\n";
                         } else {
                             if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
@@ -238,7 +238,7 @@ class serendipity_event_lightbox extends serendipity_event
                     // Magnific-Popup code (https://github.com/dimsemenov/Magnific-Popup) - init with :visible to ensure to not show hidden elements via hideafter function in imageselectorplus ranges
                     elseif ($type == 'magnific') {
                         if (!empty($headcss) && $headcss) {
-                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/magnific-popup/magnific-popup.css" />' . "\n";
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/magnific-popup/magnific-popup.css">' . "\n";
                         } else {
                             if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";
@@ -250,8 +250,8 @@ class serendipity_event_lightbox extends serendipity_event
                     // PrettyPhoto code - http://www.no-margin-for-errors.com/projects/prettyPhoto/ - init with :visible to ensure to not show hidden elements via hideafter function in imageselectorplus ranges
                     elseif ($type == 'prettyPhoto') {
                         if (!empty($headcss) && $headcss) {
-                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/prettyphoto/css/prettyPhoto.css" />' . "\n";
-                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/prettyphoto/css/prettyPhotoScreens.css" />' . "\n";
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/prettyphoto/css/prettyPhoto.css">' . "\n";
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/prettyphoto/css/prettyPhotoScreens.css">' . "\n";
                         } else {
                             if ($jquery) {
                                 echo '    <script type="text/javascript" src="' . $pluginDir . '/jquery-1.11.3.min.js" charset="utf-8"></script>' . "\n";

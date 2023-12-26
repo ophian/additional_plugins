@@ -25,7 +25,7 @@ class serendipity_event_outdate_entries extends serendipity_event {
             'php'         => '7.4.0'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
-        $propbag->add('version', '2.0.0');
+        $propbag->add('version', '2.1.1');
         $propbag->add('stackable', false);
         $this->dependencies = array('serendipity_event_entryproperties' => 'keep');
     }
@@ -124,6 +124,15 @@ class serendipity_event_outdate_entries extends serendipity_event {
                         }
                     }
 
+                    // Change to use " . serendipity_db_get_unixTimestamp('ep.value', true) . " up from Styx 5
+                    if ($serendipity['dbType'] == 'postgres' || $serendipity['dbType'] == 'pdo-postgres') {
+                        $utByDbType = "'EXTRACT(EPOCH FROM ep.value)'";
+                    } elseif ($serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
+                        $utByDbType = "STRFTIME('%s', ep.value)";
+                    } else {
+                        $utByDbType = 'UNIX_TIMESTAMP(ep.value)';
+                    }
+
                     $timeout_custom = $this->get_config('timeout_custom');
                     if (!empty($timeout_custom)) {
                         $sql = "SELECT id, ep.value AS access
@@ -135,7 +144,7 @@ class serendipity_event_outdate_entries extends serendipity_event {
                                  WHERE e.isdraft = 'false'
                                    AND ep.property = 'ep_" . $timeout_custom . "'
                                    AND ep.value != ''
-                                   AND UNIX_TIMESTAMP(ep.value) < " . time();
+                                   AND $utByDbType < " . time();
 
                         $rows = serendipity_db_query($sql);
                         if (is_array($rows)) {

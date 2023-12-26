@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.11');
+        $propbag->add('version',       '3.12');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -811,7 +811,7 @@ class serendipity_event_usergallery extends serendipity_event
                         if ($lightbox_type == 'colorbox') {
 if (isset($frontend_head)) {
 echo '
-    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/colorbox/colorbox.css" />
+    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/colorbox/colorbox.css">
 '.PHP_EOL;
 } else {
 echo '
@@ -830,7 +830,7 @@ echo '
                         } elseif ($lightbox_type == 'lightbox') {
 if (isset($frontend_head)) {
 echo '
-    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/lightbox2-jquery/css/lightbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/lightbox2-jquery/css/lightbox.min.css">
 '.PHP_EOL;
 } else {
 echo '
@@ -841,7 +841,7 @@ echo '
                         } elseif ($lightbox_type == 'magnific') {
 if (isset($frontend_head)) {
 echo '
-    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/magnific-popup/magnific-popup.css">
 '.PHP_EOL;
 } else {
 echo '
@@ -861,7 +861,7 @@ echo '
                         } elseif ($lightbox_type == 'prettyphoto') {
 if (isset($frontend_head)) {
 echo '
-    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/prettyphoto/css/prettyPhoto.css" />
+    <link rel="stylesheet" type="text/css" href="' . $lightbox_dir . '/prettyphoto/css/prettyPhoto.css">
 '.PHP_EOL;
 } else {
 echo '
@@ -1097,7 +1097,7 @@ echo '
                 // return empty array if invalid or non-existent
                 $exifsettings = array();
                 $selector .= '<tr><td colspan="2"><span class="msg_error">
-                    An error occurred. Your website will function AS NORMAL. But EXIF tags cannot be shown.<br />
+                    An error occurred. Your website will function AS NORMAL. But EXIF tags cannot be shown.<br>
                     Error: $this->get_config(\'exif_data\') is not fetched from the database properly.
                     Please contact support at https://board.s9y.org/.</span></td></tr>';
             } else {
@@ -1492,7 +1492,7 @@ echo '
                 $body = preg_replace('@(<img[^>]*)\s*height\s*=["\'][0-9]+["\']@imsU', '\1', $body);
             }
 
-            $body = '<a href="' . $link . '"><img src="' . $thumbfile_http . '" alt="" width="' . $fdim[0] . '" height="' . $fdim[1] . '" /></a>';
+            $body = '<a href="' . $link . '"><img src="' . $thumbfile_http . '" alt="" width="' . $fdim[0] . '" height="' . $fdim[1] . '"></a>';
             $entries[] = array(
                 'title'         => ($hide_title ? '' : $filename),
                 'entryid'       => $lid,

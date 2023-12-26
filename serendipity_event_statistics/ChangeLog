@@ -1,3 +1,26 @@
+4.4.0:
+------
+ * Fix another case of database table re-creation for fresh installs
+ * Refactor the rolling year versus comparison year ratio calculation,
+   fixing issues, which also sets this diagram to a new max of 300px heights.
+ * Improve CSS day table for mobiles
+
+4.3.1:
+------
+ * Fix an old [ en ] lang typo
+
+4.3.0:
+------
+ * Fix inits for fresh install
+
+4.2.1:
+------
+ * Fix backend sidebar link markup indent for Styx 4.3.1
+
+4.2.0:
+------
+ * Fixed and improved the visitors_count_firstday (by) UNIX TIMESTAMP query for SQLite and PostgreSQL
+
 4.1.0:
 ------
  * Improve markup indent for backend consistency up from Styx 4.3.0

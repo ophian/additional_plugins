@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', '글에 자유롭게 태그를 달 수 있게 합니다');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', '알맞은 태그를 입력합니다. 각 태그는 쉼표(,)로 분리합니다.');
 @define('PLUGIN_EVENT_FREETAG_LIST', '이 글에 대한 태그: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', '%s 태그가 달린 글');
+@define('PLUGIN_EVENT_FREETAG_USING', '<span class="freetag_current">%s</span> 태그가 달린 글');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', '%s 태그와 관련된 태그');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED','관련된 태그 없음.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', '입력한 모든 태그');

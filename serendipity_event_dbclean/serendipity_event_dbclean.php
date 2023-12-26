@@ -18,7 +18,7 @@ class serendipity_event_dbclean extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DBCLEAN_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0'
         ));
@@ -185,17 +185,19 @@ class serendipity_event_dbclean extends serendipity_event
             if (stristr($serendipity['dbType'], 'sqlite')) {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}$table
-                         WHERE strftime('%s', day) < (strftime('%s', 'now') - ($days*86400))";
+                         WHERE STRFTIME('%s', day) < (STRFTIME('%s', 'now') - ($days*86400))"; // a timestamp with time zone (do we really have to use a TZ ?)
+                         // change to UNIXEPOCH(day) w/ Styx 5 for SQLite >= 3.38.0 (2022-02-22) only
             }
             else if (stristr($serendipity['dbType'], 'postgres')) {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}$table
-                         WHERE to_timestamp(day) < (NOW() - INTERVAL '$days days')";
+                         WHERE TO_TIMESTAMP(day) < (NOW() - INTERVAL '$days days')"; // The PostgreSQL TO_TIMESTAMP() function returns a timestamp with time zone (do we really have to use a TZ ?)
+                         // CURRENT_TIMESTAMP is a synonym for NOW
             }
             else {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}$table
-                         WHERE UNIX_TIMESTAMP(day) < (UNIX_TIMESTAMP(NOW()) - ($days*86400))";
+                         WHERE UNIX_TIMESTAMP(day) < (UNIX_TIMESTAMP(NOW()) - ($days*86400))"; // a timestamp with time zone (do we really have to use a TZ ?)
             }
             serendipity_db_query($sql);
         }
@@ -203,17 +205,18 @@ class serendipity_event_dbclean extends serendipity_event
             if (stristr($serendipity['dbType'], 'sqlite')) {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}karmalog
-                         WHERE votetime < (strftime('%s', 'now') - ($days*86400))";
+                         WHERE votetime < (STRFTIME('%s', 'now') - ($days*86400))"; // a timestamp with time zone (do we really have to use a TZ ?)
+                         // change to UNIXEPOCH() w/ Styx 5 for SQLite >= 3.38.0 (2022-02-22) only
             }
             else if (stristr($serendipity['dbType'], 'postgres')) {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}karmalog
-                         WHERE votetime < (NOW() - INTERVAL '$days days')";
+                         WHERE votetime < (NOW() - INTERVAL '$days days')"; // a timestamp with time zone (do we really have to use a TZ ?)
             }
             else {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}karmalog
-                         WHERE votetime < (UNIX_TIMESTAMP(NOW()) - ($days*86400))";
+                         WHERE votetime < (UNIX_TIMESTAMP(NOW()) - ($days*86400))"; // a timestamp with time zone (do we really have to use a TZ ?)
             }
             serendipity_db_query($sql);
         }
@@ -221,17 +224,21 @@ class serendipity_event_dbclean extends serendipity_event
             if (stristr($serendipity['dbType'], 'sqlite')) {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}$table
-                         WHERE timestamp < (strftime('%s', 'now') - ($days*86400))";
+                         WHERE timestamp < (STRFTIME('%s', 'now') - ($days*86400))"; // a timestamp with time zone (do we really have to use a TZ ?)
+                         // change to UNIXEPOCH() w/ Styx 5 for SQLite >= 3.38.0 (2022-02-22) only
             }
             else if (stristr($serendipity['dbType'], 'postgres')) {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}$table
-                         WHERE timestamp < (NOW() - INTERVAL '$days days')";
+                         WHERE timestamp < (NOW() - INTERVAL '$days days')"; // a timestamp with time zone (do we really have to use a TZ ?)
             }
             else {
                 $sql = "DELETE
                           FROM {$serendipity['dbPrefix']}$table
-                         WHERE timestamp < (UNIX_TIMESTAMP(NOW()) - ($days*86400))";
+                         WHERE timestamp < (UNIX_TIMESTAMP(NOW()) - ($days*86400))"; // a timestamp with time zone (do we really have to use a TZ ?)
+                         // MySQL UNIX_TIMESTAMP() returns a Unix timestamp in seconds since '1970-01-01 00:00:00' UTC as an unsigned integer if no arguments are passed with UNIT_TIMESTAMP().
+                         // The function NOW() generates a formatted date-time string, determined by the time zone of the MySQL server.
+                         // The server interprets date parameters as a value in the current time zone and converts it to an internal value in UTC
             }
             serendipity_db_query($sql);
         }

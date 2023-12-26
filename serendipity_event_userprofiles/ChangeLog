@@ -1,3 +1,15 @@
+1.4.0:
+------
+ * Prep for better indentation with the standard pure theme up from Styx 4.3.3+
+
+1.3.9:
+------
+ * Improve some remaining markup for backend consistency up from Styx 4.3.1
+
+1.3.8:
+------
+ * Fix backend sidebar link markup indent for Styx 4.3.1
+
 1.3.7:
 ------
  * Improve markup indent for backend consistency up from Styx 4.3.0

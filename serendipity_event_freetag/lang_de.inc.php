@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Erlaubt das freie Tagging von Artikeln');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Bitte alle zutreffenden Tags angeben. Mehrere zutreffende Tags mit Komma (,) trennen');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tags für diesen Artikel: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Artikel mit Tag: %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Artikel mit Tag: <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Verwandte Tags zu Tag: %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Keine verwandten Tags gefunden.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Alle festgelegten Tags');
@@ -59,6 +59,7 @@
 @define('PLUGIN_EVENT_FREETAG_USE_CAROC', 'Eine rotierende Canvas-Wolke verwenden?');
 @define('PLUGIN_EVENT_FREETAG_USE_CAROC_DESC', 'Eine rotierende JavaScript-Wolke in %s! (Begrenzt einsetzbar, da sie mehr oder weniger "quadratische" Umgebungen benötigt.)');
 @define('PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR', 'Tag-Farbe für rotierende Canvas-Wolke (rrggbb)');
+@define('PLUGIN_EVENT_FREETAG_CAROC_TAG_COLOR_DESC', 'Wählen Sie die beiden Farben mit Bedacht. Für die Themes "pure" und "b53+" werden sie für die Textfarbe im "dark"-theme-mode automatisch gegeneinander vertauscht, so dass helle Schrift auf dunklem Grund und dunkle Schrift auf hellem Grund zu sehen ist.');
 @define('PLUGIN_EVENT_FREETAG_CAROC_TAG_BORDER_COLOR', 'Tag Randfarbe für rotierende Canvas-Wolke (rrggbb)');
 @define('PLUGIN_EVENT_FREETAG_CAROC_BOXWIDTH', 'Breite der rotierenden Canvas-Wolke in Pixeln');
 

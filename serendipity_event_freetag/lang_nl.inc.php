@@ -13,7 +13,7 @@
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Maakt het mogelijk om bijdragen van tags te voorzien');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Vul relevante tags in, meerdere tags kunnen met een komma worden gescheiden (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tags voor deze bijdrage: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Bijdragen met tag %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'Bijdragen met tag <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tags gerelateerd aan tag %s');
 @define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Geen gerelateerde tags.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Alle tags');
