@@ -1,3 +1,10 @@
+4.4.0:
+------
+ * Fix another case of database table re-creation for fresh installs
+ * Refactor the rolling year versus comparison year ratio calculation,
+   fixing issues, which also sets this diagram to a new max of 300px heights.
+ * Improve CSS day table for mobiles
+
 4.3.1:
 ------
  * Fix an old [ en ] lang typo
