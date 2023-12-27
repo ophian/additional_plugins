@@ -1,3 +1,7 @@
+4.4.2:
+------
+ * Optimize the 4.4.1 fix
+
 4.4.1:
 ------
  * Fix a (name) refactored leftover variable
