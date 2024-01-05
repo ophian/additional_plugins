@@ -32,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.31');
+        $propbag->add('version',       '2.32');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -84,7 +84,7 @@ class serendipity_event_includeentry extends serendipity_event
         }
         $propbag->add('configuration', $conf_array);
 
-        $ec = (array)explode(',', $this->get_config('enabled_categories', false));
+        $ec = (array)explode(',', $this->get_config('enabled_categories', 'false'));
         $this->enabled_categories = array();
 
         foreach($ec AS $cid) {
