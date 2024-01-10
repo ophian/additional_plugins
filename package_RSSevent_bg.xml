@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Форма за обратна връзка&lt;/b&gt;&lt;br /&gt;Показва форма за изпращане на e-mail в блога като статична страница. Тя може да бъде достигната или чрез постоянна връзка, указана тук при конфигурирането на приставката или чрез &#039;index.php?serendipity[subpage]=contactform&#039;. Можете да промените външния вид на формата като поставите файл &#039;plugin_contactform.tpl&#039; в директорията на вашата тема и я модифицирате там. Captchas от приставка Spamblock (ако са позволени) ще бъдат приложени.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Wed, 30 Nov 2022 12:56:28 +0100</pubDate>
+<pubDate>Wed, 10 Jan 2024 13:42:18 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>

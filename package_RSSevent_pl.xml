@@ -185,7 +185,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Formularz kontaktu&lt;/b&gt;&lt;br /&gt;Pokazuje na Twojej stronie formularz kontaktu e-mailem jako stronę statyczną. Wyświetlić formularz można korzystając z własnego permalinku lub przez podanie adresu index.php?serendipity[subpage]=contactform. Możesz zmodyfikować wygląd formularza przez umieszczenie w katalogu stylu, z którego korzystasz pliku the plugin_contactform.tpl i zmodyfikowania go według własnych potrzeb. Captcha oferowane przez wtyczkę Ochrona przed spamem będą stosowane (o ile będą włączone).&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Wed, 30 Nov 2022 12:56:28 +0100</pubDate>
+<pubDate>Wed, 10 Jan 2024 13:42:18 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
