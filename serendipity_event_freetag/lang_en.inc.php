@@ -106,6 +106,7 @@
 
 @define('PLUGIN_EVENT_FREETAG_COLLATION', '(MySQL) Database collation for the entrytags.tag column (auto-detected)');
 @define('PLUGIN_EVENT_FREETAG_KILL', 'When checked, all assigned tags to this entry will be removed.');
+@define('PLUGIN_EVENT_FREETAG_KILL_INFO_DESC', 'You can also remove single tags from many by hand in the tag enter edit field above. Removing them all is supported only by this checkbox option! <b>ADDITIONAL NOTE</b>: Certain optional freetag plugin option cases, like category tag names and automated keyword-to-tag will not support a complete removal, while automatically adding them again in entries re-edit cases. <b>LAST WORD</b>: In any case, the default recommendation after submit for further treatment reads as follows: Open the entry by a complete new request after having treated tags by removal or change to get the new correct stored values.');
 
 @define('PLUGIN_EVENT_FREETAG_TAGLINK_DESC', 'A possible change in your taglink, is to write "plugin/taglist/" instead of "plugin/tag/". This will make your tag(s) appear as as clickable list, instead of already opened entries. You can also add this manually to certain taglinks in the frontend or append a "/taglist" tag to an already existing path (eg "/plugin/tag/your/tags/append/taglist"). In both cases "taglist" is a reserved word from now on and can not be used as a normal tag elsewhere anymore. If you want to use this, please enable the "tags-as-list (non-opened entries)" option and add some code manually, described in the documentary for the "tag-as-list" option.');
 

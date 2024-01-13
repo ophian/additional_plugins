@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.40');
+        $propbag->add('version',       '5.50');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2985,6 +2985,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 $oldtags = self::makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
             }
             if (!is_array($oldtags)) { $oldtags = array(); }
+            // check against posted remove tags
+            if (!empty($oldtags) && !empty($serendipity['POST']['properties']['freetag_tagList']) && !isset($serendipity['POST']['properties']['freetag_kill'])) {
+                // nuke oldtags to proceed with nuke & add ACTION, see below
+                $oldtags = [];
+            }
             // Condition could be used with checking the given arrays before, with ' && $oldtags !== $tags',
             // but our tags arrays are so small, that this merge and unique does not really matter for performance
             if (!empty($oldtags)) {
@@ -3072,7 +3077,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="form_check">
                     <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" type="checkbox" value="true">
-                    <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
+                    <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?>
+                        <button class="toggle_info button_link" type="button" data-href="#freetag_delete_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span></button>
+                    </label>
                 </div>
                 <div id="edit_entry_submit" class="freetag_entry_submit">
                     <a href="#top" class="x-button_link x-button_up" title="<?php echo UP; ?>">
@@ -3080,6 +3087,9 @@ document.addEventListener("DOMContentLoaded", function() {
                           <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
                         </svg>
                     </a>
+                </div>
+                <div id="freetag_delete_info" class="additional_info">
+                    <span class="msg_hint msg-btm"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_FREETAG_KILL_INFO_DESC; ?></span>
                 </div>
 <?php
 

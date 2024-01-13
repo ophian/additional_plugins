@@ -1,3 +1,7 @@
+5.50:
+-----
+ * Allow single tag delete (per hand) in the entries entryproperties freetag fieldset. Read the clarifying [ button ] info at there.
+
 5.40:
 -----
  * Fix missing entries_header link selected tagcloud tag for the current chosen tag (on some)
