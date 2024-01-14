@@ -11,6 +11,7 @@
 //
 @define('PLUGIN_EVENT_FREETAG_TITLE', 'Tagging of entries');
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Allows freestyle tagging of entries');
+@define('PLUGIN_EVENT_FREETAG_MPFDESC', 'You still have to save your entry afterwards to perform your changes finally!');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Enter any tags that apply. Separate multiple tags with a comma (,)');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Defined tags for this entry: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', 'Entries tagged as: <span class="freetag_current">%s</span>');

@@ -11,6 +11,7 @@
 //
 @define('PLUGIN_EVENT_FREETAG_TITLE', 'Freie Artikel-Tags');
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Erlaubt das freie Tagging von Artikeln');
+@define('PLUGIN_EVENT_FREETAG_MPFDESC', 'Sie müssen Ihren Eintrag anschließend noch speichern, um die Änderungen endgültig auszuführen!');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Bitte alle zutreffenden Tags angeben. Mehrere zutreffende Tags mit Komma (,) trennen');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tags für diesen Artikel: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', 'Artikel mit Tag: <span class="freetag_current">%s</span>');

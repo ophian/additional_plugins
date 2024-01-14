@@ -1,3 +1,13 @@
+5.60:
+-----
+ * Fix keyword-to-tag checkups to re-allow lowered keyword
+ * Prepare scaling to half of max size for start up cases
+ * Refactor HTML element ID selector usage preparation in entry edit fieldset for uniqueness
+   regarding #edit_entry_submit submitter box and the entryproperties fieldset with Styx > 4.3.2.
+   (For some time both variants are supported.)
+ * Improve single tag delete for possible non-stored old_tags
+ * Add an "edit_entry_freetags_need_to_save" information handler to the mfp-content layer
+
 5.50:
 -----
  * Allow single tag delete (per hand) in the entries entryproperties freetag fieldset. Read the clarifying [ button ] info at there.

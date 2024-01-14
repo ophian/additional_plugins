@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.50');
+        $propbag->add('version',       '5.60');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -792,7 +792,9 @@ class serendipity_event_freetag extends serendipity_event
             // scaling does not work with jquery rotating Canvas
             if ($scaling && !$useRotCanvas) {
                 if ($scale == 0) {
-                    $fontSize = $maxSize;
+                    #$fontSize = $maxSize;
+                    $fontSize = $maxSize / 2; // should be a default 150 size for startup - initially it was 300px
+                    #$fontSize = round((($quantity+1) - $smallest)*(($maxSize - $minSize)/4)) + $minSize; // should be a default 150 size for startup - initially it was 300px
                 } elseif ($scale == 1) {
                     $fontSize = ($quantity == $biggest) ? $maxSize : $minSize;
                 } else {
@@ -1112,6 +1114,16 @@ a.button_link.tagview_active {
 #edit_entry_freetags .freetag_entry_submit {
     top: 1em; /* without core #adv_opts background: 0; */
 }
+
+#edit_entry_freetags_need_to_save {
+    display: none;
+    visibility: hidden;
+}
+/* show in .mfp-content layer */
+.mfp-content #edit_entry_freetags_need_to_save {
+    display: inline-block;
+    visibility: visible;
+}
 /* unset up button block for .mfp-content layer */
 .mfp-content #edit_entry_freetags .freetag_entry_submit {
     top: unset;
@@ -1121,7 +1133,7 @@ a.button_link.tagview_active {
     right: unset;
     margin-right: unset;
 }
-.mfp-content #edit_entry_submit {
+.mfp-content .jump_to_edit_entry_submit  {
     display: none;
     visibility: hidden;
 }
@@ -2907,7 +2919,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (empty($tags) && serendipity_db_bool($this->get_config('keyword2tag', 'false'))) {
-            $searchtext = strip_tags($eventData['body'] . @$eventData['extended']);
+            $searchtext = strip_tags($eventData['body'] . ($eventData['extended'] ?? ''));
             // fetch oldtags AS ARRAY for each entry, valid to be checked for keywords
             $oldtags = self::makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
 
@@ -2935,7 +2947,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 $kaddmsg = '';
                 if (preg_match($regex, $searchtext) > 0) {
                     foreach($ktags AS $tag => $is_assigned) {
-                        if (!is_array($tags) || (!in_array($tag, $tags) && !in_array($tag, $tags))) {
+                        // also checks strtolowered keywords - so not too strict - even though the old storage of strtolower tags has been abandoned
+                        if (!is_array($tags) || (!in_array(strtolower($tag), $tags) && !in_array($tag, $tags))) {
 
                             if (!is_array($tags) && !empty($tag)) {
                                 $tags = array(); // avoid having "[] operator not supported for strings" errors
@@ -2947,7 +2960,10 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                         }
                     }
-                    echo '<span class="msg_success"><span class="icon-ok-circled"></span><ul class="plainText">' . "\n    <li>FreeTag:</li>\n $kaddmsg </ul></span>";
+                    // spawns into iframe messaging
+                    if (!empty($kaddmsg)) {
+                        echo '<span class="msg_success"><span class="icon-ok-circled"></span><ul class="plainText">' . "\n    <li>FreeTag:</li>\n $kaddmsg </ul></span>";
+                    }
                 } else {
                     // get the other entries tags
                     if (is_array($key2tagIDs) && !in_array($eventData['id'], $key2tagIDs)) {
@@ -2984,11 +3000,18 @@ document.addEventListener("DOMContentLoaded", function() {
             if (empty($oldtags) || !is_array($oldtags)) {
                 $oldtags = self::makeTagsFromTagList(implode(',', $this->getTagsForEntry($eventData['id']))); // as ARRAY
             }
-            if (!is_array($oldtags)) { $oldtags = array(); }
+            if (!is_array($oldtags)) {
+                $oldtags = array();
+            }
             // check against posted remove tags
             if (!empty($oldtags) && !empty($serendipity['POST']['properties']['freetag_tagList']) && !isset($serendipity['POST']['properties']['freetag_kill'])) {
-                // nuke oldtags to proceed with nuke & add ACTION, see below
-                $oldtags = [];
+                $nuke_tags = array_diff($oldtags, $tags); // key kept
+                $oldtags = array_values(array_diff($oldtags, $nuke_tags)); // the rest with new keys
+                if ($oldtags === $tags) {
+                    // nuke oldtags to proceed with nuke & add ACTION, see below
+                    $oldtags = [];
+                    // sadly w/o using POST freetag_kill here there is no ability to access the hinting RELOAD_THIS_PAGE messenger when saved. We could write to the iframe but this isn't good either.
+                }
             }
             // Condition could be used with checking the given arrays before, with ' && $oldtags !== $tags',
             // but our tags arrays are so small, that this merge and unique does not really matter for performance
@@ -3004,7 +3027,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // ACTIONS - Only do this to entries which really changed tags!!
         if ((is_array($tags) && !empty($tags) && $oldtags !== $tags)
-                || (is_array($key2tagIDs) && in_array($eventData['id'], $key2tagIDs) && $oldtags !== $tags)) {
+                || (is_array($key2tagIDs) && in_array($eventData['id'], $key2tagIDs) && $oldtags !== $tags)
+        ) {
             $this->deleteTagsForEntry($eventData['id']);
             $this->addTagsToEntry($eventData['id'], $tags);
         }
@@ -3071,6 +3095,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <a name="tagListAnchor"></a>
             <fieldset id="edit_entry_freetags" class="entryproperties_freetag">
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_FREETAG_TITLE; ?></legend></span>
+                <div id="edit_entry_freetags_need_to_save"><em><?php echo PLUGIN_EVENT_FREETAG_MPFDESC; ?></em></div>
                 <div class="form_field">
                     <label for="properties_freetag_tagList" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label>
                     <input id="properties_freetag_tagList" class="wickEnabled" dir="<?php echo $dir_reverse; ?>" type="text" name="serendipity[properties][freetag_tagList]" value="<?php echo serendipity_specialchars($tagList) ?>">
@@ -3081,7 +3106,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <button class="toggle_info button_link" type="button" data-href="#freetag_delete_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span></button>
                     </label>
                 </div>
-                <div id="edit_entry_submit" class="freetag_entry_submit">
+                <div id="edit_entry_submit" class="jump_to_edit_entry_submit freetag_entry_submit">
                     <a href="#top" class="x-button_link x-button_up" title="<?php echo UP; ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
                           <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
