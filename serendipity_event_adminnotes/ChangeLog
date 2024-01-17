@@ -1,3 +1,7 @@
+0.35:
+-----
+ * Add to BACKEND_DASHBOARD (STARTPAGE) category
+
 0.34:
 -----
  * Trying to fix expire SQL query notation for SQLite / PostgreSQL
