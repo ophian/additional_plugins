@@ -28,7 +28,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '7.4'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.12');
+        $propbag->add('version',        '3.13');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -285,10 +285,11 @@ class serendipity_event_multilingual extends serendipity_event
         global $serendipity;
         static $default_lang = null;
 
+        $return = false;
         $langs = array();
         // list/each can use references
         if (!is_array($properties)) {
-            return false;
+            return $return; // Only variables returned by references
         }
 
         $probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_names.inc.php';
@@ -306,7 +307,7 @@ class serendipity_event_multilingual extends serendipity_event
         }
 
         if (count($langs) < 1) {
-            return false;
+            return $return; // Only variables returned by references
         }
 
         // retrieve the default language of the blog...

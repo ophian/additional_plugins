@@ -1,3 +1,7 @@
+3.13:
+-----
+ * Fix for PHP 8 "Only variable references should be returned by reference"
+
 3.12:
 -----
  * Improve backend main content markup indents for Styx 4.3
