@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
@@ -194,82 +194,85 @@ class serendipity_event_autoupdate extends serendipity_event
                     if (trim($nv) == '') return;
                     echo <<<EOS
 <!DOCTYPE html>
-<html>
-    <head>
-        <base target="_self"/>
-        <title>Startpage - {$ad_suite}</title>
-        <meta http-equiv="Content-Type" content="text/html; charset={$lang_char}">
-        <style type="text/css">
+<html data-color-mode="light" lang="{$lang_char}">
+<head>
+    <base target="_self"/>
+    <title>Startpage - {$ad_suite}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset={$lang_char}">
+    <style type="text/css">
 {$css_upd}
-        </style>
-        <script type="text/javascript">
-        function getDocHeight() {
-            var D = document;
-            return Math.max(
-                Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
-                Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
-                Math.max(D.body.clientHeight, D.documentElement.clientHeight)
-            );
-        }
-        </script>
-    </head>
+    </style>
+    <script>
+      if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || localStorage.getItem('data-login-color-mode') === 'dark') {
+        document.documentElement.setAttribute('data-color-mode', 'dark');
+      }
+    </script>
+    <script type="text/javascript">
+    function getDocHeight() {
+        var D = document;
+        return Math.max(
+            Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+            Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+            Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+        );
+    }
+    </script>
+</head>
 
-    <body id="serendipity_admin_page">
+<body id="serendipity_admin_page">
 
-    <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-            <symbol id="icon-home" viewBox="-34.731 -31.834 69.462 63.668">
-                <path d="M34.73,5.319l-12.597,9.617v15.908h-9v-9.038L0,31.833l-34.73-26.513l5.461-7.155l3.741,2.856v-32.856H25.53V1.021 l3.74-2.855L34.73,5.319z M20.53-26.834H9v19H-9v-19h-11.529V4.204L0,19.88L20.53,4.204V-26.834z"></path>
-            </symbol>
-            <symbol id="icon-clock" viewBox="0 0 1024 1024">
-                <title>clock</title>
-                <path class="path1" d="M658.744 749.256l-210.744-210.746v-282.51h128v229.49l173.256 173.254zM512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 896c-212.078 0-384-171.922-384-384s171.922-384 384-384c212.078 0 384 171.922 384 384s-171.922 384-384 384z"></path>
-            </symbol>
-            <symbol id="icon-attention" viewBox="0 0 1024 1024">
-                <title>attention</title>
-                <path class="path1" d="M512 96c-111.118 0-215.584 43.272-294.156 121.844s-121.844 183.038-121.844 294.156c0 111.118 43.272 215.584 121.844 294.156s183.038 121.844 294.156 121.844c111.118 0 215.584-43.272 294.156-121.844s121.844-183.038 121.844-294.156c0-111.118-43.272-215.584-121.844-294.156s-183.038-121.844-294.156-121.844zM512 0v0c282.77 0 512 229.23 512 512s-229.23 512-512 512c-282.77 0-512-229.23-512-512s229.23-512 512-512zM448 704h128v128h-128zM448 192h128v384h-128z"></path>
-            </symbol>
-            <symbol id="icon-info" viewBox="0 0 1024 1024">
-                <title>info</title>
-                <path class="path1" d="M448 304c0-26.4 21.6-48 48-48h32c26.4 0 48 21.6 48 48v32c0 26.4-21.6 48-48 48h-32c-26.4 0-48-21.6-48-48v-32z"></path>
-                <path class="path2" d="M640 768h-256v-64h64v-192h-64v-64h192v256h64z"></path>
-                <path class="path3" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z"></path>
-            </symbol>
-            <symbol id="icon-error" viewBox="0 0 1024 1024">
-                <title>error</title>
-                <path class="path1" d="M874.040 149.96c-96.706-96.702-225.28-149.96-362.040-149.96s-265.334 53.258-362.040 149.96c-96.702 96.706-149.96 225.28-149.96 362.040s53.258 265.334 149.96 362.040c96.706 96.702 225.28 149.96 362.040 149.96s265.334-53.258 362.040-149.96c96.702-96.706 149.96-225.28 149.96-362.040s-53.258-265.334-149.96-362.040zM896 512c0 82.814-26.354 159.588-71.112 222.38l-535.266-535.268c62.792-44.758 139.564-71.112 222.378-71.112 211.738 0 384 172.262 384 384zM128 512c0-82.814 26.354-159.586 71.112-222.378l535.27 535.268c-62.794 44.756-139.568 71.11-222.382 71.11-211.738 0-384-172.262-384-384z"></path>
-            </symbol>
-            <symbol id="icon-ok" viewBox="0 0 1024 1024">
-                <title>ok</title>
-                <path class="path1" d="M864 128l-480 480-224-224-160 160 384 384 640-640z"></path>
-            </symbol>
-        </defs>
-    </svg>
-    <header id="top">
-        <div class="clearfix">
-            <div id="banner">
-                <h1>{$ad_suite}</h1>
-                <span class="block_level">{$s9ybanner}{$self_info} <span title="{$ad_help}"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg></span></span></span>
-            </div>
-            <nav id="user_menu">
-                <h2 class="visuallyhidden">User menu</h2>
-                <ul>
-                    <li><a class="icon_link" href="serendipity_admin.php" title="Startpage"><svg class="icon icon-home" title="Serendipity backend home"><use xlink:href="#icon-home" width="69.462" height="63.668" x="-34.731" y="-31.834" transform="matrix(1 0 0 -1 34.731 31.8335)" overflow="visible"></use></svg><span class="visuallyhidden"> Startpage</span></a></li>
-                </ul>
-            </nav>
+<svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <symbol id="icon-home" viewBox="-34.731 -31.834 69.462 63.668">
+            <path d="M34.73,5.319l-12.597,9.617v15.908h-9v-9.038L0,31.833l-34.73-26.513l5.461-7.155l3.741,2.856v-32.856H25.53V1.021 l3.74-2.855L34.73,5.319z M20.53-26.834H9v19H-9v-19h-11.529V4.204L0,19.88L20.53,4.204V-26.834z"></path>
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 1024 1024">
+            <title>clock</title>
+            <path class="path1" d="M658.744 749.256l-210.744-210.746v-282.51h128v229.49l173.256 173.254zM512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 896c-212.078 0-384-171.922-384-384s171.922-384 384-384c212.078 0 384 171.922 384 384s-171.922 384-384 384z"></path>
+        </symbol>
+        <symbol id="icon-attention" viewBox="0 0 1024 1024">
+            <title>attention</title>
+            <path class="path1" d="M512 96c-111.118 0-215.584 43.272-294.156 121.844s-121.844 183.038-121.844 294.156c0 111.118 43.272 215.584 121.844 294.156s183.038 121.844 294.156 121.844c111.118 0 215.584-43.272 294.156-121.844s121.844-183.038 121.844-294.156c0-111.118-43.272-215.584-121.844-294.156s-183.038-121.844-294.156-121.844zM512 0v0c282.77 0 512 229.23 512 512s-229.23 512-512 512c-282.77 0-512-229.23-512-512s229.23-512 512-512zM448 704h128v128h-128zM448 192h128v384h-128z"></path>
+        </symbol>
+        <symbol id="icon-info" viewBox="0 0 1024 1024">
+            <title>info</title>
+            <path class="path1" d="M448 304c0-26.4 21.6-48 48-48h32c26.4 0 48 21.6 48 48v32c0 26.4-21.6 48-48 48h-32c-26.4 0-48-21.6-48-48v-32z"></path>
+            <path class="path2" d="M640 768h-256v-64h64v-192h-64v-64h192v256h64z"></path>
+            <path class="path3" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z"></path>
+        </symbol>
+        <symbol id="icon-error" viewBox="0 0 1024 1024">
+            <title>error</title>
+            <path class="path1" d="M874.040 149.96c-96.706-96.702-225.28-149.96-362.040-149.96s-265.334 53.258-362.040 149.96c-96.702 96.706-149.96 225.28-149.96 362.040s53.258 265.334 149.96 362.040c96.706 96.702 225.28 149.96 362.040 149.96s265.334-53.258 362.040-149.96c96.702-96.706 149.96-225.28 149.96-362.040s-53.258-265.334-149.96-362.040zM896 512c0 82.814-26.354 159.588-71.112 222.38l-535.266-535.268c62.792-44.758 139.564-71.112 222.378-71.112 211.738 0 384 172.262 384 384zM128 512c0-82.814 26.354-159.586 71.112-222.378l535.27 535.268c-62.794 44.756-139.568 71.11-222.382 71.11-211.738 0-384-172.262-384-384z"></path>
+        </symbol>
+        <symbol id="icon-ok" viewBox="0 0 1024 1024">
+            <title>ok</title>
+            <path class="path1" d="M864 128l-480 480-224-224-160 160 384 384 640-640z"></path>
+        </symbol>
+    </defs>
+</svg>
+<header id="top">
+    <div class="clearfix">
+        <div id="banner">
+            <h1>{$ad_suite}</h1>
+            <span class="block_level">{$s9ybanner}{$self_info} <span title="{$ad_help}"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg></span></span></span>
         </div>
-    </header>
-    <div id="main" class="clearfix">
-        <div id="serendipity_updater" class="clearfix">
-            <header>
-                <h2>{$ad_title}</h2>
-                <!-- Progress bar holder -->
-                <progress id="progress" max="100" value="10"></progress>
-                <!-- Progress information -->
-                <div id="information" style="width"></div>
-                {$ad_loader}
-            </header>
-            <article>
+        <nav id="user_menu">
+            <h2 class="visuallyhidden">User menu</h2>
+            <a class="icon_link" href="serendipity_admin.php" title="Startpage"><svg class="icon icon-home" title="Serendipity backend home"><use xlink:href="#icon-home" width="69.462" height="63.668" x="-34.731" y="-31.834" transform="matrix(1 0 0 -1 34.731 31.8335)" overflow="visible"></use></svg><span class="visuallyhidden"> Startpage</span></a>
+        </nav>
+    </div>
+</header>
+<div id="main" class="clearfix">
+    <div id="serendipity_updater" class="clearfix">
+        <header>
+            <h2>{$ad_title}</h2>
+            <!-- Progress bar holder -->
+            <progress id="progress" max="100" value="10"></progress>
+            <!-- Progress information -->
+            <div id="information" style="width"></div>
+            {$ad_loader}
+        </header>
+        <article>
 EOS;
 
                     if (isset($nozipext) && $nozipext) {
@@ -789,7 +792,7 @@ EOS;
     </div>
 EOS;
         if ($terminate) {
-            $this->show_message('<p id="terminator" style="font-size: smaller;"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . PLUGIN_AUTOUPD_MSG_CLOSE . '</p>');
+            $this->show_message('<p id="terminator"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . PLUGIN_AUTOUPD_MSG_CLOSE . '</p>');
             echo <<<EOS
     </body>
 </html>

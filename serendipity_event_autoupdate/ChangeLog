@@ -1,3 +1,10 @@
+2.1.0:
+------
+
+ * Allow dark mode by browser preference OR by local storage sets for the autoupgrade page
+   following upcoming Serendipity Styx 4.4.0 installer and upgrade dark mode refactoring.
+ * Fix reload (this) page URL
+
 2.0.1:
 ------
  * Fix the link to self

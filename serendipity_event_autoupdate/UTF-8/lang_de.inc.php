@@ -42,7 +42,7 @@
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_RELOAD', 'Bitte <a href="?serendipity[newVersion]=%s">laden</a> Sie diese Seite [F5] neu, um noch einmal zu versuchen, Ihr Blog erfolgreich zu aktualisieren!');
 
 @define('PLUGIN_AUTOUPD_MSG_EXISTS', 'Existiert der Link nach (<span class="file">%s</span>) überhaupt?');
-@define('PLUGIN_AUTOUPD_MSG_RETURN', 'Seite neu <a href="?serendipity[newVersion]=%s">laden</a>, oder zurück zum <a href="serendipity_admin.php">Backend</a> Ihres Blogs.');
+@define('PLUGIN_AUTOUPD_MSG_RETURN', 'Seite neu <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=update&serendipity[newVersion]=%s">laden</a>, oder zurück zum <a href="serendipity_admin.php">Backend</a> Ihres Blogs.');
 
 @define('PLUGIN_AUTOUPD_MSG_FETCH_ZIPFAIL', 'Fehler bei vorhandener Zip-Datei; Code: %s ("%s"). Der Autoupdater wird erneut versuchen, das Programm herunterzuladen...');
 @define('PLUGIN_AUTOUPD_MSG_FETCH_CURLFAIL', 'Update-Download fehlgeschlagen (Curl installiert, aber fehlgeschlagen)!');
