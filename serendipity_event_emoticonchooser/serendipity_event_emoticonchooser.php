@@ -31,7 +31,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '3.1.8',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '3.34');
+        $propbag->add('version',       '3.35');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -119,7 +119,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $mode = (isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true) ? 'data-color-mode="dark" ' : 'data-color-mode="slight" ';
 ?>
 <!DOCTYPE html>
-<html <?=$mode?>data-light-theme="light" data-dark-theme="dark" class="no-js page_emochr" dir="ltr" lang="<?=$serendipity['lang']?>">
+<html <?=$mode?>class="no-js page_emochr" dir="ltr" lang="<?=$serendipity['lang']?>">
 <head>
     <meta charset="<?=LANG_CHARSET?>">
     <title>Serendipity <?=PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT?></title>
