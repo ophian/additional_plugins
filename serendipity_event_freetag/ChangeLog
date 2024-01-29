@@ -1,8 +1,28 @@
+5.60:
+-----
+ * Fix keyword-to-tag checkups to re-allow lowered keyword
+ * Prepare scaling to half of max size for start up cases
+ * Refactor HTML element ID selector usage preparation in entry edit fieldset
+    for uniqueness regarding #edit_entry_submit submitter box and the
+    entryproperties fieldset with Styx > 4.3.2.
+    (For some time both variants are supported.)
+ * Improve single tag delete for possible non-stored old_tags
+ * Add an "edit_entry_freetags_need_to_save" information handler to the
+   mfp-content layer.
+
+5.50:
+-----
+ * Allow single tag delete (per hand) in the entries entryproperties freetag
+    fieldset. Read the clarifying [ button ] info at there.
+
 5.40:
 -----
- * Fix missing entries_header link selected tagcloud tag for the current chosen tag (on some)
- * Improve frontend content and sidebar markup indents for Styx 4.3+ and the [ 'pure' ] standard theme, which indents are the default
- * Add freetag_current selector to entries cloud "date" header. Also applies to the serendipty_banner h2 subheader. So they can get styled.
+ * Fix missing entries_header link selected tagcloud tag for the current chosen
+    tag (on some).
+ * Improve frontend content and sidebar markup indents for Styx 4.3+ and the
+    [ 'pure' ] standard theme, which indents are the default.
+ * Add freetag_current selector to entries cloud "date" header. Also applies to
+    the serendipty_banner h2 subheader. So they can get styled.
  * Implement sidebar theme dark mode conversion for the
         - canvas rotacloud and the
         - awesome wordcloud scriptlets
@@ -14,7 +34,8 @@
 
 5.31:
 -----
- * Update jquery.autocomplete script for JQuery removed/replaced properties throwing errors
+ * Update jquery.autocomplete script for JQuery removed/replaced properties
+    throwing errors.
 
 5.30:
 -----
@@ -26,12 +47,14 @@
 
 5.28:
 -----
- * Add failsafe parameter for known-to-fail PostgresQL queries using HAVING, in this case for startups with no displayLeafTaggedEntries tag data yet
+ * Add failsafe parameter for known-to-fail PostgresQL queries using HAVING,
+    in this case for startups with no displayLeafTaggedEntries tag data yet.
  * Fix escape typo in [en] constant
 
 5.27:
 -----
- * Exclude freetag {cond}itional SQL-query preparatory for case (sidebar) calendar
+ * Exclude freetag "{cond}"itional SQL-query preparatory for case (sidebar)
+    calendar.
 
 5.26:
 -----
@@ -56,7 +79,7 @@
 5.21:
 -----
  * Avoid a case of MySQLi error exception inserting duplicate entry 'id-tag'
-   for key 'PRIMARY' for category to tags action.
+    for key 'PRIMARY' for category to tags action.
 
 5.20:
 -----
@@ -66,7 +89,8 @@
 5.19:
 5.18:
 -----
- * Check an empty case conversion of assigned categories of existing entries to tags
+ * Check an empty case conversion of assigned categories of existing entries to
+    tags.
 
 5.18:
 -----
@@ -124,7 +148,8 @@
 
 5.05:
 -----
- * Remove outdated js addLoadEvent() initializer for DOM ready vanilla function call
+ * Remove outdated js addLoadEvent() initializer for DOM ready vanilla function
+    call.
 
 5.04:
 -----
@@ -142,16 +167,16 @@
 -----
  * Preparations for Styx 3.3.0 - remove outdated feed hooks
 
-event 5.00 && sidebar 4.00:
+5.00 event && 4.00 sidebar:
 ---------------------------
  * 2021 - Remove FLASH !!! :))))))
 
 4.35:
 -----
  * Improve loading jQuery library for when the theme does not already do.
-   Change regarding config option to [default = false]
-   Removes the class_exists('serendipity_event_jquery') check, which is a not supported plugin any more!
-
+   - Change regarding config option to [default = false].
+   - Removes the class_exists('serendipity_event_jquery') check, which is a not
+     supported plugin any more!
 
 4.34:
 -----
@@ -159,139 +184,116 @@ event 5.00 && sidebar 4.00:
 
 4.33:
 -----
-
  * Improve for PHP 8
 
 4.32:
 -----
-
  * Improve for PHP 8
  * Fixup for database table creation with proper Collation
 
 4.31:
 -----
-
  * Improve freetagMenu icon toolbar padding
 
 4.30:
 -----
-
- * Improved loading assets behaviour for word/canvas cloud option set and/or the
-   sidebar plugin is installed.
+ * Improved loading assets behaviour for word/canvas cloud option set and/or
+    the sidebar plugin is installed.
 
 4.29 & sb 3.13:
 ---------------
-
- * Fix categorytemplates regression regarding SQL joins against normal category hide
+ * Fix categorytemplates regression regarding SQL joins against normal category
+    hide.
 
 4.28:
 -----
-
- * PHP 7.4 fix serendipity_archiveURL() parameters for serendipity_makePermalink()
+ * PHP 7.4 fix serendipity_archiveURL() params for serendipity_makePermalink()
 
 4.27:
 -----
-
  * Fix an uninitialized variable compat check for PHP 7.4
 
 4.26:
 -----
-
  * Add freetag plugin separators to serendipity_admin.js source
 
 4.25:
 -----
-
  * Style untagged/leaf-tag entries backend display in zebra look
 
 4.24:
 -----
-
  * Fix backend toolbar block styles for devices
 
 4.23:
 -----
-
  * Fix (disable) frontend_footer hook for commentpopup cases
  * Fix documentation example for list containers
 
 4.22:
 -----
-
  * Fix (4.20) cloud related tags SQL regression
 
 4.21:
 -----
-
  * Fix [de] lang file typos
 
 sidebar v.3.12:
 ---------------
-
  * Add cloud sidebar SQL query additions for categorytemplates
-   to exclude tagged entries living in hidden set categories OR vice versa.
+    to exclude tagged entries living in hidden set categories OR vice versa.
 
 4.20:
 -----
-
- * Add categorytemplates SQL join and SQL condition references
-   to exclude tagged entries living in hidden set categories. Since freetag tagging
-   is a global approach and will always land in the blogs central section, these queries
-   exclude tag listed entries from hidden set categories for clouds, entries and tags.
+ * Add categorytemplates SQL join and SQL condition references to exclude
+    tagged entries living in hidden set categories. Since freetag tagging
+    is a global approach and will always land in the blogs central section,
+    these queries exclude tag listed entries from hidden set categories for
+    clouds, entries and tags.
 
 4.19:
 -----
-
  * Fix PHP 7 reference error
 
 4.18:
 -----
-
  * Fix some uninitialized variable checks
  * Better handle PLUGIN_EVENT_FREETAG_KEYWORDS_ADD message for output
 
 4.17:
 -----
-
  * Fix obscure ternary syntax with out and set $not_first tags
  * Add style and markup tag for PLUGIN_EVENT_FREETAG_NO_RELATED
 
 4.16:
 -----
-
  * Fix PHP 7 warning for parameter must implement Countable
 
 4.15:
 -----
-
  * Add subpage uninitialized variable check
 
 4.14:
 -----
-
  * Minor update some examples and Smarty operator naming
 
 4.13:
 -----
-
- * Fix possible SQL injection for tagnames, Thanks to Brian carpenter (geeknik)
-   and Hanno Boeck.
- * Update docu code examples for userland Smarty operator naming
+ * Fix possible SQL injection for tagnames,
+    Thanks to Brian carpenter (geeknik) and Hanno Boeck.
+ * Update doc code examples for userland Smarty operator naming
 
 4.12:
 -----
-
  * Fix regression in 4.10 not displaying the entryproperties tag form fieldset
-   for new entry posts.
+    for new entry posts.
 
 4.11:
 -----
-
  * Add other variable default in getTagCloudTags() and displayExternalTaglist()
 
 4.10:
 -----
-
  * Better check undefined variables also in plugin_freetag.tpl
  * Fix useFlash using wrong variable (Flash is dead! Do NOT use!)
  * Remove older code < Styx 2.1
@@ -301,136 +303,104 @@ sidebar v.3.12:
 
 4.05:
 -----
-
  * Remove remaining technorati image leftover (see 4.04)
 
 4.04:
 -----
-
  * Remove technorati_tag_link option (outdated service since 2014)
 
 4.03:
 -----
-
  * Add and fix for button_up selector
 
 4.02:
 -----
-
- * Optimise FREETAG_MANAGE button list generation for an active set state
+ * Optimize FREETAG_MANAGE button list generation for an active set state
 
 4.01:
 -----
-
  * Fix the onmouse hovered fallback title by FREETAG_MANAGE button childcase
 
 4.00:
 -----
-
  * Fix some lang spelling
  * Add new option to explicitly disallow adding freetag jQuery lib,
-   when having set "$serendipity['capabilities']['jquery'] = false".
+    when having set "$serendipity['capabilities']['jquery'] = false".
  * Up from S9y 2.0 append freetag cloud scripts to frontend_footer.
-   This changed some init scripts.
+    This changed some init scripts.
  * Spend some (hover/click) love to FREETAG_MANAGE button (info) title behaviour
 
 3.94:
 -----
-
  * Fixes SVG styling recognition for Chrome
 
 3.93:
 -----
-
  * Iconfont accessibility fixes
 
 3.92:
 -----
-
  * Modification "routing" fix for Serendipity 2.1
  * Optimize tag-as-list constant text
 
 3.91:
 -----
-
  * Slightly modernized the < en > documentation examples
 
 3.90:
 -----
-
  * Fix config grouper item helper snippet for versions in 2.0 to 2.1-Alphas
 
 3.89:
 -----
-
  * Styx related up button styling in entryproperties hook,
-   see styx/commit/cf12c7f
+    see styx/commit/cf12c7f
 
 3.88:
 -----
-
  * Added fallback UP icon class declaration if not in Styx
 
 3.87:
 -----
-
  * Remove S9y 2+ fieldset inline style, making trouble with modal layer
  * Unset UP button classes when using the modal dialog layer
  * Changed unicode character style class name
 
-
 3.86:
 -----
-
  * Remove helper class for up icon, since now in core
-
 
 3.85:
 -----
-
  * Rewrite quick entry save button from 3.82 to better use a #top anchor
-
 
 3.84:
 -----
-
- * Use dir trick with 3.83 for all langs with a reverse LANG_DIRECTION
-
+ * Use dir trick with 3.83 for all languages with a reverse LANG_DIRECTION
 
 3.83:
 -----
-
  * Trick freetag input field content overflow with dir="rtl"
-
 
 3.82:
 -----
-
  * Add a quick entry save button to the Serendipity 2.0+ entryproperties
-   hook fieldset
-
+    hook fieldset.
 
 3.81:
 -----
-
  * Use icon sprites for the backend tag menu with S9y 2+
-
 
 3.80:
 -----
-
  * Bump version for release
-
 
 3.11 (sidebar):
 ---------------
-
  * Add new descending sort option for 'order by tag count' sorting.
-
 
 3.77:
 -----
-
  * Improvement of alphabet index distinction
  * Reverted 3.73 - these methods are called dynamically by name
    - displayRenameTag
@@ -440,151 +410,131 @@ sidebar v.3.12:
    - displaySplitTag
    - getSplitTagQuery
 
-
 3.76:
 -----
-
  * Fix admin permissions by serendipity_checkPermission('adminPlugins')
  * Removed an non static method marked static
 
 
 3.75: + 3.10 (sidebar):
 -----------------------
-
  * Consistent use of serendipity_db_bool()
  * Removed another 2 unused legacy methods
    - getTagHtmlFromCSV
    - getRelatedTags
- * More Docblock comments
-
+ * More PHPDoc comments
 
 3.74:
 -----
-
  * Refactor some huge event hooks to be better readable, which were:
-   external plugin, backend_publish and backend_save,
-   frontend_fetchentries and frontend_fetchentry,
-   backend_display and some css
+   - external plugin, backend_publish and backend_save,
+   - frontend_fetchentries and frontend_fetchentry,
+   - backend_display and some css
  * Fix name tagListAnchor placement
  * Fixed documentation_* example legacy code
 
-
 3.73:
 -----
-
  * Removed unused legacy method(s)
    - getManageUrlAsHidden
    - ...
 
-
 3.72: + 3.09 (sidebar):
 -----------------------
-
  * Check permission if user is allowed to maintain other entries,
-   which disallows some backend administration tasks, except ALL and LEAF tags.
+    which disallows some backend administration tasks, except ALL and LEAF tags.
  * Append backend eventData CSS to end
  * Fix 'flash_bg_trans' default carrier to false
  * Refactor some backend tag administration methods
  * Removed old probelang to use newer API approach.
-   Extends minimum required Serendipity Version to 1.6.
-
+    Extends minimum required Serendipity Version to 1.6.
 
 3.71: + 3.08 (sidebar):
 -----------------------
-
  * Updated the "Find-tags-as-you-type" autocomplete script, which removes the need
-   for jquery-migrate. This also fixes some issues with tag autocompletion!
+    for jquery-migrate. This also fixes some issues with tag autocompletion!
  * Move inline tagLists addtag() script into backend_js with 2.0+.
  * Add exact place of appearance by sprintf() for the CANVAS option descriptions,
-   by event vs. sidebar plugin.
-
+    by event vs. sidebar plugin.
 
 3.07 (sidebar):
 -----------------------
-
  * Add configgroup separate helpers, re-sorting options to better apply
-   into config groups.
- * Precised HTML Tag cloud option text for <en> <de> langs
-
+    into config groups.
+ * Precise HTML Tag cloud option text for <en> <de> langs
 
 3.70: + 3.06 (sidebar):
 -----------------------
-
  * Added an awesome "wordle" like wordcloud Canvas plugin: jQuery.awesomeCloud v0.2,
-   https://github.com/metaloha/jQuery.awesomeCloud.plugin for related Tag Clouds via
-   the event plugin, and for sidebar and archive clouds via the sidebar plugin.
-   PLEASE NOTE: Its usage prevents using the xml icon true option!
-
+    https://github.com/metaloha/jQuery.awesomeCloud.plugin for related Tag Clouds via
+    the event plugin, and for sidebar and archive clouds via the sidebar plugin.
+    PLEASE NOTE: Its usage prevents using the xml icon true option!
 
 3.69: + 3.05 (sidebar):
 -----------------------
-
  * Removed old category to tags subquery and other example from main html documentary
-   and README file, since we have that as an administration task built in.
-   (Left as copy in the very old README.txt file.)
+    and README file, since we have that as an administration task built in.
+    (Left as copy in the very old README.txt file.)
  * Update jQuery to v.1.11.3 for Serendipity < 2.0
  * Tag-Administration buttons are now short-titled and provide the fully translated
-   old content title as tooltip title.
+    old content title as tooltip title.
  * Admin method displayLeafTaggedEntries() will now show this single (leaf) tag
  * The renderTags() method frontend tagcloud now uses a list styled markup, when not
-   using flash.
+    using flash.
  * Added a rotating tagcloud jQuery Canvas Plugin: jquery.tagcanvas.min.js v2.8,
-   https://github.com/goat1000/TagCanvas for related Tag Clouds via
-   the event plugin, and for sidebar and archive clouds via the sidebar plugin.
-   This is a little limited in use, since it runs in more or less "squared" environment!
-   PLEASE NOTE: Its usage prevents using the xml icon true option!
-
+    https://github.com/goat1000/TagCanvas for related Tag Clouds via
+    the event plugin, and for sidebar and archive clouds via the sidebar plugin.
+    This is a little limited in use, since it runs in more or less "squared" environment!
+    PLEASE NOTE: Its usage prevents using the xml icon true option!
 
 3.68: + 3.04 (sidebar):
 -----------------------
-
  * Fix array_map 'htmlspecialchars' callback, to support PHP 5.4+ changes.
  * Internal cleanups: Fix or remove inconsistent and redundant code, Coding styles, etc.
  * Add configgroup separate helpers, re-sorting options to better apply
-   into config groups.
+    into config groups.
  * Fixed possible Exception with wicktags.
  * Fixed tagListAnchor to not jump beneath input field, so you can actually
-   see your tag click insert immediately.
- * Make this backend tagList entry input field "move" focussed to end,
-   when using more tags than the input field length is able to show.
+    see your tag click insert immediately.
+ * Make this backend tagList entry input field "move" focused to end,
+    when using more tags than the input field length is able to show.
  * Fixed some backend freetag tasks!
  * Added more messages.
  * Fixed some constant lang messages ... <en> <de>.
  * Now uses a specialchars_mapper() method.
  * Re-allow the backends entry alphabet index distinction in tag list. Unset by option.
  * Re-organized the "tags to strtolower" option, to only apply to tags shown in all
-   possible frontend situations at runtime. Also changed sidebar plugin to v.3.04 for this.
-   Stored and backend tags are stored and shown as applied!
-   The previous implementation had strange issues. This now is much more clear and straight!
-   WHICH IS: Keep in backend as set or changed, run in frontend by option in both plugins,
-             while covering different places of appearance!
+    possible frontend situations at runtime. Also changed sidebar plugin to v.3.04 for this.
+    Stored and backend tags are stored and shown as applied!
+    The previous implementation had strange issues. This now is much more clear and straight!
+    WHICH IS: Keep in backend as set or changed, run in frontend by option in both plugins,
+                while covering different places of appearance!
  * New PHP version requirement >= 5.3.0
-
 
 3.67:
 -----
-
  * Fix example for taglist code, which needed a pagination fix.
  * Fix multitags delivered linklist array to not use the frontends
-   entry pagination < 100 tags.
+    entry pagination < 100 tags.
  * Added new sort option for multitags entries.
  * Do not show related tags cloud, when using multitags.
-   PLEASE NOTE:
-    This changed the plugin_freetag.tpl file. If you have a template copy,
-    please add a surrounding {if NOT $freetag_isList} to the cloud markup {/if}
-    itself.
+    PLEASE NOTE:
+        This changed the plugin_freetag.tpl file. If you have a template copy,
+        please add a surrounding {if NOT $freetag_isList} to the cloud markup {/if}
+        itself.
  * Changed multitag delimiter for the frontent from " + " to a comma separated
-   list ", ", see http://board.s9y.org/viewtopic.php?f=10&t=20551 .
+    list ", ", see http://board.s9y.org/viewtopic.php?f=10&t=20551 .
  * Fix constant PLUGIN_VARS_DISPLAYTAG for multitag arrays, to show up
-   as a multitag string, delimitered by ", ", like for head_subtitle.
+    as a multitag string, delimitered by ", ", like for head_subtitle.
  * Added colon in constants for PLUGIN_EVENT_FREETAG_USING and
-   PLUGIN_EVENT_FREETAG_SUBTAG for langs <en> and <de>.
+    PLUGIN_EVENT_FREETAG_SUBTAG for langs <en> and <de>.
  * Fix minor show_related_count "default" value (5).
 
+====================== STYX =========================
 
 3.66:
 -----
- * Fix an issue refering to Smarty2->Smarty3 changes.
+ * Fix an issue referring to Smarty2->Smarty3 changes.
 
 3.65:
 -----
@@ -593,7 +543,7 @@ sidebar v.3.12:
 3.64.1
 ----
  * Fix a bug where related entries were shown on overview sections when
-   that section had only one entry
+    that section had only one entry
 
 3.59:
 ----
@@ -613,370 +563,322 @@ sidebar v.3.12:
 
 3.57:
 ----
-Stricter array check to prevent PHP notices
+ * Stricter array check to prevent PHP notices
 
 3.56:
 -----
-Removed obsolete language attribute. (yellowled)
+ * Removed obsolete language attribute. (yellowled)
 
 3.55:
 -----
-Give container a unique id, add class for magnificPopup. Required
-for 2.x backend. (yellowled)
+ * Give container a unique id, add class for magnificPopup. Required
+    for 2.x backend. (yellowled)
 
 3.54:
 ----
-Fix autocomplete error message when not within entry editor page
+ * Fix autocomplete error message when not within entry editor page
 
 3.53.1:
 -----
-Fix autocomplete of tags in 2.0
+ * Fix autocomplete of tags in 2.0
 
 3.53:
 -----
-Fixes issue #177 Freetag plugin emits "1" (mattsches)
-Fixes wrong return values, unneeded parameters, missing checks
+ * Fixes issue #177 Freetag plugin emits "1" (mattsches)
+ * Fixes wrong return values, unneeded parameters, missing checks
 
+3.52:
+-----
+ * Added additional backend markup for 2.0 backend (yellowled)
 
-3.52: Added additional backend markup for 2.0 backend (yellowled)
-3.51: Stricter array check
-3.50: Optimize autocomplete for 2.0, fixes
-3.49: Repair autocomplete for 2.0
+3.51:
+-----
+ * Stricter array check
+
+3.50:
+-----
+ * Optimize autocomplete for 2.0, fixes
+
+3.49:
+-----
+ * Repair autocomplete for 2.0
 
 3.48:
 ----
-
-Support serendipity 2.0 "js" event hook for autocomplete
-Do not loose tags when recreating entry
+ * Support serendipity 2.0 "js" event hook for autocomplete
+ * Do not loose tags when recreating entry
 
 3.47:
 -----
-Make updertEntry not loose possible category associations
+ * Make updertEntry not loose possible category associations
 
 3.46:
 -----
-
-Try to get around a "is no array" error
+ * Try to get around a "is no array" error
 
 3.45:
 -----
-
-static fixes for more PHP5 compat
+ * static fixes for more PHP5 compat
 
 3.43:
 -----
-
-static fixes for freetag<->flattr compatibility (no PHP5 error)
+ * static fixes for freetag<->flattr compatibility (no PHP5 error)
 
 3.42:
 -----
-
-static fixes for spartacus generation
+ * static fixes for spartacus generation
 
 3.41:
 -----
-
-Declare install() method as static
+ * Declare install() method as static
 
 3.39:
 ----
-
-Added specific is_array($eventData) chack, thanks to gregman
+ * Added specific is_array($eventData) chack, thanks to gregman
 
 3.38:
 -----
-
-Added missing fieldset in case of not set admin_show_taglist (thanks to gregman)
+ * Added missing fieldset in case of not set admin_show_taglist (thanks to gregman)
 
 3.37:
 -----
-
-When publishing an entry, cat2tag replacement is now even executed when tags are empty, so that category tags will always be placed.
+ * When publishing an entry, cat2tag replacement is now even executed when tags
+    are empty, so that category tags will always be placed.
 
 3.36:
 -----
-
-Fixed [tag] in one instance of HTML form field, thanks to ascger from the forums
+ * Fixed [tag] in one instance of HTML form field, thanks to ascger from the forums
 
 3.35:
 ----
-
-Change som einstances of [tag] to HTML compliant %5Btag%5D, bug report 3427291
+ * Change some instances of [tag] to HTML compliant %5Btag%5D, bug report 3427291
 
 3.34:
 -----
-
-Only use SHOW sql query for mysql
+ * Only use SHOW sql query for mysql
 
 3.33:
 -----
-
-Link to https instead of http for proper backend usage on SSL-enabled hosts,
-  thanks to Manko10
+ * Link to https instead of http for proper backend usage on SSL-enabled hosts,
+    thanks to Manko10
 
 3.30, 3.31, 3.32:
 ----
-
-Updated bundled tagcloud.swf from WP-Cumulus/Roy Tanck to version 1.23.
-Fixes a html injection vulnerability reported by MustLive
-Fixes a XSS issue reported by Stefan Schurtz
+ * Updated bundled tagcloud.swf from WP-Cumulus/Roy Tanck to version 1.23.
+ * Fixes a html injection vulnerability reported by MustLive
+ * Fixes a XSS issue reported by Stefan Schurtz
 
 3.28:
 -----
-
-Allow to use ?serendipity[tag]=Tag1;Tag2;Tag3
+ * Allow to use ?serendipity[tag]=Tag1;Tag2;Tag3
 
 3.27:
 -----
-
-Proper MySQL collation detection
+ * Proper MySQL collation detection
 
 3.26:
 -----
-
-Added is_array() chechk (Timbalu)
+ * Added is_array() check (Timbalu)
 
 3.25:
 ----
-
-Fix for DB encoding
+ * Fix for DB encoding
 
 3.24:
 -----
-
-Add database encoding (MySQL), Patch by Vincent
+ * Add database encoding (MySQL), Patch by Vincent
 
 3.23:
 -----
-
-Add whitespace/non-breaking patch, see http://board.s9y.org/viewtopic.php?f=5&t=17760
+ * Add whitespace/non-breaking patch,
+    see http://board.s9y.org/viewtopic.php?f=5&t=17760
 
 3.22:
 -----
-
-Fix possible XSS, reported by Stefan Schurtz (SSCHADV2011-004)
+ * Fix possible XSS, reported by Stefan Schurtz (SSCHADV2011-004)
 
 3.21:
 -----
-
-Add "sort" event hook for the serendipity_event_sort plugin by lazybadger
+ * Add "sort" event hook for the serendipity_event_sort plugin by lazybadger
 
 3.20:
 -----
-
-Made tagcloud display as a smarty template "plugin_freetag.tpl". If you want to customize that output, copy this file to your template
-directory and adapt it there.
+ * Made tagcloud display as a smarty template "plugin_freetag.tpl".
+    If you want to customize that output, copy this file to your template
+    directory and adapt it there.
 
 3.18:
 -----
-
-Automatic keyword detection now only works outside of html tags, so nothing like <a href="/serendipity/"> would match 'serendipity' as a keyword
+ * Automatic keyword detection now only works outside of html tags, so nothing
+    like <a href="/serendipity/"> would match 'serendipity' as a keyword
 
 3.17:
 ----
-
-Added backend functionality to clean up tag assignments for non-existent entries
-Made submit button value in tag renaming form translatable
-Fixed a HTML syntax error in tag renaming form by using the corresponding HTML entity
+ * Added backend functionality to clean up tag assignments for non-existent
+    entries
+ * Made submit button value in tag renaming form translatable
+ * Fixed a HTML syntax error in tag renaming form by using the corresponding
+    HTML entity
 
 3.16:
 ----
-
-Bugfix: Meta-keywords were not shown in entries.
+ * Bugfix: Meta-keywords were not shown in entries.
 
 3.15:
 ----
-
-Removed incorrect errormessage "FATAL ERROR! Unrecognized type for
-serendipity_event_freetag:: !"
+ * Removed incorrect error message "FATAL ERROR! Unrecognized type for
+    serendipity_event_freetag:: !"
 
 3.13, 3.14:
 ----
-
-Added mb_internal_encoding() call for proper lowercasing
+ * Added mb_internal_encoding() call for proper lowercasing
 
 3.12.1:
 ----
-
-Replaced wick-based autocompletion with a jquery-plugin (cause wick didn't
-work in Opera anymore)
+ * Replaced wick-based autocompletion with a jquery-plugin (cause wick didn't
+    work in Opera anymore)
 
 3.11.0:
 ----
-
-Add an option to select if tags will be added according to automated keywords
-Fixed false positives when searching for automated keywords by changing the search to use a regular expression
+ * Add an option to select if tags will be added according to automated keywords
+ * Fixed false positives when searching for automated keywords by changing the
+    search to use a regular expression
 
 3.10.5:
 ----
-
-Catch possible errors for the tagcloud query
+ * Catch possible errors for the tagcloud query
 
 3.10.4:
 ----
-
-Add another "empty" check to suppress DB error notices
+ * Add another "empty" check to suppress DB error notices
 
 3.10.3:
 ----
-
-Fixed missing tags in preview of saved entry in entrylist
-Fixed attaching of output in editor-preview
+ * Fixed missing tags in preview of saved entry in entrylist
+ * Fixed attaching of output in editor-preview
 
 3.10.2:
 ----
-
-Fix false detection of extended/simple entry
+ * Fix false detection of extended/simple entry
 
 3.10:
 ----
-
-Emits related articles as unnumbered list.
-Descend one step deeper when searching related tags.
-"Related Tag" is now a p instead of a div
-Introduced extended Smarty-Markup
-Code-cleanup of displayEntry()
+ * Emits related articles as unnumbered list.
+ * Descend one step deeper when searching related tags.
+ * "Related Tag" is now a p instead of a div
+ * Introduced extended Smarty-Markup
+ * Code-cleanup of displayEntry()
 	
-
-
 3.09:
 ----
-
-Fix missing escaping of variable for SQL query
+ * Fix missing escaping of variable for SQL query
 
 3.08
 ----
-
-When viewing articles by tag, no category restrictions are used (like
-startcat plugin) (chessnut)
+ * When viewing articles by tag, no category restrictions are used (like
+   startcat plugin) (chessnut)
 
 3.07
 ----
-
-Make sure that arrays get only set when SQL succeeds
+ * Make sure that arrays get only set when SQL succeeds
 
 3.06 (garvinhicking)
 --------------------
-
-Make sure to also check for non-lowercased tags for automated keywords
-
+ * Make sure to also check for non-lowercased tags for automated keywords
 
 3.05 (garvinhicking)
 --------------------
-
-Only use flash-bg/fg colors, when flash cloud is enabled.
-
+ * Only use flash-bg/fg colors, when flash cloud is enabled.
 
 3.04 (garvinhicking)
 ---------------
-
-Added uncommented possibility to put related entries to overview
-(http://board.s9y.org/viewtopic.php?f=10&t=11124&p=83814#p83814)
+ * Added uncommented possibility to put related entries to overview
+   (http://board.s9y.org/viewtopic.php?f=10&t=11124&p=83814#p83814)
 
 3.03 (garvinhicking)
 ---------------
-
-Add DB escaping to fetch entrytags, fix SQL duplicate LIMIT string.
-(Thanks to rupa)
+ * Add DB escaping to fetch entrytags, fix SQL duplicate LIMIT string.
+  (Thanks to rupa)
 
 3.01 (designor)
 --------------
-
-Optimize output, using latest SWFObject
+ * Optimize output, using latest SWFObject
 
 3.0 (lstrojny)
 --------------
-
-Version fix
+ * Version fix
 
 2.51 (lstrojny)
 ---------------
-
-Fixed ordering of tags when used with templates
+ * Fixed ordering of tags when used with templates
 
 2.5 (lstrojny)
 --------------
-
-Allow to use a Smarty template to render the sidebar
-Unified version numbers
+ * Allow to use a Smarty template to render the sidebar
+ * Unified version numbers
 
 2.105 (RobA)
 -----------
-
-Some Flash fixes, tag limitting, default options
+ * Some Flash fixes, tag limitting, default options
 
 2.103 (RobA)
 -----------
-
-Added Flash rotating tagcloud
+ * Added Flash rotating tagcloud
 
 2.97 (garvinhicking)
 --------------------
-
-Allow to place tag contents through {$entry.freetag} within smarty, when
-configured.
+ * Allow to place tag contents through {$entry.freetag} within smarty, when
+    configured.
 
 2.96 (garvinhicking)
 ----------
-
  * Fix XSS when displaying related tag cloud, thanks to Alex @ bitsploit.de
-
 
 2.95 (garvinhicking)
 ---------
-
  * Added configurable technorati image
 
 2.92/2.45 (brockhaus):
 ---------
-
  * Added configuration for XML image
 
 2.88/2.44 (brockhaus):
 ---------
-
  * Added optional technorati tag links behind tags in entry footers.
 
 2.88/2.43 (brockhaus):
 ---------
-
  * Made tags min/max font size for sidebar plugin configurable, too.
 
 2.88/2.42 (garvinhicking):
 ---------
-
  * Sort tags case insensitive in the sidebar.
 
 2.88/2.41 (brockhaus):
 ---------
-
- * The sidebar plugin always loaded the first X tags by tagname, not by relevance (tagcount).
-   So relevant tags coming too late alphabetically didn't show up.
+ * The sidebar plugin always loaded the first X tags by tagname, not by
+    relevance (tagcount).
+    So relevant tags coming too late alphabetically didn't show up.
 
 2.70:
 -----
-
- * Added possiblity for "automated tags". These will indicate what tags to assign to an entry
-   when keywords are found in an entry
+ * Added possiblity for "automated tags". These will indicate what tags to
+    assign to an entry when keywords are found in an entry.
 
 2.64:
 -----
-
  * Added option to convert categories to tags
 
 2.48:
 -----
-
  * Config option for lowercasing, patch by Lars Strojny
 
 2.47:
 ----
-
  * Better show metastuff
 
 2.44:
 ----
-
  * Show related Entries, patch by stain
  * Make configurable where to show tags
 

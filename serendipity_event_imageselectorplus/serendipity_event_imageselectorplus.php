@@ -202,7 +202,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
 
         $fdim = @serendipity_getImageSize($target, '', '');
 
-        $s9ysizes = serendipity_calculateAspectSize($fdim[0], $fdim[1], $serendipity['thumbSize'], $serendipity['thumbConstraint']);
+        $s9ysizes = serendipity_calculateAspectSize($fdim[0], $fdim[1], $serendipity['thumbSize'], ($serendipity['thumbConstraint'] ?? $serendipity['imageConstraint']));
         $orientation = 'size';
         if ($sizes['width'] == 0) {
             $_newsizes = serendipity_calculateAspectSize($fdim[0], $fdim[1], $sizes['height'], 'height');

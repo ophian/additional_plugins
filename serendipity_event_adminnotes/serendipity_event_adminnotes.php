@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '7.4.0'
         ));
 
-        $propbag->add('version',       '0.34');
+        $propbag->add('version',       '0.35');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -33,7 +33,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'backend_dashboard'                                 => true,
             'css_backend'                                       => true,
         ));
-        $propbag->add('groups', array('BACKEND_FEATURES'));
+        $propbag->add('groups', array('BACKEND_FEATURES','BACKEND_DASHBOARD'));
     }
 
     function introspect_config_item($name, &$propbag)

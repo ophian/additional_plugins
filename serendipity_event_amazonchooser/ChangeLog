@@ -1,3 +1,7 @@
+0.88:
+-----
+ * Remove some obsolete data color schemes in template file
+
 0.87:
 -----
  * PHP 8 this & that..

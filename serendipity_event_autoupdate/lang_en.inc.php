@@ -42,7 +42,7 @@
 @define('PLUGIN_AUTOUPD_MSG_FLUSH_FAIL_RELOAD', 'Please <a href="?serendipity[newVersion]=%s">reload</a> this page [F5] to have another try to upgrade your Blog successful!');
 
 @define('PLUGIN_AUTOUPD_MSG_EXISTS', 'Does the Link to (<span class="file">%s</span>) exist?');
-@define('PLUGIN_AUTOUPD_MSG_RETURN', '<a href="?serendipity[newVersion]=%s">Reload</a> page or return to your blogs <a href="serendipity_admin.php">backend</a>.');
+@define('PLUGIN_AUTOUPD_MSG_RETURN', '<a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=update&serendipity[newVersion]=%s">Reload</a> this page or return to your blogs <a href="serendipity_admin.php">backend</a>.');
 
 @define('PLUGIN_AUTOUPD_MSG_FETCH_ZIPFAIL', 'Existing zip file error; Code: %s ("%s"). The Autoupdater will try to download again...');
 @define('PLUGIN_AUTOUPD_MSG_FETCH_CURLFAIL', 'Downloading update failed (Curl installed, but failed)!');

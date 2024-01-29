@@ -1,6 +1,6 @@
 {if $linktrimmer_external}
 <!DOCTYPE html>
-<html{if $linktrimmer_darkmode} data-color-mode="dark"{else} data-color-mode="slight"{/if} data-light-theme="light" data-dark-theme="dark" class="no-js page_linktrm" dir="ltr" lang="{$lang}">
+<html{if $linktrimmer_darkmode} data-color-mode="dark"{else} data-color-mode="slight"{/if} class="no-js page_linktrm" dir="ltr" lang="{$lang}">
 <head>
     <meta charset="{$CONST.LANG_CHARSET}">
     <title>{$CONST.PLUGIN_LINKTRIMMER_NAME}</title>

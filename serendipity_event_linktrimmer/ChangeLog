@@ -1,3 +1,7 @@
+1.7.8:
+-----
+ * Remove some obsolete data color schemes in template file
+
 1.7.7:
 -----
  * Check some vars on string type, not NULL

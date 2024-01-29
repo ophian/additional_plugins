@@ -11,6 +11,7 @@
 //
 @define('PLUGIN_EVENT_FREETAG_TITLE', 'Freie Artikel-Tags');
 @define('PLUGIN_EVENT_FREETAG_DESC', 'Erlaubt das freie Tagging von Artikeln');
+@define('PLUGIN_EVENT_FREETAG_MPFDESC', 'Sie müssen Ihren Eintrag anschließend noch speichern, um die Änderungen endgültig auszuführen!');
 @define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Bitte alle zutreffenden Tags angeben. Mehrere zutreffende Tags mit Komma (,) trennen');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tags für diesen Artikel: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', 'Artikel mit Tag: <span class="freetag_current">%s</span>');
@@ -119,6 +120,7 @@
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Erweitertes Smarty');
 @define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Nutze statt der HTML-Ausgabe, ob nun direkt oder per Smarty, verschiedene Smarty Variablen, die im Template zusammengefügt werden können. Dies überschreibt alle anderen diesbezüglichen Einstellungen. Ein Beispiel für die Nutzung findet sich im Readme.');
 @define('PLUGIN_EVENT_FREETAG_KILL', 'Wenn aktiviert werden alle zugehörigen Tags gelöscht.');
+@define('PLUGIN_EVENT_FREETAG_KILL_INFO_DESC', 'Einzelne Tags aus mehreren können von Hand entfernt werden, indem Sie das obige Eingabefeld für Tags verwenden. Das vollständige Entfernen wird jedoch nur mittels dieser Checkbox-Option unterstützt! <b>HINWEIS</b>: Bestimmte optionale Freetag-Plugin-Fälle, wie z.B. Kategorie-Tag-Namen und automatisierte Schlüsselwort-zu-Tag-Fälle, unterstützen das Entfernen nur bis zur nächsten Bearbeitung des Eintrags, wo sie automatisch wieder hinzugefügt werden. <b>ACHTUNG</b>: Rufen Sie nach abgeschickten Änderungen für den Fall einer fortsetzenden Bearbeitung den Eintrag noch einmal komplett neu auf, um die aktuell gespeicherten Werte (Tags) zu erhalten. Vertrauen Sie den angezeigten Daten nicht blindlings, sonst kann es sein, dass eben vorgenommene Änderungen gleich wieder überschrieben werden.');
 
 @define('PLUGIN_EVENT_FREETAG_TAGLINK_DESC', 'Eine mögliche Änderung des Taglinks wäre "plugin/taglist/" anstelle von "plugin/tag/" zu schreiben. Dies wäre das Kommando, um jeden Taglink als Liste, anstelle von bereits geöffneten Artikeln, auszugeben. Man kann aber ebenso manuell für bestimmte Taglinks den "/taglist" tag an einen bereits existierenden Taglink (zB. "/plugin/tag/deine/tags/taglist") anhängen. In beiden Fällen ist "taglist" fortan ein reserviertes Kommando und kann nicht mehr als normales Tagwort verwendet werden. Für beide Möglichkeiten ist eine eigenhändig eingebaute Code-Änderung nötig, wie in der Dokumentation für die "Listenanzeige" Option beschrieben. Benötigt Option: "Listenanzeige (ungeöffnete Artikel)".');
 
