@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html{if $plugin_amazonchooser_darkmode} data-color-mode="dark"{else} data-color-mode="slight"{/if} data-light-theme="light" data-dark-theme="dark" class="no-js page_amazonchr" dir="ltr" lang="{$lang}">
+<html{if $plugin_amazonchooser_darkmode} data-color-mode="dark"{else} data-color-mode="slight"{/if} class="no-js page_amazonchr" dir="ltr" lang="{$lang}">
     <head>
         <title>{$CONST.PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON}</title>
         <meta http-equiv="Content-Type" content="text/html; charset={$CONST.LANG_CHARSET}" />
