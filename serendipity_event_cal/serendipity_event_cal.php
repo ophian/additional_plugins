@@ -71,7 +71,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.2.1');
+        $propbag->add('version',        '2.3.0');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '2.0',
@@ -2713,7 +2713,7 @@ class serendipity_event_cal extends serendipity_event
                 case 'backend_sidebar_admin_appearance':
                     // forbid sidebar link if user is not in admin
                     if (serendipity_userLoggedIn() && $_SESSION['serendipityUserlevel'] == '255') {
-                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal">' . PLUGIN_EVENTCAL_ADMIN_NAME . '</a></li>'."\n";
+                        echo "\n".'                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=eventcal">' . PLUGIN_EVENTCAL_ADMIN_NAME . '</a></div></li>'."\n";
                     }
                     break;
 
