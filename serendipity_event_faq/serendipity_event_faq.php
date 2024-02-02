@@ -78,7 +78,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.56');
+        $propbag->add('version',      '1.57');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -1417,7 +1417,7 @@ class serendipity_event_faq extends serendipity_event
                     #    break;
                     #}
                     $this->setupDB();
-                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . "</a></li>\n";
+                    echo '                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq">' . FAQ_NAME . "</a></div></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_faq':
