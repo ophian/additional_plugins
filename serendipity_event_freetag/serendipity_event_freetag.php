@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.60');
+        $propbag->add('version',       '5.70');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1011,7 +1011,7 @@ class serendipity_event_freetag extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries':
-                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags">' . PLUGIN_EVENT_FREETAG_MANAGETAGS . "</a></li>\n";
+                    echo '                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=managetags">' . PLUGIN_EVENT_FREETAG_MANAGETAGS . "</a></div></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_managetags':
