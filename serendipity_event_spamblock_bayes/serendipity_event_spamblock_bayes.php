@@ -17,7 +17,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.8.2');
+        $propbag->add('version',        '2.9.0');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -352,11 +352,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
                     $this->setupDB();
 
-                    echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks">
-                        <a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=spamblock_bayes">
-                            '. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME .'
-                        </a>
-                    </li>';
+                    echo '                    <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&serendipity[adminAction]=spamblock_bayes">'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME ."</a></div></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_spamblock_bayes':
