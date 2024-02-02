@@ -69,7 +69,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '1.14');
+        $propbag->add('version',       '1.15');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1573,7 +1573,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 case 'backend_sidebar_entries':
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
-                        echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=aggregator">' . PLUGIN_AGGREGATOR_TITLE . "</a></li>\n";
+                        echo '                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=aggregator">' . PLUGIN_AGGREGATOR_TITLE . "</a></div></li>\n";
                     }
                     break;
 
