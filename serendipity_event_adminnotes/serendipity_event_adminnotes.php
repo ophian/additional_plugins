@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '7.4.0'
         ));
 
-        $propbag->add('version',       '0.35');
+        $propbag->add('version',       '0.36');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -423,7 +423,7 @@ class serendipity_event_adminnotes extends serendipity_event
                     if ($serendipity['serendipityUserlevel'] < USERLEVEL_CHIEF) {
                         break;
                     }
-                    echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes">' . PLUGIN_ADMINNOTES_TITLE . "</a></li>\n";
+                    echo '                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes">' . PLUGIN_ADMINNOTES_TITLE . "</a></div></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_adminnotes':
