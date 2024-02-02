@@ -26,7 +26,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '3.4.1');
+        $propbag->add('version',       '3.5.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2.0',
             'smarty'      => '3.1.0',
@@ -353,7 +353,7 @@ class serendipity_event_linklist extends serendipity_event
 
                 case 'backend_sidebar_admin_appearance':
                     if (serendipity_db_bool($this->get_config('active', 'false'))) {
-                        echo "\n".'                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist">' . PLUGIN_LINKLIST_ADMINLINK . '</a></li>'."\n";
+                        echo "\n".'                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist">' . PLUGIN_LINKLIST_ADMINLINK . '</a></div></li>'."\n";
                     }
                     break;
 
