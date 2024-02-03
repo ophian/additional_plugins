@@ -1,3 +1,7 @@
+2.2.0:
+------
+ * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links
+
 2.1.0:
 ------
  * Fix $serendipity['db_server_info'] for removed MariaDB prefix with PHP 8.0.16+,
