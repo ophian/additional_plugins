@@ -52,7 +52,7 @@ class serendipity_event_forum extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.44');
+        $propbag->add('version',       '0.45');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -2319,7 +2319,7 @@ class serendipity_event_forum extends serendipity_event
                         break;
                     } else {
 ?>
-                    <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=forum"><?php echo PLUGIN_FORUM_TITLE; ?></a></li>
+                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=forum"><?php echo PLUGIN_FORUM_TITLE; ?></a></div></li>
 <?php
                     }
                     break;
