@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Alexander &#039;dma147&#039; Mieland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Diskusní fórum / zrcadlení phpBB fóra&lt;/b&gt;&lt;br /&gt;Poskytuje kompletní diskusní fórum. Alternativě umožňuje přístup do diskusního fóra phpBB.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 07 Dec 2023 19:20:37 +0100</pubDate>
+<pubDate>Sat, 03 Feb 2024 09:46:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -851,7 +851,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, phoneblogz.com</author>
 <content:encoded>&lt;b&gt;serendipity_event_phoneblogz&lt;br /&gt;Phoneblogz&lt;/b&gt;&lt;br /&gt;Tento plugin umožňuje vypisovat zprávy ze služby Phoneblogz.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 22 Jul 2017 13:32:19 +0200</pubDate>
+<pubDate>Sat, 03 Feb 2024 09:50:36 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_phoneblogz</guid>
 </item>
 <item>
@@ -977,7 +977,7 @@
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Přepínání stavu postranního sloupce (sbalený/rozbalený)&lt;/b&gt;&lt;br /&gt;Smrští postranní sloupce pouze na jejich nadpisy. Přidává nastavení do psaní příspěvků a také položku &quot;Správa postranních sloupců&quot; do administrační sekce.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 25 Aug 2022 09:57:59 +0200</pubDate>
+<pubDate>Sat, 03 Feb 2024 10:10:30 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
@@ -1157,7 +1157,7 @@
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;Seznam úkolů / ToDo list / projektové řízení&lt;/b&gt;&lt;br /&gt;Správa seznamu projektů/úkolů a jejich splnění v procentech&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Tue, 15 Mar 2022 14:43:17 +0100</pubDate>
+<pubDate>Sat, 03 Feb 2024 09:49:42 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
@@ -1229,7 +1229,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Profily uživatelů&lt;/b&gt;&lt;br /&gt;Zobrazuje jednoduché profily uživatelů a dovoluje přiložit jejich fotku.&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
+<pubDate>Sat, 03 Feb 2024 10:13:01 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
@@ -1265,7 +1265,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Wiki odkazy v příspěvcích&lt;/b&gt;&lt;br /&gt;V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Tue, 15 Mar 2022 15:34:18 +0100</pubDate>
+<pubDate>Sat, 03 Feb 2024 09:48:21 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
