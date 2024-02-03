@@ -20,7 +20,7 @@ class serendipity_event_phoneblogz extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_PHONEBLOGZ_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, phoneblogz.com');
-        $propbag->add('version',     '0.11');
+        $propbag->add('version',     '0.12');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -412,7 +412,7 @@ class serendipity_event_phoneblogz extends serendipity_event
             case 'backend_sidebar_entries':
                 if ($serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
 ?>
-                <li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=phoneblogz"><?php echo PLUGIN_EVENT_PHONEBLOGZ_NAME; ?></a></li>
+                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=phoneblogz"><?php echo PLUGIN_EVENT_PHONEBLOGZ_NAME; ?></a></div></li>
 <?php
                 }
                 break;
@@ -420,7 +420,7 @@ class serendipity_event_phoneblogz extends serendipity_event
             case 'backend_sidebar_admin':
                 if ($serendipity['serendipityUserlevel'] >= USERLEVEL_CHIEF) {
 ?>
-                <li class="serendipitySideBarMenuLink serendipitySideBarMenuUserManagementLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=users"><?php echo PLUGIN_EVENT_PHONEBLOGZ_USERS_NAME; ?></a></li>
+                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=users"><?php echo PLUGIN_EVENT_PHONEBLOGZ_USERS_NAME; ?></a></div></li>
 <?php
                 }
                 break;
