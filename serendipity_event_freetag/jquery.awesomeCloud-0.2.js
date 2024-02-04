@@ -531,7 +531,7 @@ Extra Thanks:
 			canvasDOM = document.getElementById(canvasID);
 			canvasDOM.setAttribute("width", options.width);
 			canvasDOM.setAttribute("height", options.height);
-			return canvasDOM.getContext("2d");
+			return canvasDOM.getContext("2d", { willReadFrequently: true });
 		},
 		destroyCanvas: function (id) {
 			$("#" + id).remove();
