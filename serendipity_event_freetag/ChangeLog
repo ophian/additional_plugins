@@ -1,5 +1,9 @@
 5.80:
 -----
+ * Update split tags and rename for constant and selectors usage
+
+5.80:
+-----
  * Add "willReadFrequently: true" to jquery.awesomeCloud-0.2.js
    for chromium recommendation pointing to to specs at
    https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently

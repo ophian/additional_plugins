@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.80');
+        $propbag->add('version',       '5.90');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -3200,7 +3200,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <input type="hidden" name="serendipity[tagaction]" value="rename">
     <input type="hidden" name="serendipity[commit]" value="true">
     <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>">
-    <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]"> <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>">
+    <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]"> <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>">
 </form>
 
 <?php
@@ -3309,10 +3309,10 @@ document.addEventListener("DOMContentLoaded", function() {
             <input type="hidden" name="serendipity[tagaction]" value="split">
             <input type="hidden" name="serendipity[commit]" value="true">
             <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>">
-            <p> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?> <br>
+            <p><?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?><br>
                 foobarbaz =&gt; foo,bar,baz</p>
             <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo serendipity_specialchars($newtag) ?>">
-            <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="split">
+            <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>">
         </form>
 
 <?php
