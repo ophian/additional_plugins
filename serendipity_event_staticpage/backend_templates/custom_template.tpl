@@ -6,7 +6,7 @@
         <fieldset id="sp_main_data" class="sect_basic">
             <legend>{$CONST.STATICPAGE_SECTION_BASIC}</legend>
             <span class="sp_legend_submit">
-                <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="serendipityPrettyButton input_button state_submit">
+                <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="input_button state_submit">
                 <span class="sp_toggle_navigator">
                     <button class="toggle_info button_link" type="button" data-href="#sp_navigator">
                         <span class="icon-right-dir" aria-hidden="true"></span>
@@ -270,7 +270,7 @@
     </div>
     {staticpage_input_finish}
     <div class="sp_responsform_submit">
-        <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="serendipityPrettyButton input_button state_submit">
+        <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="input_button state_submit">
     </div>
 
     <script>

@@ -213,7 +213,7 @@
          END OF EXAMPLE FOR CUSTOM STATICPAGE PROPERTIES *}
 
         <div class="sp_defaultform_submit">
-            <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="serendipityPrettyButton input_button">
+            <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="input_button">
         </div>
 
     </div>
@@ -223,7 +223,7 @@
 {staticpage_input_finish}
 
 <div class="sp_defaultform_submit sp_input_finish">
-    <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="serendipityPrettyButton input_button">
+    <input type="submit" name="serendipity[SAVECONF]" value="{$CONST.SAVE}" class="input_button">
 </div>
 
 <script>
