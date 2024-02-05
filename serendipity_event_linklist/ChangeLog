@@ -1,3 +1,7 @@
+3.5.1:
+-----
+ * Remove an outdated backend selector usage
+
 3.5.0:
 -----
  * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links

@@ -26,7 +26,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '3.5.0');
+        $propbag->add('version',       '3.5.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2.0',
             'smarty'      => '3.1.0',
@@ -680,9 +680,9 @@ class serendipity_event_linklist extends serendipity_event
             echo '
             </table>
         <div>
-            <input type="submit" name="REMOVE" title="'.DELETE.'"  value="'.DELETE.'" class="serendipityPrettyButton input_button state_cancel" />
+            <input type="submit" name="REMOVE" title="'.DELETE.'"  value="'.DELETE.'" class="input_button state_cancel">
             <span>&nbsp;</span>
-            <input type="submit" name="SAVE" title="'.SAVE.'"  value="'.SAVE.'" class="serendipityPrettyButton input_button" />
+            <input type="submit" name="SAVE" title="'.SAVE.'"  value="'.SAVE.'" class="input_button">
         </div>
     </form>';
         }
@@ -714,12 +714,12 @@ class serendipity_event_linklist extends serendipity_event
                 $cat = $res['category'];
                 $desc = $res['descrip'];
             }
-            $button = '<input type="submit" name="EDIT" title="EDIT" value="EDIT" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="EDIT" title="EDIT" value="EDIT" class="input_button">';
         } else {
             $link = $title = $desc = '';
             $cat = array();
             $maintitle = PLUGIN_LINKLIST_ADDLINK;
-            $button = '<input type="submit" name="ADD" title="ADD" value="ADD" class="serendipityPrettyButton input_button" />';
+            $button = '<input type="submit" name="ADD" title="ADD" value="ADD" class="input_button">';
         }
 
         $catlink = $this->get_config('category') == 'custom' ? '(<a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist&amp;serendipity[manage_category]=1">'.PLUGIN_LINKLIST_ADD_CAT.'</a>)' : '';
@@ -728,8 +728,8 @@ class serendipity_event_linklist extends serendipity_event
         <form action="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=linklist" method="post">
             <input type="hidden" name="serendipity[add_link][id]" value="<?php echo $id; ?>">
             <table border="0" cellpadding="5" cellspacing="0" width="100%">
-                <tr><td><?php echo PLUGIN_LINKLIST_LINK.'<div style="font-size: smaller;">'.PLUGIN_LINKLIST_LINK_EXAMPLE.'</div>'; ?></td><td><input class="input_textbox" type="text" name="serendipity[add_link][link]" value="<?php echo $link; ?>" size="30" /></td></tr>
-                <tr><td><?php echo PLUGIN_LINKLIST_LINK_NAME; ?></td><td><input class="input_textbox" type="text" name="serendipity[add_link][title]" value="<?php echo $title; ?>" size="30" /></td></tr>
+                <tr><td><?php echo PLUGIN_LINKLIST_LINK.'<div style="font-size: smaller;">'.PLUGIN_LINKLIST_LINK_EXAMPLE.'</div>'; ?></td><td><input class="input_textbox" type="text" name="serendipity[add_link][link]" value="<?php echo $link; ?>" size="30"></td></tr>
+                <tr><td><?php echo PLUGIN_LINKLIST_LINK_NAME; ?></td><td><input class="input_textbox" type="text" name="serendipity[add_link][title]" value="<?php echo $title; ?>" size="30"></td></tr>
                 <tr><td><?php echo CATEGORY; ?> <?php echo $catlink;?></td><td><?php echo $this->category_box('cat', $categories, $cat); ?></td></tr>
                 <tr><td valign="top"><?php echo PLUGIN_LINKLIST_LINKDESC; ?></td><td><textarea style="width: 100%" name="serendipity[add_link][desc]" id="serendipity[add_link][desc]" cols="80" rows="3"><?php echo $desc; ?></textarea></td></tr>
 
@@ -749,7 +749,7 @@ class serendipity_event_linklist extends serendipity_event
         $display = $this->get_config('display');
         $categories = $this->build_categories();
         $maintitle = PLUGIN_LINKLIST_MAINTAIN_CAT;
-        $button = '<input type="submit" name="ADD" title="' . PLUGIN_LINKLIST_ADD_CAT . '"  value="' . PLUGIN_LINKLIST_ADD_CAT . '" class="serendipityPrettyButton input_button" />';
+        $button = '<input type="submit" name="ADD" title="' . PLUGIN_LINKLIST_ADD_CAT . '"  value="' . PLUGIN_LINKLIST_ADD_CAT . '" class="input_button" />';
 
         echo '<h3>'.$maintitle.'</h3>';
 ?>
@@ -758,7 +758,7 @@ class serendipity_event_linklist extends serendipity_event
             <table border="0" cellpadding="5" cellspacing="0" width="100%">
                 <tr>
                     <td><?php echo PLUGIN_LINKLIST_CAT_NAME; ?></td>
-                    <td><input class="input_textbox" type="text" name="serendipity[add_category][title]" size="30" /></td>
+                    <td><input class="input_textbox" type="text" name="serendipity[add_category][title]" size="30"></td>
                 </tr>
                 <tr>
                     <td><?php echo PLUGIN_LINKLIST_PARENT_CATEGORY; ?></td>
@@ -792,7 +792,7 @@ class serendipity_event_linklist extends serendipity_event
 ?>
             <tr>
                 <td width="16">
-                    <input class="input_checkbox" type="checkbox" name="serendipity[category_to_remove][]" value="<?php echo $category['categoryid']; ?>" />
+                    <input class="input_checkbox" type="checkbox" name="serendipity[category_to_remove][]" value="<?php echo $category['categoryid']; ?>">
                 </td>
                 <td width="300" style="padding-left: <?php echo ($category['depth']*15)+20 ?>px">
                     <img src="<?php echo serendipity_getTemplateFile('admin/img/folder.png') ?>" style="vertical-align: bottom;"> <?php echo serendipity_specialchars($category['category_name']) ?>
@@ -803,7 +803,7 @@ class serendipity_event_linklist extends serendipity_event
         echo '
             </table>
         <div>
-            <input type="submit" name="REMOVE" title="' . CATEGORIES . ' ' . DELETE . '"  value="' . DELETE . '" class="serendipityPrettyButton input_button state_cancel" />
+            <input type="submit" name="REMOVE" title="' . CATEGORIES . ' ' . DELETE . '"  value="' . DELETE . '" class="input_button state_cancel">
         </div>
         <div style="font-size: smaller;">' . PLUGIN_LINKLIST_DELETE_WARN . '</div>
     </form>';
