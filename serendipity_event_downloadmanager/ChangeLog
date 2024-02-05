@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+1.65:
+-----
+ * Remove an outdated backend selector usage
+
 1.64:
 -----
  * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links

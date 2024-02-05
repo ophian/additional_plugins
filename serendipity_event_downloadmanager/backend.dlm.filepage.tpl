@@ -1,4 +1,4 @@
-{* backend.dlm.filepage.tpl last modified 2023-12-02 *}
+{* backend.dlm.filepage.tpl last modified 2024-02-05 *}
     <div id="dlm_backend_fileedit">
         <form action="?" name="editfileform" method="POST">
             <div>
@@ -28,7 +28,7 @@
                     <label for="">{$CONST.PLUGIN_DOWNLOADMANAGER_EDIT_FILE_DESC}</label>
                     <textarea onblur="if(this.value=='')this.value='<!--// {$CONST.PLUGIN_DOWNLOADMANAGER_EDIT_FILE_DESC} /\/\-->';" onfocus="if(this.value=='<!--// {$CONST.PLUGIN_DOWNLOADMANAGER_EDIT_FILE_DESC}\/\-->')this.value='';" name="serendipity[description]">{$dlmefe.description}</textarea>
                 </div>
-                <input id="editfile_submit" class="serendipityPrettyButton input_button" type="submit" name="serendipity[dlmanAction]" value="{$CONST.SAVE}">
+                <input id="editfile_submit" class="input_button" type="submit" name="serendipity[dlmanAction]" value="{$CONST.SAVE}">
             </div>
         </form>
     </div><!-- div edit file end -->

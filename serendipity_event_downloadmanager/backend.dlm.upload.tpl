@@ -1,4 +1,4 @@
-{* backend.dlm.upload.tpl last modified 2023-12-02 *}
+{* backend.dlm.upload.tpl last modified 2024-02-05 *}
     <div id="dlm_backend_uploadform">
 {if !empty( $dlmulf.file_uploads ) && ( $dlmulf.file_uploads == 1 || $dlmulf.file_uploads == true || $dlmulf.file_uploads == 'On' )}
         <form action="?" name="uploadfileform" method="POST" enctype="multipart/form-data">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 {/section}
-                <input id="upload_submit" class="serendipityPrettyButton input_button dlm_input_button" type="submit" name="serendipity[dlmanAction]" value="{$CONST.GO}">
+                <input id="upload_submit" class="input_button dlm_input_button" type="submit" name="serendipity[dlmanAction]" value="{$CONST.GO}">
             </div>
         </form>
 {else}
