@@ -32,7 +32,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.33');
+        $propbag->add('version',       '2.34');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -471,8 +471,8 @@ class serendipity_event_includeentry extends serendipity_event
         $html .= $this->getPages(($serendipity['POST']['staticblock'] ?? null), $type);
         $html .= '
                             </select><br>
-                            <input class="serendipityPrettyButton input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="' . GO . '">
-                            <input  class="serendipityPrettyButton input_button state_cancel" type="submit" name="serendipity[staticDelete]" value="' . DELETE . '">'."\n";
+                            <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="' . GO . '">
+                            <input  class="input_button state_cancel" type="submit" name="serendipity[staticDelete]" value="' . DELETE . '">'."\n";
 
         if ($type == 'template') {
             $html .= '<a onclick="this.href = this.href + document.getElementById(\'staticblock_template\').options[document.getElementById(\'staticblock_template\').selectedIndex].value" href="serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=new&amp;serendipity[staticblock]=" class="button_link">' . STATICBLOCK_USE . "</a>\n";
