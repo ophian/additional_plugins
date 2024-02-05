@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.50');
+        $propbag->add('version',       '1.51');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '7.1.0'
@@ -361,7 +361,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                 <h3><?php echo PLUGIN_SIDEBAR_HIDER_CONF;?></h3>
                 <div><?php echo PLUGIN_SIDEBAR_HIDER_CONF_DESC;?></div>
                 <br />
-                <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo SAVE_CHANGES_TO_LAYOUT;?>" /><br /><br />
+                <input class="input_button" type="submit" name="submit" value="<?php echo SAVE_CHANGES_TO_LAYOUT;?>" /><br /><br />
 
                 <div class="pluginmanager">
 
