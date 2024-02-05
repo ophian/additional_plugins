@@ -78,7 +78,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.57');
+        $propbag->add('version',      '1.58');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -770,7 +770,7 @@ class serendipity_event_faq extends serendipity_event
                     }
                 }
                 echo '    <div class="clear action_field">'."\n";
-                echo '        <a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=faqs&amp;serendipity[cid]='.$serendipity['GET']['cid'].'" class="serendipityPrettyButton button_link">'.FAQ_NEWFAQ.'</a>'."\n";
+                echo '        <a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=faqs&amp;serendipity[cid]='.$serendipity['GET']['cid'].'" class="button_link">'.FAQ_NEWFAQ.'</a>'."\n";
                 echo "    </div>\n";
                 echo "</div>\n";
                 break;
@@ -785,7 +785,7 @@ class serendipity_event_faq extends serendipity_event
                     echo "    </div>";
                     echo '    <strong>'. FAQ_CATEGORIES. '</strong><br /><br />'."\n";
                     echo '    '.FAQ_REALYDELETECATEGORY."&nbsp;\n";
-                    echo '    <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[categoryDelete]" value="'.YES.'" /> &nbsp; <input class="serendipityPrettyButton input_button" type="submit" name="" value="'.NO.'" />'."\n";
+                    echo '    <input class="input_button" type="submit" name="serendipity[categoryDelete]" value="'.YES.'" /> &nbsp; <input class="input_button" type="submit" name="" value="'.NO.'" />'."\n";
                     echo "</form>\n\n";
                 }
                 break;
@@ -802,7 +802,7 @@ class serendipity_event_faq extends serendipity_event
                     echo "    </div>";
                     echo '    <strong>'. FAQ_CATEGORIES. '</strong><br /><br />';
                     echo '    '.FAQ_REALYDELETECATEGORY."&nbsp;\n";
-                    echo '    <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[faqDelete]" value="'.YES.'" /> &nbsp; <input class="serendipityPrettyButton input_button" type="submit" name="" value="'.NO.'" />'."\n";
+                    echo '    <input class="input_button" type="submit" name="serendipity[faqDelete]" value="'.YES.'" /> &nbsp; <input class="input_button" type="submit" name="" value="'.NO.'" />'."\n";
                     echo "</form>\n\n";
                 }
                 break;
@@ -883,7 +883,7 @@ class serendipity_event_faq extends serendipity_event
                 echo "    </div>\n\n";
 
                 echo '    <div class="clear action_field">'."\n";
-                echo '        <a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[cat_lang]='.$this_cat_lang.'" class="serendipityPrettyButton button_link">'.FAQ_NEWCATEGORY.'</a>'."\n";
+                echo '        <a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=faq&amp;serendipity[action]=categories&amp;serendipity[cat_lang]='.$this_cat_lang.'" class="button_link">'.FAQ_NEWCATEGORY.'</a>'."\n";
                 echo "    </div>\n\n";
 
                 echo "</div>\n";
