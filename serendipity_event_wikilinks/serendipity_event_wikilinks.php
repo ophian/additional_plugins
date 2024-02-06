@@ -22,7 +22,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '1.2.0');
+        $propbag->add('version',       '1.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
@@ -161,7 +161,7 @@ class serendipity_event_wikilinks extends serendipity_event
 
                 case 'backend_sidebar_entries':
                     $this->setupDB();
-                    echo '<li class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=wikireferences">' . PLUGIN_EVENT_WIKILINKS_MAINT . '</a></li>';
+                    echo '                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=wikireferences">' . PLUGIN_EVENT_WIKILINKS_MAINT . '</a></div></li>';
                     break;
 
                 case 'backend_sidebar_entries_event_display_wikireferences':

@@ -1,3 +1,7 @@
+3.14:
+-----
+ * Remove an outdated backend selector usage
+
 3.13:
 -----
  * Fix for PHP 8 "Only variable references should be returned by reference"

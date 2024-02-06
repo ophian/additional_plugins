@@ -1,4 +1,4 @@
-{* backend.dlm.subpage.tpl last modified 2023-12-02 *}
+{* backend.dlm.subpage.tpl last modified 2024-02-05 *}
 {if $dlmgbl.thispage == 2 && $dlmcfs.catfiles === true}
 {* Show all files in category *}
 
@@ -245,7 +245,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="2"><input id="catname_submit" class="serendipityPrettyButton input_button" type="submit" name="serendipity[catnamAction]" value="{$CONST.GO}"></td>
+                    <td colspan="2"><input id="catname_submit" class="input_button" type="submit" name="serendipity[catnamAction]" value="{$CONST.GO}"></td>
                 </tr>
             </tfoot>
             </table>

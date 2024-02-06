@@ -26,7 +26,7 @@ class serendipity_event_backup extends serendipity_event
             'php'         => '7.0'
         ));
 
-        $propbag->add('version',       '1.2.3');
+        $propbag->add('version',       '1.3.0');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1387,7 +1387,7 @@ class serendipity_event_backup extends serendipity_event
 
                 case 'backend_sidebar_admin_appearance': // this is section: maintenance on 2.x - append
                     if ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN && ($serendipity['dbType'] == 'mysql' || $serendipity['dbType'] == 'mysqli')) {
-                        echo '                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=backup">' . PLUGIN_BACKUP_TITLE . "</a></li>\n";
+                        echo '                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=backup">' . PLUGIN_BACKUP_TITLE . "</a></div></li>\n";
                     }
                     break;
 

@@ -1,4 +1,4 @@
-{* backend.dlm.rootpage.tpl last modified 2023-12-02 *}
+{* backend.dlm.rootpage.tpl last modified 2024-02-05 *}
 {if $dlmgbl.thispage == 1 && $dlmact.addcat === true}
 {* Add category to selectfield cat *}
 <p id="dlm_addcat_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm1'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{serendipity_getFile file="img/plus.png"}" id="optiondlm1" alt="+/-"> {$CONST.PLUGIN_DOWNLOADMANAGER_ADD_CAT}</a></p>
@@ -25,7 +25,7 @@
                 </select>
             </div>
 
-            <input id="addcat_submit" class="serendipityPrettyButton input_button" type="submit" name="serendipity[dlmanAction]" value="{$CONST.SAVE}">
+            <input id="addcat_submit" class="input_button" type="submit" name="serendipity[dlmanAction]" value="{$CONST.SAVE}">
         </div>
         </form>
     </div>
@@ -141,7 +141,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2"><input id="catname_submit" class="serendipityPrettyButton input_button" type="submit" name="serendipity[catnamAction]" value="{$CONST.GO}"></td>
+                <td colspan="2"><input id="catname_submit" class="input_button" type="submit" name="serendipity[catnamAction]" value="{$CONST.GO}"></td>
             </tr>
         </tfoot>
         </table>

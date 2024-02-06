@@ -18,7 +18,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.40');
+        $propbag->add('version',       '1.51');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'php'         => '7.1.0'
@@ -191,7 +191,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                     break;
 
                 case 'backend_sidebar_admin': // this is section: settings on 2.x - append
-                    echo '<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=sidebarhider">'.PLUGIN_SIDEBAR_HIDER_ADMINLINK.'</a></li>';
+                    echo '                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=sidebarhider">'.PLUGIN_SIDEBAR_HIDER_ADMINLINK."</a></div></li>\n";
                     break;
 
                 case 'backend_sidebar_entries_event_display_sidebarhider':
@@ -361,7 +361,7 @@ class serendipity_event_sidebarhider extends serendipity_event
                 <h3><?php echo PLUGIN_SIDEBAR_HIDER_CONF;?></h3>
                 <div><?php echo PLUGIN_SIDEBAR_HIDER_CONF_DESC;?></div>
                 <br />
-                <input class="serendipityPrettyButton input_button" type="submit" name="submit" value="<?php echo SAVE_CHANGES_TO_LAYOUT;?>" /><br /><br />
+                <input class="input_button" type="submit" name="submit" value="<?php echo SAVE_CHANGES_TO_LAYOUT;?>" /><br /><br />
 
                 <div class="pluginmanager">
 

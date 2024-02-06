@@ -1,3 +1,8 @@
+0.24:
+-----
+
+ * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links
+
 0.23 / 0.16:
 -----
 
@@ -5,12 +10,10 @@
  * Raise requirements
  * Plugin set SQL select selection known to fail
 
-
 0.22:
 -----
 
  * Improved length of input fields
-
 
 sidebar 0.15:
 --------------

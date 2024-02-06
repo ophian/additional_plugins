@@ -1034,7 +1034,7 @@ class serendipity_event_twitter extends serendipity_plugin
                 case 'backend_sidebar_admin_appearance':
                     if ($this->get_config('tweeter_show', 'disable') == 'sidebar') {
 ?>
-                        <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=tweeter"><?php echo PLUGIN_EVENT_TWITTER_TWEETER_SIDEBARTITLE; ?></a></li>
+                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=tweeter"><?php echo PLUGIN_EVENT_TWITTER_TWEETER_SIDEBARTITLE; ?></a></div></li>
 <?php
                     }
                     break;

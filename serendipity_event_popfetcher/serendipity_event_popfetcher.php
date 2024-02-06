@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.56');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.57');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -1616,7 +1616,7 @@ class serendipity_event_popfetcher extends serendipity_event
             switch($event) {
                 case 'backend_sidebar_entries':
                     if (!$adminmenu) return false;
-                    echo '                        <li> class="serendipitySideBarMenuLink serendipitySideBarMenuEntryLinks"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=popfetcher">' . PLUGIN_MF_NAME . "</a></li>\n";
+                    echo '                    <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=popfetcher">' . PLUGIN_MF_NAME . "</a></div></li>\n";
                     break;
 
                 case 'external_plugin':

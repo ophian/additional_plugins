@@ -35,7 +35,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '2.1.0');
+        $propbag->add('version', '2.2.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
@@ -378,7 +378,7 @@ class serendipity_event_todolist extends serendipity_event
 
                 case 'backend_sidebar_entries':
 ?>
-                    <li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone"><?php echo PLUGIN_EVENT_TODOLIST_ADMINPROJECT ?></a></li>
+                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=percentagedone"><?php echo PLUGIN_EVENT_TODOLIST_ADMINPROJECT ?></a></div></li>
 <?php
                     break;
 

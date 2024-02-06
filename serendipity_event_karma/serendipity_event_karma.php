@@ -44,7 +44,7 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.23');
+        $propbag->add('version',       '2.24');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1.0',
@@ -1570,7 +1570,7 @@ if ($h == 15) {
                 // Display the Karma Log link on the sidebar
                 case 'backend_sidebar_admin_appearance':
 ?>
-<li><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=karmalog"><?php echo PLUGIN_KARMA_DISPLAY_LOG; ?></a></li>
+                        <li class="list-flex"><div class="flex-column-1"><a href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=karmalog"><?php echo PLUGIN_KARMA_DISPLAY_LOG; ?></a></div></li>
 <?php
                     return true;
                     break;

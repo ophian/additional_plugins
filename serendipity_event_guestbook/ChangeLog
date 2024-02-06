@@ -1,3 +1,7 @@
+4.2.0:
+-----
+ * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links
+
 4.1.6:
 -----
  * Improve Smarty backend markup indents for Serendipity Styx 4.3.0

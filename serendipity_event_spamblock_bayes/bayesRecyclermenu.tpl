@@ -3,8 +3,8 @@
 <div id="bayesContent">
     <form action="{$serendipityBaseURL}index.php?/plugin/bayes_recycle" method="post">
         <div id="bayesControls">
-                <input type="submit" class="serendipityPrettyButton input_button" value="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RESTORE}" name="restore"/>
-                <input type="submit" class="serendipityPrettyButton input_button" value="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY}" name="empty" />
+                <input type="submit" class="input_button" value="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RESTORE}" name="restore"/>
+                <input type="submit" class="input_button" value="{$CONST.PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY}" name="empty" />
         </div>
 
         <div id="bayesRecycler">
