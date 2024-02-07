@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '5.90');
+        $propbag->add('version',       '6.0.0');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -835,7 +835,7 @@ class serendipity_event_freetag extends serendipity_event
             echo '                        </ul>
                     </div>
                     <script type="text/javascript">
-                        window.onload = function() {
+                        document.addEventListener("DOMContentLoaded", function() {
                             if (!jQuery.isFunction(jQuery.fn.tagcanvas) ) { return false; }
                             // check B53+ theme color mode
                             let bstr = localStorage.getItem("theme");
@@ -853,7 +853,7 @@ class serendipity_event_freetag extends serendipity_event
                                 // something went wrong, hide the canvas container
                                 jQuery("#freeTagCanvas' . $key . '").hide();
                             }
-                        };
+                        });
                     </script>
 ';
         } elseif ($useWordCloud) {
@@ -862,7 +862,7 @@ class serendipity_event_freetag extends serendipity_event
             $grid = ($multiply == 2) ? 6 : $grid;  // with a small amount of tags grid could be set to 1 too
             echo '                    </div>
                     <script type="text/javascript">
-                        window.onload = function() {
+                        document.addEventListener("DOMContentLoaded", function() {
                             if (!jQuery.isFunction(jQuery.fn.awesomeCloud) ) { return false; }
                             // check B53+ theme color mode
                             let bstr = localStorage.getItem("theme");
@@ -881,7 +881,7 @@ class serendipity_event_freetag extends serendipity_event
                                 "font" : "\'Times New Roman\', Times, serif",
                                 "shape" : "circle"
                             });
-                        };
+                        });
                     </script>
 ';
         } else {

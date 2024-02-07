@@ -1,4 +1,9 @@
-5.80:
+6.0.0:
+-----
+ * Fix word- and rota-clouds "window.onload" loader to later fired "document.addEventListener('DOMContentLoaded'" listener,
+   to support themes with page footer included jQuery libs.
+
+5.90:
 -----
  * Update split tags and rename for constant and selectors usage
 
