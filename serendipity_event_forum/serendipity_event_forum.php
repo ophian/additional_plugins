@@ -16,6 +16,8 @@ include dirname(__FILE__) . '/include/functions.inc.php';
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+@define('QUOTE', 'Quote'); // strangely not defined yet when moving plugin active, so add a fallback define
+
 @define( "PWD_ALLOW_NUM", ( 1 << 0 ));
 @define( "PWD_ALLOW_LC",  ( 1 << 1 ));
 @define( "PWD_ALLOW_UC",  ( 1 << 2 ));
@@ -52,7 +54,7 @@ class serendipity_event_forum extends serendipity_event
             'php'         => '5.2.0'
         ));
 
-        $propbag->add('version',       '0.45');
+        $propbag->add('version',       '0.46');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -2348,7 +2350,7 @@ class serendipity_event_forum extends serendipity_event
                     $theUri = (string)str_replace('&amp;', '&', $eventData);
                     $uri_parts = explode('?', $theUri);
 
-                    // Try to get reguest parameters from eventData name
+                    // Try to get request parameters from eventData name
                     if (!empty($uri_parts[1])) {
                         $reqs = explode('&', $uri_parts[1]);
                         foreach($reqs AS $id => $req) {
@@ -2359,11 +2361,11 @@ class serendipity_event_forum extends serendipity_event
                         }
                     }
 
-                    $parts     = explode('_', $uri_parts[0]);
+                    $parts = explode('_', $uri_parts[0]);
                     if (!empty($parts[1])) {
-                        $param     = (int) $parts[1];
+                        $param = (int) $parts[1];
                     } else {
-                        $param     = null;
+                        $param = null;
                     }
 
                     switch($parts[0]) {
@@ -2377,7 +2379,6 @@ class serendipity_event_forum extends serendipity_event
                             $file = serendipity_db_query($sql);
                             $mime = DMA_forum_getMime(basename($file[0]['realfilename']), $this->DMA_forum_getRelPath());
                             $contenttype = $mime['TYPE'];
-
 
                             $filename = basename($file[0]['realfilename']);
                             $path = $this->get_config('uploaddir');
@@ -2452,35 +2453,35 @@ class serendipity_event_forum extends serendipity_event
                         return false;
                     }
 
-                    $con = mysql_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
+                    $con = mysqli_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
                     if (!$con) {
                         $this->logMSG('Could not connect to database');
                         return false;
                     }
 
-                    if (!mysql_select_db($this->get_config('phpbb_db_name'), $con)) {
+                    if (!mysqli_select_db($con, $this->get_config('phpbb_db_name'))) {
                         $this->logMSG('Could not select database');
                         return false;
                     }
 
-                    if (mysql_error() != '') {
-                        $this->logMSG(mysql_error(), true);
+                    if (mysqli_error($con) != '') {
+                        $this->logMSG(mysqli_error($con), true);
                         return false;
                     }
 
-                    mysql_query("SET NAMES " . SQL_CHARSET);
+                    mysqli_query($con, "SET NAMES " . SQL_CHARSET);
 
                     $prefix = $this->get_config('phpbb_db_prefix');
                     $fid    = (int)$this->get_config('phpbb_forum');
                     $topic_poster = (int)$this->get_config('phpbb_poster');
 
                     if ($phpbb_mirror == 4) {
-                        $tp = mysql_query("SELECT realName AS username FROM {$prefix}members WHERE ID_MEMBER = $topic_poster");
+                        $tp = mysqli_query($con, "SELECT realName AS username FROM {$prefix}members WHERE ID_MEMBER = $topic_poster");
                     } else {
-                        $tp = mysql_query("SELECT username FROM {$prefix}users WHERE user_id = $topic_poster");
+                        $tp = mysqli_query($con, "SELECT username FROM {$prefix}users WHERE user_id = $topic_poster");
                     }
-                    if (mysql_num_rows($tp) > 0) {
-                        $topic_poster_data = mysql_fetch_array($tp, MYSQL_ASSOC);
+                    if (mysqli_num_rows($tp) > 0) {
+                        $topic_poster_data = mysqli_fetch_array($tp, MYSQL_ASSOC);
                     }
 
                     if ($event == 'backend_save') {
@@ -2496,110 +2497,110 @@ class serendipity_event_forum extends serendipity_event
 
                         if ($phpbb_mirror == 4) {
                         } else {
-                            mysql_query("UPDATE {$prefix}topics
+                            mysqli_query($con, "UPDATE {$prefix}topics
                                             SET topic_title = '" . serendipity_db_escape_string($eventData['title']) . "'
                                           WHERE topic_id = " . (int)$r['phpbb_topic']['value'], $con);
                         }
-                        $this->logMSG(mysql_error(), true);
+                        $this->logMSG(mysqli_error($con), true);
 
                         if ($phpbb_mirror == 4) {
-                            mysql_query("UPDATE {$prefix}messages
+                            mysqli_query($con, "UPDATE {$prefix}messages
                                             SET subject = '" . serendipity_db_escape_string($eventData['title']) . "',
                                                 body    = '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "',
                                                 modifiedTime = '" . time() . "',
                                                 posterTime = '" . time() . "'
                                           WHERE ID_MSG = " . (int)$r['phpbb_post']['value'], $con);
                         } elseif ($phpbb_mirror == 3) {
-                            mysql_query("UPDATE {$prefix}posts
+                            mysqli_query($con, "UPDATE {$prefix}posts
                                             SET post_subject = '" . serendipity_db_escape_string($eventData['title']) . "',
                                                 post_text    = '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "',
                                                 topic_last_post_time = '" . time() . "'
                                           WHERE post_id = " . (int)$r['phpbb_post']['value'], $con);
                         } else {
-                            mysql_query("UPDATE {$prefix}posts_text
+                            mysqli_query($con, "UPDATE {$prefix}posts_text
                                             SET post_subject = '" . serendipity_db_escape_string($eventData['title']) . "',
                                                 post_text    = '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "'
                                           WHERE post_id = " . (int)$r['phpbb_post']['value'], $con);
                         }
-                        $this->logMSG(mysql_error(), true);
+                        $this->logMSG(mysqli_error($con), true);
 
                         return true;
                     }
 
                     if ($phpbb_mirror == 4) {
-                        mysql_query("INSERT INTO {$prefix}topics (ID_BOARD, ID_FIRST_MSG, ID_LAST_MSG, ID_MEMBER_STARTED, ID_MEMBER_UPDATED)
+                        mysqli_query($con, "INSERT INTO {$prefix}topics (ID_BOARD, ID_FIRST_MSG, ID_LAST_MSG, ID_MEMBER_STARTED, ID_MEMBER_UPDATED)
                                           VALUES ($fid, $topic_poster, $topic_poster, $topic_poster, $topic_poster)", $con);
                     } elseif ($phpbb_mirror == 3) {
-                        mysql_query("INSERT INTO {$prefix}topics (forum_id, topic_title, topic_poster, topic_time, topic_first_post_id, topic_last_post_id, topic_first_poster_name, topic_last_post_time, topic_last_poster_id)
+                        mysqli_query($con, "INSERT INTO {$prefix}topics (forum_id, topic_title, topic_poster, topic_time, topic_first_post_id, topic_last_post_id, topic_first_poster_name, topic_last_post_time, topic_last_poster_id)
                                           VALUES ($fid, '" . serendipity_db_escape_string($eventData['title']) . "', $topic_poster, UNIX_TIMESTAMP(NOW()), $topic_poster, $topic_poster, '" . serendipity_db_escape_string($topic_poster_data['username']) . "', '" . time() . "', $topic_poster)", $con);
                     } else {
-                        mysql_query("INSERT INTO {$prefix}topics (forum_id, topic_title, topic_poster, topic_time, topic_first_post_id, topic_last_post_id)
+                        mysqli_query($con, "INSERT INTO {$prefix}topics (forum_id, topic_title, topic_poster, topic_time, topic_first_post_id, topic_last_post_id)
                                           VALUES ($fid, '" . serendipity_db_escape_string($eventData['title']) . "', $topic_poster, UNIX_TIMESTAMP(NOW()), 0, 0)", $con);
                     }
-                    $this->logMSG(mysql_error(), true);
-                    $topic_id = mysql_insert_id($con);
+                    $this->logMSG(mysqli_error($con), true);
+                    $topic_id = mysqli_insert_id($con);
 
                     if ($phpbb_mirror == 4) {
-                        mysql_query("INSERT INTO {$prefix}messages (ID_TOPIC, ID_BOARD, posterTime, ID_MEMBER, subject, posterName, posterEmail, posterIP, modifiedTime, body)
+                        mysqli_query($con, "INSERT INTO {$prefix}messages (ID_TOPIC, ID_BOARD, posterTime, ID_MEMBER, subject, posterName, posterEmail, posterIP, modifiedTime, body)
                                           VALUES ($topic_id, $fid, UNIX_TIMESTAMP(NOW()), $topic_poster, '" . serendipity_db_escape_string($eventData['title']) . "', '" . serendipity_db_escape_string($eventData['author']) . "', '" . serendipity_db_escape_string($eventData['email']) . "', '" . $_SERVER['REMOTE_ADDR'] . "', 0, '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "')", $con);
-                        $this->logMSG(mysql_error(), true);
-                        $post_id = mysql_insert_id($con);
+                        $this->logMSG(mysqli_error($con), true);
+                        $post_id = mysqli_insert_id($con);
                     } elseif ($phpbb_mirror == 3) {
-                        mysql_query("INSERT INTO {$prefix}posts (topic_id, forum_id, poster_id, post_time, post_username, post_subject, post_text)
+                        mysqli_query($con, "INSERT INTO {$prefix}posts (topic_id, forum_id, poster_id, post_time, post_username, post_subject, post_text)
                                           VALUES ($topic_id, $fid, $topic_poster, UNIX_TIMESTAMP(NOW()), '" . serendipity_db_escape_string($eventData['author']) . "', '" . serendipity_db_escape_string($eventData['title']) . "', '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "')", $con);
-                        $this->logMSG(mysql_error(), true);
-                        $post_id = mysql_insert_id($con);
+                        $this->logMSG(mysqli_error($con), true);
+                        $post_id = mysqli_insert_id($con);
                     } else {
-                        mysql_query("INSERT INTO {$prefix}posts (topic_id, forum_id, poster_id, post_time, post_username)
+                        mysqli_query($con, "INSERT INTO {$prefix}posts (topic_id, forum_id, poster_id, post_time, post_username)
                                           VALUES ($topic_id, $fid, $topic_poster, UNIX_TIMESTAMP(NOW()), '" . serendipity_db_escape_string($eventData['author']) . "')", $con);
-                        $this->logMSG(mysql_error(), true);
-                        $post_id = mysql_insert_id($con);
+                        $this->logMSG(mysqli_error($con), true);
+                        $post_id = mysqli_insert_id($con);
 
-                        mysql_query("INSERT INTO {$prefix}posts_text (post_id, post_subject, post_text)
+                        mysqli_query($con, "INSERT INTO {$prefix}posts_text (post_id, post_subject, post_text)
                                           VALUES ($post_id, '" . serendipity_db_escape_string($eventData['title']) . "', '" . serendipity_db_escape_string($eventData['body'] . $eventData['extended']) . "')", $con);
-                        $this->logMSG(mysql_error(), true);
+                        $this->logMSG(mysqli_error($con), true);
                     }
 
                     if ($phpbb_mirror == 4) {
-                        mysql_query("UPDATE {$prefix}topics
+                        mysqli_query($con, "UPDATE {$prefix}topics
                                         SET ID_FIRST_MSG = $post_id,
                                             ID_LAST_MSG  = $post_id
                                       WHERE ID_TOPIC = $topic_id", $con);
                     } else {
-                        mysql_query("UPDATE {$prefix}topics
+                        mysqli_query($con, "UPDATE {$prefix}topics
                                         SET topic_first_post_id = $post_id,
                                             topic_last_post_id  = $post_id
                                       WHERE topic_id = $topic_id", $con);
                     }
-                    $this->logMSG(mysql_error(), true);
+                    $this->logMSG(mysqli_error($con), true);
 
                     if ($phpbb_mirror == 4) {
-                        mysql_query("UPDATE {$prefix}boards
+                        mysqli_query($con, "UPDATE {$prefix}boards
                                                  SET numPosts    = numPosts + 1,
                                                      numTopics   = numTopics + 1,
                                                      ID_LAST_MSG = $post_id
                                                WHERE ID_BOARD = $fid", $con);
                     } else {
-                        mysql_query("UPDATE {$prefix}forums
+                        mysqli_query($con, "UPDATE {$prefix}forums
                                                  SET forum_posts        = forum_posts + 1,
                                                      forum_topics       = forum_topics + 1,
                                                      forum_last_post_id = $post_id
                                                WHERE forum_id = $fid", $con);
                     }
-                    $this->logMSG(mysql_error(), true);
+                    $this->logMSG(mysqli_error($con), true);
 
                     if ($phpbb_mirror == 4) {
-                        $v = mysql_query("SELECT variable, value FROM {$prefix}settings WHERE variable = 'smileys_url'", $con);
-                        $this->logMsg(mysql_error(), true);
+                        $v = mysqli_query($con, "SELECT variable, value FROM {$prefix}settings WHERE variable = 'smileys_url'", $con);
+                        $this->logMsg(mysqli_error($con), true);
                         #$this->logMSG('Fetching config values from phpBB Board');
-                        while ($row = mysql_fetch_array($v, MYSQL_ASSOC)) {
+                        while ($row = mysqli_fetch_array($v, MYSQL_ASSOC)) {
                             $conf[$row['variable']] = $row['value'];
                             #$this->logMSG('Got config values from phpBB: ' . print_r($row, true));
                         }
                         $url = str_replace('/Smileys', '/index.php?topic=' . $topic_id . '.0', $conf['smileys_url']);
                     } else {
                         #$this->logMSG('Fetching config values from phpBB Board');
-                        while ($row = mysql_fetch_array($v, MYSQL_ASSOC)) {
+                        while ($row = mysqli_fetch_array($v, MYSQL_ASSOC)) {
                             $conf[$row['config_name']] = $row['config_value'];
                             #$this->logMSG('Got config values from phpBB: ' . print_r($row, true));
                         }
@@ -2632,23 +2633,23 @@ class serendipity_event_forum extends serendipity_event
                         return false;
                     }
 
-                    $con = mysql_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
+                    $con = mysqli_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
                     if (!$con) {
                         $this->logMSG('Could not get phpBB properties for storing a comment: DB credentials');
                         return false;
                     }
 
-                    if (!mysql_select_db($this->get_config('phpbb_db_name'), $con)) {
+                    if (!mysqli_select_db($con, $this->get_config('phpbb_db_name'))) {
                         $this->logMSG('Could not get phpBB properties for storing a comment: DB name');
                         return false;
                     }
 
-                    if (mysql_error() != '') {
-                        $this->logMSG(mysql_error(), true);
+                    if (mysqli_error($con) != '') {
+                        $this->logMSG(mysqli_error($con), true);
                         return false;
                     }
 
-                    mysql_query("SET NAMES " . SQL_CHARSET);
+                    mysqli_query($con, "SET NAMES " . SQL_CHARSET);
 
                     $prefix = $this->get_config('phpbb_db_prefix');
                     $fid    = (int)$this->get_config('phpbb_forum');
@@ -2657,27 +2658,27 @@ class serendipity_event_forum extends serendipity_event
                     $phpbb_url = $r['phpbb_url']['value'];
 
                     if ($phpbb_mirror == 4) {
-                        mysql_query("INSERT INTO {$prefix}messages (ID_TOPIC, ID_BOARD, posterTime, ID_MEMBER, subject, posterName, posterEmail, posterIP, modifiedTime, body)
+                        mysqli_query($con, "INSERT INTO {$prefix}messages (ID_TOPIC, ID_BOARD, posterTime, ID_MEMBER, subject, posterName, posterEmail, posterIP, modifiedTime, body)
                                           VALUES ($topic_id, $fid, UNIX_TIMESTAMP(NOW()), 0, '" . serendipity_db_escape_string($addData['title']) . "', '" . serendipity_db_escape_string($addData['name']) . "', '" . serendipity_db_escape_string($addData['email']) . "', '" . $_SERVER['REMOTE_ADDR'] . "', 0, '" . serendipity_db_escape_string($addData['comment']) . "')", $con);
-                        $this->logMSG(mysql_error(), true);
-                        $post_id = mysql_insert_id($con);
+                        $this->logMSG(mysqli_error($con), true);
+                        $post_id = mysqli_insert_id($con);
                     } elseif ($phpbb_mirror == 3) {
                         $q1 = "INSERT INTO {$prefix}posts (topic_id, forum_id, post_time, post_username, poster_id, post_subject, post_text)
                                           VALUES ($topic_id, $fid, UNIX_TIMESTAMP(NOW()), '" . strip_tags(serendipity_db_escape_string($addData['name'])) . "', 1, '" . strip_tags(serendipity_db_escape_string($addData['title'])) . "', '" . strip_tags(serendipity_db_escape_string($addData['comment'])) . "')";
-                        mysql_query($q1, $con);
-                        $this->logMSG(mysql_error(), true);
-                        $post_id = mysql_insert_id($con);
+                        mysqli_query($con, $q1);
+                        $this->logMSG(mysqli_error($con), true);
+                        $post_id = mysqli_insert_id($con);
                     } else {
                         $q1 = "INSERT INTO {$prefix}posts (topic_id, forum_id, post_time, post_username, poster_id)
                                           VALUES ($topic_id, $fid, UNIX_TIMESTAMP(NOW()), '" . strip_tags(serendipity_db_escape_string($addData['name'])) . "', -1)";
-                        mysql_query($q1, $con);
-                        $this->logMSG(mysql_error(), true);
-                        $post_id = mysql_insert_id($con);
+                        mysqli_query($con, $q1);
+                        $this->logMSG(mysqli_error($con), true);
+                        $post_id = mysqli_insert_id($con);
 
                         $q2 = "INSERT INTO {$prefix}posts_text (post_id, post_subject, post_text)
                                           VALUES ($post_id, '" . strip_tags(serendipity_db_escape_string($addData['title'])) . "', '" . strip_tags(serendipity_db_escape_string($addData['comment'])) . "')";
-                        mysql_query($q2, $con);
-                        $this->logMSG(mysql_error(), true);
+                        mysqli_query($con, $q2);
+                        $this->logMSG(mysqli_error($con), true);
                     }
 
                     if ($phpbb_mirror == 4) {
@@ -2691,16 +2692,16 @@ class serendipity_event_forum extends serendipity_event
                     } else {
                         $q3 = "UPDATE {$prefix}topics SET topic_replies = topic_replies + 1, topic_last_post_id = $post_id WHERE topic_id = $topic_id";
                     }
-                    mysql_query($q3, $con);
-                    $this->logMSG(mysql_error(), true);
+                    mysqli_query($con, $q3);
+                    $this->logMSG(mysqli_error($con), true);
 
                     if ($phpbb_mirror == 4) {
                         $q4 = "UPDATE {$prefix}boards SET numPosts = numPosts + 1, ID_LAST_MSG = $post_id WHERE ID_BOARD = $fid";
                     } else {
                         $q4 = "UPDATE {$prefix}forums SET forum_posts = forum_posts + 1, forum_last_post_id = $post_id WHERE forum_id = $fid";
                     }
-                    mysql_query($q4, $con);
-                    $this->logMSG(mysql_error(), true);
+                    mysqli_query($con, $q4);
+                    $this->logMSG(mysqli_error($con), true);
 
                     $c = serendipity_db_query("SELECT comments FROM {$serendipity['dbPrefix']}entries WHERE id = " . (int)$eventData['id'], true, 'assoc');
 
@@ -2729,14 +2730,14 @@ class serendipity_event_forum extends serendipity_event
                     }
 
                     if ($eventData['comments'] < 1) {
-                        $con = mysql_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
+                        $con = mysqli_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
                         if (!$con) {
                             return false;
                         }
 
-                        mysql_select_db($this->get_config('phpbb_db_name'), $con);
+                        mysqli_select_db($con, $this->get_config('phpbb_db_name'));
 
-                        mysql_query("SET NAMES " . SQL_CHARSET);
+                        mysqli_query($con, "SET NAMES " . SQL_CHARSET);
 
                         $prefix = $this->get_config('phpbb_db_prefix');
                         $basepost_id = $eventData['properties']['phpbb_post'];
@@ -2758,9 +2759,9 @@ class serendipity_event_forum extends serendipity_event
                                                    GROUP BY p.topic_id
                                                       LIMIT 1";
                         }
-                        $comments = mysql_query($pq, $con);
+                        $comments = mysqli_query($con, $pq);
                         if ($comments) {
-                            $crows = mysql_fetch_array($comments, MYSQL_ASSOC);
+                            $crows = mysqli_fetch_array($comments, MYSQL_ASSOC);
                             if ($crows['postcount'] > 0) {
                                 $eventData['comments'] = $crows['postcount'];
                             }
@@ -2789,19 +2790,19 @@ class serendipity_event_forum extends serendipity_event
                         return false;
                     }
 
-                    $con = mysql_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
+                    $con = mysqli_connect($this->get_config('phpbb_db_host'), $this->get_config('phpbb_db_user'), $this->get_config('phpbb_db_pw'));
                     if (!$con) {
                         return false;
                     }
 
-                    mysql_select_db($this->get_config('phpbb_db_name'), $con);
+                    mysqli_select_db($con, $this->get_config('phpbb_db_name'));
 
-                    if (mysql_error() != '') {
-                        $this->logMSG(mysql_error(), true);
+                    if (mysqli_error($con) != '') {
+                        $this->logMSG(mysqli_error($con), true);
                         return false;
                     }
 
-                    mysql_query("SET NAMES " . SQL_CHARSET);
+                    mysqli_query($con, "SET NAMES " . SQL_CHARSET);
 
 
                     $r = serendipity_db_query("SELECT value, property
@@ -2819,7 +2820,7 @@ class serendipity_event_forum extends serendipity_event
                     $phpbb_url = $r['phpbb_url']['value'];
 
                     if ($phpbb_mirror == 4) {
-                        $comments = mysql_query("SELECT p.ID_MSG AS id,
+                        $comments = mysqli_query($con, "SELECT p.ID_MSG AS id,
                                                         p.ID_MSG AS commentid,
                                                         0 AS parent_id,
                                                         p.posterTime AS timestamp,
@@ -2838,9 +2839,9 @@ class serendipity_event_forum extends serendipity_event
                                                   WHERE p.ID_TOPIC = $topic_id
                                                     AND p.ID_MSG != $basepost_id
                                                ORDER BY p.posterTime ASC", $con);
-                                               echo mysql_error();
+                                               echo mysqli_error($con);
                     } elseif ($phpbb_mirror == 3) {
-                        $comments = mysql_query("SELECT p.post_id AS id,
+                        $comments = mysqli_query($con, "SELECT p.post_id AS id,
                                                         p.post_id AS commentid,
                                                         0 AS parent_id,
                                                         p.post_time AS timestamp,
@@ -2855,7 +2856,7 @@ class serendipity_event_forum extends serendipity_event
                                                     AND p.post_id != $basepost_id
                                                ORDER BY p.post_time ASC", $con);
                     } else {
-                        $comments = mysql_query("SELECT p.post_id AS id,
+                        $comments = mysqli_query($con, "SELECT p.post_id AS id,
                                                         p.post_id AS commentid,
                                                         0 AS parent_id,
                                                         p.post_time AS timestamp,
@@ -2872,13 +2873,13 @@ class serendipity_event_forum extends serendipity_event
                                                     AND p.post_id != $basepost_id
                                                ORDER BY p.post_time ASC", $con);
                     }
-                    $this->logMSG(mysql_error(), true);
+                    $this->logMSG(mysqli_error($con), true);
                     $return = $eventData;
-                    if (mysql_num_rows($comments) < 1) {
+                    if (mysqli_num_rows($comments) < 1) {
                         return false;
                     }
 
-                    while($row = mysql_fetch_array($comments, MYSQL_ASSOC)) {
+                    while($row = mysqli_fetch_array($comments, MYSQL_ASSOC)) {
                         $row['title'] = $entry['title'];
                         $row['entrytimestamp'] = $entry['entrytimestamp'];
                         $row['entryid'] = $row['entry_id'] = $entryid;
