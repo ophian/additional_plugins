@@ -264,9 +264,7 @@ class icText extends inspectConfig
 ?>
 
         <div class="form_field clear">
-            <textarea id="nuggets<?php echo $inspectConfig['elcount']; ?>" class="direction_<?php echo $inspectConfig['lang_direction']; ?>"<?php echo $tdimension; ?> name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]">
-<?php echo $inspectConfig['hvalue']; ?>
-            </textarea>
+            <textarea id="nuggets<?php echo $inspectConfig['elcount']; ?>" class="direction_<?php echo $inspectConfig['lang_direction']; ?>"<?php echo $tdimension; ?> name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]"><?php echo $inspectConfig['hvalue']; ?></textarea>
         </div>
 
 <?php
