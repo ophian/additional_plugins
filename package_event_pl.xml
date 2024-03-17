@@ -1113,11 +1113,11 @@
 <description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.4.2</version>
-  <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
+  <version>2.4.3</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-03-08</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1470,11 +1470,11 @@
 <description>Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.4.2</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-11-19</date>
+  <version>2.5.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-03-08</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -3827,11 +3827,11 @@
 <description>Umożliwia dowolne tagowanie wpisów</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.0.0</version>
-  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <version>6.1.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-03-08</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -4749,13 +4749,13 @@
 <summary>Google Analytics</summary>
 <groups>STATISTICS</groups>
 <description>This plugin adds extended Google Analytic functionality to your Page like tracking external links or download links.</description>
-<maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Jari Turkia, kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>2.1.0</version>
+  <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2021-12-21</date>
+  <requirements:phpVersion>7.6.0</requirements:phpVersion>
+  <date>2024-03-10</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -8237,7 +8237,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2024-03-10</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -12941,11 +12941,11 @@
 <description>Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Peter Heimann, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.2.0</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <version>2.3.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-03-08</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>

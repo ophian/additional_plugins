@@ -15,7 +15,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="1024px">
       <file>config.inc.php</file>
@@ -87,7 +87,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="adaptation">
       <dir name="colorsets">
@@ -235,7 +235,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="andreas00">
       <file>commentform.tpl</file>
@@ -317,7 +317,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="andreas06">
       <file>comments.tpl</file>
@@ -411,7 +411,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="andreas08">
       <file>blue.css</file>
@@ -531,7 +531,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="andreas09">
       <file>commentform.tpl</file>
@@ -629,7 +629,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="artistic">
       <file>config.inc.php</file>
@@ -687,7 +687,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="axcur">
       <file>config.inc.php</file>
@@ -841,7 +841,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="barSinister3">
       <file>comments.tpl</file>
@@ -911,7 +911,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="bartleby">
       <file>config.inc.php</file>
@@ -957,7 +957,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="bazooka">
       <file>comments.tpl</file>
@@ -1029,7 +1029,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="be-nice">
       <file>comments.tpl</file>
@@ -1153,7 +1153,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="bex01">
       <file>comments.tpl</file>
@@ -1271,7 +1271,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="blix">
       <file>commentform.tpl</file>
@@ -1576,7 +1576,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="brownpaper">
       <file>credits.txt</file>
@@ -1648,7 +1648,7 @@
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="bulletproof">
       <file>base.css</file>
@@ -1846,7 +1846,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="carl_blue">
       <file>entries.tpl</file>
@@ -1900,7 +1900,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="carl_contest">
       <file>entries.tpl</file>
@@ -1966,7 +1966,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="carl_green">
       <file>entries.tpl</file>
@@ -2020,7 +2020,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="ceejay01">
       <file>commentform.tpl</file>
@@ -2086,7 +2086,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="chocolate_fudge">
       <file>commentform.tpl</file>
@@ -2148,7 +2148,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="chromZv2">
       <file>config.inc.php</file>
@@ -2238,7 +2238,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="codeschmiede">
       <file>entries.tpl</file>
@@ -2352,7 +2352,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="competition">
       <file>entries.tpl</file>
@@ -2404,7 +2404,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="connections">
       <file>comments.tpl</file>
@@ -2482,7 +2482,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="contest">
       <file>content.tpl</file>
@@ -2534,7 +2534,7 @@
 </release>
 </package>
 <package version="1.0">
-<name>CoSTa's Nature Theme</name>
+<name>CoSTa&#039;s Nature Theme</name>
 <template>costa-nature</template>
 <license>(N/A GPL)</license>
 <summary>Additional old theme from 2006-05-02 to 2013-02-07 as v.0.6, with a fixed content size of 700px.</summary>
@@ -2546,7 +2546,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="costa-nature">
       <file>comments.tpl</file>
@@ -2730,7 +2730,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="dreisechzig">
       <file>entries.tpl</file>
@@ -2914,7 +2914,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="freshy">
       <file>commentform.tpl</file>
@@ -3204,7 +3204,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="glossy_white">
       <file>commentform.tpl</file>
@@ -3290,7 +3290,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="greenmile">
       <file>comments.tpl</file>
@@ -3476,7 +3476,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="greenway">
       <file>commentpopup.tpl</file>
@@ -3632,7 +3632,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="hemingway">
       <file>404.tpl</file>
@@ -3756,7 +3756,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="hipporatorium">
       <file>entries.tpl</file>
@@ -3804,7 +3804,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.1</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="i3theme">
       <file>commentform.tpl</file>
@@ -4064,7 +4064,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="informatif">
       <file>beige.css</file>
@@ -4158,7 +4158,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="jazzcafe">
       <file>commentpopup.tpl</file>
@@ -4418,7 +4418,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="kamouflage">
       <file>entries.tpl</file>
@@ -4510,7 +4510,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="kubrick">
       <file>commentpopup.tpl</file>
@@ -4592,7 +4592,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="ladybird">
       <file>entries.tpl</file>
@@ -4692,7 +4692,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="ladybug">
       <file>entries.tpl</file>
@@ -4772,7 +4772,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="leaf">
       <file>commentform.tpl</file>
@@ -4884,11 +4884,11 @@
 <recommended></recommended>
 <responsive>Partly Yes</responsive>
 <mobile>No</mobile>
-<maintainers><maintainer><name>Darren Hoyt, ported to s9y by Matthias 'YellowLed' Mees.</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Darren Hoyt, ported to s9y by Matthias &#039;YellowLed&#039; Mees.</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="mimbo">
       <file>404.tpl</file>
@@ -4990,7 +4990,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="mo3">
       <file>404.tpl</file>
@@ -5208,7 +5208,7 @@
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="morsel">
       <file>entries.tpl</file>
@@ -5796,7 +5796,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="one_true_layout">
       <file>config.inc.php</file>
@@ -5924,7 +5924,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="perun_blue">
       <file>entries.tpl</file>
@@ -5974,7 +5974,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="perun_red">
       <file>entries.tpl</file>
@@ -6024,7 +6024,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="photo">
       <file>config.inc.php</file>
@@ -6114,7 +6114,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="pink-lilies">
       <file>comments.tpl</file>
@@ -6206,7 +6206,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="pixel">
       <file>botbar.tpl</file>
@@ -6324,7 +6324,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="plain-vanilla">
       <file>commentpopup.tpl</file>
@@ -6398,7 +6398,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="plus9">
       <file>AJS.js</file>
@@ -6588,7 +6588,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="powered">
       <file>entries.tpl</file>
@@ -6650,7 +6650,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="reflection">
       <file>aqua.css</file>
@@ -6744,7 +6744,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="resy">
       <file>colorset_lime_and_melon_salad.css</file>
@@ -6810,7 +6810,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="roundedcorner">
       <file>commentform.tpl</file>
@@ -6920,7 +6920,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="rubyx">
       <file>config.inc.php</file>
@@ -7144,7 +7144,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="sagittarius">
       <file>404.tpl</file>
@@ -7238,7 +7238,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion>1.5</requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="simpla">
       <file>commentform.tpl</file>
@@ -7348,7 +7348,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="soccer2006">
       <file>config.inc.php</file>
@@ -7408,7 +7408,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="softenedcells">
       <file>comments.tpl</file>
@@ -7502,7 +7502,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="splat">
       <file>config.inc.php</file>
@@ -7602,7 +7602,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="square">
       <file>comments.tpl</file>
@@ -7921,7 +7921,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="terrafirma">
       <file>comments.tpl</file>
@@ -8097,7 +8097,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="translucency">
       <file>comments.tpl</file>
@@ -8201,7 +8201,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="truth">
       <file>commentform.tpl</file>
@@ -8379,7 +8379,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="xkur">
       <file>config.inc.php</file>
@@ -8483,7 +8483,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="youngbutstrong">
       <file>commentpopup.tpl</file>
@@ -8557,7 +8557,7 @@ Without any theme engine set, all template files are taken from default theme. F
 <release>
   <version>1.0</version>
   <requirements:s9yVersion></requirements:s9yVersion>
-  <date>2023-03-10</date>
+  <date>2024-03-17</date>
   <filelist>
     <dir name="zenlike">
       <file>config.inc.php</file>
