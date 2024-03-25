@@ -9,7 +9,7 @@ class DbSpice
         global $serendipity;
 
         $q = "SELECT count(*) FROM {$serendipity['dbPrefix']}" . $table;
-        $row = serendipity_db_query($q, true, 'num', false, false, false, true);// must be true for the last, since the executed SQL error is known to fail, and should be disregarded
+        $row = serendipity_db_query($q, single: true, expectError: true);// The executed SQL error is known to fail, and should be disregarded
 
         if (is_bool($row) || !is_numeric($row[0])) { // if the response we got back was an SQL error.. :P
             return false;

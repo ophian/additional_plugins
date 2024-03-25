@@ -24,11 +24,11 @@ class serendipity_event_commentspice extends serendipity_event
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Grischa Brockhaus, Ian Styx');
         $propbag->add('requirements',   array(
-            'serendipity' => '3.2',
-            'smarty'      => '3.1',
-            'php'         => '7.3'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',        '2.4.2');
+        $propbag->add('version',        '2.5.0');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,

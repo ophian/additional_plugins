@@ -1,3 +1,8 @@
+2.5.0:
+-----
+ * Use PHP 8.2 name arguments
+ * Raised requirements
+
 2.4.2:
 ------
  * PHP 8.1 fix for isset on NULL
