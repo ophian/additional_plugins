@@ -1,3 +1,8 @@
+2.0.0:
+------
+ * Secure credentials on error by SensitiveParameter
+ * Raises requirements
+
 1.84:
 -----
  * Raised requirements for 1.83

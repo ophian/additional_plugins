@@ -1462,7 +1462,7 @@ function metaWeblog_editPost($message) {
     return new XML_RPC_Response(new XML_RPC_Value($id ? true : false, 'boolean'));
 }
 
-function universal_save_entrypassword($entryId, #[\SensitiveParameter] $password) {
+function universal_save_entrypassword($entryId, #[\SensitiveParameter] string $password) {
     global $serendipity;
     // Apply password:
     $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$entryId . " AND property = 'ep_entrypassword'";
