@@ -1,3 +1,8 @@
+2.5.0:
+-----
+ * Use PHP 8.2 combined arguments
+ * Raises requirements
+
 2.4.2:
 -----
  * Improve backend main content markup indents for Styx 4.3

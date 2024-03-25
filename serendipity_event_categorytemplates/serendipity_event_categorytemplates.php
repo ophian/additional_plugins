@@ -28,10 +28,10 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.4.2');
+        $propbag->add('version',       '2.5.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.7.0',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'genpage'                   => true,
@@ -135,7 +135,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                     ON t.categoryid = c.categoryid
                  WHERE t.template != ''
               ORDER BY c.category_name ASC";
-        $dbcids = serendipity_db_query($query, false, 'assoc', false, false, false, true); // set last param expectError true, since running in introspect_config_item() and table was reported known to fail when table or field(s) do(es) not exist (yet)
+        $dbcids = serendipity_db_query($query, expectError: true); // set last param expectError true, since running in introspect_config_item() and table was reported known to fail when table or field(s) do(es) not exist (yet)
         if (!is_array($dbcids)) {
             // It's the value "1", for "success", or something
             $dbcids = false;
