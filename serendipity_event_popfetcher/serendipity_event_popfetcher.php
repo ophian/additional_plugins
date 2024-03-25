@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.57');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '1.58');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -394,7 +394,7 @@ class serendipity_event_popfetcher extends serendipity_event
             $parentid      = (isset($commentInfo['parent_id']) && is_numeric($commentInfo['parent_id'])) ? $commentInfo['parent_id'] : 0;
             $status        = serendipity_db_escape_string(isset($commentInfo['status']) ? $commentInfo['status'] : (serendipity_db_bool($ca['moderate_comments']) ? 'pending' : 'approved'));
             $t             = serendipity_db_escape_string(isset($commentInfo['time']) ? $commentInfo['time'] : time());
-            $referer       = substr((isset($_SESSION['HTTP_REFERER']) ? serendipity_db_escape_string($_SESSION['HTTP_REFERER']) : ''), 0, 200);
+            $referer       = !empty($_SESSION['HTTP_REFERER']) ? substr(serendipity_db_escape_string($_SESSION['HTTP_REFERER']), 0, 200) : '';
 
             $query = "SELECT a.email, e.title, a.mail_comments, a.mail_trackbacks
                         FROM {$serendipity['dbPrefix']}entries e, {$serendipity['dbPrefix']}authors a
