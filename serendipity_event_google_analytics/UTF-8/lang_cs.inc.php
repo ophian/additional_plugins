@@ -1,33 +1,22 @@
 <?php
 
-/**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
- *  @translated 2009/06/27
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
- *  @revisionDate 2010/09/28
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
- *  @revisionDate 2012/02/13
- */
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME', 'Google Analytics');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC', 'Tento plugin přidává vašemu blogu rošířené funkce Google Analytics jako je například sledování odkazů nebo stažených souborů.');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ACCOUNT_NUMBER', 'Číslo účtu Google Analytics');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ACCOUNT_NUMBER_DESC', 'Číslo vašeho účtu Google Analytics. Zadávejte část xxxx-x z řetězce _uacct="UA-xxxx-x";');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_DOWNLOADS', 'Sledovat stažené soubory?');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME', 'Google Analytics 4');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC', 'This plugin adds extended Google Analytics 4 functionality.');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ACCOUNT_NUMBER', 'Google Analytics 4 measurement ID');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ACCOUNT_NUMBER_DESC', 'Your Google Analytics 4 measurement ID from stream details. Format is "G-xxxxxxxxxx".');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_EXTERNAL', 'Track external links');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_EXTERNAL_DESC', 'Add tracking into content links for accurate link exit tracking');
+#@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ANONYMIZEIP', 'Anonymize IP');
+#@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ANONYMIZEIP_DESC', 'Tell Google Analytics to anonymize the information sent by the tracker objects by removing the last octet of the IP address prior to its storage. Note that this will slightly reduce the accuracy of geographic reporting');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_DOWNLOADS', 'Track downloads?');
 @define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_DOWNLOADS_DESC', '');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_EXTERNAL', 'Sledovat odchozí odkazy?');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_EXTERNAL_DESC', '');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_DOWNLOAD_EXTENSIONS', 'Které stažené soubory se mají sledovat?');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_DOWNLOAD_EXTENSIONS_DESC', 'Seznam přípon sledovaných souborů. Jednotlivé přípony jsou oddělené čárkou.');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_INTERNAL_HOSTS', 'Domény, které přistupují k blogu.');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_INTERNAL_HOSTS_DESC', 'Jedna doména na řádce (www.priklad.cz).');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_EXCLUDE_GROUPS', 'Které skupiny uživatelů nemají být sledovány?');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_EXCLUDE_GROUPS_DESC', 'Vyberte skupiny ze seznamu.');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_DOWNLOAD_EXTENSIONS', 'Which downloads should be tracked?');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_DOWNLOAD_EXTENSIONS_DESC', 'Comma separated list of tracked extensions.');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_INTERNAL_HOSTS', 'Hosts you use for your blog.');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_INTERNAL_HOSTS_DESC', 'One host per line (www.example.net).');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_EXCLUDE_GROUPS', 'Which usergroups should not be tracked?');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_EXCLUDE_GROUPS_DESC', 'Select group(s) from list.');
 
-// Next lines were translated on 2010/09/28
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ANONYMIZEIP', 'Anonymní IP');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_ANONYMIZEIP_DESC', 'Oznamovat nástroji Google Analytics, aby znemožnil jednoznačnou identifikaci pomocí IP adresy zasílané sledovanými objekty tím, že odstraní poslední oktet z IP adresy ještě před tím, než ji uloží do databáze. Mějte na paměti, že tato akce trochu sníží přesnost určení geografické polohy návštěvníků.');
-
-// Next lines were translated on 2012/02/13
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_ADSENSE', 'Sledovat reklamy AdSense');
-@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_TRACK_ADSENSE_DESC', 'Sleduje reklamy z AdSense a přidává data do GA (GoogleAnalytics). GA a AdSense ale musejí být předtím propojené.(->https://support.google.com/adsense/bin/answer.py?hl=cs&answer=92625)');
+#@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_APPLY_TRACKING_TO', 'If enabled, apply external tracking to %s');
+@define('PLUGIN_EVENT_GOOGLE_ANALYTICS_APPLY_TRACKING_TO_DESC', 'If enabled, apply external tracking to blog entry element %s');
 
