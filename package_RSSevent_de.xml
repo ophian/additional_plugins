@@ -504,12 +504,12 @@
 <guid isPermaLink="false">serendipity_event_glossary</guid>
 </item>
 <item>
-<title>Google Analytics: Dieses Plugin fügt Google Analytics Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.</title>
+<title>Google Analytics 4: Dieses Plugin fügt Google Analytics 4 Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.</title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_google_analytics</link>
 <category>Event Plugins</category>
 <author>Jari Turkia, kleinerChemiker, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics&lt;/b&gt;&lt;br /&gt;Dieses Plugin fügt Google Analytics Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 10 Mar 2024 11:58:30 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics 4&lt;/b&gt;&lt;br /&gt;Dieses Plugin fügt Google Analytics 4 Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
+<pubDate>Tue, 02 Apr 2024 19:52:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_analytics</guid>
 </item>
 <item>
