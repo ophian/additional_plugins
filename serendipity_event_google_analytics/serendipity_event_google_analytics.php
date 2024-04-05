@@ -28,7 +28,7 @@ class serendipity_event_google_analytics extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC);
         $propbag->add('stackable', false);
         $propbag->add('author', 'Jari Turkia, kleinerChemiker, Ian Styx');
-        $propbag->add('version', '2.1.0');
+        $propbag->add('version', '2.1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '4.0',
             'smarty'      => '4.1.0',
@@ -75,20 +75,22 @@ class serendipity_event_google_analytics extends serendipity_event
 
         $propbag->add('legal',    array(
             'services' => array(
-                'Multiple' => array(
+                'oEmbed' => array(
                     'url' => 'https://www.googletagmanager.com/',
                     'desc' => 'The place where the analytics script is fetched and all further push metadata is sent to'
                 ),
             ),
             'frontend' => array(
-                'The Google analytics services will receive the URLs and the metadata of the visitors (IP, User Agent, Referrer, etc.).',
+                'The Google analytics services will receive the URLs and the metadata of the visitors (IP, User Agent, Referrer, etc.).
+                For the EU, in special DE, please https://datenschutz-generator.de/google-analytics/ to extend and outline your DSGVO privacy settings.',
             ),
             'backend' => array(
             ),
             'cookies' => array(
+                'Google Analytics 4 uses a cookie-less tracking. Users are not recognized on the basis of cookies, but on the basis of so-called "browser fingerprints" or "digital fingerprints". This refers to an individual compilation of information that their browsers send to their providers servers when they access websites. This includes, for example, the IP address, even if masked in the EU, system and browser information, etc.'
             ),
-            'stores_user_input'     => true,
-            'stores_ip'             => true,
+            'stores_user_input'     => false,
+            'stores_ip'             => false,
             'uses_ip'               => true,
             'transmits_user_input'  => true
         ));
