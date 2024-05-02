@@ -13,7 +13,7 @@ if (IN_serendipity !== true) {
 class serendipity_event_includeentry extends serendipity_event
 {
     var $title = PLUGIN_EVENT_INCLUDEENTRY_NAME;
-    var $config     = array(
+    var $config = array(
             'type',
             'title',
             'body',
@@ -23,6 +23,7 @@ class serendipity_event_includeentry extends serendipity_event
         );
     var $staticblock = array();
     var $enabled_categories = null;
+    var $statictemplate = null;
 
     function introspect(&$propbag)
     {
@@ -32,7 +33,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.34');
+        $propbag->add('version',       '2.35');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -103,14 +104,14 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        STATICBLOCK_SHOW_MULTI);
                 $propbag->add('description', STATICBLOCK_SHOW_MULTI_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'randomize':
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        STATICBLOCK_RANDOMIZE);
                 $propbag->add('description', STATICBLOCK_RANDOMIZE_DESC);
-                $propbag->add('default',     false);
+                $propbag->add('default',     'false');
                 break;
 
             case 'first_show':
@@ -139,7 +140,7 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        constant($name));
                 $propbag->add('description', sprintf(APPLY_MARKUP_TO, constant($name)));
-                $propbag->add('default', 'true');
+                $propbag->add('default',     'true');
                 break;
 
             default:
@@ -186,7 +187,7 @@ class serendipity_event_includeentry extends serendipity_event
                 $propbag->add('type',          'boolean');
                 $propbag->add('name',          sprintf(APPLY_MARKUP_TO, 'Block'));
                 $propbag->add('description',   '');
-                $propbag->add('default',       true);
+                $propbag->add('default',       'true');
                 $propbag->add('only_type',     'block');
                 break;
         }
@@ -288,7 +289,7 @@ class serendipity_event_includeentry extends serendipity_event
                     $propname = preg_replace('/^prop[=:]/', '', $buffer[3]);
                     $newbuf = $entry[$propname];
                 } else {
-                    $entry = serendipity_fetchEntry('id', $id);
+                    $entry = serendipity_fetchEntry('id', $id, fetchDrafts: 'something');
                     $newbuf = $entry[$buffer[3]];
                 }
                 break;
@@ -404,7 +405,7 @@ class serendipity_event_includeentry extends serendipity_event
         global $serendipity;
 
         $this->checkBlock();
-        if (empty($this->staticblock['apply_markup'])) {
+        if (empty($this->staticblock['apply_markup']) || false === $this->staticblock['apply_markup']) {
             $this->staticblock['apply_markup'] = '0';
         }
         if (!isset($this->staticblock['id'])) {
@@ -470,7 +471,7 @@ class serendipity_event_includeentry extends serendipity_event
 
         $html .= $this->getPages(($serendipity['POST']['staticblock'] ?? null), $type);
         $html .= '
-                            </select><br>
+                            </select>&nbsp;
                             <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="' . GO . '">
                             <input  class="input_button state_cancel" type="submit" name="serendipity[staticDelete]" value="' . DELETE . '">'."\n";
 
@@ -557,7 +558,7 @@ class serendipity_event_includeentry extends serendipity_event
             foreach($config_names AS $config_item) {
                 $cbag = new serendipity_property_bag;
                 if ($this->introspect_item($config_item, $cbag)) {
-                    $this->staticblock[$config_item] = serendipity_get_bool($_POST['serendipity']['plugin'][$config_item]);
+                    $this->staticblock[$config_item] = serendipity_get_bool($_POST['serendipity']['plugin'][$config_item] ?? null);
                 }
             }
 
@@ -572,7 +573,8 @@ class serendipity_event_includeentry extends serendipity_event
 
         echo '
             <div class="form_select">
-                <label for="staticblock_template">' . STATICBLOCK_SELECT_TEMPLATES . '</label>' . $this->showBlockForm('template') . '
+                <label for="staticblock_template">' . STATICBLOCK_SELECT_TEMPLATES . '</label>' .
+                  $this->showBlockForm('template') . '
             </div>
 
             <div class="form_select">
@@ -708,7 +710,9 @@ class serendipity_event_includeentry extends serendipity_event
                         $this->fetchStaticBlock($eventData['properties']['ep_attach_block']);
                         $block = $this->smartyParse();;
                         $eventData['display_dat'] .= $block;
-                        $eventData['entryblock']  .= $block;
+                        if (isset($eventData['entryblock'])) {
+                            $eventData['entryblock']  .= $block;
+                        }
                         // We have shown a block already, check if more are wanted with the setting below.
                         $show_multi = $cache['show_multi'];
                     }
@@ -753,7 +757,7 @@ class serendipity_event_includeentry extends serendipity_event
                     if ($bag->get('scrambles_true_content') && is_array($addData) && isset($addData['no_scramble'])) {
                         break;
                     }
-                    break;
+                    // no-BREAK! [PSR-2] - extends frontend_display_cache
 
                 case 'frontend_display_cache':
                     foreach ($this->markup_elements AS $temp) {
