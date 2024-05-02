@@ -1,3 +1,7 @@
+1.58:
+-----
+ * Better catch empty HTTP_REFERER
+
 1.57:
 -----
  * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links

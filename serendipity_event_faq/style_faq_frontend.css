@@ -11,6 +11,9 @@
     margin: inherit;
     display: inline-block;
 }
+#serendipity_faq_plugin {
+    display: block;
+}
 #serendipity_faq_plugin ul {
     margin: 0 1.5em;
 }

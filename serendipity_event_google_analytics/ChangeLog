@@ -1,3 +1,16 @@
+2.1.1:
+------
+ * Update DSGVO legal stuff
+
+2.1.0:
+------
+ * Trying to recap some extension and improvements which we had before
+ * [NOTE: No masking of IP addresses is required in Google Analytics 4, as IP addresses are neither logged nor stored.]
+
+2.0.0:
+----
+ * Upgrade the plugin to support GA4 and drop support to any obsoleted Google APIs
+
 1.8:
 -----
  * Fix an uninitialized variable check

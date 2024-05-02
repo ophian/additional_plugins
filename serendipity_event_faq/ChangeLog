@@ -1,3 +1,7 @@
+1.60:
+-----
+ * Add a style rule to the frontent for consistent search result displays
+
 1.59:
 -----
  * Fix issue with added space when building textarea(s)
