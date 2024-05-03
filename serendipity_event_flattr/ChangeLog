@@ -1,3 +1,7 @@
+1.21:
+-----
+ * Remove former [cs] lang reference - which is kind of "early nineties"...!
+
 1.20:
 -----
  * Improve backend main content markup indents for Styx 4.3

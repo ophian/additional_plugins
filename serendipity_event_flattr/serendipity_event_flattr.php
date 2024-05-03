@@ -62,11 +62,11 @@ class serendipity_event_flattr extends serendipity_event
             'add_to_feed',
         ));
         $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '1.20');
+        $propbag->add('version', '1.21');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.0'
         ));
         $propbag->add('legal',    array(
             'services' => array(
@@ -145,7 +145,6 @@ class serendipity_event_flattr extends serendipity_event
             'es' => 'es_ES',
             'fr' => 'fr_FR',
             'fi' => 'fi_FI',
-            'cs' => 'cs_CZ',
             'cz' => 'cs_CZ',
             'nl' => 'nl_NL',
             'is' => 'is_IS',
