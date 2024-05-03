@@ -1492,7 +1492,7 @@ class serendipity_event_statistics extends serendipity_event
         global $serendipity;
 
         // create table xxxx_visitors
-        $q   = "CREATE TABLE {$serendipity['dbPrefix']}visitors (
+        $q = "CREATE TABLE {$serendipity['dbPrefix']}visitors (
             counter_id {AUTOINCREMENT} {PRIMARY},
             sessID varchar(35) not null default '',
             day varchar(10) not null default '',
@@ -1504,8 +1504,8 @@ class serendipity_event_statistics extends serendipity_event
 
        serendipity_db_schema_import($q);
 
-        // create table xxxx_visitors_counts
-        $q   = "CREATE TABLE {$serendipity['dbPrefix']}visitors_count (
+        // create table xxxx_visitors_count
+        $q = "CREATE TABLE {$serendipity['dbPrefix']}visitors_count (
             year int(4) not null,
             month int(2) not null,
             day int(2) not null,
@@ -1516,7 +1516,7 @@ class serendipity_event_statistics extends serendipity_event
        serendipity_db_schema_import($q);
 
         // create table xxxx_refs
-        $q   = "CREATE TABLE {$serendipity['dbPrefix']}refs (
+        $q = "CREATE TABLE {$serendipity['dbPrefix']}refs (
             id {AUTOINCREMENT} {PRIMARY},
             refs varchar(255) not null default '',
             count int(11) not null default '0'
