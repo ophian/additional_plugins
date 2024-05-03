@@ -19,9 +19,9 @@ class serendipity_plugin_multilingual extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.0',
-            'smarty'      => '3.1',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.0'
         ));
 
         $conf = array('title', 'show_submit', 'langified', 'size');
@@ -33,8 +33,7 @@ class serendipity_plugin_multilingual extends serendipity_event
                                   'es' => 'Spanish',
                                   'fr' => 'French',
                                   'fi' => 'Finnish',
-                                  'cs' => 'Czech (Win-1250)',
-                                  'cz' => 'Czech (ISO-8859-2)',
+                                  'cz' => 'Czech',
                                   'sk' => 'Slovak',
                                   'nl' => 'Dutch',
                                   'is' => 'Icelandic',
@@ -63,7 +62,7 @@ class serendipity_plugin_multilingual extends serendipity_event
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '1.20');
+        $propbag->add('version',       '1.21');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }

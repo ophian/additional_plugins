@@ -1,3 +1,7 @@
+1.21: (sidebar plugin)
+-----
+ * Remove former [cs] lang file reference
+
 3.14:
 -----
  * Remove an outdated backend selector usage
