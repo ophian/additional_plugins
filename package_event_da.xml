@@ -1116,8 +1116,8 @@
   <version>2.4.3</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-03-08</date>
+  <requirements:phpVersion>7.4.0</requirements:phpVersion>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1470,11 +1470,11 @@
 <description>Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
-  <requirements:s9yVersion>5.0</requirements:s9yVersion>
-  <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-03-08</date>
+  <version>2.4.2</version>
+  <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.3</requirements:phpVersion>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -3184,11 +3184,11 @@
 <description>Edit the Frequently Asked Question.</description>
 <maintainers><maintainer><name>Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.59</version>
+  <version>1.60</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-02-26</date>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -3389,11 +3389,11 @@
 <description>Flattr is a social micropayment platform that lets you show love for the things you like. This plugin embedds &quot;Flattr&quot;-Badges in blog entries and RSS feeds. You can specify flattr-specific options per-entry, with a default global fallback.</description>
 <maintainers><maintainer><name>Garvin Hicking, Joachim Breitner</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.20</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <version>1.21</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.0</requirements:phpVersion>
+  <date>2024-04-12</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3827,11 +3827,11 @@
 <description>Allows freestyle tagging of entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.1.0</version>
-  <requirements:s9yVersion>5.0</requirements:s9yVersion>
-  <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-03-08</date>
+  <version>6.0.0</version>
+  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <requirements:smyVersion>3.1.0</requirements:smyVersion>
+  <requirements:phpVersion>7.4.0</requirements:phpVersion>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -4746,16 +4746,16 @@
 <name>serendipity_event_google_analytics</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_google_analytics/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Google Analytics</summary>
+<summary>Google Analytics 4</summary>
 <groups>STATISTICS</groups>
-<description>This plugin adds extended Google Analytic functionality to your Page like tracking external links or download links.</description>
+<description>This plugin adds extended Google Analytics 4 functionality.</description>
 <maintainers><maintainer><name>Jari Turkia, kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.0</version>
-  <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.6.0</requirements:phpVersion>
-  <date>2024-03-10</date>
+  <version>2.1.1</version>
+  <requirements:s9yVersion>4.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1.0</requirements:smyVersion>
+  <requirements:phpVersion>8.1.0</requirements:phpVersion>
+  <date>2024-04-05</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -5479,11 +5479,11 @@
 <description>Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.34</version>
+  <version>2.35</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2024-05-02</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -7689,7 +7689,7 @@
 <description>Provides an interactive map for *.gpx uploads and geo-tagged entries</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.7.0</version>
+  <version>2.8.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
@@ -7745,7 +7745,7 @@
 <description>Includes scripts and stylesheets for OpenStreetMap support</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.7.0</version>
+  <version>2.8.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
@@ -8233,11 +8233,11 @@
 <description>Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.57</version>
+  <version>1.58</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-03-10</date>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -10123,7 +10123,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2024-04-29</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -12283,7 +12283,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12751,7 +12751,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2023-08-19</date>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12941,11 +12941,11 @@
 <description>Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Peter Heimann, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.3.0</version>
-  <requirements:s9yVersion>5.0</requirements:s9yVersion>
-  <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-03-08</date>
+  <version>2.2.0</version>
+  <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <date>2024-03-25</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
