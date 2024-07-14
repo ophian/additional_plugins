@@ -441,7 +441,7 @@ class serendipity_event_popfetcher extends serendipity_event
 
     function nl2br_callback($matches)
     {
-        return str_replace(array("\n", "\r"), array(" ", " "), $matches[0]);
+        return str_replace(array("\n", "\r"), '', $matches[0]);
     }
 
     function stripsubject($subject)
@@ -891,7 +891,7 @@ class serendipity_event_popfetcher extends serendipity_event
 
         $inline_count++;
 
-        $cid = str_replace(array('<', '>'), array('', ''), $cid);
+        $cid = str_replace(array('<', '>'), '', $cid);
 
         if ($this->debug) {
             $this->out('<br />Scanning for inlinepic: ' . $cid . ' (and [attach:' . $inline_count . '])<br />');
