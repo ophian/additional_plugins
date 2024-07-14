@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.6.4');
+        $propbag->add('version',       '2.6.5');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -312,8 +312,9 @@ if ($serendipity['wysiwyg']) {
                             toolbar : [['Format'],['Bold','Italic','Underline','Strike','Superscript','TextColor','-','NumberedList','BulletedList','Outdent','Blockquote'],['JustifyBlock','JustifyCenter','JustifyRight'],['Link','Unlink'],['SpecialChar'],['Maximize'],['Source']],
                             toolbarGroups: null,
                             skin: (STYX_DARKMODE === true && HAS_CKEDITOR_PLUGPATH !== false) ? 'moonodark,' + CKEDITOR_PLUGPATH + 'serendipity_event_ckeditor/moonodark/' : (STYX_DARKMODE === true ? 'moono-dark' : 'moono-lisa'),
-                            extraAllowedContent: 'div(*);p(*);ul(*);'
-                        });
+                            extraAllowedContent: 'div(*);p(*);ul(*);',
+                            versionCheck: false
+                       });
                     </script>
 <?php
 }
@@ -789,7 +790,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
     border: medium none transparent;
 }
 .serendipity_mediainsert_gallery {
-    border: 1px solid #C0C0C0;
+    border: 1px solid #c0c0c0;
     margin: 0px;
     overflow: auto;
 /*    padding: 0.333em;*/

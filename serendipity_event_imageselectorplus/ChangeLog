@@ -1,3 +1,7 @@
+2.6.5:
+-----
+ * Follow CKEditor configuration disabled security notification set
+
 2.6.4:
 -----
  * Fix a case of missing end div container tag
