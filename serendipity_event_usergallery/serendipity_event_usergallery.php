@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.12');
+        $propbag->add('version',       '3.13');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -108,7 +108,7 @@ class serendipity_event_usergallery extends serendipity_event
             case 'base_directory':
                 if ($this->get_config('style') == "thumbpage") {
                     $select['gallery'] = ALL_DIRECTORIES;
-                    if ($serendipity['version'][0] == 3) {
+                    if ($serendipity['version'][0] >= 3) {
                         $mediaExcludeDirs = array('CVS' => true, '.svn' => true, '.git' => true, '.v' => true); // the last is about Variations
                         $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', true, NULL, 1, NULL, false, $mediaExcludeDirs);
                     } else {

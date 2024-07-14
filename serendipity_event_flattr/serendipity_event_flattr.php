@@ -27,7 +27,7 @@ class serendipity_event_flattr extends serendipity_event
      */
     function _addslashes($str)
     {
-        $str = str_replace(array("\r", "\n"), array(' ', ' '), $str);
+        $str = str_replace(array("\r", "\n"), '', $str);
         return addslashes($str);
     }
 

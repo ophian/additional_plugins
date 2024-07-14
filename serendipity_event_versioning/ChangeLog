@@ -1,3 +1,7 @@
+0.16:
+-----
+ * Better type juggling for API methods
+
 0.15:
 -----
  * Improve backend main content markup indents for Styx 4.3

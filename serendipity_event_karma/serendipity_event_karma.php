@@ -1862,7 +1862,7 @@ if ($h == 15) {
                             $ipFilterHtml = "<a class='button_link filter_karma' href='$url&serendipity[filter][ip]={$vote['ip']}' title='". FILTERS ."'><span class='icon-filter'></span><span class='visuallyhidden'>". FILTERS ."</span></a>";
                             $timestr = strftime('%a %b %d %Y, %H:%M:%S', $vote['votetime']);
                             $cssClass = (($i % 2 ==0)?'even':'odd');
-                            $barClass = str_replace(array('.',' '), array('_','_'), $this->image_name);
+                            $barClass = str_replace(array('.',' '), '_', $this->image_name);
                             $barHtml = $this->createRatingBar(null, $vote['points'], 1, $barClass);
                             $barHtml = sprintf($barHtml, 'what', $vote['points'], '1');
                             print("
@@ -2027,7 +2027,7 @@ if ($h == 15) {
             // Create a rating bar of this image
             //
             // What would be a good CSS class for this image?
-            $css_class = str_replace(array('.',' '), array('_','_'), $fname);
+            $css_class = str_replace(array('.',' '), '_', $fname);
             $checked = '';
             if ($fname == $cursel) {
                 $checked = 'checked="checked" ';

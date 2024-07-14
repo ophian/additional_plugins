@@ -1154,7 +1154,7 @@ class serendipity_event_cal extends serendipity_event
 
         // Fix special characters
         $fromName = str_replace(array('"', "\r", "\n"), array("'", '', ''), $from_name);
-        $fromMail = str_replace(array("\r","\n"), array('', ''), $from_address);
+        $fromMail = str_replace(array("\r","\n"), '', $from_address);
 
         // Prefix all mail with weblog title
         $subject = '['. $serendipity['blogTitle'] . '] '.  $subject;
@@ -1173,8 +1173,8 @@ class serendipity_event_cal extends serendipity_event
 
         // Check for mb_* function, and use it to encode headers etc. This is a s9y mail behaviour - see functions.inc.php mailfunction */
         if (function_exists('mb_encode_mimeheader')) {
-            $maildata['subject'] = str_replace(array("\n", "\r"), array('', ''), mb_encode_mimeheader($maildata['subject'], LANG_CHARSET));
-            $maildata['fromName'] = str_replace(array("\n", "\r"), array('', ''), mb_encode_mimeheader($maildata['fromName'], LANG_CHARSET));
+            $maildata['subject'] = str_replace(array("\n", "\r"), '', mb_encode_mimeheader($maildata['subject'], LANG_CHARSET));
+            $maildata['fromName'] = str_replace(array("\n", "\r"), '', mb_encode_mimeheader($maildata['fromName'], LANG_CHARSET));
         }
 
         // Always add these headers

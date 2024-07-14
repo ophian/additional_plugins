@@ -1,3 +1,7 @@
+2.9.2:
+-----
+ * Fix Serendipity version check for correct API usage
+
 2.9.1:
 ------
  * Prep for better indentation with the standard pure theme up from Styx 4.3.3+

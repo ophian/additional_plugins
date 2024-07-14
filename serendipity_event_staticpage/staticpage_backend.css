@@ -50,7 +50,7 @@
 .spmod .icon-clock { width: 1em; color: #444; height: 1.25rem; vertical-align: -.275em; }
 .spmsg .icon-attention, .spmsg .icon-error { color: red; }
 .spmsg .icon-ok { color: green; }
-.icon-info { color: #C09853; }
+.icon-info { color: #c09853; }
 .icon-pagelist, .icon-pageorder, .icon-pagetype, .icon-otherplugins { width: 2em; }
 .icon-pagelist { color: #3E5F81; }
 #active.splist .icon-pagelist { color: #fff; }

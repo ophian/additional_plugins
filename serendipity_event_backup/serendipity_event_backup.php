@@ -1428,7 +1428,7 @@ class serendipity_event_backup extends serendipity_event
 
                             $BACKUPDIR = $this->get_config('abspath_backupdir');
 
-                            $file = str_replace(array("\\", "/", "dlbackup_"), array("", "", ""), $uri_parts[0]);
+                            $file = str_replace(array("\\", "/", "dlbackup_"), '', $uri_parts[0]);
                             $file = basename($file);
 
                             $dlfile = $BACKUPDIR."/".$file;

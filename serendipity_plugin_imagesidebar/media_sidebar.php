@@ -33,7 +33,7 @@ class media_sidebar extends subplug_sidebar {
             case 'media_base_directory':
                 if ($this->get_config('media_hotlinks_only', 'no') == 'no') {
                     $select['gallery'] = ALL_DIRECTORIES;
-                    if ($serendipity['version'][0] == 3) {
+                    if ($serendipity['version'][0] >= 3) {
                         $mediaExcludeDirs = array('CVS' => true, '.svn' => true, '.git' => true, '.v' => true); // the last is about Variations
                         $paths = serendipity_traversePath($serendipity['serendipityPath'] . $serendipity['uploadPath'], '', true, NULL, 1, NULL, false, $mediaExcludeDirs);
                     } else {

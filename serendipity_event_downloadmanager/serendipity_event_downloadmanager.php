@@ -1003,7 +1003,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                         $dlurl   = $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dlfile_' . $file['id'];
                         $mime    = $this->getMime($file['realfilename']);
 
-                        $fileinfo = array('file_desc'  => str_replace(array("\r\n","\n","\r"),array("<br />","<br />","<br />"), ($file['description'] ?? '')),
+                        $fileinfo = array('file_desc'  => str_replace(array("\r\n","\n","\r"), "<br />", ($file['description'] ?? '')),
                                           'filedate'   => date($this->globs['dateformat'], $file['timestamp']),
                                           'filesize'   => $this->calcFilesize($file['filesize']),
                                           'iconfile'   => $mime['ICON'],

@@ -289,7 +289,7 @@ class serendipity_event_linktrimmer extends serendipity_event
                                                       WHERE hash = '" . serendipity_db_escape_string($hash) . "'
                                                       LIMIT 1", true, 'assoc');
                         if (is_array($res) && !empty($res['url'])) {
-                            $url = str_replace(array("\n", "\r", "\0"), array('', '', ''), $res['url']);
+                            $url = str_replace(array("\n", "\r", "\0"), '', $res['url']);
                             header('HTTP/1.0 301 Moved Permanently');
                             header('Location: ' . $url);
                             exit;

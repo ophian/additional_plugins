@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.5.0');
+        $propbag->add('version',       '4.5.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -624,8 +624,7 @@ class serendipity_event_statistics extends serendipity_event
     .stats_imagecell.stats_day > img {
       width: 8px; }
     .stats_imagecell > span > img {
-      width: 8px;
-      width: max-content; }
+      width: 8px; }
 }
 @media only screen and (min-width: 768px) {
   .serendipity_statistics:not(.extended_statistics) {

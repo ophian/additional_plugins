@@ -120,6 +120,9 @@ function Spawnnuggets(item, addEP, jsED) {
             // Load our specific configuration file.
             customConfig : customConfigPath,
 
+            // Disable security notifications up from July 2024.
+            versionCheck: false,
+
             // or do and set
             // Reset toolbar Groups settings
             // toolbarGroups: null,

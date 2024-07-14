@@ -27,7 +27,7 @@ class serendipity_event_versioning extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '0.15');
+        $propbag->add('version', '0.16');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -258,7 +258,7 @@ class serendipity_event_versioning extends serendipity_event
                         $msg = '<div class="serendipity_versioningInfo">' . VERSIONING_TITLE . ':<br />%s</div>';
                         $html = '<ul>';
                         foreach($versions AS $version) {
-                            $html .= '<li><a href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($eventData[0]['id'], 'revision' . $version['version'], 'serendipityHTTPPath', false) . '&amp;serendipity[version_selected]=' . $version['id'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(sprintf(VERSIONING_REVISION, $version['version'], serendipity_strftime($date_time_format, $version['version_date'], true), $version['realname'])) : htmlspecialchars(sprintf(VERSIONING_REVISION, $version['version'], serendipity_strftime($date_time_format, $version['version_date'], true), $version['realname']), ENT_COMPAT, LANG_CHARSET)) . '</a></li>';
+                            $html .= '<li><a href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($eventData[0]['id'], 'revision' . $version['version'], 'serendipityHTTPPath', false) . '&amp;serendipity[version_selected]=' . $version['id'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(sprintf(VERSIONING_REVISION, $version['version'], serendipity_strftime($date_time_format, (int) $version['version_date'], true), $version['realname'])) : htmlspecialchars(sprintf(VERSIONING_REVISION, $version['version'], serendipity_strftime($date_time_format, $version['version_date'], true), $version['realname']), ENT_COMPAT, LANG_CHARSET)) . '</a></li>';
                         }
                         $html .= '</ul>';
 
@@ -298,14 +298,24 @@ class serendipity_event_versioning extends serendipity_event
                     <select name="serendipity[versioning]">
 <?php
                         foreach($versions AS $version) {
-                            $text = (function_exists('serendipity_specialchars') ? serendipity_specialchars(sprintf(VERSIONING_REVISION,
+                            $text = (function_exists('serendipity_specialchars')
+                                ? serendipity_specialchars(
+                                    sprintf(
+                                        VERSIONING_REVISION,
                                         $version['version'],
-                                        serendipity_strftime($date_time_format, $version['version_date'], true),
-                                        $version['realname'])) : htmlspecialchars(sprintf(VERSIONING_REVISION,
+                                        serendipity_strftime($date_time_format, (int) $version['version_date'], true),
+                                        $version['realname']
+                                    )
+                                )
+                                : htmlspecialchars(
+                                    sprintf(
+                                        VERSIONING_REVISION,
                                         $version['version'],
-                                        serendipity_strftime($date_time_format, $version['version_date'], true),
-                                        $version['realname']), ENT_COMPAT, LANG_CHARSET));
-
+                                        serendipity_strftime($date_time_format, (int) $version['version_date'], true),
+                                        $version['realname']
+                                    ), ENT_COMPAT, LANG_CHARSET
+                                )
+                            );
                             echo '                        <option value="' . $version['id'] . '"' . ($serendipity['POST']['versioning'] == $version['id'] ? ' selected="selected"' : '') . '>' . $text . '</option>' . "\n";
                         }
 ?>
