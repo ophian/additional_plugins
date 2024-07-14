@@ -1117,7 +1117,7 @@ class serendipity_event_podcast extends serendipity_event
             $align = '';
         }
 
-        $filename = str_replace(array(' '),array('%20'),$filename);
+        $filename = str_replace(' ', '%20', $filename);
         $filename = $this->absolve($filename);
         $filename_noext = preg_replace('@\.'. $ext .'$@is','',$filename);
 
