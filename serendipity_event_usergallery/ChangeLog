@@ -1,3 +1,7 @@
+3.13:
+-----
+ * Fix Serendipity version check for correct API usage
+
 3.12:
 -----
  * Convert single tag (asset) elements to HTML5
