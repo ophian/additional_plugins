@@ -22,7 +22,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '7.4.0'
         ));
 
-        $propbag->add('version',       '0.36');
+        $propbag->add('version',       '0.37');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -355,7 +355,7 @@ class serendipity_event_adminnotes extends serendipity_event
                         echo '
     <li>
         <h3>' . $note['subject'] . '</h3>
-        <p>' . POSTED_BY . ' ' . $note['realname'] . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime']) . '</p>
+        <p>' . POSTED_BY . ' ' . $note['realname'] . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, (int) $note['notetime']) . '</p>
         <div class="form_buttons">
             <a class="button_link state_submit" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=edit&amp;note=' . $note['noteid'] . '">' . EDIT . '</a>
             <a class="button_link state_cancel" href="?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=adminnotes&amp;action=delete&amp;note=' . $note['noteid'] . '">' . DELETE . '</a>
@@ -468,7 +468,7 @@ function fulltext_toggle(id) {
             <li class="serendipity_note note_<?php echo $this->output($note['notetype']) ?> note_owner_<?php echo $note['authorid'] . (isset($serendipity['COOKIE']['lastnote']) && $serendipity['COOKIE']['lastnote'] < $note['noteid'] ? ' note_new' : ''); ?>">
                 <div class="note_subject">
                     <h3><?php echo $this->output($note['subject']) ?></h3>
-                    <?php echo POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, $note['notetime'])."\n"; ?>
+                    <?php echo POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, (int) $note['notetime'])."\n"; ?>
                 </div>
 <?php
                     if (strlen(strip_tags($note['body'])) > $cutoff) {
