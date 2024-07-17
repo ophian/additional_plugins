@@ -25,7 +25,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.2.2');
+        $propbag->add('version',       '2.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
             'smarty'      => '3.1',
@@ -208,10 +208,10 @@ class serendipity_event_searchhighlight extends serendipity_event
         if (empty($query)) {
             return false;
         }
-        $query = preg_replace('/(\"|\')/i', '', $query);
+        $query = preg_replace('/(\"|\'|&quot;)/i', '', $query);
 
         /* Split by search engine chars or spaces */
-        $words = preg_split('/[\s\,\+\.\-\/\=]+/', $query);
+        $words = preg_split('/[\s\,\+\.\-\/\=~<>(\)]+/', $query);
 
         /* Strip search engine keywords or common words we don't bother to highlight and for empty value strings */
         $words = array_diff($words, array('AND', 'OR', 'FROM', 'IN', ''));
