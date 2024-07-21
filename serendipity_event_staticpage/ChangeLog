@@ -1,3 +1,7 @@
+6.76:
+-----
+ * Fix issue with frontend_display hook (searchhighlight) return data for entries NOT having been created with a RT-Editor
+
 6.75:
 -----
  * Fix issue with added space when building textarea(s)
