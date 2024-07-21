@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.75');
+        $propbag->add('version', '6.76');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1890,7 +1890,17 @@ class serendipity_event_staticpage extends serendipity_event
 
             }
         }
-        // the #uncommented are already assigned [see line 1731, which assigns $this->config vars]
+        // this is an hooked entry content that was NOT written by a RT-Editor !!!
+        if (!serendipity_db_bool($this->get_static('markup')) && $eventData !== $staticpage_content) {
+            #echo 'Checkout staticpage case (Written by RT-Editor) get_static(markup) === false && $eventData !== $staticpage_content for searchhighlight plugin';
+            $entry = array('body' => $staticpage_content);
+            $entry['staticpage_content'] =& $entry['body'];
+            if (!empty($entry['body'])) {
+                serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
+            }
+            $staticpage_content = $entry['staticpage_content']; // re-assign possible changed data
+        }
+        // the #uncommented are already assigned [see ~ line 1731, which assigns $this->config vars]
         $serendipity['smarty']->assign(
             array(
                 $pagevar . 'articleformat'      => serendipity_db_bool($this->get_static('articleformat')),// already assigned, but overwrite as boolean
