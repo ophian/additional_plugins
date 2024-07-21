@@ -599,7 +599,7 @@ function wp_getComments($message) {
     $val = $message->params[3];
     $comment_filter =  $val->getval();
 
-    $limit = !empty($comment_filter['number'])?$comment_filter['number']:'10'; // defaults to 10
+    $limit = !empty($comment_filter['number']) ? $comment_filter['number'] : '10'; // defaults to 10
     if (!empty($comment_filter['offset'])) $limit = serendipity_db_limit($comment_filter['offset'], $limit);
     if (version_compare($serendipity['version'],'1.6.1')>=0)
         $order = ' co.timestamp DESC';
