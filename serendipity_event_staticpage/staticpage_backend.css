@@ -52,9 +52,9 @@
 .spmsg .icon-ok { color: green; }
 .icon-info { color: #c09853; }
 .icon-pagelist, .icon-pageorder, .icon-pagetype, .icon-otherplugins { width: 2em; }
-.icon-pagelist { color: #3E5F81; }
+.icon-pagelist { color: #3e5f81; }
 #active.splist .icon-pagelist { color: #fff; }
-.icon-pageorder { color: #3E5F81;/*#6fbc6d;*/ }
+.icon-pageorder { color: #3e5f81;/*#6fbc6d;*/ }
 .icon-pagetype { color: #f46899; }
 .icon-otherplugins { color: #5fa9dd; }
 .sp_entries_pane .spform a { vertical-align: bottom; line-height: 1.20em; }
@@ -105,6 +105,9 @@
     page-break-after: always;
     display: block;
     clear: both;
+}
+.sp_label[title]:not([title=""]) {
+    cursor: help;
 }
 .sp_button {
     display: inline-block;

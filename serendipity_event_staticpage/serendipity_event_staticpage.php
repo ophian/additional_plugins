@@ -99,11 +99,11 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.76');
+        $propbag->add('version', '6.77');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
-            'php'         => '7.4.0'
+            'php'         => '8.0.0'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES', 'FRONTEND_FEATURES'));
@@ -1811,6 +1811,7 @@ class serendipity_event_staticpage extends serendipity_event
             $_ENV[$pagevar . $staticpage_config] = $cvar;
         }
 
+        // This is textformat option true, which has higher priority over custom wysiwyg (disable nl2br) marker
         if (serendipity_db_bool($this->get_static('markup'))) {
             // check if it was marked written true by wysiwyg-editor
             $q = "SELECT * FROM {$serendipity['dbPrefix']}staticpage_custom WHERE staticpage = " . (int)$this->get_static('id') . " AND name = 'wysiwyg'";
@@ -1825,9 +1826,10 @@ class serendipity_event_staticpage extends serendipity_event
                     }
                 }
             }
+            // rewrite staticpage content entry for hooked smartymarkup plugin
             $entry = array('body' => $this->get_static('content'));
             $entry['staticpage'] =& $entry['body']; // this will be $eventData['staticpage'] for the smartymarkup plugin!
-            $addData = array('from' => 'serendipity_event_staticpage:parseStaticPage');
+            $addData = array('from' => 'serendipity_event_staticpage:parseStaticPage(smartymarkup content)');
             serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
             if (isset($entry['markup_staticpage'])) {
                 $staticpage_content = $entry['staticpage'];
@@ -1835,9 +1837,11 @@ class serendipity_event_staticpage extends serendipity_event
                 $staticpage_content = $entry['body'];
             }
 
+            // rewrite staticpage pre_content entry for hooked smartymarkup plugin
             $entry = array('body' => $this->get_static('pre_content'));
             $entry['staticpage'] =& $entry['body'];
             if (!empty($entry['body'])) {
+                $addData = array('from' => 'serendipity_event_staticpage:parseStaticPage(smartymarkup pre_content)');
                 serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
             }
             if (isset($entry['markup_staticpage'])) {
@@ -1845,6 +1849,24 @@ class serendipity_event_staticpage extends serendipity_event
             } else {
                 $staticpage_precontent = $entry['body'];
             }
+
+            // rewrite staticpage content entry for hooked searchhighlight plugin if textformat is true and nl2br is marked disabled
+            if ($serendipity['POST']['properties']['ep_no_nl2br']) {
+                #echo 'Checkout staticpage case (textformat option) get_static(markup true) && nl2br automarker true for searchhighlight plugin';
+                $entry = array('body' => $staticpage_content);
+                $entry['staticpage_content'] =& $entry['body'];
+                if (!empty($entry['body'])) {
+                    $addData = array('from' => 'serendipity_event_staticpage:parseStaticPage(markup & nl2br automarker true)');
+                    serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
+                }
+                // listen on has searchhighlight modified added data
+                if (isset($entry['highlight_staticpage'])) {
+                    $staticpage_precontent = $entry['staticpage_content']; // re-assign possible changed data
+                } else {
+                    $staticpage_precontent = $entry['body'];
+                }
+            }
+
             if (isset($serendipity['POST']['properties']['ep_no_nl2br']) && !isset($serendipity['POST']['pass'])) {
                 unset($serendipity['POST']);
             }
@@ -1890,16 +1912,7 @@ class serendipity_event_staticpage extends serendipity_event
 
             }
         }
-        // this is an hooked entry content that was NOT written by a RT-Editor !!!
-        if (!serendipity_db_bool($this->get_static('markup')) && $eventData !== $staticpage_content) {
-            #echo 'Checkout staticpage case (Written by RT-Editor) get_static(markup) === false && $eventData !== $staticpage_content for searchhighlight plugin';
-            $entry = array('body' => $staticpage_content);
-            $entry['staticpage_content'] =& $entry['body'];
-            if (!empty($entry['body'])) {
-                serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
-            }
-            $staticpage_content = $entry['staticpage_content']; // re-assign possible changed data
-        }
+
         // the #uncommented are already assigned [see ~ line 1731, which assigns $this->config vars]
         $serendipity['smarty']->assign(
             array(
@@ -2490,7 +2503,7 @@ class serendipity_event_staticpage extends serendipity_event
             // always automark true by default, or set on demand within custom template radio option!
             // case new or default or set to false
             if (!isset($serendipity['POST']['plugin']['custom']) || $serendipity['POST']['plugin']['custom']['wysiwyg'] != '') $serendipity['POST']['plugin']['custom']['wysiwyg'] = 1;
-            // in case textformat was set false, we don't need this all - this markup option has higher priority
+            // in case the textformat option was set false, we don't need this all - this markup option has higher priority
             if (isset($serendipity['POST']['plugin']['markup']) && $serendipity['POST']['plugin']['markup'] == 'false') $serendipity['POST']['plugin']['custom']['wysiwyg'] = '';
         } else {
             // remove custom wysiwyg entry
