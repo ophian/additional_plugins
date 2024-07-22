@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Searches comments on quicksearch&lt;/b&gt;&lt;br /&gt;If this plugin is installed, the quicksearch on your blog will also search through comments on your blog&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 12 Jan 2023 11:43:44 +0100</pubDate>
+<pubDate>Mon, 22 Jul 2024 16:07:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -968,7 +968,7 @@
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Highlight search queries&lt;/b&gt;&lt;br /&gt;Highlights queries used in the referring search engine to locate your page&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Sun, 21 Jul 2024 13:56:51 +0200</pubDate>
+<pubDate>Mon, 22 Jul 2024 16:22:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
@@ -1058,7 +1058,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Pagina statica&lt;/b&gt;&lt;br /&gt;Visualizza una pagina statica nel tuo blog con la stessa grafica e formattazione del blog stesso&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Sun, 21 Jul 2024 13:56:51 +0200</pubDate>
+<pubDate>Mon, 22 Jul 2024 16:18:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
