@@ -25,11 +25,11 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.3.0');
+        $propbag->add('version',       '2.4.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.9',
             'smarty'      => '3.1',
-            'php'         => '7.4'
+            'php'         => '8.0'
         ));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'css' => true));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
@@ -254,6 +254,10 @@ class serendipity_event_searchhighlight extends serendipity_event
                 &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
                     $element = &$eventData[$temp['element']];
 
+                    // yeah its not 'content' as you would assume, its 'body' from passed staticpage $entry[body]
+                    if ($temp['element'] == 'body') {
+                        $checkhash_start = hash('xxh128', $element);
+                    }
                     // Iterate over search terms and do the highlighting.
                     foreach ($queries AS $word) {
                         if (false !== strpos($word, '*')) {
@@ -275,6 +279,13 @@ class serendipity_event_searchhighlight extends serendipity_event
                         }
                         $element = preg_replace($_pattern, '<span class="serendipity_searchQuery">$1</span>', $element);
                     } // end foreach
+                    // check it modified for staticpage
+                    if ($temp['element'] == 'body') {
+                        $checkhash_end = hash('xxh128', $element);
+                        if ($checkhash_start !== $checkhash_end) {
+                            $eventData['highlight_staticpage'] = true;
+                        }
+                    }
                 }
             } // end foreach
             return;

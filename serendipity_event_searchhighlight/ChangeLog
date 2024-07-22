@@ -1,3 +1,10 @@
+2.4.0:
+------
+ * Refactor for the staticpage searchhighlight fix in v.6.77.
+   This means, only a staticpage entry with textformat option true marks a staticpage allowed to be modified by
+   additional plugins; And the searchhighlight plugin is a format modifier plugin.
+ * Raises PHP requirement to PHP 8.0. (Depends on staticpage v.6.77 plugin.)
+
 2.3.0:
 ------
  * Extend preg_*() method regex for (mysqli extended fulltext search) improvement with next Styx version >= 4.4.3
