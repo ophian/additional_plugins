@@ -1,3 +1,7 @@
+6.78:
+-----
+ * Fix an undefined offset case with v.6.77
+
 6.77:
 -----
  * Refactor the previous searchhighlight fix since being misguided by the staticpage textformat (markup) option,

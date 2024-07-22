@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.77');
+        $propbag->add('version', '6.78');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -1851,7 +1851,7 @@ class serendipity_event_staticpage extends serendipity_event
             }
 
             // rewrite staticpage content entry for hooked searchhighlight plugin if textformat is true and nl2br is marked disabled
-            if ($serendipity['POST']['properties']['ep_no_nl2br']) {
+            if (isset($serendipity['POST']['properties']['ep_no_nl2br']) && true === $serendipity['POST']['properties']['ep_no_nl2br']) {
                 #echo 'Checkout staticpage case (textformat option) get_static(markup true) && nl2br automarker true for searchhighlight plugin';
                 $entry = array('body' => $staticpage_content);
                 $entry['staticpage_content'] =& $entry['body'];
