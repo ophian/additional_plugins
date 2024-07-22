@@ -22,7 +22,7 @@ class serendipity_event_commentsearch extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.1.0');
+        $propbag->add('version', '2.2.0');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -74,7 +74,7 @@ class serendipity_event_commentsearch extends serendipity_event
             }
         }
 
-        $querystring = "SELECT c.title AS ctitle, c.body, c.author, c.entry_id, c.timestamp AS ctimestamp, c.url, c.type,
+        $querystring = "SELECT c.id AS cid, c.title AS ctitle, c.body, c.author, c.entry_id, c.timestamp AS ctimestamp, c.url, c.type,
                                e.id, e.title, e.timestamp
                           FROM {$serendipity['dbPrefix']}comments AS c
                LEFT OUTER JOIN {$serendipity['dbPrefix']}entries AS e
@@ -93,7 +93,7 @@ class serendipity_event_commentsearch extends serendipity_event
         }
         $myAddData = array("from" => "serendipity_plugin_commentsearch:generate_content");
         foreach($results AS $idx => $result) {
-            $results[$idx]['permalink'] = serendipity_archiveURL($result['id'], $result['title'], 'baseURL', true, $result);
+            $results[$idx]['permalink'] = serendipity_archiveURL($result['id'], $result['title'], 'baseURL', true, $result).'#c'.$result['cid'];
             $results[$idx]['comment']   = $result['body']; // htmlspecialchars(strip_tags($result['body']), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET);
             serendipity_plugin_api::hook_event('frontend_display', $results[$idx], $myAddData);
             // let the template decide, if we want to have tags or not

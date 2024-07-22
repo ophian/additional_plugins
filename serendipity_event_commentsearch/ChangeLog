@@ -1,3 +1,7 @@
+2.2.0:
+------
+ * Improve comment searchresult list URLs with direct anchor comment #pointer
+
 2.1.0:
 ------
  * Fix for mysqli search-term SQL queries in FULLTEXT IN BOOLEAN MODE
