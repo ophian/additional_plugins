@@ -1,3 +1,12 @@
+6.77:
+-----
+ * Refactor the previous searchhighlight fix since being misguided by the staticpage textformat (markup) option,
+   which always is of higher priority than the staticpage custom nl2br WYSIWYG (RT-Editor) automarker.
+   This means, only a staticpage entry with textformat option true marks a staticpage allowed to be modified by
+   additional plugins; And the searchhighlight plugin is a format modifier plugin.
+ * Raises PHP requirement to PHP 8.0. (Depends on searchhighlight >= v.2.4.0 plugin.)
+ * Added CSS mouse over info marker for option labels with title text.
+
 6.76:
 -----
  * Fix issue with frontend_display hook (searchhighlight) return data for entries NOT having been created with a RT-Editor
