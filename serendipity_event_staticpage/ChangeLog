@@ -1,3 +1,9 @@
+6.79:
+-----
+ * Fix false re-assign content after display_entry hook for searchhighlight
+   causing doubled content when staticpage entry option "Perform Markup Transformations" was set true.
+   Up from v.6.77.
+
 6.78:
 -----
  * Fix an undefined offset case with v.6.77
