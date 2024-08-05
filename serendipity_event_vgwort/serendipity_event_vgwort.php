@@ -18,7 +18,7 @@ class serendipity_event_vgwort extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_VGWORT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Thomas Hochstein');
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '0.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.2.1'
         ));
@@ -62,7 +62,7 @@ class serendipity_event_vgwort extends serendipity_event
     function entryLength($id)
     {
         $entry = serendipity_fetchEntry('id', $id);
-        $entry = serendipity_printEntries(array($entry), 1, false, 'ENTRIES', "return");
+        $entry = serendipity_printEntries(array($entry), true, false, 'ENTRIES', 'return');
         // printentries returns the formatted entry in a datetime array, which we need to query to get the entry itself
         $entry = array_values($entry)[0]['entries'][0];
         $fullEntry = $entry['body'];
