@@ -1,3 +1,8 @@
+4.5.3:
+-----
+ * Fix a rare placement issue with gray'ed vertical bars in the statistics year box on small screens
+   caused by (code) spaces on Firefox browser, when having no colored sibling.
+
 4.5.2:
 -----
  * Fix a strict type issue for Styx 5 API type safety
