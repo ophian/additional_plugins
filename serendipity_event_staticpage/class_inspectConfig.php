@@ -159,8 +159,6 @@ class icText extends inspectConfig
                     serendipity_plugin_api::hook_event('backend_entry_toolbar_body', $entry); // add hooked buttons
 ?>
                 </div>
-            </div>
-        </div><!-- form_editor end -->
 
 <?php
             $tdimension = $inspectConfig['config_item'] == 'question' ? ' rows="5" cols="80"' : ' rows="20" cols="80"';
