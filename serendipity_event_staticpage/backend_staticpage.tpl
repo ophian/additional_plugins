@@ -1,4 +1,4 @@
-{* backend_staticpage template file v. 1.41, 2023-11-17 *}
+{* backend_staticpage template file v. 1.42, 2024-08-05 *}
 
 <!-- backend_staticpage.tpl START -->
 
@@ -174,7 +174,7 @@
       <input type="hidden" name="serendipity[adminModule]" value="event_display">
       <input type="hidden" name="serendipity[adminAction]" value="staticpages">
       <input type="hidden" name="serendipity[staticpagecategory]" value="pages">
-      {$sp_entry_formtoken}
+      {$sp_entry_formtoken|default:''}
     </div>
 {if isset($sp_cookie_value)}
 
@@ -314,7 +314,7 @@
         {$CONST.NEW_ENTRY} <em>{$CONST.WORD_OR|lower}</em> {$CONST.EDIT_ENTRY}: #<input class="input_textbox" type="text" size="3" name="serendipity[staticpage]">
         <input type="hidden" name="serendipity[listentries_formSubmit]" value="true">{* necessary to open form on entrylist post submits *}
         <input type="hidden" name="serendipity[pagetype]" value="__new">
-        {$sp_entry_formtoken}
+        {$sp_entry_formtoken|default:''}
         <input class="input_button state_submit" type="submit" name="serendipity[staticSubmit]" value="{$CONST.GO}">
     </div>
     </form>

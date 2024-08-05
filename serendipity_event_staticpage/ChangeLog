@@ -1,3 +1,7 @@
+6.81:
+-----
+ * Catch not set 'sp_entry_formtoken' error reporting, since already caught by message notice
+
 6.80:
 -----
  * Fix some wrong placed end tags when using PLAIN TEXT Editor, breaking the form apart
