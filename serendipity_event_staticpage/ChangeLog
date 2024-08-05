@@ -1,3 +1,7 @@
+6.80:
+-----
+ * Fix some wrong placed end tags when using PLAIN TEXT Editor, breaking the form apart
+
 6.79:
 -----
  * Fix false re-assign content after display_entry hook for searchhighlight
