@@ -1,3 +1,7 @@
+4.5.2:
+-----
+ * Fix a strict type issue for Styx 5 API type safety
+
 4.5.1:
 -----
  * Fix a strange styling issue with rolling year stats bar chart on Firefox since v.127
