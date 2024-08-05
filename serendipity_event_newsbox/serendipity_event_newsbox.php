@@ -23,7 +23,7 @@ class serendipity_event_newsbox extends serendipity_event
         $propbag->add('groups',        array('FRONTEND_VIEWS', 'FRONTEND_FEATURES'));
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Jude Anthony, Ian Styx');
-        $propbag->add('version',       '1.4');
+        $propbag->add('version',       '1.5');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7',
             'smarty'      => '3.1.0',
@@ -199,7 +199,7 @@ class serendipity_event_newsbox extends serendipity_event
 
                     // Process our input data with new printEntries:
                     // $entries, no extended, no preview, block NEWSBOX, no Smarty fetch, no hooks, footer
-                    serendipity_printEntries($entries, 0, false, 'NEWSBOX', false, false, false);
+                    serendipity_printEntries($entries, false, false, 'NEWSBOX', false, false, false);
                     $newsbox_data = array();
                     $newsbox_data['title'] = $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE);
                     $newsbox_data['cats'] = explode(',', $news_cats);
