@@ -1117,7 +1117,7 @@
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1474,7 +1474,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1552,7 +1552,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -3394,7 +3394,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3832,7 +3832,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -4802,7 +4802,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -5422,7 +5422,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>3.6.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-08-03</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -5484,7 +5484,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -6834,7 +6834,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
@@ -7210,7 +7210,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -7386,7 +7386,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -9960,11 +9960,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.79</version>
+  <version>6.80</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.0.0</requirements:phpVersion>
-  <date>2024-08-04</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -10124,7 +10124,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-28</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -12058,7 +12058,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-24</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
       <file>changeLog</file>
@@ -12284,7 +12284,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12752,7 +12752,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12946,7 +12946,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-08-04</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
