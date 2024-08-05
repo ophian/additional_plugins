@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.5.1');
+        $propbag->add('version',       '4.5.2');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -654,7 +654,7 @@ class serendipity_event_statistics extends serendipity_event
                     break;
 
                 case 'backend_sidebar_entries_event_display_statistics':
-                    $max_items    = $this->get_config('max_items');
+                    $max_items    = (int) $this->get_config('max_items');
                     $ext_vis_stat = $this->get_config('ext_vis_stat');
 
                     if (!$max_items || !is_numeric($max_items) || $max_items < 1) {
