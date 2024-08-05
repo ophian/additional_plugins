@@ -1,5 +1,9 @@
 1.4:
 -----
+ * Styx 5 API type safety fix
+
+1.4:
+-----
  * Improve Smarty newsbox.tpl template file
 
 1.3:
