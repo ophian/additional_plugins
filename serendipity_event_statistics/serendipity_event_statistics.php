@@ -21,7 +21,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.5.2');
+        $propbag->add('version',       '4.5.3');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'php'         => '7.4'
@@ -1340,9 +1340,9 @@ class serendipity_event_statistics extends serendipity_event
                         $monthHeight = @round(($n[1]*$maxVisHeigh), 3); // be as precise as possible eg. 12.321px
                         $lryMoHeight = @round(($n[2]*$maxVisHeigh), 3); // ditto
                         $numCountInt = @round(($n[1]*$maxHeigh/2),3); // scale by 100
+                        // The space(s) between 1st gray and 2cd transparent may cause strange vertical placement issues in FF underneath a scrolling width of 404px, when having no colored sibling. (This exact width may be a matter of my example) - so we better remove the space(s) between gray and transparent.
                         echo '                <td class="stats_imagecell stats_month" data-color-height="'.$numCountInt.'">
-                    <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.@round($lryMoHeight).'" style="height:'.$lryMoHeight.'px" alt="o"></span>
-                    <span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="260" style="height:260px" alt="^"></span>
+                    <span class="co_mo"><img src="plugins/serendipity_event_statistics/gray.png" title="'.$n[2].'" width="8" height="'.@round($lryMoHeight).'" style="height:'.$lryMoHeight.'px" alt="o"></span><span class="di_ff"><img src="plugins/serendipity_event_statistics/transparent.png" width="8" height="260" style="height:260px" alt="^"></span>
                     <span class="cu_mo"><img src="plugins/serendipity_event_statistics/';
                         if ($numCountInt <= 33.333) {
                             echo 'red.png';
