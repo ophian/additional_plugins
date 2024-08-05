@@ -1,3 +1,7 @@
+0.7:
+-----
+ * PHP 8.x and Styx 5 type safety fix
+
 0.6:
 -----
  * PHP 8 preparation fix
