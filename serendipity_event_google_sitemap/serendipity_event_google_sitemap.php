@@ -29,7 +29,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris, Ian Styx');
-        $propbag->add('version', '0.73');
+        $propbag->add('version', '0.74');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -353,7 +353,7 @@ class serendipity_event_google_sitemap extends serendipity_event
             foreach($entries AS $entry) {
                 $max = max($entry['timestamp_1']+0, $entry['timestamp_2']+0);
                 $url = serendipity_archiveURL($entry['id'], $entry['title']);
-                $props = serendipity_fetchEntryProperties($entry['id']);
+                $props = serendipity_fetchEntryProperties((int) $entry['id']);
                 $props['title'] = $entry['title'];
                 $this->addtoxml($sitemap_xml, $url, $max, 0.7, null, $props);
             }
