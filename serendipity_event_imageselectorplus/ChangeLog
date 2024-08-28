@@ -1,3 +1,7 @@
+2.6.6:
+-----
+ * Improve parameter types for Styx 5.0 type safety
+
 2.6.5:
 -----
  * Follow CKEditor configuration disabled security notification set
