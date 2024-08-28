@@ -1,3 +1,7 @@
+1.38:
+-----
+ * Add cleanup helper to unselect multi-selected trackbacks since not everybody knows the generic keyboard commands...
+
 1.37:
 -----
  * Improve backend main content markup indents for Styx 4.3

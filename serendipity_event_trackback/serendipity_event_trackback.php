@@ -19,7 +19,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.37');
+        $propbag->add('version',       '1.38');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -212,8 +212,17 @@ class serendipity_event_trackback extends serendipity_event
                 <div id="trackback_tab_info" class="clearfix field_info additional_info" style="width: 100%;"><span class="icon-info-circled"></span> <?= PLUGIN_EVENT_MTRACKBACK_CONTROL ?></div><br>
 
                 <span class="wrap_legend"><label for="input_additional_trackbacks"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL; ?></label></span>
+                <span class="wrap_right"><span class="buttonless_link state_cancel" type="button" href="#edit_entry_trackbacks" onclick="clearFieldTrackbacks();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                  <title><?= CLEAR_FIELD ?></title>
+                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg></span></span>
+                <div data-tooltip=" [i] &nbsp;&nbsp;<?= PLUGIN_EVENT_MTRACKBACK_CONTROL_SHORT ?>"></div>
+
                 <textarea rows="5" cols="50" id="input_additional_trackbacks" name="serendipity[additional_trackbacks]"><?php echo trim(implode("\n", $trackbackURLs)); ?></textarea>
             </fieldset>
+
+            <script> function clearFieldTrackbacks() { document.getElementById("input_additional_trackbacks").value = ""; $('div[data-tooltip]').addClass('clearChecked'); } </script>
 
 <?php
                     break;
@@ -240,6 +249,37 @@ class serendipity_event_trackback extends serendipity_event
 }
 #edit_entry_trackbacks label {
     margin-left: .25em;
+}
+#edit_entry_trackbacks .wrap_right {
+  float: right;
+}
+#edit_entry_trackbacks .wrap_right:after {
+    clear: right;
+}
+
+#edit_entry_trackbacks .clearChecked[data-tooltip]:before {
+    position: absolute;
+    content: attr(data-tooltip);
+    opacity: 1;
+    right: 0;
+    width: 75%;
+    padding: .25rem;
+    background-color: var(--color-input-tooltip-warning-bg);
+    color: var(--color-input-tooltip-warning-text);
+    font-size: smaller;
+    pointer-events: none;
+}
+@media only screen and (min-width: 412px) {
+  #edit_entry_trackbacks .clearChecked[data-tooltip]:before {
+    width: 50%; }
+}
+@media only screen and (min-width: 660px) {
+  #edit_entry_trackbacks .clearChecked[data-tooltip]:before {
+    width: 41%; }
+}
+@media only screen and (min-width: 768px) {
+  #edit_entry_trackbacks .clearChecked[data-tooltip]:before {
+    width: 32%; }
 }
 
 /* serendipity_event_trackback end */
