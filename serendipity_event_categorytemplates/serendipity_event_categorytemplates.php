@@ -28,7 +28,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.4.2');
+        $propbag->add('version',       '2.4.3');
         $propbag->add('requirements',  array(
             'serendipity' => '2.7.0',
             'php'         => '7.4.0'
@@ -246,7 +246,7 @@ class serendipity_event_categorytemplates extends serendipity_event
             }
 
             // Get all the categories' IDs belonging to this entry
-            $entrycats = serendipity_fetchEntryCategories($serendipity['GET']['id']);
+            $entrycats = serendipity_fetchEntryCategories((int) $serendipity['GET']['id']);
             $entrycids = array();
             foreach ($entrycats AS $catdata) {
                 $entrycids[] = $catdata['categoryid'];
