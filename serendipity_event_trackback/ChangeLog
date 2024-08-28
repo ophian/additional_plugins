@@ -1,3 +1,7 @@
+1.39:
+-----
+ * Make use of constant available with upcoming Styx 5.0. Temporary fix adding EN lang for lower versions.
+
 1.38:
 -----
  * Add cleanup helper to unselect multi-selected trackbacks since not everybody knows the generic keyboard commands...
