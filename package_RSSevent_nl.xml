@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Properties/Templates of categories&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:24:17 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:19:15 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -167,7 +167,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 19 Aug 2024 19:41:25 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Lewe Zipfel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:25:38 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
@@ -410,7 +410,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Joachim Breitner</author>
 <content:encoded>&lt;b&gt;serendipity_event_flattr&lt;br /&gt;Flattr&lt;/b&gt;&lt;br /&gt;Flattr is a social micropayment platform that lets you show love for the things you like. This plugin embedds &quot;Flattr&quot;-Badges in blog entries and RSS feeds. You can specify flattr-specific options per-entry, with a default global fallback.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:26:40 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flattr</guid>
 </item>
 <item>
@@ -446,7 +446,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Taggen van bijdragen&lt;/b&gt;&lt;br /&gt;Maakt het mogelijk om bijdragen van tags te voorzien&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 19 Aug 2024 19:41:25 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -518,7 +518,7 @@
 <category>Event Plugins</category>
 <author>Boris, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Sitemap Generator (for Crawlers)&lt;/b&gt;&lt;br /&gt;Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:27:32 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -563,7 +563,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Extended options for media manager&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager&lt;br/&gt;For: Serendipity 3.6.0</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:28:23 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Include entry data/templates/blocks&lt;/b&gt;&lt;br /&gt;Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:29:09 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -725,7 +725,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META-Tags&lt;/b&gt;&lt;br /&gt;Sets HTML meta keywords/description tags and title element for single entry pages and default meta keywords/description tags for non-single entry pages.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:30:07 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilingual entries&lt;/b&gt;&lt;br /&gt;Allows to create multiple language versions of an entry&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:31:02 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistieken&lt;/b&gt;&lt;br /&gt;Voegt een link toe aan het controlepaneel waar je interessante statistieken kunt lezen&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 19 Aug 2024 19:41:25 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1175,7 +1175,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackback-Control&lt;/b&gt;&lt;br /&gt;Allows granular control over how trackbacks are sent when creating entries&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:33:06 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:10:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
@@ -1283,7 +1283,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Wed, 28 Aug 2024 19:32:14 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1310,7 +1310,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Mon, 19 Aug 2024 19:41:25 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
@@ -1337,7 +1337,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 19 Aug 2024 19:41:25 +0200</pubDate>
+<pubDate>Wed, 28 Aug 2024 20:01:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
