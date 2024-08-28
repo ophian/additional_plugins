@@ -9,4 +9,5 @@
 @define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_NAME', 'Nachträgliche Trackbacks');
 @define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_DESC', 'Erstelle automatisch Trackbacks von Einträgen, die nicht sofort veröffentlicht wurden.');
 @define('PLUGIN_EVENT_MTRACKBACK_CONTROL', 'Sie können Trackbacks im unteren Feld neu zuordnen ODER entfernen, indem Sie alle/jeden Trackback-Link(s) entfernen, dann speichern und folgend den Eintrag über die Eintragsliste (wichtig!) erneut laden. Um die alten/geänderten Trackback-Links neu einzufügen, führen Sie den Speichervorgang erneut durch, um die geänderten Trackbacks zu sehen.');
+@define('PLUGIN_EVENT_MTRACKBACK_CONTROL_SHORT', 'Um Ihre Änderungen (für weitere Bearbeitung) wirksam werden zu lassen, müssen Sie den Eintrag speichern und zwingend über die Eintragsliste komplett neu laden !');
 
