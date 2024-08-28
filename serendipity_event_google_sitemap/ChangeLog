@@ -1,3 +1,7 @@
+0.74:
+-----
+ * Improve parameter types for Styx 5.0 type safety
+
 0.73:
 -----
  * Improve 0.72 conversion fix for not enabled intl extension below PHP 8.1
