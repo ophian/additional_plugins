@@ -1,3 +1,7 @@
+2.36:
+-----
+ * Improve parameter types for Styx 5.0 type safety
+
 2.35:
 -----
  * Fixes for PHP 8+
