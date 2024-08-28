@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.6.5');
+        $propbag->add('version',       '2.6.6');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -517,7 +517,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
 
                             foreach($thumbs AS $thumb) {
                                 // Create thumbnail
-                                if ( $created_thumbnail = serendipity_makeThumbnail($tfile, $image_directory, $thumb['thumbSize'], $thumb['thumb']) ) {
+                                if ( $created_thumbnail = serendipity_makeThumbnail($tfile, $image_directory, (int) $thumb['thumbSize'], $thumb['thumb']) ) {
                                     $messages[] = '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE . " - " . sprintf(THUMB_CREATED_DONE, $thumb['thumb']) . "</span>\n";
                                 }
                             }
