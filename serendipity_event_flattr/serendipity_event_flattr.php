@@ -62,7 +62,7 @@ class serendipity_event_flattr extends serendipity_event
             'add_to_feed',
         ));
         $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '1.20');
+        $propbag->add('version', '1.21');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -351,7 +351,7 @@ class serendipity_event_flattr extends serendipity_event
 
                 case 'frontend_display':
                     if (empty($eventData['properties'])) {
-                        $eventData['properties'] =& serendipity_fetchEntryProperties($eventData['id']);
+                        $eventData['properties'] =& serendipity_fetchEntryProperties((int) $eventData['id']);
                     }
                 
                     if (isset($eventData['properties']['ep_flattr_active']) && $eventData['properties']['ep_flattr_active'] == '-1') {
