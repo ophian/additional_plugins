@@ -21,7 +21,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
-        $propbag->add('version',       '0.31');
+        $propbag->add('version',       '0.32');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'php'         => '7.4'
@@ -137,7 +137,7 @@ class serendipity_event_metadesc extends serendipity_event
                     // Only modify the title on single-entry pages
                     if ($addData['view'] == 'entry') {
                         // Get the properties for this entry
-                        $myid = $serendipity['GET']['id'];
+                        $myid = (int) $serendipity['GET']['id'];
                         // Requires a database fetch, but the only other way
                         // get the entry properties is to wait until we
                         // generate the entry; by the time that hook is
@@ -278,7 +278,7 @@ class serendipity_event_metadesc extends serendipity_event
                     }
 
                     // Get existing data
-                    $property = serendipity_fetchEntryProperties($eventData['id']);
+                    $property = serendipity_fetchEntryProperties((int) $eventData['id']);
 
                     foreach($this->supported_properties AS $prop_key) {
                         $prop_val = $serendipity['POST']['properties'][$prop_key] ?? null;
@@ -399,7 +399,7 @@ class serendipity_event_metadesc extends serendipity_event
                         //XMLRPC call
 
                         if (!empty($eventData['mt_keywords'])) {
-                            $property = serendipity_fetchEntryProperties($eventData['id']);
+                            $property = serendipity_fetchEntryProperties((int) $eventData['id']);
                             if (!isset($property['meta_keywords'])) {
                                  $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", 'meta_keywords', '" . serendipity_db_escape_string($eventData['mt_keywords']) . "')";
                             } elseif ($property['mt_keywords'] != $eventData['mt_keywords']) {
