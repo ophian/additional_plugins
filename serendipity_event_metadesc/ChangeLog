@@ -1,3 +1,7 @@
+0.32:
+-----
+ * Improve parameter types for Styx 5.0 type safety
+
 0.31:
 -----
  * Improve backend main content markup indents for Styx 4.3
