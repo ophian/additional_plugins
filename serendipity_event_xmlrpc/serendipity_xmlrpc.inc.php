@@ -1533,7 +1533,7 @@ function metaWeblog_createPostRpcValue($entry) {
         $values['date_modified_gmt'] =  new XML_RPC_Value(XML_RPC_iso8601_encode($modified, 1) . 'Z', 'dateTime.iso8601');
 
         // Extended Article Properties supports passwords.
-        $entry_properties = serendipity_fetchEntryProperties($entry['id']);
+        $entry_properties = serendipity_fetchEntryProperties((int) $entry['id']);
         if (is_array($entry_properties)) {
             $values['wp_password'] =  new XML_RPC_Value($entry_properties['ep_entrypassword'], 'string');
         }
