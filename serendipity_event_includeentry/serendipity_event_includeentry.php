@@ -33,7 +33,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.35');
+        $propbag->add('version',       '2.36');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
@@ -268,7 +268,7 @@ class serendipity_event_includeentry extends serendipity_event
             $buffer[3] = 'body';
         }
 
-        $id = (int)$buffer[2];
+        $id = (int) $buffer[2];
 
         switch($buffer[1]) {
 
@@ -610,7 +610,7 @@ class serendipity_event_includeentry extends serendipity_event
     {
         global $serendipity;
         // Get existing data
-        $property = serendipity_fetchEntryProperties($eventData['id']);
+        $property = serendipity_fetchEntryProperties((int) $eventData['id']);
         $supported_properties = array('attach_block');
 
         foreach($supported_properties AS $prop_key) {
