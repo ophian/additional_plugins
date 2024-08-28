@@ -1,3 +1,12 @@
+4.22.1.1:
+---------
+    * Improve an editor mode (and dark mode) image border box on added floated images using the div element,
+      that misleads the user to use it as an inside (!) starting point for the "floated" text paragraphs, which is not.
+
+      Now, set and styled this to appear with a line-height: of 0px height and appear dashed to show this is as a simple
+      hinting helper line only to indicate being inside a DIV-container, and to start off new paragraphs or break this
+      DIV-container in use of the red magic helper line(s).
+
 4.22.1.0:
 ---------
     * Upgrade to CKEDITOR 4.22. Series, update 1 (https://ckeditor.com/cke4/release-notes).
