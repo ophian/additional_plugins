@@ -28,7 +28,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '7.4'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.14');
+        $propbag->add('version',        '3.15');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -490,7 +490,7 @@ class serendipity_event_multilingual extends serendipity_event
                     $serendipity['POST']['properties']['multilingual_extended_' . $ls] = $serendipity['POST']['extended'];
 
                     // Get existing data
-                    $property = serendipity_fetchEntryProperties($eventData['id']);
+                    $property = serendipity_fetchEntryProperties((int) $eventData['id']);
 
                     foreach($this->supported_properties AS $prop_key) {
                         $prop_val = (isset($serendipity['POST']['properties'][$prop_key]) ? $serendipity['POST']['properties'][$prop_key] : null);
@@ -543,7 +543,7 @@ class serendipity_event_multilingual extends serendipity_event
                     if (!empty($eventData['id'])) {
                         if (!empty($this->showlang)) {
                             // language is given (user wants a translation)
-                            $props = serendipity_fetchEntryProperties($eventData['id']);
+                            $props = serendipity_fetchEntryProperties((int) $eventData['id']);
                             // this is a language change, not a save -- we want the DB values
                             // unless the user chooses to retain previous language content
                             if (isset($serendipity['POST']['no_save'])) {

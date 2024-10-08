@@ -2,6 +2,10 @@
 -----
  * Remove former [cs] lang file reference
 
+3.15:
+-----
+ * Improve parameter types for Styx 5.0 type safety
+
 3.14:
 -----
  * Remove an outdated backend selector usage
