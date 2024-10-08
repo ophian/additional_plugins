@@ -3,6 +3,10 @@
  * Secure credentials on error by SensitiveParameter
  * Raises requirements
 
+1.85:
+-----
+ * Improve parameter types for Styx 5.0 type safety
+
 1.84:
 -----
  * Raised requirements for 1.83
