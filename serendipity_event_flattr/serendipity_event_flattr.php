@@ -350,7 +350,7 @@ class serendipity_event_flattr extends serendipity_event
 
                 case 'frontend_display':
                     if (empty($eventData['properties'])) {
-                        $eventData['properties'] =& serendipity_fetchEntryProperties($eventData['id']);
+                        $eventData['properties'] =& serendipity_fetchEntryProperties((int) $eventData['id']);
                     }
                 
                     if (isset($eventData['properties']['ep_flattr_active']) && $eventData['properties']['ep_flattr_active'] == '-1') {

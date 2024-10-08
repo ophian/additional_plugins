@@ -1,6 +1,7 @@
 1.21:
 -----
  * Remove former [cs] lang reference - which is kind of "early nineties"...!
+ * Improve parameter types for Styx 5.0 type safety
 
 1.20:
 -----
