@@ -246,7 +246,7 @@ class serendipity_event_categorytemplates extends serendipity_event
             }
 
             // Get all the categories' IDs belonging to this entry
-            $entrycats = serendipity_fetchEntryCategories($serendipity['GET']['id']);
+            $entrycats = serendipity_fetchEntryCategories((int) $serendipity['GET']['id']);
             $entrycids = array();
             foreach ($entrycats AS $catdata) {
                 $entrycids[] = $catdata['categoryid'];
