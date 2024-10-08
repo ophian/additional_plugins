@@ -197,6 +197,7 @@ class serendipity_event_trackback extends serendipity_event
                             $serendipity['POST']['enable_trackback'] = 'on';
                         }
                     }
+                    @define('CLEAR_FIELD', 'Clear textarea');
                     $debugcheck = (isset($serendipity['logLevel']) && $serendipity['logLevel'] === 'debug')
 ? '                <input class="input_checkbox" type="checkbox" id="checkbox_enable_trackback_4" name="serendipity[trackback_resend]" value="true" /><label for="checkbox_enable_trackback_4">A forced resend of all trackbacks, if one sending option is chosen. (Debug purpose only!)</label><br />'
 : '';
