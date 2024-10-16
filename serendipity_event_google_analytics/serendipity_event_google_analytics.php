@@ -28,7 +28,7 @@ class serendipity_event_google_analytics extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC);
         $propbag->add('stackable', false);
         $propbag->add('author', 'Jari Turkia, kleinerChemiker, Ian Styx');
-        $propbag->add('version', '2.1.1');
+        $propbag->add('version', '2.2.0');
         $propbag->add('requirements',  array(
             'serendipity' => '4.0',
             'smarty'      => '4.1.0',
@@ -199,6 +199,14 @@ class serendipity_event_google_analytics extends serendipity_event
         return false;
     }
 
+    /**
+     * matches:
+     * 0 = entire regexp match
+     * 1 = anything between "<a" and "href"
+     * 2 = scheme
+     * 3 = address
+     * 4 = anything after "href" and ">"
+     */
     function analytics_tracker_callback($matches)
     {
         static $internal_hosts = null;
@@ -224,18 +232,20 @@ class serendipity_event_google_analytics extends serendipity_event
             $analytics_track_downloads = serendipity_db_bool($this->get_config('analytics_track_downloads', true));
         }
 
-        $parsed_url = parse_url($matches[3].$matches[4]);
-        if (!isset($parsed_url["scheme"]))
-            return;
-        if (!in_array($parsed_url["scheme"], array("http", "https")))
-            return;
+        $parsed_url = parse_url($matches[2].$matches[3]);
 
-        if (str_starts_with($matches[3], 'http')) {
-            $host = str_starts_with($matches[3], 'https') ? parse_url('https://' . $matches[4]) : parse_url('http://' . $matches[4]); // HTTP/S
+        // Skip tracking for local URLs without scheme, or unknown scheme.
+        if (!isset($parsed_url["scheme"]))
+            return $matches[0];
+        if (!in_array($parsed_url["scheme"], array("http", "https")))
+            return $matches[0];
+
+        if (str_starts_with($matches[2], 'http')) {
+            $host = str_starts_with($matches[2], 'https') ? parse_url('https://' . $matches[2]) : parse_url('http://' . $matches[2]); // HTTP/S
             $host['path'] = $host['path'] ?? '';
             preg_match('/\.([a-z0-9]+)$/i', $host['path'], $extension);
             if (!in_array($host['host'], $internal_hosts) && $analytics_track_external) {
-                return '<a onclick="_gaq.push([\'_trackPageview\', \'/extlink/' . htmlspecialchars($matches[4], encoding: LANG_CHARSET) . '\']);" ' . substr($matches[0], 2);
+                return '<a onclick="_gaq.push([\'_trackPageview\', \'/extlink/' . htmlspecialchars($matches[3], encoding: LANG_CHARSET) . '\']);" ' . substr($matches[0], 2);
             } elseif (in_array($host['host'], $internal_hosts) && in_array($extension[1], $download_extensions) && $analytics_track_downloads) {
                 return '<a onclick="_gaq.push([\'_trackPageview\', \'/download' . htmlspecialchars($host['path'], encoding: LANG_CHARSET) . '\']);" ' . substr($matches[0], 2);
             } else {
@@ -335,7 +345,7 @@ EOT;
                         && ($analytics_track_downloads || $analytics_track_external)) {
                             $element = $temp['element'];
                             $eventData[$element] = preg_replace_callback(
-                                                        "#<a (.*)href=(\"|')(http://|https://|)([^\"']+)(\"|')([^>]*)>#isUm",
+                                                        "#<a\\s+(.*)href\\s*=\\s*[\"|'](https?://|)([^\"']*)[\"|']([^>]*)>#isUm",
                                                         array($this, 'analytics_tracker_callback'),
                                                         $eventData[$element]);
                         }
@@ -343,7 +353,7 @@ EOT;
                     return true;
                     break;
 
-                default :
+                default:
                     return false;
             }
         } else {
