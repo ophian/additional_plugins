@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -16,11 +18,11 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '5.2'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array(
             'css_backend'                                   => true,
@@ -609,7 +611,7 @@ EOS;
                     // $target dir exists as a symbolic link - on shared installation case - delete, to create a new real directory replacement
                     if ((basename($target) == 'templates' || basename($target) == 'docs') && is_link($target)) {
                         $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg> "' . rtrim($target,"/") . '" is a symlink dir; Delete the symlink, to create a new real dir!</p>');
-                        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                        if (str_starts_with(strtoupper(PHP_OS), 'WIN')) {
                             @rmdir(rtrim($target,"/"));
                         } else {
                             @unlink(rtrim($target,"/"));
