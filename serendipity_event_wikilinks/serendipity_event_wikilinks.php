@@ -2,7 +2,10 @@
 
 // TODO:
 // Show existing references for insertion in 'Extended options' panel for 'edit entry' screen
-// Test smarty output
+// Test (with) Smarty output
+// Some documentation WHY HOW WHERE
+
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -12,9 +15,12 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_wikilinks extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_WIKILINKS_NAME;
-    var $references = array();
-    var $out_references = array();
+    public $title = PLUGIN_EVENT_WIKILINKS_NAME;
+
+    private $references = array();
+    private $out_references = array();
+    private $refcount = array();
+    private $ref_entry = 0;
 
     function introspect(&$propbag)
     {
@@ -22,17 +28,18 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '1.3.0');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.2',
-            'smarty'      => '3.1',
-            'php'         => '7.3'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('MARKUP'));
         $propbag->add('event_hooks',   array(
             'frontend_display' => true,
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body' => true,
+            'backend_wysiwyg' => true,
             'external_plugin' => true,
             'backend_publish' => true,
             'backend_save' => true,
@@ -129,7 +136,7 @@ class serendipity_event_wikilinks extends serendipity_event
                 $propbag->add('name',        PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET2_NAME);
                 $propbag->add('description', PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET2_DESC);
                 $propbag->add('type',        'content');
-                $propbag->add('default', PLUGIN_EVENT_WIKILINKS_REFDOC);
+                $propbag->add('default', '<span class="msg_hint">' . PLUGIN_EVENT_WIKILINKS_REFDOC . '</span>');
                 break;
 
             case 'db_built':
@@ -142,6 +149,124 @@ class serendipity_event_wikilinks extends serendipity_event
                 $propbag->add('default', 'true');
         }
         return true;
+    }
+
+    /**
+     * Creates the template for either the popup page OR the magnific/popup window
+     */
+    function show($area = '', $name = '')
+    {
+        global $serendipity;
+
+        if (IN_serendipity !== true) {
+            die ("Don't hack!");
+        }
+
+        #if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
+        #    serendipity_smarty_init();
+        #}
+?>
+<!DOCTYPE html>
+<html<?php echo (isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true) ? ' data-color-mode="dark"' : ' data-color-mode="slight"';?> class="no-js page_wlelist" dir="ltr" lang="<?=$serendipity['lang']?>">
+    <head>
+        <title><?php echo PLUGIN_EVENT_WIKILINKS_LINKENTRY; ?></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=<?php echo LANG_CHARSET; ?>">
+        <link rel="stylesheet" type="text/css" href="<?=serendipity_rewriteURL('serendipity_admin.css')?>">
+<?php if ($serendipity['dark_mode']) { ?>
+        <link rel="stylesheet" href="<?=serendipity_rewriteURL('templates/styx/admin/styx_dark.min.css')?>" type="text/css">
+<?php } else {
+    if (!isset($serendipity['forceLightMode'])) { ?>
+        <script>
+          if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || localStorage.getItem('data-login-color-mode') === 'dark') {
+            document.currentScript.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="<?=serendipity_rewriteURL('templates/styx/admin/styx_dark.min.css')?>" type="text/css">');
+          }
+        </script>
+<?php } } ?>
+        <script>
+            function linkchooser(instance_name = '', this_instance = '') {
+                const capturingRegex = /(?<area>nugget|quick)/; //all nuggets(\d+) and plugin adminnotes quicknote // NO QUOTES !!!!
+                const found = instance_name.match(capturingRegex);
+                const instance = (found !== null) ? instance_name : this_instance;
+                const use_wikilink = 'use_wikilink_'+instance_name;
+
+                // works on both: enableBackendPopup or MFP- layer
+                window[use_wikilink] = function (item) {
+                    item = item.replace(/'/g, '"'); //convert single to double quote
+                    try {
+                        window.parent.parent.serendipity.serendipity_imageSelector_addToBody(item, instance);
+                        window.parent.parent.$.magnificPopup.close();
+                    }
+                    catch (e) {
+                        self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
+                        self.close();
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body id="serendipity_admin_page">
+        <div id="serendipityAdminFrame">
+            <header id="top">
+                <div id="banner" class="clearfix">
+<?php if (isset($serendipity['enableBackendPopup']) && $serendipity['enableBackendPopup'] === true): ?>
+                    <h1><?php echo SERENDIPITY_ADMIN_SUITE; ?></h1>
+<?php endif; ?>
+                    <h2><?php echo PLUGIN_EVENT_WIKILINKS_LINKENTRY_DESC; ?></h2>
+                </div>
+            </header>
+
+            <script>
+                document.onreadystatechange = function () {
+                    if (document.readyState == 'interactive') {
+                        linkchooser('<?=$name;?>', '<?=$area;?>');
+                    }
+                }
+            </script>
+
+            <main id="workspace" class="clearfix">
+                <ul>
+<?php
+    $sql = "SELECT *
+              FROM {$serendipity['dbPrefix']}entries
+          ORDER BY timestamp DESC";
+    $e = serendipity_db_query($sql);
+    if (is_array($e)) {
+        foreach($e AS $entry) {
+            $entry['qtitle'] = str_replace("'", "&#39;", $entry['title']); // fetch possible single quote in title to not break the link compilation
+            $link = serendipity_archiveURL($entry['id'], $entry['title'], 'serendipityHTTPPath', true, array('timestamp' => $entry['timestamp']));
+            $jslink = "'<a href=\'$link\'>" . htmlspecialchars($entry['qtitle']) . "</a>'";
+            echo '<li style="margin-bottom: 10px">'
+               . '<a href="javascript:use_wikilink_' . $name . '(' . $jslink . '); self.close();" title="' . htmlspecialchars($entry['title']) . '"><strong>' . htmlspecialchars($entry['title']) . '</strong></a> (<a href="' . $link . '" title="' . htmlspecialchars($entry['title']) . '">#' . $entry['id'] . '</a>)<br>'
+               . POSTED_BY . ' ' . $entry['author'] . ' '
+               . ON . ' ' . serendipity_formatTime(DATE_FORMAT_SHORT, (int) $entry['timestamp']) .
+               ($entry['isdraft'] != 'false' ? ' (' . DRAFT . ')' : '') . '</a></li>' . "\n";
+        }
+    }
+?>
+                </ul>
+            </main>
+
+        </div>
+
+    </body>
+</html>
+<?php
+    }
+
+    function generate_button($txtarea)
+    {
+        global $serendipity;
+
+        if (!isset($txtarea)) {
+           $txtarea = 'serendipity_textarea_body';
+        }
+        $link =  ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/wikilinks' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=' . $txtarea;
+// root indent & empty linespace for consistency, please !
+?>
+<input type="button" class="input_button" name="insWikiLinks" value="<?php echo PLUGIN_EVENT_WIKILINKS_NAME; ?>" onclick="serendipity.openPopup('<?php echo $link; ?>', 'wikilink', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');">
+
+<?php
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
@@ -167,49 +292,52 @@ class serendipity_event_wikilinks extends serendipity_event
                 case 'backend_sidebar_entries_event_display_wikireferences':
                     $entries = serendipity_db_query("SELECT id, refname FROM {$serendipity['dbPrefix']}wikireferences ORDER BY refname ASC");
 
-                    echo '<p>' . PLUGIN_EVENT_WIKILINKS_MAINT_DESC . '</p>';
+                    echo '<p class="msg_notice">' . PLUGIN_EVENT_WIKILINKS_MAINT_DESC . '</p>';
 
                     echo '<form action="serendipity_admin.php" method="post" name="serendipityEntry">';
-                    echo '<input type="hidden" name="serendipity[adminModule]" value="event_display" />';
-                    echo '<input type="hidden" name="serendipity[adminAction]" value="wikireferences" />';
-                    echo '<select name="serendipity[wikireference]">';
-                    echo '<option value="">...</option>';
-                    foreach((array)$entries AS $idx => $row) {
-                        echo '<option value="' . $row['id'] . '" ' . ($row['id'] == $serendipity['POST']['wikireference'] ? 'selected="selected"' : '') . '>' . $row['refname'] . '</option>' . "\n";
+                    echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display">';
+                    echo '    <input type="hidden" name="serendipity[adminAction]" value="wikireferences">';
+                    echo '    <select name="serendipity[wikireference]">';
+                    echo '        <option value="">...</option>';
+                    if (is_array($entries)) {
+                      foreach($entries AS $idx => $row) {
+                        echo '        <option value="' . $row['id'] . '"' . ($row['id'] == $serendipity['POST']['wikireference'] ? ' selected="selected"' : '') . '>' . $row['refname'] . '</option>' . "\n";
+                      }
                     }
-                    echo '</select>';
-                    echo '<input type="submit" class="serendipityPrettyButton input_button" name="serendipity[typeSubmit]" value="' . GO . '" />';
-                    echo '<br /><br />';
+                    echo '    </select>';
+                    echo '    <input type="submit" class="input_button state_submit" name="serendipity[typeSubmit]" style="margin-left: .5em;" value="' . GO . '">';
+                    echo '    <entry style="display: block; margin: 1.5em auto">';
 
-                    if ($serendipity['POST']['wikireference'] > 0) {
+                    if (isset($serendipity['POST']['wikireference']) && $serendipity['POST']['wikireference'] > 0) {
 
-                        if ($serendipity['POST']['saveSubmit']) {
+                        if (isset($serendipity['POST']['saveSubmit'])) {
                             serendipity_db_update('wikireferences', array('id' => $serendipity['POST']['wikireference']), array('refname' => $serendipity['POST']['wikireference_refname'], 'ref' => $serendipity['POST']['wikireference_ref']));
-                            echo '<div class="serendipityAdminMsgSuccess"><img style="height: 22px; width: 22px; border: 0px; padding-right: 4px; vertical-align: middle" src="' . serendipity_getTemplateFile('admin/img/admin_msg_success.png') . '" alt="" />' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</div>';
+                            echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . DONE .': '. sprintf(SETTINGS_SAVED_AT, serendipity_strftime('%H:%M:%S')) . '</span>';
                         }
 
                         $ref = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}wikireferences WHERE id = " . (int)$serendipity['POST']['wikireference'], true, 'assoc');
                         $entry = serendipity_fetchEntry('id', $ref['entryid']);
 
-                        echo '<div>';
-                        echo '<label>' . PLUGIN_EVENT_WIKILINKS_DB_REFNAME . '</label><br />';
-                        echo '<input type="text" name="serendipity[wikireference_refname]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($ref['refname']) : htmlspecialchars($ref['refname'], ENT_COMPAT, LANG_CHARSET)) . '" />';
-                        echo '<input type="submit" class="serendipityPrettyButton input_button" name="serendipity[saveSubmit]" value="' . SAVE . '" />';
-                        echo '</div>';
+                        echo '    <div>';
+                        echo '      <label>' . PLUGIN_EVENT_WIKILINKS_DB_REFNAME . '</label> ';
+                        echo '      <input type="text" name="serendipity[wikireference_refname]" value="' . htmlspecialchars($ref['refname']) . '">';
+                        echo '      <input type="submit" class="input_button state_submit" name="serendipity[saveSubmit]" style="margin-left: .5em;" value="' . SAVE . '">';
+                        echo '    </div>';
 
-                        echo '<div>';
-                        echo '<label>' . PLUGIN_EVENT_WIKILINKS_DB_REF . '</label><br />';
-                        echo '<textarea cols="80" rows="20" name="serendipity[wikireference_ref]">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($ref['ref']) : htmlspecialchars($ref['ref'], ENT_COMPAT, LANG_CHARSET)) . '</textarea>';
-                        echo '</div>';
+                        echo '    <div style="display: inline-block; margin: .5em auto">';
+                        echo '      <label>' . PLUGIN_EVENT_WIKILINKS_DB_REF . '</label>';
+                        echo '      <textarea id="wikireference_ref" style="padding: .5em;" cols="80" rows="20" name="serendipity[wikireference_ref]">' . htmlspecialchars($ref['ref']) . '</textarea>';
+                        echo '    </div>';
 
-                        echo '<div>';
-                        echo '<label>' . PLUGIN_EVENT_WIKILINKS_DB_ENTRYDID . '</label>';
-                        echo '<a href="' . serendipity_archiveUrl($ref['entryid'], $entry['title']) . '">' . $entry['title'] . '</a>';
-                        echo '<p><a class="serendipityPrettyButton" href="?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . $entry['id'] . '">' . EDIT_ENTRY . '</a></p>';
+                        echo '    <div style="display: inline-block; margin: .5em auto">';
+                        echo '      <label>' . PLUGIN_EVENT_WIKILINKS_DB_ENTRYDID . '</label>';
+                        echo '      <a href="' . serendipity_archiveUrl($ref['entryid'], $entry['title']) . '">' . $entry['title'] . '</a>';
+                        echo '    </div>';
 
-                        echo '</div>';
+                        echo '    <p><a class="serendipityPrettyButton" href="?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . $entry['id'] . '&amp;' . serendipity_setFormToken('url') . '"><span class="icon-edit" aria-hidden="true"></span> ' . EDIT_ENTRY . '</a></p>';
                     }
-                    echo '</form>';
+                    echo '</entry>';
+                    echo "</form>\n";
 
                     break;
 
@@ -224,10 +352,6 @@ class serendipity_event_wikilinks extends serendipity_event
                             $is_body = false;
                             if ($element == 'body' || $element == 'extended') {
                                 $source =& $this->getFieldReference($element, $eventData);
-                                if ($source === '') {
-                                    // Prevent bug from serendipity 0.9
-                                    $source =& $eventData[$element];
-                                }
                                 $is_body = true;
                             } else {
                                 $source =& $eventData[$element];
@@ -249,175 +373,104 @@ class serendipity_event_wikilinks extends serendipity_event
 
                             $source .= $this->reference_parse();
                             if ($is_body) {
-                                if (!is_array($eventData['properties']['references'])) $eventData['properties']['references'] = array();
+                                if (!isset($eventData['properties']['references']) || !is_array($eventData['properties']['references'])) {
+                                    $eventData['properties']['references'] = [];
+                                }
                                 $eventData['properties']['references'] += $this->references;
                             }
                         }
                     }
-
-                    return true;
                     break;
 
-                case 'external_plugin':
-                    $what = '';
-                    if ($eventData == 'popup_choose_entry') {
-                        $what = 'body';
-                    } elseif ($eventData == 'popup_choose_entrybody') {
-                        $what = 'body';
-                    } elseif ($eventData == 'popup_choose_entryextended') {
-                        $what = 'extended';
-                    } elseif (preg_match('/^popup_choose_entry(.*)$/i', $eventData, $matches)) {
-                        // get the custom thing that is to be selected, for example a nugget
-                        $what = $matches[1];
+                 case 'backend_entry_toolbar_extended':
+                    if (isset($eventData['backend_entry_toolbar_extended:textarea'])) {
+                        $txtarea = $eventData['backend_entry_toolbar_extended:nugget'];
+                    } else {
+                        $txtarea = 'serendipity_textarea_extended';
+                    }
+                    if (!$serendipity['wysiwyg']) {
+                        $this->generate_button($txtarea);
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+
+                case 'backend_entry_toolbar_body':
+                    if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
+                        $txtarea = $eventData['backend_entry_toolbar_body:nugget'];
+                    } else {
+                        $txtarea = 'serendipity_textarea_body';
+                    }
+                    if (!$serendipity['wysiwyg']) {
+                        $this->generate_button($txtarea);
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+
+                case 'backend_wysiwyg':
+                    #$eventData['additional_styles'] = '.tox .tox-tbtn svg.bi.bi-list-task { fill: deepskyblue; }';
+                    $link = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/wikilinks' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea='.$eventData['item'];
+                    $open = 'serendipity.openPopup';
+                    $eventData['buttons'][] = array(
+                        'id'         => 'wikilinks' . $eventData['item'],
+                        'name'       => PLUGIN_EVENT_WIKILINKS_NAME,
+                        'javascript' => 'function() { '.$open.'(\'' . $link . '\', \'WikiLinks\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\') }',
+                        'svg'        => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5zM3 3H2v1h1z"/><path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1z"/><path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5zM2 7h1v1H2zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm1 .5H2v1h1z"/></svg>',
+// no need when we have css_backend hook. Else use this
+                        'css'        => '.tox .tox-tbtn svg.bi.bi-list-task { fill: #25f8f8; }',
+                        'toolbar'    => 'other'
+                    );
+                    break;
+
+               case 'external_plugin':
+                    if ($_SESSION['serendipityAuthedUser'] !== true)  {
+                        return true;
                     }
 
-                    if (empty($what)) {
+                    $uri_parts = explode('?', str_replace('&amp;', '&', $eventData));
+                    $parts     = explode('&', $uri_parts[0]);
+
+                    $uri_part = $parts[0];
+                    $parts = array_pop($parts);
+
+                    if (is_array($parts) && count($parts) > 1) {
+                       foreach($parts AS $key => $value) {
+                            $val = explode('=', $value);
+                            $_GET[$val[0]] = $val[1];
+                       }
+                    } else {
+                       $val = explode('=', $parts[0]);
+                       if (isset($val[1])) $_GET[$val[0]] = $val[1];
+                    }
+
+                    if (!isset($_GET['txtarea'])) {
+                        if (isset($uri_parts[1])) {
+                            $parts = explode('&', $uri_parts[1]);
+                            if (is_array($parts) && count($parts) > 1) {
+                                foreach($parts AS $key => $value) {
+                                     $val = explode('=', $value);
+                                     $_GET[$val[0]] = $val[1];
+                                }
+                            } else {
+                                $val = explode('=', $parts[0]);
+                                $_GET[$val[0]] = $val[1];
+                            }
+                        }
+                    }
+
+                    if (empty($_GET['txtarea'])) {
                         return false;
                     }
 
-
-?>
-<html>
-    <head>
-        <title><?php echo PLUGIN_EVENT_WIKILINKS_LINKENTRY; ?></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=<?php echo LANG_CHARSET; ?>" />
-        <link rel="stylesheet" type="text/css" href="<?php echo 'serendipity.css.php?serendipity[css_mode]=serendipity_admin.css'; ?>" />
-        <link rel="stylesheet" type="text/css" href="<?php echo serendipity_getTemplateFile('admin/pluginmanager.css'); ?>" />
-    </head>
-
-<body id="serendipity_admin_page">
-<div id="serendipityAdminFrame">
-    <div id="serendipityAdminBanner">
-        <h1><?php echo SERENDIPITY_ADMIN_SUITE; ?></h1>
-        <h2><?php echo PLUGIN_EVENT_WIKILINKS_LINKENTRY_DESC; ?></h2>
-    </div>
-    <div id="serendipityAdminContent">
-
-        <ul>
-<?php
-    $sql = "SELECT *
-              FROM {$serendipity['dbPrefix']}entries
-          ORDER BY timestamp DESC";
-    $e = serendipity_db_query($sql);
-    if (is_array($e)) {
-        foreach($e AS $entry) {
-            $link = serendipity_archiveURL($entry['id'], $entry['title'], 'serendipityHTTPPath', true, array('timestamp' => $entry['timestamp']));
-            $jslink = "'<a href=\'$link\'>" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . "<' + '/a>'";
-            echo '<li style="margin-bottom: 10px">'
-               . '<a href="javascript:parent.self.opener.use_link_' . $what . '(' . $jslink . '); self.close();" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '"><strong>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '</strong></a> (<a href="' . $link . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '">#' . $entry['id'] . '</a>)<br />'
-               . POSTED_BY . ' ' . $entry['author'] . ' '
-               . ON . ' ' . serendipity_formatTime(DATE_FORMAT_SHORT, $entry['timestamp']) .
-               ($entry['isdraft'] != 'false' ? ' (' . DRAFT . ')' : '') . '</a></li>' . "\n";
-        }
-    }
-?>
-        </ul>
-    </div>
-</div>
-</body>
-</html>
-<?php
-                    return true;
-
-                case 'backend_entry_toolbar_extended':
-                    if (!isset($txtarea)) {
-                        $txtarea = 'serendipity[extended]';
-                        $func    = 'extended';
+                    switch($uri_part) {
+                        case 'wikilinks':
+                            $this->show(htmlspecialchars($_GET['txtarea']), str_replace('serendipity_textarea_', '', htmlspecialchars($_GET['txtarea'])));
+                            break;
                     }
-
-                case 'backend_entry_toolbar_body':
-                    if (!isset($txtarea)) {
-                        if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
-                            // event caller has given us the name of the textarea converted
-                            // into a wysiwg editor(for example, the staticpages plugin)
-                            $txtarea = $eventData['backend_entry_toolbar_body:textarea'];
-                        } else {
-                            // default value
-                            $txtarea = 'serendipity[body]';
-                        }
-                        if (isset($eventData['backend_entry_toolbar_body:nugget'])) {
-                            $func = $eventData['backend_entry_toolbar_body:nugget'];
-                        } else{
-                            $func    = 'body';
-                        }
-                    }
-
-                    // CKEDITOR needs this little switch
-                    if (preg_match('@^nugget@i', $func)) {
-                        $cke_txtarea = $func;
-                    } else {
-                        $cke_txtarea = $txtarea;
-                    }
-
-                    if (!isset($popcl)) {
-                        $popcl = ' serendipityPrettyButton';
-                    }
-
-                    if (!isset($style)) {
-                        $style = 'text-align: right; margin-top: 5px';
-                    }
-?>
-<script type="text/javascript">
-<!--
-function use_link_<?php echo $func; ?>(txt) {
-
-    // use the shared insert function instead of the wikilinks provided function
-    // the shared JS function implements all the wikilinks functionality + NO WYSIWYG insertion
-    serendipity.serendipity_imageSelector_addToBody(txt, '<?php echo $func; ?>' );
-    return;
-
-    if(typeof(CKEDITOR) != 'undefined') {
-        var oEditor = CKEDITOR.instances['<?php echo $cke_txtarea; ?>'];
-        oEditor.insertHtml(txt);
-    } else if(typeof(FCKeditorAPI) != 'undefined') {
-        var oEditor = FCKeditorAPI.GetInstance('<?php echo $txtarea; ?>') ;
-        oEditor.InsertHtml(txt);
-    } else if(typeof(xinha_editors) != 'undefined') {
-        if(typeof(xinha_editors['<?php echo $txtarea; ?>']) != 'undefined') {
-            // this is good for the two default editors (body & extended)
-            xinha_editors['<?php echo $txtarea; ?>'].insertHTML(txt);
-        } else if(typeof(xinha_editors['<?php echo $func; ?>']) != 'undefined') {
-            // this should work in any other cases than previous one
-            xinha_editors['<?php echo $func; ?>'].insertHTML(txt);
-        } else {
-            // this is the last chance to retrieve the instance of the editor !
-            // editor has not been registered by the name of it's textarea
-            // so we must iterate over editors to find the good one
-            for (var editorName in xinha_editors) {
-                if('<?php echo $txtarea; ?>' == xinha_editors[editorName]._textArea.name) {
-                    xinha_editors[editorName].insertHTML(txt);
-                    return;
-                }
-            }
-            // not found ?!?
-        }
-    } else if(typeof(HTMLArea) != 'undefined') {
-        if(typeof(editor<?php echo $func; ?>) != 'undefined')
-            editor<?php echo $func; ?>.insertHTML(txt);
-        else if(typeof(htmlarea_editors) != 'undefined' && typeof(htmlarea_editors['<?php echo $func; ?>']) != 'undefined')
-            htmlarea_editors['<?php echo $func; ?>'].insertHTML(txt);
-    } else if(typeof(TinyMCE) != 'undefined') {
-        //tinyMCE.execCommand('mceInsertContent', false, txt);
-        tinyMCE.execInstanceCommand('<?php echo $txtarea; ?>', 'mceInsertContent', false, txt);
-    } else  {
-        // default case: no wysiwyg editor
-        txtarea = document.getElementById('<?php echo $txtarea; ?>');
-        if (txtarea.createTextRange && txtarea.caretPos) {
-            caretPos = txtarea.caretPos;
-            caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? caretPos.text + ' ' + txt + ' ' : caretPos.text + ' ' + txt + ' ';
-        } else {
-            txtarea.value  += ' ' + txt + ' ';
-        }
-
-        // alert(obj);
-        txtarea.focus();
-    }
-}
-//-->
-</script>
-<?php
-                    echo '<input type="button" class="serendipityPrettyButton input_button" onclick="entrypopup = window.open(\'' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?/plugin/popup_choose_entry' . $func . '\', \'js_entrypopup\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\')" value="' . PLUGIN_EVENT_WIKILINKS_LINKENTRY . '" />';
-                    return true;
+                    break;
 
                 default:
                     return false;
@@ -474,7 +527,7 @@ function use_link_<?php echo $func; ?>(txt) {
                     if (version_compare($db_version_match[0], '10.5.0', '>=')) {
                         $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname);";
                     } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
-                        $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(250));"; // max key 1000 bytes
+                        $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(245));"; // max key 1000 bytes (assume 5 for entryid)
                     } else {
                         $q = "CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname(191));"; // 191 - old MyISAMs
                     }
@@ -491,11 +544,15 @@ function use_link_<?php echo $func; ?>(txt) {
                 serendipity_db_schema_import("CREATE INDEX wikiref_refname ON {$serendipity['dbPrefix']}wikireferences (refname);");
                 serendipity_db_schema_import("CREATE INDEX wikiref_comb ON {$serendipity['dbPrefix']}wikireferences (entryid,refname);");
             }
-            serendipity_db_schema_import("CREATE INDEX wikiref_entry ON {$serendipity['dbPrefix']}wikireferences (entryid);");
+
+            serendipity_db_schema_import("CREATE INDEX wikiref_entry ON {$serendipity['dbPrefix']}wikireferences (entryid);"); // all
             $this->set_config('db_built', 1);
         }
     }
 
+    /**
+     * Textreference to either compare to wikireferences DB or to newly insert
+     */
     function _reference($buffer)
     {
         global $serendipity;
@@ -507,7 +564,7 @@ function use_link_<?php echo $func; ?>(txt) {
             // New refname, needs to be stored in the database IF NOT CURRENTLY EXISTING
             $exists = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}wikireferences WHERE refname = '" . serendipity_db_escape_string($buffer['refname']) . "'", true, 'assoc');
 
-            if ($exists['entryid'] == $this->ref_entry) {
+            if (!empty($exists['entryid']) && $exists['entryid'] == $this->ref_entry) {
                 #serendipity_db_update('wikireferences', array('entryid' => $this->ref_entry, 'refname' => $buffer['refname']), array('ref' => $buffer['ref']));
             } elseif (empty($exists['entryid'])) {
                 serendipity_db_insert('wikireferences', array('entryid' => $this->ref_entry, 'refname' => $buffer['refname'], 'ref' => $buffer['ref']));
@@ -515,14 +572,13 @@ function use_link_<?php echo $func; ?>(txt) {
         }
 
         if (empty($buffer['ref']) && !empty($buffer['refname'])) {
-            // We found a referenced pattern like <ref name="XXX" />, so let's fetch that from the database!
+            // We found a referenced pattern like <ref name="XXX" /> in entry data, so let's fetch that from the database!
             $exists = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}wikireferences WHERE refname = '" . serendipity_db_escape_string($buffer['refname']) . "'", true, 'assoc');
-
-            $buffer['ref'] = $exists['ref'];
+            $buffer['ref'] = $exists['ref'] ?? null;
         }
 
         if (empty($buffer['refname'])) {
-            $buffer['refname'] = $count;
+            $buffer['refname'] = (string)$count;
         }
 
         $refix = $count;
@@ -531,11 +587,11 @@ function use_link_<?php echo $func; ?>(txt) {
                 $refix = $this->refcount[$buffer['refname']];
             } else {
                 $this->references[$buffer['refname'] . $count] = $buffer['ref'];
-                $this->refcount[$buffer['refname'] . $count] = $count;
+                $this->refcount[$buffer['refname'] . $count] = (string)$count;
             }
         } else {
             $this->references[$buffer['refname']] = $buffer['ref'];
-            $this->refcount[$buffer['refname']] = $count;
+            $this->refcount[$buffer['refname']] = (string)$count;
         }
 
         $result = $this->get_config('target_match');
@@ -545,11 +601,10 @@ function use_link_<?php echo $func; ?>(txt) {
                 '{text}',
                 '{refname}'
             ),
-
             array(
                 $refix,
-                (function_exists('serendipity_specialchars') ? serendipity_specialchars($buffer['ref']) : htmlspecialchars($buffer['ref'], ENT_COMPAT, LANG_CHARSET)),
-                (function_exists('serendipity_specialchars') ? serendipity_specialchars($buffer['refname']) : htmlspecialchars($buffer['refname'], ENT_COMPAT, LANG_CHARSET)),
+                htmlspecialchars(strip_tags($buffer['ref'] ?? '')),// strips link out of title attribute
+                htmlspecialchars($buffer['refname'] ?? ''),
             ),
             $result
         );
@@ -559,13 +614,12 @@ function use_link_<?php echo $func; ?>(txt) {
 
     function reference_parse()
     {
-        global $serendipity;
         static $count = 0;
         static $count2 = 0;
 
         $count++;
 
-        $format =  $this->get_config('target_match2');
+        $format = $this->get_config('target_match2');
 
         if ($format == '-') return;
         if (count($this->references) == 0) return;
@@ -583,7 +637,7 @@ function use_link_<?php echo $func; ?>(txt) {
 
                 array(
                     $count2,
-                    (function_exists('serendipity_specialchars') ? serendipity_specialchars($buffer) : htmlspecialchars($buffer, ENT_COMPAT, LANG_CHARSET)),
+                    $buffer,/*htmlspecialchars($buffer), not: since then link markup will not display properly */
                     $key
                 ),
                 $format
@@ -598,10 +652,10 @@ function use_link_<?php echo $func; ?>(txt) {
     }
 
     /**
-    * Wikifies:
-    * [[ENTRY|DESC]] is an internal link
-    * ((ENTRY|DESC)) is a staticpage link.
-    */
+     * Wikifies:
+     * [[ENTRY|DESC]] is an internal link
+     * ((ENTRY|DESC)) is a staticpage link.
+     */
     function _wikify($buffer)
     {
         global $serendipity;
@@ -628,7 +682,7 @@ function use_link_<?php echo $func; ?>(txt) {
             $desc = $ltitle = $buffer[$cidx];
         }
         // ltitle might contain entities, convert them:
-        $ltitle = @html_entity_decode($ltitle, ENT_COMPAT, LANG_CHARSET);
+        $ltitle = @html_entity_decode($ltitle);
 
         $sql = '';
         if ($type == 'staticpage') {
@@ -646,9 +700,9 @@ function use_link_<?php echo $func; ?>(txt) {
 
         if (is_array($entry)) { // The entry exists.
 
-            // check, wether we don't want draft or future links:
+            // check, whether we don't want draft or future links:
             //if (serendipity_db_bool($this->get_config('generate_draft_links', false)) ||  !$entry['isdraft']){
-            if (serendipity_db_bool($this->get_config('generate_future_links', false)) ||  $entry['timestamp']<=serendipity_db_time()){
+            if (serendipity_db_bool($this->get_config('generate_future_links', false)) ||  $entry['timestamp'] <= serendipity_db_time()){
                 if ($type == 'staticpage') {
                     $entry_url = $entry['permalink'];
                 } else {
@@ -672,7 +726,7 @@ function use_link_<?php echo $func; ?>(txt) {
             if (serendipity_userLoggedIn()) {
                 $mode  = 'create';
                 $title = urlencode($ltitle);
-                $body  = '<h1>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($ltitle) : htmlspecialchars($ltitle, ENT_COMPAT, LANG_CHARSET)) . '</h1>';
+                $body  = '<h1>' . htmlspecialchars($ltitle) . '</h1>';
 
                 $admin_url2 = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[pre][headline]=' . $title . '&amp;serendipity[pre][content]=' . $body . '&amp;serendipity[pre][pagetitle]=' . $title;
                 if ($otype == 'staticpage') {
@@ -702,17 +756,17 @@ function use_link_<?php echo $func; ?>(txt) {
         if ($admin_url) {
             if ($otype == 'mixed') {
                 $imgurl = $this->get_config('imgpath') . $mode . '_internal.png';
-                $img1   = '<img style="border: 0px" alt="?" src="' . $imgurl . '" width="16" height="16" />';
-                $out .= '<a title="' . $admin_title . '" class="serendipity_wikilink_editor_internal" href="' . $admin_url . '">' . $img1 . '</a>';
+                $img1   = '<img style="border: 0px" alt="?" src="' . $imgurl . '" width="16" height="16">';
+                $out .= '<a title="' . $admin_title . '" class="serendipity_wikilink_editor_internal" href="' . $admin_url . '"> ' . $img1 . '</a>';
                 if ($admin_url2) {
                     $imgurl = $this->get_config('imgpath') . $mode . '_staticpage.png';
-                    $img2 = '<img style="border: 0px" alt="?" src="' . $imgurl . '" width="16" height="16" />';
-                    $out .= '<a title="' . PLUGIN_EVENT_WIKILINKS_CREATE_STATICPAGE . '" class="serendipity_wikilink_editor_staticpage" href="' . $admin_url2 . '">' . $img2 . '</a>';
+                    $img2 = '<img style="border: 0px" alt="?" src="' . $imgurl . '" width="16" height="16">';
+                    $out .= '<a title="' . PLUGIN_EVENT_WIKILINKS_CREATE_STATICPAGE . '" class="serendipity_wikilink_editor_staticpage" href="' . $admin_url2 . '"> ' . $img2 . '</a>';
                 }
             } else {
                 $imgurl = $this->get_config('imgpath') . $mode . '_' . $type . '.png';
-                $img = '<img style="border: 0px" alt="?" src="' . $imgurl . '" width="16" height="16" />';
-                $out .= '<a title="' . $admin_title . '" class="serendipity_wikilink_editor_' . $type . '" href="' . $admin_url . '">' . $img . '</a>';
+                $img = '<img style="border: 0px" alt="?" src="' . $imgurl . '" width="16" height="16">';
+                $out .= '<a title="' . $admin_title . '" class="serendipity_wikilink_editor_' . $type . '" href="' . $admin_url . '"> ' . $img . '</a>';
             }
         }
         $out .= '</span>';
