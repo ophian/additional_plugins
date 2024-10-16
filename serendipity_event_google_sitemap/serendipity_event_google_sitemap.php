@@ -29,7 +29,7 @@ class serendipity_event_google_sitemap extends serendipity_event
         $propbag->add('name', PLUGIN_EVENT_SITEMAP_TITLE);
         $propbag->add('description', PLUGIN_EVENT_SITEMAP_DESC);
         $propbag->add('author', 'Boris, Ian Styx');
-        $propbag->add('version', '0.74');
+        $propbag->add('version', '0.75');
         $propbag->add('event_hooks',  array(
                 'backend_publish' => true,
                 'backend_save'    => true,
@@ -278,6 +278,7 @@ class serendipity_event_google_sitemap extends serendipity_event
     function get_sqlnullfunction()
     {
         global $serendipity;
+
         // decide which NULL-function to use
         switch($serendipity['dbType']) {
             case 'postgres':
@@ -287,7 +288,6 @@ class serendipity_event_google_sitemap extends serendipity_event
             case 'sqlite3':
             case 'sqlite3oo':
             case 'pdo-sqlite':
-            case 'mysql':
             case 'mysqli':
                 $sqlnullfunction = 'IFNULL';
                 break;
@@ -320,6 +320,7 @@ class serendipity_event_google_sitemap extends serendipity_event
     function add_entries(&$sitemap_xml, $limit = 0)
     {
         global $serendipity;
+
         $sqlnullfunction = $this->get_sqlnullfunction();
 
         // fetch all entries from the db (tested with: mysql, sqlite, postgres)
@@ -351,7 +352,7 @@ class serendipity_event_google_sitemap extends serendipity_event
 
             // add entries
             foreach($entries AS $entry) {
-                $max = max($entry['timestamp_1']+0, $entry['timestamp_2']+0);
+                $max = max(intval($entry['timestamp_1']), intval($entry['timestamp_2']));
                 $url = serendipity_archiveURL($entry['id'], $entry['title']);
                 $props = serendipity_fetchEntryProperties((int) $entry['id']);
                 $props['title'] = $entry['title'];
@@ -569,6 +570,7 @@ class serendipity_event_google_sitemap extends serendipity_event
     function add_static(&$sitemap_xml)
     {
         global $serendipity;
+
         $sqlnullfunction = $this->get_sqlnullfunction();
 
         // add possible static pages
@@ -595,7 +597,6 @@ class serendipity_event_google_sitemap extends serendipity_event
     function add_tags(&$sitemap_xml)
     {
         global $serendipity;
-        $sqlnullfunction = $this->get_sqlnullfunction();
 
         // add possible tags pages
         $tag_pages = serendipity_db_query(

@@ -1,3 +1,7 @@
+0.75:
+-----
+ * Bugfix: Google Sitemap timestamp calculation (HQJaTu)
+
 0.74:
 -----
  * Improve parameter types for Styx 5.0 type safety
