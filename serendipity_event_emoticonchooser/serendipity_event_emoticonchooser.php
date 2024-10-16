@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_emoticonchooser extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_EMOTICONCHOOSER_TITLE;
+    public $title = PLUGIN_EVENT_EMOTICONCHOOSER_TITLE;
 
     function cleanup()
     {
@@ -27,11 +29,11 @@ class serendipity_event_emoticonchooser extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Jay Bertrandt, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.0',
-            'smarty'      => '3.1.8',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '3.35');
+        $propbag->add('version',       '4.0.0');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -104,7 +106,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
     }
 
     /**
-     * Creates the template for either the WYSIWYG-Editor OR the old style popup window
+     * Creates the template for either the WYSIWYG-Editor OR the magnific/popup window
      */
     function show()
     {
@@ -114,9 +116,15 @@ class serendipity_event_emoticonchooser extends serendipity_event
             die ("Don't hack!");
         }
         // get the stored "cache"
-        $file = $this->get_config('emotics');
-        $file = str_replace(array(' style="; display: none"', ' style="display: none;"', '</div><!-- emoticon_bar end -->'), '', $file); // we don't want this here! (see "lazy cache")
+        $area = $_area = str_replace(['emoticonchooser_serendipity_textarea_', 'emoticonchooser_'], '', $_GET['txtarea']);
+        $file = $this->get_config("emotics[$area]");
+        if (empty($file)) {
+            $file = $this->get_config('emotics'); // get the fallback body cache
+            $file = @str_replace('serendipity_textarea_body', "$_area", $file); // catch empty nuggets or quicknote - hide possible error in virgin case
+        }
+        $file = @str_replace(array(' style="; display: none"', ' style="display: none;"', '</div><!-- emoticon_bar end -->'), '', $file); // we don't want this here! (see "lazy cache")
         $mode = (isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true) ? 'data-color-mode="dark" ' : 'data-color-mode="slight" ';
+        /* THE LAYER VIEW */
 ?>
 <!DOCTYPE html>
 <html <?=$mode?>class="no-js page_emochr" dir="ltr" lang="<?=$serendipity['lang']?>">
@@ -124,32 +132,6 @@ class serendipity_event_emoticonchooser extends serendipity_event
     <meta charset="<?=LANG_CHARSET?>">
     <title>Serendipity <?=PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT?></title>
     <link rel="stylesheet" href="<?=$serendipity['baseURL']?>serendipity.css.php?serendipity[css_mode]=serendipity_admin.css">
-    <script>
-        function emoticonchooser(instance_name, this_instance, cke_txtarea) {
-            if (!instance_name) var instance_name = '';
-            if (!this_instance) var this_instance = '';
-            if (!cke_txtarea)   var cke_txtarea   = '';
-
-            var editor_instance = 'editor'+instance_name;
-            var use_emoticon    = 'use_emoticon_'+instance_name;
-
-            window[use_emoticon] = function (img) {
-                <?php if ($serendipity['enableBackendPopup'] != true): ?>
-                try {
-                    window.parent.parent.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
-                    window.parent.parent.$.magnificPopup.close();
-                }
-                catch (e) {
-                    self.opener.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
-                    self.close();
-                }
-                <?php else: ?>
-                self.opener.serendipity.serendipity_imageSelector_addToBody(img+' ', editor_instance);
-                self.close();
-                <?php endif; ?>
-            }
-        }
-    </script>
     <style>
         html[data-color-mode="dark"].page_emochr {
             background: #22272e;
@@ -179,6 +161,26 @@ class serendipity_event_emoticonchooser extends serendipity_event
             background: #323941;
         }
     </style>
+    <script>
+        function emoticonchooser(instance_name = '', this_instance = '') {
+            const capturingRegex = /(?<area>nugget|quick)/; //all nuggets(\d+) and plugin adminnotes quicknote // NO QUOTES !!!!
+            const found = instance_name.match(capturingRegex);
+            const instance = (found !== null) ? instance_name : this_instance;
+            const use_emoticon = 'use_emoticon_'+instance_name;
+
+            // works on both: enableBackendPopup or MFP- layer
+            window[use_emoticon] = function (item) {
+                try {
+                    window.parent.parent.serendipity.serendipity_imageSelector_addToBody(item, instance);
+                    window.parent.parent.$.magnificPopup.close();
+                }
+                catch (e) {
+                    self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
+                    self.close();
+                }
+            }
+        }
+    </script>
 </head>
 
 <body id="serendipity_admin_page" class="serendipity_emoticonchooser_page">
@@ -222,8 +224,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                 // frontend commentform, backend comments edit/reply commentform
                 case 'frontend_comment':
-                    if (serendipity_db_bool($this->get_config('comments', 'false')) === false) {
-                        break;
+                    // per option OR per state allowHtmlComment true, so break PLAIN TEXT (editor) only building button, script and content
+                    if (serendipity_db_bool($this->get_config('comments', 'false')) === false || ($serendipity['wysiwyg'] && $serendipity['allowHtmlComment'])) {
+                        break; // TinyMCE itself has Emojis and isn't able to place emoticons like CKE was... (see conditional below for the js file binding)
                     }
 
                     $txtarea = 'serendipity_commentform_comment';
@@ -236,7 +239,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
-                        $txtarea = 'serendipity[extended]';
+                        $txtarea = 'serendipity_textarea_extended';
                         $func    = 'extended';
                     }
                     // no break [PSR-2] - extends backend_entry_toolbar_body
@@ -245,24 +248,17 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     if (!isset($txtarea)) {
                         if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
                             // event caller has given us the name of the textarea converted
-                            // into a wysiwyg editor(for example, the staticpages plugin)
+                            // into a WYSIWYG editor (for example, the staticpages plugin)
                             $txtarea = $eventData['backend_entry_toolbar_body:textarea'];
                         } else {
                             // default value
-                            $txtarea = 'serendipity[body]';
+                            $txtarea = 'serendipity_textarea_body';
                         }
                         if (isset($eventData['backend_entry_toolbar_body:nugget'])) {
                             $func = $eventData['backend_entry_toolbar_body:nugget'];
                         } else {
                             $func = 'body';
                         }
-                    }
-
-                    // CKEDITOR and plain editor need this little switch
-                    if (preg_match('@^nugget@i', $func)) {
-                        $cke_txtarea = $func;
-                    } else {
-                        $cke_txtarea = $txtarea;
                     }
 
                     if ((!isset($serendipity['wysiwyg']) || !$serendipity['wysiwyg']) || $comments) {
@@ -317,7 +313,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     if (defined('IN_serendipity_admin') && IN_serendipity_admin === true) { // This is case entries, isn't it?! YES, and staticpages nuggets!
                         if (empty($serendipity['wysiwyg'])) {
                             $next = '';
-                            echo "    $popuplink\n"; // append toolbar button to backend entries in PLAIN EDITOR toolbar. NO onready state loading !!
+                            echo "$popuplink\n"; // append toolbar button to backend entries in PLAIN EDITOR toolbar. NO onready state loading !! - root indent & linespace after for consistency, please !
                             if ($serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || $serendipity['POST']['preview'])) {
                                 $next = ' emotin';
                             }
@@ -326,14 +322,14 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
 <div class="serendipity_emoticon_bar<?php echo $next; ?>">
     <script type="text/javascript">
-        emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
+        emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>');
     </script>
 
 <?php
                             $emoticon_bar = true;
                         }
-                        if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && isset($popuplink)) {
-                            echo "    $popuplink\n"; // add toolbar button in backend entries above CKEDITOR toolbar
+                        if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg'] && isset($popuplink) && !$serendipity['allowHtmlComment']) {
+                            echo "    $popuplink\n"; // add toolbar button in backend entries above RT-EDITOR toolbar or below in case of PLAIN TEXT comment editing
                         }
                     } else { // in frontend footer ONLY!
                         $emoticon_bar = true;
@@ -343,7 +339,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
     <script type="text/javascript">
         document.onreadystatechange = function () {
             if (document.readyState == "interactive") {
-                emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>', '<?php echo $cke_txtarea; ?>');
+                emoticonchooser('<?php echo $func; ?>', '<?php echo $txtarea; ?>');
             }
         }
     </script>
@@ -365,11 +361,9 @@ class serendipity_event_emoticonchooser extends serendipity_event
                             if (!isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'plugins') {
                                 $popupstyle = 'display: none;';
                             }
-                            $simple = (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) ? 'false' : 'true';
                         } else {
                             // BACKEND normal [wysiwyg] case in entries, staticpages, but NOT for the simplified ones in nuggets or comments
                             $popupstyle = 'display: inline-flex;';
-                            $simple = 'false';
                         }
 
                         $emotics .= "
@@ -377,7 +371,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
     <script type=\"text/javascript\">
         document.onreadystatechange = function () {
             if (document.readyState == 'interactive') {
-                emoticonchooser('$func', '$txtarea', '$cke_txtarea', $simple);
+                emoticonchooser('$func', '$txtarea');
             }
         }
     </script>
@@ -400,7 +394,12 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $emotics .= "</div><!-- emoticon_bar end -->\n\n";
                     }
                     if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
-                        $this->set_config('emotics', $emotics); //cache this extra?
+                        $name = "emotics[{$func}]";
+                        // we still have unfilled nuggets or quicknote caches placed to config assumingly done by plugin API somewhere... strange... but not by here
+                        $this->set_config($name, $emotics); //cache this differently by area name
+                        if ($func == 'body') {
+                            $this->set_config('emotics', $emotics); //cache this extra? Yes, as a fallback for other nuggets and adminnotes with runtime replacements!
+                        }
                         if ($comments) {
                             echo $emotics;
                         }
@@ -416,7 +415,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     // no-BREAK! [PSR-2] - extends frontend_footer
 
                 case 'frontend_footer':
-                    if (empty($noemojs) || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments' && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
+                    // don't load with allowHtmlComment true for TinyMCE in frontend commentform
+                    if ((empty($noemojs) || (empty($noemojs) && empty($serendipity['allowHtmlComment']))) || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments' && empty($serendipity['allowHtmlComment']) && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php
@@ -426,10 +426,13 @@ class serendipity_event_emoticonchooser extends serendipity_event
                 case 'backend_wysiwyg':
                     $link = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/emoticonchooser' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=emoticonchooser_'.$eventData['item'];
                     $eventData['buttons'][] = array(
-                        'id'         => 'emoticon' . $eventData['item'],
+                        'id'         => 'emoticon_' . $eventData['item'],
                         'name'       => PLUGIN_EVENT_EMOTICONCHOOSER_TITLE,
                         'javascript' => 'function() { serendipity.openPopup(\'' . $link . '\', \'EmoticonChooser\') }',
-                        'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_emoticon.png',
+//                        'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_emoticon.png',
+                        'svg'        => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-emoji-smile-fill bi-emoji-smile-fillCo" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8"/></svg>',
+// no need, since we have a css_backend hook. Else use this
+//                        'css'        => '.bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { fill: gold; }',
                         'toolbar'    => 'other'
                     );
                     break;
@@ -438,6 +441,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
                     $eventData .= '
 
 /* emoticonchooser plugin start */
+
+.bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { fill: gold; }
 
 .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
     margin: 1em auto 1px;

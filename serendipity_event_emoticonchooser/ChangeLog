@@ -1,3 +1,10 @@
+4.0.0:
+------
+ * Reflect Styx 5 core textarea name changes to drop into
+ * Raises requirements
+ * Remove outdated RichText Editor checks
+ * Refactor against allowHtmlComments and where to show hide or append the emoticons
+
 3.35:
 -----
  * Remove some obsolete data color schemes in page header
