@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_adminnotes extends serendipity_event
 {
-    var $debug;
+    #var $debug;
 
     function introspect(&$propbag)
     {
@@ -17,12 +19,12 @@ class serendipity_event_adminnotes extends serendipity_event
         $propbag->add('name',          PLUGIN_ADMINNOTES_TITLE);
         $propbag->add('description',   PLUGIN_ADMINNOTES_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0.0',
-            'smarty'      => '3.1.5',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '0.37');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -238,7 +240,7 @@ class serendipity_event_adminnotes extends serendipity_event
                             $q = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}adminnotes_to_groups (noteid, groupid) VALUES ($noteid, $target)");
                         }
                         if (is_string($q)) {
-                            echo $q . "<br />\n";
+                            echo $q . "<br>\n";
                         }
                     } else {
                         serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}adminnotes (authorid, notetime, subject, body, notetype) VALUES ('" . $serendipity['authorid'] . "', " . time() . ", '" . serendipity_db_escape_string($_REQUEST['note_subject']) . "', '" . serendipity_db_escape_string($_REQUEST['note_body']) . "', '" . serendipity_db_escape_string($_REQUEST['note_notetype']) . "')");
@@ -257,13 +259,13 @@ class serendipity_event_adminnotes extends serendipity_event
     '. serendipity_setFormToken() .'
     <input type="hidden" name="serendipity[adminModule]" value="event_display">
     <input type="hidden" name="serendipity[adminAction]" value="adminnotes">
-    <input type="hidden" name="action" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['action']) : htmlspecialchars($_REQUEST['action'], ENT_COMPAT, LANG_CHARSET)) . '">
+    <input type="hidden" name="action" value="' . htmlspecialchars($_REQUEST['action']) . '">
     <input type="hidden" name="note" value="' . ($entry['noteid'] ?? '') . '">
     <input type="hidden" name="note_notetype" value="note">
 
     <div class="form_field">
         <label for="note_subject" class="block_level">' . TITLE . '</label>
-        <input id="note_subject" type="text" name="note_subject" value="' . serendipity_specialchars(($entry['subject'] ?? '')) . '">
+        <input id="note_subject" type="text" name="note_subject" value="' . htmlspecialchars(($entry['subject'] ?? '')) . '">
     </div>
 
     <div class="form_multiselect">
@@ -291,21 +293,20 @@ class serendipity_event_adminnotes extends serendipity_event
                     } else {
                         $is_selected = '';
                     }
-                    echo '            <option' . $is_selected . ' value="' . $group['confkey'] . '">' . serendipity_specialchars($group['confvalue']) . "</option>\n";
+                    echo '            <option' . $is_selected . ' value="' . $group['confkey'] . '">' . htmlspecialchars($group['confvalue']) . "</option>\n";
                 }
                 echo '        </select>
     </div>
 
     <div class="form_area">
-        <label for="note_body" class="block_level">' . ENTRY_BODY . '</label>
-        <textarea id="note_body" rows=10 cols=80 name="note_body">
-' . serendipity_specialchars(($entry['body'] ?? '')) . "
-        </textarea>\n";
+        <label for="quicknote" class="block_level">' . ENTRY_BODY . '</label>
+        <textarea id="quicknote" rows=10 cols=80 name="note_body">' . htmlspecialchars(($entry['body'] ?? '')) . "</textarea>\n";// no break or indents !! (inside default textarea tags)
         if (($allow_html === 'admin' && $serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) && isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
             include_once $serendipity['serendipityPath'] . 'include/functions_entries_admin.inc.php';
-            serendipity_emit_htmlarea_code('note_body','');
+            serendipity_emit_htmlarea_code('quicknote','');
         }
         echo "\n";
+// REMEMBER: This is a none hooked display, so i.e. emoticonchooser will not happen in PLAIN TEXT displays !
 ?>
 
     </div>
@@ -320,13 +321,13 @@ class serendipity_event_adminnotes extends serendipity_event
                 $entry = $this->getMyNotes((int)$_REQUEST['note']);
 
                 echo '<span class="msg_hint"><span class="icon-help-circled" aria-hidden="true"></span> ';
-                printf(DELETE_SURE, $entry['noteid'] . ' - ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['subject']) : htmlspecialchars($entry['subject'], ENT_COMPAT, LANG_CHARSET)));
+                printf(DELETE_SURE, $entry['noteid'] . ' - ' . htmlspecialchars($entry['subject']));
                 echo "</span>\n";
 
 ?>
                     <div class="form_buttons">
                         <a class="button_link state_submit" href="<?php echo $newLoc; ?>"><?php echo DUMP_IT; ?></a>
-                        <a class="button_link state_cancel" href="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SERVER["HTTP_REFERER"]) : htmlspecialchars($_SERVER["HTTP_REFERER"], ENT_COMPAT, LANG_CHARSET)); ?>"><?php echo NOT_REALLY; ?></a>
+                        <a class="button_link state_cancel" href="<?php echo htmlspecialchars($_SERVER["HTTP_REFERER"]); ?>"><?php echo NOT_REALLY; ?></a>
                     </div>
 <?php
                 break;
@@ -342,7 +343,7 @@ class serendipity_event_adminnotes extends serendipity_event
                     serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}adminnotes_to_groups WHERE noteid = " . (int)$_REQUEST['note']);
                 }
                 echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ';
-                printf(RIP_ENTRY, $entry['noteid'] . ' - ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['subject']) : htmlspecialchars($entry['subject'], ENT_COMPAT, LANG_CHARSET)));
+                printf(RIP_ENTRY, $entry['noteid'] . ' - ' . htmlspecialchars($entry['subject']));
                 echo "</span>\n";
                 break;
 
@@ -398,7 +399,7 @@ class serendipity_event_adminnotes extends serendipity_event
         if ($allow_html) {
             $body = $string;
         } else {
-            $body = (function_exists('serendipity_specialchars') ? serendipity_specialchars($string) : htmlspecialchars($string, ENT_COMPAT, LANG_CHARSET));
+            $body = htmlspecialchars($string);
         }
 
         if ($do_markup) {
@@ -468,7 +469,7 @@ function fulltext_toggle(id) {
             <li class="serendipity_note note_<?php echo $this->output($note['notetype']) ?> note_owner_<?php echo $note['authorid'] . (isset($serendipity['COOKIE']['lastnote']) && $serendipity['COOKIE']['lastnote'] < $note['noteid'] ? ' note_new' : ''); ?>">
                 <div class="note_subject">
                     <h3><?php echo $this->output($note['subject']) ?></h3>
-                    <?php echo POSTED_BY . ' ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($note['realname']) : htmlspecialchars($note['realname'], ENT_COMPAT, LANG_CHARSET)) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, (int) $note['notetime'])."\n"; ?>
+                    <?php echo POSTED_BY . ' ' . htmlspecialchars($note['realname']) . ' ' . ON . ' ' . serendipity_strftime(DATE_FORMAT_SHORT, (int) $note['notetime'])."\n"; ?>
                 </div>
 <?php
                     if (strlen(strip_tags($note['body'])) > $cutoff) {

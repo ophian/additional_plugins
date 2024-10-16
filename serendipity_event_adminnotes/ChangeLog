@@ -1,3 +1,7 @@
+1.0.0:
+-----
+ * Major update for Styx 5.0 and the new RT editor
+
 0.37:
 -----
  * Better type juggling for API methods
