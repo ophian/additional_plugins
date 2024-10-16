@@ -31,11 +31,11 @@ class serendipity_event_typesetbuttons extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_TYPESETBUTTONS_DESC);
         $propbag->add('stackable', false);
         $propbag->add('author', 'Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '1.00');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements', array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.0',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2.0'
         ));
         $propbag->add('configuration', array(
             'enable_center',
@@ -323,7 +323,7 @@ class serendipity_event_typesetbuttons extends serendipity_event
             if (isset($eventData['backend_entry_toolbar_' . $type . ':textarea'])) {
                 $txtarea = $eventData['backend_entry_toolbar_' . $type . ':textarea'];
             } else {
-                $txtarea = "serendipity[" . $type . "]";
+                $txtarea = 'serendipity_textarea_' . $type;
             }
             $this->generate_button($txtarea, $pluginConfigurationKeys);
             return true;
