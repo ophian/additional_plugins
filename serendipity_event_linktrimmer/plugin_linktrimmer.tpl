@@ -25,6 +25,7 @@
             background: none repeat scroll 0% 0% #DDD;
             padding: 2px 5px;
         }
+        #main_linktrimmer span.icon-info-circled em { padding-right: .5em; }
         #linktrimmer_url.input_textbox { width: inherit; }
     </style>
 </head>
@@ -59,7 +60,7 @@
             <div class="form_field">
     {/if}
                 <label for="linktrimmer_hash">{$CONST.PLUGIN_LINKTRIMMER_HASH}</label>
-                <input id="linktrimmer_hash" class="input_textbox" type="text" value="" name="linktrimmer_hash" size="14">
+                <input id="linktrimmer_hash" class="input_textbox" type="text" value="" name="linktrimmer_hash" size="14"> <span class="icon-info-circled" aria-hidden="true" title="takeaway hash"><em>{$linktrimmer_hashex}</em></span>
             </div>
 
             <div class="form_field">

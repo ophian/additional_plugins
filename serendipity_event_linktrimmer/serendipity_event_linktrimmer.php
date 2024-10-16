@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,10 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_linktrimmer extends serendipity_event
 {
-    var $debug;
+    /**
+     * Access property title
+     */
+    public $title = PLUGIN_LINKTRIMMER_NAME;
 
     function introspect(&$propbag)
     {
@@ -17,12 +22,12 @@ class serendipity_event_linktrimmer extends serendipity_event
         $propbag->add('name',          PLUGIN_LINKTRIMMER_NAME);
         $propbag->add('description',   PLUGIN_LINKTRIMMER_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.6.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2.0'
         ));
 
-        $propbag->add('version',       '1.7.8');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -195,8 +200,8 @@ class serendipity_event_linktrimmer extends serendipity_event
             $pref = $this->get_config('domain');
         }
 
-        if (isset($_REQUEST['submit']) && !empty($_REQUEST['linktrimmer_url'])) {
-            $url = $this->lookup($_REQUEST['linktrimmer_url'], $_REQUEST['linktrimmer_hash'], $pref);
+        if (isset($_POST['submit']) && !empty($_POST['linktrimmer_url'])) {
+            $url = $this->lookup($_POST['linktrimmer_url'], $_POST['linktrimmer_hash'], $pref);
             if ($url == false) {
                 $error = PLUGIN_LINKTRIMMER_ERROR;
             }
@@ -206,26 +211,27 @@ class serendipity_event_linktrimmer extends serendipity_event
             'linktrimmer_ispopup'     => $serendipity['enableBackendPopup'],
             'linktrimmer_error'       => !empty($error) ? $error : null,
             'linktrimmer_url'         => !empty($url) ? $url : '',
-            'linktrimmer_origurl'     => !empty($_REQUEST['linktrimmer_url']) ? $_REQUEST['linktrimmer_url'] : '',
+            'linktrimmer_origurl'     => !empty($_POST['linktrimmer_url']) ? $_POST['linktrimmer_url'] : '',
             'linktrimmer_external'    => $external,
-            'linktrimmer_txtarea'     => !empty($_REQUEST['txtarea']) ? $_REQUEST['txtarea'] : '',
+            'linktrimmer_hashex'      => hash('xxh32', (string) time()),
+            'linktrimmer_txtarea'     => !empty($_GET['txtarea']) ? $_GET['txtarea'] : '',
             'linktrimmer_darkmode'    => isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true
         ));
 
         echo $this->parseTemplate('plugin_linktrimmer.tpl');
     }
 
-    function generate_button ($txtarea)
+    function generate_button($txtarea)
     {
         global $serendipity;
 
         if (!isset($txtarea)) {
-           $txtarea = 'body';
+           $txtarea = 'serendipity_textarea_body';
         }
         $link =  ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/linktrimmer' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=' . $txtarea;
+// root indent & empty linespace for consistency, please !
 ?>
-
-        <input type="button" class="input_button"  name="insLinktrimmer" value="<?php echo PLUGIN_LINKTRIMMER_NAME; ?>" onclick="serendipity.openPopup('<?php echo $link; ?>', 'linktrimmerSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');">
+<input type="button" class="input_button" name="insLinktrimmer" value="<?php echo PLUGIN_LINKTRIMMER_NAME; ?>" onclick="serendipity.openPopup('<?php echo $link; ?>', 'linktrimmerSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');">
 
 <?php
     }
@@ -244,7 +250,7 @@ class serendipity_event_linktrimmer extends serendipity_event
                     if (isset($eventData['backend_entry_toolbar_extended:textarea'])) {
                         $txtarea = $eventData['backend_entry_toolbar_extended:nugget'];
                     } else {
-                        $txtarea = 'extended';
+                        $txtarea = 'serendipity_textarea_extended';
                     }
                     if (!$serendipity['wysiwyg']) {
                         $this->generate_button($txtarea);
@@ -258,7 +264,7 @@ class serendipity_event_linktrimmer extends serendipity_event
                     if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
                         $txtarea = $eventData['backend_entry_toolbar_body:nugget'];
                     } else {
-                        $txtarea = 'body';
+                        $txtarea = 'serendipity_textarea_body';
                     }
                     if (!$serendipity['wysiwyg']) {
                         $this->generate_button($txtarea);
@@ -269,16 +275,18 @@ class serendipity_event_linktrimmer extends serendipity_event
                     break;
 
                 case 'backend_wysiwyg':
-                    $link = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/linktrimmer' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=linktrimmer'.$eventData['item'];
+                    $link = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/linktrimmer' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea='.$eventData['item'];
                     $open = 'serendipity.openPopup';
                     $eventData['buttons'][] = array(
                         'id'         => 'linktrimmer' . $eventData['item'],
                         'name'       => PLUGIN_LINKTRIMMER_NAME,
                         'javascript' => 'function() { '.$open.'(\'' . $link . '\', \'LinkTrimmer\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\') }',
                         'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_linktrimmer.gif',
-                        'img_path'   => 'serendipity_event_linktrimmer/serendipity_event_linktrimmer.gif',
+                        'svg'        => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layer-forward bi-layer-forward-btn" viewBox="0 0 16 16"><path d="M8.354.146a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708l1 1a.5.5 0 0 0 .708 0L7 4.207V12H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H9V4.207l.646.647a.5.5 0 0 0 .708 0l1-1a.5.5 0 0 0 0-.708z"/><path d="M1 7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h4.5a.5.5 0 0 0 0-1H1V8h4.5a.5.5 0 0 0 0-1zm9.5 0a.5.5 0 0 0 0 1H15v2h-4.5a.5.5 0 0 0 0 1H15a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z"/></svg>',
+// no need, since we have a css_backend hook. Else use this
+//                        'css'        => '.bi.bi-noise-reduction.bi-noise-reduction-btn { fill: currentColor; }',
                         'toolbar'    => 'other'
-                    );//'img_path' deprecated, used by ckeditor plugin <= 4.1.0
+                    );
                     break;
 
                 case 'frontend_configure':
@@ -317,24 +325,24 @@ class serendipity_event_linktrimmer extends serendipity_event
                     if (is_array($parts) && count($parts) > 1) {
                        foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
-                            $_REQUEST[$val[0]] = $val[1];
+                            $_GET[$val[0]] = $val[1];
                        }
                     } else {
                        $val = explode('=', $parts[0]);
-                       if (isset($val[1])) $_REQUEST[$val[0]] = $val[1];
+                       if (isset($val[1])) $_GET[$val[0]] = $val[1];
                     }
 
-                    if (!isset($_REQUEST['txtarea'])) {
+                    if (!isset($_GET['txtarea'])) {
                         if (isset($uri_parts[1])) {
                             $parts = explode('&', $uri_parts[1]);
                             if (is_array($parts) && count($parts) > 1) {
                                 foreach($parts AS $key => $value) {
                                      $val = explode('=', $value);
-                                     $_REQUEST[$val[0]] = $val[1];
+                                     $_GET[$val[0]] = $val[1];
                                 }
                             } else {
                                 $val = explode('=', $parts[0]);
-                                $_REQUEST[$val[0]] = $val[1];
+                                $_GET[$val[0]] = $val[1];
                             }
                         }
                     }

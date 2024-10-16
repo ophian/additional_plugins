@@ -1,9 +1,9 @@
 <?php
 
 define('PLUGIN_LINKTRIMMER_NAME', 'Linkverkürzung');
-define('PLUGIN_LINKTRIMMER_DESC', 'Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.');
+define('PLUGIN_LINKTRIMMER_DESC', 'Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, ähnlich tr.im, tinyurl.com usw.');
 define('PLUGIN_LINKTRIMMER_ENTER', 'URL eingeben: ');
-define('PLUGIN_LINKTRIMMER_HASH', 'Optional Hash: ');
+define('PLUGIN_LINKTRIMMER_HASH', 'Optionaler Hash: ');
 define('PLUGIN_LINKTRIMMER_RESULT', 'Verkürztes Resultat: ');
 define('PLUGIN_LINKTRIMMER_ERROR', 'Link konnte nicht gekürzt werden. Möglicherweise handelt es sich um ein Duplikat, einen ungültigen benutzerdefinierten Hash oder einen Datenbankfehler.');
 define('PLUGIN_LINKTRIMMER_LINKPREFIX', 'Link-Prefix');

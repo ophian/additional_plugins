@@ -1,13 +1,15 @@
 
 /* linktrimmer plugin start */
 
+.bi.bi-layer-forward.bi-layer-forward-btn {
+    fill: palegreen;
+}
 #linktrimmer_url.input_textbox {
     width: 71%;
 }
 #linktrimmer_result.input_textbox {
     width: 100%;
 }
-
 html[data-color-mode="dark"].page_linktrm {
     background: #22272e;
     color: #adbac7;
