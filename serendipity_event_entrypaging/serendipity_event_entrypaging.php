@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -9,7 +11,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_entrypaging extends serendipity_event
 {
-    var $title = PLUGIN_ENTRYPAGING_NAME; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
+    public $title = PLUGIN_ENTRYPAGING_NAME; // plugins accessing objects title, e.g. entryproperties: disable_markups in entry option
 
     private $smartylinks = array();
 
@@ -204,7 +206,7 @@ class serendipity_event_entrypaging extends serendipity_event
                                 $cond['compare'] = "e.id [%1] $id";
                             }
 
-                            // If logged-in, the page-link shall even promote group restricted entries.
+                            // If logged-in and has ACL read permissions, the page-link shall even promote group restricted entries.
                             // We fix the visitors paging to not show group restricted entries by this $joincat true condition.
                             // But for logged-in authors we are not that accurate. Administrators and logged-in users with high level group rights probably will have no problem paging through all entries.
                             // Low level group members will end the paging when arriving on a page they don't have access/read rights. This current limitation should be known.
