@@ -15,7 +15,7 @@
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.5</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -127,7 +127,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2024-01-29</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -203,7 +203,7 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2024-02-07</date>
   <filelist>
@@ -253,7 +253,7 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2021-08-12</date>
   <filelist>
@@ -299,9 +299,9 @@
 <release>
   <version>2.1.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.2</requirements:phpVersion>
-  <date>2024-01-29</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -403,7 +403,7 @@
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
   <date>2023-11-26</date>
   <filelist>
@@ -1115,9 +1115,9 @@
 <release>
   <version>2.4.3</version>
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1194,7 +1194,7 @@
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.13</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
@@ -1363,12 +1363,12 @@
 <license>GPL</license>
 <summary>Comment Edit</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Let user&#039;s edit their comments after they posted them.</description>
+<description>Let user's edit their comments after they posted them.</description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
   <date>2023-03-12</date>
   <filelist>
@@ -1474,7 +1474,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1552,7 +1552,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -1782,7 +1782,7 @@
 <release>
   <version>2.13</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2022-08-15</date>
   <filelist>
@@ -1838,7 +1838,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2021-05-30</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1922,7 +1922,7 @@
 <release>
   <version>2.1.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2022-03-15</date>
   <filelist>
@@ -2066,8 +2066,8 @@
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2024-02-07</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
@@ -2200,7 +2200,7 @@
 <summary>Downloadmanager</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!</description>
-<maintainers><maintainer><name>Alexander &#039;dma147&#039; Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.65</version>
   <requirements:s9yVersion>3.3.0</requirements:s9yVersion>
@@ -2523,7 +2523,7 @@
 <license>GPL</license>
 <summary>Markup: Syntax Highlighter</summary>
 <groups>MARKUP</groups>
-<description>This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It&#039;s a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</description>
+<description>This plugin is a JavaScript code highlighter based on the code of the same name by Alex Gorbatchev.   This plugin takes less server-side resources than GeSHi and displays less markup in the actual HTML code.  It's a lighter, cleaner alternative. This plugin requires the supporting theme to provide the following hooks: frontend_header, frontend_footer (and optionally backend_preview on the administrative theme only).</description>
 <maintainers><maintainer><name>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.20</version>
@@ -2768,7 +2768,7 @@
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.8</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-01-29</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2930,7 +2930,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -3393,7 +3393,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3545,7 +3545,7 @@
 <summary>Discussion forum / phpBB comment mirroring</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Provides a complete discussion forum to your users. Can alternatively provide to mirror comments into a phpBB installation.</description>
-<maintainers><maintainer><name>Alexander &#039;dma147&#039; Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander 'dma147' Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.46</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
@@ -3831,7 +3831,7 @@
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -3935,7 +3935,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_geotag">
       <file>ChangeLog</file>
@@ -3987,12 +3987,12 @@
 <summary>GeoURL</summary>
 <groups>BACKEND_METAINFORMATION</groups>
 <description>GeoURL allocates URLs to locations. More Information at http://geourl.org/</description>
-<maintainers><maintainer><name>Serendipity Styx Team</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2017-07-22</date>
   <filelist>
     <dir name="serendipity_event_geourl">
@@ -4041,8 +4041,8 @@
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2023-03-15</date>
   <filelist>
     <dir name="serendipity_event_geo_json">
@@ -4751,11 +4751,11 @@
 <description>This plugin adds extended Google Analytics 4 functionality.</description>
 <maintainers><maintainer><name>Jari Turkia, kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.1</version>
+  <version>2.2.0</version>
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.1.0</requirements:phpVersion>
-  <date>2024-05-02</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -4797,11 +4797,11 @@
 <description>Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)</description>
 <maintainers><maintainer><name>Boris, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.74</version>
+  <version>0.75</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -4857,7 +4857,7 @@
 <release>
   <version>1.79</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2022-11-07</date>
   <filelist>
@@ -5417,11 +5417,11 @@
 <description>Allows extended options for inserting images from the media manager</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.6.6</version>
+  <version>2.6.7</version>
   <requirements:s9yVersion>3.6.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -5483,7 +5483,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -5746,12 +5746,12 @@
 <license>GPL</license>
 <summary>Lightbox for entry images</summary>
 <groups>IMAGES</groups>
-<description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It&#039;s a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image &#039;a href=&quot;XXX&quot;&#039; link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
+<description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.13.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2023-12-26</date>
   <filelist>
@@ -6067,7 +6067,7 @@
   <requirements:s9yVersion>3.2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2024-09-09</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -6215,7 +6215,7 @@
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -6267,7 +6267,7 @@
 <release>
   <version>2.5.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
   <date>2022-09-17</date>
   <filelist>
@@ -6625,7 +6625,7 @@
 <summary>寄送文章</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>允許訪客寄送文章給朋友</description>
-<maintainers><maintainer><name>Serendipity Styx Team</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
@@ -6831,9 +6831,9 @@
 <release>
   <version>0.32</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
@@ -7205,11 +7205,11 @@
 <description>Allows to create multiple language versions of an entry</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.15</version>
+  <version>3.16</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -7378,7 +7378,7 @@
 <license>GPL</license>
 <summary>Newsbox</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
-<description>Group a category&#039;s entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
+<description>Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
 <maintainers><maintainer><name>Jude Anthony, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
@@ -7691,7 +7691,7 @@
 <release>
   <version>2.9.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
   <date>2023-01-30</date>
   <filelist>
@@ -7747,7 +7747,7 @@
 <release>
   <version>2.9.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
   <date>2023-01-30</date>
   <filelist>
@@ -7844,7 +7844,7 @@
 <license>GPL</license>
 <summary>HTML Nugget on Page</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Puts an HTML nugget on top or bottom of the page, or inside the page&#039;s HEAD tag</description>
+<description>Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
@@ -8235,7 +8235,7 @@
 <release>
   <version>1.58</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
   <date>2024-07-14</date>
   <filelist>
@@ -8305,7 +8305,7 @@
 <release>
   <version>1.0.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
@@ -9249,7 +9249,7 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
   <date>2022-11-30</date>
   <filelist>
@@ -9369,7 +9369,7 @@
 <release>
   <version>1.51</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.1.0</requirements:phpVersion>
   <date>2024-02-07</date>
   <filelist>
@@ -9417,7 +9417,7 @@
 <release>
   <version>1.55</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2023-11-27</date>
   <filelist>
@@ -9603,7 +9603,7 @@
 <release>
   <version>0.30</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2021-05-19</date>
   <filelist>
@@ -9799,7 +9799,7 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
@@ -9847,7 +9847,7 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
@@ -9959,11 +9959,11 @@
 <description>Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.81</version>
+  <version>6.82</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.0.0</requirements:phpVersion>
-  <date>2024-08-05</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -10121,9 +10121,9 @@
 <release>
   <version>4.5.3</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -10370,8 +10370,8 @@
 <release>
   <version>0.10</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2021-08-12</date>
   <filelist>
     <dir name="serendipity_event_template_editor">
@@ -11238,8 +11238,8 @@
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2019-12-02</date>
   <filelist>
     <dir name="serendipity_event_tinypng">
@@ -11538,7 +11538,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
@@ -11678,7 +11678,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2022-09-18</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -12055,8 +12055,8 @@
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>2.2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
@@ -12183,7 +12183,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -12283,7 +12283,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12709,7 +12709,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12751,7 +12751,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12945,7 +12945,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-08-28</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
