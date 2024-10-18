@@ -28,7 +28,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -342,6 +342,7 @@ class serendipity_event_wikilinks extends serendipity_event
                     break;
 
                 case 'frontend_display':
+                    if (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments') break; // avoid running in backend comment previews
                     $this->out_references = array();
                     foreach ($this->markup_elements AS $temp) {
                         if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
@@ -411,7 +412,7 @@ class serendipity_event_wikilinks extends serendipity_event
                     break;
 
                 case 'backend_wysiwyg':
-                    #$eventData['additional_styles'] = '.tox .tox-tbtn svg.bi.bi-list-task { fill: deepskyblue; }';
+                    #$eventData['additional_styles'][] = '.tox .tox-tbtn svg.bi.bi-list-task { fill: deepskyblue; }';
                     $link = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/wikilinks' . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea='.$eventData['item'];
                     $open = 'serendipity.openPopup';
                     $eventData['buttons'][] = array(
