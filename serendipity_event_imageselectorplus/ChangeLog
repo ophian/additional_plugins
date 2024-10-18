@@ -1,3 +1,7 @@
+2.6.7:
+-----
+ * Change a trigger_error to E_USER_WARNING for PHP 8.4 E_ERROR deprecation messages
+
 2.6.6:
 -----
  * Improve parameter types for Styx 5.0 type safety
