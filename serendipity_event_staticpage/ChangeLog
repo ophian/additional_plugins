@@ -1,3 +1,7 @@
+6.82:
+-----
+ * Catch not set variables on empty new page backend preview generation
+
 6.81:
 -----
  * Catch not set 'sp_entry_formtoken' error reporting, since already caught by message notice
