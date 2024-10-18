@@ -20,7 +20,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.6.6');
+        $propbag->add('version',       '2.6.7');
         $propbag->add('requirements',  array(
             'serendipity' => '3.6.0',
             'smarty'      => '3.1.0',
@@ -1173,7 +1173,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
         <maybe-something-here>/templates_c/mediacache/cache_img1_300_300
         */
         if (!isset($attrs['src']) || !$attrs['src']) {
-            trigger_error('The $attrs parameter must contain a "src" key', E_USER_ERROR);
+            trigger_error('The $attrs parameter must contain a "src" key', E_USER_WARNING);
         }
 
         if ((!isset($attrs['height']) || !$attrs['height']) && (!isset($attrs['width']) || !$attrs['width'])) {
