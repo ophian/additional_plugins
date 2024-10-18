@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_youtube extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_YOUTUBE_TITLE;
+    public $title = PLUGIN_EVENT_YOUTUBE_TITLE;
 
     function introspect(&$propbag)
     {
@@ -19,14 +21,15 @@ class serendipity_event_youtube extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2.0'
         ));
-        $propbag->add('version',       '1.7');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body' => true,
+            'backend_wysiwyg' => true,
         ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
         $propbag->add('configuration', array('youtube_server', 'youtube_iframe', 'youtube_width', 'youtube_height', 'youtube_rel', 'youtube_border', 'youtube_color1', 'youtube_color2'));
@@ -126,7 +129,7 @@ class serendipity_event_youtube extends serendipity_event
             switch($event) {
                 case 'backend_entry_toolbar_extended':
                     if (!isset($txtarea)) {
-                        $txtarea = 'serendipity[extended]';
+                        $txtarea = 'serendipity_textarea_extended';
                         $func    = 'extended';
                     }
                     // no break
@@ -134,11 +137,11 @@ class serendipity_event_youtube extends serendipity_event
                     if (!isset($txtarea)) {
                         if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
                             // event caller has given us the name of the textarea converted
-                            // into a wysiwg editor(for example, the staticpages plugin)
+                            // into a WYSIWYG editor(for example, the staticpages plugin)
                             $txtarea = $eventData['backend_entry_toolbar_body:textarea'];
                         } else {
                             // default value
-                            $txtarea = 'serendipity[body]';
+                            $txtarea = 'serendipity_textarea_body';
                         }
                         if (isset($eventData['backend_entry_toolbar_body:nugget'])) {
                             $func = $eventData['backend_entry_toolbar_body:nugget'];
@@ -146,11 +149,11 @@ class serendipity_event_youtube extends serendipity_event
                             $func = 'body';
                         }
                     }
-                    // CKEDITOR needs this little switch
-                    if (preg_match('@^nugget@i', $func)) {
-                        $cke_txtarea = $func;
+                    // RT-EDITORs and plain text editor need this little switch
+                    if (preg_match('/(nugget|quick)/i', $func)) {
+                        $area_instance = $func;
                     } else {
-                        $cke_txtarea = $txtarea;
+                        $area_instance = $txtarea;
                     }
 
 ?>
@@ -165,7 +168,7 @@ var youtube_color1 = '<?php echo $this->get_config('youtube_color1'); ?>';
 var youtube_color2 = '<?php echo $this->get_config('youtube_color2'); ?>';
 var youtube_iframe = '<?php echo (serendipity_db_bool($this->get_config('youtube_iframe')) ? '1' : '0'); ?>';
 
-function use_text_<?php echo $func; ?>(img) {
+function use_text_<?php echo $func; ?>(item) {
 
     videoid = prompt('<?php echo PLUGIN_EVENT_YOUTUBE_ID; ?>', '');
     
@@ -179,83 +182,68 @@ function use_text_<?php echo $func; ?>(img) {
         youtube_height += 20;
     }
 
-    img = "\n" + '<div class="youtube_player"><object width="' + youtube_width + '" height="' + youtube_height + '">'
-        + '<param name="movie" value="' + youtube_url + '"></param>'
-        + '<param name="allowFullScreen" value="true"></param>'
-        + '<param name="allowscriptaccess" value="always">'
-        + '</param>'
-        + '<embed src="' + youtube_url + '" type="application/x-shockwave-flash" '
-        + '  allowscriptaccess="always" allowfullscreen="true" width="' + youtube_width + '" height="' + youtube_height + '">'
-        + '</embed></object></div>' 
-        + '<noscript><a href="https://www.youtube.com/watch?v='+ videoid + '"></a></noscript>'
-        + "\n";
-
     if (youtube_iframe) {
-        img = "\n" + '<div class="youtube_player youtube_player_iframe"><iframe allow="encrypted-media" frameborder="0" height="' + youtube_height + '" src="https://www.youtube-nocookie.com/embed/' + videoid + '" width="' + youtube_width + '"><' + '/iframe></div>';
+        //item = "\n" + '<div class="youtube_player youtube_player_iframe"><iframe allow="encrypted-media" frameborder="0" height="' + youtube_height + '" src="https://www.youtube-nocookie.com/embed/' + videoid + '" width="' + youtube_width + '"><' + '/iframe></div>';
+        item = '<div class="youtube_player youtube_player_iframe"><iframe allow="encrypted-media" frameborder="0" height="' + youtube_height + '" src="https://www.youtube-nocookie.com/embed/' + videoid + '" width="' + youtube_width + '"><' + '/iframe></div>';
+    } else {
+        item = "\n" + '<div class="youtube_player"><object width="' + youtube_width + '" height="' + youtube_height + '">'
+            + '<param name="movie" value="' + youtube_url + '"></param>'
+            + '<param name="allowFullScreen" value="true"></param>'
+            + '<param name="allowscriptaccess" value="always">'
+            + '</param>'
+            + '<embed src="' + youtube_url + '" type="application/x-shockwave-flash" '
+            + '  allowscriptaccess="always" allowfullscreen="true" width="' + youtube_width + '" height="' + youtube_height + '">'
+            + '</embed></object></div>'
+            + '<noscript><a href="https://www.youtube.com/watch?v='+ videoid + '"></a></noscript>'
+            + "\n";
     }
 
-    if(typeof(CKEDITOR) != 'undefined') {
-        var oEditor = CKEDITOR.instances['<?php echo $cke_txtarea; ?>'];
-        oEditor.insertHtml(img);
-    } else if(typeof(FCKeditorAPI) != 'undefined') {
-        var oEditor = FCKeditorAPI.GetInstance('<?php echo $txtarea; ?>') ;
-        oEditor.InsertHtml(img);
-    } else if(typeof(xinha_editors) != 'undefined') {
-        if(typeof(xinha_editors['<?php echo $txtarea; ?>']) != 'undefined') {
-        //alert(1);
-            // this is good for the two default editors (body & extended)
-            xinha_editors['<?php echo $txtarea; ?>'].insertHTML(img);
-        } else if(typeof(xinha_editors['<?php echo $func; ?>']) != 'undefined') {
-        //alert(2);
-            // this should work in any other cases than previous one
-            xinha_editors['<?php echo $func; ?>'].insertHTML(img);
-        } else {
-        //alert(3);
-            // this is the last chance to retrieve the instance of the editor !
-            // editor has not been registered by the name of it's textarea
-            // so we must iterate over editors to find the good one
-            for (var editorName in xinha_editors) {
-                if('<?php echo $txtarea; ?>' == xinha_editors[editorName]._textArea.name) {
-                    xinha_editors[editorName].insertHTML(img);
-                    return;
-                }
-            }
-            // not found ?!?
-        }
-    } else if(typeof(HTMLArea) != 'undefined') {
-        //alert(4);
-        if(typeof(editor<?php echo $func; ?>) != 'undefined') {
-        //alert('4a<?php echo $func; ?>');
-            editor<?php echo $func; ?>.insertHTML(img);
-        } else if(typeof(htmlarea_editors) != 'undefined' && typeof(htmlarea_editors['<?php echo $func; ?>']) != 'undefined') {
-        //alert('4b');
-            htmlarea_editors['<?php echo $func; ?>'].insertHTML(img);
-        }
-    } else if(typeof(TinyMCE) != 'undefined') {
-        //tinyMCE.execCommand('mceInsertContent', false, img);
-        tinyMCE.execInstanceCommand('<?php echo $txtarea; ?>', 'mceInsertContent', false, img);
-    } else  {
-        //alert(5);
-        // default case: no wysiwyg editor
-        txtarea = document.getElementById('<?php echo $txtarea; ?>');
-        if (txtarea.createTextRange && txtarea.caretPos) {
-            caretPos = txtarea.caretPos;
-            caretPos.text = caretPos.text.charAt(caretPos.text.length - 1) == ' ' ? caretPos.text + ' ' + img + ' ' : caretPos.text + ' ' + img + ' ';
-        } else {
-            txtarea.value  += ' ' + img + ' ';
-        }
+    const use_youtube = 'use_youtube<?php echo $func; ?>';
+    const instance = '<?php echo $area_instance; ?>';
 
-        // alert(obj);
-        txtarea.focus();
+    // works on both: enableBackendPopup or MFP- layer
+    window[use_youtube] = function (item) {
+        try {
+            // both do...
+            tinyMCE.execInstanceCommand(instance, 'mceInsertContent', false, item);
+            //serendipity.serendipity_imageSelector_addToBody(item, instance);
+        } catch(ex0) {
+          try {
+            window.parent.parent.serendipity.serendipity_imageSelector_addToBody(item, instance);
+            window.parent.parent.$.magnificPopup.close();
+          } catch (ex1) {
+            self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
+            self.close();
+          }
+        } finally {
+            //console.log(item);console.log(instance);
+        }
     }
+    if (item) use_youtube<?php echo $func; ?>(item); // normally already placed in eventData['buttons'] but used here since this is a JS popup
 }
 //-->
 </script>
 <?php
+                    if ($serendipity['wysiwyg'] === false) {
+                        echo '<a class="serendipityPrettyButton serendipityExtButton" href="javascript:use_text_' . $func . '()" title="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '"><input class="input_button" name="serendipity[addYouTubeID]" value="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '" type="button"></a>&nbsp;';
+                    }
+                    break;
 
-                    #echo '<div id="serendipity_extbuttons_youtube" style="float: right; margin-top: 5px">';
-                    echo '  <a class="serendipityPrettyButton serendipityExtButton" href="javascript:use_text_' . $func . '()" title="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '">' . PLUGIN_EVENT_YOUTUBE_BUTTON . '</a>&nbsp;';
-                    #echo '</div>';
+                case 'backend_wysiwyg':
+                    // Due to 'backend_entry_toolbar_body' placed js snippet, except entry form textareas and staticpage with custom|responsive template, don't run in nuggets or plugins where it misses
+                    if (!preg_match('/(nugget|quick)/i', $eventData['item']) || preg_match('/(nuggets15|nuggets51)/i', $eventData['item'])) {
+                        $open = 'use_text_'.str_replace('serendipity_textarea_', '', $eventData['item']);
+                        $eventData['buttons'][] = array(
+                            'id'         => 'youtube' . $eventData['item'],
+                            'name'       => PLUGIN_EVENT_YOUTUBE_TITLE,
+                            'javascript' => 'function() { '.$open.'() }',
+                            'js_popup'   => true,
+                            'svg'        => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/></svg>',
+// no need when we have css_backend hook. Else use this
+                            'css'        => '.tox .tox-tbtn svg.bi.bi-youtube { fill: #25f8f8; }',
+                            'toolbar'    => 'other'
+                        );
+                    }
                     break;
 
                 default:

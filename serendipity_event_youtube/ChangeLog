@@ -1,3 +1,9 @@
+2.0.0:
+------
+ * Reflect Styx 5 core textarea name changes to drop into
+ * Raises requirements
+ * Remove outdated RichText Editor checks
+
 1.7:
 -----
 
