@@ -10,3 +10,5 @@
 DEADJOE
 .DS_Store
 .editorconfig
+.gitignore
+additional_plugins.tgz
