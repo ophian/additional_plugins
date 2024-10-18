@@ -1,3 +1,7 @@
+3.16:
+-----
+ * Fix a wrong array key name checkup on multilanguage submitted insert
+
 1.21: (sidebar plugin)
 -----
  * Remove former [cs] lang file reference
