@@ -7944,9 +7944,9 @@
 <name>serendipity_event_photoblog</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_photoblog/ChangeLog</changelog>
 <license>GPL</license>
-<summary></summary>
+<summary>FotoGünlük Kayýtlarý</summary>
 <groups>IMAGES</groups>
-<description></description>
+<description>En son yayýnladýðýnýz fotogünlük kayýtlarýnýzdaki küçükresimleri gösterir (olaylar eklentisine bakýn).</description>
 <maintainers><maintainer><name>Cameron MacFarland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
