@@ -12,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_staticpage extends serendipity_event
 {
-    var $title = STATICPAGE_TITLE; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
+    public $title = STATICPAGE_TITLE; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
 
     private $smarty_init = null;
     private $cachefile   = [];
@@ -99,7 +99,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '6.81');
+        $propbag->add('version', '6.82');
         $propbag->add('requirements', array(
             'serendipity' => '2.9.0',
             'smarty'      => '3.1.0',
@@ -2976,11 +2976,11 @@ class serendipity_event_staticpage extends serendipity_event
                         $serendipity['smarty']->assign('sp_defpages_sbplav', true);
                     }
 
-                    if (!empty($serendipity['POST']['staticPreview'])) {
-                        $link = $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[staticid]=' . $this->staticpage['id'] . '&serendipity[staticPreview]=1';
+                    if (!empty($serendipity['POST']['staticPreview'])) { // ternaries for case new empty page preview
+                        $link = $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[staticid]=' . ($this->staticpage['id'] ?? 0) . '&serendipity[staticPreview]=1';
                         $serendipity['smarty']->assign('sp_defpages_link', $link);
                         $serendipity['POST']['staticSubmit'] = true;
-                        $serendipity['smarty']->assign('sp_defpages_pagetitle', $this->staticpage['pagetitle']);
+                        $serendipity['smarty']->assign('sp_defpages_pagetitle', ($this->staticpage['pagetitle'] ?? null));
                     }
 
                     if ((isset($serendipity['POST']['staticSubmit']) && $serendipity['POST']['staticSubmit']) || isset($serendipity['GET']['staticid'])) {
