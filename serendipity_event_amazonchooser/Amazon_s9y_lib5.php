@@ -174,7 +174,7 @@ United States https://www.amazon.com/
 $searchItemRequest = new SearchItemsRequest ();
 $searchItemRequest->PartnerType = "Associates";
 // Put your Partner tag (Store/Tracking id) in place of Partner tag
-$searchItemRequest->PartnerTag = <PARTNER_TAG>;
+$searchItemRequest->PartnerTag = '<PARTNER_TAG>';
 $searchItemRequest->Keywords = "Harry";
 $searchItemRequest->SearchIndex = "All";
 $searchItemRequest->Resources = ["Images.Primary.Small","ItemInfo.Title","Offers.Listings.Price"];
@@ -182,7 +182,7 @@ $host = "webservices.amazon.com";
 $path = "/paapi5/searchitems";
 $payload = json_encode ($searchItemRequest);
 //Put your Access Key in place of <ACCESS_KEY> and Secret Key in place of <SECRET_KEY> in double quotes
-$awsv4 = new AwsV4 (<ACCESS_KEY>, <SECRET_KEY>);
+$awsv4 = new AwsV4 ('<ACCESS_KEY>', '<SECRET_KEY>');
 $awsv4->setRegionName("us-east-1");
 $awsv4->setServiceName("ProductAdvertisingAPI");
 $awsv4->setPath ($path);
@@ -207,13 +207,13 @@ $params = array (
 $stream = stream_context_create ( $params );
 
 $fp = @fopen ( 'https://'.$host.$path, 'rb', false, $stream );
-
+# echo 'https://'.$host.$path; // https://webservices.amazon.com/paapi5/searchitems // The requested method GET is not allowed for this URL.
 if (! $fp) {
-    throw new Exception ( "Exception Occured" );
+    throw new Exception ( "Exception Occurred" );
 }
 $response = @stream_get_contents ( $fp );
 if ($response === false) {
-    throw new Exception ( "Exception Occured" );
+    throw new Exception ( "Exception Occurred" );
 }
 echo $response;
 

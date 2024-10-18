@@ -1,3 +1,8 @@
+1.0.0:
+------
+ * Reflect Styx 5 core textarea name changes to drop into
+ * Raises requirements
+
 0.88:
 -----
  * Remove some obsolete data color schemes in template file

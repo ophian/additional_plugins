@@ -1,5 +1,10 @@
 <?php
 
+// outdated! Convert for https://webservices.amazon.com/paapi5/searchitems
+//                       https://webservices.amazon.com/paapi5/documentation/register-for-pa-api.html
+
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -22,11 +27,11 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian Styx');
-        $propbag->add('version',       '0.88');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2.0'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',    array(
@@ -111,7 +116,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                     if (isset($eventData['backend_entry_toolbar_extended:textarea'])) {
                         $txtarea = $eventData['backend_entry_toolbar_extended:nugget'];
                     } else {
-                        $txtarea = 'extended';
+                        $txtarea = 'serendipity_textarea_extended';
                     }
                     if (!$serendipity['wysiwyg']) {
                         $this->generate_button($txtarea,false);
@@ -125,7 +130,7 @@ class serendipity_event_amazonchooser extends serendipity_event
                     if (isset($eventData['backend_entry_toolbar_body:textarea'])) {
                         $txtarea = $eventData['backend_entry_toolbar_body:nugget'];
                     } else {
-                        $txtarea = 'body';
+                        $txtarea = 'serendipity_textarea_body';
                     }
                     if (!$serendipity['wysiwyg']) {
                         $this->generate_button($txtarea,false);
@@ -153,7 +158,9 @@ class serendipity_event_amazonchooser extends serendipity_event
                         'id'         => 'amazonchooser' . $eventData['item'],
                         'name'       => PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON,
                         'javascript' => 'function() { '.$open.'(\'' . $link . '\', \'AmazonImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\') }',
-                        'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_amazonchooser.gif',
+                        'svg'        => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amazon" viewBox="0 0 16 16"><path d="M10.813 11.968c.157.083.36.074.5-.05l.005.005a90 90 0 0 1 1.623-1.405c.173-.143.143-.372.006-.563l-.125-.17c-.345-.465-.673-.906-.673-1.791v-3.3l.001-.335c.008-1.265.014-2.421-.933-3.305C10.404.274 9.06 0 8.03 0 6.017 0 3.77.75 3.296 3.24c-.047.264.143.404.316.443l2.054.22c.19-.009.33-.196.366-.387.176-.857.896-1.271 1.703-1.271.435 0 .929.16 1.188.55.264.39.26.91.257 1.376v.432q-.3.033-.621.065c-1.113.114-2.397.246-3.36.67C3.873 5.91 2.94 7.08 2.94 8.798c0 2.2 1.387 3.298 3.168 3.298 1.506 0 2.328-.354 3.489-1.54l.167.246c.274.405.456.675 1.047 1.166ZM6.03 8.431C6.03 6.627 7.647 6.3 9.177 6.3v.57c.001.776.002 1.434-.396 2.133-.336.595-.87.961-1.465.961-.812 0-1.286-.619-1.286-1.533M.435 12.174c2.629 1.603 6.698 4.084 13.183.997.28-.116.475.078.199.431C13.538 13.96 11.312 16 7.57 16 3.832 16 .968 13.446.094 12.386c-.24-.275.036-.4.199-.299z"/><path d="M13.828 11.943c.567-.07 1.468-.027 1.645.204.135.176-.004.966-.233 1.533-.23.563-.572.961-.762 1.115s-.333.094-.23-.137c.105-.23.684-1.663.455-1.963-.213-.278-1.177-.177-1.625-.13l-.09.009q-.142.013-.233.024c-.193.021-.245.027-.274-.032-.074-.209.779-.556 1.347-.623"/></svg>',
+// no need when we have css_backend hook. Else use this
+                        'css'        => '.tox .tox-tbtn svg.bi.bi-amazon { fill: #d2b48c; }',
                         'toolbar'    => 'other'
                     );
                     break;
@@ -189,24 +196,24 @@ class serendipity_event_amazonchooser extends serendipity_event
                     if (is_array($parts) && count($parts) > 1) {
                        foreach($parts AS $key => $value) {
                             $val = explode('=', $value);
-                            $_REQUEST[$val[0]] = $val[1];
+                            $_GET[$val[0]] = $val[1];
                        }
                     } else {
                        $val = explode('=', $parts[0]);
-                       if (isset($val[1])) $_REQUEST[$val[0]] = $val[1];
+                       if (isset($val[1])) $_GET[$val[0]] = $val[1];
                     }
 
-                    if (!isset($_REQUEST['txtarea'])) {
+                    if (!isset($_GET['txtarea'])) {
                         if (isset($uri_parts[1])) {
                             $parts = explode('&', $uri_parts[1]);
                             if (is_array($parts) && count($parts) > 1) {
                                 foreach($parts AS $key => $value) {
                                      $val = explode('=', $value);
-                                     $_REQUEST[$val[0]] = $val[1];
+                                     $_GET[$val[0]] = $val[1];
                                 }
                             } else {
                                 $val = explode('=', $parts[0]);
-                                $_REQUEST[$val[0]] = $val[1];
+                                $_GET[$val[0]] = $val[1];
                             }
                         }
                     }
@@ -387,11 +394,12 @@ class serendipity_event_amazonchooser extends serendipity_event
         $title = PLUGIN_EVENT_AMAZONCHOOSER_TITLE;
     }
 
-    function generate_button ($txtarea,$return_output)
+    function generate_button($txtarea, $return_output)
     {
         global $serendipity;
+
         if (!isset($txtarea)) {
-            $txtarea = 'body';
+            $txtarea = 'serendipity_textarea_body';
         }
         $link =  serendipity_rewriteURL('plugin/amazonch') . ($serendipity['rewrite'] != 'none' ? '?' : '&amp;') . 'txtarea=' . $txtarea;
         $open = 'serendipity.openPopup';
@@ -464,7 +472,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         }
 
         $AWSAccessKey = trim($this->get_config('dtoken'));
-        $AssociateTag = trim($this->get_config('aaid'));
+        $AssociateTag = trim($this->get_config('aaid', ''));
         $secretKey = trim($this->get_config('secretKey'));
         if ($method == "search") {
             $results = Amazon_SearchItems($AWSAccessKey,$AssociateTag,$secretKey,$mode,$searchstring,$country_url,$page);
