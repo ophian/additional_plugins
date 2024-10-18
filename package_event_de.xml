@@ -4036,7 +4036,7 @@
 <license>GPL</license>
 <summary>Geo-JSON</summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Erstellt ein JSON-Object, welches alle Geo-Daten enth�lt und mit JavaScript verarbeitet werden kann</description>
+<description></description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.6</version>

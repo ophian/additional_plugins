@@ -468,11 +468,11 @@
 <guid isPermaLink="false">serendipity_event_geourl</guid>
 </item>
 <item>
-<title>Geo-JSON: Erstellt ein JSON-Object, welches alle Geo-Daten enth�lt und mit JavaScript verarbeitet werden kann</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_geo_json</link>
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_geo_json&lt;br /&gt;Geo-JSON&lt;/b&gt;&lt;br /&gt;Erstellt ein JSON-Object, welches alle Geo-Daten enth�lt und mit JavaScript verarbeitet werden kann&lt;br/&gt;For: Serendipity 2.3</content:encoded>
+<content:encoded></content:encoded>
 <pubDate>Wed, 15 Mar 2023 10:37:40 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_geo_json</guid>
 </item>

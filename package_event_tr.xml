@@ -7944,9 +7944,9 @@
 <name>serendipity_event_photoblog</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_photoblog/ChangeLog</changelog>
 <license>GPL</license>
-<summary>FotoG�nl�k Kay�tlar�</summary>
+<summary></summary>
 <groups>IMAGES</groups>
-<description>En son yay�nlad��n�z fotog�nl�k kay�tlar�n�zdaki k��kresimleri g�sterir (olaylar eklentisine bak�n).</description>
+<description></description>
 <maintainers><maintainer><name>Cameron MacFarland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
