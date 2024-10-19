@@ -4,18 +4,18 @@
 <packages>
 <package version="1.0">
 <name>serendipity_event_adminnotes</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_adminnotes/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_adminnotes/ChangeLog</changelog>
 <license>GPL</license>
 <summary>QuickNotes</summary>
 <groups>BACKEND_FEATURES,BACKEND_DASHBOARD</groups>
 <description>Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.37</version>
-  <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.5</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -48,7 +48,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_aggregator</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_aggregator/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_aggregator/ChangeLog</changelog>
 <license>GPL (IDN converter) or BSD (Onyx) or BSD-3 (SimplePie)</license>
 <summary>RSS Aggregator</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -116,18 +116,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_amazonchooser</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_amazonchooser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_amazonchooser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Amazon Medien-Button</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Fügt einen Button zum Artikeleditor hinzu, über den eine Amazon.com Suche für Produkte ausgeführt werden kann und die Ergebnisse in den Eintrag eingebettet werden</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.88</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2024-01-29</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2.0</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -194,7 +194,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_assigncategories</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_assigncategories/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_assigncategories/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Kategorien zuweisen</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -203,7 +203,7 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2024-02-07</date>
   <filelist>
@@ -244,7 +244,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_autotitle</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_autotitle/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_autotitle/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Auto-Titel</summary>
 <groups>MARKUP</groups>
@@ -253,7 +253,7 @@
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2021-08-12</date>
   <filelist>
@@ -290,18 +290,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_autoupdate</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_autoupdate/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_autoupdate/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Serendipity Autoupdate</summary>
 <groups>BACKEND_ADMIN,BACKEND_DASHBOARD,BACKEND_FEATURES</groups>
 <description>Sobald das Serendipity Backend (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in die Startseite des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Es ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!</description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.0</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>5.2</requirements:phpVersion>
-  <date>2024-01-29</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -340,7 +340,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backend</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backend/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_backend/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Zeige Einträge mittels JavaScript</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -394,7 +394,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backendrss</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backendrss/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_backendrss/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Display RSS-Feed in Backend Overview</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -403,7 +403,7 @@
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
   <date>2023-11-26</date>
   <filelist>
@@ -438,7 +438,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backup</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backup/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_backup/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Backup-Interface</summary>
 <groups>FRONTEND_FULL_MODS,BACKEND_FEATURES</groups>
@@ -490,7 +490,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_blogpdf</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_blogpdf/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_blogpdf/ChangeLog</changelog>
 <license>GPL (Uses LGPL TCPDF</license>
 <summary>Blog als PDF exportieren</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -1010,7 +1010,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_cal</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cal/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cal/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Event-Terminkalender</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
@@ -1106,18 +1106,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_categorytemplates</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_categorytemplates/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_categorytemplates/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Eigenschaften/Templates von Kategorien</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_VIEWS,BACKEND_TEMPLATES</groups>
 <description>Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: Speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten und RSS-Feeds.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.4.3</version>
+  <version>2.5.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1183,18 +1183,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_ckeditor</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_ckeditor/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_ckeditor/ChangeLog</changelog>
 <license>GPL</license>
 <summary>CKEditor Plus</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.</description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.22.1.0</version>
+  <version>4.22.1.1</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.13</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2023-07-15</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
@@ -1307,7 +1307,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_comics</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_comics/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_comics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Comics</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -1359,7 +1359,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_commentedit</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentedit/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_commentedit/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Kommentarbearbeitung</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1368,7 +1368,7 @@
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
   <date>2023-03-12</date>
   <filelist>
@@ -1411,7 +1411,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_commentsearch</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentsearch/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_commentsearch/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Durchsuche Kommentare mit der Schnellsuche</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -1463,18 +1463,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_commentspice</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentspice/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_commentspice/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Comment Spice</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.4.2</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <version>2.5.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1541,18 +1541,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_communityrating</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_communityrating/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_communityrating/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Community Rating</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.</description>
 <maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.19</version>
+  <version>1.20</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -1613,7 +1613,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_contactform</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contactform/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_contactform/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Kontaktformular</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -1691,7 +1691,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_contentrewrite</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contentrewrite/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_contentrewrite/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Wort-Ersetzer</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -1773,7 +1773,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_cpgselector</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cpgselector/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cpgselector/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Coppermine-Selektor</summary>
 <groups>BACKEND_EDITOR,IMAGES</groups>
@@ -1782,7 +1782,7 @@
 <release>
   <version>2.13</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
   <date>2022-08-15</date>
   <filelist>
@@ -1827,7 +1827,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_creativecommons</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_creativecommons/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_creativecommons/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Creative Commons Lizenz</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -1838,7 +1838,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2021-05-30</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1913,7 +1913,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_cronjob</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cronjob/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cronjob/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Cronjob-Planer</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -1922,7 +1922,7 @@
 <release>
   <version>2.1.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
   <date>2022-03-15</date>
   <filelist>
@@ -1959,7 +1959,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_customarchive</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_customarchive/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_customarchive/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Sortierbares Archiv der Einträge</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -2011,7 +2011,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_custom_permalinks</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_custom_permalinks/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_custom_permalinks/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Frei-definierbare Permalinks zu Einträgen</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -2057,7 +2057,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_dbclean</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dbclean/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dbclean/ChangeLog</changelog>
 <license>GPL</license>
 <summary>DBClean</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -2066,8 +2066,8 @@
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2024-02-07</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
@@ -2105,7 +2105,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_dejure</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dejure/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dejure/ChangeLog</changelog>
 <license>GPL</license>
 <summary>dejure.org Rechtsvernetzung</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -2149,7 +2149,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_disqus</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_disqus/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_disqus/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Disqus-Kommentare</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -2195,12 +2195,12 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_downloadmanager</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_downloadmanager/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_downloadmanager/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Downloadmanager</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!</description>
-<maintainers><maintainer><name>Alexander &#039;dma147&#039; Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.65</version>
   <requirements:s9yVersion>3.3.0</requirements:s9yVersion>
@@ -2519,7 +2519,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_dpsyntaxhighlighter</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dpsyntaxhighlighter/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dpsyntaxhighlighter/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Syntax-Hervorhebung</summary>
 <groups>MARKUP</groups>
@@ -2663,7 +2663,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_dsgvo_gdpr</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dsgvo_gdpr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dsgvo_gdpr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>DSGVO / GDPR: Datenschutz-Grundverordnung</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
@@ -2703,7 +2703,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_email_bot_obfuscator</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_email_bot_obfuscator/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_email_bot_obfuscator/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Klickbare E-Mail-Adressen - Verschleiern von E-Mail-Adressen </summary>
 <groups>ANTISPAM,MARKUP</groups>
@@ -2757,18 +2757,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_emoticonchooser</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_emoticonchooser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_emoticonchooser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Smiley-Auswahlleiste</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.35</version>
-  <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.8</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-01-29</date>
+  <version>4.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2815,7 +2815,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_entrycheck</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrycheck/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrycheck/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Regeln für Veröffentlichungen</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -2869,7 +2869,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_entrylastmodified</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrylastmodified/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrylastmodified/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Datum der letzten Aktualisierung eines Eintrags anzeigen</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -2919,7 +2919,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_entrypaging</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrypaging/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrypaging/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Nächster/Voriger Artikel</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -2930,7 +2930,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2979,7 +2979,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_entrysplit</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrysplit/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrysplit/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Lange Einträge aufteilen</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -3033,7 +3033,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_externalauth</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_externalauth/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_externalauth/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Externe Benutzer-Authentifizierung (LDAP) [EXPERIMENTAL]</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -3085,7 +3085,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_externalphp</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_externalphp/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_externalphp/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Externe PHP-Anwendung</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -3131,7 +3131,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_facebook</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_facebook/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_facebook/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Facebook (Experimentell!)</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -3177,7 +3177,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_faq</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_faq/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_faq/ChangeLog</changelog>
 <license>GPL</license>
 <summary>FAQs</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -3332,7 +3332,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_filter_entries</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_filter_entries/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_filter_entries/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Filtern von Einträgen im Frontend</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -3382,18 +3382,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_flattr</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_flattr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_flattr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Flattr</summary>
 <groups>FRONTEND_FEATURES</groups>
 <description>Flattr ist eine Social-Micropayment-Plattform, mit der man Liebe versprühen kann für Artikel, die man liebt. Das Plugin bindet &quot;Flattr&quot;-Buttons in den Blogeinträgen und RSS-Feeds ein. Flattr-spezifische Attribute können sowohl global als auch pro Eintrag vergeben werden.</description>
 <maintainers><maintainer><name>Garvin Hicking, Joachim Breitner</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.20</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <version>1.21</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.0</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3428,7 +3428,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_flickr</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_flickr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_flickr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Aus Flickr importieren</summary>
 <groups>IMAGES</groups>
@@ -3486,7 +3486,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_forgotpassword</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_forgotpassword/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_forgotpassword/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Passwort vergessen</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -3540,12 +3540,12 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_forum</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_forum/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_forum/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Diskussions-Forum / phpBB-Kommentare</summary>
 <groups>FRONTEND_FULL_MODS</groups>
 <description>Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.</description>
-<maintainers><maintainer><name>Alexander &#039;dma147&#039; Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Alexander 'dma147' Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.46</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
@@ -3820,18 +3820,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_freetag</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_freetag/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_freetag/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Freie Artikel-Tags</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Erlaubt das freie Tagging von Artikeln</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.0.0</version>
-  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <version>6.1.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -3924,7 +3924,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_geotag</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geotag/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geotag/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Geotag</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -3935,7 +3935,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_geotag">
       <file>ChangeLog</file>
@@ -3982,17 +3982,17 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_geourl</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geourl/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geourl/ChangeLog</changelog>
 <license>GPL</license>
 <summary>GeoURL</summary>
 <groups>BACKEND_METAINFORMATION</groups>
 <description>GeoURL ordnet URLs Örtlichkeiten zu. Mehr Infos unter http://geourl.org/</description>
-<maintainers><maintainer><name>Serendipity Styx Team</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2017-07-22</date>
   <filelist>
     <dir name="serendipity_event_geourl">
@@ -4032,17 +4032,17 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_geo_json</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geo_json/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geo_json/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Geo-JSON</summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Erstellt ein JSON-Object, welches alle Geo-Daten enth�lt und mit JavaScript verarbeitet werden kann</description>
+<description>Erstellt ein JSON-Object, welches alle Geo-Daten enthält und mit JavaScript verarbeitet werden kann</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2023-03-15</date>
   <filelist>
     <dir name="serendipity_event_geo_json">
@@ -4072,7 +4072,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_geshi</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geshi/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geshi/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: GeSHi</summary>
 <groups>MARKUP</groups>
@@ -4646,7 +4646,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_getid3</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_getid3/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_getid3/ChangeLog</changelog>
 <license>GPL</license>
 <summary>getID3() Unterstützung zum Erkennen von Medien Eigenschaften</summary>
 <groups>IMAGES</groups>
@@ -4696,7 +4696,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_glossary</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_glossary/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_glossary/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Glossary</summary>
 <groups>MARKUP</groups>
@@ -4744,18 +4744,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_google_analytics</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_google_analytics/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_google_analytics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Google Analytics 4</summary>
 <groups>STATISTICS</groups>
 <description>Dieses Plugin fügt Google Analytics 4 Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.</description>
 <maintainers><maintainer><name>Jari Turkia, kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.1</version>
+  <version>2.2.0</version>
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.1.0</requirements:phpVersion>
-  <date>2024-05-02</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -4790,18 +4790,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_google_sitemap</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_google_sitemap/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_google_sitemap/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Suchmaschinen-Sitemap Generator</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Erstellt eine sitemap.xml.gz für verschiedene Suchmaschinen-Crawler (Google, MSN, Yahoo und Ask).</description>
 <maintainers><maintainer><name>Boris, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.73</version>
+  <version>0.75</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-07-31</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -4848,7 +4848,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_gravatar</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_gravatar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_gravatar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Avatar Plugin</summary>
 <groups>IMAGES</groups>
@@ -4857,7 +4857,7 @@
 <release>
   <version>1.79</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2022-11-07</date>
   <filelist>
@@ -5200,7 +5200,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_guestbook</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_guestbook/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_guestbook/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Gästebuch</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
@@ -5410,18 +5410,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_imageselectorplus</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_imageselectorplus/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_imageselectorplus/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Erweiterte Optionen für Bildauswahl</summary>
 <groups>IMAGES,MARKUP</groups>
 <description>Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.</description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.6.5</version>
+  <version>2.6.7</version>
   <requirements:s9yVersion>3.6.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -5472,18 +5472,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_includeentry</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_includeentry/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_includeentry/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Eintragsdaten einfügen</summary>
 <groups>MARKUP</groups>
 <description>Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.35</version>
+  <version>2.36</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-05-02</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -5526,7 +5526,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_karma</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_karma/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_karma/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Karma</summary>
 <groups>STATISTICS</groups>
@@ -5742,7 +5742,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_lightbox</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_lightbox/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_lightbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Lightbox für Blog Einträge mit Bildern</summary>
 <groups>IMAGES</groups>
@@ -5751,7 +5751,7 @@
 <release>
   <version>2.13.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
   <date>2023-12-26</date>
   <filelist>
@@ -6056,7 +6056,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_linklist</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linklist/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linklist/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Linkliste</summary>
 <groups>FRONTEND_VIEWS,BACKEND_FEATURES</groups>
@@ -6067,7 +6067,7 @@
   <requirements:s9yVersion>3.2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2024-09-09</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -6154,7 +6154,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_linktoolbar</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linktoolbar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linktoolbar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML Link Metatags</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -6204,18 +6204,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_linktrimmer</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linktrimmer/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linktrimmer/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Linkverkürzung</summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.</description>
+<description>Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, ähnlich tr.im, tinyurl.com usw.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7.8</version>
-  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2.0</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -6258,7 +6258,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_livecomment</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_livecomment/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_livecomment/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Erweiterter Kommentarbereich</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -6267,7 +6267,7 @@
 <release>
   <version>2.5.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
   <date>2022-09-17</date>
   <filelist>
@@ -6437,7 +6437,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_ljupdate</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_ljupdate/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_ljupdate/ChangeLog</changelog>
 <license>GPL</license>
 <summary>LiveJournal/MySpace/Serendipity Aktualisierung</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -6487,7 +6487,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_loginform</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_loginform/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_loginform/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Überprüft Autoren-Login</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -6529,7 +6529,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_lsrstopper</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_lsrstopper/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_lsrstopper/ChangeLog</changelog>
 <license>GPL</license>
 <summary>D64 LSR-Stopper</summary>
 <groups>MARKUP</groups>
@@ -6620,12 +6620,12 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_mailentry</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mailentry/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mailentry/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Eintrag per E-Mail verschicken</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Erlaubt es Besuchern einen Eintrag per E-Mail an einen Freund zu verschicken</description>
-<maintainers><maintainer><name>Serendipity Styx Team</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
@@ -6686,7 +6686,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_markdown</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_markdown/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_markdown/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Markdown</summary>
 <groups>MARKUP</groups>
@@ -6776,7 +6776,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_markread</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_markread/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_markread/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Einträge für Besucher als gelesenen / ungelesenen anzeigen</summary>
 <groups>STATISTICS</groups>
@@ -6822,18 +6822,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_metadesc</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_metadesc/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_metadesc/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML Meta-Tags</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_METAINFORMATION</groups>
 <description>Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seiten mit mehr als einem Eintrag.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.31</version>
+  <version>0.32</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
@@ -6876,7 +6876,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_microformats</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_microformats/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_microformats/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Microformats</summary>
 <groups>BACKEND_EDITOR,BACKEND_TEMPLATES</groups>
@@ -6956,7 +6956,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_mimetex</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mimetex/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mimetex/ChangeLog</changelog>
 <license>GPL</license>
 <summary>MimeTex Tex Interpreter</summary>
 <groups>MARKUP</groups>
@@ -7010,7 +7010,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_mobile_output</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mobile_output/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mobile_output/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Mobile Ausgabe</summary>
 <groups>MARKUP</groups>
@@ -7198,18 +7198,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_multilingual</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_multilingual/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_multilingual/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Multilinguale Einträge</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
 <description>Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.14</version>
+  <version>3.16</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -7274,7 +7274,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_mycalendar</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mycalendar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mycalendar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Mein Kalender</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -7330,7 +7330,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_mymood</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mymood/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mymood/ChangeLog</changelog>
 <license>GPL</license>
 <summary>My Mood</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
@@ -7374,18 +7374,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_newsbox</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_newsbox/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_newsbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Newsbox</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
-<description>Group a category&#039;s entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
+<description>Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
 <maintainers><maintainer><name>Jude Anthony, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
+  <version>1.5</version>
   <requirements:s9yVersion>2.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2021-05-29</date>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -7414,7 +7414,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_oembed</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_oembed/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_oembed/ChangeLog</changelog>
 <license>GPL</license>
 <summary>oEmbed Plugin</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -7504,7 +7504,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_openid</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_openid/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_openid/ChangeLog</changelog>
 <license>GPL</license>
 <summary>OpenID Authentifizierung</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -7682,16 +7682,16 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_osm</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_osm/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_osm/ChangeLog</changelog>
 <license>GPL</license>
 <summary>OpenStreetMap Integration</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Bietet eine interaktive Karte für *.gpx Uploads und Blogs mit Geo-Daten</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.8.0</version>
+  <version>2.9.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
   <date>2023-01-30</date>
   <filelist>
@@ -7738,16 +7738,16 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_static_osm</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_osm/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_osm/ChangeLog</changelog>
 <license>GPL</license>
 <summary>OpenStreetMap Statische Dateien</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
 <description>Fügt Scripte und Stylesheets für OpenStreetMap ein</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.8.0</version>
+  <version>2.9.0</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
   <date>2023-01-30</date>
   <filelist>
@@ -7794,7 +7794,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_outdate_entries</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_outdate_entries/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_outdate_entries/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Einträge nach Verfallsdatum ausblenden</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -7840,7 +7840,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_page_nugget</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_page_nugget/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_page_nugget/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML-Klotz in Seite(n)</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -7896,7 +7896,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_phoneblogz</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_phoneblogz/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_phoneblogz/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Phoneblogz</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -7942,7 +7942,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_photoblog</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_photoblog/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_photoblog/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Photoblog Einträge/Bilder</summary>
 <groups>IMAGES</groups>
@@ -7992,7 +7992,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_podcast</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_podcast/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_podcast/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Easy Podcasting Plugin</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -8226,7 +8226,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_popfetcher</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_popfetcher/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_popfetcher/ChangeLog</changelog>
 <license>GPL</license>
 <summary>POPfetcher</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -8235,7 +8235,7 @@
 <release>
   <version>1.58</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
   <date>2024-07-14</date>
   <filelist>
@@ -8296,7 +8296,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_portier</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_portier/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_portier/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Portier Email Authentifizierung</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -8305,7 +8305,7 @@
 <release>
   <version>1.0.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
@@ -8866,7 +8866,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_prettify</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_prettify/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_prettify/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Prettify für S9Y</summary>
 <groups>MARKUP</groups>
@@ -8934,7 +8934,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_proxy_realip</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_proxy_realip/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_proxy_realip/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Proxy Real-IP</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -8980,7 +8980,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_randomblogdescription</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_randomblogdescription/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_randomblogdescription/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Zufällige Beschreibung des Blogs</summary>
 <groups>BACKEND_METAINFORMATION</groups>
@@ -9022,7 +9022,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_realtimecomments</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_realtimecomments/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_realtimecomments/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Echtzeit-Kommentare</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -9068,7 +9068,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_recaptcha</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_recaptcha/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_recaptcha/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Recaptcha</summary>
 <groups>ANTISPAM</groups>
@@ -9122,7 +9122,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_regexpmarkup</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_regexpmarkup/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_regexpmarkup/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Regexp</summary>
 <groups>MARKUP</groups>
@@ -9180,7 +9180,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_relatedlinks</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_relatedlinks/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_relatedlinks/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Verwandte Links/Einträge</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -9240,7 +9240,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_responsiveimages</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_responsiveimages/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_responsiveimages/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Responsive Images</summary>
 <groups>MARKUP</groups>
@@ -9249,7 +9249,7 @@
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
   <date>2022-11-30</date>
   <filelist>
@@ -9274,7 +9274,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_searchhighlight</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_searchhighlight/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_searchhighlight/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Hebe Suchwörter hervor</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -9360,7 +9360,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_sidebarhider</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_sidebarhider/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_sidebarhider/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Seitenleisten ein/ausklappbar machen</summary>
 <groups>BACKEND_TEMPLATES</groups>
@@ -9369,7 +9369,7 @@
 <release>
   <version>1.51</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.1.0</requirements:phpVersion>
   <date>2024-02-07</date>
   <filelist>
@@ -9408,7 +9408,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_smtpmail</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_smtpmail/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_smtpmail/ChangeLog</changelog>
 <license>GPL</license>
 <summary>SMTP Mail</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -9417,7 +9417,7 @@
 <release>
   <version>1.55</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
   <date>2023-11-27</date>
   <filelist>
@@ -9594,7 +9594,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_social</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_social/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_social/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Sharebuttons</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -9603,7 +9603,7 @@
 <release>
   <version>0.30</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
   <date>2021-05-19</date>
   <filelist>
@@ -9652,7 +9652,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_spamblock_bayes</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_bayes/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_bayes/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spamschutz (Bayes)</summary>
 <groups>ANTISPAM</groups>
@@ -9734,7 +9734,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_spamblock_bee</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_bee/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_bee/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spamschutz Biene (Honeypot, Verstecktes Captcha)</summary>
 <groups>ANTISPAM</groups>
@@ -9790,7 +9790,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_spamblock_rbl</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_rbl/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_rbl/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spamschutz (RBL)</summary>
 <groups>ANTISPAM</groups>
@@ -9799,7 +9799,7 @@
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
@@ -9838,7 +9838,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_spamblock_surbl</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_surbl/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_surbl/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spamschutz (SURBL)</summary>
 <groups>ANTISPAM</groups>
@@ -9847,7 +9847,7 @@
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
   <date>2019-08-09</date>
   <filelist>
@@ -9909,7 +9909,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_startcat</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_startcat/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_startcat/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Kategorie als Startseite</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -9952,18 +9952,18 @@
 <package version="1.0">
 <name>serendipity_event_staticpage</name>
 <website>https://ophian.github.io/</website>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_staticpage/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_staticpage/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Statische Seiten</summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES,FRONTEND_FEATURES</groups>
 <description>Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.78</version>
+  <version>6.82</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.0.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -10112,18 +10112,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_statistics</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_statistics/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_statistics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Statistiken</summary>
 <groups>STATISTICS</groups>
 <description>Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.5.1</version>
+  <version>4.5.3</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -10224,7 +10224,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_suggest</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_suggest/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_suggest/ChangeLog</changelog>
 <license>Commercial</license>
 <summary>Bestätigung für Artikel</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -10361,7 +10361,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_template_editor</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_template_editor/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_template_editor/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Template-Editor</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -10370,8 +10370,8 @@
 <release>
   <version>0.10</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2021-08-12</date>
   <filelist>
     <dir name="serendipity_event_template_editor">
@@ -10465,7 +10465,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_textile</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textile/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_textile/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Textile</summary>
 <groups>MARKUP</groups>
@@ -10587,7 +10587,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_textlinkads</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textlinkads/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_textlinkads/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Werbeanzeigen einbetten (TextLinkAds.com oder benutzerdefiniert)</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -10645,7 +10645,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_textwiki</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textwiki/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_textwiki/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Wiki</summary>
 <groups>MARKUP</groups>
@@ -11111,7 +11111,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_thumbnails</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_thumbnails/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_thumbnails/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Thumbnail-Seite des Photoblog-Plugins</summary>
 <groups>IMAGES</groups>
@@ -11161,7 +11161,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_tinymce</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_tinymce/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_tinymce/ChangeLog</changelog>
 <license>GPL</license>
 <summary>TinyMCE als WYSIWYG Editor benutzen</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -11229,7 +11229,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_tinypng</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_tinypng/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_tinypng/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Bilder komprimieren</summary>
 <groups>IMAGES</groups>
@@ -11238,8 +11238,8 @@
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
   <date>2019-12-02</date>
   <filelist>
     <dir name="serendipity_event_tinypng">
@@ -11291,7 +11291,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_todolist</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_todolist/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_todolist/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ToDo/Projekt-Liste</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -11457,7 +11457,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_tooltips</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_tooltips/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_tooltips/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Tooltips</summary>
 <groups>BACKEND_EDITOR,MARKUP</groups>
@@ -11527,18 +11527,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_trackback</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_trackback/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_trackback/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Trackbacks kontrollieren</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Ermöglicht beim Anlegen eines Eintrages zu weiteren URLs Trackbacks zu schicken oder Trackbacks zu deaktivieren</description>
 <maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.37</version>
+  <version>1.40</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2024-10-08</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
@@ -11585,7 +11585,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_trackexits</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_trackexits/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_trackexits/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Externe Links zählen</summary>
 <groups>STATISTICS</groups>
@@ -11667,18 +11667,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_typesetbuttons</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_typesetbuttons/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_typesetbuttons/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.00</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2022-09-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2.0</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -11741,7 +11741,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_typoquote</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_typoquote/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_typoquote/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Typografische Anführungszeichen</summary>
 <groups>MARKUP</groups>
@@ -11830,7 +11830,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_usergallery</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_usergallery/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_usergallery/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Bildergalerie</summary>
 <groups>IMAGES</groups>
@@ -11940,7 +11940,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_userprofiles</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_userprofiles/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_userprofiles/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Benutzerprofile</summary>
 <groups>BACKEND_USERMANAGEMENT,BACKEND_TEMPLATES</groups>
@@ -12000,7 +12000,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_versioning</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_versioning/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_versioning/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Versionierung der Einträge</summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES</groups>
@@ -12046,18 +12046,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_vgwort</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_vgwort/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_vgwort/ChangeLog</changelog>
 <license>GPL</license>
 <summary>VG Wort</summary>
 <groups>MARKUP</groups>
 <description>Integriert Zählmarken der VG Wort.</description>
 <maintainers><maintainer><name>Malte Paskuda, Thomas Hochstein</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
+  <version>0.7</version>
   <requirements:s9yVersion>2.2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2020-12-10</date>
+  <requirements:smyVersion>2.1</requirements:smyVersion>
+  <requirements:phpVersion>4.3</requirements:phpVersion>
+  <date>2024-08-05</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
       <file>changeLog</file>
@@ -12082,7 +12082,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_weblogping</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_weblogping/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_weblogping/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Einträge ankündigen</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -12172,18 +12172,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_wikilinks</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wikilinks/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_wikilinks/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Freie Wiki-Links für Einträge</summary>
 <groups>MARKUP</groups>
 <description>Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3.0</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <version>2.0.1</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -12226,7 +12226,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_wordwrap</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wordwrap/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_wordwrap/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Textformatierung: Texte umbrechen</summary>
 <groups>MARKUP</groups>
@@ -12272,18 +12272,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_xmlrpc</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_xmlrpc/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_xmlrpc/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Einträge via XML-RPC erstellen</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_EXTERNAL_SERVICES</groups>
 <description>Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.84</version>
-  <requirements:s9yVersion>4.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12334,7 +12334,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_xsstrust</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_xsstrust/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_xsstrust/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Einstellungen für vertrauenswürdige Mehrbenutzer-Blogs / HTMLPurifier</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_USERMANAGEMENT,MARKUP</groups>
@@ -12698,18 +12698,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_youtube</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_youtube/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_youtube/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Zusätzliche Editor-Buttons: Youtube usw.</summary>
 <groups>BACKEND_EDITOR</groups>
 <description>Bietet mehr Schaltflächen für den Editor, um einen einfachen Zugriff auf HTML-/Javescript-Snippets wie Youtube usw. zu ermöglichen.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2.0</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12740,18 +12740,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_adduser</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_adduser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_adduser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Registrierung neuer User</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.56</version>
-  <requirements:s9yVersion>4.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12802,7 +12802,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_flickrcss</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_flickr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_flickr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>flickr Fotostream CSS</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -12880,7 +12880,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_pollbox</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_pollbox/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_pollbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Umfragen</summary>
 <groups>STATISTICS</groups>
@@ -12934,18 +12934,18 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_twitter</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_twitter/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_twitter/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Microblogging (Twitter,Identica)</summary>
 <groups>FRONTEND_VIEWS</groups>
 <description>Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Peter Heimann, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.2.0</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <version>2.3.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-18</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
