@@ -1,3 +1,7 @@
+2.37:
+-----
+ * Improved option pair markup consistency
+
 2.36:
 -----
  * Improve parameter types for Styx 5.0 type safety
