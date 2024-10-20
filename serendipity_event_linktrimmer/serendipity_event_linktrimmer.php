@@ -27,7 +27,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             'php'         => '8.2.0'
         ));
 
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));
@@ -112,14 +112,14 @@ class serendipity_event_linktrimmer extends serendipity_event
         $title = PLUGIN_LINKTRIMMER_NAME;
     }
 
-    static function base62($var)
+    static function base62(string $var) : string
     {
         static $base_characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
         $stack = array();
-        while (bccomp($var, 0) != 0) {
-            $remainder = bcmod($var, 62);
-            $var = bcdiv(bcsub($var, $remainder), 62);
+        while (bccomp($var, '0') != 0) {
+            $remainder = bcmod($var, '62');
+            $var = bcdiv(bcsub($var, $remainder), '62');
 
             array_push($stack, $base_characters[$remainder]);
         }
@@ -169,7 +169,7 @@ class serendipity_event_linktrimmer extends serendipity_event
         if (empty($id)) return false;
 
         if (empty($hash)) {
-            $hash = serendipity_event_linktrimmer::base62($id);
+            $hash = serendipity_event_linktrimmer::base62((string) $id); // bccomp() ++ await $var as string
         }
 
         serendipity_db_query("UPDATE {$serendipity['dbPrefix']}linktrimmer
