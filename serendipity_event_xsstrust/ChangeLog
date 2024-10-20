@@ -1,5 +1,11 @@
-2.0.0:
-------
+2.0.0 + 1.4:
+------------
+ * add strict types
+ * Raise requirements for Styx 5.0
+
+
+1.0.0 + 1.3:
+------------
  * Update to htmlpurifier-4.15.0-standalone
  * Raise for Styx 4
  * Improved option pair markup consistency

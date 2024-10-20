@@ -2,6 +2,8 @@
 
 /* Author: Nicola Zanoni, (nicola.zanoni@gmail.com) */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -20,11 +22,11 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ETHICS_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Loris Zena, Ian Styx');
-        $propbag->add('version',       '1.3');
+        $propbag->add('version',       '1.4');
         $propbag->add('requirements',  array(
-            'serendipity' => '4.0',
-            'smarty'      => '3.1',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
 
         $propbag->add('configuration', array('base_val'));
