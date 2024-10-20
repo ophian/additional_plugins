@@ -1,3 +1,9 @@
+3.0.0:
+------
+ * add strict types
+ * Raise requirements for Styx 5.0
+ * This and that...
+
 2.37:
 -----
  * Improved option pair markup consistency

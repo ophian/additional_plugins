@@ -3,6 +3,7 @@
 // TODO:
 // - Order by index instead of RANDOM only
 
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -12,8 +13,8 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_includeentry extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_INCLUDEENTRY_NAME;
-    var $config = array(
+    public $title = PLUGIN_EVENT_INCLUDEENTRY_NAME;
+    protected $config = array(
             'type',
             'title',
             'body',
@@ -21,9 +22,9 @@ class serendipity_event_includeentry extends serendipity_event
             'template',
             'apply_markup',
         );
-    var $staticblock = array();
-    var $enabled_categories = null;
-    var $statictemplate = null;
+    private $staticblock = [];
+    private $enabled_categories = null;
+    private $statictemplate = null;
 
     function introspect(&$propbag)
     {
@@ -33,12 +34,12 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.37');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.6',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('page_configuration', $this->config);
         $propbag->add('event_hooks',   array(
@@ -497,7 +498,7 @@ class serendipity_event_includeentry extends serendipity_event
                 continue;
             }
             $html .= ' <option value="' . $block['id'] . '" ' . ($sel == $block['id'] ? 'selected="selected"' : '') . '>'."\n";
-            $html .= (function_exists('serendipity_specialchars') ? serendipity_specialchars($block['title']) : htmlspecialchars($block['title'], ENT_COMPAT, LANG_CHARSET)) . '</option>'."\n";
+            $html .= htmlspecialchars($block['title'] ?? '') . '</option>'."\n";
         }
 
         return $html;
@@ -553,8 +554,8 @@ class serendipity_event_includeentry extends serendipity_event
             $serendipity['POST']['staticSubmit'] = true;
             $bag  = new serendipity_property_bag;
             $this->introspect($bag);
-            $name = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('name')) : htmlspecialchars($bag->get('name'), ENT_COMPAT, LANG_CHARSET));
-            $desc = (function_exists('serendipity_specialchars') ? serendipity_specialchars($bag->get('description')) : htmlspecialchars($bag->get('description'), ENT_COMPAT, LANG_CHARSET));
+            $name = htmlspecialchars($bag->get('name') ?? '');
+            $desc = htmlspecialchars($bag->get('description') ?? '');
             $config_names = $bag->get('page_configuration');
 
             foreach($config_names AS $config_item) {
@@ -598,8 +599,8 @@ class serendipity_event_includeentry extends serendipity_event
 
             echo "<div>\n";
             echo '    <input type="hidden" name="serendipity[staticSave]" value="true">'."\n";
-            echo '    <input type="hidden" name="serendipity[staticblock]" value="' . $serendipity['POST']['staticblock'] . '">'."\n";
-            echo '    <input type="hidden" name="serendipity[type]" value="' . $serendipity['POST']['type'] . '">'."\n";
+            echo '    <input type="hidden" name="serendipity[staticblock]" value="' . htmlspecialchars($serendipity['POST']['staticblock']) . '">'."\n";
+            echo '    <input type="hidden" name="serendipity[type]" value="' . htmlspecialchars($serendipity['POST']['type']) . '">'."\n";
             echo "</div>\n\n";
 
             $this->showForm($serendipity['POST']['type']);
