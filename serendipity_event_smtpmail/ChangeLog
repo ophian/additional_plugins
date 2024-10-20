@@ -1,3 +1,9 @@
+1.56:
+-----
+  * Replace libs with PHPMailer-6.9.2
+    @see https://github.com/PHPMailer/PHPMailer/releases/tag/v6.9.2
+  * Raise requirements
+
 1.55:
 -----
   * Replace libs with PHPMailer-6.9.1
