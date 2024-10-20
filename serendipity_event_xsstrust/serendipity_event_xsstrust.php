@@ -19,18 +19,18 @@ class serendipity_event_xsstrust extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_XSSTRUST_NAME);
         $propbag->add('description',   PLUGIN_EVENT_XSSTRUST_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Garvin Hicking');
+        $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '4.0',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
-        $propbag->add('version',       '0.8');
+        $propbag->add('version', '1.0.0');
         $propbag->add('event_hooks', array(
             'frontend_display' => true,
             'backend_media_check' => true,
             'backend_entry_presave' => true,
-            ));
+        ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED', 'BACKEND_USERMANAGEMENT', 'MARKUP'));
 
         $propbag->add('configuration', array('trusted_authors', 'htmlpurifier'));
@@ -43,21 +43,26 @@ class serendipity_event_xsstrust extends serendipity_event
         $title = $this->title;
     }
 
+    /* This is a per method workaround for correct introspect_config_item configuration element pair consistency (clearfix enables bottom padding) */
     function getAuthors()
     {
         global $serendipity;
 
-        $html = '<strong>' . PLUGIN_EVENT_XSSTRUST_AUTHORS . '</strong><br />';
+        $html = '<div class="clearfix form_select">
+                        <label for="serendipity_trusted_authors">' . PLUGIN_EVENT_XSSTRUST_AUTHORS . '</label>';
 
         $users = (array)serendipity_fetchUsers();
         $valid =& $this->trusted_authors;
 
-        $html .= '<select name="serendipity[plugin][trusted_authors][]" multiple="true">';
+        $html .= '
+                        <select id="serendipity_trusted_authors" name="serendipity[plugin][trusted_authors][]" multiple="true">
+';
         foreach($users AS $user) {
-            $html .= '<option value="' . $user['authorid'] . '" ' . (isset($valid[$user['authorid']]) ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user['realname']) : htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+            $html .= '<option value="' . $user['authorid'] . '"' . (isset($valid[$user['authorid']]) ? ' selected="selected"' : '') . '>' . htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET) . '</option>' . "\n";
         }
 
-        $html .= '</select>';
+        $html .= '                        </select>
+                    </div>';
 
         return $html;
     }
@@ -113,15 +118,15 @@ class serendipity_event_xsstrust extends serendipity_event
         switch ($name) {
 
             case 'trusted_authors':
-                $propbag->add('type',          'content');
-                $propbag->add('default',   $this->getAuthors());
+                $propbag->add('type', 'content');
+                $propbag->add('default', $this->getAuthors());
                 break;
 
             case 'htmlpurifier':
                 $propbag->add('type', 'boolean');
                 $propbag->add('name', PLUGIN_XSSTRUST_HTMLPURIFIER);
                 $propbag->add('description', PLUGIN_XSSTRUST_HTMLPURIFIER_DESC);
-                $propbag->add('default', false);
+                $propbag->add('default', 'false');
                 break;
 
             default:
@@ -152,15 +157,15 @@ class serendipity_event_xsstrust extends serendipity_event
             switch($event) {
 
                 case 'backend_entry_presave':
-                    if (serendipity_db_bool($this->get_config('htmlpurifier')) && !isset($this->trusted_authors[$serendipity['authorid']])) {
-                        require_once dirname(__FILE__) . '/htmlpurifier-4.6.0-standalone/HTMLPurifier.standalone.php';
+                    if (serendipity_db_bool($this->get_config('htmlpurifier', 'false')) && !isset($this->trusted_authors[$serendipity['authorid']])) {
+                        require_once dirname(__FILE__) . '/htmlpurifier-4.15.0-standalone/HTMLPurifier.standalone.php';
                         $config = HTMLPurifier_Config::createDefault();
                         $config->set('Cache.SerializerPath', $serendipity['serendipityPath'] . PATH_SMARTY_COMPILE);
                         $config->set('Core.Encoding', LANG_CHARSET);
                         $config->set('CSS.AllowImportant', true);
                         $purifier = new HTMLPurifier($config);
 
-                        // We purify ALL THE STRINGS11!!!! [because custom entry properties etc. should not be allowed to have invalid markup]
+                        // We purify ALL THE STRINGS ! [because custom entry properties etc. should not be allowed to have invalid markup]
                         $this->recursive_purify($eventData, $purifier);
                     }
                     break;
@@ -176,9 +181,13 @@ class serendipity_event_xsstrust extends serendipity_event
                 case 'frontend_display':
                     if (!isset($this->trusted_authors[$eventData['authorid']]) && !serendipity_db_bool($this->get_config('htmlpurifier'))) {
                         // Not trusted.
-                        #$eventData['title']    = htmlspecialchars($eventData['title']);
-                        $eventData['body']     = (function_exists('serendipity_specialchars') ? serendipity_specialchars($eventData['body']) : htmlspecialchars($eventData['body'], ENT_COMPAT, LANG_CHARSET));
-                        $eventData['extended'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($eventData['extended']) : htmlspecialchars($eventData['extended'], ENT_COMPAT, LANG_CHARSET));
+                        #if (!empty($eventData['title'])) $eventData['title']    = htmlspecialchars($eventData['title']);
+                        if (!empty($eventData['body'])) {
+                            $eventData['body']     = htmlspecialchars(strip_tags($eventData['body']), ENT_COMPAT, LANG_CHARSET);
+                        }
+                        if (!empty($eventData['extended'])) {
+                            $eventData['extended'] = htmlspecialchars(strip_tags($eventData['extended']), ENT_COMPAT, LANG_CHARSET);
+                        }
                     } else {
                         // Trusted.
                     }
@@ -194,4 +203,6 @@ class serendipity_event_xsstrust extends serendipity_event
     }
 
 }
+
 /* vim: set sts=4 ts=4 expandtab : */
+?>

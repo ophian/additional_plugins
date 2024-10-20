@@ -21,10 +21,7 @@
 @define('PLUGIN_ETHICS_REDLIGHT', 'banned');
 @define('PLUGIN_ETHICS_YELLOWLIGHT', 'warning');
 @define('PLUGIN_ETHICS_GREENLIGHT', 'cool');
-@define('PLUGIN_ETHICS_BLAHBLAH', "Displays all users with their ethics (represented by a traffic light). 
-                                   Green light means '".PLUGIN_ETHICS_GREENLIGHT."'; yellow light means 
-                                   '".PLUGIN_ETHICS_YELLOWLIGHT."'; red light means '".PLUGIN_ETHICS_REDLIGHT."'
-                                   The administrator can easily modify this value for each user.");
+@define('PLUGIN_ETHICS_BLAHBLAH', "Displays all users with their ethics (represented by a traffic light). Green light means '".PLUGIN_ETHICS_GREENLIGHT."'; yellow light means '".PLUGIN_ETHICS_YELLOWLIGHT."'; red light means '".PLUGIN_ETHICS_REDLIGHT."'. The administrator can easily modify this value for each user.");
 @define('PLUGIN_ETHICS_BASEVAL', 'Starting value for each user\'s ethics');
 @define('PLUGIN_ETHICS_BASEVAL_BLAHBLAH', 'Starting ethics (1 = green; 2= yellow; 3 = red; default: 1)');
 

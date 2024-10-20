@@ -20,9 +20,7 @@
 @define('PLUGIN_ETHICS_REDLIGHT', 'zakázaný');
 @define('PLUGIN_ETHICS_YELLOWLIGHT', 'podezøelý');
 @define('PLUGIN_ETHICS_GREENLIGHT', 'v pohodì');
-@define('PLUGIN_ETHICS_BLAHBLAH', 'Zobrazuje u¾ivatele s vyobrazením jejich etické úrovnì (vyjádøenou semaforem
-).Zelená znamená "'.PLUGIN_ETHICS_GREENLIGHT.'"; oran¾ová znamená "'.PLUGIN_ETHICS_YELLOWLIGHT.'"; a èervená znamená "'.PLUGIN_ETHICS_REDLIGHT.'". Administrátor mù¾e lehce mìnit tyto hodnoty u jednotlivých u¾ivatelù.');
+@define('PLUGIN_ETHICS_BLAHBLAH', 'Zobrazuje u¾ivatele s vyobrazením jejich etické úrovnì (vyjádøenou semaforem). Zelená znamená "'.PLUGIN_ETHICS_GREENLIGHT.'"; oran¾ová znamená "'.PLUGIN_ETHICS_YELLOWLIGHT.'"; a èervená znamená "'.PLUGIN_ETHICS_REDLIGHT.'". Administrátor mù¾e lehce mìnit tyto hodnoty u jednotlivých u¾ivatelù.');
 @define('PLUGIN_ETHICS_BASEVAL', 'Výchozí úroveò etické úrovnì autora');
 @define('PLUGIN_ETHICS_BASEVAL_BLAHBLAH', 'Výchozù úroveò (1 = zelená; 2 = oran¾ová; 3 = èervená; pøednastaveno: 1)');
 
-?>
