@@ -15,7 +15,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -127,7 +127,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -301,7 +301,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -1117,7 +1117,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1474,7 +1474,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -2769,7 +2769,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2931,7 +2931,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -3394,7 +3394,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3832,7 +3832,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -6212,11 +6212,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -10124,7 +10124,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -11679,7 +11679,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -12184,7 +12184,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -12284,7 +12284,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12340,17 +12340,17 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <summary>Options for trustworthy editing on multi-user blogs / HTMLPurifier</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_USERMANAGEMENT,MARKUP</groups>
 <description>This plugin can specify, which authors on a multi-user blog you have enough trust in and do not expect hacking attempts. All other users are treated as possibly evil and cannot create HTML entries.</description>
-<maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
+<maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.8</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-01-23</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>4.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.0</requirements:smyVersion>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
       <file>ChangeLog</file>
-      <dir name="htmlpurifier-4.6.0-standalone">
+      <dir name="htmlpurifier-4.15.0-standalone">
         <file>HTMLPurifier.standalone.php</file>
         <dir name="standalone">
           <dir name="HTMLPurifier">
@@ -12378,6 +12378,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
                 <file>Attr.DefaultTextDir.txt</file>
                 <file>Attr.EnableID.txt</file>
                 <file>Attr.ForbiddenClasses.txt</file>
+                <file>Attr.ID.HTML5.txt</file>
                 <file>Attr.IDBlacklist.txt</file>
                 <file>Attr.IDBlacklistRegexp.txt</file>
                 <file>Attr.IDPrefix.txt</file>
@@ -12388,6 +12389,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
                 <file>AutoFormat.Linkify.txt</file>
                 <file>AutoFormat.PurifierLinkify.DocURL.txt</file>
                 <file>AutoFormat.PurifierLinkify.txt</file>
+                <file>AutoFormat.RemoveEmpty.Predicate.txt</file>
                 <file>AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt</file>
                 <file>AutoFormat.RemoveEmpty.RemoveNbsp.txt</file>
                 <file>AutoFormat.RemoveEmpty.txt</file>
@@ -12396,7 +12398,9 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
                 <file>Cache.SerializerPath.txt</file>
                 <file>Cache.SerializerPermissions.txt</file>
                 <file>Core.AggressivelyFixLt.txt</file>
+                <file>Core.AggressivelyRemoveScript.txt</file>
                 <file>Core.AllowHostnameUnderscore.txt</file>
+                <file>Core.AllowParseManyTags.txt</file>
                 <file>Core.CollectErrors.txt</file>
                 <file>Core.ColorKeywords.txt</file>
                 <file>Core.ConvertDocumentToFragment.txt</file>
@@ -12409,12 +12413,14 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
                 <file>Core.EscapeNonASCIICharacters.txt</file>
                 <file>Core.HiddenElements.txt</file>
                 <file>Core.Language.txt</file>
+                <file>Core.LegacyEntityDecoder.txt</file>
                 <file>Core.LexerImpl.txt</file>
                 <file>Core.MaintainLineNumbers.txt</file>
                 <file>Core.NormalizeNewlines.txt</file>
                 <file>Core.RemoveInvalidImg.txt</file>
                 <file>Core.RemoveProcessingInstructions.txt</file>
                 <file>Core.RemoveScriptContents.txt</file>
+                <file>CSS.AllowDuplicates.txt</file>
                 <file>CSS.AllowedFonts.txt</file>
                 <file>CSS.AllowedProperties.txt</file>
                 <file>CSS.AllowImportant.txt</file>
@@ -12446,6 +12452,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
                 <file>HTML.FlashAllowFullScreen.txt</file>
                 <file>HTML.ForbiddenAttributes.txt</file>
                 <file>HTML.ForbiddenElements.txt</file>
+                <file>HTML.Forms.txt</file>
                 <file>HTML.MaxImgLength.txt</file>
                 <file>HTML.Nofollow.txt</file>
                 <file>HTML.Parent.txt</file>
@@ -12456,6 +12463,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
                 <file>HTML.SafeScripting.txt</file>
                 <file>HTML.Strict.txt</file>
                 <file>HTML.TargetBlank.txt</file>
+                <file>HTML.TargetNoopener.txt</file>
+                <file>HTML.TargetNoreferrer.txt</file>
                 <file>HTML.TidyAdd.txt</file>
                 <file>HTML.TidyLevel.txt</file>
                 <file>HTML.TidyRemove.txt</file>
@@ -12491,6 +12500,10 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
               <file>Validator.php</file>
               <file>ValidatorAtom.php</file>
             </dir>
+            <dir name="DefinitionCache">
+              <dir name="Serializer">
+              </dir>
+            </dir>
             <dir name="EntityLookup">
               <file>entities.ser</file>
             </dir>
@@ -12499,12 +12512,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
               <file>YouTube.php</file>
             </dir>
             <dir name="Language">
-              <dir name="classes">
-                <file>en-x-test.php</file>
-              </dir>
               <dir name="messages">
-                <file>en-x-test.php</file>
-                <file>en-x-testmini.php</file>
                 <file>en.php</file>
               </dir>
             </dir>
@@ -12539,150 +12547,156 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_xsstrust/ChangeLog</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/HTMLPurifier.standalone.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/Exception.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/Interchange.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.AllowHostnameUnderscore.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.DisableExcludes.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.Language.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/info.ini</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Base.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Host.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema.ser</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/Validator.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/EntityLookup/entities.ser</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Filter/YouTube.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Language/classes/en-x-test.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Language/messages/en-x-test.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Language/messages/en-x-testmini.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Language/messages/en.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Lexer/PH5P.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Printer/ConfigForm.css</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Printer/ConfigForm.js</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Printer/ConfigForm.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Printer/CSSDefinition.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Printer/HTMLDefinition.php</file>
-    <file>serendipity_event_xsstrust/htmlpurifier-4.6.0-standalone/standalone/HTMLPurifier/Printer.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/HTMLPurifier.standalone.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/Exception.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/Interchange.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ID.HTML5.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.Predicate.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyRemoveScript.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.AllowHostnameUnderscore.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.AllowParseManyTags.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.DisableExcludes.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.Language.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.LegacyEntityDecoder.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowDuplicates.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Forms.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetNoopener.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetNoreferrer.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/info.ini</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Base.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Host.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/schema.ser</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/Validator.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/EntityLookup/entities.ser</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Filter/YouTube.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Language/messages/en.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Lexer/PH5P.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer/ConfigForm.css</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer/ConfigForm.js</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer/ConfigForm.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer/CSSDefinition.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer/HTMLDefinition.php</file>
+    <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer.php</file>
     <file>serendipity_event_xsstrust/lang_cs.inc.php</file>
     <file>serendipity_event_xsstrust/lang_cz.inc.php</file>
     <file>serendipity_event_xsstrust/lang_de.inc.php</file>
@@ -12710,7 +12724,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12752,7 +12766,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12946,7 +12960,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2024-10-19</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
