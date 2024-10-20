@@ -19,12 +19,12 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
         $propbag->add('name',          PLUGIN_ETHICS_NAME);
         $propbag->add('description',   PLUGIN_ETHICS_BLAHBLAH);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Loris Zena');
-        $propbag->add('version',       '1.2');
+        $propbag->add('author',        'Loris Zena, Ian Styx');
+        $propbag->add('version',       '1.3');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '4.0',
+            'smarty'      => '3.1',
+            'php'         => '7.0'
         ));
 
         $propbag->add('configuration', array('base_val'));
@@ -42,7 +42,7 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
                 break;
 
             default:
-                    return false;
+                return false;
         }
         return true;
     }
@@ -56,7 +56,7 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
 
         // Create table, if not yet existant
         if ($this->get_config('version') != '1.0') {
-            $q   = "CREATE TABLE if not exists {$serendipity['dbPrefix']}ethics (
+            $q   = "CREATE TABLE IF NOT EXISTS {$serendipity['dbPrefix']}ethics (
                         id int(10) {PRIMARY},
                         ethics int(1) default 1,
                         pwd varchar(32),
@@ -104,8 +104,8 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
                     $e_val = 1;
                 }
 
-                $q1   = "INSERT INTO {$serendipity['dbPrefix']}ethics (id, ethics, pwd, last_banned)
-                       VALUES(".(int)$villan_id.", ".(int)$e_val.", '', 0);";
+                $q1 = "INSERT INTO {$serendipity['dbPrefix']}ethics (id, ethics, pwd, last_banned)
+                            VALUES(".(int)$villan_id.", ".(int)$e_val.", '', 0);";
                 $sqli = serendipity_db_query($q1);
             }
         }
@@ -115,9 +115,11 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
             $act  = $_REQUEST['ethic_act'];
             $vill = (int)$_REQUEST['ethic_vill'];
             $ethic_received = (int)$_REQUEST['ethic_ethic'];
+
             $q = "SELECT ethics FROM {$serendipity['dbPrefix']}ethics
                   WHERE  id = $vill";
             $sql = serendipity_db_query($q);
+
             if ($sql && is_array($sql)) {
                  foreach($sql AS $key => $row) {
                       $eti = $row['ethics'];
@@ -182,58 +184,82 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
                         '.$serendipity['dbPrefix'].'ethics AS e
                 WHERE   a.authorid = e.id
             ORDER BY    a.realname ASC';
-        ?>
+?>
         <div style="margin: 0px; padding: 0px; text-align: justify;">
         <p>
-        <?
+<?php
         echo PLUGIN_ETHICS_INTRO;
-        ?>
+?>
         <br>
-        <img src="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_plugin_ethics/img/green.gif">
-        <?
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-stoplights" viewBox="0 0 16 16" style="vertical-align: middle;">
+  <title><?=PLUGIN_ETHICS_GREENLIGHT?></title>
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+  <path d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+</svg>
+<?php
         echo PLUGIN_ETHICS_GREENLIGHT."  ";
-        ?>
-        <img src="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_plugin_ethics/img/yellow.gif">
-        <?
+?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-stoplights" viewBox="0 0 16 16" style="vertical-align: middle;">
+  <title><?=PLUGIN_ETHICS_YELLOWLIGHT?></title>
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+  <path d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+</svg>
+<?php
         echo PLUGIN_ETHICS_YELLOWLIGHT."  ";
-        ?>
-        <img src="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_plugin_ethics/img/red.gif">
-        <?
+?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-stoplights" viewBox="0 0 16 16" style="vertical-align: middle;">
+  <title><?=PLUGIN_ETHICS_REDLIGHT?></title>
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+  <path d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+</svg>
+<?php
         echo PLUGIN_ETHICS_REDLIGHT;
-        ?>
+?>
         </p>
         <table align="center" width="100%">
-        <?
+<?php
         $sql = serendipity_db_query($q);
         if ($sql && is_array($sql)) {
             foreach($sql AS $key => $row) {
                 echo "<tr><td>";
-                echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['villan']) : htmlspecialchars($row['villan'], ENT_COMPAT, LANG_CHARSET))."</td><td>";
+                echo htmlspecialchars($row['villan'], ENT_COMPAT, LANG_CHARSET)."</td><td>";
                 if ($row['ethics'] == 3) {
-                    ?>
-                    <img src="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_plugin_ethics/img/red_light.gif">
-                    <?
+?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-stoplights" viewBox="0 0 16 16">
+  <title><?=PLUGIN_ETHICS_REDLIGHT?></title>
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+  <path d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+</svg>
+<?php
                 } else if ($row['ethics'] == 2) {
-                    ?>
-                    <img src="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_plugin_ethics/img/yellow_light.gif">
-                    <?
+?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-stoplights" viewBox="0 0 16 16">
+  <title><?=PLUGIN_ETHICS_YELLOWLIGHT?></title>
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+  <path d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+</svg>
+<?php
                 } else {
-                    ?>
-                    <img src="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_plugin_ethics/img/green_light.gif">
-                    <?
+?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-stoplights" viewBox="0 0 16 16">
+  <title><?=PLUGIN_ETHICS_GREENLIGHT?></title>
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m0 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m1.5 2.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+  <path d="M4 2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v2h2c-.167.5-.8 1.6-2 2v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1c-1.2-.4-1.833-1.5-2-2h2V8c-1.2-.4-1.833-1.5-2-2h2V4c-1.2-.4-1.833-1.5-2-2zm2-1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+</svg>
+<?php
                 }
                 echo "</td>";
                 if ($serendipity['serendipityUserlevel'] >= USERLEVEL_ADMIN) {
                     echo "<td>";
                     if ($row['ethics'] < 3)
                         echo "<a href=\"".$serendipity['serendipityHTTPPath'] . $serendipity['indexFile']."?ethic_vill=".$row['villan_id']."&amp;ethic_act=p&amp;ethic_ethic=".$row['ethics']."\">";
-                    echo "?";
+                    echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-square" viewBox="0 0 16 16"><path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0z"/><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/></svg>';
                     if ($row['ethics'] < 3)
                         echo "</a>";
-                    echo "  ";
+                    echo "&nbsp&nbsp;";
                     if ($row['ethics'] > 1)
                         echo "<a href=\"".$serendipity['serendipityHTTPPath'] . $serendipity['indexFile']."?ethic_vill=".$row['villan_id']."&amp;ethic_act=m&amp;ethic_ethic=".$row['ethics']."\">";
-                    echo "?";
+                    echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M3.544 10.705A.5.5 0 0 0 4 11h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5a.5.5 0 0 0-.082.537"/></svg>';
                     if ($row['ethics'] > 1)
                         echo "</a>";
                     echo "</td>";
