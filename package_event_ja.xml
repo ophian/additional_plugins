@@ -15,7 +15,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -127,7 +127,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -301,7 +301,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -1117,7 +1117,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1474,7 +1474,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -2769,7 +2769,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2931,7 +2931,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -3394,7 +3394,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.0</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3832,7 +3832,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -5480,11 +5480,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.36</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -9416,11 +9416,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Use a SMTP server to send your mails</description>
 <maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.55</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>1.56</version>
+  <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2023-11-27</date>
+  <requirements:phpVersion>7.0</requirements:phpVersion>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -9429,6 +9429,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <dir name="PHPMailer">
+        <file>.editorconfig</file>
         <file>COMMITMENT</file>
         <file>composer.json</file>
         <file>get_oauth_token.php</file>
@@ -9464,6 +9465,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>phpmailer.lang-ja.php</file>
           <file>phpmailer.lang-ka.php</file>
           <file>phpmailer.lang-ko.php</file>
+          <file>phpmailer.lang-ku.php</file>
           <file>phpmailer.lang-lt.php</file>
           <file>phpmailer.lang-lv.php</file>
           <file>phpmailer.lang-mg.php</file>
@@ -9485,6 +9487,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
           <file>phpmailer.lang-tl.php</file>
           <file>phpmailer.lang-tr.php</file>
           <file>phpmailer.lang-uk.php</file>
+          <file>phpmailer.lang-ur.php</file>
           <file>phpmailer.lang-vi.php</file>
           <file>phpmailer.lang-zh.php</file>
           <file>phpmailer.lang-zh_cn.php</file>
@@ -9517,6 +9520,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_smtpmail/lang_cz.inc.php</file>
     <file>serendipity_event_smtpmail/lang_de.inc.php</file>
     <file>serendipity_event_smtpmail/lang_en.inc.php</file>
+    <file>serendipity_event_smtpmail/PHPMailer/.editorconfig</file>
     <file>serendipity_event_smtpmail/PHPMailer/COMMITMENT</file>
     <file>serendipity_event_smtpmail/PHPMailer/composer.json</file>
     <file>serendipity_event_smtpmail/PHPMailer/get_oauth_token.php</file>
@@ -9551,6 +9555,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ja.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ka.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ko.php</file>
+    <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ku.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-lt.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-lv.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-mg.php</file>
@@ -9572,6 +9577,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-tl.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-tr.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-uk.php</file>
+    <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-ur.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-vi.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-zh.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/language/phpmailer.lang-zh_cn.php</file>
@@ -10124,7 +10130,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -11679,7 +11685,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -12184,7 +12190,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -12284,7 +12290,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12342,10 +12348,10 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>This plugin can specify, which authors on a multi-user blog you have enough trust in and do not expect hacking attempts. All other users are treated as possibly evil and cannot create HTML entries.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.0.0</version>
-  <requirements:s9yVersion>4.0</requirements:s9yVersion>
-  <requirements:smyVersion>4.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
   <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
@@ -12724,7 +12730,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12766,7 +12772,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12960,7 +12966,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2024-10-19</date>
+  <date>2024-10-20</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
