@@ -16,11 +16,11 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '2.2.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '5.2'
+            'serendipity' => '3.0',
+            'php'         => '7.0'
         ));
         $propbag->add('event_hooks',   array(
             'css_backend'                                   => true,
