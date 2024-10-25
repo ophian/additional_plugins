@@ -192,7 +192,8 @@ class serendipity_event_autoupdate extends serendipity_event
                     $css_upd   = @file_get_contents(dirname(__FILE__) . '/upgrade.min.css');
                     $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . (file_exists($serendipity['serendipityPath'] . $serendipity['templatePath'] . 'styx_logo_150.png') ? 'styx_logo_150.png' : 's9y_banner_small.png');
                     $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'] . $bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity Styx PHP Weblog" title="' . POWERED_BY . ' Serendipity Styx"> ' : ' ');
-                    $nv        = (function_exists('serendipity_specialchars') ? serendipity_specialchars($_REQUEST['serendipity']['newVersion']) : htmlspecialchars($_REQUEST['serendipity']['newVersion'], ENT_COMPAT, LANG_CHARSET)); // reduce to POST only?
+                    $rqstnv    = isset($_REQUEST['serendipity']['newVersion']) ? ($_GET['serendipity']['newVersion'] ?? $_POST['serendipity']['newVersion']) : '';
+                    $nv        = (function_exists('serendipity_specialchars') ? serendipity_specialchars($rqstnv) : htmlspecialchars($rqstnv, ENT_COMPAT, LANG_CHARSET)); // reduce to POST only?
                     if (trim($nv) == '') return;
                     echo <<<EOS
 <!DOCTYPE html>
@@ -283,7 +284,7 @@ EOS;
                         $this->close_page(true);
                         break;
                     }
-                    $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_INFO, $_REQUEST['serendipity']['newVersion']) . '</p>');
+                    $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . sprintf(PLUGIN_AUTOUPD_MSG_INFO, $rqstnv) . '</p>');
                     $this->show_message('<p class="msg_notice"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg>' . PLUGIN_AUTOUPD_MSG_EXECUTIONTIME . '</p>');
                     $start = microtime(true);
                     if (false === ($update = $this->fetchUpdate($nv))) {
