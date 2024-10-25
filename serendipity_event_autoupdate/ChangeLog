@@ -1,3 +1,8 @@
+3.0.1:
+------
+
+ * Remove legacy serendipity_specialchars() references for htmlspecialchars()
+
 3.0.0:
 ------
 

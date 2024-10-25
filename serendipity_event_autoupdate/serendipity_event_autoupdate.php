@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '3.0.0');
+        $propbag->add('version',       '3.0.1');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
@@ -183,7 +183,7 @@ class serendipity_event_autoupdate extends serendipity_event
                        of 16M but image processing scripts may raise it to 20M.
                        Edit /etc/php5/conf.d/suhosin.ini and add e.g. suhosin.memory_limit = 512M ...
                     */
-                    $self_info = sprintf(USER_SELF_INFO, (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['serendipityUser']) : htmlspecialchars($serendipity['serendipityUser'], ENT_COMPAT, LANG_CHARSET)), $serendipity['permissionLevels'][$serendipity['serendipityUserlevel']]);
+                    $self_info = sprintf(USER_SELF_INFO, htmlspecialchars($serendipity['serendipityUser']), $serendipity['permissionLevels'][$serendipity['serendipityUserlevel']]);
                     $lang_char = LANG_CHARSET;
                     $ad_suite  = SERENDIPITY_ADMIN_SUITE;
                     $ad_title  = PLUGIN_AUTOUPD_MSG_TITLE;
@@ -193,7 +193,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . (file_exists($serendipity['serendipityPath'] . $serendipity['templatePath'] . 'styx_logo_150.png') ? 'styx_logo_150.png' : 's9y_banner_small.png');
                     $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'] . $bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity Styx PHP Weblog" title="' . POWERED_BY . ' Serendipity Styx"> ' : ' ');
                     $rqstnv    = isset($_REQUEST['serendipity']['newVersion']) ? ($_GET['serendipity']['newVersion'] ?? $_POST['serendipity']['newVersion']) : '';
-                    $nv        = (function_exists('serendipity_specialchars') ? serendipity_specialchars($rqstnv) : htmlspecialchars($rqstnv, ENT_COMPAT, LANG_CHARSET)); // reduce to POST only?
+                    $nv        = htmlspecialchars($rqstnv); // reduce to POST only?
                     if (trim($nv) == '') return;
                     echo <<<EOS
 <!DOCTYPE html>
