@@ -532,7 +532,7 @@ class serendipity_event_usergallery extends serendipity_event
 
                 // append the directory properties
                 if ($this->get_config('show_media_properties','no') == 'yes' && !empty($this->get_config('directory_properties'))) {
-                    $dirprops = explode(';', $this->get_config('directory_properties');
+                    $dirprops = explode(';', $this->get_config('directory_properties'));
 
                     $dps = [];
                     foreach ($dirprops AS $dprop) {

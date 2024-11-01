@@ -7,6 +7,7 @@
  * Dark mode for EXIF data table
  * Fix default value 'media_properties' example to use (public) COMMENT1 instead of (internal) COMMENT2
  * Cleanup
+ * Improve [en, de] lang file constants
 
 3.13:
 -----
