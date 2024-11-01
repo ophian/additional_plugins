@@ -3,6 +3,18 @@
  * Add Styx default strict_types
  * Raise requirements for Styx 5
 
+3.23:
+-----
+ * Add a standard pure theme CSS dark mode overwrite
+
+3.22:
+-----
+ * Better check undeclared file counter on empty
+
+3.21:
+-----
+ * Pump version for wrong SYNC
+
 3.20:
 -----
  * Fixup fetch/prep/show MediaLibrary image properties

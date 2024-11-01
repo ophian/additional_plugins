@@ -635,7 +635,7 @@ class serendipity_event_usergallery extends serendipity_event
                     $full_filecounter = $temp_filecount[$limit_images_directory];
                 }
                 // Check up total file count of current directory or use fall-through counter
-                $totalfilesct = ($temp_filecount[$limit_images_directory] <= $full_filecounter) ? $full_filecounter : $temp_filecount[$limit_images_directory];
+                $totalfilesct = (isset($full_filecounter) && $temp_filecount[$limit_images_directory] <= $full_filecounter) ? $full_filecounter : $temp_filecount[$limit_images_directory];
 
                 $lower_limit = 0;
                 $showpage = false;
