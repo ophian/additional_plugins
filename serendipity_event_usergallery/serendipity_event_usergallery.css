@@ -24,6 +24,13 @@ div.serendipity_gallery_thumbs {
     background-color: #00000005;
     border: 1px solid #ddd;
 }
+
+/* pure default theme dark mode */
+[data-dark-theme="dark"] #page_gallery .page_content {
+    border-color: #1c2128;
+}
+
+/* generics */
 .serendipity_event_usergallery .page_content .serendipity_preface {
     display: flex;
 }

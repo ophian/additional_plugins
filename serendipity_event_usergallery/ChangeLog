@@ -1,3 +1,7 @@
+3.23:
+-----
+ * Add a standard pure theme CSS dark mode overwrite
+
 3.22:
 -----
  * Better check undeclared file counter on empty
