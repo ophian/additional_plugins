@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.13');
+        $propbag->add('version',       '3.20');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -31,7 +31,7 @@ class serendipity_event_usergallery extends serendipity_event
             'entry_display'       => true,
             'entries_header'      => true,
             'genpage'             => true,
-            'frontend_rss'        => true,
+//            'frontend_rss'        => true,
             'frontend_configure'  => true,
             'frontend_header'     => true,
             'frontend_footer'     => true
@@ -39,7 +39,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('groups', array('IMAGES'));
         $propbag->add('configuration', array('title', 'num_cols', 'subpage', 'frontpage', 'permalink', 'style', 'base_directory', 'dir_list', 'show_1lvl_sub',
         'display_dir_tree', 'dir_tab', 'images_per_page', 'image_order', 'separator1', 'intro', 'separator2', 'image_display', 'show_lightbox', 'lightbox_type', 'lightbox_path', 'jquery', 'show_objects', 'image_strict', 'fixed_width', 'image_width',
-        'feed_width', 'feed_linked_only', 'feed_body', 'separator3', 'exif_show_data', 'exif_data', 'show_media_properties', 'media_properties', 'linked_entries'));
+        /*'feed_width', 'feed_linked_only', 'feed_body', */'separator3', 'exif_show_data', 'exif_data', 'show_media_properties', 'media_properties', 'directory_properties', 'linked_entries'));
     }
 
     function introspect_config_item($name, &$propbag)
@@ -306,7 +306,7 @@ class serendipity_event_usergallery extends serendipity_event
                     $propbag->add('default',     '<table id="exif">' . $this->makeExifSelector() . '</table>');
                 } else $propbag->add('type', 'suboption');
                 break;
-
+/*
             case 'feed_width':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_USERGALLERY_RSS_FEED);
@@ -327,7 +327,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $propbag->add('description', PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC);
                 $propbag->add('default',     'false');
                 break;
-
+*/
             case 'show_media_properties':
                 $propbag->add('type',          'radio');
                 $propbag->add('name',          PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_NAME);
@@ -343,8 +343,17 @@ class serendipity_event_usergallery extends serendipity_event
                     $propbag->add('type',        'string');
                     $propbag->add('name',        PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_NAME);
                     $propbag->add('description', PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_DESC);
-                    $propbag->add('default',     'COPYRIGHT:Copyright;TITLE:Title;COMMENT2:Comment');
+                    $propbag->add('default',     'COPYRIGHT:Copyright;TITLE:Title;COMMENT1:Comment');
                 } else $propbag->add('type', 'suboption');
+                break;
+
+            case 'directory_properties':
+                if ($this->get_config('show_media_properties') == 'yes') {
+                    $propbag->add('type',        'text');
+                    $propbag->add('name',        PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_NAME);
+                    $propbag->add('description', PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_DESC);
+                    $propbag->add('default',     'put:Enigma for maniacs;art:Pure agony and other depressions');
+                }
                 break;
 
             case 'linked_entries':
@@ -362,7 +371,7 @@ class serendipity_event_usergallery extends serendipity_event
 
     function example()
     {
-        $styles = "<style> #exif tr:not(:first-of-type):nth-child(odd) { background: white; } #exif td {vertical-align: top; width: 80% } #exif td:not(2) { } #exif span.msg_hint { font-size: small; background: white; color: rgb(94, 122, 148); } #exif td.radio { white-space: nowrap } </style>\n";
+        $styles = '<style> #exif tr:not(:first-of-type):nth-child(odd) { background: white; } #exif td {vertical-align: top; width: 80% } #exif td:not(2) { } #exif span.msg_hint { font-size: small; background: white; color: rgb(94, 122, 148); } #exif td.radio { white-space: nowrap } [data-color-mode="dark"] #exif span.msg_hint{background:var(--color-bg-info);color:var(--color-text-primary);border-color:var(--color-border-primary);text-shadow:none} [data-color-mode="dark"] #exif tr:not(:first-of-type):nth-child(2n+1) {background-color: var(--color-bg-primary);} </style>'."\n";
         return $styles.'<span id="suboptions" class="msg_notice">' . PLUGIN_API_GENERIC_SUBOPTION_DESC ."</span>\n";
     }
 
@@ -413,33 +422,35 @@ class serendipity_event_usergallery extends serendipity_event
                     }
                 }
             } else {
-                $val = isset($parts[0]) ? explode('=', $parts[0]) : [0];
-                $val0 = str_replace('serendipity[', '', $val[0]);
-                if ($val[0] == $val0 &&  isset($val[1])) {
-                    $_GET[$val[0]] = $val[1];
-                } else {
-                    $val0 = str_replace(']', '', $val0);
-                    $serendipity['GET'][$val0] = $val[1] ?? null;
+                if (!empty($parts[0])) {
+                    $val = isset($parts[0]) ? explode('=', $parts[0]) : [0];
+                    $val0 = str_replace('serendipity[', '', $val[0]);
+                    if ($val[0] == $val0 &&  isset($val[1])) {
+                        $_GET[$val[0]] = $val[1];
+                    } else {
+                        $val0 = str_replace(']', '', $val0);
+                        $serendipity['GET'][$val0] = $val[1] ?? null;
+                    }
                 }
             }
         }
 
         switch ($this->get_config("image_order")) {
             case 'nameacs':
-                $orderby= 'i.name';
-                $order= 'ASC';
+                $orderby = 'i.name';
+                $order = 'ASC';
                 break;
             case 'namedesc':
-                $orderby= 'i.name';
-                $order= 'DESC';
+                $orderby = 'i.name';
+                $order = 'DESC';
                 break;
             case 'dateacs':
-                $orderby= 'i.date';
-                $order= 'ASC';
+                $orderby = 'i.date';
+                $order = 'ASC';
                 break;
             case 'datedesc':
-                $orderby= 'i.date';
-                $order= 'DESC';
+                $orderby = 'i.date';
+                $order = 'DESC';
                 break;
         }
 
@@ -517,6 +528,26 @@ class serendipity_event_usergallery extends serendipity_event
                     } else {
                         $permitted_gallery = true;
                     }
+                }
+
+                // append the directory properties
+                if ($this->get_config('show_media_properties','no') == 'yes' && !empty($this->get_config('directory_properties'))) {
+                    $dirprops = explode(';', $this->get_config('directory_properties');
+
+                    $dps = [];
+                    foreach ($dirprops AS $dprop) {
+                        list($k, $v) = explode(':', $dprop);
+                        $dps[$k] = $v;
+                    }
+                    // now merge $dp in directory list
+                    foreach ($dps AS $dpk => $dpv) {
+                        if ($dpk == $limit_output) {
+                            $limit_output = preg_replace('@[^a-z0-9]@i', ' ', $limit_output); // previously in 'plugin_usergallery_limit_directory' assign (see below)
+                            $limit_output .= " [ <span>$dpv</span> ]";
+                        }
+                    }
+                } else {
+                    $limit_output = preg_replace('@[^a-z0-9]@i', ' ', $limit_output); // previously in 'plugin_usergallery_limit_directory' assign (see below)
                 }
 
                 // SQL counted items of each dir
@@ -661,12 +692,10 @@ class serendipity_event_usergallery extends serendipity_event
                             $image['link'] = serendipity_getTemplateFile('admin/img/mime_unknown.png');
                         }
                         $image['fullwebp']  = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'webp';
-                        $_image['fullwebp'] = $serendipity['serendipityPath']     . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'webp';
-                        $image['fullwebp']  = file_exists($_image['fullwebp']) ? $image['fullwebp'] : '';
+                        $image['fullwebp']  = file_exists($image['fullwebp']) ? $image['fullwebp'] : '';
                         $image['fullimage'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . $image['name'] . '.' . $image['extension'];
                         $image['varimage']  = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'webp';
-                        $_image['varimage'] = $serendipity['serendipityPath']     . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'webp';
-                        $image['varimage']  = file_exists($_image['varimage']) ? $image['varimage'] : '';
+                        $image['varimage']  = file_exists($image['varimage']) ? $image['varimage'] : '';
                         $image['filesize']  = round($image['size']/1024);
 
                         $image['title'] = $image['name'];
@@ -709,9 +738,9 @@ class serendipity_event_usergallery extends serendipity_event
                        'plugin_usergallery_dir_list'        => $dir_list,
                        'plugin_usergallery_display_dir_tree'=> $display_dir_tree,
                        'plugin_usergallery_colwidth'        => round((10/$num_cols*10)-6,2),
-                       'plugin_usergallery_limit_directory' => preg_replace('@[^a-z0-9]@i', ' ', $limit_output),
+                       'plugin_usergallery_limit_directory' => $limit_output,
                        'plugin_usergallery_uselightbox'     => $show_lightbox,
-                       'plugin_usergallery_use_reltype'     => ($_show_lightbox === 'bottom'),
+                       'plugin_usergallery_use_reltype'     => ($_show_lightbox == 'bottom'),
                        'plugin_usergallery_lightbox_append' => true,
                        'plugin_usergallery_lightbox_script' => $lightbox_type,
                        'plugin_usergallery_lightbox_dir'    => $this->get_config('lightbox_path'),
@@ -887,10 +916,11 @@ echo '
                         $_GET['type']    = 'comments';
                     }
                     break;
-
+/*
                 case 'frontend_rss':
                     $this->showRSS($eventData);
                     break;
+*/
 
                 case 'genpage':
                     if ((empty($addData['uriargs']) || trim($addData['uriargs']) == $serendipity['indexFile']) && empty($serendipity['GET']['subpage'])) {
@@ -968,7 +998,7 @@ echo '
         global $serendipity;
 
         $exif_data = array();
-        // Display additonal exif information if allowed.
+        // Display additional EXIF information if allowed.
         $JPEG_TOOLKIT = $serendipity['baseURL'] . 'plugins/serendipity_event_usergallery/JPEG_TOOLKIT/';
         if (is_file($JPEG_TOOLKIT . 'EXIF.php')) {
             include_once $JPEG_TOOLKIT . 'EXIF.php';
@@ -1099,7 +1129,7 @@ echo '
                 $selector .= '<tr><td colspan="2"><span class="msg_error">
                     An error occurred. Your website will function AS NORMAL. But EXIF tags cannot be shown.<br>
                     Error: $this->get_config(\'exif_data\') is not fetched from the database properly.
-                    Please contact support at https://board.s9y.org/.</span></td></tr>';
+                    Please contact support at https://github.com/ophian/styx/discussions.</span></td></tr>';
             } else {
                 // split the string into options
                 $exifstring = explode(',', $exifsettings);
@@ -1136,11 +1166,7 @@ echo '
         $file = serendipity_fetchImageFromDatabase($id);
         $file['link'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['extension'];
         $file['srcv'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'webp';
-        $_file['src'] = $serendipity['serendipityPath']     . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'webp';
-        $file['srcv'] = file_exists($_file['src']) ? $file['srcv'] : '';
-        $test_string  = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $base_directory;
-        $path_len   = strlen($test_string);
-        $pic_string = substr($serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $file['path'], 0, $path_len);
+        $file['srcv'] = file_exists($file['srcv']) ? $file['srcv'] : '';
         if (isset($file['id'])) {
             $file['size_txt'] = round($file['size']/1024);
             $file['is_image'] = serendipity_isImage($file);
@@ -1225,16 +1251,17 @@ echo '
                 $exif_output .= "</div>\n";
             }
             // END EXIF DATA
+
             // Show Media Library Properties
             if ($this->get_config('show_media_properties','no') == 'yes') {
-                if (is_array($extended_data) && isset($extended_data['base_property'])) {
-                    $extended_data = array_merge($extended_data['base_property'], (array)$extended_data['base_metadata']);
-
+                if (is_array($extended_data) && isset($extended_data['base_property']) && isset($extended_data['base_property']['ALL'])) {
+                    $extended_data = array_merge($extended_data['base_property'], (array)$extended_data['base_property']['ALL']);
                 } else {
                     $extended_data = array();
                 }
                 $extended_data_out = array();
-                $extended_output = explode(';', $this->get_config('media_properties', 'COPYRIGHT:Copyright;TITLE:Title;COMMENT2:Comment'));
+                $extended_output = explode(';', $this->get_config('media_properties', 'COPYRIGHT:Copyright;TITLE:Title;COMMENT1:Comment1'));
+
                 foreach($extended_output AS $option) {
                     $option = explode(':', $option);
                     foreach($extended_data AS $ex_name => $ex_data) {
@@ -1413,7 +1440,7 @@ echo '
 
         return $e;
     }
-
+#disabled since found no working use case
     // Create an RSS-Feed. Called via URL like:
     // http://yourblog/rss.php?version=2.0&gallery=true&limit=A&picdir=B&feed_width=C&hide_title=D
     // Variables:
@@ -1487,7 +1514,7 @@ echo '
             if ($feed_body && is_array($e)) {
                 // Replace big image with thumbnail
                 $body = preg_replace('@(["\'])[^"\']*' . preg_quote($image['path'] . $filename, '@') . '@imsU', '\1' . $thumbfile_http, $e[0]['body']);
-                // Kill possible width attributes of <img> tags to not screw up display
+                // Nuke a possible width attributes of <img> tags to not screw up display
                 $body = preg_replace('@(<img[^>]*)\s*width\s*=["\'][0-9]+["\']@imsU', '\1', $body);
                 $body = preg_replace('@(<img[^>]*)\s*height\s*=["\'][0-9]+["\']@imsU', '\1', $body);
             }
@@ -1520,6 +1547,7 @@ echo '
 
         return true;
     }
+
 }
 
 /* vim: set sts=4 ts=4 expandtab : */

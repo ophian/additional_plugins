@@ -53,18 +53,18 @@
 
 //Exif data tags
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_NAME', 'EXIF-Tags anzeigen?');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'EXIF-Tags sind Zusatzinformationen über das Bild und werden, wenn möglich, automatisch erzeugt. Bitte beachten: Nicht alle Kameras (insbesondere nicht ältere) unterstützen dieses Feature!');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'EXIF-Tags sind Zusatzinformationen über das Bild und werden, wenn möglich, automatisch erzeugt. Bitte beachten: Nicht alle Kameras (insbesondere ältere) unterstützen dieses Feature!');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA', 'Unterstütze Kameras: Agfa, Canon, Casio, Epson, Fujifilm, Konica Minolta, Kyocera, Nikon, Olympus, Panasonic, Pentax, Ricoh, Sony.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NAME', 'EXIF-Daten');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_DESC', 'In der untenstehenden Liste sind alle verfügbaren EXIF-Parameter, die von Kameras gesetzt werden können, aufgeführt. Es kann sein, dass Ihre Kamera einige davon nicht liefert, da nicht jede Kamera jede Variable unterstützt.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_ADDITIONALDATA', 'Zusatzinformationen');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NOADDITIONALDATA', 'Keine Zusatzinformationen verfügbar.');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'Bildmaß für RSS-Feed');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'Dieses Plugin bietet einen RSS-Feed mit den zuletzt hinzugefügten Bildern. Er ist wie jeder andere Feed erreichbar, über die URL: %s. Die URL-Variable "gallery=true" ist wichtig, um die Galerie-Bilder anzuzeigen. Mit der URL-variable "limit=XX" kann die Anzahl der Bilder vorgegeben werden - ansonsten wird die Standard-Einstellung für alle Feeds verwendet. Die URL-Variable "picdir=XXX" kann den Feed auf ein spezielles Verzeichnis beschränken. Mit Hilfe von "hide_title=true" ist es möglich, die Dateinamen auszublenden. Mit der URL-Variable "feed_width=XXX" können Sie eine optionale Größe der Ziel-Bilder bestimmen. Geben Sie hier an, wie lang die längste Seite (Breite oder Höhe) der Bilder in Ihren Feeds sein darf.');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'Bildmaß für RSS-Feed');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'Dieses Plugin bietet einen RSS-Feed mit den zuletzt hinzugefügten Bildern. Er ist wie jeder andere Feed erreichbar, über die URL: %s. Die URL-Variable "gallery=true" ist wichtig, um die Galerie-Bilder anzuzeigen. Mit der URL-variable "limit=XX" kann die Anzahl der Bilder vorgegeben werden - ansonsten wird die Standard-Einstellung für alle Feeds verwendet. Die URL-Variable "picdir=XXX" kann den Feed auf ein spezielles Verzeichnis beschränken. Mit Hilfe von "hide_title=true" ist es möglich, die Dateinamen auszublenden. Mit der URL-Variable "feed_width=XXX" können Sie eine optionale Größe der Ziel-Bilder bestimmen. Geben Sie hier an, wie lang die längste Seite (Breite oder Höhe) der Bilder in Ihren Feeds sein darf.');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Nur verlinkte Bilder im RSS-Feed?');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', 'Hiermit werden nur die Bilder in den Feed übernommen, die auch in einem Blog-Eintrag verlinkt sind.');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Nur verlinkte Bilder im RSS-Feed?');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', 'Hiermit werden nur die Bilder in den Feed übernommen, die auch in einem Blog-Eintrag verlinkt sind.');
 
 @define('USERGALLERY_SEE_FULLSIZED', 'Auf das Bild klicken für Vollansicht');
 @define('USERGALLERY_DOWNLOAD_HERE', 'Download der Datei');
@@ -72,7 +72,7 @@
 @define('USERGALLERY_LINKED_STATICPAGES', 'Statische Seiten, die dieses Bild verwenden:');
 @define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'Einrückung der Unterverzeichnisse im Baum');
 @define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'Anzahl Pixel, um die Unterverzeichnisse im Verzeichnisbaum eingerückt werden.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. Bildbreite in der Seite.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. Bildbreite in der Seite');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'Maximale Breite, in der ein Bild angezeigt werden kann, wenn "In Seite einpassen" gewählt wurde. Die Einstellung "0" bewirkt, dass Bilder in voller Größe angezeigt werden.');
 @define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Link zu den Einträgen/statischen Seiten zeigen, die auf das Bild verlinken?');
 
@@ -86,11 +86,11 @@
 @define('PLUGIN_EVENT_USERGALLERY_IMAGES', 'Bilder');
 @define('PLUGIN_EVENT_USERGALLERY_PAGINATION', 'Seite %s von %s, insgesamt %s Bilder');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'RSS-Feed Ausgabe mit Eintrags-Text?');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Falls ausgewählt, wird zu einem Bild aus der Mediendatenbank, das in einem Blog-Eintrag verlinkt wurde, im RSS-Feed auch der Inhalt des Blog-Eintrages ausgegeben, anstelle einer einfachen Verlinkung zum passenden Blogeintrag (Standard).');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'RSS-Feed Ausgabe mit Eintrags-Text?');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Falls ausgewählt, wird zu einem Bild aus der Mediendatenbank, das in einem Blog-Eintrag verlinkt wurde, im RSS-Feed auch der Inhalt des Blog-Eintrages ausgegeben, anstelle einer einfachen Verlinkung zum passenden Blogeintrag (Standard).');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_NAME', 'Nutze Lightbox Ausgabe');
-@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Benötigt ein installiertes Lightbox-Plugin und obige Option: "Einzelbildanzeige" gesetzt als "In Seite einpassen". Wenn das Lightbox-Plugin nur für "hiesige" Usergalerie-Seiten benutzt werden soll, installiere und verschiebe es anschließend in der Pluginliste in das Inaktiv (hidden) event Feld. Die "Ja" Auswahl setzt die erforderlichen Scripte direkt in den Galerie Container über die plugin_usergallery.tpl Datei; "API" nutzt den \'frontend_footer\' hook zur Ausgabe. Letzteres kann wichtig sein, damit die benötigte jQuery library vor den besagten Scripten geladen wird. Dies ist bei Themes unterschiedlich. Gute Praxis von HTML ist die Verlinkung solcher Skripte am Seitenende bereitzustellen. "Nein" macht die Nutzung eines Leuchtkastens vom aktivem Lightbox-Plugin abhängig.');
+@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Benötigt ein installiertes Lightbox-Plugin und obige Option: "Einzelbildanzeige" gesetzt als "In Seite einpassen". Wenn das Lightbox-Plugin nur für Usergalerie-Seiten benutzt werden soll, installiere und verschiebe es anschließend in der Pluginliste in das Inaktiv (hidden) event Feld und nutze die "API" Option, damit die lightbox assets nicht doppelt geladen werden. Die "Ja" Auswahl setzt die erforderlichen Scripte direkt in den Galerie Container mittels der "plugin_usergallery.tpl" Datei; während "API" den \'frontend_footer\' hook zur Ausgabe nutzt. Letzteres kann wichtig sein, damit das benötigte jQuery asset vor den besagten Leuchtkästen geladen wird, denn dies ist bei Themes unterschiedlich. Gute Praxis von HTML ist es, die Verlinkung solcher Skripte am Seitenende bereit zu stellen. "Nein" macht die Nutzung eines Leuchtkastens vom aktiven Lightbox-Plugin abhängig oder heißt "Nutze HTML popups" zur absoluten Bildanzeige.');
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_NAME', 'Wähle Lightbox-Plugin-Typ');
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'Wählen Sie den selben Typ wie im lightbox Plugin. Man kann kein anderes lightbox-widget hier anwählen wenn dasselbe selbst aktiv gesetzt ist. Achten Sie auf mögliche Abhängigkeiten in der Anordnung/Reihenfolge der Pluginliste.');
 
@@ -98,4 +98,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Erweitere das Galerie Array mit allen Nicht-Bild Dateien aus der Mediathek, zB. *.pdf Dateien.');
 
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOX_PATH', 'Pfad zum Lightbox Plugin Verzeichnis');
+
+@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_NAME', 'Geben Sie Ihren Galerie Verzeichnissen zusätzlich (je) eine darstellende Eigenschaft bzw Beschreibung (Optional)');
+@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_DESC', 'Wie gehabt als exakter Verzeichnisname getrennt durch Doppelpunkt vom Beschreibungsinhalt; mehrere getrennt durch ein Semikolon; zB. put:Enigma for Wahnsinnige;art:Hölderlins Traum');
 

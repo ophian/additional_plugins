@@ -24,6 +24,9 @@ div.serendipity_gallery_thumbs {
     background-color: #00000005;
     border: 1px solid #ddd;
 }
+.serendipity_event_usergallery .page_content .serendipity_preface {
+    display: flex;
+}
 div.serendipity_gallery_info {
    margin-left: auto;
    margin-right: auto;

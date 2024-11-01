@@ -33,8 +33,7 @@
             <nav aria-label="usergallery_image_display" title="usergallery_image_display">
                 <ul class="serendipity_gallery_navigation pagination justify-content-between">
                     <li class="page-item prev{if $plugin_usergallery_previousid == -1} disabled{/if}">
-                    {if $plugin_usergallery_previousid != -1}
-
+{if $plugin_usergallery_previousid != -1}
                         <a class="page-link" href="{$plugin_usergallery_urlplus}serendipity[image]={$plugin_usergallery_previousid}">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-left" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                               <title id="title">{$CONST.PREVIOUS}</title>
@@ -43,13 +42,13 @@
                             </svg>
                             <span class="sr-only">{$CONST.PREVIOUS}</span>
                         </a>
-                    {else}<span class="page-link hidden"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></span>{/if}
-
+{else}
+                        <span class="page-link hidden"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></span>
+{/if}
                     </li>
                     <li class="page-item info{if empty($plugin_usergallery_bcrumb)} disabled{/if}"><a href="{$plugin_usergallery_url}">{$head_title|default:plugin_usergallery_title}</a>{foreach $plugin_usergallery_bcrumb AS $ugbcrumb} &raquo; {if $ugbcrumb@last}<strong>{$ugbcrumb.name}</strong>{else}<a href="{$plugin_usergallery_urlplus}gallery={$ugbcrumb.path}">{$ugbcrumb.name}</a>{/if}{/foreach}</li>
                     <li class="page-item next{if plugin_usergallery_nextid == -1} disabled{/if}">
-                    {if $plugin_usergallery_nextid != -1}
-
+{if $plugin_usergallery_nextid != -1}
                         <a class="page-link" href="{$plugin_usergallery_urlplus}serendipity[image]={$plugin_usergallery_nextid}">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                               <title id="title">{$CONST.NEXT}</title>
@@ -58,71 +57,66 @@
                             </svg>
                             <span class="sr-only">{$CONST.NEXT}</span>
                         </a>
-                    {else}<span class="page-link hidden"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></span>{/if}
-
+{else}
+                        <span class="page-link hidden"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></span>
+{/if}
                     </li>
                 </ul>
             </nav>
 
             <div class="serendipity_gallery_entry">
                 <h4 class="serendipity_gallery_title">{$plugin_usergallery_file.title}</h4>
-            {if $plugin_usergallery_file.is_image}
-                {if $plugin_usergallery_is_endsize}
+{if $plugin_usergallery_file.is_image}
+{if $plugin_usergallery_is_endsize}
 
                 <!-- Image -->
                 <picture><source srcset="{$plugin_usergallery_file.srcv|default:''}" type="image/webp" /><img class="serendipity_image_center gallery_preview" width="{$plugin_usergallery_file.alt_width}px" height="{$plugin_usergallery_file.alt_height}px" src="{$plugin_usergallery_file.link}" alt="" /></picture>
-                {else}
+{else}
 
                 <!-- Popup -->
                 <a href="javascript:popImage('{$plugin_usergallery_file.srcv}','{$plugin_usergallery_file.link}','{$plugin_usergallery_file.name}','{$plugin_usergallery_file.dimensions_width}','{$plugin_usergallery_file.dimensions_height}')" class="serendipity_image_link" data-fallback="{$plugin_usergallery_file.link}"><picture><source srcset="{$plugin_usergallery_file.srcv|default:''}" type="image/webp" /><img class="serendipity_image_center gallery_preview" width="{$plugin_usergallery_file.alt_width}px" height="{$plugin_usergallery_file.alt_height}px" src="{$plugin_usergallery_file.link}" alt="" /></picture></a>
-                {/if}
-            {else}
+{/if}
+{else}
 
                 <!-- download link -->
                 <a href="{$plugin_usergallery_file.link}" alt="{$plugin_usergallery_file.name}">{$CONST.USERGALLERY_DOWNLOAD_HERE}</a>
-            {/if}
+{/if}
 
                 <!-- file information -->
                 <div class="serendipity_gallery_info">
                     <div>{if NOT $plugin_usergallery_is_endsize}{$CONST.USERGALLERY_SEE_FULLSIZED}.{else}Maximum image size{/if}</div>
-                {if is_array($plugin_usergallery_file.entries) AND count($plugin_usergallery_file.entries) > 0}
+{if is_array($plugin_usergallery_file.entries) AND count($plugin_usergallery_file.entries) > 0}
 
                     <h5>{$CONST.USERGALLERY_LINKED_ENTRIES}</h5>
 
                     <ol>
-    {foreach $plugin_usergallery_file.entries AS $link}
-
+{foreach $plugin_usergallery_file.entries AS $link}
                         <li><a href="{$link.href}">{$link.title}</a></li>
-    {/foreach}
-
+{/foreach}
                     </ol>
-                {/if}
-                {if is_array($plugin_usergallery_file.staticpage_results) AND count($plugin_usergallery_file.staticpage_results) > 0}
+{/if}
+{if is_array($plugin_usergallery_file.staticpage_results) AND count($plugin_usergallery_file.staticpage_results) > 0}
 
                     <h5>{$CONST.USERGALLERY_LINKED_STATICPAGES}</h5>
 
                     <ol>
-    {foreach $plugin_usergallery_file.staticpage_results AS $result}
+{foreach $plugin_usergallery_file.staticpage_results AS $result}
                         <li><a href="{$result.href}">{$result.title}</a></li>
-    {/foreach}
-
+{/foreach}
                     </ol>
-                {/if}
+{/if}
 
                     <dl>
                         <dt>{$plugin_usergallery_file.name}.{$plugin_usergallery_file.extension}</dt>
                         <dd>{$CONST.PLUGIN_EVENT_USERGALLERY_FILESIZE}: {$plugin_usergallery_file.size_txt} kb</dd>
-                    {foreach $plugin_usergallery_extended_info AS $entry}
-
+{foreach $plugin_usergallery_extended_info AS $entry}
                         <dd>{$entry.name}: {$entry.value}</dd>
-                    {/foreach}
-                    {if $plugin_usergallery_file.is_image}
-                        {if $plugin_usergallery_xtra_info}
-
+{/foreach}
+{if $plugin_usergallery_file.is_image}
+{if $plugin_usergallery_xtra_info}
                         <dd>{$plugin_usergallery_xtra_info}</dd>
-                        {/if}
-                    {/if}
-
+{/if}
+{/if}
                     </dl>
                 </div>
             </div>
