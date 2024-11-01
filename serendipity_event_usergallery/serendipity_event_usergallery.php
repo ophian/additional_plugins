@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.21');
+        $propbag->add('version',       '3.22');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -633,7 +633,7 @@ class serendipity_event_usergallery extends serendipity_event
                     $full_filecounter = $temp_filecount[$limit_images_directory];
                 }
                 // Check up total file count of current directory or use fall-through counter
-                $totalfilesct = ($temp_filecount[$limit_images_directory] <= $full_filecounter) ? $full_filecounter : $temp_filecount[$limit_images_directory];
+                $totalfilesct = (isset($full_filecounter) && $temp_filecount[$limit_images_directory] <= $full_filecounter) ? $full_filecounter : $temp_filecount[$limit_images_directory];
 
                 $lower_limit = 0;
                 $showpage = false;

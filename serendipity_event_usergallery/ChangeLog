@@ -1,4 +1,12 @@
+3.22:
+-----
+ * Better check undeclared file counter on empty
+
 3.21:
+-----
+ * Pump version for wrong SYNC
+
+3.20:
 -----
  * Fixup fetch/prep/show MediaLibrary image properties
  * Add new directory_properties option to simple add some half-automatic description property to each (traveled) directory name as an extension of allowed media_properties
