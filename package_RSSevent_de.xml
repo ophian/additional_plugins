@@ -14,7 +14,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Medien-Button&lt;/b&gt;&lt;br /&gt;Fügt einen Button zum Artikeleditor hinzu, über den eine Amazon.com Suche für Produkte ausgeführt werden kann und die Ergebnisse in den Eintrag eingebettet werden&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Serendipity Backend (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in die Startseite des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Es ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: Speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten und RSS-Feeds.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -167,7 +167,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -311,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Smiley-Auswahlleiste&lt;/b&gt;&lt;br /&gt;Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Nächster/Voriger Artikel&lt;/b&gt;&lt;br /&gt;Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -410,7 +410,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Joachim Breitner</author>
 <content:encoded>&lt;b&gt;serendipity_event_flattr&lt;br /&gt;Flattr&lt;/b&gt;&lt;br /&gt;Flattr ist eine Social-Micropayment-Plattform, mit der man Liebe versprühen kann für Artikel, die man liebt. Das Plugin bindet &quot;Flattr&quot;-Buttons in den Blogeinträgen und RSS-Feeds ein. Flattr-spezifische Attribute können sowohl global als auch pro Eintrag vergeben werden.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_flattr</guid>
 </item>
 <item>
@@ -446,7 +446,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Freie Artikel-Tags&lt;/b&gt;&lt;br /&gt;Erlaubt das freie Tagging von Artikeln&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Textformatierung: Eintragsdaten einfügen&lt;/b&gt;&lt;br /&gt;Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linkverkürzung&lt;/b&gt;&lt;br /&gt;Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -1067,7 +1067,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiken&lt;/b&gt;&lt;br /&gt;Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1193,7 +1193,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_typesetbuttons&lt;br /&gt;Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG&lt;/b&gt;&lt;br /&gt;Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_typesetbuttons</guid>
 </item>
 <item>
@@ -1220,7 +1220,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Bildergalerie&lt;/b&gt;&lt;br /&gt;Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Fri, 01 Nov 2024 14:43:21 +0100</pubDate>
+<pubDate>Fri, 01 Nov 2024 15:01:27 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
@@ -1265,7 +1265,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Freie Wiki-Links für Einträge&lt;/b&gt;&lt;br /&gt;Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
@@ -1283,7 +1283,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Einträge via XML-RPC erstellen&lt;/b&gt;&lt;br /&gt;Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1292,7 +1292,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xsstrust&lt;br /&gt;Einstellungen für vertrauenswürdige Mehrbenutzer-Blogs / HTMLPurifier&lt;/b&gt;&lt;br /&gt;Dieses Plugin gibt an, welchen Autoren eines Mehrbenutzer-Blogs Sie genug trauen und von denen Sie keine Hackangriffe erwarten. Alle anderen Autoren dürfen kein HTML mehr verwenden!&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_xsstrust</guid>
 </item>
 <item>
@@ -1301,7 +1301,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_youtube&lt;br /&gt;Zusätzliche Editor-Buttons: Youtube usw.&lt;/b&gt;&lt;br /&gt;Bietet mehr Schaltflächen für den Editor, um einen einfachen Zugriff auf HTML-/Javescript-Snippets wie Youtube usw. zu ermöglichen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_youtube</guid>
 </item>
 <item>
@@ -1310,7 +1310,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;Registrierung neuer User&lt;/b&gt;&lt;br /&gt;Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
@@ -1337,7 +1337,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Fri, 25 Oct 2024 14:37:41 +0200</pubDate>
+<pubDate>Fri, 01 Nov 2024 14:54:53 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
