@@ -11,11 +11,11 @@
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Number of columns to show in gallery view');
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'Number of columns');
 @define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Permalink for gallery view');
-@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Enter a unique permalink you would like to use for the gallery');
+@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Enter a unique permalink you would like to use for the gallery.');
 @define('PLUGIN_EVENT_USERGALLERY_SUBNAME_NAME', 'Subpage name for gallery view');
 @define('PLUGIN_EVENT_USERGALLERY_SUBNAME_DESC', 'Enter a unique subpage name you would like to use for the gallery (gallery will be available at index.php?serendipity[subpage]=subname)');
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Pick a default directory');
-@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Pick the default directory you would like the gallery to be restricted to');
+@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Pick the default directory you would like the gallery to be restricted to.');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Choose the gallery style');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Media library" allows folder navigation and searches, while "Thumbnail page" gives a thumbnail gallery alike display of all images under a folder and opens the images in a new window or via a lightbox; In this case, the "Show directory tree" option allows you to show or hide the directory tree that can be used for navigation, and the "Show only images of the current directory" option can be turned on or off.');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Media library (disabled)');
@@ -35,7 +35,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_DIRLIST_NAME', 'Show a directory listing');
 @define('PLUGIN_EVENT_USERGALLERY_DIRLIST_DESC', 'If set to "yes" the gallery will display a listing of all directories contained in your default directory.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_NAME', 'Output images strictly');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_DESC', 'If set to "yes" the gallery will only display pictures in the current directory. If set to "no" the gallery will output all pictures in all subdirectories.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_DESC', 'If set to "yes" the gallery will only display pictures in the current directory.  If set to "no" the gallery will output all pictures in all subdirectories.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAME', 'Order of images');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DESC', 'Pick the order your would like images output.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAMEACS', 'Name (Ascending)');
@@ -59,18 +59,18 @@
 
 //Exif data tags
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_NAME', 'Show exif tags?');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'Exif tags are additional information fields about the image. These are automatically generated, if available, from the image. Please note; NOT all cameras support this feature it\'s very likely it\'s not supported. Cameras older than 4 year will more than likely not support Exif data.');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'Exif tags are additional information fields about the image. These are automatically generated, if available, from the image. Please note; NOT all cameras support this digital format feature it\'s very likely it\'s not supported. Analogue Cameras will more than likely not support Exif data.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA', 'Supported cameras: Agfa, Canon, Casio, Epson, Fujifilm, Konica Minolta, Kyocera, Nikon, Olympus, Panasonic, Pentax, Ricoh, Sony.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NAME', 'Exif data');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_DESC', 'In the list below are all available options. Your specific camera may skip one or two variables as not every variable is supported on each camera.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_ADDITIONALDATA', 'Additional Information');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NOADDITIONALDATA', 'No additional data available.');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'RSS-Feed image dimensions');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'This plugin offers a RSS-Feed with the latest pictures of your blog. You can call it like any other RSS-Feed of your blog, like with this URL: %s. The URL-Variable "gallery=true" is important to indicate that gallery pictures should be shown. You can us the URL-variable "limit=XX" to indicate the number of items you want - otherwise the default for RSS entries is used. The URL-variable "picdir=XXX" can indicate a specific directory you want to display. Using "hide_title=true" you can hide the filename titles from the RSS-Feed, and using "feed_width=XXX" you can specify an optional size of the target images (only supported since Serendipity 1.1). Enter the largest dimension (width or height in pixels) that should be used for the images in your feeds.');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'RSS-Feed image dimensions');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'This plugin offers a RSS-Feed with the latest pictures of your blog. You can call it like any other RSS-Feed of your blog, like with this URL: %s. The URL-Variable "gallery=true" is important to indicate that gallery pictures should be shown. You can us the URL-variable "limit=XX" to indicate the number of items you want - otherwise the default for RSS entries is used. The URL-variable "picdir=XXX" can indicate a specific directory you want to display. Using "hide_title=true" you can hide the filename titles from the RSS-Feed, and using "feed_width=XXX" you can specify an optional size of the target images (only supported since Serendipity 1.1). Enter the largest dimension (width or height in pixels) that should be used for the images in your feeds.');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Only show linked images in RSS-Feed?');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', 'If enabled, only images which are linked in your entries will be shown in the RSS feeds.');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Only show linked images in RSS-Feed?');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', 'If enabled, only images which are linked in your entries will be shown in the RSS feeds.');
 
 @define('USERGALLERY_SEE_FULLSIZED', 'Click image to see full sized');
 @define('USERGALLERY_DOWNLOAD_HERE', 'To download, click here!');
@@ -79,7 +79,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Show links to entries where an image is referenced?');
 @define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'Subdirectory spacing in tree');
 @define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'Number of pixels to tab subdirectories in directory view.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. image width in page.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. image width in page');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'Maximum width an image can be when displayed using "scaled to fit".  A setting of "0" means images are displayed full size.');
 
 //Media properties
@@ -92,11 +92,11 @@
 @define('PLUGIN_EVENT_USERGALLERY_IMAGES', 'images');
 @define('PLUGIN_EVENT_USERGALLERY_PAGINATION', 'Page %s of %s, totaling %s images');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'Use original blog entry for the picture in RSS-Feed?');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'If enabled, an image of the MediaLibrary that has been linked within an blog entry will have the original blog entry\'s body within the RSS feed, instead of (by default) having a simple link to the blog article and the original image location.');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'Use original blog entry for the picture in RSS-Feed?');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'If enabled, an image of the MediaLibrary that has been linked within an blog entry will have the original blog entry\'s body within the RSS feed, instead of (by default) having a simple link to the blog article and the original image location.');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_NAME', 'Use lightbox output');
-@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Needs the lightbox-plugin installed and upper option "Display Single Image" set to "Scaled to fit"! When you want to use lightboxes only for Usergallery pages, install the lightbox plugin and move it into the hidden event field in your pluginlist. "Yes" allows to output the scripts inside the gallery container by the plugin_usergallery.tpl template file; "API" uses the \'frontend_footer\' hook for generation. This can be immanent to have the jQuery library loaded bevore any lighbox assets. This is handled differently by themes. HTML good practise is to load such scripts at page end. "No" is either non-usage or related to an actice set lightbox-plugin.');
+@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Needs the lightbox-plugin installed and upper option "Display Single Image" set to "Scaled to fit"! When you want or need to use lightboxes only for usergallery pages, use this "API" radio option, install the lightbox plugin and then move it into the hidden event field in your pluginlist. This avoids to have it called twice. "Yes" allows to output the scripts inside the gallery container by the plugin_usergallery.tpl template file; while "API" uses the \'frontend_footer\' hook for generation. This can be immanent when to have the jQuery library loaded before any lighbox assets. This is handled differently by themes. HTML good practice is to load such scripts at page end. "No" is either non-usage or related to an active set lightbox-plugin.');
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_NAME', 'Use lightbox plugin type');
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'Choose the same as set in the lightbox plugin. Choosing another library will not work here, as long the lightbox-plugin is set active. Watch out for possible plugin list order flaws.');
 
@@ -104,4 +104,7 @@
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Include other MediaLibrary object files to show up too, eg *.pdf application objects.');
 
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOX_PATH', 'Path to the lightbox plugin directory');
+
+@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_NAME', 'Give your gallery directories an additional display property or description (optional)');
+@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_DESC', 'Used as before as an exact directory name separated by a colon from the description content; several separated by a semicolon; e.g. put:Enigma for maniacs;art:Pure agony and other depressions');
 

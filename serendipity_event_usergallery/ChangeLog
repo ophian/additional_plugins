@@ -1,3 +1,13 @@
+3.20:
+-----
+ * Fixup fetch/prep/show MediaLibrary image properties
+ * Add new directory_properties option to simple add some half-automatic description property to each (traveled) directory name as an extension of allowed media_properties
+ * Fix templates for better indent display
+ * Disabled RSS feed option since found no working use case... (if you have please tell me)
+ * Dark mode for EXIF data table
+ * Fix default value 'media_properties' example to use (public) COMMENT1 instead of (internal) COMMENT2
+ * Cleanup
+
 3.13:
 -----
  * Fix Serendipity version check for correct API usage
