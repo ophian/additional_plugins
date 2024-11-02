@@ -20,7 +20,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '3.23');
+        $propbag->add('version',       '3.24');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1.0',
@@ -629,7 +629,7 @@ class serendipity_event_usergallery extends serendipity_event
                 $temp_filecount[$limit_images_directory] = $temp_filecount[$limit_images_directory] ?? 0;
 
                 // Yes, we don't need full filecounter if $temp_filecount[$limit_images_directory] is set for list dir pagination
-                if ($dir_list == 'yes' && $temp_filecount[$limit_images_directory] < $full_filecounter) {
+                if ($dir_list == 'yes' && $temp_filecount[$limit_images_directory] < ($full_filecounter ?? 0)) {
                     $full_filecounter = $temp_filecount[$limit_images_directory];
                 }
                 // Check up total file count of current directory or use fall-through counter
