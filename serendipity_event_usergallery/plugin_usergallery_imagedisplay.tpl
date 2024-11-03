@@ -1,19 +1,20 @@
+{if !isset($plugin_usergallery_uselightbox) || $plugin_usergallery_uselightbox === false}{* Is affordable, when usergallery NOT uses lightbox !! *}
 <script type="text/javascript">
     <!--
     {literal}
-    function popImage(file_var,file_name,file_title,file_width,file_height) {
+    function popImage(file_avif,file_webp,file_name,file_title,file_width,file_height) {
         if (parseInt(navigator.appVersion.charAt(0)) >= 4) {
             var optBrowser='scrollbars=yes,width='+file_width+',height='+file_height+',toolbar=no,menubar=no,location=no,resize=1,resizable=0';
             var imgWin=window.open('about:blank','',optBrowser);
             with (imgWin.document) {
                 writeln('<html><head><title>Loading...</title>');
-                writeln('<style>body{margin:0;padding:0;text-align:center;}img{border:0px;}</style>');
+                writeln('<style>html{width:100vw}body{margin:0;padding:0;text-align:center;scrollbar-gutter:stable both-edges;overflow-x:hidden}img{border:0px}</style>');
                 writeln('</head>');
                 writeln('<sc'+'ript>');
                 writeln('function doTitle(){document.title="'+file_title+'";}');
                 writeln('</sc'+'ript>');
                 writeln('<body onload="self.focus();doTitle()">');
-                writeln('<a href="javascript:window.close()"><picture><source srcset="'+file_var+'" type="image/webp" /><img src="'+file_name+'" width="'+file_width+'" height="'+file_height+'" alt=""/></picture></a>');
+                writeln('<a href="javascript:window.close()"><picture><source srcset="'+file_avif+'" type="image/avif"><source srcset="'+file_webp+'" type="image/webp"><img src="'+file_name+'" width="'+file_width+'" height="'+file_height+'" alt=""></picture></a>');
                 writeln('</body></html>');
                 close();
             }
@@ -22,6 +23,7 @@
     {/literal}
     //-->
     </script>
+{/if}
 
     <section id="page_{$staticpage_pagetitle|makeFilename}" class="serendipity_staticpage page serendipity_event_usergallery_image_display">
         <header>
@@ -70,11 +72,11 @@
 {if $plugin_usergallery_is_endsize}
 
                 <!-- Image -->
-                <picture><source srcset="{$plugin_usergallery_file.srcv|default:''}" type="image/webp" /><img class="serendipity_image_center gallery_preview" width="{$plugin_usergallery_file.alt_width}px" height="{$plugin_usergallery_file.alt_height}px" src="{$plugin_usergallery_file.link}" alt="" /></picture>
+                <picture><source srcset="{$plugin_usergallery_file.fullavif|default:''}" type="image/avif"><source srcset="{$plugin_usergallery_file.fullwebp|default:''}" type="image/webp"><img class="serendipity_image_center gallery_preview" width="{$plugin_usergallery_file.alt_width}px" height="{$plugin_usergallery_file.alt_height}px" src="{$plugin_usergallery_file.link}" alt=""></picture>
 {else}
 
                 <!-- Popup -->
-                <a href="javascript:popImage('{$plugin_usergallery_file.srcv}','{$plugin_usergallery_file.link}','{$plugin_usergallery_file.name}','{$plugin_usergallery_file.dimensions_width}','{$plugin_usergallery_file.dimensions_height}')" class="serendipity_image_link" data-fallback="{$plugin_usergallery_file.link}"><picture><source srcset="{$plugin_usergallery_file.srcv|default:''}" type="image/webp" /><img class="serendipity_image_center gallery_preview" width="{$plugin_usergallery_file.alt_width}px" height="{$plugin_usergallery_file.alt_height}px" src="{$plugin_usergallery_file.link}" alt="" /></picture></a>
+                <a href="javascript:popImage('{$plugin_usergallery_file.fullavif}','{$plugin_usergallery_file.fullwebp}','{$plugin_usergallery_file.link}','{$plugin_usergallery_file.name}','{$plugin_usergallery_file.dimensions_width}','{$plugin_usergallery_file.dimensions_height}')" class="serendipity_image_link" data-fallback="{$plugin_usergallery_file.link}"><picture><source srcset="{$plugin_usergallery_file.fullavif|default:''}" type="image/avif"><source srcset="{$plugin_usergallery_file.fullwebp|default:''}" type="image/webp"><img class="serendipity_image_center gallery_preview" width="{$plugin_usergallery_file.alt_width}px" height="{$plugin_usergallery_file.alt_height}px" src="{$plugin_usergallery_file.link}" alt=""></picture></a>
 {/if}
 {else}
 

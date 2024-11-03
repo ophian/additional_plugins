@@ -682,20 +682,43 @@ class serendipity_event_usergallery extends serendipity_event
                         if (!$is_image && !$show_objects) continue; // do not include Non-Image objects to array
                         if ($is_image) {
                             $image['link'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . $image['name'] . '.' . $image['thumbnail_name'] . '.' . $image['extension'];
-                            $image['srcv'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . $image['thumbnail_name'] . '.' . 'webp';
-                            $_image['src'] = $serendipity['serendipityPath']     . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . $image['thumbnail_name'] . '.' . 'webp';
-                            $image['srcv'] = file_exists($_image['src']) ? $image['srcv'] : '';
+
+                            #$image['src']  = $serendipity['serendipityPath']     . $serendipity['uploadHTTPPath'] . $image['path'] . $image['name'] . '.' . $image['thumbnail_name'] . '.' . $image['extension'];
+                            $_image['srcavif'] = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . $image['thumbnail_name'] . '.' . 'avif';
+                            $_image['srcwebp'] = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . $image['thumbnail_name'] . '.' . 'webp';
+
+                            $image['thumbavif'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . $image['thumbnail_name'] . '.' . 'avif';
+                            $image['thumbwebp'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . $image['thumbnail_name'] . '.' . 'webp';
+
+                            $image['thumbavif'] = file_exists($_image['srcavif']) ? $image['thumbavif'] : ''; // Conversion to ...
+                            $image['thumbwebp'] = file_exists($_image['srcwebp']) ? $image['thumbwebp'] : ''; // ... HTTP path
+
+                            if (!empty($image['thumbwebp']) && ($image['thumbavif'] != '' && filesize($_image['srcavif']) >= filesize($_image['srcwebp']))) {
+                                $image['thumbavif'] = ''; // reset empty when webp thumb variation is equal or smaller in filesize
+                            }
+
                             $image['dimension'] = $image['dimensions_width'].'x' . $image['dimensions_height'];
                             $image['isimage'] = true;
                         } else {
                             $image['isimage'] = false;
                             $image['link'] = serendipity_getTemplateFile('admin/img/mime_unknown.png');
                         }
+                        // fullsize preparations
+                        $image['fullimage'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . $image['name'] . '.' . $image['extension']; // relevant for plugin_usergallery_file single image view
+
+                        $_image['srcfullavif']  = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'avif';
+                        $_image['srcfullwebp']  = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'webp';
+
+                        $image['fullavif']  = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'avif';
                         $image['fullwebp']  = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'webp';
-                        $image['fullwebp']  = file_exists($image['fullwebp']) ? $image['fullwebp'] : '';
-                        $image['fullimage'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . $image['name'] . '.' . $image['extension'];
-                        $image['varimage']  = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $image['path'] . '.v/' . $image['name'] . '.' . 'webp';
-                        $image['varimage']  = file_exists($image['varimage']) ? $image['varimage'] : '';
+
+                        $image['fullavif']  = file_exists($_image['srcfullavif']) ? $image['fullavif'] : ''; // Conversion to ...
+                        $image['fullwebp']  = file_exists($_image['srcfullwebp']) ? $image['fullwebp'] : ''; // ... HTTP path
+
+                        if (!empty($image['fullwebp']) && ($image['fullavif'] != '' && filesize($_image['srcfullavif']) >= filesize($_image['srcfullwebp']))) {
+                            $image['fullavif'] = ''; // reset empty when webp full variation is equal or smaller in filesize
+                        }
+                        $image['varimage']  = ($image['fullavif'] != '' && filesize($_image['srcfullavif']) < filesize($_image['srcfullwebp'])) ? $image['fullavif'] : $image['fullwebp']; // relevant for plugin_usergallery_file single image view
                         $image['filesize']  = round($image['size']/1024);
 
                         $image['title'] = $image['name'];
@@ -733,7 +756,7 @@ class serendipity_event_usergallery extends serendipity_event
                        'plugin_usergallery_cols'            => $num_cols,
                        'plugin_usergallery_preface'         => $this->get_config('intro'),
                        'plugin_usergallery_fixed_width'     => $this->get_config('fixed_width'),
-                       'plugin_usergallery_image_display'   => $this->get_config('image_display'),
+                       'plugin_usergallery_image_display'   => $this->get_config('image_display', 'inpage'),
                        'plugin_usergallery_bcrumb'          => $path_array,
                        'plugin_usergallery_dir_list'        => $dir_list,
                        'plugin_usergallery_display_dir_tree'=> $display_dir_tree,
@@ -1165,8 +1188,18 @@ echo '
         $base_directory = $this->get_config('base_directory');
         $file = serendipity_fetchImageFromDatabase($id);
         $file['link'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['extension'];
-        $file['srcv'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'webp';
-        $file['srcv'] = file_exists($file['srcv']) ? $file['srcv'] : '';
+        $file['fullimage'] = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['extension'];
+        $_file['srcfullavif']  = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'avif';
+        $_file['srcfullwebp']  = $serendipity['serendipityPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'webp';
+        $file['fullavif']  = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'avif';
+        $file['fullwebp']  = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'webp';
+        #$_file['fullwebp'] = $serendipity['serendipityPath']     . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . 'webp';
+        $file['fullavif']  = file_exists($_file['srcfullavif']) ? $file['fullavif'] : '';
+        $file['fullwebp']  = file_exists($_file['srcfullwebp']) ? $file['fullwebp'] : '';
+        if (!empty($file['fullwebp']) && ($file['fullavif'] != '' && filesize($_file['srcfullavif']) >= filesize($_file['srcfullwebp']))) {
+            $file['fullavif'] = ''; // reset empty when webp full variation is equal or smaller in filesize
+        }
+        $file['varimage']  = ($file['fullavif'] != '' && filesize($_file['srcfullavif']) < filesize($_file['srcfullwebp'])) ? $file['fullavif'] : $file['fullwebp'];
         if (isset($file['id'])) {
             $file['size_txt'] = round($file['size']/1024);
             $file['is_image'] = serendipity_isImage($file);
@@ -1204,7 +1237,7 @@ echo '
                             $onecount = true;
                         } else {
                             if ($onecount == true) {
-                                $next_id = $image['id'];
+                                $   next_id = $image['id'];
                                 $stop = true;
                             } else {
                                 $previous_attempt = $image['id'];
@@ -1320,17 +1353,21 @@ echo '
             $file['staticpage_results'] = $file['staticpage_results'] ?? array();
             $file['entries'] = $file['entries'] ?? array();
 
+            $_show_lightbox = $this->get_config('show_lightbox', 'false');
+            $show_lightbox = $_show_lightbox == 'bottom' ? true : serendipity_db_bool($_show_lightbox);
+
             unset($path_array['']);
             $serendipity['smarty']->assign(
-                array('plugin_usergallery_title'            => $this->get_config('title'),
-                      'plugin_usergallery_nextid'           => $next_id,
-                      'plugin_usergallery_bcrumb'           => $path_array,
-                      'plugin_usergallery_previousid'       => $previous_id,
-                      'plugin_usergallery_xtra_info'        => $exif_output ?? null,
-                      'plugin_usergallery_extended_info'    => $extended_data_out ?? null,
-                      'plugin_usergallery_file'             => $file,
-                      'plugin_usergallery_is_endsize'       => $max_size
-                      )
+                array( 'plugin_usergallery_title'           => $this->get_config('title'),
+                       'plugin_usergallery_nextid'          => $next_id,
+                       'plugin_usergallery_bcrumb'          => $path_array,
+                       'plugin_usergallery_previousid'      => $previous_id,
+                       'plugin_usergallery_xtra_info'       => $exif_output ?? null,
+                       'plugin_usergallery_extended_info'   => $extended_data_out ?? null,
+                       'plugin_usergallery_uselightbox'     => $show_lightbox,
+                       'plugin_usergallery_file'            => $file,
+                       'plugin_usergallery_is_endsize'      => $max_size
+                    )
             );
             $content = $this->parseTemplate('plugin_usergallery_imagedisplay.tpl');
             echo $content;

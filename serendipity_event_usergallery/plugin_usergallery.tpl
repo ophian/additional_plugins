@@ -1,20 +1,20 @@
-{if $plugin_usergallery_use_reltype !== true}
-<script type="text/javascript">
+{if $plugin_usergallery_image_display == 'popup' && $plugin_usergallery_use_reltype !== true}
+    <script type="text/javascript">
     <!--
     {literal}
-    function popImage(file_var,file_name,file_title,file_width,file_height) {
+    function popImage(file_avif,file_webp,file_name,file_title,file_width,file_height) {
         if (parseInt(navigator.appVersion.charAt(0)) >= 4) {
             var optBrowser='scrollbars=yes,width='+file_width+',height='+file_height+',toolbar=no,menubar=no,location=no,resize=1,resizable=0';
             var imgWin=window.open('about:blank','',optBrowser);
             with (imgWin.document) {
                 writeln('<html><head><title>Loading...</title>');
-                writeln('<style>body{margin:0;padding:0;text-align:center;}img{border:0px;}</style>');
+                writeln('<style>html{width:100vw}body{margin:0;padding:0;text-align:center;scrollbar-gutter:stable both-edges;overflow-x:hidden}img{border:0px}</style>');
                 writeln('</head>');
                 writeln('<sc'+'ript>');
                 writeln('function doTitle(){document.title="'+file_title+'";}');
                 writeln('</sc'+'ript>');
                 writeln('<body onload="self.focus();doTitle()">');
-                writeln('<a href="javascript:window.close()"><picture><source srcset="'+file_var+'" type="image/webp" /><img src="'+file_name+'" width="'+file_width+'" height="'+file_height+'" alt=""/></picture></a>');
+                writeln('<a href="javascript:window.close()"><picture><source srcset="'+file_avif+'" type="image/avif"><source srcset="'+file_webp+'" type="image/webp"><img src="'+file_name+'" width="'+file_width+'" height="'+file_height+'" alt=""></picture></a>');
                 writeln('</body></html>');
                 close();
             }
@@ -116,21 +116,22 @@
 {if $plugin_usergallery_image_display === 'popup'}
 
                     <!-- popup -->
-                    <a href="javascript:popImage('{$image.varimage}','{$image.fullimage}','{$image.name}','{$image.dimensions_width}','{$image.dimensions_height}')" class="serendipity_image_link" data-fallback="{$image.link}" title="{$image.title}"><picture><source srcset="{$image.srcv|default:''}" type="image/webp" /><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} loading="lazy" src="{$image.link}" alt="" /></picture></a>
+                    <a href="javascript:popImage('{$image.fullavif}','{$image.fullwebp}','{$image.fullimage}','{$image.name}','{$image.dimensions_width}','{$image.dimensions_height}')" class="serendipity_image_link" data-fallback="{$image.link}" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} loading="lazy" src="{$image.link}" alt=""></picture></a>
 {else}
 
-                    <!-- show thumb -->{if $plugin_usergallery_uselightbox === true}{* NOTE: Both inline style width 100% are for col 2 alike galleries, to size images up and not rely on a content width / 2 smaller image width! *}
+                    <!-- show thumb -->
+{if $plugin_usergallery_uselightbox === true}{* NOTE: Both inline style width 100% are for col 2 alike galleries, to size images up and not rely on a content width / 2 smaller image width! *}
 
-                    <a href="{$image.fullwebp}" {$plugin_usergallery_lightbox_type} class="serendipity_image_link" data-fallback="{$image.fullimage}" title="{$image.title}"><picture><source srcset="{$image.srcv|default:''}" type="image/webp" /><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt="" /></picture></a>
+                    <a href="{$image.varimage}" {$plugin_usergallery_lightbox_type} class="serendipity_image_link" data-fallback="{$image.fullimage}" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt=""></picture></a>
 {else}
 
-                    <a href="{$plugin_usergallery_urlplus}serendipity[image]={$image.id}" class="serendipity_image_link" title="{$image.title}"><picture><source srcset="{$image.srcv|default:''}" type="image/webp" /><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt="" /></picture></a>
+                    <a href="{$plugin_usergallery_urlplus}serendipity[image]={$image.id}" class="serendipity_image_link" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt=""></picture></a>
 {/if}
 {/if}
 {else}
 
                     <!-- download link -->
-                    <a href="{$image.fullimage}" target="blank" class="serendipity_image_link" data-fallback="{$image.link}" title="{$image.title}"><picture><source srcset="{$image.srcv|default:''}" type="image/webp" /><img class="serendipity_image_left gallery_thumb" loading="lazy" src="{$image.link}" alt="" /></picture></a><br><a href="{$image.fullimage}" target="blank">Download {$image.name}.{$image.extension}</a>
+                    <a href="{$image.fullimage}" target="blank" class="serendipity_image_link" data-fallback="{$image.link}" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" loading="lazy" src="{$image.link}" alt=""></picture></a><br><a href="{$image.fullimage}" target="blank">Download {$image.name}.{$image.extension}</a>
 {/if}
 {if $plugin_usergallery_image_gallery|default:false}
                 </div>
