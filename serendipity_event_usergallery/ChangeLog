@@ -3,6 +3,12 @@
  * Add Styx default strict_types
  * Raise requirements for Styx 5
 
+3.40:
+-----
+ * Refactor fixup for correct image variation usage up from Styx 3.7+
+ * Also updates the template files. Watch you copies, please.
+ * Raises requirements
+
 3.24:
 -----
  * Better check undeclared file counter on empty (other place)
