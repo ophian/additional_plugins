@@ -1239,7 +1239,7 @@ echo '
                             $onecount = true;
                         } else {
                             if ($onecount == true) {
-                                $   next_id = $image['id'];
+                                $next_id = $image['id'];
                                 $stop = true;
                             } else {
                                 $previous_attempt = $image['id'];
