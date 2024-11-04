@@ -48,7 +48,7 @@
                         <span class="page-link hidden"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></span>
 {/if}
                     </li>
-                    <li class="page-item info{if empty($plugin_usergallery_bcrumb)} disabled{/if}"><a href="{$plugin_usergallery_url}">{$head_title|default:plugin_usergallery_title}</a>{foreach $plugin_usergallery_bcrumb AS $ugbcrumb} &raquo; {if $ugbcrumb@last}<strong>{$ugbcrumb.name}</strong>{else}<a href="{$plugin_usergallery_urlplus}gallery={$ugbcrumb.path}">{$ugbcrumb.name}</a>{/if}{/foreach}</li>
+                    <li class="page-item info{if empty($plugin_usergallery_bcrumb)} disabled{/if}"><a href="{$plugin_usergallery_url}">{$head_title|default:$plugin_usergallery_title}</a>{foreach $plugin_usergallery_bcrumb AS $ugbcrumb} &raquo; {if $ugbcrumb@last}<strong>{$ugbcrumb.name}</strong>{else}<a href="{$plugin_usergallery_urlplus}gallery={$ugbcrumb.path}">{$ugbcrumb.name}</a>{/if}{/foreach}</li>
                     <li class="page-item next{if plugin_usergallery_nextid == -1} disabled{/if}">
 {if $plugin_usergallery_nextid != -1}
                         <a class="page-link" href="{$plugin_usergallery_urlplus}serendipity[image]={$plugin_usergallery_nextid}">
