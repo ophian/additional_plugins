@@ -1386,7 +1386,7 @@ echo '
         global $serendipity;
 
         if (isset($serendipity['GET']['subpage'])
-        && ($serendipity['GET']['subpage'] == $this->get_config('pagetitle') || preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
+        && ($serendipity['GET']['subpage'] == $this->get_config('subpage') || preg_match('@^' . preg_quote($this->get_config('permalink')) . '@i', $serendipity['GET']['subpage']))) {
             return true;
         }
 

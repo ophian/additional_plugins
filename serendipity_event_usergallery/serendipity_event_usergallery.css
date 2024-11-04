@@ -26,8 +26,18 @@ div.serendipity_gallery_thumbs {
 }
 
 /* pure default theme dark mode */
-[data-dark-theme="dark"] #page_gallery .page_content {
+[data-dark-theme="dark"] #page_gallery .page_content, [data-dark-theme="dark"] .serendipity_event_usergallery_image_display .serendipity_gallery_entry {
     border-color: #1c2128;
+}
+[data-dark-theme="dark"] .exif_info_head {
+    background-color: #212c37;
+    border-color: #666;
+}
+[data-dark-theme="dark"] ul.serendipity_gallery_navigation.pagination .page-link,
+[data-dark-theme="dark"] ul.serendipity_gallery_pagination_top.pagination .page-link,
+[data-dark-theme="dark"] ul.serendipity_gallery_pagination_bottom.pagination .page-link {
+    background-color: #1c2128;
+    border-color: #444c56;
 }
 
 /* generics */
@@ -42,6 +52,12 @@ div.serendipity_gallery_info {
 .serendipity_gallery_info > div:first-child {
     font-size: smaller;
     font-style: oblique;
+}
+@media screen and (min-width: 768px) {
+  .serendipity_gallery_info ol {
+    margin: 0 auto;
+    width: 60vw;
+  }
 }
 div.serendipity_gallery_entry {
    margin-left: auto;
