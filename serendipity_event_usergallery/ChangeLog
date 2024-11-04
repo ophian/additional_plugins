@@ -1,3 +1,10 @@
+3.50:
+-----
+ * Fix "startpage" option since 3.08
+ * Fix empty variation image case on very old blogs w/o variations (yet) in plugin_usergallery.tpl template file
+ * Add some more styles for standard theme and generic cases
+ * Fix a title variable in plugin_usergallery_imagedisplay.tpl template file
+
 3.40:
 -----
  * Refactor fixup for correct image variation usage up from Styx 3.7+
@@ -25,7 +32,7 @@
  * Fixup fetch/prep/show MediaLibrary image properties
  * Add new directory_properties option to simple add some half-automatic description property to each (traveled) directory name as an extension of allowed media_properties
  * Fix templates for better indent display
- * Disabled RSS feed option since found no working use case... (if you have please tell me)
+ * Disabled RSS feed option since found no working use case... (if YOU have, please tell me)
  * Dark mode for EXIF data table
  * Fix default value 'media_properties' example to use (public) COMMENT1 instead of (internal) COMMENT2
  * Cleanup
