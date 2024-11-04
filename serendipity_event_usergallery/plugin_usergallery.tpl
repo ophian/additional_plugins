@@ -116,16 +116,16 @@
 {if $plugin_usergallery_image_display === 'popup'}
 
                     <!-- popup -->
-                    <a href="javascript:popImage('{$image.fullavif}','{$image.fullwebp}','{$image.fullimage}','{$image.name}','{$image.dimensions_width}','{$image.dimensions_height}')" class="serendipity_image_link" data-fallback="{$image.link}" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} loading="lazy" src="{$image.link}" alt=""></picture></a>
+                    <a href="javascript:popImage('{$image.fullavif}','{$image.fullwebp}','{$image.fullimage}','{$image.name}','{$image.dimensions_width}','{$image.dimensions_height}')" class="serendipity_image_link" data-fallback="{$image.link}" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width != 0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} loading="lazy" src="{$image.link}" alt=""></picture></a>
 {else}
 
                     <!-- show thumb -->
 {if $plugin_usergallery_uselightbox === true}{* NOTE: Both inline style width 100% are for col 2 alike galleries, to size images up and not rely on a content width / 2 smaller image width! *}
 
-                    <a href="{$image.varimage|default:$image.fullimage}" {$plugin_usergallery_lightbox_type} class="serendipity_image_link" data-fallback="{$image.fullimage}" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt=""></picture></a>
+                    <a href="{$image.varimage|default:$image.fullimage}" {$plugin_usergallery_lightbox_type} class="serendipity_image_link" data-fallback="{$image.fullimage}" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width != 0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt=""></picture></a>
 {else}
 
-                    <a href="{$plugin_usergallery_urlplus}serendipity[image]={$image.id}" class="serendipity_image_link" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width !=0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt=""></picture></a>
+                    <a href="{$plugin_usergallery_urlplus}serendipity[image]={$image.id}" class="serendipity_image_link" title="{$image.title}"><picture><source srcset="{$image.thumbavif|default:''}" type="image/avif"><source srcset="{$image.thumbwebp|default:''}" type="image/webp"><img class="serendipity_image_left gallery_thumb" {if $plugin_usergallery_fixed_width != 0}height={$plugin_usergallery_fixed_width}px width={$plugin_usergallery_fixed_width}px{/if} style="width: 100%;" loading="lazy" src="{$image.link}" alt=""></picture></a>
 {/if}
 {/if}
 {else}
