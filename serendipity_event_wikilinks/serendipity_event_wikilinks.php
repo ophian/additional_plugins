@@ -28,7 +28,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -381,8 +381,7 @@ class serendipity_event_wikilinks extends serendipity_event
                             }
 
                             // To workaround the doubled ref tag when ref tag contains a link added with TinyMCE code cleanup tasker we use the markdown approach []() for the link
-                            // change to str_contains with Styx 5.0
-                            if (false !== strpos($source, '<sup class="wikiref">')) {
+                            if (str_contains($source, '<sup class="wikiref">')) {
                                 $source = preg_replace('/\[(.*?)\]\s*\((.*?)\)/', '<a href="$2">$1</a>', $source);
                             }
                         }

@@ -1,3 +1,7 @@
+2.0.2:
+------
+ * Use str_contains() for v.1.4.0
+
 2.0.1:
 ------
  * Deny workflow access on backend comments preview
