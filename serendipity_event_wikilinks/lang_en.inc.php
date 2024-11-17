@@ -26,23 +26,27 @@
 
 @define('PLUGIN_EVENT_WIKILINKS_REFMATCH_NAME', 'Pattern for reference capturing');
 @define('PLUGIN_EVENT_WIKILINKS_REFMATCH_DESC', 'Here you can specify the pattern that will be used to go through your text, and that will capture all references written in this way. It will collect those references, store them in a database and format them below the blogentry. Also you can use {$entry.properties.references} to place it anywhere you like in your smarty template file. The pattern is specified as a regular expression, be sure to escape special characters. The default looks complex because it uses named subpatterns, but it can be easily used like this: <ref name="xxx">yyy</ref> - where xxx is an optional name of a reference (see below) and yyy the actual text, where yyy can be any HTML or markup you like.');
-@define('PLUGIN_EVENT_WIKILINKS_REFDOC', '<strong>Re-Using references</strong><br /><br />If you want to use references on multiple occasions, it\'s helpful to only specify them once and reuse them later. If you have this text for example:<br />
-<div style="border: 1px solid black; padding: 4px">
+@define('PLUGIN_EVENT_WIKILINKS_REFDOC', '<h3><strong>Re-Using references</strong></h3>
+<p>If you want to use references on multiple occasions, it\'s helpful to only specify them once and reuse them later. If you have this text for example:
+<pre style="border: 1px solid black; padding: inherit; background-color: var(--color-auto-gray-3)">
 Serendipity&lt;ref&gt;&lt;a href="http://www.s9y.org"&gt;Serendipity Weblog&lt;/a&gt; - also, Serendipity stands for several other interpretations like a movie, or a dancer in a movie, or a movie of a dancer in a movie.</ref> can be found in many places.
-</div>
-<br/><br />
-Since you surely will mention Serendipity a lot of times in your blog, you should make a referenced mention, which works by adding a <em>name</em> attribute to the &lt;ref&gt; tag, and make it look like this:
-<div style="border: 1px solid black; padding: 4px">
+</pre></p>
+<p>Since you surely will mention Serendipity a lot of times in your blog, you should make a referenced mention, which works by adding a <em>name</em> attribute to the &lt;ref&gt; tag, and make it look like this:
+<pre style="border: 1px solid black; padding: inherit; background-color: var(--color-auto-gray-3)">
 Serendipity&lt;ref name="Serendipity"&gt;&lt;a href="http://www.s9y.org"&gt;Serendipity Weblog&lt;/a&gt; - also, Serendipity stands for several other interpretations like a movie, or a dancer in a movie, or a movie of a dancer in a movie.</ref> can be found in many places.</pre>
-</div>
-<br/><br />
-Now you only need to do this for the first occurence of your reference. Whenever you want to use the same reference in future blog entries you simply write this:
-<div style="border: 1px solid black; padding: 4px">
+</pre>
+</p>
+<p>Now you only need to do this for the first occurrence of your reference. Whenever you want to use the same reference in future blog entries you simply write this:
+<pre style="border: 1px solid black; padding: inherit; background-color: var(--color-auto-gray-3)">
 Serendipity&lt;ref name="Serendipity"&gt;&lt;/ref&gt;
-</div>
-<br /><br />
-This will take care of fetching the existing, named reference text from the database. Please note that you must use the &lt;ref&gt;...&lt;/ref&gt; notation, &lt;ref.../&gt; is not supported due to the regular expression syntax not properly supporting this.
-');
+</pre></p>
+<p>This will take care of fetching the existing, named reference text from the database. Please note that you must use the &lt;ref&gt;...&lt;/ref&gt; notation, &lt;ref.../&gt; is not supported due to the regular expression syntax not properly supporting this.
+<h3>PLEASE NOTE:</h3>
+When using the RichText Editor and you want to use ref tags containing a link like in our examples here then you have to use this (markdown) alike syntax <code>[]()</code> for the link to avoid editor cleanups doubling the ref tags by the Editors rich text mode:</p>
+<pre style="border: 1px solid black; padding: inherit; background-color: var(--color-auto-gray-3)">
+Serendipity&lt;ref name="Serendipity"&gt;[Serendipity Styx Weblog](https://ophian.github.io/) - also, Serendipity stands for several other interpretations like a movie, or a dancer in a movie, or a movie of a dancer in a movie.&lt;/ref&gt; can be found in many places.<br>
+FooBar&lt;ref name="foobar"&gt;[FooBar wording](https://google.com/search?q=foobar) - The terms foobar foo, bar, baz, qux, quux, and others are used as metasyntactic variables and placeholder names in computer programming or computer-related ..., also FooBar stands for several other interpretations like an advanced freeware audio player for the Windows platform, or for "fucked up beyond all recognition", etc.&lt;/ref&gt; can be found in many places.
+</pre></p>');
 
 @define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET_NAME', 'Format for replaced reference output');
 @define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET_DESC', 'Here you can enter how the captured reference will be replaced, usually a number linking to the list of references. {count} and {text} are placeholders for the replaced reference number and its original text. {refname} corresponds to an optional name of the reference.');
