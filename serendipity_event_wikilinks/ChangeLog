@@ -1,3 +1,8 @@
+1.4.0:
+------
+ * Workaround TinyMCE RichText Editor cleanup editor task which doubles the ref tag when it contains an inner link,
+   see description examples in the plugin configuration.
+
 1.3.0:
 ------
  * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links
