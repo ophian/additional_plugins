@@ -379,6 +379,12 @@ class serendipity_event_wikilinks extends serendipity_event
                                 }
                                 $eventData['properties']['references'] += $this->references;
                             }
+
+                            // To workaround the doubled ref tag when ref tag contains a link added with TinyMCE code cleanup tasker we use the markdown approach []() for the link
+                            // change to str_contains with Styx 5.0
+                            if (false !== strpos($source, '<sup class="wikiref">')) {
+                                $source = preg_replace('/\[(.*?)\]\s*\((.*?)\)/', '<a href="$2">$1</a>', $source);
+                            }
                         }
                     }
                     break;
@@ -593,6 +599,14 @@ class serendipity_event_wikilinks extends serendipity_event
         } else {
             $this->references[$buffer['refname']] = $buffer['ref'];
             $this->refcount[$buffer['refname']] = (string)$count;
+        }
+
+        // preview case
+        #<p>Serendipity<ref name="Serendipity">[Serendipity Styx Weblog](https://ophian.github.io/) - also, Serendipity stands for several other interpretations like a movie, or a dancer in a movie, or a movie of a dancer in a movie.</ref> can be found in many places.</p>
+        #<p>FooBar<ref name="foobar">[FooBar wording](https://google.com/search?q=foobar) - The terms foobar foo, bar, baz, qux, quux, and others are used as metasyntactic variables and placeholder names in computer programming or computer-related ..., also FooBar stands for several other interpretations like an advanced freeware audio player for the Windows platform, or for "fucked up beyond all recognition", etc.</ref> can be found in many places.</p>
+        //to workaround the doubled ref tag when ref tag contains a link with TinyMCE code cleanup tasker we use the markdown approach []() for the link
+        if (!empty($buffer['ref'])) {
+            $buffer['ref'] = preg_replace('/\[(.*?)\]\s*\((.*?)\)/', '<a href="$2">$1</a>', $buffer['ref']);
         }
 
         $result = $this->get_config('target_match');
