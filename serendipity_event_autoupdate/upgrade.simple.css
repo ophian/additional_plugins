@@ -54,6 +54,8 @@ progress[value]::-moz-progress-bar{background-image:-moz-linear-gradient(135deg,
 .msg_notice{background:#fcf8e3;border:1px solid #f7ecb5;color:#c09853}
 .msg_dialogue{background:#eee;border:1px solid #aaa;color:#777}
 .msg_run{margin:0;padding-left:2em;color:#777;font-size:.9em}
+#top{display:flex;}
+#top>div.logo{max-width:14em;width:14em;margin:.25em;padding:0 2.5%;}
 #top,#terminator{background:#25253d;color:#fcfcfc}
 #top{background:rgb(62,95,129) linear-gradient(rgb(62,95,129),rgb(41,69,100));box-shadow:rgba(0,0,0,0.5) 0px 1px 4px;color:rgb(204,221,231);text-shadow:rgba(0,0,0,0.8) 1px 1px 1px}
 #top>div{display:flex;margin:0px auto;max-width:1280px;width:100%;padding-left:2.5%;padding-right:2.5%;box-sizing:border-box}
