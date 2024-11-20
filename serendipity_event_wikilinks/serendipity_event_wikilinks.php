@@ -167,7 +167,7 @@ class serendipity_event_wikilinks extends serendipity_event
         #}
 ?>
 <!DOCTYPE html>
-<html<?php echo (isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true) ? ' data-color-mode="dark"' : ' data-color-mode="slight"';?> class="no-js page_wlelist" dir="ltr" lang="<?=$serendipity['lang']?>">
+<html<?php echo (isset($serendipity['dark_mode']) && $serendipity['dark_mode'] === true) ? ' data-color-mode="dark"' : ' data-color-mode="light"';?> class="no-js page_wlelist" dir="ltr" lang="<?=$serendipity['lang']?>">
     <head>
         <title><?php echo PLUGIN_EVENT_WIKILINKS_LINKENTRY; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=<?php echo LANG_CHARSET; ?>">
@@ -381,7 +381,7 @@ class serendipity_event_wikilinks extends serendipity_event
                             }
 
                             // To workaround the doubled ref tag when ref tag contains a link added with TinyMCE code cleanup tasker we use the markdown approach []() for the link
-                            if (str_contains($source, '<sup class="wikiref">')) {
+                            if ($element != 'comment' && str_contains($source, '<sup class="wikiref">')) {
                                 $source = preg_replace('/\[(.*?)\]\s*\((.*?)\)/', '<a href="$2">$1</a>', $source);
                             }
                         }
@@ -600,7 +600,7 @@ class serendipity_event_wikilinks extends serendipity_event
             $this->refcount[$buffer['refname']] = (string)$count;
         }
 
-        // preview case
+        // Backend entry preview case
         #<p>Serendipity<ref name="Serendipity">[Serendipity Styx Weblog](https://ophian.github.io/) - also, Serendipity stands for several other interpretations like a movie, or a dancer in a movie, or a movie of a dancer in a movie.</ref> can be found in many places.</p>
         #<p>FooBar<ref name="foobar">[FooBar wording](https://google.com/search?q=foobar) - The terms foobar foo, bar, baz, qux, quux, and others are used as metasyntactic variables and placeholder names in computer programming or computer-related ..., also FooBar stands for several other interpretations like an advanced freeware audio player for the Windows platform, or for "fucked up beyond all recognition", etc.</ref> can be found in many places.</p>
         //to workaround the doubled ref tag when ref tag contains a link with TinyMCE code cleanup tasker we use the markdown approach []() for the link
@@ -651,7 +651,7 @@ class serendipity_event_wikilinks extends serendipity_event
 
                 array(
                     $count2,
-                    $buffer,/*htmlspecialchars($buffer), not: since then link markup will not display properly */
+                    $buffer,/* htmlspecialchars($buffer), NOT: since then link markup will not display properly */
                     $key
                 ),
                 $format
