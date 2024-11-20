@@ -1,3 +1,10 @@
+1.5.0:
+------
+ * Improve for RichText Editor handling
+ * Refactor popup for entry selection
+ * Fix option case 'reference_info' for coloring contrast
+ * Some PHP 8.1/ 8.2/ 8.3 / 8.4 readiness
+
 1.4.0:
 ------
  * Workaround TinyMCE RichText Editor cleanup editor task which doubles the ref tag when it contains an inner link,
