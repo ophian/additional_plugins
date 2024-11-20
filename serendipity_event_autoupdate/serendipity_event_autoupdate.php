@@ -191,7 +191,7 @@ class serendipity_event_autoupdate extends serendipity_event
                     $ad_loader = empty($nozipext) ? '<div id="loader"><span></span><span></span><span></span></div>' : '';
                     $css_upd   = @file_get_contents(dirname(__FILE__) . '/upgrade.min.css');
                     $bimgpath  = $serendipity['serendipityHTTPPath'] . $serendipity['templatePath'] . (file_exists($serendipity['serendipityPath'] . $serendipity['templatePath'] . 'styx_logo_150.png') ? 'styx_logo_150.png' : 's9y_banner_small.png');
-                    $s9ybanner = (file_exists($_SERVER['DOCUMENT_ROOT'] . $bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity Styx PHP Weblog" title="' . POWERED_BY . ' Serendipity Styx"> ' : ' ');
+                    $styxlogo  = (file_exists($_SERVER['DOCUMENT_ROOT'] . $bimgpath) ? '<img src="' . $bimgpath . '" alt="Serendipity Styx PHP Weblog" title="' . POWERED_BY . ' Serendipity Styx"> ' : ' ');
                     $rqstnv    = isset($_REQUEST['serendipity']['newVersion']) ? ($_GET['serendipity']['newVersion'] ?? $_POST['serendipity']['newVersion']) : '';
                     $nv        = htmlspecialchars($rqstnv); // reduce to POST only?
                     if (trim($nv) == '') return;
@@ -254,10 +254,11 @@ class serendipity_event_autoupdate extends serendipity_event
     </defs>
 </svg>
 <header id="top">
+    <div class="logo">{$styxlogo}</div>
     <div class="clearfix">
         <div id="banner">
             <h1>{$ad_suite}</h1>
-            <span class="block_level">{$s9ybanner}{$self_info} <span title="{$ad_help}"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg></span></span></span>
+            <span class="block_level">{$self_info} <span title="{$ad_help}"><svg class="icon icon-attention" title="attention"><use xlink:href="#icon-attention"></use></svg></span></span></span>
         </div>
         <nav id="user_menu">
             <h2 class="visuallyhidden">User menu</h2>
