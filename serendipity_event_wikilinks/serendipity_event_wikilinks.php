@@ -182,15 +182,9 @@ class serendipity_event_wikilinks extends serendipity_event
 <?php } } ?>
         <script>
             function linkchooser(instance_name = '', this_instance = '') {
-console.log(instance_name);
-console.log(this_instance);
-console.log('inline srcriptlet'); // i.e. for backend entries and plugins like adminnotes quicknote, htmlnugget, contactform, staticpages, template blocks, etc.
                 const capturingRegex = /(?<area>nugget|quick)/; //all nuggets(\d+) and plugin adminnotes quicknote // NO QUOTES !!!!
                 const found = instance_name.match(capturingRegex);
-if (found !== null) console.log(found.groups); // i.e. {area: "nugget"}
-console.log('found: '+found); // null if not
                 const instance = (found !== null) ? instance_name : this_instance;
-console.log(instance);
                 const use_wikilink = 'use_wikilink_'+instance_name;
 
                 // works on both: enableBackendPopup or MFP- layer
@@ -202,7 +196,6 @@ console.log(instance);
                         window.parent.parent.$.magnificPopup.close();
                     }
                     catch (e) {
-//console.log(self.opener);
                         self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
                         self.close();
                     }
