@@ -1,3 +1,7 @@
+2.0.3:
+------
+ * Fix merge conflicts of 1.5.0
+
 2.0.2:
 ------
  * Use str_contains() for v.1.4.0
@@ -15,6 +19,13 @@
  * Conversion to use the default magnific popup layer
  * Improved backend and fixed some bugs
  * This plugin needs some documentation though....
+
+1.5.0:
+------
+ * Improve for RichText Editor handling
+ * Refactor popup for entry selection
+ * Fix option case 'reference_info' for coloring contrast
+ * Some PHP 8.1/ 8.2/ 8.3 / 8.4 readiness
 
 1.4.0:
 ------
