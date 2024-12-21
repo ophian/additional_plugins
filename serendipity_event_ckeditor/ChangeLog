@@ -1,3 +1,8 @@
+4.22.1.2:
+---------
+    * Fix "dark_contents.min.css" styles accidentally setting WYSIWYG-mode editor code blocks into a one-liner.
+      Please force a hard hard reload of this internal file.
+
 4.22.1.1:
 ---------
     * Improve an editor mode (and dark mode) image border box on added floated images using the div element,
