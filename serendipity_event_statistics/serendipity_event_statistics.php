@@ -1503,7 +1503,7 @@ class serendipity_event_statistics extends serendipity_event
 
        serendipity_db_schema_import($q);
 
-        // create table xxxx_visitors_counts
+        // create table xxxx_visitors_count
         $q   = "CREATE TABLE {$serendipity['dbPrefix']}visitors_count (
             year int(4) not null,
             month int(2) not null,
