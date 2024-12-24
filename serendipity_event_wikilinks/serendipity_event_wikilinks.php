@@ -26,7 +26,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '1.5.0');
+        $propbag->add('version',       '1.6.0');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
             'smarty'      => '3.1',
@@ -684,11 +684,11 @@ class serendipity_event_wikilinks extends serendipity_event
     function _wikify($buffer)
     {
         global $serendipity;
-        $debug = true;
+        #$debug = true;
 
         $admin_url = false;
 
-        $cidx = 2;
+        $cidx = 2; // 1 & 3 are [[ & ]]
 
         if ($buffer[1] == '((') {
             $type = $otype = 'staticpage';
@@ -751,7 +751,7 @@ class serendipity_event_wikilinks extends serendipity_event
             if (serendipity_userLoggedIn()) {
                 $mode  = 'create';
                 $title = urlencode($ltitle);
-                $body  = '<h1>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($ltitle) : htmlspecialchars($ltitle, ENT_COMPAT, LANG_CHARSET)) . '</h1>';
+                $body  = '<h2>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($ltitle) : htmlspecialchars($ltitle, ENT_COMPAT, LANG_CHARSET)) . '</h2>';
 
                 $admin_url2 = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[pre][headline]=' . $title . '&amp;serendipity[pre][content]=' . $body . '&amp;serendipity[pre][pagetitle]=' . $title;
                 if ($otype == 'staticpage') {
