@@ -17,7 +17,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.9.1');
+        $propbag->add('version',        '2.9.2');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -114,29 +114,34 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         if (is_null($built)) {
 
-            // Print the MySQL version
-            $serendipity['db_server_info'] = mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
-            // be a little paranoid...
-            if (substr($serendipity['db_server_info'], 0, 6) === '5.5.5-') {
-                // strip any possible added prefix having this 5.5.5 version string (which was never released). PHP up from 8.0.16 now strips it correctly.
-                $serendipity['db_server_info'] = str_replace('5.5.5-', '', $serendipity['db_server_info']);
-            }
-            $db_version_match = explode('-', $serendipity['db_server_info']);
-            if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
-                if (version_compare($db_version_match[0], '10.5.0', '>=')) {
-                    $length = 255; // MariaDB 10.5 ARIA versions with max key 2000 bytes
-                } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
-                    $length = 250; // MariaDB 10.3 and 10.4 ARIA versions with max key 1000 bytes
+            if ($serendipity['dbType'] == 'mysqli') {
+                // Print the MySQL version
+                $serendipity['db_server_info'] = $serendipity['db_server_info'] ?? mysqli_get_server_info($serendipity['dbConn']); // eg.  == 5.5.5-10.4.11-MariaDB
+                // be a little paranoid...
+                if (substr($serendipity['db_server_info'], 0, 6) === '5.5.5-') {
+                    // strip any possible added prefix having this 5.5.5 version string (which was never released). PHP up from 8.0.16 now strips it correctly.
+                    $serendipity['db_server_info'] = str_replace('5.5.5-', '', $serendipity['db_server_info']);
+                }
+                $db_version_match = explode('-', $serendipity['db_server_info']);
+                if (stristr(strtolower($serendipity['db_server_info']), 'mariadb')) {
+                    if (version_compare($db_version_match[0], '10.5.0', '>=')) {
+                        $length = 255; // MariaDB 10.5 ARIA versions with max key 2000 bytes
+                    } elseif (version_compare($db_version_match[0], '10.3.0', '>=')) {
+                        $length = 250; // MariaDB 10.3 and 10.4 ARIA versions with max key 1000 bytes
+                    } else {
+                         $length = 191; // for old InnoDB
+                    }
                 } else {
-                     $length = 191; // for old InnoDB
+                    // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
+                    if (version_compare($db_version_match[0], '5.7.7', '>=')) {
+                         $length = 255; // 255 varchar key length - InnoDB (Since MySQL 5.7 innodb_large_prefix is enabled by default allowing up to 3072 bytes)
+                    } else {
+                         $length = 191; // // 191 varchar key length - old Oracles MySQL InnoDB (191 characters * 4 bytes = 764 bytes which is less than the maximum length of 767 bytes allowed when innoDB_large_prefix is disabled)
+                    }
                 }
             } else {
-                // Oracle MySQL - https://dev.mysql.com/doc/refman/5.7/en/innodb-limits.html
-                if (version_compare($db_version_match[0], '5.7.7', '>=')) {
-                     $length = 255; // 255 varchar key length - InnoDB (Since MySQL 5.7 innodb_large_prefix is enabled by default allowing up to 3072 bytes)
-                } else {
-                     $length = 191; // // 191 varchar key length - old Oracles MySQL InnoDB (191 characters * 4 bytes = 764 bytes which is less than the maximum length of 767 bytes allowed when innoDB_large_prefix is disabled)
-                }
+                // everything else
+                $length = 255;
             }
             # b8 needs to one table for the tokens - using the old name without dbPrefix - see later
             $sql = "CREATE TABLE IF NOT EXISTS b8_wordlist(
@@ -228,7 +233,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             $category = $_REQUEST['category'];
                             $ids = $_REQUEST['id'];
                             $ids = explode(';', $ids);
-                            foreach($ids as $id) {
+                            foreach($ids AS $id) {
                                 $databaseComment = $this->getComment($id)[0];
 
                                 $comment = $databaseComment['url'] . ' ' . $databaseComment['body'] . ' ' . $databaseComment['author'] . ' ' . $databaseComment['email'];
@@ -613,13 +618,13 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         global $serendipity;
 
         $sql  = "INSERT INTO
-                    {$serendipity['dbPrefix']}spamblock_bayes_recycler (entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
+                    {$serendipity['dbPrefix']}spamblock_bayes_recycler (id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
                         SELECT
-                            entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
+                            id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
                         FROM
                             {$serendipity['dbPrefix']}comments
                         WHERE
-                            id = '$id' AND entry_id = '$entry_id'";
+                            id = '$id' AND entry_id = '$entry_id';";
         serendipity_db_query($sql);
     }
 

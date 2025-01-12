@@ -135,13 +135,14 @@ abstract class storage_base
         $texts_ham = null;
         $texts_spam = null;
         $dbversion = null;
-        if(isset($internals[\b8\b8::INTERNALS_TEXTS][\b8\b8::KEY_COUNT_HAM])) {
+
+        if (isset($internals[\b8\b8::INTERNALS_TEXTS][\b8\b8::KEY_COUNT_HAM])) {
             $texts_ham = (int) $internals[\b8\b8::INTERNALS_TEXTS][\b8\b8::KEY_COUNT_HAM];
         }
-        if(isset($internals[\b8\b8::INTERNALS_TEXTS][\b8\b8::KEY_COUNT_SPAM])) {
+        if (isset($internals[\b8\b8::INTERNALS_TEXTS][\b8\b8::KEY_COUNT_SPAM])) {
             $texts_spam = (int) $internals[\b8\b8::INTERNALS_TEXTS][\b8\b8::KEY_COUNT_SPAM];
         }
-        if(isset($internals[\b8\b8::INTERNALS_DBVERSION][\b8\b8::KEY_COUNT_HAM])) {
+        if (isset($internals[\b8\b8::INTERNALS_DBVERSION][\b8\b8::KEY_COUNT_HAM])) {
             $dbversion = (int) $internals[\b8\b8::INTERNALS_DBVERSION][\b8\b8::KEY_COUNT_HAM];
         }
 
@@ -200,7 +201,7 @@ abstract class storage_base
                 // The token was not found, so we look if we can return data for degenerated tokens
                 foreach ($this->degenerator->degenerates[$token] as $degenerate) {
                     if (isset($token_data[$degenerate])) {
-                        // A degenertaed version of the token way found in the database
+                        // A degenerated version of the token was found in the database
                         $return_data_degenerates[$token][$degenerate] = $token_data[$degenerate];
                     }
                 }
