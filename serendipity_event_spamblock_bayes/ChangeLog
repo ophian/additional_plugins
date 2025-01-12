@@ -1,3 +1,8 @@
+2.9.2:
+-----
+ * Fix incomplete mysql check logic for index key length per database
+ * [#Sync] Fix comments marked as SPAM not being deleted and added to the recycler
+
 2.9.1:
 -----
  * Remove an outdated backend selector usage

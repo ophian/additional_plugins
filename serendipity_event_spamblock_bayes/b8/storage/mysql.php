@@ -62,9 +62,11 @@ class mysql extends storage_base
                                       . ' WHERE token IN '
                                       . "('" . implode("','", $escaped) . "')");
 
-        while ($row = $result->fetch_row()) {
-            $data[$row[0]] = [ \b8\b8::KEY_COUNT_HAM  => $row[1],
-                               \b8\b8::KEY_COUNT_SPAM => $row[2] ];
+        if (false !== $result) {
+            while ($row = $result->fetch_row()) {
+                $data[$row[0]] = [ \b8\b8::KEY_COUNT_HAM  => $row[1],
+                                   \b8\b8::KEY_COUNT_SPAM => $row[2] ];
+            }
         }
 
         $result->free_result();
