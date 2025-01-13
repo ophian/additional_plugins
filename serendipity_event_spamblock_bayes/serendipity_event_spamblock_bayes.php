@@ -17,7 +17,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.9.3');
+        $propbag->add('version',        '2.9.4');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -153,7 +153,6 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
             # recycler-table
             switch ($serendipity['dbType']) {
-                case 'mysql':
                 case 'mysqli':
                     $sql = "INSERT IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
                     serendipity_db_query($sql);
@@ -168,9 +167,6 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                     serendipity_db_schema_import($sql);
                     break;
 
-                case 'sqlite':
-                case 'sqlite3':
-                case 'sqlite3oo':
                 case 'pdo-sqlite':
                     $sql = "INSERT OR IGNORE INTO b8_wordlist (token, count_ham) VALUES ('b8*dbversion', 3)";
                     serendipity_db_query($sql);
@@ -203,16 +199,30 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         switch($built) {
             case 1: // RENAME the b8 TABLE without prefix
             case 2:
-                $sql = 'SHOW TABLES LIKE "b8_wordlist"';
-                $oldname = serendipity_db_query($sql);
+                if (stristr($serendipity['dbType'], 'sqlite')) {
+                    $sql = "SELECT name FROM sqlite_schema WHERE type = 'table' AND 'b8_wordlist'";
+                    $oldname = serendipity_db_query($sql);
+                }
+                if (stristr($serendipity['dbType'], 'mysql')) {
+                    $sql = 'SHOW TABLES LIKE "b8_wordlist"';
+                    $oldname = serendipity_db_query($sql);
+                }
                 if (!empty($oldname)) {
                     $q = "ALTER TABLE `b8_wordlist` RENAME TO `{$serendipity['dbPrefix']}b8_wordlist`";
                     serendipity_db_schema_import($q);
                 }
-                $this->set_config('db_built', 3);
+                $this->set_config('db_built', 4);
                 break;
-        }
+            case 3: // Fix it once for sqlite PDO
+                if (stristr($serendipity['dbType'], 'sqlite')) {
+                    $q = "ALTER TABLE `b8_wordlist` RENAME TO `{$serendipity['dbPrefix']}b8_wordlist`";
+                    serendipity_db_schema_import($q);
+                }
+                $this->set_config('db_built', 4);
+                break;
+       }
     }
+
 
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
@@ -618,9 +628,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         global $serendipity;
 
         $sql  = "INSERT INTO
-                    {$serendipity['dbPrefix']}spamblock_bayes_recycler (entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
+                    {$serendipity['dbPrefix']}spamblock_bayes_recycler (id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
                         SELECT
-                            entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
+                            id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
                         FROM
                             {$serendipity['dbPrefix']}comments
                         WHERE
@@ -638,22 +648,20 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         if (is_array($ids)) {
             $sql = "INSERT INTO
-                    {$serendipity['dbPrefix']}comments
-                    (entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
-                    SELECT
-                    entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
-                    FROM
-                    {$serendipity['dbPrefix']}spamblock_bayes_recycler
-                    WHERE " . serendipity_db_in_sql ( 'id', $ids );
+                    {$serendipity['dbPrefix']}comments (id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
+                        SELECT
+                            id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
+                        FROM
+                            {$serendipity['dbPrefix']}spamblock_bayes_recycler
+                        WHERE " . serendipity_db_in_sql ( 'id', $ids );
         } else {
             $sql = "INSERT INTO
-                    {$serendipity['dbPrefix']}comments
-                    (entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
-                    SELECT
-                    entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
-                    FROM
-                    {$serendipity['dbPrefix']}spamblock_bayes_recycler
-                    WHERE id = " . (int)$ids;
+                    {$serendipity['dbPrefix']}comments (id entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
+                        SELECT
+                            id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
+                        FROM
+                            {$serendipity['dbPrefix']}spamblock_bayes_recycler
+                        WHERE id = " . (int)$ids;
         }
         $result = serendipity_db_query($sql);
         $this->deleteFromRecycler($ids);

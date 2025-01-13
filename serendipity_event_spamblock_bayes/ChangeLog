@@ -1,3 +1,9 @@
+2.9.4:
+-----
+ * Fix ALTER TABLE for SQLite
+ * NOTE: Only PDO:SQLite supported by \b8 class lib
+ * Fix incrementing comment ID when switching back and forth to recycler <-> comments, so it uses its origin comment ID - extends the sync fix
+
 2.9.3:
 -----
  * Strip possible Styx HTML comment tagging for b8_wordlist - only allowing words to be classified
