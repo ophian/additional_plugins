@@ -1,3 +1,8 @@
+2.9.3:
+-----
+ * Strip possible Styx HTML comment tagging for b8_wordlist - only allowing words to be classified
+ * Remove the 2.9.2 #sync for making things worse - doubling comments by new IDs
+
 2.9.2:
 -----
  * Fix incomplete mysql check logic for index key length per database
