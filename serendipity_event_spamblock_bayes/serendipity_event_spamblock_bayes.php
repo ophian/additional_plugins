@@ -17,7 +17,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.9.2');
+        $propbag->add('version',        '2.9.3');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -236,7 +236,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             foreach($ids AS $id) {
                                 $databaseComment = $this->getComment($id)[0];
 
-                                $comment = $databaseComment['url'] . ' ' . $databaseComment['body'] . ' ' . $databaseComment['author'] . ' ' . $databaseComment['email'];
+                                $comment = $databaseComment['url'] . ' ' . strip_tags($databaseComment['body']) . ' ' . $databaseComment['author'] . ' ' . $databaseComment['email'];
 
                                 $this->learn($comment, $category);
 
@@ -294,7 +294,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                             $serendipity['csuccess'] = 'true';
                         }
 
-                        $comment = $addData['url'] . ' ' . $addData['comment'] . ' ' . $addData['name'] . ' ' . $addData['email'];
+                        $comment = $addData['url'] . ' ' . strip_tags($addData['comment']) . ' ' . $addData['name'] . ' ' . $addData['email'];
 
                         if ($this->rate($comment) > 0.8) {
                             $method = $this->get_config('method', 'moderate');
@@ -336,7 +336,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 case 'xmlrpc_comment_spam':
                     $entry_id = $addData['id'];
                     $comment_id = $addData['cid'];
-                    $comment = eventData['url'] . ' ' . $eventData['body'] . ' ' . $eventData['name'] . ' ' . $eventData['email'];
+                    $comment = eventData['url'] . ' ' . strip_tags($eventData['body']) . ' ' . $eventData['name'] . ' ' . $eventData['email'];
                     $this->learn($eventData, 'spam');
                     serendipity_deleteComment($comment_id, $entry_id);
                      break;
@@ -344,7 +344,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                 case 'xmlrpc_comment_ham':
                     $comment_id = $addData['cid'];
                     $entry_id = $addData['id'];
-                    $comment = eventData['url'] . ' ' . $eventData['body'] . ' ' . $eventData['name'] . ' ' . $eventData['email'];
+                    $comment = eventData['url'] . ' ' . strip_tags($eventData['body']) . ' ' . $eventData['name'] . ' ' . $eventData['email'];
                     $this->learn($comment, 'ham');
                     //moderated ham-comments should be instantly approved, that's why they need an id:
                     serendipity_approveComment($comment_id, $entry_id);
@@ -618,9 +618,9 @@ class serendipity_event_spamblock_bayes extends serendipity_event
         global $serendipity;
 
         $sql  = "INSERT INTO
-                    {$serendipity['dbPrefix']}spamblock_bayes_recycler (id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
+                    {$serendipity['dbPrefix']}spamblock_bayes_recycler (entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer)
                         SELECT
-                            id, entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
+                            entry_id, parent_id, ip, author, email, url, body, type, timestamp, title, subscribed, status, referer
                         FROM
                             {$serendipity['dbPrefix']}comments
                         WHERE
