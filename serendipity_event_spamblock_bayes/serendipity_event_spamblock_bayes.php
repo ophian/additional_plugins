@@ -17,7 +17,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.9.4');
+        $propbag->add('version',        '2.9.5');
         $propbag->add('requirements',   array(
             'serendipity' => '2.1.2',
             'smarty'      => '3.1.0',
@@ -258,7 +258,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                                     if ($this->get_config('recycler', true)) {
                                         $this->recycleComment($id, $databaseComment['entry_id']);
                                     }
-                                    serendipity_deleteComment($id, $databaseComment['entry_id']);
+                                    serendipity_deleteComment($id, $databaseComment['entry_id']); // BE aware, if this is a comment parent, which already has threaded children, it is NOT nuked and only the comment body text is purged to contain COMMENT_DELETED, which is a core functionality AND can NOT be made undone in case it returns from recycler.
                                 }
                             }
                             break;
