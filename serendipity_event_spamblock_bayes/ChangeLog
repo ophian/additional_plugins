@@ -1,3 +1,8 @@
+2.9.5:
+-----
+ * Disable old plugin constants and re-check [de] documentation
+ * Removes old, none helpful [cs/cz] documentations
+
 2.9.4:
 -----
  * Fix ALTER TABLE for SQLite

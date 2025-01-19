@@ -61,6 +61,7 @@
 
 <p>In der Seitenleiste des Adminbereiches wird ein Menü namens "Spamschutz (Bayes)" angelegt. Dieses ist ein erweitertes Menü, das nicht für die Grundfunktionen des Plugins notwendig ist. Im Folgenden wird die Funktion der Untermenüs erklärt.</p>
 
+<!--
 <h4 id="learn">Lernen</h4>
 
 <p>Das Formular beinhaltet alle Felder, die ein Kommentar beinhalten kann, so wie den Kommentartext oder eine URL. Hier können zielgerichtet Wörter eingegeben und gelernt werden. Dies dient der Feinjustierung des Filters, sollte aber selten nötig sein.</p>
@@ -77,21 +78,23 @@
     <dt>Datenbank löschen</dt>
     <dd>Löscht die gesamte Datenbank. Dies kann sinnvoll sein, wenn z.B. im Blog die Sprache gewechselt wurde oder mehrmals Begriffe falsch eingelernt wurden.</dd>
 </dl>
-
+-->
 <h4 id="recycler">Papierkorb</h4>
 
 <p>Gelöschte oder gar nicht erst angenommene Kommentare können hier endgültig gelöscht oder wiederhergestellt werden.</p>
 
+<p>ACHTUNG: Wenn es sich beim manuellen "Bayschen-Spam" [x] Löschen in der Kommentarliste um einen Eltern-Kommentar handelt, der bereits zugeordnete Antwort-Kommentare hat, wird er u.U. NICHT komplett gelöscht, sondern nur der Text des Kommentars, der dann "COMMENT_DELETED" enthält, was eine Kernfunktion aus Styx ist. Sollte ein diesbezüglich markierter/veränderter Kommentar in den Recycler verschoben werden, kann der Originaltext NICHT rückgängig gemacht werden, wenn er aus dem Recycler als valider Kommentar wiederhergestellt wird. Also besser Kommentare nur vom Ende her bereinigen!</p>
+
 <h4 id="analyze">Analyse</h4>
 
-<p>Spamblock-Bayes bewertet jeden Bestandteil eines Kommentars separat. Dies wird durch die Prozentanzeige in der Kommentarübersicht nicht dargestellt, hier jedoch können die Einzelbewertungen angesehen werden.</p>
+<p>Spamblock-Bayes bewertet jeden Bestandteil eines Kommentars separat. Dies wird durch die Prozentanzeige in der Kommentarübersicht nicht dargestellt.<!--, hier jedoch können die Einzelbewertungen angesehen werden.--></p>
 
 <h2 id="author">Authors</h2>
 <p>
     kleinerChemiker, Germany <br />
     Malte Paskuda, based upon b8 by Tobias Leupold, Germany <br />
     Mario Hommmel, Germany <br />
-    Ian Styx, since Styx, last modified 2022-09-02
+    Ian Styx, since Styx, last modified 2025-01-18
 </p>
 
 </body>
