@@ -18,7 +18,7 @@ class serendipity_event_textile extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTILE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Lars Strojny, Ian Styx');
-        $propbag->add('version',       '1.13.0');
+        $propbag->add('version',       '1.13.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -317,6 +317,7 @@ class serendipity_event_textile extends serendipity_event
                 require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib4/src/Netcarver/Textile/Parser.php';
                 require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib4/src/Netcarver/Textile/DataBag.php';
                 require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib4/src/Netcarver/Textile/Tag.php';
+                include 'textile_namespace.inc.php'; // PHP 5.2 compat - yes we still need it
                 // todo check for user-supplied output to restrict
                 #    return $textile->setRestricted($string);
                 if (is_object($textile)) {
