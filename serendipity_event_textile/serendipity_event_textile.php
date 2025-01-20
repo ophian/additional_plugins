@@ -102,8 +102,8 @@ class serendipity_event_textile extends serendipity_event
                 $propbag->add('name',        PLUGIN_EVENT_TEXTILE_VERSION);
                 $propbag->add('description', PLUGIN_EVENT_TEXTILE_VERSION_DESCRIPTION);
                 $propbag->add('radio',       array(
-                                                'value' => array(2, 3),
-                                                'desc'  => array('2.0', '3.0'),
+                                                'value' => array(2, 3, 4),
+                                                'desc'  => array('2.0', '3.0', '4.0'),
                 ));
                 $propbag->add('default',     3);
                 break;
@@ -313,6 +313,20 @@ class serendipity_event_textile extends serendipity_event
     function textile($string)
     {
         switch($this->get_config('textile_version')) {
+            case 4:
+                require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib4/src/Netcarver/Textile/Parser.php';
+                require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib4/src/Netcarver/Textile/DataBag.php';
+                require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib4/src/Netcarver/Textile/Tag.php';
+                // todo check for user-supplied output to restrict
+                #    return $textile->setRestricted($string);
+                if (is_object($textile)) {
+                    if (serendipity_db_bool($this->get_config('textile_doctype', 'false'))) {
+                        return $textile->setDocumentType('html5')->parse($string);
+                    } else {
+                        return $textile->setDocumentType('xhtml')->parse($string);
+                    }
+                }
+                break;
             case 3:
                 require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib3/src/Netcarver/Textile/Parser.php';
                 require_once S9Y_INCLUDE_PATH . 'plugins/serendipity_event_textile/lib3/src/Netcarver/Textile/DataBag.php';
