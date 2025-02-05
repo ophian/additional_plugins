@@ -1,3 +1,7 @@
+1.61:
+-----
+ * Preparation for Styx 5 Series: Convert serendipity_mb('strtolower' ... to native PHP function
+
 1.60:
 -----
  * Add a style rule to the frontent for consistent search result displays

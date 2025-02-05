@@ -78,7 +78,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '1.60');
+        $propbag->add('version',      '1.61');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -1125,7 +1125,7 @@ class serendipity_event_faq extends serendipity_event
         } elseif (stristr($serendipity['dbType'], 'sqlite') !== FALSE) {
             $group     = 'GROUP BY id';
             $distinct  = '';
-            $term      = serendipity_mb('strtolower', $term);
+            $term      = mb_strtolower($term);
             $find_part = "(lower(question) LIKE '%$term%' OR lower(answer) LIKE '%$term%')";
         } else { // MYSQL
             $group     = 'GROUP BY id';
