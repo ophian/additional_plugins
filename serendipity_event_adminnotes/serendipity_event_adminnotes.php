@@ -24,7 +24,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '1.0.0');
+        $propbag->add('version',       '1.0.1');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -479,7 +479,7 @@ function fulltext_toggle(id) {
                     <?php echo $output . "\n"; ?>
                 </div>
                 <div id="<?php echo $id ?>_summary" class="note_body">
-                    <?php echo serendipity_mb('substr', strip_tags($output), 0, $cutoff) . "&hellip;\n"; ?>
+                    <?php echo mb_substr(strip_tags($output), 0, $cutoff) . "&hellip;\n"; ?>
                 </div>
                 <div class="note_summarylink">
                     <button class="button_link toggle_comment_full" type="button" onclick="fulltext_toggle(<?php echo $id ?>); return false;" data-href="#qn<?php echo $id ?>_full" title="<?php echo TOGGLE_OPTION ?>"><span class="icon-right-dir" aria-hidden="true"></span><span id="<?php echo $id ?>_text" class="visuallyhidden"> <?php echo TOGGLE_OPTION ?></span></button>

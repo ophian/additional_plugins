@@ -1,3 +1,7 @@
+1.0.1:
+-----
+ * Convert serendipity_mb('substr' ... to native PHP function
+
 1.0.0:
 -----
  * Major update for Styx 5.0 and the new RT editor
