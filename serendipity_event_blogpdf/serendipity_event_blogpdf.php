@@ -26,7 +26,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.4.6');
+        $propbag->add('version',       '2.4.7');
         $propbag->add('requirements',  array(
             'serendipity' => '2.1',
             'smarty'      => '3.1.0',
@@ -372,7 +372,7 @@ class serendipity_event_blogpdf extends serendipity_event
             $html = $this->prep_out(
               $body . "\n" .
               '    ' . $name .
-              ' ' . ON . ' ' . serendipity_mb('ucfirst', $this->prep_out(serendipity_strftime('%b %e %Y, %H:%M', $comment['timestamp'])))
+              ' ' . ON . ' ' . mb_ucfirst($this->prep_out(serendipity_strftime('%b %e %Y, %H:%M', $comment['timestamp'])))
             ) . "\n";
 
             $this->pdf->WriteHTML($html);
