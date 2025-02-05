@@ -1,3 +1,7 @@
+3.17:
+-----
+ * Preparation for Styx 5 Series: Convert serendipity_mb('strtolower' ... to native PHP function
+
 3.16:
 -----
  * Fix a wrong array key name checkup on multilanguage submitted insert

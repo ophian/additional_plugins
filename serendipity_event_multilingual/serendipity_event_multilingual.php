@@ -28,7 +28,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '7.4'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.16');
+        $propbag->add('version',        '3.17');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -837,7 +837,7 @@ class serendipity_event_multilingual extends serendipity_event
                         if (stristr($serendipity['dbType'], 'postgres')) {
                             $cond['find_part'] .= " OR (multilingual_body.value ILIKE '%$term%' OR multilingual_extended.value ILIKE '%$term%' OR multilingual_title.value ILIKE '%$term%')";
                         } elseif (stristr($serendipity['dbType'], 'sqlite')) {
-                            $term = serendipity_mb('strtolower', $term);
+                            $term = mb_strtolower($term);
                             $cond['find_part'] .= " OR (lower(multilingual_body.value) LIKE '%$term%' OR lower(multilingual_extended.value) LIKE '%$term%' OR lower(multilingual_title.value) LIKE '%$term%')";
                         } else {
                             // See notes on limitations with Chinese, Japanese, and Korean languages in function_entries.inc
