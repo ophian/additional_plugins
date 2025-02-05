@@ -22,7 +22,7 @@ class serendipity_event_commentsearch extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.2.0');
+        $propbag->add('version', '2.2.1');
         $propbag->add('requirements',  array(
             'serendipity' => '2.0',
             'smarty'      => '3.1',
@@ -59,7 +59,7 @@ class serendipity_event_commentsearch extends serendipity_event
         } elseif (stristr($serendipity['dbType'], 'sqlite') !== FALSE) {
             $group     = 'GROUP BY id';
             $distinct  = '';
-            $term      = serendipity_mb('strtolower', str_replace('*', '', $term));
+            $term      = mb_strtolower(str_replace('*', '', $term));
             $find_part = "(lower(c.title) LIKE '%$term%' OR lower(c.body) LIKE '%$term%')";
         } else { // MYSQL
             $group     = 'GROUP BY id';

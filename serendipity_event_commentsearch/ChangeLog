@@ -1,3 +1,7 @@
+2.2.1:
+-----
+ * Preparation for Styx 5 Series: Convert serendipity_mb('strtolower' ... to native PHP function
+
 2.2.0:
 ------
  * Improve comment searchresult list URLs with direct anchor comment #pointer
