@@ -19,7 +19,7 @@ class serendipity_event_filter_entries extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.2.0');
+        $propbag->add('version',       '2.2.1');
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
             'smarty'      => '3.1',
@@ -304,7 +304,7 @@ class serendipity_event_filter_entries extends serendipity_event
                                 $filter[] = "(title ILIKE '%$term%' OR body ILIKE '%$term%' OR extended ILIKE '%$term%')"; // Using percentage (%) wildcard already
                             } elseif ($full && $serendipity['dbType'] == 'sqlite' || $serendipity['dbType'] == 'sqlite3' || $serendipity['dbType'] == 'pdo-sqlite' || $serendipity['dbType'] == 'sqlite3oo') {
                                 $term = str_replace('*', '', $term);
-                                $term = serendipity_mb('strtolower', $term);
+                                $term = mb_strtolower($term);
                                 $filter[] = "(lower(title) LIKE '%$term%' OR lower(body) LIKE '%$term%' OR lower(extended) LIKE '%$term%')"; // Using percentage (%) wildcard already
                             } elseif ($full && $serendipity['dbType'] == 'mysqli') {
                                 // See notes on limitations with Chinese, Japanese, and Korean languages in function_entries.inc
