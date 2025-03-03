@@ -163,8 +163,8 @@ class serendipity_event_xmlrpc extends serendipity_event
             case 'event_approved':
             case 'event_pending':
                 $events = array(
-                    'none'     => PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE,
-                    'spam'   => PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM,
+                    'none' => PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE,
+                    'spam' => PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM,
                     'ham'  => PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM
                 );
                 $propbag->add('type',          'select');
@@ -174,12 +174,12 @@ class serendipity_event_xmlrpc extends serendipity_event
                     $propbag->add('description', PLUGIN_EVENT_XMLRPC_EVENT_SPAM_DESC);
                     $propbag->add('default', 'spam');
                 }
-                elseif ($name=='event_approved') {
+                elseif ($name == 'event_approved') {
                     $propbag->add('name', PLUGIN_EVENT_XMLRPC_EVENT_APPROVED);
                     $propbag->add('description', PLUGIN_EVENT_XMLRPC_EVENT_APPROVED_DESC);
                     $propbag->add('default', 'ham');
                 }
-                elseif ($name=='event_pending') {
+                elseif ($name == 'event_pending') {
                     $propbag->add('name', PLUGIN_EVENT_XMLRPC_EVENT_PENDING);
                     $propbag->add('description', PLUGIN_EVENT_XMLRPC_EVENT_PENDING_DESC);
                     $propbag->add('default', 'none');
