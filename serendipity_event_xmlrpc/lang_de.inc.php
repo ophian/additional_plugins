@@ -6,7 +6,8 @@
 @define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC', 'Bestimmt die Standard-Kategorie für Blog-Artikel via XML-RPC, wenn der Client keine Kategorie setzt.');
 @define('PLUGIN_EVENT_XMLRPC_GMT', 'GMT-Zeitzone verwenden');
 
-@define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK','<b>Zur Information:</b><br/>Dieses Blog hat eine URL, an der XML-RPC Aufrufe abgearbeitet werden. Modernere Clients können diese automatisch mit der Blog URL ermitteln, bei älteren Clients muss sie explizit angegeben werden.<br/>Diese XML-RPC URL ist: <b>%s</b><br/>');
+@define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK','<div class="msg_hint msg-btm msg-sm"><b>Zur Information:</b><br>
+Dieses Blog hat eine URL, an der XML-RPC Aufrufe abgearbeitet werden. Modernere Clients können diese automatisch mit der Blog URL ermitteln, bei älteren Clients muss sie explizit angegeben werden.<br/>Diese XML-RPC URL ist: <b>%s</b></div>');
 
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG', 'Debug Log');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC', 'Wenn Sie daran interessiert sind, was die XML-RPC Schnittstelle empfängt und antwortet, können Sie das Debug Log anschalten. Das Logfile wird als "rpc.log" im Plugin Verzeichnis angelegt.'); // Die \'debug\' Einstellung ist nur zum Auffinden von Problemen geeignet, sie produziert Antworten, mit denen ein Client nicht umgehen kann. Also bitte nicht in einem Live System einschalten!');
@@ -22,22 +23,22 @@
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DESC', 'Manche Clients speichern Kommentare mit einem generischen Autorennamen wie \'from WordPress\'. Wenn diese Option eingeschaltet ist, so wird immer der Name des eingeloggten Benutzers als Autor genommen.');
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DEFAULT', 'Autor nicht verändern');
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_LOGIN', 'Loginname als Autor');
-@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_REALNAME', 'Realname als Autor');
+@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_REALNAME', 'Publizierter Name als Autor');
 @define('PLUGIN_EVENT_XMLRPC_UPLOADDIR', 'Upload Verzeichnis');
 @define('PLUGIN_EVENT_XMLRPC_UPLOADDIR_DESC', 'In welches Medienverzeichnis sollen Medien (wie Bilder und Videos) hoch geladen werden, die der Client schickt?');
 
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', 	'<h3>SPAM an AntiSpam Plugins signalisieren</h3>
-Das Plugin kann SPAM und HAM Signale an AntiSpam Plugins senden.<br/>
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', '<h3>SPAM an AntiSpam Plugins signalisieren</h3>
+<div class="msg_hint msg-btm msg-sm">Das Plugin kann SPAM und HAM Signale an AntiSpam Plugins senden.<br/>
 Dies wird von dem AntiSpam Plugin (das dies unterstützt) genauso abgearbeitet, als ob in der Admin Oberfläche die Knöpfe Ham oder Spam gedrückt wurden.<br/>
 Da allerdings manche Clients keinen eigenen Spam Knopf anbieten, sondern nur "Moderieren" und "Freischalten", kann man hier einstellen, wann diese Signale verschickt werden sollen.<br/>
-Bei einem Client ohne separaten Spam Knopf will man das Signal z.B. schicken, wenn man einen Kommentar moderiert.');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM', 			'Kommentar wurde als SPAM markiert');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_DESC',		'Der Client hat den Kommentar als SPAM markiert');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED',   	'Kommentar wurde frei geschaltet');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED_DESC',	'Im Client wurde der Kommentar frei geschaltet');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING', 		'Kommentar wurde moderiert');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING_DESC',	'Im Client wurde der Kommentar moderiert');
-@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE', 	    'Nichts im SPAM Zusammenhang');
-@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM', 	    'Signalisiere als SPAM');
-@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM', 	    'Signalisiere als HAM');
+Bei einem Client ohne separaten Spam Knopf will man das Signal z.B. schicken, wenn man einen Kommentar moderiert.</div>');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM', 'Kommentar wurde als SPAM markiert');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_DESC', 'Der Client hat den Kommentar als SPAM markiert');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED', 'Kommentar wurde freigeschaltet');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED_DESC', 'Im Client wurde der Kommentar freigeschaltet');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING', 'Kommentar wurde moderiert');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING_DESC', 'Im Client wurde der Kommentar moderiert');
+@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE', 'Nichts im SPAM Zusammenhang');
+@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM', 'Signalisiere als SPAM');
+@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM', 'Signalisiere als HAM');
 

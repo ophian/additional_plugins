@@ -12,7 +12,8 @@
 @define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT', 'Default category');
 @define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC', 'Specify the default category, when your blogging client specifies none.');
 
-@define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK','<b>For your information:</b><br/>This blog has an URL where XMLRPC calls are handled. More modern clients are able to detect this RPC URL automatically from your blog URL, but for some older clients you have to tell them the RPC URL explicitly.<br/>Your XML-RPC URL is: <b>%s</b><br/>');
+@define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK','<div class="msg_hint msg-btm msg-sm"><b>For your information:</b><br/>
+This blog has an URL where XMLRPC calls are handled. More modern clients are able to detect this RPC URL automatically from your blog URL, but for some older clients you have to tell them the RPC URL explicitly.<br/>Your XML-RPC URL is: <b>%s</b></div>');
 
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG', 'Debug log');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC', 'If you are interested in what the XML-RPC interface is receiving and responding, switch on the debug log. The logfile is written as "rpc.log" in the plugins directory.'); // "debug" will produce output not readable by clients! It\'s only for debugging problems, so please don\'t use it in production environment.');
@@ -32,12 +33,12 @@
 @define('PLUGIN_EVENT_XMLRPC_UPLOADDIR', 'Upload directory');
 @define('PLUGIN_EVENT_XMLRPC_UPLOADDIR_DESC', 'If the clients uploads medias (i.e. images and videos) in what MediaLibrary directory should they be stored?');
 
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', 	'<h3>Signal SPAM to AntiSpam plugins</h3>
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', 	'<div class="msg_hint msg-btm msg-sm"><h3>Signal SPAM to AntiSpam plugins</h3>
 This plugin is able to signal HAM and SPAM to AntiSpam plugins supporting these signals in order to make them react on it (learning i.e.).<br/>
 Compare it with the Spam/Ham buttons in your comments list. 
 The signals will be the same, as if you push these buttons in the admin interface.<br/>
 As some clients don\'t have a separate SPAM button but only "approve" and "moderate" comments, you are able to configure when these signals are emitted.<br/>
-If you client doesn\'t support the Spam signal, you may want to signal SPAM every time you moderate a comment.');
+If you client doesn\'t support the Spam signal, you may want to signal SPAM every time you moderate a comment.</div>');
 @define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM', 			'Comment marked as SPAM');
 @define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_DESC',		'The client marked the comment as SPAM');
 @define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED',   	'Comment was approved');

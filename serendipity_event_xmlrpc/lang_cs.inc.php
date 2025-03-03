@@ -14,7 +14,8 @@
 @define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC', 'Upøesnìte výchozí kategorii, kam se mají umístit poslané pøíspìvky, pokud u nich není zadána kategorie.');
 
 // Next lines were translated on 2012/01/16
-@define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK', '<b>Pro informaci:</b><br/>Tento blog disponuje URL adresou, která zpracovává volání XMLRPC. Moderní klienti jsou schopni tutot RPC URL adresu zjistit automaticky ze základní URL adresy blogu, ale nìkterým starším klientùm je tøeba zadat RPC URL explicitnì.<br/>Vaše XML-RPC URL je: <b>%s</b><br/>');
+@define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK', '<div class="msg_hint msg-btm msg-sm"><b>Pro informaci:</b><br/>
+Tento blog disponuje URL adresou, která zpracovává volání XMLRPC. Moderní klienti jsou schopni tutot RPC URL adresu zjistit automaticky ze základní URL adresy blogu, ale nìkterým starším klientùm je tøeba zadat RPC URL explicitnì.<br/>Vaše XML-RPC URL je: <b>%s</b></div>');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG', 'Ladicí výpisy');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC', 'Pokud Vás zajímá, jaké zprávy XML-RPC dostává a odpovídá, zapnìte ladicí výpisy. Logovací soubor se jmenuje rpc.log a je umístìn v adresáøi plugins.');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_NONE', 'zakázáno');
@@ -31,12 +32,12 @@
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_REALNAME', 'Použít skuteèné jméno jako autora');
 @define('PLUGIN_EVENT_XMLRPC_UPLOADDIR', 'Adresáø pro upload');
 @define('PLUGIN_EVENT_XMLRPC_UPLOADDIR_DESC', 'Pokud klienti nahrávají média (napø. obrázky a videa), do jakého adresáøe v mediatéce se mají ukládat?');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', '<h3>Hlásit SPAM AntiSpamovým pluginùm</h3>
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', '<div class="msg_hint msg-btm msg-sm"><h3>Hlásit SPAM AntiSpamovým pluginùm</h3>
 Tento plugin je schopen hlásit HAM a SPAM AntiSpamovým pluginùm, které umožòují pøijímat tyto hlášky, aby na nì mohly reagovat (napø. se z nich uèit).<br/>
 Porovnejte s tlaèítky Spam/Ham v seznamu komentáøù. 
 Hlášení tohoto pluginu budou mít stejný úèinek jako kliknutí na tato tlaèítka v administraèní sekci.<br/>
 Pokud nìkteøí klienti nemají samostatná tlaèítka, ale pouze možnosti povolit a požádat o schválení (moderovat), mùžete nastavit, které hlášky budou kdy poslány.<br/>
-Pokud Váš klient neumí posílat hlášení o spamu, možná se vám bude hodit, když nastavíte, aby byl hlášen spam pokaždé, když zvolíte moderovat (moderate, požádat o schválení).');
+Pokud Váš klient neumí posílat hlášení o spamu, možná se vám bude hodit, když nastavíte, aby byl hlášen spam pokaždé, když zvolíte moderovat (moderate, požádat o schválení).</div>');
 @define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM', 'Komentáø oznaèený jako SPAM');
 @define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_DESC', 'Klient oznaèil komentáø jako SPAM');
 @define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED', 'Komentáø schválen');
