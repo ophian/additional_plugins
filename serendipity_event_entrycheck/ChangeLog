@@ -1,3 +1,8 @@
+1.20:
+-----
+ * Add category depth to the category-tree option
+ * Improve constants
+
 1.19:
 -----
  * Fix to allow fetching categories by author by adding global $serendipity array
