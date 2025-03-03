@@ -18,7 +18,7 @@ class serendipity_event_entrycheck extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_ENTRYCHECK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '1.19');
+        $propbag->add('version',       '1.20');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -80,7 +80,7 @@ class serendipity_event_entrycheck extends serendipity_event
                     return false;
                 }
 
-                $catlist = serendipity_generateCategoryList($cats, array(0), 4);
+                $catlist = serendipity_generateCategoryList($cats, array(0), 4, 0, 0, '', ' . ');
                 $tmp_select_cats = explode('@@@', $catlist);
 
                 if (!is_array($tmp_select_cats)) {

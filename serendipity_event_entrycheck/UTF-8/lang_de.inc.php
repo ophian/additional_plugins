@@ -21,4 +21,5 @@
 @define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK', 'Artikel entsperren');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING', 'Dieser Artikel ist gesperrt und kann nur von dem sperrenden Autoren bearbeitet werden, oder Sie entfernen die Sperre.');
 @define('PLUGIN_EVENT_ENTRYCHECK_LOCKING', 'Artikel-Sperren aktivieren?');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCKING_DESC', 'Wenn Sie Serendipity als Plattform für die Zusammenarbeit im Team verwenden, möchten Sie vielleicht sicherstellen, dass Ihre Teamautoren denselben Artikel bearbeiten/überprüfen können, ohne dass die Gefahr besteht, dass die Arbeit der anderen versehentlich überschrieben wird. Diese Option fügt eine grundlegende Sperrunterstützung hinzu. Sie sperrt einen Artikel automatisch, wenn er in den Bearbeitungsmodus wechselt, und die Sperre wird nach 1 Stunde Inaktivität aufgehoben. Außerdem wurde eine Schaltfläche zum Aufheben der Sperre hinzugefügt, die die Sperre aufhebt und Ihnen die Möglichkeit gibt, einen Eintrag zu bearbeiten.');
 
