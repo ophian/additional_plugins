@@ -18,7 +18,7 @@ class serendipity_event_entrycheck extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_ENTRYCHECK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '1.20');
+        $propbag->add('version',       '1.21');
         $propbag->add('requirements',  array(
             'serendipity' => '1.6',
             'smarty'      => '2.6.7',
@@ -164,7 +164,7 @@ class serendipity_event_entrycheck extends serendipity_event
 
                     $time  = time();
                     $state = 'unlocked';
-                    if (serendipity_db_bool($this->get_config('locking', 'false'))) {
+                    if (serendipity_db_bool($this->get_config('locking', 'false')) === true) {
                         $this->checkLock($state, $eventData['id']);
 
                         if ($state == 'unlocked') {
@@ -176,28 +176,28 @@ class serendipity_event_entrycheck extends serendipity_event
 
                         $owner = serendipity_fetchAuthor($locked['lock_owner']);
                         $link = '<a href="serendipity_admin.php?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . (int)$eventData['id'] . '&amp;serendipity[unlock]=true" class="serendipityPrettyButton">' . PLUGIN_EVENT_ENTRYCHECK_UNLOCK . '</a>';
-                        printf('<div class="entrylock">' . PLUGIN_EVENT_ENTRYCHECK_LOCKED . ' ' . $link . '</div>', $owner[0]['realname'], serendipity_strftime(DATE_FORMAT_SHORT, $locked['locked']));
+                        printf('<div class="entrylock">' . PLUGIN_EVENT_ENTRYCHECK_LOCKED . ' ' . $link . '</div>', $owner[0]['realname'], serendipity_strftime(DATE_FORMAT_SHORT, (int)$locked['locked']));
                     }
                     break;
 
                 case 'backend_entry_updertEntry':
-                    if (serendipity_db_bool($this->get_config('emptyCategories', 'false') == true) && count($addData['categories']) < 1 || $addData['categories'][0] == '0') {
+                    if (serendipity_db_bool($this->get_config('emptyCategories', 'false') === true) && (isset($addData['categories']) && count($addData['categories']) < 1) || (isset($addData['categories'][0]) && $addData['categories'][0] == '0')) {
                         $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING.'<br>';
                     }
 
-                    if (serendipity_db_bool($this->get_config('emptyTitle', 'false') == true) && strlen($addData['title']) < 1) {
+                    if (serendipity_db_bool($this->get_config('emptyTitle', 'false') === true) && strlen($addData['title']) < 1) {
                         $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING.'<br>';
                     }
 
-                    if (serendipity_db_bool($this->get_config('emptyBody', 'false') == true) && strlen($addData['body']) < 1) {
+                    if (serendipity_db_bool($this->get_config('emptyBody', 'false') === true) && strlen($addData['body']) < 1) {
                         $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_WARNING.'<br>';
                     }
 
-                    if (serendipity_db_bool($this->get_config('emptyExtended', 'false') == true) && strlen($addData['extended']) < 1) {
+                    if (serendipity_db_bool($this->get_config('emptyExtended', 'false') === true) && strlen($addData['extended']) < 1) {
                         $eventData[] = PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING.'<br>';
                     }
 
-                    if ($addData['id'] > 0 && serendipity_db_bool($this->get_config('locking', 'false'))) {
+                    if ($addData['id'] > 0 && serendipity_db_bool($this->get_config('locking', 'false')) === true) {
                         $state = 'unlocked';
                         if (!$this->checkLock($state, $addData['id'])) {
                             $eventData[] = PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING.'<br>';
