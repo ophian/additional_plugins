@@ -1,3 +1,7 @@
+1.21:
+-----
+ * Better check non category addData
+
 1.20:
 -----
  * Add category depth to the category-tree option
