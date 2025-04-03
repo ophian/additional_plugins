@@ -253,7 +253,7 @@ function XML_RPC_se($parser_resource, $name, $attrs)
 {
     global $XML_RPC_xh, $XML_RPC_valid_parents;
 
-    $parser = (int) $parser_resource;
+    $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
 
     // if invalid xmlrpc already detected, skip all processing
     if ($XML_RPC_xh[$parser]['isf'] >= 2) {
@@ -382,7 +382,7 @@ function XML_RPC_ee($parser_resource, $name)
 {
     global $XML_RPC_xh;
 
-    $parser = (int) $parser_resource;
+    $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
 
     if ($XML_RPC_xh[$parser]['isf'] >= 2) {
         return;
@@ -519,7 +519,7 @@ function XML_RPC_cd($parser_resource, $data)
 {
     global $XML_RPC_xh, $XML_RPC_backslash;
 
-    $parser = (int) $parser_resource;
+    $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
 
     if ($XML_RPC_xh[$parser]['lv'] != 3) {
         // "lookforvalue==3" means that we've found an entire value
@@ -1065,7 +1065,7 @@ class XML_RPC_Response extends XML_RPC_Base
     {
         if ($fcode != 0) {
             $this->fn = $fcode;
-            $this->fs = htmlspecialchars($fstr);
+            $this->fs = serendipity_specialchars($fstr);
         } else {
             $this->xv = $val;
         }
@@ -1441,7 +1441,7 @@ class XML_RPC_Message extends XML_RPC_Base
 
         $encoding = $this->getEncoding($data);
         $parser_resource = xml_parser_create($encoding);
-        $parser = (int) $parser_resource;
+        $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
 
         $XML_RPC_xh = array();
         $XML_RPC_xh[$parser] = array();
@@ -1459,8 +1459,8 @@ class XML_RPC_Message extends XML_RPC_Base
 
         $hdrfnd = 0;
         if ($this->debug) {
-            print "\n<pre>---GOT---\n";
-            print isset($_SERVER['SERVER_PROTOCOL']) ? htmlspecialchars($data) : $data;
+            print "\n<pre style=\"display:block\">---GOT---\n";
+            print isset($_SERVER['SERVER_PROTOCOL']) ? serendipity_specialchars($data) : $data;
             print "\n---END---</pre>\n";
         }
 
@@ -1517,15 +1517,15 @@ class XML_RPC_Message extends XML_RPC_Base
         xml_parser_free($parser_resource);
 
         if ($this->debug) {
-            print "\n<pre>---PARSED---\n";
-            var_dump($XML_RPC_xh[$parser]['value']);
+            print "\n<pre style=\"display:block\">---PARSED---\n";
+            var_dump($XML_RPC_xh[$parser]['value'] ?? '');
             print "---END---</pre>\n";
         }
 
         if ($XML_RPC_xh[$parser]['isf'] > 1) {
             $r = new XML_RPC_Response(0, $XML_RPC_err['invalid_return'],
                                       $XML_RPC_str['invalid_return'].' '.$XML_RPC_xh[$parser]['isf_reason']);
-        } elseif (!is_object($XML_RPC_xh[$parser]['value'])) {
+        } elseif (!is_object($XML_RPC_xh[$parser]['value'] ?? '')) {
             // then something odd has happened
             // and it's time to generate a client side error
             // indicating something odd went on
@@ -1716,7 +1716,7 @@ class XML_RPC_Value extends XML_RPC_Base
             $rs .= "<struct>\n";
             reset($val);
             foreach ($val as $key2 => $val2) {
-                $rs .= "<member><name>" . htmlspecialchars($key2) . "</name>\n";
+                $rs .= "<member><name>" . serendipity_specialchars($key2) . "</name>\n";
                 $rs .= $this->serializeval($val2);
                 $rs .= "</member>\n";
             }
@@ -1741,7 +1741,7 @@ class XML_RPC_Value extends XML_RPC_Base
                 $rs .= "<{$typ}>" . ($val ? '1' : '0') . "</{$typ}>";
                 break;
             case $GLOBALS['XML_RPC_String']:
-                $rs .= "<{$typ}>" . htmlspecialchars($val, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET) . "</{$typ}>";
+                $rs .= "<{$typ}>" . serendipity_specialchars($val, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET) . "</{$typ}>";
                 break;
             default:
                 $rs .= "<{$typ}>{$val}</{$typ}>";

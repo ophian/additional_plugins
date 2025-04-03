@@ -3,6 +3,17 @@
  * Secure credentials on error by SensitiveParameter
  * Raises requirements
 
+1.87:
+-----
+ * Improve bundled PEAR/XML/RPC for PHP 8.0: XMLParser objects replace xml resources
+   Hopefully written so that users which cannot load this plugin because of running a lower PHP 8.2 version
+   can just copy paste the PEAR dir library to replace their old in their serendipity xmlrpc plugin.
+   On Styx 5.0 this plugin based library will be nuked as redundant if nothing spreads against this at this point of time.
+
+1.86:
+-----
+ * Improve language constants
+
 1.85:
 -----
  * Improve parameter types for Styx 5.0 type safety
