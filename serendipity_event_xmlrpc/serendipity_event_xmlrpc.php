@@ -46,8 +46,8 @@ class serendipity_event_xmlrpc extends serendipity_event
         echo '<?xml version="1.0" ?>
         <rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd" >
         <service>
-            <engineName>Serendipity (s9y)</engineName>
-            <engineLink>http://www.s9y.org/</engineLink>
+            <engineName>Serendipity Styx</engineName>
+            <engineLink>https://ophian.github.io/</engineLink>
             <homePageLink>' . $serendipity['baseURL'] . '</homePageLink>
             <apis>
                 <api name="WordPress"   preferred="false"  apiLink="' . $serendipity['baseURL'] . 'serendipity_xmlrpc.php" blogID="1" />
@@ -259,7 +259,7 @@ class serendipity_event_xmlrpc extends serendipity_event
     function setupPearPath()
     {
         // use bundled PEAR modules instead of plugins, if found
-        // The s9y bundled lib could be outdated. Upgrading it with the plugin is much more easy.
+        // The Styx bundled lib could be outdated. Upgrading it with the plugin is much more easy.
         /*
         global $serendipity;
         @define('S9Y_PEAR_PATH', $serendipity['serendipityPath'] . 'bundled-libs/');
