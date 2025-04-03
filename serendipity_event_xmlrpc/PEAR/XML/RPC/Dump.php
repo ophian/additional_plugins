@@ -176,6 +176,7 @@ class XML_RPC_Dump
         }
         return $this->arIndent[$nLevel];
     }
+
 }
 
 /*

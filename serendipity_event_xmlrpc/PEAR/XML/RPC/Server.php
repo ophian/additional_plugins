@@ -668,7 +668,7 @@ class XML_RPC_Server
 
         $this->encoding = XML_RPC_Message::getEncoding($data);
         $parser_resource = xml_parser_create($this->encoding);
-        $parser = (!is_object($parser_resource)) ? (int) $parser_resource : $parser_resource;
+        $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
 
         $XML_RPC_xh[$parser] = array();
         $XML_RPC_xh[$parser]['cm']     = 0;
@@ -685,7 +685,7 @@ class XML_RPC_Server
         xml_parser_set_option($parser_resource, XML_OPTION_CASE_FOLDING, true);
         xml_set_element_handler($parser_resource, 'XML_RPC_se', 'XML_RPC_ee');
         xml_set_character_data_handler($parser_resource, 'XML_RPC_cd');
-        if (!xml_parse($parser_resource, $data, 1)) {
+        if (!xml_parse($parser_resource, $data, true)) {
             // return XML error as a faultCode
             $r = new XML_RPC_Response(0,
                                       $XML_RPC_errxml+xml_get_error_code($parser_resource),
@@ -693,7 +693,7 @@ class XML_RPC_Server
                                               xml_error_string(xml_get_error_code($parser_resource)),
                                               xml_get_current_line_number($parser_resource)));
             xml_parser_free($parser_resource);
-        } elseif ($XML_RPC_xh[$parser]['isf']>1) {
+        } elseif ($XML_RPC_xh[$parser]['isf'] > 1) {
             $r = new XML_RPC_Response(0,
                                       $XML_RPC_err['invalid_request'],
                                       $XML_RPC_str['invalid_request']
