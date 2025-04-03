@@ -1257,8 +1257,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;アナウンスエントリ一覧&lt;/b&gt;&lt;br /&gt;新規エントリの通知をオンラインサービスに送信します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 01 Mar 2025 09:59:56 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;アナウンスエントリ一覧&lt;/b&gt;&lt;br /&gt;新規エントリの通知をオンラインサービスに送信します。&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Thu, 03 Apr 2025 11:21:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
@@ -1285,7 +1285,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Sat, 08 Mar 2025 15:33:13 +0100</pubDate>
+<pubDate>Wed, 02 Apr 2025 18:08:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
