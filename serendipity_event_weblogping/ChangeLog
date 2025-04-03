@@ -1,3 +1,9 @@
+1.24:
+-----
+
+ * Remove old PEAR HTTP/Request fallback
+ * Raises requirements
+
 1.23:
 -----
  * Improve backend main content markup indents for Styx 4.3

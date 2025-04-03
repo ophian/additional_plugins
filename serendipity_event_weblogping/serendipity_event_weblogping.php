@@ -19,11 +19,11 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.23');
+        $propbag->add('version',       '1.24');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
+            'serendipity' => '2.1',
             'smarty'      => '3.1',
-            'php'         => '5.6'
+            'php'         => '7.6'
         ));
         $propbag->add('event_hooks',    array(
             'frontend_display'  => true,
@@ -168,9 +168,6 @@ class serendipity_event_weblogping extends serendipity_event
                     if (!class_exists('XML_RPC_Base')) {
                         include_once(S9Y_PEAR_PATH . "XML/RPC.php");
                     }
-                    if (!function_exists('serendipity_request_url')) {
-                        require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
-                    }
 
                     // First cycle through list of services to remove superseding services which may have been checked
                     foreach ($this->services AS $index => $service) {
@@ -232,52 +229,27 @@ class serendipity_event_weblogping extends serendipity_event
                             $message->createPayload();
                             $url     = "http://".$service['host'].$service['path'];
                             $options = array();
-                            serendipity_plugin_api::hook_event('backend_http_request', $options, 'weblogping');
-                            if (function_exists('serendipity_request_url')) {
-                                if (strtoupper(LANG_CHARSET) != 'UTF-8') {
-                                    $payload = utf8_encode($message->payload);
-                                } else {
-                                    $payload = $message->payload;
-                                }
-                                $fContent = serendipity_request_url($url, 'POST', 'text/xml', $payload, $options);
-#                                echo '<pre>fetchPingbackData() '.print_r($serendipity['last_http_request'], true).'</pre>';
-                                $xmlrpc_result = $message->parseResponse($fContent);
-                                if ($xmlrpc_result->faultCode()) {
-                                    $out = sprintf(PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE . "<br />", (function_exists('serendipity_specialchars') ? serendipity_specialchars($xmlrpc_result->faultString()) : htmlspecialchars($xmlrpc_result->faultString(), ENT_COMPAT, LANG_CHARSET)));
-                                } else {
-                                    $out = PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS . "<br />";
-                                }
-                                if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
-                                    echo $out;
-                                }
-                                if (false === $fContent) {
-                                    return null;
-                                }
-                            } else {
-                                // Fallback to old solution
-                                serendipity_request_start();
-                                $req = new HTTP_Request($url, $options);
-                                $req->setMethod(HTTP_REQUEST_METHOD_POST);
-                                $req->addHeader("Content-Type", "text/xml");
-                                if (strtoupper(LANG_CHARSET) != 'UTF-8') {
-                                    $payload = utf8_encode($message->payload);
-                                } else {
-                                    $payload = $message->payload;
-                                }
-                                $req->addRawPostData($payload);
-                                $http_result   = $req->sendRequest();
-                                $http_response = $req->getResponseBody();
-                                $xmlrpc_result = $message->parseResponse($http_response);
-                                if ($xmlrpc_result->faultCode()) {
-                                    $out = sprintf(PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE . "<br />", (function_exists('serendipity_specialchars') ? serendipity_specialchars($xmlrpc_result->faultString()) : htmlspecialchars($xmlrpc_result->faultString(), ENT_COMPAT, LANG_CHARSET)));
-                                } else {
-                                    $out = PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS . "<br />";
-                                }
-                                serendipity_request_end();
 
-                                if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
-                                    echo $out;
-                                }
+                            serendipity_plugin_api::hook_event('backend_http_request', $options, 'weblogping');
+
+                            if (strtoupper(LANG_CHARSET) != 'UTF-8') {
+                                $payload = utf8_encode($message->payload);
+                            } else {
+                                $payload = $message->payload;
+                            }
+                            $fContent = serendipity_request_url($url, 'POST', 'text/xml', $payload, $options);
+#                            echo '<pre>fetchPingbackData() '.print_r(($serendipity['last_http_request'] ?? 'Sorry, no last http request data available.'), true).'</pre>';
+                            $xmlrpc_result = $message->parseResponse($fContent);
+                            if ($xmlrpc_result->faultCode()) {
+                                $out = sprintf(PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE . "<br />", htmlspecialchars($xmlrpc_result->faultString(), ENT_COMPAT, LANG_CHARSET));
+                            } else {
+                                $out = PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS . "<br />";
+                            }
+                            if (!defined('SERENDIPITY_IS_XMLRPC') || defined('SERENDIPITY_XMLRPC_VERBOSE')) {
+                                echo $out;
+                            }
+                            if (false === $fContent) {
+                                return null;
                             }
                         }
                     }
