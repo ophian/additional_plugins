@@ -18,7 +18,7 @@ class serendipity_event_xmlrpc extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_XMLRPC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -260,15 +260,15 @@ class serendipity_event_xmlrpc extends serendipity_event
     {
         // use bundled PEAR modules instead of plugins, if found
         // The Styx bundled lib could be outdated. Upgrading it with the plugin is much more easy.
-        /*
+        /* As long as not on Styx 5.0 use this plugins XMLRPC PEAR path only !*/
         global $serendipity;
         @define('S9Y_PEAR_PATH', $serendipity['serendipityPath'] . 'bundled-libs/');
         if (file_exists(S9Y_PEAR_PATH . 'XML/RPC.php') && file_exists(S9Y_PEAR_PATH . 'XML/RPC/Server.php')) {
             @define('PLUGIN_EVENT_XMLRPC_PEAR_PATH', S9Y_PEAR_PATH);
         }
-        else { As long as not on Styx 5.0 use this plugins XMLRPC path only !*/
+        else {
             @define('PLUGIN_EVENT_XMLRPC_PEAR_PATH', dirname(__FILE__) . '/PEAR/');
-//        }
+        }
     }
 
     function scanUploadDir()

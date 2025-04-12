@@ -1,3 +1,8 @@
+2.1.0:
+------
+ * Priorize include of Styx 5.0 bundled-libs XMLRPC class
+   Deprecate this plugins PEAR dir XMLRPC for future removal or future updates
+
 2.0.0:
 ------
  * Secure credentials on error by SensitiveParameter
