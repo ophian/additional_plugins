@@ -424,35 +424,33 @@ class serendipity_event_amazonchooser extends serendipity_event
         list($country_url,$mode) = Amazon_country_code($country);
         $content = serendipity_getCacheItem('amazonchooser'.$asin);
         if (!$content) {
-           if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
-              serendipity_smarty_init();
-           }
-
-           if (isset($asin)) {
-               $method = "lookup";
-               $result = $this->Amazon_Call($method, $Searchindex, $asin, $country_url, 0);
-           } else {
-               $item_count = -1;
-               $error_message = PLUGIN_EVENT_AMAZONCHOOSER_NOASIN;
-           }
-           $serendipity['smarty']->assign(
-               array(
-                'plugin_amazonchooser_item_count'    => $result['count'],
-                'plugin_amazonchooser_return_count'  => $result['return_count'],
-                'plugin_amazonchooser_error_message' => $result['error_message'],
-                'plugin_amazonchooser_error_result'  => $result['error_result'],
-                'plugin_amazonchooser_cache_time'    => $result['return_date'],
-                'thingy'                             => $result['items'][0]
-              )
-           );
-
-           // use native API here - extends s9y version >= 1.3'
-           $content = $this->parseTemplate('plugin_amazon_display.tpl');
-
-           $content = str_replace("\n",'',$content);
-           if (class_exists('Cache_Lite') && is_object($cache_obj)) {
-                $cache_obj->save($content,'amazonchooser'.$asin);
+            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
+                serendipity_smarty_init();
             }
+
+            if (isset($asin)) {
+                $method = "lookup";
+                $result = $this->Amazon_Call($method, $Searchindex, $asin, $country_url, 0);
+            } else {
+                $item_count = -1;
+                $error_message = PLUGIN_EVENT_AMAZONCHOOSER_NOASIN;
+            }
+            $serendipity['smarty']->assign(
+                array(
+                    'plugin_amazonchooser_item_count'    => $result['count'],
+                    'plugin_amazonchooser_return_count'  => $result['return_count'],
+                    'plugin_amazonchooser_error_message' => $result['error_message'],
+                    'plugin_amazonchooser_error_result'  => $result['error_result'],
+                    'plugin_amazonchooser_cache_time'    => $result['return_date'],
+                    'thingy'                             => $result['items'][0]
+                )
+            );
+
+            // use native API here - extends s9y version >= 1.3'
+            $content = $this->parseTemplate('plugin_amazon_display.tpl');
+
+            $content = str_replace("\n", '', $content);
+            serendipity_cacheItem('amazonchooser'.$asin, $content);
         }
         return($content);
     }
