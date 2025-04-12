@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 08 Mar 2025 15:33:13 +0100</pubDate>
+<pubDate>Sat, 12 Apr 2025 12:58:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -617,7 +617,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Lista linków&lt;/b&gt;&lt;br /&gt;Manadżer linków - pokazuje Twoje ulubione linki w Panelu bocznym.&lt;br/&gt;For: Serendipity 3.2.0</content:encoded>
-<pubDate>Mon, 09 Sep 2024 16:18:29 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:06:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -1256,7 +1256,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Zgłoś wpisy&lt;/b&gt;&lt;br /&gt;Wyślij zgłoszenia o nowych wpisach do serwisów sieciowych&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Thu, 03 Apr 2025 11:21:33 +0200</pubDate>
+<pubDate>Thu, 03 Apr 2025 11:53:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
@@ -1283,7 +1283,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Wed, 02 Apr 2025 18:08:05 +0200</pubDate>
+<pubDate>Thu, 03 Apr 2025 11:47:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
