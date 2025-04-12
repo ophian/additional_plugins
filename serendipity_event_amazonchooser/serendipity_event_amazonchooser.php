@@ -27,7 +27,7 @@ class serendipity_event_amazonchooser extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AMAZONCHOOSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Groeninger, Ian Styx');
-        $propbag->add('version',       '1.0.0');
+        $propbag->add('version',       '1.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -417,18 +417,12 @@ class serendipity_event_amazonchooser extends serendipity_event
     {
         global $serendipity;
 
-        if (!is_dir($serendipity['serendipityPath'].'templates_c/amazonchooser/')) {
-            mkdir($serendipity['serendipityPath'].'templates_c/amazonchooser/');
-        }
         $content = false;
         $asin = $matches[1];
         $Searchindex = $matches[2];
         $country = trim($this->get_config('server'));
         list($country_url,$mode) = Amazon_country_code($country);
-        if (@include_once("Cache/Lite.php")) {
-            $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/amazonchooser/','automaticSerialization' => true,'lifeTime' => 3600));
-            $content = $cache_obj->get('amazonchooser'.$asin);
-        }
+        $content = serendipity_getCacheItem('amazonchooser'.$asin);
         if (!$content) {
            if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
               serendipity_smarty_init();
@@ -467,24 +461,17 @@ class serendipity_event_amazonchooser extends serendipity_event
     {
         global $serendipity;
 
-        if (!is_dir($serendipity['serendipityPath'].'templates_c/amazonget/')) {
-            mkdir($serendipity['serendipityPath'].'templates_c/amazonget/');
-        }
-
         $AWSAccessKey = trim($this->get_config('dtoken'));
         $AssociateTag = trim($this->get_config('aaid', ''));
         $secretKey = trim($this->get_config('secretKey'));
         if ($method == "search") {
-            $results = Amazon_SearchItems($AWSAccessKey,$AssociateTag,$secretKey,$mode,$searchstring,$country_url,$page);
+            $results = Amazon_SearchItems($AWSAccessKey, $AssociateTag, $secretKey, $mode, $searchstring, $country_url, $page);
         } else {
-            if (@include_once("Cache/Lite.php")) {
-               $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/amazonget/','automaticSerialization' => true,'lifeTime' => 43200));
-               $results = $cache_obj->get('amazonlookup'.$searchstring);
-            }
+            $results = serendipity_getCacheItem('amazonlookup'.$searchstring); // previously cached into templates_c/amazonget/ - does it matter to use the simple_cache dir per default?
             if (!$results['return_date']) {
-                $results = Amazon_ItemLookup($AWSAccessKey,$AssociateTag,$secretKey,$mode,$searchstring,$country_url);
-                if ($results['return_date'] && class_exists('Cache_Lite') && is_object($cache_obj)) {
-                    $cache_obj->save($results,'amazonlookup'.$searchstring);
+                $results = Amazon_ItemLookup($AWSAccessKey, $AssociateTag, $secretKey, $mode, $searchstring, $country_url);
+                if ($results['return_date'] && is_object($results)) {
+                    serendipity_cacheItem('amazonlookup'.$searchstring, $results, 43200);
                 }
             }
         }
