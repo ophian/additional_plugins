@@ -1,3 +1,8 @@
+2.0.0:
+-----
+ * Convert caching to use Styx 5.0 voku/cache simple_cache library
+PLEASE NOTE: Someone with insight in todays Amazon API usage and for correct linking (registration etc) needs to care for this plugin for this 2cd decade
+
 1.25:
 -----
  * Sync [de] translation and quotation fix

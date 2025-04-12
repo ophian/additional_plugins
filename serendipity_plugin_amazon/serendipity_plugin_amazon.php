@@ -1,12 +1,6 @@
 <?php
 
-$httpDirname = (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/';
-
-if (file_exists($httpDirname . 'Request2.php')) {
-    require_once $httpDirname . 'Request2.php';
-} else {
-    require_once $httpDirname . 'Request.php';
-}
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -24,11 +18,11 @@ class serendipity_plugin_amazon extends serendipity_plugin
         $propbag->add('configuration',  array('title','server', 'newwindows', 'small_medium_large','button','asin','cnt','cache','tracking'));
         $propbag->add('author',         'Matthew Groeninger, (original plugin by Thomas Nesges)');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '1.25');
+        $propbag->add('version',        '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2.0'
         ));
         $this->dependencies = array('serendipity_event_amazonchooser' => 'keep');
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
@@ -118,30 +112,25 @@ class serendipity_plugin_amazon extends serendipity_plugin
 
     function generate_content(&$title)
     {
-        global $serendipity;
-
         if (!class_exists('serendipity_event_amazonchooser')) {
            echo PLUGIN_AMAZON_DEPENDS_ON;
            return;
         }
         $title = $this->get_config('title');
-        $cache = $this->get_config('cache','60');
+        $cache = $this->get_config('cache', '60');
 
         if ($cache > 0) {
-            if (@include_once("Cache/Lite.php")) {
-               $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/amazonsidebar/','automaticSerialization' => true,'lifeTime' => $cache*60));
-               $content = $cache_obj->get('amazonsidebar_content'.$title);
-            }
+            $content = serendipity_getCacheItem('amazonsidebar_content'.$title);
         }
         if (!$content) {
             $cnt = $this->get_config('cnt','1');
-            $config_asin  = $this->get_config('asin','blah');
+            $config_asin  = $this->get_config('asin', 'blah');
             $config_asins = explode(",", $config_asin);
             $arraylen = count($config_asins);
             if ($cnt > $arraylen) {
                 $cnt = $arraylen;
             }
-            $asins = array_rand($config_asins,$cnt);
+            $asins = array_rand($config_asins, $cnt);
             $cache_it = false;
             if (count($asins) == 1 ) {
                 $content = $this->generate_amazon_content($config_asins[$asins]);
@@ -159,8 +148,8 @@ class serendipity_plugin_amazon extends serendipity_plugin
                     }
                 }
             }
-            if (is_object($cache_obj) && ($cache > 0) && $cache_it) {
-                $cache_obj->save($content_out,'amazonsidebar_content'.$title);
+            if (is_object($content) && ($cache > 0) && $cache_it) {
+                serendipity_cacheItem('amazonsidebar_content'.$title, $content_out, $cache*60);
             }
         } else {
             $content_out = $content;
@@ -171,19 +160,12 @@ class serendipity_plugin_amazon extends serendipity_plugin
 
     function generate_amazon_content($asinbase)
     {
-        global $serendipity;
-
         $asinbase = preg_replace('/\s+/', '', $asinbase);
         list($asin,$mode) = explode("-", $asinbase);
 
-        if (@include_once("Cache/Lite.php")) {
-            if (!is_dir($serendipity['serendipityPath'].'templates_c/amazonsidebar/')) {
-                mkdir($serendipity['serendipityPath'].'templates_c/amazonsidebar/');
-            }
-            $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/amazonsidebar/','automaticSerialization' => true,'lifeTime' => 3600));
-            $content = $cache_obj->get('amazonsidebar_'.$asin);
-            $cache = 1;
-        }
+        $content = serendipity_getCacheItem('amazonsidebar_'.$asin);
+        $cache = 1;
+
         if (!$content) {
             $result = $this->amazon_fetch($asin, $mode);
             if ($result) {
@@ -207,9 +189,7 @@ class serendipity_plugin_amazon extends serendipity_plugin
                     }
                     $content .= '<div class="amazon_sidebar_details"><a ' . $google_tracking . 'href="'.$strings['DETAILPAGEURL'].'" '.$target.'>'.$strings['title'].'</a></div>';
                     $content .= '</div>';
-                    if (class_exists('Cache_Lite') && is_object($cache_obj)) {
-                       $cache_obj->save($content,'amazonsidebar_'.$asin);
-                    }
+                    serendipity_cacheItem('amazonsidebar_'.$asin, $content);
                     $cache = 1;
                 } else {
                     $cache = 0;
@@ -222,7 +202,6 @@ class serendipity_plugin_amazon extends serendipity_plugin
 
     function amazon_fetch($asin, $mode)
     {
-        global $serendipity;
         if (!class_exists('serendipity_event_amazonchooser')) {
            return;
         }
@@ -232,27 +211,20 @@ class serendipity_plugin_amazon extends serendipity_plugin
         list($country_url,$mode_list) = Amazon_country_code($country);
         $mode_names = Amazon_return_mode_array();
 
-        if (!is_dir($serendipity['serendipityPath'].'templates_c/amazonget/')) {
-            mkdir($serendipity['serendipityPath'].'templates_c/amazonget/');
-        }
-
-        if (!(in_array($mode,$mode_list))) {
+        if (!(in_array($mode, $mode_list))) {
             $mode = "All";
         }
         $data = array();
-        serendipity_plugin_api::hook_event('serendipity_event_amazonchooser_devinfo',$data);
+        serendipity_plugin_api::hook_event('serendipity_event_amazonchooser_devinfo', $data);
         $AWSAccessKey = $data['dtoken'];
         $secretKey = $data['secretKey'];
         $AssociateTag = $data['aaid'];
 
-        if (@include_once("Cache/Lite.php")) {
-            $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/amazonget/','automaticSerialization' => true,'lifeTime' => 43200));
-            $results = $cache_obj->get('amazonlookup'.$asin);
-        }
+        $results = serendipity_getCacheItem('amazonlookup'.$asin);
         if (!$results['return_date']) {
-            $results = Amazon_ItemLookup($AWSAccessKey,$AssociateTag,$secretKey,$mode,$asin,$country_url);
-            if ($results['return_date'] && class_exists('Cache_Lite') && is_object($cache_obj)) {
-                $cache_obj->save($results,'amazonlookup'.$asin);
+            $results = Amazon_ItemLookup($AWSAccessKey, $AssociateTag, $secretKey, $mode, $asin, $country_url);
+            if ($results['return_date']) {
+                serendipity_cacheItem('amazonlookup'.$asin, $results);
             }
         }
         if ($results['count'] == 0 || $results['return_count'] == 0) {

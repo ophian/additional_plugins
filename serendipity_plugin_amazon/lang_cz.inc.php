@@ -36,7 +36,7 @@
 @define('PLUGIN_AMAZON_US',                 'USA');
 @define('PLUGIN_AMAZON_CA',                 'Kanada');
 @define('PLUGIN_AMAZON_FR',                 'Francie');
-@define('PLUGIN_AMAZON_DEPENDS_ON',         'Tento plugin závisí na pluginu událostí <a href="http://spartacus.s9y.org/index.php?mode=bygroups_event_en#group_BACKEND_EDITOR" >Amazon Media Button</a>. Nainstaujte prosím zmínìný plugin a nastavte ho pro pøipojení k Amazonu.');
+@define('PLUGIN_AMAZON_DEPENDS_ON',         'Tento plugin závisí na pluginu událostí <a href="https://ophian.github.io/plugins/#group_BACKEND_EDITOR" >Amazon Media Button</a>. Nainstaujte prosím zmínìný plugin a nastavte ho pro pøipojení k Amazonu.');
 
 // Next lines were translated on 2011/08/04
 @define('PLUGIN_AMAZON_TRACK_GOOGLE',       'Sledování klikù pomocí Google Analytics');

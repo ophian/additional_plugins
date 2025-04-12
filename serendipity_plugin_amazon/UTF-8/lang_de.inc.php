@@ -24,5 +24,5 @@
 @define('PLUGIN_AMAZON_US', 'Vereinigte Staaten');
 @define('PLUGIN_AMAZON_CA', 'Kanada');
 @define('PLUGIN_AMAZON_FR', 'Frankreich');
-@define('PLUGIN_AMAZON_DEPENDS_ON', 'Dieses Plugin hängt jetzt vom <a href="http://spartacus.s9y.org/index.php?mode=bygroups_event_en#group_BACKEND_EDITOR">Amazon Media Button</a>-Ereignis-Plugin ab. Bitte installieren Sie das Plugin und konfigurieren Sie es für die Verbindung mit Amazon.');
+@define('PLUGIN_AMAZON_DEPENDS_ON', 'Dieses Plugin hängt jetzt vom <a href="https://ophian.github.io/plugins/#group_BACKEND_EDITOR">Amazon Media Button</a>-Ereignis-Plugin ab. Bitte installieren Sie das Plugin und konfigurieren Sie es für die Verbindung mit Amazon.');
 
