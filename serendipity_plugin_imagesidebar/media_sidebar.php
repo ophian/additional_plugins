@@ -195,28 +195,17 @@ class media_sidebar extends subplug_sidebar {
         $rotate_time = $this->get_config('media_rotate_time', 0);
         $next_update = $this->get_config('media_next_update', '');
 
-        if ($serendipity['version'][0] == 3 && $rotate_time != 0) {
+        if ($rotate_time != 0) {
             $cache_output = serendipity_getCacheItem('mediasidebar_cache');
             if ($cache_output && $cache_output !== false) {
                 $cache_output = unserialize($cache_output);
                 $update = false;
             }
-        }
-        else if (@require_once S9Y_PEAR_PATH . 'Cache/Lite.php') {
-            $options = array(
-                'cacheDir' => $serendipity['serendipityPath'].'templates_c/',
-                'lifeTime' => 7200,
-                'automaticSerialization' => true,
-                'pearErrorMode' => CACHE_LITE_ERROR_DIE
-            );
-
-            $cache_obj = new Cache_Lite($options);
-            $cache_output = $cache_obj->get('mediasidebar_cache');
         } else {
             $cache_output = $this->get_config('media_cache_output', '');
         }
 
-        if ($serendipity['version'][0] < 3 && $rotate_time != 0) {
+        if ($rotate_time != 0) {
             if ($next_update > time()) {
                 $update = false;
             } else {
@@ -396,11 +385,8 @@ class media_sidebar extends subplug_sidebar {
                 $output_str = 'Error accessing images.';
             }
 
-            if ($serendipity['version'][0] == 3 && $rotate_time != 0) {
+            if ($rotate_time != 0) {
                 serendipity_cacheItem('mediasidebar_cache', serialize($output_str), $rotate_time*60);
-            }
-            else if (class_exists('Cache_Lite') && is_object($cache_obj)) {
-                $cache_obj->save($output_str, 'mediasidebar_cache');
             } else {
                 $this->set_config('media_cache_output', $output_str);
             }
