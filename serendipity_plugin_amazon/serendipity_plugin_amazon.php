@@ -123,16 +123,16 @@ class serendipity_plugin_amazon extends serendipity_plugin
             $content = serendipity_getCacheItem('amazonsidebar_content'.$title);
         }
         if (!$content) {
-            $cnt = $this->get_config('cnt','1');
+            $cnt = $this->get_config('cnt', 1);
             $config_asin  = $this->get_config('asin', 'blah');
             $config_asins = explode(",", $config_asin);
             $arraylen = count($config_asins);
             if ($cnt > $arraylen) {
                 $cnt = $arraylen;
             }
-            $asins = array_rand($config_asins, $cnt);
+            $asins = array_rand($config_asins, (int) $cnt);
             $cache_it = false;
-            if (count($asins) == 1 ) {
+            if (count((array)$asins) == 1 ) {
                 $content = $this->generate_amazon_content($config_asins[$asins]);
                 $content_out = $content['string'];
                 if ($content['cache']) {
