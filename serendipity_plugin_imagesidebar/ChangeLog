@@ -1,3 +1,10 @@
+3.0.0:
+------
+ * Disable coppermine selection since totally outdated.
+   This is now marked deprecated until someone finds a use case and has the time to fetch up with mysqli etc.
+ * Fix cache with voku simple cache since Styx 4+ and remove using Cache_Lite
+ * Add [de] lang translation
+
 2.9.2:
 -----
  * Fix Serendipity version check for correct API usage

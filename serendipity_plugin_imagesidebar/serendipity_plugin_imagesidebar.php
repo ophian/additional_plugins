@@ -76,7 +76,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC . ' PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.');
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx');
-        $propbag->add('version',       '2.9.2');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('license',       'BSD');
         $propbag->add('requirements',  array(
             'serendipity' => '3.2',
@@ -122,7 +122,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
 
             case 'display_source':
                 $select["none"]       = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE;
-                $select["coppermine"] = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE;
+                #$select["coppermine"] = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE;
                 $select["medialib"]   = PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB;
                 $propbag->add('type', 'select');
                 $propbag->add('name', PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME);
@@ -161,13 +161,13 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         }
 
         switch ($this->get_config('display_source', 'none')) {
-            case 'coppermine':
+/*            case 'coppermine':
                 if (file_exists(dirname(__FILE__) . '/coppermine_sidebar.php')) {
                     include_once dirname(__FILE__) . '/coppermine_sidebar.php';
                 }
                 $showit = new coppermine_sidebar($setting_array);
                 break;
-
+*/
             case 'medialib':
                 if (file_exists(dirname(__FILE__) . '/media_sidebar.php')) {
                     include_once dirname(__FILE__) . '/media_sidebar.php';
