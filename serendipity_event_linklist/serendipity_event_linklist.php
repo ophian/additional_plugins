@@ -26,11 +26,11 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '3.5.1');
+        $propbag->add('version',       '4.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.3.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('stackable',     false);
         $propbag->add('groups', array('FRONTEND_VIEWS', 'BACKEND_FEATURES'));
@@ -47,10 +47,7 @@ class serendipity_event_linklist extends serendipity_event
 
         $cache = $this->get_config('cache');
         if ($cache == 'yes' && $ignorecache == false) {
-            if (@include_once("Cache/Lite.php")) {
-                $cache_obj = new Cache_Lite(array('cacheDir' => $serendipity['serendipityPath'].'templates_c/', 'automaticSerialization' => true));
-                $output = $cache_obj->get('linklist_cache');
-            } else {
+            if (empty($output = serendipity_getCacheItem('linklist_cache'))) {
                 $output = $this->get_config('cached_output');
             }
         }
@@ -77,9 +74,7 @@ class serendipity_event_linklist extends serendipity_event
                 }
             }
             if ($cache == 'yes') {
-                if (isset($cache_obj) && is_object($cache_obj)) {
-                    $cache_obj->save($output,'linklist_cache');
-                } else {
+                if (false === serendipity_cacheItem('linklist_cache', $output, 43200)) {
                     $output = $this->set_config('cached_output',$output);
                 }
             }
@@ -168,12 +163,8 @@ class serendipity_event_linklist extends serendipity_event
         global $serendipity;
 
         if ($this->get_config('cache') == 'yes') {
-            if (@include_once("Cache/Lite.php")) {
-                $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
-                $output = $this->generate_output();
-                $cache_obj->save($output,'linklist_cache');
-            } else {
-                $output = $this->generate_output();
+            $output = $this->generate_output();
+            if (false === serendipity_cacheItem('linklist_cache', $output, 43200)) {
                 $this->set_config('cached_output',$output);
             }
         }
@@ -330,13 +321,9 @@ class serendipity_event_linklist extends serendipity_event
                     }
 
                     if ($this->get_config('cache') == 'yes') {
-                        if (@include_once("Cache/Lite.php")) {
-                            $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/', 'automaticSerialization' => true));
-                            $output = $this->generate_output(true);
-                            $cache_obj->save($output,'linklist_cache');
-                        } else {
-                            $output = $this->generate_output(true);
-                            $this->set_config('cached_output',$output);
+                        $output = $this->generate_output(true);
+                        if (false === serendipity_cacheItem('linklist_cache', $output, 43200)) {
+                            $this->set_config('cached_output', $output);
                         }
                     }
                     if (isset($_GET['serendipity']['edit_link'])) {
@@ -422,7 +409,7 @@ class serendipity_event_linklist extends serendipity_event
                                 $depth = -1;
                                 for($level[]=0, $i=1, $j=1; isset($struct[$i]); $i++, $j++) {
                                     if (isset($struct[$i]['type'])) {
-                                        if ($struct[$i]['type']=='open' && strtolower($struct[$i]['tag'])=='dir') {
+                                        if ($struct[$i]['type'] == 'open' && strtolower($struct[$i]['tag']) == 'dir') {
                                             if (!isset($in_cat[0])) {
                                                 $in_cat[0] = null;
                                             }
@@ -431,10 +418,10 @@ class serendipity_event_linklist extends serendipity_event
                                             $sql = serendipity_db_query($q);
                                             $in_cat[] = $sql[0][0];
                                             $depth++;
-                                        } else if ($struct[$i]['type']=='close' && strtolower($struct[$i]['tag'])=='dir') {
+                                        } else if ($struct[$i]['type'] == 'close' && strtolower($struct[$i]['tag']) == 'dir') {
                                             $blah = array_pop($in_cat);
                                             $depth--;
-                                        } else if ($struct[$i]['type']=='complete' && strtolower($struct[$i]['tag'])=='link') {
+                                        } else if ($struct[$i]['type'] == 'complete' && strtolower($struct[$i]['tag']) == 'link') {
                                             if (!isset($struct[$i]['attributes']['DESCRIP'])) {
                                                 $struct[$i]['attributes']['DESCRIP'] = null;
                                             }
@@ -444,14 +431,9 @@ class serendipity_event_linklist extends serendipity_event
                                 }
                             }
                             if ($eventData['cache'] == 'yes') {
-                                if (@include_once("Cache/Lite.php")) {
-                                    $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
-                                    $output = $this->generate_output(true);
-                                    $eventData['links'] = $output;
-                                    $cache_obj->save($output,'linklist_cache');
-                                } else {
-                                    $output = $this->generate_output(true);
-                                    $eventData['links'] = $output;
+                                $output = $this->generate_output(true);
+                                $eventData['links'] = $output;
+                                if (false === serendipity_cacheItem('linklist_cache', $output, 43200)) {
                                     $this->set_config('cached_output',$output);
                                 }
                             }
@@ -462,10 +444,7 @@ class serendipity_event_linklist extends serendipity_event
                             $this->set_config('cache', 'no');
                             $this->set_config('display', 'category');
                             $eventData['links'] = $this->generate_output(true);
-                            if (@include_once("Cache/Lite.php")) {
-                                $cache_obj = new Cache_Lite(array('cacheDir' => $serendipity['serendipityPath'].'templates_c/','automaticSerialization' => true));
-                                @$cache_obj->remove('linklist_cache');
-                            } else {
+                            if (false === serendipity_removeCacheItem('linklist_cache')) {
                                 $this->set_config('cached_output','');
                             }
                             $eventData['changed'] = 'true';

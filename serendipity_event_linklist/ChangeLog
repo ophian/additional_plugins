@@ -1,3 +1,8 @@
+4.0.0:
+------
+ * Convert caching to use Styx 5.0 voku/cache simple_cache library
+ * Raises requirements
+
 3.5.1:
 -----
  * Remove an outdated backend selector usage

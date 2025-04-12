@@ -20,7 +20,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.32');
+        $propbag->add('version',       '1.4.0');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -50,9 +50,9 @@ class serendipity_plugin_linklist extends serendipity_plugin
                                              'imgdir'));
         $this->protected = TRUE; // If set to TRUE, only allows the owner of the plugin to modify its configuration
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         // Register (multiple) dependencies. KEY is the name of the depending plugin. VALUE is a mode of either 'remove' or 'keep'.
         // If the mode 'remove' is set, removing the plugin results in a removal of the depending plugin.
@@ -344,16 +344,11 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $style = $this->get_config('style');
 
         if ($this->get_config('cache') == 'yes') {
-            if (@include_once("Cache/Lite.php")) {
-                $xml_hash = md5($links.$style);
-                $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/', 'automaticSerialization' => true));
-                $old_hash = $cache_obj->get('linklist_xmlhash');
-                if ($xml_hash == $old_hash) {
-                    $output = $cache_obj->get('linklist_html');
-                } else {
-                    $output = $this->gen_output($links,$style);
-                    $cache_obj->save($output, 'linklist_html');
-                    $cache_obj->save($xml_hash, 'linklist_xmlhash');
+            if (\class_exists('voku\cache\Cache')) {
+                $output = serendipity_getCacheItem('linklist_html');
+                if (empty($output)) {
+                    $output = $this->gen_output($links, $style);
+                    serendipity_cacheItem('linklist_html', $output, 43200);
                 }
             } else {
                 $output = $this->gen_output($links,$style);
@@ -560,11 +555,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
 
         $cache = $this->get_config('cache');
         if ($this->get_config('cache') == 'no') {
-            if (@include_once("Cache/Lite.php")) {
-                $cache_obj = new Cache_Lite( array('cacheDir' => $serendipity['serendipityPath'].'templates_c/' , 'automaticSerialization' => true));
-                @$cache_obj->remove('linklist_html');
-                @$cache_obj->remove('linklist_xmlhash');
-            }
+            serendipity_removeCacheItem('linklist_html');
         }
         $setdata = array('display'  => $this->get_config('display'),
                          'category' => $this->get_config('category'),
