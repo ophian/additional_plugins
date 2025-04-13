@@ -14,7 +14,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;Rychlé poznámky&lt;/b&gt;&lt;br /&gt;Zobrazuje v administrační sekci oznámení přihlášeným uživatelům&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Tlačítko médií Amazon&lt;/b&gt;&lt;br /&gt;Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 15:00:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Automatické aktualizace&lt;/b&gt;&lt;br /&gt;Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -95,7 +95,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Export blogu do PDF&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům blogu stáhnout obsah blogu ve formátu PDF&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 17 Sep 2023 15:12:20 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Vlastnosti/šablona vzhledu pro kategorie&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -131,7 +131,7 @@
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Používá CKEditor jako výchozí WYSIWYG editor. Tento editor je aktuálním state-of-art. Použití: Doporučeno! Po instalaci přejděte na stránku s nastavením tohoto pluginu a čtěte další instrukce.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:42:14 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Hledání v komentářích&lt;/b&gt;&lt;br /&gt;Pokud je tento plugin nainstalovaný, rychlé vyhledávání bude prohledávat také komentáře&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 22 Jul 2024 16:29:24 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
@@ -167,7 +167,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Komentářové koření&lt;/b&gt;&lt;br /&gt;Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -311,7 +311,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Lišta smajlíků&lt;/b&gt;&lt;br /&gt;Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -320,7 +320,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Gregor Voeltz, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;Pravidla vydávání příspěvků&lt;/b&gt;&lt;br /&gt;Provádí kontrolu příspěvku před jeho vydáním.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:19:00 +0200</pubDate>
+<pubDate>Sat, 08 Mar 2025 15:32:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_entrycheck</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Odkaz na další/předchozí příspěvek&lt;/b&gt;&lt;br /&gt;Umožňuje prohlížení dalších/předchozích příspěvků&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -383,7 +383,7 @@
 <category>Event Plugins</category>
 <author>Falk Doering, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQ - Často kladené otázky&lt;/b&gt;&lt;br /&gt;Správa FAQ - často kladených otázek&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Thu, 02 May 2024 19:06:55 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -401,7 +401,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Filtrování příspěvků&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům blogu filtrovat/řadit příspěvky podle různých pravidel&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 13 Jan 2023 14:47:11 +0100</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
@@ -410,7 +410,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Joachim Breitner</author>
 <content:encoded>&lt;b&gt;serendipity_event_flattr&lt;br /&gt;Flattr&lt;/b&gt;&lt;br /&gt;Flattr je platforma pro sociální mikroplatby, která čtenáři umožňuje ocenit drobným příspěvkem obsah, který se mu líbí. Tento plugin vkládá do příspěvků a RSS kanálů tlačítka &quot;Flattr&quot; (tzv. Flattr Badges). U každého příspěvku můžete jednotlivě zadat nastavení Flattru. Pokud tak neučiníte, použije se globální nastavení.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flattr</guid>
 </item>
 <item>
@@ -446,7 +446,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Klíčová slova&lt;/b&gt;&lt;br /&gt;Umožňuje libovolné přidávání klíčových slov k příspěvkům&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -572,7 +572,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Markup: Vložení příspěvku/šablony/bloku&lt;/b&gt;&lt;br /&gt;Umožňuje přidat do příspěvku tagy, které zajistí vložení část jiného příspěvku. Použijte tuto značku: [s9y-include-entry:XXX:YYY]. Nahraďte XXX číslem ID odkazovaného příspěvku a YYY nahraďte názvem pole příspěvku, které chcete vložit (např. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). Také můžete využít nové funkce menu pro správu šablon a bloků, které je možno vložit mezi příspěvky.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:49:04 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
@@ -616,8 +616,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linklist</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Správce odkazů (linků) - V bočním panelu zobrazuje vaše oblíbené odkazy.&lt;br/&gt;For: Serendipity 3.2.0</content:encoded>
-<pubDate>Mon, 09 Sep 2024 16:18:29 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Správce odkazů (linků) - V bočním panelu zobrazuje vaše oblíbené odkazy.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sat, 12 Apr 2025 14:08:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -635,7 +635,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Zkracovač adres&lt;/b&gt;&lt;br /&gt;Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -761,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Vízejazyčné záznamy&lt;/b&gt;&lt;br /&gt;Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Fri, 18 Oct 2024 20:58:28 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -1004,7 +1004,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detekce spamu pomocí adaptivního algoritmu, který se dokáže sám učit.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Sun, 19 Jan 2025 12:30:05 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1015,24 +1015,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Skrytá Captcha)&lt;/b&gt;&lt;br /&gt;Implementuje jednoduché ale velmi účinné antispamové algoritmy.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
 <pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
-</item>
-<item>
-<title>Antispamová ochrana (RBL): Odmítne komentáře, které jsou zadány ze adres, které jsou vedeny v blacklistu RBL. Pozor, že tato volba může znemožnit posílání komentářů uživatelům, kteří sedí za proxy serverem nebo kteří používají vytáčené spojení.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_rbl</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_rbl&lt;br /&gt;Antispamová ochrana (RBL)&lt;/b&gt;&lt;br /&gt;Odmítne komentáře, které jsou zadány ze adres, které jsou vedeny v blacklistu RBL. Pozor, že tato volba může znemožnit posílání komentářů uživatelům, kteří sedí za proxy serverem nebo kteří používají vytáčené spojení.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:23:34 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_spamblock_rbl</guid>
-</item>
-<item>
-<title>Spam Protector (SURBL): Zamítne komentáře, které obsahují URL adresy z černé listiny.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_surbl</link>
-<category>Event Plugins</category>
-<author>Sebastian Nohn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_surbl&lt;br /&gt;Spam Protector (SURBL)&lt;/b&gt;&lt;br /&gt;Zamítne komentáře, které obsahují URL adresy z černé listiny.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:23:40 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_spamblock_surbl</guid>
 </item>
 <item>
 <title>StalkerBuster (TM,C,R): Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.</title>
@@ -1058,7 +1040,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statické stránky&lt;/b&gt;&lt;br /&gt;Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Fri, 18 Oct 2024 21:02:09 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1067,7 +1049,7 @@
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiky&lt;/b&gt;&lt;br /&gt;Zobrazení statistik záznamů&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1103,7 +1085,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Markup: Textile&lt;/b&gt;&lt;br /&gt;Převádí text se značkami Textile do HTML&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 19 Jan 2023 19:20:52 +0100</pubDate>
+<pubDate>Mon, 20 Jan 2025 16:46:40 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
@@ -1193,7 +1175,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_typesetbuttons&lt;br /&gt;Rozšířená tlačítka pro ne-WYSIWYG editor&lt;/b&gt;&lt;br /&gt;Přidá tlačítka pro vložení kódů různých html entit (čárky, tečky, uvozovky) + další akce.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typesetbuttons</guid>
 </item>
 <item>
@@ -1219,8 +1201,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_usergallery</link>
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Galerie&lt;/b&gt;&lt;br /&gt;Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Galerie&lt;/b&gt;&lt;br /&gt;Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
@@ -1255,8 +1237,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Oznamování pøíspìvkù&lt;/b&gt;&lt;br /&gt;Posílá oznámení o nových příspěvcích na on-line internetové služby.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Oznamování pøíspìvkù&lt;/b&gt;&lt;br /&gt;Posílá oznámení o nových příspěvcích na on-line internetové služby.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
+<pubDate>Sat, 12 Apr 2025 13:18:10 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
@@ -1265,7 +1247,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Wiki odkazy v příspěvcích&lt;/b&gt;&lt;br /&gt;V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
@@ -1283,7 +1265,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Posílání příspěvků pomocí XML-RPC&lt;/b&gt;&lt;br /&gt;Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:34:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1292,7 +1274,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xsstrust&lt;br /&gt;Nástroje pro důvěryhodnou správu více-uživatelských blogů&lt;/b&gt;&lt;br /&gt;Tento plugin umožňuje upřesnit, kteří autoři na více-uživatelském blogu jsou důvěryhodní a lze se spolehnout, že se nebudou pokoušet o hackování. Všichni ostatní autoři jsou bráni jako potenciálně nebezpeční a nemohou vytvřátet příspěvky v HTML kódu.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:29:57 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xsstrust</guid>
 </item>
 <item>
@@ -1301,7 +1283,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_youtube&lt;br /&gt;Rozšířená tlačítka editoru: Youtube apod.&lt;/b&gt;&lt;br /&gt;Přidává tlačítka do editačního formuláře pro lehčí vkládání HTML/JS akriptů jako např. Youtube apod.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_youtube</guid>
 </item>
 <item>
@@ -1310,7 +1292,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;Samoregistrace nových uživatelů&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům webu vytvořit si vlastní uživatelský účet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) můžete určit, jestli komentáře mohou posílat pouze registrovaní uživatelé.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
@@ -1337,7 +1319,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Mikroblogování (Twitter, Identica)&lt;/b&gt;&lt;br /&gt;Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 20 Oct 2024 15:20:35 +0200</pubDate>
+<pubDate>Sat, 12 Apr 2025 13:12:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
