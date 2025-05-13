@@ -21,5 +21,5 @@
 @define('PLUGIN_EVENT_MARKDOWN_SMARTYPANTS_EXTENDED', 'SmartyPants Typographer');
 @define('PLUGIN_EVENT_MARKDOWN_SMARTYPANTS_NEVER', 'none');
  
-@define('PLUGIN_EVENT_MARKDOWN_ATTENT_NOTE', '<strong>ATTEND</strong>: If you ever have already written entries with markdown formatting - in special using code snippets - and then change the editor to use the RichText Editor (back again or new), you either need to rewrite these entries to proper HTML (like copying the previous frontend entry body output into the entry form by RT Editor SOURCE view) OR you have to keep this plugin set active and NOT back-it-up hidden or nuke it completely. Else you could find parts of your frontend entries cluttered by Browser repairs.');
+@define('PLUGIN_EVENT_MARKDOWN_ATTENT_NOTE', '<strong>ATTEND</strong>: If you ever have already written entries with markdown formatting - in special using code snippets - and then change the editor to use the RichText Editor (back again or new), you either<ul><li>need to rewrite these entries to proper HTML (like copying the previous frontend entry body output into the entry form by RT-Editor SOURCE view) OR</li><li>you have to keep this plugin set active and NOT back-it-up hidden or nuke it completely.</li></ul>Else you could find parts of your frontend entries cluttered by Browser repairs.');
 
