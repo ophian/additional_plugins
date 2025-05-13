@@ -25,7 +25,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.42');
+        $propbag->add('version',       '1.43');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'backend_entryform' => true,
@@ -118,6 +118,11 @@ class serendipity_event_markdown extends serendipity_event
         return true;
     }
 
+    function example()
+    {
+        return '<span class="msg_hint"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_MARKDOWN_ATTENT_NOTE . '</span>';
+    }
+
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;
@@ -200,7 +205,7 @@ class serendipity_event_markdown extends serendipity_event
 
                 case 'frontend_comment':
                     if (serendipity_db_bool($this->get_config('COMMENT', true))) {
-                        echo '<div class="serendipity_commentDirection serendipity_comment_markdown">' . PLUGIN_EVENT_MARKDOWN_TRANSFORM . '</div>';
+                        echo '                                <div class="serendipity_commentDirection serendipity_comment_markdown">' . PLUGIN_EVENT_MARKDOWN_TRANSFORM . '</div>';
                     }
                     break;
 
