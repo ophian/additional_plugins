@@ -1,3 +1,7 @@
+4.1.0:
+------
+ * Do not allow emoticonchooser on HTMLcomments true for visitors
+
 4.0.0:
 ------
  * Reflect Styx 5 core textarea name changes to drop into
