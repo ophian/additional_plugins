@@ -22,7 +22,7 @@ class serendipity_event_mycalendar extends serendipity_event
             'php'         => '7.4'
         ));
 
-        $propbag->add('version',       '0.24');
+        $propbag->add('version',       '0.25');
         $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -412,7 +412,7 @@ class serendipity_event_mycalendar extends serendipity_event
     <title><?php echo $serendipity['blogTitle'] . ' - ' . PLUGIN_MYCALENDAR_TITLE; ?></title>
     <link><?php echo $serendipity['baseURL']; ?></link>
     <description><?php echo PLUGIN_MYCALENDAR_SIDE_NAME; ?></description>
-    <generator>Serendipity - http://www.s9y.org/</generator>
+    <generator>Serendipity Styx - https://ophian.github.io/</generator>
 <?php
                         foreach($items AS $item) {
 ?>
