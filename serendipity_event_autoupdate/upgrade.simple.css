@@ -42,6 +42,17 @@ h3{font-size:1.28571em;line-height:1.16667em;margin:1.16667em 0px}
 h4{font-size:1.14286em;line-height:1.3125em;margin:1.3125em 0px}
 h5,h6{font-size:1em}
 span>svg{vertical-align:middle}
+summary{display:block;font-size:1rem}
+summary::after{margin-left:1ch;display:inline-block;content:'▶';transition:0.2s;color:#666;font-size:smaller}
+details[open]>summary::after{transform:rotate(90deg)}
+details{font-size:.925rem}
+details[name="myisamtoaria"]{margin:0}
+details[name="myisamtoaria"] br{display:none}
+details[name="myisamtoaria"] ul{margin:.25em 0}
+details[name="myisamtoaria"] #isamtoaria{border:none;box-shadow:2px 2px 4px #777;margin-top:.5em;color:darkslategray}
+details>summary{list-style-type:none;width:15em;border:none;text-decoration:underline;cursor:pointer}
+details>p,details>div{padding:2px 6px;margin:0}
+.upgrader_tasks .nobr br{display:none}
 .hyphenate{overflow-wrap:break-word;word-wrap:break-word;-webkit-hyphens:auto;ms-hyphens:auto;-moz-hyphens:auto;hyphens:auto}
 progress[value]{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;width:250px;height:20px;color:blue}
 progress[value]::-webkit-progress-value{background-image:-webkit-linear-gradient(-45deg,transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1)66%,transparent 66%),-webkit-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,.25)),-webkit-linear-gradient(left,#09c,#f44);border-radius:2px; background-size:35px 20px,100% 100%,100% 100%}
