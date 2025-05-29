@@ -69,7 +69,7 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_NAME', 'Šířka obrázku');
 #@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Zadat pevnou šířku obrázku. Pokud je zadána nula, plugin obrázku zadá "width: 100%"');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_NAME', 'URL');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Stálá URL adresa, na kterou má vést odkaz. (např. "http://www.s9y.org")');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Stálá URL adresa, na kterou má vést odkaz. (např. "https://www.example.org/")');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Zadejte stálý odkaz (permalink) nebo podstránku');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC', 'Tato hodnota se musí shodovat s hodnotou zadanou v pluginu "galerie". Pamatujte, že pokud je vypnuté přepisování URL adresy (url rewrite), musíte použít podstránku.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Libovolný text (html značky povoleny), který má být před obrázkem');
