@@ -26,7 +26,7 @@
 @define('PLUGIN_LINKLIST_CATEGORY', 'U¿ywaj kategorii');
 @define('PLUGIN_LINKLIST_CATEGORYDESC', 'Uzywaj kategorii by organizowaæ swoje linki');
 @define('PLUGIN_LINKLIST_ADDLINK', 'Dodaj linka');
-@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Przyk³ad: http://www.s9y.org lub http://www.s9y.org/forums/');
+@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Przyk³ad: https://github.com/ophian/styx/discussions lub https://ophian.github.io/book/');
 @define('PLUGIN_LINKLIST_EDITLINK', 'Edytuj linka');
 @define('PLUGIN_LINKLIST_LINKDESC', 'Opis linka');
 @define('PLUGIN_LINKLIST_CATEGORY_NAME', 'U¿ywaæ którego systemu kategorii:');

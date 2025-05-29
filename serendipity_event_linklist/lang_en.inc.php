@@ -26,7 +26,7 @@
 @define('PLUGIN_LINKLIST_CATEGORY', 'Use categories');
 @define('PLUGIN_LINKLIST_CATEGORYDESC', 'Use categories to organize links.');
 @define('PLUGIN_LINKLIST_ADDLINK', 'Add a Link');
-@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Example: https://github.com/ophian/styx/discussions oder https://ophian.github.io/book/');
+@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Example: https://github.com/ophian/styx/discussions or https://ophian.github.io/book/');
 @define('PLUGIN_LINKLIST_EDITLINK', 'Edit a Link');
 @define('PLUGIN_LINKLIST_LINKDESC', 'Description of Link');
 @define('PLUGIN_LINKLIST_CATEGORY_NAME', 'Category system to use:');

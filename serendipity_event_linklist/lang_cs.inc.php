@@ -31,7 +31,7 @@
 @define('PLUGIN_LINKLIST_CATEGORY', 'Použít kategorie');
 @define('PLUGIN_LINKLIST_CATEGORYDESC', 'Použít kategorie pøi seskupování odkazù.');
 @define('PLUGIN_LINKLIST_ADDLINK', 'Pøidat odkaz');
-@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Pøíklad správného odkazu: http://www.s9y.org nebo http://www.s9y.org/forums/');
+@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Pøíklad správného odkazu: https://github.com/ophian/styx/discussions nebo https://ophian.github.io/book/');
 @define('PLUGIN_LINKLIST_EDITLINK', 'Upravit odkaz');
 @define('PLUGIN_LINKLIST_LINKDESC', 'Popis odkazu');
 @define('PLUGIN_LINKLIST_CATEGORY_NAME', 'Systém kategorií:');

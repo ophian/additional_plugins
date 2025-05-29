@@ -26,7 +26,7 @@
 @define('PLUGIN_LINKLIST_CATEGORY', 'カテゴリを使う');
 @define('PLUGIN_LINKLIST_CATEGORYDESC', 'リンクの組み立てにカテゴリを使用します。');
 @define('PLUGIN_LINKLIST_ADDLINK', 'リンクを追加する');
-@define('PLUGIN_LINKLIST_LINK_EXAMPLE', '例: http://www.s9y.org or http://www.s9y.org/forums/');
+@define('PLUGIN_LINKLIST_LINK_EXAMPLE', '例: https://github.com/ophian/styx/discussions or https://ophian.github.io/book/');
 @define('PLUGIN_LINKLIST_EDITLINK', 'リンクを編集する');
 @define('PLUGIN_LINKLIST_LINKDESC', 'リンクの説明');
 @define('PLUGIN_LINKLIST_CATEGORY_NAME', '使用するカテゴリシステム:');

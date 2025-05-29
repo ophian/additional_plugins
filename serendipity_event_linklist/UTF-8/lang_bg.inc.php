@@ -26,7 +26,7 @@
 @define('PLUGIN_LINKLIST_CATEGORY', 'Use categories');
 @define('PLUGIN_LINKLIST_CATEGORYDESC', 'Use categories to organize links.');
 @define('PLUGIN_LINKLIST_ADDLINK', 'Добавяне на връзка');
-@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Пример: http://www.s9y.org или http://www.s9y.org/forums/');
+@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Пример: https://github.com/ophian/styx/discussions или https://ophian.github.io/book/');
 @define('PLUGIN_LINKLIST_EDITLINK', 'Редактиране на връзка');
 @define('PLUGIN_LINKLIST_LINKDESC', 'Описание на връзката');
 @define('PLUGIN_LINKLIST_CATEGORY_NAME', 'Система от категории:');
