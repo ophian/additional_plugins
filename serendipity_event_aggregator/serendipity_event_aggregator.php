@@ -69,7 +69,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '3.1.0',
             'php'         => '7.4.0'
         ));
-        $propbag->add('version',       '1.15');
+        $propbag->add('version',       '1.16');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1605,7 +1605,7 @@ class serendipity_event_aggregator extends serendipity_event
 <head>
     <title>{$serendipity['blogTitle']}</title>
     <dateModified>{$modified}</dateModified>
-    <ownerName>Serendipity - http://www.s9y.org/</ownerName>
+    <ownerName>Serendipity Styx - https://ophian.github.io/</ownerName>
 </head>
 <body>
 EOF;
