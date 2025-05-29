@@ -30,12 +30,12 @@
 @define('PLUGIN_EVENT_WIKILINKS_REFMATCH_DESC', 'Zde mù¾ete zadat vzor, podle kterého budou odchytávány reference pøi procházení textu. Plugin sesbírá tyto reference, ulo¾í je do databáze a vypí¹e je pod pøíspìvkem. Mù¾ete také pou¾ít smarty tag {$entry.properties.references} pro umístìní tohoto bloku na libovolné místo ve va¹í ¹ablonì. Vzor je mo¾né zadávat jako regulární výraz, nezapomeòte escapovat speciální znaky. Výchozí vzor vypadá slo¾itì, proto¾e pou¾ívá pojmenované pod-vzory, ale zato mù¾e být jednodu¹e pou¾it jako:<ref name="xxx">yyy</ref>, kde xxx je nepovinné jméno reference (viz ní¾e) a yyy je vlastní text reference, kde yyy mù¾e být libovolné HTML nebo jiný znaèkovací jazyk.');
 @define('PLUGIN_EVENT_WIKILINKS_REFDOC', '<strong>Znovu-pou¾ívání referencí</strong><br /><br />Pokud chcete pou¾ít reference na více místech, je výhodné specifikovat je pouze jednou a pak u¾ jen znovu-pou¾ívat. Napøíkad pokud napí¹ete následující text:<br />
 <div style="border: 1px solid black; padding: 4px">
-Serendipity&lt;ref&gt;&lt;a href="http://www.s9y.org"&gt;Serendipity Weblog&lt;/a&gt; - Serendipity mù¾e být také pou¾ito v dal¹ích významech, ajko napøíklad film nebo taneèník ve filmu, nebo film o filmovém taneèníkovi.</ref> se mù¾e vyskytovat na mnoha místech.
+Serendipity&lt;ref&gt;&lt;a href="https://ophian.github.io/"&gt;Serendipity Styx Weblog&lt;/a&gt; - Serendipity mù¾e být také pou¾ito v dal¹ích významech, ajko napøíklad film nebo taneèník ve filmu, nebo film o filmovém taneèníkovi.</ref> se mù¾e vyskytovat na mnoha místech.
 </div>
 <br/><br />
 Proto¾e budete mluvit o Serendipity na va¹em blogu urèitì na mnoha místech, mìli byste vytvoøit referenci, která funguje pøidáním atributu <em>name</em> attribute do tagu &lt;ref&gt; a bude vypadat následovnì:
 <div style="border: 1px solid black; padding: 4px">
-Serendipity&lt;ref name="Serendipity"&gt;&lt;a href="http://www.s9y.org"&gt;Serendipity Weblog&lt;/a&gt; Serendipity mù¾e být také pou¾ito v dal¹ích významech, ajko napøíklad film nebo taneèník ve filmu, nebo film o filmovém taneèníkovi.</ref> a mù¾e se vyskytovat na mnoha místech.</pre>
+Serendipity&lt;ref name="Serendipity"&gt;&lt;a href="https://ophian.github.io/"&gt;Serendipity Styx Weblog&lt;/a&gt; Serendipity mù¾e být také pou¾ito v dal¹ích významech, ajko napøíklad film nebo taneèník ve filmu, nebo film o filmovém taneèníkovi.</ref> a mù¾e se vyskytovat na mnoha místech.</pre>
 </div>
 <br/><br />
 Toto staèí vlo¾it pouze na prvním místì výskytu reference. Kdykoliv budete chtít pou¾ít tu samou referenci, staèí napsat jednodu¹e:
