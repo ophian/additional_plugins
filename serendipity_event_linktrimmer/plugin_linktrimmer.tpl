@@ -53,7 +53,7 @@
 
             <div class="form_field">
                 <label for="linktrimmer_url">{$CONST.PLUGIN_LINKTRIMMER_ENTER}</label>
-                <input id="linktrimmer_url" class="input_textbox" type="text" value="" name="linktrimmer_url" placeholder="http://www.s9y.org">
+                <input id="linktrimmer_url" class="input_textbox" type="text" value="" name="linktrimmer_url" placeholder="https://www.example.org">
     {if $linktrimmer_external === false}
             </div>
 
