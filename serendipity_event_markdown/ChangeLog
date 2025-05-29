@@ -1,3 +1,8 @@
+1.44:
+=====
+
+ * Do not hook into markdown spamblock message for adduser sidebar if eventData['allow_comments'] is not available
+
 1.43:
 =====
 
