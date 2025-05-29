@@ -21,7 +21,7 @@
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Popis èíslo %s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Zadejte popis akronymu ({popis})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Pøepisovací øetìzec');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'Tento plugin je primárnì vymyšlen k pøidávání jednoduchých popiskù ke zvoleným klíèovým slovùm - tzv. akronymy. Pøíklad použití <acronym title="{popis}">{slovo}</acronym> - políèko {slovo} se hledá v textu, nahrazuje se øetìzcem, který zadáte tady, pøièemž mùžete použít pùvodní slovo, mùžete použít slovo nové {popis}. Úèelem pluginu je používat stejnou šabonu pro více slov. Více použití viz dokumentace (pøeložená) na http://www.s9y.org.');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'The string used to rewrite. Place {from} and {to} anywhere you like to get a rewrite.' . "\n" . 'Example: <acronym title="{to}">{from}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Pøepisování znakù');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Odmazávání znakù ze slova ({slovo}) - pøíklad použití: Máte podnikový blog a šéfy Hrušku, Jelínka a Vrátného. Chcete, aby se jména šéfù zvýrazòovala, ale nechcete, aby se slovo hruška odkazovalo na šéfa, pokud mluvíte o ovoci, podobnì se slivovicí, pøípadnì nechcete zamìòovat šéfa s dùchodcem na vrátnici. V textu budete psát Hruška_šéf, Jelínek_šéf, Vrátný_šéf. V tomto poli zadáte \'_šéf\'. Tato pøípona Vám umožní rozpoznat šéfy, ale sama o sobì se nebude v poli {slovo} zobrazovat.');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'Vaše nahrazovací øetìzce jsou "%s" a "%s".');
