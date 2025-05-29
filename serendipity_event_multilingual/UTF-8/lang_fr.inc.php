@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Christian Lescuyer <cl@goelette.net>
  *  EN-Revision: 1.1
  */

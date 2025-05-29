@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  lang_it.inc.php,v 1.2
  *  @author Giulio Malventi <giulio@vene.ws>
  *  EN-Revision: Revision of lang_en.inc.php

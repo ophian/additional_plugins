@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @file serendipity_event_guestbook.php, langfile(UTF-8/ko)
  *  @author Wesley Hwang-Chung <wesley96@gmail.com> 2005 http://www.tool-box.info/
  *  EN-Revision: 

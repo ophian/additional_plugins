@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @file serendipity_event_guestbook.php, langfile(UTF-8/nl)
  *  @author 
  *  EN-Revision: 

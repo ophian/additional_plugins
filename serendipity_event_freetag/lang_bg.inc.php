@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ivan Cenov JWalker@hotmail.bg
  *  EN-Revision: 1.23
  */

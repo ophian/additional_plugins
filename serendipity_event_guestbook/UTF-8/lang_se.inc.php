@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @file serendipity_event_guestbook.php, langfile(UTF-8/se) v2.1 2006/10/17 crapmaster
  *  @author crapmaster
  *  EN-Revision: 

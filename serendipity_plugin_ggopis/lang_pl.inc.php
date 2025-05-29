@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Piotr utak3r Borys <piotr.borys@gmail.com>
  *  EN-Revision: Revision of lang_en.inc.php
  */

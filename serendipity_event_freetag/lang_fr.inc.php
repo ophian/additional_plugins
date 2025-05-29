@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author P'tit Lu <ptitlu@ptitlu.org>
  *  EN-Revision: Revision of lang_en.inc.php
  */

@@ -83,7 +83,7 @@
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIMENSION_RANGE_NAME', 'Select a min/max fetch dimension range');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIMENSION_RANGE_DESC', 'This value is taken to filter select image-width dimension ranges from "x" (minimum) to "y" (maximum) in pixels, which reduces the full selected database fetch and helps to not display images of too small sizes. Write as comma separated integer values, eg. "240,2400". Set to "0,0" for no filters.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_NAME', 'Enter URL');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Enter the static URL you would like to link to. (example: \'http://www.s9y.org\')');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'Enter the static URL you would like to link to. (example: \'https://www.example.org/\')');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Enter the permalink or subpage');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC', 'This value should match the value set in the gallery plugin. Note, if URL rewriting is turned off you must use the subpage.');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Text (or html) you would like placed before the picture');

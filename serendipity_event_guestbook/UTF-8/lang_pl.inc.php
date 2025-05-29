@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @file serendipity_event_guestbook.php, langfile(UTF-8/pl) v1.0 2007-05-21 16:10:54 utak3r
  *  @author utak3r
  *  EN-Revision: 

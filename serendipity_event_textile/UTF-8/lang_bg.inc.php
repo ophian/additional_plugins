@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @file 
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: Revision of lang_en.inc.php

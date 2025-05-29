@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @file serendipity_event_guestbook.php, langfile(bg)
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.2

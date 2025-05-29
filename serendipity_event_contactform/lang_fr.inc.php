@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Translator Name <cl@goelette.net>
  *  EN-Revision: 1.2
  */
