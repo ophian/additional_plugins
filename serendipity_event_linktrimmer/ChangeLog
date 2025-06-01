@@ -1,3 +1,7 @@
+2.0.2:
+------
+ * Better dark-mode vs light-mode RichText-Editor button coloring
+
 2.0.1:
 -----
  * Check some var parameters on string type, not INT

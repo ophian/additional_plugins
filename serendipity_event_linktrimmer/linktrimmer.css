@@ -2,6 +2,9 @@
 /* linktrimmer plugin start */
 
 .bi.bi-layer-forward.bi-layer-forward-btn {
+    fill: #32c932;
+}
+[data-color-mode="dark"] .bi.bi-layer-forward.bi-layer-forward-btn {
     fill: palegreen;
 }
 #linktrimmer_url.input_textbox {
