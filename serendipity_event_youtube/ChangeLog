@@ -1,3 +1,7 @@
+2.0.1:
+------
+ * Better dark-mode vs light-mode RichText-Editor button coloring
+
 2.0.0:
 ------
  * Reflect Styx 5 core textarea name changes to drop into
