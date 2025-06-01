@@ -19,7 +19,7 @@
 @define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_DESK', 'Sollen Links dargestellt werden, selbst wenn der verlinkte Eintrag noch in der Zukunft datiert ist?');
 
 @define('PLUGIN_EVENT_WIKILINKS_MAINT', 'Verweise pflegen');//Referenzregister pflegen
-@define('PLUGIN_EVENT_WIKILINKS_MAINT_DESC', 'Hier können Sie gespeicherte Verweise bearbeiten. Beachten Sie, dass, wenn Sie den ursprünglichen Eintrag bearbeiten, in dem der Verweis vorkommt, der Text eines Verweises dort immer Vorrang vor allem hat, was Sie hier bearbeiten. Wenn Sie häufig alte Einträge neu bearbeiten, sollten Sie die Texte der Verweise besser innerhalb der Einträge pflegen und nicht hier.');
+@define('PLUGIN_EVENT_WIKILINKS_MAINT_DESC', 'Hier können Sie gespeicherte Verweise bearbeiten. Beachten Sie, dass, wenn Sie den ursprünglichen Eintrag bearbeiten in dem der Verweis vorkommt, der Text eines Verweises dort immer Vorrang vor allem hat was Sie hier bearbeiten. Wenn Sie häufig alte Einträge neu bearbeiten, sollten Sie die Texte der Verweise besser innerhalb der Einträge pflegen und nicht hier.');
 
 @define('PLUGIN_EVENT_WIKILINKS_DB_REFNAME', 'Referenz Name:');
 @define('PLUGIN_EVENT_WIKILINKS_DB_REF', 'Referenz Inhalt:');
