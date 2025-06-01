@@ -33,7 +33,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '4.1.0');
+        $propbag->add('version',       '4.1.1');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -434,7 +434,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 //                        'img_url'    => $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . 'plugin/plugin_emoticon.png',
                         'svg'        => '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-emoji-smile-fill bi-emoji-smile-fillCo" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8"/></svg>',
 // no need, since we have a css_backend hook. Else use this
-//                        'css'        => '.bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { fill: gold; }',
+//                        'css'        => '.bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { fill: gold; border-radius: 1rem; background-color: black; }[data-color-mode="dark"] .bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { border-radius: unset; background-color: unset; }',
                         'toolbar'    => 'other'
                     );
                     break;
@@ -444,7 +444,8 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
 /* emoticonchooser plugin start */
 
-.bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { fill: gold; }
+.bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { fill: gold; border-radius: 1rem; background-color: black; }
+[data-color-mode="dark"] .bi.bi-emoji-smile-fill.bi-emoji-smile-fillCo { border-radius: unset; background-color: unset; }
 
 .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
     margin: 1em auto 1px;
