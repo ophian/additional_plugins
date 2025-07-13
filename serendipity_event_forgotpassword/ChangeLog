@@ -1,8 +1,15 @@
-1.16:
+1.0.0:
+------
+ * Update for Serendipity Styx 5.0
+ * Raises requirements
+ * Removed wrong encoded and outdated documentation files "documentation_cz.html" and "documentation_cs.html"
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+
+0.16:
 -----
  * Fixup for strict_types
 
-1.15:
+0.15:
 -----
  * Fixup an old S9y Series 1 message variable
  * Raises serendipity requirement to 2.0

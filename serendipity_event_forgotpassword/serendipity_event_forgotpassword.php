@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -15,12 +17,12 @@ class serendipity_event_forgotpassword extends serendipity_event
         $propbag->add('name',          PLUGIN_EVENT_FORGOTPASSWORD_NAME);
         $propbag->add('description',   PLUGIN_EVENT_FORGOTPASSWORD_DESC);
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Omid Mottaghi');
-        $propbag->add('version',       '0.16');
+        $propbag->add('author',        'Omid Mottaghi, Ian Styx');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array('backend_login_page' => true));
 
@@ -58,21 +60,18 @@ class serendipity_event_forgotpassword extends serendipity_event
             case 'nomailinfo':
                 $propbag->add('type',        'text');
                 $propbag->add('name',        PLUGIN_EVENT_FORGOTPASSWORD_MAILER);
-                $propbag->add('description', '');
                 $propbag->add('default',     PLUGIN_EVENT_FORGOTPASSWORD_MAILER_DEFAULT);
                 break;
 
             case 'nomailtxt':
                 $propbag->add('type',        'text');
                 $propbag->add('name',        PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAILTXT);
-                $propbag->add('description', '');
                 $propbag->add('default',     PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAILTXT_DEFAULT);
                 break;
 
             case 'nomailadd':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAIL);
-                $propbag->add('description', '');
                 $propbag->add('default',     '');
                 break;
         }
@@ -84,11 +83,11 @@ class serendipity_event_forgotpassword extends serendipity_event
         global $serendipity;
 
         //create table xxxx_forgotpassword
-            $q = "CREATE TABLE {$serendipity['dbPrefix']}forgotpassword (
-                    uid varchar(32) not null,
-                    authorid int(11) not null
-                )";
-            serendipity_db_schema_import($q);
+        $q = "CREATE TABLE {$serendipity['dbPrefix']}forgotpassword (
+                uid varchar(32) not null,
+                authorid int(11) not null
+            )";
+        serendipity_db_schema_import($q);
     }
 
     function uninstall(&$propbag)
@@ -114,38 +113,33 @@ class serendipity_event_forgotpassword extends serendipity_event
                     // first LINK
                     if (!isset($_GET['forgotpassword']) && !isset($_GET['username']) && !isset($_POST['username'])) {
                         $eventData['footer'] = '
-                        <table cellspacing="10" cellpadding="0" border="0" align="center">
-                            <tr>
-                                <td colspan="2" align="right"><a href="?forgotpassword=1">'.PLUGIN_EVENT_FORGOTPASSWORD_LOST_PASSWORD.'</a></td>
-                            </tr>
-                        </table>';
+        <p class="serendipity_center"><a href="?forgotpassword=1">' . PLUGIN_EVENT_FORGOTPASSWORD_LOST_PASSWORD . '</a></p>';
                         return true;
                     // first FORM
                     } elseif (!isset($_POST['username']) && !isset($_GET['uid'])) {
                         $eventData['footer'] = '
-                        <form action="serendipity_admin.php" method="post">
-                            <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                <tr>
-                                    <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_ENTER_USERNAME.'</td>
-                                </tr>
+        <form id="auth_fpwd" class="clearfix" action="serendipity_admin.php" method="post">
+            <fieldset>
+                <span class="wrap_legend"><legend>' . PLUGIN_EVENT_FORGOTPASSWORD_ENTER_USERNAME . '</legend></span>
 
-                                <tr>
-                                    <td>'.USERNAME.'</td>
-                                    <td><input class="input_textbox" type="text" name="username" /></td>
-                                </tr>
+                <div class="form_field">
+                    <label for="auth_uid">'.USERNAME.'</label>
+                    <input id="auth_uid" class="input_textbox" name="username" autocomplete="new-password" type="text" autofocus="">
+                </div>
 
-                                <tr>
-                                    <td colspan="2" align="right"><input type="submit" name="forgot" value="'.PLUGIN_EVENT_FORGOTPASSWORD_SEND_EMAIL.'" class="serendipityPrettyButton input_button" /></td>
-                                </tr>
-                            </table>
-                        </form>';
+                <div class="form_buttons">
+                    <input id="auth_fpwd_submit" name="forgot" type="submit" value="' . PLUGIN_EVENT_FORGOTPASSWORD_SEND_EMAIL . '">
+                </div>
+            </fieldset>
+        </form>
+';
                         return true;
                     // submitted FORM (send an email to user and show a simple page)
                     } elseif (!isset($_POST['uid']) && isset($_POST['username'])) {
                         $q   = 'SELECT email, authorid FROM '.$serendipity['dbPrefix'].'authors where username = \''.serendipity_db_escape_string($_POST['username']).'\'';
                         $sql = serendipity_db_query($q);
                         if (!is_array($sql) || count($sql) < 1) {
-                            $eventData['footer'] = '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST . '</div>';
+                            $eventData['footer'] = '<div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST . ' &raquo;&raquo; <a href="" onClick="history.back()">'.BACK.'</a> &laquo;&laquo;.</div>';
                             return true;
                         }
 
@@ -163,118 +157,80 @@ class serendipity_event_forgotpassword extends serendipity_event
                             $email = $res['email'];
                             $authorid = $res['authorid'];
 
-                            $md5 = md5(uniqid((string)time()));
+                            $hash = hash('xxh128', uniqid((string) time()));
 
-                            $q = 'INSERT INTO '.$serendipity['dbPrefix'].'forgotpassword VALUES (\''.$md5.'\', \''.$authorid.'\')';
-                            $sql = serendipity_db_query($q);
-
-                            if(!$sql){
-                                $eventData['footer'] = '
-                                <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                    <tr>
-                                        <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR.'</td>
-                                    </tr>
-                                </table>';
-                                return true;
-                            }
-
-                            $sent = serendipity_sendMail($email, PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT, PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY.$serendipity['baseURL'].'serendipity_admin.php?username='.$authorid.'&uid='.$md5, NULL);
-                            if ($sent) {
-                                $eventData['footer'] = '
-                                <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                    <tr>
-                                        <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SENT.'</td>
-                                    </tr>
-                                </table>';
-                            } else {
-                                $eventData['footer'] = '
-                                <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                    <tr>
-                                        <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND.'</td>
-                                    </tr>
-                                </table>';
-                            }
-                            return true;
-                        } else {
-                            $eventData['footer'] = '
-                            <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                <tr>
-                                    <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR.'</td>
-                                </tr>
-                            </table>';
-                            return true;
-                        }
-                    // clicked link in user email
-                    } elseif (isset($_GET['uid']) && isset($_GET['username']) && !isset($_POST['password'])){
-                        $eventData['footer'] = '
-                        <form action="serendipity_admin.php" method="post">
-                            <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                <tr>
-                                    <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_ENTER_PASSWORD.'</td>
-                                </tr>
-
-                                <tr>
-                                    <td>'.PASSWORD.'</td>
-                                    <td><input class="input_textbox" type="password" name="password" />
-                                        <input type="hidden" name="username" value="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($_GET['username']) : htmlspecialchars($_GET['username'], ENT_COMPAT, LANG_CHARSET)).'" />
-                                        <input type="hidden" name="uid" value="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($_GET['uid']) : htmlspecialchars($_GET['uid'], ENT_COMPAT, LANG_CHARSET)).'" /></td>
-                                </tr>
-
-                                <tr>
-                                    <td colspan="2" align="right"><input type="submit" name="forgot" value="'.PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD.'" class="serendipityPrettyButton input_button" /></td>
-                                </tr>
-                            </table>
-                        </form>';
-                        return true;
-                    // changed password page
-                    } elseif (isset($_POST['uid']) && isset($_POST['username']) && isset($_POST['password'])) {
-                        $q = 'SELECT * FROM '.$serendipity['dbPrefix'].'forgotpassword where authorid = \''.serendipity_db_escape_string($_POST['username']).'\' and uid = \''.serendipity_db_escape_string($_POST['uid']).'\'';
-                        $sql = serendipity_db_query($q);
-
-                        if ($sql && is_array($sql)) {
-                            $res = $sql[0];
-                            $authorid = $res['authorid'];
-
-
-                            if (function_exists('serendipity_hash')) {
-                                $password = serendipity_hash($_POST['password']);
-
-                                $q = 'UPDATE '.$serendipity['dbPrefix'].'authors SET hashtype=1, password=\''.$password.'\' where authorid = \''.serendipity_db_escape_string($_POST['username']).'\'';
-                            } else {
-                                $password = md5($_POST['password']);
-
-                                $q = 'UPDATE '.$serendipity['dbPrefix'].'authors SET password=\''.$password.'\' where authorid = \''.serendipity_db_escape_string($_POST['username']).'\'';
-                            }
+                            $q = 'INSERT INTO '.$serendipity['dbPrefix'].'forgotpassword VALUES (\''.$hash.'\', \''.$authorid.'\')';
                             $sql = serendipity_db_query($q);
 
                             if (!$sql){
                                 $eventData['footer'] = '
-                                <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                    <tr>
-                                        <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR.'</td>
-                                    </tr>
-                                </table>';
-                                return true;
+        <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR . '</div>';
+                                break;
                             }
 
-                            $q = 'DELETE FROM '.$serendipity['dbPrefix'].'forgotpassword where authorid = \''.serendipity_db_escape_string($_POST['username']).'\'';
-                            $sql = serendipity_db_query($q);
-
-                            $eventData['footer'] = '
-                            <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                <tr>
-                                    <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED.'</td>
-                                </tr>
-                            </table>';
-                            return true;
+                            $sent = serendipity_sendMail($email, PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT, PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY . $serendipity['baseURL'] . 'serendipity_admin.php?username='.$authorid.'&uid='.$hash, NULL);
+                            if ($sent) {
+                                $eventData['footer'] = '
+        <div class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SENT . '</div>';
+                            } else {
+                                $eventData['footer'] = '
+        <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND . '</div>';
+                            }
+                            break;
                         } else {
                             $eventData['footer'] = '
-                            <table cellspacing="10" cellpadding="0" border="0" align="center">
-                                <tr>
-                                    <td colspan="2" align="right">'.PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR.'</td>
-                                </tr>
-                            </table>';
-                            return true;
+        <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR . '</div>';
+                            break;
+                        }
+                    // clicked link in user email
+                    } elseif (isset($_GET['uid']) && isset($_GET['username']) && !isset($_POST['password'])){
+                        $eventData['footer'] = '
+        <form id="auth_fpwd" class="clearfix" action="serendipity_admin.php" method="post">
+            <fieldset>
+                <span class="wrap_legend"><legend>' . PLUGIN_EVENT_FORGOTPASSWORD_ENTER_PASSWORD . '</legend></span>
+
+                <div class="form_field">
+                    <label for="auth_uid">' . PASSWORD . '</label>
+                    <input id="auth_uid" class="input_textbox" type="password" autocomplete="new-password" name="password" autofocus="">
+                    <input type="hidden" name="username" value="'.htmlspecialchars($_GET['username']).'">
+                    <input type="hidden" name="uid" value="'.htmlspecialchars($_GET['uid']).'">
+                </div>
+
+                <div class="form_buttons">
+                    <input id="auth_fpwd_submit" name="forgot" type="submit" value="' . PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD . '">
+                </div>
+            </fieldset>
+        </form>
+';
+                        return true;
+                    // changed password page
+                    } elseif (isset($_POST['uid']) && isset($_POST['username']) && isset($_POST['password'])) {
+                        $uname = serendipity_db_escape_string($_POST['username']);
+                        $uid = serendipity_db_escape_string($_POST['uid']);
+                        $sql = serendipity_db_query("SELECT * FROM {$serendipity['dbPrefix']}forgotpassword WHERE authorid = '$uname' AND uid = '$uid'");
+
+                        if ($sql && is_array($sql)) {
+                            $res = $sql[0];
+                            $authorid = $res['authorid'];
+                            $password = serendipity_hash($_POST['password']);
+
+                            $sql = serendipity_db_query("UPDATE {$serendipity['dbPrefix']}authors SET hashtype=2, password='$password' WHERE authorid = '$uname'");
+
+                            if (!$sql){
+                                $eventData['footer'] = '
+        <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR . '</div>';
+                                break;
+                            }
+
+                            serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}forgotpassword WHERE authorid = '$uname'");
+
+                            $eventData['footer'] = '
+        <div class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED . '</div>';
+                            break;
+                        } else {
+                            $eventData['footer'] = '
+        <div class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR . '</div>';
+                            break;
                         }
                     }
                     break;

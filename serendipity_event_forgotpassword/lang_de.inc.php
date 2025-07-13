@@ -7,17 +7,17 @@
  */
 
 @define('PLUGIN_EVENT_FORGOTPASSWORD_NAME', 'Passwort vergessen');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_DESC', 'Ändere das Passwort für ausgewählten Benutzer');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_DESC', 'Ã„ndere das Passwort fÃ¼r ausgewÃ¤hlten Benutzer');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_LOST_PASSWORD', 'Passwort vergessen?');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_USERNAME', 'Name des vergessenen Login');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_PASSWORD', 'Eingabe Neues Passwort');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_SEND_EMAIL', 'Sende E-Mail');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT', 'Passwort vergessen');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY', "Jemand (vielleicht Sie selbst) möchte das Passwort für Ihr Weblog-Konto ändern,\nwenn dies bestätigt werden soll bitte auf den folgenden Link klicken:\n");
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY', "Jemand (vielleicht Sie selbst) mÃ¶chte das Passwort fÃ¼r Ihr Weblog-Konto Ã¤ndern,\nwenn dies bestÃ¤tigt werden soll bitte auf den folgenden Link klicken:\n");
 @define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR', 'Keine Verbindung zur Datenbank herstellbar');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND', "Kein E-Mailversand, dies könnte an einer fehlerhaften SMTP-Konfiguration in php.ini<br />\nliegen, oder durch die Fehlerhafte Angabe der E-Mail-Adresse im Benutzerprofil.");
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND', "Kein E-Mailversand, dies kÃ¶nnte an einer fehlerhaften SMTP-Konfiguration in php.ini<br />\nliegen, oder durch die Fehlerhafte Angabe der E-Mail-Adresse im Benutzerprofil.");
 @define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SENT', 'E-Mail erfolgreich versendet');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD', 'Ändere Passwort');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED', 'Änderung des Passwortes erfolgreich');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST', 'Gewählter Benutzername existiert nicht in der Datenbank, bitte zurück und erneut versuchen');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD', 'Ã„ndere Passwort');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED', 'Ã„nderung des Passwortes erfolgreich');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST', 'GewÃ¤hlter Benutzername existiert nicht in der Datenbank, bitte zurÃ¼ck und erneut versuchen');
 

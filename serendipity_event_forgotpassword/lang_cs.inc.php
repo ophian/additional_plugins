@@ -1,31 +1,31 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/27
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/09/12
  */
 
-@define('PLUGIN_EVENT_FORGOTPASSWORD_NAME', 'ZapomenutÈ heslo');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_DESC', 'VybranÈmu uûivateli umoûÚuje zmÏnit heslo.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_LOST_PASSWORD', 'ZapomenutÈ heslo?');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_USERNAME', 'Zadejte p¯ihlaöovacÌ jmÈno k ˙Ëtu se zapomenut˝m heslem');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_PASSWORD', 'Zadejte novÈ heslo');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_NAME', 'Zapomenut√© heslo');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_DESC', 'Vybran√©mu u≈æivateli umo≈æ≈àuje zmƒõnit heslo.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_LOST_PASSWORD', 'Zapomenut√© heslo?');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_USERNAME', 'Zadejte p≈ôihla≈°ovac√≠ jm√©no k √∫ƒçtu se zapomenut√Ωm heslem');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_PASSWORD', 'Zadejte nov√© heslo');
 @define('PLUGIN_EVENT_FORGOTPASSWORD_SEND_EMAIL', 'Poslat email');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT', 'ZapomenutÈ heslo');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY', 'NÏkdo (pravdÏpodobnÏ ty s·m) chce zmÏnit heslo pro p¯Ìstup do blogu.'."\n".'pokud chcete zmÏnit heslo, kliknÏte na n·sledujÌcÌ odkaz:'."\n");
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR', 'Nezda¯ilo se p¯ipojenÌ do datab·ze');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND', 'Nepoda¯ilo se poslat mail, pravdÏpodobnÏ kv˘li chybnÈmu nastavenÌ SMPT serveru v php.ini</br>'."\n".'nebo protoûe jste ve svÈm uûivatelskÈm profilu nezadali platnou emailovou adresu.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SENT', 'Email ˙spÏönÏ odesl·n. Zkontrolujte svoji mailovou schr·nku.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD', 'ZmÏnit heslo');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED', 'Heslo ˙spÏönÏ zmÏnÏno');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST', 'ZadanÈ uûivatelskÈ jmÈno v datab·zi nenÌ. Vraùte se a zkuste to znovu.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT', 'Zapomenut√© heslo');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY', 'Nƒõkdo (pravdƒõpodobnƒõ ty s√°m) chce zmƒõnit heslo pro p≈ô√≠stup do blogu.'."\n".'pokud chcete zmƒõnit heslo, kliknƒõte na n√°sleduj√≠c√≠ odkaz:'."\n");
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR', 'Nezda≈ôilo se p≈ôipojen√≠ do datab√°ze');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND', 'Nepoda≈ôilo se poslat mail, pravdƒõpodobnƒõ kv≈Øli chybn√©mu nastaven√≠ SMPT serveru v php.ini</br>'."\n".'nebo proto≈æe jste ve sv√©m u≈æivatelsk√©m profilu nezadali platnou emailovou adresu.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SENT', 'Email √∫spƒõ≈°nƒõ odesl√°n. Zkontrolujte svoji mailovou schr√°nku.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD', 'Zmƒõnit heslo');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED', 'Heslo √∫spƒõ≈°nƒõ zmƒõnƒõno');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST', 'Zadan√© u≈æivatelsk√© jm√©no v datab√°zi nen√≠. Vra≈•te se a zkuste to znovu.');
 
 // Next lines were translated on 2010/09/12
-@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAIL', 'Poslat ozn·menÌ mailem, kdyû se uûivatel pokusÌ zmÏnit heslo bez zad·nÌ mailovÈ adresy?');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAILTXT', 'Obsah oznamovacÌho mailu');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAILTXT_DEFAULT', 'Uûivatel "%s" se pokusil p¯ihl·sit, ale nezadal emailovou adresu. Vytvo¯te prosÌm novÈ heslo a kontaktujte uûivatele.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER', 'Chybov· zpr·va, pokud neexistuje emailov· adresa.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_DEFAULT', 'Pro uûivatele nebyla zad·na û·dn· emailov· adresa. NovÈ heslo nemohlo b˝t posl·no mailem.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAIL', 'Poslat ozn√°men√≠ mailem, kdy≈æ se u≈æivatel pokus√≠ zmƒõnit heslo bez zad√°n√≠ mailov√© adresy?');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAILTXT', 'Obsah oznamovac√≠ho mailu');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_MAILTXT_DEFAULT', 'U≈æivatel "%s" se pokusil p≈ôihl√°sit, ale nezadal emailovou adresu. Vytvo≈ôte pros√≠m nov√© heslo a kontaktujte u≈æivatele.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER', 'Chybov√° zpr√°va, pokud neexistuje emailov√° adresa.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_MAILER_DEFAULT', 'Pro u≈æivatele nebyla zad√°na ≈æ√°dn√° emailov√° adresa. Nov√© heslo nemohlo b√Ωt posl√°no mailem.');
 

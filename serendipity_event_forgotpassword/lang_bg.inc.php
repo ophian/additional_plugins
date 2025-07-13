@@ -6,18 +6,18 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_EVENT_FORGOTPASSWORD_NAME', 'Забравена парола');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_DESC', 'Сменя паролата на избран потребител');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_LOST_PASSWORD', 'Забравена парола ?');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_USERNAME', 'Въведете потребителското име, на което сте забравили паролата');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_PASSWORD', 'Въведете новата парола');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_SEND_EMAIL', 'Изпращане на e-mail');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT', 'Забравена парола');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY', "Някой (може би вие) иска да промени вашата парола,\nако вие искате да промените паролата си, изберете следващата връзка:\n");
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR', 'Няма връзка с базата данни.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND', "Невъзможност за смяна на паролата, може би поради неправилна конфигурация на SMTP в php.ini<br />\nили поради това, че сте дали невалиден e-mail адрес във вашия профил.");
-@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SENT', 'Току що беше изпратен e-mail на адреса във вашия профил. Проверете вашата пощенска кутия.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD', 'Смяна на парола');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED', 'Паролата е сменена успешно.');
-@define('PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST', 'Потребителското име не съществува в базата данни. Върнете на предишната страница и опитайте отново.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_NAME', 'Р—Р°Р±СЂР°РІРµРЅР° РїР°СЂРѕР»Р°');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_DESC', 'РЎРјРµРЅСЏ РїР°СЂРѕР»Р°С‚Р° РЅР° РёР·Р±СЂР°РЅ РїРѕС‚СЂРµР±РёС‚РµР»');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_LOST_PASSWORD', 'Р—Р°Р±СЂР°РІРµРЅР° РїР°СЂРѕР»Р° ?');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_USERNAME', 'Р’СЉРІРµРґРµС‚Рµ РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕС‚Рѕ РёРјРµ, РЅР° РєРѕРµС‚Рѕ СЃС‚Рµ Р·Р°Р±СЂР°РІРёР»Рё РїР°СЂРѕР»Р°С‚Р°');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_ENTER_PASSWORD', 'Р’СЉРІРµРґРµС‚Рµ РЅРѕРІР°С‚Р° РїР°СЂРѕР»Р°');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_SEND_EMAIL', 'РР·РїСЂР°С‰Р°РЅРµ РЅР° e-mail');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SUBJECT', 'Р—Р°Р±СЂР°РІРµРЅР° РїР°СЂРѕР»Р°');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_BODY', "РќСЏРєРѕР№ (РјРѕР¶Рµ Р±Рё РІРёРµ) РёСЃРєР° РґР° РїСЂРѕРјРµРЅРё РІР°С€Р°С‚Р° РїР°СЂРѕР»Р°,\nР°РєРѕ РІРёРµ РёСЃРєР°С‚Рµ РґР° РїСЂРѕРјРµРЅРёС‚Рµ РїР°СЂРѕР»Р°С‚Р° СЃРё, РёР·Р±РµСЂРµС‚Рµ СЃР»РµРґРІР°С‰Р°С‚Р° РІСЂСЉР·РєР°:\n");
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_DB_ERROR', 'РќСЏРјР° РІСЂСЉР·РєР° СЃ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_CANNOT_SEND', "РќРµРІСЉР·РјРѕР¶РЅРѕСЃС‚ Р·Р° СЃРјСЏРЅР° РЅР° РїР°СЂРѕР»Р°С‚Р°, РјРѕР¶Рµ Р±Рё РїРѕСЂР°РґРё РЅРµРїСЂР°РІРёР»РЅР° РєРѕРЅС„РёРіСѓСЂР°С†РёСЏ РЅР° SMTP РІ php.ini<br />\nРёР»Рё РїРѕСЂР°РґРё С‚РѕРІР°, С‡Рµ СЃС‚Рµ РґР°Р»Рё РЅРµРІР°Р»РёРґРµРЅ e-mail Р°РґСЂРµСЃ РІСЉРІ РІР°С€РёСЏ РїСЂРѕС„РёР».");
+@define('PLUGIN_EVENT_FORGOTPASSWORD_EMAIL_SENT', 'РўРѕРєСѓ С‰Рѕ Р±РµС€Рµ РёР·РїСЂР°С‚РµРЅ e-mail РЅР° Р°РґСЂРµСЃР° РІСЉРІ РІР°С€РёСЏ РїСЂРѕС„РёР». РџСЂРѕРІРµСЂРµС‚Рµ РІР°С€Р°С‚Р° РїРѕС‰РµРЅСЃРєР° РєСѓС‚РёСЏ.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_CHANGE_PASSWORD', 'РЎРјСЏРЅР° РЅР° РїР°СЂРѕР»Р°');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_PASSWORD_CHANGED', 'РџР°СЂРѕР»Р°С‚Р° Рµ СЃРјРµРЅРµРЅР° СѓСЃРїРµС€РЅРѕ.');
+@define('PLUGIN_EVENT_FORGOTPASSWORD_USER_NOT_EXIST', 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕС‚Рѕ РёРјРµ РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР° РІ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё. Р’СЉСЂРЅРµС‚Рµ РЅР° РїСЂРµРґРёС€РЅР°С‚Р° СЃС‚СЂР°РЅРёС†Р° Рё РѕРїРёС‚Р°Р№С‚Рµ РѕС‚РЅРѕРІРѕ.');
 
