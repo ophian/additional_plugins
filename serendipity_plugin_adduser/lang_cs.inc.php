@@ -1,63 +1,63 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/18
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/03/13
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/20
  */
 
-@define('PLUGIN_ADDUSER_NAME',		'Samoregistrace novıch uivatelù');
-@define('PLUGIN_ADDUSER_DESC',		'Umoòuje návštìvníkùm webu vytvoøit si vlastní uivatelskı úèet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) mùete urèit, jestli komentáøe mohou posílat pouze registrovaní uivatelé.');
-@define('PLUGIN_ADDUSER_INSTRUCTIONS',		'Další pokyny');
-@define('PLUGIN_ADDUSER_INSTRUCTIONS_DESC',		'Zde pøidejte pokyny, které se mají objevit vedle formuláøe pro vytvoøení uivatelského úètu.');
-@define('PLUGIN_ADDUSER_INSTRUCTIONS_DEFAULT',		'Zde se mùete zaregistrovat do blogu jako novı uivatel. Jednoduše zadejte svá data, potvrïte formuláø a øiïte se dalšími pokyny, které Vám pøijdou mailem.');
-@define('PLUGIN_ADDUSER_USERLEVEL',		'Vıchozí uivatelská úroveò');
-@define('PLUGIN_ADDUSER_USERLEVEL_DESC',		'Jakou uivatelskou úroveò (oprávnìní) má mít novı uivatel');
-@define('PLUGIN_ADDUSER_USERLEVEL_CHIEF',		'Šéfredaktor');
+@define('PLUGIN_ADDUSER_NAME',		'Samoregistrace novÃ½ch uÅ¾ivatelÅ¯');
+@define('PLUGIN_ADDUSER_DESC',		'UmoÅ¾Åˆuje nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m webu vytvoÅ™it si vlastnÃ­ uÅ¾ivatelskÃ½ ÃºÄet. Dohromady s pluginem udÃ¡lostÃ­ (index.php?serendipity[subpage]=adduser) mÅ¯Å¾ete urÄit, jestli komentÃ¡Å™e mohou posÃ­lat pouze registrovanÃ­ uÅ¾ivatelÃ©.');
+@define('PLUGIN_ADDUSER_INSTRUCTIONS',		'DalÅ¡Ã­ pokyny');
+@define('PLUGIN_ADDUSER_INSTRUCTIONS_DESC',		'Zde pÅ™idejte pokyny, kterÃ© se majÃ­ objevit vedle formulÃ¡Å™e pro vytvoÅ™enÃ­ uÅ¾ivatelskÃ©ho ÃºÄtu.');
+@define('PLUGIN_ADDUSER_INSTRUCTIONS_DEFAULT',		'Zde se mÅ¯Å¾ete zaregistrovat do blogu jako novÃ½ uÅ¾ivatel. JednoduÅ¡e zadejte svÃ¡ data, potvrÄte formulÃ¡Å™ a Å™iÄte se dalÅ¡Ã­mi pokyny, kterÃ© VÃ¡m pÅ™ijdou mailem.');
+@define('PLUGIN_ADDUSER_USERLEVEL',		'VÃ½chozÃ­ uÅ¾ivatelskÃ¡ ÃºroveÅˆ');
+@define('PLUGIN_ADDUSER_USERLEVEL_DESC',		'Jakou uÅ¾ivatelskou ÃºroveÅˆ (oprÃ¡vnÄ›nÃ­) mÃ¡ mÃ­t novÃ½ uÅ¾ivatel');
+@define('PLUGIN_ADDUSER_USERLEVEL_CHIEF',		'Å Ã©fredaktor');
 @define('PLUGIN_ADDUSER_USERLEVEL_EDITOR',		'Autor');
-@define('PLUGIN_ADDUSER_USERLEVEL_ADMIN',		'Administrátor');
-@define('PLUGIN_ADDUSER_USERLEVEL_DENY',		'Pøístup odepøen');
-@define('PLUGIN_SIDEBAR_LOGIN',		'Zobrazit pøihlašovací formuláø v postranním sloupci?');
-@define('PLUGIN_SIDEBAR_LOGIN_DESC',		'Pokud je povoleno, v postranním sloupci se budou zobrazovat blok s pøihlašovacím formuláøem. Pokud je zakázáno, budou se muset uivatelé registrovat pomocí zvláštní stránky v odpovídajícím pluginu událostí.');
+@define('PLUGIN_ADDUSER_USERLEVEL_ADMIN',		'AdministrÃ¡tor');
+@define('PLUGIN_ADDUSER_USERLEVEL_DENY',		'PÅ™Ã­stup odepÅ™en');
+@define('PLUGIN_SIDEBAR_LOGIN',		'Zobrazit pÅ™ihlaÅ¡ovacÃ­ formulÃ¡Å™ v postrannÃ­m sloupci?');
+@define('PLUGIN_SIDEBAR_LOGIN_DESC',		'Pokud je povoleno, v postrannÃ­m sloupci se budou zobrazovat blok s pÅ™ihlaÅ¡ovacÃ­m formulÃ¡Å™em. Pokud je zakÃ¡zÃ¡no, budou se muset uÅ¾ivatelÃ© registrovat pomocÃ­ zvlÃ¡Å¡tnÃ­ strÃ¡nky v odpovÃ­dajÃ­cÃ­m pluginu udÃ¡lostÃ­.');
 
-@define('PLUGIN_ADDUSER_EXISTS',		'Omlouváme se, jméno "%s" u nìkdo jinı pouívá. Vyberte si prosím jiné.');
-@define('PLUGIN_ADDUSER_MISSING',		'Musíte vyplnit všechna pole, aby Vám mohl bıt vytvoøen novı úèet.');
-@define('PLUGIN_ADDUSER_SENTMAIL',		'Váš úèet byl vytvoøen. Bìhem nìkolika okamikù byste mìli obdret email se souhrnem nejdùleitìjších informací.');
-@define('PLUGIN_ADDUSER_WRONG_ACTIVATION',		'Nesprávná aktivaèní URL adresa!');
+@define('PLUGIN_ADDUSER_EXISTS',		'OmlouvÃ¡me se, jmÃ©no "%s" uÅ¾ nÄ›kdo jinÃ½ pouÅ¾Ã­vÃ¡. Vyberte si prosÃ­m jinÃ©.');
+@define('PLUGIN_ADDUSER_MISSING',		'MusÃ­te vyplnit vÅ¡echna pole, aby VÃ¡m mohl bÃ½t vytvoÅ™en novÃ½ ÃºÄet.');
+@define('PLUGIN_ADDUSER_SENTMAIL',		'VÃ¡Å¡ ÃºÄet byl vytvoÅ™en. BÄ›hem nÄ›kolika okamÅ¾ikÅ¯ byste mÄ›li obdrÅ¾et email se souhrnem nejdÅ¯leÅ¾itÄ›jÅ¡Ã­ch informacÃ­.');
+@define('PLUGIN_ADDUSER_WRONG_ACTIVATION',		'NesprÃ¡vnÃ¡ aktivaÄnÃ­ URL adresa!');
 
-@define('PLUGIN_ADDUSER_MAIL_SUBJECT',		'Novı uivatelskı úèet byl vytvoøen');
-@define('PLUGIN_ADDUSER_MAIL_BODY',		"Novı uivatelskı úèet %s byl právì vytvoøen na blogu %s. Pro aktivaci toho úètu prosím kliknìte na následující odkaz:\n\n%s\n\nPoté se mùete pøihlásit pomocí døíve zadaného jména a hesla. Tento email byl poslán jak novému uivateli, tak provozovateli blogu.");
-@define('PLUGIN_ADDUSER_SUCCEED',		'Úèet byl úspìšnì aktivován. Nyní se mùete pøihlásit do administrátorské sekce blogu. odkaz na pøihlašovací stránku je uveden v aktivaèním emailu.');
-@define('PLUGIN_ADDUSER_FAILED',		'Úèet nemohl bıt aktivován. Neopsali jste špatnì URL adresu z aktivaèního emailu?');
+@define('PLUGIN_ADDUSER_MAIL_SUBJECT',		'NovÃ½ uÅ¾ivatelskÃ½ ÃºÄet byl vytvoÅ™en');
+@define('PLUGIN_ADDUSER_MAIL_BODY',		"NovÃ½ uÅ¾ivatelskÃ½ ÃºÄet %s byl prÃ¡vÄ› vytvoÅ™en na blogu %s. Pro aktivaci toho ÃºÄtu prosÃ­m kliknÄ›te na nÃ¡sledujÃ­cÃ­ odkaz:\n\n%s\n\nPotÃ© se mÅ¯Å¾ete pÅ™ihlÃ¡sit pomocÃ­ dÅ™Ã­ve zadanÃ©ho jmÃ©na a hesla. Tento email byl poslÃ¡n jak novÃ©mu uÅ¾ivateli, tak provozovateli blogu.");
+@define('PLUGIN_ADDUSER_SUCCEED',		'ÃšÄet byl ÃºspÄ›Å¡nÄ› aktivovÃ¡n. NynÃ­ se mÅ¯Å¾ete pÅ™ihlÃ¡sit do administrÃ¡torskÃ© sekce blogu. odkaz na pÅ™ihlaÅ¡ovacÃ­ strÃ¡nku je uveden v aktivaÄnÃ­m emailu.');
+@define('PLUGIN_ADDUSER_FAILED',		'ÃšÄet nemohl bÃ½t aktivovÃ¡n. Neopsali jste Å¡patnÄ› URL adresu z aktivaÄnÃ­ho emailu?');
 
-@define('PLUGIN_ADDUSER_REGISTERED_ONLY',		'Komentáøe smí posílat pouze registrovaní uivatelé?');
-@define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC',		'Pokud je povoleno, komentáøe k pøíspìvkùm mohou posílat pouze registrovaní a pøihlášení uivatelé.');
-@define('PLUGIN_ADDUSER_REGISTERED_ONLY_REASON',		'Komentáøe mohou posílat pouze registrovaní uivatelé. <a href="%s">Zalote si úèet</a> a pak se <a href="%s">pøihlašte do blogu</a>. Váš prohlíeè musí podporovat cookies.');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY',		'KomentÃ¡Å™e smÃ­ posÃ­lat pouze registrovanÃ­ uÅ¾ivatelÃ©?');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY_DESC',		'Pokud je povoleno, komentÃ¡Å™e k pÅ™Ã­spÄ›vkÅ¯m mohou posÃ­lat pouze registrovanÃ­ a pÅ™ihlÃ¡Å¡enÃ­ uÅ¾ivatelÃ©.');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY_REASON',		'KomentÃ¡Å™e mohou posÃ­lat pouze registrovanÃ­ uÅ¾ivatelÃ©. <a href="%s">ZaloÅ¾te si ÃºÄet</a> a pak se <a href="%s">pÅ™ihlaÅ¡te do blogu</a>. VÃ¡Å¡ prohlÃ­Å¾eÄ musÃ­ podporovat cookies.');
 
-@define('PLUGIN_ADDUSER_STRAIGHT',		'Okamité vloení?');
-@define('PLUGIN_ADDUSER_STRAIGHT_DESC',		'Pokud je povoleno, uivatel bude okamitì po registraci vloen jako aktivovanı autor. Tato volba je doporuèena pouze na serverech, kde není pøítomen mailserver. Toto nastavení mùe bıt lehce zneuito spamery. Zapnìte jen pokud dobøe víte, co dìláte!');
+@define('PLUGIN_ADDUSER_STRAIGHT',		'OkamÅ¾itÃ© vloÅ¾enÃ­?');
+@define('PLUGIN_ADDUSER_STRAIGHT_DESC',		'Pokud je povoleno, uÅ¾ivatel bude okamÅ¾itÄ› po registraci vloÅ¾en jako aktivovanÃ½ autor. Tato volba je doporuÄena pouze na serverech, kde nenÃ­ pÅ™Ã­tomen mailserver. Toto nastavenÃ­ mÅ¯Å¾e bÃ½t lehce zneuÅ¾ito spamery. ZapnÄ›te jen pokud dobÅ™e vÃ­te, co dÄ›lÃ¡te!');
 
-@define('PLUGIN_ADDUSER_REGISTERED_CHECK',		'Ochrana pøed falšováním identity');
-@define('PLUGIN_ADDUSER_REGISTERED_CHECK_DESC',		'Pokud je povoleno, uivatelská jména zaregistrovanıch autorù mohou pouívat pouze tito autoøi, navíc musí bıt pod tímto jménem pøihlášeni.');
-@define('PLUGIN_ADDUSER_REGISTERED_CHECK_REASON',		'Jméno, které jste zadali, patøí jinému uivateli registrovanému na tomto blogu. <a href="%s" %s>Pøihlašte se prosím</a>, abyste mohli poslat pøíspìvek pod Vaším jménem. Pokud nemáte zaregistrovanı úèet pod vıše uvedenım jménem, pouijte prosím jiné jméno.');
+@define('PLUGIN_ADDUSER_REGISTERED_CHECK',		'Ochrana pÅ™ed falÅ¡ovÃ¡nÃ­m identity');
+@define('PLUGIN_ADDUSER_REGISTERED_CHECK_DESC',		'Pokud je povoleno, uÅ¾ivatelskÃ¡ jmÃ©na zaregistrovanÃ½ch autorÅ¯ mohou pouÅ¾Ã­vat pouze tito autoÅ™i, navÃ­c musÃ­ bÃ½t pod tÃ­mto jmÃ©nem pÅ™ihlÃ¡Å¡eni.');
+@define('PLUGIN_ADDUSER_REGISTERED_CHECK_REASON',		'JmÃ©no, kterÃ© jste zadali, patÅ™Ã­ jinÃ©mu uÅ¾ivateli registrovanÃ©mu na tomto blogu. <a href="%s" %s>PÅ™ihlaÅ¡te se prosÃ­m</a>, abyste mohli poslat pÅ™Ã­spÄ›vek pod VaÅ¡Ã­m jmÃ©nem. Pokud nemÃ¡te zaregistrovanÃ½ ÃºÄet pod vÃ½Å¡e uvedenÃ½m jmÃ©nem, pouÅ¾ijte prosÃ­m jinÃ© jmÃ©no.');
 
-@define('PLUGIN_ADDUSER_ADMINAPPROVE',		'Registrovaní uivatelé musí mít potvrzení administrátora?');
-@define('PLUGIN_ADDUSER_ADMINAPPROVE_DESC',		'Pokud je zapnuto, administrátor musí nového uivatele nejdøíve potvrdit, teprve pak mu bude odeslán aktivaèní email.');
-@define('PLUGIN_ADDUSER_SENTMAIL_APPROVE',		'Váš úèet by vytvoøen. Poté, co Váš úèet schválí administrátor, Vám bude zaslán email se souhrnem dùleitıch informací.');
-@define('PLUGIN_ADDUSER_SENTMAIL_APPROVE_ADMIN',		'Úèet byl potvrzen, uivateli byl zaslán email s údaji o jeho úètu.');
-@define('PLUGIN_ADDUSER_MAIL_SUBJECT_APPROVE',		'[Potvrzení vyadováno] Novı uivatelskı úèet byl vytvoøen');
-@define('PLUGIN_ADDUSER_MAIL_BODY_APPROVE',		"Novı uivatelskı úèet se jménem %s byl vytvoøen na blogu %s. Pro potvrzení úètu, a aby si mohl uivatel úèet aktivovat, kliknìte na následující odkaz:\n\n%s\n\nPoté, co tak uèiníte, novı uivatel obdrí aktivaèní email s nezbytnımi informacemi pro pøihlášení.");
+@define('PLUGIN_ADDUSER_ADMINAPPROVE',		'RegistrovanÃ­ uÅ¾ivatelÃ© musÃ­ mÃ­t potvrzenÃ­ administrÃ¡tora?');
+@define('PLUGIN_ADDUSER_ADMINAPPROVE_DESC',		'Pokud je zapnuto, administrÃ¡tor musÃ­ novÃ©ho uÅ¾ivatele nejdÅ™Ã­ve potvrdit, teprve pak mu bude odeslÃ¡n aktivaÄnÃ­ email.');
+@define('PLUGIN_ADDUSER_SENTMAIL_APPROVE',		'VÃ¡Å¡ ÃºÄet by vytvoÅ™en. PotÃ©, co VÃ¡Å¡ ÃºÄet schvÃ¡lÃ­ administrÃ¡tor, VÃ¡m bude zaslÃ¡n email se souhrnem dÅ¯leÅ¾itÃ½ch informacÃ­.');
+@define('PLUGIN_ADDUSER_SENTMAIL_APPROVE_ADMIN',		'ÃšÄet byl potvrzen, uÅ¾ivateli byl zaslÃ¡n email s Ãºdaji o jeho ÃºÄtu.');
+@define('PLUGIN_ADDUSER_MAIL_SUBJECT_APPROVE',		'[PotvrzenÃ­ vyÅ¾adovÃ¡no] NovÃ½ uÅ¾ivatelskÃ½ ÃºÄet byl vytvoÅ™en');
+@define('PLUGIN_ADDUSER_MAIL_BODY_APPROVE',		"NovÃ½ uÅ¾ivatelskÃ½ ÃºÄet se jmÃ©nem %s byl vytvoÅ™en na blogu %s. Pro potvrzenÃ­ ÃºÄtu, a aby si mohl uÅ¾ivatel ÃºÄet aktivovat, kliknÄ›te na nÃ¡sledujÃ­cÃ­ odkaz:\n\n%s\n\nPotÃ©, co tak uÄinÃ­te, novÃ½ uÅ¾ivatel obdrÅ¾Ã­ aktivaÄnÃ­ email s nezbytnÃ½mi informacemi pro pÅ™ihlÃ¡Å¡enÃ­.");
 
-@define('PLUGIN_ADDUSER_CAPTCHA',		'Pouít kryptogramy');
-@define('PLUGIN_ADDUSER_CAPTCHA_DESC',		'Vyaduje nainstalovanı plugin událostí "spamblock".');
+@define('PLUGIN_ADDUSER_CAPTCHA',		'PouÅ¾Ã­t kryptogramy');
+@define('PLUGIN_ADDUSER_CAPTCHA_DESC',		'VyÅ¾aduje nainstalovanÃ½ plugin udÃ¡lostÃ­ "spamblock".');
 
-@define('PLUGIN_ADDUSER_ANTISPAM',		'Neprošli jste protispamovım testem. Prosím zkontrolujte, jestli jste správnì opsali KRYPTOGRAM.');
+@define('PLUGIN_ADDUSER_ANTISPAM',		'NeproÅ¡li jste protispamovÃ½m testem. ProsÃ­m zkontrolujte, jestli jste sprÃ¡vnÄ› opsali KRYPTOGRAM.');
 
 // Next lines were translated on 2013/03/13
 
-@define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP',		'Pøídavná funkce: Pouze registrovaní uivatelé z této skupiny smí pøidávat komentáøe?');
-@define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP_DESC',		'Abyste toto mohli pouít, musíte zároveò povolit volbu "Komentáøe smí posílat pouze registrovaní uivatelé". Pokud je tato volba zapnutá, pak mohou posílat komentáøe pouze uivatelé ze specifické skupiny uivatelù a musí k tomu bıt pøihlášeni.');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP',		'PÅ™Ã­davnÃ¡ funkce: Pouze registrovanÃ­ uÅ¾ivatelÃ© z tÃ©to skupiny smÃ­ pÅ™idÃ¡vat komentÃ¡Å™e?');
+@define('PLUGIN_ADDUSER_REGISTERED_ONLY_GROUP_DESC',		'Abyste toto mohli pouÅ¾Ã­t, musÃ­te zÃ¡roveÅˆ povolit volbu "KomentÃ¡Å™e smÃ­ posÃ­lat pouze registrovanÃ­ uÅ¾ivatelÃ©". Pokud je tato volba zapnutÃ¡, pak mohou posÃ­lat komentÃ¡Å™e pouze uÅ¾ivatelÃ© ze specifickÃ© skupiny uÅ¾ivatelÅ¯ a musÃ­ k tomu bÃ½t pÅ™ihlÃ¡Å¡eni.');
 

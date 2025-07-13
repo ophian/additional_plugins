@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -17,10 +19,10 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.51');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '4.0',
-            'smarty'      => '3.1',
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
             'php'         => '8.2'
         ));
         $propbag->add('groups', array('BACKEND_USERMANAGEMENT'));
@@ -112,7 +114,6 @@ class serendipity_plugin_adduser extends serendipity_plugin
             case 'title':
                 $propbag->add('type',        'string');
                 $propbag->add('name',        TITLE);
-                $propbag->add('description', TITLE);
                 $propbag->add('default',     PLUGIN_ADDUSER_NAME);
                 break;
 
@@ -186,7 +187,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        CONF_USE_AUTOSAVE);
                 $propbag->add('description', CONF_USE_AUTOSAVE_DESC);
-                $propbag->add('default',     'true');
+                $propbag->add('default',     'false');
                 break;
 
             default:
@@ -256,7 +257,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
             return false;
         }
 
-        $ug = (array)explode(',', $this->get_config('usergroups', false));
+        $ug = (array)explode(',', $this->get_config('usergroups'));
 
         foreach($ug AS $cid) {
             if ($cid === false || empty($cid)) {
@@ -278,9 +279,11 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $password = substr((string)($serendipity['POST']['adduser_pass'] ?? ''), 0, 32);
         $email    = (string)($serendipity['POST']['adduser_email'] ?? '');
 
-        echo '<div style="padding-left: 4px; padding-right: 10px"><a id="adduser"></a>';
+        $serendipity['smarty']->assign('selector_get_id', '_adduser');
 
-        if (!serendipity_common_adduser::adduser($username, $password, $email, $this->get_config('userlevel', USERLEVEL_EDITOR), $this->usergroups, serendipity_db_bool($this->get_config('no_create', 'false')), serendipity_db_bool($this->get_config('right_publish', 'true')), serendipity_db_bool($this->get_config('straight_insert', 'false')), serendipity_db_bool($this->get_config('approve', 'false')), serendipity_db_bool($this->get_config('use_captcha', 'false')))) {
+        echo '<div><a id="adduser"></a>';
+
+        if (!serendipity_common_adduser::addUser($username, $password, $email, $this->get_config('userlevel', USERLEVEL_EDITOR), $this->usergroups, serendipity_db_bool($this->get_config('no_create', 'false')), serendipity_db_bool($this->get_config('right_publish', 'true')), serendipity_db_bool($this->get_config('straight_insert', 'false')), serendipity_db_bool($this->get_config('approve', 'false')), serendipity_db_bool($this->get_config('use_captcha', 'false')))) {
             $serendipity['GET']['subpage'] = 'adduser';
             serendipity_common_adduser::loginform($url, array(), $this->get_config('instructions'), $username, $password, $email, serendipity_db_bool($this->get_config('use_captcha', 'false')));
         }

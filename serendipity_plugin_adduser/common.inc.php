@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_common_adduser
 {
-    static function sendMail($username, $hash, $email, $approve_only = false, $admin_cc = true)
+    static function sendMail(string $username, string $hash, string $email, bool $approve_only = false, bool $admin_cc = true) : bool
     {
         global $serendipity;
 
@@ -50,7 +52,7 @@ class serendipity_common_adduser
         return $mail;
     }
 
-    static function checkuser($usergroups = array())
+    static function checkUser(iterable $usergroups = array()) : bool
     {
         global $serendipity;
         static $debug = false;
@@ -63,9 +65,9 @@ class serendipity_common_adduser
             }
             $author = serendipity_db_query($q, true);
 
-            serendipity_common_adduser::sendMail($author['username'], htmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET), $author['email'], false, false);
+            serendipity_common_adduser::sendMail($author['username'], htmlspecialchars($string), $author['email'], false, false);
 
-            echo PLUGIN_ADDUSER_SENTMAIL_APPROVE_ADMIN;
+            echo '<p class="serendipity_content_message serendipity_msg_success"> ' . PLUGIN_ADDUSER_SENTMAIL_APPROVE_ADMIN . "</p>\n";
             return true;
         }
 
@@ -74,7 +76,7 @@ class serendipity_common_adduser
             unset($serendipity['GET']['adduser_activation']);
 
             if (strlen($string) != 32) {
-                echo PLUGIN_ADDUSER_WRONG_ACTIVATION . '<hr />';
+                echo '<p class="serendipity_content_message serendipity_msg_important"> ' . PLUGIN_ADDUSER_WRONG_ACTIVATION . "</p>\n<hr />\n";
                 return false;
             }
 
@@ -89,7 +91,7 @@ class serendipity_common_adduser
             if (is_array($author)) {
                 $user = serendipity_db_query("SELECT authorid FROM {$serendipity['dbPrefix']}authors WHERE username = '" . serendipity_db_escape_string($author['username']) . "'", true);
                 if (is_array($user) && !empty($user['authorid'])) {
-                    printf(PLUGIN_ADDUSER_EXISTS . '<hr />', htmlspecialchars($author['username'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET));
+                    printf('<p class="serendipity_content_message serendipity_msg_notice"> ' . PLUGIN_ADDUSER_EXISTS . "</p>\n<hr />\n", htmlspecialchars($author['username']));
                     return false;
                 }
 
@@ -118,12 +120,13 @@ class serendipity_common_adduser
                         'showMediaToolbar' => '',
                         'use_autosave' => ''
                     );
+
                     if (is_array($config)) {
                         foreach($config AS $conf) {
                             $names = explode('/', $conf['name']);
                             if (isset($pair_config[$names[1]])) {
                                 $pair_config[$names[1]] = serendipity_get_bool($conf['value']);
-                                serendipity_set_config_var($names[1], $pair_config['wysiwyg'], $newID);
+                                serendipity_set_config_var($names[1], ($pair_config['wysiwyg'] ? 'true' : 'false'), $newID); // store as string !! to serendipity_set_config_var( arg #2 )
                             }
                         }
                     }
@@ -146,7 +149,7 @@ class serendipity_common_adduser
             $newauthor = serendipity_db_query($q, true);
 
             if (is_array($newauthor) && $newauthor['authorid'] > 0) {
-                echo PLUGIN_ADDUSER_SUCCEED . '<hr />';
+                echo '<p class="serendipity_content_message serendipity_msg_success"> ' . PLUGIN_ADDUSER_SUCCEED . "</p>\n<hr />\n";
                 serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}pending_authors WHERE hash = '" . serendipity_db_escape_string($string) . "'");
                 unset($serendipity['POST']); // clear input fields and post data
                 return true;
@@ -156,7 +159,7 @@ class serendipity_common_adduser
                     echo "[debug] RESULT: " . print_r($newauthor, true) . "<br />\n";
                 }
 
-                echo PLUGIN_ADDUSER_FAILED . '<hr />';
+                echo '<p class="serendipity_content_message serendipity_msg_important"> ' . PLUGIN_ADDUSER_FAILED . "</p>\n<hr />\n";
                 return false;
             }
         }
@@ -164,7 +167,7 @@ class serendipity_common_adduser
         return false;
     }
 
-    static function addAuthor($username, #[\SensitiveParameter] string $password, $email, $userlevel, $right_publish, $no_create)
+    static function addAuthor(string $username, #[\SensitiveParameter] string $password, string $email, string $userlevel, bool $right_publish, bool $no_create) : string
     {
         global $serendipity;
 
@@ -180,13 +183,10 @@ class serendipity_common_adduser
             );");
         }
 
-        $hash = md5((string) time());
-        if (function_exists('serendipity_hash')) {
-            // Serendipity 1.5 style
-            $hashpw = serendipity_hash($password);
-        } else {
-            $hashpw = md5($password);
-        }
+        $hash = hash('xxh128', $username.time().$email);
+
+        $hashpw = serendipity_hash($password);
+
         serendipity_db_insert('pending_authors', array(
             'username'      => $username,
             'password'      => $hashpw,
@@ -200,18 +200,18 @@ class serendipity_common_adduser
         return $hash;
     }
 
-    static function adduser(&$username, #[\SensitiveParameter] string &$password, &$email, $userlevel, $usergroups = array(),
-                             $no_create = false, $right_publish = true, $straight_insert = false, $approve = false, $use_captcha = false)
+    static function addUser(string &$username, #[\SensitiveParameter] string &$password, string &$email, string $userlevel, iterable $usergroups = array(),
+                            bool $no_create = false, bool $right_publish = true, bool $straight_insert = false, bool $approve = false, bool $use_captcha = false) : bool
     {
         global $serendipity;
 
-        if (serendipity_common_adduser::checkuser($usergroups)) {
+        if (serendipity_common_adduser::checkUser($usergroups)) {
             return true;
         }
 
         if (!empty($serendipity['POST']['adduser_action'])) {
             if (empty($username) || empty($password) || empty($email)) {
-                echo PLUGIN_ADDUSER_MISSING . '<hr />';
+                echo '<p class="serendipity_content_message serendipity_msg_notice"> ' . PLUGIN_ADDUSER_MISSING . "</p>\n<hr />\n";
                 return false;
             }
 
@@ -230,14 +230,14 @@ class serendipity_common_adduser
                     'source' => 'commentform',
                     'name' => $username,
                     'url' => '',
-                    'comment' => 'A new user ' . md5((string) time()) . ' is registered.',
+                    'comment' => 'A new user ' . hash('xxh128', $username.time().$email) . ' is registered.',
                     'email' => $email,
                     'source2' => 'adduser'
                 );
                 serendipity_plugin_api::hook_event('frontend_saveComment', $ca, $commentInfo);
 
                 if ($ca['allow_comments'] === false) {
-                    echo PLUGIN_ADDUSER_ANTISPAM . '<hr />';
+                    echo '<p class="serendipity_content_message serendipity_msg_notice"> ' . PLUGIN_ADDUSER_ANTISPAM . "</p>\n<hr />\n";
                     return false;
                 }
                 // End of fake call.
@@ -245,7 +245,7 @@ class serendipity_common_adduser
 
             $user = serendipity_db_query("SELECT authorid FROM {$serendipity['dbPrefix']}authors WHERE username = '" . serendipity_db_escape_string($username) . "'", true);
             if (is_array($user) && !empty($user['authorid'])) {
-                printf(PLUGIN_ADDUSER_EXISTS . '<hr />', htmlspecialchars($username, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, LANG_CHARSET));
+                printf('<p class="serendipity_content_message serendipity_msg_notice"> ' . PLUGIN_ADDUSER_EXISTS . "</p>\n<hr />\n", htmlspecialchars($username));
                 return false;
             }
 
@@ -253,16 +253,16 @@ class serendipity_common_adduser
 
             if ($approve) {
                 serendipity_common_adduser::sendMail($username, $hash, $email, true);
-                echo PLUGIN_ADDUSER_SENTMAIL_APPROVE;
+                echo '<p class="serendipity_content_message serendipity_msg_notice"> ' . PLUGIN_ADDUSER_SENTMAIL_APPROVE . "</p>\n";
                 unset($serendipity['POST']); // clear input fields and post data
             } elseif ($straight_insert) {
                 $serendipity['GET']['adduser_activation'] = $hash;
-                serendipity_common_adduser::checkuser($usergroups);
+                serendipity_common_adduser::checkUser($usergroups);
             } elseif (serendipity_common_adduser::sendMail($username, $hash, $email)) {
-                echo PLUGIN_ADDUSER_SENTMAIL;
+                echo '<p class="serendipity_content_message serendipity_msg_success"> ' . PLUGIN_ADDUSER_SENTMAIL . "</p>\n";
                 unset($serendipity['POST']); // clear input fields and post data
             } else {
-                echo ERROR;
+                echo '<p class="serendipity_content_message serendipity_msg_important"> ' . ERROR . ': ' . PLUGIN_ADDUSER_SENTMAIL_FAILED . "</p>\n";
             }
 
             unset($serendipity['POST']['adduser_action']); // Ensure the plugin is not called twice
@@ -272,7 +272,7 @@ class serendipity_common_adduser
         return false;
     }
 
-    static function loginform($url, $hidden = array(), $instructions = '', $username = '', #[\SensitiveParameter] $password = '', $email = '', $use_captcha = false)
+    static function loginform(string $url, iterable $hidden = array(), string $instructions = '', string $username = '', #[\SensitiveParameter] string $password = '', string $email = '', bool $use_captcha = false) : void
     {
         global $serendipity;
 
@@ -288,7 +288,7 @@ class serendipity_common_adduser
             'registerbox_email'        => $email,
             'registerbox_captcha'      => $use_captcha,
         ));
-        $filename = 'registerbox.tpl';
+        $filename = 'plugin_registerbox.tpl';
         $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
 
         if (!$tfile || $tfile == $filename) {

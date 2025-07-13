@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -16,7 +18,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, Ian Styx');
-        $propbag->add('version',     '3.0.0');
+        $propbag->add('version',     '3.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -202,14 +204,14 @@ class serendipity_event_adduser extends serendipity_event
                     $serendipity['smarty']->assign(array(
                         'loginform_add'  => $out,
                         'loginform_url'  => $login_url,
-                        'loginform_user' => $_SESSION['serendipityUser'],
-                        'loginform_mail' => $_SESSION['serendipityEmail'],
+                        'loginform_user' => $_SESSION['serendipityUser'] ?? '',
+                        'loginform_mail' => $_SESSION['serendipityEmail'] ?? '',
                         'close_window'   => defined('LOGIN_ACTION'),
                         'is_logged_in'   => serendipity_userLoggedIn(),
                         'is_error'       => defined('LOGIN_ERROR')
                     ));
 
-                    $filename = 'loginbox.tpl';
+                    $filename = 'plugin_loginbox.tpl';
                     $tfile = serendipity_getTemplateFile($filename, 'serendipityPath');
                     if (!$tfile || $tfile == $filename) {
                         $tfile = dirname(__FILE__) . '/' . $filename;
@@ -245,12 +247,12 @@ class serendipity_event_adduser extends serendipity_event
                         }
                     }
 
-                    if ((serendipity_db_bool($this->get_config('registered_only', 'false')) || serendipity_db_bool($this->get_config('true_identities', 'true'))) && $_SESSION['serendipityAuthedUser']) {
+                    if ((serendipity_db_bool($this->get_config('registered_only', 'false')) || serendipity_db_bool($this->get_config('true_identities', 'true'))) && isset($_SESSION['serendipityAuthedUser'])) {
                         if (defined('IN_serendipity_admin') && $serendipity['GET']['adminAction'] == 'doEdit') {
                             // void
                         } else {
-                            $serendipity['COOKIE']['name']  = (isset($_SESSION['serendipityRealname']) ? $_SESSION['serendipityRealname'] : $_SESSION['serendipityUser']);
-                            $serendipity['COOKIE']['email'] = $_SESSION['serendipityEmail'];
+                            $serendipity['COOKIE']['name']  = (isset($_SESSION['serendipityRealname']) ? $_SESSION['serendipityRealname'] : $_SESSION['serendipityUser'] ?? null);
+                            $serendipity['COOKIE']['email'] = $_SESSION['serendipityEmail'] ?? null;
                             if (isset($serendipity['POST']['comment'])) {
                                 $serendipity['POST']['name']  = $serendipity['COOKIE']['name'];
                                 $serendipity['POST']['email'] = $serendipity['COOKIE']['email'];
@@ -273,11 +275,11 @@ class serendipity_event_adduser extends serendipity_event
                         $url      = $serendipity['baseURL'] . $serendipity['indexFile'];
                         $hidden['subpage'] = 'adduser';
 
-                        $username = substr($serendipity['POST']['adduser_user'], 0, 40);
-                        $password = substr($serendipity['POST']['adduser_pass'], 0, 32);
-                        $email    = $serendipity['POST']['adduser_email'];
+                        $username = substr($serendipity['POST']['adduser_user'] ?? '', 0, 40);
+                        $password = substr($serendipity['POST']['adduser_pass'] ?? '', 0, 32);
+                        $email    = $serendipity['POST']['adduser_email'] ?? '';
 
-                        echo '<div id="adduser_form" style="padding-left: 4px; padding-right: 10px"><a id="adduser"></a>';
+                        echo '<div id="adduser_form"><a id="adduser"></a>';
 
                         // Get the config from the sidebar plugin
                         $pair_config = array(
@@ -313,7 +315,7 @@ class serendipity_event_adduser extends serendipity_event
                                 }
                             }
                         }
-                        if (!serendipity_common_adduser::adduser($username, $password, $email, $pair_config['userlevel'], $pair_config['usergroups'], $pair_config['no_create'], $pair_config['right_publish'], $pair_config['straight_insert'], $pair_config['approve'], $pair_config['use_captcha'])) {
+                        if (!serendipity_common_adduser::addUser($username, $password, $email, $pair_config['userlevel'], $pair_config['usergroups'], $pair_config['no_create'], $pair_config['right_publish'], $pair_config['straight_insert'], $pair_config['approve'], $pair_config['use_captcha'])) {
                             $serendipity['GET']['subpage'] = 'adduser';
                             serendipity_common_adduser::loginform($url, $hidden, $pair_config['instructions'], $username, $password, $email, $pair_config['use_captcha']);
                         }

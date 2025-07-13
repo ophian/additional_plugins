@@ -1,3 +1,18 @@
+3.0.0: ( sidebar plugin )
+3.0.1:
+------
+ * Set default value of 'use_autosave' option to false
+ * Declare strict_types and fixes
+ * Precision and typo fixes for plugin constants
+ * Raises requirements for Serendipity Styx 5.0
+ * Move UTF-8/ lang files one level up and purge the directory
+ * Improve messaging
+ * Improvements for Smarty indent
+ * ATTENTION: Changed template file names for consistency
+              adding a prefix "plugin_" (plugin_registerbox.tpl, plugin_loginbox.tpl).
+              If already in use in a theme, please change the name accordingly.
+ * Added a modernized registerbox template to the [ pure ] theme already
+
 3.0.0:
 ------
  * Secure credentials on error by SensitiveParameter
