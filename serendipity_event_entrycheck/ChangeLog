@@ -1,3 +1,11 @@
+2.0.0:
+------
+ * Fix some type issues
+ * Fix missing token for the unlock link
+ * Fix liberation of current lock
+ * Raise requirements
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+
 1.21:
 -----
  * Better check non category addData

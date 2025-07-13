@@ -1,33 +1,33 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/16
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/02/02
  */
 
-@define('PLUGIN_EVENT_ENTRYCHECK_TITLE',		'Pravidla vydávání pøíspìvkù');
-@define('PLUGIN_EVENT_ENTRYCHECK_DESC',		'Provádí kontrolu pøíspìvku pøed jeho vydáním.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES',		'Povinné zaøazení do kategorie');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_DESC',		'Pokud je nastaveno "Ano", musí bıt pøíspìvek zaøazen alespoò do jedné kategorie.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING',		'Není povoleno vydat pøíspìvek, ani by mìl pøiøazenou kategorii. Zaøaïte ho prosím do nìkteré z kategorií a znovu ulote!');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE',		'Zakázat prázdnı nadpis');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_DESC',		'Pokud je nastaveno na "Ano", pak musí mít pøíspìvek nìjakı, ne prázdnı nadpis.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING',		'Není povoleno vydat pøíspìvek, kterı nemá nadpis. Zadejte prosím nadpis pøíspìvku a znovu ulote!');
-@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT',		'Pøednastavená kategorie');
-@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT_DESC',		'Pokud autor nepøiøadí pøíspìvek do ádné kategorie, bude nastavena zde pøednastavená kategorie.');
+@define('PLUGIN_EVENT_ENTRYCHECK_TITLE',		'Pravidla vydÃ¡vÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_EVENT_ENTRYCHECK_DESC',		'ProvÃ¡dÃ­ kontrolu pÅ™Ã­spÄ›vku pÅ™ed jeho vydÃ¡nÃ­m.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES',		'PovinnÃ© zaÅ™azenÃ­ do kategorie');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_DESC',		'Pokud je nastaveno "Ano", musÃ­ bÃ½t pÅ™Ã­spÄ›vek zaÅ™azen alespoÅˆ do jednÃ© kategorie.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING',		'NenÃ­ povoleno vydat pÅ™Ã­spÄ›vek, aniÅ¾ by mÄ›l pÅ™iÅ™azenou kategorii. ZaÅ™aÄte ho prosÃ­m do nÄ›kterÃ© z kategoriÃ­ a znovu uloÅ¾te!');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE',		'ZakÃ¡zat prÃ¡zdnÃ½ nadpis');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_DESC',		'Pokud je nastaveno na "Ano", pak musÃ­ mÃ­t pÅ™Ã­spÄ›vek nÄ›jakÃ½, ne prÃ¡zdnÃ½ nadpis.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING',		'NenÃ­ povoleno vydat pÅ™Ã­spÄ›vek, kterÃ½ nemÃ¡ nadpis. Zadejte prosÃ­m nadpis pÅ™Ã­spÄ›vku a znovu uloÅ¾te!');
+@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT',		'PÅ™ednastavenÃ¡ kategorie');
+@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT_DESC',		'Pokud autor nepÅ™iÅ™adÃ­ pÅ™Ã­spÄ›vek do Å¾Ã¡dnÃ© kategorie, bude nastavena zde pÅ™ednastavenÃ¡ kategorie.');
 
-@define('PLUGIN_EVENT_ENTRYCHECK_LOCKED',		'Pøíspìvek byl zamèen pro úpravy uivatelem %s dne %s');
-@define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK',		'Odemknout pøíspìvek');
-@define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING',		'Tento pøíspìvek byl zamèen a mùe bıt uloen pouze vlastníkem zámku, pokud pøíspìvek ruènì neodemknete.');
-@define('PLUGIN_EVENT_ENTRYCHECK_LOCKING',		'Povolit zamykání pøíspìvkù?');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCKED',		'PÅ™Ã­spÄ›vek byl zamÄen pro Ãºpravy uÅ¾ivatelem %s dne %s');
+@define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK',		'Odemknout pÅ™Ã­spÄ›vek');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING',		'Tento pÅ™Ã­spÄ›vek byl zamÄen a mÅ¯Å¾e bÃ½t uloÅ¾en pouze vlastnÃ­kem zÃ¡mku, pokud pÅ™Ã­spÄ›vek ruÄnÄ› neodemknete.');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCKING',		'Povolit zamykÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯?');
 
 // Next lines were translated on 2012/02/02
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY',		'Zakázat prázdné tìlo pøíspìvku');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_DESC',		'Pokud je nastaveno "ano", pak musí pøíspìvek mít nìco napsáno v tìle.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_WARNING',		'Není dovoleno publikovat pøíspìvky bez textu v tìle. Pøidejte prosím text do tìla pøíspìvku a znovu ho ulote!');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED',		'Zakázat prázdnou rozšíøenou textovou èást');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_DESC',		'Pokud je nastaveno "ano", pak musí pøíspìvek mít nìco napsáno v rozšíøené textové èásti.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING',		'Není dovoleno publikovat pøíspìvky bez textu v rozšíøené textové èásti. Pøidejte prosím text do rozšíøené textové èásti a znovu ho ulote!');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY',		'ZakÃ¡zat prÃ¡zdnÃ© tÄ›lo pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_DESC',		'Pokud je nastaveno "ano", pak musÃ­ pÅ™Ã­spÄ›vek mÃ­t nÄ›co napsÃ¡no v tÄ›le.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_WARNING',		'NenÃ­ dovoleno publikovat pÅ™Ã­spÄ›vky bez textu v tÄ›le. PÅ™idejte prosÃ­m text do tÄ›la pÅ™Ã­spÄ›vku a znovu ho uloÅ¾te!');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED',		'ZakÃ¡zat prÃ¡zdnou rozÅ¡Ã­Å™enou textovou ÄÃ¡st');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_DESC',		'Pokud je nastaveno "ano", pak musÃ­ pÅ™Ã­spÄ›vek mÃ­t nÄ›co napsÃ¡no v rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING',		'NenÃ­ dovoleno publikovat pÅ™Ã­spÄ›vky bez textu v rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti. PÅ™idejte prosÃ­m text do rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti a znovu ho uloÅ¾te!');
 

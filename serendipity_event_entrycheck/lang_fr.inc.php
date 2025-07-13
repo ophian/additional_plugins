@@ -1,19 +1,19 @@
 <?php
 
-@define('PLUGIN_EVENT_ENTRYCHECK_TITLE', 'Règles de publication');
-@define('PLUGIN_EVENT_ENTRYCHECK_DESC', 'Faire quelques vérifications avant qu\'un billet soit publié.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES', 'Interdire un billet sans catégorie ?');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_DESC', 'Si la valeur "oui" est sélectionnée, un billet doit être associé à au moins une catégorie.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING', 'Il n\'est pas autorisé de publier un billet auquel n\'est associée aucune catégorie. Merci de choisir au moins une catégorie appropriée et d\'enregistrer à nouveau votre billet !');
+@define('PLUGIN_EVENT_ENTRYCHECK_TITLE', 'RÃ¨gles de publication');
+@define('PLUGIN_EVENT_ENTRYCHECK_DESC', 'Faire quelques vÃ©rifications avant qu\'un billet soit publiÃ©.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES', 'Interdire un billet sans catÃ©gorie ?');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_DESC', 'Si la valeur "oui" est sÃ©lectionnÃ©e, un billet doit Ãªtre associÃ© Ã  au moins une catÃ©gorie.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING', 'Il n\'est pas autorisÃ© de publier un billet auquel n\'est associÃ©e aucune catÃ©gorie. Merci de choisir au moins une catÃ©gorie appropriÃ©e et d\'enregistrer Ã  nouveau votre billet !');
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE', 'Ne pas autoriser les titres vides ?');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_DESC', 'Si la valeur "oui" est sélectionnée, un billet ne pourra pas avoir un titre vide.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING', 'Il n\'est pas autorisé de publier un billet dont le titre est vide. Merci de saisir un titre pour ce billet et de l\'enregistrer à nouveau !');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_DESC', 'Si la valeur "oui" est sÃ©lectionnÃ©e, un billet ne pourra pas avoir un titre vide.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING', 'Il n\'est pas autorisÃ© de publier un billet dont le titre est vide. Merci de saisir un titre pour ce billet et de l\'enregistrer Ã  nouveau !');
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY', 'Ne pas autoriser les introduction vides ?');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_DESC', 'Si la valeur "oui" est sélectionnée, un billet ne pourra pas avoir un introduction vide.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_WARNING', 'Il n\'est pas autorisé de publier un billet dont le introduction est vide. Merci de saisir un introduction pour ce billet et de l\'enregistrer à nouveau !');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_DESC', 'Si la valeur "oui" est sÃ©lectionnÃ©e, un billet ne pourra pas avoir un introduction vide.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYBODY_WARNING', 'Il n\'est pas autorisÃ© de publier un billet dont le introduction est vide. Merci de saisir un introduction pour ce billet et de l\'enregistrer Ã  nouveau !');
 @define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED', 'Ne pas autoriser les corps du billet vides ?');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_DESC', 'Si la valeur "oui" est sélectionnée, un billet ne pourra pas avoir un corps du billet vide.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING', 'Il n\'est pas autorisé de publier un billet dont le corps du billet est vide. Merci de saisir un corps du billet pour ce billet et de l\'enregistrer à nouveau !');
-@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT', 'Définir une catégorie par défaut');
-@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT_DESC', 'Vous pouvez sélectionner ici la catégorie qui sera affectée par défaut aux billets si l\'auteur n\'en spécifie pas.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_DESC', 'Si la valeur "oui" est sÃ©lectionnÃ©e, un billet ne pourra pas avoir un corps du billet vide.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYEXTENDED_WARNING', 'Il n\'est pas autorisÃ© de publier un billet dont le corps du billet est vide. Merci de saisir un corps du billet pour ce billet et de l\'enregistrer Ã  nouveau !');
+@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT', 'DÃ©finir une catÃ©gorie par dÃ©faut');
+@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT_DESC', 'Vous pouvez sÃ©lectionner ici la catÃ©gorie qui sera affectÃ©e par dÃ©faut aux billets si l\'auteur n\'en spÃ©cifie pas.');
 

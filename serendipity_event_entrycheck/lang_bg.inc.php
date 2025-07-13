@@ -6,19 +6,19 @@
  *  EN-Revision: 1.5
  */
 
-@define('PLUGIN_EVENT_ENTRYCHECK_TITLE', 'Правила за публикуване на статии');
-@define('PLUGIN_EVENT_ENTRYCHECK_DESC', 'Прилага няколко проверки на статията преди тя да бъде публикувана.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES', 'Статия без категория ?');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_DESC', 'Ако е установено на true, статията трябва да има поне една асоциирана категория към себе си');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING', 'Публикуването на статия без асоциирана категория към нея не е позволено. Моля установете подходяща асоциация и запишете статията отново.');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE', 'Статия без заглавие ?');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_DESC', 'Ако е установено на true, статията трябва да има заглавие');
-@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING', 'Публикуването на статията без заглавие не е позволено. Моля въведете заглавие и запишете статията отново.');
-@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT', 'Категория по подразбиране');
-@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT_DESC', 'В случай, че авторът не е избрал категория, по подразбиране статията се асоциира с тази категория.');
+@define('PLUGIN_EVENT_ENTRYCHECK_TITLE', 'РџСЂР°РІРёР»Р° Р·Р° РїСѓР±Р»РёРєСѓРІР°РЅРµ РЅР° СЃС‚Р°С‚РёРё');
+@define('PLUGIN_EVENT_ENTRYCHECK_DESC', 'РџСЂРёР»Р°РіР° РЅСЏРєРѕР»РєРѕ РїСЂРѕРІРµСЂРєРё РЅР° СЃС‚Р°С‚РёСЏС‚Р° РїСЂРµРґРё С‚СЏ РґР° Р±СЉРґРµ РїСѓР±Р»РёРєСѓРІР°РЅР°.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES', 'РЎС‚Р°С‚РёСЏ Р±РµР· РєР°С‚РµРіРѕСЂРёСЏ ?');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_DESC', 'РђРєРѕ Рµ СѓСЃС‚Р°РЅРѕРІРµРЅРѕ РЅР° true, СЃС‚Р°С‚РёСЏС‚Р° С‚СЂСЏР±РІР° РґР° РёРјР° РїРѕРЅРµ РµРґРЅР° Р°СЃРѕС†РёРёСЂР°РЅР° РєР°С‚РµРіРѕСЂРёСЏ РєСЉРј СЃРµР±Рµ СЃРё');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYCATEGORIES_WARNING', 'РџСѓР±Р»РёРєСѓРІР°РЅРµС‚Рѕ РЅР° СЃС‚Р°С‚РёСЏ Р±РµР· Р°СЃРѕС†РёРёСЂР°РЅР° РєР°С‚РµРіРѕСЂРёСЏ РєСЉРј РЅРµСЏ РЅРµ Рµ РїРѕР·РІРѕР»РµРЅРѕ. РњРѕР»СЏ СѓСЃС‚Р°РЅРѕРІРµС‚Рµ РїРѕРґС…РѕРґСЏС‰Р° Р°СЃРѕС†РёР°С†РёСЏ Рё Р·Р°РїРёС€РµС‚Рµ СЃС‚Р°С‚РёСЏС‚Р° РѕС‚РЅРѕРІРѕ.');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE', 'РЎС‚Р°С‚РёСЏ Р±РµР· Р·Р°РіР»Р°РІРёРµ ?');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_DESC', 'РђРєРѕ Рµ СѓСЃС‚Р°РЅРѕРІРµРЅРѕ РЅР° true, СЃС‚Р°С‚РёСЏС‚Р° С‚СЂСЏР±РІР° РґР° РёРјР° Р·Р°РіР»Р°РІРёРµ');
+@define('PLUGIN_EVENT_ENTRYCHECK_EMPTYTITLE_WARNING', 'РџСѓР±Р»РёРєСѓРІР°РЅРµС‚Рѕ РЅР° СЃС‚Р°С‚РёСЏС‚Р° Р±РµР· Р·Р°РіР»Р°РІРёРµ РЅРµ Рµ РїРѕР·РІРѕР»РµРЅРѕ. РњРѕР»СЏ РІСЉРІРµРґРµС‚Рµ Р·Р°РіР»Р°РІРёРµ Рё Р·Р°РїРёС€РµС‚Рµ СЃС‚Р°С‚РёСЏС‚Р° РѕС‚РЅРѕРІРѕ.');
+@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT', 'РљР°С‚РµРіРѕСЂРёСЏ РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ');
+@define('PLUGIN_EVENT_ENTRYCHECK_DEFAULTCAT_DESC', 'Р’ СЃР»СѓС‡Р°Р№, С‡Рµ Р°РІС‚РѕСЂСЉС‚ РЅРµ Рµ РёР·Р±СЂР°Р» РєР°С‚РµРіРѕСЂРёСЏ, РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ СЃС‚Р°С‚РёСЏС‚Р° СЃРµ Р°СЃРѕС†РёРёСЂР° СЃ С‚Р°Р·Рё РєР°С‚РµРіРѕСЂРёСЏ.');
 
-@define('PLUGIN_EVENT_ENTRYCHECK_LOCKED', 'Тази статия е заключена за редактиране от %s на %s');
-@define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK', 'Отключване на статията');
-@define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING', 'Тази статия е заключена и може да бъде записвана само от собственика на ключа, ако не я отключите.');
-@define('PLUGIN_EVENT_ENTRYCHECK_LOCKING', 'Разрешаване на заключването на статии ?');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCKED', 'РўР°Р·Рё СЃС‚Р°С‚РёСЏ Рµ Р·Р°РєР»СЋС‡РµРЅР° Р·Р° СЂРµРґР°РєС‚РёСЂР°РЅРµ РѕС‚ %s РЅР° %s');
+@define('PLUGIN_EVENT_ENTRYCHECK_UNLOCK', 'РћС‚РєР»СЋС‡РІР°РЅРµ РЅР° СЃС‚Р°С‚РёСЏС‚Р°');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCK_WARNING', 'РўР°Р·Рё СЃС‚Р°С‚РёСЏ Рµ Р·Р°РєР»СЋС‡РµРЅР° Рё РјРѕР¶Рµ РґР° Р±СЉРґРµ Р·Р°РїРёСЃРІР°РЅР° СЃР°РјРѕ РѕС‚ СЃРѕР±СЃС‚РІРµРЅРёРєР° РЅР° РєР»СЋС‡Р°, Р°РєРѕ РЅРµ СЏ РѕС‚РєР»СЋС‡РёС‚Рµ.');
+@define('PLUGIN_EVENT_ENTRYCHECK_LOCKING', 'Р Р°Р·СЂРµС€Р°РІР°РЅРµ РЅР° Р·Р°РєР»СЋС‡РІР°РЅРµС‚Рѕ РЅР° СЃС‚Р°С‚РёРё ?');
 
