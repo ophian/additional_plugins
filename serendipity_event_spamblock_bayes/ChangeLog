@@ -1,3 +1,10 @@
+3.0.0:
+------
+ * Follow refactored comments action bar buttons incorporation
+ * Place these buttons only for rel comments
+ * Raise requirements for Styx 5.0
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+
 2.9.5:
 -----
  * Disable old plugin constants and re-check [de] documentation

@@ -17,11 +17,11 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '2.9.5');
+        $propbag->add('version',        '3.0.0');
         $propbag->add('requirements',   array(
-            'serendipity' => '2.1.2',
-            'smarty'      => '3.1.0',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',  array('frontend_saveComment' => true,
                                             'backend_comments_top' => true,
@@ -320,27 +320,13 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                     break;
 
                 case 'backend_view_comment':
-                    $imgpath = $serendipity['baseURL'] . 'index.php?/plugin/';
-
-                    $comment = ($eventData['url'] ?? '') . ' ' . ($eventData['fullBody'] ?? '') . ' ' . ($eventData['name'] ?? '') . ' ' . ($eventData['email'] ?? '');
-
-                    $eventData['action_more'] = '<ul id="bayes_actions" class="plainList clearfix actions">
-                        <li>
-                        <a class="button_link spamblockBayesControls"
-                        onclick="return ham('. $eventData['id'].');"
-                        title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'"
-                        ><span class="icon-ok-circled" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'</span></a>
-                        </li>
-                        <li>
-                        <a class="button_link spamblockBayesControls"
-                        onclick="return spam('. $eventData['id'] .');"
-                        title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'"
-                        ><span class="icon-cancel" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'</span></a>
-                        </li>
-                        <li class="bayes_spamrating">
-                        <span id="' . $eventData['id'] . '_rating"> ' . preg_replace('/\..*/', '', $this->rate($comment) * 100) . '%</span>
-                        </li>
-                    </ul>';
+                    if ($eventData['type'] == 'NORMAL') {
+                        $comment = ($eventData['url'] ?? '') . ' ' . ($eventData['fullBody'] ?? '') . ' ' . ($eventData['name'] ?? '') . ' ' . ($eventData['email'] ?? '');
+                        if (!isset($eventData['action_more']) || !is_string($eventData['action_more'])) $eventData['action_more'] = ''; // bayes and spamblock akismet place it
+                        $eventData['action_more'] .= '<li><a class="button_link spamblockBayesControls" onclick="return ham('. $eventData['id'].');" title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'"><span class="icon-ok-circled" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'</span></a></li>';
+                        $eventData['action_more'] .= '<li><a class="button_link spamblockBayesControls" onclick="return spam('. $eventData['id'] .');" title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'"><span class="icon-cancel" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'</span></a></li>';
+                        $eventData['action_more'] .= '<li class="bayes_spamrating"><span id="' . $eventData['id'] . '_rating" title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . '"> ' . preg_replace('/\..*/', '', $this->rate($comment) * 100) . '%</span></li>';
+                    }
                     break;
 
                 case 'xmlrpc_comment_spam':
@@ -393,6 +379,15 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 }
 .spamblockBayesControls {
     cursor: pointer;
+}
+
+.bayes_spamrating {
+    display: inline;
+}
+.bayes_spamrating span {
+    vertical-align: middle;
+    padding: .25em;
+    font-size: .9125em;
 }
 
 /* serendipity_event_spamblock_bayes end */

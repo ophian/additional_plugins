@@ -1,105 +1,105 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/11/07
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/12/29
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/03/07
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/04/24
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/09/12
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/11/26
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/01/11
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/05/13
  */
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME', 'Spamblock (Bayes)');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC', 'Detekce spamu pomocÌ adaptivnÌho algoritmu, kter˝ se dok·ûe s·m uËit.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM', 'V po¯·dku');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC', 'Detekce spamu pomoc√≠ adaptivn√≠ho algoritmu, kter√Ω se dok√°≈æe s√°m uƒçit.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM', 'V po≈ô√°dku');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM', 'Spam');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_ERROR', 'OdmÌtnuto jako spam.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MODERATE', 'PravdÏpodobnÏ se jedn· o spam. P¯ÌspÏvek byl p¯edloûen ke schv·lenÌ.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_ERROR', 'Odm√≠tnuto jako spam.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MODERATE', 'Pravdƒõpodobnƒõ se jedn√° o spam. P≈ô√≠spƒõvek byl p≈ôedlo≈æen ke schv√°len√≠.');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_MODERATE', 'Schvalovat');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_BLOCK', 'OdmÌtnout');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DESC', 'MajÌ se zablokovanÈ koment·¯e ukl·dat do koöe?');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY', 'Vypr·zdnit koö');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_BLOCK', 'Odm√≠tnout');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DESC', 'Maj√≠ se zablokovan√© koment√°≈ôe ukl√°dat do ko≈°e?');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY', 'Vypr√°zdnit ko≈°');
 @define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RESTORE', 'Obnovit');
-@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_RECYCLER', 'Koö');
+@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_RECYCLER', 'Ko≈°');
 
 //old
 
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_AUTOLEARN',     'UËit se');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_AUTOLEARN_DESC',     'Koment·¯e, kter˝ velmi pravdÏpodobnÏ obsahujÌ spam jsou pouûity k uËenÌ pro detekci dalöÌho spamu. TÌmto zp˘sobem se algoritmus automaticky lehce uËÌ.');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGFILE',     'UmÌstÏnÌ logu');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGFILE_DESC',     'Ozn·menÌ o zamÌtnut˝ch/schvalovan˝ch p¯ÌspÏvcÌch mohou b˝t zapisov·ny do logu. Pokud chcete vypnout logov·nÌ, zadejte pr·zdn˝ ¯etÏzec.');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE',     'Vyberte metodu logov·nÌ');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE_DESC',     'Logov·nÌ odmÌtnut˝ch koment·¯˘ m˘ûe probÌhat buÔ do datab·ze nebo do textovÈho souboru.');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE_FILE', 'Soubor (viz "UmÌstÏnÌ logu" nÌûe)');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE_DB', 'Datab·ze');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_AUTOLEARN',     'Uƒçit se');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_AUTOLEARN_DESC',     'Koment√°≈ôe, kter√Ω velmi pravdƒõpodobnƒõ obsahuj√≠ spam jsou pou≈æity k uƒçen√≠ pro detekci dal≈°√≠ho spamu. T√≠mto zp≈Øsobem se algoritmus automaticky lehce uƒç√≠.');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGFILE',     'Um√≠stƒõn√≠ logu');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGFILE_DESC',     'Ozn√°men√≠ o zam√≠tnut√Ωch/schvalovan√Ωch p≈ô√≠spƒõvc√≠ch mohou b√Ωt zapisov√°ny do logu. Pokud chcete vypnout logov√°n√≠, zadejte pr√°zdn√Ω ≈ôetƒõzec.');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE',     'Vyberte metodu logov√°n√≠');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE_DESC',     'Logov√°n√≠ odm√≠tnut√Ωch koment√°≈ô≈Ø m≈Ø≈æe prob√≠hat buƒè do datab√°ze nebo do textov√©ho souboru.');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE_FILE', 'Soubor (viz "Um√≠stƒõn√≠ logu" n√≠≈æe)');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE_DB', 'Datab√°ze');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LOGTYPE_NONE', 'Nelogovat');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_REASON', 'Odchyceno pluginem Bayes');
 
 // Next lines were translated on 2009/12/29
 
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING_EXPLANATION',     'Riziko spamu podle pluginu Spambock-Bayes.');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DELETE',     'Smazat koment·¯ a oznaËit jako spam');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_APPROVE',     'Odsouhlasit koment·¯ a oznaËit jako platn˝');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_DELETE',     'Smazat koment√°≈ô a oznaƒçit jako spam');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_APPROVE',     'Odsouhlasit koment√°≈ô a oznaƒçit jako platn√Ω');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH',     'Cesta k pluginu');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH_DESC',     'Pokud je zde cesta zad·na, nenÌ nad·le rozpozn·v·na dynamicky. To m· v˝znamn˝ vliv na v˝kon pluginu. P¯Ìklad: http://www.priklad.cz/plugins/serendipity_event_spamblock_bayes/ (na konci musÌ b˝t lomÌtko "/" ).');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_PATH_DESC',     'Pokud je zde cesta zad√°na, nen√≠ nad√°le rozpozn√°v√°na dynamicky. To m√° v√Ωznamn√Ω vliv na v√Ωkon pluginu. P≈ô√≠klad: http://www.priklad.cz/plugins/serendipity_event_spamblock_bayes/ (na konci mus√≠ b√Ωt lom√≠tko "/" ).');
 
 // Next lines were translated on 2010/03/07
 
-#@define('PLUGIN_EVENT_SPAMBLOCK_METHOD',     'Zach·zenÌ se spamem');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE',     'VlastnÌ schvalov·nÌ');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE_DESC',     'P¯i vlastnÌm mÛdu schvalovat p¯i hodnocenÌ vÏtöÌm neû? (v %)');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_BLOCK',     'VlastnÌ odmÌtnutÌ');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_BLOCK_DESC',     'P¯i vlastnÌm mÛdu odmÌtnout p¯i hodnocenÌ vyööÌm neû? (v %)');
-##@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_CUSTOM',     'VlastnÌ nastavenÌ');
+#@define('PLUGIN_EVENT_SPAMBLOCK_METHOD',     'Zach√°zen√≠ se spamem');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE',     'Vlastn√≠ schvalov√°n√≠');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_MODERATE_DESC',     'P≈ôi vlastn√≠m m√≥du schvalovat p≈ôi hodnocen√≠ vƒõt≈°√≠m ne≈æ? (v %)');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_BLOCK',     'Vlastn√≠ odm√≠tnut√≠');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_BARRIER_BLOCK_DESC',     'P≈ôi vlastn√≠m m√≥du odm√≠tnout p≈ôi hodnocen√≠ vy≈°≈°√≠m ne≈æ? (v %)');
+##@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_METHOD_CUSTOM',     'Vlastn√≠ nastaven√≠');
 
 // Next lines were translated on 2010/04/24
 
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAMBUTTON',     'OznaËit vybranÈ koment·¯e jako spam');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_LEARN',     'UËit se');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_DATABASE',     'Datab·ze');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_CREATEDB',     'Vytvo¯it datab·zi');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LEARNOLD',     'UËit se ze staröÌch');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_ERASEDB',     'Vymazat datab·zi');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SAVEDVALUES',     'HodnocenÈ koment·¯e');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAMBUTTON',     'Oznaƒçit vybran√© koment√°≈ôe jako spam');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_LEARN',     'Uƒçit se');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_DATABASE',     'Datab√°ze');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_CREATEDB',     'Vytvo≈ôit datab√°zi');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_LEARNOLD',     'Uƒçit se ze star≈°√≠ch');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_ERASEDB',     'Vymazat datab√°zi');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_SAVEDVALUES',     'Hodnocen√© koment√°≈ôe');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU',     'Menu');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_DESC',     'Odkaz na rozöÌ¯enÈ menu v administraËnÌ sekci.');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_DESC',     'Odkaz na roz≈°√≠≈ôen√© menu v administraƒçn√≠ sekci.');
 
 // Next lines were translated on 2010/09/12
 
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_HAMBUTTON',     'OzaËit jako platnÈ');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_ANALYSIS',     'Anal˝za');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DELETE',     'P¯emostÏnÌ koöe');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DELETE_DESC',     'Koment·¯e s hodnocenÌm vÏtöÌm nebo rovnÈm neû je tato hodnota nebudou zahozeny do koöe, n˝brû rovnou smaz·ny. P¯Ìklad: 98');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_HAMBUTTON',     'Ozaƒçit jako platn√©');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_ANALYSIS',     'Anal√Ωza');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DELETE',     'P≈ôemostƒõn√≠ ko≈°e');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_DELETE_DESC',     'Koment√°≈ôe s hodnocen√≠m vƒõt≈°√≠m nebo rovn√©m ne≈æ je tato hodnota nebudou zahozeny do ko≈°e, n√Ωbr≈æ rovnou smaz√°ny. P≈ô√≠klad: 98');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IGNORE',     'Ignorovat');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IGNORE_DESC',     'Zadejte pole koment·¯e, kterÈ budou ignorov·ny. MoûnÈ hodnoty: ip, referer, author, body, email, url. P¯Ìklad: "ip, referer".');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IGNORE_DESC',     'Zadejte pole koment√°≈ôe, kter√© budou ignorov√°ny. Mo≈æn√© hodnoty: ip, referer, author, body, email, url. P≈ô√≠klad: "ip, referer".');
 
 // Next lines were translated on 2010/11/26
 
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_EXPORTDB',     'Export datab·ze');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORTDB',     'Import datab·ze');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORT_EXPLANATION',     'Iportovat d¯Ìve vygenerovan˝ CSV soubory. NaËten· data filtru budou p¯id·na do datab·ze.');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_EXPORTDB',     'Export datab√°ze');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORTDB',     'Import datab√°ze');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_IMPORT_EXPLANATION',     'Iportovat d≈ô√≠ve vygenerovan√Ω CSV soubory. Naƒçten√° data filtru budou p≈ôid√°na do datab√°ze.');
 
 // Next lines were translated on 2012/01/11
 
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_MENU_IMPORT',     'Import');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_EXPLANATION',     'M˘ûete importovat datab·zi spamu z jinÈho blogu. Zaregistrujte se a ostatnÌ blogy se budou uËit z vaöÌ datab·ze spamu.');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_EXPLANATION',     'M≈Ø≈æete importovat datab√°zi spamu z jin√©ho blogu. Zaregistrujte se a ostatn√≠ blogy se budou uƒçit z va≈°√≠ datab√°ze spamu.');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA',     'Online Import');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_IMPORT',     'Import');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_REGISTER',     'P¯idat tento blog');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_REGISTER',     'P≈ôidat tento blog');
 #@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_TROJA_REMOVE',     'Odstranit tento blog');
 
 // Next lines were translated on 2012/05/13
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING',     'HodnocenÌ');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL',     'Koö: ⁄plnÈ vyËiötÏnÌ');
-#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL_DESC',     'P¯i vysyp·v·nÌ koöe smazat vöechny koment·¯e, nejen ty na aktu·lnÌ str·nce.');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RATING',     'Hodnocen√≠');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL',     'Ko≈°: √öpln√© vyƒçi≈°tƒõn√≠');
+#@define('PLUGIN_EVENT_SPAMBLOCK_BAYES_RECYCLER_EMPTY_ALL_DESC',     'P≈ôi vysyp√°v√°n√≠ ko≈°e smazat v≈°echny koment√°≈ôe, nejen ty na aktu√°ln√≠ str√°nce.');
 
