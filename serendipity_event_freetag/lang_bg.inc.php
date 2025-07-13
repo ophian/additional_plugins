@@ -9,81 +9,81 @@
 //
 //  serendipity_event_freetag.php
 //
-@define('PLUGIN_EVENT_FREETAG_TITLE', 'Маркиране на статии');
-@define('PLUGIN_EVENT_FREETAG_DESC', 'Позволява свободно маркиране на статиите');
-@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Въведете маркери, подходящи за тази статия. Разделете маркерите със запетайка (,)');
-@define('PLUGIN_EVENT_FREETAG_LIST', 'Маркери, дефинирани към тази статия: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Статии, маркирани с <span class="freetag_current">%s</span>');
-@define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Маркери, свързани с маркер \'%s\'');
-@define('PLUGIN_EVENT_FREETAG_NO_RELATED','Няма свързани маркери.');
-@define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Всички дефинирани маркери');
-@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'Управление на маркерите');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'Управление на всички маркери');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'Управление на единични маркери');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'Списък на немаркираните статии');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'Списък на статии, маркирани с единични маркери');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE', 'Няма немарикирани статии!');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG', 'Маркер');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_WEIGHT', 'Тегло');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS', 'Действие');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME', 'Преименоване');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT', 'Разделяне');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE', 'Изтриване');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE', 'Действително ли желаете да изтриете маркер \'%s\'?');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'използвайте запетая за разделяне на маркерите:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'Показване на облак с маркерите?');
-@define('PLUGIN_EVENT_FREETAG_SEND_HTTP_HEADER', 'Изпращане на X-FreeTag-HTTP-Headers');
-@define('PLUGIN_EVENT_FREETAG_ADMIN_TAGLIST', 'Показване на списък с всички маркери при писане на статия');
-@define('PLUGIN_EVENT_FREETAG_ADMIN_FTAYT', 'Активиране на функцията "Намиране на маркери по време на писане"');
+@define('PLUGIN_EVENT_FREETAG_TITLE', 'РњР°СЂРєРёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёРё');
+@define('PLUGIN_EVENT_FREETAG_DESC', 'РџРѕР·РІРѕР»СЏРІР° СЃРІРѕР±РѕРґРЅРѕ РјР°СЂРєРёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёРёС‚Рµ');
+@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Р’СЉРІРµРґРµС‚Рµ РјР°СЂРєРµСЂРё, РїРѕРґС…РѕРґСЏС‰Рё Р·Р° С‚Р°Р·Рё СЃС‚Р°С‚РёСЏ. Р Р°Р·РґРµР»РµС‚Рµ РјР°СЂРєРµСЂРёС‚Рµ СЃСЉСЃ Р·Р°РїРµС‚Р°Р№РєР° (,)');
+@define('PLUGIN_EVENT_FREETAG_LIST', 'РњР°СЂРєРµСЂРё, РґРµС„РёРЅРёСЂР°РЅРё РєСЉРј С‚Р°Р·Рё СЃС‚Р°С‚РёСЏ: %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'РЎС‚Р°С‚РёРё, РјР°СЂРєРёСЂР°РЅРё СЃ <span class="freetag_current">%s</span>');
+@define('PLUGIN_EVENT_FREETAG_SUBTAG', 'РњР°СЂРєРµСЂРё, СЃРІСЉСЂР·Р°РЅРё СЃ РјР°СЂРєРµСЂ \'%s\'');
+@define('PLUGIN_EVENT_FREETAG_NO_RELATED','РќСЏРјР° СЃРІСЉСЂР·Р°РЅРё РјР°СЂРєРµСЂРё.');
+@define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Р’СЃРёС‡РєРё РґРµС„РёРЅРёСЂР°РЅРё РјР°СЂРєРµСЂРё');
+@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'РЈРїСЂР°РІР»РµРЅРёРµ РЅР° РјР°СЂРєРµСЂРёС‚Рµ');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'РЈРїСЂР°РІР»РµРЅРёРµ РЅР° РІСЃРёС‡РєРё РјР°СЂРєРµСЂРё');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'РЈРїСЂР°РІР»РµРЅРёРµ РЅР° РµРґРёРЅРёС‡РЅРё РјР°СЂРєРµСЂРё');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'РЎРїРёСЃСЉРє РЅР° РЅРµРјР°СЂРєРёСЂР°РЅРёС‚Рµ СЃС‚Р°С‚РёРё');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'РЎРїРёСЃСЉРє РЅР° СЃС‚Р°С‚РёРё, РјР°СЂРєРёСЂР°РЅРё СЃ РµРґРёРЅРёС‡РЅРё РјР°СЂРєРµСЂРё');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE', 'РќСЏРјР° РЅРµРјР°СЂРёРєРёСЂР°РЅРё СЃС‚Р°С‚РёРё!');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG', 'РњР°СЂРєРµСЂ');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_WEIGHT', 'РўРµРіР»Рѕ');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS', 'Р”РµР№СЃС‚РІРёРµ');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME', 'РџСЂРµРёРјРµРЅРѕРІР°РЅРµ');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT', 'Р Р°Р·РґРµР»СЏРЅРµ');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE', 'РР·С‚СЂРёРІР°РЅРµ');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE', 'Р”РµР№СЃС‚РІРёС‚РµР»РЅРѕ Р»Рё Р¶РµР»Р°РµС‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ РјР°СЂРєРµСЂ \'%s\'?');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'РёР·РїРѕР»Р·РІР°Р№С‚Рµ Р·Р°РїРµС‚Р°СЏ Р·Р° СЂР°Р·РґРµР»СЏРЅРµ РЅР° РјР°СЂРєРµСЂРёС‚Рµ:');
+@define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РѕР±Р»Р°Рє СЃ РјР°СЂРєРµСЂРёС‚Рµ?');
+@define('PLUGIN_EVENT_FREETAG_SEND_HTTP_HEADER', 'РР·РїСЂР°С‰Р°РЅРµ РЅР° X-FreeTag-HTTP-Headers');
+@define('PLUGIN_EVENT_FREETAG_ADMIN_TAGLIST', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° СЃРїРёСЃСЉРє СЃ РІСЃРёС‡РєРё РјР°СЂРєРµСЂРё РїСЂРё РїРёСЃР°РЅРµ РЅР° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_EVENT_FREETAG_ADMIN_FTAYT', 'РђРєС‚РёРІРёСЂР°РЅРµ РЅР° С„СѓРЅРєС†РёСЏС‚Р° "РќР°РјРёСЂР°РЅРµ РЅР° РјР°СЂРєРµСЂРё РїРѕ РІСЂРµРјРµ РЅР° РїРёСЃР°РЅРµ"');
 
 //
 //  serendipity_plugin_freetag.php
 //
-@define('PLUGIN_FREETAG_NAME', 'Маркери');
-@define('PLUGIN_FREETAG_BLAHBLAH', 'Показва списък на маркери към статиите');
-@define('PLUGIN_FREETAG_NEWLINE', 'Всеки маркер на нов ред?');
-@define('PLUGIN_FREETAG_XML', 'Показване на XML икони?');
-@define('PLUGIN_FREETAG_SCALE','Мащабиране на големината на шрифта в зависимост от популярността на маркера (подобно на flickr)?');
-@define('PLUGIN_FREETAG_UPGRADE1_2','Обновяване на %d маркера за статия номер %d');
-@define('PLUGIN_FREETAG_MAX_TAGS', 'Колко маркера да бъдат показвани?');
-@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Минимален брой на използване на маркер, за да бъде показван?');
+@define('PLUGIN_FREETAG_NAME', 'РњР°СЂРєРµСЂРё');
+@define('PLUGIN_FREETAG_BLAHBLAH', 'РџРѕРєР°Р·РІР° СЃРїРёСЃСЉРє РЅР° РјР°СЂРєРµСЂРё РєСЉРј СЃС‚Р°С‚РёРёС‚Рµ');
+@define('PLUGIN_FREETAG_NEWLINE', 'Р’СЃРµРєРё РјР°СЂРєРµСЂ РЅР° РЅРѕРІ СЂРµРґ?');
+@define('PLUGIN_FREETAG_XML', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° XML РёРєРѕРЅРё?');
+@define('PLUGIN_FREETAG_SCALE', 'РњР°С‰Р°Р±РёСЂР°РЅРµ РЅР° РіРѕР»РµРјРёРЅР°С‚Р° РЅР° С€СЂРёС„С‚Р° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚ РѕС‚ РїРѕРїСѓР»СЏСЂРЅРѕСЃС‚С‚Р° РЅР° РјР°СЂРєРµСЂР° (РїРѕРґРѕР±РЅРѕ РЅР° flickr)?');
+@define('PLUGIN_FREETAG_UPGRADE1_2', 'РћР±РЅРѕРІСЏРІР°РЅРµ РЅР° %d РјР°СЂРєРµСЂР° Р·Р° СЃС‚Р°С‚РёСЏ РЅРѕРјРµСЂ %d');
+@define('PLUGIN_FREETAG_MAX_TAGS', 'РљРѕР»РєРѕ РјР°СЂРєРµСЂР° РґР° Р±СЉРґР°С‚ РїРѕРєР°Р·РІР°РЅРё?');
+@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'РњРёРЅРёРјР°Р»РµРЅ Р±СЂРѕР№ РЅР° РёР·РїРѕР»Р·РІР°РЅРµ РЅР° РјР°СЂРєРµСЂ, Р·Р° РґР° Р±СЉРґРµ РїРѕРєР°Р·РІР°РЅ?');
 
-@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'Най-малък шрифт % за маркерите в облака');
-@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'Най-голям шрифт % за маркерите в облака');
+@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'РќР°Р№-РјР°Р»СЉРє С€СЂРёС„С‚ % Р·Р° РјР°СЂРєРµСЂРёС‚Рµ РІ РѕР±Р»Р°РєР°');
+@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'РќР°Р№-РіРѕР»СЏРј С€СЂРёС„С‚ % Р·Р° РјР°СЂРєРµСЂРёС‚Рµ РІ РѕР±Р»Р°РєР°');
 
-@define('PLUGIN_FREETAG_META_KEYWORDS', 'Брой на мета-ключовите думи, които да се вграждат в HTML (0: забранено)');
+@define('PLUGIN_FREETAG_META_KEYWORDS', 'Р‘СЂРѕР№ РЅР° РјРµС‚Р°-РєР»СЋС‡РѕРІРёС‚Рµ РґСѓРјРё, РєРѕРёС‚Рѕ РґР° СЃРµ РІРіСЂР°Р¶РґР°С‚ РІ HTML (0: Р·Р°Р±СЂР°РЅРµРЅРѕ)');
 
-@define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Статии с еднакви маркери:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED','Показване на статиите с еднакви маркери?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT','Колко статии с даден маркер да бъдат показвани?');
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Показване на маркерите след статиите?');
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'Ако е позволено, маркерите ще се показват след статиите. Ако е забранено, маркерите ще бъдат поставяни в тялото на статиите (в началната или допълнителната част).');
-@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Маркерите с малки букви');
+@define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'РЎС‚Р°С‚РёРё СЃ РµРґРЅР°РєРІРё РјР°СЂРєРµСЂРё:');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° СЃС‚Р°С‚РёРёС‚Рµ СЃ РµРґРЅР°РєРІРё РјР°СЂРєРµСЂРё?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'РљРѕР»РєРѕ СЃС‚Р°С‚РёРё СЃ РґР°РґРµРЅ РјР°СЂРєРµСЂ РґР° Р±СЉРґР°С‚ РїРѕРєР°Р·РІР°РЅРё?');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РјР°СЂРєРµСЂРёС‚Рµ СЃР»РµРґ СЃС‚Р°С‚РёРёС‚Рµ?');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'РђРєРѕ Рµ РїРѕР·РІРѕР»РµРЅРѕ, РјР°СЂРєРµСЂРёС‚Рµ С‰Рµ СЃРµ РїРѕРєР°Р·РІР°С‚ СЃР»РµРґ СЃС‚Р°С‚РёРёС‚Рµ. РђРєРѕ Рµ Р·Р°Р±СЂР°РЅРµРЅРѕ, РјР°СЂРєРµСЂРёС‚Рµ С‰Рµ Р±СЉРґР°С‚ РїРѕСЃС‚Р°РІСЏРЅРё РІ С‚СЏР»РѕС‚Рѕ РЅР° СЃС‚Р°С‚РёРёС‚Рµ (РІ РЅР°С‡Р°Р»РЅР°С‚Р° РёР»Рё РґРѕРїСЉР»РЅРёС‚РµР»РЅР°С‚Р° С‡Р°СЃС‚).');
+@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'РњР°СЂРєРµСЂРёС‚Рµ СЃ РјР°Р»РєРё Р±СѓРєРІРё');
 
-@define('PLUGIN_EVENT_FREETAG_RELATED_TAGS', 'Свързани маркери');
-@define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Връзка');
-@define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'Създаване на маркери за всички асоциирани категории?');
-@define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Ако е позволено, всички категории, към които дадена статия е асоциирана ще бъдат добавени като маркери към статията. Можете да установите всички асоциации на категории за всички съществуващи статии през панел "Управление на маркерите" в административната страница.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Шаблон за страничния панел (see default theme copy example');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! Ако е установен, шаблонът се използва за изобразяване на маркерите в страничния панел. В шаблона има променлива <tags> която съдържа списъка на маркерите във формат <tagName> => array(href => <tagLink>, count => <tagCount>)');
-@define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'Преобразуване на всички асоциирани категории за съществуващи статии в маркери');
-@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'Преобразувани категории за статия #%d (%s): %s.');
-@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Всички категории са преобразувани в маркери.');
+@define('PLUGIN_EVENT_FREETAG_RELATED_TAGS', 'РЎРІСЉСЂР·Р°РЅРё РјР°СЂРєРµСЂРё');
+@define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Р’СЂСЉР·РєР°');
+@define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'РЎСЉР·РґР°РІР°РЅРµ РЅР° РјР°СЂРєРµСЂРё Р·Р° РІСЃРёС‡РєРё Р°СЃРѕС†РёРёСЂР°РЅРё РєР°С‚РµРіРѕСЂРёРё?');
+@define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'РђРєРѕ Рµ РїРѕР·РІРѕР»РµРЅРѕ, РІСЃРёС‡РєРё РєР°С‚РµРіРѕСЂРёРё, РєСЉРј РєРѕРёС‚Рѕ РґР°РґРµРЅР° СЃС‚Р°С‚РёСЏ Рµ Р°СЃРѕС†РёРёСЂР°РЅР° С‰Рµ Р±СЉРґР°С‚ РґРѕР±Р°РІРµРЅРё РєР°С‚Рѕ РјР°СЂРєРµСЂРё РєСЉРј СЃС‚Р°С‚РёСЏС‚Р°. РњРѕР¶РµС‚Рµ РґР° СѓСЃС‚Р°РЅРѕРІРёС‚Рµ РІСЃРёС‡РєРё Р°СЃРѕС†РёР°С†РёРё РЅР° РєР°С‚РµРіРѕСЂРёРё Р·Р° РІСЃРёС‡РєРё СЃСЉС‰РµСЃС‚РІСѓРІР°С‰Рё СЃС‚Р°С‚РёРё РїСЂРµР· РїР°РЅРµР» "РЈРїСЂР°РІР»РµРЅРёРµ РЅР° РјР°СЂРєРµСЂРёС‚Рµ" РІ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РёРІРЅР°С‚Р° СЃС‚СЂР°РЅРёС†Р°.');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'РЁР°Р±Р»РѕРЅ Р·Р° СЃС‚СЂР°РЅРёС‡РЅРёСЏ РїР°РЅРµР» (see default theme copy example');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! РђРєРѕ Рµ СѓСЃС‚Р°РЅРѕРІРµРЅ, С€Р°Р±Р»РѕРЅСЉС‚ СЃРµ РёР·РїРѕР»Р·РІР° Р·Р° РёР·РѕР±СЂР°Р·СЏРІР°РЅРµ РЅР° РјР°СЂРєРµСЂРёС‚Рµ РІ СЃС‚СЂР°РЅРёС‡РЅРёСЏ РїР°РЅРµР». Р’ С€Р°Р±Р»РѕРЅР° РёРјР° РїСЂРѕРјРµРЅР»РёРІР° <tags> РєРѕСЏС‚Рѕ СЃСЉРґСЉСЂР¶Р° СЃРїРёСЃСЉРєР° РЅР° РјР°СЂРєРµСЂРёС‚Рµ РІСЉРІ С„РѕСЂРјР°С‚ <tagName> => array(href => <tagLink>, count => <tagCount>)');
+@define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'РџСЂРµРѕР±СЂР°Р·СѓРІР°РЅРµ РЅР° РІСЃРёС‡РєРё Р°СЃРѕС†РёРёСЂР°РЅРё РєР°С‚РµРіРѕСЂРёРё Р·Р° СЃСЉС‰РµСЃС‚РІСѓРІР°С‰Рё СЃС‚Р°С‚РёРё РІ РјР°СЂРєРµСЂРё');
+@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'РџСЂРµРѕР±СЂР°Р·СѓРІР°РЅРё РєР°С‚РµРіРѕСЂРёРё Р·Р° СЃС‚Р°С‚РёСЏ #%d (%s): %s.');
+@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Р’СЃРёС‡РєРё РєР°С‚РµРіРѕСЂРёРё СЃР° РїСЂРµРѕР±СЂР°Р·СѓРІР°РЅРё РІ РјР°СЂРєРµСЂРё.');
 
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Автоматични ключови думи');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Можете да асоциирате ключови думи, разделени със \',\' за всеки маркер. Когато ключовите думи се използват в текста на статиите, съответните маркери се асоциират със статиите. Все пак да се има предвид, че твърде много ключови думи могат да увеличат времето за запис на статията.');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Намерена ключова дума <strong>%s</strong>, маркер <strong><em>%s</em></strong> е асоцииран автоматично.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'РђРІС‚РѕРјР°С‚РёС‡РЅРё РєР»СЋС‡РѕРІРё РґСѓРјРё');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'РњРѕР¶РµС‚Рµ РґР° Р°СЃРѕС†РёРёСЂР°С‚Рµ РєР»СЋС‡РѕРІРё РґСѓРјРё, СЂР°Р·РґРµР»РµРЅРё СЃСЉСЃ \',\' Р·Р° РІСЃРµРєРё РјР°СЂРєРµСЂ. РљРѕРіР°С‚Рѕ РєР»СЋС‡РѕРІРёС‚Рµ РґСѓРјРё СЃРµ РёР·РїРѕР»Р·РІР°С‚ РІ С‚РµРєСЃС‚Р° РЅР° СЃС‚Р°С‚РёРёС‚Рµ, СЃСЉРѕС‚РІРµС‚РЅРёС‚Рµ РјР°СЂРєРµСЂРё СЃРµ Р°СЃРѕС†РёРёСЂР°С‚ СЃСЉСЃ СЃС‚Р°С‚РёРёС‚Рµ. Р’СЃРµ РїР°Рє РґР° СЃРµ РёРјР° РїСЂРµРґРІРёРґ, С‡Рµ С‚РІСЉСЂРґРµ РјРЅРѕРіРѕ РєР»СЋС‡РѕРІРё РґСѓРјРё РјРѕРіР°С‚ РґР° СѓРІРµР»РёС‡Р°С‚ РІСЂРµРјРµС‚Рѕ Р·Р° Р·Р°РїРёСЃ РЅР° СЃС‚Р°С‚РёСЏС‚Р°.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'РќР°РјРµСЂРµРЅР° РєР»СЋС‡РѕРІР° РґСѓРјР° <strong>%s</strong>, РјР°СЂРєРµСЂ <strong><em>%s</em></strong> Рµ Р°СЃРѕС†РёРёСЂР°РЅ Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ.');
 
-@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Преглед на статии от %d до %d');
-@define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (общо %d статии)...');
-@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT', 'Преглед на следващия пакет статии...');
-@define('PLUGIN_EVENT_FREETAG_REBUILD', 'Преизчисляване на всички ключови думи');
-@define('PLUGIN_EVENT_FREETAG_REBUILD_DESC', 'Внимание: Тази функция ще презапише всяка статия във вашия блог. Това ще отнеме известно време и е потенциално опасно за статиите. Моля първо направете резервно копие на базата данни. Натиснете \'CANCEL\', ако желаете да прекратите операцията.');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'РџСЂРµРіР»РµРґ РЅР° СЃС‚Р°С‚РёРё РѕС‚ %d РґРѕ %d');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (РѕР±С‰Рѕ %d СЃС‚Р°С‚РёРё)...');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT', 'РџСЂРµРіР»РµРґ РЅР° СЃР»РµРґРІР°С‰РёСЏ РїР°РєРµС‚ СЃС‚Р°С‚РёРё...');
+@define('PLUGIN_EVENT_FREETAG_REBUILD', 'РџСЂРµРёР·С‡РёСЃР»СЏРІР°РЅРµ РЅР° РІСЃРёС‡РєРё РєР»СЋС‡РѕРІРё РґСѓРјРё');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_DESC', 'Р’РЅРёРјР°РЅРёРµ: РўР°Р·Рё С„СѓРЅРєС†РёСЏ С‰Рµ РїСЂРµР·Р°РїРёС€Рµ РІСЃСЏРєР° СЃС‚Р°С‚РёСЏ РІСЉРІ РІР°С€РёСЏ Р±Р»РѕРі. РўРѕРІР° С‰Рµ РѕС‚РЅРµРјРµ РёР·РІРµСЃС‚РЅРѕ РІСЂРµРјРµ Рё Рµ РїРѕС‚РµРЅС†РёР°Р»РЅРѕ РѕРїР°СЃРЅРѕ Р·Р° СЃС‚Р°С‚РёРёС‚Рµ. РњРѕР»СЏ РїСЉСЂРІРѕ РЅР°РїСЂР°РІРµС‚Рµ СЂРµР·РµСЂРІРЅРѕ РєРѕРїРёРµ РЅР° Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё. РќР°С‚РёСЃРЅРµС‚Рµ \'CANCEL\', Р°РєРѕ Р¶РµР»Р°РµС‚Рµ РґР° РїСЂРµРєСЂР°С‚РёС‚Рµ РѕРїРµСЂР°С†РёСЏС‚Р°.');
 
-@define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Име на маркер');
-@define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Брой появи');
+@define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'РРјРµ РЅР° РјР°СЂРєРµСЂ');
+@define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Р‘СЂРѕР№ РїРѕСЏРІРё');
 
-@define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML изображение (относително спрямо пътя до избраната тема на блога)');
+@define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML РёР·РѕР±СЂР°Р¶РµРЅРёРµ (РѕС‚РЅРѕСЃРёС‚РµР»РЅРѕ СЃРїСЂСЏРјРѕ РїСЉС‚СЏ РґРѕ РёР·Р±СЂР°РЅР°С‚Р° С‚РµРјР° РЅР° Р±Р»РѕРіР°)');
 
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'При избор на \'Smarty\', ще бъде създадена \'Smarty\' променлива {$entry.freetag}, която можете да сложите навсякъде в файл entries.tpl.');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'РџСЂРё РёР·Р±РѕСЂ РЅР° \'Smarty\', С‰Рµ Р±СЉРґРµ СЃСЉР·РґР°РґРµРЅР° \'Smarty\' РїСЂРѕРјРµРЅР»РёРІР° {$entry.freetag}, РєРѕСЏС‚Рѕ РјРѕР¶РµС‚Рµ РґР° СЃР»РѕР¶РёС‚Рµ РЅР°РІСЃСЏРєСЉРґРµ РІ С„Р°Р№Р» entries.tpl.');
 

@@ -15,7 +15,7 @@
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tags: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', 'Post con tag <span class="freetag_current">%s</span>');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tag simili a %s');
-@define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Non ci sono tag associati.');
+@define('PLUGIN_EVENT_FREETAG_NO_RELATED','Non ci sono tag associati.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Tutti i tag');
 @define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'Gestione tag');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'Gestione di tutti i tag');
@@ -33,8 +33,8 @@
 @define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'Usa la virgola per separare i tag:');
 @define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'Visualizza la nuvola dei tag correlati ai post?');
 @define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Post simili:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Visualizzare post simili?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Quanti post simili devono essere visualizzati?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED','Visualizzare post simili?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT','Quanti post simili devono essere visualizzati?');
 
 //
 //  serendipity_plugin_freetag.php
@@ -43,8 +43,8 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'Mostra i tag associati ai post');
 @define('PLUGIN_FREETAG_NEWLINE', 'Fineriga dopo ogni tag?');
 @define('PLUGIN_FREETAG_XML', 'Visualizza le icone XML?');
-@define('PLUGIN_FREETAG_SCALE', 'Scala la dimensione dei font in base alla popolarit‡ (come Flickr)?');
-@define('PLUGIN_FREETAG_UPGRADE1_2', 'Salvando i tag %d per il post %d');
+@define('PLUGIN_FREETAG_SCALE','Scala la dimensione dei font in base alla popolarit√† (come Flickr)?');
+@define('PLUGIN_FREETAG_UPGRADE1_2','Salvando i tag %d per il post %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'Quanti tag devono essere visualizzati?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Quante occorrenze deve avere un tag per essere visibile?');
 

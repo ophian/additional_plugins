@@ -43,7 +43,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.1.0');
+        $propbag->add('version',       '6.2.0');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1598,7 +1598,6 @@ document.addEventListener("DOMContentLoaded", function() {
     static function getAllTags()
     {
         global $serendipity;
-
         static $memo = false;
 
         if (is_array($memo)) {
@@ -1607,10 +1606,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $q = "SELECT tag, count(tag) AS total
                 FROM {$serendipity['dbPrefix']}entrytags
-            GROUP BY tag
-            ORDER BY tag";
+              GROUP BY tag
+              ORDER BY tag";
 
         $rows = serendipity_db_query($q);
+
+        if ($rows === true) {
+            echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_MANAGE_TAGS_NONE . "</span>\n";
+        }
 
         if (!is_array($rows)) {
             return array();

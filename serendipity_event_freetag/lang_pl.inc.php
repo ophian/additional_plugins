@@ -9,51 +9,51 @@
 //
 //  serendipity_event_freetag.php
 //
-@define('PLUGIN_EVENT_FREETAG_TITLE', 'Tagowanie wpisów');
-@define('PLUGIN_EVENT_FREETAG_DESC', 'Umo¿liwia dowolne tagowanie wpisów');
-@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Wprowad¼ dowolne pasuj±ce tagi. Rozdzielaj tagi przecinkami (,).');
+@define('PLUGIN_EVENT_FREETAG_TITLE', 'Tagowanie wpisÃ³w');
+@define('PLUGIN_EVENT_FREETAG_DESC', 'UmoÅ¼liwia dowolne tagowanie wpisÃ³w');
+@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'WprowadÅº dowolne pasujÄ…ce tagi. Rozdzielaj tagi przecinkami (,).');
 @define('PLUGIN_EVENT_FREETAG_LIST', 'Tagi dla tego wpisu: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', 'Wpisy otagowane jako <span class="freetag_current">%s</span>');
-@define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tagi powi±zane z tagiem %s');
-@define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Brak powi±zanych tagów.');
+@define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Tagi powiÄ…zane z tagiem %s');
+@define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Brak powiÄ…zanych tagÃ³w.');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Wszystkie zdefiniowane tagi');
-@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'Zarz±dzaj tagami');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'Zarz±dzaj wszystkimi tagami');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'Zarz±dzaj tagami \'Leaf\' (pojedynczymi)');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'Lista nieotagowanych wpisów');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'Lista wpisów z tagami \'Leaf\'');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE', 'Nie ma nieotagowanych wpisów!');
+@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'ZarzÄ…dzaj tagami');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'ZarzÄ…dzaj wszystkimi tagami');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'ZarzÄ…dzaj tagami \'Leaf\' (pojedynczymi)');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'Lista nieotagowanych wpisÃ³w');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'Lista wpisÃ³w z tagami \'Leaf\'');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE', 'Nie ma nieotagowanych wpisÃ³w!');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG', 'Tag');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_WEIGHT', 'Waga');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS', 'Akcja');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME', 'Zmieñ nazwê');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME', 'ZmieÅ„ nazwÄ™');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT', 'Rozdziel');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE', 'Usuñ');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE', 'Na pewno chcesz usun±æ tag %s?');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'u¿yj przecinka by rozdzieliæ tagi:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'Pokazaæ tag cloud (chmurê tagów) do powi±zanych wpisów?');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE', 'UsuÅ„');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE', 'Na pewno chcesz usunÄ…Ä‡ tag %s?');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'uÅ¼yj przecinka by rozdzieliÄ‡ tagi:');
+@define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'PokazaÄ‡ tag cloud (chmurÄ™ tagÃ³w) do powiÄ…zanych wpisÃ³w?');
 
 //
 //  serendipity_plugin_freetag.php
 //
 @define('PLUGIN_FREETAG_NAME', 'Tagi');
-@define('PLUGIN_FREETAG_BLAHBLAH', 'Pokazuje listê tagów zdefiniowanych dla wpisów');
-@define('PLUGIN_FREETAG_NEWLINE', 'Przej¶cie do nowej linii po ka¿dym tagu?');
-@define('PLUGIN_FREETAG_XML', 'Pokazywaæ ikony XML?');
-@define('PLUGIN_FREETAG_SCALE', 'Skalowaæ rozmiar czcionki w zale¿no¶ci od popularno¶ci taga (jak w serwisach ??? czy flickr)?');
-@define('PLUGIN_FREETAG_UPGRADE1_2', 'Poprawiono %d tagów dla wpisu numer: %d');
-@define('PLUGIN_FREETAG_MAX_TAGS', 'Jak wiele tagów ma byæ pokazywanych?');
-@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Jak wiele razy musi wyst±piæ dany tag, by by³ pokazywany na li¶cie?');
+@define('PLUGIN_FREETAG_BLAHBLAH', 'Pokazuje listÄ™ tagÃ³w zdefiniowanych dla wpisÃ³w');
+@define('PLUGIN_FREETAG_NEWLINE', 'PrzejÅ›cie do nowej linii po kaÅ¼dym tagu?');
+@define('PLUGIN_FREETAG_XML', 'PokazywaÄ‡ ikony XML?');
+@define('PLUGIN_FREETAG_SCALE', 'SkalowaÄ‡ rozmiar czcionki w zaleÅ¼noÅ›ci od popularnoÅ›ci taga (jak w serwisach flickr)?');
+@define('PLUGIN_FREETAG_UPGRADE1_2', 'Poprawiono %d tagÃ³w dla wpisu numer: %d');
+@define('PLUGIN_FREETAG_MAX_TAGS', 'Jak wiele tagÃ³w ma byÄ‡ pokazywanych?');
+@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Jak wiele razy musi wystÄ…piÄ‡ dany tag, by byÅ‚ pokazywany na liÅ›cie?');
 
-@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'Minimalny rozmiar czcionki w procentach (%) w chmurze tagów (tag cloud)');
-@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'Maksymalny rozmiar czcionki w procentach (%) w chmurze tagów (tag cloud)');
+@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'Minimalny rozmiar czcionki w procentach (%) w chmurze tagÃ³w (tag cloud)');
+@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'Maksymalny rozmiar czcionki w procentach (%) w chmurze tagÃ³w (tag cloud)');
 
-@define('PLUGIN_FREETAG_META_KEYWORDS', 'Ilo¶æ s³ów kluczowych meta umieszczanych w ¼ródle HTML (0: wy³±czenie opcji)');
+@define('PLUGIN_FREETAG_META_KEYWORDS', 'IloÅ›Ä‡ sÅ‚Ã³w kluczowych meta umieszczanych w ÅºrÃ³dle HTML (0: wyÅ‚Ä…czenie opcji)');
 
-@define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Powi±zane wpisy wedlug tagów:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Wy¶wietlaæ wpisy powi±zane wed³ug tagów?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Jak wiele powi±zanych wpisów ma byæ pokazywanych?');
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Pokazywaæ tagi w stopce wpisu?');
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'Je¶li opcja jest w³±czona, tagi bêd± pokazywane w stopce wpisu. Je¶li opcja bêdzie wy³±czona, tagi zostan± umieszczone w tre¶ci (na samym dole) wpisu lub rozszerzonej tre¶ci wpisu.');
-@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Poka¿ tagi tylko ma³ymi literami');
+@define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'PowiÄ…zane wpisy wedlug tagÃ³w:');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'WyÅ›wietlaÄ‡ wpisy powiÄ…zane wedÅ‚ug tagÃ³w?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Jak wiele powiÄ…zanych wpisÃ³w ma byÄ‡ pokazywanych?');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'PokazywaÄ‡ tagi w stopce wpisu?');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'JeÅ›li opcja jest wÅ‚Ä…czona, tagi bÄ™dÄ… pokazywane w stopce wpisu. JeÅ›li opcja bÄ™dzie wyÅ‚Ä…czona, tagi zostanÄ… umieszczone w treÅ›ci (na samym dole) wpisu lub rozszerzonej treÅ›ci wpisu.');
+@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'PokaÅ¼ tagi tylko maÅ‚ymi literami');
 

@@ -1,3 +1,8 @@
+6.2.0:
+-----
+ * Add PLUGIN_EVENT_FREETAG_MANAGE_TAGS_NONE message
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+
 6.1.0:
 -----
  * Use PHP 8.2 name arguments

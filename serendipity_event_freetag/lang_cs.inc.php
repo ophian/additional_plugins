@@ -1,21 +1,21 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/17
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/25
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/11/29
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/04/12
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/01/11
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/07/05
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/05/13
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/20
  */
 
@@ -23,111 +23,111 @@
 //  serendipity_event_freetag.php
 //
 
-@define('PLUGIN_EVENT_FREETAG_TITLE', 'Klíèová slova');
-@define('PLUGIN_EVENT_FREETAG_DESC', 'Umoòuje libovolné pøidávání klíèovıch slov k pøíspìvkùm');
-@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'Vlote libovolné mnoství klíèovıch slov, která se k èlánku vztahují. Oddìlujte èárkou (,)');
-@define('PLUGIN_EVENT_FREETAG_LIST', 'Klíèová slova tohoto pøíspìvku: %s');
-@define('PLUGIN_EVENT_FREETAG_USING', 'Pøíspìvky oznaèené <span class="freetag_current">%s</span>');
-@define('PLUGIN_EVENT_FREETAG_SUBTAG', 'Klíèová slova pøíbuzná ke slovu %s');
-@define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'ádná pøíbuzná klíèová slova');
-@define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'Všechna definovaná klíèová slova');
-@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'Správa klíèovıch slov');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'Správa všech klíèovıch slov');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'Správa \'koncovıch\' klíèovıch slov');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'Vypsat pøíspìvky bez klíèovıch slov');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'Vypsat pøíspìvky s \'koncovımi\' klíèovımi slovy');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE', 'ádné pøíspìvky bez klíèovıch slov!');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG', 'Klíèové slovo');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_WEIGHT', 'Váha');
+@define('PLUGIN_EVENT_FREETAG_TITLE', 'KlÃ­ÄovÃ¡ slova');
+@define('PLUGIN_EVENT_FREETAG_DESC', 'UmoÅ¾Åˆuje libovolnÃ© pÅ™idÃ¡vÃ¡nÃ­ klÃ­ÄovÃ½ch slov k pÅ™Ã­spÄ›vkÅ¯m');
+@define('PLUGIN_EVENT_FREETAG_ENTERDESC', 'VloÅ¾te libovolnÃ© mnoÅ¾stvÃ­ klÃ­ÄovÃ½ch slov, kterÃ¡ se k ÄlÃ¡nku vztahujÃ­. OddÄ›lujte ÄÃ¡rkou (,)');
+@define('PLUGIN_EVENT_FREETAG_LIST', 'KlÃ­ÄovÃ¡ slova tohoto pÅ™Ã­spÄ›vku: %s');
+@define('PLUGIN_EVENT_FREETAG_USING', 'PÅ™Ã­spÄ›vky oznaÄenÃ© <span class="freetag_current">%s</span>');
+@define('PLUGIN_EVENT_FREETAG_SUBTAG', 'KlÃ­ÄovÃ¡ slova pÅ™Ã­buznÃ¡ ke slovu %s');
+@define('PLUGIN_EVENT_FREETAG_NO_RELATED', 'Å½Ã¡dnÃ¡ pÅ™Ã­buznÃ¡ klÃ­ÄovÃ¡ slova');
+@define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'VÅ¡echna definovanÃ¡ klÃ­ÄovÃ¡ slova');
+@define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'SprÃ¡va klÃ­ÄovÃ½ch slov');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'SprÃ¡va vÅ¡ech klÃ­ÄovÃ½ch slov');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAF', 'SprÃ¡va \'koncovÃ½ch\' klÃ­ÄovÃ½ch slov');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED', 'Vypsat pÅ™Ã­spÄ›vky bez klÃ­ÄovÃ½ch slov');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGGED', 'Vypsat pÅ™Ã­spÄ›vky s \'koncovÃ½mi\' klÃ­ÄovÃ½mi slovy');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_UNTAGGED_NONE', 'Å½Ã¡dnÃ© pÅ™Ã­spÄ›vky bez klÃ­ÄovÃ½ch slov!');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_TAG', 'KlÃ­ÄovÃ© slovo');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_WEIGHT', 'VÃ¡ha');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LIST_ACTIONS', 'Akce');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME', 'Pøejmenuvat');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT', 'Rozdìlit');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME', 'PÅ™ejmenuvat');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT', 'RozdÄ›lit');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE', 'Smazat');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE', 'Opravdu chcete smazat klíèové slovo %s?');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'pouijte èárku pro oddìlení slov:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'Zobrazit mnoinu pøíbuznıch klíèovıch slov?');
-@define('PLUGIN_EVENT_FREETAG_SEND_HTTP_HEADER', 'Posílat HTTP hlavièku X-FreeTag');
-@define('PLUGIN_EVENT_FREETAG_ADMIN_TAGLIST', 'Zobrazit seznam všech tagù pøi úpravách pøíspìvkù');
-@define('PLUGIN_EVENT_FREETAG_ADMIN_FTAYT', 'Aktivovat \'Hledání-tagù-bìhem-psaní\'');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE', 'Opravdu chcete smazat klÃ­ÄovÃ© slovo %s?');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT', 'pouÅ¾ijte ÄÃ¡rku pro oddÄ›lenÃ­ slov:');
+@define('PLUGIN_EVENT_FREETAG_SHOW_TAGCLOUD', 'Zobrazit mnoÅ¾inu pÅ™Ã­buznÃ½ch klÃ­ÄovÃ½ch slov?');
+@define('PLUGIN_EVENT_FREETAG_SEND_HTTP_HEADER', 'PosÃ­lat HTTP hlaviÄku X-FreeTag');
+@define('PLUGIN_EVENT_FREETAG_ADMIN_TAGLIST', 'Zobrazit seznam vÅ¡ech tagÅ¯ pÅ™i ÃºpravÃ¡ch pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_EVENT_FREETAG_ADMIN_FTAYT', 'Aktivovat \'HledÃ¡nÃ­-tagÅ¯-bÄ›hem-psanÃ­\'');
 
 //
 //  serendipity_plugin_freetag.php
 //
 
-@define('PLUGIN_FREETAG_NAME', 'Zobrazit pøíspìvky s klíèovımi slovy');
-@define('PLUGIN_FREETAG_BLAHBLAH', 'Zobrazí seznam existujících klíèovıch slov');
-@define('PLUGIN_FREETAG_NEWLINE', 'Nová øádka za kadım klíèovım slovem?');
+@define('PLUGIN_FREETAG_NAME', 'Zobrazit pÅ™Ã­spÄ›vky s klÃ­ÄovÃ½mi slovy');
+@define('PLUGIN_FREETAG_BLAHBLAH', 'ZobrazÃ­ seznam existujÃ­cÃ­ch klÃ­ÄovÃ½ch slov');
+@define('PLUGIN_FREETAG_NEWLINE', 'NovÃ¡ Å™Ã¡dka za kaÅ¾dÃ½m klÃ­ÄovÃ½m slovem?');
 @define('PLUGIN_FREETAG_XML', 'Zobrazovat XML ikony?');
-@define('PLUGIN_FREETAG_SCALE', 'Mìnit velikost fontu klíèového slova podle jeho oblíbenosti (jako je to na Flickru)?');
-@define('PLUGIN_FREETAG_UPGRADE1_2', 'Aktualizace %d klíèovıch slov pro pøíspìvek è.%d');
-@define('PLUGIN_FREETAG_MAX_TAGS', 'Kolik klíèovıch slov zobrazovat?');
-@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'Kolikrát se musí klíèové slovo vyskytnout, aby bylo zobrazeno?');
+@define('PLUGIN_FREETAG_SCALE', 'MÄ›nit velikost fontu klÃ­ÄovÃ©ho slova podle jeho oblÃ­benosti (jako je to na ??? nebo Flickru)?');
+@define('PLUGIN_FREETAG_UPGRADE1_2', 'Aktualizace %d klÃ­ÄovÃ½ch slov pro pÅ™Ã­spÄ›vek Ä.%d');
+@define('PLUGIN_FREETAG_MAX_TAGS', 'Kolik klÃ­ÄovÃ½ch slov zobrazovat?');
+@define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'KolikrÃ¡t se musÃ­ klÃ­ÄovÃ© slovo vyskytnout, aby bylo zobrazeno?');
 
-@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'Nejmenší velikost fontu písma v % pøi zobrazení mnoiny klíèovıch slov');
-@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'Nejvìtší velikost fontu písma v % pøi zobrazení mnoiny klíèovıch slov');
+@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MIN', 'NejmenÅ¡Ã­ velikost fontu pÃ­sma v % pÅ™i zobrazenÃ­ mnoÅ¾iny klÃ­ÄovÃ½ch slov');
+@define('PLUGIN_EVENT_FREETAG_TAGCLOUD_MAX', 'NejvÄ›tÅ¡Ã­ velikost fontu pÃ­sma v % pÅ™i zobrazenÃ­ mnoÅ¾iny klÃ­ÄovÃ½ch slov');
 
-@define('PLUGIN_FREETAG_META_KEYWORDS', 'Poèet klíèovıch slov, která mají bıt vloena do "meta keywords" tagu v hlavièce zdrojového HTML kódu (0: zakázat generování meta tagu)');
+@define('PLUGIN_FREETAG_META_KEYWORDS', 'PoÄet klÃ­ÄovÃ½ch slov, kterÃ¡ majÃ­ bÃ½t vloÅ¾ena do "meta keywords" tagu v hlaviÄce zdrojovÃ©ho HTML kÃ³du (0: zakÃ¡zat generovÃ¡nÃ­ meta tagu)');
 
-@define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'Pøíbuzné pøípìvky podle klíèovıch slov:');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Zobrazovat pøíbuzné pøíspìvky podle klíèovıch slov?');
-@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Kolik pøíbuznıch pøíspìvkù má bıt zobrazeno?');
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Zobrazovat klíèová slova v patièce?');
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'Pokud je povoleno, klíèová slova se budou zobrazovat v patièce stránky. Pokud je zakázáno, klíèová slova budou vloena do pøíspìvku.');
-@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Slova malımi písmeny');
+@define('PLUGIN_EVENT_FREETAG_RELATED_ENTRIES', 'PÅ™Ã­buznÃ© pÅ™Ã­pÄ›vky podle klÃ­ÄovÃ½ch slov:');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED', 'Zobrazovat pÅ™Ã­buznÃ© pÅ™Ã­spÄ›vky podle klÃ­ÄovÃ½ch slov?');
+@define('PLUGIN_EVENT_FREETAG_SHOW_RELATED_COUNT', 'Kolik pÅ™Ã­buznÃ½ch pÅ™Ã­spÄ›vkÅ¯ mÃ¡ bÃ½t zobrazeno?');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER', 'Zobrazovat klÃ­ÄovÃ¡ slova v patiÄce?');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC', 'Pokud je povoleno, klÃ­ÄovÃ¡ slova se budou zobrazovat v patiÄce strÃ¡nky. Pokud je zakÃ¡zÃ¡no, klÃ­ÄovÃ¡ slova budou vloÅ¾ena do pÅ™Ã­spÄ›vku.');
+@define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS', 'Slova malÃ½mi pÃ­smeny');
 
-@define('PLUGIN_EVENT_FREETAG_RELATED_TAGS', 'Pøíbuzná klíèová slova');
-@define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Odkaz na klíèové slovo');
-@define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'Vytvoøit klíèová slova pøo všechny pøiøazené kategorie?');
-@define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Pokud je povoleno, názvy všech kategorií, do kterıch je pøíspìvek zaøazen, budou pøidány jako klíèová slova. Mùete nastavit pøiøazení názvù kategorií jako klíèovıch slov pro všechny ji existující pøíspìvky pomocí menu "Správa klíèovıch slov" v Administrativní sekci.');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Šablona postranního sloupce (see default theme copy example');
-@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! Pokud je nastaveno, je šablona pouita k vykreslení postranního sloupce s klíèovımi slovy. V šablonì je pøístupná promìnná <tags>, ta obsahuje seznam tagù ve formátu <tagName> => array(href => <tagLink>, count => <tagCount>)');
-@define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'Pøevést pøiøazené kategorie všech pøíspìvkù na klíèová slova');
-@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'Byly pøevedeny kategorie pøíspìvku è.%d (%s): %s.');
-@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Ze jmen všech kategorií byla vytvoøena klíèová slova.');
+@define('PLUGIN_EVENT_FREETAG_RELATED_TAGS', 'PÅ™Ã­buznÃ¡ klÃ­ÄovÃ¡ slova');
+@define('PLUGIN_EVENT_FREETAG_TAGLINK', 'Odkaz na klÃ­ÄovÃ© slovo');
+@define('PLUGIN_EVENT_FREETAG_CAT2TAG', 'VytvoÅ™it klÃ­ÄovÃ¡ slova pÅ™o vÅ¡echny pÅ™iÅ™azenÃ© kategorie?');
+@define('PLUGIN_EVENT_FREETAG_CAT2TAG_DESC', 'Pokud je povoleno, nÃ¡zvy vÅ¡ech kategoriÃ­, do kterÃ½ch je pÅ™Ã­spÄ›vek zaÅ™azen, budou pÅ™idÃ¡ny jako klÃ­ÄovÃ¡ slova. MÅ¯Å¾ete nastavit pÅ™iÅ™azenÃ­ nÃ¡zvÅ¯ kategoriÃ­ jako klÃ­ÄovÃ½ch slov pro vÅ¡echny jiÅ¾ existujÃ­cÃ­ pÅ™Ã­spÄ›vky pomocÃ­ menu "SprÃ¡va klÃ­ÄovÃ½ch slov" v AdministrativnÃ­ sekci.');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE', 'Å ablona postrannÃ­ho sloupce (see default theme copy example');
+@define('PLUGIN_EVENT_FREETAG_TEMPLATE_DESCRIPTION', 'Not named "plugin_freetag.tpl", which is already used! Pokud je nastaveno, je Å¡ablona pouÅ¾ita k vykreslenÃ­ postrannÃ­ho sloupce s klÃ­ÄovÃ½mi slovy. V Å¡ablonÄ› je pÅ™Ã­stupnÃ¡ promÄ›nnÃ¡ <tags>, ta obsahuje seznam tagÅ¯ ve formÃ¡tu <tagName> => array(href => <tagLink>, count => <tagCount>)');
+@define('PLUGIN_EVENT_FREETAG_GLOBALLINKS', 'PÅ™evÃ©st pÅ™iÅ™azenÃ© kategorie vÅ¡ech pÅ™Ã­spÄ›vkÅ¯ na klÃ­ÄovÃ¡ slova');
+@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY', 'Byly pÅ™evedeny kategorie pÅ™Ã­spÄ›vku Ä.%d (%s): %s.');
+@define('PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG', 'Ze jmen vÅ¡ech kategoriÃ­ byla vytvoÅ™ena klÃ­ÄovÃ¡ slova.');
 
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'Automatická klíèová slova');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Zde mùete pøiøadit ke kadému klíèovéu slovu libovolné mnoství obecnıch slov (oddìlujte èárkou ","). Kdykoliv se tato obecná slova vyskytnou v pøíspìvku, jim odpovídající klíèové slovo bude automaticky pøiøazeno k pøíspìvku. Mìjte na pamìti, e mnoho automatickıch slov mùe vıznamnì zvıšit èas ukládání pøíspìvku.');
-@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Nalezeno slovo <strong>%s</strong>, klíèové slovo <strong><em>%s</em></strong> bylo automaticky pøiøazeno.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS', 'AutomatickÃ¡ klÃ­ÄovÃ¡ slova');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_DESC', 'Zde mÅ¯Å¾ete pÅ™iÅ™adit ke kaÅ¾dÃ©mu klÃ­ÄovÃ©u slovu libovolnÃ© mnoÅ¾stvÃ­ obecnÃ½ch slov (oddÄ›lujte ÄÃ¡rkou ","). Kdykoliv se tato obecnÃ¡ slova vyskytnou v pÅ™Ã­spÄ›vku, jim odpovÃ­dajÃ­cÃ­ klÃ­ÄovÃ© slovo bude automaticky pÅ™iÅ™azeno k pÅ™Ã­spÄ›vku. MÄ›jte na pamÄ›ti, Å¾e mnoho automatickÃ½ch slov mÅ¯Å¾e vÃ½znamnÄ› zvÃ½Å¡it Äas uklÃ¡dÃ¡nÃ­ pÅ™Ã­spÄ›vku.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORDS_ADD', 'Nalezeno slovo <strong>%s</strong>, klÃ­ÄovÃ© slovo <strong><em>%s</em></strong> bylo automaticky pÅ™iÅ™azeno.');
 
-@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'Zobrazení pøíspìvkù %d a %d');
-@define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (celkem %d pøíspìvkù)...');
-@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT', 'Zobrazování další dávky pøíspìvkù...');
-@define('PLUGIN_EVENT_FREETAG_REBUILD', 'Znovupøiøazení všech automatickıch slov');
-@define('PLUGIN_EVENT_FREETAG_REBUILD_DESC', 'VAROVÁNÍ: Tato funkce pøiøadí a znovu uloí kadı z pøíspìvkù. Bude to dlouho trvat a dokonce to mùe ponièit nìkteré z pøíspìvkù. Vøele se doporuèuje nejdøíve zálohovat databázi! Kliknìte na "Zrušit" pro pøerušení akce.');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNO', 'ZobrazenÃ­ pÅ™Ã­spÄ›vkÅ¯ %d aÅ¾ %d');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_TOTAL', ' (celkem %d pÅ™Ã­spÄ›vkÅ¯)...');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT', 'ZobrazovÃ¡nÃ­ dalÅ¡Ã­ dÃ¡vky pÅ™Ã­spÄ›vkÅ¯...');
+@define('PLUGIN_EVENT_FREETAG_REBUILD', 'ZnovupÅ™iÅ™azenÃ­ vÅ¡ech automatickÃ½ch slov');
+@define('PLUGIN_EVENT_FREETAG_REBUILD_DESC', 'VAROVÃNÃ: Tato funkce pÅ™iÅ™adÃ­ a znovu uloÅ¾Ã­ kaÅ¾dÃ½ z pÅ™Ã­spÄ›vkÅ¯. Bude to dlouho trvat a dokonce to mÅ¯Å¾e poniÄit nÄ›kterÃ© z pÅ™Ã­spÄ›vkÅ¯. VÅ™ele se doporuÄuje nejdÅ™Ã­ve zÃ¡lohovat databÃ¡zi! KliknÄ›te na "ZruÅ¡it" pro pÅ™eruÅ¡enÃ­ akce.');
 
-@define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'Klíèové slovo');
-@define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'Poèet klíèovıch slov');
+@define('PLUGIN_EVENT_FREETAG_ORDER_TAGNAME', 'KlÃ­ÄovÃ© slovo');
+@define('PLUGIN_EVENT_FREETAG_ORDER_TAGCOUNT', 'PoÄet klÃ­ÄovÃ½ch slov');
 
-@define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML obrázek - cesta relativní k umístìní šablon');
+@define('PLUGIN_EVENT_FREETAG_XMLIMAGE', 'XML obrÃ¡zek - cesta relativnÃ­ k umÃ­stÄ›nÃ­ Å¡ablon');
 
-@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'Pokud nastaveno na "Smarty", pak bude ve smarty vytvoøena promìnná ($entry.freetag), kterou mùete umístit kamkoliv do šablonového souboru entries.tpl.');
+@define('PLUGIN_EVENT_FREETAG_EMBED_FOOTER_DESC2', 'Pokud nastaveno na "Smarty", pak bude ve smarty vytvoÅ™ena promÄ›nnÃ¡ ($entry.freetag), kterou mÅ¯Å¾ete umÃ­stit kamkoliv do Å¡ablonovÃ©ho souboru entries.tpl.');
 
 // Next lines were translated on 2009/11/29
 
-@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'Rozšíøené Smarty');
-@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Generovat oddìlené promìnné Smarty pro pozdìjší pouití v šablonách. Toto nastavení je nadøazené jinım nastavením. Pøíklad pouití naleznete v Readme.');
+@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY', 'RozÅ¡Ã­Å™enÃ© Smarty');
+@define('PLUGIN_EVENT_FREETAG_EXTENDED_SMARTY_DESC', 'Generovat oddÄ›lenÃ© promÄ›nnÃ© Smarty pro pozdÄ›jÅ¡Ã­ pouÅ¾itÃ­ v Å¡ablonÃ¡ch. Toto nastavenÃ­ je nadÅ™azenÃ© jinÃ½m nastavenÃ­m. PÅ™Ã­klad pouÅ¾itÃ­ naleznete v Readme.');
 
 // Next lines were translated on 2010/04/12
 
-@define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG', 'Vytváøet tagy z automatickıch klíèovıch slov?');
-@define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG_DESC', 'Pokud je povoleno, pak bude pøíspìvek provìøen na pøítomnost automatickıch klíèovıch slov a budou mu následnì pøidány odpovídající automatické tagy. Tato slova mùete zadat pod polokou menu "Správa klíèovıch slov" v administraèní sekci.');
+@define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG', 'VytvÃ¡Å™et tagy z automatickÃ½ch klÃ­ÄovÃ½ch slov?');
+@define('PLUGIN_EVENT_FREETAG_KEYWORD2TAG_DESC', 'Pokud je povoleno, pak bude pÅ™Ã­spÄ›vek provÄ›Å™en na pÅ™Ã­tomnost automatickÃ½ch klÃ­ÄovÃ½ch slov a budou mu nÃ¡slednÄ› pÅ™idÃ¡ny odpovÃ­dajÃ­cÃ­ automatickÃ© tagy. Tato slova mÅ¯Å¾ete zadat pod poloÅ¾kou menu "SprÃ¡va klÃ­ÄovÃ½ch slov" v administraÄnÃ­ sekci.');
 
 // Next lines were translated on 2011/01/11
 
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP', 'Vyèistit namapování tagù k pøíspìvkùm');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO', 'Následující seznam obsahuje tagy, které jsou pøiøazeny k neexistujícím pøíspìvkùm. Kliknìte na &quot;Vyèistit&quot; pro odstranìní tìchto nadbyteènıch pøiøazení.');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING', 'Nebyly nalezeny ádné tagy, které by byly pøiøazeny k neexistujícím pøíspìvkùm. Není tedy co èistit.');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR', 'Tagy pøiøazeny k neexistujícícm pøíspìvkùm nemohly bıt nalezeny, protoe došlo k chybì.');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM', 'Vyèistit');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_ENTRIES', 'ID èísla ovlivnìnıch pøíspìvkù');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL', 'Všechna pøebyteèná pøiøazení byla úspìšnì odstranìna.');
-@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED', 'Odstraòování pøebyteènıch pøiøazení se nezdaøilo.');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP', 'VyÄistit namapovÃ¡nÃ­ tagÅ¯ k pÅ™Ã­spÄ›vkÅ¯m');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_INFO', 'NÃ¡sledujÃ­cÃ­ seznam obsahuje tagy, kterÃ© jsou pÅ™iÅ™azeny k neexistujÃ­cÃ­m pÅ™Ã­spÄ›vkÅ¯m. KliknÄ›te na &quot;VyÄistit&quot; pro odstranÄ›nÃ­ tÄ›chto nadbyteÄnÃ½ch pÅ™iÅ™azenÃ­.');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_NOTHING', 'Nebyly nalezeny Å¾Ã¡dnÃ© tagy, kterÃ© by byly pÅ™iÅ™azeny k neexistujÃ­cÃ­m pÅ™Ã­spÄ›vkÅ¯m. NenÃ­ tedy co Äistit.');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_LOOKUP_ERROR', 'Tagy pÅ™iÅ™azeny k neexistujÃ­cÃ­cm pÅ™Ã­spÄ›vkÅ¯m nemohly bÃ½t nalezeny, protoÅ¾e doÅ¡lo k chybÄ›.');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM', 'VyÄistit');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_ENTRIES', 'ID ÄÃ­sla ovlivnÄ›nÃ½ch pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_SUCCESSFUL', 'VÅ¡echna pÅ™ebyteÄnÃ¡ pÅ™iÅ™azenÃ­ byla ÃºspÄ›Å¡nÄ› odstranÄ›na.');
+@define('PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_FAILED', 'OdstraÅˆovÃ¡nÃ­ pÅ™ebyteÄnÃ½ch pÅ™iÅ™azenÃ­ se nezdaÅ™ilo.');
 
 // Next lines were translated on 2011/07/05
 
-@define('PLUGIN_EVENT_FREETAG_COLLATION', 'Porovnání (MySQL) databáze pro sloupec entrytags.tag (automatická-detekce)');
+@define('PLUGIN_EVENT_FREETAG_COLLATION', 'PorovnÃ¡nÃ­ (MySQL) databÃ¡ze pro sloupec entrytags.tag (automatickÃ¡-detekce)');
 
 // Next lines were translated on 2012/05/13
 
-@define('PLUGIN_EVENT_FREETAG_KILL', 'Pokud je zaškrtnuto, budou smazány všechny tagy pøiøazené k tomuto pøíspìvku.');
+@define('PLUGIN_EVENT_FREETAG_KILL', 'Pokud je zaÅ¡krtnuto, budou smazÃ¡ny vÅ¡echny tagy pÅ™iÅ™azenÃ© k tomuto pÅ™Ã­spÄ›vku.');
 

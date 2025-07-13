@@ -15,7 +15,7 @@
 @define('PLUGIN_EVENT_FREETAG_LIST', 'このエントリーに定義されたタグ: %s');
 @define('PLUGIN_EVENT_FREETAG_USING', '「<span class="freetag_current">%s</span>」としてタグ付けされたエントリー');
 @define('PLUGIN_EVENT_FREETAG_SUBTAG', 'タグ「%s」に関連したタグ');
-@define('PLUGIN_EVENT_FREETAG_NO_RELATED','関連したタグはありません。');
+@define('PLUGIN_EVENT_FREETAG_NO_RELATED', '関連したタグはありません。');
 @define('PLUGIN_EVENT_FREETAG_ALLTAGS', 'すべての定義済みタグ');
 @define('PLUGIN_EVENT_FREETAG_MANAGETAGS', 'タグの管理');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_ALL', 'すべてのタグを管理する');
@@ -43,8 +43,8 @@
 @define('PLUGIN_FREETAG_BLAHBLAH', 'エントリーの既存タグの一覧を表示します。');
 @define('PLUGIN_FREETAG_NEWLINE', '各タグの後に改行を入れますか?');
 @define('PLUGIN_FREETAG_XML', 'XML アイコンを表示しますか?');
-@define('PLUGIN_FREETAG_SCALE','(flickr のように)タグのフォントサイズを人気度に依存して変化させますか?');
-@define('PLUGIN_FREETAG_UPGRADE1_2','エントリー番号の %d 個のタグをアップグレード中: %d');
+@define('PLUGIN_FREETAG_SCALE', '(flickr のように)タグのフォントサイズを人気度に依存して変化させますか?');
+@define('PLUGIN_FREETAG_UPGRADE1_2', 'エントリー番号の %d 個のタグをアップグレード中: %d');
 @define('PLUGIN_FREETAG_MAX_TAGS', 'いくつのタグを表示するべきですか?');
 @define('PLUGIN_FREETAG_TRESHOLD_TAG_COUNT', 'How many occurences must a tag have in order to be shown?');
 

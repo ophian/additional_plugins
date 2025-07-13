@@ -124,6 +124,7 @@
 @define('FREETAG_CONFIGGROUP_ENTRYPAGE', 'Frontend Entry Page Preferences');
 @define('FREETAG_CONFIGGROUP_ENTRYPAGE_DESC', 'Frontend entry page configurations:');
 
+@define('PLUGIN_EVENT_FREETAG_MANAGE_TAGS_NONE', 'There are no entries with tags yet!');
 @define('PLUGIN_EVENT_FREETAG_MANAGE_LEAFTAGS_NONE', 'No \'Leaf\' tag entries!');
 
 @define('PLUGIN_EVENT_FREETAG_LOWERCASE_TAGS_DESC', 'Storage and Backend-Tags live like applied. To lowercase applies only for shown Frontend-Tags.');
