@@ -23,11 +23,11 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '1.85');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1',
-            'smarty'      => '3.1.0',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('event_hooks',   array('entry_display' => true, 'css' => true, 'entries_header' => true, 'entries_footer' => true));
@@ -141,7 +141,7 @@ class serendipity_event_entrypaging extends serendipity_event
 
             switch ($event) {
                 case 'css':
-                    if (stristr($eventData, '.serendipity_entrypaging') || false !== strpos($eventData, 'serendipity_smarty_entrypaging')) {
+                    if (str_contains($eventData, '.serendipity_entrypaging') || str_contains($eventData, 'serendipity_smarty_entrypaging')) {
                         // class exists in CSS, so a user has customized it and we don't need default
                         return true;
                     }
@@ -167,6 +167,10 @@ class serendipity_event_entrypaging extends serendipity_event
                 case 'entry_display':
                 case 'entries_footer':
                     if (isset($serendipity['GET']['id']) && is_numeric($serendipity['GET']['id'])) {
+
+                        if ((defined('IN_serendipity_admin') && IN_serendipity_admin === true)) {
+                            break;
+                        }
 
                         $placement = $this->get_config('placement', 'top');
 

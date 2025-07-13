@@ -1,22 +1,22 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/30
  */
 
-@define('PLUGIN_ENTRYPAGING_NAME', 'Odkaz na dal¹í/pøedchozí pøíspìvek');
-@define('PLUGIN_ENTRYPAGING_BLAHBLAH', 'Umo¾òuje prohlí¾ení dal¹ích/pøedchozích pøíspìvkù');
-@define('PLUGIN_ENTRYPAGING_PLACE', 'Umístìní');
-@define('PLUGIN_ENTRYPAGING_TOP', 'Nahoøe');
+@define('PLUGIN_ENTRYPAGING_NAME', 'Odkaz na dalÅ¡Ã­/pÅ™edchozÃ­ pÅ™Ã­spÄ›vek');
+@define('PLUGIN_ENTRYPAGING_BLAHBLAH', 'UmoÅ¾Åˆuje prohlÃ­Å¾enÃ­ dalÅ¡Ã­ch/pÅ™edchozÃ­ch pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_ENTRYPAGING_PLACE', 'UmÃ­stÄ›nÃ­');
+@define('PLUGIN_ENTRYPAGING_TOP', 'NahoÅ™e');
 @define('PLUGIN_ENTRYPAGING_BOTTOM', 'Dole');
-@define('PLUGIN_ENTRYPAGING_RANDOM', 'Zobrazit náhodnı pøíspìvek/záznam');
-@define('PLUGIN_ENTRYPAGING_RANDOM_BLAHBLAH', 'Nad odkazy dal¹í/pøedchozí zobrazí odkaz na náhodnì vybranı pøíspìvek.');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT', 'Náhodnı pøíspìvek: ');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT', 'Text odkazu na dal¹í pøíspìvek');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_PREV', 'Text odkazu na pøedchozí pøíspìvek');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT_DESC', 'Zadej text odkazu. Pokud zùstane prázdnı, bude jako text pou¾it nadpis pøíslu¹ného pøíspìvku (záznamu).');
-@define('PLUGIN_ENTRYPAGING_USECATEGORY', 'Pou¾íat stránkování podle kategorií');
-@define('PLUGIN_ENTRYPAGING_USECATEGORY_BLAHBLAH', 'Pokud je povoleno, stránkování zobrazí odkazy na dal¹í/pøedchozí pøíspìvky pouze z kategorie pøíspìvku, ve kterém je zobrazeno.');
+@define('PLUGIN_ENTRYPAGING_RANDOM', 'Zobrazit nÃ¡hodnÃ½ pÅ™Ã­spÄ›vek/zÃ¡znam');
+@define('PLUGIN_ENTRYPAGING_RANDOM_BLAHBLAH', 'Nad odkazy dalÅ¡Ã­/pÅ™edchozÃ­ zobrazÃ­ odkaz na nÃ¡hodnÄ› vybranÃ½ pÅ™Ã­spÄ›vek.');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT', 'NÃ¡hodnÃ½ pÅ™Ã­spÄ›vek: ');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT', 'Text odkazu na dalÅ¡Ã­ pÅ™Ã­spÄ›vek');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_PREV', 'Text odkazu na pÅ™edchozÃ­ pÅ™Ã­spÄ›vek');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT_DESC', 'Zadej text odkazu. Pokud zÅ¯stane prÃ¡zdnÃ½, bude jako text pouÅ¾it nadpis pÅ™Ã­sluÅ¡nÃ©ho pÅ™Ã­spÄ›vku (zÃ¡znamu).');
+@define('PLUGIN_ENTRYPAGING_USECATEGORY', 'PouÅ¾Ã­at strÃ¡nkovÃ¡nÃ­ podle kategoriÃ­');
+@define('PLUGIN_ENTRYPAGING_USECATEGORY_BLAHBLAH', 'Pokud je povoleno, strÃ¡nkovÃ¡nÃ­ zobrazÃ­ odkazy na dalÅ¡Ã­/pÅ™edchozÃ­ pÅ™Ã­spÄ›vky pouze z kategorie pÅ™Ã­spÄ›vku, ve kterÃ©m je zobrazeno.');
 

@@ -6,17 +6,17 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_ENTRYPAGING_NAME', 'Linki do nastêpnego/poprzedniego wpisu');
-@define('PLUGIN_ENTRYPAGING_BLAHBLAH', 'Umieszcza w widoku wpisu linki do nastêpnego/poprzedniego wpisu');
+@define('PLUGIN_ENTRYPAGING_NAME', 'Linki do nastÄ™pnego/poprzedniego wpisu');
+@define('PLUGIN_ENTRYPAGING_BLAHBLAH', 'Umieszcza w widoku wpisu linki do nastÄ™pnego/poprzedniego wpisu');
 @define('PLUGIN_ENTRYPAGING_PLACE', 'Umieszczenie');
-@define('PLUGIN_ENTRYPAGING_TOP', 'Góra');
-@define('PLUGIN_ENTRYPAGING_BOTTOM', 'Dó³');
-@define('PLUGIN_ENTRYPAGING_RANDOM', 'Poka¿ losowy wpis');
-@define('PLUGIN_ENTRYPAGING_RANDOM_BLAHBLAH', 'Pokazuje losowy wpis ponad linkami do nastêpnego/poprzedniego wpisu');
+@define('PLUGIN_ENTRYPAGING_TOP', 'GÃ³ra');
+@define('PLUGIN_ENTRYPAGING_BOTTOM', 'DÃ³Å‚');
+@define('PLUGIN_ENTRYPAGING_RANDOM', 'PokaÅ¼ losowy wpis');
+@define('PLUGIN_ENTRYPAGING_RANDOM_BLAHBLAH', 'Pokazuje losowy wpis ponad linkami do nastÄ™pnego/poprzedniego wpisu');
 @define('PLUGIN_ENTRYPAGING_RANDOM_TEXT', 'Losowy wpis: ');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT', 'Nazwa linku do nastêpnego wpisu');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT', 'Nazwa linku do nastÄ™pnego wpisu');
 @define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_PREV', 'Nazwa linku do poprzedniego wpisu');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT_DESC', 'Wpisz nazwê linku (np. "nastêpny"). Je¶li pozostawisz te pola puste, bêd± wy¶wietlane tytu³y nastêpnego/poprzedniego wpisu.');
-@define('PLUGIN_ENTRYPAGING_USECATEGORY', 'Uzyj linkowania tylko w obrêbie kategorii');
-@define('PLUGIN_ENTRYPAGING_USECATEGORY_BLAHBLAH', 'Je¶li w³±czone, linkowanie bêdzie siê odbywa³o tylko do wpisów z kategorii (pierwszej zaznaczonej w polu wyboru kategorii w Edycji wpisu), do której przynale¿y dany wpis. A wiêc linkowane bêd± wpisy poprzednie/nastêpne nie tylko wed³ug chronologii ale tak¿e w obrêbie tej samej kategorii.');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT_DESC', 'Wpisz nazwÄ™ linku (np. "nastÄ™pny"). JeÅ›li pozostawisz te pola puste, bÄ™dÄ… wyÅ›wietlane tytuÅ‚y nastÄ™pnego/poprzedniego wpisu.');
+@define('PLUGIN_ENTRYPAGING_USECATEGORY', 'Uzyj linkowania tylko w obrÄ™bie kategorii');
+@define('PLUGIN_ENTRYPAGING_USECATEGORY_BLAHBLAH', 'JeÅ›li wÅ‚Ä…czone, linkowanie bÄ™dzie siÄ™ odbywaÅ‚o tylko do wpisÃ³w z kategorii (pierwszej zaznaczonej w polu wyboru kategorii w Edycji wpisu), do ktÃ³rej przynaleÅ¼y dany wpis. A wiÄ™c linkowane bÄ™dÄ… wpisy poprzednie/nastÄ™pne nie tylko wedÅ‚ug chronologii ale takÅ¼e w obrÄ™bie tej samej kategorii.');
 

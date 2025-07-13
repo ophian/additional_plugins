@@ -6,17 +6,17 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_ENTRYPAGING_NAME', 'Връзки към предишна/следваща статия');
-@define('PLUGIN_ENTRYPAGING_BLAHBLAH', 'Поставя връзки към предишната и следващата статия в страницата на настоящата статия. Това позволява по-лесно разглеждане на статиите.');
-@define('PLUGIN_ENTRYPAGING_PLACE', 'Място на връзките');
-@define('PLUGIN_ENTRYPAGING_TOP', 'Горе');
-@define('PLUGIN_ENTRYPAGING_BOTTOM', 'Долу');
-@define('PLUGIN_ENTRYPAGING_RANDOM', 'Показва случайна статия');
-@define('PLUGIN_ENTRYPAGING_RANDOM_BLAHBLAH', 'Показва случайна статия над връзките за предишна/следваща статия');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT', 'Случайна статия: ');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT', 'Име на връзката към следващата статия');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_PREV', 'Име на връзката към предишната статия');
-@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT_DESC', 'Въведете име на връзката. Ако го оставите празно, ще бъде използвано заглавието на статията.');
-@define('PLUGIN_ENTRYPAGING_USECATEGORY', 'Следване на статии по категории');
-@define('PLUGIN_ENTRYPAGING_USECATEGORY_BLAHBLAH', 'Ако е позволено, последователността от статиите ще бъде от категорията, която е първа в списъка категории за текущо показаната статия.');
+@define('PLUGIN_ENTRYPAGING_NAME', 'Р’СЂСЉР·РєРё РєСЉРј РїСЂРµРґРёС€РЅР°/СЃР»РµРґРІР°С‰Р° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_ENTRYPAGING_BLAHBLAH', 'РџРѕСЃС‚Р°РІСЏ РІСЂСЉР·РєРё РєСЉРј РїСЂРµРґРёС€РЅР°С‚Р° Рё СЃР»РµРґРІР°С‰Р°С‚Р° СЃС‚Р°С‚РёСЏ РІ СЃС‚СЂР°РЅРёС†Р°С‚Р° РЅР° РЅР°СЃС‚РѕСЏС‰Р°С‚Р° СЃС‚Р°С‚РёСЏ. РўРѕРІР° РїРѕР·РІРѕР»СЏРІР° РїРѕ-Р»РµСЃРЅРѕ СЂР°Р·РіР»РµР¶РґР°РЅРµ РЅР° СЃС‚Р°С‚РёРёС‚Рµ.');
+@define('PLUGIN_ENTRYPAGING_PLACE', 'РњСЏСЃС‚Рѕ РЅР° РІСЂСЉР·РєРёС‚Рµ');
+@define('PLUGIN_ENTRYPAGING_TOP', 'Р“РѕСЂРµ');
+@define('PLUGIN_ENTRYPAGING_BOTTOM', 'Р”РѕР»Сѓ');
+@define('PLUGIN_ENTRYPAGING_RANDOM', 'РџРѕРєР°Р·РІР° СЃР»СѓС‡Р°Р№РЅР° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_ENTRYPAGING_RANDOM_BLAHBLAH', 'РџРѕРєР°Р·РІР° СЃР»СѓС‡Р°Р№РЅР° СЃС‚Р°С‚РёСЏ РЅР°Рґ РІСЂСЉР·РєРёС‚Рµ Р·Р° РїСЂРµРґРёС€РЅР°/СЃР»РµРґРІР°С‰Р° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT', 'РЎР»СѓС‡Р°Р№РЅР° СЃС‚Р°С‚РёСЏ: ');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT', 'РРјРµ РЅР° РІСЂСЉР·РєР°С‚Р° РєСЉРј СЃР»РµРґРІР°С‰Р°С‚Р° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_PREV', 'РРјРµ РЅР° РІСЂСЉР·РєР°С‚Р° РєСЉРј РїСЂРµРґРёС€РЅР°С‚Р° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_ENTRYPAGING_RANDOM_TEXT_NEXT_DESC', 'Р’СЉРІРµРґРµС‚Рµ РёРјРµ РЅР° РІСЂСЉР·РєР°С‚Р°. РђРєРѕ РіРѕ РѕСЃС‚Р°РІРёС‚Рµ РїСЂР°Р·РЅРѕ, С‰Рµ Р±СЉРґРµ РёР·РїРѕР»Р·РІР°РЅРѕ Р·Р°РіР»Р°РІРёРµС‚Рѕ РЅР° СЃС‚Р°С‚РёСЏС‚Р°.');
+@define('PLUGIN_ENTRYPAGING_USECATEGORY', 'РЎР»РµРґРІР°РЅРµ РЅР° СЃС‚Р°С‚РёРё РїРѕ РєР°С‚РµРіРѕСЂРёРё');
+@define('PLUGIN_ENTRYPAGING_USECATEGORY_BLAHBLAH', 'РђРєРѕ Рµ РїРѕР·РІРѕР»РµРЅРѕ, РїРѕСЃР»РµРґРѕРІР°С‚РµР»РЅРѕСЃС‚С‚Р° РѕС‚ СЃС‚Р°С‚РёРёС‚Рµ С‰Рµ Р±СЉРґРµ РѕС‚ РєР°С‚РµРіРѕСЂРёСЏС‚Р°, РєРѕСЏС‚Рѕ Рµ РїСЉСЂРІР° РІ СЃРїРёСЃСЉРєР° РєР°С‚РµРіРѕСЂРёРё Р·Р° С‚РµРєСѓС‰Рѕ РїРѕРєР°Р·Р°РЅР°С‚Р° СЃС‚Р°С‚РёСЏ.');
 
