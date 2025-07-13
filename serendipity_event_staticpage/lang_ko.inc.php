@@ -96,4 +96,6 @@
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY', '상위 페이지만 보여주기');
 @define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', '사용할 경우, 상위 페이지만 나타나게 됩니다. 사용하지 않으면 하위 페이지도 보입니다.');
 @define('PLUGIN_STATICPAGELIST_IMG_NAME', '트리 구조에 그림 사용');
+@define('PLUGIN_STATICPAGELIST_SELECTPAGES', '페이지 선택');
+@define('PLUGIN_STATICPAGELIST_SELECTPAGES_DESC', '첫 페이지에 나타낼 상위 페이지를 고릅니다.');
 

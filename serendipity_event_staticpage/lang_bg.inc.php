@@ -9,131 +9,131 @@
 //
 // serendipity_event_staticpage.php
 //
-@define('STATICPAGE_HEADLINE', 'Заглавие');
-@define('STATICPAGE_HEADLINE_BLAHBLAH', 'Заглавие, което се показва над съдържанието и е форматирано като всяко друго заглавие в блога.');
-@define('STATICPAGE_TITLE', 'Статични страници');
-@define('STATICPAGE_TITLE_BLAHBLAH', 'Показва статични страници във вашия блог използвайки общия дизайн на блога. Добавя нова команда към административното меню.');
+@define('STATICPAGE_HEADLINE', 'Р—Р°РіР»Р°РІРёРµ');
+@define('STATICPAGE_HEADLINE_BLAHBLAH', 'Р—Р°РіР»Р°РІРёРµ, РєРѕРµС‚Рѕ СЃРµ РїРѕРєР°Р·РІР° РЅР°Рґ СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ Рё Рµ С„РѕСЂРјР°С‚РёСЂР°РЅРѕ РєР°С‚Рѕ РІСЃСЏРєРѕ РґСЂСѓРіРѕ Р·Р°РіР»Р°РІРёРµ РІ Р±Р»РѕРіР°.');
+@define('STATICPAGE_TITLE', 'РЎС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё');
+@define('STATICPAGE_TITLE_BLAHBLAH', 'РџРѕРєР°Р·РІР° СЃС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё РІСЉРІ РІР°С€РёСЏ Р±Р»РѕРі РёР·РїРѕР»Р·РІР°Р№РєРё РѕР±С‰РёСЏ РґРёР·Р°Р№РЅ РЅР° Р±Р»РѕРіР°. Р”РѕР±Р°РІСЏ РЅРѕРІР° РєРѕРјР°РЅРґР° РєСЉРј Р°РґРјРёРЅРёСЃС‚СЂР°С‚РёРІРЅРѕС‚Рѕ РјРµРЅСЋ.');
 @define('CONTENT_BLAHBLAH', '');
-@define('STATICPAGE_PERMALINK', 'Permalink (константна връзка)');
-@define('STATICPAGE_PERMALINK_BLAHBLAH', 'Дефинира permalink за URL. Трябва да бъде абсолютен HTTP път и да завършва с \'.htm\' or \'.html\' !');
-@define('STATICPAGE_PAGETITLE', 'Късо име на URL (съвместимост назад)');
-@define('STATICPAGE_ARTICLEFORMAT', 'Форматиране като статия ?');
-@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', 'При избор \'Да\' страницата автоматично ще бъде форматирана като статия (цветове, граници, шрифтове и т.н.), по подразбиране: \'Да\'.');
-@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE', 'Заглавие на страницата, когато е форматирана като статия');
-@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'При използване на формат като статия, можете да изберете какъв текст да се показва, където се показва датата над статиите за един ден.');
-@define('STATICPAGE_SELECT', 'Изберете страница за редактиране или \'Нова\' за създаване на нова страница.');
-@define('STATICPAGE_PASSWORD_NOTICE', 'Разглеждането на тази страница изисква въвеждането на парола. Въведете я тук. ');
-@define('STATICPAGE_PARENTPAGES_NAME', 'Родителска страница');
-@define('STATICPAGE_PARENTPAGE_DESC', 'Изберете родителска страница за тази страница');
-@define('STATICPAGE_PARENTPAGE_PARENT', 'Това е родителска страница');
-@define('STATICPAGE_AUTHORS_NAME', 'Име на автора');
-@define('STATICPAGE_AUTHORS_DESC', 'Този автор е собственик на страницата');
-@define('STATICPAGE_FILENAME_NAME', 'Smarty шаблон за страницата');
-@define('STATICPAGE_FILENAME_DESC', 'Име на файла - Smarty шаблон, който ще се използва за тази страница. Този файл може да бъде поставен в директорията на тази приставка или в директорията на избраната от вас тема (templates/your_theme).');
-@define('STATICPAGE_SHOWCHILDPAGES_NAME', 'Показване на страници деца');
-@define('STATICPAGE_SHOWCHILDPAGES_DESC', 'Показване на страниците-деца в списък от връзки.');
-@define('STATICPAGE_PRECONTENT_NAME', 'Предварително съдържание');
-@define('STATICPAGE_PRECONTENT_DESC', 'Това съдържание се показва преди списъка на страниците деца.');
-@define('STATICPAGE_CANNOTDELETE_MSG', 'Тази страница не може да бъде изтрита, защото тя има страници деца. Първо трябва да изтриете тях.');
-@define('STATICPAGE_IS_STARTPAGE', 'Тази страница да бъде главна страница на блога (на сайта)');
-@define('STATICPAGE_IS_STARTPAGE_DESC', 'Вместо да се показва подразбиращата се лицева страница (със статиите) да се показва тази страница. Ако желаете връзка към обичайната лицева страница, използвайте \'index.php?frontpage\'.');
-@define('STATICPAGE_TOP', 'Горе');
-@define('STATICPAGE_NEXT', 'Следваща');
-@define('STATICPAGE_PREV', 'Предишна');
-@define('STATICPAGE_LINKNAME', 'Редактиране');
+@define('STATICPAGE_PERMALINK', 'Permalink (РєРѕРЅСЃС‚Р°РЅС‚РЅР° РІСЂСЉР·РєР°)');
+@define('STATICPAGE_PERMALINK_BLAHBLAH', 'Р”РµС„РёРЅРёСЂР° permalink Р·Р° URL. РўСЂСЏР±РІР° РґР° Р±СЉРґРµ Р°Р±СЃРѕР»СЋС‚РµРЅ HTTP РїСЉС‚ Рё РґР° Р·Р°РІСЉСЂС€РІР° СЃ \'.htm\' or \'.html\' !');
+@define('STATICPAGE_PAGETITLE', 'РљСЉСЃРѕ РёРјРµ РЅР° URL (СЃСЉРІРјРµСЃС‚РёРјРѕСЃС‚ РЅР°Р·Р°Рґ)');
+@define('STATICPAGE_ARTICLEFORMAT', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ ?');
+@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', 'РџСЂРё РёР·Р±РѕСЂ \'Р”Р°\' СЃС‚СЂР°РЅРёС†Р°С‚Р° Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ С‰Рµ Р±СЉРґРµ С„РѕСЂРјР°С‚РёСЂР°РЅР° РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ (С†РІРµС‚РѕРІРµ, РіСЂР°РЅРёС†Рё, С€СЂРёС„С‚РѕРІРµ Рё С‚.РЅ.), РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ: \'Р”Р°\'.');
+@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE', 'Р—Р°РіР»Р°РІРёРµ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°, РєРѕРіР°С‚Рѕ Рµ С„РѕСЂРјР°С‚РёСЂР°РЅР° РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ');
+@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'РџСЂРё РёР·РїРѕР»Р·РІР°РЅРµ РЅР° С„РѕСЂРјР°С‚ РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ, РјРѕР¶РµС‚Рµ РґР° РёР·Р±РµСЂРµС‚Рµ РєР°РєСЉРІ С‚РµРєСЃС‚ РґР° СЃРµ РїРѕРєР°Р·РІР°, РєСЉРґРµС‚Рѕ СЃРµ РїРѕРєР°Р·РІР° РґР°С‚Р°С‚Р° РЅР°Рґ СЃС‚Р°С‚РёРёС‚Рµ Р·Р° РµРґРёРЅ РґРµРЅ.');
+@define('STATICPAGE_SELECT', 'РР·Р±РµСЂРµС‚Рµ СЃС‚СЂР°РЅРёС†Р° Р·Р° СЂРµРґР°РєС‚РёСЂР°РЅРµ РёР»Рё \'РќРѕРІР°\' Р·Р° СЃСЉР·РґР°РІР°РЅРµ РЅР° РЅРѕРІР° СЃС‚СЂР°РЅРёС†Р°.');
+@define('STATICPAGE_PASSWORD_NOTICE', 'Р Р°Р·РіР»РµР¶РґР°РЅРµС‚Рѕ РЅР° С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р° РёР·РёСЃРєРІР° РІСЉРІРµР¶РґР°РЅРµС‚Рѕ РЅР° РїР°СЂРѕР»Р°. Р’СЉРІРµРґРµС‚Рµ СЏ С‚СѓРє. ');
+@define('STATICPAGE_PARENTPAGES_NAME', 'Р РѕРґРёС‚РµР»СЃРєР° СЃС‚СЂР°РЅРёС†Р°');
+@define('STATICPAGE_PARENTPAGE_DESC', 'РР·Р±РµСЂРµС‚Рµ СЂРѕРґРёС‚РµР»СЃРєР° СЃС‚СЂР°РЅРёС†Р° Р·Р° С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р°');
+@define('STATICPAGE_PARENTPAGE_PARENT', 'РўРѕРІР° Рµ СЂРѕРґРёС‚РµР»СЃРєР° СЃС‚СЂР°РЅРёС†Р°');
+@define('STATICPAGE_AUTHORS_NAME', 'РРјРµ РЅР° Р°РІС‚РѕСЂР°');
+@define('STATICPAGE_AUTHORS_DESC', 'РўРѕР·Рё Р°РІС‚РѕСЂ Рµ СЃРѕР±СЃС‚РІРµРЅРёРє РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('STATICPAGE_FILENAME_NAME', 'Smarty С€Р°Р±Р»РѕРЅ Р·Р° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('STATICPAGE_FILENAME_DESC', 'РРјРµ РЅР° С„Р°Р№Р»Р° - Smarty С€Р°Р±Р»РѕРЅ, РєРѕР№С‚Рѕ С‰Рµ СЃРµ РёР·РїРѕР»Р·РІР° Р·Р° С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р°. РўРѕР·Рё С„Р°Р№Р» РјРѕР¶Рµ РґР° Р±СЉРґРµ РїРѕСЃС‚Р°РІРµРЅ РІ РґРёСЂРµРєС‚РѕСЂРёСЏС‚Р° РЅР° С‚Р°Р·Рё РїСЂРёСЃС‚Р°РІРєР° РёР»Рё РІ РґРёСЂРµРєС‚РѕСЂРёСЏС‚Р° РЅР° РёР·Р±СЂР°РЅР°С‚Р° РѕС‚ РІР°СЃ С‚РµРјР° (templates/your_theme).');
+@define('STATICPAGE_SHOWCHILDPAGES_NAME', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° СЃС‚СЂР°РЅРёС†Рё РґРµС†Р°');
+@define('STATICPAGE_SHOWCHILDPAGES_DESC', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° СЃС‚СЂР°РЅРёС†РёС‚Рµ-РґРµС†Р° РІ СЃРїРёСЃСЉРє РѕС‚ РІСЂСЉР·РєРё.');
+@define('STATICPAGE_PRECONTENT_NAME', 'РџСЂРµРґРІР°СЂРёС‚РµР»РЅРѕ СЃСЉРґСЉСЂР¶Р°РЅРёРµ');
+@define('STATICPAGE_PRECONTENT_DESC', 'РўРѕРІР° СЃСЉРґСЉСЂР¶Р°РЅРёРµ СЃРµ РїРѕРєР°Р·РІР° РїСЂРµРґРё СЃРїРёСЃСЉРєР° РЅР° СЃС‚СЂР°РЅРёС†РёС‚Рµ РґРµС†Р°.');
+@define('STATICPAGE_CANNOTDELETE_MSG', 'РўР°Р·Рё СЃС‚СЂР°РЅРёС†Р° РЅРµ РјРѕР¶Рµ РґР° Р±СЉРґРµ РёР·С‚СЂРёС‚Р°, Р·Р°С‰РѕС‚Рѕ С‚СЏ РёРјР° СЃС‚СЂР°РЅРёС†Рё РґРµС†Р°. РџСЉСЂРІРѕ С‚СЂСЏР±РІР° РґР° РёР·С‚СЂРёРµС‚Рµ С‚СЏС….');
+@define('STATICPAGE_IS_STARTPAGE', 'РўР°Р·Рё СЃС‚СЂР°РЅРёС†Р° РґР° Р±СЉРґРµ РіР»Р°РІРЅР° СЃС‚СЂР°РЅРёС†Р° РЅР° Р±Р»РѕРіР° (РЅР° СЃР°Р№С‚Р°)');
+@define('STATICPAGE_IS_STARTPAGE_DESC', 'Р’РјРµСЃС‚Рѕ РґР° СЃРµ РїРѕРєР°Р·РІР° РїРѕРґСЂР°Р·Р±РёСЂР°С‰Р°С‚Р° СЃРµ Р»РёС†РµРІР° СЃС‚СЂР°РЅРёС†Р° (СЃСЉСЃ СЃС‚Р°С‚РёРёС‚Рµ) РґР° СЃРµ РїРѕРєР°Р·РІР° С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р°. РђРєРѕ Р¶РµР»Р°РµС‚Рµ РІСЂСЉР·РєР° РєСЉРј РѕР±РёС‡Р°Р№РЅР°С‚Р° Р»РёС†РµРІР° СЃС‚СЂР°РЅРёС†Р°, РёР·РїРѕР»Р·РІР°Р№С‚Рµ \'index.php?frontpage\'.');
+@define('STATICPAGE_TOP', 'Р“РѕСЂРµ');
+@define('STATICPAGE_NEXT', 'РЎР»РµРґРІР°С‰Р°');
+@define('STATICPAGE_PREV', 'РџСЂРµРґРёС€РЅР°');
+@define('STATICPAGE_LINKNAME', 'Р РµРґР°РєС‚РёСЂР°РЅРµ');
 
-@define('STATICPAGE_ARTICLETYPE', 'Тип на страницата');
-@define('STATICPAGE_ARTICLETYPE_DESC', 'Изберете вида на страницата.');
+@define('STATICPAGE_ARTICLETYPE', 'РўРёРї РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('STATICPAGE_ARTICLETYPE_DESC', 'РР·Р±РµСЂРµС‚Рµ РІРёРґР° РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°.');
 
-@define('STATICPAGE_CATEGORY_PAGEORDER', 'Подреждане');
-@define('STATICPAGE_CATEGORY_PAGES', 'Редактиране');
-@define('STATICPAGE_CATEGORY_PAGETYPES', 'Типове страници');
-@define('STATICPAGE_CATEGORY_PAGEADD', 'Други приставки');
+@define('STATICPAGE_CATEGORY_PAGEORDER', 'РџРѕРґСЂРµР¶РґР°РЅРµ');
+@define('STATICPAGE_CATEGORY_PAGES', 'Р РµРґР°РєС‚РёСЂР°РЅРµ');
+@define('STATICPAGE_CATEGORY_PAGETYPES', 'РўРёРїРѕРІРµ СЃС‚СЂР°РЅРёС†Рё');
+@define('STATICPAGE_CATEGORY_PAGEADD', 'Р”СЂСѓРіРё РїСЂРёСЃС‚Р°РІРєРё');
 
-@define('PAGETYPES_SELECT', 'Изберете тип на страницата.');
-@define('STATICPAGE_ARTICLETYPE_DESCRIPTION', 'Описание');
-@define('STATICPAGE_ARTICLETYPE_DESCRIPTION_DESC', 'Кратко описание на този тип страници - какво съдържат, предназначение. Можете да регистрирате няколко типа страници според необходимостта.');
-@define('STATICPAGE_ARTICLETYPE_TEMPLATE', 'Smarty шаблон за страницата');
-@define('STATICPAGE_ARTICLETYPE_TEMPLATE_DESC', 'Име на файла - Smarty шаблон, който ще се използва за тази страница. Този файл може да бъде поставен в директорията на тази приставка или в директорията на избраната от вас тема (\'templates/your_theme\').');
-@define('STATICPAGE_ARTICLETYPE_IMAGE', 'Път до картинката на типа');
-@define('STATICPAGE_ARTICLETYPE_IMAGE_DESC', ' Можете да укажете графично изображение, което да бъде свързано с този тип. Това изображение ще се показва на всички страници от този тип. Така посетителят ще може по-лесно да се ориентира в съдържанието на Вашия сайт. Тук е необходим пълен път до файла.');
+@define('PAGETYPES_SELECT', 'РР·Р±РµСЂРµС‚Рµ С‚РёРї РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°.');
+@define('STATICPAGE_ARTICLETYPE_DESCRIPTION', 'РћРїРёСЃР°РЅРёРµ');
+@define('STATICPAGE_ARTICLETYPE_DESCRIPTION_DESC', 'РљСЂР°С‚РєРѕ РѕРїРёСЃР°РЅРёРµ РЅР° С‚РѕР·Рё С‚РёРї СЃС‚СЂР°РЅРёС†Рё - РєР°РєРІРѕ СЃСЉРґСЉСЂР¶Р°С‚, РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅРёРµ. РњРѕР¶РµС‚Рµ РґР° СЂРµРіРёСЃС‚СЂРёСЂР°С‚Рµ РЅСЏРєРѕР»РєРѕ С‚РёРїР° СЃС‚СЂР°РЅРёС†Рё СЃРїРѕСЂРµРґ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚С‚Р°.');
+@define('STATICPAGE_ARTICLETYPE_TEMPLATE', 'Smarty С€Р°Р±Р»РѕРЅ Р·Р° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('STATICPAGE_ARTICLETYPE_TEMPLATE_DESC', 'РРјРµ РЅР° С„Р°Р№Р»Р° - Smarty С€Р°Р±Р»РѕРЅ, РєРѕР№С‚Рѕ С‰Рµ СЃРµ РёР·РїРѕР»Р·РІР° Р·Р° С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р°. РўРѕР·Рё С„Р°Р№Р» РјРѕР¶Рµ РґР° Р±СЉРґРµ РїРѕСЃС‚Р°РІРµРЅ РІ РґРёСЂРµРєС‚РѕСЂРёСЏС‚Р° РЅР° С‚Р°Р·Рё РїСЂРёСЃС‚Р°РІРєР° РёР»Рё РІ РґРёСЂРµРєС‚РѕСЂРёСЏС‚Р° РЅР° РёР·Р±СЂР°РЅР°С‚Р° РѕС‚ РІР°СЃ С‚РµРјР° (\'templates/your_theme\').');
+@define('STATICPAGE_ARTICLETYPE_IMAGE', 'РџСЉС‚ РґРѕ РєР°СЂС‚РёРЅРєР°С‚Р° РЅР° С‚РёРїР°');
+@define('STATICPAGE_ARTICLETYPE_IMAGE_DESC', ' РњРѕР¶РµС‚Рµ РґР° СѓРєР°Р¶РµС‚Рµ РіСЂР°С„РёС‡РЅРѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ, РєРѕРµС‚Рѕ РґР° Р±СЉРґРµ СЃРІСЉСЂР·Р°РЅРѕ СЃ С‚РѕР·Рё С‚РёРї. РўРѕРІР° РёР·РѕР±СЂР°Р¶РµРЅРёРµ С‰Рµ СЃРµ РїРѕРєР°Р·РІР° РЅР° РІСЃРёС‡РєРё СЃС‚СЂР°РЅРёС†Рё РѕС‚ С‚РѕР·Рё С‚РёРї. РўР°РєР° РїРѕСЃРµС‚РёС‚РµР»СЏС‚ С‰Рµ РјРѕР¶Рµ РїРѕ-Р»РµСЃРЅРѕ РґР° СЃРµ РѕСЂРёРµРЅС‚РёСЂР° РІ СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ РЅР° Р’Р°С€РёСЏ СЃР°Р№С‚. РўСѓРє Рµ РЅРµРѕР±С…РѕРґРёРј РїСЉР»РµРЅ РїСЉС‚ РґРѕ С„Р°Р№Р»Р°.');
 
-@define('STATICPAGE_SHOWNAVI', 'Показване на навигация');
-@define('STATICPAGE_SHOWNAVI_DESC', 'Показване на навигационни връзки в страницата.');
-@define('STATICPAGE_SHOWONNAVI', 'Показване в страничната приставка');
-@define('STATICPAGE_SHOWONNAVI_DESC', 'Показване на връзка към страницата в навигацията в страничната приставка.');
+@define('STATICPAGE_SHOWNAVI', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РЅР°РІРёРіР°С†РёСЏ');
+@define('STATICPAGE_SHOWNAVI_DESC', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РЅР°РІРёРіР°С†РёРѕРЅРЅРё РІСЂСЉР·РєРё РІ СЃС‚СЂР°РЅРёС†Р°С‚Р°.');
+@define('STATICPAGE_SHOWONNAVI', 'РџРѕРєР°Р·РІР°РЅРµ РІ СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР°');
+@define('STATICPAGE_SHOWONNAVI_DESC', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РІСЂСЉР·РєР° РєСЉРј СЃС‚СЂР°РЅРёС†Р°С‚Р° РІ РЅР°РІРёРіР°С†РёСЏС‚Р° РІ СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР°.');
 
-@define('STATICPAGE_SHOWNAVI_DEFAULT', 'Показване на навигация в странична приставка');
-@define('STATICPAGE_DEFAULT_DESC', 'Подразбираща се стойност за нови страници.');
-@define('STATICPAGE_SHOWONNAVI_DEFAULT', 'Показване на страницата при навигация в странична приставка');
-@define('STATICPAGE_SHOWMARKUP_DEFAULT', 'Показване на маркап');
-@define('STATICPAGE_SHOWARTICLEFORMAT_DEFAULT', 'Форматиране като статия');
-@define('STATICPAGE_SHOWCHILDPAGES_DEFAULT', 'Показване на страници деца (не само родителските)');
+@define('STATICPAGE_SHOWNAVI_DEFAULT', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РЅР°РІРёРіР°С†РёСЏ РІ СЃС‚СЂР°РЅРёС‡РЅР° РїСЂРёСЃС‚Р°РІРєР°');
+@define('STATICPAGE_DEFAULT_DESC', 'РџРѕРґСЂР°Р·Р±РёСЂР°С‰Р° СЃРµ СЃС‚РѕР№РЅРѕСЃС‚ Р·Р° РЅРѕРІРё СЃС‚СЂР°РЅРёС†Рё.');
+@define('STATICPAGE_SHOWONNAVI_DEFAULT', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р° РїСЂРё РЅР°РІРёРіР°С†РёСЏ РІ СЃС‚СЂР°РЅРёС‡РЅР° РїСЂРёСЃС‚Р°РІРєР°');
+@define('STATICPAGE_SHOWMARKUP_DEFAULT', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РјР°СЂРєР°Рї');
+@define('STATICPAGE_SHOWARTICLEFORMAT_DEFAULT', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ');
+@define('STATICPAGE_SHOWCHILDPAGES_DEFAULT', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° СЃС‚СЂР°РЅРёС†Рё РґРµС†Р° (РЅРµ СЃР°РјРѕ СЂРѕРґРёС‚РµР»СЃРєРёС‚Рµ)');
 
-@define('STATICPAGE_PAGEORDER_DESC', 'Подреждане на статичните страници');
-@define('STATICPAGE_PAGEADD_DESC', 'Избор на приставки, които да бъдат включени като връзки в навигацията на статичните страници');
-@define('STATICPAGE_PAGEADD_PLUGINS', 'Следващите приставки могат да бъдат включени в страничната приставка на статичните страници:');
+@define('STATICPAGE_PAGEORDER_DESC', 'РџРѕРґСЂРµР¶РґР°РЅРµ РЅР° СЃС‚Р°С‚РёС‡РЅРёС‚Рµ СЃС‚СЂР°РЅРёС†Рё');
+@define('STATICPAGE_PAGEADD_DESC', 'РР·Р±РѕСЂ РЅР° РїСЂРёСЃС‚Р°РІРєРё, РєРѕРёС‚Рѕ РґР° Р±СЉРґР°С‚ РІРєР»СЋС‡РµРЅРё РєР°С‚Рѕ РІСЂСЉР·РєРё РІ РЅР°РІРёРіР°С†РёСЏС‚Р° РЅР° СЃС‚Р°С‚РёС‡РЅРёС‚Рµ СЃС‚СЂР°РЅРёС†Рё');
+@define('STATICPAGE_PAGEADD_PLUGINS', 'РЎР»РµРґРІР°С‰РёС‚Рµ РїСЂРёСЃС‚Р°РІРєРё РјРѕРіР°С‚ РґР° Р±СЉРґР°С‚ РІРєР»СЋС‡РµРЅРё РІ СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР° РЅР° СЃС‚Р°С‚РёС‡РЅРёС‚Рµ СЃС‚СЂР°РЅРёС†Рё:');
 
-@define('STATICPAGE_PUBLISHSTATUS', 'Състояние');
-@define('STATICPAGE_PUBLISHSTATUS_DESC', 'Степен на готовност на страницата.');
+@define('STATICPAGE_PUBLISHSTATUS', 'РЎСЉСЃС‚РѕСЏРЅРёРµ');
+@define('STATICPAGE_PUBLISHSTATUS_DESC', 'РЎС‚РµРїРµРЅ РЅР° РіРѕС‚РѕРІРЅРѕСЃС‚ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°.');
 
-@define('STATICPAGE_SHOWTEXTORHEADLINE_NAME', 'Показване на заглавията или \'предишна\'/\'следваща\' при навигацията');
-@define('STATICPAGE_SHOWTEXTORHEADLINE_TEXT', 'Предишна/Следваща');
-@define('STATICPAGE_SHOWTEXTORHEADLINE_HEADLINE', 'Заглавие');
+@define('STATICPAGE_SHOWTEXTORHEADLINE_NAME', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° Р·Р°РіР»Р°РІРёСЏС‚Р° РёР»Рё \'РїСЂРµРґРёС€РЅР°\'/\'СЃР»РµРґРІР°С‰Р°\' РїСЂРё РЅР°РІРёРіР°С†РёСЏС‚Р°');
+@define('STATICPAGE_SHOWTEXTORHEADLINE_TEXT', 'РџСЂРµРґРёС€РЅР°/РЎР»РµРґРІР°С‰Р°');
+@define('STATICPAGE_SHOWTEXTORHEADLINE_HEADLINE', 'Р—Р°РіР»Р°РІРёРµ');
 
-@define('STATICPAGE_LANGUAGE', 'Език');
-@define('STATICPAGE_LANGUAGE_DESC', 'Определете езика на тази страница.');
+@define('STATICPAGE_LANGUAGE', 'Р•Р·РёРє');
+@define('STATICPAGE_LANGUAGE_DESC', 'РћРїСЂРµРґРµР»РµС‚Рµ РµР·РёРєР° РЅР° С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р°.');
 
-@define('STATICPAGE_PLUGINS_INSTALLED', 'Приставката е инсталирана');
-@define('STATICPAGE_PLUGIN_AVAILABLE', 'Приставката е налична, но не е инсталирана');
-@define('STATICPAGE_PLUGIN_NOTAVAILABLE', 'Приставката не е налична');
+@define('STATICPAGE_PLUGINS_INSTALLED', 'РџСЂРёСЃС‚Р°РІРєР°С‚Р° Рµ РёРЅСЃС‚Р°Р»РёСЂР°РЅР°');
+@define('STATICPAGE_PLUGIN_AVAILABLE', 'РџСЂРёСЃС‚Р°РІРєР°С‚Р° Рµ РЅР°Р»РёС‡РЅР°, РЅРѕ РЅРµ Рµ РёРЅСЃС‚Р°Р»РёСЂР°РЅР°');
+@define('STATICPAGE_PLUGIN_NOTAVAILABLE', 'РџСЂРёСЃС‚Р°РІРєР°С‚Р° РЅРµ Рµ РЅР°Р»РёС‡РЅР°');
 
-@define('STATICPAGE_SEARCHRESULTS', 'Намерени са %d статични страници:');
+@define('STATICPAGE_SEARCHRESULTS', 'РќР°РјРµСЂРµРЅРё СЃР° %d СЃС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё:');
 
-@define('LANG_ALL', 'Всички езици');
+@define('LANG_ALL', 'Р’СЃРёС‡РєРё РµР·РёС†Рё');
 
-@define('STATICPAGE_STATUS', 'Състояние');
+@define('STATICPAGE_STATUS', 'РЎСЉСЃС‚РѕСЏРЅРёРµ');
 
 //
 // serendipity_plugin_staticpage.php
 //
 
-@define('PLUGIN_STATICPAGELIST_NAME', 'Статични страници - списък');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Тази приставка показва конфигурируем списък от статични страници.');
-@define('PLUGIN_STATICPAGELIST_TITLE', 'Заглавие');
-@define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Заглавие на страничната приставка');
-@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'Статични страници');
-@define('PLUGIN_STATICPAGELIST_LIMIT', 'Брой страници');
-@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', 'Колко връзки към статични страници да се показват. 0 означава без ограничение.');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Връзка към лицевата страница');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'Да има ли връзка към лицевата страница (със статиите) ?');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'Заглавна страница');
-@define('PLUGIN_LINKS_IMGDIR', 'Директория с картинки за формиране на дървото');
-@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Пълен URL до картинките, формиращи дървовидната структура. Директория \'img\' трябва да се намира в тази директория (тя е част от тази приставка).');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME', 'Графика или само текст');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC', 'Връзките да се показват в дървовидна структура или само като текст.');
-@define('PLUGIN_STATICPAGELIST_ICON', 'JS Дърво');
-@define('PLUGIN_STATICPAGELIST_TEXT', 'Текст');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY', 'Само родителски страници ?');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', 'При избор \'Да\' само родителските страници се показват. При избор \'Не\' се виждат всички страници.');
-@define('PLUGIN_STATICPAGELIST_IMG_NAME', 'Използване на графика в дървовидната структура');
+@define('PLUGIN_STATICPAGELIST_NAME', 'РЎС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё - СЃРїРёСЃСЉРє');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'РўР°Р·Рё РїСЂРёСЃС‚Р°РІРєР° РїРѕРєР°Р·РІР° РєРѕРЅС„РёРіСѓСЂРёСЂСѓРµРј СЃРїРёСЃСЉРє РѕС‚ СЃС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё.');
+@define('PLUGIN_STATICPAGELIST_TITLE', 'Р—Р°РіР»Р°РІРёРµ');
+@define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Р—Р°РіР»Р°РІРёРµ РЅР° СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР°');
+@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'РЎС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё');
+@define('PLUGIN_STATICPAGELIST_LIMIT', 'Р‘СЂРѕР№ СЃС‚СЂР°РЅРёС†Рё');
+@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', 'РљРѕР»РєРѕ РІСЂСЉР·РєРё РєСЉРј СЃС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё РґР° СЃРµ РїРѕРєР°Р·РІР°С‚. 0 РѕР·РЅР°С‡Р°РІР° Р±РµР· РѕРіСЂР°РЅРёС‡РµРЅРёРµ.');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Р’СЂСЉР·РєР° РєСЉРј Р»РёС†РµРІР°С‚Р° СЃС‚СЂР°РЅРёС†Р°');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'Р”Р° РёРјР° Р»Рё РІСЂСЉР·РєР° РєСЉРј Р»РёС†РµРІР°С‚Р° СЃС‚СЂР°РЅРёС†Р° (СЃСЉСЃ СЃС‚Р°С‚РёРёС‚Рµ) ?');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'Р—Р°РіР»Р°РІРЅР° СЃС‚СЂР°РЅРёС†Р°');
+@define('PLUGIN_LINKS_IMGDIR', 'Р”РёСЂРµРєС‚РѕСЂРёСЏ СЃ РєР°СЂС‚РёРЅРєРё Р·Р° С„РѕСЂРјРёСЂР°РЅРµ РЅР° РґСЉСЂРІРѕС‚Рѕ');
+@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'РџСЉР»РµРЅ URL РґРѕ РєР°СЂС‚РёРЅРєРёС‚Рµ, С„РѕСЂРјРёСЂР°С‰Рё РґСЉСЂРІРѕРІРёРґРЅР°С‚Р° СЃС‚СЂСѓРєС‚СѓСЂР°. Р”РёСЂРµРєС‚РѕСЂРёСЏ \'img\' С‚СЂСЏР±РІР° РґР° СЃРµ РЅР°РјРёСЂР° РІ С‚Р°Р·Рё РґРёСЂРµРєС‚РѕСЂРёСЏ (С‚СЏ Рµ С‡Р°СЃС‚ РѕС‚ С‚Р°Р·Рё РїСЂРёСЃС‚Р°РІРєР°).');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME', 'Р“СЂР°С„РёРєР° РёР»Рё СЃР°РјРѕ С‚РµРєСЃС‚');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC', 'Р’СЂСЉР·РєРёС‚Рµ РґР° СЃРµ РїРѕРєР°Р·РІР°С‚ РІ РґСЉСЂРІРѕРІРёРґРЅР° СЃС‚СЂСѓРєС‚СѓСЂР° РёР»Рё СЃР°РјРѕ РєР°С‚Рѕ С‚РµРєСЃС‚.');
+@define('PLUGIN_STATICPAGELIST_ICON', 'JS Р”СЉСЂРІРѕ');
+@define('PLUGIN_STATICPAGELIST_TEXT', 'РўРµРєСЃС‚');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY', 'РЎР°РјРѕ СЂРѕРґРёС‚РµР»СЃРєРё СЃС‚СЂР°РЅРёС†Рё ?');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', 'РџСЂРё РёР·Р±РѕСЂ \'Р”Р°\' СЃР°РјРѕ СЂРѕРґРёС‚РµР»СЃРєРёС‚Рµ СЃС‚СЂР°РЅРёС†Рё СЃРµ РїРѕРєР°Р·РІР°С‚. РџСЂРё РёР·Р±РѕСЂ \'РќРµ\' СЃРµ РІРёР¶РґР°С‚ РІСЃРёС‡РєРё СЃС‚СЂР°РЅРёС†Рё.');
+@define('PLUGIN_STATICPAGELIST_IMG_NAME', 'РР·РїРѕР»Р·РІР°РЅРµ РЅР° РіСЂР°С„РёРєР° РІ РґСЉСЂРІРѕРІРёРґРЅР°С‚Р° СЃС‚СЂСѓРєС‚СѓСЂР°');
 
-@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'URL на преместената директория е сменен в %s статични страници.'); 
+@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'URL РЅР° РїСЂРµРјРµСЃС‚РµРЅР°С‚Р° РґРёСЂРµРєС‚РѕСЂРёСЏ Рµ СЃРјРµРЅРµРЅ РІ %s СЃС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё.'); 
 
-@define('STATICPAGE_QUICKSEARCH_DESC', 'Ако е разрешено, бързото търсене ще работи и в статичните страници.');
+@define('STATICPAGE_QUICKSEARCH_DESC', 'РђРєРѕ Рµ СЂР°Р·СЂРµС€РµРЅРѕ, Р±СЉСЂР·РѕС‚Рѕ С‚СЉСЂСЃРµРЅРµ С‰Рµ СЂР°Р±РѕС‚Рё Рё РІ СЃС‚Р°С‚РёС‡РЅРёС‚Рµ СЃС‚СЂР°РЅРёС†Рё.');
 
-@define('STATICPAGE_CATEGORYPAGE','свързана статична страница');
-@define('STATICPAGE_RELATED_CATEGORY', 'свързана категория');
-@define('STATICPAGE_RELATED_CATEGORY_DESCRIPTION', 'Извеждане на статиите от тази категория или поставяне на връзка към категорията на статичната страница. Използвайте "plugin_staticpage_related_category.tpl" за тази възможност.');
+@define('STATICPAGE_CATEGORYPAGE','СЃРІСЉСЂР·Р°РЅР° СЃС‚Р°С‚РёС‡РЅР° СЃС‚СЂР°РЅРёС†Р°');
+@define('STATICPAGE_RELATED_CATEGORY', 'СЃРІСЉСЂР·Р°РЅР° РєР°С‚РµРіРѕСЂРёСЏ');
+@define('STATICPAGE_RELATED_CATEGORY_DESCRIPTION', 'РР·РІРµР¶РґР°РЅРµ РЅР° СЃС‚Р°С‚РёРёС‚Рµ РѕС‚ С‚Р°Р·Рё РєР°С‚РµРіРѕСЂРёСЏ РёР»Рё РїРѕСЃС‚Р°РІСЏРЅРµ РЅР° РІСЂСЉР·РєР° РєСЉРј РєР°С‚РµРіРѕСЂРёСЏС‚Р° РЅР° СЃС‚Р°С‚РёС‡РЅР°С‚Р° СЃС‚СЂР°РЅРёС†Р°. РР·РїРѕР»Р·РІР°Р№С‚Рµ "plugin_staticpage_related_category.tpl" Р·Р° С‚Р°Р·Рё РІСЉР·РјРѕР¶РЅРѕСЃС‚.');
 
-@define('STATICPAGE_ARTICLE_OVERVIEW','Преглед на страницата');
-@define('STATICPAGE_NEW_HEADLINES','Най-нови статии:');
+@define('STATICPAGE_ARTICLE_OVERVIEW','РџСЂРµРіР»РµРґ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('STATICPAGE_NEW_HEADLINES','РќР°Р№-РЅРѕРІРё СЃС‚Р°С‚РёРё:');
 
-@define('STATICPAGE_TEMPLATE','Шаблон за редактиране');
-@define('STATICPAGE_TEMPLATE_EXTERNAL', 'Кратък шаблон');
+@define('STATICPAGE_TEMPLATE','РЁР°Р±Р»РѕРЅ Р·Р° СЂРµРґР°РєС‚РёСЂР°РЅРµ');
+@define('STATICPAGE_TEMPLATE_EXTERNAL', 'РљСЂР°С‚СЉРє С€Р°Р±Р»РѕРЅ');
 
-@define('STATICPAGE_SECTION_META', 'Мета-данни');
-@define('STATICPAGE_SECTION_BASIC', 'Основно съдържание');
-@define('STATICPAGE_SECTION_OPT', 'Опции');
-@define('STATICPAGE_SECTION_STRUCT', 'Структурирано');
+@define('STATICPAGE_SECTION_META', 'РњРµС‚Р°-РґР°РЅРЅРё');
+@define('STATICPAGE_SECTION_BASIC', 'РћСЃРЅРѕРІРЅРѕ СЃСЉРґСЉСЂР¶Р°РЅРёРµ');
+@define('STATICPAGE_SECTION_OPT', 'РћРїС†РёРё');
+@define('STATICPAGE_SECTION_STRUCT', 'РЎС‚СЂСѓРєС‚СѓСЂРёСЂР°РЅРѕ');
 

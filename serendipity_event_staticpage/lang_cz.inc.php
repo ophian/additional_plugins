@@ -1,16 +1,16 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/30
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/15
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/03/09
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/06/30
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/03/31
  */
 
@@ -19,87 +19,87 @@
 //
 
 @define('STATICPAGE_HEADLINE', 'Nadpis');
-@define('STATICPAGE_HEADLINE_BLAHBLAH', 'Tento text je uveden˝ jako nadpis statickÈ str·nky, zobrazen˝ stejnÏ jako nadpisy bÏæn˝ch p¯ÌspÏvk˘');
-@define('STATICPAGE_TITLE', 'StatickÈ str·nky');
-@define('STATICPAGE_TITLE_BLAHBLAH', 'Zobrazuje v blogu statickÈ str·nky se stejn˝m designem jako majÌ bÏænÈ p¯spÏvky. P¯id· novÈ menu do adminstr·torskÈho rozhranÌ.');
-@define('CONTENT_BLAHBLAH', 'zde vepiπte obsah str·nky');
-@define('STATICPAGE_PERMALINK', 'St·l˝ odkaz');
-@define('STATICPAGE_PERMALINK_BLAHBLAH', 'Definuje adresu st·lÈho odkazu (permalink), pod kterou je str·nka zobraziteln·. MusÌ b˝t ve from·tu absolutnÌ adresy a musÌ konËit .htm nebo .html!');
-@define('STATICPAGE_PAGETITLE', 'Zkr·cen· URL adresa (kv˘li zpÏtnÈ kompatibilitÏ, v novÏjπÌch verzÌch ignorujte)');
-@define('STATICPAGE_ARTICLEFORMAT', 'Form·tovat jako Ël·nek?');
-@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', 'Pokud je nastaveno na ANO, Ël·nek je automaticky form·tov·n jako bÏæn˝ p¯ÌspÏvek (barvy, okraje, apod.) (StandardnÏ: ANO)');
-@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE', 'Nadpis str·nka v mÛdu "Form·tovat jako Ël·nek"');
-@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'Pokud pro statickou str·nku pouæijete stejn˝ form·t jako pro bÏænÈ p¯ÌspÏvky, tento nadpis se zobrazÌ na mÌstÏ, kde se u norm·lnÌch p¯ÌspÏvk˘ zobrazuje DATUM.');
-@define('STATICPAGE_SELECT', 'Upravit nebo vytvo¯it statickou str·nku - vyber v menu');
-@define('STATICPAGE_PASSWORD_NOTICE', 'Tato str·nka je zaheslov·na. Zadej prosÌm spr·vnÈ heslo:');
-@define('STATICPAGE_PARENTPAGES_NAME', 'RodiËovsk· str·nka');
-@define('STATICPAGE_PARENTPAGE_DESC', 'Vyber nad¯azenou - rodiËovskou str·nku');
-@define('STATICPAGE_PARENTPAGE_PARENT', 'Toto je rodiËovsk· str·nka');
-@define('STATICPAGE_AUTHORS_NAME', 'JmÈno autora');
-@define('STATICPAGE_AUTHORS_DESC', 'Tento autor je vlastnÌkem tÈto statickÈ str·nky');
-@define('STATICPAGE_FILENAME_NAME', '©ablona (Smarty)');
-@define('STATICPAGE_FILENAME_DESC', 'Vloæ jmÈno souboru πablony, kter· m· b˝t pouæita k zobrazenÌ str·nky. Tento soubor m˘æe b˝t umÌstÏn˝ buÔ v adres·¯i /plugins/serendipity_event_staticpage nebo v adres·¯i VaπÌ πablony.');
-@define('STATICPAGE_SHOWCHILDPAGES_NAME', 'Zobraz dÏti (pod¯azenÈ str·nky)');
-@define('STATICPAGE_SHOWCHILDPAGES_DESC', 'ZobrazÌ seznam odkaz˘ na vπechny pod¯azenÈ str·nky = dÏti, kterÈ majÌ tuto str·nku nastavenou jako rodiËe.');
-@define('STATICPAGE_PRECONTENT_NAME', '⁄vod');
-@define('STATICPAGE_PRECONTENT_DESC', 'Tento blok se zobrazÌ p¯ed seznamem pod¯azen˝ch Ël·nek.');
-@define('STATICPAGE_CANNOTDELETE_MSG', 'NenÌ moænÈ vymazat tuto str·nku. V datab·zi byly nalezeny pod¯azenÈ str·nky. Nejd¯Ìve musÌte smazat je.');
-@define('STATICPAGE_IS_STARTPAGE', 'UdÏlej z tÈto strany hlavnÌ stranu Serendipity');
-@define('STATICPAGE_IS_STARTPAGE_DESC', 'Pokud je nastaveno, tato strana se zobrazÌ mÌsto standardnÌ ˙vodnÌ strany Serendipity. Lze zadat pouze jednu str·nku jako ˙vodnÌ! Pokud pak chcete zobrazit p˘vodnÌ ˙vodnÌ str·nku, pouæijte odkaz "index.php?frontpage". Pokud chcete pouæÌt tuto vlastnost modulu statickÈ str·nky, musÌte ho v seznamu plugin˘ p¯emÌstit p¯ed vπechny ostatnÌ pluginy zobrazujÌcÌ statickÈ str·nky (jako hlasov·nÌ nebo kniha host˘).');
-@define('STATICPAGE_TOP', 'HlavnÌ str·nka blogu');
-@define('STATICPAGE_NEXT', 'DalπÌ');
-@define('STATICPAGE_PREV', 'P¯edchozÌ');
+@define('STATICPAGE_HEADLINE_BLAHBLAH', 'Tento text je uveden√Ω jako nadpis statick√© str√°nky, zobrazen√Ω stejnƒõ jako nadpisy bƒõ≈æn√Ωch p≈ô√≠spƒõvk≈Ø');
+@define('STATICPAGE_TITLE', 'Statick√© str√°nky');
+@define('STATICPAGE_TITLE_BLAHBLAH', 'Zobrazuje v blogu statick√© str√°nky se stejn√Ωm designem jako maj√≠ bƒõ≈æn√© p≈ôspƒõvky. P≈ôid√° nov√© menu do adminstr√°torsk√©ho rozhran√≠.');
+@define('CONTENT_BLAHBLAH', 'zde vepi≈°te obsah str√°nky');
+@define('STATICPAGE_PERMALINK', 'St√°l√Ω odkaz');
+@define('STATICPAGE_PERMALINK_BLAHBLAH', 'Definuje adresu st√°l√©ho odkazu (permalink), pod kterou je str√°nka zobraziteln√°. Mus√≠ b√Ωt ve from√°tu absolutn√≠ adresy a mus√≠ konƒçit .htm nebo .html!');
+@define('STATICPAGE_PAGETITLE', 'Zkr√°cen√° URL adresa (kv≈Øli zpƒõtn√© kompatibilitƒõ, v novƒõj≈°√≠ch verz√≠ch ignorujte)');
+@define('STATICPAGE_ARTICLEFORMAT', 'Form√°tovat jako ƒçl√°nek?');
+@define('STATICPAGE_ARTICLEFORMAT_BLAHBLAH', 'Pokud je nastaveno na ANO, ƒçl√°nek je automaticky form√°tov√°n jako bƒõ≈æn√Ω p≈ô√≠spƒõvek (barvy, okraje, apod.) (Standardnƒõ: ANO)');
+@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE', 'Nadpis str√°nka v m√≥du "Form√°tovat jako ƒçl√°nek"');
+@define('STATICPAGE_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'Pokud pro statickou str√°nku pou≈æijete stejn√Ω form√°t jako pro bƒõ≈æn√© p≈ô√≠spƒõvky, tento nadpis se zobraz√≠ na m√≠stƒõ, kde se u norm√°ln√≠ch p≈ô√≠spƒõvk≈Ø zobrazuje DATUM.');
+@define('STATICPAGE_SELECT', 'Upravit nebo vytvo≈ôit statickou str√°nku - vyber v menu');
+@define('STATICPAGE_PASSWORD_NOTICE', 'Tato str√°nka je zaheslov√°na. Zadej pros√≠m spr√°vn√© heslo:');
+@define('STATICPAGE_PARENTPAGES_NAME', 'Rodiƒçovsk√° str√°nka');
+@define('STATICPAGE_PARENTPAGE_DESC', 'Vyber nad≈ôazenou - rodiƒçovskou str√°nku');
+@define('STATICPAGE_PARENTPAGE_PARENT', 'Toto je rodiƒçovsk√° str√°nka');
+@define('STATICPAGE_AUTHORS_NAME', 'Jm√©no autora');
+@define('STATICPAGE_AUTHORS_DESC', 'Tento autor je vlastn√≠kem t√©to statick√© str√°nky');
+@define('STATICPAGE_FILENAME_NAME', '≈†ablona (Smarty)');
+@define('STATICPAGE_FILENAME_DESC', 'Vlo≈æ jm√©no souboru ≈°ablony, kter√° m√° b√Ωt pou≈æita k zobrazen√≠ str√°nky. Tento soubor m≈Ø≈æe b√Ωt um√≠stƒõn√Ω buƒè v adres√°≈ôi /plugins/serendipity_event_staticpage nebo v adres√°≈ôi Va≈°√≠ ≈°ablony.');
+@define('STATICPAGE_SHOWCHILDPAGES_NAME', 'Zobraz dƒõti (pod≈ôazen√© str√°nky)');
+@define('STATICPAGE_SHOWCHILDPAGES_DESC', 'Zobraz√≠ seznam odkaz≈Ø na v≈°echny pod≈ôazen√© str√°nky = dƒõti, kter√© maj√≠ tuto str√°nku nastavenou jako rodiƒçe.');
+@define('STATICPAGE_PRECONTENT_NAME', '√övod');
+@define('STATICPAGE_PRECONTENT_DESC', 'Tento blok se zobraz√≠ p≈ôed seznamem pod≈ôazen√Ωch ƒçl√°nek.');
+@define('STATICPAGE_CANNOTDELETE_MSG', 'Nen√≠ mo≈æn√© vymazat tuto str√°nku. V datab√°zi byly nalezeny pod≈ôazen√© str√°nky. Nejd≈ô√≠ve mus√≠te smazat je.');
+@define('STATICPAGE_IS_STARTPAGE', 'Udƒõlej z t√©to strany hlavn√≠ stranu Serendipity');
+@define('STATICPAGE_IS_STARTPAGE_DESC', 'Pokud je nastaveno, tato strana se zobraz√≠ m√≠sto standardn√≠ √∫vodn√≠ strany Serendipity. Lze zadat pouze jednu str√°nku jako √∫vodn√≠! Pokud pak chcete zobrazit p≈Øvodn√≠ √∫vodn√≠ str√°nku, pou≈æijte odkaz "index.php?frontpage". Pokud chcete pou≈æ√≠t tuto vlastnost modulu statick√© str√°nky, mus√≠te ho v seznamu plugin≈Ø p≈ôem√≠stit p≈ôed v≈°echny ostatn√≠ pluginy zobrazuj√≠c√≠ statick√© str√°nky (jako hlasov√°n√≠ nebo kniha host≈Ø).');
+@define('STATICPAGE_TOP', 'Hlavn√≠ str√°nka blogu');
+@define('STATICPAGE_NEXT', 'Dal≈°√≠');
+@define('STATICPAGE_PREV', 'P≈ôedchoz√≠');
 @define('STATICPAGE_LINKNAME', 'Upravit');
 
-@define('STATICPAGE_ARTICLETYPE', 'Typ str·nky');
-@define('STATICPAGE_ARTICLETYPE_DESC', 'Vyberte typ tÈto statickÈ str·nky.');
+@define('STATICPAGE_ARTICLETYPE', 'Typ str√°nky');
+@define('STATICPAGE_ARTICLETYPE_DESC', 'Vyberte typ t√©to statick√© str√°nky.');
 
-@define('STATICPAGE_CATEGORY_PAGEORDER', 'Po¯adÌ str·nek');
-@define('STATICPAGE_CATEGORY_PAGES', '⁄prava str·nek');
-@define('STATICPAGE_CATEGORY_PAGETYPES', 'Typy str·nek');
-@define('STATICPAGE_CATEGORY_PAGEADD', 'OstatnÌ pluginy');
+@define('STATICPAGE_CATEGORY_PAGEORDER', 'Po≈ôad√≠ str√°nek');
+@define('STATICPAGE_CATEGORY_PAGES', '√öprava str√°nek');
+@define('STATICPAGE_CATEGORY_PAGETYPES', 'Typy str√°nek');
+@define('STATICPAGE_CATEGORY_PAGEADD', 'Ostatn√≠ pluginy');
 
-@define('PAGETYPES_SELECT', 'Vyber typ str·nky k ˙prav·m');
-@define('STATICPAGE_ARTICLETYPE_DESCRIPTION', 'N·zev:');
-@define('STATICPAGE_ARTICLETYPE_DESCRIPTION_DESC', 'N·zev typu str·nky.');
-@define('STATICPAGE_ARTICLETYPE_TEMPLATE', '©ablona:');
-@define('STATICPAGE_ARTICLETYPE_TEMPLATE_DESC', 'JmÈno souboru πablony. Soubor m˘æe b˝t umÌstÏn v adres·¯i pluginy "statickÈ str·nky" nebo v adres·¯i VaπÌ πablony.');
-@define('STATICPAGE_ARTICLETYPE_IMAGE', 'Cesta k obr·zku:');
-@define('STATICPAGE_ARTICLETYPE_IMAGE_DESC', 'Zadejte URL adresu obr·zku.');
+@define('PAGETYPES_SELECT', 'Vyber typ str√°nky k √∫prav√°m');
+@define('STATICPAGE_ARTICLETYPE_DESCRIPTION', 'N√°zev:');
+@define('STATICPAGE_ARTICLETYPE_DESCRIPTION_DESC', 'N√°zev typu str√°nky.');
+@define('STATICPAGE_ARTICLETYPE_TEMPLATE', '≈†ablona:');
+@define('STATICPAGE_ARTICLETYPE_TEMPLATE_DESC', 'Jm√©no souboru ≈°ablony. Soubor m≈Ø≈æe b√Ωt um√≠stƒõn v adres√°≈ôi pluginy "statick√© str√°nky" nebo v adres√°≈ôi Va≈°√≠ ≈°ablony.');
+@define('STATICPAGE_ARTICLETYPE_IMAGE', 'Cesta k obr√°zku:');
+@define('STATICPAGE_ARTICLETYPE_IMAGE_DESC', 'Zadejte URL adresu obr√°zku.');
 
-@define('STATICPAGE_SHOWNAVI', 'Vloæit navigaci');
-@define('STATICPAGE_SHOWNAVI_DESC', 'ZobrazÌ navigaËnÌ liπtu s odkazy na dalπÌ statickÈ str·nky v tÈto statickÈ str·nce.');
-@define('STATICPAGE_SHOWONNAVI', 'Vloæit postrannÌ navigaci');
-@define('STATICPAGE_SHOWONNAVI_DESC', 'ZobrazÌ tuto str·nku na seznamu statick˝ch str·nek v postrannÌm panelu.');
+@define('STATICPAGE_SHOWNAVI', 'Vlo≈æit navigaci');
+@define('STATICPAGE_SHOWNAVI_DESC', 'Zobraz√≠ navigaƒçn√≠ li≈°tu s odkazy na dal≈°√≠ statick√© str√°nky v t√©to statick√© str√°nce.');
+@define('STATICPAGE_SHOWONNAVI', 'Vlo≈æit postrann√≠ navigaci');
+@define('STATICPAGE_SHOWONNAVI_DESC', 'Zobraz√≠ tuto str√°nku na seznamu statick√Ωch str√°nek v postrann√≠m panelu.');
 
-@define('STATICPAGE_SHOWNAVI_DEFAULT', 'Vloæit navigaci');
-@define('STATICPAGE_DEFAULT_DESC', 'StandardnÌ nastavenÌ pro novÈ str·nky.');
-@define('STATICPAGE_SHOWONNAVI_DEFAULT', 'Zobrazit str·nku v postrannÌ navigaci');
-@define('STATICPAGE_SHOWMARKUP_DEFAULT', 'PouæÌt znaËkov·nÌ');
-@define('STATICPAGE_SHOWARTICLEFORMAT_DEFAULT', 'Form·tovat jako bÏæn˝ Ël·nek');
-@define('STATICPAGE_SHOWCHILDPAGES_DEFAULT', 'Zobrazit dÏti (pod¯azenÈ str·nky)');
+@define('STATICPAGE_SHOWNAVI_DEFAULT', 'Vlo≈æit navigaci');
+@define('STATICPAGE_DEFAULT_DESC', 'Standardn√≠ nastaven√≠ pro nov√© str√°nky.');
+@define('STATICPAGE_SHOWONNAVI_DEFAULT', 'Zobrazit str√°nku v postrann√≠ navigaci');
+@define('STATICPAGE_SHOWMARKUP_DEFAULT', 'Pou≈æ√≠t znaƒçkov√°n√≠');
+@define('STATICPAGE_SHOWARTICLEFORMAT_DEFAULT', 'Form√°tovat jako bƒõ≈æn√Ω ƒçl√°nek');
+@define('STATICPAGE_SHOWCHILDPAGES_DEFAULT', 'Zobrazit dƒõti (pod≈ôazen√© str√°nky)');
 
-@define('STATICPAGE_PAGEORDER_DESC', 'Tady m˘æete zmÏnit po¯adÌ statick˝ch str·nek.');
-@define('STATICPAGE_PAGEADD_DESC', 'Vyberte pluginy, na kterÈ chcete zobrazi odkaz v navigaci statick˝ch str·nek.');
-@define('STATICPAGE_PAGEADD_PLUGINS', 'N·sledujÌcÌ pluginy mohou b˝t vloæeny do navigace statick˝ch str·nek v postrannÌm sloupci.');
+@define('STATICPAGE_PAGEORDER_DESC', 'Tady m≈Ø≈æete zmƒõnit po≈ôad√≠ statick√Ωch str√°nek.');
+@define('STATICPAGE_PAGEADD_DESC', 'Vyberte pluginy, na kter√© chcete zobrazi odkaz v navigaci statick√Ωch str√°nek.');
+@define('STATICPAGE_PAGEADD_PLUGINS', 'N√°sleduj√≠c√≠ pluginy mohou b√Ωt vlo≈æeny do navigace statick√Ωch str√°nek v postrann√≠m sloupci.');
 
 @define('STATICPAGE_PUBLISHSTATUS', 'Publikovat');
-@define('STATICPAGE_PUBLISHSTATUS_DESC', 'Typ uloæenÌ str·nky - zve¯ejnit/koncept');
+@define('STATICPAGE_PUBLISHSTATUS_DESC', 'Typ ulo≈æen√≠ str√°nky - zve≈ôejnit/koncept');
 
-@define('STATICPAGE_SHOWTEXTORHEADLINE_NAME', 'Zobrazit v navigaci text "p¯edchozÌ/dalπÌ" nebo n·zvy p¯edchozÌ a dalπÌ str·nky?');
-@define('STATICPAGE_SHOWTEXTORHEADLINE_TEXT', 'P¯edchozÌ/DalπÌ');
-@define('STATICPAGE_SHOWTEXTORHEADLINE_HEADLINE', 'N·zvy str·nek');
+@define('STATICPAGE_SHOWTEXTORHEADLINE_NAME', 'Zobrazit v navigaci text "p≈ôedchoz√≠/dal≈°√≠" nebo n√°zvy p≈ôedchoz√≠ a dal≈°√≠ str√°nky?');
+@define('STATICPAGE_SHOWTEXTORHEADLINE_TEXT', 'P≈ôedchoz√≠/Dal≈°√≠');
+@define('STATICPAGE_SHOWTEXTORHEADLINE_HEADLINE', 'N√°zvy str√°nek');
 
 @define('STATICPAGE_LANGUAGE', 'Jazyk');
-@define('STATICPAGE_LANGUAGE_DESC', 'Vyberte jazyk tÈto str·nky');
+@define('STATICPAGE_LANGUAGE_DESC', 'Vyberte jazyk t√©to str√°nky');
 
-@define('STATICPAGE_PLUGINS_INSTALLED', 'Plugin je nainstalov·n');
-@define('STATICPAGE_PLUGIN_AVAILABLE', 'Plugin je k dispozici, ale nenÌ nainstalov·n.');
-@define('STATICPAGE_PLUGIN_NOTAVAILABLE', 'Plugin nenÌ k dispozici');
+@define('STATICPAGE_PLUGINS_INSTALLED', 'Plugin je nainstalov√°n');
+@define('STATICPAGE_PLUGIN_AVAILABLE', 'Plugin je k dispozici, ale nen√≠ nainstalov√°n.');
+@define('STATICPAGE_PLUGIN_NOTAVAILABLE', 'Plugin nen√≠ k dispozici');
 
-@define('STATICPAGE_SEARCHRESULTS', 'PoËet nalezen˝ch statick˝ch str·nek - %d:');
+@define('STATICPAGE_SEARCHRESULTS', 'Poƒçet nalezen√Ωch statick√Ωch str√°nek - %d:');
 
-@define('LANG_ALL', 'Vπechny jazyky');
+@define('LANG_ALL', 'V≈°echny jazyky');
 
 @define('STATICPAGE_STATUS', 'Stav');
 
@@ -107,67 +107,67 @@
 //  serendipity_plugin_staticpage.php
 //
 
-@define('PLUGIN_STATICPAGELIST_NAME', 'Seznam statick˝ch str·nek');
-@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Tento plugin zobrazuje nastaviteln˝ seznam st·l˝ch (statick˝ch) str·nek.');
+@define('PLUGIN_STATICPAGELIST_NAME', 'Seznam statick√Ωch str√°nek');
+@define('PLUGIN_STATICPAGELIST_NAME_DESC', 'Tento plugin zobrazuje nastaviteln√Ω seznam st√°l√Ωch (statick√Ωch) str√°nek.');
 @define('PLUGIN_STATICPAGELIST_TITLE', 'Nadpis');
-@define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Nadpis bloku v postrannÌm panelu:');
-@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'St·lÈ str·nky');
-@define('PLUGIN_STATICPAGELIST_LIMIT', 'PoËet str·nek k zobrazenÌ');
-@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', 'Zadej maxim·lnÌ poËet str·nek, kterÈ se zobrazÌ najednou. 0 znamen· bez omezenÌ.');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Zobrazit odkaz na hlavnÌ srt·nku');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'ZobrazÌ odkaz na hlavnÌ str·nku');
-@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'HlavnÌ str·nka');
-@define('PLUGIN_LINKS_IMGDIR', 'Adres·¯ s obr·zky');
-@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Zadej URL adresu adres·¯e, kde se nach·zÌ obr·zky zobrazenÈ ve stromu. V tomto adres·¯i se musÌ nach·zet podadres·¯ "img".');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME', 'Ikony nebo Ëist˝ text');
-@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC', 'Zobrazit menu jako strom s ikonami nebo jako Ëist˝ text');
+@define('PLUGIN_STATICPAGELIST_TITLE_DESC', 'Nadpis bloku v postrann√≠m panelu:');
+@define('PLUGIN_STATICPAGELIST_TITLE_DEFAULT', 'St√°l√© str√°nky');
+@define('PLUGIN_STATICPAGELIST_LIMIT', 'Poƒçet str√°nek k zobrazen√≠');
+@define('PLUGIN_STATICPAGELIST_LIMIT_DESC', 'Zadej maxim√°ln√≠ poƒçet str√°nek, kter√© se zobraz√≠ najednou. 0 znamen√° bez omezen√≠.');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_NAME', 'Zobrazit odkaz na hlavn√≠ srt√°nku');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_DESC', 'Zobraz√≠ odkaz na hlavn√≠ str√°nku');
+@define('PLUGIN_STATICPAGELIST_FRONTPAGE_LINKNAME', 'Hlavn√≠ str√°nka');
+@define('PLUGIN_LINKS_IMGDIR', 'Adres√°≈ô s obr√°zky');
+@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Zadej URL adresu adres√°≈ôe, kde se nach√°z√≠ obr√°zky zobrazen√© ve stromu. V tomto adres√°≈ôi se mus√≠ nach√°zet podadres√°≈ô "img".');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_NAME', 'Ikony nebo ƒçist√Ω text');
+@define('PLUGIN_STATICPAGELIST_SHOWICONS_DESC', 'Zobrazit menu jako strom s ikonami nebo jako ƒçist√Ω text');
 @define('PLUGIN_STATICPAGELIST_ICON', 'JS Strom - ikony');
-@define('PLUGIN_STATICPAGELIST_TEXT', '»ist˝ text');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY', 'Zobrazit pouze rodiËovskÈ str·nky?');
-@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', 'Pokud je zaponuto, jsou zobrazeny pouze rodiËovskÈ str·nky. Jinak budou zobrazeny i pod¯azenÈ str·nky.');
+@define('PLUGIN_STATICPAGELIST_TEXT', 'ƒåist√Ω text');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY', 'Zobrazit pouze rodiƒçovsk√© str√°nky?');
+@define('PLUGIN_STATICPAGELIST_PARENTSONLY_DESC', 'Pokud je zaponuto, jsou zobrazeny pouze rodiƒçovsk√© str√°nky. Jinak budou zobrazeny i pod≈ôazen√© str√°nky.');
 @define('PLUGIN_STATICPAGELIST_IMG_NAME', 'Povolit grafiku pro strom');
 
-@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'ZmÏnÏna URL adresa p¯esunutÈho adres·¯e v %s statick˝ch str·nk·ch.');
-#@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'V jin˝ch datab·zÌch neæ je MySQL nenÌ moænÈ iterativnÌ prohled·v·nÌ vπech statick˝ch str·nek a nahrazenÌ n·zv˘ star˝ch adres·¯˘ n·zvy nov˝ch adres·¯˘. Budete muset provÈst tuto operaci ruËnÏ. St·le m˘æete p¯esunout star˝ adres·¯ zpÏt tam, kde byl p˘vodnÏ, pokud se v·m do ruËnÌch zmÏn nechce.');
+@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRIES', 'Zmƒõnƒõna URL adresa p≈ôesunut√©ho adres√°≈ôe v %s statick√Ωch str√°nk√°ch.');
+#@define('STATICPAGE_MEDIA_DIRECTORY_MOVE_ENTRY', 'V jin√Ωch datab√°z√≠ch ne≈æ je MySQL nen√≠ mo≈æn√© iterativn√≠ prohled√°v√°n√≠ v≈°ech statick√Ωch str√°nek a nahrazen√≠ n√°zv≈Ø star√Ωch adres√°≈ô≈Ø n√°zvy nov√Ωch adres√°≈ô≈Ø. Budete muset prov√©st tuto operaci ruƒçnƒõ. St√°le m≈Ø≈æete p≈ôesunout star√Ω adres√°≈ô zpƒõt tam, kde byl p≈Øvodnƒõ, pokud se v√°m do ruƒçn√≠ch zmƒõn nechce.');
 
-@define('STATICPAGE_QUICKSEARCH_DESC', 'Pokud je povoleno, rychlÈ vyhled·v·nÌ prohled· takÈ statickÈ str·nky.');
+@define('STATICPAGE_QUICKSEARCH_DESC', 'Pokud je povoleno, rychl√© vyhled√°v√°n√≠ prohled√° tak√© statick√© str√°nky.');
 
-@define('STATICPAGE_CATEGORYPAGE', 'P¯Ìbuzn· statick· str·nka');
-@define('STATICPAGE_RELATED_CATEGORY', 'P¯Ìbuzn· kategorie');
-@define('STATICPAGE_RELATED_CATEGORY_DESCRIPTION', 'Zobrazte p¯ÌspÏvky z tÈto kategorie a nebo zobrazte odkazy na nÏ ve statickÈ str·nce. Pro ˙pravu vzhledu seznamu p¯ÌspÏvk˘ upravte πablonu "plugin_staticpage_related_category.tpl".');
+@define('STATICPAGE_CATEGORYPAGE', 'P≈ô√≠buzn√° statick√° str√°nka');
+@define('STATICPAGE_RELATED_CATEGORY', 'P≈ô√≠buzn√° kategorie');
+@define('STATICPAGE_RELATED_CATEGORY_DESCRIPTION', 'Zobrazte p≈ô√≠spƒõvky z t√©to kategorie a nebo zobrazte odkazy na nƒõ ve statick√© str√°nce. Pro √∫pravu vzhledu seznamu p≈ô√≠spƒõvk≈Ø upravte ≈°ablonu "plugin_staticpage_related_category.tpl".');
 
-@define('STATICPAGE_ARTICLE_OVERVIEW', 'P¯ehled Ël·nk˘:');
-@define('STATICPAGE_NEW_HEADLINES', 'NejnovÏjπÌ Ël·nky:');
+@define('STATICPAGE_ARTICLE_OVERVIEW', 'P≈ôehled ƒçl√°nk≈Ø:');
+@define('STATICPAGE_NEW_HEADLINES', 'Nejnovƒõj≈°√≠ ƒçl√°nky:');
 
-@define('STATICPAGE_TEMPLATE', '©ablona pro pozadÌ');
-@define('STATICPAGE_TEMPLATE_EXTERNAL', 'Jednoduch· πablona');
+@define('STATICPAGE_TEMPLATE', '≈†ablona pro pozad√≠');
+@define('STATICPAGE_TEMPLATE_EXTERNAL', 'Jednoduch√° ≈°ablona');
 
 @define('STATICPAGE_SECTION_META', 'Metadata');
-@define('STATICPAGE_SECTION_BASIC', 'Z·kladnÌ obsah');
+@define('STATICPAGE_SECTION_BASIC', 'Z√°kladn√≠ obsah');
 @define('STATICPAGE_SECTION_OPT', 'Volby');
 @define('STATICPAGE_SECTION_STRUCT', 'Struktura');
 
 // Next lines were translated on 2011/03/09
 
-@define('STATICPAGE_IS_404_PAGE', 'Nastavit tuto str·nku jako chybovou str·nku 404');
-@define('STATICPAGE_IS_404_PAGE_DESC', 'MÌsto vytv·¯enÌ zvl·πtnÌho chybovÈho dokumentu m˘æete nastavit tuto str·nku jako chybovou str·nku 404. Webserver musÌ toto nastavenÌ umoæÚovat!');
+@define('STATICPAGE_IS_404_PAGE', 'Nastavit tuto str√°nku jako chybovou str√°nku 404');
+@define('STATICPAGE_IS_404_PAGE_DESC', 'M√≠sto vytv√°≈ôen√≠ zvl√°≈°tn√≠ho chybov√©ho dokumentu m≈Ø≈æete nastavit tuto str√°nku jako chybovou str√°nku 404. Webserver mus√≠ toto nastaven√≠ umo≈æ≈àovat!');
 
 // Next lines were translated on 2011/06/30
 
-@define('PLUGIN_STATICPAGELIST_SMARTIFY', 'PostrannÌ seznam pomocÌ Smarty');
-@define('PLUGIN_STATICPAGELIST_SMARTIFY_BLAHBLAH', 'Pouæijte πablonu Smarty: "plugin_staticpage_sidebar.tpl" pro zad·nÌ v˝stupu do postrannÌho sloupce (umoæÚuje zkr·tit dÈlku pomocÌ funkcÌ Smarty).');
+@define('PLUGIN_STATICPAGELIST_SMARTIFY', 'Postrann√≠ seznam pomoc√≠ Smarty');
+@define('PLUGIN_STATICPAGELIST_SMARTIFY_BLAHBLAH', 'Pou≈æijte ≈°ablonu Smarty: "plugin_staticpage_sidebar.tpl" pro zad√°n√≠ v√Ωstupu do postrann√≠ho sloupce (umo≈æ≈àuje zkr√°tit d√©lku pomoc√≠ funkc√≠ Smarty).');
 
 // Next lines were translated on 2013/03/31
-@define('STATICPAGE_SHOWMETA_DEFAULT', 'Vkl·dat vstupnÌ pole pro zad·nÌ HTML meta tag˘');
-@define('STATICPAGES_CUSTOM_STRUCTURE_SHOW', 'Zobrazit moænosti struktur·lnÌch polÌ');
-@define('STATICPAGES_CUSTOM_META_SHOW', 'Zobrazit nepovinn· META pole');
-@define('STATICPAGES_CUSTOM_META_TITLE', 'HTML TITLE (nepovinn˝)');
-@define('STATICPAGES_CUSTOM_META_TITLE_BLAH_BLAH', 'V HTML kÛdu bude vloæeno jako <title>v·π nadpis</title>');
-@define('STATICPAGES_CUSTOM_META_DESC', 'HTML META Description (nepovinnÈ)');
-@define('STATICPAGES_CUSTOM_META_DESC_BLAH_BLAH', 'V HTML kÛdu bude vloæeno jako <meta name="description" content="Tady bude v·π html meta popis str·nky">');
-@define('STATICPAGES_CUSTOM_META_KEYS', 'HTML META Keywords (nepovinnÈ)');
-@define('STATICPAGES_CUSTOM_META_KEYS_BLAH_BLAH', 'V HTML kÛdu bude vloæeno jako <meta name="keywords" content="vaπe html meta klÌËov· slova">' );
+@define('STATICPAGE_SHOWMETA_DEFAULT', 'Vkl√°dat vstupn√≠ pole pro zad√°n√≠ HTML meta tag≈Ø');
+@define('STATICPAGES_CUSTOM_STRUCTURE_SHOW', 'Zobrazit mo≈ænosti struktur√°ln√≠ch pol√≠');
+@define('STATICPAGES_CUSTOM_META_SHOW', 'Zobrazit nepovinn√° META pole');
+@define('STATICPAGES_CUSTOM_META_TITLE', 'HTML TITLE (nepovinn√Ω)');
+@define('STATICPAGES_CUSTOM_META_TITLE_BLAH_BLAH', 'V HTML k√≥du bude vlo≈æeno jako <title>v√°≈° nadpis</title>');
+@define('STATICPAGES_CUSTOM_META_DESC', 'HTML META Description (nepovinn√©)');
+@define('STATICPAGES_CUSTOM_META_DESC_BLAH_BLAH', 'V HTML k√≥du bude vlo≈æeno jako <meta name="description" content="Tady bude v√°≈° html meta popis str√°nky">');
+@define('STATICPAGES_CUSTOM_META_KEYS', 'HTML META Keywords (nepovinn√©)');
+@define('STATICPAGES_CUSTOM_META_KEYS_BLAH_BLAH', 'V HTML k√≥du bude vlo≈æeno jako <meta name="keywords" content="va≈°e html meta kl√≠ƒçov√° slova">' );
 @define('STATICPAGE_SHOW_BREADCRUMB_DEFAULT', 'Zobrazit breadcrumb');
-@define('STATICPAGE_SHOW_BREADCRUMB', 'Zobrazit navigaËnÌ kol·Ëek (bradcrumb)');
-@define('STATICPAGE_SHOW_BREADCRUMB_DESC', 'Na tÈto str·nce zobrazÌ kol·Ëkovou navigaci, tzv. breadcrumb.');
+@define('STATICPAGE_SHOW_BREADCRUMB', 'Zobrazit navigaƒçn√≠ kol√°ƒçek (bradcrumb)');
+@define('STATICPAGE_SHOW_BREADCRUMB_DESC', 'Na t√©to str√°nce zobraz√≠ kol√°ƒçkovou navigaci, tzv. breadcrumb.');
 
