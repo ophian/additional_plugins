@@ -27,11 +27,11 @@
 <guid isPermaLink="false">serendipity_plugin_faq</guid>
 </item>
 <item>
-<title>Toon getagde bijdragen: Toon een &quot;tag cloud&quot; van gebruikte tags</title>
+<title>Show tagged entries: Shows a list of existing tags for entries</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_freetag</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Toon getagde bijdragen&lt;/b&gt;&lt;br /&gt;Toon een &quot;tag cloud&quot; van gebruikte tags&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Show tagged entries&lt;/b&gt;&lt;br /&gt;Shows a list of existing tags for entries&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
 <pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_freetag</guid>
 </item>
@@ -148,8 +148,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_adduser</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Fri, 14 Jul 2023 13:35:00 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 25 May 2025 19:30:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>

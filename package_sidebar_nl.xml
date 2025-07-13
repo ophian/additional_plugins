@@ -200,9 +200,9 @@
 <name>serendipity_plugin_freetag</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_freetag/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Toon getagde bijdragen</summary>
+<summary>Show tagged entries</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Toon een &quot;tag cloud&quot; van gebruikte tags</description>
+<description>Shows a list of existing tags for entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>4.00</version>
@@ -240,21 +240,7 @@
       <file>README.txt</file>
       <file>serendipity_event_freetag.php</file>
       <file>serendipity_plugin_freetag.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_hu.inc.php</file>
-        <file>lang_it.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_nl.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_se.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_freetag/ChangeLog</file>
@@ -285,18 +271,6 @@
     <file>serendipity_event_freetag/README.txt</file>
     <file>serendipity_event_freetag/serendipity_event_freetag.php</file>
     <file>serendipity_event_freetag/serendipity_plugin_freetag.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_hu.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_it.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_nl.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_se.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -924,18 +898,6 @@
       <file>staticpage_backend.css</file>
       <file>staticpage_backend.js</file>
       <file>svg_iconizr.tpl</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_it.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_se.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -995,16 +957,6 @@
     <file>serendipity_event_staticpage/staticpage_backend.css</file>
     <file>serendipity_event_staticpage/staticpage_backend.js</file>
     <file>serendipity_event_staticpage/svg_iconizr.tpl</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_it.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_se.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1627,11 +1579,11 @@
 <description>Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.51</version>
-  <requirements:s9yVersion>4.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2025-05-25</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -1644,18 +1596,11 @@
       <file>lang_en.inc.php</file>
       <file>lang_fr.inc.php</file>
       <file>lang_ja.inc.php</file>
-      <file>loginbox.tpl</file>
-      <file>registerbox.tpl</file>
+      <file>plugin_loginbox.tpl</file>
+      <file>plugin_registerbox.tpl</file>
       <file>serendipity_event_adduser.php</file>
       <file>serendipity_plugin_adduser.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_adduser/ChangeLog</file>
@@ -1668,15 +1613,10 @@
     <file>serendipity_plugin_adduser/lang_en.inc.php</file>
     <file>serendipity_plugin_adduser/lang_fr.inc.php</file>
     <file>serendipity_plugin_adduser/lang_ja.inc.php</file>
-    <file>serendipity_plugin_adduser/loginbox.tpl</file>
-    <file>serendipity_plugin_adduser/registerbox.tpl</file>
+    <file>serendipity_plugin_adduser/plugin_loginbox.tpl</file>
+    <file>serendipity_plugin_adduser/plugin_registerbox.tpl</file>
     <file>serendipity_plugin_adduser/serendipity_event_adduser.php</file>
     <file>serendipity_plugin_adduser/serendipity_plugin_adduser.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

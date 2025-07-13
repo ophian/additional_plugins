@@ -27,11 +27,11 @@
 <guid isPermaLink="false">serendipity_plugin_faq</guid>
 </item>
 <item>
-<title>Getaggte Artikel: Zeigt alle vorhandenen Tags</title>
+<title>Show tagged entries: Shows a list of existing tags for entries</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_freetag</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Getaggte Artikel&lt;/b&gt;&lt;br /&gt;Zeigt alle vorhandenen Tags&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Show tagged entries&lt;/b&gt;&lt;br /&gt;Shows a list of existing tags for entries&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
 <pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_freetag</guid>
 </item>
@@ -99,11 +99,11 @@
 <guid isPermaLink="false">serendipity_plugin_spamblock_bee</guid>
 </item>
 <item>
-<title>Liste der statischen Seiten: Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten.</title>
+<title>Static Page List: This plugin displays a configurable list of the static pages.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_staticpage</link>
 <category>Sidebar Plugins</category>
 <author>Rob Antonishen, Falk Doering, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Liste der statischen Seiten&lt;/b&gt;&lt;br /&gt;Dieses Plugin zeigt eine konfigurierbare Liste der statischen Seiten.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Static Page List&lt;/b&gt;&lt;br /&gt;This plugin displays a configurable list of the static pages.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
 <pubDate>Fri, 24 Jun 2022 18:11:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_staticpage</guid>
 </item>
@@ -144,12 +144,12 @@
 <guid isPermaLink="false">serendipity_plugin_xsstrust</guid>
 </item>
 <item>
-<title>Registrierung neuer User: Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.</title>
+<title>User Self-Registration: Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_adduser</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;Registrierung neuer User&lt;/b&gt;&lt;br /&gt;Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Fri, 14 Jul 2023 13:35:00 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 25 May 2025 19:30:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>

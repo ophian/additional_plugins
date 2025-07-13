@@ -55,11 +55,11 @@
 <description>Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator</description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
+  <version>1.16</version>
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-05-29</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -123,11 +123,11 @@
 <description>あなたのエントリに Amazon を検索するためのボタンを追加し、エントリに挿入することができるほうになります。</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-06-01</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -1178,130 +1178,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_challengeresponse/serendipity_event_challengeresponse.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_ckeditor</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_ckeditor/ChangeLog</changelog>
-<license>GPL</license>
-<summary>CKEditor Plus</summary>
-<groups>BACKEND_EDITOR</groups>
-<description>Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</description>
-<maintainers><maintainer><name>Rustam Abdullaev, Ian Styx</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>4.22.1.1</version>
-  <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.13</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-05-13</date>
-  <filelist>
-    <dir name="serendipity_event_ckeditor">
-      <file>basic_toolbar.css</file>
-      <file>ChangeLog</file>
-      <file>ckeditor_4.22.1.0-plus.zip</file>
-      <file>cke_backend.css</file>
-      <file>cke_config.js</file>
-      <file>cke_ibn.css</file>
-      <file>cke_plugin.js</file>
-      <file>dark_contents.min.css</file>
-      <file>documentation_cs.html</file>
-      <file>documentation_cz.html</file>
-      <file>highlight.min.css</file>
-      <file>highlight.min.js</file>
-      <dir name="img">
-        <file>mlgallery.png</file>
-        <file>mls9y.png</file>
-      </dir>
-      <file>lang_cs.inc.php</file>
-      <file>lang_cz.inc.php</file>
-      <file>lang_de.inc.php</file>
-      <file>lang_en.inc.php</file>
-      <dir name="moonodark">
-        <file>codesnippet.png</file>
-        <file>codesnippet_hidpi.png</file>
-        <file>dialog.css</file>
-        <file>editor.css</file>
-        <file>editor_gecko.css</file>
-        <file>embed.png</file>
-        <file>embedsemantic.png</file>
-        <file>embedsemantic_hidpi.png</file>
-        <file>embed_hidpi.png</file>
-        <file>icons.png</file>
-        <file>icons_hidpi.png</file>
-        <dir name="images">
-          <file>arrow.png</file>
-          <file>close.png</file>
-          <dir name="hidpi">
-            <file>close.png</file>
-            <file>lock-open.png</file>
-            <file>lock.png</file>
-            <file>refresh.png</file>
-          </dir>
-          <file>lock-open.png</file>
-          <file>lock.png</file>
-          <file>refresh.png</file>
-        </dir>
-        <file>skin.js</file>
-      </dir>
-      <file>prettify.css</file>
-      <file>prettify.js</file>
-      <file>serendipity_event_ckeditor.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-      <file>wysiwyg-style.css</file>
-    </dir>
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_ckeditor/basic_toolbar.css</file>
-    <file>serendipity_event_ckeditor/ChangeLog</file>
-    <file>serendipity_event_ckeditor/ckeditor_4.22.1.0-plus.zip</file>
-    <file>serendipity_event_ckeditor/cke_backend.css</file>
-    <file>serendipity_event_ckeditor/cke_config.js</file>
-    <file>serendipity_event_ckeditor/cke_ibn.css</file>
-    <file>serendipity_event_ckeditor/cke_plugin.js</file>
-    <file>serendipity_event_ckeditor/dark_contents.min.css</file>
-    <file>serendipity_event_ckeditor/documentation_cs.html</file>
-    <file>serendipity_event_ckeditor/documentation_cz.html</file>
-    <file>serendipity_event_ckeditor/highlight.min.css</file>
-    <file>serendipity_event_ckeditor/highlight.min.js</file>
-    <file>serendipity_event_ckeditor/img/mlgallery.png</file>
-    <file>serendipity_event_ckeditor/img/mls9y.png</file>
-    <file>serendipity_event_ckeditor/lang_cs.inc.php</file>
-    <file>serendipity_event_ckeditor/lang_cz.inc.php</file>
-    <file>serendipity_event_ckeditor/lang_de.inc.php</file>
-    <file>serendipity_event_ckeditor/lang_en.inc.php</file>
-    <file>serendipity_event_ckeditor/moonodark/codesnippet.png</file>
-    <file>serendipity_event_ckeditor/moonodark/codesnippet_hidpi.png</file>
-    <file>serendipity_event_ckeditor/moonodark/dialog.css</file>
-    <file>serendipity_event_ckeditor/moonodark/editor.css</file>
-    <file>serendipity_event_ckeditor/moonodark/editor_gecko.css</file>
-    <file>serendipity_event_ckeditor/moonodark/embed.png</file>
-    <file>serendipity_event_ckeditor/moonodark/embedsemantic.png</file>
-    <file>serendipity_event_ckeditor/moonodark/embedsemantic_hidpi.png</file>
-    <file>serendipity_event_ckeditor/moonodark/embed_hidpi.png</file>
-    <file>serendipity_event_ckeditor/moonodark/icons.png</file>
-    <file>serendipity_event_ckeditor/moonodark/icons_hidpi.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/arrow.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/close.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/hidpi/close.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/hidpi/lock-open.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/hidpi/lock.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/hidpi/refresh.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/lock-open.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/lock.png</file>
-    <file>serendipity_event_ckeditor/moonodark/images/refresh.png</file>
-    <file>serendipity_event_ckeditor/moonodark/skin.js</file>
-    <file>serendipity_event_ckeditor/prettify.css</file>
-    <file>serendipity_event_ckeditor/prettify.js</file>
-    <file>serendipity_event_ckeditor/serendipity_event_ckeditor.php</file>
-    <file>serendipity_event_ckeditor/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_ckeditor/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_ckeditor/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_ckeditor/wysiwyg-style.css</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2765,11 +2641,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>エントリに挿入する表情アイコンとスマイルを選択するツールバーを表示します。</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.1.0</version>
+  <version>4.1.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-18</date>
+  <date>2025-06-01</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2818,16 +2694,16 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <name>serendipity_event_entrycheck</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrycheck/ChangeLog</changelog>
 <license>GPL</license>
-<summary>公開のルール</summary>
+<summary>Rules for publishing</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>エントリの公開前にいくつかの確認を適用します。.</description>
+<description>Applies some checks before an entry is published.</description>
 <maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.21</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2025-03-08</date>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-06-07</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
       <file>ChangeLog</file>
@@ -2839,15 +2715,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_fr.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_entrycheck.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_entrycheck/ChangeLog</file>
@@ -2859,12 +2727,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_entrycheck/lang_fr.inc.php</file>
     <file>serendipity_event_entrycheck/lang_ja.inc.php</file>
     <file>serendipity_event_entrycheck/serendipity_event_entrycheck.php</file>
-    <file>serendipity_event_entrycheck/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_entrycheck/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_entrycheck/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_entrycheck/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_entrycheck/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_entrycheck/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2922,16 +2784,16 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <name>serendipity_event_entrypaging</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrypaging/ChangeLog</changelog>
 <license>GPL</license>
-<summary>次/前のエントリへのリンク</summary>
+<summary>Links to next/previous entry</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>閲覧時、次/前のエントリを閲覧することを可能にします。</description>
+<description>Allows viewing the next/previous entry when viewing</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.85</version>
-  <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-06-02</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2945,16 +2807,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_pl.inc.php</file>
       <file>README_FOR_SMARTY_TEMPLATING.txt</file>
       <file>serendipity_event_entrypaging.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_entrypaging/ChangeLog</file>
@@ -2968,13 +2821,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_entrypaging/lang_pl.inc.php</file>
     <file>serendipity_event_entrypaging/README_FOR_SMARTY_TEMPLATING.txt</file>
     <file>serendipity_event_entrypaging/serendipity_event_entrypaging.php</file>
-    <file>serendipity_event_entrypaging/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_entrypaging/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_entrypaging/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_entrypaging/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_entrypaging/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_entrypaging/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_entrypaging/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -3489,21 +3335,19 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <name>serendipity_event_forgotpassword</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_forgotpassword/ChangeLog</changelog>
 <license>GPL</license>
-<summary>パスワード忘れ</summary>
+<summary>Forgot Password</summary>
 <groups>BACKEND_FEATURES</groups>
-<description>選択したユーザーのパスワードを変更します</description>
-<maintainers><maintainer><name>Omid Mottaghi</name><role>lead</role></maintainer></maintainers>
+<description>Change the password for selected user</description>
+<maintainers><maintainer><name>Omid Mottaghi, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.16</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2023-06-22</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-05-24</date>
   <filelist>
     <dir name="serendipity_event_forgotpassword">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
-      <file>documentation_cz.html</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -3511,19 +3355,10 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_forgotpassword.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_forgotpassword/ChangeLog</file>
-    <file>serendipity_event_forgotpassword/documentation_cs.html</file>
-    <file>serendipity_event_forgotpassword/documentation_cz.html</file>
     <file>serendipity_event_forgotpassword/lang_bg.inc.php</file>
     <file>serendipity_event_forgotpassword/lang_cs.inc.php</file>
     <file>serendipity_event_forgotpassword/lang_cz.inc.php</file>
@@ -3531,11 +3366,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_forgotpassword/lang_en.inc.php</file>
     <file>serendipity_event_forgotpassword/lang_ja.inc.php</file>
     <file>serendipity_event_forgotpassword/serendipity_event_forgotpassword.php</file>
-    <file>serendipity_event_forgotpassword/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_forgotpassword/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_forgotpassword/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_forgotpassword/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_forgotpassword/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -3823,16 +3653,16 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <name>serendipity_event_freetag</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_freetag/ChangeLog</changelog>
 <license>GPL</license>
-<summary>エントリーのタグ</summary>
+<summary>Tagging of entries</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>エントリーの自由なタグを許可します。</description>
+<description>Allows freestyle tagging of entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.1.0</version>
+  <version>6.2.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-13</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -3863,21 +3693,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>README.txt</file>
       <file>serendipity_event_freetag.php</file>
       <file>serendipity_plugin_freetag.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_hu.inc.php</file>
-        <file>lang_it.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_nl.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_se.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_freetag/ChangeLog</file>
@@ -3908,18 +3724,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_freetag/README.txt</file>
     <file>serendipity_event_freetag/serendipity_event_freetag.php</file>
     <file>serendipity_event_freetag/serendipity_plugin_freetag.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_hu.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_it.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_nl.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_freetag/UTF-8/lang_se.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6068,7 +5872,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-06-08</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -6212,11 +6016,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.1</version>
+  <version>2.0.2</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-06-01</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -6694,11 +6498,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>エントリテキストに Markdown マークアップを適用します。</description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.43</version>
+  <version>1.44</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-05-29</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -7282,11 +7086,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>個人カレンダーの管理をします。</description>
 <maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.24</version>
+  <version>0.25</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-05-29</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
@@ -9666,11 +9470,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Detects SPAM via an algorithm which learns.</description>
 <maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.9.5</version>
-  <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-01-19</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-06-07</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="b8">
@@ -9702,11 +9506,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_spamblock_bayes.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -9729,9 +9528,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_spamblock_bayes/lang_de.inc.php</file>
     <file>serendipity_event_spamblock_bayes/lang_en.inc.php</file>
     <file>serendipity_event_spamblock_bayes/serendipity_event_spamblock_bayes.php</file>
-    <file>serendipity_event_spamblock_bayes/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_spamblock_bayes/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_spamblock_bayes/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -9863,16 +9659,16 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <website>https://ophian.github.io/</website>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_staticpage/ChangeLog</changelog>
 <license>GPL</license>
-<summary>静的ページ</summary>
+<summary>Static Pages</summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES,FRONTEND_FEATURES</groups>
-<description>デザインとすべての書式化されたブログとウェブログ内部に静的ページを表示します。管理インターフェースに新しいメニューを追加します。</description>
+<description>Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.83</version>
-  <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>8.0.0</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <version>7.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-13</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -9935,18 +9731,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>staticpage_backend.css</file>
       <file>staticpage_backend.js</file>
       <file>svg_iconizr.tpl</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_it.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_se.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -10006,16 +9790,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_staticpage/staticpage_backend.css</file>
     <file>serendipity_event_staticpage/staticpage_backend.js</file>
     <file>serendipity_event_staticpage/svg_iconizr.tpl</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_it.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_se.inc.php</file>
-    <file>serendipity_event_staticpage/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -12112,11 +11886,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>You can specify new/existing links to your blog entries via [[title]], link to staticpages via ((title)) and link to both via {{title}}. References can be automatically appended to the blog entry.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.3</version>
+  <version>2.0.4</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-06-22</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -12652,11 +12426,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Offers more buttons to the editing screen to implement easy access to HTML/JS snippets like Youtube etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-06-01</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12689,16 +12463,16 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <name>serendipity_event_adduser</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_adduser/ChangeLog</changelog>
 <license>GPL</license>
-<summary>ユーザー自身での登録</summary>
+<summary>User Self-Registration</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
-<description>ブログ訪問者が自分のアカウントを作成することを許可します。Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
+<description>Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-13</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12711,18 +12485,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>lang_fr.inc.php</file>
       <file>lang_ja.inc.php</file>
-      <file>loginbox.tpl</file>
-      <file>registerbox.tpl</file>
+      <file>plugin_loginbox.tpl</file>
+      <file>plugin_registerbox.tpl</file>
       <file>serendipity_event_adduser.php</file>
       <file>serendipity_plugin_adduser.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_adduser/ChangeLog</file>
@@ -12735,15 +12502,10 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_plugin_adduser/lang_en.inc.php</file>
     <file>serendipity_plugin_adduser/lang_fr.inc.php</file>
     <file>serendipity_plugin_adduser/lang_ja.inc.php</file>
-    <file>serendipity_plugin_adduser/loginbox.tpl</file>
-    <file>serendipity_plugin_adduser/registerbox.tpl</file>
+    <file>serendipity_plugin_adduser/plugin_loginbox.tpl</file>
+    <file>serendipity_plugin_adduser/plugin_registerbox.tpl</file>
     <file>serendipity_plugin_adduser/serendipity_event_adduser.php</file>
     <file>serendipity_plugin_adduser/serendipity_plugin_adduser.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_plugin_adduser/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

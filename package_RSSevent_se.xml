@@ -23,7 +23,7 @@
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 2.2</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Thu, 29 May 2025 18:29:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Media Button&lt;/b&gt;&lt;br /&gt;Adds a button to allow Amazon.com search which are insertable into your entry&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:42 +0200</pubDate>
+<pubDate>Sun, 01 Jun 2025 12:20:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -124,15 +124,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;A simple example for custom Spam verification.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
 <pubDate>Fri, 18 Aug 2017 10:41:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_challengeresponse</guid>
-</item>
-<item>
-<title>CKEditor Plus: Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_ckeditor</link>
-<category>Event Plugins</category>
-<author>Rustam Abdullaev, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Uses CKEditor as the default WYSIWYG editor. For any JS-Editor usage: Recommended! After installation, go to the configuration screen of this plugin for further instructions.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:42 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
 <title>Comics: Run webcomics in your blog</title>
@@ -311,7 +302,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Show Emoticon/Smiley toolbar&lt;/b&gt;&lt;br /&gt;Shows a toolbar to select emoticons to insert into your entry.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 18 May 2025 13:51:39 +0200</pubDate>
+<pubDate>Sun, 01 Jun 2025 12:22:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -319,8 +310,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrycheck</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Gregor Voeltz, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;Rules for publishing&lt;/b&gt;&lt;br /&gt;Applies some checks before an entry is published.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 08 Mar 2025 15:32:09 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;Rules for publishing&lt;/b&gt;&lt;br /&gt;Applies some checks before an entry is published.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sat, 07 Jun 2025 16:05:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrycheck</guid>
 </item>
 <item>
@@ -337,8 +328,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrypaging</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Links to next/previous entry&lt;/b&gt;&lt;br /&gt;Allows viewing the next/previous entry when viewing&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:42 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Links to next/previous entry&lt;/b&gt;&lt;br /&gt;Allows viewing the next/previous entry when viewing&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 02 Jun 2025 18:41:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
@@ -426,9 +417,9 @@
 <title>Forgot Password: Change the password for selected user</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_forgotpassword</link>
 <category>Event Plugins</category>
-<author>Omid Mottaghi</author>
-<content:encoded>&lt;b&gt;serendipity_event_forgotpassword&lt;br /&gt;Forgot Password&lt;/b&gt;&lt;br /&gt;Change the password for selected user&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 22 Jun 2023 11:02:48 +0200</pubDate>
+<author>Omid Mottaghi, Ian Styx</author>
+<content:encoded>&lt;b&gt;serendipity_event_forgotpassword&lt;br /&gt;Forgot Password&lt;/b&gt;&lt;br /&gt;Change the password for selected user&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sat, 24 May 2025 13:11:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_forgotpassword</guid>
 </item>
 <item>
@@ -441,12 +432,12 @@
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
-<title>Etikettering av artiklar: Medger fri etikettering av artiklar</title>
+<title>Tagging of entries: Allows freestyle tagging of entries</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_freetag</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Etikettering av artiklar&lt;/b&gt;&lt;br /&gt;Medger fri etikettering av artiklar&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:42 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Tagging of entries&lt;/b&gt;&lt;br /&gt;Allows freestyle tagging of entries&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 13 Jul 2025 11:27:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -617,7 +608,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:42 +0200</pubDate>
+<pubDate>Sun, 08 Jun 2025 09:38:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
@@ -635,7 +626,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linktrimmer&lt;/b&gt;&lt;br /&gt;Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:42 +0200</pubDate>
+<pubDate>Sun, 01 Jun 2025 12:24:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -707,7 +698,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Markup: Markdown&lt;/b&gt;&lt;br /&gt;Apply Markdown markup to entry text&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:10:44 +0200</pubDate>
+<pubDate>Thu, 29 May 2025 18:14:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -770,7 +761,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_mycalendar&lt;br /&gt;My Calendar&lt;/b&gt;&lt;br /&gt;Maintains a personal calendar&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Thu, 29 May 2025 18:31:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mycalendar</guid>
 </item>
 <item>
@@ -1003,8 +994,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_spamblock_bayes</link>
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects SPAM via an algorithm which learns.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Sun, 19 Jan 2025 12:30:05 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamblock (Bayes)&lt;/b&gt;&lt;br /&gt;Detects SPAM via an algorithm which learns.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sat, 07 Jun 2025 10:10:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
@@ -1035,12 +1026,12 @@
 <guid isPermaLink="false">serendipity_event_startcat</guid>
 </item>
 <item>
-<title>statiska sidor: Förvaltar olika statiska sidor inom ditt blog med blog-design och alla formateringen. Lägg3r till en ny menypunkt i administrationsgränssnittet!</title>
+<title>Static Pages: Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_staticpage</link>
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
-<content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;statiska sidor&lt;/b&gt;&lt;br /&gt;Förvaltar olika statiska sidor inom ditt blog med blog-design och alla formateringen. Lägg3r till en ny menypunkt i administrationsgränssnittet!&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:43 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Static Pages&lt;/b&gt;&lt;br /&gt;Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 13 Jul 2025 16:23:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
@@ -1247,7 +1238,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Free Wiki links for your entries&lt;/b&gt;&lt;br /&gt;You can specify new/existing links to your blog entries via [[title]], link to staticpages via ((title)) and link to both via {{title}}. References can be automatically appended to the blog entry.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:43 +0200</pubDate>
+<pubDate>Sun, 22 Jun 2025 08:07:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
@@ -1283,7 +1274,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_youtube&lt;br /&gt;Extended Editor Buttons: Youtube etc.&lt;/b&gt;&lt;br /&gt;Offers more buttons to the editing screen to implement easy access to HTML/JS snippets like Youtube etc.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:43 +0200</pubDate>
+<pubDate>Sun, 01 Jun 2025 12:21:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_youtube</guid>
 </item>
 <item>
@@ -1292,7 +1283,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:43 +0200</pubDate>
+<pubDate>Sun, 13 Jul 2025 16:27:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
