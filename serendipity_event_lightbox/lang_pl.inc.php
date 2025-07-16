@@ -6,8 +6,8 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-#@define('PLUGIN_EVENT_LIGHTBOX_NAME', 'Lightbox/Thickbox JS/Greybox');
-#@define('PLUGIN_EVENT_LIGHTBOX_DESC', 'Lightbox JS to prosty, nie rzucaj±cy siê w oczy skrypt u¿ywany do wy¶wietlania obrazków na aktualnie otwartej stronie w warstwie overlay. Konfiguracja zajmuje chwilkê a sam skrypt pracuje poprawnie w ka¿dej nowoczesnej przegl±darce. Lightbox wy¶wietla obrazki podczas gdy Thickbox potrafi tak¿e wy¶wietlaæ kod HTML na nak³adanej na stronê warstwie. Obydwie wtyczki pracuj± tak: przeszukuj± Twoje wpisy i zastêpuj± ka¿dy link a href tak, by wykorzystywa³ ich sposób wy¶wietlania linkowanego materia³u. Wiêc je¶li chcesz, by miniatury Twoich obrazków wy¶wietla³y siê jako wyskakuj±ce du¿e obrazki, musisz osadzaæ swoje obrazki jako linki do ich wiêkszej wersji. U¿ywaj±c Thickboxa musisz u¿yæ klasy class="thickbox" jako atrybut w odwo³aniach a href by pokaza³o siê okienko z podlinkowan± zawarto¶ci±.');
-@define('PLUGIN_EVENT_LIGHTBOX_TYPE', 'Wybierz skrypt, który bêdzie upiêksza³ Twoje obrazki/linki');
-@define('PLUGIN_EVENT_LIGHTBOX_PATH', '¦cie¿ka do skryptów');
-@define('PLUGIN_EVENT_LIGHTBOX_PATH_DESC', 'Wprowad¼ pe³n± ¶cie¿kê HTTP (wszystko co wystêpuje po nazwie Twojej domeny) prowadz±c± do katalogu wtyczki ze skryptami');
+#@define('PLUGIN_EVENT_LIGHTBOX_NAME', 'Lightbox/Thickbox JS');
+#@define('PLUGIN_EVENT_LIGHTBOX_DESC', 'Lightbox JS to prosty, nie rzucajÄ…cy siÄ™ w oczy skrypt uÅ¼ywany do wyÅ›wietlania obrazkÃ³w na aktualnie otwartej stronie w warstwie overlay. Konfiguracja zajmuje chwilkÄ™ a sam skrypt pracuje poprawnie w kaÅ¼dej nowoczesnej przeglÄ…darce. Lightbox wyÅ›wietla obrazki podczas gdy Thickbox potrafi takÅ¼e wyÅ›wietlaÄ‡ kod HTML na nakÅ‚adanej na stronÄ™ warstwie. Obydwie wtyczki pracujÄ… tak: przeszukujÄ… Twoje wpisy i zastÄ™pujÄ… kaÅ¼dy link a href tak, by wykorzystywaÅ‚ ich sposÃ³b wyÅ›wietlania linkowanego materiaÅ‚u. WiÄ™c jeÅ›li chcesz, by miniatury Twoich obrazkÃ³w wyÅ›wietlaÅ‚y siÄ™ jako wyskakujÄ…ce duÅ¼e obrazki, musisz osadzaÄ‡ swoje obrazki jako linki do ich wiÄ™kszej wersji. UÅ¼ywajÄ…c Thickboxa musisz uÅ¼yÄ‡ klasy class="thickbox" jako atrybut w odwoÅ‚aniach a href by pokazaÅ‚o siÄ™ okienko z podlinkowanÄ… zawartoÅ›ciÄ….');
+@define('PLUGIN_EVENT_LIGHTBOX_TYPE', 'Wybierz skrypt, ktÃ³ry bÄ™dzie upiÄ™kszaÅ‚ Twoje obrazki/linki');
+@define('PLUGIN_EVENT_LIGHTBOX_PATH', 'ÅšcieÅ¼ka do skryptÃ³w');
+@define('PLUGIN_EVENT_LIGHTBOX_PATH_DESC', 'WprowadÅº peÅ‚nÄ… Å›cieÅ¼kÄ™ HTTP (wszystko co wystÄ™puje po nazwie Twojej domeny) prowadzÄ…cÄ… do katalogu wtyczki ze skryptami');

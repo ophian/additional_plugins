@@ -1,30 +1,30 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/12/01
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/15
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/10/31
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/05/13
  */
 
 #@define('PLUGIN_EVENT_LIGHTBOX_NAME', 'Lightbox/Thickbox JS/Greybox');
-#@define('PLUGIN_EVENT_LIGHTBOX_DESC', 'Lightbox je jednoduchı nenápadnı skript pouívanı k zobrazení obrázù pøes aktuální stranu. Bìhem okamiku ho nastavíte. Funguje ve všech moderních prohlíeèích. Lightbox zobrazuje obrázky, zatímco Thickbox umí zobrazit také vyskakovací HTML bloky. Oba skripty fungují následovnì: Vyhledávají v pøíspìvcích a nahrazují kadı vıskyt odkazu \'a href="XXX"\' odkazem na zobrazení nad aktuální stránkou. Take pokud chcete zobrazovat zvìtšené obrázky, staèí do èlánku vloit odkazy na tyto velké obrázky. Pøi pouití Thickboxu vlote atribut \'class="thickbox"\' do odkazu \'a href\', tento odkaz se pak zobrazí ve vyskakovacím oknì.');
-@define('PLUGIN_EVENT_LIGHTBOX_TYPE', 'Vyberte skript, kterı má formátovat Vaše obrázky/odkazy');
-@define('PLUGIN_EVENT_LIGHTBOX_PATH', 'Cesta ke skriptùm');
-@define('PLUGIN_EVENT_LIGHTBOX_PATH_DESC', 'Zadejte plnou HTTP cestu (všechno, co následuje po názvu Vaší domény) do adresáøe s pluginem Lightbox.');
+#@define('PLUGIN_EVENT_LIGHTBOX_DESC', 'Lightbox je jednoduchÃ½ nenÃ¡padnÃ½ skript pouÅ¾Ã­vanÃ½ k zobrazenÃ­ obrÃ¡zÅ¯ pÅ™es aktuÃ¡lnÃ­ stranu. BÄ›hem okamÅ¾iku ho nastavÃ­te. Funguje ve vÅ¡ech modernÃ­ch prohlÃ­Å¾eÄÃ­ch. Lightbox zobrazuje obrÃ¡zky, zatÃ­mco Thickbox umÃ­ zobrazit takÃ© vyskakovacÃ­ HTML bloky. Oba skripty fungujÃ­ nÃ¡sledovnÄ›: VyhledÃ¡vajÃ­ v pÅ™Ã­spÄ›vcÃ­ch a nahrazujÃ­ kaÅ¾dÃ½ vÃ½skyt odkazu \'a href="XXX"\' odkazem na zobrazenÃ­ nad aktuÃ¡lnÃ­ strÃ¡nkou. TakÅ¾e pokud chcete zobrazovat zvÄ›tÅ¡enÃ© obrÃ¡zky, staÄÃ­ do ÄlÃ¡nku vloÅ¾it odkazy na tyto velkÃ© obrÃ¡zky. PÅ™i pouÅ¾itÃ­ Thickboxu vloÅ¾te atribut \'class="thickbox"\' do odkazu \'a href\', tento odkaz se pak zobrazÃ­ ve vyskakovacÃ­m oknÄ›.');
+@define('PLUGIN_EVENT_LIGHTBOX_TYPE', 'Vyberte skript, kterÃ½ mÃ¡ formÃ¡tovat VaÅ¡e obrÃ¡zky/odkazy');
+@define('PLUGIN_EVENT_LIGHTBOX_PATH', 'Cesta ke skriptÅ¯m');
+@define('PLUGIN_EVENT_LIGHTBOX_PATH_DESC', 'Zadejte plnou HTTP cestu (vÅ¡echno, co nÃ¡sleduje po nÃ¡zvu VaÅ¡Ã­ domÃ©ny) do adresÃ¡Å™e s pluginem Lightbox.');
 
-@define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION', 'Optimalizace nahrávání JavaScriptu');
-@define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION_DESC', 'Zapnutí této volby nahraje skript a CSS Lightboxu pouze pokud jsou v zobrazeném èlánku obrázky, které tuto funkci vyadují. To podstatnì zkrátí dobu nahrávání stránky. Na nìkterıch blogách tato funkce vedla k tomu, e se skript nenahrál nikdy. Pokud je to i Váš pøípad, vypnìte tuto volbu.');
-@define('PLUGIN_EVENT_LIGHTBOX_GALLERY', 'Vytvoøit galerii');
-@define('PLUGIN_EVENT_LIGHTBOX_GALLERY_NONE', 'ádná galerie');
-@define('PLUGIN_EVENT_LIGHTBOX_GALLERY_ENTRY', 'Galerie s fotkami z pøíspìvku');
-@define('PLUGIN_EVENT_LIGHTBOX_GALLERY_PAGE', 'Galerie s fotkami na této stránce');
+@define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION', 'Optimalizace nahrÃ¡vÃ¡nÃ­ JavaScriptu');
+@define('PLUGIN_EVENT_LIGHTBOX_OPTIMIZATION_DESC', 'ZapnutÃ­ tÃ©to volby nahraje skript a CSS Lightboxu pouze pokud jsou v zobrazenÃ©m ÄlÃ¡nku obrÃ¡zky, kterÃ© tuto funkci vyÅ¾adujÃ­. To podstatnÄ› zkrÃ¡tÃ­ dobu nahrÃ¡vÃ¡nÃ­ strÃ¡nky. Na nÄ›kterÃ½ch blogÃ¡ch tato funkce vedla k tomu, Å¾e se skript nenahrÃ¡l nikdy. Pokud je to i VÃ¡Å¡ pÅ™Ã­pad, vypnÄ›te tuto volbu.');
+@define('PLUGIN_EVENT_LIGHTBOX_GALLERY', 'VytvoÅ™it galerii');
+@define('PLUGIN_EVENT_LIGHTBOX_GALLERY_NONE', 'Å½Ã¡dnÃ¡ galerie');
+@define('PLUGIN_EVENT_LIGHTBOX_GALLERY_ENTRY', 'Galerie s fotkami z pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_LIGHTBOX_GALLERY_PAGE', 'Galerie s fotkami na tÃ©to strÃ¡nce');
 
 // Next lines were translated on 2012/05/13
-@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS', 'Objekt s inicializaèním nastavením JavaScriptu');
-@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Nìkteré typy Lightboxu (napø. prettyPhoto) umoòují zadání libovolného objektu s nastavním, take mùete zadat napø. "(social_tools: false)". Currently works with prettyPhoto only.');
+@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS', 'Objekt s inicializaÄnÃ­m nastavenÃ­m JavaScriptu');
+@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'NÄ›kterÃ© typy Lightboxu (napÅ™. prettyPhoto) umoÅ¾ÅˆujÃ­ zadÃ¡nÃ­ libovolnÃ©ho objektu s nastavnÃ­m, takÅ¾e mÅ¯Å¾ete zadat napÅ™. "(social_tools: false)". Currently works with prettyPhoto only.');
