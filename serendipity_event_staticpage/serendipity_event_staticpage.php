@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -14,6 +16,7 @@ class serendipity_event_staticpage extends serendipity_event
 {
     public $title = STATICPAGE_TITLE; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
 
+    private $srchtermres = 0;
     private $smarty_init = null;
     private $cachefile   = [];
     private $htmlnugget  = [];
@@ -99,7 +102,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '7.0.0');
+        $propbag->add('version', '7.0.1');
         $propbag->add('requirements', array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -3413,6 +3416,7 @@ class serendipity_event_staticpage extends serendipity_event
                 $rval = self::fixUTFEntity(self::html_specialchars($resval));
             }
         }
+        $this->srchtermres = count($results);
         $serendipity['smarty']->assign(
             array(
                 'staticpage_searchresults' => count($results),

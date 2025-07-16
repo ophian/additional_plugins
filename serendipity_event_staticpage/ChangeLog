@@ -1,3 +1,12 @@
+7.0.1:
+-----
+ * Fix class icTimestamp default timestamp to now for Styx 5.0
+ * Declare strict types
+
+2.0.0 (sb):
+----------
+ * Raise requirements for Styx 5.0
+
 7.0.0:
 -----
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
