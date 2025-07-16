@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/08
  */
 
-@define('PLUGIN_EVENT_YOUTUBE_TITLE', 'RozπÌ¯en· tlaËÌtka editoru: Youtube apod.');
-@define('PLUGIN_EVENT_YOUTUBE_DESC', 'P¯id·v· tlaËÌtka do editaËnÌho formul·¯e pro lehËÌ vkl·d·nÌ HTML/JS akript˘ jako nap¯. Youtube apod.');
+@define('PLUGIN_EVENT_YOUTUBE_TITLE', 'Roz≈°√≠≈ôen√° tlaƒç√≠tka editoru: Youtube apod.');
+@define('PLUGIN_EVENT_YOUTUBE_DESC', 'P≈ôid√°v√° tlaƒç√≠tka do editaƒçn√≠ho formul√°≈ôe pro lehƒç√≠ vkl√°d√°n√≠ HTML/JS akript≈Ø jako nap≈ô. Youtube apod.');
 @define('PLUGIN_EVENT_YOUTUBE_BUTTON', 'Youtube');
-@define('PLUGIN_EVENT_YOUTUBE_ID', 'ID identifik·tor videa na Youtube (nap¯. "mAcwcqOPcHM" - v adrese videa je to ta Ë·st za ?v=)');
+@define('PLUGIN_EVENT_YOUTUBE_ID', 'ID identifik√°tor videa na Youtube (nap≈ô. "mAcwcqOPcHM" - v adrese videa je to ta ƒç√°st za ?v=)');
 
 @define('PLUGIN_EVENT_YOUTUBE_SERVER', 'Youtube: URL adresa Serveru');
-@define('PLUGIN_EVENT_YOUTUBE_WIDTH', 'Youtube: ©Ì¯ka videa');
-@define('PLUGIN_EVENT_YOUTUBE_HEIGHT', 'Youtube: V˝πka videa');
-@define('PLUGIN_EVENT_YOUTUBE_REL', 'Youtube: Zobrazit podobn· videa?');
-@define('PLUGIN_EVENT_YOUTUBE_BORDER', 'Youtube: PouæÌvat r·meËky?');
-@define('PLUGIN_EVENT_YOUTUBE_COLOR1', 'Youtube: HlavnÌ barva?');
-@define('PLUGIN_EVENT_YOUTUBE_COLOR2', 'Youtube: Druh· barva?');
+@define('PLUGIN_EVENT_YOUTUBE_WIDTH', 'Youtube: ≈†√≠≈ôka videa');
+@define('PLUGIN_EVENT_YOUTUBE_HEIGHT', 'Youtube: V√Ω≈°ka videa');
+@define('PLUGIN_EVENT_YOUTUBE_REL', 'Youtube: Zobrazit podobn√° videa?');
+@define('PLUGIN_EVENT_YOUTUBE_BORDER', 'Youtube: Pou≈æ√≠vat r√°meƒçky?');
+@define('PLUGIN_EVENT_YOUTUBE_COLOR1', 'Youtube: Hlavn√≠ barva?');
+@define('PLUGIN_EVENT_YOUTUBE_COLOR2', 'Youtube: Druh√° barva?');
 

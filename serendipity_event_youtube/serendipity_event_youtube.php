@@ -23,9 +23,9 @@ class serendipity_event_youtube extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
-            'php'         => '8.2.0'
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body' => true,
