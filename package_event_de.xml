@@ -1323,14 +1323,14 @@
 <license>GPL</license>
 <summary>Comment Spice</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.</description>
+<description>Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
+  <version>2.6.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1361,11 +1361,6 @@
           <file>comments.tpl</file>
         </dir>
       </dir>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -1389,9 +1384,6 @@
     <file>serendipity_event_commentspice/serendipity_event_commentspice.php</file>
     <file>serendipity_event_commentspice/tpl.examples/2k11/commentform.tpl</file>
     <file>serendipity_event_commentspice/tpl.examples/2k11/comments.tpl</file>
-    <file>serendipity_event_commentspice/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_commentspice/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_commentspice/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -3190,14 +3182,14 @@
 <license>GPL</license>
 <summary>Flattr</summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Flattr ist eine Social-Micropayment-Plattform, mit der man Liebe versprühen kann für Artikel, die man liebt. Das Plugin bindet &quot;Flattr&quot;-Buttons in den Blogeinträgen und RSS-Feeds ein. Flattr-spezifische Attribute können sowohl global als auch pro Eintrag vergeben werden.</description>
+<description>Flattr is a social micropayment platform that lets you show love for the things you like. This plugin embedds &quot;Flattr&quot;-Badges in blog entries and RSS feeds. You can specify flattr-specific options per-entry, with a default global fallback.</description>
 <maintainers><maintainer><name>Garvin Hicking, Joachim Breitner</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.21</version>
+  <version>2.0.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.0</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3208,12 +3200,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_flattr.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_flattr/ChangeLog</file>
@@ -3224,9 +3211,6 @@
     <file>serendipity_event_flattr/lang_de.inc.php</file>
     <file>serendipity_event_flattr/lang_en.inc.php</file>
     <file>serendipity_event_flattr/serendipity_event_flattr.php</file>
-    <file>serendipity_event_flattr/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_flattr/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_flattr/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5236,16 +5220,16 @@
 <name>serendipity_event_includeentry</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_includeentry/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Textformatierung: Eintragsdaten einfügen</summary>
+<summary>Markup: Include entry data/templates/blocks</summary>
 <groups>MARKUP</groups>
-<description>Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).</description>
+<description>Allows you to add HTML-style tags to your entry that includes parts of other entrys. Use this markup: [s9y-include-entry:XXX:YYY]. Replace XXX with the target entryid and YYY with the target field name (i.e. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). You can also use the new menu functions to maintain templates and blocks that can get inserted in between your entries.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.0</version>
+  <version>3.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -5259,13 +5243,7 @@
       <file>lang_en.inc.php</file>
       <file>plugin_staticblock.tpl</file>
       <file>serendipity_event_includeentry.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_includeentry/ChangeLog</file>
@@ -5279,10 +5257,6 @@
     <file>serendipity_event_includeentry/lang_en.inc.php</file>
     <file>serendipity_event_includeentry/plugin_staticblock.tpl</file>
     <file>serendipity_event_includeentry/serendipity_event_includeentry.php</file>
-    <file>serendipity_event_includeentry/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_includeentry/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_includeentry/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_includeentry/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5511,11 +5485,11 @@
 <description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.0</version>
+  <version>3.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-14</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -5815,11 +5789,11 @@
 <description>Links manager - Shows your favorite links in the sidebar.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.0.1</version>
+  <version>4.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-14</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -5944,16 +5918,16 @@
 <name>serendipity_event_linktrimmer</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linktrimmer/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Linkverkürzung</summary>
+<summary>Linktrimmer</summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, ähnlich tr.im, tinyurl.com usw.</description>
+<description>Allows you to truncate any link for redirection on your own blog, like tr.im, tinyurl.com etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.2</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-06-01</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -5969,9 +5943,6 @@
       <file>serendipity_event_linktrimmer.gif</file>
       <file>serendipity_event_linktrimmer.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -5988,9 +5959,6 @@
     <file>serendipity_event_linktrimmer/plugin_linktrimmer.tpl</file>
     <file>serendipity_event_linktrimmer/serendipity_event_linktrimmer.gif</file>
     <file>serendipity_event_linktrimmer/serendipity_event_linktrimmer.php</file>
-    <file>serendipity_event_linktrimmer/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_linktrimmer/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_linktrimmer/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6938,16 +6906,16 @@
 <name>serendipity_event_multilingual</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_multilingual/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Multilinguale Einträge</summary>
+<summary>Multilingual entries</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
-<description>Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</description>
+<description>Allows to create multiple language versions of an entry</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.17</version>
-  <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <version>4.0.1</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -6967,18 +6935,7 @@
       <file>lang_tr.inc.php</file>
       <file>serendipity_event_multilingual.php</file>
       <file>serendipity_plugin_multilingual.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_names.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_multilingual/ChangeLog</file>
@@ -6998,15 +6955,6 @@
     <file>serendipity_event_multilingual/lang_tr.inc.php</file>
     <file>serendipity_event_multilingual/serendipity_event_multilingual.php</file>
     <file>serendipity_event_multilingual/serendipity_plugin_multilingual.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_names.inc.php</file>
-    <file>serendipity_event_multilingual/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -9403,11 +9351,11 @@
 <description>Detects SPAM via an algorithm which learns.</description>
 <maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.0</version>
+  <version>3.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-06-07</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="b8">
@@ -11267,16 +11215,16 @@
 <name>serendipity_event_typesetbuttons</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_typesetbuttons/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG</summary>
+<summary>Typeset/Extended Buttons for non-WYSIWYG editors</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.</description>
+<description>Adds buttons for various encoded typeset entities and other extended actions.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -11302,11 +11250,6 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_typesetbuttons.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -11331,9 +11274,6 @@
     <file>serendipity_event_typesetbuttons/lang_de.inc.php</file>
     <file>serendipity_event_typesetbuttons/lang_en.inc.php</file>
     <file>serendipity_event_typesetbuttons/serendipity_event_typesetbuttons.php</file>
-    <file>serendipity_event_typesetbuttons/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_typesetbuttons/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_typesetbuttons/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -11912,16 +11852,16 @@
 <name>serendipity_event_xsstrust</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_xsstrust/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Einstellungen für vertrauenswürdige Mehrbenutzer-Blogs / HTMLPurifier</summary>
+<summary>Options for trustworthy editing on multi-user blogs / HTMLPurifier</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_USERMANAGEMENT,MARKUP</groups>
-<description>Dieses Plugin gibt an, welchen Autoren eines Mehrbenutzer-Blogs Sie genug trauen und von denen Sie keine Hackangriffe erwarten. Alle anderen Autoren dürfen kein HTML mehr verwenden!</description>
+<description>This plugin can specify, which authors on a multi-user blog you have enough trust in and do not expect hacking attempts. All other users are treated as possibly evil and cannot create HTML entries.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
       <file>ChangeLog</file>
@@ -12112,12 +12052,6 @@
       <file>lang_it.inc.php</file>
       <file>serendipity_event_xsstrust.php</file>
       <file>serendipity_plugin_xsstrust.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_it.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -12279,10 +12213,6 @@
     <file>serendipity_event_xsstrust/lang_it.inc.php</file>
     <file>serendipity_event_xsstrust/serendipity_event_xsstrust.php</file>
     <file>serendipity_event_xsstrust/serendipity_plugin_xsstrust.php</file>
-    <file>serendipity_event_xsstrust/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_xsstrust/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_xsstrust/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_xsstrust/UTF-8/lang_it.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -12290,16 +12220,16 @@
 <name>serendipity_event_youtube</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_youtube/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zusätzliche Editor-Buttons: Youtube usw.</summary>
+<summary>Extended Editor Buttons: Youtube etc.</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Bietet mehr Schaltflächen für den Editor, um einen einfachen Zugriff auf HTML-/Javescript-Snippets wie Youtube usw. zu ermöglichen.</description>
+<description>Offers more buttons to the editing screen to implement easy access to HTML/JS snippets like Youtube etc.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.1</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-06-01</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12308,12 +12238,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_youtube.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_youtube/ChangeLog</file>
@@ -12322,9 +12247,6 @@
     <file>serendipity_event_youtube/lang_de.inc.php</file>
     <file>serendipity_event_youtube/lang_en.inc.php</file>
     <file>serendipity_event_youtube/serendipity_event_youtube.php</file>
-    <file>serendipity_event_youtube/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_youtube/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_youtube/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -12516,14 +12438,14 @@
 <license>GPL</license>
 <summary>Microblogging (Twitter,Identica)</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.</description>
+<description>Adds a twitter/identica client to the admininistration interface, searches for tweetbacks and announces new articles to a microblogging account.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Peter Heimann, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.3.0</version>
+  <version>2.4.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
@@ -12570,11 +12492,6 @@
         <file>OAuth.php</file>
         <file>twitteroauth.php</file>
       </dir>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -12612,9 +12529,6 @@
     <file>serendipity_plugin_twitter/tweeter/tweeter_history.inc.php</file>
     <file>serendipity_plugin_twitter/twitteroauth/OAuth.php</file>
     <file>serendipity_plugin_twitter/twitteroauth/twitteroauth.php</file>
-    <file>serendipity_plugin_twitter/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_twitter/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_twitter/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

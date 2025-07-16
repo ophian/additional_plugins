@@ -72,12 +72,12 @@
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
-<title>언어 선택: 방문자가 메인 페이지의 언어를 변경할 수 있게 하기</title>
+<title>Choose Language: Allows visitors to change the frontend interface language</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_multilingual</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;언어 선택&lt;/b&gt;&lt;br /&gt;방문자가 메인 페이지의 언어를 변경할 수 있게 하기&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 13 May 2025 19:09:43 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;Choose Language&lt;/b&gt;&lt;br /&gt;Allows visitors to change the frontend interface language&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 16 Jul 2025 11:40:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_multilingual</guid>
 </item>
 <item>
