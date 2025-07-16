@@ -3,6 +3,7 @@
 // TODO:
 // Use parent category template for a child category, but allow child categories to override template of parent category.
 
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -28,7 +29,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.5.0');
+        $propbag->add('version',       '2.6.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'

@@ -1,3 +1,8 @@
+2.6.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+
 2.5.0:
 -----
  * Use PHP 8.2 combined arguments

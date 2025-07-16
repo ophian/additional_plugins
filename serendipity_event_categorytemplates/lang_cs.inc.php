@@ -1,21 +1,21 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/26
  */
 
-@define('PLUGIN_CATEGORYTEMPLATES_NAME', 'Vlastnosti/šablona vzhledu pro kategorie');
-#@define('PLUGIN_CATEGORYTEMPLATES_DESC', 'Tento plugin poskytuje pøídavné vlastnosti pro kategorie a v nich obsaené pøíspìvky, vèetnì volitené šablony vzhledu, poøadí øazení, poèet zobrazenıch pøíspìvkù, ochranu heslem a schovávání RSS kanálu.');// translate new, see en
-@define('PLUGIN_CATEGORYTEMPLATES_SELECT', 'Zadejte prosím název adresáøe se šablonou, kterou chcete pouít pro tuto kategorii. Relativní cesta zaèíná v adresáøi "templates/". Take mùete zadat napøíklad "blue" nebo "kubrick". Mùete pouít také název podadresáøe, pokud jste uloili šablonu v podadresáøi jiné šablony. Pak zadáváte "blue/kategorie1" nebo "blue/kategorie2". Recommended use is to add a category own "Engine:" template.');
-@define('PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT', 'Pøíspìvky zobrazené na vıchozí stránce kategorie');
+@define('PLUGIN_CATEGORYTEMPLATES_NAME', 'Vlastnosti/Å¡ablona vzhledu pro kategorie');
+#@define('PLUGIN_CATEGORYTEMPLATES_DESC', 'Tento plugin poskytuje pÅ™Ã­davnÃ© vlastnosti pro kategorie a v nich obsaÅ¾enÃ© pÅ™Ã­spÄ›vky, vÄetnÄ› volitenÃ© Å¡ablony vzhledu, poÅ™adÃ­ Å™azenÃ­, poÄet zobrazenÃ½ch pÅ™Ã­spÄ›vkÅ¯, ochranu heslem a schovÃ¡vÃ¡nÃ­ RSS kanÃ¡lu.');// translate new, see en
+@define('PLUGIN_CATEGORYTEMPLATES_SELECT', 'Zadejte prosÃ­m nÃ¡zev adresÃ¡Å™e se Å¡ablonou, kterou chcete pouÅ¾Ã­t pro tuto kategorii. RelativnÃ­ cesta zaÄÃ­nÃ¡ v adresÃ¡Å™i "templates/". TakÅ¾e mÅ¯Å¾ete zadat napÅ™Ã­klad "blue" nebo "kubrick". MÅ¯Å¾ete pouÅ¾Ã­t takÃ© nÃ¡zev podadresÃ¡Å™e, pokud jste uloÅ¾ili Å¡ablonu v podadresÃ¡Å™i jinÃ© Å¡ablony. Pak zadÃ¡vÃ¡te "blue/kategorie1" nebo "blue/kategorie2". Recommended use is to add a category own "Engine:" template.');
+@define('PLUGIN_CATEGORYTEMPLATES_FETCHLIMIT', 'PÅ™Ã­spÄ›vky zobrazenÃ© na vÃ½chozÃ­ strÃ¡nce kategorie');
 @define('PLUGIN_CATEGORYTEMPLATES_PASS', 'Ochrana heslem:');
-@define('PLUGIN_CATEGORYTEMPLATES_PASS_DESC', 'Má bıt zapnuta ochrana kategorií heslem? Nevıhoda je, e se kvùli zaheslovanému pøístupu musí provést jeden dotaz do databáze navíc a e pøíspìvky v kategoriích chránìnıch heslem se nezobrazují na vıchozí stránce blogu dokud uivatel nezobrazí chránìnou kategorii.');
+@define('PLUGIN_CATEGORYTEMPLATES_PASS_DESC', 'MÃ¡ bÃ½t zapnuta ochrana kategoriÃ­ heslem? NevÃ½hoda je, Å¾e se kvÅ¯li zaheslovanÃ©mu pÅ™Ã­stupu musÃ­ provÃ©st jeden dotaz do databÃ¡ze navÃ­c a Å¾e pÅ™Ã­spÄ›vky v kategoriÃ­ch chrÃ¡nÄ›nÃ½ch heslem se nezobrazujÃ­ na vÃ½chozÃ­ strÃ¡nce blogu dokud uÅ¾ivatel nezobrazÃ­ chrÃ¡nÄ›nou kategorii.');
 @define('PLUGIN_CATEGORYTEMPLATES_PASS_USER', 'Ochrana kategorie heslem');
-@define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY', 'Globální nastavení kategorie pøíspìvku');
-@define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY_DESC', 'Pokud je zapnuto, kategorie pøíspìvku pøi zobrazení jediného pøíspìvku bude nastavena jako aktuální kategorie.');
-@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'Poøadí šablon kategorií');
-@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je pøíspìvek pøiøazen do více kategorií, tento seznam urèuje, která šablona bude pouita. Šablona pro kategorii, která je nejvıše, bude pouita. To be able to save and activate your order changes for existing categorytemplates, you must first activate their checkbox(es) here.');
-@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'ádné kategorie ještì nemají vlastní šablonu. In this case let this checkbox unchecked!');
-#@define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'Pøíspìvky v této kategorii se nebudou zobrazovat v RSS kanálu');// translate new, see en
+@define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY', 'GlobÃ¡lnÃ­ nastavenÃ­ kategorie pÅ™Ã­spÄ›vku');
+@define('PLUGIN_CATEGORYTEMPLATES_FIXENTRY_DESC', 'Pokud je zapnuto, kategorie pÅ™Ã­spÄ›vku pÅ™i zobrazenÃ­ jedinÃ©ho pÅ™Ã­spÄ›vku bude nastavena jako aktuÃ¡lnÃ­ kategorie.');
+@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE', 'PoÅ™adÃ­ Å¡ablon kategoriÃ­');
+@define('PLUGIN_CATEGORYTEMPLATES_CATPRECEDENCE_DESC', 'Pokud je pÅ™Ã­spÄ›vek pÅ™iÅ™azen do vÃ­ce kategoriÃ­, tento seznam urÄuje, kterÃ¡ Å¡ablona bude pouÅ¾ita. Å ablona pro kategorii, kterÃ¡ je nejvÃ½Å¡e, bude pouÅ¾ita. To be able to save and activate your order changes for existing categorytemplates, you must first activate their checkbox(es) here.');
+@define('PLUGIN_CATEGORYTEMPLATES_NO_CUSTOMIZED_CATEGORIES', 'Å½Ã¡dnÃ© kategorie jeÅ¡tÄ› nemajÃ­ vlastnÃ­ Å¡ablonu. In this case let this checkbox unchecked!');
+#@define('PLUGIN_CATEGORYTEMPLATES_HIDE', 'PÅ™Ã­spÄ›vky v tÃ©to kategorii se nebudou zobrazovat v RSS kanÃ¡lu');// translate new, see en
 
