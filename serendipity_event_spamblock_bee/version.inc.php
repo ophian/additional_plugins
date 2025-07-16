@@ -1,3 +1,3 @@
 <?php
 
-@define('PLUGIN_SPAMBLOCK_BEE_VERSION', '1.6.8');
+@define('PLUGIN_SPAMBLOCK_BEE_VERSION', '2.0.0');

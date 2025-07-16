@@ -1,97 +1,97 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2013/03/31
  */
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_TITLE', 'Spamblock Bee (Honeypot, Skrytá Captcha)');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_DESC',  'Implementuje jednoduché ale velmi úèinné antispamové algoritmy.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_EXTRA_DESC',  '<strong>Tip k instalaci</strong>: Je dùle¾ité umístit tento plugin na zaèátek seznamu pluginù. Pak bude nejefektivnìj¹í.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_TITLE', 'Spamblock Bee (Honeypot, SkrytÃ¡ Captcha)');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_DESC',  'Implementuje jednoduchÃ© ale velmi ÃºÄinnÃ© antispamovÃ© algoritmy.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_EXTRA_DESC',  '<strong>Tip k instalaci</strong>: Je dÅ¯leÅ¾itÃ© umÃ­stit tento plugin na zaÄÃ¡tek seznamu pluginÅ¯. Pak bude nejefektivnÄ›jÅ¡Ã­.');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_PATH', 'Cesta k pluginùm');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_PATH_DESC', 'V bì¾nıch instalacích je vıchozí nastavení správnì.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_PATH', 'Cesta k pluginÅ¯m');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_PATH_DESC', 'V bÄ›Å¾nÃ½ch instalacÃ­ch je vÃ½chozÃ­ nastavenÃ­ sprÃ¡vnÄ›.');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_REQUIRED_FIELDS', 'Povinná políèka komentáøù');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_REQUIRED_FIELDS_DESC', 'Zadejte seznam políèek, která musejí bıt komentujícím povinnì vyplnìna. Jednotlivá políèka oddìlujte èárkou ",". Pou¾ít mù¾ete: name, email, url, replyTo, comment');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_REASON_REQUIRED_FIELD', 'Nevyplnil jsi políèko %s!');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_REQUIRED_FIELDS', 'PovinnÃ¡ polÃ­Äka komentÃ¡Å™Å¯');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_REQUIRED_FIELDS_DESC', 'Zadejte seznam polÃ­Äek, kterÃ¡ musejÃ­ bÃ½t komentujÃ­cÃ­m povinnÄ› vyplnÄ›na. JednotlivÃ¡ polÃ­Äka oddÄ›lujte ÄÃ¡rkou ",". PouÅ¾Ã­t mÅ¯Å¾ete: name, email, url, replyTo, comment');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_REASON_REQUIRED_FIELD', 'Nevyplnil jsi polÃ­Äko %s!');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_TITLE', 'Odmítnout komentáøe, které obsahují pouze nadpis pøíspìvku');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_TITLE_DESC', 'Nìkteré spamboty se sna¾í pouze vlo¾it odkaz a vytváøejí obsah komentáøe pouze podle toho, co najdou v titulku stránky. ®ádnı ¾ivı ètenáø to nìdìlá, je tedy bezpeèné tuto volbu zapnout.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_TITLE', 'OdmÃ­tnout komentÃ¡Å™e, kterÃ© obsahujÃ­ pouze nadpis pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_TITLE_DESC', 'NÄ›kterÃ© spamboty se snaÅ¾Ã­ pouze vloÅ¾it odkaz a vytvÃ¡Å™ejÃ­ obsah komentÃ¡Å™e pouze podle toho, co najdou v titulku strÃ¡nky. Å½Ã¡dnÃ½ Å¾ivÃ½ ÄtenÃ¡Å™ to nÄ›dÄ›lÃ¡, je tedy bezpeÄnÃ© tuto volbu zapnout.');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_SAMEBODY', 'Odmítnout komentáøe, jejich¾ text u¾ existuje');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_SAMEBODY_DESC', 'To zamezí vícenásobnému vlo¾ení tého¾ komentáøe, tøeba kdy¾ ètenáø stiskne "reload" po vlo¾ení komentáøe. Tyto duplicity mohou bıt bezpeènì odmítnuté.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_SAMEBODY', 'OdmÃ­tnout komentÃ¡Å™e, jejichÅ¾ text uÅ¾ existuje');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_FILTER_SAMEBODY_DESC', 'To zamezÃ­ vÃ­cenÃ¡sobnÃ©mu vloÅ¾enÃ­ tÃ©hoÅ¾ komentÃ¡Å™e, tÅ™eba kdyÅ¾ ÄtenÃ¡Å™ stiskne "reload" po vloÅ¾enÃ­ komentÃ¡Å™e. Tyto duplicity mohou bÃ½t bezpeÄnÄ› odmÃ­tnutÃ©.');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_BODY', 'Spamová ochrana: Neplatná zpráva.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_BODY', 'SpamovÃ¡ ochrana: NeplatnÃ¡ zprÃ¡va.');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SECTION_LOGGING', 'Soubory a logování');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SECTION_ADVANCED', 'Pokroèilé nastavení kryptogramù Captcha');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SECTION_LOGGING', 'Soubory a logovÃ¡nÃ­');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SECTION_ADVANCED', 'PokroÄilÃ© nastavenÃ­ kryptogramÅ¯ Captcha');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HONEYPOT', 'Pou¾ít Honeypot');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HONEYPOT_DESC', '"Honeypot" (v doslovném pøekladu "hrnec s medem") je skryté políèko komentáøe, které by tudí¾ mìlo zùstat v¾dy prázdné. Ale proto¾e spamboty vplòují èasto v¹echna políèka, která najdou, je toto jednoduchı zpùsob, jak je odhalit. (Tímto je necháte "sednout na lep") Zapnutí této volby nepøedstavuje vùbec ¾ádné riziko pro bì¾né u¾ivatele, ale úèinnost proti spambotùm pøedstavuje velkou vıhodu! Aby byl Honeypot co nejfektivnìj¹í, umístìte ho pøed ostatní antispamové pluginy.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_WARN_HONEPOT', 'Nechce¹ mi dát svoje èíslo, ¾e? ;)');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HCAPTCHA', 'Pou¾ít skryté kryptogramy');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HCAPTCHA_DESC', 'Toto nastavení vyrobí kryt´ptogram, kterı doká¾ou ¾iví lidé lehce vyøe¹it, ale ne tak spampoty. Pokud má ètenáø zapnutı Javascript, odpovìï bude vyplnìna automaticky a skryta. A proto¾e spampoty èasto Javacript neumí, je to dal¹í pìkná past, která je ale skryta pøed ¾ivımi ètenáøi.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_HCAPTCHA', 'Spamová ochrana: ©patnı kryptogram (Captcha).');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HONEYPOT', 'PouÅ¾Ã­t Honeypot');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HONEYPOT_DESC', '"Honeypot" (v doslovnÃ©m pÅ™ekladu "hrnec s medem") je skrytÃ© polÃ­Äko komentÃ¡Å™e, kterÃ© by tudÃ­Å¾ mÄ›lo zÅ¯stat vÅ¾dy prÃ¡zdnÃ©. Ale protoÅ¾e spamboty vplÅˆujÃ­ Äasto vÅ¡echna polÃ­Äka, kterÃ¡ najdou, je toto jednoduchÃ½ zpÅ¯sob, jak je odhalit. (TÃ­mto je nechÃ¡te "sednout na lep") ZapnutÃ­ tÃ©to volby nepÅ™edstavuje vÅ¯bec Å¾Ã¡dnÃ© riziko pro bÄ›Å¾nÃ© uÅ¾ivatele, ale ÃºÄinnost proti spambotÅ¯m pÅ™edstavuje velkou vÃ½hodu! Aby byl Honeypot co nejfektivnÄ›jÅ¡Ã­, umÃ­stÄ›te ho pÅ™ed ostatnÃ­ antispamovÃ© pluginy.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_WARN_HONEPOT', 'NechceÅ¡ mi dÃ¡t svoje ÄÃ­slo, Å¾e? ;)');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HCAPTCHA', 'PouÅ¾Ã­t skrytÃ© kryptogramy');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_HCAPTCHA_DESC', 'Toto nastavenÃ­ vyrobÃ­ krytÂ´ptogram, kterÃ½ dokÃ¡Å¾ou Å¾ivÃ­ lidÃ© lehce vyÅ™eÅ¡it, ale ne tak spampoty. Pokud mÃ¡ ÄtenÃ¡Å™ zapnutÃ½ Javascript, odpovÄ›Ä bude vyplnÄ›na automaticky a skryta. A protoÅ¾e spampoty Äasto Javacript neumÃ­, je to dalÅ¡Ã­ pÄ›knÃ¡ past, kterÃ¡ je ale skryta pÅ™ed Å¾ivÃ½mi ÄtenÃ¡Å™i.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_HCAPTCHA', 'SpamovÃ¡ ochrana: Å patnÃ½ kryptogram (Captcha).');
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE', 'Typ spam logu');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE_DESC', 'Kam se mají zapisovat logy o spamu nalezeném pluginem Spamblock Bee?');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE_DESC', 'Kam se majÃ­ zapisovat logy o spamu nalezenÃ©m pluginem Spamblock Bee?');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE_NONE', 'Nelogovat');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE_FILE', 'Textovı soubor');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE_DATABASE', 'Databázová tabulka');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGFILE', 'Logovací soubor');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGFILE_DESC', 'Kam ulo¾it logovací soubor, pokud je pou¾it pro logování spamu?');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE_FILE', 'TextovÃ½ soubor');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGTYPE_DATABASE', 'DatabÃ¡zovÃ¡ tabulka');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGFILE', 'LogovacÃ­ soubor');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_SPAM_LOGFILE_DESC', 'Kam uloÅ¾it logovacÃ­ soubor, pokud je pouÅ¾it pro logovÃ¡nÃ­ spamu?');
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_RESULT_OFF', 'Vypnuto');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_RESULT_MODERATE', 'Schvalovat komentáøe');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_RESULT_REJECT', 'Odmítnout komentáøe');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_RESULT_MODERATE', 'Schvalovat komentÃ¡Å™e');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_RESULT_REJECT', 'OdmÃ­tnout komentÃ¡Å™e');
 
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_RM_DEFAULT', 'Vıchozí');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_RM_DEFAULT', 'VÃ½chozÃ­');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_RM_JSON', 'JSON');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_RM_SMARTY', 'Smarty');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_RM_SMARTY_ENC', 'Smarty + ¹ifrování');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QT_MATH', 'Matematické rovnice');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QT_CUSTOM', 'Libovolné otázky');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DESC', 'Pokroèilé nastavení pro skryté kryptogramy. Pokud jsou vypnuty, mù¾ete tuto èást nastavení v klidu ignorovat.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL', 'Zpùsob získání odpovìdi');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC', 'Vyberte si, jak se má získat správná odpovìï na kryptogram. Pokud vyberete "JSON", pak se budou posílat Ajaxové po¾adavky na index.php/plugin/spamblockbeecaptcha. "Smarty" poskytne odpovìï pomocí promìnné Smarty {$beeCaptchaAnswer}, zatímco "Vıchozí" ji natvrdo vepí¹e do stránky.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC_ADD', 'POZNÁMKA: Pokud je vybráno "Smarty", nebude do stránky vlo¾eno ¾ádné dal¹í CSS nebo JavaScript. Musíte se sami postarat o správné vyplnìní políèka a jeho skrytí. "Smarty + ¹ifrování" je v principu stejné nastavení jako "Smarty" s tím rozdílem, ¾e odpovìï ulo¾ená v {$beeCaptchaAnswer} je za¹ifrovaná jednoduchou XOR ¹ifrou. Promìnná {$beeCaptchaScrambleKey} obsahuje de¹ifrovací klíè.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTION_TYPE', 'Typ otázky');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTION_TYPE_DESC', 'Spamblock Bee umí automaticky vytváøet jednoduché matematické problémy, nebo si mù¾ete zadat vlastní sadu otázek a odpovìdí. Vyberte si mo¾nost, která vám více vyhovuje.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTIONS', 'Vlastní otázky');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DEFAULT_QUESTIONS', "Otázka1\nOtázka2");
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTIONS_DESC', 'Pokud chcete pro kryptogramy pou¾ít vlastní otázky, zapi¹tì je sem. Pi¹te jednu otázku na jednu øádku. Pøedtím ne¾ mù¾e ètenáø poslat komentáø, bude muset zodpovìdìt jednu náhodnì vybranou otázku.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWERS', 'Odpovìdi na vlastní otázky');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWERS_DESC', 'Toto políèko obsahuje správné odpovìdi na otázky zadané vı¹e. Pi¹te jednu odpovìï na jednu øádku ve stejném poøadí jako otázky. Otázky, které nemají odpovìï, budou ignorovány. V¹echny odpovìdi nerozli¹ují velikost písmen (tedy "odpovìï" je to samé, co "OdpovìÏ").');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DEFAULT_ANSWERS', "Odpovìï1\nOdpovìï2");
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP', 'Pou¾ít regulární vırazy');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC', 'Mají se odpovìdi vyhodnocovat jako regulární vırazy (PCRE = Perl compatible regular expressions)? Tato metoda mù¾e bıt pou¾ita pro zadání více správnıch odpovìdí k jedné otázce. Ka¾dá øádka s odpovìdí by mìla bıt ve tvaru /pattern/:answer.');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC_ADD', 'POZNÁMKA: Povolte tuto mo¾nost, jen pokud opravdu víte, co dìláte. Vyplnìní ¹patného regulárního vırazu má za následek selhání kontroly odpovìdi a v nìkterıch øídkıch pøípadech Vás mù¾e i vystavit tzv. útoku Denial of Service! Odpovìdi del¹í ne¾ 1000 znakù budou odmítnuty, pokud je zapnuto ovìøování pomocí regulárních vırazù.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_RM_SMARTY_ENC', 'Smarty + Å¡ifrovÃ¡nÃ­');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QT_MATH', 'MatematickÃ© rovnice');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QT_CUSTOM', 'LibovolnÃ© otÃ¡zky');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DESC', 'PokroÄilÃ© nastavenÃ­ pro skrytÃ© kryptogramy. Pokud jsou vypnuty, mÅ¯Å¾ete tuto ÄÃ¡st nastavenÃ­ v klidu ignorovat.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL', 'ZpÅ¯sob zÃ­skÃ¡nÃ­ odpovÄ›di');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC', 'Vyberte si, jak se mÃ¡ zÃ­skat sprÃ¡vnÃ¡ odpovÄ›Ä na kryptogram. Pokud vyberete "JSON", pak se budou posÃ­lat AjaxovÃ© poÅ¾adavky na index.php/plugin/spamblockbeecaptcha. "Smarty" poskytne odpovÄ›Ä pomocÃ­ promÄ›nnÃ© Smarty {$beeCaptchaAnswer}, zatÃ­mco "VÃ½chozÃ­" ji natvrdo vepÃ­Å¡e do strÃ¡nky.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWER_RETRIEVAL_DESC_ADD', 'POZNÃMKA: Pokud je vybrÃ¡no "Smarty", nebude do strÃ¡nky vloÅ¾eno Å¾Ã¡dnÃ© dalÅ¡Ã­ CSS nebo JavaScript. MusÃ­te se sami postarat o sprÃ¡vnÃ© vyplnÄ›nÃ­ polÃ­Äka a jeho skrytÃ­. "Smarty + Å¡ifrovÃ¡nÃ­" je v principu stejnÃ© nastavenÃ­ jako "Smarty" s tÃ­m rozdÃ­lem, Å¾e odpovÄ›Ä uloÅ¾enÃ¡ v {$beeCaptchaAnswer} je zaÅ¡ifrovanÃ¡ jednoduchou XOR Å¡ifrou. PromÄ›nnÃ¡ {$beeCaptchaScrambleKey} obsahuje deÅ¡ifrovacÃ­ klÃ­Ä.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTION_TYPE', 'Typ otÃ¡zky');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTION_TYPE_DESC', 'Spamblock Bee umÃ­ automaticky vytvÃ¡Å™et jednoduchÃ© matematickÃ© problÃ©my, nebo si mÅ¯Å¾ete zadat vlastnÃ­ sadu otÃ¡zek a odpovÄ›dÃ­. Vyberte si moÅ¾nost, kterÃ¡ vÃ¡m vÃ­ce vyhovuje.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTIONS', 'VlastnÃ­ otÃ¡zky');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DEFAULT_QUESTIONS', "OtÃ¡zka1\nOtÃ¡zka2");
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_QUESTIONS_DESC', 'Pokud chcete pro kryptogramy pouÅ¾Ã­t vlastnÃ­ otÃ¡zky, zapiÅ¡tÄ› je sem. PiÅ¡te jednu otÃ¡zku na jednu Å™Ã¡dku. PÅ™edtÃ­m neÅ¾ mÅ¯Å¾e ÄtenÃ¡Å™ poslat komentÃ¡Å™, bude muset zodpovÄ›dÄ›t jednu nÃ¡hodnÄ› vybranou otÃ¡zku.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWERS', 'OdpovÄ›di na vlastnÃ­ otÃ¡zky');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_ANSWERS_DESC', 'Toto polÃ­Äko obsahuje sprÃ¡vnÃ© odpovÄ›di na otÃ¡zky zadanÃ© vÃ½Å¡e. PiÅ¡te jednu odpovÄ›Ä na jednu Å™Ã¡dku ve stejnÃ©m poÅ™adÃ­ jako otÃ¡zky. OtÃ¡zky, kterÃ© nemajÃ­ odpovÄ›Ä, budou ignorovÃ¡ny. VÅ¡echny odpovÄ›di nerozliÅ¡ujÃ­ velikost pÃ­smen (tedy "odpovÄ›Ä" je to samÃ©, co "OdpovÄ›Ä").');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_DEFAULT_ANSWERS', "OdpovÄ›Ä1\nOdpovÄ›Ä2");
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP', 'PouÅ¾Ã­t regulÃ¡rnÃ­ vÃ½razy');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC', 'MajÃ­ se odpovÄ›di vyhodnocovat jako regulÃ¡rnÃ­ vÃ½razy (PCRE = Perl compatible regular expressions)? Tato metoda mÅ¯Å¾e bÃ½t pouÅ¾ita pro zadÃ¡nÃ­ vÃ­ce sprÃ¡vnÃ½ch odpovÄ›dÃ­ k jednÃ© otÃ¡zce. KaÅ¾dÃ¡ Å™Ã¡dka s odpovÄ›dÃ­ by mÄ›la bÃ½t ve tvaru /pattern/:answer.');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CONFIG_ADV_USE_REGEXP_DESC_ADD', 'POZNÃMKA: Povolte tuto moÅ¾nost, jen pokud opravdu vÃ­te, co dÄ›lÃ¡te. VyplnÄ›nÃ­ Å¡patnÃ©ho regulÃ¡rnÃ­ho vÃ½razu mÃ¡ za nÃ¡sledek selhÃ¡nÃ­ kontroly odpovÄ›di a v nÄ›kterÃ½ch Å™Ã­dkÃ½ch pÅ™Ã­padech VÃ¡s mÅ¯Å¾e i vystavit tzv. Ãºtoku Denial of Service! OdpovÄ›di delÅ¡Ã­ neÅ¾ 1000 znakÅ¯ budou odmÃ­tnuty, pokud je zapnuto ovÄ›Å™ovÃ¡nÃ­ pomocÃ­ regulÃ¡rnÃ­ch vÃ½razÅ¯.');
 
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_0', 'nula');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_1', 'jedna');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_2', 'dva');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_3', 'tøi');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_4', 'ètyøi');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_5', 'pìt');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_6', '¹est');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_3', 'tÅ™i');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_4', 'ÄtyÅ™i');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_5', 'pÄ›t');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_6', 'Å¡est');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_7', 'sedm');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_8', 'osm');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_9', 'devìt');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_9', 'devÄ›t');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_10', 'deset');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_PLUS', 'plus');
-@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_MINUS', 'mínus');
+@define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_MINUS', 'mÃ­nus');
 @define('PLUGIN_EVENT_SPAMBLOCK_BEE_CAPTCHA_QUEST', 'Kolik je');
 
 @define('PLUGIN_SPAMBLOCK_BEE_TITLE', 'Spam report');
-@define('PLUGIN_SPAMBLOCK_BEE_DESC', 'Vypí¹e statistiku o komentáøovém spamu, pokud plugin ukládá logy do databáze.');
+@define('PLUGIN_SPAMBLOCK_BEE_DESC', 'VypÃ­Å¡e statistiku o komentÃ¡Å™ovÃ©m spamu, pokud plugin uklÃ¡dÃ¡ logy do databÃ¡ze.');
 @define('PLUGIN_SPAMBLOCK_BEE_DAYS', 'Zobrazit dny');
-@define('PLUGIN_SPAMBLOCK_BEE_DAYS_DESC', 'Mù¾ete si nechat vypsat report o událostech, které se staly bìhem posledních X dní. Mù¾ete nastavit více ne¾ jeden den, jednotlivé dny oddìlujte èárkou.');
-@define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES', 'Databázové vyhledávání');
-@define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES_DESC', 'Tento plugin prochází databázovou tabulku "spamblocklog", ze které vytváøí report. Mù¾ete zde zadat rùzná vyhledávání, která chcete provést. Jedna øádka je jedno vyhledávání. Øádka by mìla vypadat "Vá¹NázevVyhledávání:VyhledávanıØetìzec". Mù¾ete pou¾ít zástupnı znak %. Napøíklad "BayesPlugin:%Bayes%" spoèítá v¹echny pøíspìvky, které mají text "Bayes" kdekoliv v nadpisu, a vypí¹e je v postranním sloupci jako "BayesPlugin".');
-@define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN', 'Pouze pro pøihlá¹ené u¾ivatele');
-@define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN_DESC', 'Pokud je zapnuto, postranní sloupec bude viditelnı pouze pøihlá¹enım u¾ivatelùm (autorùm) Va¹eho blogu.');
+@define('PLUGIN_SPAMBLOCK_BEE_DAYS_DESC', 'MÅ¯Å¾ete si nechat vypsat report o udÃ¡lostech, kterÃ© se staly bÄ›hem poslednÃ­ch X dnÃ­. MÅ¯Å¾ete nastavit vÃ­ce neÅ¾ jeden den, jednotlivÃ© dny oddÄ›lujte ÄÃ¡rkou.');
+@define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES', 'DatabÃ¡zovÃ© vyhledÃ¡vÃ¡nÃ­');
+@define('PLUGIN_SPAMBLOCK_BEE_DBSEARCHES_DESC', 'Tento plugin prochÃ¡zÃ­ databÃ¡zovou tabulku "spamblocklog", ze kterÃ© vytvÃ¡Å™Ã­ report. MÅ¯Å¾ete zde zadat rÅ¯znÃ¡ vyhledÃ¡vÃ¡nÃ­, kterÃ¡ chcete provÃ©st. Jedna Å™Ã¡dka je jedno vyhledÃ¡vÃ¡nÃ­. Å˜Ã¡dka by mÄ›la vypadat "VÃ¡Å¡NÃ¡zevVyhledÃ¡vÃ¡nÃ­:VyhledÃ¡vanÃ½Å˜etÄ›zec". MÅ¯Å¾ete pouÅ¾Ã­t zÃ¡stupnÃ½ znak %. NapÅ™Ã­klad "BayesPlugin:%Bayes%" spoÄÃ­tÃ¡ vÅ¡echny pÅ™Ã­spÄ›vky, kterÃ© majÃ­ text "Bayes" kdekoliv v nadpisu, a vypÃ­Å¡e je v postrannÃ­m sloupci jako "BayesPlugin".');
+@define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN', 'Pouze pro pÅ™ihlÃ¡Å¡enÃ© uÅ¾ivatele');
+@define('PLUGIN_SPAMBLOCK_BEE_LOGGEDIN_DESC', 'Pokud je zapnuto, postrannÃ­ sloupec bude viditelnÃ½ pouze pÅ™ihlÃ¡Å¡enÃ½m uÅ¾ivatelÅ¯m (autorÅ¯m) VaÅ¡eho blogu.');
 @define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS', 'Cachovat report');
-@define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS_DESC', 'Vytváøení reportu zatì¾uje databázi, tak¾e byste ho nemìli vytváøet pøi ka¾dém naètení stránky, ale report by mìl bıt cachován. Zde nastavíte èas mezi jednotlivımi aktualizacemi reportu.');
+@define('PLUGIN_SPAMBLOCK_BEE_CACHEMINS_DESC', 'VytvÃ¡Å™enÃ­ reportu zatÄ›Å¾uje databÃ¡zi, takÅ¾e byste ho nemÄ›li vytvÃ¡Å™et pÅ™i kaÅ¾dÃ©m naÄtenÃ­ strÃ¡nky, ale report by mÄ›l bÃ½t cachovÃ¡n. Zde nastavÃ­te Äas mezi jednotlivÃ½mi aktualizacemi reportu.');
 @define('PLUGIN_SPAMBLOCK_BEE_TODAY', 'Dnes:');
-@define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'Posledních %d dní:');
+@define('PLUGIN_SPAMBLOCK_BEE_LAST_X_DAYS', 'PoslednÃ­ch %d dnÃ­:');
 

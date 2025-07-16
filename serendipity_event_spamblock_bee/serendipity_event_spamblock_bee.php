@@ -99,9 +99,9 @@ class serendipity_event_spamblock_bee extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Grischa Brockhaus, Janek Bevendorff, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
 
         $propbag->add('version',       PLUGIN_SPAMBLOCK_BEE_VERSION); // setup via version.inc.php
