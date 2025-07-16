@@ -27,7 +27,7 @@ class serendipity_event_linktrimmer extends serendipity_event
             'php'         => '8.2.0'
         ));
 
-        $propbag->add('version',       '2.0.2');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('prefix', 'frontpage', 'domain'));

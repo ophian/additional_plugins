@@ -1,22 +1,22 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/06/22
  */
-@define('PLUGIN_LINKTRIMMER_NAME', 'Zkracovaè adres');
-@define('PLUGIN_LINKTRIMMER_DESC', 'Umo¾òuje zkrátit odkaz na Vá¹ blog, podobnì jako tøeba tr.im, tinyurl.com apod.');
+@define('PLUGIN_LINKTRIMMER_NAME', 'ZkracovaÄ adres');
+@define('PLUGIN_LINKTRIMMER_DESC', 'UmoÅ¾Åˆuje zkrÃ¡tit odkaz na VÃ¡Å¡ blog, podobnÄ› jako tÅ™eba tr.im, tinyurl.com apod.');
 @define('PLUGIN_LINKTRIMMER_ENTER', 'Zadejte URL adresu: ');
-@define('PLUGIN_LINKTRIMMER_HASH', 'volitelnı hash kód: ');
-@define('PLUGIN_LINKTRIMMER_RESULT', 'Zkrácenı vısledek: ');
-@define('PLUGIN_LINKTRIMMER_ERROR', 'Odkaz nelze zkrátit. Mo¾ná se jedná o duplicitu, neplatnı hash nebo databázovou chybu.');
-@define('PLUGIN_LINKTRIMMER_LINKPREFIX', 'Pøedpona odkazu');
-@define('PLUGIN_LINKTRIMMER_LINKPREFIX_DESC', 'Zadejte jedineènou èást URL adresy, která bude pou¾ita ve Va¹í doménì pro identifikaci zkracovaèe odkazù. Pokud napø. zadáte "I", Va¹e URL adresa bude vypadat jako http://vasBlog/l/feda [se zapnutım pøepisováním URL adres] nebo http://vasBlog/l/feda [bez URL pøepisování]');
-@define('PLUGIN_LINKTRIMMER_DOMAIN', 'Doména');
-@define('PLUGIN_LINKTRIMMER_DOMAIN_DESC', 'Odkaz pou¾itı jako vısledek. Mù¾ete pou¾ít pøesmìrování pomocí .htaccess na jiné doménì, kterou vlastníte. Tu zadáte zde. Pokud Va¹e Serendipity bì¾í na http://vaseDlouhaDomena.cz/serendipity, ale vlastníte taky http://kratka.cz, mù¾ete zde zadat http://kratka.cz a na http://kratka.cz umístítì soubor .htaccess, kterı bude v¹echno pøesmìrovávat na dlouhou doménu následovnì: RewriteRule ^(.*)$ http://vaseDlouhaDomena.cz/serendipity/$1.');
+@define('PLUGIN_LINKTRIMMER_HASH', 'volitelnÃ½ hash kÃ³d: ');
+@define('PLUGIN_LINKTRIMMER_RESULT', 'ZkrÃ¡cenÃ½ vÃ½sledek: ');
+@define('PLUGIN_LINKTRIMMER_ERROR', 'Odkaz nelze zkrÃ¡tit. MoÅ¾nÃ¡ se jednÃ¡ o duplicitu, neplatnÃ½ hash nebo databÃ¡zovou chybu.');
+@define('PLUGIN_LINKTRIMMER_LINKPREFIX', 'PÅ™edpona odkazu');
+@define('PLUGIN_LINKTRIMMER_LINKPREFIX_DESC', 'Zadejte jedineÄnou ÄÃ¡st URL adresy, kterÃ¡ bude pouÅ¾ita ve VaÅ¡Ã­ domÃ©nÄ› pro identifikaci zkracovaÄe odkazÅ¯. Pokud napÅ™. zadÃ¡te "I", VaÅ¡e URL adresa bude vypadat jako http://vasBlog/l/feda [se zapnutÃ½m pÅ™episovÃ¡nÃ­m URL adres] nebo http://vasBlog/l/feda [bez URL pÅ™episovÃ¡nÃ­]');
+@define('PLUGIN_LINKTRIMMER_DOMAIN', 'DomÃ©na');
+@define('PLUGIN_LINKTRIMMER_DOMAIN_DESC', 'Odkaz pouÅ¾itÃ½ jako vÃ½sledek. MÅ¯Å¾ete pouÅ¾Ã­t pÅ™esmÄ›rovÃ¡nÃ­ pomocÃ­ .htaccess na jinÃ© domÃ©nÄ›, kterou vlastnÃ­te. Tu zadÃ¡te zde. Pokud VaÅ¡e Serendipity bÄ›Å¾Ã­ na http://vaseDlouhaDomena.cz/serendipity, ale vlastnÃ­te taky http://kratka.cz, mÅ¯Å¾ete zde zadat http://kratka.cz a na http://kratka.cz umÃ­stÃ­tÄ› soubor .htaccess, kterÃ½ bude vÅ¡echno pÅ™esmÄ›rovÃ¡vat na dlouhou domÃ©nu nÃ¡sledovnÄ›: RewriteRule ^(.*)$ http://vaseDlouhaDomena.cz/serendipity/$1.');
 
 // Next lines were translated on 2013/06/22
-@define('PLUGIN_LINKTRIMMER_FRONTPAGE_OPTION', 'Zobrazovat zkracovaè adres na hlavní stránce administraèní sekce?');
+@define('PLUGIN_LINKTRIMMER_FRONTPAGE_OPTION', 'Zobrazovat zkracovaÄ adres na hlavnÃ­ strÃ¡nce administraÄnÃ­ sekce?');
 
