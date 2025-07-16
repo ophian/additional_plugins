@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -28,7 +30,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',        '2.5.0');
+        $propbag->add('version',        '2.6.0');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,

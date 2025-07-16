@@ -1,98 +1,98 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2013/04/05
  */
-@define('PLUGIN_EVENT_COMMENTSPICE_TITLE', 'Komentáøové koøení');
-@define('PLUGIN_EVENT_COMMENTSPICE_DESC',  'Okoøeòte formuláø pro zadání komentáøù pomocí twitteru komentujícího, odkazem na poslední èlánek nebo pravidly pro ne-sledování.');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_HINTBEE', '<strong>UPOZORNÌNÍ K AKTUALIZACI!</strong>: Antispamová ochrana vytahující se ke komntáøùm byla pøesunuta do samostatného pluginu "Spamblock Bee". Pokud tedy chcete pouít Honeypot, kterı zde byl døíve implementován, nainstalujte si prosím tento novı plugin.');
+@define('PLUGIN_EVENT_COMMENTSPICE_TITLE', 'KomentÃ¡Å™ovÃ© koÅ™enÃ­');
+@define('PLUGIN_EVENT_COMMENTSPICE_DESC',  'OkoÅ™eÅˆte formulÃ¡Å™ pro zadÃ¡nÃ­ komentÃ¡Å™Å¯ pomocÃ­ twitteru komentujÃ­cÃ­ho, odkazem na poslednÃ­ ÄlÃ¡nek nebo pravidly pro ne-sledovÃ¡nÃ­.');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_HINTBEE', '<strong>UPOZORNÄšNÃ K AKTUALIZACI!</strong>: AntispamovÃ¡ ochrana vytahujÃ­cÃ­ se ke komntÃ¡Å™Å¯m byla pÅ™esunuta do samostatnÃ©ho pluginu "Spamblock Bee". Pokud tedy chcete pouÅ¾Ã­t Honeypot, kterÃ½ zde byl dÅ™Ã­ve implementovÃ¡n, nainstalujte si prosÃ­m tento novÃ½ plugin.');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_TWITTERNAME', 'Twitterové jméno');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_ANNOUNC_RSS', 'Oznamovat poslední pøíspìvky');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_GENERAL', 'Obecná nastavení');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_TWITTERNAME', 'TwitterovÃ© jmÃ©no');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_ANNOUNC_RSS', 'Oznamovat poslednÃ­ pÅ™Ã­spÄ›vky');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_GENERAL', 'ObecnÃ¡ nastavenÃ­');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT', 'Povolí komentujícím pøidat ke komentáøi jejich twitterové jméno');
-@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_DESC', 'Pokud je povoleno, komentující mohou zadat své twitterové jméno, po kterım bude odkaz na jejich twitterovou èasovou osu.');
+@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT', 'PovolÃ­ komentujÃ­cÃ­m pÅ™idat ke komentÃ¡Å™i jejich twitterovÃ© jmÃ©no');
+@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_DESC', 'Pokud je povoleno, komentujÃ­cÃ­ mohou zadat svÃ© twitterovÃ© jmÃ©no, po kterÃ½m bude odkaz na jejich twitterovou Äasovou osu.');
 @define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_NOFOLLOW', 'Nastavit "nofollow" pro twitter');
-@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_NOFOLLOW_DESC', 'Pokud je nastavené nesledování, vyhledávaèe budou ignorovat odkaz na èasovou osu na twitteru. To bude ménì zajímavé pro ruèní komentáøové spamery, ale nedá to vyhledávaèùm odkaz na skuteèné komentátory.');
+@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_NOFOLLOW_DESC', 'Pokud je nastavenÃ© nesledovÃ¡nÃ­, vyhledÃ¡vaÄe budou ignorovat odkaz na Äasovou osu na twitteru. To bude mÃ©nÄ› zajÃ­mavÃ© pro ruÄnÃ­ komentÃ¡Å™ovÃ© spamery, ale nedÃ¡ to vyhledÃ¡vaÄÅ¯m odkaz na skuteÄnÃ© komentÃ¡tory.');
 @define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET', 'Zobrazit twitter followme widget');
-@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DESC', 'Pokud je tato volba zapnuta, bude se místo vlastního textu zobrazovat pìknı originální twitterovskı widget "followme". Aèkoliv to bude vypadat hezky, zpomalí to vykreslování stránky, protoe musí bıt naèten pro kadı komentáø. Pokud je vkládání followme øešeno pomocí smarty, bude se tato volba pøepínat podle toho, jestli $comment.spice_twitter_followme nìco obsahuje nebo ne.');
-@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT',  'Zobrazovat poèet followerù');
-@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT_DESC',    'Pokud je zapnuto, widget bude zobrazovat poèet followerù komentujícího.');
-@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DARK',          'Tmavé pozadí widgetu');
-@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DARK_DESC',     'Pokud Váš styl vzhledu pouívá tmavé pozadí, je zøejmì dobrı nápad toto zapnout.');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS', 'Povolit komentujícím oznamování nedávnıch pøíspìvkù');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_DESC', 'Kdy komentující zadá svoji domovskou stránku, pugin comment spice zkontroluje RSS kanál na této stránce. Pokud existuje, mùe komentující vybrat jeden z nedávnıch èlánkù, kterı bude inzerován spoleènì s jeho komentáøem.');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_NOFOLLOW', 'Nastavit odkazy na nedávné èlánky jako "nofollow"');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_NOFOLLOW_DESC', 'Pokud je nastavené nesledování, vyhledávaèe budou ignorovat odkaz na nedávné pøíspìvky. To bude ménì zajímavé pro ruèní komentáøové spamery, ale nedá to vyhledávaèùm odkaz na skuteèné komentátory.');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_MAXSELECT', 'Maximální poèet inzerovanıch èlánkù');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_MAXSELECT_DESC', 'Kolik nedávnıch èlánkù mùe komentující maximálnì inzerovat se svım komentáøem?');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_ONCEONLY', 'Inzerovat nedávnı èlánek pouze jednou na jedné stránce blogu');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_ONCEONLY_DESC', 'Tato volba umoòuje komentujícímu inzerovat kadı svùj èlánek na stránce blogu pouze jednou. (U prvního komentáøe si mùe vybrat všechny èlánky, u druhého všechny kromì tìch, které inzeroval u prvního komentáøe atd.)');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN', 'Poèet minut mezi obnovením cache s nedávnımi èlánky');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN_DESC', 'V jakém èasovém intervalu má CommentSpice obnovovat informace o nedávnıch èláncích? Nenastavujte zde pøíliš vysokou hodinu, jinak se nové èlánky budou objevovat se zpodìním. Jedna a dvì hodiny (60-120min) je dobrá hodnota. Zadáním 0 vypnete cachování.');
+@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DESC', 'Pokud je tato volba zapnuta, bude se mÃ­sto vlastnÃ­ho textu zobrazovat pÄ›knÃ½ originÃ¡lnÃ­ twitterovskÃ½ widget "followme". AÄkoliv to bude vypadat hezky, zpomalÃ­ to vykreslovÃ¡nÃ­ strÃ¡nky, protoÅ¾e musÃ­ bÃ½t naÄten pro kaÅ¾dÃ½ komentÃ¡Å™. Pokud je vklÃ¡dÃ¡nÃ­ followme Å™eÅ¡eno pomocÃ­ smarty, bude se tato volba pÅ™epÃ­nat podle toho, jestli $comment.spice_twitter_followme nÄ›co obsahuje nebo ne.');
+@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT',  'Zobrazovat poÄet followerÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT_DESC',    'Pokud je zapnuto, widget bude zobrazovat poÄet followerÅ¯ komentujÃ­cÃ­ho.');
+@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DARK',          'TmavÃ© pozadÃ­ widgetu');
+@define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DARK_DESC',     'Pokud VÃ¡Å¡ styl vzhledu pouÅ¾Ã­vÃ¡ tmavÃ© pozadÃ­, je zÅ™ejmÄ› dobrÃ½ nÃ¡pad toto zapnout.');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS', 'Povolit komentujÃ­cÃ­m oznamovÃ¡nÃ­ nedÃ¡vnÃ½ch pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_DESC', 'KdyÅ¾ komentujÃ­cÃ­ zadÃ¡ svoji domovskou strÃ¡nku, pugin comment spice zkontroluje RSS kanÃ¡l na tÃ©to strÃ¡nce. Pokud existuje, mÅ¯Å¾e komentujÃ­cÃ­ vybrat jeden z nedÃ¡vnÃ½ch ÄlÃ¡nkÅ¯, kterÃ½ bude inzerovÃ¡n spoleÄnÄ› s jeho komentÃ¡Å™em.');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_NOFOLLOW', 'Nastavit odkazy na nedÃ¡vnÃ© ÄlÃ¡nky jako "nofollow"');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_NOFOLLOW_DESC', 'Pokud je nastavenÃ© nesledovÃ¡nÃ­, vyhledÃ¡vaÄe budou ignorovat odkaz na nedÃ¡vnÃ© pÅ™Ã­spÄ›vky. To bude mÃ©nÄ› zajÃ­mavÃ© pro ruÄnÃ­ komentÃ¡Å™ovÃ© spamery, ale nedÃ¡ to vyhledÃ¡vaÄÅ¯m odkaz na skuteÄnÃ© komentÃ¡tory.');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_MAXSELECT', 'MaximÃ¡lnÃ­ poÄet inzerovanÃ½ch ÄlÃ¡nkÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_MAXSELECT_DESC', 'Kolik nedÃ¡vnÃ½ch ÄlÃ¡nkÅ¯ mÅ¯Å¾e komentujÃ­cÃ­ maximÃ¡lnÄ› inzerovat se svÃ½m komentÃ¡Å™em?');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_ONCEONLY', 'Inzerovat nedÃ¡vnÃ½ ÄlÃ¡nek pouze jednou na jednÃ© strÃ¡nce blogu');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_ONCEONLY_DESC', 'Tato volba umoÅ¾Åˆuje komentujÃ­cÃ­mu inzerovat kaÅ¾dÃ½ svÅ¯j ÄlÃ¡nek na strÃ¡nce blogu pouze jednou. (U prvnÃ­ho komentÃ¡Å™e si mÅ¯Å¾e vybrat vÅ¡echny ÄlÃ¡nky, u druhÃ©ho vÅ¡echny kromÄ› tÄ›ch, kterÃ© inzeroval u prvnÃ­ho komentÃ¡Å™e atd.)');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN', 'PoÄet minut mezi obnovenÃ­m cache s nedÃ¡vnÃ½mi ÄlÃ¡nky');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN_DESC', 'V jakÃ©m ÄasovÃ©m intervalu mÃ¡ CommentSpice obnovovat informace o nedÃ¡vnÃ½ch ÄlÃ¡ncÃ­ch? Nenastavujte zde pÅ™Ã­liÅ¡ vysokou hodinu, jinak se novÃ© ÄlÃ¡nky budou objevovat se zpoÅ¾dÄ›nÃ­m. Jedna aÅ¾ dvÄ› hodiny (60-120min) je dobrÃ¡ hodnota. ZadÃ¡nÃ­m 0 vypnete cachovÃ¡nÃ­.');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_RULES', 'Pravidla');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTCOUNT', 'Minimální poèet komentáøù nutnı pro povolení komentáøovıch extra funkcí');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTCOUNT_DESC', 'Zadejte poèet komentáøù, které musí komentující vloit pøedtím, ne se mu povolí CommentSpice. 0 znamená: povolit komukoliv.');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH', 'MInimální délka komentáøe nutná pro povolení komentáøovıch extra funkcí');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH_DESC', 'Zadejte délku komentáøe nutnou k zapnutí CommentSpice. 0 znamená: povolit pro komentáøe libovolné délky.');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTCOUNT', 'Minimální poèet komentáøù nutnı pro povolení follow odkazù');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTCOUNT_DESC', 'Zadejte poèet komentáøù, které musí komentující vloit pøedtím, ne mùe pouít follow (sledované) odkazy. 0 znamená: povolit komukoliv.');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH', 'MInimální délka komentáøe nutná pro povolení follow odkazù');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH_DESC', 'Zadejte délku komentáøe nutnou k zapnutí follow (sledovanıch) odkazù. 0 znamená: povolit pro komentáøe libovolné délky.');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTCOUNT', 'MinimÃ¡lnÃ­ poÄet komentÃ¡Å™Å¯ nutnÃ½ pro povolenÃ­ komentÃ¡Å™ovÃ½ch extra funkcÃ­');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTCOUNT_DESC', 'Zadejte poÄet komentÃ¡Å™Å¯, kterÃ© musÃ­ komentujÃ­cÃ­ vloÅ¾it pÅ™edtÃ­m, neÅ¾ se mu povolÃ­ CommentSpice. 0 znamenÃ¡: povolit komukoliv.');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH', 'MInimÃ¡lnÃ­ dÃ©lka komentÃ¡Å™e nutnÃ¡ pro povolenÃ­ komentÃ¡Å™ovÃ½ch extra funkcÃ­');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH_DESC', 'Zadejte dÃ©lku komentÃ¡Å™e nutnou k zapnutÃ­ CommentSpice. 0 znamenÃ¡: povolit pro komentÃ¡Å™e libovolnÃ© dÃ©lky.');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTCOUNT', 'MinimÃ¡lnÃ­ poÄet komentÃ¡Å™Å¯ nutnÃ½ pro povolenÃ­ follow odkazÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTCOUNT_DESC', 'Zadejte poÄet komentÃ¡Å™Å¯, kterÃ© musÃ­ komentujÃ­cÃ­ vloÅ¾it pÅ™edtÃ­m, neÅ¾ mÅ¯Å¾e pouÅ¾Ã­t follow (sledovanÃ©) odkazy. 0 znamenÃ¡: povolit komukoliv.');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH', 'MInimÃ¡lnÃ­ dÃ©lka komentÃ¡Å™e nutnÃ¡ pro povolenÃ­ follow odkazÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH_DESC', 'Zadejte dÃ©lku komentÃ¡Å™e nutnou k zapnutÃ­ follow (sledovanÃ½ch) odkazÅ¯. 0 znamenÃ¡: povolit pro komentÃ¡Å™e libovolnÃ© dÃ©lky.');
 @define('PLUGIN_EVENT_COMMENTSPICE_ENABLED', 'povoleno');
-@define('PLUGIN_EVENT_COMMENTSPICE_DISABED', 'zakázáno');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULES', 'pouít pravidla');
+@define('PLUGIN_EVENT_COMMENTSPICE_DISABED', 'zakÃ¡zÃ¡no');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULES', 'pouÅ¾Ã­t pravidla');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_TWITTER', 'Smartifikovat zobrazování twitter jména');
-@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_TWITTER_DESC', 'Pokud je zapnuto, CommentSpice nebude generovat HTML kód pro zobrazení odkazu na twitter, resp. widgetu, ale vše potøebné vloí do promìnnıch Smarty. Aby se pak nìco zobrazovalo, musíte pøidat odpovídající obsah do šablony comments.tpl. Dostupné promìnné jsou $comment.spice_twitter_name (twitter jméno, kontrolujte, jsetli není prázdné), $comment.spice_twitter_url (url adresa na èasovou osu twitter), $comment.spice_twitter_nofollow (nastavení nofollow pro odkazy na twitter), $comment.spice_twitter_icon_html (html vytváøející twitterovou ikonu), $comment.spice_twitter_followme (html zobrazující followme widget).');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER', 'Šablona formuláøe pro zadání komentáøù upravena pro zadání twitteru');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER_DESC', 'Zapnìte tuto volbu, pokud jste upravovali šablonu commentform.tpl, aby obsahovala políèko pro zadání twitteru na vámi zvoleném místì. V adresáøi pluginu najdete pøíklady, jak na to.');
-@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_RSS', 'Smartifikovat zobrazení èlánkù');
-@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_RSS_DESC', 'Pokud je zapnuto, CommentSpice nebude generovat HTML kód pro zobrazení nedávnıch pøíspìvkù, ale vše potøebné vloí do promìnnıch Smarty. Aby se pak nìco zobrazovalo, musíte pøidat odpovídající obsah do šablony comments.tpl. Dostupné promìnné jsou $comment.spice_article_name (nadpisy èlánkù, kontrolujte, jestli vùbec nìco obsahují). $comment.spice_article_url (url adresa èlánkù), $comment.spice_article_nofollow (nastavení nofollow pro nedávné èlánky), $comment.spice_article_prefix (pøedpona v jazyku ètenáøe).');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS', 'Šablona formuláøe pro zadání komentáøù upravena políèkem pro vıbìr èlánkù');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS_DESC', 'Zapnìte tuto volbu, pokud jste upravovali šablonu commentform.tpl, aby obsahovala políèko pro vıbìr nedávnıch èlánkù. V adresáøi pluginu najdete pøíklady, jak na to.');
-@define('PLUGIN_EVENT_COMMENTSPICE_STYLE_RSS', 'Styl oznámení o nedávnıch èláncích');
-@define('PLUGIN_EVENT_COMMENTSPICE_STYLE_RSS_DESC', 'Plugin vykreslí políèko pro vıbìr èlánkù èernì s pìknou ikonou apod. Pokud se vám to tak nelíbí, mùete toto zobrazování vypnout a ostylovat si políèko sami pomocí vlastní šablony.');
+@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_TWITTER', 'Smartifikovat zobrazovÃ¡nÃ­ twitter jmÃ©na');
+@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_TWITTER_DESC', 'Pokud je zapnuto, CommentSpice nebude generovat HTML kÃ³d pro zobrazenÃ­ odkazu na twitter, resp. widgetu, ale vÅ¡e potÅ™ebnÃ© vloÅ¾Ã­ do promÄ›nnÃ½ch Smarty. Aby se pak nÄ›co zobrazovalo, musÃ­te pÅ™idat odpovÃ­dajÃ­cÃ­ obsah do Å¡ablony comments.tpl. DostupnÃ© promÄ›nnÃ© jsou $comment.spice_twitter_name (twitter jmÃ©no, kontrolujte, jsetli nenÃ­ prÃ¡zdnÃ©), $comment.spice_twitter_url (url adresa na Äasovou osu twitter), $comment.spice_twitter_nofollow (nastavenÃ­ nofollow pro odkazy na twitter), $comment.spice_twitter_icon_html (html vytvÃ¡Å™ejÃ­cÃ­ twitterovou ikonu), $comment.spice_twitter_followme (html zobrazujÃ­cÃ­ followme widget).');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER', 'Å ablona formulÃ¡Å™e pro zadÃ¡nÃ­ komentÃ¡Å™Å¯ upravena pro zadÃ¡nÃ­ twitteru');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER_DESC', 'ZapnÄ›te tuto volbu, pokud jste upravovali Å¡ablonu commentform.tpl, aby obsahovala polÃ­Äko pro zadÃ¡nÃ­ twitteru na vÃ¡mi zvolenÃ©m mÃ­stÄ›. V adresÃ¡Å™i pluginu najdete pÅ™Ã­klady, jak na to.');
+@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_RSS', 'Smartifikovat zobrazenÃ­ ÄlÃ¡nkÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_RSS_DESC', 'Pokud je zapnuto, CommentSpice nebude generovat HTML kÃ³d pro zobrazenÃ­ nedÃ¡vnÃ½ch pÅ™Ã­spÄ›vkÅ¯, ale vÅ¡e potÅ™ebnÃ© vloÅ¾Ã­ do promÄ›nnÃ½ch Smarty. Aby se pak nÄ›co zobrazovalo, musÃ­te pÅ™idat odpovÃ­dajÃ­cÃ­ obsah do Å¡ablony comments.tpl. DostupnÃ© promÄ›nnÃ© jsou $comment.spice_article_name (nadpisy ÄlÃ¡nkÅ¯, kontrolujte, jestli vÅ¯bec nÄ›co obsahujÃ­). $comment.spice_article_url (url adresa ÄlÃ¡nkÅ¯), $comment.spice_article_nofollow (nastavenÃ­ nofollow pro nedÃ¡vnÃ© ÄlÃ¡nky), $comment.spice_article_prefix (pÅ™edpona v jazyku ÄtenÃ¡Å™e).');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS', 'Å ablona formulÃ¡Å™e pro zadÃ¡nÃ­ komentÃ¡Å™Å¯ upravena polÃ­Äkem pro vÃ½bÄ›r ÄlÃ¡nkÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS_DESC', 'ZapnÄ›te tuto volbu, pokud jste upravovali Å¡ablonu commentform.tpl, aby obsahovala polÃ­Äko pro vÃ½bÄ›r nedÃ¡vnÃ½ch ÄlÃ¡nkÅ¯. V adresÃ¡Å™i pluginu najdete pÅ™Ã­klady, jak na to.');
+@define('PLUGIN_EVENT_COMMENTSPICE_STYLE_RSS', 'Styl oznÃ¡menÃ­ o nedÃ¡vnÃ½ch ÄlÃ¡ncÃ­ch');
+@define('PLUGIN_EVENT_COMMENTSPICE_STYLE_RSS_DESC', 'Plugin vykreslÃ­ polÃ­Äko pro vÃ½bÄ›r ÄlÃ¡nkÅ¯ ÄernÄ› s pÄ›knou ikonou apod. Pokud se vÃ¡m to tak nelÃ­bÃ­, mÅ¯Å¾ete toto zobrazovÃ¡nÃ­ vypnout a ostylovat si polÃ­Äko sami pomocÃ­ vlastnÃ­ Å¡ablony.');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK', 'Vloit obsah pingbackovanıch èlánkù');
-@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DESC', 'Pokud nìjakı cizí blog pošle tomu vašemu pingback, je známá pouze URL adresa cizího èlánku. Serendipity umí stáhnout i obsah cizího èlánku a zobrazit ho, jak to znáte z odezev (trackback). Jenom z vıkonostních dùvodù to Serendipit nedìlá jako vıchozí nastavení. Pomocí této volby umoníte pluginu uloit nastavení do serendipity_config_local.inc.php. Pokud hodnotu nemùete zmìnit, pak jste u v minulosti museli zmínìné nastavení pøepsat. V takovém pøípadì byste mìli vymazat vaše ruèní nastavení ze souboru serendipity_config_local.inc.php, aby zmìny mohl provádìt tento plugin.');
+@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK', 'VloÅ¾it obsah pingbackovanÃ½ch ÄlÃ¡nkÅ¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DESC', 'Pokud nÄ›jakÃ½ cizÃ­ blog poÅ¡le tomu vaÅ¡emu pingback, je znÃ¡mÃ¡ pouze URL adresa cizÃ­ho ÄlÃ¡nku. Serendipity umÃ­ stÃ¡hnout i obsah cizÃ­ho ÄlÃ¡nku a zobrazit ho, jak to znÃ¡te z odezev (trackback). Jenom z vÃ½konostnÃ­ch dÅ¯vodÅ¯ to Serendipit nedÄ›lÃ¡ jako vÃ½chozÃ­ nastavenÃ­. PomocÃ­ tÃ©to volby umoÅ¾nÃ­te pluginu uloÅ¾it nastavenÃ­ do serendipity_config_local.inc.php. Pokud hodnotu nemÅ¯Å¾ete zmÄ›nit, pak jste uÅ¾ v minulosti museli zmÃ­nÄ›nÃ© nastavenÃ­ pÅ™epsat. V takovÃ©m pÅ™Ã­padÄ› byste mÄ›li vymazat vaÅ¡e ruÄnÃ­ nastavenÃ­ ze souboru serendipity_config_local.inc.php, aby zmÄ›ny mohl provÃ¡dÄ›t tento plugin.');
 @define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_ON', 'Ponechat: stahovat obsah');
 @define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_OFF', 'Ponechat: nestahovat obsah');
-@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_FETCH', 'Zmìnit na: stahovat obsah');
-@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DONTFETCH', 'Zmìnit na: nestahovat obsah');
+@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_FETCH', 'ZmÄ›nit na: stahovat obsah');
+@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DONTFETCH', 'ZmÄ›nit na: nestahovat obsah');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_PATH', 'Cesta k pluginùm');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATH_DESC', 'V bìnıch instalacích je vıchozí hodnota správnì');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATH', 'Cesta k pluginÅ¯m');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATH_DESC', 'V bÄ›Å¾nÃ½ch instalacÃ­ch je vÃ½chozÃ­ hodnota sprÃ¡vnÄ›');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_EXPERTSETTINGS', 'Zobrazit pokroèilá nastavení');
-@define('PLUGIN_EVENT_COMMENTSPICE_STANDARDSETTINGS', 'Zobrazit základní nastavení');
+@define('PLUGIN_EVENT_COMMENTSPICE_EXPERTSETTINGS', 'Zobrazit pokroÄilÃ¡ nastavenÃ­');
+@define('PLUGIN_EVENT_COMMENTSPICE_STANDARDSETTINGS', 'Zobrazit zÃ¡kladnÃ­ nastavenÃ­');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER', 'Èíst na Twitteru');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER_FOOTER', 'Pokud zadáte <b>twitterové jméno</b>, ke komentáøi bude pøidán odkaz na Vaši èasovou osu z twitteru.');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER', 'ÄŒÃ­st na Twitteru');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER_FOOTER', 'Pokud zadÃ¡te <b>twitterovÃ© jmÃ©no</b>, ke komentÃ¡Å™i bude pÅ™idÃ¡n odkaz na VaÅ¡i Äasovou osu z twitteru.');
 @define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER_PLACEHOLDER', 'twittername nebo jmeno@identi.ca');
 @define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER_LABEL', 'Twitter');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_LABEL', 'Inzerovat nedávné èlánky');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CHOOSE', '- vyberte èlánek -');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_RECENT', '% píše o');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_FOOTER', '<b>Inzerujte nedávné èlánky</b><br/>Tento blog vám umoòuje spoleènì s Vaším komentáøem inzerovat i nìkterı z posledních èlánkù na Vašem blogu. Jako domovksou stránku zadejte pøíslušnou URL adresu Vašeho blogu a objeví se políèko, ze kterého mùete vybrat nedávné èlánky. (potøeba mít zapnutı Javascript)');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED', 'Je mi líto, nepodaøilo se mi stáhnout Vaše "nedávné èlánky"...');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_LABEL', 'Inzerovat nedÃ¡vnÃ© ÄlÃ¡nky');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CHOOSE', '- vyberte ÄlÃ¡nek -');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_RECENT', '% pÃ­Å¡e o');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_FOOTER', '<b>Inzerujte nedÃ¡vnÃ© ÄlÃ¡nky</b><br/>Tento blog vÃ¡m umoÅ¾Åˆuje spoleÄnÄ› s VaÅ¡Ã­m komentÃ¡Å™em inzerovat i nÄ›kterÃ½ z poslednÃ­ch ÄlÃ¡nkÅ¯ na VaÅ¡em blogu. Jako domovksou strÃ¡nku zadejte pÅ™Ã­sluÅ¡nou URL adresu VaÅ¡eho blogu a objevÃ­ se polÃ­Äko, ze kterÃ©ho mÅ¯Å¾ete vybrat nedÃ¡vnÃ© ÄlÃ¡nky. (potÅ™eba mÃ­t zapnutÃ½ Javascript)');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED', 'Je mi lÃ­to, nepodaÅ™ilo se mi stÃ¡hnout VaÅ¡e "nedÃ¡vnÃ© ÄlÃ¡nky"...');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO','Audio komentáøe pomocí audioboo.fm');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','Pokud máte podcastovací blog, moná chcete umonit uivatelùm vkládat i audio komentáøe, tzv. boo audios (mini podcasty) umístìné na <a href="http://audioboo.fm" target="_blank" rel="noopener">audioboo.fm</a>.');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW','Povolit boo audio komentáøe');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW_DESC','Zapnìte, pokud chcete povolit audio boo komentáøe. Pod políèkem pro vloení komentáøe se objeví políèko pro vloení a nahrání (beta funkce!) audio boo komentáøù.');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE','Schvalovat audio boo komentáøe');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE_DESC','Zapnìte, pokud mají audio boo komentáøe podléhat schvalování pøed zveøejnìním.');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','Tento blog Vám umoòuje vloit audio boo komentáøe pomocí <a href="http://audioboo.fm/profile" target="_blank" rel="noopener">audioboo.fm</a>. <a href="http://audioboo.fm/boos/new" target="_blank" rel="noopener">Nahrajte novı komentáø</a> a zadejte odkaz do políèka audio boo.');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO','Audio komentÃ¡Å™e pomocÃ­ audioboo.fm');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','Pokud mÃ¡te podcastovacÃ­ blog, moÅ¾nÃ¡ chcete umoÅ¾nit uÅ¾ivatelÅ¯m vklÃ¡dat i audio komentÃ¡Å™e, tzv. boo audios (mini podcasty) umÃ­stÄ›nÃ© na <a href="http://audioboo.fm" target="_blank" rel="noopener">audioboo.fm</a>.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW','Povolit boo audio komentÃ¡Å™e');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW_DESC','ZapnÄ›te, pokud chcete povolit audio boo komentÃ¡Å™e. Pod polÃ­Äkem pro vloÅ¾enÃ­ komentÃ¡Å™e se objevÃ­ polÃ­Äko pro vloÅ¾enÃ­ a nahrÃ¡nÃ­ (beta funkce!) audio boo komentÃ¡Å™Å¯.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE','Schvalovat audio boo komentÃ¡Å™e');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE_DESC','ZapnÄ›te, pokud majÃ­ audio boo komentÃ¡Å™e podlÃ©hat schvalovÃ¡nÃ­ pÅ™ed zveÅ™ejnÄ›nÃ­m.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','Tento blog VÃ¡m umoÅ¾Åˆuje vloÅ¾it audio boo komentÃ¡Å™e pomocÃ­ <a href="http://audioboo.fm/profile" target="_blank" rel="noopener">audioboo.fm</a>. <a href="http://audioboo.fm/boos/new" target="_blank" rel="noopener">Nahrajte novÃ½ komentÃ¡Å™</a> a zadejte odkaz do polÃ­Äka audio boo.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_PLACEHOLDER', 'http://audioboo.fm/boos/123456-nadpis');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_WRONG', 'Je mi líto, toto nevypadá jako boo URL (http://audioboo.fm/boos/12345-nadpis)');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATED', 'Audio boo komentáøe podléhají schválení pøed zveøejnìním, prosíme o trpìlivost.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_WRONG', 'Je mi lÃ­to, toto nevypadÃ¡ jako boo URL (http://audioboo.fm/boos/12345-nadpis)');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATED', 'Audio boo komentÃ¡Å™e podlÃ©hajÃ­ schvÃ¡lenÃ­ pÅ™ed zveÅ™ejnÄ›nÃ­m, prosÃ­me o trpÄ›livost.');
 
-@define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS', 'Poadavky');
-@define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTCOUNT', '%s napsanıch komentáøù');
-@define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTLEN', 'nejménì %s znakù v komentáøi');
+@define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS', 'PoÅ¾adavky');
+@define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTCOUNT', '%s napsanÃ½ch komentÃ¡Å™Å¯');
+@define('PLUGIN_EVENT_COMMENTSPICE_REQUIREMENTS_COMMENTLEN', 'nejmÃ©nÄ› %s znakÅ¯ v komentÃ¡Å™i');
 

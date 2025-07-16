@@ -1,8 +1,8 @@
 <?php
 
 @define('PLUGIN_EVENT_COMMENTSPICE_TITLE', 'Comment Spice');
-@define('PLUGIN_EVENT_COMMENTSPICE_DESC',  'Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_HINTBEE', '<strong>UPDATE WARNUNG!</strong>: Die AntiSpam bezogene Funktionalität in Comment Spice wurde in ein neues AntiSpam Plugin namens "Spamschutz Biene" verschoben. Wenn Du also die Honeypot Funktionalität weiterhin haben möchtest, installiere Dir dieses Plugin bitte zusätzlich.');
+@define('PLUGIN_EVENT_COMMENTSPICE_DESC',  'WÃ¼rze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_HINTBEE', '<strong>UPDATE WARNUNG!</strong>: Die AntiSpam bezogene FunktionalitÃ¤t in Comment Spice wurde in ein neues AntiSpam Plugin namens "Spamschutz Biene" verschoben. Wenn Du also die Honeypot FunktionalitÃ¤t weiterhin haben mÃ¶chtest, installiere Dir dieses Plugin bitte zusÃ¤tzlich.');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_TWITTERNAME', 'Twittername');
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_ANNOUNC_RSS', 'Artikel bewerben');
@@ -11,7 +11,7 @@
 @define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT', 'Erlaube Kommentatoren, ihren Twitternamen anzugeben');
 @define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_DESC', 'Hiermit erlaubst Du einem Kommentator, mit ihrem Kommentar auch ihren Twitternamen anzugeben. Wenn er dies tut, so wird seine Twitter Timeline mit seinem Kommentar verlinkt.');
 @define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_NOFOLLOW', 'Twitterlink auf nofollow setzen');
-@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_NOFOLLOW_DESC', 'Wenn der Twitterlink auf nofollow gesetzt wird, werden Suchmaschinen ihn ignorieren. Dies macht die Eingabe für manuelle Kommentarspammer uninteressant, gibt aber weniger Kudos an den echten Kommentator.');
+@define('PLUGIN_EVENT_COMMENTSPICE_TWITTERINPUT_NOFOLLOW_DESC', 'Wenn der Twitterlink auf nofollow gesetzt wird, werden Suchmaschinen ihn ignorieren. Dies macht die Eingabe fÃ¼r manuelle Kommentarspammer uninteressant, gibt aber weniger Kudos an den echten Kommentator.');
 @define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET', 'Erstelle Twitter Followme Widget');
 @define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_DESC', 'Wenn angeschaltet, wird das Followme Widget von Twitter in den Kommentaren angezeigt anstatt des eigenen Outputs. Das sieht recht gut aus, verlangsamt aber das Rendern der Kommentarliste, da es pro Kommentar nachgeladen werden muss. Wenn das Plugin smartifiziert ist, stellt das ein, ob $comment.spice_twitter_followme Inhalt hat oder nicht.');
 @define('PLUGIN_EVENT_COMMENTSPICE_FOLLOWME_WIDGET_COUNT',  'Twitter Followme Widget Follower Anzahl');
@@ -21,40 +21,40 @@
 @define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS', 'Erlaube Kommentatoren, einen ihrer Artikel zu bewerben');
 @define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_DESC', 'Wenn der Kommentator eine Homepage eingegeben hat, wird CommentSpice die URL nach einem RSS feed durchsuchen. Wenn einer gefunden wurde, kann der Kommentator einen seiner Artikel aussuchen, der dann mit seinem Kommentar beworben wird.');
 @define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_NOFOLLOW', 'Artikel Bewerbung auf nofollow setzen');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_NOFOLLOW_DESC', 'Wenn die Artikel Bewerbung auf nofollow gesetzt wird, werden Suchmaschinen ihn ignorieren. Dies macht die Eingabe für manuelle Kommentarspammer uninteressant, gibt aber weniger Kudos an den echten Kommentator.');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_NOFOLLOW_DESC', 'Wenn die Artikel Bewerbung auf nofollow gesetzt wird, werden Suchmaschinen ihn ignorieren. Dies macht die Eingabe fÃ¼r manuelle Kommentarspammer uninteressant, gibt aber weniger Kudos an den echten Kommentator.');
 @define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_MAXSELECT', 'Maximale Artikel Anzahl, aus der beworben werden darf');
 @define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_MAXSELECT_DESC', 'Wie viele seiner neuesten Artikel sollen dem Kommentator maximal zu Auswahl vorgelegt werden?');
 @define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_ONCEONLY', 'Einen Artikel nur einmal pro Blogseite bewerben');
 @define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_ONCEONLY_DESC', 'Diese Option erlaubt es einem Kommentator nur einmal pro Blogseite, einen bestimmten seiner Artikel zu bewerben. (Erster Kommentar: Alle Artikel, zweiter Kommentar alle Artikel minus dem bereits auf der Seite beworbenen usw.)');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN', 'Cache Minuten für Artikel Informationen');
-@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN_DESC', 'Wie viele Minuten sollen die Information für Artikel zwischen gespeichert werden? Ein bis zwei Stunden (60-120 Minuten) erscheint sinnvoll. Ein Wert von 0 schaltet den Cache aus.');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN', 'Cache Minuten fÃ¼r Artikel Informationen');
+@define('PLUGIN_EVENT_COMMENTSPICE_ANNOUNCE_RSS_CACHEMIN_DESC', 'Wie viele Minuten sollen die Information fÃ¼r Artikel zwischen gespeichert werden? Ein bis zwei Stunden (60-120 Minuten) erscheint sinnvoll. Ein Wert von 0 schaltet den Cache aus.');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_RULES', 'Regeln');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTCOUNT', 'Minimale Anzahl an Kommentaren für Spice Extras');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTCOUNT', 'Minimale Anzahl an Kommentaren fÃ¼r Spice Extras');
 @define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTCOUNT_DESC', 'Minimale Anzahl von Kommentaren, die der Kommentator geschrieben haben muss, damit er die Extras benutzen darf. 0 bedeutet: Erlaube es allen.');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH', 'Minimale Kommentarlänge für Spice Extras');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH_DESC', 'Minimale Kommentarlänge, damit der Kommentator die Extras benutzen darf. 0 bedeutet: Kommentarlänge egal.');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH', 'Minimale KommentarlÃ¤nge fÃ¼r Spice Extras');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_EXTRAS_COMMENTLENGTH_DESC', 'Minimale KommentarlÃ¤nge, damit der Kommentator die Extras benutzen darf. 0 bedeutet: KommentarlÃ¤nge egal.');
 @define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTCOUNT', 'Minimale Anzahl an Kommentaren, um dofollow Links frei zu schalten');
 @define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTCOUNT_DESC', 'Minimale Anzahl von Kommentaren, die der Kommentator geschrieben haben muss, um dofollow Links frei zu schalten. 0 bedeutet: Immer frei schalten.');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH', 'Minimale Kommentarlänge, um dofollow Links frei zu schalten');
-@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH_DESC', 'Minimale Kommentarlänge, um dofollow Links frei zu schalten. 0 bedeutet: Kommentarlänge egal.');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH', 'Minimale KommentarlÃ¤nge, um dofollow Links frei zu schalten');
+@define('PLUGIN_EVENT_COMMENTSPICE_RULE_DOFOLLOW_COMMENTLENGTH_DESC', 'Minimale KommentarlÃ¤nge, um dofollow Links frei zu schalten. 0 bedeutet: KommentarlÃ¤nge egal.');
 @define('PLUGIN_EVENT_COMMENTSPICE_ENABLED', 'angeschaltet');
 @define('PLUGIN_EVENT_COMMENTSPICE_DISABED', 'ausgeschaltet');
 @define('PLUGIN_EVENT_COMMENTSPICE_RULES', 'Regeln verwenden');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_TWITTER', 'Twittername Ausgabe smartifizieren');
-@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_TWITTER_DESC', 'Wenn angeschaltet, wird CommentSpice keinen Code für den Twitterlink darstellen sondern wird benötigte Informationen in den Smarty Hash stecken. Damit das funktioniert, muss die comments.tpl angepasst werden. Verfügbare Variablen sind $comment.spice_twitter_name (Twittername, sollte auf Vorhandensein gecheckt werden), $comment.spice_twitter_url (URL der Twitter Timeline), $comment.spice_twitter_nofollow (Nofollow Einstllung für Twitterlinks), $comment.spice_twitter_icon_html (HTML, das das twitter icon darstellt), $comment.spice_twitter_followme (HTML, das das followme widget darstellt).');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER', 'Kommentareditor Template wurde für Twittereingabe gepatched.');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER_DESC', 'Wenn Dein commentform.tpl bereits gepatched wurde, um die Twitter Eingabe darzustellen, dann kannst Du diese Option einschalten. Ich habe dem Plugin Beispiel Templates beigefügt.');
+@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_TWITTER_DESC', 'Wenn angeschaltet, wird CommentSpice keinen Code fÃ¼r den Twitterlink darstellen sondern wird benÃ¶tigte Informationen in den Smarty Hash stecken. Damit das funktioniert, muss die comments.tpl angepasst werden. VerfÃ¼gbare Variablen sind $comment.spice_twitter_name (Twittername, sollte auf Vorhandensein gecheckt werden), $comment.spice_twitter_url (URL der Twitter Timeline), $comment.spice_twitter_nofollow (Nofollow Einstllung fÃ¼r Twitterlinks), $comment.spice_twitter_icon_html (HTML, das das twitter icon darstellt), $comment.spice_twitter_followme (HTML, das das followme widget darstellt).');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER', 'Kommentareditor Template wurde fÃ¼r Twittereingabe gepatched.');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_TWITTER_DESC', 'Wenn Dein commentform.tpl bereits gepatched wurde, um die Twitter Eingabe darzustellen, dann kannst Du diese Option einschalten. Ich habe dem Plugin Beispiel Templates beigefÃ¼gt.');
 @define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_RSS', 'Artikelbewerbung smartifizieren');
-@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_RSS_DESC', 'Wenn angeschaltet, wird CommentSpice keinen Code für die Artikelbewerbung darstellen sondern wird benötigte Informationen in den Smarty Hash stecken. Damit das funktioniert, muss die comments.tpl angepasst werden. Verfügbare Variablen sind $comment.spice_article_name (Name des Artikel, sollte auf Vorhandensein gecheckt werden). $comment.spice_article_url (Artikel URL), $comment.spice_article_nofollow (Nofollow Einstellung für Artikelbewerbung), $comment.spice_article_prefix (Prefix in der Sprache des Besuchers).');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS', 'Kommentareditor Template wurde für Artikel Auswahl gepatched.');
-@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS_DESC', 'Wenn Dein commentform.tpl bereits gepatched wurde, um die Artikel Auswahl darzustellen, dann kannst Du diese Option einschalten. Ich habe dem Plugin Beispiel Templates beigefügt.');
+@define('PLUGIN_EVENT_COMMENTSPICE_SMARTIFY_RSS_DESC', 'Wenn angeschaltet, wird CommentSpice keinen Code fÃ¼r die Artikelbewerbung darstellen sondern wird benÃ¶tigte Informationen in den Smarty Hash stecken. Damit das funktioniert, muss die comments.tpl angepasst werden. VerfÃ¼gbare Variablen sind $comment.spice_article_name (Name des Artikel, sollte auf Vorhandensein gecheckt werden). $comment.spice_article_url (Artikel URL), $comment.spice_article_nofollow (Nofollow Einstellung fÃ¼r Artikelbewerbung), $comment.spice_article_prefix (Prefix in der Sprache des Besuchers).');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS', 'Kommentareditor Template wurde fÃ¼r Artikel Auswahl gepatched.');
+@define('PLUGIN_EVENT_COMMENTSPICE_PATCHEDINPUT_RSS_DESC', 'Wenn Dein commentform.tpl bereits gepatched wurde, um die Artikel Auswahl darzustellen, dann kannst Du diese Option einschalten. Ich habe dem Plugin Beispiel Templates beigefÃ¼gt.');
 @define('PLUGIN_EVENT_COMMENTSPICE_STYLE_RSS', 'Artikelbewerbung stylen');
-@define('PLUGIN_EVENT_COMMENTSPICE_STYLE_RSS_DESC', 'Das Plugin styled die Dropdown Box der letzten Artikel schwarz mit einem Icon usw. Wenn Du das nicht möchtest, kannst Du dies hier ausschalten und Deinem Template das Styling überlassen.');
+@define('PLUGIN_EVENT_COMMENTSPICE_STYLE_RSS_DESC', 'Das Plugin styled die Dropdown Box der letzten Artikel schwarz mit einem Icon usw. Wenn Du das nicht mÃ¶chtest, kannst Du dies hier ausschalten und Deinem Template das Styling Ã¼berlassen.');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK', 'Inhalt von Pingback Artikeln abholen');
-@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DESC', 'Wenn ein anderes Blog ein Pingback auf einen Artikel dieses Blogs schickt, ist nur die URL des fremden Artikels bekannt. Serendipity kann jedoch den Inhalt des fremden Artikels abholen und darstellen, so wie es von Trackbacks bekannt ist. Aus Performance Gründen tut Serendipity dies jedoch nicht per default. Hiermit kann eine Einstellung in die serendipity_config_local.inc.php geschrieben werden, die Serendipity dazu veranlasst, den Inhalt abzuholen. Wenn der Wert hier unverändert bleibt, dann wurde die Einstellung bereits manuell vorgenommen und überschreibt die Einstellung des Plugins. In dem Fall muss der manuelle Eintrag aus der serendipity_config_local.inc.php wieder entfernt werden, wenn die Einstellung mit diesem Plugin verändert werden soll.');
+@define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_DESC', 'Wenn ein anderes Blog ein Pingback auf einen Artikel dieses Blogs schickt, ist nur die URL des fremden Artikels bekannt. Serendipity kann jedoch den Inhalt des fremden Artikels abholen und darstellen, so wie es von Trackbacks bekannt ist. Aus Performance GrÃ¼nden tut Serendipity dies jedoch nicht per default. Hiermit kann eine Einstellung in die serendipity_config_local.inc.php geschrieben werden, die Serendipity dazu veranlasst, den Inhalt abzuholen. Wenn der Wert hier unverÃ¤ndert bleibt, dann wurde die Einstellung bereits manuell vorgenommen und Ã¼berschreibt die Einstellung des Plugins. In dem Fall muss der manuelle Eintrag aus der serendipity_config_local.inc.php wieder entfernt werden, wenn die Einstellung mit diesem Plugin verÃ¤ndert werden soll.');
 @define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_ON', 'Behalte: Inhalt abholen');
 @define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_LEAVE_OFF', 'Behalte: Inhalt nicht abholen');
 @define('PLUGIN_EVENT_COMMENTSPICE_FETCH_PINGBACK_FETCH', 'Setze auf: Inhalt abholen');
@@ -72,18 +72,18 @@
 @define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_TWITTER_LABEL', 'Twitter');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_LABEL', 'Bewirb einen Deiner Artikel');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CHOOSE', '- Artikel wählen -');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CHOOSE', '- Artikel wÃ¤hlen -');
 @define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_RECENT', '%s schrieb auch');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_FOOTER', '<b>Bewirb einen Deiner letzten Artikel</b><br/>Dieses Blog erlaubt Dir mit Deinem Kommentar einen Deiner letzten Artikel zu bewerben. Bitte gib Deine Blog URL als Homepage ein, dann wird eine Auswahl erscheinen, in der Du einen Artikel auswählen kannst. (Javascript erforderlich)');
-@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED', 'Entschuldigung, bei der Übergabe "Deines letzten Artikels" ist etwas schief gegangen.');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_FOOTER', '<b>Bewirb einen Deiner letzten Artikel</b><br/>Dieses Blog erlaubt Dir mit Deinem Kommentar einen Deiner letzten Artikel zu bewerben. Bitte gib Deine Blog URL als Homepage ein, dann wird eine Auswahl erscheinen, in der Du einen Artikel auswÃ¤hlen kannst. (Javascript erforderlich)');
+@define('PLUGIN_EVENT_COMMENTSPICE_PROMOTE_ARTICLE_CORRUPTED', 'Entschuldigung, bei der Ãœbergabe "Deines letzten Artikels" ist etwas schief gegangen.');
 
 @define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO','Audio Kommentare mittels audioboo.fm');
-@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','Wenn Du z.B. ein Podcasting Blog hast, möchtest Du vielleicht Deinen Hörern erlauben, per Boo Audio (Mini Podcasts) zu kommentieren, die auf <a href="http://audioboo.fm" target="_blank" rel="noopener">audioboo.fm</a> gehostet werden.');
+@define('PLUGIN_EVENT_COMMENTSPICE_CONFIG_BOO_DESC','Wenn Du z.B. ein Podcasting Blog hast, mÃ¶chtest Du vielleicht Deinen HÃ¶rern erlauben, per Boo Audio (Mini Podcasts) zu kommentieren, die auf <a href="http://audioboo.fm" target="_blank" rel="noopener">audioboo.fm</a> gehostet werden.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW','Erlaube Boo Kommentare');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW_DESC','Schalte dies ein, wenn Du Deinen Lesern/Hörern Boo Audio Kommentare erlauben möchtest. Unterhalb des Kommentar Editors wird ein Feld erscheinen, in dem ein Boo eingetragen und (beta!) aufgenommen werden kann.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_ALLOW_DESC','Schalte dies ein, wenn Du Deinen Lesern/HÃ¶rern Boo Audio Kommentare erlauben mÃ¶chtest. Unterhalb des Kommentar Editors wird ein Feld erscheinen, in dem ein Boo eingetragen und (beta!) aufgenommen werden kann.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE','Moderiere Boo Kommentare');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATE_DESC','Schalte dies ein, wenn Audio Boos moderiert werden sollen.');
-@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','Dieses Blog erlaubt Dir, Audio Kommentare über <a href="http://audioboo.fm/profile" target="_blank" rel="noopener">audioboo.fm</a> hinzuzufügen. <a href="http://audioboo.fm/boos/new" target="_blank" rel="noopener">Erstelle einen neuen Boo</a> und gib hier den Link auf die Seite Deines Boos ein.');
+@define('PLUGIN_EVENT_COMMENTSPICE_BOO_FOOTER','Dieses Blog erlaubt Dir, Audio Kommentare Ã¼ber <a href="http://audioboo.fm/profile" target="_blank" rel="noopener">audioboo.fm</a> hinzuzufÃ¼gen. <a href="http://audioboo.fm/boos/new" target="_blank" rel="noopener">Erstelle einen neuen Boo</a> und gib hier den Link auf die Seite Deines Boos ein.');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_PLACEHOLDER', 'http://audioboo.fm/boos/123456-title');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_WRONG', 'Tut mir leid, das scheint keine boo URL zu sein (http://audioboo.fm/boos/12345-title)');
 @define('PLUGIN_EVENT_COMMENTSPICE_BOO_MODERATED', 'Boo Audio Kommentare werden vorerst moderiert, bitte habe etwas Geduld.');
