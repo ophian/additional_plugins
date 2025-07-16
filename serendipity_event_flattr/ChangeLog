@@ -1,3 +1,10 @@
+2.0.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Declare strict types
+ * Raise requirements
+
 1.21:
 -----
  * Remove former [cs] lang reference - which is kind of "early nineties"...!

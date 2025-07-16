@@ -6,23 +6,24 @@
  *  @translated 2011/11/22
  */
 @define('PLUGIN_FLATTR_NAME', 'Flattr');
-@define('PLUGIN_FLATTR_DESC', 'Flattr ist eine Social-Micropayment-Plattform, mit der man Liebe versprühen kann für Artikel, die man liebt. Das Plugin bindet "Flattr"-Buttons in den Blogeinträgen und RSS-Feeds ein. Flattr-spezifische Attribute können sowohl global als auch pro Eintrag vergeben werden.');
+@define('PLUGIN_FLATTR_DESC', 'Flattr ist eine Social-Micropayment-Plattform, mit der man Liebe versprÃ¼hen kann fÃ¼r Artikel, die man liebt. Das Plugin bindet "Flattr"-Buttons in den BlogeintrÃ¤gen und RSS-Feeds ein. Flattr-spezifische Attribute kÃ¶nnen sowohl global als auch pro Eintrag vergeben werden.');
 
 @define('PLUGIN_FLATTR_USER', 'User-ID (bei flattr.com anmelden)');
 
 @define('PLUGIN_FLATTR_PLACEMENT_FOOTER', 'Artikelfooter');
-@define('PLUGIN_FLATTR_PLACEMENT_SMARTY', 'Als Smarty-Variable {$entry.flattr}, für entries.tpl');
+@define('PLUGIN_FLATTR_PLACEMENT_SMARTY', 'Als Smarty-Variable {$entry.flattr}, fÃ¼r entries.tpl');
 @define('PLUGIN_FLATTR_PLACEMENT', 'Wo soll der flattr-Button erscheinen');
 
 @define('PLUGIN_FLATTR_BUTTON', 'Flattr Button-Typ ("default" oder "compact")');
 @define('PLUGIN_FLATTR_CATS', 'Flattr-Kategorie');
 @define('PLUGIN_FLATTR_LANG', 'Flattr-Sprache');
-@define('PLUGIN_FLATTR_DSC', 'Flattr-Beschreibung (standardmäßig Artikeltext)');
-@define('PLUGIN_FLATTR_TAG', 'Flattr-Schlagwörter (standardmäßig vom Artikel-Tags-Plugin, falls verwendet)');
-@define('PLUGIN_FLATTR_ADD_TO_FEED', 'Flattr-Button zum RSS-/ATOM-Feed hinzufügen?');
+@define('PLUGIN_FLATTR_DSC', 'Flattr-Beschreibung (standardmÃ¤ÃŸig Artikeltext)');
+@define('PLUGIN_FLATTR_TAG', 'Flattr-SchlagwÃ¶rter (standardmÃ¤ÃŸig vom Artikel-Tags-Plugin, falls verwendet)');
+@define('PLUGIN_FLATTR_POPOUT', 'Popout anzeigen, wenn die Maus Ã¼ber den Flattr-Button fÃ¤hrt');
+@define('PLUGIN_FLATTR_ADD_TO_FEED', 'Flattr-Button zum RSS-/ATOM-Feed hinzufÃ¼gen?');
 
 @define('PLUGIN_FLATTR_ACTIVE', 'Flattr aktivieren');
 
 // Next lines were translated on 2011/11/22
-@define('PLUGIN_FLATTR_BUTTON_DESC', 'Wird etwas anderes als "default" oder "compact" eingetragen, dann wird dieser Text für den Button verwendet. Z.B. kann hier "Klicke hier um zu Flattern" eingetragen werden.');
+@define('PLUGIN_FLATTR_BUTTON_DESC', 'Wird etwas anderes als "default" oder "compact" eingetragen, dann wird dieser Text fÃ¼r den Button verwendet. Z.B. kann hier "Klicke hier um zu Flattern" eingetragen werden.');
 

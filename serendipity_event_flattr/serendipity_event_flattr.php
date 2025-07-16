@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -62,11 +64,11 @@ class serendipity_event_flattr extends serendipity_event
             'add_to_feed',
         ));
         $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '1.21');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
-            'php'         => '8.0'
+            'php'         => '8.2'
         ));
         $propbag->add('legal',    array(
             'services' => array(
@@ -304,11 +306,11 @@ class serendipity_event_flattr extends serendipity_event
                                 $opt = array('1' => YES, '-1' => NO);
                             }
                             foreach($opt AS $key => $kval) {
-                                echo '                        <option value="' . $key . '"' . ((string)$val == (string)$key ? ' selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($kval) : htmlspecialchars($kval, ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+                                echo '                        <option value="' . $key . '"' . ((string)$val == (string)$key ? ' selected="selected"' : '') . '>' . htmlspecialchars($kval) . '</option>' . "\n";
                             }
                             echo '                    </select>';
                         } else {
-                            echo '                    <input type="text" name="serendipity[properties][ep_' . $attr . ']" id="properties_' . $attr . '" class="input_textbox" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET)) . '" style="width: 100%" />' . "\n";
+                            echo '                    <input type="text" name="serendipity[properties][ep_' . $attr . ']" id="properties_' . $attr . '" class="input_textbox" value="' . htmlspecialchars($val) . '" style="width: 100%" />' . "\n";
                         }
 ?>
                 </div>
@@ -414,7 +416,7 @@ class serendipity_event_flattr extends serendipity_event
                                  "\">" . $flattr_btn . "</a>";
                     } else {
                         $flattr_tle2 = isset($flattr_tle2) ? stripslashes($flattr_tle2) : null;
-                        $flattr_tle2 = (function_exists('serendipity_specialchars') ? serendipity_specialchars($flattr_tle2) : htmlspecialchars($flattr_tle2, ENT_COMPAT, LANG_CHARSET));
+                        $flattr_tle2 = htmlspecialchars($flattr_tle2);
                         $flattr = "
 <a class='FlattrButton' style='display:none;'
     title=\"" . $flattr_tle2 . "\"
@@ -434,7 +436,7 @@ class serendipity_event_flattr extends serendipity_event
                     if ($addData['from'] == 'functions_entries:updertEntry') {
                     } elseif ($addData['from'] == 'functions_entries:printEntries_rss') {
                         $entryText =& $this->getFieldReference($field, $eventData);
-                        $entryText .= (function_exists('serendipity_specialchars') ? serendipity_specialchars($flattr) : htmlspecialchars($flattr, ENT_COMPAT, LANG_CHARSET));
+                        $entryText .= htmlspecialchars($flattr);
                     } else {
                         $entryText =& $this->getFieldReference($field, $eventData);
                         $entryText .= $flattr;

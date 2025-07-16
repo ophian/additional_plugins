@@ -1,38 +1,38 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2010/05/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/07/09
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/09/09
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/10
  */
 @define('PLUGIN_FLATTR_NAME', 'Flattr');
-@define('PLUGIN_FLATTR_DESC', 'Flattr je platforma pro sociální mikroplatby, která ètenáøi umo¾òuje ocenit drobnım pøíspìvkem obsah, kterı se mu líbí. Tento plugin vkládá do pøíspìvkù a RSS kanálù tlaèítka "Flattr" (tzv. Flattr Badges). U ka¾dého pøíspìvku mù¾ete jednotlivì zadat nastavení Flattru. Pokud tak neuèiníte, pou¾ije se globální nastavení.');
+@define('PLUGIN_FLATTR_DESC', 'Flattr je platforma pro sociÃ¡lnÃ­ mikroplatby, kterÃ¡ ÄtenÃ¡Å™i umoÅ¾Åˆuje ocenit drobnÃ½m pÅ™Ã­spÄ›vkem obsah, kterÃ½ se mu lÃ­bÃ­. Tento plugin vklÃ¡dÃ¡ do pÅ™Ã­spÄ›vkÅ¯ a RSS kanÃ¡lÅ¯ tlaÄÃ­tka "Flattr" (tzv. Flattr Badges). U kaÅ¾dÃ©ho pÅ™Ã­spÄ›vku mÅ¯Å¾ete jednotlivÄ› zadat nastavenÃ­ Flattru. Pokud tak neuÄinÃ­te, pouÅ¾ije se globÃ¡lnÃ­ nastavenÃ­.');
 
-@define('PLUGIN_FLATTR_USER', 'U¾ivatelské ID (pokud vám jako ID nefunguje u¾ivatelské jméno pro Flattr, po¾ádejte o nìj na www.flattr.com)');
+@define('PLUGIN_FLATTR_USER', 'UÅ¾ivatelskÃ© ID (pokud vÃ¡m jako ID nefunguje uÅ¾ivatelskÃ© jmÃ©no pro Flattr, poÅ¾Ã¡dejte o nÄ›j na www.flattr.com)');
 
-@define('PLUGIN_FLATTR_PLACEMENT_FOOTER', 'Patièka pøíspìvku');
-@define('PLUGIN_FLATTR_PLACEMENT_SMARTY', 'Promìnná Smarty {$entry.flattr}, pro ¹ablonu entries.tpl');
-@define('PLUGIN_FLATTR_PLACEMENT', 'Kam umístit tlaèítko Flattr');
+@define('PLUGIN_FLATTR_PLACEMENT_FOOTER', 'PatiÄka pÅ™Ã­spÄ›vku');
+@define('PLUGIN_FLATTR_PLACEMENT_SMARTY', 'PromÄ›nnÃ¡ Smarty {$entry.flattr}, pro Å¡ablonu entries.tpl');
+@define('PLUGIN_FLATTR_PLACEMENT', 'Kam umÃ­stit tlaÄÃ­tko Flattr');
 
-@define('PLUGIN_FLATTR_BUTTON', 'Styl tlaèítka Flattr ("default" nebo "compact")');
-@define('PLUGIN_FLATTR_CATS', 'Kategorie pøíspìvku pro Flattr');
-@define('PLUGIN_FLATTR_LANG', 'Jazyk pøíspìvku pro Flattr');
-@define('PLUGIN_FLATTR_DSC', 'Popis pøíspìvku pro Flattr (jako vıchozí hodnota je pou¾it text pøíspìvku)');
-@define('PLUGIN_FLATTR_TAG', 'Tagy pro Flattr (vıchozí hodnota je pøebíraná z pluginu freetag, pokud ho pou¾íváte)');
+@define('PLUGIN_FLATTR_BUTTON', 'Styl tlaÄÃ­tka Flattr ("default" nebo "compact")');
+@define('PLUGIN_FLATTR_CATS', 'Kategorie pÅ™Ã­spÄ›vku pro Flattr');
+@define('PLUGIN_FLATTR_LANG', 'Jazyk pÅ™Ã­spÄ›vku pro Flattr');
+@define('PLUGIN_FLATTR_DSC', 'Popis pÅ™Ã­spÄ›vku pro Flattr (jako vÃ½chozÃ­ hodnota je pouÅ¾it text pÅ™Ã­spÄ›vku)');
+@define('PLUGIN_FLATTR_TAG', 'Tagy pro Flattr (vÃ½chozÃ­ hodnota je pÅ™ebÃ­ranÃ¡ z pluginu freetag, pokud ho pouÅ¾Ã­vÃ¡te)');
 
 @define('PLUGIN_FLATTR_ACTIVE', 'Povolit Flattr');
 
 // Next lines were translated on 2011/07/09
 
-@define('PLUGIN_FLATTR_BUTTON_DESC', 'Pokud zadáte cokoliv jiného ne¾ "default" (vıchozí vzhled) nebo "compact" (kompaktní vzhled), bude zde zadanı text pou¾it pro statické tlaèítko. Mù¾ete zde zadat napøíklad "Kliknìte zde pro Flattr".');
+@define('PLUGIN_FLATTR_BUTTON_DESC', 'Pokud zadÃ¡te cokoliv jinÃ©ho neÅ¾ "default" (vÃ½chozÃ­ vzhled) nebo "compact" (kompaktnÃ­ vzhled), bude zde zadanÃ½ text pouÅ¾it pro statickÃ© tlaÄÃ­tko. MÅ¯Å¾ete zde zadat napÅ™Ã­klad "KliknÄ›te zde pro Flattr".');
 
 // Next lines were translated on 2012/09/09
 
-@define('PLUGIN_FLATTR_POPOUT', 'Zobrazovat popup okno bìhem pohybu my¹i nad tlaèítkem Flattr');
-@define('PLUGIN_FLATTR_ADD_TO_FEED', 'Pøidat tlaèítko Flattr do kanálu RSS/ATOM?');
+@define('PLUGIN_FLATTR_POPOUT', 'Zobrazovat popup okno bÄ›hem pohybu myÅ¡i nad tlaÄÃ­tkem Flattr');
+@define('PLUGIN_FLATTR_ADD_TO_FEED', 'PÅ™idat tlaÄÃ­tko Flattr do kanÃ¡lu RSS/ATOM?');
 
