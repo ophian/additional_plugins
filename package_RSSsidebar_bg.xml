@@ -54,11 +54,11 @@
 <guid isPermaLink="false">serendipity_plugin_guestbook</guid>
 </item>
 <item>
-<title>Списък от връзки: Менажер на връзките - показва връзки към други сайтове в странична приставка чрез дървовидно меню.</title>
+<title>Link List: Links manager - Shows your favorite links in the sidebar.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linklist</link>
 <category>Sidebar Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_linklist&lt;br /&gt;Списък от връзки&lt;/b&gt;&lt;br /&gt;Менажер на връзките - показва връзки към други сайтове в странична приставка чрез дървовидно меню.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
 <pubDate>Tue, 13 May 2025 19:09:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_linklist</guid>
 </item>
@@ -108,11 +108,11 @@
 <guid isPermaLink="false">serendipity_plugin_staticpage</guid>
 </item>
 <item>
-<title>Статистика: Статистика</title>
+<title>Statistics: Statistics</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_statistics</link>
 <category>Sidebar Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_statistics&lt;br /&gt;Статистика&lt;/b&gt;&lt;br /&gt;Статистика&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<content:encoded>&lt;b&gt;serendipity_plugin_statistics&lt;br /&gt;Statistics&lt;/b&gt;&lt;br /&gt;Statistics&lt;br/&gt;For: Serendipity 1.6</content:encoded>
 <pubDate>Sat, 18 Jul 2020 10:56:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_statistics</guid>
 </item>

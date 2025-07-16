@@ -297,11 +297,11 @@
 <description>When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!</description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.2</version>
+  <version>3.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-15</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -314,12 +314,7 @@
       <file>serendipity_event_autoupdate.php</file>
       <file>upgrade.min.css</file>
       <file>upgrade.simple.css</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_autoupdate/ChangeLog</file>
@@ -332,9 +327,6 @@
     <file>serendipity_event_autoupdate/serendipity_event_autoupdate.php</file>
     <file>serendipity_event_autoupdate/upgrade.min.css</file>
     <file>serendipity_event_autoupdate/upgrade.simple.css</file>
-    <file>serendipity_event_autoupdate/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_autoupdate/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_autoupdate/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1113,11 +1105,11 @@
 <description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
+  <version>2.6.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1130,14 +1122,7 @@
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_categorytemplates.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_categorytemplates/ChangeLog</file>
@@ -1150,11 +1135,6 @@
     <file>serendipity_event_categorytemplates/lang_en.inc.php</file>
     <file>serendipity_event_categorytemplates/lang_ja.inc.php</file>
     <file>serendipity_event_categorytemplates/serendipity_event_categorytemplates.php</file>
-    <file>serendipity_event_categorytemplates/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_categorytemplates/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_categorytemplates/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_categorytemplates/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_categorytemplates/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1496,11 +1476,11 @@
 <description>Shows an email contactform on your blog as a static page. It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. Captchas from Spamblock plugins (if enabled) will be applied.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.49</version>
-  <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2024-01-29</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-15</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1520,19 +1500,7 @@
       <file>plugin_contactform.tpl</file>
       <file>plugin_dynamicform.tpl</file>
       <file>serendipity_event_contactform.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_it.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_nl.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_contactform/ChangeLog</file>
@@ -1552,16 +1520,6 @@
     <file>serendipity_event_contactform/plugin_contactform.tpl</file>
     <file>serendipity_event_contactform/plugin_dynamicform.tpl</file>
     <file>serendipity_event_contactform/serendipity_event_contactform.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_it.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_nl.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_contactform/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2698,11 +2656,11 @@
 <description>Applies some checks before an entry is published.</description>
 <maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.21</version>
+  <version>2.0.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-06-07</date>
+  <date>2025-07-15</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
       <file>ChangeLog</file>
@@ -2788,11 +2746,11 @@
 <description>Allows viewing the next/previous entry when viewing</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-06-02</date>
+  <date>2025-07-14</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -3657,11 +3615,11 @@
 <description>Allows freestyle tagging of entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.2.0</version>
+  <version>6.3.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-13</date>
+  <date>2025-07-15</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -5553,11 +5511,11 @@
 <description>Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.</description>
 <maintainers><maintainer><name>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.13.0</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-14</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -5720,12 +5678,6 @@
         <file>README</file>
       </dir>
       <file>serendipity_event_lightbox.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -5851,10 +5803,6 @@
     <file>serendipity_event_lightbox/prettyphoto/js/jquery.prettyPhoto.min.js</file>
     <file>serendipity_event_lightbox/prettyphoto/README</file>
     <file>serendipity_event_lightbox/serendipity_event_lightbox.php</file>
-    <file>serendipity_event_lightbox/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_lightbox/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_lightbox/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_lightbox/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5867,11 +5815,11 @@
 <description>Links manager - Shows your favorite links in the sidebar.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-06-08</date>
+  <date>2025-07-14</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -5906,14 +5854,6 @@
       <file>serendipity_event_linklist.css</file>
       <file>serendipity_event_linklist.php</file>
       <file>serendipity_plugin_linklist.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -5947,12 +5887,6 @@
     <file>serendipity_event_linklist/serendipity_event_linklist.css</file>
     <file>serendipity_event_linklist/serendipity_event_linklist.php</file>
     <file>serendipity_event_linklist/serendipity_plugin_linklist.php</file>
-    <file>serendipity_event_linklist/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_linklist/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_linklist/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_linklist/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_linklist/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_linklist/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -9539,11 +9473,11 @@
 <description>Implements simple comment antispam mechanisms, that are easy to configure but very effective.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Janek Bevendorff, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.8</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-14</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -9559,11 +9493,6 @@
       <file>serendipity_event_spamblock_bee.php</file>
       <file>serendipity_plugin_spamblock_bee.php</file>
       <file>spamblockbee.png</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
       <file>version.inc.php</file>
     </dir>
   </filelist>
@@ -9579,9 +9508,6 @@
     <file>serendipity_event_spamblock_bee/serendipity_event_spamblock_bee.php</file>
     <file>serendipity_event_spamblock_bee/serendipity_plugin_spamblock_bee.php</file>
     <file>serendipity_event_spamblock_bee/spamblockbee.png</file>
-    <file>serendipity_event_spamblock_bee/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_spamblock_bee/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_spamblock_bee/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_spamblock_bee/version.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -9796,16 +9722,16 @@
 <name>serendipity_event_statistics</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_statistics/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Estatísticas</summary>
+<summary>Statistics</summary>
 <groups>STATISTICS</groups>
-<description>Junta uma ligação a estatísticas interessantes no seu painel entradas, incluindo um contador de visitantes</description>
+<description>Adds a link to interesting statistics in your entries panel, including a visitors counter</description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.5.3</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <version>5.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-14</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -9835,26 +9761,8 @@
       <file>serendipity_event_statistics.php</file>
       <file>serendipity_plugin_statistics.php</file>
       <file>transparent.png</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cn.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_hu.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_nl.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_pt_PT.inc.php</file>
-        <file>lang_sk.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
       <file>yellow.png</file>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_statistics/botlist.txt</file>
@@ -9884,22 +9792,6 @@
     <file>serendipity_event_statistics/serendipity_event_statistics.php</file>
     <file>serendipity_event_statistics/serendipity_plugin_statistics.php</file>
     <file>serendipity_event_statistics/transparent.png</file>
-    <file>serendipity_event_statistics/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_hu.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_nl.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_sk.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_statistics/UTF-8/lang_zh.inc.php</file>
     <file>serendipity_event_statistics/yellow.png</file>
   </serendipityFilelist>
 </release>
@@ -11543,11 +11435,11 @@
 <description>Allows to publish galleries by media directories out of your MediaLibrary tree. Stackable plugin!</description>
 <maintainers><maintainer><name>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.0.0</version>
+  <version>4.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-14</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
@@ -11590,13 +11482,6 @@
       <file>plugin_usergallery_imagedisplay.tpl</file>
       <file>serendipity_event_usergallery.css</file>
       <file>serendipity_event_usergallery.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -11636,11 +11521,6 @@
     <file>serendipity_event_usergallery/plugin_usergallery_imagedisplay.tpl</file>
     <file>serendipity_event_usergallery/serendipity_event_usergallery.css</file>
     <file>serendipity_event_usergallery/serendipity_event_usergallery.php</file>
-    <file>serendipity_event_usergallery/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_usergallery/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_usergallery/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_usergallery/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_usergallery/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -11885,11 +11765,11 @@
 <description>You can specify new/existing links to your blog entries via [[title]], link to staticpages via ((title)) and link to both via {{title}}. References can be automatically appended to the blog entry.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.4</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-06-22</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -11903,13 +11783,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_wikilinks.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_wikilinks/ChangeLog</file>
@@ -11923,10 +11797,6 @@
     <file>serendipity_event_wikilinks/lang_de.inc.php</file>
     <file>serendipity_event_wikilinks/lang_en.inc.php</file>
     <file>serendipity_event_wikilinks/serendipity_event_wikilinks.php</file>
-    <file>serendipity_event_wikilinks/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_wikilinks/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_wikilinks/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_wikilinks/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
