@@ -23,7 +23,7 @@ class serendipity_event_entrypaging extends serendipity_event
         $propbag->add('description',   PLUGIN_ENTRYPAGING_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -108,9 +108,9 @@ class serendipity_event_entrypaging extends serendipity_event
             }
 
             // what above does, is to retrieve the multilingual title, if available
-            $title = serendipity_specialchars($localtitle[0]);
+            $title = htmlspecialchars($localtitle[0]);
             if ($this->get_config($type) != '') {
-                $title = serendipity_specialchars($this->get_config($type));
+                $title = htmlspecialchars($this->get_config($type));
             }
             if (empty($title)) {
                 if ($type == 'next') {
