@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -17,7 +19,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '3.0.0');
+        $propbag->add('version',        '3.1.0');
         $propbag->add('requirements',   array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
