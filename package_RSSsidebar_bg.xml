@@ -103,8 +103,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_staticpage</link>
 <category>Sidebar Plugins</category>
 <author>Rob Antonishen, Falk Doering, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Static Page List&lt;/b&gt;&lt;br /&gt;This plugin displays a configurable list of the static pages.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 24 Jun 2022 18:11:03 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Static Page List&lt;/b&gt;&lt;br /&gt;This plugin displays a configurable list of the static pages.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 16 Jul 2025 19:17:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_staticpage</guid>
 </item>
 <item>

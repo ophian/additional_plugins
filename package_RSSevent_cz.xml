@@ -774,12 +774,12 @@
 <guid isPermaLink="false">serendipity_event_mymood</guid>
 </item>
 <item>
-<title>Blok s novinkami: Seskupte příspěvky z jedné kategorie na výchozí stránce blogu do jednoho bloku místo obvyklého výpisu příspěvků. Podporuje vnořené bloky s novinkami.</title>
+<title>Newsbox: Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_newsbox</link>
 <category>Event Plugins</category>
 <author>Jude Anthony, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Blok s novinkami&lt;/b&gt;&lt;br /&gt;Seskupte příspěvky z jedné kategorie na výchozí stránce blogu do jednoho bloku místo obvyklého výpisu příspěvků. Podporuje vnořené bloky s novinkami.&lt;br/&gt;For: Serendipity 2.7</content:encoded>
-<pubDate>Mon, 05 Aug 2024 10:57:15 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Newsbox&lt;/b&gt;&lt;br /&gt;Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 16 Jul 2025 14:41:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_newsbox</guid>
 </item>
 <item>
@@ -1031,7 +1031,7 @@
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
 <content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Static Pages&lt;/b&gt;&lt;br /&gt;Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 13 Jul 2025 16:23:00 +0200</pubDate>
+<pubDate>Wed, 16 Jul 2025 19:15:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>

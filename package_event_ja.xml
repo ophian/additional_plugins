@@ -7068,11 +7068,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.</description>
 <maintainers><maintainer><name>Jude Anthony, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>2.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2024-08-05</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -7081,11 +7081,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
       <file>lang_en.inc.php</file>
       <file>newsbox.tpl</file>
       <file>serendipity_event_newsbox.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_newsbox/ChangeLog</file>
@@ -7094,8 +7090,6 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
     <file>serendipity_event_newsbox/lang_en.inc.php</file>
     <file>serendipity_event_newsbox/newsbox.tpl</file>
     <file>serendipity_event_newsbox/serendipity_event_newsbox.php</file>
-    <file>serendipity_event_newsbox/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_newsbox/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -9538,11 +9532,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Shows static pages inside your blog with your blogs design and all formatting. Adds a new menu item to the admin interface.</description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>7.0.0</version>
+  <version>7.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-13</date>
+  <date>2025-07-16</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
