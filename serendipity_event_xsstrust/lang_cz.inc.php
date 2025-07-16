@@ -1,26 +1,26 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/08
  */
 
 //
 //  serendipity_event_xsstrust
 //
-@define('PLUGIN_EVENT_XSSTRUST_NAME',     'Nástroje pro dùvìryhodnou správu více-u¾ivatelskıch blogù');
-@define('PLUGIN_EVENT_XSSTRUST_DESC',     'Tento plugin umo¾òuje upøesnit, kteøí autoøi na více-u¾ivatelském blogu jsou dùvìryhodní a lze se spolehnout, ¾e se nebudou pokou¹et o hackování. V¹ichni ostatní autoøi jsou bráni jako potenciálnì nebezpeèní a nemohou vytvøátet pøíspìvky v HTML kódu.');
-@define('PLUGIN_EVENT_XSSTRUST_AUTHORS',  'Dùvìryhodní autoøi');
+@define('PLUGIN_EVENT_XSSTRUST_NAME',     'NÃ¡stroje pro dÅ¯vÄ›ryhodnou sprÃ¡vu vÃ­ce-uÅ¾ivatelskÃ½ch blogÅ¯');
+@define('PLUGIN_EVENT_XSSTRUST_DESC',     'Tento plugin umoÅ¾Åˆuje upÅ™esnit, kteÅ™Ã­ autoÅ™i na vÃ­ce-uÅ¾ivatelskÃ©m blogu jsou dÅ¯vÄ›ryhodnÃ­ a lze se spolehnout, Å¾e se nebudou pokouÅ¡et o hackovÃ¡nÃ­. VÅ¡ichni ostatnÃ­ autoÅ™i jsou brÃ¡ni jako potenciÃ¡lnÄ› nebezpeÄnÃ­ a nemohou vytvÅ™Ã¡tet pÅ™Ã­spÄ›vky v HTML kÃ³du.');
+@define('PLUGIN_EVENT_XSSTRUST_AUTHORS',  'DÅ¯vÄ›ryhodnÃ­ autoÅ™i');
 
 //
 //  serendipity_plugin_xsstrust
 //
-@define('PLUGIN_ETHICS_NAME', 'Zobrazit dùvìryhodné autory');
-@define('PLUGIN_ETHICS_INTRO', 'Tento plugin zobrazuje autory se zobrazením jejich etické úrovnì, semafor má následující vıznam:');
-@define('PLUGIN_ETHICS_REDLIGHT', 'zakázanı');
-@define('PLUGIN_ETHICS_YELLOWLIGHT', 'podezøelı');
-@define('PLUGIN_ETHICS_GREENLIGHT', 'v pohodì');
-@define('PLUGIN_ETHICS_BLAHBLAH', 'Zobrazuje u¾ivatele s vyobrazením jejich etické úrovnì (vyjádøenou semaforem). Zelená znamená "'.PLUGIN_ETHICS_GREENLIGHT.'"; oran¾ová znamená "'.PLUGIN_ETHICS_YELLOWLIGHT.'"; a èervená znamená "'.PLUGIN_ETHICS_REDLIGHT.'". Administrátor mù¾e lehce mìnit tyto hodnoty u jednotlivıch u¾ivatelù.');
-@define('PLUGIN_ETHICS_BASEVAL', 'Vıchozí úroveò etické úrovnì autora');
-@define('PLUGIN_ETHICS_BASEVAL_BLAHBLAH', 'Vıchozù úroveò (1 = zelená; 2 = oran¾ová; 3 = èervená; pøednastaveno: 1)');
+@define('PLUGIN_ETHICS_NAME', 'Zobrazit dÅ¯vÄ›ryhodnÃ© autory');
+@define('PLUGIN_ETHICS_INTRO', 'Tento plugin zobrazuje autory se zobrazenÃ­m jejich etickÃ© ÃºrovnÄ›, semafor mÃ¡ nÃ¡sledujÃ­cÃ­ vÃ½znam:');
+@define('PLUGIN_ETHICS_REDLIGHT', 'zakÃ¡zanÃ½');
+@define('PLUGIN_ETHICS_YELLOWLIGHT', 'podezÅ™elÃ½');
+@define('PLUGIN_ETHICS_GREENLIGHT', 'v pohodÄ›');
+@define('PLUGIN_ETHICS_BLAHBLAH', 'Zobrazuje uÅ¾ivatele s vyobrazenÃ­m jejich etickÃ© ÃºrovnÄ› (vyjÃ¡dÅ™enou semaforem). ZelenÃ¡ znamenÃ¡ "'.PLUGIN_ETHICS_GREENLIGHT.'"; oranÅ¾ovÃ¡ znamenÃ¡ "'.PLUGIN_ETHICS_YELLOWLIGHT.'"; a ÄervenÃ¡ znamenÃ¡ "'.PLUGIN_ETHICS_REDLIGHT.'". AdministrÃ¡tor mÅ¯Å¾e lehce mÄ›nit tyto hodnoty u jednotlivÃ½ch uÅ¾ivatelÅ¯.');
+@define('PLUGIN_ETHICS_BASEVAL', 'VÃ½chozÃ­ ÃºroveÅˆ etickÃ© ÃºrovnÄ› autora');
+@define('PLUGIN_ETHICS_BASEVAL_BLAHBLAH', 'VÃ½chozÅ¯ ÃºroveÅˆ (1 = zelenÃ¡; 2 = oranÅ¾ovÃ¡; 3 = ÄervenÃ¡; pÅ™ednastaveno: 1)');
 
