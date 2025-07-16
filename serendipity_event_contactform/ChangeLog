@@ -1,3 +1,12 @@
+2.0.0:
+-----
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Declare strict types
+ * Improve selected() method
+ * Set header by Styx 5 declared server protocol
+ * Raise requirements for Styx 5.0
+
 1.49:
 -----
  * Fix error on parsing dynamic fields

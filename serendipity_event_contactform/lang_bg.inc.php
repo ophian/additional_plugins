@@ -6,21 +6,21 @@
  *  EN-Revision: 1.6
  */
 
-@define('PLUGIN_CONTACTFORM_TITLE', 'Форма за обратна връзка');
-@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'Показва форма за изпращане на e-mail в блога като статична страница. Тя може да бъде достигната или чрез постоянна връзка, указана тук при конфигурирането на приставката или чрез \'index.php?serendipity[subpage]=contactform\'. Можете да промените външния вид на формата като поставите файл \'plugin_contactform.tpl\' в директорията на вашата тема и я модифицирате там. Captchas от приставка Spamblock (ако са позволени) ще бъдат приложени.');
-@define('PLUGIN_CONTACTFORM_PERMALINK', 'Постоянна връзка');
-@define('PLUGIN_CONTACTFORM_PAGETITLE', 'Късо URL име (за обратна съвместимост)');
-@define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH', 'Дефинира постоянна връзка за URL. Трябва да бъде абсолютен HTTP път и да завършва с \'.htm\' или \'.html\'.');
-@define('PLUGIN_CONTACTFORM_EMAIL', 'e-mail адрес');
-@define('PLUGIN_CONTACTFORM_INTRO', 'Въвеждащ текст, който се появява над полето за въвеждане на съобщението (може да бъде оставено празно)');
-@define('PLUGIN_CONTACTFORM_MESSAGE', 'Съобщение');
-@define('PLUGIN_CONTACTFORM_SENT', 'Текст след като съобщението е било изпратено успешно');
-@define('PLUGIN_CONTACTFORM_SENT_HTML', 'Съобщението беше успешно изпратено.');
-@define('PLUGIN_CONTACTFORM_ERROR_HTML', 'Съобщението не беше изпратено поради възникнала грешка.');
-@define('PLUGIN_CONTACTFORM_ERROR_DATA', 'Въведете вашето име, e-mail и съобщението.');
-@define('PLUGIN_CONTACTFORM_DYNAMIC_ERROR_DATA', 'Не е попълнено задължително поле.');
-@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT', 'Форматиране като статия ?');
-@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH', 'При избор \'Да\' съобщението се форматира автоматично като статия (цветове, шрифтове и т.н.).');
+@define('PLUGIN_CONTACTFORM_TITLE', 'Р¤РѕСЂРјР° Р·Р° РѕР±СЂР°С‚РЅР° РІСЂСЉР·РєР°');
+@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'РџРѕРєР°Р·РІР° С„РѕСЂРјР° Р·Р° РёР·РїСЂР°С‰Р°РЅРµ РЅР° e-mail РІ Р±Р»РѕРіР° РєР°С‚Рѕ СЃС‚Р°С‚РёС‡РЅР° СЃС‚СЂР°РЅРёС†Р°. РўСЏ РјРѕР¶Рµ РґР° Р±СЉРґРµ РґРѕСЃС‚РёРіРЅР°С‚Р° РёР»Рё С‡СЂРµР· РїРѕСЃС‚РѕСЏРЅРЅР° РІСЂСЉР·РєР°, СѓРєР°Р·Р°РЅР° С‚СѓРє РїСЂРё РєРѕРЅС„РёРіСѓСЂРёСЂР°РЅРµС‚Рѕ РЅР° РїСЂРёСЃС‚Р°РІРєР°С‚Р° РёР»Рё С‡СЂРµР· \'index.php?serendipity[subpage]=contactform\'. РњРѕР¶РµС‚Рµ РґР° РїСЂРѕРјРµРЅРёС‚Рµ РІСЉРЅС€РЅРёСЏ РІРёРґ РЅР° С„РѕСЂРјР°С‚Р° РєР°С‚Рѕ РїРѕСЃС‚Р°РІРёС‚Рµ С„Р°Р№Р» \'plugin_contactform.tpl\' РІ РґРёСЂРµРєС‚РѕСЂРёСЏС‚Р° РЅР° РІР°С€Р°С‚Р° С‚РµРјР° Рё СЏ РјРѕРґРёС„РёС†РёСЂР°С‚Рµ С‚Р°Рј. Captchas РѕС‚ РїСЂРёСЃС‚Р°РІРєР° Spamblock (Р°РєРѕ СЃР° РїРѕР·РІРѕР»РµРЅРё) С‰Рµ Р±СЉРґР°С‚ РїСЂРёР»РѕР¶РµРЅРё.');
+@define('PLUGIN_CONTACTFORM_PERMALINK', 'РџРѕСЃС‚РѕСЏРЅРЅР° РІСЂСЉР·РєР°');
+@define('PLUGIN_CONTACTFORM_PAGETITLE', 'РљСЉСЃРѕ URL РёРјРµ (Р·Р° РѕР±СЂР°С‚РЅР° СЃСЉРІРјРµСЃС‚РёРјРѕСЃС‚)');
+@define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH', 'Р”РµС„РёРЅРёСЂР° РїРѕСЃС‚РѕСЏРЅРЅР° РІСЂСЉР·РєР° Р·Р° URL. РўСЂСЏР±РІР° РґР° Р±СЉРґРµ Р°Р±СЃРѕР»СЋС‚РµРЅ HTTP РїСЉС‚ Рё РґР° Р·Р°РІСЉСЂС€РІР° СЃ \'.htm\' РёР»Рё \'.html\'.');
+@define('PLUGIN_CONTACTFORM_EMAIL', 'e-mail Р°РґСЂРµСЃ');
+@define('PLUGIN_CONTACTFORM_INTRO', 'Р’СЉРІРµР¶РґР°С‰ С‚РµРєСЃС‚, РєРѕР№С‚Рѕ СЃРµ РїРѕСЏРІСЏРІР° РЅР°Рґ РїРѕР»РµС‚Рѕ Р·Р° РІСЉРІРµР¶РґР°РЅРµ РЅР° СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ (РјРѕР¶Рµ РґР° Р±СЉРґРµ РѕСЃС‚Р°РІРµРЅРѕ РїСЂР°Р·РЅРѕ)');
+@define('PLUGIN_CONTACTFORM_MESSAGE', 'РЎСЉРѕР±С‰РµРЅРёРµ');
+@define('PLUGIN_CONTACTFORM_SENT', 'РўРµРєСЃС‚ СЃР»РµРґ РєР°С‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ Рµ Р±РёР»Рѕ РёР·РїСЂР°С‚РµРЅРѕ СѓСЃРїРµС€РЅРѕ');
+@define('PLUGIN_CONTACTFORM_SENT_HTML', 'РЎСЉРѕР±С‰РµРЅРёРµС‚Рѕ Р±РµС€Рµ СѓСЃРїРµС€РЅРѕ РёР·РїСЂР°С‚РµРЅРѕ.');
+@define('PLUGIN_CONTACTFORM_ERROR_HTML', 'РЎСЉРѕР±С‰РµРЅРёРµС‚Рѕ РЅРµ Р±РµС€Рµ РёР·РїСЂР°С‚РµРЅРѕ РїРѕСЂР°РґРё РІСЉР·РЅРёРєРЅР°Р»Р° РіСЂРµС€РєР°.');
+@define('PLUGIN_CONTACTFORM_ERROR_DATA', 'Р’СЉРІРµРґРµС‚Рµ РІР°С€РµС‚Рѕ РёРјРµ, e-mail Рё СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ.');
+@define('PLUGIN_CONTACTFORM_DYNAMIC_ERROR_DATA', 'РќРµ Рµ РїРѕРїСЉР»РЅРµРЅРѕ Р·Р°РґСЉР»Р¶РёС‚РµР»РЅРѕ РїРѕР»Рµ.');
+@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ ?');
+@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH', 'РџСЂРё РёР·Р±РѕСЂ \'Р”Р°\' СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ СЃРµ С„РѕСЂРјР°С‚РёСЂР° Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ (С†РІРµС‚РѕРІРµ, С€СЂРёС„С‚РѕРІРµ Рё С‚.РЅ.).');
 @define('PLUGIN_CONTACTFORM_DYNAMICTPL', 'Use the dynamic tpl?');
 @define('PLUGIN_CONTACTFORM_DYNAMICTPL_DESC', 'This setting allows you to choose the form type you wish to use.  You can use the standard form, a small business form, a more detailed form or an entirely custom form created from a manually entered string.');
 @define('PLUGIN_CONTACTFORM_DYNAMICFIELDS', 'Form field string');

@@ -1,10 +1,5 @@
 <?php
 
-/**
- *  @version 
- *  @Rikkie Neutelings <nb@3gz.com>
-  */
-
 @define('PLUGIN_CONTACTFORM_TITLE', 'Contactformulier');
 @define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'Geeft een contactformulier weer op uw blog als een statische pagina. Het kan zowel worden opgeroepen via een zelfgemaakte permalink of door index.php?serendipity[subpage]=contactform. Het uiterlijk van het contactformulier kan worden aangepast door het plugin_contactform.tpl-bestand in de template map te plaatsen en vervolgens te bewerken. Captchas van de Spamblock plugin worden ondersteund (indien geactiveerd).');
 @define('PLUGIN_CONTACTFORM_PERMALINK', 'Permalink');

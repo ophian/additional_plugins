@@ -1,79 +1,79 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/15
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/05/06
  */
 
-@define('PLUGIN_CONTACTFORM_TITLE',		'Kontaktní formuláø');
-@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH',		'Zobrazuje kontaktní formuláø k poslání e-mailu jako statickou stránku. Pøístup k fromuláøi buï pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláøe si mùete upravit podle svého vloením souboru plugin_contactform.tpl do adresáøe s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou pouity, pokud je SpamBlock nainstalován.');
-@define('PLUGIN_CONTACTFORM_PERMALINK',		'Stálı odkaz - Permalink');
-@define('PLUGIN_CONTACTFORM_PAGETITLE',		'URL zkratka (kvùli zpìtné kompatibilitì, v novìjších verzích ignorujte)');
-@define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH',		'Definuje permanetní URL adresu. Je tøeba zadat absolutní cestu a musí konèit na .html nebo .html!');
-@define('PLUGIN_CONTACTFORM_EMAIL',		'Cílová e-mailová adresa');
-@define('PLUGIN_CONTACTFORM_INTRO',		'Úvodní text (volitelné)');
-@define('PLUGIN_CONTACTFORM_MESSAGE',		'Text zprávy');
-@define('PLUGIN_CONTACTFORM_SENT',		'Text po odeslání zprávy');
-@define('PLUGIN_CONTACTFORM_SENT_HTML',		'Zpráva byla úspìšnì odeslána!');
-@define('PLUGIN_CONTACTFORM_ERROR_HTML',		'Pøi odesílání zprávy se vyskytla chyba!');
-@define('PLUGIN_CONTACTFORM_ERROR_DATA',		'Jméno, e-mail ani text zprávy nesmí zùstat prázdné.');
-@define('PLUGIN_CONTACTFORM_DYNAMIC_ERROR_DATA',		'Povinné pole je prázdné.');
-@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT',		'Formátovat jako èlánek?');
-@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH',		'Pokud je vybráno, vısledná stránka je formátována jako obvyklı pøíspìvek (barvy, okraje, apod.) (Standardnì: ANO)');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL',		'Šablona');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DESC',		'Tato volba Vám umoòuje nastavit vzhled kontaktního formuláøe podle Vašich pøání. Mùete pouít standardní vzhled, úspornı obchodní vzhled, vzhled s podrobnostmi nebo váš vlastní vzhled, kterı musíte ruènì zadat.');
-@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS',		'Pole formuláøe');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL_STANDARD',		'Standardní');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ',		'Obchodní');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DETAILED',		'Podrobnı');
-@define('PLUGIN_CONTACTFORM_DYNAMICTPL_FULLDYNAMIC',		'Vlastní');
-@define('PLUGIN_CONTACTFORM_FNAME',		'Jméno');
-@define('PLUGIN_CONTACTFORM_LNAME',		'Pøíjmení');
+@define('PLUGIN_CONTACTFORM_TITLE',		'KontaktnÃ­ formulÃ¡Å™');
+@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH',		'Zobrazuje kontaktnÃ­ formulÃ¡Å™ k poslÃ¡nÃ­ e-mailu jako statickou strÃ¡nku. PÅ™Ã­stup k fromulÃ¡Å™i buÄ pomocÃ­ stÃ¡lÃ©ho odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromulÃ¡Å™e si mÅ¯Å¾ete upravit podle svÃ©ho vloÅ¾enÃ­m souboru plugin_contactform.tpl do adresÃ¡Å™e s VaÅ¡Ã­ Å¡ablonou. Kryptogramy z pluginu SpamBlock budou pouÅ¾ity, pokud je SpamBlock nainstalovÃ¡n.');
+@define('PLUGIN_CONTACTFORM_PERMALINK',		'StÃ¡lÃ½ odkaz - Permalink');
+@define('PLUGIN_CONTACTFORM_PAGETITLE',		'URL zkratka (kvÅ¯li zpÄ›tnÃ© kompatibilitÄ›, v novÄ›jÅ¡Ã­ch verzÃ­ch ignorujte)');
+@define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH',		'Definuje permanetnÃ­ URL adresu. Je tÅ™eba zadat absolutnÃ­ cestu a musÃ­ konÄit na .html nebo .html!');
+@define('PLUGIN_CONTACTFORM_EMAIL',		'CÃ­lovÃ¡ e-mailovÃ¡ adresa');
+@define('PLUGIN_CONTACTFORM_INTRO',		'ÃšvodnÃ­ text (volitelnÃ©)');
+@define('PLUGIN_CONTACTFORM_MESSAGE',		'Text zprÃ¡vy');
+@define('PLUGIN_CONTACTFORM_SENT',		'Text po odeslÃ¡nÃ­ zprÃ¡vy');
+@define('PLUGIN_CONTACTFORM_SENT_HTML',		'ZprÃ¡va byla ÃºspÄ›Å¡nÄ› odeslÃ¡na!');
+@define('PLUGIN_CONTACTFORM_ERROR_HTML',		'PÅ™i odesÃ­lÃ¡nÃ­ zprÃ¡vy se vyskytla chyba!');
+@define('PLUGIN_CONTACTFORM_ERROR_DATA',		'JmÃ©no, e-mail ani text zprÃ¡vy nesmÃ­ zÅ¯stat prÃ¡zdnÃ©.');
+@define('PLUGIN_CONTACTFORM_DYNAMIC_ERROR_DATA',		'PovinnÃ© pole je prÃ¡zdnÃ©.');
+@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT',		'FormÃ¡tovat jako ÄlÃ¡nek?');
+@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH',		'Pokud je vybrÃ¡no, vÃ½slednÃ¡ strÃ¡nka je formÃ¡tovÃ¡na jako obvyklÃ½ pÅ™Ã­spÄ›vek (barvy, okraje, apod.) (StandardnÄ›: ANO)');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL',		'Å ablona');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DESC',		'Tato volba VÃ¡m umoÅ¾Åˆuje nastavit vzhled kontaktnÃ­ho formulÃ¡Å™e podle VaÅ¡ich pÅ™Ã¡nÃ­. MÅ¯Å¾ete pouÅ¾Ã­t standardnÃ­ vzhled, ÃºspornÃ½ obchodnÃ­ vzhled, vzhled s podrobnostmi nebo vÃ¡Å¡ vlastnÃ­ vzhled, kterÃ½ musÃ­te ruÄnÄ› zadat.');
+@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS',		'Pole formulÃ¡Å™e');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_STANDARD',		'StandardnÃ­');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ',		'ObchodnÃ­');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_DETAILED',		'PodrobnÃ½');
+@define('PLUGIN_CONTACTFORM_DYNAMICTPL_FULLDYNAMIC',		'VlastnÃ­');
+@define('PLUGIN_CONTACTFORM_FNAME',		'JmÃ©no');
+@define('PLUGIN_CONTACTFORM_LNAME',		'PÅ™Ã­jmenÃ­');
 @define('PLUGIN_CONTACTFORM_ADDRESS',		'Adresa');
-@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC',		'Tento øetìzec urèuje, které z polí se objeví v kontaktním formuláøi, zda jsou tato pole povinná a jejich pøednastavenou hodnotu. If you had already build a custom string here and then change the dynamic tpl profile selection (with Save) and back to custom again, this form field string will contain one of the default profile strings. This can be irritating if your self-created string is only slightly different from the default, so you don\'t notice it right away.');
-@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC_NOTE',		'<p>"Pole formuláøe" je textovı øetìzec, podle kterého se budou zobrazovat pole v kontaktním formuláøi. Øetìzec musí mít následující syntaxi &lt;pole&gt;:&lt;pole&gt;:&lt;pole&gt;.  Oddìlování polí je pomocí dvojteèky.</p>
-   <p>Jednotlivá pole (kromì typu "radio", "checkbox" a "select", které bude samostatnì rozebráno) musí bıt zadány ve tvaru {require;}Jméno;typ{;default}.  Pamatujte na oddìlování jednotlivıch polí pomocí dvojteèky. Ve tvaru syntaxe znamenají pøíkazy ve sloenıch závorkách, e se jedná o nepovinné parametry. Pokud má bıt pole kontrolování, zda je vyplnìné, vlote na zaèátek definice pole slovo "require".
+@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC',		'Tento Å™etÄ›zec urÄuje, kterÃ© z polÃ­ se objevÃ­ v kontaktnÃ­m formulÃ¡Å™i, zda jsou tato pole povinnÃ¡ a jejich pÅ™ednastavenou hodnotu. If you had already build a custom string here and then change the dynamic tpl profile selection (with Save) and back to custom again, this form field string will contain one of the default profile strings. This can be irritating if your self-created string is only slightly different from the default, so you don\'t notice it right away.');
+@define('PLUGIN_CONTACTFORM_DYNAMICFIELDS_DESC_NOTE',		'<p>"Pole formulÃ¡Å™e" je textovÃ½ Å™etÄ›zec, podle kterÃ©ho se budou zobrazovat pole v kontaktnÃ­m formulÃ¡Å™i. Å˜etÄ›zec musÃ­ mÃ­t nÃ¡sledujÃ­cÃ­ syntaxi &lt;pole&gt;:&lt;pole&gt;:&lt;pole&gt;.  OddÄ›lovÃ¡nÃ­ polÃ­ je pomocÃ­ dvojteÄky.</p>
+   <p>JednotlivÃ¡ pole (kromÄ› typu "radio", "checkbox" a "select", kterÃ© bude samostatnÄ› rozebrÃ¡no) musÃ­ bÃ½t zadÃ¡ny ve tvaru {require;}JmÃ©no;typ{;default}.  Pamatujte na oddÄ›lovÃ¡nÃ­ jednotlivÃ½ch polÃ­ pomocÃ­ dvojteÄky. Ve tvaru syntaxe znamenajÃ­ pÅ™Ã­kazy ve sloÅ¾enÃ½ch zÃ¡vorkÃ¡ch, Å¾e se jednÃ¡ o nepovinnÃ© parametry. Pokud mÃ¡ bÃ½t pole kontrolovÃ¡nÃ­, zda je vyplnÄ›nÃ©, vloÅ¾te na zaÄÃ¡tek definice pole slovo "require".
 </p>
-   <p>Pole mohou bıt následujících typù:
+   <p>Pole mohou bÃ½t nÃ¡sledujÃ­cÃ­ch typÅ¯:
         <ul> 
-         <li>text - standardní textové pole; Pøíklad: "Jméno;text"</li>
+         <li>text - standardnÃ­ textovÃ© pole; PÅ™Ã­klad: "JmÃ©no;text"</li>
          <li>email - normal email text field; example: "Name;email" (unlike the "text" type, this one uses the placeholder attribute, depending on the template design. The forms "'.PLUGIN_CONTACTFORM_DYNAMICTPL_SMALLBIZ.'" and "'.PLUGIN_CONTACTFORM_DYNAMICTPL_DETAILED.'" use the "text" type</li>
-         <li>checkbox - zaškrtávací políèko; Pøíklad: "ádám odpovìï;checkbox;název, kterı se má zobrazit po zaškrtnutí políèka"</li>
-         <li>radio - skupina vybíracích koleèek; Pøíklad: "Z aut mám nejradši;radio;Citroeny|Peugeoty|Renaulty"</li>
-         <li>hidden - skryté pole; Pøíklad: "skryte_pole;hidden"</li>
-         <li>password - heslo. Pozor, toto políèko není nijak testováno, je jen vloeno do mailu, kde se objeví jeho textová hodnota.; Pøíklad: "require;Heslo;password"</li>
-         <li>textarea - velká oblast pro text o nìkolika øádcích; Pøíklad: "Zde napište svùj dopis;textarea"</li>
-         <li>select - Rozbalovací políèko s vıbìrem nìkolika voleb; Pøíklad: "Neoblíbenìjší kategorie na blogu;select;auta|letadla|kytièky|drogy"</li>
+         <li>checkbox - zaÅ¡krtÃ¡vacÃ­ polÃ­Äko; PÅ™Ã­klad: "Å½Ã¡dÃ¡m odpovÄ›Ä;checkbox;nÃ¡zev, kterÃ½ se mÃ¡ zobrazit po zaÅ¡krtnutÃ­ polÃ­Äka"</li>
+         <li>radio - skupina vybÃ­racÃ­ch koleÄek; PÅ™Ã­klad: "Z aut mÃ¡m nejradÅ¡i;radio;Citroeny|Peugeoty|Renaulty"</li>
+         <li>hidden - skrytÃ© pole; PÅ™Ã­klad: "skryte_pole;hidden"</li>
+         <li>password - heslo. Pozor, toto polÃ­Äko nenÃ­ nijak testovÃ¡no, je jen vloÅ¾eno do mailu, kde se objevÃ­ jeho textovÃ¡ hodnota.; PÅ™Ã­klad: "require;Heslo;password"</li>
+         <li>textarea - velkÃ¡ oblast pro text o nÄ›kolika Å™Ã¡dcÃ­ch; PÅ™Ã­klad: "Zde napiÅ¡te svÅ¯j dopis;textarea"</li>
+         <li>select - RozbalovacÃ­ polÃ­Äko s vÃ½bÄ›rem nÄ›kolika voleb; PÅ™Ã­klad: "NeoblÃ­benÄ›jÅ¡Ã­ kategorie na blogu;select;auta|letadla|kytiÄky|drogy"</li>
         </ul>
    </p>
-   <p>K pøednastavení hodnoty pro políèko jednoduše pøidáte další definici k poli. Pro políèko checkbox je jediná správná hodnota "checked"</p>
-   <p>Typ "radio" pouívá následující syntaxi {require;}Název;radio;Volba1,Hodnota1|Volba1,Hodnota1{,checked}.</p>
-   <p>Pøíklady:
+   <p>K pÅ™ednastavenÃ­ hodnoty pro polÃ­Äko jednoduÅ¡e pÅ™idÃ¡te dalÅ¡Ã­ definici k poli. Pro polÃ­Äko checkbox je jedinÃ¡ sprÃ¡vnÃ¡ hodnota "checked"</p>
+   <p>Typ "radio" pouÅ¾Ã­vÃ¡ nÃ¡sledujÃ­cÃ­ syntaxi {require;}NÃ¡zev;radio;Volba1,Hodnota1|Volba1,Hodnota1{,checked}.</p>
+   <p>PÅ™Ã­klady:
        <ul>
-         <li>Standardní formuláø lze zapsat takto: "require;Jméno;text:require;E-mail;text:require;Domácí stránka;text:require;Text zprávy;textarea;"</li>
-         <li>Textové pole pro telefoní èíslo: "Telefon;text"</li>
-         <li>Textové pole pro telefoní èíslo, které má bıt povinnì vyplnìné:- "require;Telefon;text"</li>
-         <li>Textová oblast s pøednastavenım textem: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Tohle je pøednastavenı text...  Pìkná nuda...  Ale je to pøednastavené."
-         <li>Vıbìr mezi ano/ne: "Vıbìr;radio;Ano,ano|Ne,ne a ještì jednou ne"</li>
-         <li>Zaškrtávací políèko standardnì zaškrtnuté: "Povolání Student;checkbox;checked"</li>
-         <li>Poslední ètyøi pøíklady dohromady: "require;Telefon;text:'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Tohle je pøednastavenı text...  Pìkná nuda...  Ale je to pøednastavené.:Vıbìr;radio;Ano,ano|Ne,ne a ještì jednou ne:Povolání Student;checkbox;checked" </li>
+         <li>StandardnÃ­ formulÃ¡Å™ lze zapsat takto: "require;JmÃ©no;text:require;E-mail;text:require;DomÃ¡cÃ­ strÃ¡nka;text:require;Text zprÃ¡vy;textarea;"</li>
+         <li>TextovÃ© pole pro telefonÃ­ ÄÃ­slo: "Telefon;text"</li>
+         <li>TextovÃ© pole pro telefonÃ­ ÄÃ­slo, kterÃ© mÃ¡ bÃ½t povinnÄ› vyplnÄ›nÃ©:- "require;Telefon;text"</li>
+         <li>TextovÃ¡ oblast s pÅ™ednastavenÃ½m textem: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Tohle je pÅ™ednastavenÃ½ text...  PÄ›knÃ¡ nuda...  Ale je to pÅ™ednastavenÃ©."
+         <li>VÃ½bÄ›r mezi ano/ne: "VÃ½bÄ›r;radio;Ano,ano|Ne,ne a jeÅ¡tÄ› jednou ne"</li>
+         <li>ZaÅ¡krtÃ¡vacÃ­ polÃ­Äko standardnÄ› zaÅ¡krtnutÃ©: "PovolÃ¡nÃ­ Student;checkbox;checked"</li>
+         <li>PoslednÃ­ ÄtyÅ™i pÅ™Ã­klady dohromady: "require;Telefon;text:'.PLUGIN_CONTACTFORM_MESSAGE.';textarea;Tohle je pÅ™ednastavenÃ½ text...  PÄ›knÃ¡ nuda...  Ale je to pÅ™ednastavenÃ©.:VÃ½bÄ›r;radio;Ano,ano|Ne,ne a jeÅ¡tÄ› jednou ne:PovolÃ¡nÃ­ Student;checkbox;checked" </li>
        </ul>
    </p>
    <p>It is important that there are no hidden line breaks in the string, otherwise strange markups or even missing fields may result.</p>
    <p>For the textarea field there is a special feature to note: Since other plugins can hook in after the message field, the emoticonchooser event plugin in particular uses a fixed className selector to insert its smileys into the textarea field. For this case (as far as you use it) the name of the dynamically constructed textarea field must be exactly as defined in the currently used language constant. In this case: <strong>'.PLUGIN_CONTACTFORM_MESSAGE.'</strong>. The '.PLUGIN_CONTACTFORM_DYNAMICFIELDS.' for the text field must then be: "'.PLUGIN_CONTACTFORM_MESSAGE.';textarea" so that the plugin_dynamicform.tpl template file can refer to it exactly.</p>
    <p>If you use field types other than the predefined ones, you can specify a custom template file and use Smarty syntax to check for custom field types yourself, similar to how other types are already checked in the default template file.</p>');
 
-@define('PLUGIN_CONTACTFORM_TEMPLATE',		'Jméno souboru se šablonou');
-@define('PLUGIN_CONTACTFORM_TEMPLATE_DESC',		'Zadejte pouze jméno souboru jakékoliv šablony, která má bıt pouita k vykreslení kontaktního formuláøe. Mùete nahrát vlastní soubory buï do adresáøe tohoto pluginu, nebo do adresáøe se šablonou, kterou pouíváte.');
-@define('PLUGIN_CONTACTFORM_SUBJECT',		'Pøedmìt emailu');
-@define('PLUGIN_CONTACTFORM_SUBJECT_DESC',		'Zadejte pøedmìt emailu, kterı bude poslán na Vaši adresu. Mùete do nìj umístit promìnnou %s, která bude obsahovat nadpis kontaktního formuláøe.');
+@define('PLUGIN_CONTACTFORM_TEMPLATE',		'JmÃ©no souboru se Å¡ablonou');
+@define('PLUGIN_CONTACTFORM_TEMPLATE_DESC',		'Zadejte pouze jmÃ©no souboru jakÃ©koliv Å¡ablony, kterÃ¡ mÃ¡ bÃ½t pouÅ¾ita k vykreslenÃ­ kontaktnÃ­ho formulÃ¡Å™e. MÅ¯Å¾ete nahrÃ¡t vlastnÃ­ soubory buÄ do adresÃ¡Å™e tohoto pluginu, nebo do adresÃ¡Å™e se Å¡ablonou, kterou pouÅ¾Ã­vÃ¡te.');
+@define('PLUGIN_CONTACTFORM_SUBJECT',		'PÅ™edmÄ›t emailu');
+@define('PLUGIN_CONTACTFORM_SUBJECT_DESC',		'Zadejte pÅ™edmÄ›t emailu, kterÃ½ bude poslÃ¡n na VaÅ¡i adresu. MÅ¯Å¾ete do nÄ›j umÃ­stit promÄ›nnou %s, kterÃ¡ bude obsahovat nadpis kontaktnÃ­ho formulÃ¡Å™e.');
 
 // Next lines were translated on 2009/05/06
-@define('PLUGIN_CONTACTFORM_ISSUECOUNTER',		'Pouívat poèítadlo kontaktních formuláøù?');
-@define('PLUGIN_CONTACTFORM_ISSUECOUNTER_DESC',		'Pokud je pouito, kadı odeslanı kontaktní formuláø dostane jedineèné ID identifikaèní èíslo.');
-@define('PLUGIN_CONTACTFORM_MAIL_ISSUECOUNTER',		'Èíslo lístku: %s');
+@define('PLUGIN_CONTACTFORM_ISSUECOUNTER',		'PouÅ¾Ã­vat poÄÃ­tadlo kontaktnÃ­ch formulÃ¡Å™Å¯?');
+@define('PLUGIN_CONTACTFORM_ISSUECOUNTER_DESC',		'Pokud je pouÅ¾ito, kaÅ¾dÃ½ odeslanÃ½ kontaktnÃ­ formulÃ¡Å™ dostane jedineÄnÃ© ID identifikaÄnÃ­ ÄÃ­slo.');
+@define('PLUGIN_CONTACTFORM_MAIL_ISSUECOUNTER',		'ÄŒÃ­slo lÃ­stku: %s');
 

@@ -6,18 +6,18 @@
  *  TR-version: First Public Release of lang_tr.inc.php
  */
 
-@define('PLUGIN_CONTACTFORM_TITLE', 'İletişim Formu');
-@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'Sitenizde bir e-posta ile iletişim formu gösterir. Özelleştirilmiş bir kalıcı bağlantı URL adresi ile ya da index.php?serendipity[subpage]=contactform  adresiyle de erişilebilir. İletişim Formunun görünüşünü özelleştirebilirsiniz. plugin_contactform.tpl dosyasını şablon dizinize kopyalayıp istediğiniz gibi düzenleyebilirsiniz. Captcha koruması Spamblock eklentisiyle (eğer etkinse) iletişim formunuza eklenecektir.');
-@define('PLUGIN_CONTACTFORM_PERMALINK', 'Kalıcı Bağlantı');
-@define('PLUGIN_CONTACTFORM_PAGETITLE', 'URL kısa adı (Geriye doğru uyumlu)');
-@define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH', 'URL adresi için kalıcı bağlantı tanımlama. Kesin HTTP yolu tanımlanarak .htm ya da .html uzantısıyla sonlandırılması gerekir!');
-@define('PLUGIN_CONTACTFORM_EMAIL', 'Alıcı eposta adresi');
-@define('PLUGIN_CONTACTFORM_INTRO', 'Giriş metni (opsiyonel)');
+@define('PLUGIN_CONTACTFORM_TITLE', 'Ä°letiÅŸim Formu');
+@define('PLUGIN_CONTACTFORM_TITLE_BLAHBLAH', 'Sitenizde bir e-posta ile iletiÅŸim formu gÃ¶sterir. Ã–zelleÅŸtirilmiÅŸ bir kalÄ±cÄ± baÄŸlantÄ± URL adresi ile ya da index.php?serendipity[subpage]=contactform  adresiyle de eriÅŸilebilir. Ä°letiÅŸim Formunun gÃ¶rÃ¼nÃ¼ÅŸÃ¼nÃ¼ Ã¶zelleÅŸtirebilirsiniz. plugin_contactform.tpl dosyasÄ±nÄ± ÅŸablon dizinize kopyalayÄ±p istediÄŸiniz gibi dÃ¼zenleyebilirsiniz. Captcha korumasÄ± Spamblock eklentisiyle (eÄŸer etkinse) iletiÅŸim formunuza eklenecektir.');
+@define('PLUGIN_CONTACTFORM_PERMALINK', 'KalÄ±cÄ± BaÄŸlantÄ±');
+@define('PLUGIN_CONTACTFORM_PAGETITLE', 'URL kÄ±sa adÄ± (Geriye doÄŸru uyumlu)');
+@define('PLUGIN_CONTACTFORM_PERMALINK_BLAHBLAH', 'URL adresi iÃ§in kalÄ±cÄ± baÄŸlantÄ± tanÄ±mlama. Kesin HTTP yolu tanÄ±mlanarak .htm ya da .html uzantÄ±sÄ±yla sonlandÄ±rÄ±lmasÄ± gerekir!');
+@define('PLUGIN_CONTACTFORM_EMAIL', 'AlÄ±cÄ± eposta adresi');
+@define('PLUGIN_CONTACTFORM_INTRO', 'GiriÅŸ metni (opsiyonel)');
 @define('PLUGIN_CONTACTFORM_MESSAGE', 'ileti');
-@define('PLUGIN_CONTACTFORM_SENT', 'Mesaj gönderildikten sonra gösterilecek ileti');
-@define('PLUGIN_CONTACTFORM_SENT_HTML', 'İletiniz eposta olarak başarıyla gönderildi!');
-@define('PLUGIN_CONTACTFORM_ERROR_HTML', 'İleti gönderilirken bir hata oluştu!');
-@define('PLUGIN_CONTACTFORM_ERROR_DATA', 'Adınınz E-Posta adresiniz ve iletiniz boş gönderilemez.');
-@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT', 'Makale olarak biçimlensin mi?');
-@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH', 'Eğer evet seçeneği işaretlenirse çıktı makale olarak biçimlenecek (renkler, kenarlıklar, vb.) (öntanımlı: evet)');
+@define('PLUGIN_CONTACTFORM_SENT', 'Mesaj gÃ¶nderildikten sonra gÃ¶sterilecek ileti');
+@define('PLUGIN_CONTACTFORM_SENT_HTML', 'Ä°letiniz eposta olarak baÅŸarÄ±yla gÃ¶nderildi!');
+@define('PLUGIN_CONTACTFORM_ERROR_HTML', 'Ä°leti gÃ¶nderilirken bir hata oluÅŸtu!');
+@define('PLUGIN_CONTACTFORM_ERROR_DATA', 'AdÄ±nÄ±nz E-Posta adresiniz ve iletiniz boÅŸ gÃ¶nderilemez.');
+@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT', 'Makale olarak biÃ§imlensin mi?');
+@define('PLUGIN_CONTACTFORM_ARTICLEFORMAT_BLAHBLAH', 'EÄŸer evet seÃ§eneÄŸi iÅŸaretlenirse Ã§Ä±ktÄ± makale olarak biÃ§imlenecek (renkler, kenarlÄ±klar, vb.) (Ã¶ntanÄ±mlÄ±: evet)');
 
