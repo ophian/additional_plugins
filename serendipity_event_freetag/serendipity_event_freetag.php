@@ -10,6 +10,7 @@
  *  (RQ: We are ten years later now. Shall we keep this?)
  */
 
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -43,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.2.0');
+        $propbag->add('version',       '6.3.0');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -2269,8 +2270,10 @@ document.addEventListener("DOMContentLoaded", function() {
         include_once(S9Y_INCLUDE_PATH . 'include/genpage.inc.php');
 
         if ($emit_404 && $this->taggedEntries !== null && $this->taggedEntries < 1) {
-            @header('HTTP/1.0 404 Not found');
-            @header('Status: 404 Not found');
+            if (!headers_sent()) {
+                header(serendipity_getServerProtocol() . ' 404 Not found');
+                header('Status: 404 Not found');
+            }
             if (serendipity_db_bool($this->get_config('send_http_header', 'true'))) {
                 @header('X-FreeTag: not found');
             }
@@ -2556,7 +2559,7 @@ document.addEventListener("DOMContentLoaded", function() {
         global $serendipity;
 
         if ($failsafe) {
-            $r = serendipity_db_query($q, false, 'both', false, false, false, true); // set last param expectError true, since table is known to fail when empty using HAVING
+            $r = serendipity_db_query($q, expectError: true); // set last param expectError true, since table is known to fail when empty using HAVING
         } else {
             $r = serendipity_db_query($q);
         }

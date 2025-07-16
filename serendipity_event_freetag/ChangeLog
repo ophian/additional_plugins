@@ -1,3 +1,9 @@
+6.3.0:
+-----
+ * Declare strict types
+ * Set header by Styx 5 declared server protocol
+ * Allow short parameter query
+
 6.2.0:
 -----
  * Add PLUGIN_EVENT_FREETAG_MANAGE_TAGS_NONE message
