@@ -1,3 +1,8 @@
+4.0.1:
+-----
+ * Fix lang_selected label reference
+ * Use native htmspecialchars()
+
 4.0.0 (2.0.0: sidebar):
 ----------------------
  * Raise up for Styx 5.0

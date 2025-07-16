@@ -30,7 +30,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '8.2'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '4.0.0');
+        $propbag->add('version',        '4.0.1');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -691,7 +691,7 @@ class serendipity_event_multilingual extends serendipity_event
                     $langs = '';
                     //asort($use_lang); //sorts by value ASC, but if so we should do it everywhere though
                     foreach($use_lang AS $code => $desc) {
-                        $langs .= '                        <option value="' . $code . '"' . ($lang_selected == $code ? ' selected="selected"' : '') . '>' . serendipity_specialchars($desc) . "</option>\n";
+                        $langs .= '                        <option value="' . $code . '"' . ($lang_selected == $code ? ' selected="selected"' : '') . '>' . htmlspecialchars($desc) . "</option>\n";
                     }
 ?>
             <fieldset id="edit_entry_multilingual" class="entryproperties_multilingual">
@@ -699,7 +699,7 @@ class serendipity_event_multilingual extends serendipity_event
                 <div class="form_field">
 <?php
                     if (isset($eventData['id'])) { ?>
-                    <label for="serendipity[properties][lang_selected]"><?php echo PLUGIN_EVENT_MULTILINGUAL_CURRENT; ?></label><br>
+                    <label for="properties_lang_selected"><?php echo PLUGIN_EVENT_MULTILINGUAL_CURRENT; ?></label><br>
                     <select id="properties_lang_selected" name="serendipity[properties][lang_selected]">
                         <option value=""><?php echo USE_DEFAULT; ?></option>
 <?php echo $langs; ?>
