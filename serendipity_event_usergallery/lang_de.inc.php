@@ -1,29 +1,29 @@
 <?php
 
 @define('PLUGIN_EVENT_USERGALLERY_TITLE', 'Bildergalerie');
-@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Anzahl der Spalten für die Galerie-Ansicht');
+@define('PLUGIN_EVENT_USERGALLERY_DESC', 'ErmÃ¶glicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.');
+@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Anzahl der Spalten fÃ¼r die Galerie-Ansicht');
 @define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'Anzahl der Spalten');
-@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Permalink für die Anzeige der Galerie');
-@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Geben Sie den Permalink ein, den Sie für die Galerie benutzen möchten.');
-@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_NAME', 'Name der Unterseite für die Galerie');
-@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_DESC', 'Geben Sie einen eindeutigen Namen für die Unterseite ein, den Sie für die Galerie verwenden möchten (die Galerie wird unter index.php?serendipity[subpage]=uniquename erreichbar sein). Dies ist nur für interne Prozesse wesentlich, außer Sie benutzen kein mod_rewrite.');
+@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Permalink fÃ¼r die Anzeige der Galerie');
+@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Geben Sie den Permalink ein, den Sie fÃ¼r die Galerie benutzen mÃ¶chten.');
+@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_NAME', 'Name der Unterseite fÃ¼r die Galerie');
+@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_DESC', 'Geben Sie einen eindeutigen Namen fÃ¼r die Unterseite ein, den Sie fÃ¼r die Galerie verwenden mÃ¶chten (die Galerie wird unter index.php?serendipity[subpage]=uniquename erreichbar sein). Dies ist nur fÃ¼r interne Prozesse wesentlich, auÃŸer Sie benutzen kein mod_rewrite.');
 @define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Standardverzeichnis');
-@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Wählen Sie das Standardverzeichnis, dessen Bilder in der Galerie angezeigt werden sollen.');
+@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'WÃ¤hlen Sie das Standardverzeichnis, dessen Bilder in der Galerie angezeigt werden sollen.');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Art der Galeriedarstellung');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', 'Wählen Sie aus, wie die Galerie dargestellt werden soll. "Mediathek" stellt eine Ordnernavigation sowie eine Suchfunktion zur Verfügung. Wenn Sie "Seite mit Vorschaubildern" wählen, werden die Vorschaubilder eines bestimmten Ordners angezeigt; in diesem Fall können Sie über die Option "Verzeichnisbaum anzeigen" den zur Navigation verwendbaren Verzeichnisbaum ein- oder ausblenden sowie die Option "Nur Bilder des aktuellen Verzeichnisses anzeigen" ein- oder ausschalten.');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', 'WÃ¤hlen Sie aus, wie die Galerie dargestellt werden soll. "Mediathek" stellt eine Ordnernavigation sowie eine Suchfunktion zur VerfÃ¼gung. Wenn Sie "Seite mit Vorschaubildern" wÃ¤hlen, werden die Vorschaubilder eines bestimmten Ordners angezeigt; in diesem Fall kÃ¶nnen Sie Ã¼ber die Option "Verzeichnisbaum anzeigen" den zur Navigation verwendbaren Verzeichnisbaum ein- oder ausblenden sowie die Option "Nur Bilder des aktuellen Verzeichnisses anzeigen" ein- oder ausschalten.');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Mediathek (disabled)');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'Seite mit Vorschaubildern');
 @define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', 'Anzeigename');
-@define('PLUGIN_EVENT_USERGALLERY_PRETTY_DESC', 'Geben Sie den Namen ein, den Sie als Galerietitel verwenden möchten.');
+@define('PLUGIN_EVENT_USERGALLERY_PRETTY_DESC', 'Geben Sie den Namen ein, den Sie als Galerietitel verwenden mÃ¶chten.');
 
 @define('PLUGIN_EVENT_USERGALLERY_INTRO', 'Einleitungstext (optional)');
-@define('PLUGIN_EVENT_USERGALLERY_FIXED_WIDTH', 'Feste Bildgröße');
-@define('PLUGIN_EVENT_USERGALLERY_FIXED_DESC', 'Setzt die Bildhöhe und -breite aller Bilder auf einen einheitlichen Wert. Auf "0" setzen, um die Standard-Thumbnails zu verwenden.');
-@define('PLUGIN_EVENT_USERGALLERY_FILESIZE', 'Dateigröße');
-@define('PLUGIN_EVENT_USERGALLERY_DIMENSION', 'Ausmaß');
+@define('PLUGIN_EVENT_USERGALLERY_FIXED_WIDTH', 'Feste BildgrÃ¶ÃŸe');
+@define('PLUGIN_EVENT_USERGALLERY_FIXED_DESC', 'Setzt die BildhÃ¶he und -breite aller Bilder auf einen einheitlichen Wert. Auf "0" setzen, um die Standard-Thumbnails zu verwenden.');
+@define('PLUGIN_EVENT_USERGALLERY_FILESIZE', 'DateigrÃ¶ÃŸe');
+@define('PLUGIN_EVENT_USERGALLERY_DIMENSION', 'AusmaÃŸ');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_NAME', 'Einzelbildanzeige');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_DESC', 'Sie können die Bilder entweder entsprechend der Seitengröße skaliert (bei der Großansicht wird ein Pop-up-Fenster in passender Größe angezeigt) oder direkt in einem Pop-up-Fenster anzeigen lassen.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_DESC', 'Sie kÃ¶nnen die Bilder entweder entsprechend der SeitengrÃ¶ÃŸe skaliert (bei der GroÃŸansicht wird ein Pop-up-Fenster in passender GrÃ¶ÃŸe angezeigt) oder direkt in einem Pop-up-Fenster anzeigen lassen.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_INPAGE', 'In Seite einpassen');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_POPUP', 'In Popup-Fenster zeigen');
 @define('PLUGIN_EVENT_USERGALLERY_DIRLIST_NAME', 'Verzeichnisbaum anzeigen');
@@ -31,74 +31,74 @@
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_NAME', 'Nur Bilder des aktuellen Verzeichnisses anzeigen');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_DESC', 'Wenn auf "Ja" gesetzt, werden nur Bilder angezeigt, die sich im aktuellen Verzeichnis befinden. Wenn auf "Nein" gesetzt, wird die Galerie alle Bilder aus allen Unterverzeichnissen ausgeben.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAME', 'Reihenfolge der Bilder');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DESC', 'Wählen Sie das Kriterium, nach dem die Bilder sortiert werden sollen.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DESC', 'WÃ¤hlen Sie das Kriterium, nach dem die Bilder sortiert werden sollen.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAMEACS', 'Name (aufsteigend)');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAMEDESC', 'Name (absteigend)');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEACS', 'Datum (aufsteigend)');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEDESC', 'Datum (absteigend)');
 @define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_NAME', 'Gesamten Verzeichnisbaum zeigen');
-@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', 'Wenn auf "Ja" gesetzt, wird der vollständige Verzeichnisbaum auf jeder Seite angezeigt. Wenn auf "Nein" gesetzt, werden nur die jeweiligen Unterverzeichnisse angezeigt. (Dieses Verhalten ist auch vom Template, das für die Anzeige der Galerie verwendet wird, abhängig.)');
+@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', 'Wenn auf "Ja" gesetzt, wird der vollstÃ¤ndige Verzeichnisbaum auf jeder Seite angezeigt. Wenn auf "Nein" gesetzt, werden nur die jeweiligen Unterverzeichnisse angezeigt. (Dieses Verhalten ist auch vom Template, das fÃ¼r die Anzeige der Galerie verwendet wird, abhÃ¤ngig.)');
 @define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME', 'Nur eine tiefere Verzeichnisebene anzeigen');
 @define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'Hierdurch wird unterhalb des aktuellen Verzeichnisses nur eine tiefere Verzeichnisebene angezeigt. Die Anzahl aller Bilder, die sich in weiteren Unterebenen befinden, wird aufsummiert. Dies funktioniert nicht, wenn Sie den gesamten Verzeichnisbaum anzeigen lassen.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'Bilder pro Seite');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Geben Sie die Anzahl der Bilder ein, die pro Seite angezeigt werden sollen. Wenn "0", wird es nur eine Seite geben, auf der sich alle Bilder befinden.');
 @define('PLUGIN_EVENT_USERGALLERY_JQUERY', 'Nutze Plugin jQuery lib');
-@define('PLUGIN_EVENT_USERGALLERY_JQUERY_DESC', 'Aktivieren Sie dies nur, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lädt. Stellen Sie aber sicher, dass jQuery vor dem lightbox Script geladen wird.');
-@define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'zurück');
+@define('PLUGIN_EVENT_USERGALLERY_JQUERY_DESC', 'Aktivieren Sie dies nur, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lÃ¤dt. Stellen Sie aber sicher, dass jQuery vor dem lightbox Script geladen wird.');
+@define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'zurÃ¼ck');
 @define('PLUGIN_EVENT_USERGALLERY_NEXT', 'weiter');
-@define('PLUGIN_EVENT_USERGALLERY_UPONELEVEL', 'Eine Ebene höher');
-@define('PLUGIN_EVENT_USERGALLERY_BACK', 'zurück');
-@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_NAME', 'Mache diese Seite zur Startseite für Serendipity');
-@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_DESC', 'Anstelle der normalen Startseite wird diese Galerie gezeigt. Die normale Startseite ist dann unter "index.php?frontpage" zu erreichen. Es sollte dafür gesorgt werden, dass kein anderes Plugin mit Permalink-Feature (wie voting, guestbook, staticpages) vor dem User-Gallery-Plugin in der Serendipity-Plugin-Konfiguration steht.');
+@define('PLUGIN_EVENT_USERGALLERY_UPONELEVEL', 'Eine Ebene hÃ¶her');
+@define('PLUGIN_EVENT_USERGALLERY_BACK', 'zurÃ¼ck');
+@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_NAME', 'Mache diese Seite zur Startseite fÃ¼r Serendipity');
+@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_DESC', 'Anstelle der normalen Startseite wird diese Galerie gezeigt. Die normale Startseite ist dann unter "index.php?frontpage" zu erreichen. Es sollte dafÃ¼r gesorgt werden, dass kein anderes Plugin mit Permalink-Feature (wie voting, guestbook, staticpages) vor dem User-Gallery-Plugin in der Serendipity-Plugin-Konfiguration steht.');
 
 //Exif data tags
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_NAME', 'EXIF-Tags anzeigen?');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'EXIF-Tags sind Zusatzinformationen über das Bild und werden, wenn möglich, automatisch erzeugt. Bitte beachten: Nicht alle Kameras (insbesondere ältere) unterstützen dieses Feature!');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA', 'Unterstütze Kameras: Agfa, Canon, Casio, Epson, Fujifilm, Konica Minolta, Kyocera, Nikon, Olympus, Panasonic, Pentax, Ricoh, Sony.');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'EXIF-Tags sind Zusatzinformationen Ã¼ber das Bild und werden, wenn mÃ¶glich, automatisch erzeugt. Bitte beachten: Nicht alle Kameras (insbesondere Ã¤ltere) unterstÃ¼tzen dieses Feature!');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA', 'UnterstÃ¼tze Kameras: Agfa, Canon, Casio, Epson, Fujifilm, Konica Minolta, Kyocera, Nikon, Olympus, Panasonic, Pentax, Ricoh, Sony.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NAME', 'EXIF-Daten');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_DESC', 'In der untenstehenden Liste sind alle verfügbaren EXIF-Parameter, die von Kameras gesetzt werden können, aufgeführt. Es kann sein, dass Ihre Kamera einige davon nicht liefert, da nicht jede Kamera jede Variable unterstützt.');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_DESC', 'In der untenstehenden Liste sind alle verfÃ¼gbaren EXIF-Parameter, die von Kameras gesetzt werden kÃ¶nnen, aufgefÃ¼hrt. Es kann sein, dass Ihre Kamera einige davon nicht liefert, da nicht jede Kamera jede Variable unterstÃ¼tzt.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_ADDITIONALDATA', 'Zusatzinformationen');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NOADDITIONALDATA', 'Keine Zusatzinformationen verfügbar.');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NOADDITIONALDATA', 'Keine Zusatzinformationen verfÃ¼gbar.');
 
-#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'Bildmaß für RSS-Feed');
-#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'Dieses Plugin bietet einen RSS-Feed mit den zuletzt hinzugefügten Bildern. Er ist wie jeder andere Feed erreichbar, über die URL: %s. Die URL-Variable "gallery=true" ist wichtig, um die Galerie-Bilder anzuzeigen. Mit der URL-variable "limit=XX" kann die Anzahl der Bilder vorgegeben werden - ansonsten wird die Standard-Einstellung für alle Feeds verwendet. Die URL-Variable "picdir=XXX" kann den Feed auf ein spezielles Verzeichnis beschränken. Mit Hilfe von "hide_title=true" ist es möglich, die Dateinamen auszublenden. Mit der URL-Variable "feed_width=XXX" können Sie eine optionale Größe der Ziel-Bilder bestimmen. Geben Sie hier an, wie lang die längste Seite (Breite oder Höhe) der Bilder in Ihren Feeds sein darf.');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'BildmaÃŸ fÃ¼r RSS-Feed');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'Dieses Plugin bietet einen RSS-Feed mit den zuletzt hinzugefÃ¼gten Bildern. Er ist wie jeder andere Feed erreichbar, Ã¼ber die URL: %s. Die URL-Variable "gallery=true" ist wichtig, um die Galerie-Bilder anzuzeigen. Mit der URL-variable "limit=XX" kann die Anzahl der Bilder vorgegeben werden - ansonsten wird die Standard-Einstellung fÃ¼r alle Feeds verwendet. Die URL-Variable "picdir=XXX" kann den Feed auf ein spezielles Verzeichnis beschrÃ¤nken. Mit Hilfe von "hide_title=true" ist es mÃ¶glich, die Dateinamen auszublenden. Mit der URL-Variable "feed_width=XXX" kÃ¶nnen Sie eine optionale GrÃ¶ÃŸe der Ziel-Bilder bestimmen. Geben Sie hier an, wie lang die lÃ¤ngste Seite (Breite oder HÃ¶he) der Bilder in Ihren Feeds sein darf.');
 
 #@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Nur verlinkte Bilder im RSS-Feed?');
-#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', 'Hiermit werden nur die Bilder in den Feed übernommen, die auch in einem Blog-Eintrag verlinkt sind.');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', 'Hiermit werden nur die Bilder in den Feed Ã¼bernommen, die auch in einem Blog-Eintrag verlinkt sind.');
 
-@define('USERGALLERY_SEE_FULLSIZED', 'Auf das Bild klicken für Vollansicht');
+@define('USERGALLERY_SEE_FULLSIZED', 'Auf das Bild klicken fÃ¼r Vollansicht');
 @define('USERGALLERY_DOWNLOAD_HERE', 'Download der Datei');
 @define('USERGALLERY_LINKED_ENTRIES', 'Artikel, die dieses Bild verwenden:');
 @define('USERGALLERY_LINKED_STATICPAGES', 'Statische Seiten, die dieses Bild verwenden:');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'Einrückung der Unterverzeichnisse im Baum');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'Anzahl Pixel, um die Unterverzeichnisse im Verzeichnisbaum eingerückt werden.');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'EinrÃ¼ckung der Unterverzeichnisse im Baum');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'Anzahl Pixel, um die Unterverzeichnisse im Verzeichnisbaum eingerÃ¼ckt werden.');
 @define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. Bildbreite in der Seite');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'Maximale Breite, in der ein Bild angezeigt werden kann, wenn "In Seite einpassen" gewählt wurde. Die Einstellung "0" bewirkt, dass Bilder in voller Größe angezeigt werden.');
-@define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Link zu den Einträgen/statischen Seiten zeigen, die auf das Bild verlinken?');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'Maximale Breite, in der ein Bild angezeigt werden kann, wenn "In Seite einpassen" gewÃ¤hlt wurde. Die Einstellung "0" bewirkt, dass Bilder in voller GrÃ¶ÃŸe angezeigt werden.');
+@define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Link zu den EintrÃ¤gen/statischen Seiten zeigen, die auf das Bild verlinken?');
 
 //Media properties
 @define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_NAME', 'Medien-Eigenschaften zeigen?');
 @define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_DESC', 'Medien-Eigenschaften zeigen, die einzelnen Elementen der Mediendatenbank zugeordnet sind?');
 @define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_NAME', 'Liste der Medien-Eigenschaften');
-@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_DESC', 'Dies ist eine Liste der Medien-Eigenschaften und der Namen, die Sie für jede Eigenschaft auf der Seite anzeigen möchten. Das Format der Liste ist: "ITEM1:Item1;ITEM2:Item2", wobei die Eigenschaft durch Semikolons getrennt sind. Für jede Eigenschaft wird zuerst der Name (wie in den Konfigurationseinstellungen aufgelistet) angegeben, danach folgen ein Doppelpunkt sowie der jeweilige Anzeigename.');
+@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_DESC', 'Dies ist eine Liste der Medien-Eigenschaften und der Namen, die Sie fÃ¼r jede Eigenschaft auf der Seite anzeigen mÃ¶chten. Das Format der Liste ist: "ITEM1:Item1;ITEM2:Item2", wobei die Eigenschaft durch Semikolons getrennt sind. FÃ¼r jede Eigenschaft wird zuerst der Name (wie in den Konfigurationseinstellungen aufgelistet) angegeben, danach folgen ein Doppelpunkt sowie der jeweilige Anzeigename.');
 
 //Several constants used in the template
 @define('PLUGIN_EVENT_USERGALLERY_IMAGES', 'Bilder');
 @define('PLUGIN_EVENT_USERGALLERY_PAGINATION', 'Seite %s von %s, insgesamt %s Bilder');
 
 #@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'RSS-Feed Ausgabe mit Eintrags-Text?');
-#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Falls ausgewählt, wird zu einem Bild aus der Mediendatenbank, das in einem Blog-Eintrag verlinkt wurde, im RSS-Feed auch der Inhalt des Blog-Eintrages ausgegeben, anstelle einer einfachen Verlinkung zum passenden Blogeintrag (Standard).');
+#@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Falls ausgewÃ¤hlt, wird zu einem Bild aus der Mediendatenbank, das in einem Blog-Eintrag verlinkt wurde, im RSS-Feed auch der Inhalt des Blog-Eintrages ausgegeben, anstelle einer einfachen Verlinkung zum passenden Blogeintrag (Standard).');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_NAME', 'Nutze Lightbox Ausgabe');
-@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'Benötigt ein installiertes Lightbox-Plugin und obige Option: "Einzelbildanzeige" gesetzt als "In Seite einpassen". Wenn das Lightbox-Plugin nur für Usergalerie-Seiten benutzt werden soll, installiere und verschiebe es anschließend in der Pluginliste in das Inaktiv (hidden) event Feld und nutze die "API" Option, damit die lightbox assets nicht doppelt geladen werden. Die "Ja" Auswahl setzt die erforderlichen Scripte direkt in den Galerie Container mittels der "plugin_usergallery.tpl" Datei; während "API" den \'frontend_footer\' hook zur Ausgabe nutzt. Letzteres kann wichtig sein, damit das benötigte jQuery asset vor den besagten Leuchtkästen geladen wird, denn dies ist bei Themes unterschiedlich. Gute Praxis von HTML ist es, die Verlinkung solcher Skripte am Seitenende bereit zu stellen. "Nein" macht die Nutzung eines Leuchtkastens vom aktiven Lightbox-Plugin abhängig oder heißt "Nutze HTML popups" zur absoluten Bildanzeige.');
-@define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_NAME', 'Wähle Lightbox-Plugin-Typ');
-@define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'Wählen Sie den selben Typ wie im lightbox Plugin. Man kann kein anderes lightbox-widget hier anwählen wenn dasselbe selbst aktiv gesetzt ist. Achten Sie auf mögliche Abhängigkeiten in der Anordnung/Reihenfolge der Pluginliste.');
+@define('PLUGIN_EVENT_USERGALLERY_SHOWLIGHTBOX_DESC', 'BenÃ¶tigt ein installiertes Lightbox-Plugin und obige Option: "Einzelbildanzeige" gesetzt als "In Seite einpassen". Wenn das Lightbox-Plugin nur fÃ¼r Usergalerie-Seiten benutzt werden soll, installiere und verschiebe es anschlieÃŸend in der Pluginliste in das Inaktiv (hidden) event Feld und nutze die "API" Option, damit die lightbox assets nicht doppelt geladen werden. Die "Ja" Auswahl setzt die erforderlichen Scripte direkt in den Galerie Container mittels der "plugin_usergallery.tpl" Datei; wÃ¤hrend "API" den \'frontend_footer\' hook zur Ausgabe nutzt. Letzteres kann wichtig sein, damit das benÃ¶tigte jQuery asset vor den besagten LeuchtkÃ¤sten geladen wird, denn dies ist bei Themes unterschiedlich. Gute Praxis von HTML ist es, die Verlinkung solcher Skripte am Seitenende bereit zu stellen. "Nein" macht die Nutzung eines Leuchtkastens vom aktiven Lightbox-Plugin abhÃ¤ngig oder heiÃŸt "Nutze HTML popups" zur absoluten Bildanzeige.');
+@define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_NAME', 'WÃ¤hle Lightbox-Plugin-Typ');
+@define('PLUGIN_EVENT_USERGALLERY_LIGHTBOXTYPE_DESC', 'WÃ¤hlen Sie den selben Typ wie im lightbox Plugin. Man kann kein anderes lightbox-widget hier anwÃ¤hlen wenn dasselbe selbst aktiv gesetzt ist. Achten Sie auf mÃ¶gliche AbhÃ¤ngigkeiten in der Anordnung/Reihenfolge der Pluginliste.');
 
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_NAME', 'Zeige alle Nicht-Bild Dateien');
 @define('PLUGIN_EVENT_USERGALLERY_SHOWOBJECTS_DESC', 'Erweitere das Galerie Array mit allen Nicht-Bild Dateien aus der Mediathek, zB. *.pdf Dateien.');
 
 @define('PLUGIN_EVENT_USERGALLERY_LIGHTBOX_PATH', 'Pfad zum Lightbox Plugin Verzeichnis');
 
-@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_NAME', 'Geben Sie Ihren Galerie Verzeichnissen zusätzlich (je) eine darstellende Eigenschaft bzw Beschreibung (Optional)');
-@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_DESC', 'Wie gehabt als exakter Verzeichnisname getrennt durch Doppelpunkt vom Beschreibungsinhalt; mehrere getrennt durch ein Semikolon; zB. put:Enigma for Wahnsinnige;art:Hölderlins Traum');
+@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_NAME', 'Geben Sie Ihren Galerie Verzeichnissen zusÃ¤tzlich (je) eine darstellende Eigenschaft bzw Beschreibung (Optional)');
+@define('PLUGIN_EVENT_USERGALLERY_ADDDIR_PROPERTIES_DESC', 'Wie gehabt als exakter Verzeichnisname getrennt durch Doppelpunkt vom Beschreibungsinhalt; mehrere getrennt durch ein Semikolon; zB. put:Enigma for Wahnsinnige;art:HÃ¶lderlins Traum');
 

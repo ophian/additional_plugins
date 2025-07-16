@@ -1,94 +1,94 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/08
  */
 
 @define('PLUGIN_EVENT_USERGALLERY_TITLE', 'Galerie');
-#@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Umoòuje nepøihlášenım uivatelùm prohlíet Serendipity knihovnu médií');//translate again
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Poèet sloupcù v zobrazení galerie');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'Poèet sloupcù');
-@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Stálı odkaz (permalink) na stránku galerie');
-@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Zadejte jedineènı odkaz, pod kterım bude pøístupná galerie');
-@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_NAME', 'Jméno podstránky pro zobrazení galerie');
-@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_DESC', 'Zadejte jedineèné jméno podstránky, které bude svázáno s galerií (galerie bude pøístupná pod adresou index.php?serendipity[subpage]=zde_zadané_jméno)');
-@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Vyberte vıchozí adresáø');
-@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Vyberte adresáø knihovny médií, na kterı má bıt omezeno zobrazení galerie');
+#@define('PLUGIN_EVENT_USERGALLERY_DESC', 'UmoÅ¾Åˆuje nepÅ™ihlÃ¡Å¡enÃ½m uÅ¾ivatelÅ¯m prohlÃ­Å¾et Serendipity knihovnu mÃ©diÃ­');//translate again
+@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'PoÄet sloupcÅ¯ v zobrazenÃ­ galerie');
+@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'PoÄet sloupcÅ¯');
+@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'StÃ¡lÃ½ odkaz (permalink) na strÃ¡nku galerie');
+@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Zadejte jedineÄnÃ½ odkaz, pod kterÃ½m bude pÅ™Ã­stupnÃ¡ galerie');
+@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_NAME', 'JmÃ©no podstrÃ¡nky pro zobrazenÃ­ galerie');
+@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_DESC', 'Zadejte jedineÄnÃ© jmÃ©no podstrÃ¡nky, kterÃ© bude svÃ¡zÃ¡no s galeriÃ­ (galerie bude pÅ™Ã­stupnÃ¡ pod adresou index.php?serendipity[subpage]=zde_zadanÃ©_jmÃ©no)');
+@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Vyberte vÃ½chozÃ­ adresÃ¡Å™');
+@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Vyberte adresÃ¡Å™ knihovny mÃ©diÃ­, na kterÃ½ mÃ¡ bÃ½t omezeno zobrazenÃ­ galerie');
 @define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Vyberte vzhled galerie');
-#@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Knihovna médií! umoòuje procházení po adresáøích a vyhledávání, zatímco "Stránka s náhledy" zobrazí náhledy všech obrázkù v adresáøi a obrázky otevírá v novém oknì.');//translate again
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Knihovna médií');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'Stránka s náhledy');
+#@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', '"Knihovna mÃ©diÃ­! umoÅ¾Åˆuje prochÃ¡zenÃ­ po adresÃ¡Å™Ã­ch a vyhledÃ¡vÃ¡nÃ­, zatÃ­mco "StrÃ¡nka s nÃ¡hledy" zobrazÃ­ nÃ¡hledy vÅ¡ech obrÃ¡zkÅ¯ v adresÃ¡Å™i a obrÃ¡zky otevÃ­rÃ¡ v novÃ©m oknÄ›.');//translate again
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Knihovna mÃ©diÃ­');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'StrÃ¡nka s nÃ¡hledy');
 @define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', 'Nadpis galerie');
-@define('PLUGIN_EVENT_USERGALLERY_PRETTY_DESC', 'Zadejte nadpis stránka s galerií');
-@define('PLUGIN_EVENT_USERGALLERY_INTRO', 'Úvodní text (nepovinné)');
-@define('PLUGIN_EVENT_USERGALLERY_FIXED_WIDTH', 'Pevná velikost obrázkù v zobrazení galerie');
-@define('PLUGIN_EVENT_USERGALLERY_FIXED_DESC', 'Nastaví vıšku a šíøku obrázku na pevnou hodnotu pøi prohlíení galerie. Zadejte nulu pro pouití standardních náhledù.');
+@define('PLUGIN_EVENT_USERGALLERY_PRETTY_DESC', 'Zadejte nadpis strÃ¡nka s galeriÃ­');
+@define('PLUGIN_EVENT_USERGALLERY_INTRO', 'ÃšvodnÃ­ text (nepovinnÃ©)');
+@define('PLUGIN_EVENT_USERGALLERY_FIXED_WIDTH', 'PevnÃ¡ velikost obrÃ¡zkÅ¯ v zobrazenÃ­ galerie');
+@define('PLUGIN_EVENT_USERGALLERY_FIXED_DESC', 'NastavÃ­ vÃ½Å¡ku a Å¡Ã­Å™ku obrÃ¡zku na pevnou hodnotu pÅ™i prohlÃ­Å¾enÃ­ galerie. Zadejte nulu pro pouÅ¾itÃ­ standardnÃ­ch nÃ¡hledÅ¯.');
 @define('PLUGIN_EVENT_USERGALLERY_FILESIZE', 'Velikost souboru');
-@define('PLUGIN_EVENT_USERGALLERY_FILENAME', 'Jméno souboru');
-@define('PLUGIN_EVENT_USERGALLERY_DIMENSION', 'Rozmìry');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_NAME', 'Zobrazit jedinı obrázek');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_DESC', 'Mùete zobrazovat obrázky v mìøítku pøizpùsobené stránce (s adaptivním pop-up oknem pro velké obrázky), nebo v adaptivním pop-up oknì pøímo po kliknutí na náhled na stránce galerie.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_INPAGE', 'Pøizpùsobené mìøítko');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_POPUP', 'Adaptivní pop-up okno');
-@define('PLUGIN_EVENT_USERGALLERY_DIRLIST_NAME', 'Zobrazit vıpis adresáøe');
-@define('PLUGIN_EVENT_USERGALLERY_DIRLIST_DESC', 'Pokud je nastavené na "Ano", galerie bude zobrazovat vıpis všech podadresáøù ve vıchozím adresáøi.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_NAME', 'Pouze obrázky v aktuálním adresáøi');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_DESC', 'Pokud nastaveno na "Ano", galerie bude zobrazovat pouze obrázky v aktuálním adresáøi. Pokud nastaveno na "Ne", galerie bude zobrazovat všechny obrázky ze všech podadresáøù.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAME', 'Øazení');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DESC', 'Vyberte poøadí, v jakém se mají vypisovat obrázky');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAMEACS', 'Jméno (vzestupnì)');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAMEDESC', 'Jméno (sestupnì)');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEACS', 'Datum (vzestupnì)');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEDESC', 'Datum (sestupnì)');
-@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_NAME', 'Zobrazit celı strom adresáøù');
-@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', '"Ano" znamená, e se bude na kadé stránce galerie zobrazovat celı strom adresáøù. "Ne" znamená, e se bude vypisovat pouze strom podadresáøù aktuálního adresáøe. (Toto chování je také závislé na šablonì vzhledu pouité pro zobrazení galerie.)');
-@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME', 'Zobrazovat pouze jednu úroveò podadresáøù');
-@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'Toto nastavení omezí vıpis stromu podadresáøù pouze na první úroveò podadresáøù. Tedy podadresáøe podadresáøù u se nebudou zobrazovat. Také vypíše celkovı poèet obrázkù v podadresáøích. Toto nastavení není pøístupné pokud pouíváte zobrazení plného stromu adresáøù.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'Poèet obrázkù na stránce');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Pokud zde zadáte "0", stránkování bude vypnuto a všechny obrázky se budou zobrazovat na první stránce.');
-@define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'pøedchozí');
-@define('PLUGIN_EVENT_USERGALLERY_NEXT', 'další');
-@define('PLUGIN_EVENT_USERGALLERY_UPONELEVEL', 'O úroveò vıše');
-@define('PLUGIN_EVENT_USERGALLERY_BACK', 'Zpìt');
-@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_NAME', 'Nastavit tuto stránku jako úvodní stránku blogu Serendipity');
-@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_DESC', 'Místo vıchozí stránky Serendipity mùete zobrazovat galerii. Pokud chcete zmìnit úvodní stránku zpìt na vıchozí stránku Serendipity, pouijte "index.php?frontpage". Pokud chcete pouívat tuto funkci, ujistìte se, e pøed pluginem "Galerie" (v nastavení nainstalovanıch pluginù) nejsou pouity ádné další pluginy, které definují stálé odkazy (permalink), jako napø. hlasování, návštìvní kniha.');
+@define('PLUGIN_EVENT_USERGALLERY_FILENAME', 'JmÃ©no souboru');
+@define('PLUGIN_EVENT_USERGALLERY_DIMENSION', 'RozmÄ›ry');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_NAME', 'Zobrazit jedinÃ½ obrÃ¡zek');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_DESC', 'MÅ¯ete zobrazovat obrÃ¡zky v mÄ›Å™Ã­tku pÅ™izpÅ¯sobenÃ© strÃ¡nce (s adaptivnÃ­m pop-up oknem pro velkÃ© obrÃ¡zky), nebo v adaptivnÃ­m pop-up oknÄ› pÅ™Ã­mo po kliknutÃ­ na nÃ¡hled na strÃ¡nce galerie.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_INPAGE', 'PÅ™izpÅ¯sobenÃ© mÄ›Å™Ã­tko');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEDISPLAY_POPUP', 'AdaptivnÃ­ pop-up okno');
+@define('PLUGIN_EVENT_USERGALLERY_DIRLIST_NAME', 'Zobrazit vÃ½pis adresÃ¡Å™e');
+@define('PLUGIN_EVENT_USERGALLERY_DIRLIST_DESC', 'Pokud je nastavenÃ© na "Ano", galerie bude zobrazovat vÃ½pis vÅ¡ech podadresÃ¡Å™Å¯ ve vÃ½chozÃ­m adresÃ¡Å™i.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_NAME', 'Pouze obrÃ¡zky v aktuÃ¡lnÃ­m adresÃ¡Å™i');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGESTRICT_DESC', 'Pokud nastaveno na "Ano", galerie bude zobrazovat pouze obrÃ¡zky v aktuÃ¡lnÃ­m adresÃ¡Å™i. Pokud nastaveno na "Ne", galerie bude zobrazovat vÅ¡echny obrÃ¡zky ze vÅ¡ech podadresÃ¡Å™Å¯.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAME', 'Å˜azenÃ­');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DESC', 'Vyberte poÅ™adÃ­, v jakÃ©m se majÃ­ vypisovat obrÃ¡zky');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAMEACS', 'JmÃ©no (vzestupnÄ›)');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_NAMEDESC', 'JmÃ©no (sestupnÄ›)');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEACS', 'Datum (vzestupnÄ›)');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGEORDER_DATEDESC', 'Datum (sestupnÄ›)');
+@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_NAME', 'Zobrazit celÃ½ strom adresÃ¡Å™Å¯');
+@define('PLUGIN_EVENT_USERGALLERY_DISPLAYDIR_DESC', '"Ano" znamenÃ¡, Å¾e se bude na kaÅ¾dÃ© strÃ¡nce galerie zobrazovat celÃ½ strom adresÃ¡Å™Å¯. "Ne" znamenÃ¡, Å¾e se bude vypisovat pouze strom podadresÃ¡Å™Å¯ aktuÃ¡lnÃ­ho adresÃ¡Å™e. (Toto chovÃ¡nÃ­ je takÃ© zÃ¡vislÃ© na Å¡ablonÄ› vzhledu pouÅ¾itÃ© pro zobrazenÃ­ galerie.)');
+@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_NAME', 'Zobrazovat pouze jednu ÃºroveÅˆ podadresÃ¡Å™Å¯');
+@define('PLUGIN_EVENT_USERGALLERY_1SUBLVL_DESC', 'Toto nastavenÃ­ omezÃ­ vÃ½pis stromu podadresÃ¡Å™Å¯ pouze na prvnÃ­ ÃºroveÅˆ podadresÃ¡Å™Å¯. Tedy podadresÃ¡Å™e podadresÃ¡Å™Å¯ uÅ¾ se nebudou zobrazovat. TakÃ© vypÃ­Å¡e celkovÃ½ poÄet obrÃ¡zkÅ¯ v podadresÃ¡Å™Ã­ch. Toto nastavenÃ­ nenÃ­ pÅ™Ã­stupnÃ© pokud pouÅ¾Ã­vÃ¡te zobrazenÃ­ plnÃ©ho stromu adresÃ¡Å™Å¯.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_NAME', 'PoÄet obrÃ¡zkÅ¯ na strÃ¡nce');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGESPERPAGE_DESC', 'Pokud zde zadÃ¡te "0", strÃ¡nkovÃ¡nÃ­ bude vypnuto a vÅ¡echny obrÃ¡zky se budou zobrazovat na prvnÃ­ strÃ¡nce.');
+@define('PLUGIN_EVENT_USERGALLERY_PREVIOUS', 'pÅ™edchozÃ­');
+@define('PLUGIN_EVENT_USERGALLERY_NEXT', 'dalÅ¡Ã­');
+@define('PLUGIN_EVENT_USERGALLERY_UPONELEVEL', 'O ÃºroveÅˆ vÃ½Å¡e');
+@define('PLUGIN_EVENT_USERGALLERY_BACK', 'ZpÄ›t');
+@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_NAME', 'Nastavit tuto strÃ¡nku jako ÃºvodnÃ­ strÃ¡nku blogu Serendipity');
+@define('PLUGIN_EVENT_USERGALLERY_FRONTPAGE_DESC', 'MÃ­sto vÃ½chozÃ­ strÃ¡nky Serendipity mÅ¯Å¾ete zobrazovat galerii. Pokud chcete zmÄ›nit ÃºvodnÃ­ strÃ¡nku zpÄ›t na vÃ½chozÃ­ strÃ¡nku Serendipity, pouÅ¾ijte "index.php?frontpage". Pokud chcete pouÅ¾Ã­vat tuto funkci, ujistÄ›te se, Å¾e pÅ™ed pluginem "Galerie" (v nastavenÃ­ nainstalovanÃ½ch pluginÅ¯) nejsou pouÅ¾ity Å¾Ã¡dnÃ© dalÅ¡Ã­ pluginy, kterÃ© definujÃ­ stÃ¡lÃ© odkazy (permalink), jako napÅ™. hlasovÃ¡nÃ­, nÃ¡vÅ¡tÄ›vnÃ­ kniha.');
 
 //Exif data tags
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_NAME', 'Zobrazovat exif tagy?');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'EXIF tagy jsou pøídavné informace o obrázku obsaené pøímo v souboru s obrázkem. Tyto jsou automaticky vytváøené fotoaparáty, obsahují informace jako je model fotoaparátu, nastavení expozice, pouití blesku, èas závìrky apod. Starší fotoaparáty (pøed rokem 2000) nemusí tyto informace zapisovat.');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA', 'Podporované fotoaparáty: Agfa, Canon, Casio, Epson, Fujifilm, Konica Minolta, Kyocera, Nikon, Olympus, Panasonic, Pentax, Ricoh, Sony.');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_SHOW_DESC', 'EXIF tagy jsou pÅ™Ã­davnÃ© informace o obrÃ¡zku obsaÅ¾enÃ© pÅ™Ã­mo v souboru s obrÃ¡zkem. Tyto jsou automaticky vytvÃ¡Å™enÃ© fotoaparÃ¡ty, obsahujÃ­ informace jako je model fotoaparÃ¡tu, nastavenÃ­ expozice, pouÅ¾itÃ­ blesku, Äas zÃ¡vÄ›rky apod. StarÅ¡Ã­ fotoaparÃ¡ty (pÅ™ed rokem 2000) nemusÃ­ tyto informace zapisovat.');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_CAMERA', 'PodporovanÃ© fotoaparÃ¡ty: Agfa, Canon, Casio, Epson, Fujifilm, Konica Minolta, Kyocera, Nikon, Olympus, Panasonic, Pentax, Ricoh, Sony.');
 @define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NAME', 'EXIF data');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_DESC', 'V seznamu níe jsou všechny pøístupné volby. Váš konkrétní fotoaparát mùe pøeskoèit jednu nebo dvì hodnoty, protoe ne všechny hodnoty jsou zapisovány všemi fotoaparáty.');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_ADDITIONALDATA', 'Další informace');
-@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NOADDITIONALDATA', 'ádné další informace');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_DESC', 'V seznamu nÃ­Å¾e jsou vÅ¡echny pÅ™Ã­stupnÃ© volby. VÃ¡Å¡ konkrÃ©tnÃ­ fotoaparÃ¡t mÅ¯Å¾e pÅ™eskoÄit jednu nebo dvÄ› hodnoty, protoÅ¾e ne vÅ¡echny hodnoty jsou zapisovÃ¡ny vÅ¡emi fotoaparÃ¡ty.');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_ADDITIONALDATA', 'DalÅ¡Ã­ informace');
+@define('PLUGIN_EVENT_USERGALLERY_EXIFDATA_NOADDITIONALDATA', 'Å½Ã¡dnÃ© dalÅ¡Ã­ informace');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'Rozmìry obrázku v RSS kanálu');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'Tento plugin nabízí RSS kanál s posledními obrázky na blogu. Mùete ho zobrazit jako jakıkoliv jinı RSS kanál na bogu, tedy zadáním následující URL adresy: %s. Promìnná "gallery=true" v URL adrese je dùleitá, protoe znamená, e se mají zobrazovat obrázky galerie. Mùete pouít také další promìnnou "limit=XX" k omezení obrázkù v RSS kanálu. Promìnná "picdir=XXX" urèuje adresáø, jeho obrázky se mají zobrazovat v RSS kanálu. Promìnná "hide_title=true" skryje názvy souborù a "feed_width=XXX" nastaví velikost cílovıch obrázkù (podporované od verze Serendipity 1.1). Zadejte maximální velikost obrázkù v RSS kanálu.');
+@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED', 'RozmÄ›ry obrÃ¡zku v RSS kanÃ¡lu');
+@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_DESC', 'Tento plugin nabÃ­zÃ­ RSS kanÃ¡l s poslednÃ­mi obrÃ¡zky na blogu. MÅ¯Å¾ete ho zobrazit jako jakÃ½koliv jinÃ½ RSS kanÃ¡l na bogu, tedy zadÃ¡nÃ­m nÃ¡sledujÃ­cÃ­ URL adresy: %s. PromÄ›nnÃ¡ "gallery=true" v URL adrese je dÅ¯leÅ¾itÃ¡, protoÅ¾e znamenÃ¡, Å¾e se majÃ­ zobrazovat obrÃ¡zky galerie. MÅ¯Å¾ete pouÅ¾Ã­t takÃ© dalÅ¡Ã­ promÄ›nnou "limit=XX" k omezenÃ­ obrÃ¡zkÅ¯ v RSS kanÃ¡lu. PromÄ›nnÃ¡ "picdir=XXX" urÄuje adresÃ¡Å™, jehoÅ¾ obrÃ¡zky se majÃ­ zobrazovat v RSS kanÃ¡lu. PromÄ›nnÃ¡ "hide_title=true" skryje nÃ¡zvy souborÅ¯ a "feed_width=XXX" nastavÃ­ velikost cÃ­lovÃ½ch obrÃ¡zkÅ¯ (podporovanÃ© od verze Serendipity 1.1). Zadejte maximÃ¡lnÃ­ velikost obrÃ¡zkÅ¯ v RSS kanÃ¡lu.');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Zobrazit v RSS pouze propojení obrázky?');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', '"Ano" znamená, e se v RSS kanálu objeví pouze obrázky, které jsou obsaené v nìkterém z publikovanıch pøíspìvkù.');
+@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY', 'Zobrazit v RSS pouze propojenÃ­ obrÃ¡zky?');
+@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_LINKONLY_DESC', '"Ano" znamenÃ¡, Å¾e se v RSS kanÃ¡lu objevÃ­ pouze obrÃ¡zky, kterÃ© jsou obsaÅ¾enÃ© v nÄ›kterÃ©m z publikovanÃ½ch pÅ™Ã­spÄ›vkÅ¯.');
 
-@define('USERGALLERY_SEE_FULLSIZED', 'Kliknìte pro obrázek v plné velikosti');
-@define('USERGALLERY_DOWNLOAD_HERE', 'Download - kliknìte zde!');
-@define('USERGALLERY_LINKED_ENTRIES', 'Pøíspìvky obsahující tento obrázek:');
-@define('USERGALLERY_LINKED_STATICPAGES', 'Statické stránky zborazující tento obrázek:');
-@define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Zobrazit odkaz na pøíspìvky obsahující obrázek?');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'Odsazení podadresáøù ve stromu adresáøù');
-@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'Odsazení podadresáøe od rodièovského adresáøe v pixelech.');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. šíøka obrázku');
-@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'Maximální šíøka obrázku. Na tuto šíøu budou zmenšeny vìtší obrázky v pøípadì zobrazení "Pøizpùsobené mìøítko". Nastavení na "0" znamená bez omezení - všechny obrázky jsou zobrazení v pùvodní velikosti.');
+@define('USERGALLERY_SEE_FULLSIZED', 'KliknÄ›te pro obrÃ¡zek v plnÃ© velikosti');
+@define('USERGALLERY_DOWNLOAD_HERE', 'Download - kliknÄ›te zde!');
+@define('USERGALLERY_LINKED_ENTRIES', 'PÅ™Ã­spÄ›vky obsahujÃ­cÃ­ tento obrÃ¡zek:');
+@define('USERGALLERY_LINKED_STATICPAGES', 'StatickÃ© strÃ¡nky zborazujÃ­cÃ­ tento obrÃ¡zek:');
+@define('PLUGIN_EVENT_USERGALLERY_SHOW_LINKED_ENTRY', 'Zobrazit odkaz na pÅ™Ã­spÄ›vky obsahujÃ­cÃ­ obrÃ¡zek?');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_NAME', 'OdsazenÃ­ podadresÃ¡Å™Å¯ ve stromu adresÃ¡Å™Å¯');
+@define('PLUGIN_EVENT_USERGALLERY_DIRTAB_DESC', 'OdsazenÃ­ podadresÃ¡Å™e od rodiÄovskÃ©ho adresÃ¡Å™e v pixelech.');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_NAME', 'Max. Å¡Ã­Å™ka obrÃ¡zku');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGE_WIDTH_DESC', 'MaximÃ¡lnÃ­ Å¡Ã­Å™ka obrÃ¡zku. Na tuto Å¡Ã­Å™u budou zmenÅ¡eny vÄ›tÅ¡Ã­ obrÃ¡zky v pÅ™Ã­padÄ› zobrazenÃ­ "PÅ™izpÅ¯sobenÃ© mÄ›Å™Ã­tko". NastavenÃ­ na "0" znamenÃ¡ bez omezenÃ­ - vÅ¡echny obrÃ¡zky jsou zobrazenÃ­ v pÅ¯vodnÃ­ velikosti.');
 
 //Media properties
-@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_NAME', 'Zobrazit vlastnosti obrázkù');
-@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_DESC', 'Zobrazit vlastnosti obrázkù pøiøazené v knihovnì médií?');
-@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_NAME', 'Seznam vlastností obrázku');
-@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_DESC', 'Toto je definice seznamu vlastností obrázku a pøiøazenı popis jednotlivıch poloek. Formát je "POLOKA1:Název poloky 1;POLOKA2: Název poloky 2", kde jednotlivé poloky jsou oddìlené støedníkem, první je název vlastnosti (jak jsou vypsány v "Nastavení blogu", pak èárka, pak zobrazené jméno.');
+@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_NAME', 'Zobrazit vlastnosti obrÃ¡zkÅ¯');
+@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_SHOW_DESC', 'Zobrazit vlastnosti obrÃ¡zkÅ¯ pÅ™iÅ™azenÃ© v knihovnÄ› mÃ©diÃ­?');
+@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_NAME', 'Seznam vlastnostÃ­ obrÃ¡zku');
+@define('PLUGIN_EVENT_USERGALLERY_MEDIA_PROPERTIES_DESC', 'Toto je definice seznamu vlastnostÃ­ obrÃ¡zku a pÅ™iÅ™azenÃ½ popis jednotlivÃ½ch poloÅ¾ek. FormÃ¡t je "POLOÅ½KA1:NÃ¡zev poloÅ¾ky 1;POLOÅ½KA2: NÃ¡zev poloÅ¾ky 2", kde jednotlivÃ© poloÅ¾ky jsou oddÄ›lenÃ© stÅ™ednÃ­kem, prvnÃ­ je nÃ¡zev vlastnosti (jak jsou vypsÃ¡ny v "NastavenÃ­ blogu", pak ÄÃ¡rka, pak zobrazenÃ© jmÃ©no.');
 
 //Several consants used in the template
-@define('PLUGIN_EVENT_USERGALLERY_IMAGES', 'obrázky');
-@define('PLUGIN_EVENT_USERGALLERY_PAGINATION', 'Stránka %s z %s, celkem %s obrázkù');
+@define('PLUGIN_EVENT_USERGALLERY_IMAGES', 'obrÃ¡zky');
+@define('PLUGIN_EVENT_USERGALLERY_PAGINATION', 'StrÃ¡nka %s z %s, celkem %s obrÃ¡zkÅ¯');
 
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'Pouít originální formát pøíspìvku pro obrázek v RSS kanálu?');
-@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Pokud je povoleno, obrázek z knihovny médií, kterı byl pouit v pøíspìvku na blogu, bude mít v RSS kanálu stejné tìlo pøíspìvku jako pøíspìvek místo vıchozího jednoduchého odkazu na pøíspìvek a pùvodní umístìní obrázku.');
+@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY', 'PouÅ¾Ã­t originÃ¡lnÃ­ formÃ¡t pÅ™Ã­spÄ›vku pro obrÃ¡zek v RSS kanÃ¡lu?');
+@define('PLUGIN_EVENT_USERGALLERY_RSS_FEED_BODY_DESC', 'Pokud je povoleno, obrÃ¡zek z knihovny mÃ©diÃ­, kterÃ½ byl pouÅ¾it v pÅ™Ã­spÄ›vku na blogu, bude mÃ­t v RSS kanÃ¡lu stejnÃ© tÄ›lo pÅ™Ã­spÄ›vku jako pÅ™Ã­spÄ›vek mÃ­sto vÃ½chozÃ­ho jednoduchÃ©ho odkazu na pÅ™Ã­spÄ›vek a pÅ¯vodnÃ­ umÃ­stÄ›nÃ­ obrÃ¡zku.');
 

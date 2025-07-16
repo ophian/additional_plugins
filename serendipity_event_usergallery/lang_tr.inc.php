@@ -6,20 +6,20 @@
  *  First public version: lang_tr.inc.php
  */
 
-@define('PLUGIN_EVENT_USERGALLERY_TITLE', 'Galeri Gösterimi');
-#@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Anonim kullanýcý-ziyaretçilerin Serendipity Medya Galerisini görmelerine izin verir');//translate again
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Galeride gösterilecek sütun sayýsý');
-@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'Sütunlarýn sayýsý');
-@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Galeri görünümü için kalýcý baðlantý URL adresi');
-@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Galeri eriþiminde kullanýlmak üzere benzesiz bir kalýcý baðlantý URL adresi yazýn');
-@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_NAME', 'Galeri görünümü için altsayfa adý');
-@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_DESC', 'Galeri görünümü için kullanmak isteyeceðiniz benzersiz bir altsayfa adý yazýn (galeri eriþim adresi index.php?serendipity[subpage]=altsayfaismi  þeklinde olacak.)');
-@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Öntanýmlý Dizin Seçimi');
-@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Galeri fotolarýnýn saklanmasý ve eriþilmesinde kullanýlacak Öntanýmlý dizini belirtin. ');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Galeri Stili Seçin');
-#@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', 'Kullanmak istediðiniz galeri stilini seçin. "Medya Kütüphanesi" dizinler arasýnda gezinmenize ve arama yapmanýza imkan verir, "Küçükresim Sayfasý" dizindeki küçükresimlerin gösterilmesini saðlar ve týklandýðýnda resimler yeni bir pencerede açýlýr');//translate again
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Medya Kütüphanesi');
-@define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'Küçükresim Sayfasý');
-@define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', 'Gösterim adý');
-@define('PLUGIN_EVENT_USERGALLERY_PRETTY_DESC', 'Galeriyi tanýmlamakta kullanacaðýnýz baþlýðý seçin');
+@define('PLUGIN_EVENT_USERGALLERY_TITLE', 'Galeri GÃ¶sterimi');
+#@define('PLUGIN_EVENT_USERGALLERY_DESC', 'Anonim kullanÄ±cÄ±-ziyaretÃ§ilerin Serendipity Medya Galerisini gÃ¶rmelerine izin verir');//translate again
+@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_DESC', 'Galeride gÃ¶sterilecek sÃ¼tun sayÄ±sÄ±');
+@define('PLUGIN_EVENT_USERGALLERY_NUMCOLS_NAME', 'SÃ¼tunlarÄ±n sayÄ±sÄ±');
+@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_NAME', 'Galeri gÃ¶rÃ¼nÃ¼mÃ¼ iÃ§in kalÄ±cÄ± baÄŸlantÄ± URL adresi');
+@define('PLUGIN_EVENT_USERGALLERY_PERMALINK_DESC', 'Galeri eriÅŸiminde kullanÄ±lmak Ã¼zere benzesiz bir kalÄ±cÄ± baÄŸlantÄ± URL adresi yazÄ±n');
+@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_NAME', 'Galeri gÃ¶rÃ¼nÃ¼mÃ¼ iÃ§in altsayfa adÄ±');
+@define('PLUGIN_EVENT_USERGALLERY_SUBNAME_DESC', 'Galeri gÃ¶rÃ¼nÃ¼mÃ¼ iÃ§in kullanmak isteyeceÄŸiniz benzersiz bir altsayfa adÄ± yazÄ±n (galeri eriÅŸim adresi index.php?serendipity[subpage]=altsayfaismi  ÅŸeklinde olacak.)');
+@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_NAME', 'Ã–ntanÄ±mlÄ± Dizin SeÃ§imi');
+@define('PLUGIN_EVENT_USERGALLERY_DIRECTORY_DESC', 'Galeri fotolarÄ±nÄ±n saklanmasÄ± ve eriÅŸilmesinde kullanÄ±lacak Ã–ntanÄ±mlÄ± dizini belirtin. ');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_NAME', 'Galeri Stili SeÃ§in');
+#@define('PLUGIN_EVENT_USERGALLERY_STYLE_DESC', 'Kullanmak istediÄŸiniz galeri stilini seÃ§in. "Medya KÃ¼tÃ¼phanesi" dizinler arasÄ±nda gezinmenize ve arama yapmanÄ±za imkan verir, "KÃ¼Ã§Ã¼kresim SayfasÄ±" dizindeki kÃ¼Ã§Ã¼kresimlerin gÃ¶sterilmesini saÄŸlar ve tÄ±klandÄ±ÄŸÄ±nda resimler yeni bir pencerede aÃ§Ä±lÄ±r');//translate again
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_SERENDIPITY', 'Medya KÃ¼tÃ¼phanesi');
+@define('PLUGIN_EVENT_USERGALLERY_STYLE_THUMBPAGE', 'KÃ¼Ã§Ã¼kresim SayfasÄ±');
+@define('PLUGIN_EVENT_USERGALLERY_PRETTY_NAME', 'GÃ¶sterim adÄ±');
+@define('PLUGIN_EVENT_USERGALLERY_PRETTY_DESC', 'Galeriyi tanÄ±mlamakta kullanacaÄŸÄ±nÄ±z baÅŸlÄ±ÄŸÄ± seÃ§in');
 
