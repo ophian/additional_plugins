@@ -2,6 +2,8 @@
 
 // Contributed by Grischa Brockhaus <s9ycoder@brockha.us>
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -1084,7 +1086,7 @@ class serendipity_event_twitter extends serendipity_plugin
 
                 <div class="form_field">
                     <label for="serendipity[properties][microblogging_tagList]" class="block_level"><?php echo PLUGIN_EVENT_TWITTER_BACKEND_ENTERDESC; ?></label>
-                    <input id="properties_microblogging_tagList"  class="wickEnabled" name="serendipity[properties][microblogging_tagList]" type="text" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($tagList) : htmlspecialchars($tagList, ENT_COMPAT, LANG_CHARSET)); ?>">
+                    <input id="properties_microblogging_tagList"  class="wickEnabled" name="serendipity[properties][microblogging_tagList]" type="text" value="<?php echo htmlspecialchars($tagList) ?>">
                 </div>
             </fieldset>
 
@@ -1712,7 +1714,7 @@ a.twitter_update_time {
             // add shorturl to entryfooter
             if ($show_shorturl) {
                 $shorturl = $this->default_shorturl($entryurl);
-                $onclick = (function_exists('serendipity_specialchars') ? serendipity_specialchars(PLUGIN_EVENT_TWITTER_SHORTURL_ON_CLICK) : htmlspecialchars(PLUGIN_EVENT_TWITTER_SHORTURL_ON_CLICK, ENT_COMPAT, LANG_CHARSET));
+                $onclick = htmlspecialchars(PLUGIN_EVENT_TWITTER_SHORTURL_ON_CLICK);
                 if ($do_smartify) { // emit smarty tag only
                     $eventData[$event_index]['url_shorturl'] = $shorturl;
                 }

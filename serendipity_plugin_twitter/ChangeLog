@@ -9,6 +9,12 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+2.4.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Declare strict types
+
 2.3.0:
 -----
  * Use PHP 8.2 name arguments
