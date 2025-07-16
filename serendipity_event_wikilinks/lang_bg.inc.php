@@ -6,21 +6,21 @@
  *  EN-Revision: 1.5
  */
 
-@define('PLUGIN_EVENT_WIKILINKS_NAME', 'Wiki връзки в статиите');
-@define('PLUGIN_EVENT_WIKILINKS_DESC', 'Можете да поставяте нови/съществуващи връзки към вашите статии чрез [[title]], към статични страници чрез ((title)) и връзки към двете чрез {{title}}.');
-@define('PLUGIN_EVENT_WIKILINKS_IMGPATH', 'Път до изображенията');
-@define('PLUGIN_EVENT_WIKILINKS_IMGPATH_DESC', 'Въведете пътя, където са записани иконите на връзките за wiki редактиране.');
+@define('PLUGIN_EVENT_WIKILINKS_NAME', 'Wiki РІСЂСЉР·РєРё РІ СЃС‚Р°С‚РёРёС‚Рµ');
+@define('PLUGIN_EVENT_WIKILINKS_DESC', 'РњРѕР¶РµС‚Рµ РґР° РїРѕСЃС‚Р°РІСЏС‚Рµ РЅРѕРІРё/СЃСЉС‰РµСЃС‚РІСѓРІР°С‰Рё РІСЂСЉР·РєРё РєСЉРј РІР°С€РёС‚Рµ СЃС‚Р°С‚РёРё С‡СЂРµР· [[title]], РєСЉРј СЃС‚Р°С‚РёС‡РЅРё СЃС‚СЂР°РЅРёС†Рё С‡СЂРµР· ((title)) Рё РІСЂСЉР·РєРё РєСЉРј РґРІРµС‚Рµ С‡СЂРµР· {{title}}.');
+@define('PLUGIN_EVENT_WIKILINKS_IMGPATH', 'РџСЉС‚ РґРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏС‚Р°');
+@define('PLUGIN_EVENT_WIKILINKS_IMGPATH_DESC', 'Р’СЉРІРµРґРµС‚Рµ РїСЉС‚СЏ, РєСЉРґРµС‚Рѕ СЃР° Р·Р°РїРёСЃР°РЅРё РёРєРѕРЅРёС‚Рµ РЅР° РІСЂСЉР·РєРёС‚Рµ Р·Р° wiki СЂРµРґР°РєС‚РёСЂР°РЅРµ.');
 
-@define('PLUGIN_EVENT_WIKILINKS_EDIT_INTERNAL', 'Редактиране на статията');
-@define('PLUGIN_EVENT_WIKILINKS_EDIT_STATICPAGE', 'Реадктиране на статичната страница');
-@define('PLUGIN_EVENT_WIKILINKS_CREATE_INTERNAL', 'Създаване на статията');
-@define('PLUGIN_EVENT_WIKILINKS_CREATE_STATICPAGE', 'Създаване на статичната страница');
+@define('PLUGIN_EVENT_WIKILINKS_EDIT_INTERNAL', 'Р РµРґР°РєС‚РёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёСЏС‚Р°');
+@define('PLUGIN_EVENT_WIKILINKS_EDIT_STATICPAGE', 'Р РµР°РґРєС‚РёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёС‡РЅР°С‚Р° СЃС‚СЂР°РЅРёС†Р°');
+@define('PLUGIN_EVENT_WIKILINKS_CREATE_INTERNAL', 'РЎСЉР·РґР°РІР°РЅРµ РЅР° СЃС‚Р°С‚РёСЏС‚Р°');
+@define('PLUGIN_EVENT_WIKILINKS_CREATE_STATICPAGE', 'РЎСЉР·РґР°РІР°РЅРµ РЅР° СЃС‚Р°С‚РёС‡РЅР°С‚Р° СЃС‚СЂР°РЅРёС†Р°');
 
-@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY', 'Връзка към статия');
-@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY_DESC', 'Моля изберете статията, към която искате да добавите връзка.');
+@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY', 'Р’СЂСЉР·РєР° РєСЉРј СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY_DESC', 'РњРѕР»СЏ РёР·Р±РµСЂРµС‚Рµ СЃС‚Р°С‚РёСЏС‚Р°, РєСЉРј РєРѕСЏС‚Рѕ РёСЃРєР°С‚Рµ РґР° РґРѕР±Р°РІРёС‚Рµ РІСЂСЉР·РєР°.');
 
-@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_NAME', 'Създаване на връзки към чернови?');
-@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_DESC', 'Да се създават ли връзки към статии, които все още са чернови (не са публикувани)?');
-@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_NAME', 'Създаване на връзки към бъдещи статии?');
-@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_DESK', 'Да се създават ли връзки към статии, които са с дата в  бъдещето?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_NAME', 'РЎСЉР·РґР°РІР°РЅРµ РЅР° РІСЂСЉР·РєРё РєСЉРј С‡РµСЂРЅРѕРІРё?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_DESC', 'Р”Р° СЃРµ СЃСЉР·РґР°РІР°С‚ Р»Рё РІСЂСЉР·РєРё РєСЉРј СЃС‚Р°С‚РёРё, РєРѕРёС‚Рѕ РІСЃРµ РѕС‰Рµ СЃР° С‡РµСЂРЅРѕРІРё (РЅРµ СЃР° РїСѓР±Р»РёРєСѓРІР°РЅРё)?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_NAME', 'РЎСЉР·РґР°РІР°РЅРµ РЅР° РІСЂСЉР·РєРё РєСЉРј Р±СЉРґРµС‰Рё СЃС‚Р°С‚РёРё?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_DESK', 'Р”Р° СЃРµ СЃСЉР·РґР°РІР°С‚ Р»Рё РІСЂСЉР·РєРё РєСЉРј СЃС‚Р°С‚РёРё, РєРѕРёС‚Рѕ СЃР° СЃ РґР°С‚Р° РІ  Р±СЉРґРµС‰РµС‚Рѕ?');
 

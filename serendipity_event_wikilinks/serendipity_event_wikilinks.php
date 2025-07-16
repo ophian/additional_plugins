@@ -28,7 +28,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '2.0.4');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -301,7 +301,7 @@ class serendipity_event_wikilinks extends serendipity_event
                     echo '        <option value="">...</option>';
                     if (is_array($entries)) {
                       foreach($entries AS $idx => $row) {
-                        echo '        <option value="' . $row['id'] . '"' . ($row['id'] == $serendipity['POST']['wikireference'] ? ' selected="selected"' : '') . '>' . $row['refname'] . '</option>' . "\n";
+                        echo '        <option value="' . $row['id'] . '"' . ($row['id'] == ($serendipity['POST']['wikireference'] ?? null) ? ' selected="selected"' : '') . '>' . $row['refname'] . '</option>' . "\n";
                       }
                     }
                     echo '    </select>';
@@ -380,7 +380,7 @@ class serendipity_event_wikilinks extends serendipity_event
                                 $eventData['properties']['references'] += $this->references;
                             }
 
-                            // To workaround the doubled ref tag when ref tag contains a link added with TinyMCE code cleanup tasker we use the markdown approach []() for the link
+                            // To workaround the doubled ref tag when ref tag contains a link added with TinyMCE code cleanup tasker we use the markdown approach [title](url) for the link
                             if ($element != 'comment' && str_contains($source, '<sup class="wikiref">')) {
                                 $source = preg_replace('/\[(.*?)\]\s*\((.*?)\)/', '<a href="$2">$1</a>', $source);
                             }
@@ -673,11 +673,11 @@ class serendipity_event_wikilinks extends serendipity_event
     function _wikify($buffer)
     {
         global $serendipity;
-        $debug = true;
+        #$debug = true;
 
         $admin_url = false;
 
-        $cidx = 2;
+        $cidx = 2; // 1 & 3 are [[ & ]]
 
         if ($buffer[1] == '((') {
             $type = $otype = 'staticpage';
@@ -740,7 +740,7 @@ class serendipity_event_wikilinks extends serendipity_event
             if (serendipity_userLoggedIn()) {
                 $mode  = 'create';
                 $title = urlencode($ltitle);
-                $body  = '<h1>' . htmlspecialchars($ltitle) . '</h1>';
+                $body  = '<h2>' . htmlspecialchars($ltitle) . '</h2>';
 
                 $admin_url2 = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[pre][headline]=' . $title . '&amp;serendipity[pre][content]=' . $body . '&amp;serendipity[pre][pagetitle]=' . $title;
                 if ($otype == 'staticpage') {

@@ -1,57 +1,57 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/26
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/01/12
  */
 
-@define('PLUGIN_EVENT_WIKILINKS_NAME', 'Wiki odkazy v pøíspìvcích');
-@define('PLUGIN_EVENT_WIKILINKS_DESC', 'V pøíspìvcích mù¾ete zadat odkazy na existující/nové pøíspìvky pomocí [[nadpis pøíspìvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.');
-@define('PLUGIN_EVENT_WIKILINKS_IMGPATH', 'Cesta k obrázkùm');
-@define('PLUGIN_EVENT_WIKILINKS_IMGPATH_DESC', 'Zadejte cestu, na které jsou umístìny ikony wiki odkazù.');
+@define('PLUGIN_EVENT_WIKILINKS_NAME', 'Wiki odkazy v pÅ™Ã­spÄ›vcÃ­ch');
+@define('PLUGIN_EVENT_WIKILINKS_DESC', 'V pÅ™Ã­spÄ›vcÃ­ch mÅ¯Å¾ete zadat odkazy na existujÃ­cÃ­/novÃ© pÅ™Ã­spÄ›vky pomocÃ­ [[nadpis pÅ™Ã­spÄ›vku]], na statickÃ© strÃ¡nky pomocÃ­ ((nadpis strÃ¡nky)) a na obojÃ­ pomocÃ­ {{nadpis}}.');
+@define('PLUGIN_EVENT_WIKILINKS_IMGPATH', 'Cesta k obrÃ¡zkÅ¯m');
+@define('PLUGIN_EVENT_WIKILINKS_IMGPATH_DESC', 'Zadejte cestu, na kterÃ© jsou umÃ­stÄ›ny ikony wiki odkazÅ¯.');
 
-@define('PLUGIN_EVENT_WIKILINKS_EDIT_INTERNAL', 'Upravit pøíspìvek');
-@define('PLUGIN_EVENT_WIKILINKS_EDIT_STATICPAGE', 'Upravit statickou stránku');
-@define('PLUGIN_EVENT_WIKILINKS_CREATE_INTERNAL', 'Vytvoøit pøíspìvek');
-@define('PLUGIN_EVENT_WIKILINKS_CREATE_STATICPAGE', 'Vytvoøit statickou stránku');
+@define('PLUGIN_EVENT_WIKILINKS_EDIT_INTERNAL', 'Upravit pÅ™Ã­spÄ›vek');
+@define('PLUGIN_EVENT_WIKILINKS_EDIT_STATICPAGE', 'Upravit statickou strÃ¡nku');
+@define('PLUGIN_EVENT_WIKILINKS_CREATE_INTERNAL', 'VytvoÅ™it pÅ™Ã­spÄ›vek');
+@define('PLUGIN_EVENT_WIKILINKS_CREATE_STATICPAGE', 'VytvoÅ™it statickou strÃ¡nku');
 
-@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY', 'Odkaz na pøíspìvek');
-@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY_DESC', 'Vyberte pøíspìvek, na kterı chcete odkazovat.');
+@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY', 'Odkaz na pÅ™Ã­spÄ›vek');
+@define('PLUGIN_EVENT_WIKILINKS_LINKENTRY_DESC', 'Vyberte pÅ™Ã­spÄ›vek, na kterÃ½ chcete odkazovat.');
 
-@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_NAME', 'Vytvoøit odkazy na koncepty?');
-@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_DESC', 'Mají se tvoøit odkazy na pøíspìvky, které jsou ve stavu "koncept"?');
-@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_NAME', 'Vytváøet odkazy na budoucí pøíspìvky?');
-@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_DESK', 'Mají se vytváøet odkazy na pøíspìvky, jejich¾ datum vydání je v budoucnosti?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_NAME', 'VytvoÅ™it odkazy na koncepty?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWDRAFTLINKS_DESC', 'MajÃ­ se tvoÅ™it odkazy na pÅ™Ã­spÄ›vky, kterÃ© jsou ve stavu "koncept"?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_NAME', 'VytvÃ¡Å™et odkazy na budoucÃ­ pÅ™Ã­spÄ›vky?');
+@define('PLUGIN_EVENT_WIKILINKS_SHOWFUTURELINKS_DESK', 'MajÃ­ se vytvÃ¡Å™et odkazy na pÅ™Ã­spÄ›vky, jejichÅ¾ datum vydÃ¡nÃ­ je v budoucnosti?');
 
 // Next lines were translated on 2012/01/12
-@define('PLUGIN_EVENT_WIKILINKS_REFMATCH_NAME', 'Vzor pro odchytávání referencí');
-@define('PLUGIN_EVENT_WIKILINKS_REFMATCH_DESC', 'Zde mù¾ete zadat vzor, podle kterého budou odchytávány reference pøi procházení textu. Plugin sesbírá tyto reference, ulo¾í je do databáze a vypí¹e je pod pøíspìvkem. Mù¾ete také pou¾ít smarty tag {$entry.properties.references} pro umístìní tohoto bloku na libovolné místo ve va¹í ¹ablonì. Vzor je mo¾né zadávat jako regulární vıraz, nezapomeòte escapovat speciální znaky. Vıchozí vzor vypadá slo¾itì, proto¾e pou¾ívá pojmenované pod-vzory, ale zato mù¾e bıt jednodu¹e pou¾it jako:<ref name="xxx">yyy</ref>, kde xxx je nepovinné jméno reference (viz ní¾e) a yyy je vlastní text reference, kde yyy mù¾e bıt libovolné HTML nebo jinı znaèkovací jazyk.');
-@define('PLUGIN_EVENT_WIKILINKS_REFDOC', '<strong>Znovu-pou¾ívání referencí</strong><br /><br />Pokud chcete pou¾ít reference na více místech, je vıhodné specifikovat je pouze jednou a pak u¾ jen znovu-pou¾ívat. Napøíkad pokud napí¹ete následující text:<br />
+@define('PLUGIN_EVENT_WIKILINKS_REFMATCH_NAME', 'Vzor pro odchytÃ¡vÃ¡nÃ­ referencÃ­');
+@define('PLUGIN_EVENT_WIKILINKS_REFMATCH_DESC', 'Zde mÅ¯Å¾ete zadat vzor, podle kterÃ©ho budou odchytÃ¡vÃ¡ny reference pÅ™i prochÃ¡zenÃ­ textu. Plugin sesbÃ­rÃ¡ tyto reference, uloÅ¾Ã­ je do databÃ¡ze a vypÃ­Å¡e je pod pÅ™Ã­spÄ›vkem. MÅ¯Å¾ete takÃ© pouÅ¾Ã­t smarty tag {$entry.properties.references} pro umÃ­stÄ›nÃ­ tohoto bloku na libovolnÃ© mÃ­sto ve vaÅ¡Ã­ Å¡ablonÄ›. Vzor je moÅ¾nÃ© zadÃ¡vat jako regulÃ¡rnÃ­ vÃ½raz, nezapomeÅˆte escapovat speciÃ¡lnÃ­ znaky. VÃ½chozÃ­ vzor vypadÃ¡ sloÅ¾itÄ›, protoÅ¾e pouÅ¾Ã­vÃ¡ pojmenovanÃ© pod-vzory, ale zato mÅ¯Å¾e bÃ½t jednoduÅ¡e pouÅ¾it jako:<ref name="xxx">yyy</ref>, kde xxx je nepovinnÃ© jmÃ©no reference (viz nÃ­Å¾e) a yyy je vlastnÃ­ text reference, kde yyy mÅ¯Å¾e bÃ½t libovolnÃ© HTML nebo jinÃ½ znaÄkovacÃ­ jazyk.');
+@define('PLUGIN_EVENT_WIKILINKS_REFDOC', '<strong>Znovu-pouÅ¾Ã­vÃ¡nÃ­ referencÃ­</strong><br /><br />Pokud chcete pouÅ¾Ã­t reference na vÃ­ce mÃ­stech, je vÃ½hodnÃ© specifikovat je pouze jednou a pak uÅ¾ jen znovu-pouÅ¾Ã­vat. NapÅ™Ã­kad pokud napÃ­Å¡ete nÃ¡sledujÃ­cÃ­ text:<br />
 <div style="border: 1px solid black; padding: 4px">
-Serendipity&lt;ref&gt;&lt;a href="https://ophian.github.io/"&gt;Serendipity Styx Weblog&lt;/a&gt; - Serendipity mù¾e bıt také pou¾ito v dal¹ích vıznamech, ajko napøíklad film nebo taneèník ve filmu, nebo film o filmovém taneèníkovi.</ref> se mù¾e vyskytovat na mnoha místech.
+Serendipity&lt;ref&gt;&lt;a href="https://ophian.github.io/"&gt;Serendipity Styx Weblog&lt;/a&gt; - Serendipity mÅ¯Å¾e bÃ½t takÃ© pouÅ¾ito v dalÅ¡Ã­ch vÃ½znamech, ajko napÅ™Ã­klad film nebo taneÄnÃ­k ve filmu, nebo film o filmovÃ©m taneÄnÃ­kovi.</ref> se mÅ¯Å¾e vyskytovat na mnoha mÃ­stech.
 </div>
 <br/><br />
-Proto¾e budete mluvit o Serendipity na va¹em blogu urèitì na mnoha místech, mìli byste vytvoøit referenci, která funguje pøidáním atributu <em>name</em> attribute do tagu &lt;ref&gt; a bude vypadat následovnì:
+ProtoÅ¾e budete mluvit o Serendipity na vaÅ¡em blogu urÄitÄ› na mnoha mÃ­stech, mÄ›li byste vytvoÅ™it referenci, kterÃ¡ funguje pÅ™idÃ¡nÃ­m atributu <em>name</em> attribute do tagu &lt;ref&gt; a bude vypadat nÃ¡sledovnÄ›:
 <div style="border: 1px solid black; padding: 4px">
-Serendipity&lt;ref name="Serendipity"&gt;&lt;a href="https://ophian.github.io/"&gt;Serendipity Styx Weblog&lt;/a&gt; Serendipity mù¾e bıt také pou¾ito v dal¹ích vıznamech, ajko napøíklad film nebo taneèník ve filmu, nebo film o filmovém taneèníkovi.</ref> a mù¾e se vyskytovat na mnoha místech.</pre>
+Serendipity&lt;ref name="Serendipity"&gt;&lt;a href="https://ophian.github.io/"&gt;Serendipity Styx Weblog&lt;/a&gt; Serendipity mÅ¯Å¾e bÃ½t takÃ© pouÅ¾ito v dalÅ¡Ã­ch vÃ½znamech, ajko napÅ™Ã­klad film nebo taneÄnÃ­k ve filmu, nebo film o filmovÃ©m taneÄnÃ­kovi.</ref> a mÅ¯Å¾e se vyskytovat na mnoha mÃ­stech.</pre>
 </div>
 <br/><br />
-Toto staèí vlo¾it pouze na prvním místì vıskytu reference. Kdykoliv budete chtít pou¾ít tu samou referenci, staèí napsat jednodu¹e:
+Toto staÄÃ­ vloÅ¾it pouze na prvnÃ­m mÃ­stÄ› vÃ½skytu reference. Kdykoliv budete chtÃ­t pouÅ¾Ã­t tu samou referenci, staÄÃ­ napsat jednoduÅ¡e:
 <div style="border: 1px solid black; padding: 4px">
 Serendipity&lt;ref name="Serendipity"&gt;&lt;/ref&gt;
 </div>
 <br /><br />
-To se postará o vlo¾ení existující pojmenované reference z databáze. Pamatujte, ¾e musíte pou¾ít &lt;ref&gt;...&lt;/ref&gt; zápis, &lt;ref.../&gt; není podporováno kvùli syntaxi regulárního vırazu.
+To se postarÃ¡ o vloÅ¾enÃ­ existujÃ­cÃ­ pojmenovanÃ© reference z databÃ¡ze. Pamatujte, Å¾e musÃ­te pouÅ¾Ã­t &lt;ref&gt;...&lt;/ref&gt; zÃ¡pis, &lt;ref.../&gt; nenÃ­ podporovÃ¡no kvÅ¯li syntaxi regulÃ¡rnÃ­ho vÃ½razu.
 ');
-@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET_NAME', 'Formát nahrazené reference');
-@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET_DESC', 'Zde mù¾ete zadat, jak bude odchycená reference nahrazena, obvykle èíselnım odkazem do seznamu referencí. {count} (èíslo) a {text} jsou zástupné promìnné pro èíslo a celı text reference. {refname} odpovídá nepovinnému jménu reference.');
-@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET2_NAME', 'Formát seznamu referencí');
-@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET2_DESC', 'Mù¾ete zadat, jak se budou odchycené reference zobrazovat v seznamu referencí. Pokud je nastaveno na "-", pak se seznam referencí nebude vypisovat. To je u¾iteèné, pokud chcete seznam referencí zobrazovat sami pomocí smarty!');
+@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET_NAME', 'FormÃ¡t nahrazenÃ© reference');
+@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET_DESC', 'Zde mÅ¯Å¾ete zadat, jak bude odchycenÃ¡ reference nahrazena, obvykle ÄÃ­selnÃ½m odkazem do seznamu referencÃ­. {count} (ÄÃ­slo) a {text} jsou zÃ¡stupnÃ© promÄ›nnÃ© pro ÄÃ­slo a celÃ½ text reference. {refname} odpovÃ­dÃ¡ nepovinnÃ©mu jmÃ©nu reference.');
+@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET2_NAME', 'FormÃ¡t seznamu referencÃ­');
+@define('PLUGIN_EVENT_WIKILINKS_REFMATCHTARGET2_DESC', 'MÅ¯Å¾ete zadat, jak se budou odchycenÃ© reference zobrazovat v seznamu referencÃ­. Pokud je nastaveno na "-", pak se seznam referencÃ­ nebude vypisovat. To je uÅ¾iteÄnÃ©, pokud chcete seznam referencÃ­ zobrazovat sami pomocÃ­ smarty!');
 @define('PLUGIN_EVENT_WIKILINKS_MAINT', 'Zachovat index reference');
-@define('PLUGIN_EVENT_WIKILINKS_MAINT_DESC', 'Zde mù¾ete upravit ulo¾ené reference. Pamatujte, ¾e kdy¾ upravíte pùvodní pøíspìvek, ve kterém byla reference, tak text v pøíspìvku má v¾dy pøednost pøed v¹ím, co zadáte tady. Pokud èasto upravujete star¹í pøíspìvky, mìli byste radìji upravovat text referencí uvntø pøíspìvkù a ne zde.');
-@define('PLUGIN_EVENT_WIKILINKS_DB_REFNAME', 'Název reference');
+@define('PLUGIN_EVENT_WIKILINKS_MAINT_DESC', 'Zde mÅ¯Å¾ete upravit uloÅ¾enÃ© reference. Pamatujte, Å¾e kdyÅ¾ upravÃ­te pÅ¯vodnÃ­ pÅ™Ã­spÄ›vek, ve kterÃ©m byla reference, tak text v pÅ™Ã­spÄ›vku mÃ¡ vÅ¾dy pÅ™ednost pÅ™ed vÅ¡Ã­m, co zadÃ¡te tady. Pokud Äasto upravujete starÅ¡Ã­ pÅ™Ã­spÄ›vky, mÄ›li byste radÄ›ji upravovat text referencÃ­ uvntÅ™ pÅ™Ã­spÄ›vkÅ¯ a ne zde.');
+@define('PLUGIN_EVENT_WIKILINKS_DB_REFNAME', 'NÃ¡zev reference');
 @define('PLUGIN_EVENT_WIKILINKS_DB_REF', 'Obsah reference');
-@define('PLUGIN_EVENT_WIKILINKS_DB_ENTRYDID', 'Zadáno v:');
+@define('PLUGIN_EVENT_WIKILINKS_DB_ENTRYDID', 'ZadÃ¡no v:');
 

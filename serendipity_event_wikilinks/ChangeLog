@@ -1,3 +1,9 @@
+2.1.0:
+------
+ * Fix POST wikireference on null
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Change h1 to h2 header
+
 2.0.4:
 ------
  * Better dark-mode vs light-mode RichText-Editor button coloring
