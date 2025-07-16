@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -31,11 +33,11 @@ class serendipity_event_typesetbuttons extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_TYPESETBUTTONS_DESC);
         $propbag->add('stackable', false);
         $propbag->add('author', 'Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '2.0.0');
+        $propbag->add('version', '2.1.0');
         $propbag->add('requirements', array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
-            'php'         => '8.2.0'
+            'php'         => '8.2'
         ));
         $propbag->add('configuration', array(
             'enable_center',
@@ -431,7 +433,7 @@ class serendipity_event_typesetbuttons extends serendipity_event
     private function getCustomButton($txtarea, $part)
     {
         $buttons = explode('@', $part);
-        $b_name = serendipity_specialchars($buttons[0]);
+        $b_name = htmlspecialchars($buttons[0]);
         $b_title = preg_replace('@[^a-z0-9]@i', '_', $buttons[0]);
         $b_open = str_replace(array('"', "'"), array('&quot;', "\\'"), $buttons[1]);
         $b_close = str_replace(array('"', "'"), array('&quot;', "\\'"), $buttons[2]);

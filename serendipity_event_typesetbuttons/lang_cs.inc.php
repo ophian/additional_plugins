@@ -1,35 +1,35 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/30
  */
 
-@define('PLUGIN_EVENT_TYPESETBUTTONS_TITLE',                    'RozöÌ¯en· tlaËÌtka pro ne-WYSIWYG editor');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_DESC',                     'P¯id· tlaËÌtka pro vloûenÌ kÛd˘ r˘zn˝ch html entit (Ë·rky, teËky, uvozovky) + dalöÌ akce.');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_TITLE',                    'Roz≈°√≠≈ôen√° tlaƒç√≠tka pro ne-WYSIWYG editor');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_DESC',                     'P≈ôid√° tlaƒç√≠tka pro vlo≈æen√≠ k√≥d≈Ø r≈Øzn√Ωch html entit (ƒç√°rky, teƒçky, uvozovky) + dal≈°√≠ akce.');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SPACE_BUTTON',             'Mez');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_SPACE_BUTTON',      'Povol zobrazit tlaËÌtko "NedÏliteln· mezera".');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_SPACE_BUTTON',      'Povol zobrazit tlaƒç√≠tko "Nedƒõliteln√° mezera".');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_AMP_BUTTON',               '&');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_AMP_BUTTON',        'Povol zobrazit tlaËÌtko "Ampersand" ');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_AMP_BUTTON',        'Povol zobrazit tlaƒç√≠tko "Ampersand" ');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_EMDASH_BUTTON',            '&mdash;');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_EMDASH_BUTTON',     'Povol zobrazit tlaËÌtko "em pomlËka" ');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_EMDASH_BUTTON',     'Povol zobrazit tlaƒç√≠tko "em pomlƒçka" ');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_ENDASH_BUTTON',            '&ndash;');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_ENDASH_BUTTON',     'Povol zobrazit tlaËÌtko "en pomlËka"');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_ENDASH_BUTTON',     'Povol zobrazit tlaƒç√≠tko "en pomlƒçka"');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_BULLET_BUTTON',            '&bull;');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_BULLET_BUTTON',     'Povol zobrazit tlaËÌtko "TeËka"');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_DQUOTES_BUTTON',    'Povol zobrazit tlaËÌtko "DvojitÈ uvozovky"');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_SQUOTES_BUTTON',    'Povol zobrazit tlaËÌtko "JednoduchÈ uvozovky"');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_BULLET_BUTTON',     'Povol zobrazit tlaƒç√≠tko "Teƒçka"');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_DQUOTES_BUTTON',    'Povol zobrazit tlaƒç√≠tko "Dvojit√© uvozovky"');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_SQUOTES_BUTTON',    'Povol zobrazit tlaƒç√≠tko "Jednoduch√© uvozovky"');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_APOS_BUTTON',              '&apos;');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_APOS_BUTTON',       'Povol zobrazit tlaËÌtko "Apostrof"');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_APOS_BUTTON',       'Povol zobrazit tlaƒç√≠tko "Apostrof"');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_ACCENT_BUTTON',            '&nbsp;&#x0301;');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_ACCENT_BUTTON',     'Povol zobrazit tlaËÌtko "Akcent" (Ë·rka)');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_ACCENT_BUTTON',     'Povol zobrazit tlaƒç√≠tko "Akcent" (ƒç√°rka)');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_GACCENT_BUTTON',           '&nbsp;&#x0300;');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_GACCENT_BUTTON',    'Povol zobrazit tlaËÌtko "Grave" (obr·cen˝ akcent)');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_STRIKE_BUTTON',            'äkrt');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_STRIKE_BUTTON',     'Povol zobrazit tlaËÌtko "P¯eökrtnutÌ"');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_GACCENT_BUTTON',    'Povol zobrazit tlaƒç√≠tko "Grave" (obr√°cen√Ω akcent)');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_STRIKE_BUTTON',            '≈†krt');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_STRIKE_BUTTON',     'Povol zobrazit tlaƒç√≠tko "P≈ôe≈°krtnut√≠"');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_CENTER_BUTTON',            'Centrovat');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_CENTER_BUTTON',     'Povol zobrazit tlaËÌtko "Vycentrovat"');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_ENABLE_CENTER_BUTTON',     'Povol zobrazit tlaƒç√≠tko "Vycentrovat"');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES1',                'Typ 1');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES2',                'Typ 2');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES3',                'Typ 3');
@@ -38,7 +38,7 @@
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES6',                'Typ 6');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES7',                'Typ 7');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES8',                'Typ 8');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_DQUOTES_NOTE',        "Dvojit˝ch uvozovek m˘ûe b˝t nÏkolikero druh˘:<br />
+@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_DQUOTES_NOTE',        "Dvojit√Ωch uvozovek m≈Ø≈æe b√Ωt nƒõkolikero druh≈Ø:<br />
 <div style=\"margin: auto;\">
 <span style=\"padding-left:40px;\">Typ 1: &ldquo;...&rdquo;</span>
 <span style=\"padding-left:40px;\">Typ 2: &bdquo;...&ldquo;</span>
@@ -50,7 +50,7 @@
 <span style=\"padding-left:40px;\">Typ 7: &raquo;...&laquo;</span>
 <span style=\"padding-left:40px;\">Typ 8: &raquo;...&raquo;</span>
 </div>");
-@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_DQUOTES_BUTTON',      'Vyber typ dvojit˝ch uvozovek, kter˝ se m· pouûÌt');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_DQUOTES_BUTTON',      'Vyber typ dvojit√Ωch uvozovek, kter√Ω se m√° pou≈æ√≠t');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES1_BUTTON',         '&ldquo; &rdquo;');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES2_BUTTON',         '&bdquo; &ldquo;');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_DBQUOTES3_BUTTON',         '&bdquo; &rdquo;');
@@ -67,7 +67,7 @@
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES6',                 'Typ 6');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES7',                 'Typ 7');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES8',                 'Typ 8');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_SQUOTES_NOTE',        "Jednoduch˝ch uvozovek m˘ûe b˝t nÏkolikero druh˘:<br />
+@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_SQUOTES_NOTE',        "Jednoduch√Ωch uvozovek m≈Ø≈æe b√Ωt nƒõkolikero druh≈Ø:<br />
 <div style=\"margin: auto;\">
 <span style=\"padding-left:40px;\">Typ 1: &lsquo;...&rsquo;</span>
 <span style=\"padding-left:40px;\">Typ 2: &sbquo;...&lsquo;</span>
@@ -79,7 +79,7 @@
 <span style=\"padding-left:40px;\">Typ 7: &rsaquo;...&lsaquo;</span>
 <span style=\"padding-left:40px;\">Typ 8: &rsaquo;...&rsaquo;</span>
 </div>");
-@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_SQUOTES_BUTTON',      'Vyber typ jednoduch˝ch uvozovek, kter˝ se m· pouûÌt');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_TYPE_SQUOTES_BUTTON',      'Vyber typ jednoduch√Ωch uvozovek, kter√Ω se m√° pou≈æ√≠t');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES1_BUTTON',          '&lsquo; &rsquo;');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES2_BUTTON',          '&sbquo; &lsquo;');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES3_BUTTON',          '&sbquo; &rsquo;');
@@ -88,9 +88,9 @@
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES6_BUTTON',          '&lsaquo; &rsaquo;');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES7_BUTTON',          '&rsaquo; &lsaquo;');
 @define('PLUGIN_EVENT_TYPESETBUTTONS_SQUOTES8_BUTTON',          '&rsaquo; &rsaquo;');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_REAL_APOS',                'PouûÌt skuteËn˝ apostrof (pokud nenÌ vybr·no, tlaËÌtko vloûÌ "pravou jednoduchou uvozovku")');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_USED_NAMED_ENTS',          'PouûÌt pojmenovanÈ entity, kde to jen jde. PojmenovanÈ entity mohou rozhodit nÏkterÈ typy xml v˝stup˘.');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_REAL_APOS',                'Pou≈æ√≠t skuteƒçn√Ω apostrof (pokud nen√≠ vybr√°no, tlaƒç√≠tko vlo≈æ√≠ "pravou jednoduchou uvozovku")');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_USED_NAMED_ENTS',          'Pou≈æ√≠t pojmenovan√© entity, kde to jen jde. Pojmenovan√© entity mohou rozhodit nƒõkter√© typy xml v√Ωstup≈Ø.');
 
-@define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM',                   'VolitelnÈ HTML tagy');
-@define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM_DESC',              'Tady m˘ûete zadat seznam libovoln˝ch HTML tag˘, kterÈ chcete p¯idat do liöty se speci·lnÌmi tlaËÌtky. Form·t je: Nadpis@<otevÌracÌ tag>@<uzavÌracÌ tag>. R˘znÈ tagy jsou oddÏleny znakem | (roura - pipe). P¯Ìklad: MojeCitace@<div class="MojeCitace">@</div>|Vystraha@<script type="text/javascript">alert(\'@\');</script>. Pokud nepot¯ebujete uzavÌracÌ tag, nechte jeho mÌsto jednoduöe nevyplnÏnÈ. P¯Ìklad: M˘jObr·zek@<img src="blabla.gif">@');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM',                   'Voliteln√© HTML tagy');
+@define('PLUGIN_EVENT_TYPESETBUTTONS_CUSTOM_DESC',              'Tady m≈Ø≈æete zadat seznam libovoln√Ωch HTML tag≈Ø, kter√© chcete p≈ôidat do li≈°ty se speci√°ln√≠mi tlaƒç√≠tky. Form√°t je: Nadpis@<otev√≠rac√≠ tag>@<uzav√≠rac√≠ tag>. R≈Øzn√© tagy jsou oddƒõleny znakem | (roura - pipe). P≈ô√≠klad: MojeCitace@<div class="MojeCitace">@</div>|Vystraha@<script type="text/javascript">alert(\'@\');</script>. Pokud nepot≈ôebujete uzav√≠rac√≠ tag, nechte jeho m√≠sto jednodu≈°e nevyplnƒõn√©. P≈ô√≠klad: M≈ØjObr√°zek@<img src="blabla.gif">@');
 
