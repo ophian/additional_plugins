@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/30
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/15
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/21
  */
 
@@ -15,94 +15,94 @@
 //
 
 @define('PLUGIN_LINKLIST_TITLE', 'Link List');
-@define('PLUGIN_LINKLIST_DESC', 'Správce odkazù (linkù) - V boèním panelu zobrazuje vaše oblíbené odkazy.');
+@define('PLUGIN_LINKLIST_DESC', 'SprÃ¡vce odkazÅ¯ (linkÅ¯) - V boÄnÃ­m panelu zobrazuje vaÅ¡e oblÃ­benÃ© odkazy.');
 @define('PLUGIN_LINKLIST_LINK', 'Odkaz (Link)');
-@define('PLUGIN_LINKLIST_LINK_NAME', 'Jméno');
+@define('PLUGIN_LINKLIST_LINK_NAME', 'JmÃ©no');
 @define('PLUGIN_LINKLIST_ADMINLINK', 'Odkazy (LinkList)');
-@define('PLUGIN_LINKLIST_ORDER', 'Seøaï odkazy podle:');
-@define('PLUGIN_LINKLIST_ORDER_DESC', 'Vyber kritérium, podle kterého se mají øadit odkazy pøi zobrazování.');
-@define('PLUGIN_LINKLIST_ORDER_NUM_ORDER', 'Poøadí zadané uivatelem (tebou)');
-@define('PLUGIN_LINKLIST_ORDER_DATE_ACS', 'Datum (Od nejstaršího po nejnovìjší)');
-@define('PLUGIN_LINKLIST_ORDER_DATE_DESC', 'Datum (Od nejnovìjšího po nejstarší)');
+@define('PLUGIN_LINKLIST_ORDER', 'SeÅ™aÄ odkazy podle:');
+@define('PLUGIN_LINKLIST_ORDER_DESC', 'Vyber kritÃ©rium, podle kterÃ©ho se majÃ­ Å™adit odkazy pÅ™i zobrazovÃ¡nÃ­.');
+@define('PLUGIN_LINKLIST_ORDER_NUM_ORDER', 'PoÅ™adÃ­ zadanÃ© uÅ¾ivatelem (tebou)');
+@define('PLUGIN_LINKLIST_ORDER_DATE_ACS', 'Datum (Od nejstarÅ¡Ã­ho po nejnovÄ›jÅ¡Ã­)');
+@define('PLUGIN_LINKLIST_ORDER_DATE_DESC', 'Datum (Od nejnovÄ›jÅ¡Ã­ho po nejstarÅ¡Ã­)');
 @define('PLUGIN_LINKLIST_ORDER_CATEGORY', 'Kategorie');
-@define('PLUGIN_LINKLIST_ORDER_ALPHA', 'Abecednì');
-@define('PLUGIN_LINKLIST_LINKS', 'Správa odkazù');
-@define('PLUGIN_LINKLIST_NOLINKS', 'ádné odkazy nejsou zadány');
-@define('PLUGIN_LINKLIST_CATEGORY', 'Pouít kategorie');
-@define('PLUGIN_LINKLIST_CATEGORYDESC', 'Pouít kategorie pøi seskupování odkazù.');
-@define('PLUGIN_LINKLIST_ADDLINK', 'Pøidat odkaz');
-@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'Pøíklad správného odkazu: https://github.com/ophian/styx/discussions nebo https://ophian.github.io/book/');
+@define('PLUGIN_LINKLIST_ORDER_ALPHA', 'AbecednÄ›');
+@define('PLUGIN_LINKLIST_LINKS', 'SprÃ¡va odkazÅ¯');
+@define('PLUGIN_LINKLIST_NOLINKS', 'Å½Ã¡dnÃ© odkazy nejsou zadÃ¡ny');
+@define('PLUGIN_LINKLIST_CATEGORY', 'PouÅ¾Ã­t kategorie');
+@define('PLUGIN_LINKLIST_CATEGORYDESC', 'PouÅ¾Ã­t kategorie pÅ™i seskupovÃ¡nÃ­ odkazÅ¯.');
+@define('PLUGIN_LINKLIST_ADDLINK', 'PÅ™idat odkaz');
+@define('PLUGIN_LINKLIST_LINK_EXAMPLE', 'PÅ™Ã­klad sprÃ¡vnÃ©ho odkazu: https://github.com/ophian/styx/discussions nebo https://ophian.github.io/book/');
 @define('PLUGIN_LINKLIST_EDITLINK', 'Upravit odkaz');
 @define('PLUGIN_LINKLIST_LINKDESC', 'Popis odkazu');
-@define('PLUGIN_LINKLIST_CATEGORY_NAME', 'Systém kategorií:');
-@define('PLUGIN_LINKLIST_CATEGORY_NAME_DESC', 'Mùete si vybrat, kterı systém kategorií chcete pouít. Jestli stejné kategorie, jako u pøíspìvkù, nebo nezávislé kategorie definované v tomto pluginu.');
-@define('PLUGIN_LINKLIST_CATEGORY_NAME_CUSTOM', 'Vlastní');
-@define('PLUGIN_LINKLIST_CATEGORY_NAME_DEFAULT', 'Standardní - z blogu');
-@define('PLUGIN_LINKLIST_ADD_CAT', 'Pøidat kategorii');
-@define('PLUGIN_LINKLIST_CAT_NAME', 'Název kategorie');
-@define('PLUGIN_LINKLIST_PARENT_CATEGORY', 'Nadøazená (rodièovská) kategorie');
-@define('PLUGIN_LINKLIST_ADMINCAT', 'Správa kategorií');
-@define('PLUGIN_LINKLIST_CACHE_NAME', 'Cachovat postranní sloupec');
-@define('PLUGIN_LINKLIST_CACHE_DESC', 'Cachování postranního sloupce zvyšuje rychlost stránek. Cache je obnovována pouze pøi vkládání odkazù pøes administrativní rozhraní. Není obnovována pøi ruèním zadávání pomocí xml.');
+@define('PLUGIN_LINKLIST_CATEGORY_NAME', 'SystÃ©m kategoriÃ­:');
+@define('PLUGIN_LINKLIST_CATEGORY_NAME_DESC', 'MÅ¯Å¾ete si vybrat, kterÃ½ systÃ©m kategoriÃ­ chcete pouÅ¾Ã­t. Jestli stejnÃ© kategorie, jako u pÅ™Ã­spÄ›vkÅ¯, nebo nezÃ¡vislÃ© kategorie definovanÃ© v tomto pluginu.');
+@define('PLUGIN_LINKLIST_CATEGORY_NAME_CUSTOM', 'VlastnÃ­');
+@define('PLUGIN_LINKLIST_CATEGORY_NAME_DEFAULT', 'StandardnÃ­ - z blogu');
+@define('PLUGIN_LINKLIST_ADD_CAT', 'PÅ™idat kategorii');
+@define('PLUGIN_LINKLIST_CAT_NAME', 'NÃ¡zev kategorie');
+@define('PLUGIN_LINKLIST_PARENT_CATEGORY', 'NadÅ™azenÃ¡ (rodiÄovskÃ¡) kategorie');
+@define('PLUGIN_LINKLIST_ADMINCAT', 'SprÃ¡va kategoriÃ­');
+@define('PLUGIN_LINKLIST_CACHE_NAME', 'Cachovat postrannÃ­ sloupec');
+@define('PLUGIN_LINKLIST_CACHE_DESC', 'CachovÃ¡nÃ­ postrannÃ­ho sloupce zvyÅ¡uje rychlost strÃ¡nek. Cache je obnovovÃ¡na pouze pÅ™i vklÃ¡dÃ¡nÃ­ odkazÅ¯ pÅ™es administrativnÃ­ rozhranÃ­. NenÃ­ obnovovÃ¡na pÅ™i ruÄnÃ­m zadÃ¡vÃ¡nÃ­ pomocÃ­ xml.');
 @define('PLUGIN_LINKLIST_ENABLED_NAME', 'Povolit');
-@define('PLUGIN_LINKLIST_ENABLED_DESC', 'Povolit tento zásuvnı modul.');
-@define('PLUGIN_LINKLIST_DELETE_WARN', 'Pokud smaete kategorii, všechny odkazy v ní obsaené budou pøesunuty do koøenové kategorie.');
+@define('PLUGIN_LINKLIST_ENABLED_DESC', 'Povolit tento zÃ¡suvnÃ½ modul.');
+@define('PLUGIN_LINKLIST_DELETE_WARN', 'Pokud smaÅ¾ete kategorii, vÅ¡echny odkazy v nÃ­ obsaÅ¾enÃ© budou pÅ™esunuty do koÅ™enovÃ© kategorie.');
 
 //
 //  serendipity_plugin_linklist.php
 //
 
 @define('PLUGIN_LINKS_NAME', 'Link List');
-@define('PLUGIN_LINKS_BLAHBLAH', 'Správce odkazù (linkù) - V boèním panelu zobrazuje vaše oblíbené odkazy.');
+@define('PLUGIN_LINKS_BLAHBLAH', 'SprÃ¡vce odkazÅ¯ (linkÅ¯) - V boÄnÃ­m panelu zobrazuje vaÅ¡e oblÃ­benÃ© odkazy.');
 @define('PLUGIN_LINKS_TITLE', 'Nadpis');
-@define('PLUGIN_LINKS_TITLE_BLAHBLAH', 'Nadpis celého panelu odkazù v postranním sloupci');
-@define('PLUGIN_LINKS_TOP_LEVEL', 'Text nejvyšší úrovnì');
-@define('PLUGIN_LINKS_TOP_LEVEL_BLAHBLAH', 'Zadejte text, kterı se má zobrazit jako popis hlavní kategorie stromu odkazù. Pole mùete té nechat prázdné.');
-@define('PLUGIN_LINKS_DIRECTXML', 'Vloit XML pøímo');
-@define('PLUGIN_LINKS_DIRECTXML_BLAHBLAH', 'Odkazy mùete vloit pøímo pomocí ruèního zadání XML struktury. (zadávání pøes administrátorské rozhraní pak nebude moné)');
+@define('PLUGIN_LINKS_TITLE_BLAHBLAH', 'Nadpis celÃ©ho panelu odkazÅ¯ v postrannÃ­m sloupci');
+@define('PLUGIN_LINKS_TOP_LEVEL', 'Text nejvyÅ¡Å¡Ã­ ÃºrovnÄ›');
+@define('PLUGIN_LINKS_TOP_LEVEL_BLAHBLAH', 'Zadejte text, kterÃ½ se mÃ¡ zobrazit jako popis hlavnÃ­ kategorie stromu odkazÅ¯. Pole mÅ¯Å¾ete tÃ©Å¾ nechat prÃ¡zdnÃ©.');
+@define('PLUGIN_LINKS_DIRECTXML', 'VloÅ¾it XML pÅ™Ã­mo');
+@define('PLUGIN_LINKS_DIRECTXML_BLAHBLAH', 'Odkazy mÅ¯Å¾ete vloÅ¾it pÅ™Ã­mo pomocÃ­ ruÄnÃ­ho zadÃ¡nÃ­ XML struktury. (zadÃ¡vÃ¡nÃ­ pÅ™es administrÃ¡torskÃ© rozhranÃ­ pak nebude moÅ¾nÃ©)');
 @define('PLUGIN_LINKS_LINKS', 'Odkazy');
-@define('PLUGIN_LINKS_LINKS_BLAHBLAH', 'Pouívá se XML!!! - pro zadání adresáøe (kategorie) pouijte strukturu "<dir name="dirname"> a uzavøete pomocí </dir> - jednotlivé odkazy zadávejte jako "<link name="linkname" link="http://link.com/" />');
-@define('PLUGIN_LINKS_OPENALL', 'Text "Otevøi všechny"');
-@define('PLUGIN_LINKS_OPENALL_BLAHBLAH', 'Zadej text, kterı se má zobrazit u pøepínaèe "Otevøi všechny" nad seznamem odkazù');
-@define('PLUGIN_LINKS_OPENALL_DEFAULT', 'Otevøi všechny');
-@define('PLUGIN_LINKS_CLOSEALL', 'Zavøi všechny');
-@define('PLUGIN_LINKS_CLOSEALL_BLAHBLAH', 'Zadej text, kterı se má zobrazit u pøepínaèe "Zavøi všechny" nad seznamem odkazù');
-@define('PLUGIN_LINKS_CLOSEALL_DEFAULT', 'Zavøi všechny');
-@define('PLUGIN_LINKS_SHOW', 'Zobrazit pøepínaèe "Otevøi všechny" a "Zavøi všechny" ');
-@define('PLUGIN_LINKS_SHOW_BLAHBLAH', 'Chceš zobrazit pøepínaèe "Otevøi všechny" a "Zavøi všechny" u stromu odkazù?');
-@define('PLUGIN_LINKS_LOCATION', 'Poloha pøepínaèù "Otevøi/Zavøi všechny"');
-@define('PLUGIN_LINKS_LOCATION_BLAHBLAH', 'Kde se mají zobrazit pøepínaèe "Otevøi všechny" a "Zavøi všechny"?');
-@define('PLUGIN_LINKS_LOCATION_TOP', 'Nahoøe');
+@define('PLUGIN_LINKS_LINKS_BLAHBLAH', 'PouÅ¾Ã­vÃ¡ se XML!!! - pro zadÃ¡nÃ­ adresÃ¡Å™e (kategorie) pouÅ¾ijte strukturu "<dir name="dirname"> a uzavÅ™ete pomocÃ­ </dir> - jednotlivÃ© odkazy zadÃ¡vejte jako "<link name="linkname" link="http://link.com/" />');
+@define('PLUGIN_LINKS_OPENALL', 'Text "OtevÅ™i vÅ¡echny"');
+@define('PLUGIN_LINKS_OPENALL_BLAHBLAH', 'Zadej text, kterÃ½ se mÃ¡ zobrazit u pÅ™epÃ­naÄe "OtevÅ™i vÅ¡echny" nad seznamem odkazÅ¯');
+@define('PLUGIN_LINKS_OPENALL_DEFAULT', 'OtevÅ™i vÅ¡echny');
+@define('PLUGIN_LINKS_CLOSEALL', 'ZavÅ™i vÅ¡echny');
+@define('PLUGIN_LINKS_CLOSEALL_BLAHBLAH', 'Zadej text, kterÃ½ se mÃ¡ zobrazit u pÅ™epÃ­naÄe "ZavÅ™i vÅ¡echny" nad seznamem odkazÅ¯');
+@define('PLUGIN_LINKS_CLOSEALL_DEFAULT', 'ZavÅ™i vÅ¡echny');
+@define('PLUGIN_LINKS_SHOW', 'Zobrazit pÅ™epÃ­naÄe "OtevÅ™i vÅ¡echny" a "ZavÅ™i vÅ¡echny" ');
+@define('PLUGIN_LINKS_SHOW_BLAHBLAH', 'ChceÅ¡ zobrazit pÅ™epÃ­naÄe "OtevÅ™i vÅ¡echny" a "ZavÅ™i vÅ¡echny" u stromu odkazÅ¯?');
+@define('PLUGIN_LINKS_LOCATION', 'Poloha pÅ™epÃ­naÄÅ¯ "OtevÅ™i/ZavÅ™i vÅ¡echny"');
+@define('PLUGIN_LINKS_LOCATION_BLAHBLAH', 'Kde se majÃ­ zobrazit pÅ™epÃ­naÄe "OtevÅ™i vÅ¡echny" a "ZavÅ™i vÅ¡echny"?');
+@define('PLUGIN_LINKS_LOCATION_TOP', 'NahoÅ™e');
 @define('PLUGIN_LINKS_LOCATION_BOTTOM', 'Dole');
-@define('PLUGIN_LINKS_SELECTION', 'Pouít zvırazòování vıbìru');
-@define('PLUGIN_LINKS_SELECTION_BLAHBLAH', 'Pokud je nastaveno na ANO, právì navštívené odkazy jsou zvırazòovány.');
-@define('PLUGIN_LINKS_COOKIE', 'Pouít cookies');
-@define('PLUGIN_LINKS_COOKIE_BLAHBLAH', 'Pokud je nastaveno na ANO, strom odkazù pouívá cookies k tomu, aby si pamatoval svùj aktuální stav (které kategorie jsou otevøené a které zavøené).');
-@define('PLUGIN_LINKS_LINE', 'Vykreslit èáry');
-@define('PLUGIN_LINKS_LINE_BLAHBLAH', 'Pokud nastaveno na ANO, strom odkazù je vykreslen s èárami spojující sousedící poloky a kategorie.');
-@define('PLUGIN_LINKS_ICON', 'Pouít ikony');
-@define('PLUGIN_LINKS_ICON_BLAHBLAH', 'Pokud nastaveno na ANO, strom odkazù je vykreslen s pouitím ikon pro odakzy a kategorie.');
-@define('PLUGIN_LINKS_STATUS', 'Zobrazovat text ve status øádku');
-@define('PLUGIN_LINKS_STATUS_BLAHBLAH', 'Pokud nastaveno na ANO, zobrazuje ve status øádku místo adresy název odkazu.');
-@define('PLUGIN_LINKS_CLOSELEVEL', 'Zavírat stejnou úroveò');
-@define('PLUGIN_LINKS_CLOSELEVEL_BLAHBLAH', 'Pokud nastaveno na ANO, je moné rozkliknout pouze jednu kategorii ve stromu odkazù. Pøepínaèe "Zavøít/otevøít všechny" pøi zaškrtnutí této volby nefungují.');
-@define('PLUGIN_LINKS_TARGET', 'Cíl - Target');
-@define('PLUGIN_LINKS_TARGET_BLAHBLAH', 'Cíl - Target pro zobrazování odkazù, moné hodnoty jsou "_blank", "_self", "_top", "_parent" nebo jakékoliv jméno rámu');
-@define('PLUGIN_LINKS_IMGDIR', 'Obrázky z adresáøe v pluginu');
-@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Pokud je nastaveno na ANO, plugin bude hledat obrázky pro odkazy/kategorie ve svém podadresáøi. Pokud je nastaveno na NE, plugin se bude odkazovat do adresáøe "/templates/default/img/". Nastavení volby na NE je nezbytné pro sdílené instalace, ale obrázky musíte pøesunout do adresáøe šablony ruènì.');
-@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_NAME', 'Strom kategorií otevøen nebo zavøen.');
-@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_DESC', 'Pøi pouití øazení odkazù podle "Kategorie", bude strom kategorií pøednastaven jako otevøenı/zavøenı, pokud se nenajde nastavení o jeho stavu.');
-@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_NAME_CLOSED', 'Zavøenı');
-@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_NAME_OPEN', 'Otevøenı');
+@define('PLUGIN_LINKS_SELECTION', 'PouÅ¾Ã­t zvÃ½razÅˆovÃ¡nÃ­ vÃ½bÄ›ru');
+@define('PLUGIN_LINKS_SELECTION_BLAHBLAH', 'Pokud je nastaveno na ANO, prÃ¡vÄ› navÅ¡tÃ­venÃ© odkazy jsou zvÃ½razÅˆovÃ¡ny.');
+@define('PLUGIN_LINKS_COOKIE', 'PouÅ¾Ã­t cookies');
+@define('PLUGIN_LINKS_COOKIE_BLAHBLAH', 'Pokud je nastaveno na ANO, strom odkazÅ¯ pouÅ¾Ã­vÃ¡ cookies k tomu, aby si pamatoval svÅ¯j aktuÃ¡lnÃ­ stav (kterÃ© kategorie jsou otevÅ™enÃ© a kterÃ© zavÅ™enÃ©).');
+@define('PLUGIN_LINKS_LINE', 'Vykreslit ÄÃ¡ry');
+@define('PLUGIN_LINKS_LINE_BLAHBLAH', 'Pokud nastaveno na ANO, strom odkazÅ¯ je vykreslen s ÄÃ¡rami spojujÃ­cÃ­ sousedÃ­cÃ­ poloÅ¾ky a kategorie.');
+@define('PLUGIN_LINKS_ICON', 'PouÅ¾Ã­t ikony');
+@define('PLUGIN_LINKS_ICON_BLAHBLAH', 'Pokud nastaveno na ANO, strom odkazÅ¯ je vykreslen s pouÅ¾itÃ­m ikon pro odakzy a kategorie.');
+@define('PLUGIN_LINKS_STATUS', 'Zobrazovat text ve status Å™Ã¡dku');
+@define('PLUGIN_LINKS_STATUS_BLAHBLAH', 'Pokud nastaveno na ANO, zobrazuje ve status Å™Ã¡dku mÃ­sto adresy nÃ¡zev odkazu.');
+@define('PLUGIN_LINKS_CLOSELEVEL', 'ZavÃ­rat stejnou ÃºroveÅˆ');
+@define('PLUGIN_LINKS_CLOSELEVEL_BLAHBLAH', 'Pokud nastaveno na ANO, je moÅ¾nÃ© rozkliknout pouze jednu kategorii ve stromu odkazÅ¯. PÅ™epÃ­naÄe "ZavÅ™Ã­t/otevÅ™Ã­t vÅ¡echny" pÅ™i zaÅ¡krtnutÃ­ tÃ©to volby nefungujÃ­.');
+@define('PLUGIN_LINKS_TARGET', 'CÃ­l - Target');
+@define('PLUGIN_LINKS_TARGET_BLAHBLAH', 'CÃ­l - Target pro zobrazovÃ¡nÃ­ odkazÅ¯, moÅ¾nÃ© hodnoty jsou "_blank", "_self", "_top", "_parent" nebo jakÃ©koliv jmÃ©no rÃ¡mu');
+@define('PLUGIN_LINKS_IMGDIR', 'ObrÃ¡zky z adresÃ¡Å™e v pluginu');
+@define('PLUGIN_LINKS_IMGDIR_BLAHBLAH', 'Pokud je nastaveno na ANO, plugin bude hledat obrÃ¡zky pro odkazy/kategorie ve svÃ©m podadresÃ¡Å™i. Pokud je nastaveno na NE, plugin se bude odkazovat do adresÃ¡Å™e "/templates/default/img/". NastavenÃ­ volby na NE je nezbytnÃ© pro sdÃ­lenÃ© instalace, ale obrÃ¡zky musÃ­te pÅ™esunout do adresÃ¡Å™e Å¡ablony ruÄnÄ›.');
+@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_NAME', 'Strom kategoriÃ­ otevÅ™en nebo zavÅ™en.');
+@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_DESC', 'PÅ™i pouÅ¾itÃ­ Å™azenÃ­ odkazÅ¯ podle "Kategorie", bude strom kategoriÃ­ pÅ™ednastaven jako otevÅ™enÃ½/zavÅ™enÃ½, pokud se nenajde nastavenÃ­ o jeho stavu.');
+@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_NAME_CLOSED', 'ZavÅ™enÃ½');
+@define('PLUGIN_LINKLIST_CATEGORY_DEFAULT_OPEN_NAME_OPEN', 'OtevÅ™enÃ½');
 @define('PLUGIN_LINKLIST_OUTSTYLE_DTREE', 'dtree');
 @define('PLUGIN_LINKLIST_OUTSTYLE_CSS', 'CSS List');
 @define('PLUGIN_LINKLIST_ORDER_OUTSTYLE_SIMP_CSS', 'Simple CSS');
-@define('PLUGIN_LINKS_OUTSTYLE', 'Vyber styl zobrazení odkazovníku (LinkListu)');
-@define('PLUGIN_LINKS_OUTSTYLE_BLAHBLAH', 'Vyber styl zobrazení odkazovníku (LinkListu).  "Dtree" zobrazuje strom pomocí javascriptu. "CSS list" pouivá ostylované tagy div a jednoduchı javascript, ovšem neumoòuje všechny volby jako Dtree. "Simple CSS" zobrazí jednoduchı odkazovník formátovanı pouze pomocí CSS stylù. Pamatujte, e Dtree není prùchozí pro vyhledávací roboty. ');
-@define('PLUGIN_LINKS_CALLMARKUP', 'Pouívat znaèkování?');
-@define('PLUGIN_LINKS_CALLMARKUP_BLAHBLAH', 'Zda pouívat znaèkování na odkazovník. Tato volba pouije všechna znaèkování, která jsou obecnì pouívána na vloenı HTML kód.');
-@define('PLUGIN_LINKS_USEDESC', 'Pouít zadanı popis');
-@define('PLUGIN_LINKS_USEDESC_BLAHBLAH', 'Pouít popis pro titulek odkazu, pokud je pøítomen.');
-@define('PLUGIN_LINKS_PREPEND', 'Zadej jakıkoliv text. Zobrazí se pøed seznamem odkazù.');
-@define('PLUGIN_LINKS_APPEND', 'Zadej jakıkoliv text. Zobrazí se za seznamem odkazù.');
+@define('PLUGIN_LINKS_OUTSTYLE', 'Vyber styl zobrazenÃ­ odkazovnÃ­ku (LinkListu)');
+@define('PLUGIN_LINKS_OUTSTYLE_BLAHBLAH', 'Vyber styl zobrazenÃ­ odkazovnÃ­ku (LinkListu).  "Dtree" zobrazuje strom pomocÃ­ javascriptu. "CSS list" pouÅ¾ivÃ¡ ostylovanÃ© tagy div a jednoduchÃ½ javascript, ovÅ¡em neumoÅ¾Åˆuje vÅ¡echny volby jako Dtree. "Simple CSS" zobrazÃ­ jednoduchÃ½ odkazovnÃ­k formÃ¡tovanÃ½ pouze pomocÃ­ CSS stylÅ¯. Pamatujte, Å¾e Dtree nenÃ­ prÅ¯chozÃ­ pro vyhledÃ¡vacÃ­ roboty. ');
+@define('PLUGIN_LINKS_CALLMARKUP', 'PouÅ¾Ã­vat znaÄkovÃ¡nÃ­?');
+@define('PLUGIN_LINKS_CALLMARKUP_BLAHBLAH', 'Zda pouÅ¾Ã­vat znaÄkovÃ¡nÃ­ na odkazovnÃ­k. Tato volba pouÅ¾ije vÅ¡echna znaÄkovÃ¡nÃ­, kterÃ¡ jsou obecnÄ› pouÅ¾Ã­vÃ¡na na vloÅ¾enÃ½ HTML kÃ³d.');
+@define('PLUGIN_LINKS_USEDESC', 'PouÅ¾Ã­t zadanÃ½ popis');
+@define('PLUGIN_LINKS_USEDESC_BLAHBLAH', 'PouÅ¾Ã­t popis pro titulek odkazu, pokud je pÅ™Ã­tomen.');
+@define('PLUGIN_LINKS_PREPEND', 'Zadej jakÃ½koliv text. ZobrazÃ­ se pÅ™ed seznamem odkazÅ¯.');
+@define('PLUGIN_LINKS_APPEND', 'Zadej jakÃ½koliv text. ZobrazÃ­ se za seznamem odkazÅ¯.');
 

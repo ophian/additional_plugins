@@ -26,7 +26,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '4.0.0');
+        $propbag->add('version',       '4.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -69,7 +69,7 @@ class serendipity_event_linklist extends serendipity_event
                         $link = $row['link'];
                         $id   = $row['id'];
                         $descrip = $row['descrip'];
-                        $output .= '<link name="'.serendipity_specialchars($name).'" link="http://'.$link.'" descrip="'.serendipity_specialchars($descrip).'" />'."\n";
+                        $output .= '<link name="'.htmlspecialchars($name).'" link="http://'.$link.'" descrip="'.htmlspecialchars($descrip).'" />'."\n";
                     }
                 }
             }
@@ -113,7 +113,7 @@ class serendipity_event_linklist extends serendipity_event
                 $cat_name = $sql[0]['category_name'];
 
                 $cat_open = true;
-                $open_category = str_replace($replace_name, serendipity_specialchars($cat_name), $open_category);
+                $open_category = str_replace($replace_name, htmlspecialchars($cat_name), $open_category);
                 $output .= $open_category;
             }
         }
@@ -146,9 +146,9 @@ class serendipity_event_linklist extends serendipity_event
                 $replace_link = "_link_";
                 $replace_descrip = "_descrip_";
 
-                $link_out = str_replace($replace_linkname, serendipity_specialchars($name), $link_out);
+                $link_out = str_replace($replace_linkname, htmlspecialchars($name), $link_out);
                 $link_out = str_replace($replace_link,$link,$link_out);
-                $link_out = str_replace($replace_descrip, serendipity_specialchars($descrip), $link_out);
+                $link_out = str_replace($replace_descrip, htmlspecialchars($descrip), $link_out);
                 $output .=  $link_out;
             }
         }
@@ -175,7 +175,7 @@ class serendipity_event_linklist extends serendipity_event
     {
         global $serendipity;
         // Create table
-        $q   = "CREATE TABLE ".$serendipity['dbPrefix']."links (
+        $q   = "CREATE TABLE {$serendipity['dbPrefix']}links (
                     id {AUTOINCREMENT} {PRIMARY},
                     date_added int(10) {UNSIGNED} NULL,
                     link varchar(250) default NULL,
@@ -225,7 +225,7 @@ class serendipity_event_linklist extends serendipity_event
         $q   = "CREATE INDEX catind ON {$serendipity['dbPrefix']}links (category);";
         $sql = serendipity_db_schema_import($q);
 
-        $q   = "CREATE TABLE ".$serendipity['dbPrefix']."link_category (
+        $q   = "CREATE TABLE {$serendipity['dbPrefix']}link_category (
                     categoryid {AUTOINCREMENT} {PRIMARY},
                     category_name varchar(255) default NULL,
                     parentid int(11) default 0
@@ -244,9 +244,9 @@ class serendipity_event_linklist extends serendipity_event
     {
         global $serendipity;
         // Drop table
-        $q   = "DROP TABLE ".$serendipity['dbPrefix']."links";
+        $q   = "DROP TABLE {$serendipity['dbPrefix']}links";
         $sql = serendipity_db_schema_import($q);
-        $q   = "DROP TABLE ".$serendipity['dbPrefix']."link_category";
+        $q   = "DROP TABLE {$serendipity['dbPrefix']}link_category";
         $sql = serendipity_db_schema_import($q);
     }
 
@@ -774,7 +774,7 @@ class serendipity_event_linklist extends serendipity_event
                     <input class="input_checkbox" type="checkbox" name="serendipity[category_to_remove][]" value="<?php echo $category['categoryid']; ?>">
                 </td>
                 <td width="300" style="padding-left: <?php echo ($category['depth']*15)+20 ?>px">
-                    <img src="<?php echo serendipity_getTemplateFile('admin/img/folder.png') ?>" style="vertical-align: bottom;"> <?php echo serendipity_specialchars($category['category_name']) ?>
+                    <img src="<?php echo serendipity_getTemplateFile('admin/img/folder.png') ?>" style="vertical-align: bottom;"> <?php echo htmlspecialchars($category['category_name']) ?>
                 </td>
             </tr>
 <?php
