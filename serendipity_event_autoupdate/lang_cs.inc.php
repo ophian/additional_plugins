@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2011/01/20
  */
-@define('PLUGIN_EVENT_AUTOUPDATE_NAME', 'AutomatickÈ aktualizace');
-@define('PLUGIN_EVENT_AUTOUPDATE_DESC', 'Kdyû "tabule" detekuje aktualizace, tento plugin p¯id· moûnost automatickÈ aktualizace blogu kliknutÌm na jedinÈ tlaËÌtko v administraËnÌ sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in "Configuration:: General Settings: Update notification" to "stable" or "beta" to use and get notifications at all!');
+@define('PLUGIN_EVENT_AUTOUPDATE_NAME', 'Automatick√© aktualizace');
+@define('PLUGIN_EVENT_AUTOUPDATE_DESC', 'Kdy≈æ "tabule" detekuje aktualizace, tento plugin p≈ôid√° mo≈ænost automatick√© aktualizace blogu kliknut√≠m na jedin√© tlaƒç√≠tko v administraƒçn√≠ sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in "Configuration:: General Settings: Update notification" to "stable" or "beta" to use and get notifications at all!');
 @define('PLUGIN_EVENT_AUTOUPDATE_UPDATEBUTTON', 'Automaticky aktualizovat');
 
