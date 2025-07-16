@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -26,7 +28,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '4.0.1');
+        $propbag->add('version',       '4.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
