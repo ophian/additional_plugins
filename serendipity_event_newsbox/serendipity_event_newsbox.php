@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -23,11 +25,11 @@ class serendipity_event_newsbox extends serendipity_event
         $propbag->add('groups',        array('FRONTEND_VIEWS', 'FRONTEND_FEATURES'));
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Jude Anthony, Ian Styx');
-        $propbag->add('version',       '1.5');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.7',
-            'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'genpage'                => true,

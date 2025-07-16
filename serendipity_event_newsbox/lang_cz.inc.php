@@ -1,26 +1,26 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/14
  */
 
 @define('PLUGIN_EVENT_NEWSBOX_TITLE', 'Blok s novinkami');
-@define('PLUGIN_EVENT_NEWSBOX_DESC', 'Seskupte pøíspìvky z jedné kategorie na vıchozí stránce blogu do jednoho bloku místo obvyklého vıpisu pøíspìvkù. Podporuje vnoøené bloky s novinkami.');
+@define('PLUGIN_EVENT_NEWSBOX_DESC', 'Seskupte pÅ™Ã­spÄ›vky z jednÃ© kategorie na vÃ½chozÃ­ strÃ¡nce blogu do jednoho bloku mÃ­sto obvyklÃ©ho vÃ½pisu pÅ™Ã­spÄ›vkÅ¯. Podporuje vnoÅ™enÃ© bloky s novinkami.');
 @define('PLUGIN_EVENT_NEWSBOX_TITLEFIELD', 'Nadpis');
-@define('PLUGIN_EVENT_NEWSBOX_TITLEFIELD_DESC', 'Nadpis zobrazující se u tohoto bloku s novinkami');
+@define('PLUGIN_EVENT_NEWSBOX_TITLEFIELD_DESC', 'Nadpis zobrazujÃ­cÃ­ se u tohoto bloku s novinkami');
 @define('PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE', 'Novinky');
 @define('PLUGIN_EVENT_NEWSBOX_CONTENTTYPE', 'Co se bude zobrazovat v tomto bloku s novinkami?');
-@define('PLUGIN_EVENT_NEWSBOX_CONTENTTYPE_DESC', 'Tento blok s novinkami mù¾e obsahovat kategorie nebo jiné bloky s novinkami.');
-@define('PLUGIN_EVENT_NEWSBOX_NEWSCATS', 'Které kategorie bude obsahovat tento blok?');
-@define('PLUGIN_EVENT_NEWSBOX_NEWSCATS_DESC', 'Pokud se rozhodnete, ¾e má blok obsahovat kategorie, mù¾ete je zde vybrat. Mù¾ete vybrat více kategorií najednou. Pøíspìvky z tìchto kategorií se nebudou zobrazovat ve vıpisu pøíspìvkù na vıchozí stranì, nıbr¾ v tomto bloku.');
-@define('PLUGIN_EVENT_NEWSBOX_NUMENTRIES', 'Poèet pøíspìvkù');
-@define('PLUGIN_EVENT_NEWSBOX_NUMENTRIES_DESC', 'Pokud tento blok obsahuje kategorie, zadejte zde maximální poèet pøíspìvkù, kteér se budou v bloku zobrazovat.');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT', 'Umístìní');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_DESC', 'Kde bude blok s novinkami umístìn? Blok mù¾ete umístit na zaèátek nebo na konec seznamu pøíspìvkù, do hlavièky stránky, do patièky, do jiného bloku s novinkami a nebo ho skrıt. Skryté bloky se nikde nezobrazují. Bloky, které obsahují samy sebe se také nikdy nezobraí. V ¹ablonách/stylech vzhledu, které nepodporují bloky s novinkami, se mohou bloky zobrazovat o¹klivì, pokud nejsou zobrazeny nad ostatními pøíspìvky.');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_TOP', 'Záhlaví stránky (when using raw data)');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_TOP', 'Pøed pøíspìvky');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_BOTTOM', 'Za pøíspìvky');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_BOTTOM', 'Patièka stránky (when using raw data)');
-@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_HIDDEN', '*SKRYTİ*');
+@define('PLUGIN_EVENT_NEWSBOX_CONTENTTYPE_DESC', 'Tento blok s novinkami mÅ¯Å¾e obsahovat kategorie nebo jinÃ© bloky s novinkami.');
+@define('PLUGIN_EVENT_NEWSBOX_NEWSCATS', 'KterÃ© kategorie bude obsahovat tento blok?');
+@define('PLUGIN_EVENT_NEWSBOX_NEWSCATS_DESC', 'Pokud se rozhodnete, Å¾e mÃ¡ blok obsahovat kategorie, mÅ¯Å¾ete je zde vybrat. MÅ¯Å¾ete vybrat vÃ­ce kategoriÃ­ najednou. PÅ™Ã­spÄ›vky z tÄ›chto kategoriÃ­ se nebudou zobrazovat ve vÃ½pisu pÅ™Ã­spÄ›vkÅ¯ na vÃ½chozÃ­ stranÄ›, nÃ½brÅ¾ v tomto bloku.');
+@define('PLUGIN_EVENT_NEWSBOX_NUMENTRIES', 'PoÄet pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_EVENT_NEWSBOX_NUMENTRIES_DESC', 'Pokud tento blok obsahuje kategorie, zadejte zde maximÃ¡lnÃ­ poÄet pÅ™Ã­spÄ›vkÅ¯, kteÃ©r se budou v bloku zobrazovat.');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT', 'UmÃ­stÄ›nÃ­');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_DESC', 'Kde bude blok s novinkami umÃ­stÄ›n? Blok mÅ¯Å¾ete umÃ­stit na zaÄÃ¡tek nebo na konec seznamu pÅ™Ã­spÄ›vkÅ¯, do hlaviÄky strÃ¡nky, do patiÄky, do jinÃ©ho bloku s novinkami a nebo ho skrÃ½t. SkrytÃ© bloky se nikde nezobrazujÃ­. Bloky, kterÃ© obsahujÃ­ samy sebe se takÃ© nikdy nezobraÃ­. V Å¡ablonÃ¡ch/stylech vzhledu, kterÃ© nepodporujÃ­ bloky s novinkami, se mohou bloky zobrazovat oÅ¡klivÄ›, pokud nejsou zobrazeny nad ostatnÃ­mi pÅ™Ã­spÄ›vky.');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_TOP', 'ZÃ¡hlavÃ­ strÃ¡nky (when using raw data)');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_TOP', 'PÅ™ed pÅ™Ã­spÄ›vky');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_ENTRY_BOTTOM', 'Za pÅ™Ã­spÄ›vky');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_PAGE_BOTTOM', 'PatiÄka strÃ¡nky (when using raw data)');
+@define('PLUGIN_EVENT_NEWSBOX_PLACEMENT_HIDDEN', '*SKRYTÃ*');
 
