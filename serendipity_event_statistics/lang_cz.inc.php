@@ -1,114 +1,116 @@
 <?php
 
 /**
- *  @version 1381.1
- *  @file lang_cz.inc.php 1381.1 2009-02-14 16:07:47 VladaAjgl
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @version 1381.2
+ *  @file lang_cz.inc.php 1381.2 2009-02-23 17:32:10 VladaAjgl
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/23
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/14
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/02/23
  */
 
 @define('PLUGIN_EVENT_STATISTICS_NAME', 'Statistiky');
-@define('PLUGIN_EVENT_STATISTICS_DESC', 'ZobrazenÌ statistik z·znam˘');
+@define('PLUGIN_EVENT_STATISTICS_DESC', 'Zobrazen√≠ statistik z√°znam≈Ø');
 @define('PLUGIN_EVENT_STATISTICS_OUT_STATISTICS', 'Statistiky');
-@define('PLUGIN_EVENT_STATISTICS_OUT_FIRST_ENTRY', 'PrvnÌ z·znam');
-@define('PLUGIN_EVENT_STATISTICS_OUT_LAST_ENTRY', 'PoslednÌ z·znam');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_ENTRIES', 'Celkem z·znam˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_ENTRIES', 'z·znam˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_PUBLIC', ' ... publikovan˝ch');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_DRAFTS', ' ... koncept˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_PER_AUTHOR', 'Z·znamy podle uæivatel˘');
+@define('PLUGIN_EVENT_STATISTICS_OUT_FIRST_ENTRY', 'Prvn√≠ z√°znam');
+@define('PLUGIN_EVENT_STATISTICS_OUT_LAST_ENTRY', 'Posledn√≠ z√°znam');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_ENTRIES', 'Celkem z√°znam≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_ENTRIES', 'z√°znam≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_PUBLIC', ' ... publikovan√Ωch');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_DRAFTS', ' ... koncept≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_PER_AUTHOR', 'Z√°znamy podle u≈æivatel≈Ø');
 @define('PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES', 'Kategorie');
-@define('PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2', 'kategoriÌ');
-@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES', 'RozdÏlenÌ z·znam˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES2', 'z·znam˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES', 'Nahran˝ch obr·zk˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES2', 'obr·zk˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES', 'RozdÏlenÌ obr·zk˘ podle typ˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES2', 'soubor˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS', 'P¯ijatÈ koment·¯e');
-@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2', 'koment·¯˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS3', 'NejËastÏji komentovanÈ z·znamy');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOPCOMMENTS', 'NejËastÏji komentujÌcÌ Ëten·¯i');
+@define('PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2', 'kategori√≠');
+@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES', 'Rozdƒõlen√≠ z√°znam≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_CATEGORIES2', 'z√°znam≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES', 'Nahran√Ωch obr√°zk≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_UPLOADED_IMAGES2', 'obr√°zk≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES', 'Rozdƒõlen√≠ obr√°zk≈Ø podle typ≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_DISTRIBUTION_IMAGES2', 'soubor≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS', 'P≈ôijat√© koment√°≈ôe');
+@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS2', 'koment√°≈ô≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS3', 'Nejƒçastƒõji komentovan√© z√°znamy');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOPCOMMENTS', 'Nejƒçastƒõji komentuj√≠c√≠ ƒçten√°≈ôi');
 @define('PLUGIN_EVENT_STATISTICS_OUT_LINK', 'www');
-@define('PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS', 'OdbÏratelÈ (RSS kan·lu)');
-@define('PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2', 'odbÏratel˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS', 'NejËastÏji odebÌranÈ z·znamy');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS2', 'odbÏratel˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS', 'P¯ijatÈ odezvy');
+@define('PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS', 'Odbƒõratel√© (RSS kan√°lu)');
+@define('PLUGIN_EVENT_STATISTICS_OUT_SUBSCRIBERS2', 'odbƒõratel≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS', 'Nejƒçastƒõji odeb√≠ran√© z√°znamy');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOPSUBSCRIBERS2', 'odbƒõratel≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS', 'P≈ôijat√© odezvy');
 @define('PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS2', 'odezev');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK', 'NejËastÏji sledovanÈ z·znamy');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK', 'Nejƒçastƒõji sledovan√© z√°znamy');
 @define('PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK2', 'odezev');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACKS3', 'NejËastÏjπÌ odezvy Ëten·¯˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE', 'poËet koment·¯˘ na z·znam');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE', 'poËet odezev na z·znam');
-@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY', 'poËet z·znam˘ za den');
-@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK', 'poËet z·znam˘ za t˝den');
-@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH', 'poËet z·znam˘ za mÏsÌc');
-@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE2', 'koment·¯˘/z·znamy');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE2', 'odezev/z·znam');
-@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY2', 'z·znam˘/den');
-@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK2', 'z·znam˘/t˝den');
-@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH2', 'z·znam˘/mÏsÌc');
-@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS', 'Celkov˝ poËet znak˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS2', 'znak˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE', 'Znak˘ na z·znam');
-@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE2', 'znak˘/z·znam');
-@define('PLUGIN_EVENT_STATISTICS_OUT_LONGEST_ARTICLES', '%s nejdelπÌch z·znam˘');
-@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS', 'PoËet prvk˘');
-@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS_DESC', 'Kolik prvk˘ vzÌt pro statistickÈ vyhodnocenÌ? (Default: 20)');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACKS3', 'Nejƒçastƒõj≈°√≠ odezvy ƒçten√°≈ô≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE', 'poƒçet koment√°≈ô≈Ø na z√°znam');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE', 'poƒçet odezev na z√°znam');
+@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY', 'poƒçet z√°znam≈Ø za den');
+@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK', 'poƒçet z√°znam≈Ø za t√Ωden');
+@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH', 'poƒçet z√°znam≈Ø za mƒõs√≠c');
+@define('PLUGIN_EVENT_STATISTICS_OUT_COMMENTS_PER_ARTICLE2', 'koment√°≈ô≈Ø/z√°znamy');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TRACKBACKS_PER_ARTICLE2', 'odezev/z√°znam');
+@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_DAY2', 'z√°znam≈Ø/den');
+@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_WEEK2', 'z√°znam≈Ø/t√Ωden');
+@define('PLUGIN_EVENT_STATISTICS_OUT_ARTICLES_PER_MONTH2', 'z√°znam≈Ø/mƒõs√≠c');
+@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS', 'Celkov√Ω poƒçet znak≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS2', 'znak≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE', 'Znak≈Ø na z√°znam');
+@define('PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE2', 'znak≈Ø/z√°znam');
+@define('PLUGIN_EVENT_STATISTICS_OUT_LONGEST_ARTICLES', '%s nejdel≈°√≠ch z√°znam≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS', 'Poƒçet prvk≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS_DESC', 'Kolik prvk≈Ø vz√≠t pro statistick√© vyhodnocen√≠? (Default: 20)');
 
 //Language constants for the Extended Visitors feature
-@define('PLUGIN_EVENT_STATISTICS_EXT_ADD', 'RozπÌ¯enÈ statistiky pro n·vtÏvnÌky');
-@define('PLUGIN_EVENT_STATISTICS_EXT_ADD_DESC', 'P¯idat rozπÌ¯enÈ statistiky pro n·vπtÏvnÌky str·nek? (StandardnÏ: NE)');
+@define('PLUGIN_EVENT_STATISTICS_EXT_ADD', 'Roz≈°√≠≈ôen√© statistiky pro n√°vtƒõvn√≠ky');
+@define('PLUGIN_EVENT_STATISTICS_EXT_ADD_DESC', 'P≈ôidat roz≈°√≠≈ôen√© statistiky pro n√°v≈°tƒõvn√≠ky str√°nek? (Standardnƒõ: NE)');
 @define('PLUGIN_EVENT_STATISTICS_EXT_OPT1', 'NE!');
-@define('PLUGIN_EVENT_STATISTICS_EXT_OPT2', 'ANO, na konec str·nky');
-@define('PLUGIN_EVENT_STATISTICS_EXT_OPT3', 'ANO, na zaË·tek str·nky');
-@define('PLUGIN_EVENT_STATISTICS_EXT_ALL', 'Uk·zat vπechno?');
-@define('PLUGIN_EVENT_STATISTICS_EXT_ALL_DESC', 'Zobrazit vπechny statistiky, i o uæivatelÌch? (StandardnÏ: NE)');
-@define('PLUGIN_EVENT_STATISTICS_EXT_ALL1', 'NE, kromÏ poËÌtadel vπechno schovej.');
-@define('PLUGIN_EVENT_STATISTICS_EXT_ALL2', 'ANO, ukaæ vπechny statistiky!');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Jednotliv· poËÌtadla');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'N·vπtÏvnÌk˘ dnes');
+@define('PLUGIN_EVENT_STATISTICS_EXT_OPT2', 'ANO, na konec str√°nky');
+@define('PLUGIN_EVENT_STATISTICS_EXT_OPT3', 'ANO, na zaƒç√°tek str√°nky');
+@define('PLUGIN_EVENT_STATISTICS_EXT_ALL', 'Uk√°zat v≈°echno?');
+@define('PLUGIN_EVENT_STATISTICS_EXT_ALL_DESC', 'Zobrazit v≈°echny statistiky, i o u≈æivatel√≠ch? (Standardnƒõ: NE)');
+@define('PLUGIN_EVENT_STATISTICS_EXT_ALL1', 'NE, kromƒõ poƒç√≠tadel v≈°echno schovej.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_ALL2', 'ANO, uka≈æ v≈°echny statistiky!');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Jednotliv√° poƒç√≠tadla');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTODAY', 'N√°v≈°tƒõvn√≠k≈Ø dnes');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Visitors this year');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR', 'Visitors last year');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'N·vπtÏvnÌk˘ celkem (since %s)');
-@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY', 'ZobrazenÌ dnes');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'N√°v≈°tƒõvn√≠k≈Ø celkem (since %s)');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY', 'Zobrazen√≠ dnes');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSCURYR', 'Hits this year');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR', 'Hits last year');
-@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'ZobrazenÌ celkem (since %s)');
-#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Ukl·d·nÌ statistik od');
-@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC', 'ZobrazenÌ se mohou vyπplhat do velk˝ch hodnot, protoæe jsou zv˝πena p¯i KAÆD…M naËtenÌ str·nky. NenÌ to ËÌslo poËtu lidÌ, kte¯Ì str·nku prohlÌæeli. Je to ukazatel poËtu zobrazenÌ str·nky.');
-@define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'PoslednÌ n·vπtÏvnÌci');
-@define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top odkazovaËe');
-@define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'Æ·dnÈ odkazy jeπtÏ nebyly zaznamen·ny.');
-@define('PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH', 'N·vπtÏvy podle dnÌ');
-@define('PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH', 'N·vπtÏvy podle mÏsÌc˘');
-@define('PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS', 'RozπÌ¯en· statistika o uæivatelÌch');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Zapnout, nepoËÌtej roboty');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Vypnout, zapoËÌtej i roboty');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Ochrana proti vyhled·vacÌm robot˘m');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Nastav na \'Zapnout\' pokud do statistik nechceπ zapoËÌt·vat vyhled·vacÌ roboty. nastav na \'Vypnout\' a roboti budou zapoËÌt·ni. V souËasnÈ dobÏ filtruje 290 zn·m˝ch robot˘.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL', 'Zobrazen√≠ celkem (since %s)');
+#@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Ukl√°d√°n√≠ statistik od');
+@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC', 'Zobrazen√≠ se mohou vy≈°plhat do velk√Ωch hodnot, proto≈æe jsou zv√Ω≈°ena p≈ôi KA≈ΩD√âM naƒçten√≠ str√°nky. Nen√≠ to ƒç√≠slo poƒçtu lid√≠, kte≈ô√≠ str√°nku prohl√≠≈æeli. Je to ukazatel poƒçtu zobrazen√≠ str√°nky.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Posledn√≠ n√°v≈°tƒõvn√≠ci');
+@define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top odkazovaƒçe');
+@define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', '≈Ω√°dn√© odkazy je≈°tƒõ nebyly zaznamen√°ny.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH', 'N√°v≈°tƒõvy podle dn√≠');
+@define('PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH', 'N√°v≈°tƒõvy podle mƒõs√≠c≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS', 'Roz≈°√≠≈ôen√° statistika o u≈æivatel√≠ch');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Zapnout, nepoƒç√≠tej roboty');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Vypnout, zapoƒç√≠tej i roboty');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Ochrana proti vyhled√°vac√≠m robot≈Øm');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Nastav na \'Zapnout\' pokud do statistik nechce≈° zapoƒç√≠t√°vat vyhled√°vac√≠ roboty. nastav na \'Vypnout\' a roboti budou zapoƒç√≠t√°ni. V souƒçasn√© dobƒõ filtruje 290 zn√°m√Ωch robot≈Ø.');
 
-@define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Zobraz datum poslednÌho p¯ÌspÏvku');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Zobraz poËet p¯ÌspÏvk˘');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_COMMENTCOUNT', 'Zobraz poËet koment·¯˘');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_MONTHVISITORS', 'Zobraz n·vπtÏvnÌky v tomto mÏsÌci');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_DAYVISITORS', 'Zobraz n·vπtÏvnÌky dnes');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_WEEKVISITORS', 'Zobraz n·vπtÏvnÌky tento t˝den');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Zobraz datum posledn√≠ho p≈ô√≠spƒõvku');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Zobraz poƒçet p≈ô√≠spƒõvk≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_COMMENTCOUNT', 'Zobraz poƒçet koment√°≈ô≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_MONTHVISITORS', 'Zobraz n√°v≈°tƒõvn√≠ky v tomto mƒõs√≠ci');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_DAYVISITORS', 'Zobraz n√°v≈°tƒõvn√≠ky dnes');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_WEEKVISITORS', 'Zobraz n√°v≈°tƒõvn√≠ky tento t√Ωden');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT', 'Cache timeout');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT_DESC', 'Jak dlouho majÌ b˝t statistiky zobrazeny p¯ed znovunaËtenÌm? NastavenÌ tÈto hodnoty na vysok˝ poËet minut zvÏtπÌ v˝kon, ale pokud bude hodnota p¯Ìliπ vysok·, moæn· nebude zobrazovat aktu·lnÌ data.');
-@define('PLUGIN_EVENT_STATISTICS_TEXT', 'Form·tov·nÌ text');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_DESC', 'Pouæij symbol %s pro vloæenÌ ËÌsla/textu');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_LASTENTRY', 'PoslednÌ p¯ÌspÏvek: %s');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_ENTRYCOUNT', '%s napsan˝ch p¯ÌspÏvk˘');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_COMMENTCOUNT', '%s koment·¯˘ bylo udÏleno');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_MONTHVISITORS', '%s n·vπtÏvnÌk(˘) tento mÏsÌc');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_DAYVISITORS', '%s n·vπtÏvnÌk(˘) dnes');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_WEEKVISITORS', '%s n·vπtÏvnÌk(˘) tento t˝den');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT_DESC', 'Jak dlouho maj√≠ b√Ωt statistiky zobrazeny p≈ôed znovunaƒçten√≠m? Nastaven√≠ t√©to hodnoty na vysok√Ω poƒçet minut zvƒõt≈°√≠ v√Ωkon, ale pokud bude hodnota p≈ô√≠li≈° vysok√°, mo≈æn√° nebude zobrazovat aktu√°ln√≠ data.');
+@define('PLUGIN_EVENT_STATISTICS_TEXT', 'Form√°tov√°n√≠ text');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_DESC', 'Pou≈æij symbol %s pro vlo≈æen√≠ ƒç√≠sla/textu');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_LASTENTRY', 'Posledn√≠ p≈ô√≠spƒõvek: %s');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_ENTRYCOUNT', '%s napsan√Ωch p≈ô√≠spƒõvk≈Ø');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_COMMENTCOUNT', '%s koment√°≈ô≈Ø bylo udƒõleno');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_MONTHVISITORS', '%s n√°v≈°tƒõvn√≠k(≈Ø) tento mƒõs√≠c');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_DAYVISITORS', '%s n√°v≈°tƒõvn√≠k(≈Ø) dnes');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_WEEKVISITORS', '%s n√°v≈°tƒõvn√≠k(≈Ø) tento t√Ωden');
 
-@define('PLUGIN_EVENT_STATISTICS_SHOW_CURRENTVISITORS', 'Ukaæ poËet online n·vπtÏvnÌk˘ (poËÌt·no bÏhem poslednÌch 15 minut)');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_CURRENTVISITORS', '%s n·vπtÏvnÌk(˘) online');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_CURRENTVISITORS', 'Uka≈æ poƒçet online n√°v≈°tƒõvn√≠k≈Ø (poƒç√≠t√°no bƒõhem posledn√≠ch 15 minut)');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_CURRENTVISITORS', '%s n√°v≈°tƒõvn√≠k(≈Ø) online');
 

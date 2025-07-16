@@ -1,3 +1,8 @@
+5.0.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Raise requirements for Styx 5.0
+
 4.5.3:
 -----
  * Fix a rare placement issue with gray'ed vertical bars in the statistics year box on small screens

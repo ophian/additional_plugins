@@ -21,10 +21,10 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '4.5.3');
+        $propbag->add('version',       '5.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.2',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('STATISTICS'));
         $propbag->add('event_hooks',   array(
@@ -859,7 +859,7 @@ class serendipity_event_statistics extends serendipity_event
                             $link_url   = '';
 
                             if (!empty($com_stat['email'])) {
-                                $link_start = '<a href="mailto:' . serendipity_specialchars($com_stat['email']) . '">';
+                                $link_start = '<a href="mailto:' . htmlspecialchars($com_stat['email']) . '">';
                                 $link_end   = '</a>';
                             }
 
@@ -868,7 +868,7 @@ class serendipity_event_statistics extends serendipity_event
                                     $com_stat['url'] = 'http://' . $com_stat['url'];
                                 }
 
-                                $link_url = ' (<a href="' . serendipity_specialchars($com_stat['url']) . '">' . PLUGIN_EVENT_STATISTICS_OUT_LINK . '</a>)';
+                                $link_url = ' (<a href="' . htmlspecialchars($com_stat['url']) . '">' . PLUGIN_EVENT_STATISTICS_OUT_LINK . '</a>)';
                             }
 
                             if (empty($com_stat['author'])) {
@@ -937,7 +937,7 @@ class serendipity_event_statistics extends serendipity_event
                                 $tb_stat['author'] = ANONYMOUS;
                             }
 ?>
-            <dt><a href="<?php echo serendipity_specialchars($tb_stat['url']); ?>"><?php echo serendipity_specialchars($tb_stat['author']); ?></a></dt>
+            <dt><a href="<?php echo htmlspecialchars($tb_stat['url']); ?>"><?php echo htmlspecialchars($tb_stat['author']); ?></a></dt>
             <dd><?php echo $tb_stat['postings']; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_TOPTRACKBACK2; ?></dd>
 <?php
                         }

@@ -7,14 +7,14 @@
  */
 
 @define('PLUGIN_EVENT_STATISTICS_NAME', 'Statistiken');
-@define('PLUGIN_EVENT_STATISTICS_DESC', 'Zeigt einen Link zu informativen Statistiken (inkl. Besucherz‰hler) in der Administrationsoberfl‰che an.');
+@define('PLUGIN_EVENT_STATISTICS_DESC', 'Zeigt einen Link zu informativen Statistiken (inkl. Besucherz√§hler) in der Administrationsoberfl√§che an.');
 @define('PLUGIN_EVENT_STATISTICS_OUT_STATISTICS', 'Statistik');
 @define('PLUGIN_EVENT_STATISTICS_OUT_FIRST_ENTRY', 'Erster Eintrag');
 @define('PLUGIN_EVENT_STATISTICS_OUT_LAST_ENTRY', 'Letzter Eintrag');
 @define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_ENTRIES', 'Insgesamt verfasste Artikel');
 @define('PLUGIN_EVENT_STATISTICS_OUT_ENTRIES', 'Artikel');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_PUBLIC', ' ... davon ˆffentlich');
-@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_DRAFTS', ' ... davon Entw¸rfe');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_PUBLIC', ' ... davon √∂ffentlich');
+@define('PLUGIN_EVENT_STATISTICS_OUT_TOTAL_DRAFTS', ' ... davon Entw√ºrfe');
 @define('PLUGIN_EVENT_STATISTICS_OUT_PER_AUTHOR', 'Artikel pro Benutzer');
 @define('PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES', 'Vorhandene Kategorien');
 @define('PLUGIN_EVENT_STATISTICS_OUT_CATEGORIES2', 'Kategorie(n)');
@@ -53,11 +53,11 @@
 @define('PLUGIN_EVENT_STATISTICS_OUT_CHARS2', 'Zeichen');
 @define('PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE', 'Zeichen pro Artikel');
 @define('PLUGIN_EVENT_STATISTICS_OUT_CHARS_PER_ARTICLE2', 'Zeichen/Artikel');
-@define('PLUGIN_EVENT_STATISTICS_OUT_LONGEST_ARTICLES', 'Die %s l‰ngsten Artikel');
-@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS', 'Anzahl Eintr‰ge');
-@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS_DESC', 'Wie viele Eintr‰ge sollen pro statistischem Wert angezeigt werden (Standard: 20)?');
-@define('PLUGIN_EVENT_STATISTICS_CHECKDNS', 'Zeige Host-Adresse f¸r die IP in "Letzte Besucher"');
-@define('PLUGIN_EVENT_STATISTICS_CHECKDNS_DESC', 'Dabei wird die PHP-Funktion gethostbyaddr() verwendet, was die Anzeige der Ergebnisse Ihrer Statistikaktivit‰ten auf manchen Servern drastisch verlangsamen kann. Wenn dies der Fall ist und Sie sich nicht darum k¸mmern, nur eine IP ausgewiesen zu bekommen, schalten Sie dies bitte einfach aus.');
+@define('PLUGIN_EVENT_STATISTICS_OUT_LONGEST_ARTICLES', 'Die %s l√§ngsten Artikel');
+@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS', 'Anzahl Eintr√§ge');
+@define('PLUGIN_EVENT_STATISTICS_MAX_ITEMS_DESC', 'Wie viele Eintr√§ge sollen pro statistischem Wert angezeigt werden (Standard: 20)?');
+@define('PLUGIN_EVENT_STATISTICS_CHECKDNS', 'Zeige Host-Adresse f√ºr die IP in "Letzte Besucher"');
+@define('PLUGIN_EVENT_STATISTICS_CHECKDNS_DESC', 'Dabei wird die PHP-Funktion gethostbyaddr() verwendet, was die Anzeige der Ergebnisse Ihrer Statistikaktivit√§ten auf manchen Servern drastisch verlangsamen kann. Wenn dies der Fall ist und Sie sich nicht darum k√ºmmern, nur eine IP ausgewiesen zu bekommen, schalten Sie dies bitte einfach aus.');
 
 //Language constants for the Extended Visitors feature
 @define('PLUGIN_EVENT_STATISTICS_EXT_ADD', 'Erweiterte Besucherstatistiken');
@@ -67,7 +67,7 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_OPT3', 'Ja, oben auf der Seite.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL', 'Alles zeigen? (Standard: nein)');
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL_DESC', 'Bei \'nein\' werden nur Besucherstatistiken angezeigt');
-@define('PLUGIN_EVENT_STATISTICS_EXT_ALL1', 'Nein, alles auﬂer dem Z‰hler verbergen.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_ALL1', 'Nein, alles au√üer dem Z√§hler verbergen.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_ALL2', 'Ja, alle Statistiken anzeigen!');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISITORS', 'Anzahl der Besucher');
 @define('PLUGIN_EVENT_STATISTICS_EXT_HITSTODAY', 'Aufrufe heute');
@@ -79,25 +79,25 @@
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISCURYR', 'Besucher dieses Jahres');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL', 'Besucher gesamt (seit %s)');
 #@define('PLUGIN_EVENT_STATISTICS_EXT_VISSINCE', 'Die erweiterte Besucherstatistik hat seit folgendem Zeitpunkt Daten gesammelt:');
-@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC', 'Die Zahl der Aufrufe kann sehr groﬂ werden, liefert jedoch einen Wert bez¸glich der einzelnen Seitenanfragen. Diese Zahl erhˆht sich deshalb mit JEDEM Seitenaufruf sowie jeder Aktualisierung der Seite und kann damit NICHT als Besucherz‰hler verstanden werden.');
+@define('PLUGIN_EVENT_STATISTICS_EXT_COUNTDESC', 'Die Zahl der Aufrufe kann sehr gro√ü werden, liefert jedoch einen Wert bez√ºglich der einzelnen Seitenanfragen. Diese Zahl erh√∂ht sich deshalb mit JEDEM Seitenaufruf sowie jeder Aktualisierung der Seite und kann damit NICHT als Besucherz√§hler verstanden werden.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_VISLATEST', 'Letzte Besucher');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS', 'Top-Referrer');
 @define('PLUGIN_EVENT_STATISTICS_EXT_TOPREFS_NONE', 'Bisher wurden keine Referrer registriert.');
 @define('PLUGIN_EVENT_STATISTICS_EXT_DAYGRAPH', 'Besucher, auf den Tag bezogen');
 @define('PLUGIN_EVENT_STATISTICS_EXT_MONTHGRAPH', 'Besucher, auf den Monat bezogen');
 @define('PLUGIN_EVENT_STATISTICS_OUT_EXT_STATISTICS', 'Erweiterte Besucherstatistik');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Aktivieren, keine Robots z‰hlen');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Nein, Robots bitte mitz‰hlen');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Spider/Robot-Z‰hlung verhindern');
-@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Bei \'ja\' werden keine Spiders/Robots gez‰hlt. Bei \'nein\' werden Spiders/Robots mitgez‰hlt. Bislang kˆnnen ¸ber 290 Bots von der Z‰hlung ausgeschlossen werden.');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS1', 'Aktivieren, keine Robots z√§hlen');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS2', 'Nein, Robots bitte mitz√§hlen');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS', 'Spider/Robot-Z√§hlung verhindern');
+@define('PLUGIN_EVENT_STATISTICS_BANNED_HOSTS_DESC', 'Bei \'ja\' werden keine Spiders/Robots gez√§hlt. Bei \'nein\' werden Spiders/Robots mitgez√§hlt. Bislang k√∂nnen √ºber 290 Bots von der Z√§hlung ausgeschlossen werden.');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_LASTENTRY', 'Datum des letzten Artikels anzeigen');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_ENTRYCOUNT', 'Anzahl der Artikel anzeigen');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_COMMENTCOUNT', 'Anzahl der Kommentare anzeigen');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_MONTHVISITORS', 'Besucher dieses Monats anzeigen');
 @define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT', 'Cache-Zeitlimit');
-@define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT_DESC', 'Gibt an (in Minuten), wie lange die Statistik angezeigt wird, bevor sie aktualisiert wird. Ein hˆheres Zeitlimit f¸hrt zu einer besseren Leistung, gew‰hrleistet aber nicht, dass die Statistiken immer aktuell sind.');
+@define('PLUGIN_EVENT_STATISTICS_SHOW_CACHETIMEOUT_DESC', 'Gibt an (in Minuten), wie lange die Statistik angezeigt wird, bevor sie aktualisiert wird. Ein h√∂heres Zeitlimit f√ºhrt zu einer besseren Leistung, gew√§hrleistet aber nicht, dass die Statistiken immer aktuell sind.');
 @define('PLUGIN_EVENT_STATISTICS_TEXT', 'Textformatierung');
-@define('PLUGIN_EVENT_STATISTICS_TEXT_DESC', 'Bitte %s als Platzhalter f¸r die Zahl/den Text benutzen');
+@define('PLUGIN_EVENT_STATISTICS_TEXT_DESC', 'Bitte %s als Platzhalter f√ºr die Zahl/den Text benutzen');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_LASTENTRY', 'Letzter Artikel: %s');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_ENTRYCOUNT', '%s Artikel wurden geschrieben');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_COMMENTCOUNT', '%s Kommentare wurden abgegeben');
@@ -112,6 +112,6 @@
 @define('PLUGIN_EVENT_STATISTICS_TEXT_DAYVISITORS', '%s Besucher heute');
 @define('PLUGIN_EVENT_STATISTICS_TEXT_WEEKVISITORS', '%s Besucher in dieser Woche');
 
-@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN', 'Automatisches Lˆschen alter Logeintr‰ge');
-@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'Lˆscht alle Eintr‰ge der "visitors"-Tabelle jeweils ‰lter als 1 Jahr, da diese Logeintr‰ge die Datenbank kontinuierlich aufbl‰hen, zu einer steten Verlangsamung des System f¸hren und z.Z. keinen echten Mehrwert bieten. Nat¸rlich bleiben die bereits ausgewerteten Daten der "visitors_count"-Tabelle weiterhin erhalten.');
+@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN', 'Automatisches L√∂schen alter Logeintr√§ge');
+@define('PLUGIN_EVENT_STATISTICS_AUTOCLEAN_DESC', 'L√∂scht alle Eintr√§ge der "visitors"-Tabelle jeweils √§lter als 1 Jahr, da diese Logeintr√§ge die Datenbank kontinuierlich aufbl√§hen, zu einer steten Verlangsamung des System f√ºhren und z.Z. keinen echten Mehrwert bieten. Nat√ºrlich bleiben die bereits ausgewerteten Daten der "visitors_count"-Tabelle weiterhin erhalten.');
 
