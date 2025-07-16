@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -23,12 +25,12 @@ class serendipity_event_multilingual extends serendipity_event
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Garvin Hicking, Wesley Hwang-Chung, Ian Styx');
         $propbag->add('requirements',   array(
-            'serendipity' => '3.0',
-            'smarty'      => '3.1',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '3.17');
+        $propbag->add('version',        '4.0.0');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,

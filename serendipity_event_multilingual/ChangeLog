@@ -1,3 +1,11 @@
+4.0.0 (2.0.0: sidebar):
+----------------------
+ * Raise up for Styx 5.0
+ * Raises requirements
+ * Add strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+
 3.17:
 -----
  * Preparation for Styx 5 Series: Convert serendipity_mb('strtolower' ... to native PHP function

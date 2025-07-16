@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -21,7 +23,7 @@ class serendipity_plugin_multilingual extends serendipity_event
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
-            'php'         => '8.0'
+            'php'         => '8.2'
         ));
 
         $conf = array('title', 'show_submit', 'langified', 'size');
@@ -62,7 +64,7 @@ class serendipity_plugin_multilingual extends serendipity_event
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '1.21');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }
@@ -134,7 +136,7 @@ class serendipity_plugin_multilingual extends serendipity_event
 //        echo '<option value=""> </option>'."\n"; // we cannot reset to default - once its is set. So the only way to change - is to change! Cookie will last 1 month.
         foreach ($languages AS $lang_key => $language) {
             if (serendipity_db_bool($this->get_config($lang_key, 'false'))) {
-                echo '<option value="' . $lang_key . '"' . ($setlang == $lang_key ? ' selected="selected"' : '') . '>' . serendipity_specialchars($language) . "</option>\n";
+                echo '<option value="' . $lang_key . '"' . ($setlang == $lang_key ? ' selected="selected"' : '') . '>' . htmlspecialchars($language) . "</option>\n";
             }
         }
         echo '</select>';

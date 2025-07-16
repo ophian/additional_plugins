@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/23
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/25
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/10/26
  */
 
@@ -14,38 +14,38 @@
 //  serendipity_event_multilingual.php
 //
 
-@define('PLUGIN_EVENT_MULTILINGUAL_TITLE',              'Vízejazyèné záznamy');
-@define('PLUGIN_EVENT_MULTILINGUAL_DESC',               'Umo¾òuje vytvoøit pøíspìvek (záznam) ve více jazykovıch variantách. Obsahuje té¾ fromuláø pro vıbìr základního jazyka blogu.');
-@define('PLUGIN_EVENT_MULTILINGUAL_NEEDTOSAVE',         'Pøíspìvek musí bıt ulo¾en pøed tím, ne¾ mù¾ete zaèít psát jeho verzi v cizím jazyce. Mù¾ete pøíspìvek ulo¾it té¾ jako koncept.');
-@define('PLUGIN_EVENT_MULTILINGUAL_CURRENT',            'Vıbìr jazyka pro úpravy: ');
+@define('PLUGIN_EVENT_MULTILINGUAL_TITLE',              'VÃ­zejazyÄnÃ© zÃ¡znamy');
+@define('PLUGIN_EVENT_MULTILINGUAL_DESC',               'UmoÅ¾Åˆuje vytvoÅ™it pÅ™Ã­spÄ›vek (zÃ¡znam) ve vÃ­ce jazykovÃ½ch variantÃ¡ch. Obsahuje tÃ©Å¾ fromulÃ¡Å™ pro vÃ½bÄ›r zÃ¡kladnÃ­ho jazyka blogu.');
+@define('PLUGIN_EVENT_MULTILINGUAL_NEEDTOSAVE',         'PÅ™Ã­spÄ›vek musÃ­ bÃ½t uloÅ¾en pÅ™ed tÃ­m, neÅ¾ mÅ¯Å¾ete zaÄÃ­t psÃ¡t jeho verzi v cizÃ­m jazyce. MÅ¯Å¾ete pÅ™Ã­spÄ›vek uloÅ¾it tÃ©Å¾ jako koncept.');
+@define('PLUGIN_EVENT_MULTILINGUAL_CURRENT',            'VÃ½bÄ›r jazyka pro Ãºpravy: ');
 @define('PLUGIN_EVENT_MULTILINGUAL_SWITCH',             'Jazyk');
-@define('PLUGIN_EVENT_MULTILINGUAL_COPY',               'Nechávat obsah z pøedchozího jazyka');
-@define('PLUGIN_EVENT_MULTILINGUAL_COPYDESC',           'Zachovává obsah polí z pøede¹lého upravovaného jazyka pøi zvolení úpravy nové jazykové verze..');
-@define('PLUGIN_EVENT_MULTILINGUAL_PLACE',              'Kam umístit odkaz na jiné jazykové verze?');
-@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDFOOTER',    'Záhlaví pøíspìvku');
-@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDSPECIAL',   '"multilingual_footer" pro volitelnı vıstup do ¹ablony Smarty');
+@define('PLUGIN_EVENT_MULTILINGUAL_COPY',               'NechÃ¡vat obsah z pÅ™edchozÃ­ho jazyka');
+@define('PLUGIN_EVENT_MULTILINGUAL_COPYDESC',           'ZachovÃ¡vÃ¡ obsah polÃ­ z pÅ™edeÅ¡lÃ©ho upravovanÃ©ho jazyka pÅ™i zvolenÃ­ Ãºpravy novÃ© jazykovÃ© verze..');
+@define('PLUGIN_EVENT_MULTILINGUAL_PLACE',              'Kam umÃ­stit odkaz na jinÃ© jazykovÃ© verze?');
+@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDFOOTER',    'ZÃ¡hlavÃ­ pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDSPECIAL',   '"multilingual_footer" pro volitelnÃ½ vÃ½stup do Å¡ablony Smarty');
 
 //
 //  serendipity_plugin_multilingual.php
 //
 
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_TITLE',        'Vıbìr jazyka');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_DESC',         'Povolit náv¹tìvníkùm mìnit jazyk u¾ivatelského rozhraní blogu');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_USERDESC',     'Mù¾ete vybrat rùzné jazyky pro zobrazování u¾ivatelského rozhraní blogu: ');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT',       'Potvrzovací tlaèítko?');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT_DESC',  'Zobrazit potvrzovací tlaèítko vedle políèka s vıbìrem jazyka?');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_TITLE',        'VÃ½bÄ›r jazyka');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_DESC',         'Povolit nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m mÄ›nit jazyk uÅ¾ivatelskÃ©ho rozhranÃ­ blogu');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_USERDESC',     'MÅ¯Å¾ete vybrat rÅ¯znÃ© jazyky pro zobrazovÃ¡nÃ­ uÅ¾ivatelskÃ©ho rozhranÃ­ blogu: ');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT',       'PotvrzovacÃ­ tlaÄÃ­tko?');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT_DESC',  'Zobrazit potvrzovacÃ­ tlaÄÃ­tko vedle polÃ­Äka s vÃ½bÄ›rem jazyka?');
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_SIZE',         'Velikost fontu');
 
 // Next lines were translated on 2009/08/25
 
-@define('PLUGIN_EVENT_MULTILINGUAL_TAGTITLE',           'Pøekládání nadpisu pøíspìvku pomocí tagù');
-@define('PLUGIN_EVENT_MULTILINGUAL_TAGTITLE_DESC',      'Zapne mo¾nost pøekládání nadpisu pomocí taug {{!<jazyk>}}<text>{{--}}. Also used for non-tag mode translated entry_title(s).');
-@define('PLUGIN_EVENT_MULTILINGUAL_TAGENTRIES',         'Pøekládání pøíspìvkù a nadpisù pøíspìvkù pomocí tagù v textu');
-@define('PLUGIN_EVENT_MULTILINGUAL_TAGENTRIES_DESC',    'Zapne mo¾nost pøekládání pøíspìvkù pomocí tagu {{!<jazyk>}}<text>{{--}}');
-@define('PLUGIN_EVENT_MULTILINGUAL_TAGSIDEBAR',         'Pøekládání polo¾ek postranních sloupcù pomocí tagù');
-@define('PLUGIN_EVENT_MULTILINGUAL_TAGSIDEBAR_DESC',    'Zapne mo¾nost pøekládání obsahu postranních sloupcù pomocí tagu {{!<jazyk>}}<text>{{--}}');
+@define('PLUGIN_EVENT_MULTILINGUAL_TAGTITLE',           'PÅ™eklÃ¡dÃ¡nÃ­ nadpisu pÅ™Ã­spÄ›vku pomocÃ­ tagÅ¯');
+@define('PLUGIN_EVENT_MULTILINGUAL_TAGTITLE_DESC',      'Zapne moÅ¾nost pÅ™eklÃ¡dÃ¡nÃ­ nadpisu pomocÃ­ taug {{!<jazyk>}}<text>{{--}}. Also used for non-tag mode translated entry_title(s).');
+@define('PLUGIN_EVENT_MULTILINGUAL_TAGENTRIES',         'PÅ™eklÃ¡dÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯ a nadpisÅ¯ pÅ™Ã­spÄ›vkÅ¯ pomocÃ­ tagÅ¯ v textu');
+@define('PLUGIN_EVENT_MULTILINGUAL_TAGENTRIES_DESC',    'Zapne moÅ¾nost pÅ™eklÃ¡dÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯ pomocÃ­ tagu {{!<jazyk>}}<text>{{--}}');
+@define('PLUGIN_EVENT_MULTILINGUAL_TAGSIDEBAR',         'PÅ™eklÃ¡dÃ¡nÃ­ poloÅ¾ek postrannÃ­ch sloupcÅ¯ pomocÃ­ tagÅ¯');
+@define('PLUGIN_EVENT_MULTILINGUAL_TAGSIDEBAR_DESC',    'Zapne moÅ¾nost pÅ™eklÃ¡dÃ¡nÃ­ obsahu postrannÃ­ch sloupcÅ¯ pomocÃ­ tagu {{!<jazyk>}}<text>{{--}}');
 
 // Next lines were translated on 2013/10/26
-@define('PLUGIN_EVENT_MULTILINGUAL_LANGSWITCH',        'Vynutit plné pøepnutí jazyka?');
-@define('PLUGIN_EVENT_MULTILINGUAL_LANGSWITCH_DESC',   'Má se pøi vybrání jazykové verze jednotlivého pøíspìvku pøepnout do zvoleného jazyka kompletnì i celé rozhraní blogu?');
+@define('PLUGIN_EVENT_MULTILINGUAL_LANGSWITCH',        'Vynutit plnÃ© pÅ™epnutÃ­ jazyka?');
+@define('PLUGIN_EVENT_MULTILINGUAL_LANGSWITCH_DESC',   'MÃ¡ se pÅ™i vybrÃ¡nÃ­ jazykovÃ© verze jednotlivÃ©ho pÅ™Ã­spÄ›vku pÅ™epnout do zvolenÃ©ho jazyka kompletnÄ› i celÃ© rozhranÃ­ blogu?');
 

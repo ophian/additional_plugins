@@ -9,24 +9,24 @@
 //
 //  serendipity_event_multilingual.php
 //
-@define('PLUGIN_EVENT_MULTILINGUAL_TITLE', 'Многоезични статии');
-@define('PLUGIN_EVENT_MULTILINGUAL_DESC', 'Позволява създаването на версии на статиите на различни езици');
-@define('PLUGIN_EVENT_MULTILINGUAL_NEEDTOSAVE', 'Трябва да запишете статията, преди да въведете версия на различен език. Можете да запишете статията и като чернова без да я публикувате още сега.');
-@define('PLUGIN_EVENT_MULTILINGUAL_CURRENT', 'Изберете езикова версия за редактиране: ');
-@define('PLUGIN_EVENT_MULTILINGUAL_SWITCH', 'Избор');
-@define('PLUGIN_EVENT_MULTILINGUAL_COPY', 'Запазване на версията на предишния език');
-@define('PLUGIN_EVENT_MULTILINGUAL_COPYDESC', 'Запазва съдържанието от версията на предишния език в полето за редактиране докато се въвежда новата езикова версия');
-@define('PLUGIN_EVENT_MULTILINGUAL_PLACE', 'Къде да се поставят връзките от статията ?');
-@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDFOOTER', 'Основа на статия');
-@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDSPECIAL', '"multilingual_footer" за специфичен Smarty изход');
+@define('PLUGIN_EVENT_MULTILINGUAL_TITLE', 'РњРЅРѕРіРѕРµР·РёС‡РЅРё СЃС‚Р°С‚РёРё');
+@define('PLUGIN_EVENT_MULTILINGUAL_DESC', 'РџРѕР·РІРѕР»СЏРІР° СЃСЉР·РґР°РІР°РЅРµС‚Рѕ РЅР° РІРµСЂСЃРёРё РЅР° СЃС‚Р°С‚РёРёС‚Рµ РЅР° СЂР°Р·Р»РёС‡РЅРё РµР·РёС†Рё');
+@define('PLUGIN_EVENT_MULTILINGUAL_NEEDTOSAVE', 'РўСЂСЏР±РІР° РґР° Р·Р°РїРёС€РµС‚Рµ СЃС‚Р°С‚РёСЏС‚Р°, РїСЂРµРґРё РґР° РІСЉРІРµРґРµС‚Рµ РІРµСЂСЃРёСЏ РЅР° СЂР°Р·Р»РёС‡РµРЅ РµР·РёРє. РњРѕР¶РµС‚Рµ РґР° Р·Р°РїРёС€РµС‚Рµ СЃС‚Р°С‚РёСЏС‚Р° Рё РєР°С‚Рѕ С‡РµСЂРЅРѕРІР° Р±РµР· РґР° СЏ РїСѓР±Р»РёРєСѓРІР°С‚Рµ РѕС‰Рµ СЃРµРіР°.');
+@define('PLUGIN_EVENT_MULTILINGUAL_CURRENT', 'РР·Р±РµСЂРµС‚Рµ РµР·РёРєРѕРІР° РІРµСЂСЃРёСЏ Р·Р° СЂРµРґР°РєС‚РёСЂР°РЅРµ: ');
+@define('PLUGIN_EVENT_MULTILINGUAL_SWITCH', 'РР·Р±РѕСЂ');
+@define('PLUGIN_EVENT_MULTILINGUAL_COPY', 'Р—Р°РїР°Р·РІР°РЅРµ РЅР° РІРµСЂСЃРёСЏС‚Р° РЅР° РїСЂРµРґРёС€РЅРёСЏ РµР·РёРє');
+@define('PLUGIN_EVENT_MULTILINGUAL_COPYDESC', 'Р—Р°РїР°Р·РІР° СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ РѕС‚ РІРµСЂСЃРёСЏС‚Р° РЅР° РїСЂРµРґРёС€РЅРёСЏ РµР·РёРє РІ РїРѕР»РµС‚Рѕ Р·Р° СЂРµРґР°РєС‚РёСЂР°РЅРµ РґРѕРєР°С‚Рѕ СЃРµ РІСЉРІРµР¶РґР° РЅРѕРІР°С‚Р° РµР·РёРєРѕРІР° РІРµСЂСЃРёСЏ');
+@define('PLUGIN_EVENT_MULTILINGUAL_PLACE', 'РљСЉРґРµ РґР° СЃРµ РїРѕСЃС‚Р°РІСЏС‚ РІСЂСЉР·РєРёС‚Рµ РѕС‚ СЃС‚Р°С‚РёСЏС‚Р° ?');
+@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDFOOTER', 'РћСЃРЅРѕРІР° РЅР° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_EVENT_MULTILINGUAL_PLACE_ADDSPECIAL', '"multilingual_footer" Р·Р° СЃРїРµС†РёС„РёС‡РµРЅ Smarty РёР·С…РѕРґ');
 
 //
 //  serendipity_plugin_multilingual.php
 //
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_TITLE', 'Избор на език');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_DESC', 'Позволява посетителите да сменят езика на лицевата страница');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_USERDESC', 'Можете да избирате език за лицевата страница на блога: ');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT', 'Бутон "Продължи" ?');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT_DESC', 'Да се показва ли Бутон "Продължи" за задействане на избора ?');
-@define('PLUGIN_SIDEBAR_MULTILINGUAL_SIZE', 'Големина на шрифта');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_TITLE', 'РР·Р±РѕСЂ РЅР° РµР·РёРє');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_DESC', 'РџРѕР·РІРѕР»СЏРІР° РїРѕСЃРµС‚РёС‚РµР»РёС‚Рµ РґР° СЃРјРµРЅСЏС‚ РµР·РёРєР° РЅР° Р»РёС†РµРІР°С‚Р° СЃС‚СЂР°РЅРёС†Р°');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_USERDESC', 'РњРѕР¶РµС‚Рµ РґР° РёР·Р±РёСЂР°С‚Рµ РµР·РёРє Р·Р° Р»РёС†РµРІР°С‚Р° СЃС‚СЂР°РЅРёС†Р° РЅР° Р±Р»РѕРіР°: ');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT', 'Р‘СѓС‚РѕРЅ "РџСЂРѕРґСЉР»Р¶Рё" ?');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_SUBMIT_DESC', 'Р”Р° СЃРµ РїРѕРєР°Р·РІР° Р»Рё Р‘СѓС‚РѕРЅ "РџСЂРѕРґСЉР»Р¶Рё" Р·Р° Р·Р°РґРµР№СЃС‚РІР°РЅРµ РЅР° РёР·Р±РѕСЂР° ?');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_SIZE', 'Р“РѕР»РµРјРёРЅР° РЅР° С€СЂРёС„С‚Р°');
 
