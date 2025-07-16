@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -18,7 +20,7 @@ class serendipity_event_entrycheck extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_ENTRYCHECK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '1.21');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -115,7 +117,7 @@ class serendipity_event_entrycheck extends serendipity_event
     {
         global $serendipity;
 
-        $locked = serendipity_db_query("SELECT property, value FROM {$serendipity['dbPrefix']}entryproperties WHERE (property = 'locked' or property = 'lock_owner') AND entryid = " . (int)$id, false, 'assoc', false, 'property', 'value');
+        $locked = serendipity_db_query("SELECT property, value FROM {$serendipity['dbPrefix']}entryproperties WHERE (property = 'locked' OR property = 'lock_owner') AND entryid = " . (int)$id, false, 'assoc', false, 'property', 'value');
         if (is_array($locked) && $locked['locked'] > 0 ) {
             // Entry is locked
 
@@ -157,6 +159,7 @@ body.save_preview_body .msg_error {
 /* entrycheck plugin end */
 
 ';
+                    break;
 
                 case 'backend_entryform':
                     if (!isset($eventData['id']) || $eventData['id'] < 1) {
@@ -173,12 +176,13 @@ body.save_preview_body .msg_error {
                             serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (property, value, entryid) VALUES ('locked', '$time', {$eventData['id']})");
                             serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (property, value, entryid) VALUES ('lock_owner', '{$serendipity['authorid']}', {$eventData['id']})");
                             $locked = array('lock_owner' => $serendipity['authorid'], 'locked' => $time);
+                            // By now it is locked
                         }
 
                         if ($state != 'liberate' && !empty($locked['lock_owner'])) {
                             $owner = serendipity_fetchAuthor($locked['lock_owner']);
-                            $link = '<a href="serendipity_admin.php?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . (int)$eventData['id'] . '&amp;serendipity[unlock]=true&amp;' . serendipity_setFormToken('url') . '" class="serendipityPrettyButton">' . PLUGIN_EVENT_ENTRYCHECK_UNLOCK . '</a>';
-                            printf('<div class="msg_info">' . PLUGIN_EVENT_ENTRYCHECK_LOCKED . ' ' . $link . '</div>', $owner[0]['realname'], serendipity_strftime(DATE_FORMAT_SHORT, (int)$locked['locked']));
+                            $link = '<a href="serendipity_admin.php?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . (int)$eventData['id'] . '&amp;serendipity[unlock]=true&amp;' . serendipity_setFormToken('url') . '" class="link_button">' . PLUGIN_EVENT_ENTRYCHECK_UNLOCK . '</a>';
+                            printf('<div class="msg_notice">' . PLUGIN_EVENT_ENTRYCHECK_LOCKED . ' ' . $link . '</div>', $owner[0]['realname'], serendipity_strftime(DATE_FORMAT_SHORT, (int)$locked['locked']));
                         }
                     }
                     break;

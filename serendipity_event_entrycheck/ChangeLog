@@ -3,6 +3,7 @@
  * Fix some type issues
  * Fix missing token for the unlock link
  * Fix liberation of current lock
+ * Declare strict types
  * Raise requirements
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
 
