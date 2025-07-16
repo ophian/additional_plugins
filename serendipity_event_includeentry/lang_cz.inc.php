@@ -1,30 +1,30 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/07
  */
 
-@define('PLUGIN_EVENT_INCLUDEENTRY_NAME', 'Markup: Vlo¾ení pøíspìvku/¹ablony/bloku');
-@define('PLUGIN_EVENT_INCLUDEENTRY_DESC', 'Umo¾òuje pøidat do pøíspìvku tagy, které zajistí vlo¾ení èást jiného pøíspìvku. Pou¾ijte tuto znaèku: [s9y-include-entry:XXX:YYY]. Nahraïte XXX èíslem ID odkazovaného pøíspìvku a YYY nahraïte názvem pole pøíspìvku, které chcete vlo¾it (napø. "body", "title", "extended", ...). Také mù¾ete vyu¾ít nové funkce menu pro správu ¹ablon a blokù, které je mo¾no vlo¾it mezi pøíspìvky.');
-@define('PLUGIN_EVENT_INCLUDEENTRY_BLOCKS', 'Bloky ¹ablon');
+@define('PLUGIN_EVENT_INCLUDEENTRY_NAME', 'Markup: VloÅ¾enÃ­ pÅ™Ã­spÄ›vku/Å¡ablony/bloku');
+@define('PLUGIN_EVENT_INCLUDEENTRY_DESC', 'UmoÅ¾Åˆuje pÅ™idat do pÅ™Ã­spÄ›vku tagy, kterÃ© zajistÃ­ vloÅ¾enÃ­ ÄÃ¡st jinÃ©ho pÅ™Ã­spÄ›vku. PouÅ¾ijte tuto znaÄku: [s9y-include-entry:XXX:YYY]. NahraÄte XXX ÄÃ­slem ID odkazovanÃ©ho pÅ™Ã­spÄ›vku a YYY nahraÄte nÃ¡zvem pole pÅ™Ã­spÄ›vku, kterÃ© chcete vloÅ¾it (napÅ™. "body", "title", "extended", ...). TakÃ© mÅ¯Å¾ete vyuÅ¾Ã­t novÃ© funkce menu pro sprÃ¡vu Å¡ablon a blokÅ¯, kterÃ© je moÅ¾no vloÅ¾it mezi pÅ™Ã­spÄ›vky.');
+@define('PLUGIN_EVENT_INCLUDEENTRY_BLOCKS', 'Bloky Å¡ablon');
 @define('PLUGIN_EVENT_INCLUDEENTRY_DBVERSION', '1.0');
-@define('PLUGIN_EVENT_INCLUDEENTRY_FILENAME_NAME', '©ablona (Smarty)');
-@define('PLUGIN_EVENT_INCLUDEENTRY_FILENAME_DESC', 'Zadejte jméno souboru ¹ablony, která se má pou¾ít pro tuto stránku. ©ablona smarty mù¾e bıt umístìna v adresáøi tohoto pluginu nebo v adresáøi Va¹í ¹ablony.');
-@define('STATICBLOCK_SELECT_TEMPLATES', 'Vyberte ¹ablonu');
+@define('PLUGIN_EVENT_INCLUDEENTRY_FILENAME_NAME', 'Å ablona (Smarty)');
+@define('PLUGIN_EVENT_INCLUDEENTRY_FILENAME_DESC', 'Zadejte jmÃ©no souboru Å¡ablony, kterÃ¡ se mÃ¡ pouÅ¾Ã­t pro tuto strÃ¡nku. Å ablona smarty mÅ¯Å¾e bÃ½t umÃ­stÄ›na v adresÃ¡Å™i tohoto pluginu nebo v adresÃ¡Å™i VaÅ¡Ã­ Å¡ablony.');
+@define('STATICBLOCK_SELECT_TEMPLATES', 'Vyberte Å¡ablonu');
 @define('STATICBLOCK_SELECT_BLOCKS', 'Vyberte blok');
-@define('STATICBLOCK_EDIT_TEMPLATES', 'Upravit ¹ablonu');
+@define('STATICBLOCK_EDIT_TEMPLATES', 'Upravit Å¡ablonu');
 @define('STATICBLOCK_EDIT_BLOCKS', 'Upravit blok');
-@define('STATICBLOCK_USE', 'Pou¾ít ¹ablonu');
-@define('STATICBLOCK_ATTACH', 'Pøidat statickı blok: ');
+@define('STATICBLOCK_USE', 'PouÅ¾Ã­t Å¡ablonu');
+@define('STATICBLOCK_ATTACH', 'PÅ™idat statickÃ½ blok: ');
 
-@define('STATICBLOCK_RANDOMIZE', 'Zobrazovat náhodné bloky');
-@define('STATICBLOCK_RANDOMIZE_DESC', 'Pokud je zapnuto, bloky budou náhodnì vlo¾eny za pøíspìvky.');
-@define('STATICBLOCK_FIRST_SHOW', 'První pøíspìvek');
-@define('STATICBLOCK_FIRST_SHOW_DESC', 'Zadejte poèet pøíspìvkù, po kterıch zaènou bıt vkládány náhodné bloky. "1" vlo¾í náhodnı blok za první pøíspìvek, "2" za druhı atp.');
-@define('STATICBLOCK_SHOW_SKIP', 'Pøeskoèit pøíspìvky');
-@define('STATICBLOCK_SHOW_SKIP_DESC', 'Zadejte poèet pøíspìvkù, po kterıch se má znovu vøadit náhodnı blok. "1" bude zobrazovat náhodnı blok po ka¾dém pøíspìvku, "2" pouze po ka¾dıch dvou pøíspìvcích.');
+@define('STATICBLOCK_RANDOMIZE', 'Zobrazovat nÃ¡hodnÃ© bloky');
+@define('STATICBLOCK_RANDOMIZE_DESC', 'Pokud je zapnuto, bloky budou nÃ¡hodnÄ› vloÅ¾eny za pÅ™Ã­spÄ›vky.');
+@define('STATICBLOCK_FIRST_SHOW', 'PrvnÃ­ pÅ™Ã­spÄ›vek');
+@define('STATICBLOCK_FIRST_SHOW_DESC', 'Zadejte poÄet pÅ™Ã­spÄ›vkÅ¯, po kterÃ½ch zaÄnou bÃ½t vklÃ¡dÃ¡ny nÃ¡hodnÃ© bloky. "1" vloÅ¾Ã­ nÃ¡hodnÃ½ blok za prvnÃ­ pÅ™Ã­spÄ›vek, "2" za druhÃ½ atp.');
+@define('STATICBLOCK_SHOW_SKIP', 'PÅ™eskoÄit pÅ™Ã­spÄ›vky');
+@define('STATICBLOCK_SHOW_SKIP_DESC', 'Zadejte poÄet pÅ™Ã­spÄ›vkÅ¯, po kterÃ½ch se mÃ¡ znovu vÅ™adit nÃ¡hodnÃ½ blok. "1" bude zobrazovat nÃ¡hodnÃ½ blok po kaÅ¾dÃ©m pÅ™Ã­spÄ›vku, "2" pouze po kaÅ¾dÃ½ch dvou pÅ™Ã­spÄ›vcÃ­ch.');
 
-@define('STATICBLOCK_SHOW_MULTI', 'Povolit vícenásobné bloky');
-@define('STATICBLOCK_SHOW_MULTI_DESC', 'Pokud vlo¾íte blok do pøíspìvku, má pøesto funkce náhodné vkládání blokù vkládat bloky po pøíspìvku? Pokud je nastaveno "Ne", ka¾dı pøíspìvek nebude obsahovat více ne¾ jeden náhodnı blok.');
+@define('STATICBLOCK_SHOW_MULTI', 'Povolit vÃ­cenÃ¡sobnÃ© bloky');
+@define('STATICBLOCK_SHOW_MULTI_DESC', 'Pokud vloÅ¾Ã­te blok do pÅ™Ã­spÄ›vku, mÃ¡ pÅ™esto funkce nÃ¡hodnÃ© vklÃ¡dÃ¡nÃ­ blokÅ¯ vklÃ¡dat bloky po pÅ™Ã­spÄ›vku? Pokud je nastaveno "Ne", kaÅ¾dÃ½ pÅ™Ã­spÄ›vek nebude obsahovat vÃ­ce neÅ¾ jeden nÃ¡hodnÃ½ blok.');
 
