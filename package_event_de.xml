@@ -8,14 +8,14 @@
 <license>GPL</license>
 <summary>QuickNotes</summary>
 <groups>BACKEND_FEATURES,BACKEND_DASHBOARD</groups>
-<description>Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.</description>
+<description>Displays information for authors on the administration panel</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-05-13</date>
+  <date>2025-07-17</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -25,12 +25,7 @@
       <file>lang_en.inc.php</file>
       <file>notes.css</file>
       <file>serendipity_event_adminnotes.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_adminnotes/ChangeLog</file>
@@ -40,9 +35,6 @@
     <file>serendipity_event_adminnotes/lang_en.inc.php</file>
     <file>serendipity_event_adminnotes/notes.css</file>
     <file>serendipity_event_adminnotes/serendipity_event_adminnotes.php</file>
-    <file>serendipity_event_adminnotes/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_adminnotes/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_adminnotes/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -196,16 +188,16 @@
 <name>serendipity_event_assigncategories</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_assigncategories/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Kategorien zuweisen</summary>
+<summary>Category Assignment</summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Ermöglicht mehrere Kategorien zu bestehenden Einträgen zuzuweisen, bzw. die Zuweisungen schnell für alle Artikel zu ändern.</description>
+<description>Lets you assign multiple categories to entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-17</date>
   <filelist>
     <dir name="serendipity_event_assigncategories">
       <file>ChangeLog</file>
@@ -216,14 +208,7 @@
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_assigncategories.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_assigncategories/ChangeLog</file>
@@ -234,11 +219,6 @@
     <file>serendipity_event_assigncategories/lang_en.inc.php</file>
     <file>serendipity_event_assigncategories/lang_ja.inc.php</file>
     <file>serendipity_event_assigncategories/serendipity_event_assigncategories.php</file>
-    <file>serendipity_event_assigncategories/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_assigncategories/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_assigncategories/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_assigncategories/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_assigncategories/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
