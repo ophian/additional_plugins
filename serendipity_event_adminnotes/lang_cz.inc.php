@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/05
  */
-@define('PLUGIN_ADMINNOTES_TITLE', 'Rychlé poznámky');
-@define('PLUGIN_ADMINNOTES_DESC', 'Zobrazuje v administraèní sekci oznámení pøihlá¹enım u¾ivatelùm');
+@define('PLUGIN_ADMINNOTES_TITLE', 'RychlÃ© poznÃ¡mky');
+@define('PLUGIN_ADMINNOTES_DESC', 'Zobrazuje v administraÄnÃ­ sekci oznÃ¡menÃ­ pÅ™ihlÃ¡Å¡enÃ½m uÅ¾ivatelÅ¯m');
 
-@define('PLUGIN_ADMINNOTES_FEEDBACK', 'Povolit u¾ivatelùm posílání poznámek?');
-@define('PLUGIN_ADMINNOTES_FEEDBACK_DESC', 'Pokud není povoleno, pak mù¾e poznámky psát pouze administrátor. Pokud je povoleno, pak u¾ivatelé mohou posílat zprávy v¹em skupinám u¾ivatelù, jich¾ jsou èleny.');
-@define('PLUGIN_ADMINNOTES_FEEDBACK_INFO', 'Zadejte zprávu, která se objeví v administraèní sekci a vyberte cílovou skupinu adresátù, kteøí tuto zprávu uvidí.');
+@define('PLUGIN_ADMINNOTES_FEEDBACK', 'Povolit uÅ¾ivatelÅ¯m posÃ­lÃ¡nÃ­ poznÃ¡mek?');
+@define('PLUGIN_ADMINNOTES_FEEDBACK_DESC', 'Pokud nenÃ­ povoleno, pak mÅ¯Å¾e poznÃ¡mky psÃ¡t pouze administrÃ¡tor. Pokud je povoleno, pak uÅ¾ivatelÃ© mohou posÃ­lat zprÃ¡vy vÅ¡em skupinÃ¡m uÅ¾ivatelÅ¯, jichÅ¾ jsou Äleny.');
+@define('PLUGIN_ADMINNOTES_FEEDBACK_INFO', 'Zadejte zprÃ¡vu, kterÃ¡ se objevÃ­ v administraÄnÃ­ sekci a vyberte cÃ­lovou skupinu adresÃ¡tÅ¯, kteÅ™Ã­ tuto zprÃ¡vu uvidÃ­.');
 
-@define('PLUGIN_ADMINNOTES_HTML', 'Povolit HTML formátování?');
-@define('PLUGIN_ADMINNOTES_HTML_DESC', 'Pokud je povoleno, pak je mo¾né v pøíspìvcích pou¾ívat HTML tagy. Pozor, nìkteøí "zá¹kodníci" by se mohli pokusit vlo¾it do stránek kód v JavaScriptu. Tuto volbu povolte pouze pokud stoprocentnì vìøíte v¹em svım u¾ivatelùm!');
+@define('PLUGIN_ADMINNOTES_HTML', 'Povolit HTML formÃ¡tovÃ¡nÃ­?');
+@define('PLUGIN_ADMINNOTES_HTML_DESC', 'Pokud je povoleno, pak je moÅ¾nÃ© v pÅ™Ã­spÄ›vcÃ­ch pouÅ¾Ã­vat HTML tagy. Pozor, nÄ›kteÅ™Ã­ "zÃ¡Å¡kodnÃ­ci" by se mohli pokusit vloÅ¾it do strÃ¡nek kÃ³d v JavaScriptu. Tuto volbu povolte pouze pokud stoprocentnÄ› vÄ›Å™Ã­te vÅ¡em svÃ½m uÅ¾ivatelÅ¯m!');
 
-@define('PLUGIN_ADMINNOTES_CUTOFF', 'Zkrátit poznámky po X znacích?');
-@define('PLUGIN_ADMINNOTES_CUTOFF_DESC', 'Poznámky del¹i ne¾ zde nastaveno budou ve vıpisu oøíznuty a jejich plné znìní se zobrazí a¾ po rozkliknutí.');
+@define('PLUGIN_ADMINNOTES_CUTOFF', 'ZkrÃ¡tit poznÃ¡mky po X znacÃ­ch?');
+@define('PLUGIN_ADMINNOTES_CUTOFF_DESC', 'PoznÃ¡mky delÅ¡i neÅ¾ zde nastaveno budou ve vÃ½pisu oÅ™Ã­znuty a jejich plnÃ© znÄ›nÃ­ se zobrazÃ­ aÅ¾ po rozkliknutÃ­.');
 
