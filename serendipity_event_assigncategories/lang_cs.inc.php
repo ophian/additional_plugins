@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_ASSIGNCATEGORIES_NAME',		'Pøiøazení více kategorií');
-@define('PLUGIN_ASSIGNCATEGORIES_DESC',		'Umoòuje pøiøadit pøíspìvku více kategorií');
+@define('PLUGIN_ASSIGNCATEGORIES_NAME',		'PÅ™iÅ™azenÃ­ vÃ­ce kategoriÃ­');
+@define('PLUGIN_ASSIGNCATEGORIES_DESC',		'UmoÅ¾Åˆuje pÅ™iÅ™adit pÅ™Ã­spÄ›vku vÃ­ce kategoriÃ­');
 

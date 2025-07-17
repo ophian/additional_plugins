@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -18,10 +20,10 @@ class serendipity_event_assigncategories extends serendipity_event
         $propbag->add('description',   PLUGIN_ASSIGNCATEGORIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '1.9');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'backend_sidebar_entries'   => true,
@@ -129,19 +131,19 @@ class serendipity_event_assigncategories extends serendipity_event
             $this->updateCategories($entries);
         }
 
-        echo '<form action="?" method="post">' . "\n";
-        echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display" />' . "\n";
-        echo '    <input type="hidden" name="serendipity[adminAction]" value="assigncategories" />' . "\n";
+        echo '<form id="assigncategories" action="?" method="post">' . "\n";
+        echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display">' . "\n";
+        echo '    <input type="hidden" name="serendipity[adminAction]" value="assigncategories">' . "\n";
 
         $cats = serendipity_fetchCategories('all');
 
         foreach ($cats AS $cat_data) {
             echo '    <div class="form_multiselect">' . "\n";
-            echo '        <label for="serendipity_assigncat_'  . $cat_data['categoryid'] . '" class="block_level">' . serendipity_specialchars($cat_data['category_name']) . "</label>\n";
+            echo '        <label for="serendipity_assigncat_'  . $cat_data['categoryid'] . '" class="block_level">🏷️ ' . htmlspecialchars($cat_data['category_name']) . "</label>\n";
             echo '        <select id="serendipity_assigncat_'  . $cat_data['categoryid'] . '" size="5" name="serendipity[assigncat][' . $cat_data['categoryid'] . '][]" multiple="true">' . "\n";
             if (is_array($entries) && !empty($entries)) {
                 foreach($entries AS $entryid => $entry) {
-                    echo '            <option value="' . $entryid . '"' . (isset($entry['categories']) && in_array($cat_data['categoryid'], (array)$entry['categories']) ? ' selected="selected"' : '') . '>' . serendipity_specialchars(trim($entry['title'])) . "</option>\n";
+                    echo '            <option value="' . $entryid . '"' . (isset($entry['categories']) && in_array($cat_data['categoryid'], (array)$entry['categories']) ? ' selected="selected"' : '') . '>' . htmlspecialchars(trim($entry['title'])) . "</option>\n";
                 }
             }
             echo "        </select>\n";

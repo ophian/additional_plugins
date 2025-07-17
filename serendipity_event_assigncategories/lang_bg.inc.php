@@ -6,6 +6,6 @@
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_ASSIGNCATEGORIES_NAME', 'Асоцииране на категориите');
-@define('PLUGIN_ASSIGNCATEGORIES_DESC', 'Дава възможност за асоцииране на няколко категории с дадена статия');
+@define('PLUGIN_ASSIGNCATEGORIES_NAME', 'РђСЃРѕС†РёРёСЂР°РЅРµ РЅР° РєР°С‚РµРіРѕСЂРёРёС‚Рµ');
+@define('PLUGIN_ASSIGNCATEGORIES_DESC', 'Р”Р°РІР° РІСЉР·РјРѕР¶РЅРѕСЃС‚ Р·Р° Р°СЃРѕС†РёРёСЂР°РЅРµ РЅР° РЅСЏРєРѕР»РєРѕ РєР°С‚РµРіРѕСЂРёРё СЃ РґР°РґРµРЅР° СЃС‚Р°С‚РёСЏ');
 
