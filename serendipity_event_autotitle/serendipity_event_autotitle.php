@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,12 +10,11 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_autotitle extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_AUTOTITLE_NAME;
-    var $cache = null;
-    var $cache_group = 'serendipity_autotitle';
-    var $cache_key   = '';
-
-    var $page_charset;
+    public $title = PLUGIN_EVENT_AUTOTITLE_NAME;
+    protected $debug_fp = null;
+    protected $cache = null;
+    protected $cache_key   = '';
+    protected $page_charset;
 
     function introspect(&$propbag)
     {
@@ -23,10 +24,10 @@ class serendipity_event_autotitle extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOTITLE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '0.5');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true));
@@ -106,23 +107,6 @@ class serendipity_event_autotitle extends serendipity_event
                         if (serendipity_db_bool($this->get_config($temp['name'], 'true')) && !empty($eventData[$temp['element']])
                         &&  (!isset($eventData['properties']['ep_disable_markup_' . $this->instance]) || !$eventData['properties']['ep_disable_markup_' . $this->instance])
                         &&  !isset($serendipity['POST']['properties']['disable_markup_' . $this->instance])) {
-
-                            @include_once 'Cache/Lite.php';
-
-                            if (!class_exists('Cache_Lite')) {
-                                $this->debugMsg('Cache_Lite not available.');
-                                return false;
-                            }
-
-                            $options = array(
-                                'cacheDir' => $serendipity['serendipityPath'] . 'templates_c/',
-                                'lifeTime' => 604800, // one week
-                                'hashedDirectoryLevel' => 2,
-                                'automaticCleaningFactor' => 200
-                            );
-
-                            $this->cache = new Cache_Lite($options);
-
                             $element = $temp['element'];
                             $eventData[$element] = $this->autotitle($eventData[$element]);
                         }
@@ -152,8 +136,7 @@ class serendipity_event_autotitle extends serendipity_event
         $offset = 0;
 
         while (true) {
-            preg_match('|<a (.*?)\">|is', $text, $links,
-                            PREG_OFFSET_CAPTURE, $offset);
+            preg_match('|<a (.*?)\">|is', $text, $links, PREG_OFFSET_CAPTURE, $offset);
 
             if (empty($links[0])) {
                 break;
@@ -177,29 +160,17 @@ class serendipity_event_autotitle extends serendipity_event
             if (empty($url)) {
                 continue;
             }
-
-            // prepare cache:
-            $this->cache->_setFileName($url, $this->cache_group);
+            $hashed = hash('xxh3', $url); // prepare cache key
             // check cache:
-            $title = $this->get_cached_title($url);
+            $title = serendipity_getCacheItem("autotitle_cache_$hashed");
             if ($title === false) {
                 // $page = a maximum of the first 4kb of the linked site
                 $page = $this->getPage($url);
+                $page = is_string($page) ? $page : ''; // bool to string
                 // fetch everything between <title>, only one is allowed
                 preg_match('|<title>([^<]*?)</title>|is', $page, $title);
                 $page_charset = $this->getCharset($page);
 
-                // we need smarty to get our own charset :/
-                if (!isset($serendipity['smarty']) || !is_object($serendipity['smarty'])) {
-                    serendipity_smarty_init();
-                }
-                if (!defined('Smarty::SMARTY_VERSION')) {
-                    // handle with Smarty version 2
-                    $own_charset = $serendipity['smarty']->get_template_vars('head_charset');
-                } else {
-                    // handle with Smarty version 3 ...
-                    $own_charset = $serendipity['smarty']->tpl_vars['head_charset']->value;
-                }
                 // remove newlines to prevent issues with inserted brs by nl2br or textile
                 // 1. Standardize line endings:
                 //    DOS to Unix and Mac to Unix
@@ -208,11 +179,9 @@ class serendipity_event_autotitle extends serendipity_event
                 $title = str_replace(array("\n", "\t"), '', $title);
 
                 // escape and convert to prevent encoding-errors
-                $title = htmlspecialchars(
-                        iconv("$page_charset", "$own_charset//TRANSLIT", $title)
-                        , ENT_COMPAT, $own_charset, false);
+                $title = htmlspecialchars(iconv("$page_charset", "UTF-8//TRANSLIT", $title), ENT_COMPAT, 'UTF-8', false);
 
-                $this->cache_title($url, $title);
+                serendipity_cacheItem("autotitle_cache_$hashed", $title, 604800); // cache it for one week
             }
             // insert title in links
             $titled_link = "$link title=\"$title\"";
@@ -236,13 +205,13 @@ class serendipity_event_autotitle extends serendipity_event
         } else {
             $fetchlimit = 4096;
         }
-        $page = @file_get_contents($url, 0, null, -1, $fetchlimit);
+        $page = @file_get_contents($url, false, null, -1, $fetchlimit);
         if (empty($page)) {
             // try it again with curl if fopen was forbidden
             if (function_exists('curl_init')) {
                 $ch = curl_init($url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_RANGE, "0-$fetchlimits");
+                curl_setopt($ch, CURLOPT_RANGE, "0-$fetchlimit");
                 // the range isn't properly working. So the timeout shall hinder the worst
                 // that's why curl is not the default
                 curl_setopt($ch, CURLOPT_TIMEOUT, "20");
@@ -261,16 +230,6 @@ class serendipity_event_autotitle extends serendipity_event
         } else {
             return 'UTF-8';
         }
-    }
-
-    function get_cached_title($url)
-    {
-        return $this->cache->get($url, $this->cache_group);
-    }
-
-    function cache_title($url, $title)
-    {
-        return $this->cache->save($title, $url, $this->cache_group);
     }
 
     function debugMsg($msg)

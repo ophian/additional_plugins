@@ -1,3 +1,11 @@
+1.0.0:
+-----
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Convert for new cache system with Styx 5.0
+ * Declare strict types
+ * Bug fixes and clean-ups
+ * Raise requirements
+
 0.5:
 -----
  * PHP 8 preparation fix
