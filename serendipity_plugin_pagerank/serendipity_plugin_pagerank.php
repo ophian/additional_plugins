@@ -208,7 +208,7 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         $url = "https://www.google.com/search?client=navclient-auto&ch=6$ch&features=Rank&q=" . urlencode($url);
 
         if (ini_get('allow_url_fopen')) {
-            $data = file_get_contents($url, 128);
+            $data = file_get_contents($url, false, null, -1, 128);
         } else {
             if (function_exists('serendipity_request_object')) {
                 $req = serendipity_request_object($url);
