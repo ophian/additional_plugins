@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -55,9 +57,12 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_aggregator extends serendipity_event
 {
-    var $debug;
-    var $title = PLUGIN_AGGREGATOR_TITLE;
+    private $debug;
+    public $title = PLUGIN_AGGREGATOR_TITLE;
 
+    /**
+     * API
+     */
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -65,11 +70,11 @@ class serendipity_event_aggregator extends serendipity_event
         $propbag->add('name',          PLUGIN_AGGREGATOR_TITLE);
         $propbag->add('description',   PLUGIN_AGGREGATOR_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '2.2',
-            'smarty'      => '3.1.0',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '1.16');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -85,6 +90,9 @@ class serendipity_event_aggregator extends serendipity_event
         $this->dependencies = array('serendipity_event_entryproperties' => 'keep');
     }
 
+    /**
+     * API
+     */
     function introspect_config_item($name, &$propbag)
     {
         switch($name) {
@@ -128,7 +136,7 @@ class serendipity_event_aggregator extends serendipity_event
                         if (!isset($plugin_data['p']->markup_elements) || !is_array(@$plugin_data['p']->markup_elements) || empty($plugin_data['p']->markup_elements)) {
                             continue;
                         }
-                        $markups[$plugin_data['p']->instance] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($plugin_data['p']->title) : htmlspecialchars($plugin_data['p']->title, ENT_COMPAT, LANG_CHARSET));
+                        $markups[$plugin_data['p']->instance] = htmlspecialchars($plugin_data['p']->title);
                     }
                 }
 
@@ -165,8 +173,8 @@ class serendipity_event_aggregator extends serendipity_event
 
             case 'expire_md5':
                 $propbag->add('type', 'string');
-                $propbag->add('name', PLUGIN_AGGREGATOR_EXPIRE_MD5);
-                $propbag->add('description', PLUGIN_AGGREGATOR_EXPIRE_MD5_BLAHBLAH);
+                $propbag->add('name', PLUGIN_AGGREGATOR_EXPIRE_HASH);
+                $propbag->add('description', PLUGIN_AGGREGATOR_EXPIRE_HASH_BLAHBLAH);
                 $propbag->add('default', 90);
                 break;
 
@@ -190,6 +198,9 @@ class serendipity_event_aggregator extends serendipity_event
         return true;
     }
 
+    /**
+     *
+     */
     function setupDB()
     {
         global $serendipity;
@@ -211,7 +222,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         # Schema extension (version 2)
         if ($this->get_config('db_version') < 2) {
-            echo "*** setup DB version " . $this->get_config('db_version'). "<br />\n";
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $sql = "CREATE TABLE {$serendipity['dbPrefix']}aggregator_md5 (
                           entryid {AUTOINCREMENT} {PRIMARY},
                           md5         varchar(32) NOT NULL default '',
@@ -237,7 +248,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         # Schema extension (version 3)
         if ($this->get_config('db_version') < 3) {
-            echo "*** setup DB version " . $this->get_config('db_version'). "<br />\n";
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $sql = "CREATE TABLE {$serendipity['dbPrefix']}aggregator_feedcat (
                          feedid int(11) not null,
                          categoryid int(11) not null
@@ -319,6 +330,9 @@ class serendipity_event_aggregator extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function &getFeeds($opt = null)
     {
         global $serendipity;
@@ -360,6 +374,9 @@ class serendipity_event_aggregator extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function removeFeeds()
     {
         global $serendipity;
@@ -370,6 +387,9 @@ class serendipity_event_aggregator extends serendipity_event
         return serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}aggregator_feeds");
     }
 
+    /**
+     *
+     */
     function createFeeds()
     {
         global $serendipity;
@@ -398,6 +418,9 @@ class serendipity_event_aggregator extends serendipity_event
         }
     }
 
+    /**
+     *
+     */
     function purgeEntries($id_list)
     {
         global $serendipity;
@@ -409,9 +432,13 @@ class serendipity_event_aggregator extends serendipity_event
         $e = serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}exits           WHERE entry_id IN (" . implode(", ", $id_list) . ")");
 
         if ($a === true) echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . PLUGIN_AGGREGATOR_SUCCESS_PURGE . '</span>';
+
         return true;
     }
 
+    /**
+     *
+     */
     function expireFeedEntries($age)
     {
         global $serendipity;
@@ -448,7 +475,10 @@ class serendipity_event_aggregator extends serendipity_event
         return;
     }
 
-    function purgeMD5($id_list)
+    /**
+     *
+     */
+    function purgeHash($id_list)
     {
         global $serendipity;
 
@@ -457,13 +487,16 @@ class serendipity_event_aggregator extends serendipity_event
         return true;
     }
 
-    function expireFeedMD5($age)
+    /**
+     *
+     */
+    function expireFeedHash($age)
     {
         global $serendipity;
 
         // CLSC: 86400 = number of seconds in 24 hours
         $t  = time() - 86400 * $age;
-        if ($this->debug) printf("DEBUG: MD5 Expire cutoff %s\n", $t);
+        if ($this->debug) printf("DEBUG: HASH Expire cutoff %s\n", $t);
 
         $q = "SELECT entryid FROM {$serendipity['dbPrefix']}aggregator_md5 WHERE timestamp < " . (int) $t;
         $entries = serendipity_db_query($q);
@@ -475,15 +508,18 @@ class serendipity_event_aggregator extends serendipity_event
 
         $id_list = array();
         foreach($entries AS $entry) {
-            if ($this->debug) printf("Expire MD5 %s\n", $entry['entryid']);
+            if ($this->debug) printf("Expire HASH %s\n", $entry['entryid']);
             $id_list[] = $entry['entryid'];
         }
 
-        $this->purgeMD5($id_list);
+        $this->purgeHash($id_list);
 
         return;
     }
 
+    /**
+     *
+     */
     function expireFeeds()
     {
         $t  = &$this->get_config('expire');
@@ -493,11 +529,14 @@ class serendipity_event_aggregator extends serendipity_event
 
         $t = &$this->get_config('expire_md5');
         if ($t > 0) {
-            $this->expireFeedMD5($t);
+            $this->expireFeedHash($t);
         }
         return;
     }
 
+    /**
+     *
+     */
     function updateFeed($idx, &$array)
     {
         global $serendipity;
@@ -520,6 +559,9 @@ class serendipity_event_aggregator extends serendipity_event
         return $this->insertFeedCats($idx, $array['categoryids']);
     }
 
+    /**
+     *
+     */
     function deleteFeed($idx, &$array)
     {
         global $serendipity;
@@ -552,6 +594,9 @@ class serendipity_event_aggregator extends serendipity_event
         return serendipity_db_query($q);
     }
 
+    /**
+     *
+     */
     function insertFeed(&$array)
     {
         global $serendipity;
@@ -592,6 +637,9 @@ class serendipity_event_aggregator extends serendipity_event
         return $this->insertFeedCats(serendipity_db_insert_id(), $array['categoryids']);
     }
 
+    /**
+     *
+     */
     function insertFeedCats($idx, $categories)
     {
         global $serendipity;
@@ -612,6 +660,9 @@ class serendipity_event_aggregator extends serendipity_event
         return true;
     }
 
+    /**
+     *
+     */
     function deleteFeedCats($idx)
     {
         global $serendipity;
@@ -622,10 +673,11 @@ class serendipity_event_aggregator extends serendipity_event
         return serendipity_db_query($q);
     }
 
+    /**
+     *
+     */
     function &fetchCat($name, $selected = 0)
     {
-        global $serendipity;
-
         $n = "\n";
         $cat_list = '
                     <select name="' . $name . '" multiple="multiple" size="4">'.$n;
@@ -641,9 +693,11 @@ class serendipity_event_aggregator extends serendipity_event
         return $cat_list;
     }
 
+    /**
+     * Shows feeds in admin area
+     */
     function showFeeds()
     {
-        # Shows feeds in admin area
         global $serendipity;
 
         echo '<h2>' . PLUGIN_AGGREGATOR_TITLE . "</h2>\n\n";
@@ -674,7 +728,7 @@ class serendipity_event_aggregator extends serendipity_event
         echo "</span>\n";
 
         echo '
-<form action="?" method="post">
+<form id="feed_aggregator" action="?" method="post">
     <div>
         <input type="hidden" name="serendipity[adminModule]" value="event_display">
         <input type="hidden" name="serendipity[adminAction]" value="aggregator">
@@ -702,18 +756,18 @@ class serendipity_event_aggregator extends serendipity_event
             <tr style="padding: 10px;" class="serendipity_admin_list_item serendipity_admin_list_item_' . $even . '">
                 <td valign="top"><em>' . $idx . '</em></td>
                 <td valign="top">
-                    <input class="input_textbox" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedname]" value="' . serendipity_specialchars($feed['feedname']) . '">
+                    <input class="input_textbox" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedname]" value="' . htmlspecialchars($feed['feedname']) . '">
                     <span class="ag_legend">' . PLUGIN_AGGREGATOR_HTMLURI . ':</span>
-                    ' . serendipity_specialchars($feed['charset']) . '
+                    ' . htmlspecialchars($feed['charset']) . '
                 </td>
                 <td width="100%" valign="top">
-                    <input class="input_textbox ag_long" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedurl]" value="' . serendipity_specialchars($feed['feedurl']) . '">
-                    <input class="input_textbox ag_short" type="text" name="serendipity[feed][' . $feed['feedid'] . '][htmlurl]" value="' . serendipity_specialchars($feed['htmlurl']) . '">
+                    <input class="input_textbox ag_long" type="text" name="serendipity[feed][' . $feed['feedid'] . '][feedurl]" value="' . htmlspecialchars($feed['feedurl']) . '">
+                    <input class="input_textbox ag_short" type="text" name="serendipity[feed][' . $feed['feedid'] . '][htmlurl]" value="' . htmlspecialchars($feed['htmlurl']) . '">
                 </td>
                 <td valign="top" rowspan="2">'
                 . $cat . '
                 </td>
-                <td valign="top" rowspan="2"><textarea rows=6 cols=25 name="serendipity[feed][' . $feed['feedid'] . '][match_expression]">' . serendipity_specialchars($feed['match_expression']) . '</textarea></td>
+                <td valign="top" rowspan="2"><textarea rows=6 cols=25 name="serendipity[feed][' . $feed['feedid'] . '][match_expression]">' . htmlspecialchars($feed['match_expression']) . '</textarea></td>
             </tr>
             <tr style="padding: 10px;" class="serendipity_admin_list_item serendipity_admin_list_item_' . $even . '">
                 <td></td>
@@ -736,7 +790,7 @@ class serendipity_event_aggregator extends serendipity_event
 ';
 
         echo '
-<form action="?" method="post">
+<form id="importfeedlist" action="?" method="post">
     <div>
         <input type="hidden" name="serendipity[adminModule]" value="event_display">
         <input type="hidden" name="serendipity[adminAction]" value="aggregator">
@@ -762,6 +816,9 @@ class serendipity_event_aggregator extends serendipity_event
 </form>';
     }
 
+    /**
+     *
+     */
     function importOPML()
     {
         $tree = $this->importFeeds();
@@ -790,6 +847,9 @@ class serendipity_event_aggregator extends serendipity_event
         serendipity_rebuildCategoryTree();
     }
 
+    /**
+     *
+     */
     function serendipity_addCategory($name, $desc, $authorid, $icon, $parentid)
     {
         global $serendipity;
@@ -808,10 +868,11 @@ class serendipity_event_aggregator extends serendipity_event
         return serendipity_db_query($query);
     }
 
+    /**
+     *
+     */
     function newCategory($parent, $last_parent_id)
     {
-        global $serendipity;
-
         if (function_exists('serendipity_addCategory')) {
             $parent_id = serendipity_addCategory($parent, '', 0, '', $last_parent_id);
         } else {
@@ -822,6 +883,9 @@ class serendipity_event_aggregator extends serendipity_event
         return $parent_id;
     }
 
+    /**
+     *
+     */
     function fetchCategoryParent($parentname)
     {
         if (!is_array($this->cats)) {
@@ -837,6 +901,9 @@ class serendipity_event_aggregator extends serendipity_event
         return false;
     }
 
+    /**
+     *
+     */
     function parseOutline(&$xml_outline, $last_parent_name = '', $last_parent_id = 0)
     {
         global $serendipity;
@@ -881,6 +948,9 @@ class serendipity_event_aggregator extends serendipity_event
         return true;
     }
 
+    /**
+     *
+     */
     function &importFeeds()
     {
         // Used by ImportOPML routine
@@ -939,6 +1009,9 @@ class serendipity_event_aggregator extends serendipity_event
         return $tree;
     }
 
+    /**
+     *
+     */
     function &GetChildren($vals, &$i)
     {
         $children = array();
@@ -973,7 +1046,10 @@ class serendipity_event_aggregator extends serendipity_event
         }
     }
 
-    function insertProperties($entryid, $feed, $md5hash = null)
+    /**
+     *
+     */
+    function insertProperties($entryid, $feed, $hash = null)
     {
         global $serendipity;
 
@@ -1021,17 +1097,20 @@ class serendipity_event_aggregator extends serendipity_event
                                 serendipity_db_query($sql);
 
             # We will be using this for duplicate detection
-            # same articleurl and same md5 property -> dupe
+            # same articleurl and same HASH property -> dupe
             $t = time();
             $sql  = "INSERT INTO {$serendipity['dbPrefix']}aggregator_md5
                                  (entryid, md5, timestamp)
-                          VALUES ('$entryid', '$md5hash', '$t')";
+                          VALUES ('$entryid', '$hash', '$t')";
             serendipity_db_query($sql);
         }
 
         $this->feedupdate_finish($feed, $entryid);
      }
 
+    /**
+     *
+     */
     function feedupdate_finish(&$feed, $entryid)
     {
         global $serendipity;
@@ -1040,13 +1119,16 @@ class serendipity_event_aggregator extends serendipity_event
         $sql = "UPDATE {$serendipity['dbPrefix']}aggregator_feeds SET last_update = " . time() . " WHERE feedid = " . (int)$feed['feedid'];
         serendipity_db_query($sql);
 
-        $md5hash = md5($entryid . $feed['articleurl'] . $feed['last_update']);
+        $hash = hash('xxh3', $entryid . $feed['articleurl'] . $feed['last_update']); // 64 bit hashing up from PHP 8.1
 
-        # Always update the MD5 hash, to catch updates of an entry properly. Patch by jerwarren!
-        $sql = "UPDATE {$serendipity['dbPrefix']}aggregator_md5 SET timestamp = '$t', md5='$md5hash' WHERE entryid = " . (int)$entryid;
+        # Always update the HASH, to catch updates of an entry properly. Patch by jerwarren!
+        $sql = "UPDATE {$serendipity['dbPrefix']}aggregator_md5 SET timestamp = '$t', md5='$hash' WHERE entryid = " . (int)$entryid;
         serendipity_db_query($sql);
     }
 
+    /**
+     *
+     */
     function decode($charset, &$array)
     {
         if (LANG_CHARSET == 'ISO-8859-1' || LANG_CHARSET == 'UTF-8') {
@@ -1073,6 +1155,9 @@ class serendipity_event_aggregator extends serendipity_event
         return true;
     }
 
+    /**
+     *
+     */
     function parseDate($time)
     {
         if (empty($time)) {
@@ -1097,6 +1182,9 @@ class serendipity_event_aggregator extends serendipity_event
         return -1;
     }
 
+    /**
+     *
+     */
     function checkCharset(&$feed)
     {
         global $serendipity;
@@ -1123,9 +1211,13 @@ class serendipity_event_aggregator extends serendipity_event
                                  SET charset = '" . serendipity_db_escape_string($encoding) . "'
                                WHERE feedid  = " . (int)$feed['feedid']);
         $feed['charset'] = $encoding;
+
         return $encoding;
     }
 
+    /**
+     *
+     */
     function fetchFeeds($opt = null)
     {
         global $serendipity;
@@ -1149,7 +1241,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         $cache_authors = array();
         $cache_entries = array();
-        $cache_md5     = array();
+        $cache_hash    = array();
 
         $sql_cache_authors = serendipity_db_Query("SELECT authorid, realname
                                                      FROM {$serendipity['dbPrefix']}authors");
@@ -1182,15 +1274,15 @@ class serendipity_event_aggregator extends serendipity_event
         }
         if ($this->debug) printf("DEBUG: cache_entries['title']['authorid']['timestamp'] = entryid has %d entries.\n", count($cache_entries));
 
-        $sql_cache_md5 = serendipity_db_query("SELECT entryid, md5, timestamp
+        $sql_cache_hash = serendipity_db_query("SELECT entryid, md5, timestamp
                                                  FROM {$serendipity['dbPrefix']}aggregator_md5");
-        if (is_array($sql_cache_md5)) {
-            foreach($sql_cache_md5 AS $idx => $entry) {
-                $cache_md5[$entry['md5']]['entryid'] = $entry['entryid'];
-                $cache_md5[$entry['md5']]['timestamp'] = $entry['timestamp'];
+        if (is_array($sql_cache_hash)) {
+            foreach($sql_cache_hash AS $idx => $entry) {
+                $cache_hash[$entry['md5']]['entryid'] = $entry['entryid'];
+                $cache_hash[$entry['md5']]['timestamp'] = $entry['timestamp'];
             }
         }
-        if ($this->debug) printf("DEBUG: cache_md5['md5'] = entryid has %d entries.\n", count($cache_md5));
+        if ($this->debug) printf("DEBUG: cache_hash['md5'] = entryid has %d entries.\n", count($cache_hash));
 
         foreach($feeds AS $feed) {
             if (empty($opt['store_separate'])) printf("Read %s.\n", $feed['feedurl']);
@@ -1232,7 +1324,7 @@ class serendipity_event_aggregator extends serendipity_event
                         if ($this->debug) printf("DEBUG: falling back to dc:date % s= %s\n", $item['dc:date'], $date);
                     }
                     if ($date == -1) {
-                        // Couldn't figure out the date string. Set it to "now" and hope that the md5hash will get it.
+                        // Couldn't figure out the date string. Set it to "now" and hope that the hash will get it.
                         $date           = time();
                         $fake_timestamp = true;
                         if ($this->debug) printf("DEBUG: falling back to time() = %s\n", $date);
@@ -1266,7 +1358,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 // error handling
                 if ($simplefeed->error()) {
-                    if (empty($opt['store_separate'])) printf('<p><b>ERROR:</b> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($simplefeed->error()) : htmlspecialchars($simplefeed->error(), ENT_COMPAT, LANG_CHARSET)) . "</p>\r\n") ;
+                    if (empty($opt['store_separate'])) printf('<p><b>ERROR:</b> ' . htmlspecialchars($simplefeed->error()) . "</p>\r\n") ;
                 }
 
                 if ($success) {
@@ -1292,7 +1384,6 @@ class serendipity_event_aggregator extends serendipity_event
            }
 
            foreach ($stack AS $key => $item) {
-
                 if (isset($opt['store_separate']) && $opt['store_separate'] === true) {
                     $ep_id = $cache_entries[$item['title']][$feed['feedid']][$item['date']];
                     if ($this->debug) {
@@ -1350,19 +1441,19 @@ class serendipity_event_aggregator extends serendipity_event
                     $entry['body'] = $item['content'];
                 }
 
-                $md5hash = md5($feed_authorid . $item['title'] . $entry['body']);
+                $hash = hash('xxh3', $feed_authorid . $item['title'] . $entry['body']); // 64 bit hashing up from PHP 8.1
 
-                # Check 1: Have we seen this MD5?
+                # Check 1: Have we seen this HASH?
                 if ($this->debug) {
-                    printf("DEBUG: lookup cache_md5[%s] finds %s.\n",
-                        $md5hash,
-                        empty($cache_md5[$md5hash]) ? "nothing" : $cache_md5[$md5hash]['entryid']
+                    printf("DEBUG: lookup cache_hash[%s] finds %s.\n",
+                        $hash,
+                        empty($cache_hash[$hash]) ? "nothing" : $cache_hash[$hash]['entryid']
                     );
                 }
 
-                # If we have this md5, title and body for this article
+                # If we have this HASH, title and body for this article
                 # are unchanged. We do not need to do anything.
-                if (isset($cache_md5[$md5hash])) {
+                if (isset($cache_hash[$hash])) {
                     continue;
                 }
 
@@ -1446,7 +1537,7 @@ class serendipity_event_aggregator extends serendipity_event
                     $this->feedupdate_finish($feed, $entryid);
                 } else {
                     $entryid = serendipity_updertEntry($entry);
-                    $this->insertProperties($entryid, $feed, $md5hash);
+                    $this->insertProperties($entryid, $feed, $hash);
                 }
                 if (empty($opt['store_separate'])) printf(" Save '%s' as %s.\n", $item['title'], $entryid);
             }
@@ -1455,15 +1546,19 @@ class serendipity_event_aggregator extends serendipity_event
         if (empty($opt['store_separate'])) printf("Finish planetarium.\n");
     }
 
+    /**
+     * API
+     */
     function generate_content(&$title)
     {
         $title = PLUGIN_AGGREGATOR_TITLE;
     }
 
+    /**
+     *
+     */
     function showRecursive($ary, &$xml, $child_name = 'id', $parent_name = 'parent_id', $parentid = 0)
     {
-        global $serendipity;
-
         if ( sizeof($ary) == 0 ) {
             return array();
         }
@@ -1483,10 +1578,10 @@ class serendipity_event_aggregator extends serendipity_event
                         }
 
                         printf('    <outline title="%s" xmlUrl="%s" htmlUrl="%s" description="%s" />' . "\n",
-                            serendipity_utf8_encode((function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['feedname']) : htmlspecialchars($feed['feedname'], ENT_COMPAT, LANG_CHARSET))),
-                            serendipity_utf8_encode((function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['feedurl']) : htmlspecialchars($feed['feedurl'], ENT_COMPAT, LANG_CHARSET))),
-                            serendipity_utf8_encode((function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['htmlurl']) : htmlspecialchars($feed['htmlurl'], ENT_COMPAT, LANG_CHARSET))),
-                            serendipity_utf8_encode((function_exists('serendipity_specialchars') ? serendipity_specialchars($feed['feedname']) : htmlspecialchars($feed['feedname'], ENT_COMPAT, LANG_CHARSET)))
+                            serendipity_utf8_encode(htmlspecialchars($feed['feedname'])),
+                            serendipity_utf8_encode(htmlspecialchars($feed['feedurl'])),
+                            serendipity_utf8_encode(htmlspecialchars($feed['htmlurl'])),
+                            serendipity_utf8_encode(htmlspecialchars($feed['feedname']))
                         );
                     }
                 }
@@ -1502,6 +1597,9 @@ class serendipity_event_aggregator extends serendipity_event
         return true;
     }
 
+    /**
+     *
+     */
     function parseShowFeed(&$eventData)
     {
         global $serendipity;
@@ -1509,7 +1607,7 @@ class serendipity_event_aggregator extends serendipity_event
         $cmd = explode('|', $eventData);
         $opt = array();
         foreach($cmd AS $cmdpart) {
-            $cmdpart = trim($cmdpart);
+            $cmdpart  = trim($cmdpart);
             $cmdpart2 = explode(':', $cmdpart);
 
             if (!empty($cmdpart) && !empty($cmdpart2[1])) {
@@ -1527,7 +1625,7 @@ class serendipity_event_aggregator extends serendipity_event
 
         $opt['store_separate'] = true;
 
-        $fkey = 'last_showfeed_' . md5(serialize($opt));
+        $fkey = 'last_showfeed_' . hash('xxh3', serialize($opt)); // 64 bit hashing up from PHP 8.1
         if (time() - $this->get_config($fkey) > $opt['cachetime']) {
             $this->set_config($fkey, time());
             $this->fetchFeeds($opt);
@@ -1556,10 +1654,13 @@ class serendipity_event_aggregator extends serendipity_event
         }
         $serendipity['smarty']->display($tfile);
         //
-        // Feed Icon parsen und in feeds speichern
+        // Parse the Feed Icon save in feeds
         return true;
     }
 
+    /**
+     * API
+     */
     function event_hook($event, &$bag, &$eventData, $addData = null)
     {
         global $serendipity;

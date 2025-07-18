@@ -1,51 +1,51 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/05
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/12/25
  */
 
-@define('PLUGIN_AGGREGATOR_TITLE', 'RSS agregátor');
-@define('PLUGIN_AGGREGATOR_DESC', 'Zobrazuje zprávy z mnoha RSS kanálù. DÙLE®ITÁ POZNÁMKA: Aktualizace a "krmení" agregátoru je v souèasnosti nutno dìlat ruènì pomocí Cronjobs nebo podobnì. Volejte následující adresu v libovolnıch èasovıch intervalech: ' . $serendipity['baseURL'] . 'index.php?/plugin/aggregator');
-@define('PLUGIN_AGGREGATOR_FEEDNAME', 'Název RSS kanálu');
-@define('PLUGIN_AGGREGATOR_FEEDNAME_DESC', 'Zobrazovanı název RSS kanálu.');
-@define('PLUGIN_AGGREGATOR_FEEDURI', 'URI adresa RSS kanálu');
-@define('PLUGIN_AGGREGATOR_FEEDURI_DESC', 'Adresa RSS kanálu.');
-@define('PLUGIN_AGGREGATOR_HTMLURI', 'Domovská stránka - URI adresa');
-@define('PLUGIN_AGGREGATOR_HTMLURI_DESC', 'HTML adresa kanálu.');
+@define('PLUGIN_AGGREGATOR_TITLE', 'RSS agregÃ¡tor');
+@define('PLUGIN_AGGREGATOR_DESC', 'Zobrazuje zprÃ¡vy z mnoha RSS kanÃ¡lÅ¯. DÅ®LEÅ½ITÃ POZNÃMKA: Aktualizace a "krmenÃ­" agregÃ¡toru je v souÄasnosti nutno dÄ›lat ruÄnÄ› pomocÃ­ Cronjobs nebo podobnÄ›. Volejte nÃ¡sledujÃ­cÃ­ adresu v libovolnÃ½ch ÄasovÃ½ch intervalech: ' . $serendipity['baseURL'] . 'index.php?/plugin/aggregator');
+@define('PLUGIN_AGGREGATOR_FEEDNAME', 'NÃ¡zev RSS kanÃ¡lu');
+@define('PLUGIN_AGGREGATOR_FEEDNAME_DESC', 'ZobrazovanÃ½ nÃ¡zev RSS kanÃ¡lu.');
+@define('PLUGIN_AGGREGATOR_FEEDURI', 'URI adresa RSS kanÃ¡lu');
+@define('PLUGIN_AGGREGATOR_FEEDURI_DESC', 'Adresa RSS kanÃ¡lu.');
+@define('PLUGIN_AGGREGATOR_HTMLURI', 'DomovskÃ¡ strÃ¡nka - URI adresa');
+@define('PLUGIN_AGGREGATOR_HTMLURI_DESC', 'HTML adresa kanÃ¡lu.');
 @define('PLUGIN_AGGREGATOR_CATEGORIES', 'Kategorie');
 
-@define('PLUGIN_AGGREGATOR_FEEDLIST', 'Toto je seznam pou¾itelnıch kanálù. Jednotilvé kanály mù¾ete zadat ruènì a stisknout tlaèítko "GO" ("Provést"), nebo mù¾ete importovat celı OPML soubor. Kanály mohou bıt smazány zadáním prázdné hodnoty do názvuv nebo URL adresy kanálu. Nové kanály mohou bıt pøidány jako poslední øádka tabulky.');
-@define('PLUGIN_AGGREGATOR_FEEDUPDATE', 'Poslední aktualizace');
-@define('PLUGIN_AGGREGATOR_FEED_MISSINGDATA', 'Musíte zadat jméno a URL adresu RSS kanálu.');
-@define('PLUGIN_AGGREGATOR_EXPORTFEEDLIST', 'Exportovat OPML seznam RSS kanálù');
-@define('PLUGIN_AGGREGATOR_IMPORTFEEDLIST', 'Importovat OPML seznam RSS kanálù');
-@define('PLUGIN_AGGREGATOR_IMPORTFEEDLIST_DESC', 'Zadejte URL adresu k OPML soubor (souèasné nastavení RSS kanálù bude ZRU©ENO a pøepsáno importovanımi kanály!). Pokud za¹krtnete vobu "Import kategorií", bude z OMPL souboru do blogu importována i struktura kategorií.');
+@define('PLUGIN_AGGREGATOR_FEEDLIST', 'Toto je seznam pouÅ¾itelnÃ½ch kanÃ¡lÅ¯. JednotilvÃ© kanÃ¡ly mÅ¯Å¾ete zadat ruÄnÄ› a stisknout tlaÄÃ­tko "GO" ("ProvÃ©st"), nebo mÅ¯Å¾ete importovat celÃ½ OPML soubor. KanÃ¡ly mohou bÃ½t smazÃ¡ny zadÃ¡nÃ­m prÃ¡zdnÃ© hodnoty do nÃ¡zvuv nebo URL adresy kanÃ¡lu. NovÃ© kanÃ¡ly mohou bÃ½t pÅ™idÃ¡ny jako poslednÃ­ Å™Ã¡dka tabulky.');
+@define('PLUGIN_AGGREGATOR_FEEDUPDATE', 'PoslednÃ­ aktualizace');
+@define('PLUGIN_AGGREGATOR_FEED_MISSINGDATA', 'MusÃ­te zadat jmÃ©no a URL adresu RSS kanÃ¡lu.');
+@define('PLUGIN_AGGREGATOR_EXPORTFEEDLIST', 'Exportovat OPML seznam RSS kanÃ¡lÅ¯');
+@define('PLUGIN_AGGREGATOR_IMPORTFEEDLIST', 'Importovat OPML seznam RSS kanÃ¡lÅ¯');
+@define('PLUGIN_AGGREGATOR_IMPORTFEEDLIST_DESC', 'Zadejte URL adresu k OPML soubor (souÄasnÃ© nastavenÃ­ RSS kanÃ¡lÅ¯ bude ZRUÅ ENO a pÅ™epsÃ¡no importovanÃ½mi kanÃ¡ly!). Pokud zaÅ¡krtnete vobu "Import kategoriÃ­", bude z OMPL souboru do blogu importovÃ¡na i struktura kategoriÃ­.');
 @define('PLUGIN_AGGREGATOR_IMPORTFEEDLIST_BUTTON', 'Importovat OPML!');
 @define('PLUGIN_AGGREGATOR_EXPORTFEEDLIST_BUTTON', 'Exportovat OPML!');
 @define('PLUGIN_AGGREGATOR_IMPORTCATEGORIES', 'Importovat kategorie');
-@define('PLUGIN_AGGREGATOR_IMPORTCATEGORIES2', 'Zaøadit ka¾dı RSS kanál do vlastní kategorie');
-@define('PLUGIN_AGGREGATOR_CATEGORYSKIPPED', 'Pøeskakuji vytváøení kategorie "%s", proto¾e u¾ existuje.');
+@define('PLUGIN_AGGREGATOR_IMPORTCATEGORIES2', 'ZaÅ™adit kaÅ¾dÃ½ RSS kanÃ¡l do vlastnÃ­ kategorie');
+@define('PLUGIN_AGGREGATOR_CATEGORYSKIPPED', 'PÅ™eskakuji vytvÃ¡Å™enÃ­ kategorie "%s", protoÅ¾e uÅ¾ existuje.');
 
-@define('PLUGIN_AGGREGATOR_EXPIRE', 'Vypr¹ení platnosti obsahu');
-@define('PLUGIN_AGGREGATOR_EXPIRE_BLAHBLAH', 'Platnost obsahu v databázi vypr¹í po uplynutí n dní (0 = ¾ádné vypr¹ení platnosti).');
-@define('PLUGIN_AGGREGATOR_EXPIRE_MD5', 'Kontrolní souèty pro expiraci');
-@define('PLUGIN_AGGREGATOR_EXPIRE_MD5_BLAHBLAH', 'Kontrolní sumy se pou¾ívají ke kontrole èlánkù bez data na duplikáty. Po kolika dnech mají kontrolní souèty vypr¹et? (90 = doporuèená hodnota, 0 = nikdy).');
-@define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES', 'Odstranit závislé pøíspìvky?');
-@define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES_DESC', 'Pokud odhlásíte (sma¾ete) kanál a tato volba je zapnuta, v¹echny pøíspìvky svázané s tímto kanálem budou smazány.');
-@define('PLUGIN_AGGREGATOR_DEBUG', 'Ladicí vıpisy');
-@define('PLUGIN_AGGREGATOR_DEBUG_BLAHBLAH', 'Zapnout zapisování ladicích vıpisù do souboru?');
+@define('PLUGIN_AGGREGATOR_EXPIRE', 'VyprÅ¡enÃ­ platnosti obsahu');
+@define('PLUGIN_AGGREGATOR_EXPIRE_BLAHBLAH', 'Platnost obsahu v databÃ¡zi vyprÅ¡Ã­ po uplynutÃ­ n dnÃ­ (0 = Å¾Ã¡dnÃ© vyprÅ¡enÃ­ platnosti).');
+@define('PLUGIN_AGGREGATOR_EXPIRE_HASH', 'KontrolnÃ­ souÄty pro expiraci');
+@define('PLUGIN_AGGREGATOR_EXPIRE_HASH_BLAHBLAH', 'KontrolnÃ­ sumy se pouÅ¾Ã­vajÃ­ ke kontrole ÄlÃ¡nkÅ¯ bez data na duplikÃ¡ty. Po kolika dnech majÃ­ kontrolnÃ­ souÄty vyprÅ¡et? (90 = doporuÄenÃ¡ hodnota, 0 = nikdy).');
+@define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES', 'Odstranit zÃ¡vislÃ© pÅ™Ã­spÄ›vky?');
+@define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES_DESC', 'Pokud odhlÃ¡sÃ­te (smaÅ¾ete) kanÃ¡l a tato volba je zapnuta, vÅ¡echny pÅ™Ã­spÄ›vky svÃ¡zanÃ© s tÃ­mto kanÃ¡lem budou smazÃ¡ny.');
+@define('PLUGIN_AGGREGATOR_DEBUG', 'LadicÃ­ vÃ½pisy');
+@define('PLUGIN_AGGREGATOR_DEBUG_BLAHBLAH', 'Zapnout zapisovÃ¡nÃ­ ladicÃ­ch vÃ½pisÅ¯ do souboru?');
 @define('PLUGIN_AGGREGATOR_IGNORE_UPDATES', 'Ignorovat aktualizace?');
-@define('PLUGIN_AGGREGATOR_IGNORE_UPDATES_DESC', 'Pokud se text èlánku zmìní pozdìji po vydání, má se tato aktualizace ignorovat?');
+@define('PLUGIN_AGGREGATOR_IGNORE_UPDATES_DESC', 'Pokud se text ÄlÃ¡nku zmÄ›nÃ­ pozdÄ›ji po vydÃ¡nÃ­, mÃ¡ se tato aktualizace ignorovat?');
 @define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE', 'Vybrat RSS parser');
-@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onys je distribuován pod BSD licencí, ale nepodporuje kanály typu ATOM.');
-@define('PLUGIN_AGGREGATOR_CRONJOB', 'Tento plugin vyu¾ívá Serendipity plugin Cronjob. Nainstalujte jej, pokud potøebujete vyu¾ívat pravidelnì opakované aktualizace.');
+@define('PLUGIN_AGGREGATOR_CHOOSE_ENGINE_DESC', 'Onys je distribuovÃ¡n pod BSD licencÃ­, ale nepodporuje kanÃ¡ly typu ATOM.');
+@define('PLUGIN_AGGREGATOR_CRONJOB', 'Tento plugin vyuÅ¾Ã­vÃ¡ Serendipity plugin Cronjob. Nainstalujte jej, pokud potÅ™ebujete vyuÅ¾Ã­vat pravidelnÄ› opakovanÃ© aktualizace.');
 @define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION', 'Filtr (*)');
-@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Zde lze zadat regulární vıraz, kterım se bude porovnávat obsah pøíspìvku (nadpis a tìlo) a tento pøíspìvek se vlo¾í do bogu, pouze pokud obsahuje zde zadanı vzor. Pokud je ponecháno prázdné, ¾ádné porovnávání se neprovádí. Více vırazù mù¾e bıt oddìleno znakem ~ (vlnovka = tilda) a jsou kombinovány podle logiky OR (nebo = pokud èlánek obsahuje alespoò jeden z vırazù, je pøijat).');
+@define('PLUGIN_AGGREGATOR_MATCH_EXPRESSION_DESC', 'Zde lze zadat regulÃ¡rnÃ­ vÃ½raz, kterÃ½m se bude porovnÃ¡vat obsah pÅ™Ã­spÄ›vku (nadpis a tÄ›lo) a tento pÅ™Ã­spÄ›vek se vloÅ¾Ã­ do bogu, pouze pokud obsahuje zde zadanÃ½ vzor. Pokud je ponechÃ¡no prÃ¡zdnÃ©, Å¾Ã¡dnÃ© porovnÃ¡vÃ¡nÃ­ se neprovÃ¡dÃ­. VÃ­ce vÃ½razÅ¯ mÅ¯Å¾e bÃ½t oddÄ›leno znakem ~ (vlnovka = tilda) a jsou kombinovÃ¡ny podle logiky OR (nebo = pokud ÄlÃ¡nek obsahuje alespoÅˆ jeden z vÃ½razÅ¯, je pÅ™ijat).');
 
-@define('PLUGIN_AGGREGATOR_PUBLISH', 'Ulo¾it agregované pøíspìvky jako...');
-@define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'Zakázat znaèkovací pluginy pro pøíspìvky vyrobené pomocí agregátoru.');
-@define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'Oznaète znaèkovací pluginy, které nemají bıt pou¾ívány v agregovanıch pøíspìvcích.');
+@define('PLUGIN_AGGREGATOR_PUBLISH', 'UloÅ¾it agregovanÃ© pÅ™Ã­spÄ›vky jako...');
+@define('PLUGIN_AGGREGATOR_MARKUP_DISABLE', 'ZakÃ¡zat znaÄkovacÃ­ pluginy pro pÅ™Ã­spÄ›vky vyrobenÃ© pomocÃ­ agregÃ¡toru.');
+@define('PLUGIN_AGGREGATOR_MARKUP_DISABLE_DESC', 'OznaÄte znaÄkovacÃ­ pluginy, kterÃ© nemajÃ­ bÃ½t pouÅ¾Ã­vÃ¡ny v agregovanÃ½ch pÅ™Ã­spÄ›vcÃ­ch.');
 

@@ -30,8 +30,8 @@
 
 @define('PLUGIN_AGGREGATOR_EXPIRE', 'Expire(d) content');
 @define('PLUGIN_AGGREGATOR_EXPIRE_BLAHBLAH', 'Content will expire from the database after n days (0 = no expire). Although, if the feed entries to be sourced are older than n days, they are not fetched at all (0 = All).');
-@define('PLUGIN_AGGREGATOR_EXPIRE_MD5', 'Expire checksums');
-@define('PLUGIN_AGGREGATOR_EXPIRE_MD5_BLAHBLAH', 'Checksums are being used to check articles without dates against duplicates. After how many days shall the checksums expire? (90 = recommended, 0 = Never).');
+@define('PLUGIN_AGGREGATOR_EXPIRE_HASH', 'Expire checksums');
+@define('PLUGIN_AGGREGATOR_EXPIRE_HASH_BLAHBLAH', 'Checksums are being used to check articles without dates against duplicates. After how many days shall the checksums expire? (90 = recommended, 0 = Never).');
 @define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES', 'Remove dependent entries?');
 @define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES_DESC', 'When a Feed is unsubscripted and this option is enabled, all associated entries to this feed are erased.');
 @define('PLUGIN_AGGREGATOR_DEBUG', 'Debug Output');

@@ -31,8 +31,8 @@
 
 @define('PLUGIN_AGGREGATOR_EXPIRE', '期限切れの内容');
 @define('PLUGIN_AGGREGATOR_EXPIRE_BLAHBLAH', '内容は n 日の後にデータベースで期限切れになるするでしょう (0 = 期限切れなし)');
-@define('PLUGIN_AGGREGATOR_EXPIRE_MD5', '期限切れのチェックサム');
-@define('PLUGIN_AGGREGATOR_EXPIRE_MD5_BLAHBLAH', 'チェックサムは、日付のない記事に対しての複製を確認するために使用されます。チェックサムは何日後に期限切れになりますか? (90 = 推奨, 0 = しない).');
+@define('PLUGIN_AGGREGATOR_EXPIRE_HASH', '期限切れのチェックサム');
+@define('PLUGIN_AGGREGATOR_EXPIRE_HASH_BLAHBLAH', 'チェックサムは、日付のない記事に対しての複製を確認するために使用されます。チェックサムは何日後に期限切れになりますか? (90 = 推奨, 0 = しない).');
 @define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES', '依存するエントリを削除しますか?');
 @define('PLUGIN_AGGREGATOR_DELETEDEPENDENCIES_DESC', '入力が登録を取り消され、このオプションが有効な場合、この入力への関連するエントリーがすべて削除されます。');
 @define('PLUGIN_AGGREGATOR_DEBUG', 'デバグ出力');

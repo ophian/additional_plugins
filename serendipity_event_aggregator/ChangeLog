@@ -1,3 +1,13 @@
+2.0.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Declare strict types
+ * Changed real MD5 to XXH3 hashes, but left the MD5 naming(!) where DB related
+   and variable field containered, except for the root container naming.
+    TLDR.: Avoid update breaks, except some expiring.
+ * Raise requirements
+
 1.16:
 -----
  * Point to Styx
