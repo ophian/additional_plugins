@@ -47,11 +47,11 @@
 <description>Display entries from multiple RSS feeds (&quot;Planet&quot;). IMPORTANT NOTE: Updating and &quot;feeding&quot; your Aggregator must currently still happen manually via Cronjobs or similar. Call this URL with your custom timing interval: index.php?/plugin/aggregator</description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.16</version>
-  <requirements:s9yVersion>2.2</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-05-29</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-18</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -74,12 +74,6 @@
         </dir>
       </dir>
       <file>theme-patch.diff</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -99,10 +93,6 @@
     <file>serendipity_event_aggregator/simplepie/idn/npdata.ser</file>
     <file>serendipity_event_aggregator/simplepie/idn/ReadMe.txt</file>
     <file>serendipity_event_aggregator/theme-patch.diff</file>
-    <file>serendipity_event_aggregator/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_aggregator/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_aggregator/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_aggregator/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -231,11 +221,11 @@
 <description>Set the title-tag into the links of the entry.</description>
 <maintainers><maintainer><name>Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2021-08-12</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-18</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
       <file>ChangeLog</file>
@@ -246,12 +236,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_autotitle.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_autotitle/ChangeLog</file>
@@ -262,9 +247,6 @@
     <file>serendipity_event_autotitle/lang_de.inc.php</file>
     <file>serendipity_event_autotitle/lang_en.inc.php</file>
     <file>serendipity_event_autotitle/serendipity_event_autotitle.php</file>
-    <file>serendipity_event_autotitle/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_autotitle/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_autotitle/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
