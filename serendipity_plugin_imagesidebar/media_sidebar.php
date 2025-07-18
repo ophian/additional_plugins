@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class media_sidebar extends subplug_sidebar {
 
     var $title = PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME;

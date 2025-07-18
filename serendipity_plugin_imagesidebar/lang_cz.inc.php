@@ -1,88 +1,88 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/16
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/21
  */
 
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME', 'JednotnÈ zobrazov·nÌ obr·zk˘ v postrannÌm sloupci');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'UmoæÚuje zobrazovat obr·zky v postrannÌm sloupci. Zdroj˘ tÏchto obr·zk˘ m˘æe b˝t vÌcero. Plugin se dok·æe p¯ipojit do datab·ze Coppermine galerie (pouze pokud bÏæÌ na MySQL) a samoz¯ejmÏ i ke KnihovnÏ mÈdiÌ Serendipity.');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME', 'Jednotn√© zobrazov√°n√≠ obr√°zk≈Ø v postrann√≠m sloupci');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC', 'Umo≈æ≈àuje zobrazovat obr√°zky v postrann√≠m sloupci. Zdroj≈Ø tƒõchto obr√°zk≈Ø m≈Ø≈æe b√Ωt v√≠cero. Plugin se dok√°≈æe p≈ôipojit do datab√°ze Coppermine galerie (pouze pokud bƒõ≈æ√≠ na MySQL) a samoz≈ôejmƒõ i ke Knihovnƒõ m√©di√≠ Serendipity.');
 
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME', 'Zdroj obr·zku');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC', 'Vyberte ze seznamu zdroj obr·zk˘');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE', 'JeπtÏ nebylo nic vybr·no');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE', 'Datab·ze Coppermine');
-@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB', 'Knihovna mÈdiÌ Serendipity');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NAME', 'Zdroj obr√°zku');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_DESC', 'Vyberte ze seznamu zdroj obr√°zk≈Ø');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_NONE', 'Je≈°tƒõ nebylo nic vybr√°no');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_COPPERMINE', 'Datab√°ze Coppermine');
+@define('PLUGIN_SIDEBAR_IMAGESIDEBAR_DISPLAYSRC_MEDIALIB', 'Knihovna m√©di√≠ Serendipity');
 
-@define('PLUGIN_CPGS_NAME', 'Coppermine n·hledy');
-@define('PLUGIN_CPGS_DESC', 'Zobrazit n·hledy galerie Coppermine v postrannÌm sloupci');
+@define('PLUGIN_CPGS_NAME', 'Coppermine n√°hledy');
+@define('PLUGIN_CPGS_DESC', 'Zobrazit n√°hledy galerie Coppermine v postrann√≠m sloupci');
 @define('PLUGIN_CPGS_SERVER_NAME', 'Server');
-@define('PLUGIN_CPGS_SERVER_DESC', 'SQL server pouæit˝ v Coppermine');
-@define('PLUGIN_CPGS_DB_NAME', 'Datab·ze');
-@define('PLUGIN_CPGS_DB_DESC', 'SQL datab·ze');
-@define('PLUGIN_CPGS_PREFIX_NAME', 'P¯edpona (prefix)');
-@define('PLUGIN_CPGS_PREFIX_DESC', 'P¯edpona - prefix tabulek Coppermine galerie');
-@define('PLUGIN_CPGS_USER_NAME', 'P¯ihlaπovacÌ jmÈno');
-@define('PLUGIN_CPGS_USER_DESC', 'P¯ihlaπovacÌ jmÈno do datab·ze');
+@define('PLUGIN_CPGS_SERVER_DESC', 'SQL server pou≈æit√Ω v Coppermine');
+@define('PLUGIN_CPGS_DB_NAME', 'Datab√°ze');
+@define('PLUGIN_CPGS_DB_DESC', 'SQL datab√°ze');
+@define('PLUGIN_CPGS_PREFIX_NAME', 'P≈ôedpona (prefix)');
+@define('PLUGIN_CPGS_PREFIX_DESC', 'P≈ôedpona - prefix tabulek Coppermine galerie');
+@define('PLUGIN_CPGS_USER_NAME', 'P≈ôihla≈°ovac√≠ jm√©no');
+@define('PLUGIN_CPGS_USER_DESC', 'P≈ôihla≈°ovac√≠ jm√©no do datab√°ze');
 @define('PLUGIN_CPGS_PASSWORD_NAME', 'Heslo');
-@define('PLUGIN_CPGS_PASSWORD_DESC', 'Heslo do datab·ze');
+@define('PLUGIN_CPGS_PASSWORD_DESC', 'Heslo do datab√°ze');
 @define('PLUGIN_CPGS_URL_NAME', 'URL');
 @define('PLUGIN_CPGS_URL_DESC', 'URL adresa galerie');
 @define('PLUGIN_CPGS_TYPE_NAME', 'Typ');
-@define('PLUGIN_CPGS_TYPE_DESC', 'KterÈ obr·zky zobrazit?');
+@define('PLUGIN_CPGS_TYPE_DESC', 'Kter√© obr√°zky zobrazit?');
 @define('PLUGIN_CPGS_TITLE_NAME', 'Nadpis');
-@define('PLUGIN_CPGS_TITLE_DESC', 'Nadpis postrannÌho bloku');
+@define('PLUGIN_CPGS_TITLE_DESC', 'Nadpis postrann√≠ho bloku');
 @define('PLUGIN_CPGS_ALBUM_NAME', 'Odkaz na album');
-@define('PLUGIN_CPGS_ALBUM_DESC', 'P¯iloæit odkaz na album pod n·hled obr·zku');
+@define('PLUGIN_CPGS_ALBUM_DESC', 'P≈ôilo≈æit odkaz na album pod n√°hled obr√°zku');
 @define('PLUGIN_CPGS_GALLLINK_NAME', 'URL odkaz na galerii');
-@define('PLUGIN_CPGS_GALLLINK_DESC', 'URL adresa - odkaz pod n·hledy (pr·zdnÈ = æ·dn˝ odkaz)');
-@define('PLUGIN_CPGS_GALLNAME_NAME', 'N·zev galerie');
+@define('PLUGIN_CPGS_GALLLINK_DESC', 'URL adresa - odkaz pod n√°hledy (pr√°zdn√© = ≈æ√°dn√Ω odkaz)');
+@define('PLUGIN_CPGS_GALLNAME_NAME', 'N√°zev galerie');
 @define('PLUGIN_CPGS_GALLNAME_DESC', 'Text pro odkaz na galerii');
-@define('PLUGIN_CPGS_COUNT_NAME', 'N·hledy');
-@define('PLUGIN_CPGS_COUNT_DESC', 'PoËet zobrazen˝ch n·hled˘');
+@define('PLUGIN_CPGS_COUNT_NAME', 'N√°hledy');
+@define('PLUGIN_CPGS_COUNT_DESC', 'Poƒçet zobrazen√Ωch n√°hled≈Ø');
 @define('PLUGIN_CPGS_SIZE_NAME', 'Velikost');
-@define('PLUGIN_CPGS_SIZE_DESC', 'Maxim·lnÌ velikost n·hled˘');
-@define('PLUGIN_CPGS_THUMB_NAME', 'Zpracovat i ne-obr·zky?');
-@define('PLUGIN_CPGS_THUMB_DESC', 'PokusÌ se nalÈzt n·hledy generovanÈ galeriÌ Coppermine i pro ne-obr·zky (videa apod.)');
+@define('PLUGIN_CPGS_SIZE_DESC', 'Maxim√°ln√≠ velikost n√°hled≈Ø');
+@define('PLUGIN_CPGS_THUMB_NAME', 'Zpracovat i ne-obr√°zky?');
+@define('PLUGIN_CPGS_THUMB_DESC', 'Pokus√≠ se nal√©zt n√°hledy generovan√© galeri√≠ Coppermine i pro ne-obr√°zky (videa apod.)');
 @define('PLUGIN_CPGS_FILTER_NAME', 'Filtr alb');
-@define('PLUGIN_CPGS_FILTER_DESC', 'T¯Ìdit alba podle:');
-@define('PLUGIN_CPGS_RECENT', 'NejnovÏjπÌ');
-@define('PLUGIN_CPGS_POPULAR', 'NejËastÏji zobrazovanÈ');
-@define('PLUGIN_CPGS_RANDOM', 'N·hodnÈ');
+@define('PLUGIN_CPGS_FILTER_DESC', 'T≈ô√≠dit alba podle:');
+@define('PLUGIN_CPGS_RECENT', 'Nejnovƒõj≈°√≠');
+@define('PLUGIN_CPGS_POPULAR', 'Nejƒçastƒõji zobrazovan√©');
+@define('PLUGIN_CPGS_RANDOM', 'N√°hodn√©');
 
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NAME', 'ZobrazenÌ Knihovny mÈdiÌ v postrannÌm sloupci');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DESC', 'Zobrazit n·hodn˝ obr·zek z Knihovny mÈdiÌ Serendipity v postrannÌm sloupci. (Pozor, nerozliπuje mezi typy soubor˘, neodliπuje obr·zky a jinÈ soubory!)');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_NAME', 'V˝chozÌ adres·¯');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_DESC', 'Vyberte v˝chozÌ adres·¯, plugin bude vyhled·vat obr·zky pouze v nÏm.');
-#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'NerekurzivnÌ zobrazov·nÌ obr·zk˘');
-#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'Pokud je "Ano", budou se zobrazovat pouze obr·zky z aktu·lnÌho adres·¯e. Pokud je "Ne", pak se budou zobrazovat obr·zky i ze vπech podadres·¯˘.');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME', 'Chov·nÌ odkazu');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"Ve str·nce" otev¯e obr·zek ve st·vajÌcÌm oknÏ. "VyskakovacÌ okno" - obr·zek bude otev¯en v novÈm, velikostnÏ p¯izp˘sobenÈm oknÏ. "URL" umoæÚuje zadat statickou url adresu jako cÌl odkazu. "Galerie" povede na st·lou adresu (permalink) pluginu usergallery (pokud je nainstalov·n).');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE', 'Ve str·nce');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_POPUP', 'VyskakovacÌ okno');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NAME', 'Zobrazen√≠ Knihovny m√©di√≠ v postrann√≠m sloupci');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DESC', 'Zobrazit n√°hodn√Ω obr√°zek z Knihovny m√©di√≠ Serendipity v postrann√≠m sloupci. (Pozor, nerozli≈°uje mezi typy soubor≈Ø, neodli≈°uje obr√°zky a jin√© soubory!)');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_NAME', 'V√Ωchoz√≠ adres√°≈ô');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_DIRECTORY_DESC', 'Vyberte v√Ωchoz√≠ adres√°≈ô, plugin bude vyhled√°vat obr√°zky pouze v nƒõm.');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_NAME', 'Nerekurzivn√≠ zobrazov√°n√≠ obr√°zk≈Ø');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_IMAGESTRICT_DESC', 'Pokud je "Ano", budou se zobrazovat pouze obr√°zky z aktu√°ln√≠ho adres√°≈ôe. Pokud je "Ne", pak se budou zobrazovat obr√°zky i ze v≈°ech podadres√°≈ô≈Ø.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_NAME', 'Chov√°n√≠ odkazu');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_DESC', '"Ve str√°nce" otev≈ôe obr√°zek ve st√°vaj√≠c√≠m oknƒõ. "Vyskakovac√≠ okno" - obr√°zek bude otev≈ôen v nov√©m, velikostnƒõ p≈ôizp≈Øsoben√©m oknƒõ. "URL" umo≈æ≈àuje zadat statickou url adresu jako c√≠l odkazu. "Galerie" povede na st√°lou adresu (permalink) pluginu usergallery (pokud je nainstalov√°n).');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_INPAGE', 'Ve str√°nce');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_POPUP', 'Vyskakovac√≠ okno');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_URL', 'URL adresa');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_GALLERY', 'Galerie');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY', 'Odkaz na p¯Ìbuzn˝ p¯ÌspÏvek');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_LINKBEHAVIOR_ENTRY', 'Odkaz na p≈ô√≠buzn√Ω p≈ô√≠spƒõvek');
 
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_NAME', '©Ì¯ka obr·zku');
-#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Zadat pevnou πÌ¯ku obr·zku. Pokud je zad·na nula, plugin obr·zku zad· "width: 100%"');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_NAME', '≈†√≠≈ôka obr√°zku');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_WIDTH_DESC', 'Zadat pevnou ≈°√≠≈ôku obr√°zku. Pokud je zad√°na nula, plugin obr√°zku zad√° "width: 100%"');
 @define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_NAME', 'URL');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'St·l· URL adresa, na kterou m· vÈst odkaz. (nap¯. "https://www.example.org/")');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Zadejte st·l˝ odkaz (permalink) nebo podstr·nku');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC', 'Tato hodnota se musÌ shodovat s hodnotou zadanou v pluginu "galerie". Pamatujte, æe pokud je vypnutÈ p¯episov·nÌ URL adresy (url rewrite), musÌte pouæÌt podstr·nku.');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Libovoln˝ text (html znaËky povoleny), kter˝ m· b˝t p¯ed obr·zkem');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_SUMMERY', 'Libovoln˝ text (html znaËky povoleny), kter˝ bude p¯ipojen˝ za obr·zek');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME', 'Perioda v˝mÏny obr·zk˘');
-#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC', 'Jak Ëasto majÌ b˝t vymÏÚov·ny obr·zky. V minut·ch. Hodnota "0" znamen· obmÏnu p¯i kaædÈm naËtenÌ str·nky.');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_NAME', 'PoËet zobrazen˝ch obr·zk˘');
-#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_DESC', 'Kolik obr·zk˘ se m· zobrazovat?');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_NAME', 'Omezit pouze na hotlink obr·zky');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_DESC', 'Tato volba omezuje zobrazov·nÌ obr·zk˘ v postrannÌm sloupci pouze na ty, kterÈ jsou v KnihovnÏ mÈdiÌ oznaËeny jako hotlink (nejsou uloæenÈ na vaπem blogu, ale jedn· se pouze na odkazy na cizÌ servery).');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME', 'KlÌËovÈ slovo');
-@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_DESC', 'Vstupem pro tuto funkci je jedinÈ klÌËovÈ slovo (bez mezer). Funkce omezuje zobrazov·nÌ pouze na obr·zky obsahujÌcÌ zadanÈ slovo. Nap¯. pokud m·te hotlinky z vÌce zdroj˘, ale chcete zobrazovat pouze ty poch·zejÌcÌ z jednoho zdroje, m˘æete sem napsat nap¯Ìklad "zdroj.cz".');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_URL_DESC', 'St√°l√° URL adresa, na kterou m√° v√©st odkaz. (nap≈ô. "https://www.example.org/")');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_NAME', 'Zadejte st√°l√Ω odkaz (permalink) nebo podstr√°nku');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_GALPERM_DESC', 'Tato hodnota se mus√≠ shodovat s hodnotou zadanou v pluginu "galerie". Pamatujte, ≈æe pokud je vypnut√© p≈ôepisov√°n√≠ URL adresy (url rewrite), mus√≠te pou≈æ√≠t podstr√°nku.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_INTRO', 'Libovoln√Ω text (html znaƒçky povoleny), kter√Ω m√° b√Ωt p≈ôed obr√°zkem');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_SUMMERY', 'Libovoln√Ω text (html znaƒçky povoleny), kter√Ω bude p≈ôipojen√Ω za obr√°zek');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_NAME', 'Perioda v√Ωmƒõny obr√°zk≈Ø');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_ROTATETIME_DESC', 'Jak ƒçasto maj√≠ b√Ωt vymƒõ≈àov√°ny obr√°zky. V minut√°ch. Hodnota "0" znamen√° obmƒõnu p≈ôi ka≈æd√©m naƒçten√≠ str√°nky.');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_NAME', 'Poƒçet zobrazen√Ωch obr√°zk≈Ø');
+#@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_NUMIMAGES_DESC', 'Kolik obr√°zk≈Ø se m√° zobrazovat?');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_NAME', 'Omezit pouze na hotlink obr√°zky');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKS_DESC', 'Tato volba omezuje zobrazov√°n√≠ obr√°zk≈Ø v postrann√≠m sloupci pouze na ty, kter√© jsou v Knihovnƒõ m√©di√≠ oznaƒçeny jako hotlink (nejsou ulo≈æen√© na va≈°em blogu, ale jedn√° se pouze na odkazy na ciz√≠ servery).');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_NAME', 'Kl√≠ƒçov√© slovo');
+@define('PLUGIN_SIDEBAR_MEDIASIDEBAR_HOTLINKBASE_DESC', 'Vstupem pro tuto funkci je jedin√© kl√≠ƒçov√© slovo (bez mezer). Funkce omezuje zobrazov√°n√≠ pouze na obr√°zky obsahuj√≠c√≠ zadan√© slovo. Nap≈ô. pokud m√°te hotlinky z v√≠ce zdroj≈Ø, ale chcete zobrazovat pouze ty poch√°zej√≠c√≠ z jednoho zdroje, m≈Ø≈æete sem napsat nap≈ô√≠klad "zdroj.cz".');
 
-@define('PLUGIN_CPGS_GROUP_NAME', 'Uæivatelsk· skupina (usergroup)');
-@define('PLUGIN_CPGS_GROUP_DESC', 'Coppermine umoæÚuje omezit zobrazenÌ obr·zk˘ pouze na zadanou skupinu uæivatel˘. Pokud pot¯ebujete zobrazovat pouze nÏkterÈ obr·zky, zadejte uæivatelskou skupinu, za kterou se bude tento plugin maskovat. "Everybody" znamen·, æe nastavenÌ uæivatelskÈ skupiny bude ignorov·no.');
+@define('PLUGIN_CPGS_GROUP_NAME', 'U≈æivatelsk√° skupina (usergroup)');
+@define('PLUGIN_CPGS_GROUP_DESC', 'Coppermine umo≈æ≈àuje omezit zobrazen√≠ obr√°zk≈Ø pouze na zadanou skupinu u≈æivatel≈Ø. Pokud pot≈ôebujete zobrazovat pouze nƒõkter√© obr√°zky, zadejte u≈æivatelskou skupinu, za kterou se bude tento plugin maskovat. "Everybody" znamen√°, ≈æe nastaven√≠ u≈æivatelsk√© skupiny bude ignorov√°no.');
 
