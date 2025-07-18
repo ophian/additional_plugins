@@ -1,34 +1,36 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
- *  Revize: VladimÌr Ajgl <vlada@ajgl.cz> 2007/11/25 
+ *  Revize: Vladim√≠r Ajgl <vlada@ajgl.cz> 2007/11/25 
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/15
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/02/23
  */
 
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_NAME', 'RozπÌ¯enÈ volby pro pr·ci s mÈdii');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC', 'Rozπi¯uje moænosti vkl·d·nÌ obr·zk˘ z knihovny mÈdiÌ - quickblog a hromadnÈ vkl·d·nÌ obr·zk˘ (vÌce v dokumentaci v adres·¯i plugins/serendipity_evnets_imageselectorplus).');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET', 'CÌl pro tento odkaz:');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_JS', 'VyskakovacÌ popup okno (pomocÌ JavaScriptu, p¯izp˘sobiteln· velikost)');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_ENTRY', 'Samostatn˝ p¯ÌspÏvek');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_BLANK', 'VyskakovacÌ popup okno (pomocÌ target=_blank)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_NAME', 'Roz≈°√≠≈ôen√© volby pro pr√°ci s m√©dii');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC', 'Roz≈°i≈ôuje mo≈ænosti vkl√°d√°n√≠ obr√°zk≈Ø z knihovny m√©di√≠ - quickblog a hromadn√© vkl√°d√°n√≠ obr√°zk≈Ø (v√≠ce v dokumentaci v adres√°≈ôi plugins/serendipity_evnets_imageselectorplus).');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET', 'C√≠l pro tento odkaz:');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_JS', 'Vyskakovac√≠ popup okno (pomoc√≠ JavaScriptu, p≈ôizp≈Øsobiteln√° velikost)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_ENTRY', 'Samostatn√Ω p≈ô√≠spƒõvek');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_BLANK', 'Vyskakovac√≠ popup okno (pomoc√≠ target=_blank)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG', 'QuickBlog');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC', 'Pokud v n·sledujÌcÌch polÌch zad·te alespoÚ nadpis, obr·zek bude na blog z·roveÚ odesl·n jako nov˝ z·znam (p¯ÌspÏvek). Jeho vzhled je moæno editovat pomocÌ πablony plugin_quickblog.tpl');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH', 'Maxim·lnÌ v˝πka n·hledu (πÌ¯ka je p¯izp˘sobena proporcion·lnÏ)');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT', 'Maxim·nÌ πÌ¯ka n·hledu (v˝πka je p¯izp˘sobena proporcion·lnÏ)');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE', 'Dynamicky mÏnit velikost obr·zk˘ v z·vislosti na atributech "width" a "height"');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automaticky posÌl· klientovi obr·zky s upravenou velikostÌ v z·vislosti na hodnot·ch atributÌ width a/nebo height v tagu IMG. Toto V·m m˘æe trochu usnadnit æivot a snÌæ dobu stahov·nÌ str·nek, ale takÈ to sniæuje v˝kon serveru. (Pozn·mka: pomÏr stran z˘st·v· zachov·n). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC', 'Pokud v n√°sleduj√≠c√≠ch pol√≠ch zad√°te alespo≈à nadpis, obr√°zek bude na blog z√°rove≈à odesl√°n jako nov√Ω z√°znam (p≈ô√≠spƒõvek). Jeho vzhled je mo≈æno editovat pomoc√≠ ≈°ablony plugin_quickblog.tpl');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH', 'Maxim√°ln√≠ v√Ω≈°ka n√°hledu (≈°√≠≈ôka je p≈ôizp≈Øsobena proporcion√°lnƒõ)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT', 'Maxim√°n√≠ ≈°√≠≈ôka n√°hledu (v√Ω≈°ka je p≈ôizp≈Øsobena proporcion√°lnƒõ)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE', 'Dynamicky mƒõnit velikost obr√°zk≈Ø v z√°vislosti na atributech "width" a "height"');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC', 'Automaticky pos√≠l√° klientovi obr√°zky s upravenou velikost√≠ v z√°vislosti na hodnot√°ch atribut√≠ width a/nebo height v tagu IMG. Toto V√°m m≈Ø≈æe trochu usnadnit ≈æivot a sn√≠≈æ dobu stahov√°n√≠ str√°nek, ale tak√© to sni≈æuje v√Ωkon serveru. (Pozn√°mka: pomƒõr stran z≈Øst√°v√° zachov√°n). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
 
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES', 'Rozbalov·nÌ ZIP archiv˘');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH', 'Pokud je nahran˝ soubor ZIP archiv, m· se rozbalit? - P¯ednastaven· hodnota pro zaπkrt·vacÌ polÌËko ve formul·¯i pro nahr·v·nÌ soubor˘.');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC', 'Pokud je nahran˝ soubor ZIP archiv, m· se rozbalit?');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK', 'ZIP archiv byl ˙spÏπnÏ rozbalen');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED', 'ZIP archive se nepoda¯ilo rozbalit');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE', 'Obr·zek ze ZIP archivu');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB', 'p¯id·n do datab·ze');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES', 'Rozbalov√°n√≠ ZIP archiv≈Ø');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH', 'Pokud je nahran√Ω soubor ZIP archiv, m√° se rozbalit? - P≈ôednastaven√° hodnota pro za≈°krt√°vac√≠ pol√≠ƒçko ve formul√°≈ôi pro nahr√°v√°n√≠ soubor≈Ø.');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC', 'Pokud je nahran√Ω soubor ZIP archiv, m√° se rozbalit?');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK', 'ZIP archiv byl √∫spƒõ≈°nƒõ rozbalen');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED', 'ZIP archive se nepoda≈ôilo rozbalit');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE', 'Obr√°zek ze ZIP archivu');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB', 'p≈ôid√°n do datab√°ze');
 
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD', 'PouæÌt jhead pro zÌsk·nÌ EXIF dat');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD_DESC', 'P¯ekr˝v· standardnÌ chov·nÌ a pouæÌv· externÌ vol·nÌ aplikace jhead pro zÌsk·nÌ EXIF dat. Vyberte tuto moænost pouze pokud je aplikace jhead nainstalovan· a m˘æe b˝t spouπtÏna.');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD', 'Pou≈æ√≠t jhead pro z√≠sk√°n√≠ EXIF dat');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD_DESC', 'P≈ôekr√Ωv√° standardn√≠ chov√°n√≠ a pou≈æ√≠v√° extern√≠ vol√°n√≠ aplikace jhead pro z√≠sk√°n√≠ EXIF dat. Vyberte tuto mo≈ænost pouze pokud je aplikace jhead nainstalovan√° a m≈Ø≈æe b√Ωt spou≈°tƒõna.');
 

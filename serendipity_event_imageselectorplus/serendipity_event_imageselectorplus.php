@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -20,11 +22,11 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '2.6.7');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.6.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.3.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('IMAGES','MARKUP'));
 
@@ -589,9 +591,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                     // New draft post
                     $entry             = array();
                     $entry['isdraft']  = 'false';
-                    $entry['title']    = (function_exists('serendipity_specialchars')
-                                            ? serendipity_specialchars($serendipity['POST']['quickblog']['title'])
-                                            : htmlspecialchars($serendipity['POST']['quickblog']['title'], ENT_COMPAT, LANG_CHARSET));
+                    $entry['title']    = htmlspecialchars($serendipity['POST']['quickblog']['title']);
                     if (isset($objpath) && !empty($objpath)) {
                         $entry['body'] = '<a href="' . $objpath . '"><img alt="" class="serendipity_image_left serendipity_quickblog_image" src="' . $objpreview . '">' . $filename . '</a> (-'.$obj_mime.'-)<p>' . $serendipity['POST']['quickblog']['body'] . '</p>';
                     } else {
@@ -599,9 +599,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                     }
                     $entry['authorid'] = $serendipity['authorid'];
                     $entry['exflag']   = false;
-                    $entry['categories'][0] = (function_exists('serendipity_specialchars')
-                                                ? serendipity_specialchars($serendipity['POST']['quickblog']['category'])
-                                                : htmlspecialchars($serendipity['POST']['quickblog']['category'], ENT_COMPAT, LANG_CHARSET));
+                    $entry['categories'][0] = htmlspecialchars($serendipity['POST']['quickblog']['category']);
                     $entry['allow_comments']    = serendipity_db_bool($serendipity['allowCommentsDefault']) ? 'true' : 'false';
                     $entry['moderate_comments'] = serendipity_db_bool($serendipity['moderateCommentsDefault']) ? 'true' : 'false';
                     $serendipity['POST']['properties']['fake'] = 'fake';
@@ -810,7 +808,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                     break;
 
                 case 'frontend_image_selector':
-                    $eventData['finishJSFunction'] = 'serendipity.serendipity_imageSelector_done(\'' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['textarea']) : htmlspecialchars($serendipity['GET']['textarea'], ENT_COMPAT, LANG_CHARSET)) . '\')';
+                    $eventData['finishJSFunction'] = 'serendipity.serendipity_imageSelector_done(\'' . htmlspecialchars($serendipity['GET']['textarea']) . '\')';
                     break;
 
                 default:

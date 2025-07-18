@@ -4,29 +4,29 @@
  *  @version
  *  @author Ivan Cenov <JWalker@hotmail.bg>
  *  EN-Revision: 1.7
- */
+  */
 
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_NAME',                      'Допълнителни опции за медийния менажер');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC',                      'Дава допълнителни опции при вмъкване на изображения чрез медийния менажер');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET',                    'Цел (URL) на тази връзка');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_JS',                 'Изскачаш прозорец (през JavaScript, с големина която се адаптира)');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_ENTRY',              'Изолирана статия');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_BLANK',              'Изскачаш прозорец (via target=_blank)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_NAME',                      'Р”РѕРїСЉР»РЅРёС‚РµР»РЅРё РѕРїС†РёРё Р·Р° РјРµРґРёР№РЅРёСЏ РјРµРЅР°Р¶РµСЂ');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_DESC',                      'Р”Р°РІР° РґРѕРїСЉР»РЅРёС‚РµР»РЅРё РѕРїС†РёРё РїСЂРё РІРјСЉРєРІР°РЅРµ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏ С‡СЂРµР· РјРµРґРёР№РЅРёСЏ РјРµРЅР°Р¶РµСЂ');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET',                    'Р¦РµР» (URL) РЅР° С‚Р°Р·Рё РІСЂСЉР·РєР°');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_JS',                 'РР·СЃРєР°С‡Р°С€ РїСЂРѕР·РѕСЂРµС† (РїСЂРµР· JavaScript, СЃ РіРѕР»РµРјРёРЅР° РєРѕСЏС‚Рѕ СЃРµ Р°РґР°РїС‚РёСЂР°)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_ENTRY',              'РР·РѕР»РёСЂР°РЅР° СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_TARGET_BLANK',              'РР·СЃРєР°С‡Р°С€ РїСЂРѕР·РѕСЂРµС† (via target=_blank)');
 @define('PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG',                 'QuickBlog');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC',            'Ако въведете поне заглавие в следващите полета, изображението ще бъде записано веднага като нова статия в блога. Дизайнът може да бъде променен във файл quickblog.tpl.');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH',                  'Максимална ширина на миниатюрата (не взема предвид височината)');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT',                 'Максимална височина на миниатюрата (не взема предвид ширината)');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE',                'Динамично преоразмерява изображенията в зависимост от атрибутите за ширина и височина');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC',           'Автоматично изпраща преоразмерени версии на изображенията към клиента в зависимост от атрибутите за широчина и височина, указани в IMG tag. Това ви улеснява и намалява времето за изтегляне, но намалява ефективността на сървъра. (Забележка: Отношението между ширина и височина се поддържа). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_QUICKBLOG_DESC',            'РђРєРѕ РІСЉРІРµРґРµС‚Рµ РїРѕРЅРµ Р·Р°РіР»Р°РІРёРµ РІ СЃР»РµРґРІР°С‰РёС‚Рµ РїРѕР»РµС‚Р°, РёР·РѕР±СЂР°Р¶РµРЅРёРµС‚Рѕ С‰Рµ Р±СЉРґРµ Р·Р°РїРёСЃР°РЅРѕ РІРµРґРЅР°РіР° РєР°С‚Рѕ РЅРѕРІР° СЃС‚Р°С‚РёСЏ РІ Р±Р»РѕРіР°. Р”РёР·Р°Р№РЅСЉС‚ РјРѕР¶Рµ РґР° Р±СЉРґРµ РїСЂРѕРјРµРЅРµРЅ РІСЉРІ С„Р°Р№Р» quickblog.tpl.');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXWIDTH',                  'РњР°РєСЃРёРјР°Р»РЅР° С€РёСЂРёРЅР° РЅР° РјРёРЅРёР°С‚СЋСЂР°С‚Р° (РЅРµ РІР·РµРјР° РїСЂРµРґРІРёРґ РІРёСЃРѕС‡РёРЅР°С‚Р°)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_MAXHEIGHT',                 'РњР°РєСЃРёРјР°Р»РЅР° РІРёСЃРѕС‡РёРЅР° РЅР° РјРёРЅРёР°С‚СЋСЂР°С‚Р° (РЅРµ РІР·РµРјР° РїСЂРµРґРІРёРґ С€РёСЂРёРЅР°С‚Р°)');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE',                'Р”РёРЅР°РјРёС‡РЅРѕ РїСЂРµРѕСЂР°Р·РјРµСЂСЏРІР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏС‚Р° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚ РѕС‚ Р°С‚СЂРёР±СѓС‚РёС‚Рµ Р·Р° С€РёСЂРёРЅР° Рё РІРёСЃРѕС‡РёРЅР°');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_AUTORESIZE_DESC',           'РђРІС‚РѕРјР°С‚РёС‡РЅРѕ РёР·РїСЂР°С‰Р° РїСЂРµРѕСЂР°Р·РјРµСЂРµРЅРё РІРµСЂСЃРёРё РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏС‚Р° РєСЉРј РєР»РёРµРЅС‚Р° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚ РѕС‚ Р°С‚СЂРёР±СѓС‚РёС‚Рµ Р·Р° С€РёСЂРѕС‡РёРЅР° Рё РІРёСЃРѕС‡РёРЅР°, СѓРєР°Р·Р°РЅРё РІ IMG tag. РўРѕРІР° РІРё СѓР»РµСЃРЅСЏРІР° Рё РЅР°РјР°Р»СЏРІР° РІСЂРµРјРµС‚Рѕ Р·Р° РёР·С‚РµРіР»СЏРЅРµ, РЅРѕ РЅР°РјР°Р»СЏРІР° РµС„РµРєС‚РёРІРЅРѕСЃС‚С‚Р° РЅР° СЃСЉСЂРІСЉСЂР°. (Р—Р°Р±РµР»РµР¶РєР°: РћС‚РЅРѕС€РµРЅРёРµС‚Рѕ РјРµР¶РґСѓ С€РёСЂРёРЅР° Рё РІРёСЃРѕС‡РёРЅР° СЃРµ РїРѕРґРґСЉСЂР¶Р°). An old feature of S9y history and at the latest with Styx 3 partly unusable, since with the new image Variations much has become irrelevant in this context. Recommended: No!');
 
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES',               'Разхивиране на ZIP архивите');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH',       'Разархивиране на качените ZIP архиви? - подразбираща се стойност за диалога в страницата за качване на изображения.');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC',          'Разархивиране на качените ZIP архиви?');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK',                  'ZIP архивът е разархивиран успешно');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED',              'ZIP архивът не беше разрхивиран поради някаква грешка');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE',  'Изображението от ZIP архива');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB',           'добавено към базата данни');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES',               'Р Р°Р·С…РёРІРёСЂР°РЅРµ РЅР° ZIP Р°СЂС…РёРІРёС‚Рµ');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_BLABLAH',       'Р Р°Р·Р°СЂС…РёРІРёСЂР°РЅРµ РЅР° РєР°С‡РµРЅРёС‚Рµ ZIP Р°СЂС…РёРІРё? - РїРѕРґСЂР°Р·Р±РёСЂР°С‰Р° СЃРµ СЃС‚РѕР№РЅРѕСЃС‚ Р·Р° РґРёР°Р»РѕРіР° РІ СЃС‚СЂР°РЅРёС†Р°С‚Р° Р·Р° РєР°С‡РІР°РЅРµ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏ.');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FILES_DESC',          'Р Р°Р·Р°СЂС…РёРІРёСЂР°РЅРµ РЅР° РєР°С‡РµРЅРёС‚Рµ ZIP Р°СЂС…РёРІРё?');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_OK',                  'ZIP Р°СЂС…РёРІСЉС‚ Рµ СЂР°Р·Р°СЂС…РёРІРёСЂР°РЅ СѓСЃРїРµС€РЅРѕ');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_FAILED',              'ZIP Р°СЂС…РёРІСЉС‚ РЅРµ Р±РµС€Рµ СЂР°Р·СЂС…РёРІРёСЂР°РЅ РїРѕСЂР°РґРё РЅСЏРєР°РєРІР° РіСЂРµС€РєР°');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_IMAGE_FROM_ARCHIVE',  'РР·РѕР±СЂР°Р¶РµРЅРёРµС‚Рѕ РѕС‚ ZIP Р°СЂС…РёРІР°');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_UNZIP_ADD_TO_DB',           'РґРѕР±Р°РІРµРЅРѕ РєСЉРј Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё');
 
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD',                     'Използване на jhead за извличане на EXIF данни');
-@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD_DESC',                'Отмяна на поведението по подразбиране и използване на външни повиквания на jhead за получаване на EXIF данни. Изберете тази опция само, ако jhead е иснталирано и може да бъде изпълнявано.'); 
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD',                     'РР·РїРѕР»Р·РІР°РЅРµ РЅР° jhead Р·Р° РёР·РІР»РёС‡Р°РЅРµ РЅР° EXIF РґР°РЅРЅРё');
+@define('PLUGIN_EVENT_IMAGESELECTORPLUS_JHEAD_DESC',                'РћС‚РјСЏРЅР° РЅР° РїРѕРІРµРґРµРЅРёРµС‚Рѕ РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ Рё РёР·РїРѕР»Р·РІР°РЅРµ РЅР° РІСЉРЅС€РЅРё РїРѕРІРёРєРІР°РЅРёСЏ РЅР° jhead Р·Р° РїРѕР»СѓС‡Р°РІР°РЅРµ РЅР° EXIF РґР°РЅРЅРё. РР·Р±РµСЂРµС‚Рµ С‚Р°Р·Рё РѕРїС†РёСЏ СЃР°РјРѕ, Р°РєРѕ jhead Рµ РёСЃРЅС‚Р°Р»РёСЂР°РЅРѕ Рё РјРѕР¶Рµ РґР° Р±СЉРґРµ РёР·РїСЉР»РЅСЏРІР°РЅРѕ.'); 
 

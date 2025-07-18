@@ -1,3 +1,11 @@
+3.0.0:
+------
+ * Fix lang [de] typos
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+ * Use native htmlspecialchars()
+ * Raise requirement
+
 2.6.7:
 -----
  * Change a trigger_error to E_USER_WARNING for PHP 8.4 E_ERROR deprecation messages
