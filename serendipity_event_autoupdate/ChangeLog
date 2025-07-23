@@ -1,3 +1,10 @@
+2.4.0:
+------
+
+ * Make the autoupdate work for changed checksums from previous Styx versions to the new Styx 5.0-beta1 version.
+   Further updates will arrive when decided what happens with even more pre release betas or RC versions,
+   since jumping from Styx 4 to Styx 5 will need this workaround checksum file exception at least once.
+
 2.3.0:
 ------
 

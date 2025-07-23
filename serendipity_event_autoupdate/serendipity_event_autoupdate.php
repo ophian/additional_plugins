@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '2.3.0');
+        $propbag->add('version',       '2.4.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
@@ -728,8 +728,9 @@ EOS;
         $checksumFile = (string)$updateDir . 'serendipity/checksums.inc.php';
 
         // Serendipity BETA version release files prior to Styx 2.1-beta2 did not have checksums
+        // The switch from v4 to v5-beta1 needs to skip too since it relies on new 'xxh128' hashes instead of md5() once and only
         // version_compare(new_version, existing_version, operator)
-        if (FALSE !== strpos($version, 'beta') && version_compare($version, '2.1-beta2', '<')) {
+        if (FALSE !== strpos($version, 'beta') && (version_compare($version, '2.1-beta2', '<') || $version == '5.0-beta1')) {
             return true;
         }
         include_once $checksumFile;
