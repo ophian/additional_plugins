@@ -8,7 +8,7 @@
 @define('FAQS', 'Fragenkatalog');
 @define('FAQ_NEW_ENTRY', 'Neuer Eintrag');
 @define('FAQ_NAME', 'FAQs');
-@define('FAQ_NAME_DESC', 'Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.');
+@define('FAQ_NAME_DESC', 'Liste von Fragen und Antworten werden Ã¼bersichtlich aufbereitet dargestellt.');
 @define('FAQ_QUESTIONS', 'Fragen');
 @define('FAQ_QUESTION', 'Frage');
 @define('FAQ_QUESTION_DESC', 'Geben Sie hier die Frage ein.');
@@ -18,7 +18,7 @@
 @define('FAQ_CATEGORIES', 'Kategorien');
 @define('FAQ_CATEGORY_DESC', 'Setzen Sie hier den Namen der Kategorie.');
 @define('FAQ_PID', 'Elternseite');
-@define('FAQ_PID_PID', 'Welches ist die übergeordnete Seite.');
+@define('FAQ_PID_PID', 'Welches ist die Ã¼bergeordnete Seite.');
 @define('FAQ_DESCRIPTION', 'Beschreibung');
 @define('FAQ_DESCRIPTION_DESC', 'Geben Sie hier eine kurze Beschreibung ein.');
 @define('FAQ_PARENT', 'Ist Elternkategorie');
@@ -34,18 +34,18 @@
 
 @define('FAQ_PLUGIN_NAME', 'FAQ Kategorie-Plugin');
 @define('FAQ_PLUGIN_NAME_DESC', 'Zeigt einzelne Kategorien in der Seitenleiste an.');
-@define('FAQ_PLUGIN_TITLE', 'Überschrift');
-@define('FAQ_PLUGIN_TITLE_DESC', 'Kurze Überschrift für das Plugin.');
+@define('FAQ_PLUGIN_TITLE', 'Ãœberschrift');
+@define('FAQ_PLUGIN_TITLE_DESC', 'Kurze Ãœberschrift fÃ¼r das Plugin.');
 @define('FAQ_PLUGIN_CATEGORY', 'Kategorie');
 @define('FAQ_PLUGIN_CATEGORY_DESC', 'Welche Kategorien sollen angezeigt werden?');
 
 @define('FAQ_PREVOUS', 'Vorherige Frage:');
-@define('FAQ_NEXT', 'Nächste Frage:');
+@define('FAQ_NEXT', 'NÃ¤chste Frage:');
 @define('FAQ_SEARCHRESULTS', '%d FAQs gefunden:');
 
 // Next lines were translated on 2009/08/20
-@define('FAQ_REALYDELETECATEGORY', 'Möchten Sie diese Kategorie wirklich löschen?');
+@define('FAQ_REALYDELETECATEGORY', 'MÃ¶chten Sie diese Kategorie wirklich lÃ¶schen?');
 @define('FAQ_NEWFAQ', 'Neue FAQ');
-@define('FAQ_MARKUP', 'Textformatierung für FAQ Artikel anwenden');
+@define('FAQ_MARKUP', 'Textformatierung fÃ¼r FAQ Artikel anwenden');
 @define('FAQ_MARKUP_DESC', 'Wenn aktiviert, werden die Textformatierungen auch auf FAQ Artikel angewandt.');
 

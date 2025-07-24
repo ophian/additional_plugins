@@ -1,51 +1,51 @@
 <?php
 
 /**
- * @version
- * @author Ivan Cenov jwalker@hotmail.bg
+ *@version
+ *@author Ivan Cenov jwalker@hotmail.bg
  * EN-Revision: 1.6
  */
 
-@define('FAQS', '×åñòî çàäàâàíè âúïðîñè');
-@define('FAQ_NEW_ENTRY', 'Íîâ âúïðîñ');
-@define('FAQ_NAME', '×åñòî çàäàâàíè âúïðîñè');
-@define('FAQ_NAME_DESC', 'Ðåäàêòèðà ñïèñúê îò ÷åñòî çàäàâàíè âúïðîñè.');
-@define('FAQ_QUESTIONS', 'Âúïðîñè');
-@define('FAQ_QUESTION', 'Âúïðîñ');
-@define('FAQ_QUESTION_DESC', 'Âúâåäåòå âúïðîñ');
-@define('FAQ_ANSWER', 'Îòãîâîð');
-@define('FAQ_ANSWER_DESC', 'Âúâåäåòå îòãîâîð');
-@define('FAQ_CATEGORY', 'Êàòåãîðèÿ');
-@define('FAQ_CATEGORYS', 'Êàòåãîðèè');
-@define('FAQ_CATEGORY_DESC', 'Èçáåðåòå êàòåãîðèÿ');
-@define('FAQ_PID', 'Ðîäèòåë');
-@define('FAQ_PID_PID', 'Èçáåðåòå ðîäèòåëñêà êàòåãîðèÿ');
-@define('FAQ_DESCRIPTION', 'Îïèñàíèå');
-@define('FAQ_DESCRIPTION_DESC', 'Âúâåäåòå îïèñàíèå çà òàçè êàòåãîðèÿ');
-@define('FAQ_PARENT', 'Ðîäèòåëñêà');
-@define('FAQ_NEWCATEGORY', 'Íîâà êàòåãîðèÿ');
-@define('FAQ_DAYSUPDATE', 'Äíè ñ ìàðêåð \'îáíîâåí\'');
-@define('FAQ_DAYSUPDATE_DESC', 'Áðîé äíè, ïðåç êîèòî âúïðîñúò ùå áúäå ìàðêèðàí êàòî îáíîâåí.');
-@define('FAQ_DAYSNEW', 'Äíè ñ ìàðêåð \'íîâ\'');
-@define('FAQ_DAYSNEW_DESC', 'Áðîé äíè, ïðåç êîèòî âúïðîñúò ùå áúäå ìàðêèðàí êàòî íîâ.');
-@define('FAQ_NEW', 'Íîâ');
-@define('FAQ_UPDATE', 'Îáíîâåí');
-@define('FAQ_FAQURL', 'URL êúì ×ÇÂ-ïðèñòàâêàòà');
+@define('FAQS', 'Ð§ÐµÑÑ‚Ð¾ Ð·Ð°Ð´Ð°Ð²Ð°Ð½Ð¸ Ð²ÑŠÐ¿Ñ€Ð¾ÑÐ¸');
+@define('FAQ_NEW_ENTRY', 'ÐÐ¾Ð² Ð²ÑŠÐ¿Ñ€Ð¾Ñ');
+@define('FAQ_NAME', 'Ð§ÐµÑÑ‚Ð¾ Ð·Ð°Ð´Ð°Ð²Ð°Ð½Ð¸ Ð²ÑŠÐ¿Ñ€Ð¾ÑÐ¸');
+@define('FAQ_NAME_DESC', 'Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð° ÑÐ¿Ð¸ÑÑŠÐº Ð¾Ñ‚ Ñ‡ÐµÑÑ‚Ð¾ Ð·Ð°Ð´Ð°Ð²Ð°Ð½Ð¸ Ð²ÑŠÐ¿Ñ€Ð¾ÑÐ¸.');
+@define('FAQ_QUESTIONS', 'Ð’ÑŠÐ¿Ñ€Ð¾ÑÐ¸');
+@define('FAQ_QUESTION', 'Ð’ÑŠÐ¿Ñ€Ð¾Ñ');
+@define('FAQ_QUESTION_DESC', 'Ð’ÑŠÐ²ÐµÐ´ÐµÑ‚Ðµ Ð²ÑŠÐ¿Ñ€Ð¾Ñ');
+@define('FAQ_ANSWER', 'ÐžÑ‚Ð³Ð¾Ð²Ð¾Ñ€');
+@define('FAQ_ANSWER_DESC', 'Ð’ÑŠÐ²ÐµÐ´ÐµÑ‚Ðµ Ð¾Ñ‚Ð³Ð¾Ð²Ð¾Ñ€');
+@define('FAQ_CATEGORY', 'ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ');
+@define('FAQ_CATEGORYS', 'ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸');
+@define('FAQ_CATEGORY_DESC', 'Ð˜Ð·Ð±ÐµÑ€ÐµÑ‚Ðµ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ');
+@define('FAQ_PID', 'Ð Ð¾Ð´Ð¸Ñ‚ÐµÐ»');
+@define('FAQ_PID_PID', 'Ð˜Ð·Ð±ÐµÑ€ÐµÑ‚Ðµ Ñ€Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑÐºÐ° ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ');
+@define('FAQ_DESCRIPTION', 'ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ');
+@define('FAQ_DESCRIPTION_DESC', 'Ð’ÑŠÐ²ÐµÐ´ÐµÑ‚Ðµ Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ð·Ð° Ñ‚Ð°Ð·Ð¸ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ');
+@define('FAQ_PARENT', 'Ð Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑÐºÐ°');
+@define('FAQ_NEWCATEGORY', 'ÐÐ¾Ð²Ð° ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ');
+@define('FAQ_DAYSUPDATE', 'Ð”Ð½Ð¸ Ñ Ð¼Ð°Ñ€ÐºÐµÑ€ \'Ð¾Ð±Ð½Ð¾Ð²ÐµÐ½\'');
+@define('FAQ_DAYSUPDATE_DESC', 'Ð‘Ñ€Ð¾Ð¹ Ð´Ð½Ð¸, Ð¿Ñ€ÐµÐ· ÐºÐ¾Ð¸Ñ‚Ð¾ Ð²ÑŠÐ¿Ñ€Ð¾ÑÑŠÑ‚ Ñ‰Ðµ Ð±ÑŠÐ´Ðµ Ð¼Ð°Ñ€ÐºÐ¸Ñ€Ð°Ð½ ÐºÐ°Ñ‚Ð¾ Ð¾Ð±Ð½Ð¾Ð²ÐµÐ½.');
+@define('FAQ_DAYSNEW', 'Ð”Ð½Ð¸ Ñ Ð¼Ð°Ñ€ÐºÐµÑ€ \'Ð½Ð¾Ð²\'');
+@define('FAQ_DAYSNEW_DESC', 'Ð‘Ñ€Ð¾Ð¹ Ð´Ð½Ð¸, Ð¿Ñ€ÐµÐ· ÐºÐ¾Ð¸Ñ‚Ð¾ Ð²ÑŠÐ¿Ñ€Ð¾ÑÑŠÑ‚ Ñ‰Ðµ Ð±ÑŠÐ´Ðµ Ð¼Ð°Ñ€ÐºÐ¸Ñ€Ð°Ð½ ÐºÐ°Ñ‚Ð¾ Ð½Ð¾Ð².');
+@define('FAQ_NEW', 'ÐÐ¾Ð²');
+@define('FAQ_UPDATE', 'ÐžÐ±Ð½Ð¾Ð²ÐµÐ½');
+@define('FAQ_FAQURL', 'URL ÐºÑŠÐ¼ Ð§Ð—Ð’-Ð¿Ñ€Ð¸ÑÑ‚Ð°Ð²ÐºÐ°Ñ‚Ð°');
 @define('FAQ_FAQURL_DESC', '');
-@define('FAQ_REALYDELETECATEGORY', 'Íàèñòèíà ëè æåëàòå äà ïðåìàõíåòå òàçè êàòåãîðèÿ ?');
-@define('FAQ_NEWFAQ', 'Íîâ ×.Ç.Â.');
-@define('FAQ_MARKUP', 'Ôîðìàòèðàíå íà îòãîâîðà');
-@define('FAQ_MARKUP_DESC', 'Îòãîâîð \'Äà\' óêàçâà ôîðìàòèðàùèòå ïðèñòàâêè íà Serendipity äà ñå ïðèëîæàò êúì îòãîâîðà. Òàêà òîé ùå èìà âúíøíèÿ âèä íà îáèêíîâåíèòå ñòàòèè.');
+@define('FAQ_REALYDELETECATEGORY', 'ÐÐ°Ð¸ÑÑ‚Ð¸Ð½Ð° Ð»Ð¸ Ð¶ÐµÐ»Ð°Ñ‚Ðµ Ð´Ð° Ð¿Ñ€ÐµÐ¼Ð°Ñ…Ð½ÐµÑ‚Ðµ Ñ‚Ð°Ð·Ð¸ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ ?');
+@define('FAQ_NEWFAQ', 'ÐÐ¾Ð² Ð§.Ð—.Ð’.');
+@define('FAQ_MARKUP', 'Ð¤Ð¾Ñ€Ð¼Ð°Ñ‚Ð¸Ñ€Ð°Ð½Ðµ Ð½Ð° Ð¾Ñ‚Ð³Ð¾Ð²Ð¾Ñ€Ð°');
+@define('FAQ_MARKUP_DESC', 'ÐžÑ‚Ð³Ð¾Ð²Ð¾Ñ€ \'Ð”Ð°\' ÑƒÐºÐ°Ð·Ð²Ð° Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¸Ñ€Ð°Ñ‰Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¸ÑÑ‚Ð°Ð²ÐºÐ¸ Ð½Ð° Serendipity Ð´Ð° ÑÐµ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶Ð°Ñ‚ ÐºÑŠÐ¼ Ð¾Ñ‚Ð³Ð¾Ð²Ð¾Ñ€Ð°. Ð¢Ð°ÐºÐ° Ñ‚Ð¾Ð¹ Ñ‰Ðµ Ð¸Ð¼Ð° Ð²ÑŠÐ½ÑˆÐ½Ð¸Ñ Ð²Ð¸Ð´ Ð½Ð° Ð¾Ð±Ð¸ÐºÐ½Ð¾Ð²ÐµÐ½Ð¸Ñ‚Ðµ ÑÑ‚Ð°Ñ‚Ð¸Ð¸.');
 
-@define('FAQ_PLUGIN_NAME', '×.Ç.Â. - Ñåëåêòîð íà êàòåãîðèè');
-@define('FAQ_PLUGIN_NAME_DESC', 'Èçáåðåòå êàòåãîðèèòå, êîèòî ùå ñå ïîêàçâàò â áëîãà.');
-@define('FAQ_PLUGIN_TITLE', 'Çàãëàâèå');
-@define('FAQ_PLUGIN_TITLE_DESC', 'Èçáåðåòå çàãëàâèå çà ïðèñòàâêàòà.');
-@define('FAQ_PLUGIN_CATEGORY', 'Èçáåðåòå êàòåãîðèÿ');
-@define('FAQ_PLUGIN_CATEGORY_DESC', 'Êîè êàòåãîðèè äà áúäàò ïîêàçâàíè íà ñòðàíèöàòà ?');
+@define('FAQ_PLUGIN_NAME', 'Ð§.Ð—.Ð’. - Ð¡ÐµÐ»ÐµÐºÑ‚Ð¾Ñ€ Ð½Ð° ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸');
+@define('FAQ_PLUGIN_NAME_DESC', 'Ð˜Ð·Ð±ÐµÑ€ÐµÑ‚Ðµ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸Ñ‚Ðµ, ÐºÐ¾Ð¸Ñ‚Ð¾ Ñ‰Ðµ ÑÐµ Ð¿Ð¾ÐºÐ°Ð·Ð²Ð°Ñ‚ Ð² Ð±Ð»Ð¾Ð³Ð°.');
+@define('FAQ_PLUGIN_TITLE', 'Ð—Ð°Ð³Ð»Ð°Ð²Ð¸Ðµ');
+@define('FAQ_PLUGIN_TITLE_DESC', 'Ð˜Ð·Ð±ÐµÑ€ÐµÑ‚Ðµ Ð·Ð°Ð³Ð»Ð°Ð²Ð¸Ðµ Ð·Ð° Ð¿Ñ€Ð¸ÑÑ‚Ð°Ð²ÐºÐ°Ñ‚Ð°.');
+@define('FAQ_PLUGIN_CATEGORY', 'Ð˜Ð·Ð±ÐµÑ€ÐµÑ‚Ðµ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ');
+@define('FAQ_PLUGIN_CATEGORY_DESC', 'ÐšÐ¾Ð¸ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸ Ð´Ð° Ð±ÑŠÐ´Ð°Ñ‚ Ð¿Ð¾ÐºÐ°Ð·Ð²Ð°Ð½Ð¸ Ð½Ð° ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°Ñ‚Ð° ?');
 
-@define('FAQ_PREVOUS', 'Ïðåäèøåí âúïðîñ:');
-@define('FAQ_NEXT', 'Ñëåäâàù âúïðîñ:');
+@define('FAQ_PREVOUS', 'ÐŸÑ€ÐµÐ´Ð¸ÑˆÐµÐ½ Ð²ÑŠÐ¿Ñ€Ð¾Ñ:');
+@define('FAQ_NEXT', 'Ð¡Ð»ÐµÐ´Ð²Ð°Ñ‰ Ð²ÑŠÐ¿Ñ€Ð¾Ñ:');
 
-@define('FAQ_SEARCHRESULTS', 'Íàìåðåíè ñà %d âúïðîñà:');
+@define('FAQ_SEARCHRESULTS', 'ÐÐ°Ð¼ÐµÑ€ÐµÐ½Ð¸ ÑÐ° %d Ð²ÑŠÐ¿Ñ€Ð¾ÑÐ°:');
 

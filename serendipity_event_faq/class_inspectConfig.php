@@ -202,7 +202,7 @@ class icText extends inspectConfig
                 <?php if ( isset($inspectConfig['pdata']['markupeditor']) ) { ?>
                     <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
                     <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
-                    <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]<?php } ?>
+                    <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?><span class="infobox_markupeditortype"> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]</span><?php } ?>
                 <?php } else { ?>
                 <?php if ( $inspectConfig['pdata']['nl2br']['iso2br'] ) { ?>
                     <button class="wrap_selection lang-html" type="button" name="insX" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" data-tag-open="nl" data-tag-close="nl">NoBR</button>
@@ -214,7 +214,7 @@ class icText extends inspectConfig
                     <button class="wrap_insgal" type="button" name="insG" title="Media Gallery" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>"><span class="icon-gallery" aria-hidden="true"></span><span class="visuallyhidden"> Media Gallery</span></button>
                     <button class="wrap_insmedia" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insImage"><span class="icon-s9yml" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MEDIA ?></span></button>
                     <button class="wrap_insurl" type="button" data-tarea="nuggets<?php echo $inspectConfig['elcount']; ?>" name="insURL">URL</button>
-                    <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]<?php } ?>
+                    <?php if ( isset($inspectConfig['pdata']['markupeditortype']) ) { ?><span class="infobox_markupeditortype"> [ <?php echo $inspectConfig['pdata']['markupeditortype']; ?> ]</span><?php } ?>
                 <?php } ?>
                 </span></nobr>
 
