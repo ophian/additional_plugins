@@ -23,11 +23,11 @@ class serendipity_event_markdown extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team and Jan Lehnardt, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'backend_entryform' => true,
