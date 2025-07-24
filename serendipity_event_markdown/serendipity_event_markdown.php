@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use \Michelf\Markdown, \Michelf\MarkdownExtra, \Michelf\SmartyPants, \Michelf\SmartyPantsTypographer;
 
 if (IN_serendipity !== true) {
@@ -25,7 +27,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '3.1',
             'php'         => '7.4'
         ));
-        $propbag->add('version',       '1.44');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'backend_entryform' => true,

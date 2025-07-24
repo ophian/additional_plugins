@@ -6,9 +6,9 @@
  *  EN-Revision: 1.12
  */
 
-@define('PLUGIN_EVENT_MARKDOWN_NAME', 'Форматиране на текст: Markdown');
-@define('PLUGIN_EVENT_MARKDOWN_DESC', 'Прилага текстово форматиране Markdown');
-@define('PLUGIN_EVENT_MARKDOWN_EXTRA_NAME', 'Форматиране на текст: Markdown Extra');
-@define('PLUGIN_EVENT_MARKDOWN_EXTRA_DESC', 'Прилагане на форматиране Markdown Extra върху текста на статиите (Виж: http://michelf.ca/projects/php-markdown/extra/)');
-@define('PLUGIN_EVENT_MARKDOWN_TRANSFORM', 'Разрешен формат <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>');
+@define('PLUGIN_EVENT_MARKDOWN_NAME', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РЅР° С‚РµРєСЃС‚: Markdown');
+@define('PLUGIN_EVENT_MARKDOWN_DESC', 'РџСЂРёР»Р°РіР° С‚РµРєСЃС‚РѕРІРѕ С„РѕСЂРјР°С‚РёСЂР°РЅРµ Markdown');
+@define('PLUGIN_EVENT_MARKDOWN_EXTRA_NAME', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РЅР° С‚РµРєСЃС‚: Markdown Extra');
+@define('PLUGIN_EVENT_MARKDOWN_EXTRA_DESC', 'РџСЂРёР»Р°РіР°РЅРµ РЅР° С„РѕСЂРјР°С‚РёСЂР°РЅРµ Markdown Extra РІСЉСЂС…Сѓ С‚РµРєСЃС‚Р° РЅР° СЃС‚Р°С‚РёРёС‚Рµ (Р’РёР¶: http://michelf.ca/projects/php-markdown/extra/)');
+@define('PLUGIN_EVENT_MARKDOWN_TRANSFORM', 'Р Р°Р·СЂРµС€РµРЅ С„РѕСЂРјР°С‚ <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>');
 

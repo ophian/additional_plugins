@@ -1,17 +1,17 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/17
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/17
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
 @define('PLUGIN_EVENT_MARKDOWN_NAME', 'Markup: Markdown');
-@define('PLUGIN_EVENT_MARKDOWN_DESC', 'Pøevádí znaèky Markdown na HTML v textu pøíspìvku');
+@define('PLUGIN_EVENT_MARKDOWN_DESC', 'PÅ™evÃ¡dÃ­ znaÄky Markdown na HTML v textu pÅ™Ã­spÄ›vku');
 @define('PLUGIN_EVENT_MARKDOWN_EXTRA_NAME', 'Markup: Markdown Extra');
-@define('PLUGIN_EVENT_MARKDOWN_EXTRA_DESC', 'Pøevádí znaèky Markdown Extra na HTML v textu pøíspìvku (Viz.: http://michelf.ca/projects/php-markdown/extra/)');
-@define('PLUGIN_EVENT_MARKDOWN_TRANSFORM', 'Povolenı formát <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>');
+@define('PLUGIN_EVENT_MARKDOWN_EXTRA_DESC', 'PÅ™evÃ¡dÃ­ znaÄky Markdown Extra na HTML v textu pÅ™Ã­spÄ›vku (Viz.: http://michelf.ca/projects/php-markdown/extra/)');
+@define('PLUGIN_EVENT_MARKDOWN_TRANSFORM', 'PovolenÃ½ formÃ¡t <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>');
 

@@ -1,3 +1,10 @@
+2.0.0:
+------
+
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+ * Raise requirements
+
 1.44:
 =====
 
