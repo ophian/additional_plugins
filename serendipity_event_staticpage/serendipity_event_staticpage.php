@@ -102,7 +102,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '7.0.1');
+        $propbag->add('version', '7.1.0');
         $propbag->add('requirements', array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
