@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -21,7 +23,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '5.0.0');
+        $propbag->add('version',       '5.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -749,9 +751,9 @@ class serendipity_event_statistics extends serendipity_event
 
         <dl>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_FIRST_ENTRY; ?></dt>
-            <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', $first_entry[0]); ?></dd>
+            <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', (int) $first_entry[0]); ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_LAST_ENTRY; ?></dt>
-            <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', $last_entry[0]); ?></dd>
+            <dd><?php echo serendipity_formatTime(DATE_FORMAT_ENTRY . ' %H:%m', (int) $last_entry[0]); ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_OUT_TOTAL_ENTRIES; ?></dt>
             <dd><?php echo $total_count[0]; ?> <?php echo PLUGIN_EVENT_STATISTICS_OUT_ENTRIES; ?>
                 <dl>
@@ -1126,7 +1128,7 @@ class serendipity_event_statistics extends serendipity_event
      */
     function statistics_rollingYear()
     {
-        $date = mktime(0, 0, 0, date('n'), 1);
+        $date = mktime(0, 0, 0, (int) date('n'), 1);
         $months[] = [date('m', $date), date('Y', $date)];
         // get 24 months as 2 rolling years for comparison
         for($i = -1; $i >= -23; $i--) {
@@ -1243,7 +1245,7 @@ class serendipity_event_statistics extends serendipity_event
             <dd><?php echo $visitors_count_curryear[0]; ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_VISLSTYR; ?></dt>
             <dd><?php echo $visitors_count_lastyear[0] ?? '-'; ?></dd>
-            <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
+            <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_VISTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, (int) $visitors_count_firstday[0])).'</em>'); ?></dt>
             <dd><?php echo $visitors_count_all[0]; ?></dd>
             <dd>-------------------------------------
                 <a class="statistics_info toggle_info button_link" href="#statstics_countdesc" title="Statistics Count description Information">
@@ -1257,7 +1259,7 @@ class serendipity_event_statistics extends serendipity_event
             <dd><?php echo $hits_count_curryear[0]; ?></dd>
             <dt><?php echo PLUGIN_EVENT_STATISTICS_EXT_HITSLSTYR; ?></dt>
             <dd><?php echo $hits_count_lastyear[0] ?? '-'; ?></dd>
-            <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, $visitors_count_firstday[0])).'</em>'); ?></dt>
+            <dt><?php echo sprintf(PLUGIN_EVENT_STATISTICS_EXT_HITSTOTAL, '<em>'.str_replace(' 00:00', '', serendipity_formatTime(DATE_FORMAT_SHORT, (int) $visitors_count_firstday[0])).'</em>'); ?></dt>
             <dd><?php echo $hits_count_all[0]; ?></dd>
         </dl>
 
@@ -1292,7 +1294,7 @@ class serendipity_event_statistics extends serendipity_event
             if ($visitors_count_all[0] > 0) {
                 $num = $this->statistics_getmonthlystats();
                 // split out the added old comparison year from $num to a current_rolling_year ($cry) and a last_rolling_year ($lry)
-                list($cry, $lry) = array_chunk($num, ceil(count($num) / 2));
+                list($cry, $lry) = array_chunk($num, (int) ceil(count($num) / 2));
 ?>
         <table>
           <tbody>
@@ -1300,7 +1302,7 @@ class serendipity_event_statistics extends serendipity_event
                 <th scope="row"><?php echo MONTHS; ?></th>
 <?php
                     foreach (array_reverse($cry) AS $month) {
-                        echo '                <td>' . serendipity_strftime('%b', mktime(0, 0, 0, $month[0], 1, 2000)) . "</td>\n";
+                        echo '                <td>' . serendipity_strftime('%b', mktime(0, 0, 0, (int) $month[0], 1, 2000)) . "</td>\n";
                     }
 ?>
             </tr>
