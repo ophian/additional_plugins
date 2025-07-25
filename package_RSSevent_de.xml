@@ -1107,15 +1107,6 @@
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>
-<title>TinyMCE als WYSIWYG Editor benutzen: Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tinymce</link>
-<category>Event Plugins</category>
-<author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;TinyMCE als WYSIWYG Editor benutzen&lt;/b&gt;&lt;br /&gt;Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:08:54 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_tinymce</guid>
-</item>
-<item>
 <title>Bilder komprimieren: PNG- und JPG-Bilder mit dem TinyPNG-Dienst komprimieren.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tinypng</link>
 <category>Event Plugins</category>
