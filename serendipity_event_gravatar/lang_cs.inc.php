@@ -1,63 +1,63 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/06
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/04/17
  */
 
 @define('PLUGIN_EVENT_GRAVATAR_NAME',               'Avatar Plugin');
-@define('PLUGIN_EVENT_GRAVATAR_DESC',               'Zobrazuje avatary (ikona èi obrázek pøispìvatele) v komentáøích. Podporovány jsou sluby Gravatar, Pavatar a  Favatar.');
+@define('PLUGIN_EVENT_GRAVATAR_DESC',               'Zobrazuje avatary (ikona Äi obrÃ¡zek pÅ™ispÄ›vatele) v komentÃ¡Å™Ã­ch. PodporovÃ¡ny jsou sluÅ¾by Gravatar, Pavatar a Favatar.');
 
-@define('PLUGIN_EVENT_GRAVATAR_USE_SMARTY',         'Tvoøit smarty tag');
-@define('PLUGIN_EVENT_GRAVATAR_USE_SMARTY_DESC',    'Pokud je tato volba zapnuta, obrázky avatarù nejsou zapsány pøímo do textu komentáøe, ale je místo toho vygenerován tag {$comment.avatar} pro šablonovací systém smarty. Pak budou avatary zobrazovat pouze styly vzhledu, které tento tag pouívají. Nejjednodušší zpùsob, jak zjistit, jestli Váš styl vzhledu podporuje avatary, je vyzkoušet zapnout toto nastavení.');
+@define('PLUGIN_EVENT_GRAVATAR_USE_SMARTY',         'TvoÅ™it smarty tag');
+@define('PLUGIN_EVENT_GRAVATAR_USE_SMARTY_DESC',    'Pokud je tato volba zapnuta, obrÃ¡zky avatarÅ¯ nejsou zapsÃ¡ny pÅ™Ã­mo do textu komentÃ¡Å™e, ale je mÃ­sto toho vygenerovÃ¡n tag {$comment.avatar} pro Å¡ablonovacÃ­ systÃ©m smarty. Pak budou avatary zobrazovat pouze styly vzhledu, kterÃ© tento tag pouÅ¾Ã­vajÃ­. NejjednoduÅ¡Å¡Ã­ zpÅ¯sob, jak zjistit, jestli VÃ¡Å¡ styl vzhledu podporuje avatary, je vyzkouÅ¡et zapnout toto nastavenÃ­.');
 
-@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR',      'Vıchozí avatar');
+@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR',      'VÃ½chozÃ­ avatar');
 @define('PLUGIN_EVENT_GRAVATAR_SIZE',               'Velikost');
-@define('PLUGIN_EVENT_GRAVATAR_RATING',             'Hodnocení Gravatar');
-@define('PLUGIN_EVENT_GRAVATAR_RATING_NO',          'ádné hodnocení');
-@define('PLUGIN_EVENT_GRAVATAR_RATING_G',           'Obecné - General (G)');
-@define('PLUGIN_EVENT_GRAVATAR_RATING_R',           'Omezené - Restricted (R)');
-@define('PLUGIN_EVENT_GRAVATAR_RATING_PG',          'Rodièovské vedení - Parental Guidance (PG)');
-@define('PLUGIN_EVENT_GRAVATAR_RATING_X',           'Explicitní (X)');
+@define('PLUGIN_EVENT_GRAVATAR_RATING',             'HodnocenÃ­ Gravatar');
+@define('PLUGIN_EVENT_GRAVATAR_RATING_NO',          'Å½Ã¡dnÃ© hodnocenÃ­');
+@define('PLUGIN_EVENT_GRAVATAR_RATING_G',           'ObecnÃ© - General (G)');
+@define('PLUGIN_EVENT_GRAVATAR_RATING_R',           'OmezenÃ© - Restricted (R)');
+@define('PLUGIN_EVENT_GRAVATAR_RATING_PG',          'RodiÄovskÃ© vedenÃ­ - Parental Guidance (PG)');
+@define('PLUGIN_EVENT_GRAVATAR_RATING_X',           'ExplicitnÃ­ (X)');
 
-@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR_DESC', 'Jaká je URL adresa k vıchozímu avataru? Zadejte absolutní URL cestu nebo relativní URL cestu, vzhledem ke koøenové sloce serveru.');
-@define('PLUGIN_EVENT_GRAVATAR_SIZE_DESC',          'Nejvìtší rozmìr avataru (v pixelech)');
-@define('PLUGIN_EVENT_GRAVATAR_RATING_DESC',        'Hodnocení obrázku');
+@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR_DESC', 'JakÃ¡ je URL adresa k vÃ½chozÃ­mu avataru? Zadejte absolutnÃ­ URL cestu nebo relativnÃ­ URL cestu, vzhledem ke koÅ™enovÃ© sloÅ¾ce serveru.');
+@define('PLUGIN_EVENT_GRAVATAR_SIZE_DESC',          'NejvÄ›tÅ¡Ã­ rozmÄ›r avataru (v pixelech)');
+@define('PLUGIN_EVENT_GRAVATAR_RATING_DESC',        'HodnocenÃ­ obrÃ¡zku');
 
-@define('PLUGIN_EVENT_GRAVATAR_CACHING',            'Cachovací èas');
-@define('PLUGIN_EVENT_GRAVATAR_CACHING_DESC',       'Pokud chcete cachovat avatary (doporuèeno!), zadejte èas v hodinách, bìhem které bude avatar vkládán do blogu z Vašeho serveru, ani by byl kontaktován server sluby s avatary. Vıhoda cachování je, e se ušetøí komunikace mezi blogem a serverem s avatary, a e bude blog ponìkud nezávislejší na momentálním stavu avatarovıch slueb, Hodnota "0" vypne cachování.');
+@define('PLUGIN_EVENT_GRAVATAR_CACHING',            'CachovacÃ­ Äas');
+@define('PLUGIN_EVENT_GRAVATAR_CACHING_DESC',       'Pokud chcete cachovat avatary (doporuÄeno!), zadejte Äas v hodinÃ¡ch, bÄ›hem kterÃ© bude avatar vklÃ¡dÃ¡n do blogu z VaÅ¡eho serveru, aniÅ¾ by byl kontaktovÃ¡n server sluÅ¾by s avatary. VÃ½hoda cachovÃ¡nÃ­ je, Å¾e se uÅ¡etÅ™Ã­ komunikace mezi blogem a serverem s avatary, a Å¾e bude blog ponÄ›kud nezÃ¡vislejÅ¡Ã­ na momentÃ¡lnÃ­m stavu avatarovÃ½ch sluÅ¾eb, Hodnota "0" vypne cachovÃ¡nÃ­.');
 
-@define('PLUGIN_EVENT_GRAVATAR_ALIGN',              'Zarovnání');
-@define('PLUGIN_EVENT_GRAVATAR_ALIGN_DESC',         'Tato volba urèuje zarovnání avataru, ale pouze pokud není pouívána volba "smarty tag". Pøi pouití zmínìné volby je na Vás zaøídit zarovnání po svém pomocí CSS stylu pro obrázek s avatarem.');
+@define('PLUGIN_EVENT_GRAVATAR_ALIGN',              'ZarovnÃ¡nÃ­');
+@define('PLUGIN_EVENT_GRAVATAR_ALIGN_DESC',         'Tato volba urÄuje zarovnÃ¡nÃ­ avataru, ale pouze pokud nenÃ­ pouÅ¾Ã­vÃ¡na volba "smarty tag". PÅ™i pouÅ¾itÃ­ zmÃ­nÄ›nÃ© volby je na VÃ¡s zaÅ™Ã­dit zarovnÃ¡nÃ­ po svÃ©m pomocÃ­ CSS stylu pro obrÃ¡zek s avatarem.');
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN_LEFT',         'vlevo');
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN_RIGHT',        'vpravo');
-@define('PLUGIN_EVENT_GRAVATAR_ALIGN_NONE',         'bez zarovnání');
+@define('PLUGIN_EVENT_GRAVATAR_ALIGN_NONE',         'bez zarovnÃ¡nÃ­');
 
-@define('PLUGIN_EVENT_GRAVATAR_RECENT_ENTRIES',     'Pouít v postranním sloupci');
-@define('PLUGIN_EVENT_GRAVATAR_RECENT_ENTRIES_DESC','Mají se avatary zobrazovat také v postranním sloupci v bloku s nejnovìjšími komentáøi?');
+@define('PLUGIN_EVENT_GRAVATAR_RECENT_ENTRIES',     'PouÅ¾Ã­t v postrannÃ­m sloupci');
+@define('PLUGIN_EVENT_GRAVATAR_RECENT_ENTRIES_DESC','MajÃ­ se avatary zobrazovat takÃ© v postrannÃ­m sloupci v bloku s nejnovÄ›jÅ¡Ã­mi komentÃ¡Å™i?');
 
 @define('PLUGIN_EVENT_GRAVATAR_INFOLINE',           'Zobrazovat informaci o typu avataru');
-@define('PLUGIN_EVENT_GRAVATAR_INFOLINE_DESC',      'Pokud je zapnuto, pak se pod polem pro zadání textu komentáøe bude zobrazovat informace, které avatary jsou momentálnì podporovány.');
+@define('PLUGIN_EVENT_GRAVATAR_INFOLINE_DESC',      'Pokud je zapnuto, pak se pod polem pro zadÃ¡nÃ­ textu komentÃ¡Å™e bude zobrazovat informace, kterÃ© avatary jsou momentÃ¡lnÄ› podporovÃ¡ny.');
 
-@define('PLUGIN_EVENT_GRAVATAR_METHOD_DEFAULT',     'Vıchozí avatar');
-@define('PLUGIN_EVENT_GRAVATAR_METHOD',             'Stahovat avatary pomocí');
-@define('PLUGIN_EVENT_GRAVATAR_METHOD_DESC',        'Pokud pøedchozí pokus sele, zkus tento. Typy "Monster ID", "Defaultavatar" a "---" nikdy neselou. Všechny metody, které následují po jedné ze zmínìnıch metod, nebudou nikdy zkoušeny!');
-@define('PLUGIN_EVENT_GRAVATAR_SUPPORTED',          '%s obrázky autorù podporovány.');
+@define('PLUGIN_EVENT_GRAVATAR_METHOD_DEFAULT',     'VÃ½chozÃ­ avatar');
+@define('PLUGIN_EVENT_GRAVATAR_METHOD',             'Stahovat avatary pomocÃ­');
+@define('PLUGIN_EVENT_GRAVATAR_METHOD_DESC',        'Pokud pÅ™edchozÃ­ pokus selÅ¾e, zkus tento. Typy "Monster ID", "Defaultavatar" a "---" nikdy neselÅ¾ou. VÅ¡echny metody, kterÃ© nÃ¡sledujÃ­ po jednÃ© ze zmÃ­nÄ›nÃ½ch metod, nebudou nikdy zkouÅ¡eny!');
+@define('PLUGIN_EVENT_GRAVATAR_SUPPORTED',          '%s obrÃ¡zky autorÅ¯ podporovÃ¡ny.');
 
-@define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT',          'Jméno autora v atributu ALT v obrázku');
-@define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT_DESC',     'Obvykle se jméno autora zobrazuje v atributu TITLE v obrázku s avatarem a atribut ALT je vyplnìn hvìzdièkami. To zabraòuje zhroucení vzhledu stránky, pokud není prohlíeè schopen natáhnout obrázky. Ale slepci pouívají pro prohlíení internetu èasto právì atribut ALT, take pokud jim chcete zpøístupnit své stránky, zapnìte tuto volbu.');
+@define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT',          'JmÃ©no autora v atributu ALT v obrÃ¡zku');
+@define('PLUGIN_EVENT_GRAVATAR_AUTOR_ALT_DESC',     'Obvykle se jmÃ©no autora zobrazuje v atributu TITLE v obrÃ¡zku s avatarem a atribut ALT je vyplnÄ›n hvÄ›zdiÄkami. To zabraÅˆuje zhroucenÃ­ vzhledu strÃ¡nky, pokud nenÃ­ prohlÃ­Å¾eÄ schopen natÃ¡hnout obrÃ¡zky. Ale slepci pouÅ¾Ã­vajÃ­ pro prohlÃ­Å¾enÃ­ internetu Äasto prÃ¡vÄ› atribut ALT, takÅ¾e pokud jim chcete zpÅ™Ã­stupnit svÃ© strÃ¡nky, zapnÄ›te tuto volbu.');
 
-@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="http://www.gravatar.com" target="_blank" rel="noopener">Gravatar</a></b> je centrální úloištì obrázkù uivatelù spøaené s emailovou adresou, ' .
-        '<b><a href="http://www.peej.co.uk/projects/favatars.html" target="_blank" rel="noopener">Favatar</a></b> poskytuje favicony naètené z osobních stránek uivatele, <b><a href="http://www.pavatar.com" target="_blank" rel="noopener">Pavatar</a></b> ' .
-        'jsou obrázky uloené na osobních stránkách pisatele a ' .
-        '<b><a href="http://www.splitbrain.org/go/monsterid" target="_blank" rel="noopener">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank" rel="noopener">Identicon</a></b> a <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank" rel="noopener">Wavatar</a></b> avatary jsou nahrávané obrázky vytvoøené jednotlivımi uivateli.');
-@define('PLUGIN_EVENT_GRAVATAR_EXTLING_WARNING',    '<font color="red">POZOR!</font> Tento plugin musí bıt zaøazen pøed všemi pluginy, které mìní odkazy (jako napø. plugin "exit tracking plugin")! ' .
-        '<font color="red">Jinak nebudou pracovat avatary slueb Pavatar, Favatar a MayBlogLog!</font>');
+@define('PLUGIN_EVENT_GRAVATAR_LONG_DESCRIPTION',   '<b><a href="http://www.gravatar.com" target="_blank" rel="noopener">Gravatar</a></b> je centrÃ¡lnÃ­ ÃºloÅ¾iÅ¡tÄ› obrÃ¡zkÅ¯ uÅ¾ivatelÅ¯ spÅ™aÅ¾enÃ© s emailovou adresou, ' .
+        '<b><a href="http://www.peej.co.uk/projects/favatars.html" target="_blank" rel="noopener">Favatar</a></b> poskytuje favicony naÄtenÃ© z osobnÃ­ch strÃ¡nek uÅ¾ivatele, <b><a href="http://www.pavatar.com" target="_blank" rel="noopener">Pavatar</a></b> ' .
+        'jsou obrÃ¡zky uloÅ¾enÃ© na osobnÃ­ch strÃ¡nkÃ¡ch pisatele a ' .
+        '<b><a href="http://www.splitbrain.org/go/monsterid" target="_blank" rel="noopener">Monster ID</a></b>, <b><a href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/" target="_blank" rel="noopener">Identicon</a></b> a <b><a href="http://www.shamusyoung.com/twentysidedtale/?p=1462" target="_blank" rel="noopener">Wavatar</a></b> avatary jsou nahrÃ¡vanÃ© obrÃ¡zky vytvoÅ™enÃ© jednotlivÃ½mi uÅ¾ivateli.');
+@define('PLUGIN_EVENT_GRAVATAR_EXTLING_WARNING',    '<font color="red">POZOR!</font> Tento plugin musÃ­ bÃ½t zaÅ™azen pÅ™ed vÅ¡emi pluginy, kterÃ© mÄ›nÃ­ odkazy (jako napÅ™. plugin "exit tracking plugin")! ' .
+        '<font color="red">Jinak nebudou pracovat avatary sluÅ¾eb Pavatar a Favatar!</font>');
 
 @define('PLUGIN_EVENT_GRAVATAR_FALLBACK',           'Gravatar fallback');
-@define('PLUGIN_EVENT_GRAVATAR_FALLBACK_DESC',      'Gravatar má implementovanıch nìkolik návratovıch metod pro pøípad, e pro poadovaného uivatele není znám ádnı avatar. Implementovány jsou té Monster ID, Identicon a Wavatar. Pokud vyberete nìkterı z tìchto zínìnıch, nebudou uskuteèòovány ádné další pokusy o naètení avataru, pokud uivatel zadá email.');
-@define('PLUGIN_EVENT_GRAVATAR_FALLBACK_ALLWAYS',   'Vdy návratová hodnota pro Gravatar');
-@define('PLUGIN_EVENT_GRAVATAR_FALLBACK_ALLWAYS_DESC', 'Pouívat návratovou hodnotu Gravatar i v pøípadì, e uivatel nezadá email (zadá tedy url nebo jméno)');
+@define('PLUGIN_EVENT_GRAVATAR_FALLBACK_DESC',      'Gravatar mÃ¡ implementovanÃ½ch nÄ›kolik nÃ¡vratovÃ½ch metod pro pÅ™Ã­pad, Å¾e pro poÅ¾adovanÃ©ho uÅ¾ivatele nenÃ­ znÃ¡m Å¾Ã¡dnÃ½ avatar. ImplementovÃ¡ny jsou tÃ©Å¾ Monster ID, Identicon a Wavatar. Pokud vyberete nÄ›kterÃ½ z tÄ›chto zÃ­nÄ›nÃ½ch, nebudou uskuteÄÅˆovÃ¡ny Å¾Ã¡dnÃ© dalÅ¡Ã­ pokusy o naÄtenÃ­ avataru, pokud uÅ¾ivatel zadÃ¡ email.');
+@define('PLUGIN_EVENT_GRAVATAR_FALLBACK_ALLWAYS',   'VÅ¾dy nÃ¡vratovÃ¡ hodnota pro Gravatar');
+@define('PLUGIN_EVENT_GRAVATAR_FALLBACK_ALLWAYS_DESC', 'PouÅ¾Ã­vat nÃ¡vratovou hodnotu Gravatar i v pÅ™Ã­padÄ›, Å¾e uÅ¾ivatel nezadÃ¡ email (zadÃ¡ tedy url nebo jmÃ©no)');
 

@@ -1,3 +1,10 @@
+2.0.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+ * Use native htmlspecialchars()
+ * Raise requirements for Styx 5.0
+
 1.79:
 -----
  * Fix ycon image creation with imagefilledpolygon on PHP 8.1, which deprecated the $num_points parameter

@@ -12,7 +12,7 @@
 @define('PLUGIN_EVENT_GRAVATAR_USE_SMARTY',         'Produce smarty tag');
 @define('PLUGIN_EVENT_GRAVATAR_USE_SMARTY_DESC',    'If this option is switched on, the avatar images are not written directly into the comment output but a smarty tag {$comment.avatar} is produced. Only templates, that support this smarty tag, will display the avatar, if this option is set to true. The best way is to try it, if your template supports this smarty tag.');
 
-@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR',      'Domy¶lny obrazek avatara');
+@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR',      'DomyÂ¶lny obrazek avatara');
 @define('PLUGIN_EVENT_GRAVATAR_SIZE',               'rozmiar obrazka');
 @define('PLUGIN_EVENT_GRAVATAR_RATING',             'Rating');
 @define('PLUGIN_EVENT_GRAVATAR_RATING_NO',          'No rating');
@@ -21,12 +21,12 @@
 @define('PLUGIN_EVENT_GRAVATAR_RATING_PG',          'Parental Guidance (PG)');
 @define('PLUGIN_EVENT_GRAVATAR_RATING_X',           'Explicit (X)');
 
-@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR_DESC', 'Jaki jest adres URL do domy¶lnego obrazka avatara?');
+@define('PLUGIN_EVENT_GRAVATAR_DEFAULTAVATAR_DESC', 'Jaki jest adres URL do domyÂ¶lnego obrazka avatara?');
 @define('PLUGIN_EVENT_GRAVATAR_SIZE_DESC',          'Maksymalny rozmiar avatara (w pikselach)');
-@define('PLUGIN_EVENT_GRAVATAR_RATING_DESC',        'Wybierz Rating (poziom przyznawany przez gravatar.com ka¿demu obrazkowi avatara), jaki ma byæ wy¶wietlany na stronie');
+@define('PLUGIN_EVENT_GRAVATAR_RATING_DESC',        'Wybierz Rating (poziom przyznawany przez gravatar.com kaÂ¿demu obrazkowi avatara), jaki ma byÃ¦ wyÂ¶wietlany na stronie');
 
-@define('PLUGIN_EVENT_GRAVATAR_CACHING',            'Buforowaæ Avatars?');
-@define('PLUGIN_EVENT_GRAVATAR_CACHING_DESC',       'Je¶li chcesz buforowaæ obrazki avatarów, wpisz ilo¶æ godzin, w ci±gu których obrazek bêdzie pobierany z Twojego serwera zamiast z centralnego serwera www.gravatar.com. Pamiêtaj, ¿e to spowoduje wzrost obci±¿enia Twojego hosta. Plusem buforowania jest odci±¿enie serwerów Gravatara i przynajmniej czasowe uniezale¿nienie siê od centralnych serwerów na wypadek np. ich awarii. "0" wy³±cza buforowanie.');
+@define('PLUGIN_EVENT_GRAVATAR_CACHING',            'BuforowaÃ¦ Avatars?');
+@define('PLUGIN_EVENT_GRAVATAR_CACHING_DESC',       'JeÂ¶li chcesz buforowaÃ¦ obrazki avatarÃ³w, wpisz iloÂ¶Ã¦ godzin, w ciÂ±gu ktÃ³rych obrazek bÃªdzie pobierany z Twojego serwera zamiast z centralnego serwera www.gravatar.com. PamiÃªtaj, Â¿e to spowoduje wzrost obciÂ±Â¿enia Twojego hosta. Plusem buforowania jest odciÂ±Â¿enie serwerÃ³w Gravatara i przynajmniej czasowe uniezaleÂ¿nienie siÃª od centralnych serwerÃ³w na wypadek np. ich awarii. "0" wyÂ³Â±cza buforowanie.');
 
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN',              'Alignment');
 @define('PLUGIN_EVENT_GRAVATAR_ALIGN_DESC',         'This option configures the alignment of the avatar, if the smarty tag option is not used. For smarty tags you have to do the alignment using the CSS class of the avatar.');
@@ -61,5 +61,5 @@
         'are images at the writer\'s site and ' .
         '<b><a href="://www.splitbrain.org/go/monsterid" target="_blank" rel="noopener">Monster ID avatars</a></b> are localy created monster images unique for each writer.');
 @define('PLUGIN_EVENT_GRAVATAR_EXTLING_WARNING',    '<font color="red">CAUTION!</font> This plugin has to be executed before any plugin changing links (like i.e. the exit tracking plugin)! ' .
-        '<font color="red">Else Pavatars, Favatars and MayBlogLog avatars won\'t work!</font>');
+        '<font color="red">Else Pavatars and Favatars avatars won\'t work!</font>');
 

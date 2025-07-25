@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -9,7 +11,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '1.79');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '2.0.0');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -19,11 +21,12 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_gravatar extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_GRAVATAR_NAME;
-    var $cache_dir                  = null;
-    var $defaultImageConfiguration  = null;
-    var $avatarConfiguration        = array();
-    var $cache_seconds              = 0;
+    public $title = PLUGIN_EVENT_GRAVATAR_NAME;
+
+    protected $cache_dir                  = null;
+    protected $defaultImageConfiguration  = null;
+    protected $avatarConfiguration        = array();
+    protected $cache_seconds              = 0;
 
     function introspect(&$propbag)
     {
@@ -34,8 +37,8 @@ class serendipity_event_gravatar extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1.0',
-            'php'         => '7.0.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('version',       PLUGIN_EVENT_GRAVATAR_VERSION);
         $propbag->add('groups',        array('IMAGES'));
@@ -462,7 +465,7 @@ class serendipity_event_gravatar extends serendipity_event
         $title = '';
         $author = 'unknown';
         if (isset($eventData['author'])) {
-            $author = serendipity_specialchars($eventData['author']);
+            $author = htmlspecialchars($eventData['author']);
             $title = $author;
         }
 
