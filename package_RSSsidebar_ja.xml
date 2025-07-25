@@ -32,7 +32,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Show tagged entries&lt;/b&gt;&lt;br /&gt;Shows a list of existing tags for entries&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 23 Jul 2025 18:25:34 +0200</pubDate>
+<pubDate>Fri, 25 Jul 2025 16:23:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_freetag</guid>
 </item>
 <item>
@@ -162,12 +162,12 @@
 <guid isPermaLink="false">serendipity_plugin_amazon</guid>
 </item>
 <item>
-<title>カテゴリツリーメニュー: DHTML のカテゴリメニューです。PEAR::HTML_TreeMenu が必要です。</title>
+<title>Category Tree Menu: DHTML category menu.  Requires PEAR::HTML_TreeMenu.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_category_dhtml_menu</link>
 <category>Sidebar Plugins</category>
 <author>Jackson Miller, Sebastian Bauer</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_category_dhtml_menu&lt;br /&gt;カテゴリツリーメニュー&lt;/b&gt;&lt;br /&gt;DHTML のカテゴリメニューです。PEAR::HTML_TreeMenu が必要です。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 23 Sep 2022 12:17:04 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_category_dhtml_menu&lt;br /&gt;Category Tree Menu&lt;/b&gt;&lt;br /&gt;DHTML category menu.  Requires PEAR::HTML_TreeMenu.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 25 Jul 2025 16:51:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_category_dhtml_menu</guid>
 </item>
 <item>

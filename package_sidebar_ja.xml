@@ -193,11 +193,11 @@
 <description>Shows a list of existing tags for entries</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.1.0</version>
+  <version>4.2.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-23</date>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -1576,44 +1576,37 @@
 </package>
 <package version="1.0">
 <name>serendipity_plugin_category_dhtml_menu</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_category_dhtml_menu/ChangeLog</changelog>
 <license>GPL</license>
-<summary>カテゴリツリーメニュー</summary>
+<summary>Category Tree Menu</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>DHTML のカテゴリメニューです。PEAR::HTML_TreeMenu が必要です。</description>
+<description>DHTML category menu.  Requires PEAR::HTML_TreeMenu.</description>
 <maintainers><maintainer><name>Jackson Miller, Sebastian Bauer</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.13</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.0</requirements:smyVersion>
-  <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-09-23</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_plugin_category_dhtml_menu">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_plugin_category_dhtml_menu.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_plugin_category_dhtml_menu/ChangeLog</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_bg.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_cs.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_cz.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_en.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_ja.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/serendipity_plugin_category_dhtml_menu.php</file>
-    <file>serendipity_plugin_category_dhtml_menu/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_category_dhtml_menu/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_category_dhtml_menu/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_category_dhtml_menu/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
