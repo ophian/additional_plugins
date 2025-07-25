@@ -25,11 +25,3 @@
 @define('PLUGIN_CURRENTLY_LOCALE','Amazon の地域 (国)');
 @define('PLUGIN_CURRENTLY_LOCALE_DETAILS','対象の Amazon の地域 (国)');
 
-@define('PLUGIN_CURRENTLY_AMAZON_DETAILS','<br/><p><strong>Enter your amazon.com associates information below, or leave blank for defaults. Associate information is available from the <a href="http://aws.amazon.com">Amazon Web Services</a> website.</strong></p><br/>');
-@define('PLUGIN_CURRENTLY_AMAZON_TAG','Amazon Associates Tag');
-@define('PLUGIN_CURRENTLY_AMAZON_TAG_DETAILS','Your Amazon Associates Tag');
-@define('PLUGIN_CURRENTLY_AMAZON_ID','Amazon Access Key ID');
-@define('PLUGIN_CURRENTLY_AMAZON_ID_DETAILS','Your Amazon Access Key ID');
-@define('PLUGIN_CURRENTLY_AMAZON_KEY','Amazon Secret Access Key');
-@define('PLUGIN_CURRENTLY_AMAZON_KEY_DETAILS','Your Amazon Secret Access Key');
-

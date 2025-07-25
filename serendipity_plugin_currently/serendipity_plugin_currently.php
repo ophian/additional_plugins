@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 //xml.inc has everything we need to do the actual xml.amazon.com query.
 include_once('soap.inc');
 
@@ -12,11 +15,11 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_currently extends serendipity_plugin
 {
-    var $title = PLUGIN_CURRENTLY_NAME;
+    public $title = PLUGIN_CURRENTLY_NAME;
 
-    var $associates_tag = '';
-    var $associates_id  = '';
-    var $associates_key = '';
+    protected $associates_tag = '';
+    protected $associates_id  = '';
+    protected $associates_key = '';
 
     function introspect(&$propbag)
     {
@@ -26,11 +29,11 @@ class serendipity_plugin_currently extends serendipity_plugin
         $propbag->add('description',   PLUGIN_CURRENTLY_DETAIL);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Dustin Hawkins');
-        $propbag->add('version',       '2.3');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '5.6'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
 

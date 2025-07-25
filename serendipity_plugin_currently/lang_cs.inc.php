@@ -1,38 +1,38 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/11/21
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/14
  */
 
-@define('PLUGIN_CURRENTLY_NAME', 'Co pr·vÏ dÏl·m');
-@define('PLUGIN_CURRENTLY_DETAIL', 'Zobrazuje seznam toho, co pr·vÏ poslouch·te, hrajete nebo Ëtete.');
+@define('PLUGIN_CURRENTLY_NAME', 'Co pr√°vƒõ dƒõl√°m');
+@define('PLUGIN_CURRENTLY_DETAIL', 'Zobrazuje seznam toho, co pr√°vƒõ poslouch√°te, hrajete nebo ƒçtete.');
 @define('PLUGIN_CURRENTLY_DELETE', 'Smazat');
-@define('PLUGIN_CURRENTLY_LISTENING', 'Poslouch·m:');
-@define('PLUGIN_CURRENTLY_LISTENING_BAND', 'Poslouch·m kapelu:');
-@define('PLUGIN_CURRENTLY_LISTENING_BAND_DETAILS', 'Kterou kapelu pr·vÏ poslouch·te?');
-@define('PLUGIN_CURRENTLY_LISTENING_ALBUM', 'Poslouch·m album:');
-@define('PLUGIN_CURRENTLY_LISTENING_ALBUM_DETAILS', 'KterÈ album pr·vÏ poslouch·te?');
-@define('PLUGIN_CURRENTLY_LISTENING_TRACK', 'Poslouch·m skladbu:');
-@define('PLUGIN_CURRENTLY_LISTENING_TRACK_DETAILS', 'Kterou skladbu pr·vÏ poslouch·te?');
-@define('PLUGIN_CURRENTLY_READING', '»tu:');
-@define('PLUGIN_CURRENTLY_READING_DETAILS', 'Co pr·vÏ Ëtete?');
+@define('PLUGIN_CURRENTLY_LISTENING', 'Poslouch√°m:');
+@define('PLUGIN_CURRENTLY_LISTENING_BAND', 'Poslouch√°m kapelu:');
+@define('PLUGIN_CURRENTLY_LISTENING_BAND_DETAILS', 'Kterou kapelu pr√°vƒõ poslouch√°te?');
+@define('PLUGIN_CURRENTLY_LISTENING_ALBUM', 'Poslouch√°m album:');
+@define('PLUGIN_CURRENTLY_LISTENING_ALBUM_DETAILS', 'Kter√© album pr√°vƒõ poslouch√°te?');
+@define('PLUGIN_CURRENTLY_LISTENING_TRACK', 'Poslouch√°m skladbu:');
+@define('PLUGIN_CURRENTLY_LISTENING_TRACK_DETAILS', 'Kterou skladbu pr√°vƒõ poslouch√°te?');
+@define('PLUGIN_CURRENTLY_READING', 'ƒåtu:');
+@define('PLUGIN_CURRENTLY_READING_DETAILS', 'Co pr√°vƒõ ƒçtete?');
 @define('PLUGIN_CURRENTLY_PLAYING', 'Hraji:');
-@define('PLUGIN_CURRENTLY_PLAYING_DETAILS', 'Jakou poËÌtaËovou hru pr·vÏ hrajete?');
+@define('PLUGIN_CURRENTLY_PLAYING_DETAILS', 'Jakou poƒç√≠taƒçovou hru pr√°vƒõ hrajete?');
 @define('PLUGIN_CURRENTLY_WATCHING', 'Sleduji:');
-@define('PLUGIN_CURRENTLY_WATCHING_DETAILS', 'Jak˝ film nebo seri·l pr·vÏ sledujete?');
-@define('PLUGIN_CURRENTLY_LOCALE','Amazon Locale (ZemÏ)');
-@define('PLUGIN_CURRENTLY_LOCALE_DETAILS','Amazon Locale (ZemÏ)');
+@define('PLUGIN_CURRENTLY_WATCHING_DETAILS', 'Jak√Ω film nebo seri√°l pr√°vƒõ sledujete?');
+@define('PLUGIN_CURRENTLY_LOCALE','Amazon Locale (Zemƒõ)');
+@define('PLUGIN_CURRENTLY_LOCALE_DETAILS','Amazon Locale (Zemƒõ)');
 
-@define('PLUGIN_CURRENTLY_AMAZON_DETAILS','<br/><p><strong>Zadejte nÌûe Vaöe Amazon Associates ˙daje, nebo ponechte pr·zdnÈ pro pouûitÌ v˝chozÌch hodnot. Amazon Associates ˙daje jsou p¯ÌstupnÈ na str·nce <a href="http://aws.amazon.com">Amazon Web Services</a>.</strong></p><br/>');
+@define('PLUGIN_CURRENTLY_AMAZON_DETAILS','<br/><p><strong>Zadejte n√≠≈æe Va≈°e Amazon Associates √∫daje, nebo ponechte pr√°zdn√© pro pou≈æit√≠ v√Ωchoz√≠ch hodnot. Amazon Associates √∫daje jsou p≈ô√≠stupn√© na str√°nce <a href="http://aws.amazon.com">Amazon Web Services</a>.</strong></p><br/>');
 @define('PLUGIN_CURRENTLY_AMAZON_TAG','Amazon Associates Tag');
-@define('PLUGIN_CURRENTLY_AMAZON_TAG_DETAILS','V·ö Amazon Associates Tag');
+@define('PLUGIN_CURRENTLY_AMAZON_TAG_DETAILS','V√°≈° Amazon Associates Tag');
 @define('PLUGIN_CURRENTLY_AMAZON_ID','Amazon Access Key ID');
-@define('PLUGIN_CURRENTLY_AMAZON_ID_DETAILS','V·ö p¯Ìstupov˝ Amazon klÌË/identifik·tor');
+@define('PLUGIN_CURRENTLY_AMAZON_ID_DETAILS','V√°≈° p≈ô√≠stupov√Ω Amazon kl√≠ƒç/identifik√°tor');
 @define('PLUGIN_CURRENTLY_AMAZON_KEY','Amazon Secret Access Key');
-@define('PLUGIN_CURRENTLY_AMAZON_KEY_DETAILS','V·ö tajn˝ p¯Ìstupov˝ Amazon klÌË');
+@define('PLUGIN_CURRENTLY_AMAZON_KEY_DETAILS','V√°≈° tajn√Ω p≈ô√≠stupov√Ω Amazon kl√≠ƒç');
 
