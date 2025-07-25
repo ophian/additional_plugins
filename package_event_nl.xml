@@ -4495,11 +4495,11 @@
 <description>Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.79</version>
-  <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-11-07</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -4582,12 +4582,6 @@
         <file>README</file>
       </dir>
       <file>serendipity_event_gravatar.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
       <dir name="wavatars">
         <dir name="parts">
           <file>brow1.png</file>
@@ -4751,10 +4745,6 @@
     <file>serendipity_event_gravatar/monsterid/parts/mouth_9.png</file>
     <file>serendipity_event_gravatar/monsterid/README</file>
     <file>serendipity_event_gravatar/serendipity_event_gravatar.php</file>
-    <file>serendipity_event_gravatar/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_gravatar/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_gravatar/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_gravatar/UTF-8/lang_pl.inc.php</file>
     <file>serendipity_event_gravatar/wavatars/parts/brow1.png</file>
     <file>serendipity_event_gravatar/wavatars/parts/brow2.png</file>
     <file>serendipity_event_gravatar/wavatars/parts/brow3.png</file>
@@ -4944,19 +4934,21 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_head_nugget</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_head_nugget/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML-Code inside head (HTML-Head Nugget)</summary>
 <groups>BACKEND_METAINFORMATION</groups>
 <description>Allows you to insert HTML-Markup into the HEAD-area of your blog. You can use this for meta-tags or JavaScript inclusion.</description>
 <maintainers><maintainer><name>Jannis Hermanns</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-11-17</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_head_nugget">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -4964,16 +4956,10 @@
       <file>lang_en.inc.php</file>
       <file>lang_pl.inc.php</file>
       <file>serendipity_event_head_nugget.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_head_nugget/ChangeLog</file>
     <file>serendipity_event_head_nugget/lang_bg.inc.php</file>
     <file>serendipity_event_head_nugget/lang_cs.inc.php</file>
     <file>serendipity_event_head_nugget/lang_cz.inc.php</file>
@@ -4981,11 +4967,6 @@
     <file>serendipity_event_head_nugget/lang_en.inc.php</file>
     <file>serendipity_event_head_nugget/lang_pl.inc.php</file>
     <file>serendipity_event_head_nugget/serendipity_event_head_nugget.php</file>
-    <file>serendipity_event_head_nugget/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_head_nugget/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_head_nugget/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_head_nugget/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_head_nugget/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6437,11 +6418,11 @@
 <description>This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.</description>
 <maintainers><maintainer><name>Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.54</version>
-  <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-02-10</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -6469,12 +6450,6 @@
       <file>smarty.inc.php</file>
       <file>tabber-minimized.js</file>
       <file>tabber.css</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -6501,10 +6476,6 @@
     <file>serendipity_event_microformats/smarty.inc.php</file>
     <file>serendipity_event_microformats/tabber-minimized.js</file>
     <file>serendipity_event_microformats/tabber.css</file>
-    <file>serendipity_event_microformats/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_microformats/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_microformats/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_microformats/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -9336,11 +9307,11 @@
 <description>Allows you to show only one category on the frontpage</description>
 <maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -9349,12 +9320,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_startcat.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_startcat/ChangeLog</file>
@@ -9363,9 +9329,6 @@
     <file>serendipity_event_startcat/lang_de.inc.php</file>
     <file>serendipity_event_startcat/lang_en.inc.php</file>
     <file>serendipity_event_startcat/serendipity_event_startcat.php</file>
-    <file>serendipity_event_startcat/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_startcat/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_startcat/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -11421,29 +11384,25 @@
 <description>Integrate VG Wort counters into your blog.</description>
 <maintainers><maintainer><name>Malte Paskuda, Thomas Hochstein</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.7</version>
-  <requirements:s9yVersion>2.2.1</requirements:s9yVersion>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2024-08-05</date>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
       <file>changeLog</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_vgwort.php</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-      </dir>
       <file>vgwortMenu.tpl</file>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_vgwort/changeLog</file>
     <file>serendipity_event_vgwort/lang_de.inc.php</file>
     <file>serendipity_event_vgwort/lang_en.inc.php</file>
     <file>serendipity_event_vgwort/serendipity_event_vgwort.php</file>
-    <file>serendipity_event_vgwort/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_vgwort/vgwortMenu.tpl</file>
   </serendipityFilelist>
 </release>

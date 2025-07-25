@@ -513,12 +513,12 @@
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
-<title>Avatar Plugin: Avatare bei Kommentaren anzeigen. Unterstützt werden Gravatare, Pavatare, Favatare, Wavatare, Monster ID, Identicon, Twitter und Identica Avatare</title>
+<title>Avatar Plugin: Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_gravatar</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Avatare bei Kommentaren anzeigen. Unterstützt werden Gravatare, Pavatare, Favatare, Wavatare, Monster ID, Identicon, Twitter und Identica Avatare&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Mon, 07 Nov 2022 16:50:06 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Show Avatars inside comments. Gravatars, Pavatars, Favatars, Wavatars, Monster ID, Identicon, Twitter and Identica Avatars are supported.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 25 Jul 2025 19:02:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -531,12 +531,12 @@
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
-<title>HTML-Code für den Head-Bereich (HTML-Kopf Klotz): Beinhaltet HTML-Markup, welches im HEAD-Bereich des Blogs eingebunden werden kann, z.B. für Meta-Tags oder JavaScripts.</title>
+<title>HTML-Code inside head (HTML-Head Nugget): Allows you to insert HTML-Markup into the HEAD-area of your blog. You can use this for meta-tags or JavaScript inclusion.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_head_nugget</link>
 <category>Event Plugins</category>
 <author>Jannis Hermanns</author>
-<content:encoded>&lt;b&gt;serendipity_event_head_nugget&lt;br /&gt;HTML-Code für den Head-Bereich (HTML-Kopf Klotz)&lt;/b&gt;&lt;br /&gt;Beinhaltet HTML-Markup, welches im HEAD-Bereich des Blogs eingebunden werden kann, z.B. für Meta-Tags oder JavaScripts.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 17 Nov 2018 13:19:07 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_head_nugget&lt;br /&gt;HTML-Code inside head (HTML-Head Nugget)&lt;/b&gt;&lt;br /&gt;Allows you to insert HTML-Markup into the HEAD-area of your blog. You can use this for meta-tags or JavaScript inclusion.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 25 Jul 2025 18:34:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_head_nugget</guid>
 </item>
 <item>
@@ -720,12 +720,12 @@
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
-<title>Microformats: Dieses Plugin ermöglicht es, auf einfache Weise Rezensionen zu veröffentlichen und Veranstaltungen anzukündigen: Es unterstützt die jeweiligen Mikroformate.</title>
+<title>Microformats: This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_microformats</link>
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht es, auf einfache Weise Rezensionen zu veröffentlichen und Veranstaltungen anzukündigen: Es unterstützt die jeweiligen Mikroformate.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 10 Feb 2023 10:13:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;This plugin provides an easy way to publish reviews (or events); it supports the respective microformats.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 25 Jul 2025 19:01:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
@@ -1017,12 +1017,12 @@
 <guid isPermaLink="false">serendipity_event_stalkerbuster</guid>
 </item>
 <item>
-<title>Kategorie als Startseite: Ermöglicht, die Artikel einer speziellen Kategorie anstelle der Übersicht aller Artikel auf der Startseite anzuzeigen.</title>
+<title>Start Page Category: Allows you to show only one category on the frontpage</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_startcat</link>
 <category>Event Plugins</category>
 <author>Stefan Willoughby, Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_startcat&lt;br /&gt;Kategorie als Startseite&lt;/b&gt;&lt;br /&gt;Ermöglicht, die Artikel einer speziellen Kategorie anstelle der Übersicht aller Artikel auf der Startseite anzuzeigen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:23:49 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_startcat&lt;br /&gt;Start Page Category&lt;/b&gt;&lt;br /&gt;Allows you to show only one category on the frontpage&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 25 Jul 2025 18:37:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_startcat</guid>
 </item>
 <item>
@@ -1215,12 +1215,12 @@
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>
-<title>VG Wort: Integriert Zählmarken der VG Wort.</title>
+<title>VG Wort: Integrate VG Wort counters into your blog.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_vgwort</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Thomas Hochstein</author>
-<content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort&lt;/b&gt;&lt;br /&gt;Integriert Zählmarken der VG Wort.&lt;br/&gt;For: Serendipity 2.2.1</content:encoded>
-<pubDate>Mon, 05 Aug 2024 10:57:49 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort&lt;/b&gt;&lt;br /&gt;Integrate VG Wort counters into your blog.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 25 Jul 2025 18:43:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_vgwort</guid>
 </item>
 <item>

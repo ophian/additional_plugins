@@ -512,9 +512,9 @@
 <name>serendipity_plugin_microformats</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_microformats/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Nadcházející události</summary>
+<summary>Upcoming Events</summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Zobrazit nejbližší a doporučené události v postranním sloupci a použít na ně mikroformat hCalendar.</description>
+<description>Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.</description>
 <maintainers><maintainer><name>Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.28</version>
@@ -549,12 +549,6 @@
       <file>smarty.inc.php</file>
       <file>tabber-minimized.js</file>
       <file>tabber.css</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -581,10 +575,6 @@
     <file>serendipity_event_microformats/smarty.inc.php</file>
     <file>serendipity_event_microformats/tabber-minimized.js</file>
     <file>serendipity_event_microformats/tabber.css</file>
-    <file>serendipity_event_microformats/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_microformats/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_microformats/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_microformats/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1714,16 +1704,16 @@
 <name>serendipity_plugin_currently</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_currently/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Co právě dělám</summary>
+<summary>Currently...</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Zobrazuje seznam toho, co právě posloucháte, hrajete nebo čtete.</description>
+<description>Displays items you are currently listening, playing, or reading...</description>
 <maintainers><maintainer><name>Dustin Hawkins</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.3</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>5.6</requirements:phpVersion>
-  <date>2022-07-07</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_plugin_currently">
       <file>ChangeLog</file>
@@ -1737,14 +1727,8 @@
       <file>lang_ja.inc.php</file>
       <file>serendipity_plugin_currently.php</file>
       <file>soap.inc</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
       <file>xml.inc</file>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_currently/ChangeLog</file>
@@ -1758,10 +1742,6 @@
     <file>serendipity_plugin_currently/lang_ja.inc.php</file>
     <file>serendipity_plugin_currently/serendipity_plugin_currently.php</file>
     <file>serendipity_plugin_currently/soap.inc</file>
-    <file>serendipity_plugin_currently/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_currently/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_currently/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_currently/UTF-8/lang_ja.inc.php</file>
     <file>serendipity_plugin_currently/xml.inc</file>
   </serendipityFilelist>
 </release>
@@ -2585,16 +2565,16 @@
 <name>serendipity_plugin_popularentries</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_popularentries/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Oblíbené příspěvky</summary>
+<summary>Popular Entries</summary>
 <groups>STATISTICS</groups>
-<description>Zobrazuje nadpisy a počet komentářů nejoblíbenějších příspěvků. Oblíbenost je počítána na základě množství komentářů.</description>
+<description>Shows the titles and number of comments of the most popular entries calculated according to the entries most commented on.</description>
 <maintainers><maintainer><name>Kaustubh Srikanth</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.11</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2019-10-22</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_plugin_popularentries">
       <file>ChangeLog</file>
@@ -2608,15 +2588,7 @@
       <file>lang_ja.inc.php</file>
       <file>lang_pl.inc.php</file>
       <file>serendipity_plugin_popularentries.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_popularentries/ChangeLog</file>
@@ -2630,12 +2602,6 @@
     <file>serendipity_plugin_popularentries/lang_ja.inc.php</file>
     <file>serendipity_plugin_popularentries/lang_pl.inc.php</file>
     <file>serendipity_plugin_popularentries/serendipity_plugin_popularentries.php</file>
-    <file>serendipity_plugin_popularentries/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_popularentries/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_popularentries/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_popularentries/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_popularentries/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_plugin_popularentries/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2685,16 +2651,16 @@
 <name>serendipity_plugin_randomquotes</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_randomquotes/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Náhodný citát</summary>
+<summary>Random Quotes</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Zobrazuje blok s náhodně vybraným citátem</description>
+<description>Shows a block with a random quotation</description>
 <maintainers><maintainer><name>Florian Solcher</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.06</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2019-10-22</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_plugin_randomquotes">
       <file>ChangeLog</file>
@@ -2704,13 +2670,7 @@
       <file>lang_en.inc.php</file>
       <file>lang_pl.inc.php</file>
       <file>serendipity_plugin_randomquotes.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_randomquotes/ChangeLog</file>
@@ -2720,10 +2680,6 @@
     <file>serendipity_plugin_randomquotes/lang_en.inc.php</file>
     <file>serendipity_plugin_randomquotes/lang_pl.inc.php</file>
     <file>serendipity_plugin_randomquotes/serendipity_plugin_randomquotes.php</file>
-    <file>serendipity_plugin_randomquotes/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_randomquotes/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_randomquotes/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_randomquotes/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2857,16 +2813,16 @@
 <name>serendipity_plugin_showentries</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_showentries/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zobrazení příspěvků v postranním sloupci</summary>
+<summary>Show Entries in sidebar</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Zobrazuje příspěvky ze zadaných kategorií v postranním sloupci. Dobré např. pro moblogování! (Moblogování = blogování pomocí mobilního telefonu, tedy krátké příspěvky)</description>
+<description>Shows entries of special categories in your sidebar. Good for Sidebar Moblogging!</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.11</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_plugin_showentries">
       <file>ChangeLog</file>
@@ -2880,14 +2836,7 @@
       <file>lang_ja.inc.php</file>
       <file>plugin_showentries.tpl</file>
       <file>serendipity_plugin_showentries.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc .php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_showentries/ChangeLog</file>
@@ -2901,11 +2850,6 @@
     <file>serendipity_plugin_showentries/lang_ja.inc.php</file>
     <file>serendipity_plugin_showentries/plugin_showentries.tpl</file>
     <file>serendipity_plugin_showentries/serendipity_plugin_showentries.php</file>
-    <file>serendipity_plugin_showentries/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_showentries/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_showentries/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_showentries/UTF-8/lang_de.inc .php</file>
-    <file>serendipity_plugin_showentries/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
