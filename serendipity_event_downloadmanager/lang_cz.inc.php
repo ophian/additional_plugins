@@ -1,80 +1,80 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/09/28
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/08/21
  */
 
 @define('PLUGIN_DOWNLOADMANAGER_TITLE', 'Downloadmanager');
-@define('PLUGIN_DOWNLOADMANAGER_DESC', 'Zaji¹»uje Serendipity v¹echny funkce download managera. Pøi odinstalování jsou odstranìny v¹echny tabulky z databáze (ztráta v¹ech dat)!!!');
+@define('PLUGIN_DOWNLOADMANAGER_DESC', 'ZajiÅ¡Å¥uje Serendipity vÅ¡echny funkce download managera. PÅ™i odinstalovÃ¡nÃ­ jsou odstranÄ›ny vÅ¡echny tabulky z databÃ¡ze (ztrÃ¡ta vÅ¡ech dat)!!!');
 @define('PLUGIN_DOWNLOADMANAGER_PAGETITLE', 'Titulek');
-@define('PLUGIN_DOWNLOADMANAGER_PAGETITLE_BLAHBLAH', 'tj. to, co se zobrazuje v informaèním pruhu okna prohlí¾eèe je¹tì nad menu');
+@define('PLUGIN_DOWNLOADMANAGER_PAGETITLE_BLAHBLAH', 'tj. to, co se zobrazuje v informaÄnÃ­m pruhu okna prohlÃ­Å¾eÄe jeÅ¡tÄ› nad menu');
 @define('PLUGIN_DOWNLOADMANAGER_HEADLINE', 'Nadpis');
-@define('PLUGIN_DOWNLOADMANAGER_HEADLINE_BLAHBLAH', 'tj. to, co je napsáno tuènım velkım písmem jako název stránky blogu');
-@define('PLUGIN_DOWNLOADMANAGER_PAGEURL', 'Statická URL adresa');
-@define('PLUGIN_DOWNLOADMANAGER_PAGEURL_BLAHBLAH', 'Definuje URL, pod kterou je download mana¾er pøístupnı (index.php?serendipity[subpage]=zde_zadané_jméno)');
-@define('PLUGIN_DOWNLOADMANAGER_PERMALINK', 'Permalink (stálı odkaz)');
-@define('PLUGIN_DOWNLOADMANAGER_PERMALINK_BLAHBLAH', 'Definuje stálou zkratku, která mù¾e bıt krat¹í a srozumitelnìj¹í ne¾ statická URL adresa (nastavené vı¹e). Je tøeba zadat absolutní HTTP cestu, navíc musí konèit .htm nebo .html. (Vıchozí nastavení: "%s")');
-@define('PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH', 'Cesta pro pøíchozí data');
-@define('PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH_BLAHBLAH', 'Plná absolutní cesta k adresáøi, do kterého nahráváte soubory. Plugin pracuje tak, ¾e do tohoto adresáøe se nahrají soubory a teprve pak urèíte, které mají bıt nabízené ke sta¾ení. Ty si pak plugin pøemístí do adresáøe s downloady.');
-@define('PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH', 'Absolutní cesta adresáøe s downloady');
-@define('PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH_BLAHBLAH', 'Plná absolutní cesta k adresáøi, do kterého si bude downloadmanager umís»ovat soubory, které pak budou pøístupné z blogu.');
+@define('PLUGIN_DOWNLOADMANAGER_HEADLINE_BLAHBLAH', 'tj. to, co je napsÃ¡no tuÄnÃ½m velkÃ½m pÃ­smem jako nÃ¡zev strÃ¡nky blogu');
+@define('PLUGIN_DOWNLOADMANAGER_PAGEURL', 'StatickÃ¡ URL adresa');
+@define('PLUGIN_DOWNLOADMANAGER_PAGEURL_BLAHBLAH', 'Definuje URL, pod kterou je download manaÅ¾er pÅ™Ã­stupnÃ½ (index.php?serendipity[subpage]=zde_zadanÃ©_jmÃ©no)');
+@define('PLUGIN_DOWNLOADMANAGER_PERMALINK', 'Permalink (stÃ¡lÃ½ odkaz)');
+@define('PLUGIN_DOWNLOADMANAGER_PERMALINK_BLAHBLAH', 'Definuje stÃ¡lou zkratku, kterÃ¡ mÅ¯Å¾e bÃ½t kratÅ¡Ã­ a srozumitelnÄ›jÅ¡Ã­ neÅ¾ statickÃ¡ URL adresa (nastavenÃ© vÃ½Å¡e). Je tÅ™eba zadat absolutnÃ­ HTTP cestu, navÃ­c musÃ­ konÄit .htm nebo .html. (VÃ½chozÃ­ nastavenÃ­: "%s")');
+@define('PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH', 'Cesta pro pÅ™Ã­chozÃ­ data');
+@define('PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH_BLAHBLAH', 'PlnÃ¡ absolutnÃ­ cesta k adresÃ¡Å™i, do kterÃ©ho nahrÃ¡vÃ¡te soubory. Plugin pracuje tak, Å¾e do tohoto adresÃ¡Å™e se nahrajÃ­ soubory a teprve pak urÄÃ­te, kterÃ© majÃ­ bÃ½t nabÃ­zenÃ© ke staÅ¾enÃ­. Ty si pak plugin pÅ™emÃ­stÃ­ do adresÃ¡Å™e s downloady.');
+@define('PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH', 'AbsolutnÃ­ cesta adresÃ¡Å™e s downloady');
+@define('PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH_BLAHBLAH', 'PlnÃ¡ absolutnÃ­ cesta k adresÃ¡Å™i, do kterÃ©ho si bude downloadmanager umÃ­sÅ¥ovat soubory, kterÃ© pak budou pÅ™Ã­stupnÃ© z blogu.');
 @define('PLUGIN_DOWNLOADMANAGER_HTTPPATH', 'HTTP cesta k pluginu');
-@define('PLUGIN_DOWNLOADMANAGER_HTTPPATH_BLAHBLAH', 'aboslutní http cesta k pluginu (obvykle "/plugins/serendipity_event_downloadmanager").');
-@define('PLUGIN_DOWNLOADMANAGER_DATEFORMAT', 'Formát data, podle pravidel PHP funkce date(). (vıchozí: "Y/m/d, h:ia")');
+@define('PLUGIN_DOWNLOADMANAGER_HTTPPATH_BLAHBLAH', 'aboslutnÃ­ http cesta k pluginu (obvykle "/plugins/serendipity_event_downloadmanager").');
+@define('PLUGIN_DOWNLOADMANAGER_DATEFORMAT', 'FormÃ¡t data, podle pravidel PHP funkce date(). (vÃ½chozÃ­: "Y/m/d, h:ia")');
 @define('PLUGIN_DOWNLOADMANAGER_SHOWFILEDATE', 'Zobrazovat datum souboru');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWFILEDATE_BLAHBLAH', 'Má se v seznamu souborù zobrazovat datum souboru?');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWFILENAME', 'Zobrazovat jméno souboru');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWFILENAME_BLAHBLAH', 'Má se v seznamu souborù zobrazovat jméno souboru?');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWFILEDATE_BLAHBLAH', 'MÃ¡ se v seznamu souborÅ¯ zobrazovat datum souboru?');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWFILENAME', 'Zobrazovat jmÃ©no souboru');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWFILENAME_BLAHBLAH', 'MÃ¡ se v seznamu souborÅ¯ zobrazovat jmÃ©no souboru?');
 @define('PLUGIN_DOWNLOADMANAGER_SHOWFILESIZE', 'Zobrazovat velikost');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWFILESIZE_BLAHBLAH', 'Má se v seznamu souborù zobrazovat velikost souboru?');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWDOWNLOADS', 'Poèet sta¾ení souboru');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWDOWNLOADS_BLAHBLAH', 'Má se v seznamu souborù zobrazovat poèet sta¾ení souboru?');
-@define('PLUGIN_DOWNLOADMANAGER_FILENAME_FIELD', 'Popis políèka se jménem souboru');
-@define('PLUGIN_DOWNLOADMANAGER_FILENAME_FIELD_BLAHBLAH', 'Zde mù¾ete zmìnit popis políèka se jménem souboru');
-@define('PLUGIN_DOWNLOADMANAGER_FILESIZE_FIELD', 'Popis políèka s velikostí');
-@define('PLUGIN_DOWNLOADMANAGER_FILESIZE_FIELD_BLAHBLAH', 'Zde mù¾ete zmìnit popis políèka s velikostí souboru');
-@define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD', 'Popis políèka s datem');
-@define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD_BLAHBLAH', 'Zde mù¾ete zmìnit popis políèka s datem vytvoøení souboru');
-@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD', 'Popis políèka s poètem sta¾ení');
-@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD_BLAHBLAH', 'Zde mù¾ete zmìnit popis políèka s poètem sta¾ení souboru');
-@define('PLUGIN_DOWNLOADMANAGER_ICONWIDTH', '©íøka ikony');
-@define('PLUGIN_DOWNLOADMANAGER_ICONWIDTHBLAH', '©íøka ikon typu souboru v seznamu souborù');
-@define('PLUGIN_DOWNLOADMANAGER_ICONHEIGHT', 'Vı¹ka ikony');
-@define('PLUGIN_DOWNLOADMANAGER_ICONHEIGHT_BLAHBLAH', '©íøka ikon typu souboru v seznamu souborù');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWHIDDEN_REGISTERED', 'Zobrazovat registrovanım u¾ivatelùm skryté kategorie?');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWHIDDEN_REGISTERED_BLAHBLAH', 'Mají se skryté kategorie zobrazovat registrovanım a pøihlá¹enım u¾ivatelùm?');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWFILESIZE_BLAHBLAH', 'MÃ¡ se v seznamu souborÅ¯ zobrazovat velikost souboru?');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWDOWNLOADS', 'PoÄet staÅ¾enÃ­ souboru');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWDOWNLOADS_BLAHBLAH', 'MÃ¡ se v seznamu souborÅ¯ zobrazovat poÄet staÅ¾enÃ­ souboru?');
+@define('PLUGIN_DOWNLOADMANAGER_FILENAME_FIELD', 'Popis polÃ­Äka se jmÃ©nem souboru');
+@define('PLUGIN_DOWNLOADMANAGER_FILENAME_FIELD_BLAHBLAH', 'Zde mÅ¯Å¾ete zmÄ›nit popis polÃ­Äka se jmÃ©nem souboru');
+@define('PLUGIN_DOWNLOADMANAGER_FILESIZE_FIELD', 'Popis polÃ­Äka s velikostÃ­');
+@define('PLUGIN_DOWNLOADMANAGER_FILESIZE_FIELD_BLAHBLAH', 'Zde mÅ¯Å¾ete zmÄ›nit popis polÃ­Äka s velikostÃ­ souboru');
+@define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD', 'Popis polÃ­Äka s datem');
+@define('PLUGIN_DOWNLOADMANAGER_FILEDATE_FIELD_BLAHBLAH', 'Zde mÅ¯Å¾ete zmÄ›nit popis polÃ­Äka s datem vytvoÅ™enÃ­ souboru');
+@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD', 'Popis polÃ­Äka s poÄtem staÅ¾enÃ­');
+@define('PLUGIN_DOWNLOADMANAGER_DLS_FIELD_BLAHBLAH', 'Zde mÅ¯Å¾ete zmÄ›nit popis polÃ­Äka s poÄtem staÅ¾enÃ­ souboru');
+@define('PLUGIN_DOWNLOADMANAGER_ICONWIDTH', 'Å Ã­Å™ka ikony');
+@define('PLUGIN_DOWNLOADMANAGER_ICONWIDTHBLAH', 'Å Ã­Å™ka ikon typu souboru v seznamu souborÅ¯');
+@define('PLUGIN_DOWNLOADMANAGER_ICONHEIGHT', 'VÃ½Å¡ka ikony');
+@define('PLUGIN_DOWNLOADMANAGER_ICONHEIGHT_BLAHBLAH', 'Å Ã­Å™ka ikon typu souboru v seznamu souborÅ¯');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWHIDDEN_REGISTERED', 'Zobrazovat registrovanÃ½m uÅ¾ivatelÅ¯m skrytÃ© kategorie?');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWHIDDEN_REGISTERED_BLAHBLAH', 'MajÃ­ se skrytÃ© kategorie zobrazovat registrovanÃ½m a pÅ™ihlÃ¡Å¡enÃ½m uÅ¾ivatelÅ¯m?');
 
-@define('PLUGIN_DOWNLOADMANAGER_NO_CATS_FOUND', '®ádné kategorie');
+@define('PLUGIN_DOWNLOADMANAGER_NO_CATS_FOUND', 'Å½Ã¡dnÃ© kategorie');
 @define('PLUGIN_DOWNLOADMANAGER_CATEGORIES', 'Kategorie');
 @define('PLUGIN_DOWNLOADMANAGER_SUBCATEGORIES', 'Podkategorie');
 @define('PLUGIN_DOWNLOADMANAGER_CATEGORY', 'Kategorie');
-@define('PLUGIN_DOWNLOADMANAGER_NUMBER_OF_DOWNLOADS', 'poèet souborù');
-@define('PLUGIN_DOWNLOADMANAGER_CATNAME', 'Jméno kategorie:');
+@define('PLUGIN_DOWNLOADMANAGER_NUMBER_OF_DOWNLOADS', 'poÄet souborÅ¯');
+@define('PLUGIN_DOWNLOADMANAGER_CATNAME', 'JmÃ©no kategorie:');
 @define('PLUGIN_DOWNLOADMANAGER_SUBCAT_OF', 'Podkategorie v:');
-@define('PLUGIN_DOWNLOADMANAGER_ADD_CAT', 'Pøidat novou kategorii');
+@define('PLUGIN_DOWNLOADMANAGER_ADD_CAT', 'PÅ™idat novou kategorii');
 @define('PLUGIN_DOWNLOADMANAGER_DEL_FILE', 'Smazat soubor...');
-@define('PLUGIN_DOWNLOADMANAGER_DEL_CAT', 'Smazat kategorii (a v¹echny soubory v ní obsa¾ené!)...');
-@define('PLUGIN_DOWNLOADMANAGER_DEL_CAT_NOT_ALLOWD', 'Smazání není mo¾né - kategorie obsahuje podkategorie!');
-@define('PLUGIN_DOWNLOADMANAGER_DELETE_NOT_ALLOWED', 'Tato kategorie nemù¾e bıt smazána, proto¾e obsahuje alespoò jednu dal¹í podkategorii!');
+@define('PLUGIN_DOWNLOADMANAGER_DEL_CAT', 'Smazat kategorii (a vÅ¡echny soubory v nÃ­ obsaÅ¾enÃ©!)...');
+@define('PLUGIN_DOWNLOADMANAGER_DEL_CAT_NOT_ALLOWD', 'SmazÃ¡nÃ­ nenÃ­ moÅ¾nÃ© - kategorie obsahuje podkategorie!');
+@define('PLUGIN_DOWNLOADMANAGER_DELETE_NOT_ALLOWED', 'Tato kategorie nemÅ¯Å¾e bÃ½t smazÃ¡na, protoÅ¾e obsahuje alespoÅˆ jednu dalÅ¡Ã­ podkategorii!');
 @define('PLUGIN_DOWNLOADMANAGER_CAT_NOT_FOUND', 'Kategorie nenalezena!');
-@define('PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT', 'Soubory v této kategorii');
-@define('PLUGIN_DOWNLOADMANAGER_BACK', 'Zpìt...');
-@define('PLUGIN_DOWNLOADMANAGER_FILENAME', 'Jméno souboru');
+@define('PLUGIN_DOWNLOADMANAGER_DLS_IN_THIS_CAT', 'Soubory v tÃ©to kategorii');
+@define('PLUGIN_DOWNLOADMANAGER_BACK', 'ZpÄ›t...');
+@define('PLUGIN_DOWNLOADMANAGER_FILENAME', 'JmÃ©no souboru');
 @define('PLUGIN_DOWNLOADMANAGER_FILESIZE', 'Velikost');
 @define('PLUGIN_DOWNLOADMANAGER_FILEDATE', 'Datum');
-@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS', 'poèet sta¾ení');
-@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS_BLAH', 'Poèet sta¾ení');
-@define('PLUGIN_DOWNLOADMANAGER_IMPORT_FILE', 'Importovat soubor z pøíchozího adresáøe do aktuální kategorie...');
-@define('PLUGIN_DOWNLOADMANAGER_COPY_NOT_ALLOWED', 'Nelze zkopírovat soubor z pøíchozího adresáøe!<br />Dùvodem mù¾e bıt napø. aktivovanı safe_mode.<br />Pro pou¾ívání této funkce je tøeba deaktivovat safe_mode!');
-@define('PLUGIN_DOWNLOADMANAGER_DELETE_IN_INCOMING_NOT_ALLOWED', 'Webserver nemá dostatek oprávnìní pro smazání souboru z pøíchozího adresáøe! Sma¾te prosím soubor ruènì a potom pozmìòte pøístupová práva, aby to od pøí¹tì ¹lo.');
-@define('PLUGIN_DOWNLOADMANAGER_DELETE_IN_DOWNLOADDIR_NOT_ALLOWED', 'Webserver nemá dostatek oprávnìní pro smazání souboru z  adresáøe downloadù! Pozmìòte pøístupová práva, pak opakujte pokus o smazání.');
-@define('PLUGIN_DOWNLOADMANAGER_INCOMINGTABLE', 'Pøíchozí adresáø:');
-#@define('PLUGIN_DOWNLOADMANAGER_INCOMINGTABLE_BLAHBLAH', 'Nahrajte soubor do tohoto adresáøe pomocí FTP, pokud Vám nejde nahrát pomocí funkce php-upload. To se mù¾e stát napø. pokud je soubor pøíli¹ velkı. Php má toti¾ omezení na max. velikost uploadovaného souboru - nastavení v php.ini.<br />Aktuální adresáø: ');
+@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS', 'poÄet staÅ¾enÃ­');
+@define('PLUGIN_DOWNLOADMANAGER_NUM_DOWNLOADS_BLAH', 'PoÄet staÅ¾enÃ­');
+@define('PLUGIN_DOWNLOADMANAGER_IMPORT_FILE', 'Importovat soubor z pÅ™Ã­chozÃ­ho adresÃ¡Å™e do aktuÃ¡lnÃ­ kategorie...');
+@define('PLUGIN_DOWNLOADMANAGER_COPY_NOT_ALLOWED', 'Nelze zkopÃ­rovat soubor z pÅ™Ã­chozÃ­ho adresÃ¡Å™e!<br />DÅ¯vodem mÅ¯Å¾e bÃ½t napÅ™. aktivovanÃ½ safe_mode.<br />Pro pouÅ¾Ã­vÃ¡nÃ­ tÃ©to funkce je tÅ™eba deaktivovat safe_mode!');
+@define('PLUGIN_DOWNLOADMANAGER_DELETE_IN_INCOMING_NOT_ALLOWED', 'Webserver nemÃ¡ dostatek oprÃ¡vnÄ›nÃ­ pro smazÃ¡nÃ­ souboru z pÅ™Ã­chozÃ­ho adresÃ¡Å™e! SmaÅ¾te prosÃ­m soubor ruÄnÄ› a potom pozmÄ›Åˆte pÅ™Ã­stupovÃ¡ prÃ¡va, aby to od pÅ™Ã­Å¡tÄ› Å¡lo.');
+@define('PLUGIN_DOWNLOADMANAGER_DELETE_IN_DOWNLOADDIR_NOT_ALLOWED', 'Webserver nemÃ¡ dostatek oprÃ¡vnÄ›nÃ­ pro smazÃ¡nÃ­ souboru z  adresÃ¡Å™e downloadÅ¯! PozmÄ›Åˆte pÅ™Ã­stupovÃ¡ prÃ¡va, pak opakujte pokus o smazÃ¡nÃ­.');
+@define('PLUGIN_DOWNLOADMANAGER_INCOMINGTABLE', 'PÅ™Ã­chozÃ­ adresÃ¡Å™:');
+#@define('PLUGIN_DOWNLOADMANAGER_INCOMINGTABLE_BLAHBLAH', 'Nahrajte soubor do tohoto adresÃ¡Å™e pomocÃ­ FTP, pokud VÃ¡m nejde nahrÃ¡t pomocÃ­ funkce php-upload. To se mÅ¯Å¾e stÃ¡t napÅ™. pokud je soubor pÅ™Ã­liÅ¡ velkÃ½. Php mÃ¡ totiÅ¾ omezenÃ­ na max. velikost uploadovanÃ©ho souboru - nastavenÃ­ v php.ini.<br />AktuÃ¡lnÃ­ adresÃ¡Å™: ');
 @define('PLUGIN_DOWNLOADMANAGER_INCOMINGTABLE_BLAHBLAH', 'This directory "%s"
 <ul>
     <li>allows to import files via FTP upload to the current category "<strong>%s</strong>"</li>
@@ -82,66 +82,66 @@
     <li>On the other hand you should not keep files in here and always erase stored files completly (see blue trash symbol link).</li>
     <li>For keeping and hiding files in the longer term please use the root directory. See DLM Help box.</li>
 </ul>');
-@define('PLUGIN_DOWNLOADMANAGER_THIS_FILE', 'Vybranı soubor');
+@define('PLUGIN_DOWNLOADMANAGER_THIS_FILE', 'VybranÃ½ soubor');
 @define('PLUGIN_DOWNLOADMANAGER_EDIT_FILE', 'Editovat soubor');
-@define('PLUGIN_DOWNLOADMANAGER_MOVE_TO_CAT', 'Pøesunout do');
+@define('PLUGIN_DOWNLOADMANAGER_MOVE_TO_CAT', 'PÅ™esunout do');
 @define('PLUGIN_DOWNLOADMANAGER_EDIT_FILE_DESC', 'Popis souboru');
-@define('PLUGIN_DOWNLOADMANAGER_FILE_EDITED', 'Soubor úspì¹nì zmìnìn a ulo¾en!');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE', 'Stáhnout soubor');
-@define('PLUGIN_DOWNLOADMANAGER_UPLOAD_FILE', 'Nahrát soubory...');
+@define('PLUGIN_DOWNLOADMANAGER_FILE_EDITED', 'Soubor ÃºspÄ›Å¡nÄ› zmÄ›nÄ›n a uloÅ¾en!');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_FILE', 'StÃ¡hnout soubor');
+@define('PLUGIN_DOWNLOADMANAGER_UPLOAD_FILE', 'NahrÃ¡t soubory...');
 @define('PLUGIN_DOWNLOADMANAGER_FILE', 'Soubor');
-@define('PLUGIN_DOWNLOADMANAGER_UPLOAD_NOT_ALLOWED', 'Nahrávání souborù není povoleno!<br />Povolte je v php.ini (file_uploads)!');
-@define('PLUGIN_DOWNLOADMANAGER_ERRORS_OCCOURED', 'Bìhem nahrávání souboru se vyskytly chyby!');
-@define('PLUGIN_DOWNLOADMANAGER_ERRORS_NOTCOPIED', 'Následující soubory nemohly bıt pøekopírovány:');
-@define('PLUGIN_DOWNLOADMANAGER_ERRORS_TOOBIG', 'Následující soubory jsou pøíli¹ velké:');
-@define('PLUGIN_DOWNLOADMANAGER_NO_FILES_UPLOADED', '®ádné uploadované soubory nebyly nalezeny!');
-@define('PLUGIN_DOWNLOADMANAGER_MEDIA_LIBRARY', 'Soubory z knihovny médií');
-@define('PLUGIN_DOWNLOADMANAGER_MEDIA_LIBRARY_BLAHBLAH', 'Do downloadmanagera mù¾ete pøidat soubory, které jsou ji¾ nahrané v knihovnì médií. Pozn.: Tyto soubory se nebudou pøemís»ovat, pouze se zkopírují a zùstanou i v pùvodním adresáøi!<br />Aktuální adresáø: ');
-@define('PLUGIN_DOWNLOADMANAGER_HIDE_TREE', 'Skrıt celı podstrom této kategorie...');
-@define('PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE', 'Zobrazit celı podstrom této kategorie...');
-@define('PLUGIN_DOWNLOADMANAGER_OPEN_CAT', 'Kliknutí otevøe kategorii pro upload a editaci souborù...');
+@define('PLUGIN_DOWNLOADMANAGER_UPLOAD_NOT_ALLOWED', 'NahrÃ¡vÃ¡nÃ­ souborÅ¯ nenÃ­ povoleno!<br />Povolte je v php.ini (file_uploads)!');
+@define('PLUGIN_DOWNLOADMANAGER_ERRORS_OCCOURED', 'BÄ›hem nahrÃ¡vÃ¡nÃ­ souboru se vyskytly chyby!');
+@define('PLUGIN_DOWNLOADMANAGER_ERRORS_NOTCOPIED', 'NÃ¡sledujÃ­cÃ­ soubory nemohly bÃ½t pÅ™ekopÃ­rovÃ¡ny:');
+@define('PLUGIN_DOWNLOADMANAGER_ERRORS_TOOBIG', 'NÃ¡sledujÃ­cÃ­ soubory jsou pÅ™Ã­liÅ¡ velkÃ©:');
+@define('PLUGIN_DOWNLOADMANAGER_NO_FILES_UPLOADED', 'Å½Ã¡dnÃ© uploadovanÃ© soubory nebyly nalezeny!');
+@define('PLUGIN_DOWNLOADMANAGER_MEDIA_LIBRARY', 'Soubory z knihovny mÃ©diÃ­');
+@define('PLUGIN_DOWNLOADMANAGER_MEDIA_LIBRARY_BLAHBLAH', 'Do downloadmanagera mÅ¯Å¾ete pÅ™idat soubory, kterÃ© jsou jiÅ¾ nahranÃ© v knihovnÄ› mÃ©diÃ­. Pozn.: Tyto soubory se nebudou pÅ™emÃ­sÅ¥ovat, pouze se zkopÃ­rujÃ­ a zÅ¯stanou i v pÅ¯vodnÃ­m adresÃ¡Å™i!<br />AktuÃ¡lnÃ­ adresÃ¡Å™: ');
+@define('PLUGIN_DOWNLOADMANAGER_HIDE_TREE', 'SkrÃ½t celÃ½ podstrom tÃ©to kategorie...');
+@define('PLUGIN_DOWNLOADMANAGER_UNHIDE_TREE', 'Zobrazit celÃ½ podstrom tÃ©to kategorie...');
+@define('PLUGIN_DOWNLOADMANAGER_OPEN_CAT', 'KliknutÃ­ otevÅ™e kategorii pro upload a editaci souborÅ¯...');
 
-@define('PLUGIN_DOWNLOADMANAGER_SHOWDESC_INLIST',       'Zobrazit popis souborù v seznamu souborù ke sta¾ení');
-@define('PLUGIN_DOWNLOADMANAGER_SHOWDESC_INLIST_DESC',  'Pokud chcete generovat krátkı seznam souborù, vypnìte tuto volbu. Pokud chcete poskytnout ke ka¾dému souboru podrobnìj¹í informace, volbu zapnìte.');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST',       'Pøímı download');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_DESC',  'Vıchozí chování downloadmanagera je, ¾e pøed sta¾ením souboru zobrazí stránku s informacemi. Pomocí tohoto nastavení mù¾ete umo¾nit pøeskoèit tuto stránku rovnou na stahování souboru. Stahování zaène jak po kliknutí na jméno souboru, tak na ikonku.');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_NO',    'Info-stránka');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_ICON',  'Pøímé stahování po kliknutí na ikonu');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_NAME',  'Pøímé stahování po kliknutí na jméno souboru');
-@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_BOTH',  'Pøímé stahování po kliknutí na obojí');
-@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING',          'Nové verze existujících souborù...');
-@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_DESC',     'Pokud uploadujete soubor, kterı u¾ existuje, má se vytvoøit novı soubor, nebo jen obnovit informace u ji¾ existujícího?');
-@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_INSERT',   'vytvoøit novı soubor');
-@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_UPDATE',   'aktualizovat starı');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWDESC_INLIST',       'Zobrazit popis souborÅ¯ v seznamu souborÅ¯ ke staÅ¾enÃ­');
+@define('PLUGIN_DOWNLOADMANAGER_SHOWDESC_INLIST_DESC',  'Pokud chcete generovat krÃ¡tkÃ½ seznam souborÅ¯, vypnÄ›te tuto volbu. Pokud chcete poskytnout ke kaÅ¾dÃ©mu souboru podrobnÄ›jÅ¡Ã­ informace, volbu zapnÄ›te.');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST',       'PÅ™Ã­mÃ½ download');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_DESC',  'VÃ½chozÃ­ chovÃ¡nÃ­ downloadmanagera je, Å¾e pÅ™ed staÅ¾enÃ­m souboru zobrazÃ­ strÃ¡nku s informacemi. PomocÃ­ tohoto nastavenÃ­ mÅ¯Å¾ete umoÅ¾nit pÅ™eskoÄit tuto strÃ¡nku rovnou na stahovÃ¡nÃ­ souboru. StahovÃ¡nÃ­ zaÄne jak po kliknutÃ­ na jmÃ©no souboru, tak na ikonku.');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_NO',    'Info-strÃ¡nka');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_ICON',  'PÅ™Ã­mÃ© stahovÃ¡nÃ­ po kliknutÃ­ na ikonu');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_NAME',  'PÅ™Ã­mÃ© stahovÃ¡nÃ­ po kliknutÃ­ na jmÃ©no souboru');
+@define('PLUGIN_DOWNLOADMANAGER_DOWNLOAD_INLIST_BOTH',  'PÅ™Ã­mÃ© stahovÃ¡nÃ­ po kliknutÃ­ na obojÃ­');
+@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING',          'NovÃ© verze existujÃ­cÃ­ch souborÅ¯...');
+@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_DESC',     'Pokud uploadujete soubor, kterÃ½ uÅ¾ existuje, mÃ¡ se vytvoÅ™it novÃ½ soubor, nebo jen obnovit informace u jiÅ¾ existujÃ­cÃ­ho?');
+@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_INSERT',   'vytvoÅ™it novÃ½ soubor');
+@define('PLUGIN_DOWNLOADMANAGER_ADD_EXISTING_UPDATE',   'aktualizovat starÃ½');
 
 // Next lines were translated on 2010/09/28
 
-@define('PLUGIN_DOWNLOADMANAGER_BACKEND_TITLE', 'Downloadmanager verze %s - Administraèní menu');
-@define('PLUGIN_DOWNLOADMANAGER_INTRO', 'Úvodní text (nepovinné)');
-@define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY', 'Obecné: zobrazovat data pouze registrovanım u¾ivatelùm');
-@define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY_BLAHBLAH', 'Chcete, aby pøehled kategorií a souborù ke sta¾ení byl zobrazován pouze registrovanım a pøihlá¹enım u¾ivatelùm?');
-@define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY_ERROR', 'Soubory ke sta¾ení jsou pøístupné pouze registrovanım u¾ivatelùm!');
-@define('PLUGIN_DOWNLOADMANAGER_ROOTLEVEL_TITLE', 'soubory v koøenovém adresáøi (v pøehledu schované, neviditelné!)');
-@define('PLUGIN_DOWNLOADMANAGER_ERRORS_UPGRADE_NOTCOPIED', 'Omlouváme se, vyskytla se chyba. Soubory z <br /><em>%s</em><br />nemohly bıt pøesunuty do<br /><em>%s</em>.<br /><br />Pøesuòte je proím ruènì a kliknìte na <a class="backend_error_link" href="%s">tento odkaz</a>, abyste o pøesunu informovali plugin!<br />Kromì toho odstraòte ruènì také staré adresáøe.<br />');
-#@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPIED_NEWDIR', 'Proto¾e jste aktualizovali plugin downloadmanager na verzi 0.24, byly v¹echny soubory ke sta¾enı zkopírovány do novıch podadresáøù \'/.dlm/files\' a \'/.dlm/ftpin\' v adresáøi \'/archives\', aby se zamezilo konfliktu s cestami ke starım slo¾kám.<br /><br />Nastavení bylo zmìnìno, aby ukazovalo na nové adresáøe a dále nelze mìnit.<br />Odstraòte prosím ruènì staré adresáøe.<br />');
-#@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPY_NEWDIR_REMEMBER', 'Úspì¹nì jste zmìnili plugin, aby novì pracoval pouze s novımi adresáøi.<br /><br />Nezapomeòte prosím ruènì pøesunout soubory do novıch adresáøù \'archives/.dlm/files\' a \'archives/.dlm/ftpin\'!<br />Také ruènì odstraòte staré adresáøe.<br />');
-@define('PLUGIN_DOWNLOADMANAGER_BUTTON_MARK', 'oznaèit/odznaèit v¹e');
-@define('PLUGIN_DOWNLOADMANAGER_BUTTON_MARK_TITLE', 'smazat v¹echny oznaèené to ftp/trash');
-@define('PLUGIN_DOWNLOADMANAGER_BUTTON_MOVE_TITLE', 'pøesunout v¹echny oznaèené do kategorie');
-@define('PLUGIN_DOWNLOADMANAGER_CLEAR_TRASH', 'Vymazat bin v adresáøi ftp/ko¹');
-@define('PLUGIN_DOWNLOADMANAGER_NO_TRASH', '®ádné soubory k vymazání v adresáøi ftp/ko¹');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_CHANGE', 'Zmìnit název kategorie pøímo v políèku / <em>Enter</em>');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', 'Pro zobrazení a manipulaci s adresáøem ftp/ko¹ vyberte podkategorii v koøenové slo¾ce.');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_MULTI', 'V¹echny soubory f adresáøi ftp/ko¹ budou teï smazány!');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_SINGLE', 'Po stisku èerveného tlaèítka bude provedeno mazání!');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_ERASE', 'V¹echny soubory oznaèené k mazání budou <b>pøesunuty</b> do adresáøe ftp/ko¹,<br />&nbsp;&nbsp;&nbsp;aby omylem nedo¹lo k nevratnému znièení souborù!');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_KEEP', 'Ponechat soubory, ale nezobrazovat je na pøehledové stránce? Pøesuòte je do koøenového adresáøe,<br />&nbsp;&nbsp;&nbsp;nebo vytvoøte skrytı podadresáø! Pamatujte, ¾e máte 2 volby v nastavení<br />&nbsp;&nbsp;&nbsp;tıkající se registrovanım a pøihlá¹enıch u¾ivatelù a toho, co se jim bude zobrazovat.');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_TRASH', 'Pou¾ijte tlaèátko s modrım ko¹em k vyèi¹tìní adresáøe ftp/ko¹ po skonèení práce!');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_MOVE', 'Pou¾ijte adresáø ftp/ko¹ k jednoduchému pøesunu více souborù mezi adresáøi!<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. po¹lete soubory do ftp/ko¹ pomocí <b>oznaèit</b> <em>a</em> <b>smazat</b>;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. v kategoriích vyberte jinı podadresáø;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. otevøete ftp/ko¹ a pøesuòte soubory pomocí <b>oznaèit</b> <em>a</em> <b>pøesunout</b>.');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_DESC', 'Pøi odinstalování pluginu budou v¹echny databázové tabulky související s pluginem smazány!');
-@define('PLUGIN_DOWNLOADMANAGER_EDIT_FILE_RENAME', 'Pøejmenovat tento soubor');
-@define('PLUGIN_DOWNLOADMANAGER_BACK_ROOT', 'Koøenová kategorie');
-@define('PLUGIN_DOWNLOADMANAGER_BACK_CURRENT', 'Aktuální kategorie');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_CHANGE', 'Zmìnit jméno souboru pod soubor-odkaz editovat-podstránka.');
-@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_LFTP', 'Nahrát soubory pomocí ftp do adresáøe /serendipity/archives/.dlm/ftpin folder.');
+@define('PLUGIN_DOWNLOADMANAGER_BACKEND_TITLE', 'Downloadmanager verze %s - AdministraÄnÃ­ menu');
+@define('PLUGIN_DOWNLOADMANAGER_INTRO', 'ÃšvodnÃ­ text (nepovinnÃ©)');
+@define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY', 'ObecnÃ©: zobrazovat data pouze registrovanÃ½m uÅ¾ivatelÅ¯m');
+@define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY_BLAHBLAH', 'Chcete, aby pÅ™ehled kategoriÃ­ a souborÅ¯ ke staÅ¾enÃ­ byl zobrazovÃ¡n pouze registrovanÃ½m a pÅ™ihlÃ¡Å¡enÃ½m uÅ¾ivatelÅ¯m?');
+@define('PLUGIN_DOWNLOADMANAGER_REGISTERED_ONLY_ERROR', 'Soubory ke staÅ¾enÃ­ jsou pÅ™Ã­stupnÃ© pouze registrovanÃ½m uÅ¾ivatelÅ¯m!');
+@define('PLUGIN_DOWNLOADMANAGER_ROOTLEVEL_TITLE', 'soubory v koÅ™enovÃ©m adresÃ¡Å™i (v pÅ™ehledu schovanÃ©, neviditelnÃ©!)');
+@define('PLUGIN_DOWNLOADMANAGER_ERRORS_UPGRADE_NOTCOPIED', 'OmlouvÃ¡me se, vyskytla se chyba. Soubory z <br /><em>%s</em><br />nemohly bÃ½t pÅ™esunuty do<br /><em>%s</em>.<br /><br />PÅ™esuÅˆte je proÃ­m ruÄnÄ› a kliknÄ›te na <a class="backend_error_link" href="%s">tento odkaz</a>, abyste o pÅ™esunu informovali plugin!<br />KromÄ› toho odstraÅˆte ruÄnÄ› takÃ© starÃ© adresÃ¡Å™e.<br />');
+#@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPIED_NEWDIR', 'ProtoÅ¾e jste aktualizovali plugin downloadmanager na verzi 0.24, byly vÅ¡echny soubory ke staÅ¾enÃ½ zkopÃ­rovÃ¡ny do novÃ½ch podadresÃ¡Å™Å¯ \'/.dlm/files\' a \'/.dlm/ftpin\' v adresÃ¡Å™i \'/archives\', aby se zamezilo konfliktu s cestami ke starÃ½m sloÅ¾kÃ¡m.<br /><br />NastavenÃ­ bylo zmÄ›nÄ›no, aby ukazovalo na novÃ© adresÃ¡Å™e a dÃ¡le nelze mÄ›nit.<br />OdstraÅˆte prosÃ­m ruÄnÄ› starÃ© adresÃ¡Å™e.<br />');
+#@define('PLUGIN_DOWNLOADMANAGER_ALLFILES_COPY_NEWDIR_REMEMBER', 'ÃšspÄ›Å¡nÄ› jste zmÄ›nili plugin, aby novÄ› pracoval pouze s novÃ½mi adresÃ¡Å™i.<br /><br />NezapomeÅˆte prosÃ­m ruÄnÄ› pÅ™esunout soubory do novÃ½ch adresÃ¡Å™Å¯ \'archives/.dlm/files\' a \'archives/.dlm/ftpin\'!<br />TakÃ© ruÄnÄ› odstraÅˆte starÃ© adresÃ¡Å™e.<br />');
+@define('PLUGIN_DOWNLOADMANAGER_BUTTON_MARK', 'oznaÄit/odznaÄit vÅ¡e');
+@define('PLUGIN_DOWNLOADMANAGER_BUTTON_MARK_TITLE', 'smazat vÅ¡echny oznaÄenÃ© to ftp/trash');
+@define('PLUGIN_DOWNLOADMANAGER_BUTTON_MOVE_TITLE', 'pÅ™esunout vÅ¡echny oznaÄenÃ© do kategorie');
+@define('PLUGIN_DOWNLOADMANAGER_CLEAR_TRASH', 'Vymazat bin v adresÃ¡Å™i ftp/koÅ¡');
+@define('PLUGIN_DOWNLOADMANAGER_NO_TRASH', 'Å½Ã¡dnÃ© soubory k vymazÃ¡nÃ­ v adresÃ¡Å™i ftp/koÅ¡');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_CF_CHANGE', 'ZmÄ›nit nÃ¡zev kategorie pÅ™Ã­mo v polÃ­Äku / <em>Enter</em>');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_VIEW', 'Pro zobrazenÃ­ a manipulaci s adresÃ¡Å™em ftp/koÅ¡ vyberte podkategorii v koÅ™enovÃ© sloÅ¾ce.');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_MULTI', 'VÅ¡echny soubory f adresÃ¡Å™i ftp/koÅ¡ budou teÄ smazÃ¡ny!');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_SINGLE', 'Po stisku ÄervenÃ©ho tlaÄÃ­tka bude provedeno mazÃ¡nÃ­!');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_ERASE', 'VÅ¡echny soubory oznaÄenÃ© k mazÃ¡nÃ­ budou <b>pÅ™esunuty</b> do adresÃ¡Å™e ftp/koÅ¡,<br />&nbsp;&nbsp;&nbsp;aby omylem nedoÅ¡lo k nevratnÃ©mu zniÄenÃ­ souborÅ¯!');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_KEEP', 'Ponechat soubory, ale nezobrazovat je na pÅ™ehledovÃ© strÃ¡nce? PÅ™esuÅˆte je do koÅ™enovÃ©ho adresÃ¡Å™e,<br />&nbsp;&nbsp;&nbsp;nebo vytvoÅ™te skrytÃ½ podadresÃ¡Å™! Pamatujte, Å¾e mÃ¡te 2 volby v nastavenÃ­<br />&nbsp;&nbsp;&nbsp;tÃ½kajÃ­cÃ­ se registrovanÃ½m a pÅ™ihlÃ¡Å¡enÃ½ch uÅ¾ivatelÅ¯ a toho, co se jim bude zobrazovat.');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_TRASH', 'PouÅ¾ijte tlaÄÃ¡tko s modrÃ½m koÅ¡em k vyÄiÅ¡tÄ›nÃ­ adresÃ¡Å™e ftp/koÅ¡ po skonÄenÃ­ prÃ¡ce!');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_MOVE', 'PouÅ¾ijte adresÃ¡Å™ ftp/koÅ¡ k jednoduchÃ©mu pÅ™esunu vÃ­ce souborÅ¯ mezi adresÃ¡Å™i!<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. poÅ¡lete soubory do ftp/koÅ¡ pomocÃ­ <b>oznaÄit</b> <em>a</em> <b>smazat</b>;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. v kategoriÃ­ch vyberte jinÃ½ podadresÃ¡Å™;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. otevÅ™ete ftp/koÅ¡ a pÅ™esuÅˆte soubory pomocÃ­ <b>oznaÄit</b> <em>a</em> <b>pÅ™esunout</b>.');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_DESC', 'PÅ™i odinstalovÃ¡nÃ­ pluginu budou vÅ¡echny databÃ¡zovÃ© tabulky souvisejÃ­cÃ­ s pluginem smazÃ¡ny!');
+@define('PLUGIN_DOWNLOADMANAGER_EDIT_FILE_RENAME', 'PÅ™ejmenovat tento soubor');
+@define('PLUGIN_DOWNLOADMANAGER_BACK_ROOT', 'KoÅ™enovÃ¡ kategorie');
+@define('PLUGIN_DOWNLOADMANAGER_BACK_CURRENT', 'AktuÃ¡lnÃ­ kategorie');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_FF_CHANGE', 'ZmÄ›nit jmÃ©no souboru pod soubor-odkaz editovat-podstrÃ¡nka.');
+@define('PLUGIN_DOWNLOADMANAGER_HELPTIP_IF_LFTP', 'NahrÃ¡t soubory pomocÃ­ ftp do adresÃ¡Å™e /serendipity/archives/.dlm/ftpin folder.');
 

@@ -5,8 +5,9 @@
 
 # italian language file
 
+
 @define("PLUGIN_DOWNLOADMANAGER_TITLE", "Downloadmanager");
-@define("PLUGIN_DOWNLOADMANAGER_DESC", "Aggiunge le funzionalita' di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate!");
+@define("PLUGIN_DOWNLOADMANAGER_DESC", "Aggiunge le funzionalita' di downloadmanager a s9y. Quando viene disinstallato, tutte le tabelle vengono eliminate! Visita http://blog.linux-stats.org per scaricare il plugin.");
 @define('PLUGIN_DOWNLOADMANAGER_PAGETITLE', 'Titolo della pagina');
 @define('PLUGIN_DOWNLOADMANAGER_PAGETITLE_BLAHBLAH', 'Titolo della pagina');
 @define('PLUGIN_DOWNLOADMANAGER_HEADLINE', 'Descrizione');
@@ -19,8 +20,6 @@
 @define("PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH_BLAHBLAH", "Indirizzo completo e assoluto della directory di upload.");
 @define("PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH", "Path di download");
 @define("PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH_BLAHBLAH", "Indirizzo completo e assoluto della directory di download.");
-@define("PLUGIN_DOWNLOADMANAGER_HTTPPATH", "http path to plugin");
-@define("PLUGIN_DOWNLOADMANAGER_HTTPPATH_BLAHBLAH", "absolute http path to plugin (usually \"/plugins/serendipity_event_downloadmanager\").");
 @define("PLUGIN_DOWNLOADMANAGER_DATEFORMAT", "Formato della data, utilizza la sintassi di PHP date(). (Italiana: \"d/m/Y, h:ia\")");
 @define("PLUGIN_DOWNLOADMANAGER_SHOWFILEDATE", "Visualizza la data del file");
 @define("PLUGIN_DOWNLOADMANAGER_SHOWFILEDATE_BLAHBLAH", "Visualizzare la data del file nell'elenco?");

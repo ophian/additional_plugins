@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -15,11 +17,12 @@ if (!isset($serendipity['dlm']['pluginpath'])) {
 
 class serendipity_event_downloadmanager extends serendipity_event
 {
-    var $debug;
-    var $MIME;
-    var $globs = array();
-    var $isWIN = null;
-    var $title = PLUGIN_DOWNLOADMANAGER_TITLE;
+    public $title = PLUGIN_DOWNLOADMANAGER_TITLE;
+
+    protected $debug;
+    protected $MIME;
+    protected $globs = array();
+    protected $isWIN = null;
 
     /**
      * introspect API
@@ -33,12 +36,12 @@ class serendipity_event_downloadmanager extends serendipity_event
         $propbag->add('name',          PLUGIN_DOWNLOADMANAGER_TITLE);
         $propbag->add('description',   PLUGIN_DOWNLOADMANAGER_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '3.3.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.0.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '1.65');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1914,7 +1917,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     }
                     if ($this->selected()) {
                         $serendipity['head_title']    = $this->get_config('pagetitle');
-                        $serendipity['head_subtitle'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['blogTitle']) : htmlspecialchars($serendipity['blogTitle'], ENT_COMPAT, LANG_CHARSET));
+                        $serendipity['head_subtitle'] = htmlspecialchars($serendipity['blogTitle']);
                     } else {
                         // Put subpage back so staticpage plugin will work
                         $serendipity['GET']['subpage'] = $oldsubpage;
@@ -2608,7 +2611,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             $filedate = date($this->globs['dateformat'], @filemtime($_val));
             $filesize = @filesize($_val);
             $filesize = $this->calcFilesize($filesize);
-            #$val = serendipity_specialchars($val);
+            #$val = htmlspecialchars($val);
             $files[] = array(
                             'filename' => str_replace($absinth.'/', '', $val),
                             'filesize' => $filesize,

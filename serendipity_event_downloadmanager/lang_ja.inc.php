@@ -21,13 +21,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 @define('PLUGIN_DOWNLOADMANAGER_PAGEURL', '静的 URL');
 @define('PLUGIN_DOWNLOADMANAGER_PAGEURL_BLAHBLAH', 'ページの URL を定義します (index.php?serendipity[subpage]=name)');
 @define('PLUGIN_DOWNLOADMANAGER_PERMALINK', '固定リンク');
-@define('PLUGIN_DOWNLOADMANAGER_PERMALINK_BLAHBLAH', 'Defines a custom permalink for the URL which can be much shorter than the Static URL. 絶対 HTTP パスの必要があり、最後に「.htm」か「.html」が必要です. (デフォルト: "%s")');
+@define('PLUGIN_DOWNLOADMANAGER_PERMALINK_BLAHBLAH', 'Defines a custom permalink for the URL which can be much shorter than the Static URL. 絶対 HTTP パスの必要があり、最後に「.htm」か「.html」が必要です! (デフォルト: "%s")');
 @define("PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH", "受付データのパス");
 @define('PLUGIN_DOWNLOADMANAGER_ABSINCOMINGPATH_BLAHBLAH', 'Full and absolute path to the directory in which you can (FTP)-upload bigger files to import them into your downloadmanager.');
 @define("PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH", "絶対ダウンロードデータパス");
 @define("PLUGIN_DOWNLOADMANAGER_ABSDOWNLOADPATH_BLAHBLAH", "Full and absolute path to the directory in which the files are stored.");
-@define("PLUGIN_DOWNLOADMANAGER_HTTPPATH", "http path to plugin");
-@define("PLUGIN_DOWNLOADMANAGER_HTTPPATH_BLAHBLAH", "absolute http path to plugin (usually \"/plugins/serendipity_event_downloadmanager\").");
 @define("PLUGIN_DOWNLOADMANAGER_DATEFORMAT", "エントリの実際の日付の書式です、PHP の date() 関数の値を用います (デフォルト: \"Y/m/d, h:ia\")");
 @define("PLUGIN_DOWNLOADMANAGER_SHOWFILEDATE", "ファイルの日付を表示する");
 @define("PLUGIN_DOWNLOADMANAGER_SHOWFILEDATE_BLAHBLAH", "項目一覧でファイルの日付を表示すべきですか?");
