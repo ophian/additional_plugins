@@ -1,3 +1,9 @@
+2.1.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+ * Raise requirements for Styx 5.0
+
 2.0:
 ----
  * Added missing language constant definitions

@@ -2,23 +2,23 @@
 
 /**
  *  @version $Revision: 1381 $
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_CREATIVECOMMONS_NAME',        'Licence Creative Commons');
-@define('PLUGIN_CREATIVECOMMONS_DESC',        'Vıbìr a zobreazení licence Creative Commons (autorská práva) pro obsah Vašeho webu.');
+@define('PLUGIN_CREATIVECOMMONS_DESC',        'VÃ½bÄ›r a zobreazenÃ­ licence Creative Commons (autorskÃ¡ prÃ¡va) pro obsah VaÅ¡eho webu.');
 @define('PLUGIN_CREATIVECOMMONS_TXT',         'Zobrazovat text?');
-@define('PLUGIN_CREATIVECOMMONS_TXT_DESC',    'Pøi zobrazení stavu licence zobrazit i struèné vysvìtlení, proè jste vybrali právì vybranou licenci.');
-@define('PLUGIN_CREATIVECOMMONS_CAP',         'Obsah tohoto díla (blogu) je licencován pomocí <a href="#license_uri#">Creative Commons License</a>');
-@define('PLUGIN_CREATIVECOMMONS_CAP_PD',      'Obsah tohoto díla (blogu) je urèen k <a href="#license_url#}">veøejnému pouití (Public Domain)</a>');
-// @define('PLUGIN_CREATIVECOMMONS_BY',          'Vyadovat oznaèení zdroje?');
-// @define('PLUGIN_CREATIVECOMMONS_BY_DESC',     'Vlastník licence povoluje ostatním kopírovat, distribuovat, zobrazovat a uívat dílo. Uivatelé licence (ti, kteøí dílo uívají) musí na opltáku uvést vlastníka licence jako zdroj.');
-@define('PLUGIN_CREATIVECOMMONS_NC',          'Povolit komerèní vyuití vašeho díla?');
-@define('PLUGIN_CREATIVECOMMONS_NC_DESC',     'Volba NE znamená, e: Vlastník licence povoluje ostatním kopírovat, distribuovat, zobrazovat a uívat dílo. Pod podmínkou, e dritelé licence (ti, kteøí dílo uívají) nesmí dílo pouívat ke komerèním úèelù, pokud k tomu nedostanou vıslovné povolení vlastníka licence.');
-@define('PLUGIN_CREATIVECOMMONS_ND',          'Povolit zmìny díla?');
-@define('PLUGIN_CREATIVECOMMONS_ND_DESC',     'Volba NE znamená, e: Vlastník licence povoluje ostatním kopírovat, distribuovat, zobrazovat a uívat dílo pouze v pùvodním znìní. ádné jeho zmìny èi úpravy nejsou povoleny.');
-@define('PLUGIN_CREATIVECOMMONS_SA_DESC',     'Ano, pokud ho budou ostatní šíøit pod stejnou licencí');
+@define('PLUGIN_CREATIVECOMMONS_TXT_DESC',    'PÅ™i zobrazenÃ­ stavu licence zobrazit i struÄnÃ© vysvÄ›tlenÃ­, proÄ jste vybrali prÃ¡vÄ› vybranou licenci.');
+@define('PLUGIN_CREATIVECOMMONS_CAP',         'Obsah tohoto dÃ­la (blogu) je licencovÃ¡n pomocÃ­ <a href="#license_uri#">Creative Commons License</a>');
+@define('PLUGIN_CREATIVECOMMONS_CAP_PD',      'Obsah tohoto dÃ­la (blogu) je urÄen k <a href="#license_url#}">veÅ™ejnÃ©mu pouÅ¾itÃ­ (Public Domain)</a>');
+// @define('PLUGIN_CREATIVECOMMONS_BY',          'VyÅ¾adovat oznaÄenÃ­ zdroje?');
+// @define('PLUGIN_CREATIVECOMMONS_BY_DESC',     'VlastnÃ­k licence povoluje ostatnÃ­m kopÃ­rovat, distribuovat, zobrazovat a uÅ¾Ã­vat dÃ­lo. UÅ¾ivatelÃ© licence (ti, kteÅ™Ã­ dÃ­lo uÅ¾Ã­vajÃ­) musÃ­ na opltÃ¡ku uvÃ©st vlastnÃ­ka licence jako zdroj.');
+@define('PLUGIN_CREATIVECOMMONS_NC',          'Povolit komerÄnÃ­ vyuÅ¾itÃ­ vaÅ¡eho dÃ­la?');
+@define('PLUGIN_CREATIVECOMMONS_NC_DESC',     'Volba NE znamenÃ¡, Å¾e: VlastnÃ­k licence povoluje ostatnÃ­m kopÃ­rovat, distribuovat, zobrazovat a uÅ¾Ã­vat dÃ­lo. Pod podmÃ­nkou, Å¾e drÅ¾itelÃ© licence (ti, kteÅ™Ã­ dÃ­lo uÅ¾Ã­vajÃ­) nesmÃ­ dÃ­lo pouÅ¾Ã­vat ke komerÄnÃ­m ÃºÄelÅ¯, pokud k tomu nedostanou vÃ½slovnÃ© povolenÃ­ vlastnÃ­ka licence.');
+@define('PLUGIN_CREATIVECOMMONS_ND',          'Povolit zmÄ›ny dÃ­la?');
+@define('PLUGIN_CREATIVECOMMONS_ND_DESC',     'Volba NE znamenÃ¡, Å¾e: VlastnÃ­k licence povoluje ostatnÃ­m kopÃ­rovat, distribuovat, zobrazovat a uÅ¾Ã­vat dÃ­lo pouze v pÅ¯vodnÃ­m znÄ›nÃ­. Å½Ã¡dnÃ© jeho zmÄ›ny Äi Ãºpravy nejsou povoleny.');
+@define('PLUGIN_CREATIVECOMMONS_SA_DESC',     'Ano, pokud ho budou ostatnÃ­ Å¡Ã­Å™it pod stejnou licencÃ­');
 
 @define('PLUGIN_CREATIVECOMMONS_VERSION',     'License version');
 @define('PLUGIN_CREATIVECOMMONS_VERSION_DESC',     'Select which numbered version of the license you want to use.');

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_creativecommons extends serendipity_event
 {
-    var $title = PLUGIN_CREATIVECOMMONS_NAME;
+    public $title = PLUGIN_CREATIVECOMMONS_NAME;
 
     function introspect(&$propbag)
     {
@@ -17,11 +19,11 @@ class serendipity_event_creativecommons extends serendipity_event
         $propbag->add('description',   PLUGIN_CREATIVECOMMONS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Evan Nemerson, Ian Styx');
-        $propbag->add('version',       '2.0');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('configuration', array('cc_version', 'nc', 'nd', 'txt', 'image_type'));
         $propbag->add('event_hooks',
