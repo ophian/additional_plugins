@@ -45,12 +45,12 @@
 <guid isPermaLink="false">serendipity_plugin_geotag</guid>
 </item>
 <item>
-<title>Guestbook Sidebar: Toont de laatste items uit het gastenboek in de sidebar</title>
+<title>Guestbook Sidebar: Display the latest guestbook items in the sidebar</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_guestbook</link>
 <category>Sidebar Plugins</category>
 <author>Jaap Boerma ( j@webbict.com ), Tadashi Jokagi &lt;elf2000@users.sourceforge.net&gt;, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;Guestbook Sidebar&lt;/b&gt;&lt;br /&gt;Toont de laatste items uit het gastenboek in de sidebar&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:17 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;Guestbook Sidebar&lt;/b&gt;&lt;br /&gt;Display the latest guestbook items in the sidebar&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 25 Jul 2025 17:59:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_guestbook</guid>
 </item>
 <item>

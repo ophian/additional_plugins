@@ -966,16 +966,16 @@
 <name>serendipity_event_cal</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cal/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Event-Terminkalender</summary>
+<summary>Event-Calendar</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
-<description>Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</description>
+<description>Shows an event calendar inside your blogs with your normal blog design. It supports backend/frontend administration, multiple events and iCal export. (MySQL-only)</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.3.0</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -1012,11 +1012,6 @@
       <file>serendipity_event_cal.php</file>
       <file>style_eventcal.css</file>
       <file>style_eventcal_backend.css</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -1052,9 +1047,6 @@
     <file>serendipity_event_cal/serendipity_event_cal.php</file>
     <file>serendipity_event_cal/style_eventcal.css</file>
     <file>serendipity_event_cal/style_eventcal_backend.css</file>
-    <file>serendipity_event_cal/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_cal/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_cal/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1231,16 +1223,16 @@
 <name>serendipity_event_commentsearch</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_commentsearch/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Durchsuche Kommentare mit der Schnellsuche</summary>
+<summary>Searches comments on quicksearch</summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.</description>
+<description>If this plugin is installed, the quicksearch on your blog will also search through comments on your blog</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.2.1</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-23</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
       <file>ChangeLog</file>
@@ -1254,10 +1246,6 @@
       <file>plugin_commentsearch_searchresults.tpl</file>
       <file>serendipity_event_commentsearch.php</file>
       <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -1272,10 +1260,6 @@
     <file>serendipity_event_commentsearch/lang_en.inc.php</file>
     <file>serendipity_event_commentsearch/plugin_commentsearch_searchresults.tpl</file>
     <file>serendipity_event_commentsearch/serendipity_event_commentsearch.php</file>
-    <file>serendipity_event_commentsearch/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_commentsearch/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_commentsearch/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_commentsearch/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1617,16 +1601,16 @@
 <name>serendipity_event_creativecommons</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_creativecommons/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Creative Commons Lizenz</summary>
+<summary>Creative Commons License</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Wählen Sie eine Lizenz für den Inhalt</description>
+<description>Choose and display a creative commons license for your content</description>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <version>2.1.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1647,22 +1631,7 @@
       <file>lang_tn.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_event_creativecommons.php</file>
-      <dir name="UTF-8">
-        <file>lang_cn.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_pt_PT.inc.php</file>
-        <file>lang_sk.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_creativecommons/ChangeLog</file>
@@ -1683,19 +1652,6 @@
     <file>serendipity_event_creativecommons/lang_tn.inc.php</file>
     <file>serendipity_event_creativecommons/lang_zh.inc.php</file>
     <file>serendipity_event_creativecommons/serendipity_event_creativecommons.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_sk.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_creativecommons/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1987,14 +1943,14 @@
 <license>GPL</license>
 <summary>Downloadmanager</summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!</description>
+<description>Provides full downloadmanager capabilities to your s9y. When uninstalling, all related tables will be dropped!</description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.65</version>
-  <requirements:s9yVersion>3.3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -2145,13 +2101,6 @@
       <file>style_dlmanager_backend.css</file>
       <file>style_dlmanager_frontend.css</file>
       <file>TODO</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_it.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -2297,11 +2246,6 @@
     <file>serendipity_event_downloadmanager/style_dlmanager_backend.css</file>
     <file>serendipity_event_downloadmanager/style_dlmanager_frontend.css</file>
     <file>serendipity_event_downloadmanager/TODO</file>
-    <file>serendipity_event_downloadmanager/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_downloadmanager/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_downloadmanager/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_downloadmanager/UTF-8/lang_it.inc.php</file>
-    <file>serendipity_event_downloadmanager/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -4898,16 +4842,16 @@
 <name>serendipity_event_guestbook</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_guestbook/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Gästebuch</summary>
+<summary>Guestbook</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
-<description>Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.</description>
+<description>Shows a guestbook inside your blog with your normal blog design.</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.2.0</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <version>5.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-07-25</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -4952,17 +4896,6 @@
       <file>serendipity_plugin_guestbook.php</file>
       <file>style_guestbook_backend.css</file>
       <file>style_guestbook_frontend.css</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_nl.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_se.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -5006,15 +4939,6 @@
     <file>serendipity_event_guestbook/serendipity_plugin_guestbook.php</file>
     <file>serendipity_event_guestbook/style_guestbook_backend.css</file>
     <file>serendipity_event_guestbook/style_guestbook_frontend.css</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_nl.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_guestbook/UTF-8/lang_se.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
