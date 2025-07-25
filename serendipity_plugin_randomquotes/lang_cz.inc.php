@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @author VladimÌr Ajgl <vlada@ajgl.cz>
+ * @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  * @translated 2009/08/14
  */
 
-@define('PLUGIN_RNDQUOTES_TITLE', 'N·hodn˝ cit·t');
-@define('PLUGIN_RNDQUOTES_BLAHBLAH', 'Zobrazuje blok s n·hodnÏ vybran˝m cit·tem');
-@define('PLUGIN_RNDQUOTES_SEARCHENGINELINK', 'Vyhled·vacÌ odkaz');
-@define('PLUGIN_RNDQUOTES_SEARCHENGINELINK_BLAHBLAH', 'Vyhled·vacÌ ¯etÏzec, %QUERY% bude nahrazenou jmÈnem autora, ponechte pr·zdnÈ pro æ·dn˝ odkaz');
-@define('PLUGIN_RNDQUOTES_FORMATSTRING', 'Form·tovacÌ vzor');
-@define('PLUGIN_RNDQUOTES_FORMATSTRING_BLAHBLAH', 'Vzor form·tov·nÌ bloku, mÌsto %QUOTE% bude vloæena citace, mÌsto %AUTHOR% jmÈno autora');
-@define('PLUGIN_RNDQUOTES_QUOTES', 'Cit·ty');
-@define('PLUGIN_RNDQUOTES_QUOTES_BLAHBLAH', 'Form·t jednoho cit·tu / jednÈ ¯·dky: Cit·t|Autor|URLadresa (URL je voliteln·. Kdyæ bude pr·zdn· - tedy za autorem bude |, ale æ·dn· adresa - cit·t bude bez odkazu. Pokud nebude ani |, pak se jako odkaz pouæije vyhled·vacÌ odkaz.)');
-@define('PLUGIN_RNDQUOTES_NEWWINDOW', 'OtevÌrat odkazy v novÈm oknÏ');
-@define('PLUGIN_RNDQUOTES_NEWWINDOW_BLAHBLAH', 'MajÌ se odkazy otevÌrat v novÈm oknÏ (vyæaduje javascript)?');
-@define('PLUGIN_RNDQUOTES_NUMQUOTES', 'PoËet zobrazen˝ch cit·tu');
-@define('PLUGIN_RNDQUOTES_NUMQUOTES_BLAHBLAH', 'PoËet cit·t˘, kterÈ se majÌ zobrazovat v postrannÌm sloupci. 0 pro vπechny cit·ty.');
+@define('PLUGIN_RNDQUOTES_TITLE', 'N√°hodn√Ω cit√°t');
+@define('PLUGIN_RNDQUOTES_BLAHBLAH', 'Zobrazuje blok s n√°hodnƒõ vybran√Ωm cit√°tem');
+@define('PLUGIN_RNDQUOTES_SEARCHENGINELINK', 'Vyhled√°vac√≠ odkaz');
+@define('PLUGIN_RNDQUOTES_SEARCHENGINELINK_BLAHBLAH', 'Vyhled√°vac√≠ ≈ôetƒõzec, %QUERY% bude nahrazenou jm√©nem autora, ponechte pr√°zdn√© pro ≈æ√°dn√Ω odkaz');
+@define('PLUGIN_RNDQUOTES_FORMATSTRING', 'Form√°tovac√≠ vzor');
+@define('PLUGIN_RNDQUOTES_FORMATSTRING_BLAHBLAH', 'Vzor form√°tov√°n√≠ bloku, m√≠sto %QUOTE% bude vlo≈æena citace, m√≠sto %AUTHOR% jm√©no autora');
+@define('PLUGIN_RNDQUOTES_QUOTES', 'Cit√°ty');
+@define('PLUGIN_RNDQUOTES_QUOTES_BLAHBLAH', 'Form√°t jednoho cit√°tu / jedn√© ≈ô√°dky: Cit√°t|Autor|URLadresa (URL je voliteln√°. Kdy≈æ bude pr√°zdn√° - tedy za autorem bude |, ale ≈æ√°dn√° adresa - cit√°t bude bez odkazu. Pokud nebude ani |, pak se jako odkaz pou≈æije vyhled√°vac√≠ odkaz.)');
+@define('PLUGIN_RNDQUOTES_NEWWINDOW', 'Otev√≠rat odkazy v nov√©m oknƒõ');
+@define('PLUGIN_RNDQUOTES_NEWWINDOW_BLAHBLAH', 'Maj√≠ se odkazy otev√≠rat v nov√©m oknƒõ (vy≈æaduje javascript)?');
+@define('PLUGIN_RNDQUOTES_NUMQUOTES', 'Poƒçet zobrazen√Ωch cit√°tu');
+@define('PLUGIN_RNDQUOTES_NUMQUOTES_BLAHBLAH', 'Poƒçet cit√°t≈Ø, kter√© se maj√≠ zobrazovat v postrann√≠m sloupci. 0 pro v≈°echny cit√°ty.');
 

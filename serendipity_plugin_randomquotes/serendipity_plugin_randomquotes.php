@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,6 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_randomquotes extends serendipity_plugin
 {
+    public $title = PLUGIN_RNDQUOTES_TITLE;
 
     function introspect(&$propbag)
     {
@@ -16,11 +19,11 @@ class serendipity_plugin_randomquotes extends serendipity_plugin
         $propbag->add('configuration',  array('title', 'searchenginelink', 'formatstring', 'quotes', 'newwindow', 'numquotes'));
         $propbag->add('author',         'Florian Solcher');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '1.06');
+        $propbag->add('version',        '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
     }
