@@ -7,6 +7,8 @@
  * @version 
  */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -20,7 +22,8 @@ if (IN_serendipity !== true) {
  */
 class serendipity_plugin_category_dhtml_menu extends serendipity_plugin
 {
-    var $title = PLUGIN_DHTMLMENU_NAME;
+    public $title = PLUGIN_DHTMLMENU_NAME;
+    private const XML_IMAGE_AVAILABLE = " Available [ pure ] theme defaults: 'img/xml.gif' (orange), 'img/xml12.png' (lightblue 12px), 'img/xml16.png' (lightblue 16px), 'icons/rss.svg' (colored by CSS)";
 
     /**
      * Provides reflection for plugin management.
@@ -33,12 +36,12 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin
         $propbag->add('description', PLUGIN_DHTMLMENU_NAME_DESC);
         $propbag->add('configuration', array('title', 'expand_all', 'image_path', 'script_path', 'show_count', 'image'));
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.0',
-            'php'         => '7.3'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('author',      'Jackson Miller, Sebastian Bauer');
-        $propbag->add('version',     '1.13');
+        $propbag->add('version',     '2.0.0');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
     }
 
@@ -88,7 +91,7 @@ class serendipity_plugin_category_dhtml_menu extends serendipity_plugin
             case 'image':
                 $propbag->add('type',         'string');
                 $propbag->add('name',         XML_IMAGE_TO_DISPLAY);
-                $propbag->add('description',  XML_IMAGE_TO_DISPLAY_DESC);
+                $propbag->add('description',  XML_IMAGE_TO_DISPLAY_DESC . self::XML_IMAGE_AVAILABLE);
                 $propbag->add('default',     serendipity_getTemplateFile('img/xml.gif'));
                 break;
 

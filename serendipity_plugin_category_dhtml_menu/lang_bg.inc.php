@@ -6,10 +6,10 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_DHTMLMENU_NAME', 'Категории в дървовидно меню');
-@define('PLUGIN_DHTMLMENU_NAME_DESC', 'DHTML дървовидно меню на категориите. Изисква PEAR::HTML_TreeMenu.');
-@define('PLUGIN_DHTMLMENU_PATH', 'Път до картинките');
-@define('PLUGIN_DHTMLMENU_PATH_DESC', 'Абослютен път (URL) до папката с картинките.');
-@define('PLUGIN_DHTMLMENU_JSPATH', 'Път до HTMLTree.js');
-@define('PLUGIN_DHTMLMENU_JSPATH_DESC', 'Пълен път до HTMLTree.js (URL), включително и името на файла (HTMLTree.js е част от пакета PEAR::HTML_TreeMenu).');
+@define('PLUGIN_DHTMLMENU_NAME', 'РљР°С‚РµРіРѕСЂРёРё РІ РґСЉСЂРІРѕРІРёРґРЅРѕ РјРµРЅСЋ');
+@define('PLUGIN_DHTMLMENU_NAME_DESC', 'DHTML РґСЉСЂРІРѕРІРёРґРЅРѕ РјРµРЅСЋ РЅР° РєР°С‚РµРіРѕСЂРёРёС‚Рµ. РР·РёСЃРєРІР° PEAR::HTML_TreeMenu.');
+@define('PLUGIN_DHTMLMENU_PATH', 'РџСЉС‚ РґРѕ РєР°СЂС‚РёРЅРєРёС‚Рµ');
+@define('PLUGIN_DHTMLMENU_PATH_DESC', 'РђР±РѕСЃР»СЋС‚РµРЅ РїСЉС‚ (URL) РґРѕ РїР°РїРєР°С‚Р° СЃ РєР°СЂС‚РёРЅРєРёС‚Рµ.');
+@define('PLUGIN_DHTMLMENU_JSPATH', 'РџСЉС‚ РґРѕ HTMLTree.js');
+@define('PLUGIN_DHTMLMENU_JSPATH_DESC', 'РџСЉР»РµРЅ РїСЉС‚ РґРѕ HTMLTree.js (URL), РІРєР»СЋС‡РёС‚РµР»РЅРѕ Рё РёРјРµС‚Рѕ РЅР° С„Р°Р№Р»Р° (HTMLTree.js Рµ С‡Р°СЃС‚ РѕС‚ РїР°РєРµС‚Р° PEAR::HTML_TreeMenu).');
 

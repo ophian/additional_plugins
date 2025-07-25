@@ -1,0 +1,8 @@
+2.0.0:
+------
+ * Add extended option to add different XML icons [by pure standard theme] and/or svg styled by CSS
+   via the sidebar plugin configuration, following other core sidebar plugins.
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+ * Raise requirements for Styx 5.0
+
