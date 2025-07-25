@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_POPULARENTRIES extends serendipity_plugin
 {
-    var $title = PLUGIN_POPULARENTRIES_TITLE;
+    public $title = PLUGIN_POPULARENTRIES_TITLE;
 
     function introspect(&$propbag)
     {
@@ -19,11 +21,11 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Kaustubh Srikanth');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+                        'serendipity' => '5.0',
+                        'smarty'      => '4.1',
+                        'php'         => '8.2'
         ));
-        $propbag->add('version',       '1.11');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('configuration', array('title', 'sortby', 'number', 'number_from', 'category', 'commentors_hide'));
         $propbag->add('groups', array('STATISTICS'));
     }
@@ -260,8 +262,8 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin
                         continue;
                     }
                     $entryLink = $serendipity['serendipityHTTPPath'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : '') . PATH_COMMENTS . '/' . urlencode($entry['author']);
-                    echo '<li><a href="' . $entryLink . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['author']) : htmlspecialchars($entry['author'], ENT_COMPAT, LANG_CHARSET)) . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['author']) : htmlspecialchars($entry['author'], ENT_COMPAT, LANG_CHARSET)) . '</a>';
-                    echo ' <span class="serendipitySideBarDate">(' . (!empty($entry['points']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['points']) : htmlspecialchars($entry['points'], ENT_COMPAT, LANG_CHARSET)) : 0) . ')</span></li>';
+                    echo '<li><a href="' . $entryLink . '" title="' . htmlspecialchars($entry['author']) . '">' . htmlspecialchars($entry['author']) . '</a>';
+                    echo ' <span class="serendipitySideBarDate">(' . (!empty($entry['points']) ? htmlspecialchars($entry['points']) : 0) . ')</span></li>';
                 } else {
                     $entryLink = serendipity_archiveURL(
                                    $entry['id'],
@@ -271,8 +273,8 @@ class serendipity_plugin_POPULARENTRIES extends serendipity_plugin
                                    array('timestamp' => $entry['timestamp'])
                                 );
 
-                    echo '<li><a href="' . $entryLink . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '">' . $entry['title'] . '</a>';
-                    echo ' <span class="serendipitySideBarDate">(' . (!empty($entry['points']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['points']) : htmlspecialchars($entry['points'], ENT_COMPAT, LANG_CHARSET)) : 0) . ')</span></li>';
+                    echo '<li><a href="' . $entryLink . '" title="' . htmlspecialchars($entry['title']) . '">' . $entry['title'] . '</a>';
+                    echo ' <span class="serendipitySideBarDate">(' . (!empty($entry['points']) ? htmlspecialchars($entry['points']) : 0) . ')</span></li>';
                 }
             }
         }

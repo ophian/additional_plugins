@@ -1,25 +1,24 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
  */
 
-@define('PLUGIN_POPULARENTRIES_TITLE', 'Oblíbené pøíspìvky');
-@define('PLUGIN_POPULARENTRIES_BLAHBLAH', 'Zobrazuje nadpisy a poèet komentáøù nejoblíbenìj¹ích pøíspìvkù. Oblíbenost je poèítána na základì mno¾ství komentáøù.');
-@define('PLUGIN_POPULARENTRIES_NUMBER', 'Poèet pøíspìvkù');
-@define('PLUGIN_POPULARENTRIES_NUMBER_BLAHBLAH', 'Kolik pøíspìvkù má bıt zobrazeno? (vıchozí: 10)');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM', 'Pøeskoèit pøíspìvky z úvodní strany');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_DESC', 'Z nejnovìj¹ích pøíspìvkù budou zobrazovány pouze ty, které nejsou na úvodní stránce blogu. (vıchozí: ' . $serendipity['fetchLimit'] . ' nejnovìj¹ích pøíspìvkù bude pøeskoèeno)');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL', 'Zobrazit v¹e');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR', 'Pøeskoèit pøíspìvky z úvodní strany');
-@define('PLUGIN_POPULARENTRIES_SORTBY', 'Øadit pøíspìvky podle:');
-@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTS', 'poètu komentáøù');
-@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS', 'poètu komentujících osob');
-@define('PLUGIN_POPULARENTRIES_SORTBY_VISITS', 'nejvìt¹ího poètu náv¹tìv [vy¾aduje nainstalovanı plugin "karma"]');
-@define('PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS', 'nejmen¹ího poètu náv¹tìv [vy¾aduje nainstalovanı plugin "karma"]');
-@define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'karmy [vy¾aduje nainstalovanı plugin "karma"]');
-@define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'poètu odkazù [vy¾aduje nainstalovanı plugin "Sledování odkazù (Track Exits)"]');
-@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER', 'Filtrování komentujících osob');
-@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER_DESC', 'Èárkami oddìlenı seznam (bez mezer) jmen koemntujících osob, které budou odfiltrovány pøi øazení podle poètu komentujících osob.');
-
+@define('PLUGIN_POPULARENTRIES_TITLE', 'OblÃ­benÃ© pÅ™Ã­spÄ›vky');
+@define('PLUGIN_POPULARENTRIES_BLAHBLAH', 'Zobrazuje nadpisy a poÄet komentÃ¡Å™Å¯ nejoblÃ­benÄ›jÅ¡Ã­ch pÅ™Ã­spÄ›vkÅ¯. OblÃ­benost je poÄÃ­tÃ¡na na zÃ¡kladÄ› mnoÅ¾stvÃ­ komentÃ¡Å™Å¯.');
+@define('PLUGIN_POPULARENTRIES_NUMBER', 'PoÄet pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_POPULARENTRIES_NUMBER_BLAHBLAH', 'Kolik pÅ™Ã­spÄ›vkÅ¯ mÃ¡ bÃ½t zobrazeno? (vÃ½chozÃ­: 10)');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM', 'PÅ™eskoÄit pÅ™Ã­spÄ›vky z ÃºvodnÃ­ strany');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_DESC', 'Z nejnovÄ›jÅ¡Ã­ch pÅ™Ã­spÄ›vkÅ¯ budou zobrazovÃ¡ny pouze ty, kterÃ© nejsou na ÃºvodnÃ­ strÃ¡nce blogu. (vÃ½chozÃ­: ' . $serendipity['fetchLimit'] . ' nejnovÄ›jÅ¡Ã­ch pÅ™Ã­spÄ›vkÅ¯ bude pÅ™eskoÄeno)');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL', 'Zobrazit vÅ¡e');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR', 'PÅ™eskoÄit pÅ™Ã­spÄ›vky z ÃºvodnÃ­ strany');
+@define('PLUGIN_POPULARENTRIES_SORTBY', 'Å˜adit pÅ™Ã­spÄ›vky podle:');
+@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTS', 'poÄtu komentÃ¡Å™Å¯');
+@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS', 'poÄtu komentujÃ­cÃ­ch osob');
+@define('PLUGIN_POPULARENTRIES_SORTBY_VISITS', 'nejvÄ›tÅ¡Ã­ho poÄtu nÃ¡vÅ¡tÄ›v [vyÅ¾aduje nainstalovanÃ½ plugin "karma"]');
+@define('PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS', 'nejmenÅ¡Ã­ho poÄtu nÃ¡vÅ¡tÄ›v [vyÅ¾aduje nainstalovanÃ½ plugin "karma"]');
+@define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'karmy [vyÅ¾aduje nainstalovanÃ½ plugin "karma"]');
+@define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'poÄtu odkazÅ¯ [vyÅ¾aduje nainstalovanÃ½ plugin "SledovÃ¡nÃ­ odkazÅ¯ (Track Exits)"]');
+@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER', 'FiltrovÃ¡nÃ­ komentujÃ­cÃ­ch osob');
+@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTORS_FILTER_DESC', 'ÄŒÃ¡rkami oddÄ›lenÃ½ seznam (bez mezer) jmen koemntujÃ­cÃ­ch osob, kterÃ© budou odfiltrovÃ¡ny pÅ™i Å™azenÃ­ podle poÄtu komentujÃ­cÃ­ch osob.');

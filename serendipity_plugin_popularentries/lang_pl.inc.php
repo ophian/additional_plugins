@@ -7,17 +7,17 @@
  */
 
 @define('PLUGIN_POPULARENTRIES_TITLE', 'Popularne wpisy');
-@define('PLUGIN_POPULARENTRIES_BLAHBLAH', 'Pokazuje tytu³y i ilo¶æ komentarzy najpopularniejszych wpisów.');
-@define('PLUGIN_POPULARENTRIES_NUMBER', 'Ilo¶æ wpisów');
-@define('PLUGIN_POPULARENTRIES_NUMBER_BLAHBLAH', 'Jak wiele tytu³ów wpisów ma byæ pokazanych? (Standardowo: 10)');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM', 'Pomiñ wspisy ze strony startowej');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_DESC', 'Tylko ostatnie wpisy poza tymi wy¶wietlonymi na stronie g³ównej bêd± pokazane. (Standardowo: ostatnie ' . $serendipity['fetchLimit'] . ' bêdzie pominiête)');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL', 'Poka¿ wszystkie');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR', 'Pomiñ wpisy ze strony startowej');
+@define('PLUGIN_POPULARENTRIES_BLAHBLAH', 'Pokazuje tytuÅ‚y i iloÅ›Ä‡ komentarzy najpopularniejszych wpisÃ³w.');
+@define('PLUGIN_POPULARENTRIES_NUMBER', 'IloÅ›Ä‡ wpisÃ³w');
+@define('PLUGIN_POPULARENTRIES_NUMBER_BLAHBLAH', 'Jak wiele tytuÅ‚Ã³w wpisÃ³w ma byÄ‡ pokazanych? (Standardowo: 10)');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM', 'PomiÅ„ wspisy ze strony startowej');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_DESC', 'Tylko ostatnie wpisy poza tymi wyÅ›wietlonymi na stronie gÅ‚Ã³wnej bÄ™dÄ… pokazane. (Standardowo: ostatnie ' . $serendipity['fetchLimit'] . ' bÄ™dzie pominiÄ™te)');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL', 'PokaÅ¼ wszystkie');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR', 'PomiÅ„ wpisy ze strony startowej');
 @define('PLUGIN_POPULARENTRIES_SORTBY', 'Sortuj wpisy po:');
-@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTS', 'ilo¶ci komentarzy');
-@define('PLUGIN_POPULARENTRIES_SORTBY_VISITS', 'najwiêkszej ilo¶ci wizyt [wymaga wtyczki Karma]');
-@define('PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS', 'najmniejszej ilo¶ci wizyt [wymaga wtyczki Karma]');
+@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTS', 'iloÅ›ci komentarzy');
+@define('PLUGIN_POPULARENTRIES_SORTBY_VISITS', 'najwiÄ™kszej iloÅ›ci wizyt [wymaga wtyczki Karma]');
+@define('PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS', 'najmniejszej iloÅ›ci wizyt [wymaga wtyczki Karma]');
 @define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'karmie [wymaga wtyczki Karma]');
-@define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'wyj¶ciach (top-exits) [wymaga wtyczki Track Exits]');
+@define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'wyjÅ›ciach (top-exits) [wymaga wtyczki Track Exits]');
 

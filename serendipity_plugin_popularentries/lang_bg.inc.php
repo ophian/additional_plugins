@@ -6,18 +6,18 @@
  *  EN-Revision: 1.4
  */
 
-@define('PLUGIN_POPULARENTRIES_TITLE', 'Популярни статии');
-@define('PLUGIN_POPULARENTRIES_BLAHBLAH', 'Показва заглавията и броя на коментарите на най-популярните статии. Популярността се изчислява според броя на коментарите към статиите.');
-@define('PLUGIN_POPULARENTRIES_NUMBER', 'Брой статии');
-@define('PLUGIN_POPULARENTRIES_NUMBER_BLAHBLAH', 'Брой на статиите, чиито заглавия да се показват. (По подразбиране: 10)');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM', 'Прескачане на показаните статии');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_DESC', 'Заглавията на статиите, които са изведени в блога ще бъдат пропуснати. (По подразбиране последните ' . $serendipity['fetchLimit'] . ' ще бъдат прескочени.)');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL', 'Всички');
-@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR', 'Прескачане');
-@define('PLUGIN_POPULARENTRIES_SORTBY', 'Сортиране на статиите:');
-@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTS', 'коментари');
-@define('PLUGIN_POPULARENTRIES_SORTBY_VISITS', 'най-много посещения [изисква приставка \'карма\']');
-@define('PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS', 'най-малко посещения [изисква приставка \'карма\']');
-@define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'карма [изисква приставка \'карма\']');
-@define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'изход към външни връзки [изисква приставка Track Exits]');
+@define('PLUGIN_POPULARENTRIES_TITLE', 'РџРѕРїСѓР»СЏСЂРЅРё СЃС‚Р°С‚РёРё');
+@define('PLUGIN_POPULARENTRIES_BLAHBLAH', 'РџРѕРєР°Р·РІР° Р·Р°РіР»Р°РІРёСЏС‚Р° Рё Р±СЂРѕСЏ РЅР° РєРѕРјРµРЅС‚Р°СЂРёС‚Рµ РЅР° РЅР°Р№-РїРѕРїСѓР»СЏСЂРЅРёС‚Рµ СЃС‚Р°С‚РёРё. РџРѕРїСѓР»СЏСЂРЅРѕСЃС‚С‚Р° СЃРµ РёР·С‡РёСЃР»СЏРІР° СЃРїРѕСЂРµРґ Р±СЂРѕСЏ РЅР° РєРѕРјРµРЅС‚Р°СЂРёС‚Рµ РєСЉРј СЃС‚Р°С‚РёРёС‚Рµ.');
+@define('PLUGIN_POPULARENTRIES_NUMBER', 'Р‘СЂРѕР№ СЃС‚Р°С‚РёРё');
+@define('PLUGIN_POPULARENTRIES_NUMBER_BLAHBLAH', 'Р‘СЂРѕР№ РЅР° СЃС‚Р°С‚РёРёС‚Рµ, С‡РёРёС‚Рѕ Р·Р°РіР»Р°РІРёСЏ РґР° СЃРµ РїРѕРєР°Р·РІР°С‚. (РџРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ: 10)');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM', 'РџСЂРµСЃРєР°С‡Р°РЅРµ РЅР° РїРѕРєР°Р·Р°РЅРёС‚Рµ СЃС‚Р°С‚РёРё');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_DESC', 'Р—Р°РіР»Р°РІРёСЏС‚Р° РЅР° СЃС‚Р°С‚РёРёС‚Рµ, РєРѕРёС‚Рѕ СЃР° РёР·РІРµРґРµРЅРё РІ Р±Р»РѕРіР° С‰Рµ Р±СЉРґР°С‚ РїСЂРѕРїСѓСЃРЅР°С‚Рё. (РџРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ РїРѕСЃР»РµРґРЅРёС‚Рµ ' . $serendipity['fetchLimit'] . ' С‰Рµ Р±СЉРґР°С‚ РїСЂРµСЃРєРѕС‡РµРЅРё.)');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_ALL', 'Р’СЃРёС‡РєРё');
+@define('PLUGIN_POPULARENTRIES_NUMBER_FROM_RADIO_POPULAR', 'РџСЂРµСЃРєР°С‡Р°РЅРµ');
+@define('PLUGIN_POPULARENTRIES_SORTBY', 'РЎРѕСЂС‚РёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёРёС‚Рµ:');
+@define('PLUGIN_POPULARENTRIES_SORTBY_COMMENTS', 'РєРѕРјРµРЅС‚Р°СЂРё');
+@define('PLUGIN_POPULARENTRIES_SORTBY_VISITS', 'РЅР°Р№-РјРЅРѕРіРѕ РїРѕСЃРµС‰РµРЅРёСЏ [РёР·РёСЃРєРІР° РїСЂРёСЃС‚Р°РІРєР° \'РєР°СЂРјР°\']');
+@define('PLUGIN_POPULARENTRIES_SORTBY_LOWVISITS', 'РЅР°Р№-РјР°Р»РєРѕ РїРѕСЃРµС‰РµРЅРёСЏ [РёР·РёСЃРєРІР° РїСЂРёСЃС‚Р°РІРєР° \'РєР°СЂРјР°\']');
+@define('PLUGIN_POPULARENTRIES_SORTBY_KARMAVOTES', 'РєР°СЂРјР° [РёР·РёСЃРєРІР° РїСЂРёСЃС‚Р°РІРєР° \'РєР°СЂРјР°\']');
+@define('PLUGIN_POPULARENTRIES_SORTBY_EXITS', 'РёР·С…РѕРґ РєСЉРј РІСЉРЅС€РЅРё РІСЂСЉР·РєРё [РёР·РёСЃРєРІР° РїСЂРёСЃС‚Р°РІРєР° Track Exits]');
 
