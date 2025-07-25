@@ -1,57 +1,57 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/08
  */
 
-@define('PLUGIN_EVENT_MICROFORMATS_TITLE', 'Mikroformáty');
-@define('PLUGIN_EVENT_MICROFORMATS_DESC', 'Tento plugin poskytuje jednoduché publikování pøehledù (nebo událostí); podporuje pøíslu¹né mikroformáty.');
+@define('PLUGIN_EVENT_MICROFORMATS_TITLE', 'MikroformÃ¡ty');
+@define('PLUGIN_EVENT_MICROFORMATS_DESC', 'Tento plugin poskytuje jednoduchÃ© publikovÃ¡nÃ­ pÅ™ehledÅ¯ (nebo udÃ¡lostÃ­); podporuje pÅ™Ã­sluÅ¡nÃ© mikroformÃ¡ty.');
 
-@define('PLUGIN_EVENT_MICROFORMATS_TYPES', 'Typ pøíspìvku');
-@define('PLUGIN_EVENT_MICROFORMATS_TYPES_DESC', 'Kterı typ pøíspìvkù chcete publikovat, tzn. pøehledy nebo události?');
+@define('PLUGIN_EVENT_MICROFORMATS_TYPES', 'Typ pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_MICROFORMATS_TYPES_DESC', 'KterÃ½ typ pÅ™Ã­spÄ›vkÅ¯ chcete publikovat, tzn. pÅ™ehledy nebo udÃ¡losti?');
 
-@define('PLUGIN_EVENT_MICROFORMATS_TYPES_HREVIEW', 'Pøehledy');
-@define('PLUGIN_EVENT_MICROFORMATS_TYPES_HCALENDAR', 'Události');
+@define('PLUGIN_EVENT_MICROFORMATS_TYPES_HREVIEW', 'PÅ™ehledy');
+@define('PLUGIN_EVENT_MICROFORMATS_TYPES_HCALENDAR', 'UdÃ¡losti');
 
 @define('PLUGIN_EVENT_MICROFORMATS_ID', 'ID');
-@define('PLUGIN_EVENT_MICROFORMATS_RATING', 'Hodnocení');
+@define('PLUGIN_EVENT_MICROFORMATS_RATING', 'HodnocenÃ­');
 
-@define('PLUGIN_EVENT_MICROFORMATS_SB_SUBNODE', 'Pøidat uzel');
-@define('PLUGIN_EVENT_MICROFORMATS_SB_SUBNODE_DESC', 'Pokud je k pøíspìvku pøidán uzel, slu¾by, které pou¾ívají strukturované blogování, ho mohou pøeèíst; ale XHTML kód nemusí bıt správnì vykreslen.');
+@define('PLUGIN_EVENT_MICROFORMATS_SB_SUBNODE', 'PÅ™idat uzel');
+@define('PLUGIN_EVENT_MICROFORMATS_SB_SUBNODE_DESC', 'Pokud je k pÅ™Ã­spÄ›vku pÅ™idÃ¡n uzel, sluÅ¾by, kterÃ© pouÅ¾Ã­vajÃ­ strukturovanÃ© blogovÃ¡nÃ­, ho mohou pÅ™eÄÃ­st; ale XHTML kÃ³d nemusÃ­ bÃ½t sprÃ¡vnÄ› vykreslen.');
 
-@define('PLUGIN_MICROFORMATS_TITLE_N', 'Nadcházející události');
-@define('PLUGIN_MICROFORMATS_TITLE_D', 'Zobrazit nejbli¾¹í a doporuèené události v postranním sloupci a pou¾ít na nì mikroformat hCalendar.');
+@define('PLUGIN_MICROFORMATS_TITLE_N', 'NadchÃ¡zejÃ­cÃ­ udÃ¡losti');
+@define('PLUGIN_MICROFORMATS_TITLE_D', 'Zobrazit nejbliÅ¾Å¡Ã­ a doporuÄenÃ© udÃ¡losti v postrannÃ­m sloupci a pouÅ¾Ã­t na nÄ› mikroformat hCalendar.');
 
-@define('PLUGIN_MICROFORMATS_DISPLAY_N', 'Hlavièka postranního sloupce');
-@define('PLUGIN_MICROFORMATS_DISPLAY_D', 'To je to, co se zobrazí jako nadpis bloku v postranním sloupci');
+@define('PLUGIN_MICROFORMATS_DISPLAY_N', 'HlaviÄka postrannÃ­ho sloupce');
+@define('PLUGIN_MICROFORMATS_DISPLAY_D', 'To je to, co se zobrazÃ­ jako nadpis bloku v postrannÃ­m sloupci');
 
-@define('PLUGIN_MICROFORMATS_SORT_N', 'Tøídit události podle data');
-@define('PLUGIN_MICROFORMATS_SORT_D', 'Pokud je "Ano", pak budou události tøídìny podle data konání. Jinak se budou zobrazovat v poøadí, v jakém byly zadány.');
+@define('PLUGIN_MICROFORMATS_SORT_N', 'TÅ™Ã­dit udÃ¡losti podle data');
+@define('PLUGIN_MICROFORMATS_SORT_D', 'Pokud je "Ano", pak budou udÃ¡losti tÅ™Ã­dÄ›ny podle data konÃ¡nÃ­. Jinak se budou zobrazovat v poÅ™adÃ­, v jakÃ©m byly zadÃ¡ny.');
 
-@define('PLUGIN_MICROFORMATS_PURGE_N', 'Odstranit události, které u¾ probìhly');
-@define('PLUGIN_MICROFORMATS_PURGE_D', 'Události, které jsou star¹í ne¾ X dní od aktuálního data, budou odstranìny ze seznamu. Ponechte prázdné, pokud nechcete mazat události.');
+@define('PLUGIN_MICROFORMATS_PURGE_N', 'Odstranit udÃ¡losti, kterÃ© uÅ¾ probÄ›hly');
+@define('PLUGIN_MICROFORMATS_PURGE_D', 'UdÃ¡losti, kterÃ© jsou starÅ¡Ã­ neÅ¾ X dnÃ­ od aktuÃ¡lnÃ­ho data, budou odstranÄ›ny ze seznamu. Ponechte prÃ¡zdnÃ©, pokud nechcete mazat udÃ¡losti.');
 
-@define('PLUGIN_MICROFORMATS_ENTRIES_N', 'Vèetnì událostí z pøíspìvkù');
-@define('PLUGIN_MICROFORMATS_ENTRIES_D', 'Pokud pou¾ijete mikroformát hCalendar v pøíspìvcích, mù¾ete je také zobrazit v postranním sloupci.');
+@define('PLUGIN_MICROFORMATS_ENTRIES_N', 'VÄetnÄ› udÃ¡lostÃ­ z pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_MICROFORMATS_ENTRIES_D', 'Pokud pouÅ¾ijete mikroformÃ¡t hCalendar v pÅ™Ã­spÄ›vcÃ­ch, mÅ¯Å¾ete je takÃ© zobrazit v postrannÃ­m sloupci.');
 
 @define('PLUGIN_MICROFORMATS_ICONDISPLAY_N', 'Zobrazit CAL ikonu');
-@define('PLUGIN_MICROFORMATS_ICONDISPLAY_D', 'Zobrazit èervenou CAL ikonu pod seznamem událostí.');
+@define('PLUGIN_MICROFORMATS_ICONDISPLAY_D', 'Zobrazit Äervenou CAL ikonu pod seznamem udÃ¡lostÃ­.');
 
-@define('PLUGIN_MICROFORMATS_TIMEZONE_N', 'Èasové pásmo');
-@define('PLUGIN_MICROFORMATS_TIMEZONE_D', 'Èasové pásmo událostí (nejpravdìpodobnìji èasové pásmo blogu).');
+@define('PLUGIN_MICROFORMATS_TIMEZONE_N', 'ÄŒasovÃ© pÃ¡smo');
+@define('PLUGIN_MICROFORMATS_TIMEZONE_D', 'ÄŒasovÃ© pÃ¡smo udÃ¡lostÃ­ (nejpravdÄ›podobnÄ›ji ÄasovÃ© pÃ¡smo blogu).');
 
-@define('PLUGIN_MICROFORMATS_EVENTLIST_XML_N', 'Seznam událostí');
-@define('PLUGIN_MICROFORMATS_EVENTLIST_XML_D', 'Pou¾ijte prosím správné XML formátování (viz. ní¾e). Musíte zadat pøinejmen¹ím "summary" (shrnutí nebo popis) a "dtstart" (datum poèátku).');
+@define('PLUGIN_MICROFORMATS_EVENTLIST_XML_N', 'Seznam udÃ¡lostÃ­');
+@define('PLUGIN_MICROFORMATS_EVENTLIST_XML_D', 'PouÅ¾ijte prosÃ­m sprÃ¡vnÃ© XML formÃ¡tovÃ¡nÃ­ (viz. nÃ­Å¾e). MusÃ­te zadat pÅ™inejmenÅ¡Ã­m "summary" (shrnutÃ­ nebo popis) a "dtstart" (datum poÄÃ¡tku).');
 
-@define('PLUGIN_EVENT_MICROFORMATS_BEST_N', 'Maximum bodù');
+@define('PLUGIN_EVENT_MICROFORMATS_BEST_N', 'Maximum bodÅ¯');
 @define('PLUGIN_EVENT_MICROFORMATS_BEST_D', '');
 
-@define('PLUGIN_EVENT_MICROFORMATS_STEP_N', 'Krokù');
+@define('PLUGIN_EVENT_MICROFORMATS_STEP_N', 'KrokÅ¯');
 @define('PLUGIN_EVENT_MICROFORMATS_STEP_D', '');
 
-@define('PLUGIN_EVENT_MICROFORMATS_PATH_N', 'Cesta ke skriptùm');
-@define('PLUGIN_EVENT_MICROFORMATS_PATH_D', 'Zadejte plnou HTTP cestu (v¹echno po doménovém jménu), která vede do adresáøe tohoto pluginu (napø. /serendipity/plugins/serendipity_event_microformats).');
+@define('PLUGIN_EVENT_MICROFORMATS_PATH_N', 'Cesta ke skriptÅ¯m');
+@define('PLUGIN_EVENT_MICROFORMATS_PATH_D', 'Zadejte plnou HTTP cestu (vÅ¡echno po domÃ©novÃ©m jmÃ©nu), kterÃ¡ vede do adresÃ¡Å™e tohoto pluginu (napÅ™. /serendipity/plugins/serendipity_event_microformats).');
 
-@define('PLUGIN_MICROFORMATS_EVENTLIST_XML_EXPLAIN', 'V souladu s definicí mikroformátu hCalendar (28.01.2007), tìlo pøíspìvku je definováno následovnì: <p><code>&lt;events&gt;<br/>&lt;event summary="Mistrovství svìta ve fotbale 2010" location="Jihoafrická republika" url="http://www.fifa.com/de/worldcup/index/0,3360,WF2010,00.html?comp=WF&year=2010" dtstart="20100611T1930" dtend="20100711T2000" description="Africká vızva" /&gt;<br/>&lt;/events&gt;</code></p><p>Podívejte se také na <a href="http://blog.sperr-objekt.de/pages/microformats.html">dokumentaci</a>, která by u¾ mìla bıt napsána.</p>');
+@define('PLUGIN_MICROFORMATS_EVENTLIST_XML_EXPLAIN', 'V souladu s definicÃ­ mikroformÃ¡tu hCalendar (28.01.2007), tÄ›lo pÅ™Ã­spÄ›vku je definovÃ¡no nÃ¡sledovnÄ›: <p><code>&lt;events&gt;<br/>&lt;event summary="MistrovstvÃ­ svÄ›ta ve fotbale 2010" location="JihoafrickÃ¡ republika" url="http://www.fifa.com/de/worldcup/index/0,3360,WF2010,00.html?comp=WF&year=2010" dtstart="20100611T1930" dtend="20100711T2000" description="AfrickÃ¡ vÃ½zva" /&gt;<br/>&lt;/events&gt;</code></p><p>PodÃ­vejte se takÃ© na <a href="http://blog.sperr-objekt.de/pages/microformats.html">dokumentaci</a>, kterÃ¡ by uÅ¾ mÄ›la bÃ½t napsÃ¡na.</p>');
 

@@ -3,6 +3,8 @@
 // Thanks to http://microformats.org/code/hcalendar/creator
 // Thanks to http://microformats.org/code/hreview/creator
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -11,10 +13,10 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_microformats extends serendipity_event
 {
-    var $is_smarty_init = false;
-    var $title = PLUGIN_EVENT_MICROFORMATS_TITLE;
+    public $title = PLUGIN_EVENT_MICROFORMATS_TITLE;
 
-    var $timezones  = array('-1200' => '-12 (IDLW)',
+    protected $is_smarty_init = false;
+    protected $timezones  = array('-1200' => '-12 (IDLW)',
                             '-1100' => '-11 (NT)',
                             '-1000' => '-10 (HST)',
                             '-0900' => '-9 (AKST)',
@@ -53,11 +55,11 @@ class serendipity_event_microformats extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MICROFORMATS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version',       '0.54');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1',
-            'smarty'      => '3.1',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'frontend_header'                                   => true,
