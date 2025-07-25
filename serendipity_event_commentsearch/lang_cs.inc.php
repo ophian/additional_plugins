@@ -1,11 +1,11 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/24
  */
 
-@define('COMMENTSEARCH_TITLE', 'Hledání v komentáøích');
-@define('COMMENTSEARCH_DESC', 'Pokud je tento plugin nainstalovanı, rychlé vyhledávání bude prohledávat také komentáøe');
-@define('COMMENT_SEARCHRESULTS', 'Vısledky hledání v komentáøích');
+@define('COMMENTSEARCH_TITLE', 'HledÃ¡nÃ­ v komentÃ¡Å™Ã­ch');
+@define('COMMENTSEARCH_DESC', 'Pokud je tento plugin nainstalovanÃ½, rychlÃ© vyhledÃ¡vÃ¡nÃ­ bude prohledÃ¡vat takÃ© komentÃ¡Å™e');
+@define('COMMENT_SEARCHRESULTS', 'VÃ½sledky hledÃ¡nÃ­ v komentÃ¡Å™Ã­ch');
 
