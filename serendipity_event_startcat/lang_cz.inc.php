@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/21
  */
 
-@define('PLUGIN_EVENT_STARTCAT_NAME', 'Kategorie na vıchozí stránce');
-@define('PLUGIN_EVENT_STARTCAT_DESC', 'Umo¾òuje zobrazovat na vıchozí stránce blogu pøíspìvky pouze z jedné kategorie');
-@define('PLUGIN_EVENT_STARTCAT_CATEGORY_NAME', 'Vıchozí kategorie');
-@define('PLUGIN_EVENT_STARTCAT_CATEGORY_DESC', 'Vyberte kategorii, která se bude zobrazovat na vıchozí stránce blogu.');
-@define('PLUGIN_EVENT_STARTCAT_HIDECATEGORY_NAME', 'Vıchozí skrytá galerie');
-@define('PLUGIN_EVENT_STARTCAT_HIDECATEGORY_DESC', 'Vyberte kategorii, kterı má bıt na vıchozí stránce schována (pou¾ije se pouze pokud nejsou vybrána ¾ádné "vıchozí kategorie").');
-@define('PLUGIN_EVENT_STARTCAT_MULTICATEGORY_NAME', 'Více vıchozích kategorií');
-@define('PLUGIN_EVENT_STARTCAT_MULTICATEGORY_DESC', 'Pokud chcete na vıchozí stránce blogu zobrazit více kategorií, zadjte zde jejich ID identifikátory oddìlené støedníkem ";". ID kategorie zjistíte v administraèní sekci, pokud nalistujete seznam kategorií a podr¾íte chvilku my¹ nad názvem kategorie. Tato volba pøepí¹e ruèní vıbìr kategorií vı¹e.');
-@define('PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_NAME', 'Více vıchozích skrytıch kategorií');
-@define('PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_DESC', 'Pokud chcete z vıchozí stránky blogu skrıt více kategorií, zadejte zde ID identifikátory tìchto kategorií oddìlené støedníkem ";". Tato volba pøepí¹e ruèní vıbìr kategorií viz vı¹e.');
-@define('PLUGIN_EVENT_STARTCAT_REMEMBERCAT_NAME', 'Umo¾nit náv¹tìvníkùm zapamatovat si vybranou kategorii?');
-@define('PLUGIN_EVENT_STARTCAT_REMEMBERCAT_DESC', 'Pokud je povoleno, pak se kategorie, kterou náv¹tìvník blogu vybere, ulo¾í do cookie a z ní se naète pøi dal¹í náv¹tìvì.');
+@define('PLUGIN_EVENT_STARTCAT_NAME', 'Kategorie na vÃ½chozÃ­ strÃ¡nce');
+@define('PLUGIN_EVENT_STARTCAT_DESC', 'UmoÅ¾Åˆuje zobrazovat na vÃ½chozÃ­ strÃ¡nce blogu pÅ™Ã­spÄ›vky pouze z jednÃ© kategorie');
+@define('PLUGIN_EVENT_STARTCAT_CATEGORY_NAME', 'VÃ½chozÃ­ kategorie');
+@define('PLUGIN_EVENT_STARTCAT_CATEGORY_DESC', 'Vyberte kategorii, kterÃ¡ se bude zobrazovat na vÃ½chozÃ­ strÃ¡nce blogu.');
+@define('PLUGIN_EVENT_STARTCAT_HIDECATEGORY_NAME', 'VÃ½chozÃ­ skrytÃ¡ galerie');
+@define('PLUGIN_EVENT_STARTCAT_HIDECATEGORY_DESC', 'Vyberte kategorii, kterÃ½ mÃ¡ bÃ½t na vÃ½chozÃ­ strÃ¡nce schovÃ¡na (pouÅ¾ije se pouze pokud nejsou vybrÃ¡na Å¾Ã¡dnÃ© "vÃ½chozÃ­ kategorie").');
+@define('PLUGIN_EVENT_STARTCAT_MULTICATEGORY_NAME', 'VÃ­ce vÃ½chozÃ­ch kategoriÃ­');
+@define('PLUGIN_EVENT_STARTCAT_MULTICATEGORY_DESC', 'Pokud chcete na vÃ½chozÃ­ strÃ¡nce blogu zobrazit vÃ­ce kategoriÃ­, zadjte zde jejich ID identifikÃ¡tory oddÄ›lenÃ© stÅ™ednÃ­kem ";". ID kategorie zjistÃ­te v administraÄnÃ­ sekci, pokud nalistujete seznam kategoriÃ­ a podrÅ¾Ã­te chvilku myÅ¡ nad nÃ¡zvem kategorie. Tato volba pÅ™epÃ­Å¡e ruÄnÃ­ vÃ½bÄ›r kategoriÃ­ vÃ½Å¡e.');
+@define('PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_NAME', 'VÃ­ce vÃ½chozÃ­ch skrytÃ½ch kategoriÃ­');
+@define('PLUGIN_EVENT_STARTCAT_MULTIHIDECATEGORY_DESC', 'Pokud chcete z vÃ½chozÃ­ strÃ¡nky blogu skrÃ½t vÃ­ce kategoriÃ­, zadejte zde ID identifikÃ¡tory tÄ›chto kategoriÃ­ oddÄ›lenÃ© stÅ™ednÃ­kem ";". Tato volba pÅ™epÃ­Å¡e ruÄnÃ­ vÃ½bÄ›r kategoriÃ­ viz vÃ½Å¡e. Tato volba vyÅ¾aduje alespoÅˆ Serendipity 1.0-alpha1.');
+@define('PLUGIN_EVENT_STARTCAT_REMEMBERCAT_NAME', 'UmoÅ¾nit nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m zapamatovat si vybranou kategorii?');
+@define('PLUGIN_EVENT_STARTCAT_REMEMBERCAT_DESC', 'Pokud je povoleno, pak se kategorie, kterou nÃ¡vÅ¡tÄ›vnÃ­k blogu vybere, uloÅ¾Ã­ do cookie a z nÃ­ se naÄte pÅ™i dalÅ¡Ã­ nÃ¡vÅ¡tÄ›vÄ›.');
 
