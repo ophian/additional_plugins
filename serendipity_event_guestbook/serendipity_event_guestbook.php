@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 //error_reporting(E_ALL);
 
 if (IN_serendipity !== true) {
@@ -10,8 +12,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_guestbook extends serendipity_event
 {
-    var $title = PLUGIN_GUESTBOOK_TITLE;
-    var $filter_defaults;
+    public $title = PLUGIN_GUESTBOOK_TITLE;
+
+    protected $filter_defaults;
 
     /**
      * Declare Serendipity backend properties.
@@ -56,11 +59,11 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '4.2.0');
+        $propbag->add('version',      '5.0.0');
         $propbag->add('requirements', array(
-                        'serendipity' => '2.0',
-                        'smarty'      => '3.1',
-                        'php'         => '7.3'
+                        'serendipity' => '5.0',
+                        'smarty'      => '4.1',
+                        'php'         => '8.2'
                     ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));

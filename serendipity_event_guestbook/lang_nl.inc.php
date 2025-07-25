@@ -2,7 +2,7 @@
 
 /**
  *  @version
- *  @file serendipity_event_guestbook.php, langfile(nl)
+ *  @file serendipity_event_guestbook.php, langfile(UTF-8/nl)
  *  @author 
  *  EN-Revision: 
  */

@@ -2,178 +2,179 @@
 
 /**
  *  @file lang_cs.inc.php 1.1 2011-04-17 14:21:59 VladaAjgl
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/20
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/04/17
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/10/26
  */
 
-@define('PLUGIN_GUESTBOOK_HEADLINE', 'Hlavní nadpis');
-@define('PLUGIN_GUESTBOOK_HEADLINE_BLAHBLAH', 'Hlavní nadpis stránky s náv¹tìvní knihou.');
-@define('PLUGIN_GUESTBOOK_TITLE', 'Náv¹tìvní kniha');
-@define('PLUGIN_GUESTBOOK_TITLE_BLAHBLAH', 'Zobrazuje náv¹tìvní knihu jako stránku blogu. Vzhled je toto¾nı s ostatními stránkami.');
-@define('PLUGIN_GUESTBOOK_PERMALINK', 'Stálı odkaz');
-@define('PLUGIN_GUESTBOOK_PERMALINK_BLAHBLAH', 'Definuje stálı URL odkaz. (Náv¹tìvní knihu pak mù¾ete odkazovat pomocí tohoto odkazu a ne pomocí nepøehledného vnitøního odkazu, kterı pou¾ívá Serendipity.) Je tøeba zadat absolutní HTTP cestu, vèetnì ukonèovacího .htm nebo .html!');
-@define('PLUGIN_GUESTBOOK_PAGETITLE', 'Nadpis statické stránky a URL');
-@define('PLUGIN_GUESTBOOK_PAGETITLE_BLAHBLAH', 'Nadpis stránky pro modul "Statické stránky". Pozor: tento nadpis také definuje URL adresu statické stránky (index.php?serendipity[subpage]=jmeno)');
-@define('PLUGIN_GUESTBOOK_FORMORDER', 'Formuláø náv¹tìvní knihy');
-@define('PLUGIN_GUESTBOOK_FORMORDER_BLAHBLAH', 'Kde má bıt umístìn formuláø pro poslání vzkazu.');
-@define('PLUGIN_GUESTBOOK_FORMORDER_TOP', 'Nahoøe');
+@define('PLUGIN_GUESTBOOK_HEADLINE', 'HlavnÃ­ nadpis');
+@define('PLUGIN_GUESTBOOK_HEADLINE_BLAHBLAH', 'HlavnÃ­ nadpis strÃ¡nky s nÃ¡vÅ¡tÄ›vnÃ­ knihou.');
+@define('PLUGIN_GUESTBOOK_TITLE', 'NÃ¡vÅ¡tÄ›vnÃ­ kniha');
+@define('PLUGIN_GUESTBOOK_TITLE_BLAHBLAH', 'Zobrazuje nÃ¡vÅ¡tÄ›vnÃ­ knihu jako strÃ¡nku blogu. Vzhled je totoÅ¾nÃ½ s ostatnÃ­mi strÃ¡nkami.');
+@define('PLUGIN_GUESTBOOK_PERMALINK', 'StÃ¡lÃ½ odkaz');
+@define('PLUGIN_GUESTBOOK_PERMALINK_BLAHBLAH', 'Definuje stÃ¡lÃ½ URL odkaz. (NÃ¡vÅ¡tÄ›vnÃ­ knihu pak mÅ¯Å¾ete odkazovat pomocÃ­ tohoto odkazu a ne pomocÃ­ nepÅ™ehlednÃ©ho vnitÅ™nÃ­ho odkazu, kterÃ½ pouÅ¾Ã­vÃ¡ Serendipity.) Je tÅ™eba zadat absolutnÃ­ HTTP cestu, vÄetnÄ› ukonÄovacÃ­ho .htm nebo .html!');
+@define('PLUGIN_GUESTBOOK_PAGETITLE', 'Nadpis statickÃ© strÃ¡nky a URL');
+@define('PLUGIN_GUESTBOOK_PAGETITLE_BLAHBLAH', 'Nadpis strÃ¡nky pro modul "StatickÃ© strÃ¡nky". Pozor: tento nadpis takÃ© definuje URL adresu statickÃ© strÃ¡nky (index.php?serendipity[subpage]=jmeno)');
+@define('PLUGIN_GUESTBOOK_FORMORDER', 'FormulÃ¡Å™ nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('PLUGIN_GUESTBOOK_FORMORDER_BLAHBLAH', 'Kde mÃ¡ bÃ½t umÃ­stÄ›n formulÃ¡Å™ pro poslÃ¡nÃ­ vzkazu.');
+@define('PLUGIN_GUESTBOOK_FORMORDER_TOP', 'NahoÅ™e');
 @define('PLUGIN_GUESTBOOK_FORMORDER_BOTTOM', 'Dole');
-@define('PLUGIN_GUESTBOOK_FORMORDER_POPUP', 'Vyskakovací okno');
+@define('PLUGIN_GUESTBOOK_FORMORDER_POPUP', 'VyskakovacÃ­ okno');
 
-@define('PLUGIN_GUESTBOOK_EMAILADMIN', 'Poslat mail administrátorovi?');
-@define('PLUGIN_GUESTBOOK_EMAILADMIN_BLAHBLAH', 'Pokud nastaveno na "Ano", pak bude administrátor mailem upozornìn na ka¾dı novı pøíspìvek.');
-@define('PLUGIN_GUESTBOOK_TARGETMAILADMIN', 'Email administrátora');
-@define('PLUGIN_GUESTBOOK_TARGETMAILADMIN_BLAHBLAH', 'Zadejte prosím platnou emailovou adresu, na kterou mají bıt posílána oznámení o novıch vzkazech.');
-@define('PLUGIN_GUESTBOOK_SHOWEMAIL', 'Po¾adovat email u¾ivatelù?');
-@define('PLUGIN_GUESTBOOK_SHOWEMAIL_BLAHBLAH', 'Má se zobrazovat pole, které ¾ádá po u¾ivateli zadání emailové adresy?');
-@define('PLUGIN_GUESTBOOK_SHOWURL', 'Po¾adovat domovskou stránku?');
-@define('PLUGIN_GUESTBOOK_SHOWURL_BLAHBLAH', 'Má se zobrazovat pole, které ¾ádá po u¾ivateli zadání domovské (www) stránky?');
+@define('PLUGIN_GUESTBOOK_EMAILADMIN', 'Poslat mail administrÃ¡torovi?');
+@define('PLUGIN_GUESTBOOK_EMAILADMIN_BLAHBLAH', 'Pokud nastaveno na "Ano", pak bude administrÃ¡tor mailem upozornÄ›n na kaÅ¾dÃ½ novÃ½ pÅ™Ã­spÄ›vek.');
+@define('PLUGIN_GUESTBOOK_TARGETMAILADMIN', 'Email administrÃ¡tora');
+@define('PLUGIN_GUESTBOOK_TARGETMAILADMIN_BLAHBLAH', 'Zadejte prosÃ­m platnou emailovou adresu, na kterou majÃ­ bÃ½t posÃ­lÃ¡na oznÃ¡menÃ­ o novÃ½ch vzkazech.');
+@define('PLUGIN_GUESTBOOK_SHOWEMAIL', 'PoÅ¾adovat email uÅ¾ivatelÅ¯?');
+@define('PLUGIN_GUESTBOOK_SHOWEMAIL_BLAHBLAH', 'MÃ¡ se zobrazovat pole, kterÃ© Å¾Ã¡dÃ¡ po uÅ¾ivateli zadÃ¡nÃ­ emailovÃ© adresy?');
+@define('PLUGIN_GUESTBOOK_SHOWURL', 'PoÅ¾adovat domovskou strÃ¡nku?');
+@define('PLUGIN_GUESTBOOK_SHOWURL_BLAHBLAH', 'MÃ¡ se zobrazovat pole, kterÃ© Å¾Ã¡dÃ¡ po uÅ¾ivateli zadÃ¡nÃ­ domovskÃ© (www) strÃ¡nky?');
 @define('PLUGIN_GUESTBOOK_SHOWCAPTCHA', 'Zobrazovat kryptogramy?');
-@define('PLUGIN_GUESTBOOK_SHOWCAPTCHA_BLAHBLAH', 'Mají se pøi zadávání vzkazù pou¾ívat KRYPTOGRAMY? (vy¾aduje aktivní modul Spamblock)');
-@define('PLUGIN_GUESTBOOK_NUMBER', 'Poèet vzkazù na stránku');
-@define('PLUGIN_GUESTBOOK_NUMBER_BLAHBLAH', 'Kolik vzkazù se má zobrazovat na jedné stránce?');
-@define('PLUGIN_GUESTBOOK_WORDWRAP', 'Znakù na øádku (pro zalamování)');
-@define('PLUGIN_GUESTBOOK_WORDWRAP_BLAHBLAH', 'Po kolika znacích má bıt vlo¾en znak nové øádky?');
-@define('PLUGIN_GUESTBOOK_ERROR_DATA', 'Jméno, email ani vlastní text vzkazu nesmí bıt prázdné.');
+@define('PLUGIN_GUESTBOOK_SHOWCAPTCHA_BLAHBLAH', 'MajÃ­ se pÅ™i zadÃ¡vÃ¡nÃ­ vzkazÅ¯ pouÅ¾Ã­vat KRYPTOGRAMY? (vyÅ¾aduje aktivnÃ­ modul Spamblock)');
+@define('PLUGIN_GUESTBOOK_NUMBER', 'PoÄet vzkazÅ¯ na strÃ¡nku');
+@define('PLUGIN_GUESTBOOK_NUMBER_BLAHBLAH', 'Kolik vzkazÅ¯ se mÃ¡ zobrazovat na jednÃ© strÃ¡nce?');
+@define('PLUGIN_GUESTBOOK_WORDWRAP', 'ZnakÅ¯ na Å™Ã¡dku (pro zalamovÃ¡nÃ­)');
+@define('PLUGIN_GUESTBOOK_WORDWRAP_BLAHBLAH', 'Po kolika znacÃ­ch mÃ¡ bÃ½t vloÅ¾en znak novÃ© Å™Ã¡dky?');
+@define('PLUGIN_GUESTBOOK_ERROR_DATA', 'JmÃ©no, email ani vlastnÃ­ text vzkazu nesmÃ­ bÃ½t prÃ¡zdnÃ©.');
 
-@define('PLUGIN_GUESTBOOK_EMAIL', 'Emailová adresa');
-@define('PLUGIN_GUESTBOOK_INTRO', 'Úvodní text (nepovinnı)');
+@define('PLUGIN_GUESTBOOK_EMAIL', 'EmailovÃ¡ adresa');
+@define('PLUGIN_GUESTBOOK_INTRO', 'ÃšvodnÃ­ text (nepovinnÃ½)');
 @define('PLUGIN_GUESTBOOK_MESSAGE', 'Vzkaz');
-@define('PLUGIN_GUESTBOOK_SENT', 'Text kterı se má zobrazit po odeslání vzkazu');
-@define('PLUGIN_GUESTBOOK_SENT_HTML', 'Vá¹ vzkaz byl úspì¹nì odeslán!');
-@define('PLUGIN_GUESTBOOK_ERROR_HTML', 'Pøi odesílání vzkazu se objevila chyba!');
-@define('PLUGIN_GUESTBOOK_ERROR_DATA', 'Jméno, email ani vlastní text vzkazu nesmí bıt prázdné.');
-@define('PLUGIN_GUESTBOOK_ARTICLEFORMAT', 'Formátovat jako èlánek?');
-@define('PLUGIN_GUESTBOOK_ARTICLEFORMAT_BLAHBLAH', 'Pokud je zapnuto, vıstup je automaticky formátován jako bì¾nı èlánek/pøíspìvek (co se tıèe barev, okrajù, atd.) (vıchozí: ano)');
-@define('PLUGIN_GUESTBOOK_CAPTCHAWARNING', 'Pozor, kryptogramy jsou pou¾ívány!!!');
-@define('PLUGIN_GUESTBOOK_PROTECTION', 'Emailová adresa bude pøemìnìna do formátu: "u¾ivatel at email dot com"');
-@define('PLUGIN_GUESTBOOK_DBDONE', 'Vzkaz do náv¹tìvní knihy byl ulo¾en!');
-@define('PLUGIN_GUESTBOOK_USER_LOGGEDOFF', 'U¾ivatel se odhlásil.');
+@define('PLUGIN_GUESTBOOK_SENT', 'Text kterÃ½ se mÃ¡ zobrazit po odeslÃ¡nÃ­ vzkazu');
+@define('PLUGIN_GUESTBOOK_SENT_HTML', 'VÃ¡Å¡ vzkaz byl ÃºspÄ›Å¡nÄ› odeslÃ¡n!');
+@define('PLUGIN_GUESTBOOK_ERROR_HTML', 'PÅ™i odesÃ­lÃ¡nÃ­ vzkazu se objevila chyba!');
+@define('PLUGIN_GUESTBOOK_ERROR_DATA', 'JmÃ©no, email ani vlastnÃ­ text vzkazu nesmÃ­ bÃ½t prÃ¡zdnÃ©.');
+@define('PLUGIN_GUESTBOOK_ARTICLEFORMAT', 'FormÃ¡tovat jako ÄlÃ¡nek?');
+@define('PLUGIN_GUESTBOOK_ARTICLEFORMAT_BLAHBLAH', 'Pokud je zapnuto, vÃ½stup je automaticky formÃ¡tovÃ¡n jako bÄ›Å¾nÃ½ ÄlÃ¡nek/pÅ™Ã­spÄ›vek (co se tÃ½Äe barev, okrajÅ¯, atd.) (vÃ½chozÃ­: ano)');
+@define('PLUGIN_GUESTBOOK_CAPTCHAWARNING', 'Pozor, kryptogramy jsou pouÅ¾Ã­vÃ¡ny!!!');
+@define('PLUGIN_GUESTBOOK_PROTECTION', 'EmailovÃ¡ adresa bude pÅ™emÄ›nÄ›na do formÃ¡tu: "uÅ¾ivatel at email dot com"');
+@define('PLUGIN_GUESTBOOK_DBDONE', 'Vzkaz do nÃ¡vÅ¡tÄ›vnÃ­ knihy byl uloÅ¾en!');
+@define('PLUGIN_GUESTBOOK_USER_LOGGEDOFF', 'UÅ¾ivatel se odhlÃ¡sil.');
 @define('PLUGIN_GUESTBOOK_USERSDATE_OF_ENTRY', 'napsal');
-@define('PLUGIN_GUESTBOOK_UNKNOWN_ERROR', 'Neo¹etøená chyba! Kontaktujte prosím administrátora stránek.');
+@define('PLUGIN_GUESTBOOK_UNKNOWN_ERROR', 'NeoÅ¡etÅ™enÃ¡ chyba! Kontaktujte prosÃ­m administrÃ¡tora strÃ¡nek.');
 @define('PLUGIN_GUESTBOOK_TIMESTAMP_THE', ' ');
-@define('PLUGIN_GUESTBOOK_ALTER_OLDTABLE_DONE', 'Databázová tabulka úspì¹nì aktualizována (ALTER).');
-@define('PLUGIN_GUESTBOOK_INSTALL_NEWTABLE_DONE', 'Databázová tabulka úspì¹nì vytvoøena.');
-@define('PLUGIN_GUESTBOOK_SUBMITFORM', 'Vlo¾te novı vzkaz do náv¹tìvní knihy');
+@define('PLUGIN_GUESTBOOK_ALTER_OLDTABLE_DONE', 'DatabÃ¡zovÃ¡ tabulka ÃºspÄ›Å¡nÄ› aktualizovÃ¡na (ALTER).');
+@define('PLUGIN_GUESTBOOK_INSTALL_NEWTABLE_DONE', 'DatabÃ¡zovÃ¡ tabulka ÃºspÄ›Å¡nÄ› vytvoÅ™ena.');
+@define('PLUGIN_GUESTBOOK_SUBMITFORM', 'VloÅ¾te novÃ½ vzkaz do nÃ¡vÅ¡tÄ›vnÃ­ knihy');
 
 @define('BODY', 'Vzkaz');
 @define('SUBMIT', 'Odeslat vzkaz');
-@define('REFRESH', 'Obnovte prosím stránku, pak uvidíte Vá¹ vzkaz.');
+@define('REFRESH', 'Obnovte prosÃ­m strÃ¡nku, pak uvidÃ­te VÃ¡Å¡ vzkaz.');
 
-@define('GUESTBOOK_NEXTPAGE', 'dal¹í stránka');
-@define('GUESTBOOK_PREVPAGE', 'pøedchozí stránka');
+@define('GUESTBOOK_NEXTPAGE', 'dalÅ¡Ã­ strÃ¡nka');
+@define('GUESTBOOK_PREVPAGE', 'pÅ™edchozÃ­ strÃ¡nka');
 
 @define('TEXT_DELETE', 'smazat');
-@define('TEXT_SAY', 'øekl');
+@define('TEXT_SAY', 'Å™ekl');
 @define('TEXT_EMAIL', 'Email');
-@define('TEXT_NAME', 'Jméno');
-@define('TEXT_HOMEPAGE', 'WWW stránka');
-@define('TEXT_EMAILSUBJECT', 'Novı vzkaz do náv¹tìvní knihy');
-@define('TEXT_EMAILTEXT',  "%s právì napsal do Tvé náv¹tìvní knihy:\n%s\n%s\n");
-@define('TEXT_CONVERTBOLDUNDERLINE', 'Text mezi hvìzdièkami bude tuènı (*slovo*), mezi podtr¾ítky podtr¾enı (_slovo_).');
-@define('TEXT_CONVERTSMILIES', 'Bì¾ní smajlíci jako :-) a ;-) budou nahrazeni obrázky.');
+@define('TEXT_NAME', 'JmÃ©no');
+@define('TEXT_HOMEPAGE', 'WWW strÃ¡nka');
+@define('TEXT_EMAILSUBJECT', 'NovÃ½ vzkaz do nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('TEXT_EMAILTEXT',  "%s prÃ¡vÄ› napsal do TvÃ© nÃ¡vÅ¡tÄ›vnÃ­ knihy:\n%s\n%s\n");
+@define('TEXT_CONVERTBOLDUNDERLINE', 'Text mezi hvÄ›zdiÄkami bude tuÄnÃ½ (*slovo*), mezi podtrÅ¾Ã­tky podtrÅ¾enÃ½ (_slovo_).');
+@define('TEXT_CONVERTSMILIES', 'BÄ›Å¾nÃ­ smajlÃ­ci jako :-) a ;-) budou nahrazeni obrÃ¡zky.');
 @define('TEXT_IMG_DELETEENTRY', 'Smazat vzkaz');
-@define('TEXT_IMG_LASTMODIFIED', 'naposledy zmìnìno');
-@define('TEXT_USERS_HOMEPAGE', 'Domovská stránka');
-@define('ERROR_NAMEEMPTY', 'Zadejte prosím své jméno.');
-@define('ERROR_TEXTEMPTY', 'Zadejte prosím text vzkazu.');
-@define('ERROR_EMAILEMPTY', 'Zadejte prosím platnou emailovou adresu.');
-@define('ERROR_DATATOSHORT', 'Vá¹ vzkaz musí mít alespoò 3, v poli pro komentáø pak 10 znakù.');
-@define('ERROR_NOVALIDEMAIL', 'Va¹e emailová adresa vypadá neplatnì: ');
-@define('ERROR_NOINPUT', 'Zadejte prosím jméno, emailovou adresu a vzkaz');
-@define('ERROR_ISFALSECAPTCHA', 'Nesprávnì zadanı KRYPTOGRAM!');
-@define('ERROR_NOCAPTCHASET', 'Nastavení KRYPTOGRAMÙ nejspí¹ není správné!');
-@define('ERROR_UNKNOWN', 'Vyskytla se neo¹etøená chyba. Zkuste akci znovu, nebo kontaktujte administrátora stránky. Díky za pochopení.');
+@define('TEXT_IMG_LASTMODIFIED', 'naposledy zmÄ›nÄ›no');
+@define('TEXT_USERS_HOMEPAGE', 'DomovskÃ¡ strÃ¡nka');
+@define('ERROR_NAMEEMPTY', 'Zadejte prosÃ­m svÃ© jmÃ©no.');
+@define('ERROR_TEXTEMPTY', 'Zadejte prosÃ­m text vzkazu.');
+@define('ERROR_EMAILEMPTY', 'Zadejte prosÃ­m platnou emailovou adresu.');
+@define('ERROR_DATATOSHORT', 'VÃ¡Å¡ vzkaz musÃ­ mÃ­t alespoÅˆ 3, v poli pro komentÃ¡Å™ pak 10 znakÅ¯.');
+@define('ERROR_NOVALIDEMAIL', 'VaÅ¡e emailovÃ¡ adresa vypadÃ¡ neplatnÄ›: ');
+@define('ERROR_NOINPUT', 'Zadejte prosÃ­m jmÃ©no, emailovou adresu a vzkaz');
+@define('ERROR_ISFALSECAPTCHA', 'NesprÃ¡vnÄ› zadanÃ½ KRYPTOGRAM!');
+@define('ERROR_NOCAPTCHASET', 'NastavenÃ­ KRYPTOGRAMÅ® nejspÃ­Å¡ nenÃ­ sprÃ¡vnÃ©!');
+@define('ERROR_UNKNOWN', 'Vyskytla se neoÅ¡etÅ™enÃ¡ chyba. Zkuste akci znovu, nebo kontaktujte administrÃ¡tora strÃ¡nky. DÃ­ky za pochopenÃ­.');
 @define('ERROR_OCCURRED', 'Vyskytly se chyby:');
 
-@define('THANKS_FOR_ENTRY', 'Podìkování za vzkaz:');
-@define('WINDOW_CLOSE', 'Zavøít okno');
-@define('QUESTION_DELETE', 'Opravdu si pøejete smazat vzkaz od %s?');
+@define('THANKS_FOR_ENTRY', 'PodÄ›kovÃ¡nÃ­ za vzkaz:');
+@define('WINDOW_CLOSE', 'ZavÅ™Ã­t okno');
+@define('QUESTION_DELETE', 'Opravdu si pÅ™ejete smazat vzkaz od %s?');
 
 @define('PAGINATOR_TO', 'Do');
-@define('PAGINATOR_FIRST', 'První');
-@define('PAGINATOR_PREVIOUS', 'Pøedchozí');
-@define('PAGINATOR_NEXT', 'Následující');
-@define('PAGINATOR_LAST', 'Poslední');
-@define('PAGINATOR_PAGE', 'Stránka.');
+@define('PAGINATOR_FIRST', 'PrvnÃ­');
+@define('PAGINATOR_PREVIOUS', 'PÅ™edchozÃ­');
+@define('PAGINATOR_NEXT', 'NÃ¡sledujÃ­cÃ­');
+@define('PAGINATOR_LAST', 'PoslednÃ­');
+@define('PAGINATOR_PAGE', 'StrÃ¡nka.');
 @define('PAGINATOR_RANGE', ' do ');
 @define('PAGINATOR_OFFSET', ', celkem ');
-@define('PAGINATOR_ENTRIES', ' vzkazù. ');
+@define('PAGINATOR_ENTRIES', ' vzkazÅ¯. ');
 
 //
 //  serendipity_plugin_guestbook.php
 //
 
-@define('PLUGIN_GUESTSIDE_NAME', 'Náv¹tìvní kniha - postranní blok');
-@define('PLUGIN_GUESTSIDE_BLAHBLAH', 'Zobrazuje nejnovìj¹í vzkazy z náv¹tìvní knihy v bloku v postranním sloupci');
+@define('PLUGIN_GUESTSIDE_NAME', 'NÃ¡vÅ¡tÄ›vnÃ­ kniha - postrannÃ­ blok');
+@define('PLUGIN_GUESTSIDE_BLAHBLAH', 'Zobrazuje nejnovÄ›jÅ¡Ã­ vzkazy z nÃ¡vÅ¡tÄ›vnÃ­ knihy v bloku v postrannÃ­m sloupci');
 @define('PLUGIN_GUESTSIDE_TITLE', 'Nadpis bloku');
 @define('PLUGIN_GUESTSIDE_TITLE_BLAHBLAH', 'Zadejte nadpis bloku se vzkazy');
 @define('PLUGIN_GUESTSIDE_SHOWEMAIL', 'Zobrazovat email');
-@define('PLUGIN_GUESTSIDE_SHOWEMAIL_BLAHBLAH', 'Mají se zobrazovat emailové adresy pøispìvatelù?');
-@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE', 'Zobrazovat domovské stránky');
-@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE_BLAHBLAH', 'Mají se zobrazovat domovské (www) stránky pøispìvatele?');
-@define('PLUGIN_GUESTSIDE_MAXCHARS', 'Maximálnì znakù');
-@define('PLUGIN_GUESTSIDE_MAXCHARS_BLAHBLAH', 'Nejvìt¹í povolená délka (poèet znakù) pøíspìveku');
-@define('PLUGIN_GUESTSIDE_MAXITEMS', 'Maximálnì vzkazù');
-@define('PLUGIN_GUESTSIDE_MAXITEMS_BLAHBLAH', 'Zadejte poèet vzkazù, kterı se má zobrazovat v bloku v postranním sloupci');
-@define('PLUGIN_GUESTSIDE_NOENTRIES', 'Je¹tì nikdo nezanechal vzkaz v náv¹tìvní knize.');
+@define('PLUGIN_GUESTSIDE_SHOWEMAIL_BLAHBLAH', 'MajÃ­ se zobrazovat emailovÃ© adresy pÅ™ispÄ›vatelÅ¯?');
+@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE', 'Zobrazovat domovskÃ© strÃ¡nky');
+@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE_BLAHBLAH', 'MajÃ­ se zobrazovat domovskÃ© (www) strÃ¡nky pÅ™ispÄ›vatele?');
+@define('PLUGIN_GUESTSIDE_MAXCHARS', 'MaximÃ¡lnÄ› znakÅ¯');
+@define('PLUGIN_GUESTSIDE_MAXCHARS_BLAHBLAH', 'NejvÄ›tÅ¡Ã­ povolenÃ¡ dÃ©lka (poÄet znakÅ¯) pÅ™Ã­spÄ›veku');
+@define('PLUGIN_GUESTSIDE_MAXITEMS', 'MaximÃ¡lnÄ› vzkazÅ¯');
+@define('PLUGIN_GUESTSIDE_MAXITEMS_BLAHBLAH', 'Zadejte poÄet vzkazÅ¯, kterÃ½ se mÃ¡ zobrazovat v bloku v postrannÃ­m sloupci');
+@define('PLUGIN_GUESTSIDE_NOENTRIES', 'JeÅ¡tÄ› nikdo nezanechal vzkaz v nÃ¡vÅ¡tÄ›vnÃ­ knize.');
 
 // Next lines were translated on 2011/04/17
 
-@define('PLUGIN_GUESTBOOK_DBDONE_APP', '(Jakmile bude pøíspìvek odsouhlasen, objeví se v náv¹tìvní knize.)');
-@define('ERROR_DATANOTAGS', 'Pøíspìvek není platnı. Nejsou povoleny html tagy nebo bbcode.');
-@define('PLUGIN_GUESTBOOK_SHOWAPP', 'Schvalovat pøíspìvky?');
-@define('PLUGIN_GUESTBOOK_SHOWAPP_BLAHBLAH', 'Pøíspìvky do náv¹tìvní knihy budou pøedkládany administrátorovi ke schválení pøedtím, ne¾ se zobrazí na stránce (vıchozí: ne).');
-@define('PLUGIN_GUESTBOOK_APP_ENTRY', 'Vá¹ pøíspìvek %s byl ulo¾en');
-@define('PLUGIN_GUESTBOOK_CHECKBOXALERT', 'Za¹krtnìte políèko u pøíspìvku, kterı chcete schválit, zmìnit nebo vymazat.');
-@define('PLUGIN_GUESTBOOK_ADMINBODY', 'Odpovìï admina');
-@define('PLUGIN_GUESTBOOK_FORM_RIGHT_BBC', 'Pou¾ívejte BBcode (strong, italic, underline, strike, quotes).');
-@define('PLUGIN_GUESTBOOK_AUTOMODERATE', 'Pou¾ít automatické schvalování?');
-@define('PLUGIN_GUESTBOOK_AUTOMODERATE_BLAHBLAH', 'Nastavuje pøíspìvky náv¹tìvní knihy, aby byly administrátorem schvalovány pøe zobrazením. Pokud plugin SPAMBLOCK nejdøíve nastaví pøíspìvek ke schválení, hledání stop-slov v¾dy skonèí s pozitivním vısledkem (vıchozí: ne).');
-@define('PLUGIN_GUESTBOOK_AUTOMODERATE_ERROR', 'Vá¹ pøíspìvek byl oznaèen ke schválení administrátorem.');
-@define('PLUGIN_GUESTBOOK_CONFIG_ERROR', 'Vıstraha nevhodného nastavení konfiguraèního souboru! Volba náv¹tìvní knihy: "Automatické schvalování" je nastaveno na vıchozí hodnotu "ne", kdy¾ je "schvalování pøíspìvkù" aktivní! Lze pou¾ít pouze jednu ze zmínìnıch voleb, ne souèasnì.');
-@define('PLUGIN_GUESTBOOK_FILTER_ENTRYCHECKS', 'Speciální kontrola tìla pøíspìvku');
-@define('PLUGIN_GUESTBOOK_FILTER_ENTRYCHECKS_BLAHBLAH', 'Vyjmenujte speciální kontroly tìla pøíspìvkù. Povoleny jsou reguálrní vırazy oddìlené støedníkem (;). Speciální znaky musíte escapovat pomocí "\". Pokud ponecháte toto pole prázdné, nebudou provádìny ¾ádné speciální kontroly!');
-@define('PLUGIN_GUESTBOOK_ADMIN_NAME', 'Náv¹tìvní kniha');
-@define('PLUGIN_GUESTBOOK_ADMIN_NAME_MENU', 'Náv¹tìvní kniha verze %s - Administraèní menu');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC', 'Náv¹tìvní kniha - administrace databázovıch tabulek pluginu');
-@define('PLUGIN_GUESTBOOK_ADMIN_VIEW', 'zobrazit pøíspìvky');
-@define('PLUGIN_GUESTBOOK_ADMIN_VIEW_NORESULT', 'V náv¹tìvní knize nejsou ¾ádné schválené pøíspìvky!');
-@define('PLUGIN_GUESTBOOK_ADMIN_VIEW_DESC', 'Seskupovat podle data [nejnovìj¹í nahoøe].');
-@define('PLUGIN_GUESTBOOK_ADMIN_APP', 'schvalování pøíspìvkù');
-@define('PLUGIN_GUESTBOOK_ADMIN_APP_DESC', 'Seskupovat podle data [nejnovìj¹í nahoøe].');
-@define('PLUGIN_GUESTBOOK_ADMIN_APP_NORESULT', '®ádné nové pøíspìvky ke schválení!');
-@define('PLUGIN_GUESTBOOK_ADMIN_ERASE', 'smazat pøíspìvky');
-@define('PLUGIN_GUESTBOOK_ADMIN_ADD', 'pøidat pøíspìvek');
-@define('PLUGIN_GUESTBOOK_ADMIN_DROP_SURE', 'Urèitì chcete smazat celou databázovou tabulku náv¹tìvní knihy vèetnì v¹ech pøíspìvkù? Prosím potvrïte!');
-@define('PLUGIN_GUESTBOOK_ADMIN_DROP_OK', 'Databázová tabulka %s byla úspì¹nì smazána!');
-@define('PLUGIN_GUESTBOOK_ADMIN_DUMP_SELF', 'Pøed pokraèováním byste mìli pro jistotu provést mysql dump (záloha) pomocí PhpMyAdmina nebo pomocí zálohovacího odkazu vı¹e!');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP', 'DB - záloha');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP_DESC', 'zálohujte databázovou tabulku náv¹tìvní knihy');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP_TITLE', 'záloha hodnot z databázové tabulky');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP_DONE', 'Databázová tabulka náv¹tìvní knihy byla úspì¹nì zálohována!');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT', 'DB - vlo¾ení');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT_DESC', 'vlo¾it do databázové tabulky náv¹tìvní knihy');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT_TITLE', 'vlo¾it hodnoty do databázové tabulky náv¹tìvní knihy');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT_MSG', 'Proto¾e tato operace není triviální, pou¾ijte prosím databázové administraèní nástroje jako napøíklad PhpMyAdmin pro znovu naplnìní databáze!');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_ERASE', 'DB - vymazání');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_ERASE_DESC', 'Odstranit databázovou tabulku náv¹tìvní knihy');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_ERASE_TITLE', 'Mazání databázové tabulky náv¹tìvní knihy');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DELFILE_MSG', 'Databázová tabulka <u>%s</u> byla úspì¹nì vymazána');
+@define('PLUGIN_GUESTBOOK_DBDONE_APP', '(Jakmile bude pÅ™Ã­spÄ›vek odsouhlasen, objevÃ­ se v nÃ¡vÅ¡tÄ›vnÃ­ knize.)');
+@define('ERROR_DATANOTAGS', 'PÅ™Ã­spÄ›vek nenÃ­ platnÃ½. Nejsou povoleny html tagy nebo bbcode.');
+@define('PLUGIN_GUESTBOOK_SHOWAPP', 'Schvalovat pÅ™Ã­spÄ›vky?');
+@define('PLUGIN_GUESTBOOK_SHOWAPP_BLAHBLAH', 'PÅ™Ã­spÄ›vky do nÃ¡vÅ¡tÄ›vnÃ­ knihy budou pÅ™edklÃ¡dany administrÃ¡torovi ke schvÃ¡lenÃ­ pÅ™edtÃ­m, neÅ¾ se zobrazÃ­ na strÃ¡nce (vÃ½chozÃ­: ne).');
+@define('PLUGIN_GUESTBOOK_APP_ENTRY', 'VÃ¡Å¡ pÅ™Ã­spÄ›vek %s byl uloÅ¾en');
+@define('PLUGIN_GUESTBOOK_CHECKBOXALERT', 'ZaÅ¡krtnÄ›te polÃ­Äko u pÅ™Ã­spÄ›vku, kterÃ½ chcete schvÃ¡lit, zmÄ›nit nebo vymazat.');
+@define('PLUGIN_GUESTBOOK_ADMINBODY', 'OdpovÄ›Ä admina');
+@define('PLUGIN_GUESTBOOK_FORM_RIGHT_BBC', 'PouÅ¾Ã­vejte BBcode (strong, italic, underline, strike, quotes).');
+@define('PLUGIN_GUESTBOOK_AUTOMODERATE', 'PouÅ¾Ã­t automatickÃ© schvalovÃ¡nÃ­?');
+@define('PLUGIN_GUESTBOOK_AUTOMODERATE_BLAHBLAH', 'Nastavuje pÅ™Ã­spÄ›vky nÃ¡vÅ¡tÄ›vnÃ­ knihy, aby byly administrÃ¡torem schvalovÃ¡ny pÅ™e zobrazenÃ­m. Pokud plugin SPAMBLOCK nejdÅ™Ã­ve nastavÃ­ pÅ™Ã­spÄ›vek ke schvÃ¡lenÃ­, hledÃ¡nÃ­ stop-slov vÅ¾dy skonÄÃ­ s pozitivnÃ­m vÃ½sledkem (vÃ½chozÃ­: ne).');
+@define('PLUGIN_GUESTBOOK_AUTOMODERATE_ERROR', 'VÃ¡Å¡ pÅ™Ã­spÄ›vek byl oznaÄen ke schvÃ¡lenÃ­ administrÃ¡torem.');
+@define('PLUGIN_GUESTBOOK_CONFIG_ERROR', 'VÃ½straha nevhodnÃ©ho nastavenÃ­ konfiguraÄnÃ­ho souboru! Volba nÃ¡vÅ¡tÄ›vnÃ­ knihy: "AutomatickÃ© schvalovÃ¡nÃ­" je nastaveno na vÃ½chozÃ­ hodnotu "ne", kdyÅ¾ je "schvalovÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯" aktivnÃ­! Lze pouÅ¾Ã­t pouze jednu ze zmÃ­nÄ›nÃ½ch voleb, ne souÄasnÄ›.');
+@define('PLUGIN_GUESTBOOK_FILTER_ENTRYCHECKS', 'SpeciÃ¡lnÃ­ kontrola tÄ›la pÅ™Ã­spÄ›vku');
+@define('PLUGIN_GUESTBOOK_FILTER_ENTRYCHECKS_BLAHBLAH', 'Vyjmenujte speciÃ¡lnÃ­ kontroly tÄ›la pÅ™Ã­spÄ›vkÅ¯. Povoleny jsou reguÃ¡lrnÃ­ vÃ½razy oddÄ›lenÃ© stÅ™ednÃ­kem (;). SpeciÃ¡lnÃ­ znaky musÃ­te escapovat pomocÃ­ "\". Pokud ponechÃ¡te toto pole prÃ¡zdnÃ©, nebudou provÃ¡dÄ›ny Å¾Ã¡dnÃ© speciÃ¡lnÃ­ kontroly!');
+@define('PLUGIN_GUESTBOOK_ADMIN_NAME', 'NÃ¡vÅ¡tÄ›vnÃ­ kniha');
+@define('PLUGIN_GUESTBOOK_ADMIN_NAME_MENU', 'NÃ¡vÅ¡tÄ›vnÃ­ kniha verze %s - AdministraÄnÃ­ menu');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC', 'NÃ¡vÅ¡tÄ›vnÃ­ kniha - administrace databÃ¡zovÃ½ch tabulek pluginu');
+@define('PLUGIN_GUESTBOOK_ADMIN_VIEW', 'zobrazit pÅ™Ã­spÄ›vky');
+@define('PLUGIN_GUESTBOOK_ADMIN_VIEW_NORESULT', 'V nÃ¡vÅ¡tÄ›vnÃ­ knize nejsou Å¾Ã¡dnÃ© schvÃ¡lenÃ© pÅ™Ã­spÄ›vky!');
+@define('PLUGIN_GUESTBOOK_ADMIN_VIEW_DESC', 'Seskupovat podle data [nejnovÄ›jÅ¡Ã­ nahoÅ™e].');
+@define('PLUGIN_GUESTBOOK_ADMIN_APP', 'schvalovÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_GUESTBOOK_ADMIN_APP_DESC', 'Seskupovat podle data [nejnovÄ›jÅ¡Ã­ nahoÅ™e].');
+@define('PLUGIN_GUESTBOOK_ADMIN_APP_NORESULT', 'Å½Ã¡dnÃ© novÃ© pÅ™Ã­spÄ›vky ke schvÃ¡lenÃ­!');
+@define('PLUGIN_GUESTBOOK_ADMIN_ERASE', 'smazat pÅ™Ã­spÄ›vky');
+@define('PLUGIN_GUESTBOOK_ADMIN_ADD', 'pÅ™idat pÅ™Ã­spÄ›vek');
+@define('PLUGIN_GUESTBOOK_ADMIN_DROP_SURE', 'UrÄitÄ› chcete smazat celou databÃ¡zovou tabulku nÃ¡vÅ¡tÄ›vnÃ­ knihy vÄetnÄ› vÅ¡ech pÅ™Ã­spÄ›vkÅ¯? ProsÃ­m potvrÄte!');
+@define('PLUGIN_GUESTBOOK_ADMIN_DROP_OK', 'DatabÃ¡zovÃ¡ tabulka %s byla ÃºspÄ›Å¡nÄ› smazÃ¡na!');
+@define('PLUGIN_GUESTBOOK_ADMIN_DUMP_SELF', 'PÅ™ed pokraÄovÃ¡nÃ­m byste mÄ›li pro jistotu provÃ©st mysql dump (zÃ¡loha) pomocÃ­ PhpMyAdmina nebo pomocÃ­ zÃ¡lohovacÃ­ho odkazu vÃ½Å¡e!');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP', 'DB - zÃ¡loha');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP_DESC', 'zÃ¡lohujte databÃ¡zovou tabulku nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP_TITLE', 'zÃ¡loha hodnot z databÃ¡zovÃ© tabulky');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DUMP_DONE', 'DatabÃ¡zovÃ¡ tabulka nÃ¡vÅ¡tÄ›vnÃ­ knihy byla ÃºspÄ›Å¡nÄ› zÃ¡lohovÃ¡na!');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT', 'DB - vloÅ¾enÃ­');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT_DESC', 'vloÅ¾it do databÃ¡zovÃ© tabulky nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT_TITLE', 'vloÅ¾it hodnoty do databÃ¡zovÃ© tabulky nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_INSERT_MSG', 'ProtoÅ¾e tato operace nenÃ­ triviÃ¡lnÃ­, pouÅ¾ijte prosÃ­m databÃ¡zovÃ© administraÄnÃ­ nÃ¡stroje jako napÅ™Ã­klad PhpMyAdmin pro znovu naplnÄ›nÃ­ databÃ¡ze!');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_ERASE', 'DB - vymazÃ¡nÃ­');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_ERASE_DESC', 'Odstranit databÃ¡zovou tabulku nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_ERASE_TITLE', 'MazÃ¡nÃ­ databÃ¡zovÃ© tabulky nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DELFILE_MSG', 'DatabÃ¡zovÃ¡ tabulka <u>%s</u> byla ÃºspÄ›Å¡nÄ› vymazÃ¡na');
 @define('PLUGIN_GUESTBOOK_ADMIN_DBC_DOWNLOAD', 'DB - download');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DOWNLOAD_DESC', 'Stáhnout do souboru zálohu databázové tabulky náv¹tìvní knihy');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DOWNLOAD_TITLE', 'Sta¾ení zálohy databázové tabulky');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DOWNLOAD_MSG', 'Neexistuje ¾ádná záloha databázové tabulky náv¹tìvní knihy!');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_DESC', '®ádná záloha tabulky náv¹tìvní knihy');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DOWNLOAD_DESC', 'StÃ¡hnout do souboru zÃ¡lohu databÃ¡zovÃ© tabulky nÃ¡vÅ¡tÄ›vnÃ­ knihy');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DOWNLOAD_TITLE', 'StaÅ¾enÃ­ zÃ¡lohy databÃ¡zovÃ© tabulky');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_DOWNLOAD_MSG', 'Neexistuje Å¾Ã¡dnÃ¡ zÃ¡loha databÃ¡zovÃ© tabulky nÃ¡vÅ¡tÄ›vnÃ­ knihy!');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_DESC', 'Å½Ã¡dnÃ¡ zÃ¡loha tabulky nÃ¡vÅ¡tÄ›vnÃ­ knihy');
 @define('PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_TITLE', 'Adminsitrace - chyba');
-@define('PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_NOBACKUP', 'Vybraná databázová tabulka nemohla bıt zálohována!');
+@define('PLUGIN_GUESTBOOK_ADMIN_DBC_NIXDA_NOBACKUP', 'VybranÃ¡ databÃ¡zovÃ¡ tabulka nemohla bÃ½t zÃ¡lohovÃ¡na!');
 
 // Next lines were translated on 2013/10/26
-@define('TEXT_EMAILMODERATE', "\n\nTento pøíspìvek do náv¹tìvní knihy byl nastaven, ¾e vy¾aduje schválení (%s)!");
-@define('TEXT_EMAILFOOTER', "\n\nOdesláno Serendipity pluginem Guestbook.");
-@define('ERROR_DATASTRIPPED', 'Aktivní bezpeènostní filtr vyhodnotil Vá¹ pøíspìvek jako neplatnı. Ode¹lete prosím pøíspìvek znovu.');
-@define('PLUGIN_GUESTBOOK_FILTER_ENTRYCHECKS_BYPASS', '(Pøeskoèeno pouze u¾ivatelskım oprávnìním USERLEVEL_ADMIN!)');
+@define('TEXT_EMAILMODERATE', "\n\nTento pÅ™Ã­spÄ›vek do nÃ¡vÅ¡tÄ›vnÃ­ knihy byl nastaven, Å¾e vyÅ¾aduje schvÃ¡lenÃ­ (%s)!");
+@define('TEXT_EMAILFOOTER', "\n\nOdeslÃ¡no Serendipity pluginem Guestbook.");
+@define('ERROR_DATASTRIPPED', 'AktivnÃ­ bezpeÄnostnÃ­ filtr vyhodnotil VÃ¡Å¡ pÅ™Ã­spÄ›vek jako neplatnÃ½. OdeÅ¡lete prosÃ­m pÅ™Ã­spÄ›vek znovu.');
+@define('PLUGIN_GUESTBOOK_FILTER_ENTRYCHECKS_BYPASS', '(PÅ™eskoÄeno pouze uÅ¾ivatelskÃ½m oprÃ¡vnÄ›nÃ­m USERLEVEL_ADMIN!)');
+

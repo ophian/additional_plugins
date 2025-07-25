@@ -2,69 +2,61 @@
 
 /**
  *  @version
- *  @file serendipity_event_guestbook.php, langfile(bg)
  *  @author Ivan Cenov jwalker@hotmail.bg
- *  EN-Revision: 1.2
+ *  EN-Revision: 1.1
  */
 
-//
-//  serendipity_event_guestbook.php
-//
-@define('GUESTBOOK_HEADLINE', 'Заглавие');
-@define('GUESTBOOK_HEADLINE_BLAHBLAH', 'Заглавие на страницата на книгата за гости');
-@define('GUESTBOOK_TITLE', 'Книга за гости');
-@define('GUESTBOOK_TITLE_BLAHBLAH', 'Показва книга за гости в блога.');
-@define('GUESTBOOK_PAGETITLE', 'Заглавие на страницата');
-@define('GUESTBOOK_PAGETITLE_BLAHBLAH', 'Заглавие на страницата на книгата за гости');
-@define('GUESTBOOK_PAGEURL', 'Статичен URL');
-@define('GUESTBOOK_PAGEURL_BLAHBLAH', 'Дефинира URL за страницата (например index.php?serendipity[subpage]=name)');
-@define('GUESTBOOK_SESSIONLOCK', 'Заключване по сесия');
-@define('GUESTBOOK_SESSIONLOCK_BLAHBLAH', 'Ако е активно, разрешава само едно съобщение за сесията. Понякога добре, понякога не, понеже може някой да е забравил да напише нещо и да иска да остави второ съобщение.');
-@define('GUESTBOOK_TIMELOCK', 'Заключване по време');
-@define('GUESTBOOK_TIMELOCK_BLAHBLAH', 'Задава време в секунди, след което посетителят може да въведе следващо съобщение. Полезно е, когато искате да се предпазите от дублиране на съобщенията чрез двойно кликване, или да изолирате спам роботите.');
-@define('GUESTBOOK_EMAILADMIN', 'e-mail до администратора');
-@define('GUESTBOOK_EMAILADMIN_BLAHBLAH', 'Ако е активно, при всяко съобщение се изпраща e-mail до администратора.');
-@define('GUESTBOOK_TARGETMAILADMIN', 'e-mail адрес на администратора');
-    
-@define('GUESTBOOK_NUMBER', 'Съобщения на страница');
-@define('GUESTBOOK_NUMBER_BLAHBLAH', 'Брой на съобщения, които да се показват на една страница');
-@define('GUESTBOOK_WORDWRAP', 'Брой на символите на ред');
-@define('GUESTBOOK_WORDWRAP_BLAHBLAH', 'След колко символа автоматично да се преминава на нов ред ?');
-@define('GUESTBOOK_SHOWHOMEPAGE', 'Показване на URL на посетителя ?');
-@define('GUESTBOOK_SHOWEMAIL', 'Показване на e-mail-а на посетителя ?');
-@define('GUESTBOOK_DATEFORMAT', 'Формат на датата');
+@define('GUESTBOOK_HEADLINE', 'Р—Р°РіР»Р°РІРёРµ');
+@define('GUESTBOOK_HEADLINE_BLAHBLAH', 'Р—Р°РіР»Р°РІРёРµ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р° РЅР° РєРЅРёРіР°С‚Р° Р·Р° РіРѕСЃС‚Рё');
+@define('GUESTBOOK_TITLE', 'РљРЅРёРіР° Р·Р° РіРѕСЃС‚Рё');
+@define('GUESTBOOK_TITLE_BLAHBLAH', 'РџРѕРєР°Р·РІР° РєРЅРёРіР° Р·Р° РіРѕСЃС‚Рё РІ Р±Р»РѕРіР°.');
+@define('GUESTBOOK_PAGETITLE', 'Р—Р°РіР»Р°РІРёРµ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('GUESTBOOK_PAGETITLE_BLAHBLAH', 'Р—Р°РіР»Р°РІРёРµ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р° РЅР° РєРЅРёРіР°С‚Р° Р·Р° РіРѕСЃС‚Рё');
+@define('GUESTBOOK_PAGEURL', 'РЎС‚Р°С‚РёС‡РµРЅ URL');
+@define('GUESTBOOK_PAGEURL_BLAHBLAH', 'Р”РµС„РёРЅРёСЂР° URL Р·Р° СЃС‚СЂР°РЅРёС†Р°С‚Р° (РЅР°РїСЂРёРјРµСЂ index.php?serendipity[subpage]=name)');
+@define('GUESTBOOK_SESSIONLOCK', 'Р—Р°РєР»СЋС‡РІР°РЅРµ РїРѕ СЃРµСЃРёСЏ');
+@define('GUESTBOOK_SESSIONLOCK_BLAHBLAH', 'РђРєРѕ Рµ Р°РєС‚РёРІРЅРѕ, СЂР°Р·СЂРµС€Р°РІР° СЃР°РјРѕ РµРґРЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ Р·Р° СЃРµСЃРёСЏС‚Р°. РџРѕРЅСЏРєРѕРіР° РґРѕР±СЂРµ, РїРѕРЅСЏРєРѕРіР° РЅРµ, РїРѕРЅРµР¶Рµ РјРѕР¶Рµ РЅСЏРєРѕР№ РґР° Рµ Р·Р°Р±СЂР°РІРёР» РґР° РЅР°РїРёС€Рµ РЅРµС‰Рѕ Рё РґР° РёСЃРєР° РґР° РѕСЃС‚Р°РІРё РІС‚РѕСЂРѕ СЃСЉРѕР±С‰РµРЅРёРµ.');
+@define('GUESTBOOK_TIMELOCK', 'Р—Р°РєР»СЋС‡РІР°РЅРµ РїРѕ РІСЂРµРјРµ');
+@define('GUESTBOOK_TIMELOCK_BLAHBLAH', 'Р—Р°РґР°РІР° РІСЂРµРјРµ РІ СЃРµРєСѓРЅРґРё, СЃР»РµРґ РєРѕРµС‚Рѕ РїРѕСЃРµС‚РёС‚РµР»СЏС‚ РјРѕР¶Рµ РґР° РІСЉРІРµРґРµ СЃР»РµРґРІР°С‰Рѕ СЃСЉРѕР±С‰РµРЅРёРµ. РџРѕР»РµР·РЅРѕ Рµ, РєРѕРіР°С‚Рѕ РёСЃРєР°С‚Рµ РґР° СЃРµ РїСЂРµРґРїР°Р·РёС‚Рµ РѕС‚ РґСѓР±Р»РёСЂР°РЅРµ РЅР° СЃСЉРѕР±С‰РµРЅРёСЏС‚Р° С‡СЂРµР· РґРІРѕР№РЅРѕ РєР»РёРєРІР°РЅРµ, РёР»Рё РґР° РёР·РѕР»РёСЂР°С‚Рµ СЃРїР°Рј СЂРѕР±РѕС‚РёС‚Рµ.');
+@define('GUESTBOOK_EMAILADMIN', 'e-mail РґРѕ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°');
+@define('GUESTBOOK_EMAILADMIN_BLAHBLAH', 'РђРєРѕ Рµ Р°РєС‚РёРІРЅРѕ, РїСЂРё РІСЃСЏРєРѕ СЃСЉРѕР±С‰РµРЅРёРµ СЃРµ РёР·РїСЂР°С‰Р° e-mail РґРѕ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°.');
+@define('GUESTBOOK_TARGETMAILADMIN', 'e-mail Р°РґСЂРµСЃ РЅР° Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°');
+@define('GUESTBOOK_NUMBER', 'РЎСЉРѕР±С‰РµРЅРёСЏ РЅР° СЃС‚СЂР°РЅРёС†Р°');
+@define('GUESTBOOK_NUMBER_BLAHBLAH', 'Р‘СЂРѕР№ РЅР° СЃСЉРѕР±С‰РµРЅРёСЏ, РєРѕРёС‚Рѕ РґР° СЃРµ РїРѕРєР°Р·РІР°С‚ РЅР° РµРґРЅР° СЃС‚СЂР°РЅРёС†Р°');
+@define('GUESTBOOK_WORDWRAP', 'Р‘СЂРѕР№ РЅР° СЃРёРјРІРѕР»РёС‚Рµ РЅР° СЂРµРґ');
+@define('GUESTBOOK_WORDWRAP_BLAHBLAH', 'РЎР»РµРґ РєРѕР»РєРѕ СЃРёРјРІРѕР»Р° Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ РґР° СЃРµ РїСЂРµРјРёРЅР°РІР° РЅР° РЅРѕРІ СЂРµРґ ?');
+@define('GUESTBOOK_SHOWHOMEPAGE', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° URL РЅР° РїРѕСЃРµС‚РёС‚РµР»СЏ ?');
+@define('GUESTBOOK_SHOWEMAIL', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° e-mail-Р° РЅР° РїРѕСЃРµС‚РёС‚РµР»СЏ ?');
+@define('GUESTBOOK_DATEFORMAT', 'Р¤РѕСЂРјР°С‚ РЅР° РґР°С‚Р°С‚Р°');
 
-@define('SUBMIT', 'Изпращане');
-@define('GUESTBOOK_NEXTPAGE', 'следваща страница');
-@define('GUESTBOOK_PREVPAGE', 'предишна страница');
-@define('TEXT_DELETE', 'изтриване');
-@define('TEXT_SAY', 'каза');
+@define('PLUGIN_GUESTSIDE_NAME', 'РљРЅРёРіР° Р·Р° РіРѕСЃС‚Рё');
+@define('PLUGIN_GUESTSIDE_BLAHBLAH', 'РџРѕРєР°Р·РІР° РїРѕСЃР»РµРґРЅРёС‚Рµ СЃСЉРѕР±С‰РµРЅРёСЏ РІ РєРЅРёРіР°С‚Р° Р·Р° РіРѕСЃС‚Рё РІ СЃС‚СЂР°РЅРёС‡РЅР° РїСЂРёСЃС‚Р°РІРєР°');
+@define('PLUGIN_GUESTSIDE_TITLE', 'Р—Р°РіР»Р°РІРёРµ РЅР° РїСЂРёСЃС‚Р°РІРєР°С‚Р°');
+@define('PLUGIN_GUESTSIDE_TITLE_BLAHBLAH', 'Р—Р°РіР»Р°РІРёРµ РЅР° РїСЂРёСЃС‚Р°РІРєР°С‚Р° РЅР° СЃС‚СЂР°РЅРёС‡РЅРёСЏ РїР°РЅРµР»');
+@define('PLUGIN_GUESTSIDE_SHOWEMAIL', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° e-mail');
+@define('PLUGIN_GUESTSIDE_SHOWEMAIL_BLAHBLAH', 'Р”Р° СЃРµ РїРѕРєР°Р·РІР°С‚ Р»Рё e-mail Р°РґСЂРµСЃРёС‚Рµ РЅР° Р°РІС‚РѕСЂРёС‚Рµ РЅР° СЃСЉРѕР±С‰РµРЅРёСЏС‚Р° ?');
+@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° URL');
+@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE_BLAHBLAH', 'Р”Р° СЃРµ РїРѕРєР°Р·РІР°С‚ Р»Рё URL РЅР° Р°РІС‚РѕСЂРёС‚Рµ РЅР° СЃСЉРѕР±С‰РµРЅРёСЏС‚Р° ?');
+@define('PLUGIN_GUESTSIDE_MAXCHARS', 'Р‘СЂРѕР№ СЃРёРјРІРѕР»Рё');
+@define('PLUGIN_GUESTSIDE_MAXCHARS_BLAHBLAH', 'РњР°РєСЃРёРјР°Р»РµРЅ Р±СЂРѕР№ СЃРёРјРІРѕР»Рё РѕС‚ СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ, РєРѕРёС‚Рѕ РґР° СЃРµ РїРѕРєР°Р·РІР°С‚');
+@define('PLUGIN_GUESTSIDE_MAXITEMS', 'Р‘СЂРѕР№ СЃСЉРѕР±С‰РµРЅРёСЏ');
+@define('PLUGIN_GUESTSIDE_MAXITEMS_BLAHBLAH', 'РњР°РєСЃРёРјР°Р»РµРЅ Р±СЂРѕР№ РЅР° СЃСЉРѕР±С‰РµРЅРёСЏС‚Р°, РєРѕРёС‚Рѕ РґР° СЃРµ РїРѕРєР°Р·РІР°С‚');
+@define('PLUGIN_GUESTSIDE_NOENTRIES', 'РќСЏРјР° СЃСЉРѕР±С‰РµРЅРёСЏ');
+
+@define('SUBMIT', 'РР·РїСЂР°С‰Р°РЅРµ');
+@define('GUESTBOOK_NEXTPAGE', 'СЃР»РµРґРІР°С‰Р° СЃС‚СЂР°РЅРёС†Р°');
+@define('GUESTBOOK_PREVPAGE', 'РїСЂРµРґРёС€РЅР° СЃС‚СЂР°РЅРёС†Р°');
+@define('TEXT_DELETE', 'РёР·С‚СЂРёРІР°РЅРµ');
+@define('TEXT_SAY', 'РєР°Р·Р°');
 @define('TEXT_EMAIL', 'e-mail');
-@define('TEXT_NAME', 'Име');
-@define('TEXT_HOMEPAGE', 'Страница');
-@define('TEXT_COMMENT', 'Текст');
-@define('TEXT_EMAILSUBJECT', ' БЛОГ: ново съобщение в книгата за гости');
-@define('TEXT_EMAILTEXT', "%s току що написа във Вашата книга за гости:\n%s\n%s\n");
-@define('ERROR_TIMELOCK', 'Между две съобщения трябва да има поне %s секунди.');
-@define('ERROR_NAMEEMPTY', 'Липсва име на посетителя.');
-@define('ERROR_TEXTEMPTY', 'Съобщението не съдържа никакъв текст.');
-@define('ERROR_OCCURRED', 'Във вашето съобщение има проблеми. Отстранете ги и опитайте отново:');
-@define('QUESTION_DELETE', 'Наистина ли искате да изтриете съобщението на %s ?');
-
-//
-//  serendipity_plugin_guestbook.php
-//
-@define('PLUGIN_GUESTSIDE_NAME', 'Книга за гости');
-@define('PLUGIN_GUESTSIDE_BLAHBLAH', 'Показва последните съобщения в книгата за гости в странична приставка');
-@define('PLUGIN_GUESTSIDE_TITLE', 'Заглавие на приставката');
-@define('PLUGIN_GUESTSIDE_TITLE_BLAHBLAH', 'Заглавие на приставката на страничния панел');
-@define('PLUGIN_GUESTSIDE_SHOWEMAIL', 'Показване на e-mail');
-@define('PLUGIN_GUESTSIDE_SHOWEMAIL_BLAHBLAH', 'Да се показват ли e-mail адресите на авторите на съобщенията ?');
-@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE', 'Показване на URL');
-@define('PLUGIN_GUESTSIDE_SHOWHOMEPAGE_BLAHBLAH', 'Да се показват ли URL на авторите на съобщенията ?');
-@define('PLUGIN_GUESTSIDE_MAXCHARS', 'Брой символи');
-@define('PLUGIN_GUESTSIDE_MAXCHARS_BLAHBLAH', 'Максимален брой символи от съобщението, които да се показват');
-@define('PLUGIN_GUESTSIDE_MAXITEMS', 'Брой съобщения');
-@define('PLUGIN_GUESTSIDE_MAXITEMS_BLAHBLAH', 'Максимален брой на съобщенията, които да се показват');
-@define('PLUGIN_GUESTSIDE_NOENTRIES', 'Няма съобщения');
+@define('TEXT_NAME', 'РРјРµ');
+@define('TEXT_HOMEPAGE', 'РЎС‚СЂР°РЅРёС†Р°');
+@define('TEXT_COMMENT', 'РўРµРєСЃС‚');
+@define('TEXT_EMAILSUBJECT', ' Р‘Р›РћР“: РЅРѕРІРѕ СЃСЉРѕР±С‰РµРЅРёРµ РІ РєРЅРёРіР°С‚Р° Р·Р° РіРѕСЃС‚Рё');
+@define('TEXT_EMAILTEXT', "%s С‚РѕРєСѓ С‰Рѕ РЅР°РїРёСЃР° РІСЉРІ Р’Р°С€Р°С‚Р° РєРЅРёРіР° Р·Р° РіРѕСЃС‚Рё:\n%s\n%s\n");
+@define('ERROR_TIMELOCK', 'РњРµР¶РґСѓ РґРІРµ СЃСЉРѕР±С‰РµРЅРёСЏ С‚СЂСЏР±РІР° РґР° РёРјР° РїРѕРЅРµ %s СЃРµРєСѓРЅРґРё.');
+@define('ERROR_NAMEEMPTY', 'Р›РёРїСЃРІР° РёРјРµ РЅР° РїРѕСЃРµС‚РёС‚РµР»СЏ.');
+@define('ERROR_TEXTEMPTY', 'РЎСЉРѕР±С‰РµРЅРёРµС‚Рѕ РЅРµ СЃСЉРґСЉСЂР¶Р° РЅРёРєР°РєСЉРІ С‚РµРєСЃС‚.');
+@define('ERROR_OCCURRED', 'Р’СЉРІ РІР°С€РµС‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµ РёРјР° РїСЂРѕР±Р»РµРјРё. РћС‚СЃС‚СЂР°РЅРµС‚Рµ РіРё Рё РѕРїРёС‚Р°Р№С‚Рµ РѕС‚РЅРѕРІРѕ:');
+@define('QUESTION_DELETE', 'РќР°РёСЃС‚РёРЅР° Р»Рё РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ РЅР° %s ?');
 

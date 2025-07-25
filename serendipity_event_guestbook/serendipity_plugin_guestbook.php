@@ -5,6 +5,8 @@
  * guestbooksidebar plugin by Jaap Boerma // j@webbict.com // v1.02 // 18-10-2005
  */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -24,11 +26,11 @@ class serendipity_plugin_guestbook extends serendipity_plugin
         $propbag->add('description',   PLUGIN_GUESTSIDE_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Jaap Boerma ( j@webbict.com ), Tadashi Jokagi <elf2000@users.sourceforge.net>, Ian Styx');
-        $propbag->add('version',       '1.27');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements', array(
-                        'serendipity' => '1.6',
-                        'smarty'      => '2.6.7',
-                        'php'         => '5.0.0'
+                        'serendipity' => '5.0',
+                        'smarty'      => '4.1',
+                        'php'         => '8.2'
                     ));
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $propbag->add('configuration', array(
