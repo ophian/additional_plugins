@@ -1,3 +1,8 @@
+6.4.0 & 4.2.0 (sb plugin):
+--------------------------
+ * Add extended option to add different XML icons [by pure standard theme] and/or svg styled by CSS
+   via the sidebar plugin configuration, following other core sidebar plugins.
+
 6.3.1:
 -----
  * Bump for sidebar v.4.1.0 up-raise for Styx 5.0

@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.3.1');
+        $propbag->add('version',       '6.4.0');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -724,6 +724,7 @@ class serendipity_event_freetag extends serendipity_event
 
         $rsslink  = $serendipity['serendipityHTTPPath'] . 'rss.php?serendipity%5Btag%5D=';
         $xmlImg   = serendipity_getTemplateFile($xml_image);
+        $usesvg = is_null($xmlImg) ? false : pathinfo($xmlImg, PATHINFO_EXTENSION) === 'svg';
 
         $first    = true;
         $biggest  = max($tags); // these 2 are weight counts by tag (which already are in the array)
@@ -760,7 +761,7 @@ class serendipity_event_freetag extends serendipity_event
 ';
 
         } else {
-            echo "<ul class=\"plainList\">\n";
+            echo "<ul class=\"plainList" . ($usesvg ? ' xmlsvg' : '') . "\">\n";
         }
 
         $tagparam = '';

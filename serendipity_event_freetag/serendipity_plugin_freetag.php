@@ -10,8 +10,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_freetag extends serendipity_plugin
 {
-    var $title = PLUGIN_FREETAG_NAME;
+    public $title = PLUGIN_FREETAG_NAME;
 
+    private const XML_IMAGE_AVAILABLE = " Available [ pure ] theme defaults: 'img/xml.gif' (orange), 'img/xml12.png' (lightblue 12px), 'img/xml16.png' (lightblue 16px), 'icons/rss.svg' (colored by CSS)";
     private $bycategory = [];
 
     function introspect(&$propbag)
@@ -29,7 +30,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '4.1.0');
+        $propbag->add('version',       '4.2.0');
         $propbag->add('groups',        array('FRONTEND_ENTRY_RELATED'));
         $propbag->add('configuration', array(
             'config_pagegrouper',
@@ -160,7 +161,7 @@ class serendipity_plugin_freetag extends serendipity_plugin
             case 'xml_image':
                  $propbag->add('type',        'string');
                  $propbag->add('name',        PLUGIN_EVENT_FREETAG_XMLIMAGE);
-                 $propbag->add('description', '');
+                 $propbag->add('description', self::XML_IMAGE_AVAILABLE);
                  $propbag->add('default',     'img/xml.gif');
                  break;
 
