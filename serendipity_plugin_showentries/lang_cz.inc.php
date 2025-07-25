@@ -1,16 +1,16 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/07
  */
 
-@define('PLUGIN_SHOWENTRIES_TITLE',		'Zobrazení pøíspìvkù v postranním sloupci');
+@define('PLUGIN_SHOWENTRIES_TITLE',		'ZobrazenÃ­ pÅ™Ã­spÄ›vkÅ¯ v postrannÃ­m sloupci');
 @define('PLUGIN_SHOWENTRIES_TITLE_DEFAULT',		'Moblog');
-@define('PLUGIN_SHOWENTRIES_BLAHBLAH',		'Zobrazuje pøíspìvky ze zadanıch kategorií v postranním sloupci. Dobré napø. pro moblogování! (Moblogování = blogování pomocí mobilního telefonu, tedy krátké pøíspìvky)');
-@define('PLUGIN_SHOWENTRIES_NUMBER',		'Kolik pøíspìvkù zobrazovat?');
-@define('PLUGIN_SHOWENTRIES_SKIPNUMBER',		'Schovat pøíspìvky zobrazené na úvodní stranì?');
-@define('PLUGIN_SHOWENTRIES_CATEGORY',		'Zadejte ID èíslo kategorie, která se má zobrazovat (prázdné=v¹echny, více kategorií oddìlujte støedníkem ";")');
-@define('PLUGIN_SHOWENTRIES_SHOWTITLE',		'Zobrazovat nadpis pøíspìvku?');
-@define('PLUGIN_SHOWENTRIES_SHOWEXT',		'Zobrazovat roz¹íøené tìlo pøíspìvkù?');
+@define('PLUGIN_SHOWENTRIES_BLAHBLAH',		'Zobrazuje pÅ™Ã­spÄ›vky ze zadanÃ½ch kategoriÃ­ v postrannÃ­m sloupci. DobrÃ© napÅ™. pro moblogovÃ¡nÃ­! (MoblogovÃ¡nÃ­ = blogovÃ¡nÃ­ pomocÃ­ mobilnÃ­ho telefonu, tedy krÃ¡tkÃ© pÅ™Ã­spÄ›vky)');
+@define('PLUGIN_SHOWENTRIES_NUMBER',		'Kolik pÅ™Ã­spÄ›vkÅ¯ zobrazovat?');
+@define('PLUGIN_SHOWENTRIES_SKIPNUMBER',		'Schovat pÅ™Ã­spÄ›vky zobrazenÃ© na ÃºvodnÃ­ stranÄ›?');
+@define('PLUGIN_SHOWENTRIES_CATEGORY',		'Zadejte ID ÄÃ­slo kategorie, kterÃ¡ se mÃ¡ zobrazovat (prÃ¡zdnÃ©=vÅ¡echny, vÃ­ce kategoriÃ­ oddÄ›lujte stÅ™ednÃ­kem ";")');
+@define('PLUGIN_SHOWENTRIES_SHOWTITLE',		'Zobrazovat nadpis pÅ™Ã­spÄ›vku?');
+@define('PLUGIN_SHOWENTRIES_SHOWEXT',		'Zobrazovat rozÅ¡Ã­Å™enÃ© tÄ›lo pÅ™Ã­spÄ›vkÅ¯?');
 
