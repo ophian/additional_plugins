@@ -3,6 +3,13 @@
 * 
 
 
+3.0.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+ * Use native htmlspecialchars()
+ * Raise requirements for Styx 5.0
+
 2.3.0:
 -----
  * Prepare for Serendipity Styx 4.4.0 - expandable hooked sidebar links

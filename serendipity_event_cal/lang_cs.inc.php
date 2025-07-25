@@ -1,94 +1,94 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/11/21
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/11/29
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/02/14
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/03/07
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/03/05
  */
 
 @define('PLUGIN_EVENTCAL_HEADLINE', 'Nadpis');
-@define('PLUGIN_EVENTCAL_HEADLINE_BLAHBLAH', 'Nadpis stránky');
-@define('PLUGIN_EVENTCAL_TITLE', 'Kalendáø akcí');
-@define('PLUGIN_EVENTCAL_TITLE_BLAHBLAH', 'Zobrazuje kalendáø akcí jako samostatnou stránku v blogu. Design stránky zùstává stejnı jako u zbytku blogu. (MySQL only)');
-@define('PLUGIN_EVENTCAL_PERMALINK', 'Stálı odkaz');
-@define('PLUGIN_EVENTCAL_PERMALINK_BLAHBLAH', 'Zadejte stálı odkaz, stálou URL adresu stránky s kalendáøem akcí. Musí bıt absolutní HTTP cesta a musí konèit .htm nebo .html!');
-@define('PLUGIN_EVENTCAL_PAGETITLE', 'Název statické stránky & její URL');
-@define('PLUGIN_EVENTCAL_PAGETITLE_BLAHBLAH', 'Název statické stránky. Pozor: název také definuje URL adresu této stránky (index.php?serendipity[subpage]=zde_zadany_nazev)');
-@define('PLUGIN_EVENTCAL_ARTICLEFORMAT', 'Formátovat jako pøíspìvek?');
-@define('PLUGIN_EVENTCAL_ARTICLEFORMAT_BLAHBLAH', 'Pokud zadáte "ano", stránka bude automaticky zformátována stejnì jako bìné pøíspìvky. (Vıchozí: ano)');
+@define('PLUGIN_EVENTCAL_HEADLINE_BLAHBLAH', 'Nadpis strÃ¡nky');
+@define('PLUGIN_EVENTCAL_TITLE', 'KalendÃ¡Å™ akcÃ­');
+@define('PLUGIN_EVENTCAL_TITLE_BLAHBLAH', 'Zobrazuje kalendÃ¡Å™ akcÃ­ jako samostatnou strÃ¡nku v blogu. Design strÃ¡nky zÅ¯stÃ¡vÃ¡ stejnÃ½ jako u zbytku blogu. (MySQL only)');
+@define('PLUGIN_EVENTCAL_PERMALINK', 'StÃ¡lÃ½ odkaz');
+@define('PLUGIN_EVENTCAL_PERMALINK_BLAHBLAH', 'Zadejte stÃ¡lÃ½ odkaz, stÃ¡lou URL adresu strÃ¡nky s kalendÃ¡Å™em akcÃ­. MusÃ­ bÃ½t absolutnÃ­ HTTP cesta a musÃ­ konÄit .htm nebo .html!');
+@define('PLUGIN_EVENTCAL_PAGETITLE', 'NÃ¡zev statickÃ© strÃ¡nky & jejÃ­ URL');
+@define('PLUGIN_EVENTCAL_PAGETITLE_BLAHBLAH', 'NÃ¡zev statickÃ© strÃ¡nky. Pozor: nÃ¡zev takÃ© definuje URL adresu tÃ©to strÃ¡nky (index.php?serendipity[subpage]=zde_zadany_nazev)');
+@define('PLUGIN_EVENTCAL_ARTICLEFORMAT', 'FormÃ¡tovat jako pÅ™Ã­spÄ›vek?');
+@define('PLUGIN_EVENTCAL_ARTICLEFORMAT_BLAHBLAH', 'Pokud zadÃ¡te "ano", strÃ¡nka bude automaticky zformÃ¡tovÃ¡na stejnÄ› jako bÄ›Å¾nÃ© pÅ™Ã­spÄ›vky. (VÃ½chozÃ­: ano)');
 @define('PLUGIN_EVENTCAL_SHOWCAPTCHA', 'Zobrazovat kryptogramy?');
-@define('PLUGIN_EVENTCAL_SHOWCAPTCHA_BLAHBLAH', 'Mají se pouívat kryptogramy (captchas - vyaduje nainstalovanı a aktivovanı plugin Spamblock)');
-@define('PLUGIN_EVENTCAL_NEXTPAGE', 'další strana');
-@define('PLUGIN_EVENTCAL_PREVPAGE', 'pøedchozí strana');
+@define('PLUGIN_EVENTCAL_SHOWCAPTCHA_BLAHBLAH', 'MajÃ­ se pouÅ¾Ã­vat kryptogramy (captchas - vyÅ¾aduje nainstalovanÃ½ a aktivovanÃ½ plugin Spamblock)');
+@define('PLUGIN_EVENTCAL_NEXTPAGE', 'dalÅ¡Ã­ strana');
+@define('PLUGIN_EVENTCAL_PREVPAGE', 'pÅ™edchozÃ­ strana');
 @define('PLUGIN_EVENTCAL_TEXT_DELETE', 'smazat');
-@define('PLUGIN_EVENTCAL_TEXT_SAY', 'øekl');
+@define('PLUGIN_EVENTCAL_TEXT_SAY', 'Å™ekl');
 @define('PLUGIN_EVENTCAL_TEXT_EMAIL', 'Email');
-@define('PLUGIN_EVENTCAL_TEXT_NAME', 'Jméno');
-@define('PLUGIN_EVENTCAL_TEXT_EACH', 'Kadı');
+@define('PLUGIN_EVENTCAL_TEXT_NAME', 'JmÃ©no');
+@define('PLUGIN_EVENTCAL_TEXT_EACH', 'KaÅ¾dÃ½');
 @define('PLUGIN_EVENTCAL_TEXT_TO', 'pro');
 @define('PLUGIN_EVENTCAL_TEXT_CW', 'CW-');
 
-@define('PLUGIN_EVENTCAL_HALLO_ADMIN', 'Dobrı den uivateli: %s ( %s )<br />');
-@define('PLUGIN_EVENTCAL_INSERT_DONE_BLAHBLAH', 'Díky za Váš pøíspìvek èíslo ID = %d.');
-@define('PLUGIN_EVENTCAL_INSERT_DONE_EVALUATE', 'Pøedtím ne Váš pøíspìvek schválí administrátor, naleznete jej v èásti: "Neschválené akce".');
-@define('PLUGIN_EVENTCAL_REJECT_DONE_BLAHBLAH', 'Úpìšnì jste vymazali pøíspìvek èíslo ID = %s z databáze.');
-@define('PLUGIN_EVENTCAL_APPROVE_DONE_BLAHBLAH', 'Pøíspìvek èíslo ID = %d byl úspìšnì schválen.');
+@define('PLUGIN_EVENTCAL_HALLO_ADMIN', 'DobrÃ½ den uÅ¾ivateli: %s ( %s )<br />');
+@define('PLUGIN_EVENTCAL_INSERT_DONE_BLAHBLAH', 'DÃ­ky za VÃ¡Å¡ pÅ™Ã­spÄ›vek ÄÃ­slo ID = %d.');
+@define('PLUGIN_EVENTCAL_INSERT_DONE_EVALUATE', 'PÅ™edtÃ­m neÅ¾ VÃ¡Å¡ pÅ™Ã­spÄ›vek schvÃ¡lÃ­ administrÃ¡tor, naleznete jej v ÄÃ¡sti: "NeschvÃ¡lenÃ© akce".');
+@define('PLUGIN_EVENTCAL_REJECT_DONE_BLAHBLAH', 'ÃšpÄ›Å¡nÄ› jste vymazali pÅ™Ã­spÄ›vek ÄÃ­slo ID = %s z databÃ¡ze.');
+@define('PLUGIN_EVENTCAL_APPROVE_DONE_BLAHBLAH', 'PÅ™Ã­spÄ›vek ÄÃ­slo ID = %d byl ÃºspÄ›Å¡nÄ› schvÃ¡len.');
 
-@define('CAL_EVENT_PLEASECORRECT', 'Opravte prosím.');
-@define('CAL_EVENT_SHORTTITLE', 'Vlote prosím krátkı název pro tuto akci!');
-@define('CAL_EVENT_EVENTDESC', 'Zadejte prosím plnı popis akce!');
-@define('CAL_EVENT_APPBY', 'Musíte zadat token autora (sig) pro potvrzení akce!');
-@define('CAL_EVENT_START_DATE', 'Nesprávnı zaèátek akce!');
-@define('CAL_EVENT_START_DATE_HISTORY', 'Nesprávné datum akce! Zadávání probìhlıch akcí je podporováno pouze na uplynulıch 31 dní!');
-@define('CAL_EVENT_END_DATE', 'Nesprávnı konec akce!');
-@define('CAL_EVENT_REAL_START_DATE', 'Datum zaèátku akce musí bıt platnı den daného mìsíce (%s)!');
-@define('CAL_EVENT_REAL_END_DATE', 'Datum konce akce musí bıt platnı den daného mìsíce (%s) a musí bıt za datem zaèátku!');
-@define('CAL_EVENT_REAL_MONTHLY_DATE', 'Hodnota opakování pro mìsíèní akce nemùe bıt "Tıdnì"!');
-@define('CAL_EVENT_IDENTICAL_DATE', 'Akce má stejné datum zaèátku a konce!');
-@define('CAL_EVENT_ORDER_DATE', 'Zadaná sekvence akce není platná!');
-@define('CAL_EVENT_WEEKLY_DATE', 'Správná hodnota má bıt: "Tıdnì" a vybranı "Den v tıdnu".');
+@define('CAL_EVENT_PLEASECORRECT', 'Opravte prosÃ­m.');
+@define('CAL_EVENT_SHORTTITLE', 'VloÅ¾te prosÃ­m krÃ¡tkÃ½ nÃ¡zev pro tuto akci!');
+@define('CAL_EVENT_EVENTDESC', 'Zadejte prosÃ­m plnÃ½ popis akce!');
+@define('CAL_EVENT_APPBY', 'MusÃ­te zadat token autora (sig) pro potvrzenÃ­ akce!');
+@define('CAL_EVENT_START_DATE', 'NesprÃ¡vnÃ½ zaÄÃ¡tek akce!');
+@define('CAL_EVENT_START_DATE_HISTORY', 'NesprÃ¡vnÃ© datum akce! ZadÃ¡vÃ¡nÃ­ probÄ›hlÃ½ch akcÃ­ je podporovÃ¡no pouze na uplynulÃ½ch 31 dnÃ­!');
+@define('CAL_EVENT_END_DATE', 'NesprÃ¡vnÃ½ konec akce!');
+@define('CAL_EVENT_REAL_START_DATE', 'Datum zaÄÃ¡tku akce musÃ­ bÃ½t platnÃ½ den danÃ©ho mÄ›sÃ­ce (%s)!');
+@define('CAL_EVENT_REAL_END_DATE', 'Datum konce akce musÃ­ bÃ½t platnÃ½ den danÃ©ho mÄ›sÃ­ce (%s) a musÃ­ bÃ½t za datem zaÄÃ¡tku!');
+@define('CAL_EVENT_REAL_MONTHLY_DATE', 'Hodnota opakovÃ¡nÃ­ pro mÄ›sÃ­ÄnÃ­ akce nemÅ¯Å¾e bÃ½t "TÃ½dnÄ›"!');
+@define('CAL_EVENT_IDENTICAL_DATE', 'Akce mÃ¡ stejnÃ© datum zaÄÃ¡tku a konce!');
+@define('CAL_EVENT_ORDER_DATE', 'ZadanÃ¡ sekvence akce nenÃ­ platnÃ¡!');
+@define('CAL_EVENT_WEEKLY_DATE', 'SprÃ¡vnÃ¡ hodnota mÃ¡ bÃ½t: "TÃ½dnÄ›" a vybranÃ½ "Den v tÃ½dnu".');
 
-@define('CAL_EVENT_FORM_DAY_FIRST', 'První');
-@define('CAL_EVENT_FORM_DAY_SECOND', 'Druhı');
-@define('CAL_EVENT_FORM_DAY_THIRD', 'Tøetí');
-@define('CAL_EVENT_FORM_DAY_FOURTH', 'Ètvrtı');
-@define('CAL_EVENT_FORM_DAY_LAST', 'Poslední');
-@define('CAL_EVENT_FORM_DAY_SECONDLAST', 'Pøedposlední');
-@define('CAL_EVENT_FORM_DAY_THIRDLAST', 'Pøed-pøedposlední');
-@define('CAL_EVENT_FORM_DAY_EACH', 'Tıdnì');
+@define('CAL_EVENT_FORM_DAY_FIRST', 'PrvnÃ­');
+@define('CAL_EVENT_FORM_DAY_SECOND', 'DruhÃ½');
+@define('CAL_EVENT_FORM_DAY_THIRD', 'TÅ™etÃ­');
+@define('CAL_EVENT_FORM_DAY_FOURTH', 'ÄŒtvrtÃ½');
+@define('CAL_EVENT_FORM_DAY_LAST', 'PoslednÃ­');
+@define('CAL_EVENT_FORM_DAY_SECONDLAST', 'PÅ™edposlednÃ­');
+@define('CAL_EVENT_FORM_DAY_THIRDLAST', 'PÅ™ed-pÅ™edposlednÃ­');
+@define('CAL_EVENT_FORM_DAY_EACH', 'TÃ½dnÄ›');
 
-@define('CAL_EVENT_FORM_RIGHT_SHORTMAX', 'max. 16 znakù!');
-@define('CAL_EVENT_FORM_RIGHT_URLDESC', 'Buï ');
+@define('CAL_EVENT_FORM_RIGHT_SHORTMAX', 'max. 16 znakÅ¯!');
+@define('CAL_EVENT_FORM_RIGHT_URLDESC', 'BuÄ ');
 @define('CAL_EVENT_FORM_RIGHT_URL', 'http://www.domena.cz');
 @define('CAL_EVENT_FORM_RIGHT_MAIL', 'mailto:vas@email.cz');
 @define('CAL_EVENT_FORM_RIGHT_OR', 'nebo');
-@define('CAL_EVENT_FORM_RIGHT_DETAILDESC', '<b>Nezapomìòte</b>, prosím, zadat do tohoto pole pøesnı èas akce.');
-@define('CAL_EVENT_FORM_RIGHT_BBC', 'Pouít BBcode (tuèné, kurzíva, podtrení, pøeškrtnutí).');
+@define('CAL_EVENT_FORM_RIGHT_DETAILDESC', '<b>NezapomÄ›Åˆte</b>, prosÃ­m, zadat do tohoto pole pÅ™esnÃ½ Äas akce.');
+@define('CAL_EVENT_FORM_RIGHT_BBC', 'PouÅ¾Ã­t BBcode (tuÄnÃ©, kurzÃ­va, podtrÅ¾enÃ­, pÅ™eÅ¡krtnutÃ­).');
 @define('CAL_EVENT_FORM_RIGHT_SINGLE', 'Pouze jeden den');
-@define('CAL_EVENT_FORM_RIGHT_SINGLE_NOEND', 'není tøeba zadávat datum konce');
-@define('CAL_EVENT_FORM_RIGHT_MULTI', 'Vícedenní akce');
-@define('CAL_EVENT_FORM_RIGHT_RECUR', 'Opakování');
-@define('CAL_EVENT_FORM_RIGHT_RECUR_MONTH', 'kadı mìsíc');
-@define('CAL_EVENT_FORM_RIGHT_RECUR_WEEK', 'kadı tıden');
+@define('CAL_EVENT_FORM_RIGHT_SINGLE_NOEND', 'nenÃ­ tÅ™eba zadÃ¡vat datum konce');
+@define('CAL_EVENT_FORM_RIGHT_MULTI', 'VÃ­cedennÃ­ akce');
+@define('CAL_EVENT_FORM_RIGHT_RECUR', 'OpakovÃ¡nÃ­');
+@define('CAL_EVENT_FORM_RIGHT_RECUR_MONTH', 'kaÅ¾dÃ½ mÄ›sÃ­c');
+@define('CAL_EVENT_FORM_RIGHT_RECUR_WEEK', 'kaÅ¾dÃ½ tÃ½den');
 
-@define('CAL_EVENT_FORM_BUTTON_ADD_EVENT', 'Vlote akci');
-@define('CAL_EVENT_FORM_BUTTON_APPROVE_EVENT', 'Neschválené akce');
-@define('CAL_EVENT_FORM_BUTTON_CLOSE', 'Zavøít formuláø');
-@define('CAL_EVENT_FORM_BUTTON_FREETABLE', 'vyèistit stará data (starší ne 1 mìsíc) a pøeskládat tabulku');
-@define('CAL_EVENT_FORM_BUTTON_LOGOFF', 'odhlásit');
-@define('CAL_EVENT_FORM_BUTTON_MARK', 'oznaèit/odznaèit všechny');
-@define('CAL_EVENT_FORM_BUTTON_OPEN', 'Otevøít formuláø');
-@define('CAL_EVENT_FORM_BUTTON_REJECT_SED', 'Vymazat pøíspìvek schválené akce');
-@define('CAL_EVENT_FORM_BUTTON_EDIT_SED', 'Zmìnit pøíspìvek schválené akce');
-@define('CAL_EVENT_FORM_BUTTON_SUBMIT', '&raquo; Poslat pøíspìvek &laquo;');
-@define('CAL_EVENT_FORM_BUTTON_TOAPPROVE', 'akce/akcí');
+@define('CAL_EVENT_FORM_BUTTON_ADD_EVENT', 'VloÅ¾te akci');
+@define('CAL_EVENT_FORM_BUTTON_APPROVE_EVENT', 'NeschvÃ¡lenÃ© akce');
+@define('CAL_EVENT_FORM_BUTTON_CLOSE', 'ZavÅ™Ã­t formulÃ¡Å™');
+@define('CAL_EVENT_FORM_BUTTON_FREETABLE', 'vyÄistit starÃ¡ data (starÅ¡Ã­ neÅ¾ 1 mÄ›sÃ­c) a pÅ™esklÃ¡dat tabulku');
+@define('CAL_EVENT_FORM_BUTTON_LOGOFF', 'odhlÃ¡sit');
+@define('CAL_EVENT_FORM_BUTTON_MARK', 'oznaÄit/odznaÄit vÅ¡echny');
+@define('CAL_EVENT_FORM_BUTTON_OPEN', 'OtevÅ™Ã­t formulÃ¡Å™');
+@define('CAL_EVENT_FORM_BUTTON_REJECT_SED', 'Vymazat pÅ™Ã­spÄ›vek schvÃ¡lenÃ© akce');
+@define('CAL_EVENT_FORM_BUTTON_EDIT_SED', 'ZmÄ›nit pÅ™Ã­spÄ›vek schvÃ¡lenÃ© akce');
+@define('CAL_EVENT_FORM_BUTTON_SUBMIT', '&raquo; Poslat pÅ™Ã­spÄ›vek &laquo;');
+@define('CAL_EVENT_FORM_BUTTON_TOAPPROVE', 'akce/akcÃ­');
 
 @define('CAL_EVENT_FORM_TITLE_DATE', 'datum');
 @define('CAL_EVENT_FORM_TITLE_TITLE', 'nadpis');
@@ -99,134 +99,134 @@
 @define('CAL_EVENT_FORM_TITLE_DEL', 'smazat');
 
 @define('CAL_EVENT_FORM_LEFT_AUTHOR', '<u>Autor</u>');
-@define('CAL_EVENT_FORM_LEFT_TITLE', '<u>Krátkı</u> nadpis');
-@define('CAL_EVENT_FORM_LEFT_LINK', 'Webová stránka nebo email');
-@define('CAL_EVENT_FORM_LEFT_DESC', '<u>Plnı</u> popis');
-@define('CAL_EVENT_FORM_LEFT_SINGLE', '<u>Zaèátek</u> - datum');
+@define('CAL_EVENT_FORM_LEFT_TITLE', '<u>KrÃ¡tkÃ½</u> nadpis');
+@define('CAL_EVENT_FORM_LEFT_LINK', 'WebovÃ¡ strÃ¡nka nebo email');
+@define('CAL_EVENT_FORM_LEFT_DESC', '<u>PlnÃ½</u> popis');
+@define('CAL_EVENT_FORM_LEFT_SINGLE', '<u>ZaÄÃ¡tek</u> - datum');
 @define('CAL_EVENT_FORM_LEFT_MULTI', '<u>Konec</u> - datum');
-@define('CAL_EVENT_FORM_LEFT_RECUR', 'Opakování');
-@define('CAL_EVENT_FORM_LEFT_SPAM', 'Bezpeènost');
+@define('CAL_EVENT_FORM_LEFT_RECUR', 'OpakovÃ¡nÃ­');
+@define('CAL_EVENT_FORM_LEFT_SPAM', 'BezpeÄnost');
 
-@define('CAL_EVENT_DB_ERROR_ONE', 'V databázové tabulce kalendáøe akcí (eventcal) se vyskytla chyba:');
-@define('CAL_EVENT_DB_ERROR_TWO', 'Nelze se spojit s databází!');
-@define('CAL_EVENT_USER_LOGINFIRST', 'Pro pokraèování procesu se musíte pøihlásit pomocí platného úètu na blogu. Pokud ho máte, pøihlašte se do administraèní sekce blogu.');
-@define('CAL_EVENT_USER_LOGINFIRST', 'Pro pokraèování procesu se musíte pøihlásit pomocí platného úètu na blogu. Pokud ho máte, pøihlašte se do administraèní sekce blogu.');
-@define('CAL_EVENT_USER_VALIDATION', 'Uivatelské jméno nebo heslo není správné.');
-@define('CAL_EVENT_USER_LOGGEDOFF', 'Vaše seance vypršela nebo jste se odhlásili. Pro administraci kalendáøe akcí se musíte znovu pøihlásit do blogu.');
-@define('CAL_EVENT_USER_FREETABLE', 'Data starší ne 1 mìsíc byla úspìšnì smazána a databázová tabulka pøeskládána.');
-@define('CAL_EVENT_USER_FREE_SURE', 'Opravdu chcete rekonstruovat databázovou tabulku kalendáøe akcí?');
-@define('CAL_EVENT_USER_NOPERMISSION', 'Nemáte dostateèná oprávnìní k pokraèování!');
-@define('CAL_EVENT_CHGSELECTED_ARRAY', 'Pokud chcete zmìnit jeden pøíspìvek, odznaète prosím ostatní.');
-@define('CAL_EVENT_CHECKBOXALERT', 'Zaškrtnìte ètvereèek u pøíspìvku, kterı chcete ohodnotit, zmìnit nebo smazat.');
+@define('CAL_EVENT_DB_ERROR_ONE', 'V databÃ¡zovÃ© tabulce kalendÃ¡Å™e akcÃ­ (eventcal) se vyskytla chyba:');
+@define('CAL_EVENT_DB_ERROR_TWO', 'Nelze se spojit s databÃ¡zÃ­!');
+@define('CAL_EVENT_USER_LOGINFIRST', 'Pro pokraÄovÃ¡nÃ­ procesu se musÃ­te pÅ™ihlÃ¡sit pomocÃ­ platnÃ©ho ÃºÄtu na blogu. Pokud ho mÃ¡te, pÅ™ihlaÅ¡te se do administraÄnÃ­ sekce blogu.');
+@define('CAL_EVENT_USER_LOGINFIRST', 'Pro pokraÄovÃ¡nÃ­ procesu se musÃ­te pÅ™ihlÃ¡sit pomocÃ­ platnÃ©ho ÃºÄtu na blogu. Pokud ho mÃ¡te, pÅ™ihlaÅ¡te se do administraÄnÃ­ sekce blogu.');
+@define('CAL_EVENT_USER_VALIDATION', 'UÅ¾ivatelskÃ© jmÃ©no nebo heslo nenÃ­ sprÃ¡vnÃ©.');
+@define('CAL_EVENT_USER_LOGGEDOFF', 'VaÅ¡e seance vyprÅ¡ela nebo jste se odhlÃ¡sili. Pro administraci kalendÃ¡Å™e akcÃ­ se musÃ­te znovu pÅ™ihlÃ¡sit do blogu.');
+@define('CAL_EVENT_USER_FREETABLE', 'Data starÅ¡Ã­ neÅ¾ 1 mÄ›sÃ­c byla ÃºspÄ›Å¡nÄ› smazÃ¡na a databÃ¡zovÃ¡ tabulka pÅ™esklÃ¡dÃ¡na.');
+@define('CAL_EVENT_USER_FREE_SURE', 'Opravdu chcete rekonstruovat databÃ¡zovou tabulku kalendÃ¡Å™e akcÃ­?');
+@define('CAL_EVENT_USER_NOPERMISSION', 'NemÃ¡te dostateÄnÃ¡ oprÃ¡vnÄ›nÃ­ k pokraÄovÃ¡nÃ­!');
+@define('CAL_EVENT_CHGSELECTED_ARRAY', 'Pokud chcete zmÄ›nit jeden pÅ™Ã­spÄ›vek, odznaÄte prosÃ­m ostatnÃ­.');
+@define('CAL_EVENT_CHECKBOXALERT', 'ZaÅ¡krtnÄ›te ÄtvereÄek u pÅ™Ã­spÄ›vku, kterÃ½ chcete ohodnotit, zmÄ›nit nebo smazat.');
 @define('CAL_EVENT_TODAY', 'DNES');
 
-@define('PLUGIN_EVENTCAL_CAL', ' Vykreslit kalendáø ');
+@define('PLUGIN_EVENTCAL_CAL', ' Vykreslit kalendÃ¡Å™ ');
 @define('PLUGIN_EVENTCAL_ADD', ' Vykreslit add ');
 @define('PLUGIN_EVENTCAL_APP', ' Vykreslit app ');
 
 // Next lines were translated on 2009/11/29
 
-@define('CAL_EVENT_FALSECAPTCHA', 'Kryptogram u Vašeho pøíspìvku se neshoduje!');
+@define('CAL_EVENT_FALSECAPTCHA', 'Kryptogram u VaÅ¡eho pÅ™Ã­spÄ›vku se neshoduje!');
 
 // Next lines were translated on 2010/02/14
 
-@define('PLUGIN_EVENTCAL_SHOWINTRO', 'Úvodní text (volitelnı)');
-@define('PLUGIN_EVENTCAL_SHOWINTRO_BLAHBLAH', 'Text, kterı se zobrazuje pøed pøíspìvky. (HTML povoleno)');
-@define('PLUGIN_EVENTCAL_SHOWICAL', 'Exportovat iCal kanál?');
-@define('PLUGIN_EVENTCAL_SHOWICAL_BLAHBLAH', 'Pokud ano, bude povolen export iCal jako mìsíèní pøehled a nebo jako jednotlivé události pomocí tlaèítek.');
-@define('PLUGIN_EVENTCAL_ICAL_LOG', 'Pøihlášení pro staení iCal?');
-@define('PLUGIN_EVENTCAL_ICAL_LOG_BLAHBLAH', 'Urèuje, jestli iCal exporty budou zaznamenány do logu a zda-li se má posílat oznámení administrátorovi. [potøeba zada emailovou adresu]');
-@define('PLUGIN_EVENTCAL_ICAL_LOG_EMAIL', 'Administrátorská emailová adresa (v závislosti na nastavení \'pøihlášení nastavené na ano\' a/nebo \'iCal URL\')');
-@define('PLUGIN_EVENTCAL_ICAL_LOG_EMAIL_BLAHBLAH', 'Vaše emailová adresa, na kterou se budou posílat oznámení o iCa exportech.');
+@define('PLUGIN_EVENTCAL_SHOWINTRO', 'ÃšvodnÃ­ text (volitelnÃ½)');
+@define('PLUGIN_EVENTCAL_SHOWINTRO_BLAHBLAH', 'Text, kterÃ½ se zobrazuje pÅ™ed pÅ™Ã­spÄ›vky. (HTML povoleno)');
+@define('PLUGIN_EVENTCAL_SHOWICAL', 'Exportovat iCal kanÃ¡l?');
+@define('PLUGIN_EVENTCAL_SHOWICAL_BLAHBLAH', 'Pokud ano, bude povolen export iCal jako mÄ›sÃ­ÄnÃ­ pÅ™ehled a nebo jako jednotlivÃ© udÃ¡losti pomocÃ­ tlaÄÃ­tek.');
+@define('PLUGIN_EVENTCAL_ICAL_LOG', 'PÅ™ihlÃ¡Å¡enÃ­ pro staÅ¾enÃ­ iCal?');
+@define('PLUGIN_EVENTCAL_ICAL_LOG_BLAHBLAH', 'UrÄuje, jestli iCal exporty budou zaznamenÃ¡ny do logu a zda-li se mÃ¡ posÃ­lat oznÃ¡menÃ­ administrÃ¡torovi. [potÅ™eba zada emailovou adresu]');
+@define('PLUGIN_EVENTCAL_ICAL_LOG_EMAIL', 'AdministrÃ¡torskÃ¡ emailovÃ¡ adresa (v zÃ¡vislosti na nastavenÃ­ \'pÅ™ihlÃ¡Å¡enÃ­ nastavenÃ© na ano\' a/nebo \'iCal URL\')');
+@define('PLUGIN_EVENTCAL_ICAL_LOG_EMAIL_BLAHBLAH', 'VaÅ¡e emailovÃ¡ adresa, na kterou se budou posÃ­lat oznÃ¡menÃ­ o iCa exportech.');
 @define('PLUGIN_EVENTCAL_ICAL_ICSURL', 'Export iCal URL adresa?');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_BLAH', 'Nastavte, jak bude exportován vybranı iCal soubor.');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_BLAHBLAH', 'Staení, uivatelskı poadavek webcal-push, email (na administrátorskou adresu, která musí bıt níe nastavena) nebo všechny tøi. V tom pøípadì si uivatel vybere, kterı se mu hodí nejvíce.');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_NO', 'ádnı ics soubor');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_DL', 'ics staení');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_WEBCAL', 'ics pomocí webcal://');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_MAIL', 'ics pøes email');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_USER', 'uivatel rozhodne');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_EXPORT', 'uivateli');
-@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_INTERN', 'administrátorovi');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_BLAH', 'Nastavte, jak bude exportovÃ¡n vybranÃ½ iCal soubor.');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_BLAHBLAH', 'StaÅ¾enÃ­, uÅ¾ivatelskÃ½ poÅ¾adavek webcal-push, email (na administrÃ¡torskou adresu, kterÃ¡ musÃ­ bÃ½t nÃ­Å¾e nastavena) nebo vÅ¡echny tÅ™i. V tom pÅ™Ã­padÄ› si uÅ¾ivatel vybere, kterÃ½ se mu hodÃ­ nejvÃ­ce.');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_NO', 'Å¾Ã¡dnÃ½ ics soubor');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_DL', 'ics staÅ¾enÃ­');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_WEBCAL', 'ics pomocÃ­ webcal://');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_MAIL', 'ics pÅ™es email');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_USER', 'uÅ¾ivatel rozhodne');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_EXPORT', 'uÅ¾ivateli');
+@define('PLUGIN_EVENTCAL_ICAL_ICSURL_INLIST_INTERN', 'administrÃ¡torovi');
 @define('PLUGIN_EVENTCAL_TEXT_INTERVAL', 'Interval');
-@define('PLUGIN_EVENTCAL_TEXT_BIWEEK', 'ètrnáct dní');
+@define('PLUGIN_EVENTCAL_TEXT_BIWEEK', 'ÄtrnÃ¡ct dnÃ­');
 @define('PLUGIN_EVENTCAL_TEXT_YEARLY', 'rok');
-@define('PLUGIN_EVENTCAL_SENDMAIL_BLAHBLAH', 'iCal soubor byl úpìšnì odeslán!');
-@define('PLUGIN_EVENTCAL_SENDMAIL_ERROR', 'Pøi odesílání emailu se vyskytla chyba!');
-@define('CAL_EVENT_START_RECUR', 'Poèáteèní datum &raquo; <u>%s</u> &laquo; první vıskyt!');
+@define('PLUGIN_EVENTCAL_SENDMAIL_BLAHBLAH', 'iCal soubor byl ÃºpÄ›Å¡nÄ› odeslÃ¡n!');
+@define('PLUGIN_EVENTCAL_SENDMAIL_ERROR', 'PÅ™i odesÃ­lÃ¡nÃ­ emailu se vyskytla chyba!');
+@define('CAL_EVENT_START_RECUR', 'PoÄÃ¡teÄnÃ­ datum &raquo; <u>%s</u> &laquo; prvnÃ­ vÃ½skyt!');
 @define('CAL_EVENT_FORM_RIGHT_RECURSTRICT1', 'Pozor:');
-@define('CAL_EVENT_FORM_RIGHT_RECURSTRICT2', 'pøísnì podle prvního dne u všech opakujících se událostí!');
-@define('CAL_EVENT_FORM_RIGHT_RECUR_BIWEEK', 'kadı druhı tıden');
-@define('CAL_EVENT_FORM_RIGHT_RECUR_YEAR', 'kadı rok');
-@define('CAL_EVENT_FORM_RIGHT_HELP_SINGLE', 'Jednotlivá událost. \'Koneèné datum\' ani ádná další informace není potøeba!');
-@define('CAL_EVENT_FORM_RIGHT_HELP_MULTI', 'Multi-událost: Zobrazovat mìsíènì. Vyaduje \'Poèáteèní datum\' a \'Koncové datum\'.');
-@define('CAL_EVENT_FORM_RIGHT_HELP_WEEK', 'Tıdenní událost. Urèitì je potøeba nastavit. \'vdy zapnuto\', \'Tıdnì\' a a \'Den v tıdnu\'. Zobrazuje kadı kalendáøní tıden v mìsíci. Vyaduje \'Poèáteèní datum\' a \'koncové datum\'.');
-@define('CAL_EVENT_FORM_RIGHT_HELP_BIWEEK', 'Ètrnáctidenní událost. Urèitì je tøeba zadat: \'vdy zapnuto\', \'Tıdnì\' a \'Den v tıdnu\'. Zobrazuje se kadı druhı kalendáøní tıden v mìsíci. Vyaduje \'Poèáteèní datum\' a \'Koncové datum\'.');
-@define('CAL_EVENT_FORM_RIGHT_HELP_MONTH', 'Mìsíèní událost. Urèitì je tøeba zadat: \'vdy zapnuto\', \'ntı Den\' a \'Den v tıdnu\'. Zobrazuje se kadı mìsíc. Vyaduje \'Poèáteèní datum\' a \'Koncové datum\'.');
-@define('CAL_EVENT_FORM_RIGHT_HELP_YEAR', 'Roèní událost. Zobrazuje se roènì od \'Poèáteèního data\'. Nepotøebuje \'Koncové datum\' ani ádné další nastavení!');
-@define('CAL_EVENT_FORM_BUTTON_HELP_ICALM', 'Staení událostí iCal ze v souèasném mìsíci vèetnì všech opakujících se událostí z minulosti i budoucnosti.');
+@define('CAL_EVENT_FORM_RIGHT_RECURSTRICT2', 'pÅ™Ã­snÄ› podle prvnÃ­ho dne u vÅ¡ech opakujÃ­cÃ­ch se udÃ¡lostÃ­!');
+@define('CAL_EVENT_FORM_RIGHT_RECUR_BIWEEK', 'kaÅ¾dÃ½ druhÃ½ tÃ½den');
+@define('CAL_EVENT_FORM_RIGHT_RECUR_YEAR', 'kaÅ¾dÃ½ rok');
+@define('CAL_EVENT_FORM_RIGHT_HELP_SINGLE', 'JednotlivÃ¡ udÃ¡lost. \'KoneÄnÃ© datum\' ani Å¾Ã¡dnÃ¡ dalÅ¡Ã­ informace nenÃ­ potÅ™eba!');
+@define('CAL_EVENT_FORM_RIGHT_HELP_MULTI', 'Multi-udÃ¡lost: Zobrazovat mÄ›sÃ­ÄnÄ›. VyÅ¾aduje \'PoÄÃ¡teÄnÃ­ datum\' a \'KoncovÃ© datum\'.');
+@define('CAL_EVENT_FORM_RIGHT_HELP_WEEK', 'TÃ½dennÃ­ udÃ¡lost. UrÄitÄ› je potÅ™eba nastavit. \'vÅ¾dy zapnuto\', \'TÃ½dnÄ›\' a a \'Den v tÃ½dnu\'. Zobrazuje kaÅ¾dÃ½ kalendÃ¡Å™nÃ­ tÃ½den v mÄ›sÃ­ci. VyÅ¾aduje \'PoÄÃ¡teÄnÃ­ datum\' a \'koncovÃ© datum\'.');
+@define('CAL_EVENT_FORM_RIGHT_HELP_BIWEEK', 'ÄŒtrnÃ¡ctidennÃ­ udÃ¡lost. UrÄitÄ› je tÅ™eba zadat: \'vÅ¾dy zapnuto\', \'TÃ½dnÄ›\' a \'Den v tÃ½dnu\'. Zobrazuje se kaÅ¾dÃ½ druhÃ½ kalendÃ¡Å™nÃ­ tÃ½den v mÄ›sÃ­ci. VyÅ¾aduje \'PoÄÃ¡teÄnÃ­ datum\' a \'KoncovÃ© datum\'.');
+@define('CAL_EVENT_FORM_RIGHT_HELP_MONTH', 'MÄ›sÃ­ÄnÃ­ udÃ¡lost. UrÄitÄ› je tÅ™eba zadat: \'vÅ¾dy zapnuto\', \'ntÃ½ Den\' a \'Den v tÃ½dnu\'. Zobrazuje se kaÅ¾dÃ½ mÄ›sÃ­c. VyÅ¾aduje \'PoÄÃ¡teÄnÃ­ datum\' a \'KoncovÃ© datum\'.');
+@define('CAL_EVENT_FORM_RIGHT_HELP_YEAR', 'RoÄnÃ­ udÃ¡lost. Zobrazuje se roÄnÄ› od \'PoÄÃ¡teÄnÃ­ho data\'. NepotÅ™ebuje \'KoncovÃ© datum\' ani Å¾Ã¡dnÃ© dalÅ¡Ã­ nastavenÃ­!');
+@define('CAL_EVENT_FORM_BUTTON_HELP_ICALM', 'StaÅ¾enÃ­ udÃ¡lostÃ­ iCal ze v souÄasnÃ©m mÄ›sÃ­ci vÄetnÄ› vÅ¡ech opakujÃ­cÃ­ch se udÃ¡lostÃ­ z minulosti i budoucnosti.');
 
 // Next lines were translated on 2010/03/06
 
-@define('PLUGIN_EVENTCAL_ADMIN_NAME', 'Kalendáø událostí');
-@define('PLUGIN_EVENTCAL_ADMIN_NAME_MENU', 'Kalendáø událostí  ver.%s - Administrátorské menu');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC', 'Kalendáø událostí - Administrace pluginu');
-@define('PLUGIN_EVENTCAL_ADMIN_VIEW', 'Kalendáø událostí - Zobrazit schválené události');
-@define('PLUGIN_EVENTCAL_ADMIN_VIEW_DESC', 'Seskupeno podle typu - jednotlivá, vícedenní, opakující se, tıdenní, roèní.');
-@define('PLUGIN_EVENTCAL_ADMIN_APP', 'Kalendáø událostí - Zobrazit neschválené události');
-@define('PLUGIN_EVENTCAL_ADMIN_APP_DESC', 'Seskupit podle Poèáteèního data [nejnovìjší nahoøe].');
-@define('PLUGIN_EVENTCAL_ADMIN_ERASE', 'Kalendáø událostí - Vymazat události');
-@define('PLUGIN_EVENTCAL_ADMIN_LOG', 'Kalendáø událostí - iCal Log');
-@define('PLUGIN_EVENTCAL_ADMIN_LOG_ERROR', 'POZOR: Pøi zapisování iCal logovacího souboru se vyskytla chyba. Zkontrolujte, co je špatnì (má adresáø a soubor nastavená práva pro zápis?)!');
-@define('PLUGIN_EVENTCAL_ADMIN_ADD', 'Kalendáø událostí - Vloení nové události');
-@define('PLUGIN_EVENTCAL_ADMIN_NORESULT', 'ádné události neèekají na %s!');
-@define('PLUGIN_EVENTCAL_ADMIN_NORESULT_APP', 'schválení');
-@define('PLUGIN_EVENTCAL_ADMIN_NORESULT_DROP', 'vymazání');
-@define('PLUGIN_EVENTCAL_ADMIN_NORESULT_FREE', 'vyèištìní');
-@define('PLUGIN_EVENTCAL_ADMIN_FREE_SURE', 'Urèitì chcete odstranit staré události z databázové tabulky událostí?');
-@define('PLUGIN_EVENTCAL_ADMIN_CLEAN_SURE', 'Urèitì chcete nastavit novou hodnotu autoincrementu (id) pro všechna data v databázové tabulce kalendáøe událostí?');
-@define('PLUGIN_EVENTCAL_ADMIN_CLEAN_SURE_ADD', '<u>Upozornìní:</u> Mùe to mít negativní dopady na cachovaná data ve vyhledávaèích a podobnıch slubách mimo Váš blog!');
-@define('PLUGIN_EVENTCAL_ADMIN_DROP_SURE', 'Urèitì chcete smazat celou tabulku kalendáøe událostí vèetnì všch dat? Potvrïte prosím zde!');
-@define('PLUGIN_EVENTCAL_ADMIN_DROP_OK', 'Vaše %s databázová tabulka byla úspašnì vymazána!');
-@define('PLUGIN_EVENTCAL_ADMIN_DUMP_SELF', 'Pøed pokraèováním byste mìli pro jistotu udìlat mysql dump pomocí PhpMyAdmina!');
-@define('PLUGIN_EVENTCAL_ADMIN_ICAL_EMAILLINK', 'Stáhnìte všechny schválené události jako ics soubor pomocí emailu na administrátorskou adresu, pokud je nastavená v konfiguraci tohoto pluginu! Ujistìte se, e je zadaná!');
-@define('PLUGIN_EVENTCAL_ADMIN_ICAL_DOWNLINK', 'Stáhnout všechny schválené události jako ics soubor!');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_TITLE', 'Pouívejte prosím tento administraèní panel opatrnì.');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_TITLE_DESC', 'Nìkteré odkazy mohou bıt v pøíštích verzích vylepšeny!');
+@define('PLUGIN_EVENTCAL_ADMIN_NAME', 'KalendÃ¡Å™ udÃ¡lostÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_NAME_MENU', 'KalendÃ¡Å™ udÃ¡lostÃ­  ver.%s - AdministrÃ¡torskÃ© menu');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC', 'KalendÃ¡Å™ udÃ¡lostÃ­ - Administrace pluginu');
+@define('PLUGIN_EVENTCAL_ADMIN_VIEW', 'KalendÃ¡Å™ udÃ¡lostÃ­ - Zobrazit schvÃ¡lenÃ© udÃ¡losti');
+@define('PLUGIN_EVENTCAL_ADMIN_VIEW_DESC', 'Seskupeno podle typu - jednotlivÃ¡, vÃ­cedennÃ­, opakujÃ­cÃ­ se, tÃ½dennÃ­, roÄnÃ­.');
+@define('PLUGIN_EVENTCAL_ADMIN_APP', 'KalendÃ¡Å™ udÃ¡lostÃ­ - Zobrazit neschvÃ¡lenÃ© udÃ¡losti');
+@define('PLUGIN_EVENTCAL_ADMIN_APP_DESC', 'Seskupit podle PoÄÃ¡teÄnÃ­ho data [nejnovÄ›jÅ¡Ã­ nahoÅ™e].');
+@define('PLUGIN_EVENTCAL_ADMIN_ERASE', 'KalendÃ¡Å™ udÃ¡lostÃ­ - Vymazat udÃ¡losti');
+@define('PLUGIN_EVENTCAL_ADMIN_LOG', 'KalendÃ¡Å™ udÃ¡lostÃ­ - iCal Log');
+@define('PLUGIN_EVENTCAL_ADMIN_LOG_ERROR', 'POZOR: PÅ™i zapisovÃ¡nÃ­ iCal logovacÃ­ho souboru se vyskytla chyba. Zkontrolujte, co je Å¡patnÄ› (mÃ¡ adresÃ¡Å™ a soubor nastavenÃ¡ prÃ¡va pro zÃ¡pis?)!');
+@define('PLUGIN_EVENTCAL_ADMIN_ADD', 'KalendÃ¡Å™ udÃ¡lostÃ­ - VloÅ¾enÃ­ novÃ© udÃ¡losti');
+@define('PLUGIN_EVENTCAL_ADMIN_NORESULT', 'Å½Ã¡dnÃ© udÃ¡losti neÄekajÃ­ na %s!');
+@define('PLUGIN_EVENTCAL_ADMIN_NORESULT_APP', 'schvÃ¡lenÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_NORESULT_DROP', 'vymazÃ¡nÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_NORESULT_FREE', 'vyÄiÅ¡tÄ›nÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_FREE_SURE', 'UrÄitÄ› chcete odstranit starÃ© udÃ¡losti z databÃ¡zovÃ© tabulky udÃ¡lostÃ­?');
+@define('PLUGIN_EVENTCAL_ADMIN_CLEAN_SURE', 'UrÄitÄ› chcete nastavit novou hodnotu autoincrementu (id) pro vÅ¡echna data v databÃ¡zovÃ© tabulce kalendÃ¡Å™e udÃ¡lostÃ­?');
+@define('PLUGIN_EVENTCAL_ADMIN_CLEAN_SURE_ADD', '<u>UpozornÄ›nÃ­:</u> MÅ¯Å¾e to mÃ­t negativnÃ­ dopady na cachovanÃ¡ data ve vyhledÃ¡vaÄÃ­ch a podobnÃ½ch sluÅ¾bÃ¡ch mimo VÃ¡Å¡ blog!');
+@define('PLUGIN_EVENTCAL_ADMIN_DROP_SURE', 'UrÄitÄ› chcete smazat celou tabulku kalendÃ¡Å™e udÃ¡lostÃ­ vÄetnÄ› vÅ¡ch dat? PotvrÄte prosÃ­m zde!');
+@define('PLUGIN_EVENTCAL_ADMIN_DROP_OK', 'VaÅ¡e %s databÃ¡zovÃ¡ tabulka byla ÃºspaÅ¡nÄ› vymazÃ¡na!');
+@define('PLUGIN_EVENTCAL_ADMIN_DUMP_SELF', 'PÅ™ed pokraÄovÃ¡nÃ­m byste mÄ›li pro jistotu udÄ›lat mysql dump pomocÃ­ PhpMyAdmina!');
+@define('PLUGIN_EVENTCAL_ADMIN_ICAL_EMAILLINK', 'StÃ¡hnÄ›te vÅ¡echny schvÃ¡lenÃ© udÃ¡losti jako ics soubor pomocÃ­ emailu na administrÃ¡torskou adresu, pokud je nastavenÃ¡ v konfiguraci tohoto pluginu! UjistÄ›te se, Å¾e je zadanÃ¡!');
+@define('PLUGIN_EVENTCAL_ADMIN_ICAL_DOWNLINK', 'StÃ¡hnout vÅ¡echny schvÃ¡lenÃ© udÃ¡losti jako ics soubor!');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_TITLE', 'PouÅ¾Ã­vejte prosÃ­m tento administraÄnÃ­ panel opatrnÄ›.');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_TITLE_DESC', 'NÄ›kterÃ© odkazy mohou bÃ½t v pÅ™Ã­Å¡tÃ­ch verzÃ­ch vylepÅ¡eny!');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP', 'Administrace - dump');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DESC', 'zálohujte tabulky kalendáøe akcí z databáze');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_TITLE', 'zálohujte (dump vıpis) data z databáze kalendáøe akcí');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_MSG', 'Protoe to není jednoduchá akce, pouijte prosím administrátorské nástroje jako PhpMyAdmin k dumpu dat!');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT', 'Administrace - vloení');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_DESC', 'vloení dat do databázové tabulky kalendáøe akcí');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_TITLE', 'vloení hodnot do databáze kalendáøe akcí');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_MSG', 'Protoe to není jednoduchá operace, pouijte prosím administraèní nástroje jako PhpMyAdmin pro znovu naplnìní databáze!');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_ERASE', 'Administrace - vymazání');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_ERASE_DESC', 'odstranit tabulky kalendáøe akcí z databáze');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_ERASE_TITLE', 'vymazat databázi kalendáøe akcí');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD', 'Administrace - èištìní');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_DESC', 'odstranit události starší ne 1 mìsíc z databázové tabulky kalendáøe akcí');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_TITLE', 'smazat data starší ne 1 mìsíc z databázové tabulky');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_MSG', 'Z databázové tabulky jste odstranili %d starıch událostí starších ne 30 dní.');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DESC', 'zÃ¡lohujte tabulky kalendÃ¡Å™e akcÃ­ z databÃ¡ze');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_TITLE', 'zÃ¡lohujte (dump vÃ½pis) data z databÃ¡ze kalendÃ¡Å™e akcÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_MSG', 'ProtoÅ¾e to nenÃ­ jednoduchÃ¡ akce, pouÅ¾ijte prosÃ­m administrÃ¡torskÃ© nÃ¡stroje jako PhpMyAdmin k dumpu dat!');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT', 'Administrace - vloÅ¾enÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_DESC', 'vloÅ¾enÃ­ dat do databÃ¡zovÃ© tabulky kalendÃ¡Å™e akcÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_TITLE', 'vloÅ¾enÃ­ hodnot do databÃ¡ze kalendÃ¡Å™e akcÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_INSERT_MSG', 'ProtoÅ¾e to nenÃ­ jednoduchÃ¡ operace, pouÅ¾ijte prosÃ­m administraÄnÃ­ nÃ¡stroje jako PhpMyAdmin pro znovu naplnÄ›nÃ­ databÃ¡ze!');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_ERASE', 'Administrace - vymazÃ¡nÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_ERASE_DESC', 'odstranit tabulky kalendÃ¡Å™e akcÃ­ z databÃ¡ze');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_ERASE_TITLE', 'vymazat databÃ¡zi kalendÃ¡Å™e akcÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD', 'Administrace - ÄiÅ¡tÄ›nÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_DESC', 'odstranit udÃ¡losti starÅ¡Ã­ neÅ¾ 1 mÄ›sÃ­c z databÃ¡zovÃ© tabulky kalendÃ¡Å™e akcÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_TITLE', 'smazat data starÅ¡Ã­ neÅ¾ 1 mÄ›sÃ­c z databÃ¡zovÃ© tabulky');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELOLD_MSG', 'Z databÃ¡zovÃ© tabulky jste odstranili %d starÃ½ch udÃ¡lostÃ­ starÅ¡Ã­ch neÅ¾ 30 dnÃ­.');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT', 'Administrace - increment');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_DESC', 'Nastavte nové autoincrement id identifikátory v databázové tabulce kalendáøe akcí');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_TITLE', 'nastavit nové autoincrement id v databázové tabulce');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_MSG', 'Restrukturalizovali jste databázovou tabulku s %d zbıvajícími hodnotami.');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_DESC', 'Nastavte novÃ© autoincrement id identifikÃ¡tory v databÃ¡zovÃ© tabulce kalendÃ¡Å™e akcÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_TITLE', 'nastavit novÃ© autoincrement id v databÃ¡zovÃ© tabulce');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_INCREMENT_MSG', 'Restrukturalizovali jste databÃ¡zovou tabulku s %d zbÃ½vajÃ­cÃ­mi hodnotami.');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL', 'Administrace - iCal');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL_DESC', 'pošlete všechny události jako iCal soubor administrátorovi - pomocí emailu, pokud je zadán v nastavení, jinak pomocí downloadu');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL_TITLE', 'poslat iCal pomocí emailu, nebo stáhnout');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL_DESC', 'poÅ¡lete vÅ¡echny udÃ¡losti jako iCal soubor administrÃ¡torovi - pomocÃ­ emailu, pokud je zadÃ¡n v nastavenÃ­, jinak pomocÃ­ downloadu');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_ICALALL_TITLE', 'poslat iCal pomocÃ­ emailu, nebo stÃ¡hnout');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_ILOG', 'Administrace - iLog');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_ILOG_DESC', 'zobrazit iLog souboru exportu pomocí iCal, pokud je');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_ILOG_TITLE', 'zobrazit logovací soubor iCal exportu');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_ILOG_DESC', 'zobrazit iLog souboru exportu pomocÃ­ iCal, pokud je');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_ILOG_TITLE', 'zobrazit logovacÃ­ soubor iCal exportu');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_ILOG_MSG', 'Soubor iLog neexistuje!');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_NIXDA_DESC', 'v databázi není ádná tabulka kalendáøe akcí');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_NIXDA_DESC', 'v databÃ¡zi nenÃ­ Å¾Ã¡dnÃ¡ tabulka kalendÃ¡Å™e akcÃ­');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_NIXDA_TITLE', 'Administrace - chyba');
 
 // Next lines were translated on 2011/03/05
-@define('PLUGIN_EVENTCAL_ADMIN_ORDERBY_DESC', 'Seskupeno podle typu akce (èasové znaèky) sestupnì.');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DONE', 'Databáze kalendáøe akcí byla úspìšnì zálohována!');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELFILE_MSG', 'Soubor zálohy databázové tabulky <u>%s</u> úspìšnì vymazán');
+@define('PLUGIN_EVENTCAL_ADMIN_ORDERBY_DESC', 'Seskupeno podle typu akce (ÄasovÃ© znaÄky) sestupnÄ›.');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DUMP_DONE', 'DatabÃ¡ze kalendÃ¡Å™e akcÃ­ byla ÃºspÄ›Å¡nÄ› zÃ¡lohovÃ¡na!');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DELFILE_MSG', 'Soubor zÃ¡lohy databÃ¡zovÃ© tabulky <u>%s</u> ÃºspÄ›Å¡nÄ› vymazÃ¡n');
 @define('PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD', 'Administrace - management');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD_DESC', 'Staení a vymazání záloh databázové tabulky kalendáøe akcí');
-@define('PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD_MSG', 'V adresáøi "templates_c" není ádnı adresáø "eventcal".');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD_DESC', 'StaÅ¾enÃ­ a vymazÃ¡nÃ­ zÃ¡loh databÃ¡zovÃ© tabulky kalendÃ¡Å™e akcÃ­');
+@define('PLUGIN_EVENTCAL_ADMIN_DBC_DOWNLOAD_MSG', 'V adresÃ¡Å™i "templates_c" nenÃ­ Å¾Ã¡dnÃ½ adresÃ¡Å™ "eventcal".');
 

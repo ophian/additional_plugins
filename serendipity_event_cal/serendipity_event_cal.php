@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 ##error_reporting(E_ALL);
 
 if (IN_serendipity !== true) {
@@ -27,7 +29,7 @@ $serendipity['SERVER']['eventcal_debug']  = FALSE;
 
 class serendipity_event_cal extends serendipity_event
 {
-    var $title = PLUGIN_EVENTCAL_TITLE;
+    public $title = PLUGIN_EVENTCAL_TITLE;
 
     function cleanup()
     {
@@ -71,12 +73,12 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.3.0');
+        $propbag->add('version',        '3.0.0');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
-                                            'serendipity' => '2.0',
-                                            'smarty'      => '3.0',
-                                            'php'         => '7.0'
+                                            'serendipity' => '5.0',
+                                            'smarty'      => '4.1',
+                                            'php'         => '8.2'
                                         )
                     );
         $propbag->add('legal',    array(
@@ -266,15 +268,15 @@ class serendipity_event_cal extends serendipity_event
                 if (is_array($val)) {
                     foreach($val AS $akey => $aval) {
                         if ($savearrayname == true)
-                            $row[$key][$akey] = ($outputformfield == true) ? stripslashes((function_exists('serendipity_specialchars') ? serendipity_specialchars($aval) : htmlspecialchars($aval, ENT_COMPAT, LANG_CHARSET))) : stripslashes($aval); // array e.g. $row['name']
+                            $row[$key][$akey] = ($outputformfield == true) ? stripslashes(htmlspecialchars($aval)) : stripslashes($aval); // array e.g. $row['name']
                         else
-                            $$key[$akey]      = ($outputformfield == true) ? stripslashes((function_exists('serendipity_specialchars') ? serendipity_specialchars($aval) : htmlspecialchars($aval, ENT_COMPAT, LANG_CHARSET))) : stripslashes($aval); // $key-name e.g. $name
+                            $$key[$akey]      = ($outputformfield == true) ? stripslashes(htmlspecialchars($aval)) : stripslashes($aval); // $key-name e.g. $name
                     }
                 } else {
                     if ($savearrayname == true)
-                        $row[$key] = ($outputformfield == true) ? stripslashes((function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET))) : stripslashes($val); // array e.g. $row['name']
+                        $row[$key] = ($outputformfield == true) ? stripslashes(htmlspecialchars($val)) : stripslashes($val); // array e.g. $row['name']
                     else
-                        $$key      = ($outputformfield == true) ? stripslashes((function_exists('serendipity_specialchars') ? serendipity_specialchars($val) : htmlspecialchars($val, ENT_COMPAT, LANG_CHARSET))) : stripslashes($val); // $key-name e.g. $name
+                        $$key      = ($outputformfield == true) ? stripslashes(htmlspecialchars($val)) : stripslashes($val); // $key-name e.g. $name
                 }
             }
         }
