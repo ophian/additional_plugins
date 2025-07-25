@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_vgwort extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_VGWORT_NAME;
+    public $title = PLUGIN_EVENT_VGWORT_NAME;
 
     function introspect(&$propbag)
     {
@@ -18,9 +20,9 @@ class serendipity_event_vgwort extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_VGWORT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Thomas Hochstein');
-        $propbag->add('version',       '0.7');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.2.1'
+            'serendipity' => '5.0'
         ));
         $propbag->add('event_hooks',   array('external_plugin' => true,
                                              'backend_maintenance' => true,
