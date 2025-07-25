@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_head_nugget extends serendipity_event
  {
-    var $title = HEAD_NUGGET_TITLE;
+    public $title = HEAD_NUGGET_TITLE;
 
     function introspect(&$propbag)
     {
@@ -20,11 +22,11 @@ class serendipity_event_head_nugget extends serendipity_event
         );
         $propbag->add('event_hooks', array('frontend_header' => true));
         $propbag->add('author', 'Jannis Hermanns');
-        $propbag->add('version', '1.6');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('stackable', true);
         $propbag->add('groups', array('BACKEND_METAINFORMATION'));

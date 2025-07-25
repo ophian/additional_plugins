@@ -3,10 +3,10 @@
 /**
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/16
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
-@define('HEAD_NUGGET_TITLE', 'HTML kÛd v z·hlavÌ str·nky (HTML-Head Nugget)');
-@define('HEAD_NUGGET_HOLDS_A_BLAHBLAH', 'UmoæÚuje vloæit HTML kÛd do <HEAD> oblasti html kÛdu str·nky. PouæitÌ pro vloæenÌ meta-tag˘ nebo vloæenÌ JavaScriptu.');
+@define('HEAD_NUGGET_TITLE', 'HTML k√≥d v z√°hlav√≠ str√°nky (HTML-Head Nugget)');
+@define('HEAD_NUGGET_HOLDS_A_BLAHBLAH', 'Umo≈æ≈àuje vlo≈æit HTML k√≥d do <HEAD> oblasti html k√≥du str√°nky. Pou≈æit√≠ pro vlo≈æen√≠ meta-tag≈Ø nebo vlo≈æen√≠ JavaScriptu.');
 
