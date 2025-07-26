@@ -26,7 +26,7 @@ class serendipity_plugin_guestbook extends serendipity_plugin
         $propbag->add('description',   PLUGIN_GUESTSIDE_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Jaap Boerma ( j@webbict.com ), Tadashi Jokagi <elf2000@users.sourceforge.net>, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements', array(
                         'serendipity' => '5.0',
                         'smarty'      => '4.1',
@@ -191,11 +191,7 @@ class serendipity_plugin_guestbook extends serendipity_plugin
                 $row['body'] = trim(preg_replace('/\s+/', ' ', $row['body']));
 
                 if (strlen($row['body']) > $max_chars) {
-                    if (function_exists('mb_strimwidth')) {
-                        $row['body'] = mb_strimwidth($row['body'], 0, $max_chars, "&hellip;");
-                    } else {
-                        $row['body'] = substr($row['body'], 0, $max_chars) . "&hellip;";
-                    }
+                    $row['body'] = mb_strimwidth($row['body'], 0, (int) $max_chars, "&hellip;");
                 }
                 // We do not need to strictly set this to true, since that would be the default case in nl2br if nothing is set
                 // This is the only workable solution for (sidebar?) plugins, to explicitly allow to apply nl2br plugin changes to markup (if we want to),

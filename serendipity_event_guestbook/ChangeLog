@@ -1,3 +1,7 @@
+5.0.1 & 2.0.1 (sb plugin):
+--------------------------
+ * Fix 3rd param type for mb_strimwidth() awaits int
+
 5.0.0 & 2.0.0 (sb plugin):
 --------------------------
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
