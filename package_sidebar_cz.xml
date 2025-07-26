@@ -2192,7 +2192,7 @@
 <description>Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do databáze Coppermine galerie (pouze pokud běží na MySQL) a samozřejmě i ke Knihovně médií Serendipity. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.</description>
 <maintainers><maintainer><name>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.0.2</version>
+  <version>4.0.3</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
