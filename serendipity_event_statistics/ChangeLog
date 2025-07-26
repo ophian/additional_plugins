@@ -1,3 +1,7 @@
+5.0.2:
+------
+ * Cast fix setCookie() 2cd parameter to string
+
 5.0.1: + 2.0.0 (sb plugin)
 5.0.0:
 ------

@@ -23,7 +23,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '5.0.1');
+        $propbag->add('version',       '5.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -1198,7 +1198,7 @@ class serendipity_event_statistics extends serendipity_event
         if (serendipity_db_bool($this->get_config('autoclean', 'true'))
         && (!isset($_COOKIE['serendipity']['autoCleanStats']) || $_COOKIE['serendipity']['autoCleanStats'] < time())) {
             $this->autoCleanStats();
-            setCookie('serendipity[autoCleanStats]', time()+43200); // + 12 h
+            setCookie('serendipity[autoCleanStats]', (string) (time()+43200)); // + 12 h
         }
         // ---------------QUERIES for Viewing statistics ----------------------------------------------
         $day = date('Y-m-d');
