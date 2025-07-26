@@ -1,5 +1,4 @@
 <?php
-
 # Translated by: Wesley Hwang-Chung <wesley96@gmail.com> 
 # (c) 2005 http://www.tool-box.info/
 

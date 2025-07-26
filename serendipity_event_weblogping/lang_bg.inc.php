@@ -5,13 +5,13 @@
  *  @author Iwan Cenov <jwalker@hotmail.bg>
  */
 
-@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Анонсиране на статии (чрез XML-RPC пинг) на:');
-@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Изпращане на XML-RPC пинк към хост %s');
-@define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Анонсиране на статии');
-@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Изпраща известия за нови статии на онлайн услуги');
-@define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(заменя %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Пинг услуги');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Една или повече специални пинг услуги, разделени с ",". Записите трябва да бъдат форматирани така: "host.domain/path". Ако бъде въведена "*" в началото на името на хоста, ще му бъдат изпратени разширени XML-RPC опции (само, ако се поддържат от него). You have to submit this form several times, until the new entries are placed into the upper list.');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Неуспех (Причина: %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Успех!');
+@define('PLUGIN_EVENT_WEBLOGPING_PING', 'РђРЅРѕРЅСЃРёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёРё (С‡СЂРµР· XML-RPC РїРёРЅРі) РЅР°:');
+@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'РР·РїСЂР°С‰Р°РЅРµ РЅР° XML-RPC РїРёРЅРє РєСЉРј С…РѕСЃС‚ %s');
+@define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'РђРЅРѕРЅСЃРёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёРё');
+@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'РР·РїСЂР°С‰Р° РёР·РІРµСЃС‚РёСЏ Р·Р° РЅРѕРІРё СЃС‚Р°С‚РёРё РЅР° РѕРЅР»Р°Р№РЅ СѓСЃР»СѓРіРё');
+@define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(Р·Р°РјРµРЅСЏ %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'РџРёРЅРі СѓСЃР»СѓРіРё');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Р•РґРЅР° РёР»Рё РїРѕРІРµС‡Рµ СЃРїРµС†РёР°Р»РЅРё РїРёРЅРі СѓСЃР»СѓРіРё, СЂР°Р·РґРµР»РµРЅРё СЃ ",". Р—Р°РїРёСЃРёС‚Рµ С‚СЂСЏР±РІР° РґР° Р±СЉРґР°С‚ С„РѕСЂРјР°С‚РёСЂР°РЅРё С‚Р°РєР°: "host.domain/path". РђРєРѕ Р±СЉРґРµ РІСЉРІРµРґРµРЅР° "*" РІ РЅР°С‡Р°Р»РѕС‚Рѕ РЅР° РёРјРµС‚Рѕ РЅР° С…РѕСЃС‚Р°, С‰Рµ РјСѓ Р±СЉРґР°С‚ РёР·РїСЂР°С‚РµРЅРё СЂР°Р·С€РёСЂРµРЅРё XML-RPC РѕРїС†РёРё (СЃР°РјРѕ, Р°РєРѕ СЃРµ РїРѕРґРґСЉСЂР¶Р°С‚ РѕС‚ РЅРµРіРѕ). You have to submit this form several times, until the new entries are placed into the upper list.');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'РќРµСѓСЃРїРµС… (РџСЂРёС‡РёРЅР°: %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'РЈСЃРїРµС…!');
 

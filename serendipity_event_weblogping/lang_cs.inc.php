@@ -2,17 +2,17 @@
 
 /**
  *  @version
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Oznamovat poloûky (prostrednictvÌm XML-RPC ping) na:');
-@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'PosÌl·m XML-RPC ozn·menÌ na hosta %s');
-@define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Oznamov·nÌ p¯ÌspÏvk˘');
-@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'PosÌl· ozn·menÌ o nov˝ch prÌspevcÌch na on-line internetovÈ sluûby.');
-@define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(odstranov·nÌ %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'VlastnÌ oznamovacÌ sluûby');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jedna nebo vÌce oznamovacÌch sluûeb oddelenÈ c·rkou ",". Form·t sluûby je "host.domena/cesta". Pokud je na zac·tku sluûby uveden· hvezdicka "*", budou na tuto adresu posÌl·ny roöÌren· XML-RPC ozn·menÌ. You have to submit this form several times, until the new entries are placed into the upper list.');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Nezda¯ilo se (Duvod: %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', '⁄spech!');
+@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Oznamovat polo≈æky (prostrednictv√≠m XML-RPC ping) na:');
+@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Pos√≠l√°m XML-RPC ozn√°men√≠ na hosta %s');
+@define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Oznamov√°n√≠ p√∏√≠sp√¨vk√π');
+@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Pos√≠l√° ozn√°men√≠ o nov√Ωch p≈ô√≠spƒõvc√≠ch na on-line internetov√© slu≈æby.');
+@define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(odstra≈àov√°n√≠ %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Vlastn√≠ oznamovac√≠ slu≈æby');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jedna nebo v√≠ce oznamovac√≠ch slu≈æeb oddƒõlen√© ƒç√°rkou ",". Form√°t slu≈æby je "host.domena/cesta". Pokud je na zaƒç√°tku slu≈æby uveden√° hvƒõzdiƒçka "*", budou na tuto adresu pos√≠l√°ny ro≈°√≠≈ôen√° XML-RPC ozn√°men√≠. You have to submit this form several times, until the new entries are placed into the upper list.');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Nezda√∏ilo se (D≈Øvod: %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', '√öspƒõch!');
 

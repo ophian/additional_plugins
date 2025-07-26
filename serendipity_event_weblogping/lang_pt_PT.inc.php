@@ -3,17 +3,17 @@
 ##########################################################################
 #                                                                        #
 # Translated by                                                          #
-# Jo„o P. Matos <jmatos@math.ist.utl.pt>                                 #
+# Jo√£o P. Matos <jmatos@math.ist.utl.pt>                                 #
 #                                                                        #
 ##########################################################################
 
 @define('PLUGIN_EVENT_WEBLOGPING_PING', 'Anunciar as entradas (por ping XML) a:');
-@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Enviar o ping XML-RPC ‡ m·quina %s');
+@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Enviar o ping XML-RPC √† m√°quina %s');
 @define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Anunciar as entradas');
-@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Enviar uma actualizaÁ„o de novas entradas aos serviÁos de indexaÁ„o');
+@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Enviar uma actualiza√ß√£o de novas entradas aos servi√ßos de indexa√ß√£o');
 @define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(substitui %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'ServiÁos ping adicionais');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Um ou mais serviÁos ping adicionais, separados por ",". As entradas precisam de ser formatadas como: "m·quina.domÌnio/caminho". Se um "*" for introduzido no princÌpio do nome de uma m·quina, as opÁıes XML-RPC adicionais ser„o enviadas para essa m·quina (se suportadas por essa m·quina). You have to submit this form several times, until the new entries are placed into the upper list.');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'FalhanÁo(Raz„o: %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Servi√ßos ping adicionais');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Um ou mais servi√ßos ping adicionais, separados por ",". As entradas precisam de ser formatadas como: "m√°quina.dom√≠nio/caminho". Se um "*" for introduzido no princ√≠pio do nome de uma m√°quina, as op√ß√µes XML-RPC adicionais ser√£o enviadas para essa m√°quina (se suportadas por essa m√°quina). You have to submit this form several times, until the new entries are placed into the upper list.');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Falhan√ßo(Raz√£o: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Sucesso!!');
 

@@ -6,13 +6,13 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Zg≥aszam wpisy (via XML-RPC) do:');
-@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Wysy≥am pinga XML-RPC do hosta %s');
-@define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Zg≥o∂ wpisy');
-@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Wy∂lij zg≥oszenia o nowych wpisach do serwisÛw sieciowych');
+@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Zg≈Çaszam wpisy (via XML-RPC) do:');
+@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Wysy≈Çam pinga XML-RPC do hosta %s');
+@define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Zg≈Ço≈õ wpisy');
+@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Wy≈õlij zg≈Çoszenia o nowych wpisach do serwis√≥w sieciowych');
 @define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(supersedes %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'W≥asne serwisy sieciowe');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jeden (lub wiÍcej) specjalistyczny serwis sieciowy (serwisy rozdzielaj przecinkiem ","). Dane powinny byÊ wpisane w podobny do nastÍpuj±cego sposÛb: "host.domena/∂cieøka". Je∂li zostanie wprowadzony znak "*" na pocz±tku nazwy hosta, rozszerzony ping XML-RPC zostanie wys≥any do takiego hosta (tylko je∂li host obs≥uguje takie pingi). You have to submit this form several times, until the new entries are placed into the upper list.');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'W≈Çasne serwisy sieciowe');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Jeden (lub wiƒôcej) specjalistyczny serwis sieciowy (serwisy rozdzielaj przecinkiem ","). Dane powinny byƒá wpisane w podobny do nastƒôpujƒÖcego spos√≥b: "host.domena/≈õcie≈ºka". Je≈õli zostanie wprowadzony znak "*" na poczƒÖtku nazwy hosta, rozszerzony ping XML-RPC zostanie wys≈Çany do takiego hosta (tylko je≈õli host obs≈Çuguje takie pingi). You have to submit this form several times, until the new entries are placed into the upper list.');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Niepowodzenie (przyczyna: %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Sukces!');
 

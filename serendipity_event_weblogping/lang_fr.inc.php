@@ -8,13 +8,13 @@
 #                                                                        #
 ##########################################################################
 
-@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Annoncer les billets à: (par ping XML)');
-@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Envoie le ping XML-RPC à l\'hôte %s');
+@define('PLUGIN_EVENT_WEBLOGPING_PING', 'Annoncer les billets Ã : (par ping XML)');
+@define('PLUGIN_EVENT_WEBLOGPING_SENDINGPING', 'Envoie le ping XML-RPC Ã  l\'hÃ´te %s');
 @define('PLUGIN_EVENT_WEBLOGPING_TITLE', 'Annconcer les billets');
-@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Envoyer une mise à jour pour les nouveaux billets aux services d\'indexation');
+@define('PLUGIN_EVENT_WEBLOGPING_DESC', 'Envoyer une mise Ã  jour pour les nouveaux billets aux services d\'indexation');
 @define('PLUGIN_EVENT_WEBLOGPING_SUPERSEDES', '(remplace %s)');
 @define('PLUGIN_EVENT_WEBLOGPING_CUSTOM', 'Services ping additionnels');
-@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Vous permet d\'ajouter des services additionnels; entrez les adresses cibles ici, séparez plusieurs adresses par des virgules (,). Les adresses doivent être au format "hôte.domaine/chemin". Si un "*" est ajouté au début de l\'hôte, les options XML-RPC étendues seront envoyées à l\hôte cible (seulement si celui-ci les gère). You have to submit this form several times, until the new entries are placed into the upper list.');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Le ping a échoué. (Raison: %s)');
-@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Ping réussi.');
+@define('PLUGIN_EVENT_WEBLOGPING_CUSTOM_BLAHBLA', 'Vous permet d\'ajouter des services additionnels; entrez les adresses cibles ici, sÃ©parez plusieurs adresses par des virgules (,). Les adresses doivent Ãªtre au format "hÃ´te.domaine/chemin". Si un "*" est ajoutÃ© au dÃ©but de l\'hÃ´te, les options XML-RPC Ã©tendues seront envoyÃ©es Ã  l\hÃ´te cible (seulement si celui-ci les gÃ¨re). You have to submit this form several times, until the new entries are placed into the upper list.');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_FAILURE', 'Le ping a Ã©chouÃ©. (Raison: %s)');
+@define('PLUGIN_EVENT_WEBLOGPING_SEND_SUCCESS', 'Ping rÃ©ussi.');
 
