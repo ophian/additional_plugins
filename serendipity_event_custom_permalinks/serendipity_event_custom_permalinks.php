@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -28,11 +30,11 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.27');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR'));
@@ -187,7 +189,7 @@ meta_properties_permalink {
                     </legend>
                 </span>
                 <div class="form_field">
-                    <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo serendipity_specialchars($permalink); ?>">
+                    <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo htmlspecialchars($permalink); ?>">
                 </div>
                 <div id="meta_properties_permalink" class="clearfix xfield_info additional_info">
                     <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>

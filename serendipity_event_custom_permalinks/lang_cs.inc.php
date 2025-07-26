@@ -1,14 +1,14 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_EVENT_CUSTOM_PERMALINKS', 'Stálé odkazy pro pøíspìvky');
-@define('PLUGIN_EVENT_CUSTOM_PERMALINKS_DESC', 'Mùete definovat stálé odkazy k jednotlivım pøíspìvkùm. Lze pouít pouze URL vzory, které JEŠTÌ NEJSOU pouívané - pouívání stálıch odkazù ve tvaru /archives/odkaz není tedy moné. Ale pouívání jakéhokoliv jiného (virtuálního) adresáøe moné je.');
-@define('PLUGIN_EVENT_CUSTOM_PERMALINKS_PL', 'Stálı odkaz');
-@define('PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC', 'Definujte stálı odkaz pro tento pøíspìvek. Je tøeba pouít absolutní HTTP cestu, která musí obsahovat ukonèující .htm nebo .html! Lze pouít pouze URL vzory, které JEŠTÌ NEJSOU pouívané - pouívání stálıch odkazù ve tvaru /archives/odkaz není tedy moné. Ale pouívání jakéhokoliv jiného (virtuálního) adresáøe moné je.');
+@define('PLUGIN_EVENT_CUSTOM_PERMALINKS', 'StÃ¡lÃ© odkazy pro pÅ™Ã­spÄ›vky');
+@define('PLUGIN_EVENT_CUSTOM_PERMALINKS_DESC', 'MÅ¯Å¾ete definovat stÃ¡lÃ© odkazy k jednotlivÃ½m pÅ™Ã­spÄ›vkÅ¯m. Lze pouÅ¾Ã­t pouze URL vzory, kterÃ© JEÅ TÄš NEJSOU pouÅ¾Ã­vanÃ© - pouÅ¾Ã­vÃ¡nÃ­ stÃ¡lÃ½ch odkazÅ¯ ve tvaru /archives/odkaz nenÃ­ tedy moÅ¾nÃ©. Ale pouÅ¾Ã­vÃ¡nÃ­ jakÃ©hokoliv jinÃ©ho (virtuÃ¡lnÃ­ho) adresÃ¡Å™e moÅ¾nÃ© je.');
+@define('PLUGIN_EVENT_CUSTOM_PERMALINKS_PL', 'StÃ¡lÃ½ odkaz');
+@define('PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC', 'Definujte stÃ¡lÃ½ odkaz pro tento pÅ™Ã­spÄ›vek. Je tÅ™eba pouÅ¾Ã­t absolutnÃ­ HTTP cestu, kterÃ¡ musÃ­ obsahovat ukonÄujÃ­cÃ­ .htm nebo .html! Lze pouÅ¾Ã­t pouze URL vzory, kterÃ© JEÅ TÄš NEJSOU pouÅ¾Ã­vanÃ© - pouÅ¾Ã­vÃ¡nÃ­ stÃ¡lÃ½ch odkazÅ¯ ve tvaru /archives/odkaz nenÃ­ tedy moÅ¾nÃ©. Ale pouÅ¾Ã­vÃ¡nÃ­ jakÃ©hokoliv jinÃ©ho (virtuÃ¡lnÃ­ho) adresÃ¡Å™e moÅ¾nÃ© je.');
 
