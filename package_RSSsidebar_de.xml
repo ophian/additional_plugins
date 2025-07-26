@@ -275,7 +275,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Integrierte Bildanzeige in der Seitenleiste&lt;/b&gt;&lt;br /&gt;Bietet die Möglichkeit, Bilder in der Seitenleiste anzuzeigen. Die Quelle der Bilder ist konfigurierbar. Das Plugin ist in der Lage, auf die Styx Mediathek zuzugreifen. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sat, 26 Jul 2025 18:27:38 +0200</pubDate>
+<pubDate>Sat, 26 Jul 2025 18:37:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
