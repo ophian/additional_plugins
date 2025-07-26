@@ -418,7 +418,7 @@ class media_sidebar extends subplug_sidebar {
             $hours = (int) (($rotate_time % 1440)/ 60);
             $minutes = (int) ((($rotate_time % 1440) % 60)/1);
             while ($next_time < time()) {
-                $next_time  = mktime((int) date("H",$last_update)+$hours, (int) date("i",$last_update)+$minutes, 0, (int) date("m",$last_update), (int) date("d",$last_update)+ $day, (int) date("Y",$last_update));
+                $next_time  = mktime((int) date("H",(int) $last_update)+$hours, (int) date("i",(int) $last_update)+$minutes, 0, (int) date("m",(int) $last_update), (int) date("d",(int) $last_update)+ $day, (int) date("Y",(int) $last_update));
                 $last_update = $next_time;
             }
         }
