@@ -7,6 +7,6 @@
  */
 
 @define('PLUGIN_EVENT_TEXTILE_NAME', 'Znacznik: Textile');
-@define('PLUGIN_EVENT_TEXTILE_DESC', 'Parsuj ca³± tre¶æ przez modu³ konwertera Textile');
+@define('PLUGIN_EVENT_TEXTILE_DESC', 'Parsuj caÅ‚Ä… treÅ›Ä‡ przez moduÅ‚ konwertera Textile');
 @define('PLUGIN_EVENT_TEXTILE_TRANSFORM', '<a href="%s" target="_blank">Textile</a>-format dozwolony');
 

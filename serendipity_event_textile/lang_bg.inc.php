@@ -5,13 +5,13 @@
  *  @file 
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: Revision of lang_en.inc.php
-*/
+ */
 
-@define('PLUGIN_EVENT_TEXTILE_NAME', 'Форматиране на текст: Textile');
-@define('PLUGIN_EVENT_TEXTILE_DESC', 'Форматиране на текст чрез Textile конвертор.');
-@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'Разрешен формат <a href="%s" target="_blank">Textile</a>');
-@define('PLUGIN_EVENT_TEXTILE_VERSION', 'Версия на Textile');
-@define('PLUGIN_EVENT_TEXTILE_VERSION_DESCRIPTION', 'Коя версия на Textile искате да използвате?');
-@define('PLUGIN_EVENT_TEXTILE_UNESCAPE', 'Конвертиране на HTML кавички в истински кавички?');
-@define('PLUGIN_EVENT_TEXTILE_UNESCAPE_DESC', 'Ако е позволено, HTML-Quote-Entities (&quot;) ще бъдат конвертирани в истински кавички. Полезно е, акп желаете да използвате Textile форматиране в коментарите.');
+@define('PLUGIN_EVENT_TEXTILE_NAME', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РЅР° С‚РµРєСЃС‚: Textile');
+@define('PLUGIN_EVENT_TEXTILE_DESC', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РЅР° С‚РµРєСЃС‚ С‡СЂРµР· Textile РєРѕРЅРІРµСЂС‚РѕСЂ.');
+@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'Р Р°Р·СЂРµС€РµРЅ С„РѕСЂРјР°С‚ <a href="%s" target="_blank">Textile</a>');
+@define('PLUGIN_EVENT_TEXTILE_VERSION', 'Р’РµСЂСЃРёСЏ РЅР° Textile');
+@define('PLUGIN_EVENT_TEXTILE_VERSION_DESCRIPTION', 'РљРѕСЏ РІРµСЂСЃРёСЏ РЅР° Textile РёСЃРєР°С‚Рµ РґР° РёР·РїРѕР»Р·РІР°С‚Рµ?');
+@define('PLUGIN_EVENT_TEXTILE_UNESCAPE', 'РљРѕРЅРІРµСЂС‚РёСЂР°РЅРµ РЅР° HTML РєР°РІРёС‡РєРё РІ РёСЃС‚РёРЅСЃРєРё РєР°РІРёС‡РєРё?');
+@define('PLUGIN_EVENT_TEXTILE_UNESCAPE_DESC', 'РђРєРѕ Рµ РїРѕР·РІРѕР»РµРЅРѕ, HTML-Quote-Entities (&quot;) С‰Рµ Р±СЉРґР°С‚ РєРѕРЅРІРµСЂС‚РёСЂР°РЅРё РІ РёСЃС‚РёРЅСЃРєРё РєР°РІРёС‡РєРё. РџРѕР»РµР·РЅРѕ Рµ, Р°РєРї Р¶РµР»Р°РµС‚Рµ РґР° РёР·РїРѕР»Р·РІР°С‚Рµ Textile С„РѕСЂРјР°С‚РёСЂР°РЅРµ РІ РєРѕРјРµРЅС‚Р°СЂРёС‚Рµ.');
 

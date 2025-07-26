@@ -2,15 +2,15 @@
 
 /**
  *  @file lang_cs.inc.php 1381 2008-01-20 01:31:00 VladaAjgl
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_EVENT_TEXTILE_NAME', 'Markup: Textile');
-@define('PLUGIN_EVENT_TEXTILE_DESC', 'Pøevádí text se znaèkami Textile do HTML');
-@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'Povolenı formát <a href="%s" target="_blank">Textile</a>');
+@define('PLUGIN_EVENT_TEXTILE_DESC', 'PÅ™evÃ¡dÃ­ text se znaÄkami Textile do HTML');
+@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'PovolenÃ½ formÃ¡t <a href="%s" target="_blank">Textile</a>');
 @define('PLUGIN_EVENT_TEXTILE_VERSION', 'Verze Textile');
-@define('PLUGIN_EVENT_TEXTILE_VERSION_DESCRIPTION', 'Kterou verzi znaèkovacího jazyka Textile chcete pouívat?');
-@define('PLUGIN_EVENT_TEXTILE_UNESCAPE', 'Pøevádìt HTML uvozovky na skuteèné uvozovky?');
-@define('PLUGIN_EVENT_TEXTILE_UNESCAPE_DESC', 'Pokud je povoleno, HTML entity pro uvozovky (&quot;) Budou pøevedeny na skuteèné uvozovky. To je uiteèné v pøípadì, e chcete povolit pouívání Textile v komentáøích.');
+@define('PLUGIN_EVENT_TEXTILE_VERSION_DESCRIPTION', 'Kterou verzi znaÄkovacÃ­ho jazyka Textile chcete pouÅ¾Ã­vat?');
+@define('PLUGIN_EVENT_TEXTILE_UNESCAPE', 'PÅ™evÃ¡dÄ›t HTML uvozovky na skuteÄnÃ© uvozovky?');
+@define('PLUGIN_EVENT_TEXTILE_UNESCAPE_DESC', 'Pokud je povoleno, HTML entity pro uvozovky (&quot;) Budou pÅ™evedeny na skuteÄnÃ© uvozovky. To je uÅ¾iteÄnÃ© v pÅ™Ã­padÄ›, Å¾e chcete povolit pouÅ¾Ã­vÃ¡nÃ­ Textile v komentÃ¡Å™Ã­ch.');
 

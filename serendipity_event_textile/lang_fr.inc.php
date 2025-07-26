@@ -9,5 +9,5 @@
 
 @define('PLUGIN_EVENT_TEXTILE_NAME', 'Balises: Textile');
 @define('PLUGIN_EVENT_TEXTILE_DESC', 'Permet l\'utilisation de balises Textile dans le texte des billets');
-@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'Syntaxe <a href="%s" target="_blank">Textile</a> autorisée');
+@define('PLUGIN_EVENT_TEXTILE_TRANSFORM', 'Syntaxe <a href="%s" target="_blank">Textile</a> autorisÃ©e');
 
