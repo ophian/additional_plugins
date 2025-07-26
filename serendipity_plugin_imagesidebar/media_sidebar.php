@@ -406,9 +406,9 @@ class media_sidebar extends subplug_sidebar {
 
     function calc_update_time($rotate_time, $last_update)
     {
-        $next_time = mktime(date("H"), date("i"), 0, date("m"), date("d"), date("Y"));
+        $next_time = mktime((int) date("H"), date("i"), 0, (int) date("m"), (int) date("d"), (int) date("Y"));
         if ($last_update == '') {
-            $last_update = mktime(date("H"), 0, 0, date("m"), date("d"), date("Y"));
+            $last_update = mktime((int) date("H"), 0, 0, (int) date("m"), (int) date("d"), (int) date("Y"));
         }
         if ($rotate_time != 0) {
             if ($rotate_time > 1440) {
@@ -418,7 +418,7 @@ class media_sidebar extends subplug_sidebar {
             $hours = (int) (($rotate_time % 1440)/ 60);
             $minutes = (int) ((($rotate_time % 1440) % 60)/1);
             while ($next_time < time()) {
-                $next_time  = mktime(date("H",$last_update)+$hours, date("i",$last_update)+$minutes, 0, date("m",$last_update), date("d",$last_update)+ $day, date("Y",$last_update));
+                $next_time  = mktime((int) date("H",$last_update)+$hours, date("i",$last_update)+$minutes, 0, (int) date("m",$last_update), (int) date("d",$last_update)+ $day, (int) date("Y",$last_update));
                 $last_update = $next_time;
             }
         }
