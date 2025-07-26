@@ -1,93 +1,91 @@
 <?php
 
 /**
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @translated 2009/05/28
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @revisionDate 2011/06/19
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @revisionDate 2012/05/13
  */
 
 @define('PLUGIN_PODCAST_NAME', 'Podcasting plugin');
-@define('PLUGIN_PODCAST_DESC', 'Pøidává "podcastovací" mo¾nosti (RSS zapouzdøení, pøehrávaè videa a/nebo hudby)');
-@define('PLUGIN_PODCAST_EASY', 'Jednoduché nastavení:');
-@define('PLUGIN_PODCAST_USEPLAYER', 'Zobrazit pøehrávaè');
-@define('PLUGIN_PODCAST_USEPLAYER_DESC', 'Má se generovat HTML kód pro pøehrávání podcastù místo jednoduchého odkazu na soubor multimédia?');
-@define('PLUGIN_PODCAST_AUTOSIZE', 'Pøizpùsobit velikost pøehrávaèe');
-@define('PLUGIN_PODCAST_AUTOSIZE_DESC', 'Sna¾í se urèit rozmìry videa a pøizpùsobit jim rozmìry pøehrávaèe. Nastavení ¹íøky a vı¹ky budou ingorována.');
-@define('PLUGIN_PODCAST_WIDTH', '©íøka');
-@define('PLUGIN_PODCAST_WIDTH_DESC', '©íøka pøehrávaèe');
-@define('PLUGIN_PODCAST_HEIGHT', 'Vı¹ka');
-@define('PLUGIN_PODCAST_HEIGHT_DESC', 'Vı¹ka pøehrávaèe');
-@define('PLUGIN_PODCAST_ALIGN', 'Zarovnání');
-@define('PLUGIN_PODCAST_ALIGN_DESC', 'Zarovnání pøehrávaèe k okolnímu textu');
+@define('PLUGIN_PODCAST_DESC', 'PÅ™idÃ¡vÃ¡ "podcastovacÃ­" moÅ¾nosti (RSS zapouzdÅ™enÃ­, pÅ™ehrÃ¡vaÄ videa a/nebo hudby)');
+@define('PLUGIN_PODCAST_EASY', 'JednoduchÃ© nastavenÃ­:');
+@define('PLUGIN_PODCAST_USEPLAYER', 'Zobrazit pÅ™ehrÃ¡vaÄ');
+@define('PLUGIN_PODCAST_USEPLAYER_DESC', 'MÃ¡ se generovat HTML kÃ³d pro pÅ™ehrÃ¡vÃ¡nÃ­ podcastÅ¯ mÃ­sto jednoduchÃ©ho odkazu na soubor multimÃ©dia?');
+@define('PLUGIN_PODCAST_AUTOSIZE', 'PÅ™izpÅ¯sobit velikost pÅ™ehrÃ¡vaÄe');
+@define('PLUGIN_PODCAST_AUTOSIZE_DESC', 'SnaÅ¾Ã­ se urÄit rozmÄ›ry videa a pÅ™izpÅ¯sobit jim rozmÄ›ry pÅ™ehrÃ¡vaÄe. NastavenÃ­ Å¡Ã­Å™ky a vÃ½Å¡ky budou ingorovÃ¡na.');
+@define('PLUGIN_PODCAST_WIDTH', 'Å Ã­Å™ka');
+@define('PLUGIN_PODCAST_WIDTH_DESC', 'Å Ã­Å™ka pÅ™ehrÃ¡vaÄe');
+@define('PLUGIN_PODCAST_HEIGHT', 'VÃ½Å¡ka');
+@define('PLUGIN_PODCAST_HEIGHT_DESC', 'VÃ½Å¡ka pÅ™ehrÃ¡vaÄe');
+@define('PLUGIN_PODCAST_ALIGN', 'ZarovnÃ¡nÃ­');
+@define('PLUGIN_PODCAST_ALIGN_DESC', 'ZarovnÃ¡nÃ­ pÅ™ehrÃ¡vaÄe k okolnÃ­mu textu');
 @define('PLUGIN_PODCAST_ALIGN_LEFT', 'doleva');
 @define('PLUGIN_PODCAST_ALIGN_RIGHT', 'doprava');
-@define('PLUGIN_PODCAST_ALIGN_CENTER', 'na støed');
-@define('PLUGIN_PODCAST_ALIGN_NONE', '¾ádné');
-@define('PLUGIN_PODCAST_FIRSTMEDIAONLY', 'Vlo¾it první multimediální soubor pouze jako RSS zapouzdøení');
-@define('PLUGIN_PODCAST_FIRSTMEDIAONLY_DESC', 'Specifikace standardu RSS umo¾òuje vlo¾it pouze jedno zapouzdøení u ka¾dého pøíspìvku. Pokud je tato volba "Ano", pak bude respektován vı¹e zmínìnı standard RDD a pouze první nalezenı multimediální soubor bude vlo¾en do RSS kanálu.');
+@define('PLUGIN_PODCAST_ALIGN_CENTER', 'na stÅ™ed');
+@define('PLUGIN_PODCAST_ALIGN_NONE', 'Å¾Ã¡dnÃ©');
+@define('PLUGIN_PODCAST_FIRSTMEDIAONLY', 'VloÅ¾it prvnÃ­ multimediÃ¡lnÃ­ soubor pouze jako RSS zapouzdÅ™enÃ­');
+@define('PLUGIN_PODCAST_FIRSTMEDIAONLY_DESC', 'Specifikace standardu RSS umoÅ¾Åˆuje vloÅ¾it pouze jedno zapouzdÅ™enÃ­ u kaÅ¾dÃ©ho pÅ™Ã­spÄ›vku. Pokud je tato volba "Ano", pak bude respektovÃ¡n vÃ½Å¡e zmÃ­nÄ›nÃ½ standard RDD a pouze prvnÃ­ nalezenÃ½ multimediÃ¡lnÃ­ soubor bude vloÅ¾en do RSS kanÃ¡lu.');
 
-@define('PLUGIN_PODCAST_EXTATTRSETTINGS', 'Podcastování pomocí roz¹íøenıch parametrù pøíspìvku:');
-@define('PLUGIN_PODCAST_EXTATTR', 'Roz¹íøující parametry pøíspìvku');
-@define('PLUGIN_PODCAST_EXTATTR_DESC', 'Zde mù¾ete urèit, které roz¹iøující parametry mají bıt zpracovávány jako multimediální pøílohy èlánku a které tedy budou vkládány do RSS. Pi¹te seznam èárkou oddìlenıch jmen parametrù. Pro tuto funkci je tøeba mít nainstalovanı plugin "Roz¹íøené parametry pøíspìvku".');
+@define('PLUGIN_PODCAST_EXTATTRSETTINGS', 'PodcastovÃ¡nÃ­ pomocÃ­ rozÅ¡Ã­Å™enÃ½ch parametrÅ¯ pÅ™Ã­spÄ›vku:');
+@define('PLUGIN_PODCAST_EXTATTR', 'RozÅ¡Ã­Å™ujÃ­cÃ­ parametry pÅ™Ã­spÄ›vku');
+@define('PLUGIN_PODCAST_EXTATTR_DESC', 'Zde mÅ¯Å¾ete urÄit, kterÃ© rozÅ¡iÅ™ujÃ­cÃ­ parametry majÃ­ bÃ½t zpracovÃ¡vÃ¡ny jako multimediÃ¡lnÃ­ pÅ™Ã­lohy ÄlÃ¡nku a kterÃ© tedy budou vklÃ¡dÃ¡ny do RSS. PiÅ¡te seznam ÄÃ¡rkou oddÄ›lenÃ½ch jmen parametrÅ¯. Pro tuto funkci je tÅ™eba mÃ­t nainstalovanÃ½ plugin "RozÅ¡Ã­Å™enÃ© parametry pÅ™Ã­spÄ›vku".');
 
-@define('PLUGIN_PODCAST_EXTPOS', 'Poloha multimédiálních souborù nalezenıch v roz¹íøenıch parametrech pøíspìvku.');
-@define('PLUGIN_PODCAST_EXTPOS_DESC', 'Urèete, jakım zpùsobem mají bıt vøazeny multimediální soubory do pøíspìvku.');
-@define('PLUGIN_PODCAST_EXTPOS_NONE', 'Nevkládat do pøíspìvku');
-@define('PLUGIN_PODCAST_EXTPOS_BT', 'Zaèátek pøíspìvku');
-@define('PLUGIN_PODCAST_EXTPOS_BB', 'Konec pøíspìvku');
-@define('PLUGIN_PODCAST_EXTPOS_ET', 'Zaèátek roz¹íøené textové èásti');
-@define('PLUGIN_PODCAST_EXTPOS_EB', 'Konec roz¹íøené textové èásti');
+@define('PLUGIN_PODCAST_EXTPOS', 'Poloha multimÃ©diÃ¡lnÃ­ch souborÅ¯ nalezenÃ½ch v rozÅ¡Ã­Å™enÃ½ch parametrech pÅ™Ã­spÄ›vku.');
+@define('PLUGIN_PODCAST_EXTPOS_DESC', 'UrÄete, jakÃ½m zpÅ¯sobem majÃ­ bÃ½t vÅ™azeny multimediÃ¡lnÃ­ soubory do pÅ™Ã­spÄ›vku.');
+@define('PLUGIN_PODCAST_EXTPOS_NONE', 'NevklÃ¡dat do pÅ™Ã­spÄ›vku');
+@define('PLUGIN_PODCAST_EXTPOS_BT', 'ZaÄÃ¡tek pÅ™Ã­spÄ›vku');
+@define('PLUGIN_PODCAST_EXTPOS_BB', 'Konec pÅ™Ã­spÄ›vku');
+@define('PLUGIN_PODCAST_EXTPOS_ET', 'ZaÄÃ¡tek rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti');
+@define('PLUGIN_PODCAST_EXTPOS_EB', 'Konec rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti');
 
-@define('PLUGIN_PODCAST_EXPERT', 'Pokroèilá nastavení:');
-@define('PLUGIN_PODCAST_QTEXT', 'Quicktime pøípony');
-@define('PLUGIN_PODCAST_QTEXT_DESC', 'Typy souborù, které je schopnı pøehrát Quick Time Player.');
-@define('PLUGIN_PODCAST_WMEXT', 'Windows Media Player pøípony');
-@define('PLUGIN_PODCAST_WMEXT_DESC', 'Typy souborù, které je schopnı pøehrát Windows Media Player.');
-@define('PLUGIN_PODCAST_MFEXT', 'Flash pøípony');
-@define('PLUGIN_PODCAST_MFEXT_DESC', 'Typy souborù, které je schopnı pøehrát Flash Player.');
-@define('PLUGIN_PODCAST_AUEXT', 'Quicktime miniplayer audio pøípony');
-@define('PLUGIN_PODCAST_AUEXT_DESC', 'Typy zvukovıch souborù, které je schopnı pøehrát Quick Time Miniplayer.');
+@define('PLUGIN_PODCAST_EXPERT', 'PokroÄilÃ¡ nastavenÃ­:');
+@define('PLUGIN_PODCAST_QTEXT', 'Quicktime pÅ™Ã­pony');
+@define('PLUGIN_PODCAST_QTEXT_DESC', 'Typy souborÅ¯, kterÃ© je schopnÃ½ pÅ™ehrÃ¡t Quick Time Player.');
+@define('PLUGIN_PODCAST_WMEXT', 'Windows Media Player pÅ™Ã­pony');
+@define('PLUGIN_PODCAST_WMEXT_DESC', 'Typy souborÅ¯, kterÃ© je schopnÃ½ pÅ™ehrÃ¡t Windows Media Player.');
 
-@define('PLUGIN_PODCAST_USECACHE', 'Cachování');
-@define('PLUGIN_PODCAST_USECACHE_DESC', 'Má se pou¾ít cashování pro zapamatování informací nalezenıch podcastù? Pøi pou¾ití cachování je nutní analyzovat obsah souborù pouze jednou. (Doporuèená volba!)');
+@define('PLUGIN_PODCAST_AUEXT', 'Quicktime miniplayer audio pÅ™Ã­pony');
+@define('PLUGIN_PODCAST_AUEXT_DESC', 'Typy zvukovÃ½ch souborÅ¯, kterÃ© je schopnÃ½ pÅ™ehrÃ¡t Quick Time Miniplayer.');
+
+@define('PLUGIN_PODCAST_USECACHE', 'CachovÃ¡nÃ­');
+@define('PLUGIN_PODCAST_USECACHE_DESC', 'MÃ¡ se pouÅ¾Ã­t cashovÃ¡nÃ­ pro zapamatovÃ¡nÃ­ informacÃ­ nalezenÃ½ch podcastÅ¯? PÅ™i pouÅ¾itÃ­ cachovÃ¡nÃ­ je nutnÃ­ analyzovat obsah souborÅ¯ pouze jednou. (DoporuÄenÃ¡ volba!)');
 @define('PLUGIN_PODCAST_JS_OPTIMIZATION', 'Optimalizace JavaScriptu');
-@define('PLUGIN_PODCAST_JS_OPTIMIZATION_DESC','Pokud je zapnutá, JavaScripty jsou do stránky pøidávány pouze v pøípadì potøeby. Pokud pou¾íváte cachování pøíspìvkù, MUSÍTE tuto volbu VYPNOUT!');
+@define('PLUGIN_PODCAST_JS_OPTIMIZATION_DESC','Pokud je zapnutÃ¡, JavaScripty jsou do strÃ¡nky pÅ™idÃ¡vÃ¡ny pouze v pÅ™Ã­padÄ› potÅ™eby. Pokud pouÅ¾Ã­vÃ¡te cachovÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯, MUSÃTE tuto volbu VYPNOUT!');
 
-@define('PLUGIN_PODCAST_ASURE_FEEDENC', 'Ujistit se o zapouzdøení multimédia do RSS kanálu');
-@define('PLUGIN_PODCAST_ASURE_FEEDEENC_DESC', 'Zajistí vlo¾ení média do RSS kanálu jako "zapouzdøení" i v pøípadì, ¾e není zobrazeno v pøíspìvku');
+@define('PLUGIN_PODCAST_ASURE_FEEDENC', 'Ujistit se o zapouzdÅ™enÃ­ multimÃ©dia do RSS kanÃ¡lu');
+@define('PLUGIN_PODCAST_ASURE_FEEDEENC_DESC', 'ZajistÃ­ vloÅ¾enÃ­ mÃ©dia do RSS kanÃ¡lu jako "zapouzdÅ™enÃ­" i v pÅ™Ã­padÄ›, Å¾e nenÃ­ zobrazeno v pÅ™Ã­spÄ›vku');
 
-@define('PLUGIN_PODCAST_HTTPREL', 'Relativní HTTP adresa pluginu');
-@define('PLUGIN_PODCAST_HTTPREL_DESC', 'Napi¹te relativní cestu k pluginu vzhledem k základnímu adresáøi blogu. Pokud jste nezmìnili strukturu stálıch odkazù (permalinkù) a pokud Vá¹ blog nebì¾í na serveru v podadresáøi, pak by v¹e mìlo fungovat s vıchozím nastavením.');
+@define('PLUGIN_PODCAST_HTTPREL', 'RelativnÃ­ HTTP adresa pluginu');
+@define('PLUGIN_PODCAST_HTTPREL_DESC', 'NapiÅ¡te relativnÃ­ cestu k pluginu vzhledem k zÃ¡kladnÃ­mu adresÃ¡Å™i blogu. Pokud jste nezmÄ›nili strukturu stÃ¡lÃ½ch odkazÅ¯ (permalinkÅ¯) a pokud VÃ¡Å¡ blog nebÄ›Å¾Ã­ na serveru v podadresÃ¡Å™i, pak by vÅ¡e mÄ›lo fungovat s vÃ½chozÃ­m nastavenÃ­m.');
 
 @define('PLUGIN_PODCAST_USAGE', 
-'Skenuje pøíspìvky na pøítomnost odkazù na multimediální soubory (video, audio) a nahrazuje je HTML kódem, kterı zobrazí soubor v pøehrávaèi multimédií. Toto ulehèuje vytváøení objektù pøehrávaèe, jednodu¹e tím, ¾e staèí napsat odkaz na soubor (napø. video) nebo ho vybrat z mediatéky. Navíc plugin vkládá multimediální soubory do RSS kanálu zpùsobem, kterı umo¾òuje RSS èteèkám zobrazit je jako podcasty. /Klíèové slovo: Zapouzdøovací tagy / Enclosure Tags).');
+'Skenuje pÅ™Ã­spÄ›vky na pÅ™Ã­tomnost odkazÅ¯ na multimediÃ¡lnÃ­ soubory (video, audio) a nahrazuje je HTML kÃ³dem, kterÃ½ zobrazÃ­ soubor v pÅ™ehrÃ¡vaÄi multimÃ©diÃ­. Toto ulehÄuje vytvÃ¡Å™enÃ­ objektÅ¯ pÅ™ehrÃ¡vaÄe, jednoduÅ¡e tÃ­m, Å¾e staÄÃ­ napsat odkaz na soubor (napÅ™. video) nebo ho vybrat z mediatÃ©ky. NavÃ­c plugin vklÃ¡dÃ¡ multimediÃ¡lnÃ­ soubory do RSS kanÃ¡lu zpÅ¯sobem, kterÃ½ umoÅ¾Åˆuje RSS ÄteÄkÃ¡m zobrazit je jako podcasty. /KlÃ­ÄovÃ© slovo: ZapouzdÅ™ovacÃ­ tagy / Enclosure Tags).');
 
 // Next lines were translated on 2011/06/19
 
-@define('PLUGIN_PODCAST_EXPERT_HINT', 'TIP: Pomocí HTML znaèek si mù¾ete pøizpùsobit LIBOVOLNİ pøehrávaè, tak¾e mù¾ete zadat seznam rùznıch variant pøehrávaèe pro rùzné typy souborù! Pamatujte, ¾e jak jednou ulo¾íte nastavení pluginu, bude v¾dy pou¾ito statické znaèkování <strong>namísto</strong> toho, které plugin poskytuje pomocí souboru <strong>podcast_player.php</strong>. Pokud chcete resetovat nastavení na vıchozí hodnoty, jednodu¹e vyma¾te ve¹kerı obsah pole pro znaèkování pluginu a ulo¾te nastavení.');
-@define('PLUGIN_PODCAST_QTEXT_HTML', 'Znaèkování pøehrávaèe Quicktime');
-@define('PLUGIN_PODCAST_WMEXT_HTML', 'Znaèkování Windows Media Player');
-@define('PLUGIN_PODCAST_MFEXT_HTML', 'Znaèkování Flash player');
-@define('PLUGIN_PODCAST_AUEXT_HTML', 'Znaèkování Quicktime.');
+@define('PLUGIN_PODCAST_EXPERT_HINT', 'TIP: PomocÃ­ HTML znaÄek si mÅ¯Å¾ete pÅ™izpÅ¯sobit LIBOVOLNÃ pÅ™ehrÃ¡vaÄ, takÅ¾e mÅ¯Å¾ete zadat seznam rÅ¯znÃ½ch variant pÅ™ehrÃ¡vaÄe pro rÅ¯znÃ© typy souborÅ¯! Pamatujte, Å¾e jak jednou uloÅ¾Ã­te nastavenÃ­ pluginu, bude vÅ¾dy pouÅ¾ito statickÃ© znaÄkovÃ¡nÃ­ <strong>namÃ­sto</strong> toho, kterÃ© plugin poskytuje pomocÃ­ souboru <strong>podcast_player.php</strong>. Pokud chcete resetovat nastavenÃ­ na vÃ½chozÃ­ hodnoty, jednoduÅ¡e vymaÅ¾te veÅ¡kerÃ½ obsah pole pro znaÄkovÃ¡nÃ­ pluginu a uloÅ¾te nastavenÃ­.');
+@define('PLUGIN_PODCAST_QTEXT_HTML', 'ZnaÄkovÃ¡nÃ­ pÅ™ehrÃ¡vaÄe Quicktime');
+@define('PLUGIN_PODCAST_WMEXT_HTML', 'ZnaÄkovÃ¡nÃ­ Windows Media Player');
+@define('PLUGIN_PODCAST_AUEXT_HTML', 'ZnaÄkovÃ¡nÃ­ Quicktime.');
 
-@define('PLUGIN_PODCAST_HTML5_AUDIO', 'HTML5 audio roz¹íøení');
-@define('PLUGIN_PODCAST_HTML5_AUDIO_DESC', 'Moderní prohlí¾eèe nativnì podporují HTML5 widgety.');
-@define('PLUGIN_PODCAST_HTML5_AUDIO_HTML', 'Znaèkování HTML5 audio');
-@define('PLUGIN_PODCAST_HTML5_VIDEO', 'HTML5 vedio roz¹íøení');
-@define('PLUGIN_PODCAST_HTML5_VIDEO_DESC', 'Moderní prohlí¾eèe nativnì podporují HTML5 widgety.');
-@define('PLUGIN_PODCAST_HTML5_VIDEO_HTML', 'Znaèkování HTML5 video');
-@define('PLUGIN_PODCAST_USAGE_RSS', 'Pro omezení RSS kanálù na pouze specifikované typy mù¾ete pøistupovat ke kanálu pomocí URL jako http://' . $serendipity['baseURL'] . 'rss.php?version=2.0&podcast_format=ogg.
-Toto nastavení napøíklad vlo¾í do kanálu pouze soubory formátu "ogg". Mù¾ete urèit více formátù oddìlenıch èárkou ",".');
-@define('PLUGIN_PODCAST_ITUNES', 'Znaèkování iTunes XML');
-@define('PLUGIN_PODCAST_ITUNES_DESC', 'Zadejte XML, které má bıt vlo¾ení do RSS-kanálu, aby se zobrazovalo v iTunes.');
-@define('PLUGIN_PODCAST_MERGEMULTI', 'Slouèit více elementù HTML5 pøehrávaèe');
-@define('PLUGIN_PODCAST_DOWNLOADLINK', 'V¾dy pøipojit odkaz na sta¾ení');
-@define('PLUGIN_PODCAST_DOWNLOADLINK_DESC','Pokud je vypnuto, mù¾ete pøidat vlastní prizpùsobenı odkaz na sta¾ení do znaèek pøehrávaèe.');
+@define('PLUGIN_PODCAST_HTML5_AUDIO', 'HTML5 audio rozÅ¡Ã­Å™enÃ­');
+@define('PLUGIN_PODCAST_HTML5_AUDIO_DESC', 'ModernÃ­ prohlÃ­Å¾eÄe nativnÄ› podporujÃ­ HTML5 widgety.');
+@define('PLUGIN_PODCAST_HTML5_AUDIO_HTML', 'ZnaÄkovÃ¡nÃ­ HTML5 audio');
+@define('PLUGIN_PODCAST_HTML5_VIDEO', 'HTML5 vedio rozÅ¡Ã­Å™enÃ­');
+@define('PLUGIN_PODCAST_HTML5_VIDEO_DESC', 'ModernÃ­ prohlÃ­Å¾eÄe nativnÄ› podporujÃ­ HTML5 widgety.');
+@define('PLUGIN_PODCAST_HTML5_VIDEO_HTML', 'ZnaÄkovÃ¡nÃ­ HTML5 video');
+@define('PLUGIN_PODCAST_USAGE_RSS', 'Pro omezenÃ­ RSS kanÃ¡lÅ¯ na pouze specifikovanÃ© typy mÅ¯Å¾ete pÅ™istupovat ke kanÃ¡lu pomocÃ­ URL jako http://' . $serendipity['baseURL'] . 'rss.php?version=2.0&podcast_format=ogg.
+Toto nastavenÃ­ napÅ™Ã­klad vloÅ¾Ã­ do kanÃ¡lu pouze soubory formÃ¡tu "ogg". MÅ¯Å¾ete urÄit vÃ­ce formÃ¡tÅ¯ oddÄ›lenÃ½ch ÄÃ¡rkou ",".');
+@define('PLUGIN_PODCAST_ITUNES', 'ZnaÄkovÃ¡nÃ­ iTunes XML');
+@define('PLUGIN_PODCAST_ITUNES_DESC', 'Zadejte XML, kterÃ© mÃ¡ bÃ½t vloÅ¾enÃ­ do RSS-kanÃ¡lu, aby se zobrazovalo v iTunes.');
+@define('PLUGIN_PODCAST_MERGEMULTI', 'SlouÄit vÃ­ce elementÅ¯ HTML5 pÅ™ehrÃ¡vaÄe');
+@define('PLUGIN_PODCAST_DOWNLOADLINK', 'VÅ¾dy pÅ™ipojit odkaz na staÅ¾enÃ­');
+@define('PLUGIN_PODCAST_DOWNLOADLINK_DESC','Pokud je vypnuto, mÅ¯Å¾ete pÅ™idat vlastnÃ­ prizpÅ¯sobenÃ½ odkaz na staÅ¾enÃ­ do znaÄek pÅ™ehrÃ¡vaÄe.');
 
 // Next lines were translated on 2012/05/13
-@define('PLUGIN_PODCAST_NOPODCASTING_CLASS','Ignorovat CSS tøídy');
-@define('PLUGIN_PODCAST_NOPODCASTING_CLASS_DESC','Pokud mají odkazy na média zadanou tuto CSS tøídu, pak budou ignorovány (tyto odkazy nebudou nahrazovány pøehrávaèem a nebudou se zobrazovat v RSS kanálu).');
+@define('PLUGIN_PODCAST_NOPODCASTING_CLASS','Ignorovat CSS tÅ™Ã­dy');
+@define('PLUGIN_PODCAST_NOPODCASTING_CLASS_DESC','Pokud majÃ­ odkazy na mÃ©dia zadanou tuto CSS tÅ™Ã­du, pak budou ignorovÃ¡ny (tyto odkazy nebudou nahrazovÃ¡ny pÅ™ehrÃ¡vaÄem a nebudou se zobrazovat v RSS kanÃ¡lu).');
 
