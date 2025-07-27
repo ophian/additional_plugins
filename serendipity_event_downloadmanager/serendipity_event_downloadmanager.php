@@ -41,7 +41,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -901,7 +901,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                     $file['filename']       = stripslashes($file['realfilename']);
                     $file['dlcount']        = intval($file['dlcount']);
                     $file['filesize']       = $this->calcFilesize($file['filesize']);
-                    $file['filedate']       = date($this->globs['dateformat'], $file['timestamp']);
+                    $file['filedate']       = date($this->globs['dateformat'], (int) $file['timestamp']);
                     $file['description']    = $temp_array['comment'];
                     $file['dlurl']          = $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . '?/' : '') . 'plugin/dlfile_'.$id;
 
@@ -1007,7 +1007,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                         $mime    = $this->getMime($file['realfilename']);
 
                         $fileinfo = array('file_desc'  => str_replace(array("\r\n","\n","\r"), "<br />", ($file['description'] ?? '')),
-                                          'filedate'   => date($this->globs['dateformat'], $file['timestamp']),
+                                          'filedate'   => date($this->globs['dateformat'], (int) $file['timestamp']),
                                           'filesize'   => $this->calcFilesize($file['filesize']),
                                           'iconfile'   => $mime['ICON'],
                                           'iconwidth'  => $this->get_config('iconwidth'),
@@ -2252,9 +2252,9 @@ class serendipity_event_downloadmanager extends serendipity_event
                     $this->backend_str_replace_recursive($data[$key], $p, $skey, $nkey);
                 } else {
                     if ($key == $skey) {
-                        if (!$nkey) $data[$key] = ($p ? date($p, $value) : $this->calcFilesize($value));
+                        if (!$nkey) $data[$key] = ($p ? date($p, (int) $value) : $this->calcFilesize($value));
                         elseif ($p === false) $data[$nkey] = $this->getMime($value);
-                        else $data[$nkey] = ($p ? date($p, $value) : $this->calcFilesize($value));
+                        else $data[$nkey] = ($p ? date($p, (int) $value) : $this->calcFilesize($value));
                     }
                 }
             }

@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+2.0.1:
+------
+ * Fix some type regressions on date() 2cd argument timestamp to INT type
+
 2.0.0:
 ------
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
