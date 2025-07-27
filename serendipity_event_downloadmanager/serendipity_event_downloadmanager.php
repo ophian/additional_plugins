@@ -20,9 +20,14 @@ class serendipity_event_downloadmanager extends serendipity_event
     public $title = PLUGIN_DOWNLOADMANAGER_TITLE;
 
     protected $debug;
-    protected $MIME;
+    #protected $MIME;
     protected $globs = array();
     protected $isWIN = null;
+    protected $UPLOAD_SUCCESS   = null;
+    protected $UPLOAD_COUNT     = null;
+    protected $UPLOAD_TOOBIG    = [];
+    protected $UPLOAD_NOTCOPIED = null;
+
 
     /**
      * introspect API
@@ -41,7 +46,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.0.2');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -509,7 +514,7 @@ class serendipity_event_downloadmanager extends serendipity_event
      */
     function mb_basename($file)
     {
-        $r = explode('/',$file);
+        $r = explode('/', (string) $file);
         return end($r); // avoid Notice: Only variables should be assigned by reference
     }
 
@@ -1368,7 +1373,7 @@ class serendipity_event_downloadmanager extends serendipity_event
         $ret = serendipity_db_query("SELECT systemfilename
                                        FROM {$serendipity['dbPrefix']}dma_downloadmanager_files
                                       WHERE id = $id");
-        if (file_exists($this->globs['dlmpath']."/".$ret[0]['systemfilename']) && !@unlink($this->globs['dlmpath']."/".$ret[0]['systemfilename'])) {
+        if (is_array($ret) && file_exists($this->globs['dlmpath']."/".$ret[0]['systemfilename']) && !@unlink($this->globs['dlmpath']."/".$ret[0]['systemfilename'])) {
             $this->ERRMSG(PLUGIN_DOWNLOADMANAGER_DELETE_IN_DOWNLOADDIR_NOT_ALLOWED);
         } else {
             serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}dma_downloadmanager_files WHERE id = $id");
@@ -1782,7 +1787,7 @@ class serendipity_event_downloadmanager extends serendipity_event
 
                     } else {
 
-                        if (isset($this->UPLOAD_TOOBIG) && count($this->UPLOAD_TOOBIG) >= 1 || isset($this->UPLOAD_NOTCOPIED) && count($this->UPLOAD_NOTCOPIED) >= 1) {
+                        if (isset($this->UPLOAD_TOOBIG) && count((array) $this->UPLOAD_TOOBIG) >= 1 || isset($this->UPLOAD_NOTCOPIED) && count((string) $this->UPLOAD_NOTCOPIED) >= 1) {
                             $ERRMSG = PLUGIN_DOWNLOADMANAGER_ERRORS_OCCOURED."<br />";
                             if (is_array($this->UPLOAD_TOOBIG) && count($this->UPLOAD_TOOBIG) >= 1) {
                                 $ERRMSG .= "<br />".PLUGIN_DOWNLOADMANAGER_ERRORS_TOOBIG."<br />";
@@ -2009,7 +2014,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                                 $headers = getallheaders();
                             }
 
-                            if (substr($headers["Range"], 0, 6) == "bytes=") {
+                            if (isset($headers["Range"]) && substr($headers["Range"], 0, 6) == "bytes=") {
                                 header("HTTP/1.1 206 Partial Content");
                                 header("Content-Type: $contenttype");
                                 header("Content-Disposition: attachment; filename=".$filename);
@@ -2053,7 +2058,7 @@ class serendipity_event_downloadmanager extends serendipity_event
                                 echo $contents;
                             } else {
                                 $fp = fopen($path."/".$sysname,"rb");
-                                $contents = fread ($fp, $filesize);
+                                $contents = fread ($fp, (int) $filesize);
                                 fclose($fp);
                                 header("Content-Type: $contenttype");
                                 header("Content-Disposition: attachment; filename=".$filename);

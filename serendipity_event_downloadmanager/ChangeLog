@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+2.0.2:
+------
+ * Fix some more type issues for PHP 8 plus versions
+
 2.0.1:
 ------
  * Fix some type regressions on date() 2cd argument timestamp to INT type
