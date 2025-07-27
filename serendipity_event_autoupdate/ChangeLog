@@ -1,3 +1,9 @@
+2.5.0:
+------
+
+ * Precise the previous checksum check workaround upgrading a previous Styx versions (assumable 4.x) to the new Styx 5.0 (-BETA, -RC) or 5.0 Release versions.
+   On Styx 5.0 (even on more BETA or RC versions) a new autoupdate Plugin update is available and the checksum checks return back to function.
+
 2.4.0:
 ------
 
