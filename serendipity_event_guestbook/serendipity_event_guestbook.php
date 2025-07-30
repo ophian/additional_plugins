@@ -59,7 +59,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '5.0.2');
+        $propbag->add('version',      '5.0.3');
         $propbag->add('requirements', array(
                         'serendipity' => '5.0',
                         'smarty'      => '4.1',
@@ -480,7 +480,7 @@ class serendipity_event_guestbook extends serendipity_event
      */
     public static function html_specialchars($string, $flags = null, $encoding = LANG_CHARSET, $double_encode = true)
     {
-        if ($string === null) {
+        if ($string === null || $string === false) {
             $string = '';
         }
         if ($flags === null) {
