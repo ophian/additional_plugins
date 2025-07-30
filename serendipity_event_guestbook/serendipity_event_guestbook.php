@@ -59,7 +59,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '5.0.1');
+        $propbag->add('version',      '5.0.2');
         $propbag->add('requirements', array(
                         'serendipity' => '5.0',
                         'smarty'      => '4.1',
@@ -676,7 +676,7 @@ class serendipity_event_guestbook extends serendipity_event
                 $replace_ac             = $this->cut_string($entry['body'], '[ac]', '[/ac]');
                 $stripped_body          = $this->strip_security($entry['body'], null, true);
                 $search_ac              = $this->cut_string($stripped_body, '[ac]', '[/ac]');
-                $entry['body']          = str_replace($search_ac, $placeholder_ac, $stripped_body);
+                $entry['body']          = is_string($search_ac) ? str_replace($search_ac, $placeholder_ac, $stripped_body) : $stripped_body;
 
                 if (serendipity_db_bool($this->get_config('markup', 'true'))) {
                     // parse  $entry['text'] through hook events standard formatting and smilies
@@ -690,7 +690,7 @@ class serendipity_event_guestbook extends serendipity_event
                 if ($backend_escape) {
                     $replace_ac = self::html_specialchars($replace_ac); // do not allow in backend, eg unescaped scripts
                 }
-                $entry['body']          = str_replace($placeholder_ac, $replace_ac, $entry['body']);
+                $entry['body']          = is_string($replace_ac) ? str_replace($placeholder_ac, $replace_ac, $entry['body']) : $entry['body'];
                 $entry['body']          = $this->text_pattern_bbc($entry['body']);
 
                 $entries[$i]            = $entry;
@@ -799,7 +799,7 @@ class serendipity_event_guestbook extends serendipity_event
         $sql = "SELECT * FROM {$serendipity['dbPrefix']}guestbook $whe ORDER BY timestamp DESC ";
         $entries = serendipity_db_query($sql . serendipity_db_limit_sql(
                                         serendipity_db_limit(
-                                            $cp * $rp, $rp
+                                            $cp * $rp, (int) $rp
                                         )
                                     ), false, 'assoc'
                                 );

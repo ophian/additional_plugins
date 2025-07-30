@@ -322,7 +322,7 @@ span.frontend_guestbook_paginator_right { color: #BBB; }
     text-align: center;
     text-decoration: none;
     border-color: #444c56;
-    color: #adbac7;
+    color: #1d2e3f;
 }
 [data-dark-theme="dark"] span.frontend_guestbook_paginator_left, [data-dark-theme="dark"] span.frontend_guestbook_paginator_right {
     color: #545d68
