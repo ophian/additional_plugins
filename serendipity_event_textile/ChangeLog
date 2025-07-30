@@ -1,3 +1,7 @@
+2.0.1:
+------
+ * Fix Deprecated: ***::__construct(): Implicitly marking parameter $foo as nullable is deprecated, the explicit nullable type must be used instead
+
 2.0.0:
 ------
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
