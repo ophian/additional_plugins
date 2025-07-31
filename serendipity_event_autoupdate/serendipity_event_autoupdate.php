@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '3.1.0');
+        $propbag->add('version',       '3.1.1');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
@@ -87,7 +87,7 @@ class serendipity_event_autoupdate extends serendipity_event
             // Total processes, since most of them are too fast we fake it by 3 steps (see sleep, down below)
             $total = 3;
 
-            ob_implicit_flush(1);
+            ob_implicit_flush(true);
 
             // fake processing loop
             for ($i=1; $i<=$total; $i++) {

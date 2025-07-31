@@ -1,3 +1,8 @@
+3.1.1:
+------
+
+ * Fix Uncaught TypeError: ob_implicit_flush(): Argument #1 ($enable) must be of type bool, int given
+
 3.1.0:
 ------
 
