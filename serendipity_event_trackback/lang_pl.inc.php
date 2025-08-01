@@ -6,9 +6,9 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_MTRACKBACK_TITLETITLE', 'Kontrola ¦ladów (Trackbacków)');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLEDESC', 'Umo¿liwia pe³niejsz± kontrolê nad wysy³anymi ¶ladami podczas tworzenia i zapisywania wpisu');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL', 'Dodatkowe linki, do których maj± byæ wys³ane ¶lady (trackbacki) (rozdzielaj te linki spacjami [" "]) ');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKOWN', 'Wysy³aæ ¶lady do w³asnego bloga?');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL', 'Wy³±czyæ globalnie obs³ugê ¶ladów?');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLETITLE', 'Kontrola ÅšladÃ³w (TrackbackÃ³w)');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLEDESC', 'UmoÅ¼liwia peÅ‚niejszÄ… kontrolÄ™ nad wysyÅ‚anymi Å›ladami podczas tworzenia i zapisywania wpisu');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL', 'Dodatkowe linki, do ktÃ³rych majÄ… byÄ‡ wysÅ‚ane Å›lady (trackbacki) (rozdzielaj te linki spacjami [" "]) ');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKOWN', 'WysyÅ‚aÄ‡ Å›lady do wÅ‚asnego bloga?');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL', 'WyÅ‚Ä…czyÄ‡ globalnie obsÅ‚ugÄ™ Å›ladÃ³w?');
 

@@ -1,22 +1,22 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/17
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/05/02
  */
 
-@define('PLUGIN_EVENT_MTRACKBACK_TITLETITLE',		'Spr·va odezev');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLEDESC',		'UmoæÚuje podrobnou kontrolu chov·nÌ odezev, jak jsou posÌl·ny p¯i vytv·¯enÌ p¯ÌspÏvk˘');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL',		'P¯ÌdavnÈ odkazy pro odezvy (oddÏlujte mezerami [" "])');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKOWN',		'PosÌlat odezvy vlastnÌmu blogu?');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL',		'Zak·zat posÌl·nÌ vπech odezev');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKSEL',		'PosÌlat odezvy pouze na nÌæe vypsanÈ URL adresy');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLETITLE',		'Spr√°va odezev');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLEDESC',		'Umo≈æ≈àuje podrobnou kontrolu chov√°n√≠ odezev, jak jsou pos√≠l√°ny p≈ôi vytv√°≈ôen√≠ p≈ô√≠spƒõvk≈Ø');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL',		'P≈ô√≠davn√© odkazy pro odezvy (oddƒõlujte mezerami [" "])');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKOWN',		'Pos√≠lat odezvy vlastn√≠mu blogu?');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL',		'Zak√°zat pos√≠l√°n√≠ v≈°ech odezev');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKSEL',		'Pos√≠lat odezvy pouze na n√≠≈æe vypsan√© URL adresy');
 
 // Next lines were translated on 2010/05/02
-@define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_NAME',		'PozdræenÈ odezvy');
-@define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_DESC',		'Automaticky vytv·¯et odezvy Ël·nk˘, kterÈ nebyly okamæitÏ publikov·ny.');
+@define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_NAME',		'Pozdr≈æen√© odezvy');
+@define('PLUGIN_EVENT_MTRACKBACK_DELAYED_TRACKBACKS_DESC',		'Automaticky vytv√°≈ôet odezvy ƒçl√°nk≈Ø, kter√© nebyly okam≈æitƒõ publikov√°ny.');
 

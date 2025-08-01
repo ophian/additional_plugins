@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,8 +10,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_trackback extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_MTRACKBACK_TITLETITLE;
-    var $cache = array();
+    public $title = PLUGIN_EVENT_MTRACKBACK_TITLETITLE;
+
+    protected $cache = array();
 
     function introspect(&$propbag)
     {
@@ -19,11 +22,11 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.40');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1',
-            'smarty'      => '3.1.0',
-            'php'         => '5.3.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'backend_display'           => true,
@@ -175,7 +178,9 @@ class serendipity_event_trackback extends serendipity_event
                         $urls = serendipity_db_query("SELECT link FROM {$serendipity['dbPrefix']}references WHERE entry_id = '". (int)$eventData['id'] ."'");
                         if (is_array($urls)) {
                             foreach($urls AS $row) {
-                                $trackbackURLs[] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['link']) : htmlspecialchars($row['link'], ENT_COMPAT, LANG_CHARSET));
+                                if (is_string($row['link'])) {
+                                    $trackbackURLs[] = htmlspecialchars($row['link']);
+                                }
                             }
                         }
                     }
@@ -185,7 +190,7 @@ class serendipity_event_trackback extends serendipity_event
                         foreach($additional_urls AS $additional_url) {
                             $additional_url = trim($additional_url);
                             if (!in_array($additional_url, $trackbackURLs)) {
-                                $trackbackURLs[] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($additional_url) : htmlspecialchars($additional_url, ENT_COMPAT, LANG_CHARSET));
+                                $trackbackURLs[] = htmlspecialchars($additional_url);
                             }
                         }
                     }
