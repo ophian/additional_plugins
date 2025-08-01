@@ -1138,8 +1138,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_trackback</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Správa odezev&lt;/b&gt;&lt;br /&gt;Umožňuje podrobnou kontrolu chování odezev, jak jsou posílány při vytváření příspěvků&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:28:04 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Správa odezev&lt;/b&gt;&lt;br /&gt;Umožňuje podrobnou kontrolu chování odezev, jak jsou posílány při vytváření příspěvků&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 01 Aug 2025 13:00:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
