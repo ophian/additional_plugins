@@ -1,3 +1,7 @@
+2.0.2:
+------
+ * Improve consistency of external link reference for frontend_comment hook
+
 2.0.1:
 ------
  * Fix Deprecated: ***::__construct(): Implicitly marking parameter $foo as nullable is deprecated, the explicit nullable type must be used instead
