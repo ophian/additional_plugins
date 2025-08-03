@@ -19,7 +19,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '3.1.0');
+        $propbag->add('version',        '3.1.1');
         $propbag->add('requirements',   array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -327,7 +327,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                         if (!isset($eventData['action_more']) || !is_string($eventData['action_more'])) $eventData['action_more'] = ''; // bayes and spamblock akismet place it
                         $eventData['action_more'] .= '<li><a class="button_link spamblockBayesControls" onclick="return ham('. $eventData['id'].');" title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'"><span class="icon-ok-circled" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_HAM .'</span></a></li>';
                         $eventData['action_more'] .= '<li><a class="button_link spamblockBayesControls" onclick="return spam('. $eventData['id'] .');" title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . ': ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'"><span class="icon-cancel" aria-hidden="true"></span><span class="visuallyhidden"> ' . PLUGIN_EVENT_SPAMBLOCK_BAYES_SPAM .'</span></a></li>';
-                        $eventData['action_more'] .= '<li class="bayes_spamrating"><span id="' . $eventData['id'] . '_rating" title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . '"> ' . preg_replace('/\..*/', '', $this->rate($comment) * 100) . '%</span></li>';
+                        $eventData['action_more'] .= '<li class="bayes_spamrating"><span id="' . $eventData['id'] . '_rating" title="'. PLUGIN_EVENT_SPAMBLOCK_BAYES_NAME . '"> ' . preg_replace('/\..*/', '', (string)($this->rate($comment) * 100)) . '%</span></li>';
                     }
                     break;
 

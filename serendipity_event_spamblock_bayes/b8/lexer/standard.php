@@ -181,7 +181,7 @@ class standard
      * @param string $word_to_remove Word to remove from the processed string
      * @return void
      */
-    private function add_token(string $token, string $word_to_remove = null)
+    private function add_token(string $token, ?string $word_to_remove)
     {
         // Check the validity of the token
         if (! $this->is_valid($token)) {
@@ -260,7 +260,7 @@ class standard
     {
         foreach (preg_split($this->regexp['raw_split'], $text) as $word) {
             // Check the word and add it to the token list if it's valid
-            $this->add_token($word);
+            $this->add_token($word, null);
         }
     }
 

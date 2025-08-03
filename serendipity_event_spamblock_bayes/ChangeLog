@@ -1,3 +1,9 @@
+3.1.1:
+------
+ * Fix a type error with floats awaiting array or string type in preg_replace
+ * Fix b8 lib for the explicit nullable type usage of PHP 8.4
+   and a regression of this fix in b8/lexer/standard with too few arguments.
+
 3.1.0:
 ------
  * Declare strict types

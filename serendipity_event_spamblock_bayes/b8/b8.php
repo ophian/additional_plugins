@@ -137,7 +137,7 @@ class b8
      * @param string The text to classify
      * @return mixed float The rating between 0 (ham) and 1 (spam) or an error code
      */
-    public function classify(string $text = null)
+    public function classify(?string $text)
     {
         // Let's first see if the user called the function correctly
         if ($text === null) {
@@ -340,7 +340,7 @@ class b8
      * @param string Either b8::SPAM or b8::HAM
      * @return mixed void or an error code
      */
-    public function learn(string $text = null, string $category = null)
+    public function learn(?string $text, ?string $category)
     {
         // Let's first see if the user called the function correctly
         if ($text === null) {
@@ -361,7 +361,7 @@ class b8
      * @param string Either b8::SPAM or b8::HAM
      * @return mixed void or an error code
      */
-    public function unlearn(string $text = null, string $category = null)
+    public function unlearn(?string $text, ?string $category)
     {
         // Let's first see if the user called the function correctly
         if ($text === null) {
