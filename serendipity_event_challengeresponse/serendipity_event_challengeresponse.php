@@ -1,5 +1,11 @@
 <?php
-if (IN_serendipity !== true) die ("Don't hack!");
+
+declare(strict_types=1);
+
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
 
 // Load possible language files.
 #@serendipity_plugin_api::load_language(dirname(__FILE__));
@@ -16,11 +22,11 @@ class serendipity_event_challengeresponse extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Nobody');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1.0',
-            'smarty'      => '3.1.31',
-            'php'         => '5.3.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '0.12');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('event_hooks',    array(
             'frontend_saveComment' => true,
             'frontend_comment'     => true
