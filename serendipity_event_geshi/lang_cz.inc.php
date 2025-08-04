@@ -1,18 +1,18 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
 @define('PLUGIN_EVENT_GESHI_NAME',		'Markup: GeSHi');
-@define('PLUGIN_EVENT_GESHI_DESC',		'Barevné zvırazòování syntaxe poèítaèovıch jazykù. Pou¾ití tagù: [geshi lang=nazev_jazyku [,ln={y|n}]]programovı kód[/geshi]');
-@define('PLUGIN_EVENT_GESHI_TRANSFORM',		'Pro vlo¾ení zdrojového kódu mù¾ete pou¾ít tag <b>[geshi lang=nazev_jazyku [,ln={y|n}]] [/geshi]</b>');
+@define('PLUGIN_EVENT_GESHI_DESC',		'BarevnÃ© zvÃ½razÅˆovÃ¡nÃ­ syntaxe poÄÃ­taÄovÃ½ch jazykÅ¯. PouÅ¾itÃ­ tagÅ¯: [geshi lang=nazev_jazyku [,ln={y|n}]]programovÃ½ kÃ³d[/geshi]');
+@define('PLUGIN_EVENT_GESHI_TRANSFORM',		'Pro vloÅ¾enÃ­ zdrojovÃ©ho kÃ³du mÅ¯Å¾ete pouÅ¾Ã­t tag <b>[geshi lang=nazev_jazyku [,ln={y|n}]] [/geshi]</b>');
 @define('PLUGIN_EVENT_GESHI_VERSION',		'03');
 @define('PLUGIN_EVENT_GESHI_PATHTOGESHI',		'Cesta k GeSHi');
-@define('PLUGIN_EVENT_GESHI_PATHTOGESHI_DESC',		'Cesta k instalaci balíèku GeSHi, relativnì ke koøenovému adresáøi Serendipity');
-@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS',		'Èíslování øádkù?');
-@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS_DESC',		'Mají se standardnì zobrazovat èísla øádkù?');
+@define('PLUGIN_EVENT_GESHI_PATHTOGESHI_DESC',		'Cesta k instalaci balÃ­Äku GeSHi, relativnÄ› ke koÅ™enovÃ©mu adresÃ¡Å™i Serendipity');
+@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS',		'ÄŒÃ­slovÃ¡nÃ­ Å™Ã¡dkÅ¯?');
+@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS_DESC',		'MajÃ­ se standardnÄ› zobrazovat ÄÃ­sla Å™Ã¡dkÅ¯?');
 

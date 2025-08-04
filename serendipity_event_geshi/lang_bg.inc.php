@@ -6,12 +6,12 @@
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_EVENT_GESHI_NAME',     'Форматиране на текст: GeSHi');
-@define('PLUGIN_EVENT_GESHI_DESC',     'Синтактично оцветяване на програмни текстове. Приложение: [geshi lang=lang_name [,ln={y|n}]] програмен текст (без HTML) [/geshi]. Поддържани езици: actionscript, ada, apache, asm, asp, bash, c, c_mac, caddcl, cadlisp, cpp, csharp (C#), css, delphi, html4strict, java, javascript, lisp, lua, mpasm, nsis, objc, oobas, oracle8, pascal, perl, php, python, qbasic, smarty, vb, vbnet, visualfoxpro, xml');
-@define('PLUGIN_EVENT_GESHI_TRANSFORM', 'Можете да използвате таг <b>[geshi lang=lang_name [,ln={y|n}]][/geshi]</b>, за да въведете оцветен програмен текст');
+@define('PLUGIN_EVENT_GESHI_NAME',     'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РЅР° С‚РµРєСЃС‚: GeSHi');
+@define('PLUGIN_EVENT_GESHI_DESC',     'РЎРёРЅС‚Р°РєС‚РёС‡РЅРѕ РѕС†РІРµС‚СЏРІР°РЅРµ РЅР° РїСЂРѕРіСЂР°РјРЅРё С‚РµРєСЃС‚РѕРІРµ. РџСЂРёР»РѕР¶РµРЅРёРµ: [geshi lang=lang_name [,ln={y|n}]] РїСЂРѕРіСЂР°РјРµРЅ С‚РµРєСЃС‚ (Р±РµР· HTML) [/geshi]. РџРѕРґРґСЉСЂР¶Р°РЅРё РµР·РёС†Рё: actionscript, ada, apache, asm, asp, bash, c, c_mac, caddcl, cadlisp, cpp, csharp (C#), css, delphi, html4strict, java, javascript, lisp, lua, mpasm, nsis, objc, oobas, oracle8, pascal, perl, php, python, qbasic, smarty, vb, vbnet, visualfoxpro, xml');
+@define('PLUGIN_EVENT_GESHI_TRANSFORM', 'РњРѕР¶РµС‚Рµ РґР° РёР·РїРѕР»Р·РІР°С‚Рµ С‚Р°Рі <b>[geshi lang=lang_name [,ln={y|n}]][/geshi]</b>, Р·Р° РґР° РІСЉРІРµРґРµС‚Рµ РѕС†РІРµС‚РµРЅ РїСЂРѕРіСЂР°РјРµРЅ С‚РµРєСЃС‚');
 @define('PLUGIN_EVENT_GESHI_VERSION', '03');
-@define('PLUGIN_EVENT_GESHI_PATHTOGESHI','Път до GeSHi');
-@define('PLUGIN_EVENT_GESHI_PATHTOGESHI_DESC','Път до директорията, където е инсталиран GeSHi');
-@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS','Номера на редове ?');
-@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS_DESC','Показване на номера на редове по подразбиране ?');
+@define('PLUGIN_EVENT_GESHI_PATHTOGESHI','РџСЉС‚ РґРѕ GeSHi');
+@define('PLUGIN_EVENT_GESHI_PATHTOGESHI_DESC','РџСЉС‚ РґРѕ РґРёСЂРµРєС‚РѕСЂРёСЏС‚Р°, РєСЉРґРµС‚Рѕ Рµ РёРЅСЃС‚Р°Р»РёСЂР°РЅ GeSHi');
+@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS','РќРѕРјРµСЂР° РЅР° СЂРµРґРѕРІРµ ?');
+@define('PLUGIN_EVENT_GESHI_SHOWLINENUMBERS_DESC','РџРѕРєР°Р·РІР°РЅРµ РЅР° РЅРѕРјРµСЂР° РЅР° СЂРµРґРѕРІРµ РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ ?');
 

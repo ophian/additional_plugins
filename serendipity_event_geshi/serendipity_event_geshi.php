@@ -50,6 +50,7 @@
  *
  */
 
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -59,7 +60,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_geshi extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_GESHI_NAME;
+    public $title = PLUGIN_EVENT_GESHI_NAME;
     // Top Level Configuration, requires name of the Plugin, description text, and configuration information in an array..
     function introspect(&$propbag)
     {
@@ -70,11 +71,11 @@ class serendipity_event_geshi extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'David Rolston, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.6.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '1.3');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('event_hooks', array('frontend_display' => true, 'frontend_comment' => true));
         $propbag->add('groups', array('MARKUP'));
 
