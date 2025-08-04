@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/07
  */
 
 @define('PLUGIN_PAGERANK_NAME',		'Google PageRank');
-@define('PLUGIN_PAGERANK_DETAIL',		'DynamickÈ zobrazenÌ Google PageRanku');
-@define('PLUGIN_PAGERANK_PAGE_COUNT',		'PoËet zobrazen˝ch str·nek');
-@define('PLUGIN_PAGERANK_PAGE_COUNT_DESC',		'UpozornÏnÌ! Pokud zmÏnÌte toto ËÌslo, uloæte nastavenÌ DVAKR¡T!');
-@define('PLUGIN_PAGERANK_PAGE_URL',		'URL adresa Ë.%s');
-@define('PLUGIN_PAGERANK_PAGE_URL_DESC',		'URL adresa, pro kterou chcete zobrazit PageRank (nap¯. s9y.org/5.html)');
-@define('PLUGIN_PAGERANK_PAGE_CAPTION',		'Popis pro URL adresu Ë.%s');
-@define('PLUGIN_PAGERANK_THIS_PAGE',		'PageRank pro aktu·lnÌ str·nku');
-@define('PLUGIN_PAGERANK_THIS_PAGE_DESC',		'Chcete zobrazovat PageRank pro pr·vÏ zobrazenou str·nku?');
+@define('PLUGIN_PAGERANK_DETAIL',		'Dynamick√© zobrazen√≠ Google PageRanku');
+@define('PLUGIN_PAGERANK_PAGE_COUNT',		'Poƒçet zobrazen√Ωch str√°nek');
+@define('PLUGIN_PAGERANK_PAGE_COUNT_DESC',		'Upozornƒõn√≠! Pokud zmƒõn√≠te toto ƒç√≠slo, ulo≈æte nastaven√≠ DVAKR√ÅT!');
+@define('PLUGIN_PAGERANK_PAGE_URL',		'URL adresa ƒç.%s');
+@define('PLUGIN_PAGERANK_PAGE_URL_DESC',		'URL adresa, pro kterou chcete zobrazit PageRank (nap≈ô. s9y.org/5.html)');
+@define('PLUGIN_PAGERANK_PAGE_CAPTION',		'Popis pro URL adresu ƒç.%s');
+@define('PLUGIN_PAGERANK_THIS_PAGE',		'PageRank pro aktu√°ln√≠ str√°nku');
+@define('PLUGIN_PAGERANK_THIS_PAGE_DESC',		'Chcete zobrazovat PageRank pro pr√°vƒõ zobrazenou str√°nku?');
 @define('PLUGIN_PAGERANK_THIS_PAGE_YES',		'Ano');
 @define('PLUGIN_PAGERANK_THIS_PAGE_NO',		'Ne');
-@define('PLUGIN_PAGERANK_THIS_PAGE_CAPTION',		'Tato str·nka');
+@define('PLUGIN_PAGERANK_THIS_PAGE_CAPTION',		'Tato str√°nka');
 

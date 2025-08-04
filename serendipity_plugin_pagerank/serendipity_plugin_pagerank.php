@@ -8,6 +8,7 @@
  *
  ************************************************************/
 
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -17,7 +18,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_pagerank extends serendipity_plugin
 {
-    var $title = PLUGIN_PAGERANK_NAME;
+    public $title = PLUGIN_PAGERANK_NAME;
 
     function introspect(&$propbag)
     {
@@ -27,11 +28,11 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         $propbag->add('description',   PLUGIN_PAGERANK_DETAIL);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Lescuyer');
-        $propbag->add('version',       '0.35');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
 
@@ -210,18 +211,10 @@ class serendipity_plugin_pagerank extends serendipity_plugin
         if (ini_get('allow_url_fopen')) {
             $data = file_get_contents($url, false, null, -1, 128);
         } else {
-            if (function_exists('serendipity_request_object')) {
-                $req = serendipity_request_object($url);
-                $response = $req->send();
-                if (!PEAR::isError($req->send()) || $response->getStatus() == '200') {
-                    $data = $response->getBody();
-                }
-            } else {
-                require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
-                $req = new HTTP_Request($url);
-                if (!PEAR::isError($req->sendRequest()) || $req->getResponseCode() == '200') {
-                    $data = $req->getResponseBody();
-                }
+            $req = serendipity_request_object($url);
+            $response = $req->send();
+            if (!PEAR::isError($req->send()) || $response->getStatus() == '200') {
+                $data = $response->getBody();
             }
         }
         $rankarray = explode (':', $data);
