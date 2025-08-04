@@ -22,7 +22,6 @@
       <file>communityrating_Amazon.tpl</file>
       <file>communityrating_IMDB.tpl</file>
       <file>communityrating_IMDB_garvin.tpl</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>helper_compare.php</file>
       <file>helper_imdb.php</file>
@@ -34,7 +33,6 @@
         <file>star_IMDB_half.png</file>
         <file>star_IMDB_zero.png</file>
       </dir>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>README</file>
@@ -42,7 +40,6 @@
       <file>serendipity_plugin_communityrating.php</file>
       <file>smarty.inc.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
     </dir>
@@ -52,7 +49,6 @@
     <file>serendipity_event_communityrating/communityrating_Amazon.tpl</file>
     <file>serendipity_event_communityrating/communityrating_IMDB.tpl</file>
     <file>serendipity_event_communityrating/communityrating_IMDB_garvin.tpl</file>
-    <file>serendipity_event_communityrating/documentation_cs.html</file>
     <file>serendipity_event_communityrating/documentation_cz.html</file>
     <file>serendipity_event_communityrating/helper_compare.php</file>
     <file>serendipity_event_communityrating/helper_imdb.php</file>
@@ -62,14 +58,12 @@
     <file>serendipity_event_communityrating/img/star_IMDB_full.png</file>
     <file>serendipity_event_communityrating/img/star_IMDB_half.png</file>
     <file>serendipity_event_communityrating/img/star_IMDB_zero.png</file>
-    <file>serendipity_event_communityrating/lang_cs.inc.php</file>
     <file>serendipity_event_communityrating/lang_cz.inc.php</file>
     <file>serendipity_event_communityrating/lang_en.inc.php</file>
     <file>serendipity_event_communityrating/README</file>
     <file>serendipity_event_communityrating/serendipity_event_communityrating.php</file>
     <file>serendipity_event_communityrating/serendipity_plugin_communityrating.php</file>
     <file>serendipity_event_communityrating/smarty.inc.php</file>
-    <file>serendipity_event_communityrating/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_communityrating/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -83,11 +77,11 @@
 <description>Choose the categories you will display on the blog.</description>
 <maintainers><maintainer><name>Falk Doering</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -97,7 +91,6 @@
       </dir>
       <file>ChangeLog</file>
       <file>class_inspectConfig.php</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <dir name="img">
         <file>base.gif</file>
@@ -121,7 +114,6 @@
         <file>question.svg.png</file>
       </dir>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -144,7 +136,6 @@
     <file>serendipity_event_faq/alternatives/plugin_faq_category_faqs.tpl</file>
     <file>serendipity_event_faq/ChangeLog</file>
     <file>serendipity_event_faq/class_inspectConfig.php</file>
-    <file>serendipity_event_faq/documentation_cs.html</file>
     <file>serendipity_event_faq/documentation_cz.html</file>
     <file>serendipity_event_faq/img/base.gif</file>
     <file>serendipity_event_faq/img/category.png</file>
@@ -166,7 +157,6 @@
     <file>serendipity_event_faq/img/question.svg</file>
     <file>serendipity_event_faq/img/question.svg.png</file>
     <file>serendipity_event_faq/lang_bg.inc.php</file>
-    <file>serendipity_event_faq/lang_cs.inc.php</file>
     <file>serendipity_event_faq/lang_cz.inc.php</file>
     <file>serendipity_event_faq/lang_de.inc.php</file>
     <file>serendipity_event_faq/lang_en.inc.php</file>
@@ -201,7 +191,6 @@
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_en.html</file>
       <file>jquery-1.11.3.min.js</file>
@@ -211,7 +200,6 @@
       <file>jquery.awesomeCloud-0.2.js</file>
       <file>jquery.tagcanvas.min.js</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -232,7 +220,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_freetag/ChangeLog</file>
-    <file>serendipity_event_freetag/documentation_cs.html</file>
     <file>serendipity_event_freetag/documentation_cz.html</file>
     <file>serendipity_event_freetag/documentation_en.html</file>
     <file>serendipity_event_freetag/jquery-1.11.3.min.js</file>
@@ -242,7 +229,6 @@
     <file>serendipity_event_freetag/jquery.awesomeCloud-0.2.js</file>
     <file>serendipity_event_freetag/jquery.tagcanvas.min.js</file>
     <file>serendipity_event_freetag/lang_bg.inc.php</file>
-    <file>serendipity_event_freetag/lang_cs.inc.php</file>
     <file>serendipity_event_freetag/lang_cz.inc.php</file>
     <file>serendipity_event_freetag/lang_de.inc.php</file>
     <file>serendipity_event_freetag/lang_en.inc.php</file>
@@ -279,10 +265,8 @@
   <filelist>
     <dir name="serendipity_event_geotag">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>GeoTagDb.class.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -293,7 +277,6 @@
       <file>serendipity_event_geotag.php</file>
       <file>serendipity_plugin_geotag.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -301,10 +284,8 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_geotag/ChangeLog</file>
-    <file>serendipity_event_geotag/documentation_cs.html</file>
     <file>serendipity_event_geotag/documentation_cz.html</file>
     <file>serendipity_event_geotag/GeoTagDb.class.php</file>
-    <file>serendipity_event_geotag/lang_cs.inc.php</file>
     <file>serendipity_event_geotag/lang_cz.inc.php</file>
     <file>serendipity_event_geotag/lang_de.inc.php</file>
     <file>serendipity_event_geotag/lang_en.inc.php</file>
@@ -314,7 +295,6 @@
     <file>serendipity_event_geotag/plugin_version.inc.php</file>
     <file>serendipity_event_geotag/serendipity_event_geotag.php</file>
     <file>serendipity_event_geotag/serendipity_plugin_geotag.php</file>
-    <file>serendipity_event_geotag/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_geotag/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_geotag/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -329,15 +309,14 @@
 <description>Display the latest guestbook items in the sidebar</description>
 <maintainers><maintainer><name>Jaap Boerma ( j@webbict.com ), Tadashi Jokagi &lt;elf2000@users.sourceforge.net&gt;, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.1</version>
+  <version>2.0.2</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_en.html</file>
       <dir name="img">
@@ -358,7 +337,6 @@
         <file>x-square.svg</file>
       </dir>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -382,7 +360,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_guestbook/ChangeLog</file>
-    <file>serendipity_event_guestbook/documentation_cs.html</file>
     <file>serendipity_event_guestbook/documentation_cz.html</file>
     <file>serendipity_event_guestbook/documentation_en.html</file>
     <file>serendipity_event_guestbook/img/blank.gif</file>
@@ -401,7 +378,6 @@
     <file>serendipity_event_guestbook/img/shorttime.gif</file>
     <file>serendipity_event_guestbook/img/x-square.svg</file>
     <file>serendipity_event_guestbook/lang_bg.inc.php</file>
-    <file>serendipity_event_guestbook/lang_cs.inc.php</file>
     <file>serendipity_event_guestbook/lang_cz.inc.php</file>
     <file>serendipity_event_guestbook/lang_de.inc.php</file>
     <file>serendipity_event_guestbook/lang_en.inc.php</file>
@@ -433,15 +409,14 @@
 <description>Links manager - Shows your favorite links in the sidebar.</description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4.0</version>
+  <version>2.0.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-03</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>dtree.js</file>
       <dir name="img">
@@ -461,7 +436,6 @@
         <file>plusbottom.gif</file>
       </dir>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -476,7 +450,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_linklist/ChangeLog</file>
-    <file>serendipity_event_linklist/documentation_cs.html</file>
     <file>serendipity_event_linklist/documentation_cz.html</file>
     <file>serendipity_event_linklist/dtree.js</file>
     <file>serendipity_event_linklist/img/base.gif</file>
@@ -494,7 +467,6 @@
     <file>serendipity_event_linklist/img/plus.gif</file>
     <file>serendipity_event_linklist/img/plusbottom.gif</file>
     <file>serendipity_event_linklist/lang_bg.inc.php</file>
-    <file>serendipity_event_linklist/lang_cs.inc.php</file>
     <file>serendipity_event_linklist/lang_cz.inc.php</file>
     <file>serendipity_event_linklist/lang_de.inc.php</file>
     <file>serendipity_event_linklist/lang_en.inc.php</file>
@@ -525,7 +497,6 @@
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>hCalendar.tpl</file>
       <file>hReview.tpl</file>
@@ -538,7 +509,6 @@
         <file>icon-hcalendar.png</file>
         <file>mformats.png</file>
       </dir>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -553,7 +523,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_microformats/ChangeLog</file>
-    <file>serendipity_event_microformats/documentation_cs.html</file>
     <file>serendipity_event_microformats/documentation_cz.html</file>
     <file>serendipity_event_microformats/hCalendar.tpl</file>
     <file>serendipity_event_microformats/hReview.tpl</file>
@@ -564,7 +533,6 @@
     <file>serendipity_event_microformats/img/hreview.png</file>
     <file>serendipity_event_microformats/img/icon-hcalendar.png</file>
     <file>serendipity_event_microformats/img/mformats.png</file>
-    <file>serendipity_event_microformats/lang_cs.inc.php</file>
     <file>serendipity_event_microformats/lang_cz.inc.php</file>
     <file>serendipity_event_microformats/lang_de.inc.php</file>
     <file>serendipity_event_microformats/lang_en.inc.php</file>
@@ -587,20 +555,18 @@
 <description>Sélection de la langue par les visiteurs</description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_de.html</file>
       <file>documentation_en.html</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -615,12 +581,10 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_multilingual/ChangeLog</file>
-    <file>serendipity_event_multilingual/documentation_cs.html</file>
     <file>serendipity_event_multilingual/documentation_cz.html</file>
     <file>serendipity_event_multilingual/documentation_de.html</file>
     <file>serendipity_event_multilingual/documentation_en.html</file>
     <file>serendipity_event_multilingual/lang_bg.inc.php</file>
-    <file>serendipity_event_multilingual/lang_cs.inc.php</file>
     <file>serendipity_event_multilingual/lang_cz.inc.php</file>
     <file>serendipity_event_multilingual/lang_de.inc.php</file>
     <file>serendipity_event_multilingual/lang_en.inc.php</file>
@@ -651,10 +615,8 @@
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -663,7 +625,6 @@
       <file>serendipity_plugin_mycalendar.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
@@ -672,10 +633,8 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mycalendar/ChangeLog</file>
-    <file>serendipity_event_mycalendar/documentation_cs.html</file>
     <file>serendipity_event_mycalendar/documentation_cz.html</file>
     <file>serendipity_event_mycalendar/lang_bg.inc.php</file>
-    <file>serendipity_event_mycalendar/lang_cs.inc.php</file>
     <file>serendipity_event_mycalendar/lang_cz.inc.php</file>
     <file>serendipity_event_mycalendar/lang_de.inc.php</file>
     <file>serendipity_event_mycalendar/lang_en.inc.php</file>
@@ -683,7 +642,6 @@
     <file>serendipity_event_mycalendar/serendipity_event_mycalendar.php</file>
     <file>serendipity_event_mycalendar/serendipity_plugin_mycalendar.php</file>
     <file>serendipity_event_mycalendar/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_mycalendar/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_mycalendar/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_mycalendar/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_mycalendar/UTF-8/lang_ja.inc.php</file>
@@ -699,11 +657,11 @@
 <description>Prints out a statistic about your comment spam if your antispam plugins report to the DB.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Janek Bevendorff</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <version>2.0.1</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -711,7 +669,6 @@
         <file>JSON.php</file>
         <file>json.php4.include.php</file>
       </dir>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -726,7 +683,6 @@
     <file>serendipity_event_spamblock_bee/ChangeLog</file>
     <file>serendipity_event_spamblock_bee/json/JSON.php</file>
     <file>serendipity_event_spamblock_bee/json/json.php4.include.php</file>
-    <file>serendipity_event_spamblock_bee/lang_cs.inc.php</file>
     <file>serendipity_event_spamblock_bee/lang_cz.inc.php</file>
     <file>serendipity_event_spamblock_bee/lang_de.inc.php</file>
     <file>serendipity_event_spamblock_bee/lang_en.inc.php</file>
@@ -763,7 +719,6 @@
       </dir>
       <file>ChangeLog</file>
       <file>class_inspectConfig.php</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_en.html</file>
       <file>dtree.css</file>
@@ -787,7 +742,6 @@
       </dir>
       <file>jquery.simplePagination.js</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -824,7 +778,6 @@
     <file>serendipity_event_staticpage/backend_templates/typeform_staticpage_backend.tpl</file>
     <file>serendipity_event_staticpage/ChangeLog</file>
     <file>serendipity_event_staticpage/class_inspectConfig.php</file>
-    <file>serendipity_event_staticpage/documentation_cs.html</file>
     <file>serendipity_event_staticpage/documentation_cz.html</file>
     <file>serendipity_event_staticpage/documentation_en.html</file>
     <file>serendipity_event_staticpage/dtree.css</file>
@@ -846,7 +799,6 @@
     <file>serendipity_event_staticpage/img/plusbottom.gif</file>
     <file>serendipity_event_staticpage/jquery.simplePagination.js</file>
     <file>serendipity_event_staticpage/lang_bg.inc.php</file>
-    <file>serendipity_event_staticpage/lang_cs.inc.php</file>
     <file>serendipity_event_staticpage/lang_cz.inc.php</file>
     <file>serendipity_event_staticpage/lang_de.inc.php</file>
     <file>serendipity_event_staticpage/lang_en.inc.php</file>
@@ -889,18 +841,16 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>gray.png</file>
       <file>green.png</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -925,13 +875,11 @@
   <serendipityFilelist>
     <file>serendipity_event_statistics/botlist.txt</file>
     <file>serendipity_event_statistics/ChangeLog</file>
-    <file>serendipity_event_statistics/documentation_cs.html</file>
     <file>serendipity_event_statistics/documentation_cz.html</file>
     <file>serendipity_event_statistics/gray.png</file>
     <file>serendipity_event_statistics/green.png</file>
     <file>serendipity_event_statistics/lang_bg.inc.php</file>
     <file>serendipity_event_statistics/lang_cn.inc.php</file>
-    <file>serendipity_event_statistics/lang_cs.inc.php</file>
     <file>serendipity_event_statistics/lang_cz.inc.php</file>
     <file>serendipity_event_statistics/lang_de.inc.php</file>
     <file>serendipity_event_statistics/lang_en.inc.php</file>
@@ -973,7 +921,6 @@
       <file>ChangeLog</file>
       <file>Contact_Vcard_Build.php</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -985,7 +932,6 @@
       <file>serendipity_plugin_userprofiles_birthdays.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
@@ -996,7 +942,6 @@
     <file>serendipity_event_userprofiles/ChangeLog</file>
     <file>serendipity_event_userprofiles/Contact_Vcard_Build.php</file>
     <file>serendipity_event_userprofiles/lang_bg.inc.php</file>
-    <file>serendipity_event_userprofiles/lang_cs.inc.php</file>
     <file>serendipity_event_userprofiles/lang_cz.inc.php</file>
     <file>serendipity_event_userprofiles/lang_de.inc.php</file>
     <file>serendipity_event_userprofiles/lang_en.inc.php</file>
@@ -1007,7 +952,6 @@
     <file>serendipity_event_userprofiles/serendipity_plugin_userprofiles.php</file>
     <file>serendipity_event_userprofiles/serendipity_plugin_userprofiles_birthdays.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_userprofiles/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_ja.inc.php</file>
@@ -1033,7 +977,6 @@
       <file>ChangeLog</file>
       <file>Contact_Vcard_Build.php</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1045,7 +988,6 @@
       <file>serendipity_plugin_userprofiles_birthdays.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
@@ -1056,7 +998,6 @@
     <file>serendipity_event_userprofiles/ChangeLog</file>
     <file>serendipity_event_userprofiles/Contact_Vcard_Build.php</file>
     <file>serendipity_event_userprofiles/lang_bg.inc.php</file>
-    <file>serendipity_event_userprofiles/lang_cs.inc.php</file>
     <file>serendipity_event_userprofiles/lang_cz.inc.php</file>
     <file>serendipity_event_userprofiles/lang_de.inc.php</file>
     <file>serendipity_event_userprofiles/lang_en.inc.php</file>
@@ -1067,7 +1008,6 @@
     <file>serendipity_event_userprofiles/serendipity_plugin_userprofiles.php</file>
     <file>serendipity_event_userprofiles/serendipity_plugin_userprofiles_birthdays.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_userprofiles/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_userprofiles/UTF-8/lang_ja.inc.php</file>
@@ -1083,11 +1023,11 @@
 <description>Displays all users with their ethics (represented by a traffic light). Green light means 'cool'; yellow light means 'warning'; red light means 'banned'. The administrator can easily modify this value for each user.</description>
 <maintainers><maintainer><name>Loris Zena, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.4</version>
+  <version>2.0.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
       <file>ChangeLog</file>
@@ -1271,7 +1211,6 @@
           </dir>
         </dir>
       </dir>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1432,7 +1371,6 @@
     <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer/CSSDefinition.php</file>
     <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer/HTMLDefinition.php</file>
     <file>serendipity_event_xsstrust/htmlpurifier-4.15.0-standalone/standalone/HTMLPurifier/Printer.php</file>
-    <file>serendipity_event_xsstrust/lang_cs.inc.php</file>
     <file>serendipity_event_xsstrust/lang_cz.inc.php</file>
     <file>serendipity_event_xsstrust/lang_de.inc.php</file>
     <file>serendipity_event_xsstrust/lang_en.inc.php</file>
@@ -1455,14 +1393,12 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
       <file>common.inc.php</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1477,9 +1413,7 @@
   <serendipityFilelist>
     <file>serendipity_plugin_adduser/ChangeLog</file>
     <file>serendipity_plugin_adduser/common.inc.php</file>
-    <file>serendipity_plugin_adduser/documentation_cs.html</file>
     <file>serendipity_plugin_adduser/documentation_cz.html</file>
-    <file>serendipity_plugin_adduser/lang_cs.inc.php</file>
     <file>serendipity_plugin_adduser/lang_cz.inc.php</file>
     <file>serendipity_plugin_adduser/lang_de.inc.php</file>
     <file>serendipity_plugin_adduser/lang_en.inc.php</file>
@@ -1509,17 +1443,14 @@
   <filelist>
     <dir name="serendipity_plugin_amazon">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_en.html</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_plugin_amazon.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
@@ -1528,16 +1459,13 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_amazon/ChangeLog</file>
-    <file>serendipity_plugin_amazon/documentation_cs.html</file>
     <file>serendipity_plugin_amazon/documentation_cz.html</file>
     <file>serendipity_plugin_amazon/documentation_en.html</file>
-    <file>serendipity_plugin_amazon/lang_cs.inc.php</file>
     <file>serendipity_plugin_amazon/lang_cz.inc.php</file>
     <file>serendipity_plugin_amazon/lang_de.inc.php</file>
     <file>serendipity_plugin_amazon/lang_en.inc.php</file>
     <file>serendipity_plugin_amazon/lang_ja.inc.php</file>
     <file>serendipity_plugin_amazon/serendipity_plugin_amazon.php</file>
-    <file>serendipity_plugin_amazon/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_amazon/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_amazon/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_amazon/UTF-8/lang_ja.inc.php</file>
@@ -1562,7 +1490,6 @@
     <dir name="serendipity_plugin_category_dhtml_menu">
       <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
@@ -1572,7 +1499,6 @@
   <serendipityFilelist>
     <file>serendipity_plugin_category_dhtml_menu/ChangeLog</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_bg.inc.php</file>
-    <file>serendipity_plugin_category_dhtml_menu/lang_cs.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_cz.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_en.inc.php</file>
     <file>serendipity_plugin_category_dhtml_menu/lang_ja.inc.php</file>
@@ -1595,7 +1521,6 @@
   <date>2022-09-22</date>
   <filelist>
     <dir name="serendipity_plugin_coppermine">
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>none.jpg</file>
@@ -1603,20 +1528,17 @@
       <file>serendipity_plugin_coppermine.php</file>
       <file>styles.css</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_plugin_coppermine/lang_cs.inc.php</file>
     <file>serendipity_plugin_coppermine/lang_cz.inc.php</file>
     <file>serendipity_plugin_coppermine/lang_en.inc.php</file>
     <file>serendipity_plugin_coppermine/none.jpg</file>
     <file>serendipity_plugin_coppermine/README</file>
     <file>serendipity_plugin_coppermine/serendipity_plugin_coppermine.php</file>
     <file>serendipity_plugin_coppermine/styles.css</file>
-    <file>serendipity_plugin_coppermine/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_coppermine/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -1638,7 +1560,6 @@
     <dir name="serendipity_plugin_creativecommons">
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1654,7 +1575,6 @@
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cn.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_es.inc.php</file>
@@ -1671,7 +1591,6 @@
   <serendipityFilelist>
     <file>serendipity_plugin_creativecommons/lang_bg.inc.php</file>
     <file>serendipity_plugin_creativecommons/lang_cn.inc.php</file>
-    <file>serendipity_plugin_creativecommons/lang_cs.inc.php</file>
     <file>serendipity_plugin_creativecommons/lang_cz.inc.php</file>
     <file>serendipity_plugin_creativecommons/lang_de.inc.php</file>
     <file>serendipity_plugin_creativecommons/lang_en.inc.php</file>
@@ -1686,7 +1605,6 @@
     <file>serendipity_plugin_creativecommons/serendipity_plugin_creativecommons.php</file>
     <file>serendipity_plugin_creativecommons/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_plugin_creativecommons/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_creativecommons/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_creativecommons/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_creativecommons/UTF-8/lang_es.inc.php</file>
@@ -1718,9 +1636,7 @@
     <dir name="serendipity_plugin_currently">
       <file>ChangeLog</file>
       <file>curl.inc</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1733,9 +1649,7 @@
   <serendipityFilelist>
     <file>serendipity_plugin_currently/ChangeLog</file>
     <file>serendipity_plugin_currently/curl.inc</file>
-    <file>serendipity_plugin_currently/documentation_cs.html</file>
     <file>serendipity_plugin_currently/documentation_cz.html</file>
-    <file>serendipity_plugin_currently/lang_cs.inc.php</file>
     <file>serendipity_plugin_currently/lang_cz.inc.php</file>
     <file>serendipity_plugin_currently/lang_de.inc.php</file>
     <file>serendipity_plugin_currently/lang_en.inc.php</file>
@@ -1762,14 +1676,12 @@
   <filelist>
     <dir name="serendipity_plugin_externalphp">
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_externalphp.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -1777,13 +1689,11 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_externalphp/lang_bg.inc.php</file>
-    <file>serendipity_plugin_externalphp/lang_cs.inc.php</file>
     <file>serendipity_plugin_externalphp/lang_cz.inc.php</file>
     <file>serendipity_plugin_externalphp/lang_de.inc.php</file>
     <file>serendipity_plugin_externalphp/lang_en.inc.php</file>
     <file>serendipity_plugin_externalphp/serendipity_plugin_externalphp.php</file>
     <file>serendipity_plugin_externalphp/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_externalphp/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_externalphp/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_externalphp/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -1806,13 +1716,11 @@
   <filelist>
     <dir name="serendipity_plugin_feedburnersidebar">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_feedburnersidebar.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -1820,12 +1728,10 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_feedburnersidebar/ChangeLog</file>
-    <file>serendipity_plugin_feedburnersidebar/lang_cs.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/lang_cz.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/lang_de.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/lang_en.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/serendipity_plugin_feedburnersidebar.php</file>
-    <file>serendipity_plugin_feedburnersidebar/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_feedburnersidebar/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -1848,9 +1754,7 @@
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1874,7 +1778,6 @@
       <file>serendipity_event_flickrcss.php</file>
       <file>serendipity_plugin_flickr.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -1882,9 +1785,7 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_flickr/ChangeLog</file>
-    <file>serendipity_plugin_flickr/documentation_cs.html</file>
     <file>serendipity_plugin_flickr/documentation_cz.html</file>
-    <file>serendipity_plugin_flickr/lang_cs.inc.php</file>
     <file>serendipity_plugin_flickr/lang_cz.inc.php</file>
     <file>serendipity_plugin_flickr/lang_de.inc.php</file>
     <file>serendipity_plugin_flickr/lang_en.inc.php</file>
@@ -1903,7 +1804,6 @@
     <file>serendipity_plugin_flickr/phpFlickr/src/Util.php</file>
     <file>serendipity_plugin_flickr/serendipity_event_flickrcss.php</file>
     <file>serendipity_plugin_flickr/serendipity_plugin_flickr.php</file>
-    <file>serendipity_plugin_flickr/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_flickr/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_flickr/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -1926,7 +1826,6 @@
   <filelist>
     <dir name="serendipity_plugin_flickrbadge">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <dir name="lib">
@@ -1939,7 +1838,6 @@
       <file>plugin.inc.php</file>
       <file>serendipity_plugin_flickrbadge.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -1947,7 +1845,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_flickrbadge/ChangeLog</file>
-    <file>serendipity_plugin_flickrbadge/lang_cs.inc.php</file>
     <file>serendipity_plugin_flickrbadge/lang_cz.inc.php</file>
     <file>serendipity_plugin_flickrbadge/lang_en.inc.php</file>
     <file>serendipity_plugin_flickrbadge/lib/flickr/abstract.php</file>
@@ -1955,7 +1852,6 @@
     <file>serendipity_plugin_flickrbadge/lib/flickr.php</file>
     <file>serendipity_plugin_flickrbadge/plugin.inc.php</file>
     <file>serendipity_plugin_flickrbadge/serendipity_plugin_flickrbadge.php</file>
-    <file>serendipity_plugin_flickrbadge/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_flickrbadge/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_flickrbadge/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -1978,14 +1874,12 @@
   <filelist>
     <dir name="serendipity_plugin_ggopis">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <dir name="img">
         <file>gg11.png</file>
         <file>gg12.png</file>
         <file>gg13.png</file>
       </dir>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -1993,7 +1887,6 @@
       <file>README</file>
       <file>serendipity_plugin_ggopis.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_pl.inc.php</file>
@@ -2002,19 +1895,16 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_ggopis/ChangeLog</file>
-    <file>serendipity_plugin_ggopis/documentation_cs.html</file>
     <file>serendipity_plugin_ggopis/documentation_cz.html</file>
     <file>serendipity_plugin_ggopis/img/gg11.png</file>
     <file>serendipity_plugin_ggopis/img/gg12.png</file>
     <file>serendipity_plugin_ggopis/img/gg13.png</file>
-    <file>serendipity_plugin_ggopis/lang_cs.inc.php</file>
     <file>serendipity_plugin_ggopis/lang_cz.inc.php</file>
     <file>serendipity_plugin_ggopis/lang_de.inc.php</file>
     <file>serendipity_plugin_ggopis/lang_en.inc.php</file>
     <file>serendipity_plugin_ggopis/lang_pl.inc.php</file>
     <file>serendipity_plugin_ggopis/README</file>
     <file>serendipity_plugin_ggopis/serendipity_plugin_ggopis.php</file>
-    <file>serendipity_plugin_ggopis/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_ggopis/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_ggopis/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_ggopis/UTF-8/lang_pl.inc.php</file>
@@ -2038,17 +1928,14 @@
   <filelist>
     <dir name="serendipity_plugin_google_adsense">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_google_adsense.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -2056,16 +1943,13 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_google_adsense/ChangeLog</file>
-    <file>serendipity_plugin_google_adsense/documentation_cs.html</file>
     <file>serendipity_plugin_google_adsense/documentation_cz.html</file>
     <file>serendipity_plugin_google_adsense/lang_bg.inc.php</file>
-    <file>serendipity_plugin_google_adsense/lang_cs.inc.php</file>
     <file>serendipity_plugin_google_adsense/lang_cz.inc.php</file>
     <file>serendipity_plugin_google_adsense/lang_de.inc.php</file>
     <file>serendipity_plugin_google_adsense/lang_en.inc.php</file>
     <file>serendipity_plugin_google_adsense/serendipity_plugin_google_adsense.php</file>
     <file>serendipity_plugin_google_adsense/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_google_adsense/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_google_adsense/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_google_adsense/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -2088,7 +1972,6 @@
   <filelist>
     <dir name="serendipity_plugin_google_quicksearch">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
@@ -2096,7 +1979,6 @@
       <file>README</file>
       <file>serendipity_plugin_google_quicksearch.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_ja.inc.php</file>
         <file>lang_ko.inc.php</file>
@@ -2105,14 +1987,12 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_google_quicksearch/ChangeLog</file>
-    <file>serendipity_plugin_google_quicksearch/lang_cs.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/lang_cz.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/lang_en.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/lang_ja.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/lang_ko.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/README</file>
     <file>serendipity_plugin_google_quicksearch/serendipity_plugin_google_quicksearch.php</file>
-    <file>serendipity_plugin_google_quicksearch/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/UTF-8/lang_ja.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/UTF-8/lang_ko.inc.php</file>
@@ -2136,7 +2016,6 @@
   <filelist>
     <dir name="serendipity_plugin_heavyrotation">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <dir name="lib">
@@ -2156,7 +2035,6 @@
       <file>plugin.inc.php</file>
       <file>serendipity_plugin_heavyrotation.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -2164,7 +2042,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_heavyrotation/ChangeLog</file>
-    <file>serendipity_plugin_heavyrotation/lang_cs.inc.php</file>
     <file>serendipity_plugin_heavyrotation/lang_cz.inc.php</file>
     <file>serendipity_plugin_heavyrotation/lang_en.inc.php</file>
     <file>serendipity_plugin_heavyrotation/lib/album.php</file>
@@ -2177,7 +2054,6 @@
     <file>serendipity_plugin_heavyrotation/lib/helper/aws_signed_request.php</file>
     <file>serendipity_plugin_heavyrotation/plugin.inc.php</file>
     <file>serendipity_plugin_heavyrotation/serendipity_plugin_heavyrotation.php</file>
-    <file>serendipity_plugin_heavyrotation/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_heavyrotation/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_heavyrotation/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -2204,9 +2080,7 @@
       <file>coppermine_README</file>
       <file>coppermine_sidebar.php</file>
       <file>coppermine_styles.css</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2220,9 +2094,7 @@
     <file>serendipity_plugin_imagesidebar/coppermine_README</file>
     <file>serendipity_plugin_imagesidebar/coppermine_sidebar.php</file>
     <file>serendipity_plugin_imagesidebar/coppermine_styles.css</file>
-    <file>serendipity_plugin_imagesidebar/documentation_cs.html</file>
     <file>serendipity_plugin_imagesidebar/documentation_cz.html</file>
-    <file>serendipity_plugin_imagesidebar/lang_cs.inc.php</file>
     <file>serendipity_plugin_imagesidebar/lang_cz.inc.php</file>
     <file>serendipity_plugin_imagesidebar/lang_de.inc.php</file>
     <file>serendipity_plugin_imagesidebar/lang_en.inc.php</file>
@@ -2246,25 +2118,21 @@
   <date>2019-08-18</date>
   <filelist>
     <dir name="serendipity_plugin_karmaranking">
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_karmaranking.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_plugin_karmaranking/lang_cs.inc.php</file>
     <file>serendipity_plugin_karmaranking/lang_cz.inc.php</file>
     <file>serendipity_plugin_karmaranking/lang_de.inc.php</file>
     <file>serendipity_plugin_karmaranking/lang_en.inc.php</file>
     <file>serendipity_plugin_karmaranking/serendipity_plugin_karmaranking.php</file>
-    <file>serendipity_plugin_karmaranking/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_karmaranking/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_karmaranking/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -2287,10 +2155,8 @@
   <filelist>
     <dir name="serendipity_plugin_loginform">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2299,7 +2165,6 @@
       <dir name="UTF-8">
         <file>lang_bc.inc.php</file>
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
@@ -2308,10 +2173,8 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_loginform/ChangeLog</file>
-    <file>serendipity_plugin_loginform/documentation_cs.html</file>
     <file>serendipity_plugin_loginform/documentation_cz.html</file>
     <file>serendipity_plugin_loginform/lang_bg.inc.php</file>
-    <file>serendipity_plugin_loginform/lang_cs.inc.php</file>
     <file>serendipity_plugin_loginform/lang_cz.inc.php</file>
     <file>serendipity_plugin_loginform/lang_de.inc.php</file>
     <file>serendipity_plugin_loginform/lang_en.inc.php</file>
@@ -2319,7 +2182,6 @@
     <file>serendipity_plugin_loginform/serendipity_plugin_loginform.php</file>
     <file>serendipity_plugin_loginform/UTF-8/lang_bc.inc.php</file>
     <file>serendipity_plugin_loginform/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_loginform/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_loginform/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_loginform/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_loginform/UTF-8/lang_ja.inc.php</file>
@@ -2344,7 +2206,6 @@
     <dir name="serendipity_plugin_nugget_multilingual">
       <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2353,7 +2214,6 @@
       <file>serendipity_plugin_nugget_multilingual.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ko.inc.php</file>
@@ -2363,7 +2223,6 @@
   <serendipityFilelist>
     <file>serendipity_plugin_nugget_multilingual/ChangeLog</file>
     <file>serendipity_plugin_nugget_multilingual/lang_bg.inc.php</file>
-    <file>serendipity_plugin_nugget_multilingual/lang_cs.inc.php</file>
     <file>serendipity_plugin_nugget_multilingual/lang_cz.inc.php</file>
     <file>serendipity_plugin_nugget_multilingual/lang_de.inc.php</file>
     <file>serendipity_plugin_nugget_multilingual/lang_en.inc.php</file>
@@ -2371,7 +2230,6 @@
     <file>serendipity_plugin_nugget_multilingual/README</file>
     <file>serendipity_plugin_nugget_multilingual/serendipity_plugin_nugget_multilingual.php</file>
     <file>serendipity_plugin_nugget_multilingual/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_nugget_multilingual/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_nugget_multilingual/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_nugget_multilingual/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_nugget_multilingual/UTF-8/lang_ko.inc.php</file>
@@ -2387,40 +2245,28 @@
 <description>Affichage dynamique du PageRank Google</description>
 <maintainers><maintainer><name>Christian Lescuyer</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.35</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-04</date>
   <filelist>
     <dir name="serendipity_plugin_pagerank">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>lang_fr.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_plugin_pagerank.php</file>
-      <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_pagerank/ChangeLog</file>
-    <file>serendipity_plugin_pagerank/lang_cs.inc.php</file>
     <file>serendipity_plugin_pagerank/lang_cz.inc.php</file>
     <file>serendipity_plugin_pagerank/lang_en.inc.php</file>
     <file>serendipity_plugin_pagerank/lang_fr.inc.php</file>
     <file>serendipity_plugin_pagerank/lang_ja.inc.php</file>
     <file>serendipity_plugin_pagerank/serendipity_plugin_pagerank.php</file>
-    <file>serendipity_plugin_pagerank/UTF-8/lang_cs.inc.php</file>
-    <file>serendipity_plugin_pagerank/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_pagerank/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_plugin_pagerank/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2439,7 +2285,6 @@
   <date>2020-12-15</date>
   <filelist>
     <dir name="serendipity_plugin_photoblog">
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2447,7 +2292,6 @@
       <file>lang_tr.inc.php</file>
       <file>serendipity_plugin_photoblog.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
@@ -2456,14 +2300,12 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_plugin_photoblog/lang_cs.inc.php</file>
     <file>serendipity_plugin_photoblog/lang_cz.inc.php</file>
     <file>serendipity_plugin_photoblog/lang_de.inc.php</file>
     <file>serendipity_plugin_photoblog/lang_en.inc.php</file>
     <file>serendipity_plugin_photoblog/lang_ja.inc.php</file>
     <file>serendipity_plugin_photoblog/lang_tr.inc.php</file>
     <file>serendipity_plugin_photoblog/serendipity_plugin_photoblog.php</file>
-    <file>serendipity_plugin_photoblog/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_photoblog/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_photoblog/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_photoblog/UTF-8/lang_ja.inc.php</file>
@@ -2525,7 +2367,6 @@
     <dir name="serendipity_plugin_pollbox">
       <file>ChangeLog</file>
       <file>common.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2534,7 +2375,6 @@
       <file>serendipity_event_pollbox.php</file>
       <file>serendipity_plugin_pollbox.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_ja.inc.php</file>
@@ -2545,7 +2385,6 @@
   <serendipityFilelist>
     <file>serendipity_plugin_pollbox/ChangeLog</file>
     <file>serendipity_plugin_pollbox/common.inc.php</file>
-    <file>serendipity_plugin_pollbox/lang_cs.inc.php</file>
     <file>serendipity_plugin_pollbox/lang_cz.inc.php</file>
     <file>serendipity_plugin_pollbox/lang_de.inc.php</file>
     <file>serendipity_plugin_pollbox/lang_en.inc.php</file>
@@ -2553,7 +2392,6 @@
     <file>serendipity_plugin_pollbox/lang_pl.inc.php</file>
     <file>serendipity_plugin_pollbox/serendipity_event_pollbox.php</file>
     <file>serendipity_plugin_pollbox/serendipity_plugin_pollbox.php</file>
-    <file>serendipity_plugin_pollbox/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_pollbox/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_pollbox/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_pollbox/UTF-8/lang_ja.inc.php</file>
@@ -2578,10 +2416,8 @@
   <filelist>
     <dir name="serendipity_plugin_popularentries">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2592,10 +2428,8 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_popularentries/ChangeLog</file>
-    <file>serendipity_plugin_popularentries/documentation_cs.html</file>
     <file>serendipity_plugin_popularentries/documentation_cz.html</file>
     <file>serendipity_plugin_popularentries/lang_bg.inc.php</file>
-    <file>serendipity_plugin_popularentries/lang_cs.inc.php</file>
     <file>serendipity_plugin_popularentries/lang_cz.inc.php</file>
     <file>serendipity_plugin_popularentries/lang_de.inc.php</file>
     <file>serendipity_plugin_popularentries/lang_en.inc.php</file>
@@ -2622,13 +2456,11 @@
   <filelist>
     <dir name="serendipity_plugin_quicklink">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_quicklink.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -2636,12 +2468,10 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_quicklink/ChangeLog</file>
-    <file>serendipity_plugin_quicklink/lang_cs.inc.php</file>
     <file>serendipity_plugin_quicklink/lang_cz.inc.php</file>
     <file>serendipity_plugin_quicklink/lang_de.inc.php</file>
     <file>serendipity_plugin_quicklink/lang_en.inc.php</file>
     <file>serendipity_plugin_quicklink/serendipity_plugin_quicklink.php</file>
-    <file>serendipity_plugin_quicklink/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_quicklink/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_quicklink/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -2664,7 +2494,6 @@
   <filelist>
     <dir name="serendipity_plugin_randomquotes">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2674,7 +2503,6 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_randomquotes/ChangeLog</file>
-    <file>serendipity_plugin_randomquotes/lang_cs.inc.php</file>
     <file>serendipity_plugin_randomquotes/lang_cz.inc.php</file>
     <file>serendipity_plugin_randomquotes/lang_de.inc.php</file>
     <file>serendipity_plugin_randomquotes/lang_en.inc.php</file>
@@ -2701,7 +2529,6 @@
     <dir name="serendipity_plugin_shoutbox">
       <file>ChangeLog</file>
       <file>lang_cn.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2716,7 +2543,6 @@
       <file>serendipity_plugin_shoutbox.php</file>
       <dir name="UTF-8">
         <file>lang_cn.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_es.inc.php</file>
@@ -2733,7 +2559,6 @@
   <serendipityFilelist>
     <file>serendipity_plugin_shoutbox/ChangeLog</file>
     <file>serendipity_plugin_shoutbox/lang_cn.inc.php</file>
-    <file>serendipity_plugin_shoutbox/lang_cs.inc.php</file>
     <file>serendipity_plugin_shoutbox/lang_cz.inc.php</file>
     <file>serendipity_plugin_shoutbox/lang_de.inc.php</file>
     <file>serendipity_plugin_shoutbox/lang_en.inc.php</file>
@@ -2747,7 +2572,6 @@
     <file>serendipity_plugin_shoutbox/lang_zh.inc.php</file>
     <file>serendipity_plugin_shoutbox/serendipity_plugin_shoutbox.php</file>
     <file>serendipity_plugin_shoutbox/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_plugin_shoutbox/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_shoutbox/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_shoutbox/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_shoutbox/UTF-8/lang_es.inc.php</file>
@@ -2778,9 +2602,7 @@
   <filelist>
     <dir name="serendipity_plugin_shoutcast">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>readme.txt</file>
@@ -2788,23 +2610,19 @@
       <file>shoutcast_plugin_inaction.jpg</file>
       <file>shoutcast_plugin_setup.jpg</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
       </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_shoutcast/ChangeLog</file>
-    <file>serendipity_plugin_shoutcast/documentation_cs.html</file>
     <file>serendipity_plugin_shoutcast/documentation_cz.html</file>
-    <file>serendipity_plugin_shoutcast/lang_cs.inc.php</file>
     <file>serendipity_plugin_shoutcast/lang_cz.inc.php</file>
     <file>serendipity_plugin_shoutcast/lang_en.inc.php</file>
     <file>serendipity_plugin_shoutcast/readme.txt</file>
     <file>serendipity_plugin_shoutcast/serendipity_plugin_shoutcast.php</file>
     <file>serendipity_plugin_shoutcast/shoutcast_plugin_inaction.jpg</file>
     <file>serendipity_plugin_shoutcast/shoutcast_plugin_setup.jpg</file>
-    <file>serendipity_plugin_shoutcast/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_shoutcast/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
@@ -2826,10 +2644,8 @@
   <filelist>
     <dir name="serendipity_plugin_showentries">
       <file>ChangeLog</file>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc .php</file>
       <file>lang_en.inc.php</file>
@@ -2840,10 +2656,8 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_showentries/ChangeLog</file>
-    <file>serendipity_plugin_showentries/documentation_cs.html</file>
     <file>serendipity_plugin_showentries/documentation_cz.html</file>
     <file>serendipity_plugin_showentries/lang_bg.inc.php</file>
-    <file>serendipity_plugin_showentries/lang_cs.inc.php</file>
     <file>serendipity_plugin_showentries/lang_cz.inc.php</file>
     <file>serendipity_plugin_showentries/lang_de.inc .php</file>
     <file>serendipity_plugin_showentries/lang_en.inc.php</file>
@@ -2870,13 +2684,11 @@
   <filelist>
     <dir name="serendipity_plugin_sidebarlogo">
       <file>ChangeLog</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_sidebarlogo.php</file>
       <dir name="UTF-8">
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -2884,12 +2696,10 @@
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_sidebarlogo/ChangeLog</file>
-    <file>serendipity_plugin_sidebarlogo/lang_cs.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/lang_cz.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/lang_de.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/lang_en.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/serendipity_plugin_sidebarlogo.php</file>
-    <file>serendipity_plugin_sidebarlogo/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_sidebarlogo/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -2912,7 +2722,6 @@
     <dir name="serendipity_plugin_templatedropdown">
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -2928,7 +2737,6 @@
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
         <file>lang_cn.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_es.inc.php</file>
@@ -2945,7 +2753,6 @@
   <serendipityFilelist>
     <file>serendipity_plugin_templatedropdown/lang_bg.inc.php</file>
     <file>serendipity_plugin_templatedropdown/lang_cn.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/lang_cs.inc.php</file>
     <file>serendipity_plugin_templatedropdown/lang_cz.inc.php</file>
     <file>serendipity_plugin_templatedropdown/lang_de.inc.php</file>
     <file>serendipity_plugin_templatedropdown/lang_en.inc.php</file>
@@ -2960,7 +2767,6 @@
     <file>serendipity_plugin_templatedropdown/serendipity_plugin_templatedropdown.php</file>
     <file>serendipity_plugin_templatedropdown/UTF-8/lang_bg.inc.php</file>
     <file>serendipity_plugin_templatedropdown/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_templatedropdown/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_templatedropdown/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_templatedropdown/UTF-8/lang_es.inc.php</file>
@@ -2992,14 +2798,12 @@
     <dir name="serendipity_plugin_timezones">
       <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_timezones.php</file>
       <dir name="UTF-8">
         <file>lang_bg.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
       </dir>
@@ -3008,13 +2812,11 @@
   <serendipityFilelist>
     <file>serendipity_plugin_timezones/ChangeLog</file>
     <file>serendipity_plugin_timezones/lang_bg.inc.php</file>
-    <file>serendipity_plugin_timezones/lang_cs.inc.php</file>
     <file>serendipity_plugin_timezones/lang_cz.inc.php</file>
     <file>serendipity_plugin_timezones/lang_de.inc.php</file>
     <file>serendipity_plugin_timezones/lang_en.inc.php</file>
     <file>serendipity_plugin_timezones/serendipity_plugin_timezones.php</file>
     <file>serendipity_plugin_timezones/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_timezones/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_timezones/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_timezones/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
@@ -3097,7 +2899,6 @@
       <dir name="documentation">
         <file>documentation.css</file>
       </dir>
-      <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <file>documentation_de.html</file>
       <file>documentation_en.html</file>
@@ -3109,7 +2910,6 @@
         <file>tt-micro-black.png</file>
         <file>tt-micro-white.png</file>
       </dir>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -3140,7 +2940,6 @@
     <file>serendipity_plugin_twitter/classes/twitter_entry_defs.include.php</file>
     <file>serendipity_plugin_twitter/classes/UrlShortener.php</file>
     <file>serendipity_plugin_twitter/documentation/documentation.css</file>
-    <file>serendipity_plugin_twitter/documentation_cs.html</file>
     <file>serendipity_plugin_twitter/documentation_cz.html</file>
     <file>serendipity_plugin_twitter/documentation_de.html</file>
     <file>serendipity_plugin_twitter/documentation_en.html</file>
@@ -3150,7 +2949,6 @@
     <file>serendipity_plugin_twitter/img/signin.png</file>
     <file>serendipity_plugin_twitter/img/tt-micro-black.png</file>
     <file>serendipity_plugin_twitter/img/tt-micro-white.png</file>
-    <file>serendipity_plugin_twitter/lang_cs.inc.php</file>
     <file>serendipity_plugin_twitter/lang_cz.inc.php</file>
     <file>serendipity_plugin_twitter/lang_de.inc.php</file>
     <file>serendipity_plugin_twitter/lang_en.inc.php</file>
@@ -3184,7 +2982,6 @@
     <dir name="serendipity_plugin_wikipedia_finder">
       <file>ChangeLog</file>
       <file>lang_cn.inc.php</file>
-      <file>lang_cs.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
@@ -3194,7 +2991,6 @@
       <file>serendipity_plugin_wikipedia_finder.php</file>
       <dir name="UTF-8">
         <file>lang_cn.inc.php</file>
-        <file>lang_cs.inc.php</file>
         <file>lang_cz.inc.php</file>
         <file>lang_de.inc.php</file>
         <file>lang_es.inc.php</file>
@@ -3209,7 +3005,6 @@
   <serendipityFilelist>
     <file>serendipity_plugin_wikipedia_finder/ChangeLog</file>
     <file>serendipity_plugin_wikipedia_finder/lang_cn.inc.php</file>
-    <file>serendipity_plugin_wikipedia_finder/lang_cs.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/lang_cz.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/lang_de.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/lang_en.inc.php</file>
@@ -3218,7 +3013,6 @@
     <file>serendipity_plugin_wikipedia_finder/lang_zh.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/serendipity_plugin_wikipedia_finder.php</file>
     <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_cz.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_de.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_es.inc.php</file>

@@ -32,7 +32,7 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon メディアボタン&lt;/b&gt;&lt;br /&gt;あなたのエントリに Amazon を検索するためのボタンを追加し、エントリに挿入することができるほうになります。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:37:45 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
@@ -41,7 +41,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_assigncategories&lt;br /&gt;カテゴリの割り当て&lt;/b&gt;&lt;br /&gt;エントリに複数のカテゴリを割り当てます。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:36:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_assigncategories</guid>
 </item>
 <item>
@@ -59,7 +59,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Thu, 31 Jul 2025 16:05:50 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:35:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
@@ -121,8 +121,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_challengeresponse</link>
 <category>Event Plugins</category>
 <author>Nobody</author>
-<content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;A simple example for custom Spam verification.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 18 Aug 2017 10:41:27 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;A simple example for custom Spam verification.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 03 Aug 2025 17:36:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_challengeresponse</guid>
 </item>
 <item>
@@ -139,8 +139,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_commentedit</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Comment Edit&lt;/b&gt;&lt;br /&gt;Let user's edit their comments after they posted them.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 12 Mar 2023 18:57:37 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Comment Edit&lt;/b&gt;&lt;br /&gt;Let user's edit their comments after they posted them.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 03 Aug 2025 17:39:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentedit</guid>
 </item>
 <item>
@@ -158,7 +158,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Spice up your comments area with goodies like commenters twitter or last posted article link and nofollows by rules.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:35:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;お問合せフォーム&lt;/b&gt;&lt;br /&gt;静的ページとしてブログに電子メールお問合せフォームを表示します。It can be accessed by either the custom permalink or by index.php?serendipity[subpage]=contactform. You can customize the look of the contact form by putting the plugin_contactform.tpl file into your template directory and modify it there. spam ブロックプラグインの Captcha が(もし有効なら)適用されるでしょう。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:34:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
@@ -184,8 +184,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_contentrewrite</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;コンテントリライター&lt;/b&gt;&lt;br /&gt;単語を新しく選択された文字列に置換します (useful for acronyms)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 14 Jul 2023 11:16:41 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;コンテントリライター&lt;/b&gt;&lt;br /&gt;単語を新しく選択された文字列に置換します (useful for acronyms)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 14:30:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
@@ -220,8 +220,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_customarchive</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Customizable Entries Archive&lt;/b&gt;&lt;br /&gt;Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Customizable Entries Archive&lt;/b&gt;&lt;br /&gt;Shows a sortable view of all past articles for the visitor. The link to this page should be inserted into a HTML nugget.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 03 Aug 2025 18:40:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Custom Permalinks for Entries&lt;/b&gt;&lt;br /&gt;Defines custom permalinks that can be used to access a specific entry. It can only use URL patterns which are NOT YET in use - using custom permalinks within the /archives/ structure is thus not possible. But any (virtual) other directory is.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:42:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -238,8 +238,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dbclean</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_dbclean&lt;br /&gt;DBClean&lt;/b&gt;&lt;br /&gt;Cleanup database&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_dbclean&lt;br /&gt;DBClean&lt;/b&gt;&lt;br /&gt;Cleanup database&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 13:25:51 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dbclean</guid>
 </item>
 <item>
@@ -285,8 +285,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dsgvo_gdpr</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: General Data Protection Regulation&lt;/b&gt;&lt;br /&gt;This plugin aims to help blog owners to apply conformity to the General Data Protection Regulation Act.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 14:01:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dsgvo_gdpr</guid>
 </item>
 <item>
@@ -313,7 +313,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Gregor Voeltz, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;公開のルール&lt;/b&gt;&lt;br /&gt;エントリの公開前にいくつかの確認を適用します。.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:33:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrycheck</guid>
 </item>
 <item>
@@ -321,8 +321,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrylastmodified</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrylastmodified&lt;br /&gt;最終更新日を表示する&lt;/b&gt;&lt;br /&gt;ブログのフロントページにエントリの最終修正日を表示します。&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 13 Jul 2019 13:51:40 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_entrylastmodified&lt;br /&gt;最終更新日を表示する&lt;/b&gt;&lt;br /&gt;ブログのフロントページにエントリの最終修正日を表示します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 11:14:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrylastmodified</guid>
 </item>
 <item>
@@ -376,7 +376,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Falk Doering, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;よくある質問と回答(Frequently Asked Questions)&lt;/b&gt;&lt;br /&gt;よくある質問と回答(Frequently Asked Question)の編集です。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:32:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -474,8 +474,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geshi</link>
 <category>Event Plugins</category>
 <author>David Rolston, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Markup: GeSHi&lt;/b&gt;&lt;br /&gt;Computer Language Color Syntax Highlighting. Tag usage: [geshi lang=lang_name [,ln={y|n}]]code snippet[/geshi]&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 24 Nov 2022 11:31:07 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Markup: GeSHi&lt;/b&gt;&lt;br /&gt;Computer Language Color Syntax Highlighting. Tag usage: [geshi lang=lang_name [,ln={y|n}]]code snippet[/geshi]&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 03 Aug 2025 18:42:14 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geshi</guid>
 </item>
 <item>
@@ -501,8 +501,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_google_analytics</link>
 <category>Event Plugins</category>
 <author>Jari Turkia, kleinerChemiker, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics 4&lt;/b&gt;&lt;br /&gt;This plugin adds extended Google Analytics 4 functionality.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Fri, 18 Oct 2024 20:57:37 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics 4&lt;/b&gt;&lt;br /&gt;This plugin adds extended Google Analytics 4 functionality.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 14:30:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_analytics</guid>
 </item>
 <item>
@@ -510,8 +510,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_google_sitemap</link>
 <category>Event Plugins</category>
 <author>Boris, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Sitemap Generator (for Crawlers)&lt;/b&gt;&lt;br /&gt;Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 18 Oct 2024 20:57:56 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Sitemap Generator (for Crawlers)&lt;/b&gt;&lt;br /&gt;Creates a sitemap.xml.gz, which can be used by miscellaneous Web-Crawlers. (Google, MSN, Yahoo and Ask)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 03 Aug 2025 17:33:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
@@ -529,7 +529,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Guestbook&lt;/b&gt;&lt;br /&gt;Shows a guestbook inside your blog with your normal blog design.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 30 Jul 2025 16:57:01 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:30:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
@@ -556,7 +556,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;メディアマネージャーの拡張されたオプション&lt;/b&gt;&lt;br /&gt;Allows extended options for inserting images from the media manager&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:29:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
@@ -636,8 +636,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_livecomment</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_livecomment&lt;br /&gt;Enhanced Comment Area&lt;/b&gt;&lt;br /&gt;Uses JavaScript to show a live preview and markup-buttons&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 17 Sep 2022 12:47:20 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_livecomment&lt;br /&gt;Enhanced Comment Area&lt;/b&gt;&lt;br /&gt;Uses JavaScript to show a live preview and markup-buttons&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 03 Aug 2025 18:36:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_livecomment</guid>
 </item>
 <item>
@@ -645,8 +645,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_livesearch</link>
 <category>Event Plugins</category>
 <author>Christian Stocker, Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_livesearch&lt;br /&gt;ライブサーチ&lt;/b&gt;&lt;br /&gt;(JavaScript 経由で)キー入力中のライブアップデートを追加することにより、内部検索機能を強化します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 05 Apr 2019 10:54:47 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_livesearch&lt;br /&gt;ライブサーチ&lt;/b&gt;&lt;br /&gt;(JavaScript 経由で)キー入力中のライブアップデートを追加することにより、内部検索機能を強化します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 13:48:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_livesearch</guid>
 </item>
 <item>
@@ -700,7 +700,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;マークアップ: Markdown&lt;/b&gt;&lt;br /&gt;エントリテキストに Markdown マークアップを適用します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 03 Aug 2025 12:36:16 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:28:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
@@ -717,8 +717,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_metadesc</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META-Tags&lt;/b&gt;&lt;br /&gt;Sets HTML meta keywords/description tags and title element for single entry pages and default meta keywords/description tags for non-single entry pages.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:33:59 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META-Tags&lt;/b&gt;&lt;br /&gt;Sets HTML meta keywords/description tags and title element for single entry pages and default meta keywords/description tags for non-single entry pages.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 13:33:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -744,8 +744,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mobile_output</link>
 <category>Event Plugins</category>
 <author>Pelle Boese, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Mobile Output&lt;/b&gt;&lt;br /&gt;This plugin handles mobile devices and outputs optimized XHTML MP markup if it detects a mobile browser and a specially optimized site for iPhone and iPod Touch. It also scales images to fit the display size.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 13:24:25 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Mobile Output&lt;/b&gt;&lt;br /&gt;This plugin handles mobile devices and outputs optimized XHTML MP markup if it detects a mobile browser and a specially optimized site for iPhone and iPod Touch. It also scales images to fit the display size.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 11:19:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
@@ -754,7 +754,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;多言語エントリ&lt;/b&gt;&lt;br /&gt;エントリの複数の言語バージョンを作成することを可能にします。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:26:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
@@ -843,8 +843,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_phoneblogz</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, phoneblogz.com</author>
-<content:encoded>&lt;b&gt;serendipity_event_phoneblogz&lt;br /&gt;Phoneblogz&lt;/b&gt;&lt;br /&gt;This plugin allows to fetch messages from Phoneblogz.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_phoneblogz&lt;br /&gt;Phoneblogz&lt;/b&gt;&lt;br /&gt;This plugin allows to fetch messages from Phoneblogz.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 15:23:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_phoneblogz</guid>
 </item>
 <item>
@@ -969,8 +969,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_sidebarhider</link>
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;サイドバーの状態切り替え (折り畳み/展開)&lt;/b&gt;&lt;br /&gt;Shrinks Sidebars to just their titles.  Extra configuration in Entries -&gt; Manage Sidebars in the Admin Suite.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;サイドバーの状態切り替え (折り畳み/展開)&lt;/b&gt;&lt;br /&gt;Shrinks Sidebars to just their titles.  Extra configuration in Entries -&gt; Manage Sidebars in the Admin Suite.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 13:58:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
@@ -1006,7 +1006,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Hidden Captcha)&lt;/b&gt;&lt;br /&gt;Implements simple comment antispam mechanisms, that are easy to configure but very effective.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 14:18:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
@@ -1042,7 +1042,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;統計情報&lt;/b&gt;&lt;br /&gt;エントリパネルに興味のある統計へのリンクを加えます。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:14:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
@@ -1122,8 +1122,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_todolist</link>
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/プロジェクト一覧&lt;/b&gt;&lt;br /&gt;Maintain a list of projects and their percentage completion.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/プロジェクト一覧&lt;/b&gt;&lt;br /&gt;Maintain a list of projects and their percentage completion.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 13:05:24 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
@@ -1149,8 +1149,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_trackexits</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_trackexits&lt;br /&gt;マークアップ: 退出追跡&lt;/b&gt;&lt;br /&gt;外部 URL のクリックを追跡します。&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:05:09 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_trackexits&lt;br /&gt;マークアップ: 退出追跡&lt;/b&gt;&lt;br /&gt;外部 URL のクリックを追跡します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 14:24:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackexits</guid>
 </item>
 <item>
@@ -1222,7 +1222,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;アナウンスエントリ一覧&lt;/b&gt;&lt;br /&gt;新規エントリの通知をオンラインサービスに送信します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:20:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
@@ -1239,8 +1239,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wordwrap</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_wordwrap&lt;br /&gt;Markup: Wordwrap long text&lt;/b&gt;&lt;br /&gt;Inserts breaks for lengthy entries/comments&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:40:09 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_wordwrap&lt;br /&gt;Markup: Wordwrap long text&lt;/b&gt;&lt;br /&gt;Inserts breaks for lengthy entries/comments&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 04 Aug 2025 11:20:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wordwrap</guid>
 </item>
 <item>
@@ -1249,7 +1249,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Post via XML-RPC&lt;/b&gt;&lt;br /&gt;Allows to post/edit entries via the XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:14:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
@@ -1258,7 +1258,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_xsstrust&lt;br /&gt;Options for trustworthy editing on multi-user blogs / HTMLPurifier&lt;/b&gt;&lt;br /&gt;This plugin can specify, which authors on a multi-user blog you have enough trust in and do not expect hacking attempts. All other users are treated as possibly evil and cannot create HTML entries.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:54:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xsstrust</guid>
 </item>
 <item>
@@ -1276,7 +1276,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;ユーザー自身での登録&lt;/b&gt;&lt;br /&gt;ブログ訪問者が自分のアカウントを作成することを許可します。Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 04 Aug 2025 15:09:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
