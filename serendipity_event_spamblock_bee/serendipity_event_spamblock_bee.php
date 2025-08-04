@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -28,47 +30,47 @@ class serendipity_event_spamblock_bee extends serendipity_event
 {
     /**
      * Plug-in title
-     * @var string
+     * @public string
      */
-    var $title = PLUGIN_EVENT_SPAMBLOCK_BEE_TITLE;
+    public $title = PLUGIN_EVENT_SPAMBLOCK_BEE_TITLE;
 
     /**
      * Whether to use a Honey Pot
-     * @var boolean
+     * @private boolean
      */
-    var $useHoneyPot = true;
+    private $useHoneyPot = true;
 
     /**
      * Whether the Captcha is enabled and what to do when validation failed
-     * @var string
+     * @private string
      */
-    var $hiddenCaptchaHandle = null;
+    private $hiddenCaptchaHandle = null;
 
     /**
      * Method for retrieving the correct answer of the hidden Captcha.
      * Either 'default', 'json' or 'smarty'.
-     * @var string
+     * @private string
      */
-    var $answerRetrievalMethod = null;
+    private $answerRetrievalMethod = null;
 
     /**
      * Correct answer for the Captcha. If RegExp matching is on, it'll
      * also contain an index 'pattern'
-     * @var array
+     * @private array
      */
-    var $captchaAnswer = array('answer' => null);
+    private $captchaAnswer = array('answer' => null);
 
     /**
      * Type of question asked in the Captcha. This is either 'math' or 'custom'
-     * @var string
+     * @private string
      */
-    var $captchaQuestionType = null;
+    private $captchaQuestionType = null;
 
     /**
      * Whether to use RegExp matching for the hidden Captcha
-     * @var boolean
+     * @private boolean
      */
-    var $useRegularExpressions = false;
+    private $useRegularExpressions = false;
 
     /**
      * Constructor. Initialize class variables from configuration

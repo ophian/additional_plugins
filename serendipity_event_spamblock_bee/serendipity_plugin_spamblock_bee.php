@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -11,8 +13,9 @@ include dirname(__FILE__) . '/version.inc.php';
 
 class serendipity_plugin_spamblock_bee extends serendipity_plugin
 {
-    var $title = PLUGIN_SPAMBLOCK_BEE_TITLE;
-    var $cache_file = null;
+    public $title = PLUGIN_SPAMBLOCK_BEE_TITLE;
+
+    private $cache_file = null;
 
     function introspect(&$propbag)
     {
@@ -23,9 +26,9 @@ class serendipity_plugin_spamblock_bee extends serendipity_plugin
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Grischa Brockhaus, Janek Bevendorff');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
             ));
 
         $propbag->add('version',       PLUGIN_SPAMBLOCK_BEE_VERSION); // setup via version.inc.php
