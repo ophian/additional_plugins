@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_autoupdate extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_AUTOUPDATE_NAME;
+    public $title = PLUGIN_EVENT_AUTOUPDATE_NAME;
 
     function introspect(&$propbag)
     {
@@ -18,7 +18,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '3.1.1');
+        $propbag->add('version',       '3.1.2');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
