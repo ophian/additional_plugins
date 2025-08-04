@@ -1,29 +1,29 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/30
  */
 
-@define('PLUGIN_SIDEBAR_HIDER_NAME', 'Pøepínání stavu postranního sloupce (sbalenı/rozbalenı)');
-@define('PLUGIN_SIDEBAR_HIDER_DESC', 'Smr¹tí postranní sloupce pouze na jejich nadpisy. Pøidává nastavení do psaní pøíspìvkù a také polo¾ku "Správa postranních sloupcù" do administraèní sekce.');
-@define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR', 'Styl skrytıch sloupcù');
-@define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR_DESC', 'Extra tagy stylù, které se mají pou¾ít na postranní sloupce, pokud jsou sloupce schované (napø. odstranìní spodního odsazení).');
-@define('PLUGIN_SIDEBAR_HIDER_STYLE_TITLE', 'Styl skrytého nadpisu');
-@define('PLUGIN_SIDEBAR_HIDER_STYLE_TITLE_DESC', 'Extra tagy stylù, které se mají pou¾ít na nadpis postranního sloupce, pokud je sloupec schovanı (napø. odstranìní spodního okraje).');
+@define('PLUGIN_SIDEBAR_HIDER_NAME', 'PÅ™epÃ­nÃ¡nÃ­ stavu postrannÃ­ho sloupce (sbalenÃ½/rozbalenÃ½)');
+@define('PLUGIN_SIDEBAR_HIDER_DESC', 'SmrÅ¡tÃ­ postrannÃ­ sloupce pouze na jejich nadpisy. PÅ™idÃ¡vÃ¡ nastavenÃ­ do psanÃ­ pÅ™Ã­spÄ›vkÅ¯ a takÃ© poloÅ¾ku "SprÃ¡va postrannÃ­ch sloupcÅ¯" do administraÄnÃ­ sekce.');
+@define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR', 'Styl skrytÃ½ch sloupcÅ¯');
+@define('PLUGIN_SIDEBAR_HIDER_STYLE_SIDEBAR_DESC', 'Extra tagy stylÅ¯, kterÃ© se majÃ­ pouÅ¾Ã­t na postrannÃ­ sloupce, pokud jsou sloupce schovanÃ© (napÅ™. odstranÄ›nÃ­ spodnÃ­ho odsazenÃ­).');
+@define('PLUGIN_SIDEBAR_HIDER_STYLE_TITLE', 'Styl skrytÃ©ho nadpisu');
+@define('PLUGIN_SIDEBAR_HIDER_STYLE_TITLE_DESC', 'Extra tagy stylÅ¯, kterÃ© se majÃ­ pouÅ¾Ã­t na nadpis postrannÃ­ho sloupce, pokud je sloupec schovanÃ½ (napÅ™. odstranÄ›nÃ­ spodnÃ­ho okraje).');
 @define('PLUGIN_SIDEBAR_HIDER_STYLE_LINK', 'Styl odkazu "Schovat"');
-@define('PLUGIN_SIDEBAR_HIDER_STYLE_LINK_DESC', 'Tag stylu, kterı se pou¾ije na odkaz "Schovat".');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE', 'HTML odkazu pøi viditelném sloupci');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE_DESC', 'HTML kód odkazu "Schovat", pokud je postranní sloupec vidìt (napø. obrázek)');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN', 'HTML odkazu pøi skrytém sloupci');
-@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML kód odkazu "Schovat", pokud je postranní sloupec schovanı (napø. obrázek)');
-@define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'Správce viditelnosti postranního sloupce');
-@define('PLUGIN_SIDEBAR_HIDER_CONF', 'Nastavení skrıvání postranního sloupce');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'Poznámka: Tento plugin schovává sloupce podle jejich umístìní. Zmìna poøadí pluginù nebude mít vliv.');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_HIDDEN', 'Skrytı:');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_EVERYONE', 'Jakıkoliv u¾ivatel:');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_MEMBERS', 'Pouze pøihlá¹ení:');
-@define('PLUGIN_SIDEBAR_HIDER_CONF_MYSELF', 'Pouze já:');
+@define('PLUGIN_SIDEBAR_HIDER_STYLE_LINK_DESC', 'Tag stylu, kterÃ½ se pouÅ¾ije na odkaz "Schovat".');
+@define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE', 'HTML odkazu pÅ™i viditelnÃ©m sloupci');
+@define('PLUGIN_SIDEBAR_HIDER_LINK_VISIBLE_DESC', 'HTML kÃ³d odkazu "Schovat", pokud je postrannÃ­ sloupec vidÄ›t (napÅ™. obrÃ¡zek)');
+@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN', 'HTML odkazu pÅ™i skrytÃ©m sloupci');
+@define('PLUGIN_SIDEBAR_HIDER_LINK_HIDDEN_DESC', 'HTML kÃ³d odkazu "Schovat", pokud je postrannÃ­ sloupec schovanÃ½ (napÅ™. obrÃ¡zek)');
+@define('PLUGIN_SIDEBAR_HIDER_ADMINLINK', 'SprÃ¡vce viditelnosti postrannÃ­ho sloupce');
+@define('PLUGIN_SIDEBAR_HIDER_CONF', 'NastavenÃ­ skrÃ½vÃ¡nÃ­ postrannÃ­ho sloupce');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_DESC', 'PoznÃ¡mka: Tento plugin schovÃ¡vÃ¡ sloupce podle jejich umÃ­stÄ›nÃ­. ZmÄ›na poÅ™adÃ­ pluginÅ¯ nebude mÃ­t vliv.');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_HIDDEN', 'SkrytÃ½:');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_EVERYONE', 'JakÃ½koliv uÅ¾ivatel:');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_MEMBERS', 'Pouze pÅ™ihlÃ¡Å¡enÃ­:');
+@define('PLUGIN_SIDEBAR_HIDER_CONF_MYSELF', 'Pouze jÃ¡:');
 @define('PLUGIN_SIDEBAR_HIDER_CONF_CATEGORIES', 'Pouze kategorie:');
-@define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC', 'Úvodní stránka');
+@define('PLUGIN_SIDEBAR_HIDER_FRONTPAGE_DESC', 'ÃšvodnÃ­ strÃ¡nka');
 
