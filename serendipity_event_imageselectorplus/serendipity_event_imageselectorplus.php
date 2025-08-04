@@ -10,9 +10,10 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_imageselectorplus extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_IMAGESELECTORPLUS_NAME;
-    var $gotMilk = false;
-    var $cache = array();
+    public $title = PLUGIN_EVENT_IMAGESELECTORPLUS_NAME;
+
+    private $gotMilk = false;
+    private $cache = array();
 
     function introspect(&$propbag)
     {
@@ -22,7 +23,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '3.0.0');
+        $propbag->add('version',       '3.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',

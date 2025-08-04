@@ -1,3 +1,7 @@
+3.0.1:
+------
+ * Convert for Visibility property declaration (minor)
+
 3.0.0:
 ------
  * Fix lang [de] typos
