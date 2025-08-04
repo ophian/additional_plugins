@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_EVENT_COMMENTEDIT_NAME', 'Kommentarbearbeitung');
-@define('PLUGIN_EVENT_COMMENTEDIT_DESC', 'Ermöglicht Besuchern ihren Kommentar nachträglich zu editieren.');
+@define('PLUGIN_EVENT_COMMENTEDIT_DESC', 'ErmÃ¶glicht Besuchern ihren Kommentar nachtrÃ¤glich zu editieren.');
 @define('PLUGIN_EVENT_COMMENTEDIT_PATH', 'Plugin-Pfad');
 @define('PLUGIN_EVENT_COMMENTEDIT_PATH_DESC', 'Wird hier der Pluginpfad angegeben wird dieser nicht mehr dynamisch ermittelt, was einen deutlichen Leistungsgewinn einbringt. Beispiel: https://www.example.com/plugins/serendipity_event_commentedit/ (das / am Ende ist wichtig).');
 @define('PLUGIN_EVENT_COMMENTEDIT_TIMEOUT', 'Editierzeit');

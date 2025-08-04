@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_commentedit extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_COMMENTEDIT_NAME;
+    public $title = PLUGIN_EVENT_COMMENTEDIT_NAME;
 
     function introspect(&$propbag)
     {
@@ -19,10 +21,10 @@ class serendipity_event_commentedit extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '0.8');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('event_hooks',   array(
             'frontend_saveComment_finish' => true,
             'fetchcomments'               => true,

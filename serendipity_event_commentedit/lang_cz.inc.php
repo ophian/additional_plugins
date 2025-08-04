@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/08
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/14
  */
 
-@define('PLUGIN_EVENT_COMMENTEDIT_NAME', 'Editace komentáøù');
-@define('PLUGIN_EVENT_COMMENTEDIT_DESC', 'Povoluje u¾ivatelùm mìnit vlastní komentáøe i poté, co ji¾ byly odeslány.');
+@define('PLUGIN_EVENT_COMMENTEDIT_NAME', 'Editace komentÃ¡Å™Å¯');
+@define('PLUGIN_EVENT_COMMENTEDIT_DESC', 'Povoluje uÅ¾ivatelÅ¯m mÄ›nit vlastnÃ­ komentÃ¡Å™e i potÃ©, co jiÅ¾ byly odeslÃ¡ny.');
 @define('PLUGIN_EVENT_COMMENTEDIT_PATH', 'Cesta k pluginu');
-@define('PLUGIN_EVENT_COMMENTEDIT_PATH_DESC', 'Pokud je zde zadána cesta, není urèována dynamicky, co¾ zvy¹uje vıkon blogu. Pøíklad: https://www.mujblog.cz/plugins/serendipity_event_commentedit/ (na konci musí bıt lomítko!).');
-@define('PLUGIN_EVENT_COMMENTEDIT_TIMEOUT', 'Èas úpravy');
-@define('PLUGIN_EVENT_COMMENTEDIT_TIMEOUT_DESC', 'Jak dlouhı má bıt èas k editaci komentáøe? (v sekundách)');
-@define('PLUGIN_EVENT_COMMENTEDIT_EDITTOOLTIP', 'Kliknìte pro editace');
-@define('PLUGIN_EVENT_COMMENTEDIT_EDITTIMER', 'Èas zbıvající k dokonèení úprav');
-@define('PLUGIN_EVENT_COMMENTEDIT_MAIL', 'Mailové oznámení');
-@define('PLUGIN_EVENT_COMMENTEDIT_MAIL_DESC', 'Posílat oznámení mailem po editaci komentáøe?');
+@define('PLUGIN_EVENT_COMMENTEDIT_PATH_DESC', 'Pokud je zde zadÃ¡na cesta, nenÃ­ urÄovÃ¡na dynamicky, coÅ¾ zvyÅ¡uje vÃ½kon blogu. PÅ™Ã­klad: https://www.mujblog.cz/plugins/serendipity_event_commentedit/ (na konci musÃ­ bÃ½t lomÃ­tko!).');
+@define('PLUGIN_EVENT_COMMENTEDIT_TIMEOUT', 'ÄŒas Ãºpravy');
+@define('PLUGIN_EVENT_COMMENTEDIT_TIMEOUT_DESC', 'Jak dlouhÃ½ mÃ¡ bÃ½t Äas k editaci komentÃ¡Å™e? (v sekundÃ¡ch)');
+@define('PLUGIN_EVENT_COMMENTEDIT_EDITTOOLTIP', 'KliknÄ›te pro editace');
+@define('PLUGIN_EVENT_COMMENTEDIT_EDITTIMER', 'ÄŒas zbÃ½vajÃ­cÃ­ k dokonÄenÃ­ Ãºprav');
+@define('PLUGIN_EVENT_COMMENTEDIT_MAIL', 'MailovÃ© oznÃ¡menÃ­');
+@define('PLUGIN_EVENT_COMMENTEDIT_MAIL_DESC', 'PosÃ­lat oznÃ¡menÃ­ mailem po editaci komentÃ¡Å™e?');
 
