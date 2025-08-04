@@ -6,23 +6,23 @@
  *  EN-Revision: 1381
  */
 
-@define('PLUGIN_EVENT_CONTENTREWRITE_FROM', 'от');
-@define('PLUGIN_EVENT_CONTENTREWRITE_TO', 'към');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'Подмяна на съдържание');
-@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Заменя думи с нов избран стринг (може да се използва за акроними)');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE', 'Ново име');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Въведете дума (акроним) за нов запис ({от})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE', 'Дума #%d');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION', 'Въведете дума (акроним) ({от})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_PTITLE', 'Заглавие на приставката');
-@define('PLUGIN_EVENT_CONTENTREWRITE_PDESCRIPTION', 'Името на тази приставка, както ще се появява в списъка с приставки');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION', 'Ново описание');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Въведете описание на дума (акронима) тук ({към})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Описание #%s');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Въведете описание на думата (акронима) тук ({към})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Заменящ стринг');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'Стрингът, използван за подмяната на думата с описанието й. Поставете {от} и {към}, където желаете да имате подмяна.' . "\n" . 'Пример: <acronym title="{към}">{от}</acronym>');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Символ за фисиране на подмяна');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Ако е предвиден символ за предизвикване на подмяна, въведете го тук. Ако искате да замените \'serendipity*\' с каквото сте въвели за тази дума, но желаете \'*\' да се пропуска, въведете този символ тук.');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'Стринговете за изпълнение на подмяна във вашата конфигурация са "%s" и "%s".');
+@define('PLUGIN_EVENT_CONTENTREWRITE_FROM', 'РѕС‚');
+@define('PLUGIN_EVENT_CONTENTREWRITE_TO', 'РєСЉРј');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'РџРѕРґРјСЏРЅР° РЅР° СЃСЉРґСЉСЂР¶Р°РЅРёРµ');
+@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Р—Р°РјРµРЅСЏ РґСѓРјРё СЃ РЅРѕРІ РёР·Р±СЂР°РЅ СЃС‚СЂРёРЅРі (РјРѕР¶Рµ РґР° СЃРµ РёР·РїРѕР»Р·РІР° Р·Р° Р°РєСЂРѕРЅРёРјРё)');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE', 'РќРѕРІРѕ РёРјРµ');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Р’СЉРІРµРґРµС‚Рµ РґСѓРјР° (Р°РєСЂРѕРЅРёРј) Р·Р° РЅРѕРІ Р·Р°РїРёСЃ ({РѕС‚})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE', 'Р”СѓРјР° #%d');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION', 'Р’СЉРІРµРґРµС‚Рµ РґСѓРјР° (Р°РєСЂРѕРЅРёРј) ({РѕС‚})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_PTITLE', 'Р—Р°РіР»Р°РІРёРµ РЅР° РїСЂРёСЃС‚Р°РІРєР°С‚Р°');
+@define('PLUGIN_EVENT_CONTENTREWRITE_PDESCRIPTION', 'РРјРµС‚Рѕ РЅР° С‚Р°Р·Рё РїСЂРёСЃС‚Р°РІРєР°, РєР°РєС‚Рѕ С‰Рµ СЃРµ РїРѕСЏРІСЏРІР° РІ СЃРїРёСЃСЉРєР° СЃ РїСЂРёСЃС‚Р°РІРєРё');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION', 'РќРѕРІРѕ РѕРїРёСЃР°РЅРёРµ');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Р’СЉРІРµРґРµС‚Рµ РѕРїРёСЃР°РЅРёРµ РЅР° РґСѓРјР° (Р°РєСЂРѕРЅРёРјР°) С‚СѓРє ({РєСЉРј})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'РћРїРёСЃР°РЅРёРµ #%s');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Р’СЉРІРµРґРµС‚Рµ РѕРїРёСЃР°РЅРёРµ РЅР° РґСѓРјР°С‚Р° (Р°РєСЂРѕРЅРёРјР°) С‚СѓРє ({РєСЉРј})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Р—Р°РјРµРЅСЏС‰ СЃС‚СЂРёРЅРі');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'РЎС‚СЂРёРЅРіСЉС‚, РёР·РїРѕР»Р·РІР°РЅ Р·Р° РїРѕРґРјСЏРЅР°С‚Р° РЅР° РґСѓРјР°С‚Р° СЃ РѕРїРёСЃР°РЅРёРµС‚Рѕ Р№. РџРѕСЃС‚Р°РІРµС‚Рµ {РѕС‚} Рё {РєСЉРј}, РєСЉРґРµС‚Рѕ Р¶РµР»Р°РµС‚Рµ РґР° РёРјР°С‚Рµ РїРѕРґРјСЏРЅР°.' . "\n" . 'РџСЂРёРјРµСЂ: <acronym title="{РєСЉРј}">{РѕС‚}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'РЎРёРјРІРѕР» Р·Р° С„РёСЃРёСЂР°РЅРµ РЅР° РїРѕРґРјСЏРЅР°');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'РђРєРѕ Рµ РїСЂРµРґРІРёРґРµРЅ СЃРёРјРІРѕР» Р·Р° РїСЂРµРґРёР·РІРёРєРІР°РЅРµ РЅР° РїРѕРґРјСЏРЅР°, РІСЉРІРµРґРµС‚Рµ РіРѕ С‚СѓРє. РђРєРѕ РёСЃРєР°С‚Рµ РґР° Р·Р°РјРµРЅРёС‚Рµ \'serendipity*\' СЃ РєР°РєРІРѕС‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё Р·Р° С‚Р°Р·Рё РґСѓРјР°, РЅРѕ Р¶РµР»Р°РµС‚Рµ \'*\' РґР° СЃРµ РїСЂРѕРїСѓСЃРєР°, РІСЉРІРµРґРµС‚Рµ С‚РѕР·Рё СЃРёРјРІРѕР» С‚СѓРє.');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'РЎС‚СЂРёРЅРіРѕРІРµС‚Рµ Р·Р° РёР·РїСЉР»РЅРµРЅРёРµ РЅР° РїРѕРґРјСЏРЅР° РІСЉРІ РІР°С€Р°С‚Р° РєРѕРЅС„РёРіСѓСЂР°С†РёСЏ СЃР° "%s" Рё "%s".');
 

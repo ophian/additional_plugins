@@ -1,4 +1,5 @@
 <?php
+
 ##########################################################################
 # serendipity - another blogger...                                       #
 ##########################################################################
@@ -14,21 +15,21 @@
 
 @define('PLUGIN_EVENT_CONTENTREWRITE_FROM', 'de');
 @define('PLUGIN_EVENT_CONTENTREWRITE_TO', 'vers');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'RÈecriture de contenu');
-@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Remplace des mots avec un texte dÈfini (pratique par ex. pour les acronymes)');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'R√©ecriture de contenu');
+@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Remplace des mots avec un texte d√©fini (pratique par ex. pour les acronymes)');
 @define('PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE', 'Nouveau titre');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Entrez le titre de l\'acronyme pour la nouvelle entrÈe ({de})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Entrez le titre de l\'acronyme pour la nouvelle entr√©e ({de})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE', 'Titre #%d');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION', 'Entrez l\'acronyme ici ({de})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_PTITLE', 'Titre du plugin');
 @define('PLUGIN_EVENT_CONTENTREWRITE_PDESCRIPTION', 'Le nom de ce plugin');
 @define('PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION', 'Nouvelle description');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Entrez la description pour la nouvelle entrÈe ({vers})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Entrez la description pour la nouvelle entr√©e ({vers})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Description #%s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Entrez la description ici ({vers})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Texte de remplacement');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'Entrez le texte par lequel vous voulez remplacer le mot que vous avez sÈlectionnÈ. Vous pouvez utiliser {de} et {vers} o˘ vous le dÈsirez pour ajouter une rÈecriture.' . "\n" . 'Exemple: <acronym title="{vers}">{de}</acronym>');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'CaractËre de rÈecriture');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Si vous utilisez un caractËre spÈcial pour forcer la rÈecriture, entrez-le ici. Exemple: si vous dÈsirez seulement remplacer \'mot*\' avec le texte que vous avez dÈfini, mais ne voulez pas que le \'*\' s\'affiche, entrez ce caractËre ici.');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'Entrez le texte par lequel vous voulez remplacer le mot que vous avez s√©lectionn√©. Vous pouvez utiliser {de} et {vers} o√π vous le d√©sirez pour ajouter une r√©ecriture.' . "\n" . 'Exemple: <acronym title="{vers}">{de}</acronym>');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Caract√®re de r√©ecriture');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Si vous utilisez un caract√®re sp√©cial pour forcer la r√©ecriture, entrez-le ici. Exemple: si vous d√©sirez seulement remplacer \'mot*\' avec le texte que vous avez d√©fini, mais ne voulez pas que le \'*\' s\'affiche, entrez ce caract√®re ici.');
 
 /* vim: set sts=4 ts=4 expandtab : */

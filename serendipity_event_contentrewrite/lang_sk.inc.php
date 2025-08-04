@@ -2,27 +2,27 @@
 
 /**
  *  @version $$
- *  @author Martin Matuπka <martin@matuska.org>
+ *  @author Martin Matu≈°ka <martin@matuska.org>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_EVENT_CONTENTREWRITE_FROM', 'slovo');
 @define('PLUGIN_EVENT_CONTENTREWRITE_TO', 'popis');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'PrepisovaË obsahu');
-@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Nahradzuje slov· µubovoln˝m reªazcom (uæitoËnÈ na vkladanie akronymov)');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE', 'Nov˝ nadpis');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Zadajte slovo akronymu (to, ktorÈ m· byª v texte hµadanÈ a nahradenÈ) pre nov˙ poloæku ({slovo})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE', 'Slovo ËÌslo %d');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION', 'Zadejte akronym (prepisovanÈ slovo) ({slovo})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'Prepisovaƒç obsahu');
+@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Nahradzuje slov√° ƒæubovoln√Ωm re≈•azcom (u≈æitoƒçn√© na vkladanie akronymov)');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE', 'Nov√Ω nadpis');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Zadajte slovo akronymu (to, ktor√© m√° by≈• v texte hƒæadan√© a nahraden√©) pre nov√∫ polo≈æku ({slovo})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE', 'Slovo ƒç√≠slo %d');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION', 'Zadejte akronym (prepisovan√© slovo) ({slovo})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_PTITLE', 'Nadpis doplnku');
 @define('PLUGIN_EVENT_CONTENTREWRITE_PDESCRIPTION', 'Nadpis tohto doplnku');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION', 'Nov˝ popis');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Zadajte popis, ktor˝ se m· k akronymu pridaª ({popis})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Popis ËÌslo %s');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION', 'Nov√Ω popis');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Zadajte popis, ktor√Ω se m√° k akronymu prida≈• ({popis})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Popis ƒç√≠slo %s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Zadajte popis akronymu ({popis})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'PrepisovacÌ reªazec');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'Prepisovac√≠ re≈•azec');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'The string used to rewrite. Place {from} and {to} anywhere you like to get a rewrite.' . "\n" . 'Example: <acronym title="{to}">{from}</acronym>');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'Prepisovanie znakov');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Zmazanie znakov zo slova ({slovo}) - prÌklad pouæitia: M·te podnikov˝ weblog a ved˙cich Hruπku, DlhÈho a MokrÈho. Chcete, aby boli men· ved˙cich zv˝razÚovanÈ, ale nechcete, aby slovo hruπka odkazovalo na ved˙ceho, keÔ ide o ovocie. V texte budete pÌsaª Hruπka_ved˙ci, Dlh˝_ved˙ci a Mokr˝_ved˙ci. V tomto poli zad·te \'_ved˙ci\'. T·to prÌpona V·m umoænÌ rozpoznaª ved˙cich, ale sama sa nebude v poli {slovo} zobrazovaª.');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'Vaπe nahradzovanÈ reªazce s˙ "%s" a "%s".');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Zmazanie znakov zo slova ({slovo}) - pr√≠klad pou≈æitia: M√°te podnikov√Ω weblog a ved√∫cich Hru≈°ku, Dlh√©ho a Mokr√©ho. Chcete, aby boli men√° ved√∫cich zv√Ωraz≈àovan√©, ale nechcete, aby slovo hru≈°ka odkazovalo na ved√∫ceho, keƒè ide o ovocie. V texte budete p√≠sa≈• Hru≈°ka_ved√∫ci, Dlh√Ω_ved√∫ci a Mokr√Ω_ved√∫ci. V tomto poli zad√°te \'_ved√∫ci\'. T√°to pr√≠pona V√°m umo≈æn√≠ rozpozna≈• ved√∫cich, ale sama sa nebude v poli {slovo} zobrazova≈•.');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'Va≈°e nahradzovan√© re≈•azce s√∫ "%s" a "%s".');
 

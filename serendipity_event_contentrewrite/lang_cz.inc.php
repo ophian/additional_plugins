@@ -1,28 +1,28 @@
-<?php 
+<?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  First-transaltion: Vladimir Ajgl <vlada@ajgl.cz> 2007-12-11
  */
 
 @define('PLUGIN_EVENT_CONTENTREWRITE_FROM', 'slovo');
 @define('PLUGIN_EVENT_CONTENTREWRITE_TO', 'popis');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'P¯episovaË obsahu');
-@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Nahrazuje slovat libovoln˝m ¯etÏzcem (uæiteËnÈ pro vkl·d·nÌ akronym˘)');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE', 'Nov˝ nadpis');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Zadejte slovo akronymu (to, kterÈ m· b˝t v textu hled·no a nahrazov·no) pro novou poloæku ({slovo})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE', 'Slovo ËÌslo %d');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION', 'Zadejte akronym (p¯episovanÈ slovo) ({slovo})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NAME', 'P≈ôepisovaƒç obsahu');
+@define('PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION', 'Nahrazuje slovat libovoln√Ωm ≈ôetƒõzcem (u≈æiteƒçn√© pro vkl√°d√°n√≠ akronym≈Ø)');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTITLE', 'Nov√Ω nadpis');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWTDESCRIPTION', 'Zadejte slovo akronymu (to, kter√© m√° b√Ωt v textu hled√°no a nahrazov√°no) pro novou polo≈æku ({slovo})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTITLE', 'Slovo ƒç√≠slo %d');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDTDESCRIPTION', 'Zadejte akronym (p≈ôepisovan√© slovo) ({slovo})');
 @define('PLUGIN_EVENT_CONTENTREWRITE_PTITLE', 'Nadpis Pluginu');
 @define('PLUGIN_EVENT_CONTENTREWRITE_PDESCRIPTION', 'Nadpis tohoto pluginu');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION', 'Nov˝ popis');
-@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Zadejte popis, kter˝ se m· k akronymu p¯idat ({popis})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Popis ËÌslo %s');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDESCRIPTION', 'Nov√Ω popis');
+@define('PLUGIN_EVENT_CONTENTREWRITE_NEWDDESCRIPTION', 'Zadejte popis, kter√Ω se m√° k akronymu p≈ôidat ({popis})');
+@define('PLUGIN_EVENT_CONTENTREWRITE_OLDDESCRIPTION', 'Popis ƒç√≠slo %s');
 @define('PLUGIN_EVENT_CONTENTREWRITE_OLDDDESCRIPTION', 'Zadejte popis akronymu ({popis})');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'P¯episovacÌ ¯etÏzec');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING', 'P≈ôepisovac√≠ ≈ôetƒõzec');
 @define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_DESC', 'The string used to rewrite. Place {from} and {to} anywhere you like to get a rewrite.' . "\n" . 'Example: <acronym title="{to}">{from}</acronym>');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'P¯episov·nÌ znak˘');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Odmaz·v·nÌ znak˘ ze slova ({slovo}) - p¯Ìklad pouæitÌ: M·te podnikov˝ blog a πÈfy Hruπku, JelÌnka a Vr·tnÈho. Chcete, aby se jmÈna πÈf˘ zv˝razÚovala, ale nechcete, aby se slovo hruπka odkazovalo na πÈfa, pokud mluvÌte o ovoci, podobnÏ se slivovicÌ, p¯ÌpadnÏ nechcete zamÏÚovat πÈfa s d˘chodcem na vr·tnici. V textu budete ps·t Hruπka_πÈf, JelÌnek_πÈf, Vr·tn˝_πÈf. V tomto poli zad·te \'_πÈf\'. Tato p¯Ìpona V·m umoænÌ rozpoznat πÈfy, ale sama o sobÏ se nebude v poli {slovo} zobrazovat.');
-@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'Vaπe nahrazovacÌ ¯etÏzce jsou "%s" a "%s".');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHAR', 'P≈ôepisov√°n√≠ znak≈Ø');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITECHARDESC', 'Odmaz√°v√°n√≠ znak≈Ø ze slova ({slovo}) - p≈ô√≠klad pou≈æit√≠: M√°te podnikov√Ω blog a ≈°√©fy Hru≈°ku, Jel√≠nka a Vr√°tn√©ho. Chcete, aby se jm√©na ≈°√©f≈Ø zv√Ωraz≈àovala, ale nechcete, aby se slovo hru≈°ka odkazovalo na ≈°√©fa, pokud mluv√≠te o ovoci, podobnƒõ se slivovic√≠, p≈ô√≠padnƒõ nechcete zamƒõ≈àovat ≈°√©fa s d≈Øchodcem na vr√°tnici. V textu budete ps√°t Hru≈°ka_≈°√©f, Jel√≠nek_≈°√©f, Vr√°tn√Ω_≈°√©f. V tomto poli zad√°te \'_≈°√©f\'. Tato p≈ô√≠pona V√°m umo≈æn√≠ rozpoznat ≈°√©fy, ale sama o sobƒõ se nebude v poli {slovo} zobrazovat.');
+@define('PLUGIN_EVENT_CONTENTREWRITE_REWRITESTRING_EX', 'Va≈°e nahrazovac√≠ ≈ôetƒõzce jsou "%s" a "%s".');
 
