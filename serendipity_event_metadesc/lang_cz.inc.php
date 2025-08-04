@@ -1,36 +1,36 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/16
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/01/11
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/01/20
  */
 
 @define('PLUGIN_METADESC_NAME', 'HTML META tagy');
-@define('PLUGIN_METADESC_DESC', 'Zadejte HTML meta tagy pro klíèová slova nebo popis blogu. Také mù¾ete zadávat rùznı titulek pro jednotlivé stránky blogu a vıchozí hodnotu pro klíèová slova/popis pro stránky se zobrazenm více pøíspìvkù (vıchozí stránka, pøehledy kategorií).');
-@define('PLUGIN_METADESC_FORM', 'Pokud ponecháte tato políèka prázdná, pak bude prvních 120 znakù pøíspìvku pou¾ito jako popis (meta description). Pokud nepùjdou vygenerovat klíèová slova na základì HTML tagù pro klíèová slova, budou pou¾ita vıchozí klíèová slova (meta keywords).<br /><br />Doporuèení pro psaní popisu (meta description)<sup>*</sup>: 20 a¾ 30 slov, nejvı¹e 120 a¾ 180 znakù vèetnì mezer.<br />Doporuèení pro klíèová slova (meta keywords)<sup>*</sup>: 15 a¾ 20 nejvısti¾nìj¹ích slov vyskytujících se v pøíspìvku.');
+@define('PLUGIN_METADESC_DESC', 'Zadejte HTML meta tagy pro klÃ­ÄovÃ¡ slova nebo popis blogu. TakÃ© mÅ¯Å¾ete zadÃ¡vat rÅ¯znÃ½ titulek pro jednotlivÃ© strÃ¡nky blogu a vÃ½chozÃ­ hodnotu pro klÃ­ÄovÃ¡ slova/popis pro strÃ¡nky se zobrazenm vÃ­ce pÅ™Ã­spÄ›vkÅ¯ (vÃ½chozÃ­ strÃ¡nka, pÅ™ehledy kategoriÃ­).');
+@define('PLUGIN_METADESC_FORM', 'Pokud ponechÃ¡te tato polÃ­Äka prÃ¡zdnÃ¡, pak bude prvnÃ­ch 120 znakÅ¯ pÅ™Ã­spÄ›vku pouÅ¾ito jako popis (meta description). Pokud nepÅ¯jdou vygenerovat klÃ­ÄovÃ¡ slova na zÃ¡kladÄ› HTML tagÅ¯ pro klÃ­ÄovÃ¡ slova, budou pouÅ¾ita vÃ½chozÃ­ klÃ­ÄovÃ¡ slova (meta keywords).<br /><br />DoporuÄenÃ­ pro psanÃ­ popisu (meta description)<sup>*</sup>: 20 aÅ¾ 30 slov, nejvÃ½Å¡e 120 aÅ¾ 180 znakÅ¯ vÄetnÄ› mezer.<br />DoporuÄenÃ­ pro klÃ­ÄovÃ¡ slova (meta keywords)<sup>*</sup>: 15 aÅ¾ 20 nejvÃ½stiÅ¾nÄ›jÅ¡Ã­ch slov vyskytujÃ­cÃ­ch se v pÅ™Ã­spÄ›vku.');
 @define('PLUGIN_METADESC_DESCRIPTION', 'META-Description:');
 @define('PLUGIN_METADESC_KEYWORDS', 'META-Keywords:');
-@define('PLUGIN_METADESC_HEADTITLE_DESC', 'Tag TITLE v hlavièce HTML kódu mù¾e bıt pøizpùsoben pomocí následujícího pole. Pokud ponecháte pole prázdné, nadpis bude vygenerován podle ¹ablony, co¾ je obvykle "Nadpis pøíspìvku - nadpis blogu".   <br /><br />Doporuèení<sup>*</sup>: 3 a¾ 9 slov, nanejvı¹ 64 znakù vèetnì mezer, nejdùle¾itìj¹í slova jako první.');
-@define('PLUGIN_METADESC_HEADTITLE', 'Tag TITLE v HTML kódu stránky');
-@define('PLUGIN_METADESC_LENGTH', 'Délka');
+@define('PLUGIN_METADESC_HEADTITLE_DESC', 'Tag TITLE v hlaviÄce HTML kÃ³du mÅ¯Å¾e bÃ½t pÅ™izpÅ¯soben pomocÃ­ nÃ¡sledujÃ­cÃ­ho pole. Pokud ponechÃ¡te pole prÃ¡zdnÃ©, nadpis bude vygenerovÃ¡n podle Å¡ablony, coÅ¾ je obvykle "Nadpis pÅ™Ã­spÄ›vku - nadpis blogu".   <br /><br />DoporuÄenÃ­<sup>*</sup>: 3 aÅ¾ 9 slov, nanejvÃ½Å¡ 64 znakÅ¯ vÄetnÄ› mezer, nejdÅ¯leÅ¾itÄ›jÅ¡Ã­ slova jako prvnÃ­.');
+@define('PLUGIN_METADESC_HEADTITLE', 'Tag TITLE v HTML kÃ³du strÃ¡nky');
+@define('PLUGIN_METADESC_LENGTH', 'DÃ©lka');
 @define('PLUGIN_METADESC_WORDS', 'slov');
-@define('PLUGIN_METADESC_CHARACTERS', 'znakù');
-@define('PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER', 'Poèet slov a znakù v doporuèení je pouze doporuèení, mù¾ete napsat libovolnì dlouhı text.');
-@define('PLUGIN_METADESC_TAGNAMES', 'HTML tagy pro generování klíèovıch slov');
-@define('PLUGIN_METADESC_TAGNAMES_DESC', 'Zadejte seznam HTML tagù, které obsahují klíèová slova a ve kterıch mají bıt klíèová slova hledána. Jednotlivé tagy oddìlujte èárkou.');
-@define('PLUGIN_METADESC_DEFAULT_DESCRIPTION', 'Vıchozí HTML meta description');
-@define('PLUGIN_METADESC_DEFAULT_DESCRIPTION_DESC', 'Zadejte vıchozí hodnotu pro popis stránky (meta description), kterı se pou¾ije na pøehledovıch stranách. Tj. tam, kde je zobrazeno více pøíspìvkù najednou.');
-@define('PLUGIN_METADESC_DEFAULT_KEYWORDS', 'Vıchozí HTML meta keywords');
-@define('PLUGIN_METADESC_DEFAULT_KEYWORDS_DESC', 'Zadejte seznam èárkou oddìlenıch klíèovıch slov, které se mají pou¾ít na stránkách, které zobrazují více pøíspìvkù.');
+@define('PLUGIN_METADESC_CHARACTERS', 'znakÅ¯');
+@define('PLUGIN_METADESC_STRINGLENGTH_DISCLAIMER', 'PoÄet slov a znakÅ¯ v doporuÄenÃ­ je pouze doporuÄenÃ­, mÅ¯Å¾ete napsat libovolnÄ› dlouhÃ½ text.');
+@define('PLUGIN_METADESC_TAGNAMES', 'HTML tagy pro generovÃ¡nÃ­ klÃ­ÄovÃ½ch slov');
+@define('PLUGIN_METADESC_TAGNAMES_DESC', 'Zadejte seznam HTML tagÅ¯, kterÃ© obsahujÃ­ klÃ­ÄovÃ¡ slova a ve kterÃ½ch majÃ­ bÃ½t klÃ­ÄovÃ¡ slova hledÃ¡na. JednotlivÃ© tagy oddÄ›lujte ÄÃ¡rkou.');
+@define('PLUGIN_METADESC_DEFAULT_DESCRIPTION', 'VÃ½chozÃ­ HTML meta description');
+@define('PLUGIN_METADESC_DEFAULT_DESCRIPTION_DESC', 'Zadejte vÃ½chozÃ­ hodnotu pro popis strÃ¡nky (meta description), kterÃ½ se pouÅ¾ije na pÅ™ehledovÃ½ch stranÃ¡ch. Tj. tam, kde je zobrazeno vÃ­ce pÅ™Ã­spÄ›vkÅ¯ najednou.');
+@define('PLUGIN_METADESC_DEFAULT_KEYWORDS', 'VÃ½chozÃ­ HTML meta keywords');
+@define('PLUGIN_METADESC_DEFAULT_KEYWORDS_DESC', 'Zadejte seznam ÄÃ¡rkou oddÄ›lenÃ½ch klÃ­ÄovÃ½ch slov, kterÃ© se majÃ­ pouÅ¾Ã­t na strÃ¡nkÃ¡ch, kterÃ© zobrazujÃ­ vÃ­ce pÅ™Ã­spÄ›vkÅ¯.');
 
 // Next lines were translated on 2011/01/11
 
 @define('PLUGIN_METADESC_ESCAPE', 'Escapovat HTML entity');
 
 // Next lines were translated on 2011/01/20
-@define('PLUGIN_METADESC_ESCAPE_DESC', 'Nahradit øídící znaky jazyka HTML v popisu meta-description nebo v klíèovıch slovech pomocí odpovídajících HTML entit. K nahrazení se pou¾ívá funkce htmlspecialchars().');
+@define('PLUGIN_METADESC_ESCAPE_DESC', 'Nahradit Å™Ã­dÃ­cÃ­ znaky jazyka HTML v popisu meta-description nebo v klÃ­ÄovÃ½ch slovech pomocÃ­ odpovÃ­dajÃ­cÃ­ch HTML entit. K nahrazenÃ­ se pouÅ¾Ã­vÃ¡ funkce htmlspecialchars().');
 

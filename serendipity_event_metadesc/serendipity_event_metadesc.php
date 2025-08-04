@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,10 +10,11 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_metadesc extends serendipity_event
 {
-    var $title = PLUGIN_METADESC_NAME;
-    var $save_title = '';
-    var $save_subtitle = '';
-    var $meta_title = '';
+    public $title = PLUGIN_METADESC_NAME;
+
+    private $save_title = '';
+    private $save_subtitle = '';
+    private $meta_title = '';
 
     function introspect(&$propbag)
     {
@@ -21,10 +24,10 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
-        $propbag->add('version',       '0.32');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.0',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
 
         $propbag->add('event_hooks', array(
@@ -152,7 +155,7 @@ class serendipity_event_metadesc extends serendipity_event
                             $this->meta_title = $property['meta_head_title'];
                             $this->save_title = $serendipity['head_title'];
                             $this->save_subtitle = $serendipity['head_subtitle'];
-                            $serendipity['head_title'] = htmlspecialchars($this->meta_title, ENT_COMPAT, LANG_CHARSET);
+                            $serendipity['head_title'] = htmlspecialchars($this->meta_title);
                             // Clear the subtitle (many templates use it along with the title)
                             $serendipity['head_subtitle'] = '';
                         }
@@ -205,8 +208,8 @@ class serendipity_event_metadesc extends serendipity_event
                         }
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = htmlspecialchars($meta_description, ENT_COMPAT, LANG_CHARSET, false);
-                            $mk = htmlspecialchars($meta_keywords, ENT_COMPAT, LANG_CHARSET, false);
+                            $md = htmlspecialchars($meta_description, double_encode: false);
+                            $mk = htmlspecialchars($meta_keywords, double_encode: false);
                         } else {
                             $md = $meta_description;
                             $mk = $meta_keywords;
@@ -220,8 +223,8 @@ class serendipity_event_metadesc extends serendipity_event
                         // emit default meta description and meta keyword, if not blank, for pages other than single entry
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
-                            $md = htmlspecialchars($default_description, ENT_COMPAT, LANG_CHARSET, false);
-                            $mk = htmlspecialchars($default_keywords, ENT_COMPAT, LANG_CHARSET, false);
+                            $md = htmlspecialchars($default_description, double_encode: false);
+                            $mk = htmlspecialchars($default_keywords, false);
                         } else {
                             $md = $default_description;
                             $mk = $default_keywords;

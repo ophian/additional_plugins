@@ -1,3 +1,10 @@
+1.0.0:
+------
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Declare strict types
+ * Use native htmlspecialchars()
+ * Raise requirements for Styx 5.0
+
 0.32:
 -----
  * Improve parameter types for Styx 5.0 type safety
