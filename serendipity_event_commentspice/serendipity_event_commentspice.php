@@ -15,7 +15,7 @@ require_once dirname(__FILE__) . '/json/json.php4.include.php';
 
 class serendipity_event_commentspice extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_COMMENTSPICE_TITLE;
+    public $title = PLUGIN_EVENT_COMMENTSPICE_TITLE;
 
     function introspect(&$propbag)
     {
@@ -30,7 +30,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',        '2.6.0');
+        $propbag->add('version',        '2.6.1');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
