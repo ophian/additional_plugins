@@ -13,6 +13,7 @@ define('D_FAQ_MOVEDOWN', 1);
 
 class serendipity_event_faq extends serendipity_event
 {
+    public $title = FAQ_PLUGIN_NAME;
 
     /**
      *
@@ -23,7 +24,7 @@ class serendipity_event_faq extends serendipity_event
      * @see getFaq
      * @see updateFAQ
      */
-    var $faq = array();
+    private $faq = array();
 
     /**
      *
@@ -32,14 +33,14 @@ class serendipity_event_faq extends serendipity_event
      * @var array
      * @see
      */
-    var $category = array();
+    private $category = array();
 
     /**
      *
      * Configuration array for faqs
      *
      */
-    var $config_faq = array(
+    private $config_faq = array(
         'faqorder',
         'question',
         'answer',
@@ -52,7 +53,7 @@ class serendipity_event_faq extends serendipity_event
      * Configuration array for categories
      *
      */
-    var $config_category = array(
+    private $config_category = array(
         'id',
         'catorder',
         'parent_id',
@@ -60,8 +61,6 @@ class serendipity_event_faq extends serendipity_event
         'category',
         'introduction'
     );
-
-    var $title = FAQ_PLUGIN_NAME;
 
     /**
      * The introspection function of this plugin, to setup properties
@@ -80,7 +79,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '2.0.0');
+        $propbag->add('version',      '2.0.1');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(

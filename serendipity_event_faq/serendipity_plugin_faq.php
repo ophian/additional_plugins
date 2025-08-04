@@ -10,14 +10,13 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_faq extends serendipity_plugin
 {
-
     function introspect(&$propbag)
     {
         $propbag->add('name',           FAQ_PLUGIN_NAME);
         $propbag->add('description',    FAQ_PLUGIN_NAME_DESC);
         $propbag->add('author',         'Falk Doering');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '1.0.0');
+        $propbag->add('version',        '1.0.1');
         $propbag->add('copyright',      'LGPL');
         $propbag->add('configuration',  array(
             'title',
