@@ -1,40 +1,40 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/21
  */
 
-@define('PLUGIN_EVENT_LIVECOMMENT_NAME', 'Vylep¹ené políèko komentáøù');
-@define('PLUGIN_EVENT_LIVECOMMENT_DESC', 'Pou¾ívá JavaScript k ukázání náhledu komentáøe a znaèkovací tlaèítka');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT', 'Zvolte zobrazovací metodu.');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'Metoda jQuery pou¾ívá jvascriptové funkce pro vykreslení komentáøe na obrazovku, a to pøed formuláøem pro poslání komentáøe. Je rychlá a ve vìt¹inì pøípadù odvede svoji práci dobøe, ale podporuje pouze nìkteré formtovací pluginy (BBCode, Textile, s9y, nl2br, markdown).
-Stará metoda pou¾ívá skuteèná AJAXové volání pro naformátování náhledu komentáøe s pou¾itím v¹ech dostupnıch znaèkovacích pluginù (Wiki, Emoticons apod.). Tato metoda je nároènìj¹í a vkládá náhled na pøesné místo, kde bude komentáø pozdìji zobrazen.
-POZOR: ©ablona vzhledu, kterou pou¾íváte, musí pou¾ívat obvyklá ID a tøídy v CSS, aby fungovala správnì (#serendipity_replyform_*, #serendipity_commentForm apod. v ¹ablonì commentform.tpl).');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_JQUERY', 'jQuery (pevná poloha, rychlej¹í a hezèí)');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_LEGACY', 'Stará metoda (odsazená pozice, plné pou¾ití znaèkovacích pluginù)');
-@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_NONE', '®ádná (vypnout náhled)');
-@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_TITLE', 'Náhled');
-@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON', 'Formátovací tlaèítka');
-@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_DESC', 'Umístí formátovací tlaèítka nad oblast pro vlo¾ení komentáøe.');
-@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION', 'Animace náhledu');
-@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_DESC', 'Která animace se má pou¾ít z zobrazení oblasti náhledu? Vyberte "zobrazit", pokud nechcete pou¾ít animaci pro oblast náhledu.');
-@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_SPEED', 'Rychlost animace oblasti s náhledem');
-@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_SPEED_DESC', 'Napi¹te jedno z klíèovıch slov "fast, "def", nebo "slow", anebo napi¹te èíslo (které znaèí èas v ms).');
-@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION', 'Animace formátovacích tlaèítek');
-@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_DESC', 'Která animace se má pou¾ít pro zobrazení formátovacích tlaèítek? Vyberte "zobrazit", pokud si nepøejete animaci pro tlaèítka.');
-@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_SPEED', 'Rychlost animace formátovacích tlaèítek');
-@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_SPEED_DESC', 'Napi¹te jedno z klíèovıch slov "fast, "def" nebo "slow" nebo zadejte èíslo (které znaèí èas v ms).');
+@define('PLUGIN_EVENT_LIVECOMMENT_NAME', 'VylepÅ¡enÃ© polÃ­Äko komentÃ¡Å™Å¯');
+@define('PLUGIN_EVENT_LIVECOMMENT_DESC', 'PouÅ¾Ã­vÃ¡ JavaScript k ukÃ¡zÃ¡nÃ­ nÃ¡hledu komentÃ¡Å™e a znaÄkovacÃ­ tlaÄÃ­tka');
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT', 'Zvolte zobrazovacÃ­ metodu.');
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_DESC', 'Metoda jQuery pouÅ¾Ã­vÃ¡ jvascriptovÃ© funkce pro vykreslenÃ­ komentÃ¡Å™e na obrazovku, a to pÅ™ed formulÃ¡Å™em pro poslÃ¡nÃ­ komentÃ¡Å™e. Je rychlÃ¡ a ve vÄ›tÅ¡inÄ› pÅ™Ã­padÅ¯ odvede svoji prÃ¡ci dobÅ™e, ale podporuje pouze nÄ›kterÃ© formtovacÃ­ pluginy (BBCode, Textile, s9y, nl2br, markdown).
+StarÃ¡ metoda pouÅ¾Ã­vÃ¡ skuteÄnÃ¡ AJAXovÃ© volÃ¡nÃ­ pro naformÃ¡tovÃ¡nÃ­ nÃ¡hledu komentÃ¡Å™e s pouÅ¾itÃ­m vÅ¡ech dostupnÃ½ch znaÄkovacÃ­ch pluginÅ¯ (Wiki, Emoticons apod.). Tato metoda je nÃ¡roÄnÄ›jÅ¡Ã­ a vklÃ¡dÃ¡ nÃ¡hled na pÅ™esnÃ© mÃ­sto, kde bude komentÃ¡Å™ pozdÄ›ji zobrazen.
+POZOR: Å ablona vzhledu, kterou pouÅ¾Ã­vÃ¡te, musÃ­ pouÅ¾Ã­vat obvyklÃ¡ ID a tÅ™Ã­dy v CSS, aby fungovala sprÃ¡vnÄ› (#serendipity_replyform_*, #serendipity_commentForm apod. v Å¡ablonÄ› commentform.tpl).');
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_JQUERY', 'jQuery (pevnÃ¡ poloha, rychlejÅ¡Ã­ a hezÄÃ­)');
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_LEGACY', 'StarÃ¡ metoda (odsazenÃ¡ pozice, plnÃ© pouÅ¾itÃ­ znaÄkovacÃ­ch pluginÅ¯)');
+@define('PLUGIN_EVENT_LIVECOMMENT_VARIANT_NONE', 'Å½Ã¡dnÃ¡ (vypnout nÃ¡hled)');
+@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_TITLE', 'NÃ¡hled');
+@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON', 'FormÃ¡tovacÃ­ tlaÄÃ­tka');
+@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_DESC', 'UmÃ­stÃ­ formÃ¡tovacÃ­ tlaÄÃ­tka nad oblast pro vloÅ¾enÃ­ komentÃ¡Å™e.');
+@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION', 'Animace nÃ¡hledu');
+@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_DESC', 'KterÃ¡ animace se mÃ¡ pouÅ¾Ã­t z zobrazenÃ­ oblasti nÃ¡hledu? Vyberte "zobrazit", pokud nechcete pouÅ¾Ã­t animaci pro oblast nÃ¡hledu.');
+@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_SPEED', 'Rychlost animace oblasti s nÃ¡hledem');
+@define('PLUGIN_EVENT_LIVECOMMENT_PREVIEW_ANIMATION_SPEED_DESC', 'NapiÅ¡te jedno z klÃ­ÄovÃ½ch slov "fast, "def", nebo "slow", anebo napiÅ¡te ÄÃ­slo (kterÃ© znaÄÃ­ Äas v ms).');
+@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION', 'Animace formÃ¡tovacÃ­ch tlaÄÃ­tek');
+@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_DESC', 'KterÃ¡ animace se mÃ¡ pouÅ¾Ã­t pro zobrazenÃ­ formÃ¡tovacÃ­ch tlaÄÃ­tek? Vyberte "zobrazit", pokud si nepÅ™ejete animaci pro tlaÄÃ­tka.');
+@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_SPEED', 'Rychlost animace formÃ¡tovacÃ­ch tlaÄÃ­tek');
+@define('PLUGIN_EVENT_LIVECOMMENT_BUTTON_ANIMATION_SPEED_DESC', 'NapiÅ¡te jedno z klÃ­ÄovÃ½ch slov "fast, "def" nebo "slow" nebo zadejte ÄÃ­slo (kterÃ© znaÄÃ­ Äas v ms).');
 @define('PLUGIN_EVENT_LIVECOMMENT_TIMEOUT', 'Prodleva Ajaxu');
-@define('PLUGIN_EVENT_LIVECOMMENT_TIMEOUT_DESC', 'Prodleva pøedtím, ne¾ jsou zobrazena tlaèítka. Volání ajaxu pak musí bıt kompletní. Ponechte prázdné, pokud si nejse jisti.');
-@define('PLUGIN_EVENT_LIVECOMMENT_ELASTIC', 'Pru¾né pole pro zadání komentáøe');
-@define('PLUGIN_EVENT_LIVECOMMENT_ELASTIC_DESC', 'V pøípadì potøeby mìní velikost textového pole pro zadání komentáøe.');
-@define('PLUGIN_EVENT_LIVECOMMENT_BOLD', 'tuènı');
-@define('PLUGIN_EVENT_LIVECOMMENT_ITALIC', 'kurzíva');
-@define('PLUGIN_EVENT_LIVECOMMENT_UNDERLINE', 'podtr¾enı');
+@define('PLUGIN_EVENT_LIVECOMMENT_TIMEOUT_DESC', 'Prodleva pÅ™edtÃ­m, neÅ¾ jsou zobrazena tlaÄÃ­tka. VolÃ¡nÃ­ ajaxu pak musÃ­ bÃ½t kompletnÃ­. Ponechte prÃ¡zdnÃ©, pokud si nejse jisti.');
+@define('PLUGIN_EVENT_LIVECOMMENT_ELASTIC', 'PruÅ¾nÃ© pole pro zadÃ¡nÃ­ komentÃ¡Å™e');
+@define('PLUGIN_EVENT_LIVECOMMENT_ELASTIC_DESC', 'V pÅ™Ã­padÄ› potÅ™eby mÄ›nÃ­ velikost textovÃ©ho pole pro zadÃ¡nÃ­ komentÃ¡Å™e.');
+@define('PLUGIN_EVENT_LIVECOMMENT_BOLD', 'tuÄnÃ½');
+@define('PLUGIN_EVENT_LIVECOMMENT_ITALIC', 'kurzÃ­va');
+@define('PLUGIN_EVENT_LIVECOMMENT_UNDERLINE', 'podtrÅ¾enÃ½');
 @define('PLUGIN_EVENT_LIVECOMMENT_URL', 'odkaz');
-@define('PLUGIN_EVENT_LIVECOMMENT_INLINE', 'Vnoøenı JavaScript');
-@define('PLUGIN_EVENT_LIVECOMMENT_INLINE_DESC', 'Pøidává promìnné JavaScriptu pøímo do HTML vıstupu - zlep¹uje to vıkon blogu');
+@define('PLUGIN_EVENT_LIVECOMMENT_INLINE', 'VnoÅ™enÃ½ JavaScript');
+@define('PLUGIN_EVENT_LIVECOMMENT_INLINE_DESC', 'PÅ™idÃ¡vÃ¡ promÄ›nnÃ© JavaScriptu pÅ™Ã­mo do HTML vÃ½stupu - zlepÅ¡uje to vÃ½kon blogu');
 @define('PLUGIN_EVENT_LIVECOMMENT_PATH', 'Cesta k pluginu');
-@define('PLUGIN_EVENT_LIVECOMMENT_PATH_DESC', 'Pokud je zadána HTTP cesta k pluginu, pak není urèována dynamicky, co¾ má vıznamnı vliv na zlep¹ení vıkonu pluginu. Pøíklad: http://www.priklad.cz/plugins/serendipity_event_livecomment/ (na konci musí bıt lomítko /).');
+@define('PLUGIN_EVENT_LIVECOMMENT_PATH_DESC', 'Pokud je zadÃ¡na HTTP cesta k pluginu, pak nenÃ­ urÄovÃ¡na dynamicky, coÅ¾ mÃ¡ vÃ½znamnÃ½ vliv na zlepÅ¡enÃ­ vÃ½konu pluginu. PÅ™Ã­klad: http://www.priklad.cz/plugins/serendipity_event_livecomment/ (na konci musÃ­ bÃ½t lomÃ­tko /).');
 
