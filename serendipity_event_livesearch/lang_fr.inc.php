@@ -9,7 +9,7 @@
 ##########################################################################
 
 @define('PLUGIN_EVENT_LIVESEARCH_NAME', 'Recherche active');
-@define('PLUGIN_EVENT_LIVESEARCH_DESC', 'Améliore la fonction de recherche par des mises à jour a chaque pression de touche du clavier (JavaScript)');
-@define('PLUGIN_EVENT_LIVESEARCH_WAIT', 'Patientez, envoi de la requête...');
+@define('PLUGIN_EVENT_LIVESEARCH_DESC', 'AmÃ©liore la fonction de recherche par des mises Ã  jour a chaque pression de touche du clavier (JavaScript)');
+@define('PLUGIN_EVENT_LIVESEARCH_WAIT', 'Patientez, envoi de la requÃªte...');
 
 /* vim: set sts=4 ts=4 expandtab : */

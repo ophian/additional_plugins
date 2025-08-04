@@ -7,6 +7,6 @@
  */
 
 @define('PLUGIN_EVENT_LIVESEARCH_NAME', 'Livesearch');
-@define('PLUGIN_EVENT_LIVESEARCH_DESC', 'Rozszerza wbudowan± funkcjê wyszukiwania przez dodanie zmieniaj±cego siê w czasie rzeczywistym okna wyboru, którego tre¶æ jest dopasowywana po ka¿dym naci¶niêciu klawisza (JavaScript)');
-@define('PLUGIN_EVENT_LIVESEARCH_WAIT', 'Poczekaj, wysy³am zapytanie...');
+@define('PLUGIN_EVENT_LIVESEARCH_DESC', 'Rozszerza wbudowanÄ… funkcjÄ™ wyszukiwania przez dodanie zmieniajÄ…cego siÄ™ w czasie rzeczywistym okna wyboru, ktÃ³rego treÅ›Ä‡ jest dopasowywana po kaÅ¼dym naciÅ›niÄ™ciu klawisza (JavaScript)');
+@define('PLUGIN_EVENT_LIVESEARCH_WAIT', 'Poczekaj, wysyÅ‚am zapytanie...');
 

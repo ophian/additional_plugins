@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  @author Martin Matuπka <martin@matuska.org>
+ *  @author Martin Matu≈°ka <martin@matuska.org>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2010/08/17
  */
 
 @define('PLUGIN_EVENT_LIVESEARCH_NAME',     'Livesearch');
-@define('PLUGIN_EVENT_LIVESEARCH_DESC',     'VylepπÌ vn˙torn˙ vyhµad·vaciu funkciu pridanÌm odpor˙Ëania v re·lnom Ëase (JavaScript)');
-@define('PLUGIN_EVENT_LIVESEARCH_WAIT',     'PoËkajte, posielam poæiadavku...');
-@define('PLUGIN_EVENT_LIVESEARCH_NOTFOUND', 'Æiaden prÌspevok neobsahuje V·π v˝raz');
+@define('PLUGIN_EVENT_LIVESEARCH_DESC',     'Vylep≈°√≠ vn√∫torn√∫ vyhƒæad√°vaciu funkciu pridan√≠m odpor√∫ƒçania v re√°lnom ƒçase (JavaScript)');
+@define('PLUGIN_EVENT_LIVESEARCH_WAIT',     'Poƒçkajte, posielam po≈æiadavku...');
+@define('PLUGIN_EVENT_LIVESEARCH_NOTFOUND', '≈Ωiaden pr√≠spevok neobsahuje V√°≈° v√Ωraz');
 

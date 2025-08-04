@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_livesearch extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_LIVESEARCH_NAME;
+    public $title = PLUGIN_EVENT_LIVESEARCH_NAME;
 
     function introspect(&$propbag)
     {
@@ -18,11 +20,11 @@ class serendipity_event_livesearch extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_LIVESEARCH_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Stocker, Garvin Hicking');
-        $propbag->add('version',       '1.4.3');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'    => true,
@@ -139,7 +141,7 @@ class serendipity_event_livesearch extends serendipity_event
                             break;
 
                         case 'ls':
-                            // header('X-Search: ' . serendipity_specialchars($eventData) . ' leads to ' . preg_replace('@[^a-z0-9 \.\-_]@i', '', $_REQUEST['s']));
+                            // header('X-Search: ' . htmlspecialchars($eventData) . ' leads to ' . preg_replace('@[^a-z0-9 \.\-_]@i', '', $_REQUEST['s']));
                             $res = serendipity_searchEntries($_REQUEST['s']);
 
                             echo '<?xml version="1.0" encoding="utf-8" ?>';
@@ -147,7 +149,7 @@ class serendipity_event_livesearch extends serendipity_event
 
                             if (is_array($res) && count($res) > 0) {
                                 foreach($res AS $id => $entry) {
-                                    echo '<div class="serendipity_livesearch_row"><a href="' . serendipity_archiveURL($entry['id'], $entry['title'], 'baseURL', true, array('timestamp' => $entry['timestamp'])) . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '</a></div>';
+                                    echo '<div class="serendipity_livesearch_row"><a href="' . serendipity_archiveURL($entry['id'], $entry['title'], 'baseURL', true, array('timestamp' => $entry['timestamp'])) . '">' . htmlspecialchars($entry['title']) . '</a></div>';
                                 }
                             } else {
                                 echo '<div class="serendipity_livesearch_row">' . print_r($res, true) . '</div>';
