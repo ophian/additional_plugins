@@ -6,15 +6,15 @@
  *  EN-Revision: 1.3
  */
 
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME', 'Показва съобщения с датите на последните промени на статиите');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC', 'Показва кога (дата и час) са направени последните промени на статиите, веднага след тяхното съдържание. При непроменяните статии се извежда текст, поясняващ, че те не са променяни.');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_HTML', 'Статията е променяна за последен път на');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NOTMODIFIED', 'Статията не е променяна');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED', 'Показване на съобщение при непроменяни статии');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED_DESC', 'При избор \'Да\' се показват съобщения при всички статии, при избор \'Не\' съобщения се извеждат само при променяните статии.');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION', 'Позиция на съобщението');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION_DESC', '');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_LEFT', 'В ляво');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_CENTER', 'Центрирано');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_RIGHT', 'В дясно');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME', 'РџРѕРєР°Р·РІР° СЃСЉРѕР±С‰РµРЅРёСЏ СЃ РґР°С‚РёС‚Рµ РЅР° РїРѕСЃР»РµРґРЅРёС‚Рµ РїСЂРѕРјРµРЅРё РЅР° СЃС‚Р°С‚РёРёС‚Рµ');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC', 'РџРѕРєР°Р·РІР° РєРѕРіР° (РґР°С‚Р° Рё С‡Р°СЃ) СЃР° РЅР°РїСЂР°РІРµРЅРё РїРѕСЃР»РµРґРЅРёС‚Рµ РїСЂРѕРјРµРЅРё РЅР° СЃС‚Р°С‚РёРёС‚Рµ, РІРµРґРЅР°РіР° СЃР»РµРґ С‚СЏС…РЅРѕС‚Рѕ СЃСЉРґСЉСЂР¶Р°РЅРёРµ. РџСЂРё РЅРµРїСЂРѕРјРµРЅСЏРЅРёС‚Рµ СЃС‚Р°С‚РёРё СЃРµ РёР·РІРµР¶РґР° С‚РµРєСЃС‚, РїРѕСЏСЃРЅСЏРІР°С‰, С‡Рµ С‚Рµ РЅРµ СЃР° РїСЂРѕРјРµРЅСЏРЅРё.');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_HTML', 'РЎС‚Р°С‚РёСЏС‚Р° Рµ РїСЂРѕРјРµРЅСЏРЅР° Р·Р° РїРѕСЃР»РµРґРµРЅ РїСЉС‚ РЅР°');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NOTMODIFIED','РЎС‚Р°С‚РёСЏС‚Р° РЅРµ Рµ РїСЂРѕРјРµРЅСЏРЅР°');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED','РџРѕРєР°Р·РІР°РЅРµ РЅР° СЃСЉРѕР±С‰РµРЅРёРµ РїСЂРё РЅРµРїСЂРѕРјРµРЅСЏРЅРё СЃС‚Р°С‚РёРё');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED_DESC','РџСЂРё РёР·Р±РѕСЂ \'Р”Р°\' СЃРµ РїРѕРєР°Р·РІР°С‚ СЃСЉРѕР±С‰РµРЅРёСЏ РїСЂРё РІСЃРёС‡РєРё СЃС‚Р°С‚РёРё, РїСЂРё РёР·Р±РѕСЂ \'РќРµ\' СЃСЉРѕР±С‰РµРЅРёСЏ СЃРµ РёР·РІРµР¶РґР°С‚ СЃР°РјРѕ РїСЂРё РїСЂРѕРјРµРЅСЏРЅРёС‚Рµ СЃС‚Р°С‚РёРё.');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION','РџРѕР·РёС†РёСЏ РЅР° СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION_DESC','');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_LEFT', 'Р’ Р»СЏРІРѕ');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_CENTER', 'Р¦РµРЅС‚СЂРёСЂР°РЅРѕ');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_RIGHT', 'Р’ РґСЏСЃРЅРѕ');
 

@@ -1,19 +1,21 @@
 <?php
 
 /**
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @translated 2009/02/22
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
+ * @translated 2009/02/23
  */
 
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME', 'Zobrazit datum poslední zmìny');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC', 'Na úvodní stránce blogu zobrazuje u ka¾dého pøíspìvku zprávu o datu poslední zmìny. Pro pøíspìvky, které nikdy nebyly pozmìòovány, zobrazuje zprávu, ¾e nikdy nebyly mìnìny.');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_HTML', 'Naposledy zmìnìno');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NOTMODIFIED', 'V pùvodním znìní');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED', 'Zobrazovat zprávu pro nikdy nepozmìòované pøíspìvky');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED_DESC', 'Pokud je povoleno, zpráva o poslední zmìnì bude zobrazena pro v¹echny pøíspìvky, jinak pouze pro mìnìné pøíspìvky.');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION', 'Umístìní zprávy');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION_DESC', 'V které èásti pøíspìvku má bıt zpráva o zmìnách umístìna?');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NAME', 'Zobrazit datum poslednÃ­ zmÄ›ny');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_DESC', 'Na ÃºvodnÃ­ strÃ¡nce blogu zobrazuje u kaÅ¾dÃ©ho pÅ™Ã­spÄ›vku zprÃ¡vu o datu poslednÃ­ zmÄ›ny. Pro pÅ™Ã­spÄ›vky, kterÃ© nikdy nebyly pozmÄ›ÅˆovÃ¡ny, zobrazuje zprÃ¡vu, Å¾e nikdy nebyly mÄ›nÄ›ny.');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_HTML', 'Naposledy zmÄ›nÄ›no');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_NOTMODIFIED', 'V pÅ¯vodnÃ­m znÄ›nÃ­');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED', 'Zobrazovat zprÃ¡vu pro nikdy nepozmÄ›ÅˆovanÃ© pÅ™Ã­spÄ›vky');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_SHOWNOTMODIFIED_DESC', 'Pokud je povoleno, zprÃ¡va o poslednÃ­ zmÄ›nÄ› bude zobrazena pro vÅ¡echny pÅ™Ã­spÄ›vky, jinak pouze pro mÄ›nÄ›nÃ© pÅ™Ã­spÄ›vky.');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION', 'UmÃ­stÄ›nÃ­ zprÃ¡vy');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_POSITION_DESC', 'V kterÃ© ÄÃ¡sti pÅ™Ã­spÄ›vku mÃ¡ bÃ½t zprÃ¡va o zmÄ›nÃ¡ch umÃ­stÄ›na?');
 @define('PLUGIN_EVENT_ENTRYLASTMODIFIED_LEFT', 'Vlevo');
-@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_CENTER', 'Uprostøed');
+@define('PLUGIN_EVENT_ENTRYLASTMODIFIED_CENTER', 'UprostÅ™ed');
 @define('PLUGIN_EVENT_ENTRYLASTMODIFIED_RIGHT', 'Vpravo');
 
