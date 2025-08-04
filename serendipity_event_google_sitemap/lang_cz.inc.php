@@ -1,66 +1,66 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/14
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/02/06
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/01/08
  */
 
-@define('PLUGIN_EVENT_SITEMAP_TITLE', 'Gener·tor mapy str·nek pro vyhled·vaËe');
-@define('PLUGIN_EVENT_SITEMAP_DESC',  'Vytv·¯Ì soubor sitemap.xml.gz, kter˝ pouæÌvajÌ nejr˘znÏjπÌ webovÈ vyhled·vaËe (Google, MSN, Yahoo nebo Ask)');
-@define('PLUGIN_EVENT_SITEMAP_FAILEDOPEN', 'Nelze otev¯Ìt soubor pro z·pis.');
-@define('PLUGIN_EVENT_SITEMAP_REPORT', 'Oznamovat zmÏny mapy');
-@define('PLUGIN_EVENT_SITEMAP_REPORT_DESC', 'Oznamovat aktualizace mapy str·nek n·sledujÌcÌm vyhled·vacÌm sluæb·m.');
-@define('PLUGIN_EVENT_SITEMAP_REPORT_ERROR', 'Nepoda¯ilo se ohl·sit aktualizaci mapy str·nek na %s: %s<br />');
-@define('PLUGIN_EVENT_SITEMAP_REPORT_OK', 'Mapa str·nek posl·na na %s.<br />');
-@define('PLUGIN_EVENT_SITEMAP_REPORT_MANUAL','Mapa str·nek nebyla posl·na na %s, udÏlejte to ruËnÏ teÔ n·vπtÏvou <a href="%s">tohoto odkazu</a>.<br/>');
-@define('PLUGIN_EVENT_SITEMAP_ROBOTS_TXT', 'M˘æete ji takÈ p¯idat do souboru "robots.txt", viz. <a href="http://googlewebmastercentral.blogspot.com/2007/04/whats-new-with-sitemapsorg.html">podrobnosti k robots.txt</a>.<br/>');
-@define('PLUGIN_EVENT_SITEMAP_URL', 'Seznam URL adres pro ozn·menÌ (ping)');
-@define('PLUGIN_EVENT_SITEMAP_URL_DESC', 'URL adresy pro ozn·menÌ (pingbacks) (%s bude nahrazeno URL adresou mapy str·nek, vÌce adres oddÏlujte pomocÌ \';\' (st¯ednÌk), pokud pot¯ebujete zadat znak st¯ednÌku ; napiπte \'%3B\').');
-@define('PLUGIN_EVENT_SITEMAP_ADDFEEDS', 'P¯idat kan·l s novinkami');
-@define('PLUGIN_EVENT_SITEMAP_ADDFEEDS_DESC', 'Do mapy str·nek zahrne i RSS kan·ly (RSS 0.9, 1.0, 2.0, Atom a kategorie).');
-@define('PLUGIN_EVENT_SITEMAP_UNKNOWN_SERVICE', 'nezn·m˝');
-@define('PLUGIN_EVENT_SITEMAP_PERMALINK_WARNING', 'Varov·nÌ: pro spr·vnÈ vygenerov·nÌ mapy str·nek je t¯eba umÌstit plugin "permalink" (st·lÈ odkazy) <b>p¯ed</b> plugin "mapa str·nek".');
+@define('PLUGIN_EVENT_SITEMAP_TITLE', 'Gener√°tor mapy str√°nek pro vyhled√°vaƒçe');
+@define('PLUGIN_EVENT_SITEMAP_DESC',  'Vytv√°≈ô√≠ soubor sitemap.xml.gz, kter√Ω pou≈æ√≠vaj√≠ nejr≈Øznƒõj≈°√≠ webov√© vyhled√°vaƒçe (Google, MSN, Yahoo nebo Ask)');
+@define('PLUGIN_EVENT_SITEMAP_FAILEDOPEN', 'Nelze otev≈ô√≠t soubor pro z√°pis.');
+@define('PLUGIN_EVENT_SITEMAP_REPORT', 'Oznamovat zmƒõny mapy');
+@define('PLUGIN_EVENT_SITEMAP_REPORT_DESC', 'Oznamovat aktualizace mapy str√°nek n√°sleduj√≠c√≠m vyhled√°vac√≠m slu≈æb√°m.');
+@define('PLUGIN_EVENT_SITEMAP_REPORT_ERROR', 'Nepoda≈ôilo se ohl√°sit aktualizaci mapy str√°nek na %s: %s<br />');
+@define('PLUGIN_EVENT_SITEMAP_REPORT_OK', 'Mapa str√°nek posl√°na na %s.<br />');
+@define('PLUGIN_EVENT_SITEMAP_REPORT_MANUAL','Mapa str√°nek nebyla posl√°na na %s, udƒõlejte to ruƒçnƒõ teƒè n√°v≈°tƒõvou <a href="%s">tohoto odkazu</a>.<br/>');
+@define('PLUGIN_EVENT_SITEMAP_ROBOTS_TXT', 'M≈Ø≈æete ji tak√© p≈ôidat do souboru "robots.txt", viz. <a href="http://googlewebmastercentral.blogspot.com/2007/04/whats-new-with-sitemapsorg.html">podrobnosti k robots.txt</a>.<br/>');
+@define('PLUGIN_EVENT_SITEMAP_URL', 'Seznam URL adres pro ozn√°men√≠ (ping)');
+@define('PLUGIN_EVENT_SITEMAP_URL_DESC', 'URL adresy pro ozn√°men√≠ (pingbacks) (%s bude nahrazeno URL adresou mapy str√°nek, v√≠ce adres oddƒõlujte pomoc√≠ \';\' (st≈ôedn√≠k), pokud pot≈ôebujete zadat znak st≈ôedn√≠ku ; napi≈°te \'%3B\').');
+@define('PLUGIN_EVENT_SITEMAP_ADDFEEDS', 'P≈ôidat kan√°l s novinkami');
+@define('PLUGIN_EVENT_SITEMAP_ADDFEEDS_DESC', 'Do mapy str√°nek zahrne i RSS kan√°ly (RSS 0.9, 1.0, 2.0, Atom a kategorie).');
+@define('PLUGIN_EVENT_SITEMAP_UNKNOWN_SERVICE', 'nezn√°m√Ω');
+@define('PLUGIN_EVENT_SITEMAP_PERMALINK_WARNING', 'Varov√°n√≠: pro spr√°vn√© vygenerov√°n√≠ mapy str√°nek je t≈ôeba um√≠stit plugin "permalink" (st√°l√© odkazy) <b>p≈ôed</b> plugin "mapa str√°nek".');
 @define('PLUGIN_EVENT_SITEMAP_GZIP_SITEMAP', 'Gzipovat soubor sitemap.xml (komprese)');
-@define('PLUGIN_EVENT_SITEMAP_GZIP_SITEMAP_DESC', 'Protokol pro mapy str·nek umoæÚuje komprimovat soubor pomocÌ gzipu pro snÌæenÌ objemu datovÈho p¯enosu. Pokud pozorujete problÈmy s pluginem, m˘æete zkusit vypnout tuto volbu. (Pozn·mka: pokud Vaπe instalace PHP nepodporuje gzip funkce, plugin automaticky bude tvo¯it nekomprimovan˝ soubor. Tedy obecnÏ nenÌ pot¯eba tuto volbu ruËnÏ vypÌnat.)');
-@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD', 'Typy URL pro p¯id·nÌ');
-@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_DESC', 'Zadejte typy URL adres, kterÈ majÌ b˝t zahrnuty do mapy str·nek.');
-@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_FEEDS', 'Kan·ly');
+@define('PLUGIN_EVENT_SITEMAP_GZIP_SITEMAP_DESC', 'Protokol pro mapy str√°nek umo≈æ≈àuje komprimovat soubor pomoc√≠ gzipu pro sn√≠≈æen√≠ objemu datov√©ho p≈ôenosu. Pokud pozorujete probl√©my s pluginem, m≈Ø≈æete zkusit vypnout tuto volbu. (Pozn√°mka: pokud Va≈°e instalace PHP nepodporuje gzip funkce, plugin automaticky bude tvo≈ôit nekomprimovan√Ω soubor. Tedy obecnƒõ nen√≠ pot≈ôeba tuto volbu ruƒçnƒõ vyp√≠nat.)');
+@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD', 'Typy URL pro p≈ôid√°n√≠');
+@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_DESC', 'Zadejte typy URL adres, kter√© maj√≠ b√Ωt zahrnuty do mapy str√°nek.');
+@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_FEEDS', 'Kan√°ly');
 @define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_CATEGORIES', 'Kategorie');
-@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_AUTHORS', 'Auto¯i');
-@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_PERMALINKS', 'St·lÈ odkazy (permalinky)');
+@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_AUTHORS', 'Auto≈ôi');
+@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_PERMALINKS', 'St√°l√© odkazy (permalinky)');
 @define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_ARCHIVES', 'Archivy');
-@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_STATIC', 'StatickÈ str·nky');
-@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_TAGS', 'Str·nky s tagy');
-@define('PLUGIN_EVENT_SITEMAP_CUSTOM', 'VlastnÌ (XML tÏlo)');
-@define('PLUGIN_EVENT_SITEMAP_CUSTOM_DESC', 'Zde zadejte text ve form·tu XML, kter˝ chcete p¯idat na konec vygenerovanÈho souboru s mapou str·nek. PomocÌ tÈto volby m˘æete ruËnÏ p¯idat KML soubory nebo nap¯Ìklad odkazy. Zkontrolujte, æe to, co zde zad·te, odpovÌd· standardu XML.');
-@define('PLUGIN_EVENT_SITEMAP_CUSTOM2', 'VlastnÌ (XML hlaviËka/jmenn˝ prostor)');
-@define('PLUGIN_EVENT_SITEMAP_CUSTOM2_DESC', 'Zde m˘æete zadat libovoln˝ text v XML form·tu, kter˝ bude p¯id·n do hlaviËky (nahoru) vygenerovanÈho souboru s mapou str·nek, p¯Ìmo do XML elementu "urlset". Zkontrolujte, æe to, co zde zad·te, odpovÌd· standardu XML.');
+@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_STATIC', 'Statick√© str√°nky');
+@define('PLUGIN_EVENT_SITEMAP_TYPES_TO_ADD_TAGS', 'Str√°nky s tagy');
+@define('PLUGIN_EVENT_SITEMAP_CUSTOM', 'Vlastn√≠ (XML tƒõlo)');
+@define('PLUGIN_EVENT_SITEMAP_CUSTOM_DESC', 'Zde zadejte text ve form√°tu XML, kter√Ω chcete p≈ôidat na konec vygenerovan√©ho souboru s mapou str√°nek. Pomoc√≠ t√©to volby m≈Ø≈æete ruƒçnƒõ p≈ôidat KML soubory nebo nap≈ô√≠klad odkazy. Zkontrolujte, ≈æe to, co zde zad√°te, odpov√≠d√° standardu XML.');
+@define('PLUGIN_EVENT_SITEMAP_CUSTOM2', 'Vlastn√≠ (XML hlaviƒçka/jmenn√Ω prostor)');
+@define('PLUGIN_EVENT_SITEMAP_CUSTOM2_DESC', 'Zde m≈Ø≈æete zadat libovoln√Ω text v XML form√°tu, kter√Ω bude p≈ôid√°n do hlaviƒçky (nahoru) vygenerovan√©ho souboru s mapou str√°nek, p≈ô√≠mo do XML elementu "urlset". Zkontrolujte, ≈æe to, co zde zad√°te, odpov√≠d√° standardu XML.');
 @define('PLUGIN_EVENT_SITEMAP_NEWS', 'Zapnout obsah GoogleNews');
 
 // Next lines were translated on 2010/02/06
 
 @define('PLUGIN_EVENT_SITEMAP_GNEWS_NAME', 'Nadpis pro obsah GoogleNews');
 @define('PLUGIN_EVENT_SITEMAP_GNEWS_NAME_DESC', 'Zadejte nadpis pro obsah GoogleNows');
-@define('PLUGIN_EVENT_SITEMAP_PUBLIC', 'Ve¯ejn˝');
-@define('PLUGIN_EVENT_SITEMAP_SUBSCRIPTION', 'Z·pis/p¯edplatnÈ (placen˝ obsah)');
-@define('PLUGIN_EVENT_SITEMAP_REGISTRATION', 'Registrace (obsah zdarma, registrace vyæadov·na)');
-@define('PLUGIN_EVENT_SITEMAP_PRESS', 'Tiskov· zpr·va');
+@define('PLUGIN_EVENT_SITEMAP_PUBLIC', 'Ve≈ôejn√Ω');
+@define('PLUGIN_EVENT_SITEMAP_SUBSCRIPTION', 'Z√°pis/p≈ôedplatn√© (placen√Ω obsah)');
+@define('PLUGIN_EVENT_SITEMAP_REGISTRATION', 'Registrace (obsah zdarma, registrace vy≈æadov√°na)');
+@define('PLUGIN_EVENT_SITEMAP_PRESS', 'Tiskov√° zpr√°va');
 @define('PLUGIN_EVENT_SITEMAP_SATIRE', 'Satira');
 @define('PLUGIN_EVENT_SITEMAP_BLOG', 'Blog');
-@define('PLUGIN_EVENT_SITEMAP_OPED', 'N·zor autora');
-@define('PLUGIN_EVENT_SITEMAP_OPINION', 'N·zor ostatnÌch');
-@define('PLUGIN_EVENT_SITEMAP_USERGENERATED', 'Uæivatelsky vytvo¯en˝ obsah');
+@define('PLUGIN_EVENT_SITEMAP_OPED', 'N√°zor autora');
+@define('PLUGIN_EVENT_SITEMAP_OPINION', 'N√°zor ostatn√≠ch');
+@define('PLUGIN_EVENT_SITEMAP_USERGENERATED', 'U≈æivatelsky vytvo≈ôen√Ω obsah');
 @define('PLUGIN_EVENT_SITEMAP_GNEWS_SUBSCRIPTION', 'GoogleNews: typ obsahu');
 @define('PLUGIN_EVENT_SITEMAP_GNEWS_SUBSCRIPTION_DESC', '');
-@define('PLUGIN_EVENT_SITEMAP_GENRES', 'GoogleNews: Æ·nry');
-@define('PLUGIN_EVENT_SITEMAP_GENRES_DESC', 'V souËasnosti se tyto æ·nry projevÌ u vπech p¯ÌspÏvk˘. Takæe byste mÏli vybrat æ·nr, kter˝ se hodÌ na vÏtπinu p¯ÌspÏvk˘ v blogu. Aby se tato volba stala z·vislou na jednotliv˝ch p¯ÌspÏvcÌch, musÌte k p¯ÌspÏvk˘m p¯idat uæivatelskÈ pole (CustomProperty) pojmenovanÈ "gnews_genre", kterÈ m˘æe obsahovat æ·nry jako textovÈ ¯etÏzce oddÏlenÈ Ë·rkou.');
-@define('PLUGIN_EVENT_SITEMAP_NONE', 'Æ·dn˝ æ·nr');
+@define('PLUGIN_EVENT_SITEMAP_GENRES', 'GoogleNews: ≈Ω√°nry');
+@define('PLUGIN_EVENT_SITEMAP_GENRES_DESC', 'V souƒçasnosti se tyto ≈æ√°nry projev√≠ u v≈°ech p≈ô√≠spƒõvk≈Ø. Tak≈æe byste mƒõli vybrat ≈æ√°nr, kter√Ω se hod√≠ na vƒõt≈°inu p≈ô√≠spƒõvk≈Ø v blogu. Aby se tato volba stala z√°vislou na jednotliv√Ωch p≈ô√≠spƒõvc√≠ch, mus√≠te k p≈ô√≠spƒõvk≈Øm p≈ôidat u≈æivatelsk√© pole (CustomProperty) pojmenovan√© "gnews_genre", kter√© m≈Ø≈æe obsahovat ≈æ√°nry jako textov√© ≈ôetƒõzce oddƒõlen√© ƒç√°rkou.');
+@define('PLUGIN_EVENT_SITEMAP_NONE', '≈Ω√°dn√Ω ≈æ√°nr');
 
 // Next lines were translated on 2011/01/08
-@define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE', 'SlouËit mapu str·nek GoogleNews (Novinky Google) s norm·lnÌ mapou str·nek?');
-@define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE_DESC', 'Toto nastavenÌ se uplatnÌ pouze pokud jste povolili obsah novinek Google (GoogleNews). Pokud je zapnuto, norm·lnÌ soubor sitemap.xml bude obsahovat znaËky z GoogleNews. Pokud je vypnuto, pak bude data form·tovan· podle GoogleNews obsahovat pouze soubor news_sitemap.xml. Pokud m·te vÌce neæ podporovan˝ch 1000 Ël·nk˘ na blogu, musÌte tuto volbu vypnout, abyste nem·tli GoogleSpiders vaπÌ norm·lnÌ mapou str·nek.');
+@define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE', 'Slouƒçit mapu str√°nek GoogleNews (Novinky Google) s norm√°ln√≠ mapou str√°nek?');
+@define('PLUGIN_EVENT_SITEMAP_NEWS_SINGLE_DESC', 'Toto nastaven√≠ se uplatn√≠ pouze pokud jste povolili obsah novinek Google (GoogleNews). Pokud je zapnuto, norm√°ln√≠ soubor sitemap.xml bude obsahovat znaƒçky z GoogleNews. Pokud je vypnuto, pak bude data form√°tovan√° podle GoogleNews obsahovat pouze soubor news_sitemap.xml. Pokud m√°te v√≠ce ne≈æ podporovan√Ωch 1000 ƒçl√°nk≈Ø na blogu, mus√≠te tuto volbu vypnout, abyste nem√°tli GoogleSpiders va≈°√≠ norm√°ln√≠ mapou str√°nek.');
 
