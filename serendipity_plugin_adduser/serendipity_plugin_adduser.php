@@ -10,8 +10,9 @@ include_once dirname(__FILE__) . '/common.inc.php';
 
 class serendipity_plugin_adduser extends serendipity_plugin
 {
-    var $title = PLUGIN_ADDUSER_NAME;
-    var $usergroups = array();
+    public $title = PLUGIN_ADDUSER_NAME;
+
+    private $usergroups = array();
 
     function introspect(&$propbag)
     {
