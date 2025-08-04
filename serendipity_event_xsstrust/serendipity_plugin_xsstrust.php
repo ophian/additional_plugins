@@ -12,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_xsstrust extends serendipity_plugin
 {
-    var $title = PLUGIN_ETHICS_NAME;
+    public $title = PLUGIN_ETHICS_NAME;
 
     function introspect(&$propbag)
     {
@@ -22,7 +22,7 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ETHICS_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Loris Zena, Ian Styx');
-        $propbag->add('version',       '1.4');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
