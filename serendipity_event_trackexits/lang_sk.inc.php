@@ -1,15 +1,15 @@
 <?php
 
 /**
- *  @author Martin Matuska <martin@matuska.org>
+ *  @author Martin Matu≈°ka <martin@matuska.org>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_EVENT_TRACKBACK_NAME', 'Markup: Sledovanie odchodov');
-@define('PLUGIN_EVENT_TRACKBACK_DESC', 'Sleduje kliknutie na externÈ adresy URL');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION', 'PouæÌª URL presmeovanie pre adresy URL webov˝ch str·nok v koment·roch.');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'Zniæuje riziko zneuæitia koment·rov (napr. pre zv˝πenie pozÌcie vo vyhµad·vaËoch), ale z·roveÚ zabraÚuje pozitÌvnemu efektu propag·cie str·nok komentuj˙ceho n·vπtevnÌka. Serendipity presmeruje na spr·vnu adresu a zaznamen· v˝stup do logu. Funkcia "Google PageRank Deflector" zamedzÌ odkazu vo svojvoµnom zvyπovanÌ Page Ranku. Hodnota "NiË" vypne t˙to funkciu (prednastavenÈ).');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_NONE', 'NiË');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Vn˙tornÈ sledovacie funkcie Serendipity');
+@define('PLUGIN_EVENT_TRACKBACK_DESC', 'Sleduje kliknutie na extern√© adresy URL');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION', 'Pou≈æ√≠≈• URL presmeovanie pre adresy URL webov√Ωch str√°nok v koment√°roch.');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'Zni≈æuje riziko zneu≈æitia koment√°rov (napr. pre zv√Ω≈°enie poz√≠cie vo vyhƒæad√°vaƒçoch), ale z√°rove≈à zabra≈àuje pozit√≠vnemu efektu propag√°cie str√°nok komentuj√∫ceho n√°v≈°tevn√≠ka. Serendipity presmeruje na spr√°vnu adresu a zaznamen√° v√Ωstup do logu. Funkcia "Google PageRank Deflector" zamedz√≠ odkazu vo svojvoƒænom zvy≈°ovan√≠ Page Ranku. Hodnota "Niƒç" vypne t√∫to funkciu (prednastaven√©).');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_NONE', 'Niƒç');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Vn√∫torn√© sledovacie funkcie Serendipity');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Google PageRank Deflector');
 

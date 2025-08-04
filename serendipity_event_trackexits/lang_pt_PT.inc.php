@@ -1,22 +1,21 @@
 <?php
 
 ##########################################################################
-# serendipity - another blogger...                                       #
-##########################################################################
 #                                                                        #
 # (c) 2003 Jannis Hermanns <J@hacked.it>                                 #
 # http://www.jannis.to/programming/serendipity.html                      #
 #                                                                        #
 # Translated by                                                          #
-# Jo„o P. Matos <jmatos@math.ist.utl.pt>                                 #
+# Jo√£o P. Matos <jmatos@math.ist.utl.pt>                                 #
 #                                                                        #
 ##########################################################################
 
-@define('PLUGIN_EVENT_TRACKBACK_NAME', 'CÛdigo: Gest„o das ligaÁıes para o exterior');
-@define('PLUGIN_EVENT_TRACKBACK_DESC', 'Regista os cliques nas ligaÁıes para o exterior do seu blogue');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION', 'Incluir ligaÁıes para as p·ginas dos utilizadores?');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'Reduz o abuso dos coment·rios, mas anula tambÈm o efeito postivo duma ligaÁ„o para uma p·gina de um utilizador. As rotinas internas do Serendipity redirigem para a p·gina alvo e acrescentam ao log. O deflector de Google PageRank impede que a ligaÁ„o ganhe PageRank no Google.');
+@define('PLUGIN_EVENT_TRACKBACK_NAME', 'C√≥digo: Gest√£o das liga√ß√µes para o exterior');
+@define('PLUGIN_EVENT_TRACKBACK_DESC', 'Regista os cliques nas liga√ß√µes para o exterior do seu blogue');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION', 'Incluir liga√ß√µes para as p√°ginas dos utilizadores?');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'Reduz o abuso dos coment√°rios, mas anula tamb√©m o efeito postivo duma liga√ß√£o para uma p√°gina de um utilizador. As rotinas internas do Serendipity redirigem para a p√°gina alvo e acrescentam ao log. O deflector de Google PageRank impede que a liga√ß√£o ganhe PageRank no Google.');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_NONE', 'Nenhum');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Sim');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Sim, activando o deflector de Google PageRank');
 
+/* vim: set sts=4 ts=4 expandtab : */

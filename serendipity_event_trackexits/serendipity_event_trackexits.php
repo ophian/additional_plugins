@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,8 +10,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_trackexits extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_TRACKBACK_NAME;
-    var $links;
+    public $title = PLUGIN_EVENT_TRACKBACK_NAME;
+
+    private $links;
 
     function introspect(&$propbag)
     {
@@ -19,11 +22,11 @@ class serendipity_event_trackexits extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TRACKBACK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '1.16');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'frontend_display_cache' => true));
@@ -227,8 +230,8 @@ class serendipity_event_trackexits extends serendipity_event
                 '_id',
                 $this->links[$url],
                 ($entry_id != 0) ? '&amp;entry_id=' . $entry_id : '',
-                (!$is_title ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($url) : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET)) : ''),
-                (!$is_over  ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($url) : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET)) : ''),
+                (!$is_title ? htmlspecialchars($url) : ''),
+                (!$is_over  ? htmlspecialchars($url) : ''),
                 $buffer[6]
             );
         } else {
@@ -239,8 +242,8 @@ class serendipity_event_trackexits extends serendipity_event
                 '',
                 base64_encode($url),
                 ($entry_id != 0) ? '&amp;entry_id=' . $entry_id : '',
-                (!$is_title ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($url) : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET)) : ''),
-                (!$is_over  ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($url) : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET)) : ''),
+                (!$is_title ? htmlspecialchars($url) : ''),
+                (!$is_over  ? htmlspecialchars($url) : ''),
                 $buffer[6]
             );
         }

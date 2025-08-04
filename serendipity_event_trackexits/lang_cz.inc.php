@@ -1,15 +1,15 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_TRACKBACK_NAME', 'Markup: Sledování odchodù');
-@define('PLUGIN_EVENT_TRACKBACK_DESC', 'Sleduje kliknutí na URL adresy mimo blog');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION', 'Pou¾ít URL pøesmìrování pro URL adresy webovıch stránek náv¹tìvníkù, kteøí je zadávají v komentáøích.');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'Sni¾uje riziko zneu¾ití komentáøù (napø. pro zvı¹ení pozice ve vyhledávaèích), ale zároveò zabraòuje pozitivnímu efektu k propagování stránek komentujícího náv¹tìvníka. Serendipity samo pøesmìruje na správnou adresu a zaznamená proklik do logu. Funkce "Google PageRank Deflector" zamezí odkazu ve svévolnému zvy¹ování Page Ranku. Hodnota "Nic" vypne tuto funkci (standardní nastavení).');
+@define('PLUGIN_EVENT_TRACKBACK_NAME', 'Markup: SledovÃ¡nÃ­ odchodÅ¯');
+@define('PLUGIN_EVENT_TRACKBACK_DESC', 'Sleduje kliknutÃ­ na URL adresy mimo blog');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION', 'PouÅ¾Ã­t URL pÅ™esmÄ›rovÃ¡nÃ­ pro URL adresy webovÃ½ch strÃ¡nek nÃ¡vÅ¡tÄ›vnÃ­kÅ¯, kteÅ™Ã­ je zadÃ¡vajÃ­ v komentÃ¡Å™Ã­ch.');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'SniÅ¾uje riziko zneuÅ¾itÃ­ komentÃ¡Å™Å¯ (napÅ™. pro zvÃ½Å¡enÃ­ pozice ve vyhledÃ¡vaÄÃ­ch), ale zÃ¡roveÅˆ zabraÅˆuje pozitivnÃ­mu efektu k propagovÃ¡nÃ­ strÃ¡nek komentujÃ­cÃ­ho nÃ¡vÅ¡tÄ›vnÃ­ka. Serendipity samo pÅ™esmÄ›ruje na sprÃ¡vnou adresu a zaznamenÃ¡ proklik do logu. Funkce "Google PageRank Deflector" zamezÃ­ odkazu ve svÃ©volnÃ©mu zvyÅ¡ovÃ¡nÃ­ Page Ranku. Hodnota "Nic" vypne tuto funkci (standardnÃ­ nastavenÃ­).');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_NONE', 'Nic');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Vnitøní sledovací funkce Serendipity');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'VnitÅ™nÃ­ sledovacÃ­ funkce Serendipity');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Google PageRank Deflector');
 

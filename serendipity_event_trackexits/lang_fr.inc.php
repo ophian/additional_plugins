@@ -14,9 +14,9 @@
 @define('PLUGIN_EVENT_TRACKBACK_NAME', 'Balises: Gestion des liens sortants');
 @define('PLUGIN_EVENT_TRACKBACK_DESC', 'Enregistre les clicks sur tous les liens sortant de votre blog');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION', 'Inclure les liens vers les pages des utilisateurs?');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'Réduit les abus des commentaires, mais annule aussi l\'effet positif d\'un lien vers la page d\'un utilisateur. Serendipity\'s redirige vers la page cible et logue le click. L\'option du déflecteur de Google PageRank fait en sorte que le lien cible ne sera pas crédité de PageRank dans Google.');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_BLAHBLA', 'RÃ©duit les abus des commentaires, mais annule aussi l\'effet positif d\'un lien vers la page d\'un utilisateur. Serendipity\'s redirige vers la page cible et logue le click. L\'option du dÃ©flecteur de Google PageRank fait en sorte que le lien cible ne sera pas crÃ©ditÃ© de PageRank dans Google.');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_NONE', 'Non');
 @define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_S9Y', 'Oui');
-@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Oui, en activant le déflecteur du Google PageRank');
+@define('PLUGIN_EVENT_TRACKBACK_COMMENTREDIRECTION_GOOGLE', 'Oui, en activant le dÃ©flecteur du Google PageRank');
 
 /* vim: set sts=4 ts=4 expandtab : */
