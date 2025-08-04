@@ -10,8 +10,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_weblogping extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_WEBLOGPING_TITLE; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
-    var $services;
+    public $title = PLUGIN_EVENT_WEBLOGPING_TITLE; // plugins accessing objects title, eg. entryproperties disable_markups in entry option
+
+    private $services;
 
     function introspect(&$propbag)
     {
@@ -21,7 +22,7 @@ class serendipity_event_weblogping extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WEBLOGPING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
