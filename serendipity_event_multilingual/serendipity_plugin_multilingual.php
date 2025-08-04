@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_multilingual extends serendipity_event
 {
-    var $title = PLUGIN_SIDEBAR_MULTILINGUAL_TITLE;
+    public $title = PLUGIN_SIDEBAR_MULTILINGUAL_TITLE;
 
     function introspect(&$propbag)
     {
@@ -64,7 +64,7 @@ class serendipity_plugin_multilingual extends serendipity_event
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }
