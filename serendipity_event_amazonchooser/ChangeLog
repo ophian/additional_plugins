@@ -1,3 +1,8 @@
+1.2.0:
+------
+ * Convert for Visibility property declaration (minor)
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+
 1.1.1:
 ------
  * Better dark-mode vs light-mode RichText-Editor button coloring

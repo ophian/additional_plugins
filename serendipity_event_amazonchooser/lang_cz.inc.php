@@ -1,154 +1,154 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/14
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/15
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/15
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/25
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/02/01
  */
 
-@define('PLUGIN_EVENT_AMAZONCHOOSER_TITLE', 'TlaËÌtko mÈdiÌ Amazon');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_DESC', 'P¯id·v· tlaËÌtko, kterÈ umoæÚuje vkl·dat do p¯ÌspÏvk˘ v˝sledky hled·nÌ na Amazon.com');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_TITLE', 'Tlaƒç√≠tko m√©di√≠ Amazon');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_DESC', 'P≈ôid√°v√° tlaƒç√≠tko, kter√© umo≈æ≈àuje vkl√°dat do p≈ô√≠spƒõvk≈Ø v√Ωsledky hled√°n√≠ na Amazon.com');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_MEDIA_BUTTON', 'Amazon Media');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_DEV_TOKEN', 'KlÌË v˝voj·¯e (Developer Token)');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_DEV_TOKEN_DESC', 'PouæÌt tento v˝voj·¯sk˝ klÌË');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_DEV_TOKEN', 'Kl√≠ƒç v√Ωvoj√°≈ôe (Developer Token)');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_DEV_TOKEN_DESC', 'Pou≈æ√≠t tento v√Ωvoj√°≈ôsk√Ω kl√≠ƒç');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_ASSOCIATE_ID', 'Amazon Associate ID');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_SERVER', 'V˝chozÌ server');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_SERVER_DESC', 'Server Amazon, kter˝ chcete pouæÌt pro hled·nÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_GERMANY', 'NÏmecko');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_SERVER', 'V√Ωchoz√≠ server');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_SERVER_DESC', 'Server Amazon, kter√Ω chcete pou≈æ√≠t pro hled√°n√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_GERMANY', 'Nƒõmecko');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_JAPAN', 'Japonsko');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_UK', 'Velk· Brit·nie');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_UK', 'Velk√° Brit√°nie');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_US', 'USA');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_CA', 'Kanada');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_FR', 'Francie');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_SEARCH', 'Vyhled·v·nÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_SEARCH_DESC', 'Zadejte klÌËovÈ slovo, kterÈ se m· hledat:');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_CLICK', 'KliknÏte na poloæku, kterou hled·te:');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_SEARCH', 'Vyhled√°v√°n√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_SEARCH_DESC', 'Zadejte kl√≠ƒçov√© slovo, kter√© se m√° hledat:');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_CLICK', 'Kliknƒõte na polo≈æku, kterou hled√°te:');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_CHOSE', 'Vyberte');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_AUTHOR', 'Autor');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_RELEASED', 'Vyd·no');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MANUFACTURER', 'V˝robce');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_RELEASED', 'Vyd√°no');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MANUFACTURER', 'V√Ωrobce');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_DISTRIBUTOR', 'Distributor');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_STARRING', 'HereckÈ obsazenÌ');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_STARRING', 'Hereck√© obsazen√≠');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PUBLISHER', 'Vydavatel');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_ARTISTS', 'Interpret');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_DIRECTOR', 'ReæisÈr');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_NUMPAGES', 'PoËet stran');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_DIRECTOR', 'Re≈æis√©r');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_NUMPAGES', 'Poƒçet stran');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_ISBN', 'ISBN');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_RUNNING', 'DÈlka');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_FORMAT', 'Form·t');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_RUNNING', 'D√©lka');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_FORMAT', 'Form√°t');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_DEV_SECRET', 'Amazon Developer Secret Access key.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_DEV_SECRET_DESC', 'V·π "Amazon Developer Secret Access key" (Tajn˝ p¯Ìstupov˝ klÌË pro v˝voj·¯e Amazon), p¯i¯azen˝ k Vaπemu ˙Ëtu na Amazonu.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_DEV_SECRET_DESC', 'V√°≈° "Amazon Developer Secret Access key" (Tajn√Ω p≈ô√≠stupov√Ω kl√≠ƒç pro v√Ωvoj√°≈ôe Amazon), p≈ôi≈ôazen√Ω k Va≈°emu √∫ƒçtu na Amazonu.');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_EAN', 'EAN');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_PRODUCTTITLE', 'N·zev');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_PRODUCTTITLE', 'N√°zev');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PLATFORM', 'Platforma');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_GENRE', 'Æ·nr');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_ESRBAGERATING', 'ESRB hodnocenÌ');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_GENRE', '≈Ω√°nr');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_ESRBAGERATING', 'ESRB hodnocen√≠');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PRICE', 'Cena');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_PUBLISHED', 'Vyd·no');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_DISTINCTURL', 'VÌce informacÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_TECHDETAILS', 'TechnickÈ detaily');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_CUSTOMERREVIEWS', 'ProhlÈdnout hodnocenÌ od z·kaznÌk˘');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_ALLOFFERS', 'Zobrazit vπechny nabÌdky');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_PUBLISHED', 'Vyd√°no');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_DISTINCTURL', 'V√≠ce informac√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_TECHDETAILS', 'Technick√© detaily');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_CUSTOMERREVIEWS', 'Prohl√©dnout hodnocen√≠ od z√°kazn√≠k≈Ø');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_ALLOFFERS', 'Zobrazit v≈°echny nab√≠dky');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PRODUCTGROUP', 'Typ produktu:');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PRODUCTLANGUAGE', 'Jazyk');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_AUDIENCERATING', 'HodnocenÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_NEW', 'nov˝');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_USED', 'pouæit˝');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_COLLECTABLE', 'sbÏratelstvÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_REFURBISHED', 'renovovan˝');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_AUDIENCERATING', 'Hodnocen√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_NEW', 'nov√Ω');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_USED', 'pou≈æit√Ω');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_COLLECTABLE', 'sbƒõratelstv√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_REFURBISHED', 'renovovan√Ω');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_FROM', 'od');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_NOASIN', 'Æ·dnÈ ASIN nebylo zad·no pro vyhled·v·nÌ. NejspÌπe  se jedn· o problÈm uloæenÈho p¯ÌspÏvku.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_BRAND', 'ZnaËka');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_NOASIN', '≈Ω√°dn√© ASIN nebylo zad√°no pro vyhled√°v√°n√≠. Nejsp√≠≈°e  se jedn√° o probl√©m ulo≈æen√©ho p≈ô√≠spƒõvku.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_BRAND', 'Znaƒçka');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_MODEL', 'Model');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_NUMDISKS', 'PoËet disk˘');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_NUMDISKS', 'Poƒçet disk≈Ø');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_FEATURE', 'Vlastnosti');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_DISPLAYING', 'Zobrazeno');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_OF', 'z');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PAGE', 'strana');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PAGES', 'stran');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_ITEMS', 'poloæky');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_PAGELIMIT', 'Pouze prvnÌch 400 stran lze prohlÌæet');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_ASOF', 'P¯esnÈ informace od');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_APPAREL', 'OdÏvy');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_ITEMS', 'polo≈æky');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_PAGELIMIT', 'Pouze prvn√≠ch 400 stran lze prohl√≠≈æet');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_ASOF', 'P≈ôesn√© informace od');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_APPAREL', 'Odƒõvy');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_AUTO', 'Auto-moto');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_BABY', 'DÏti');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_BEAUTY', 'Kr·sa');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_BABY', 'Dƒõti');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_BEAUTY', 'Kr√°sa');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_BOOKS', 'Knihy');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_CLASSICALMUSIC', 'Klasick· hudba');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_DIGITALMUSIC', 'ModernÌ hudba');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_CLASSICALMUSIC', 'Klasick√° hudba');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_DIGITALMUSIC', 'Modern√≠ hudba');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_DVD', 'DVD');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_ELECTRONICS', 'Elektronika');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_FOREIGNBOOKS', 'ZahraniËnÌ knihy');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_GORMETFOOD', 'Gurm·nskÈ jÌdlo');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_FOREIGNBOOKS', 'Zahraniƒçn√≠ knihy');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_GORMETFOOD', 'Gurm√°nsk√© j√≠dlo');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_GROCERY', 'Potraviny');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_HEALTH', 'ZdravÌ/PÈËe o tÏlo');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_HOBBIES', 'KonÌËky');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_HEALTH', 'Zdrav√≠/P√©ƒçe o tƒõlo');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_HOBBIES', 'Kon√≠ƒçky');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_HOMEGARDEN', 'Domov a zahrada');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_HOMEIMPROVE', 'KutilstvÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_INDUSTRIAL', 'Pr˘mysl');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_HOMEIMPROVE', 'Kutilstv√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_INDUSTRIAL', 'Pr≈Ømysl');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_JEWELRY', 'Klenoty');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_KINDLESTORE', 'Pyrotechnika');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_KITCHEN', 'KuchynÏ a vybavenÌ domu');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MAGAZINE', '»asopisy');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MP3DOWNLOADS', 'MP3 ke staæenÌ');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_KITCHEN', 'Kuchynƒõ a vybaven√≠ domu');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MAGAZINE', 'ƒåasopisy');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MP3DOWNLOADS', 'MP3 ke sta≈æen√≠');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_MUSIC', 'Hudba');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MUSICALINST', 'HudebnÌ n·stroje');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MUSICTRACKS', 'HudebnÌ nahr·vky');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_OFFICEPROD', 'Kancel·¯');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_PETS', 'Dom·cÌ mazlÌËci');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_OUTDOOR', 'Outdoor a kempov·nÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_COMPUTERS', 'PoËÌtaËe');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MUSICALINST', 'Hudebn√≠ n√°stroje');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MUSICTRACKS', 'Hudebn√≠ nahr√°vky');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_OFFICEPROD', 'Kancel√°≈ô');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_PETS', 'Dom√°c√≠ mazl√≠ƒçci');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_OUTDOOR', 'Outdoor a kempov√°n√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_COMPUTERS', 'Poƒç√≠taƒçe');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_PHOTO', 'Foto & video');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_SHOES', 'Obuv');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_SOFTWARE', 'Software');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_SOFTWAREVIDEO', 'Software a videohry');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_SPORTGOODS', 'SportovnÌ vybavenÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_TOOLS', 'N·stroje');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_TOYS', 'Hry a hraËky');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_SPORTGOODS', 'Sportovn√≠ vybaven√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_TOOLS', 'N√°stroje');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_TOYS', 'Hry a hraƒçky');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_VHS', 'VHS');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_VIDEO', 'Video');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_COMPUTERGAMES', 'PoËÌtaËovÈ hry a videohry');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_COMPUTERGAMES', 'Poƒç√≠taƒçov√© hry a videohry');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_WATCHES', 'Hodinky');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_WIRELESS', 'Wireless');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_WIRELESSACC', 'Wireless - p¯ÌsluπenstvÌ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_INVALIDINDEX', 'Nespr·vn˝ index');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_NORESULTS', 'Nebyly nalezeny æ·dnÈ v˝sledky');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_NORESULTS_DESC', 'Amazon nenalezl æ·dnÈ v˝sledky. Opakujte prosÌm vyhled·v·nÌ s jin˝m vyhled·van˝mi slovy.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_UNKNOWNERROR', 'Vyskytla se nezn·m· chyba.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_PARSEERROR', 'Vyskytla se chyba parseru. OvÏ¯te prosÌm, æe vr·cen˝ v˝sledek je v XML form·tu.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_HTTPREQFAIL', 'HTTP poæadavek se nezda¯il.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_REQUEST', 'Poæadavek');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_RESPONSE', 'OdpovÏÔ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_NOIMAGE', 'Æ·dn˝ obr·zek');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_WIRELESSACC', 'Wireless - p≈ô√≠slu≈°enstv√≠');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_INVALIDINDEX', 'Nespr√°vn√Ω index');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_NORESULTS', 'Nebyly nalezeny ≈æ√°dn√© v√Ωsledky');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_NORESULTS_DESC', 'Amazon nenalezl ≈æ√°dn√© v√Ωsledky. Opakujte pros√≠m vyhled√°v√°n√≠ s jin√Ωm vyhled√°van√Ωmi slovy.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_UNKNOWNERROR', 'Vyskytla se nezn√°m√° chyba.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_PARSEERROR', 'Vyskytla se chyba parseru. Ovƒõ≈ôte pros√≠m, ≈æe vr√°cen√Ω v√Ωsledek je v XML form√°tu.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_HTTPREQFAIL', 'HTTP po≈æadavek se nezda≈ôil.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_REQUEST', 'Po≈æadavek');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_RESPONSE', 'Odpovƒõƒè');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_NOIMAGE', '≈Ω√°dn√Ω obr√°zek');
 
 // Next lines were translated on 2009/08/25
 
-@define('PLUGIN_EVENT_AMAZONCHOOSER_ASSOCIATE_ID_DESC', 'V·π Amazon Associate ID identifik·tor');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_SETTINGS_PROBLEM', 'NejËastÏjπÌ d˘vod tÈto chyby je πpatnÈ nastavenÌ pluginu. ProsÌm p¯eËtÏte si dokumentaci a znovu zkontrolujte nastavenÌ pluginu.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_PLUGINPROBLEM', 'Konflikt verzÌ knihovny Amazon.');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_PLUGINPROBLEM_DESC', 'Plugin "TlaËÌtko Amazon Media" z·visÌ na nejnovÏjπÌ verzi knihovny "Amazon_s9y_lib.php". UjistÏte se prosÌm, æe jsou vπechny Vaπe pluginy aktu·lnÌ.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_ASSOCIATE_ID_DESC', 'V√°≈° Amazon Associate ID identifik√°tor');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_SETTINGS_PROBLEM', 'Nejƒçastƒõj≈°√≠ d≈Øvod t√©to chyby je ≈°patn√© nastaven√≠ pluginu. Pros√≠m p≈ôeƒçtƒõte si dokumentaci a znovu zkontrolujte nastaven√≠ pluginu.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_PLUGINPROBLEM', 'Konflikt verz√≠ knihovny Amazon.');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_PLUGINPROBLEM_DESC', 'Plugin "Tlaƒç√≠tko Amazon Media" z√°vis√≠ na nejnovƒõj≈°√≠ verzi knihovny "Amazon_s9y_lib.php". Ujistƒõte se pros√≠m, ≈æe jsou v≈°echny Va≈°e pluginy aktu√°ln√≠.');
 
 // Next lines were translated on 2012/02/01
-@define('PLUGIN_EVENT_AMAZONCHOOSER_CN', '»Ìna');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_IT', 'It·lie');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_ES', '©panÏlsko');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_APPLIANCES', 'Spot¯ebiËe');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_ARTSANDCRAFTS', 'UmÏnÌ a ¯emesla');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_BLENDED', 'SmÏska');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_CN', 'ƒå√≠na');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_IT', 'It√°lie');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_ES', '≈†panƒõlsko');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_APPLIANCES', 'Spot≈ôebiƒçe');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_ARTSANDCRAFTS', 'Umƒõn√≠ a ≈ôemesla');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_BLENDED', 'Smƒõska');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_GARDEN', 'Zahrada');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_HOME', 'Domov');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MARKETPLACE', 'TræiπtÏ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MISC', 'R˘znÈ');
-@define('PLUGIN_EVENT_AMAZONCHOOSER_MOBILEAPP', 'MobilnÌ aplikace');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MARKETPLACE', 'Tr≈æi≈°tƒõ');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MISC', 'R≈Øzn√©');
+@define('PLUGIN_EVENT_AMAZONCHOOSER_MOBILEAPP', 'Mobiln√≠ aplikace');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_OUTLET', 'Outlet');
 @define('PLUGIN_EVENT_AMAZONCHOOSER_UNBOXVIDEO', 'Unbox Video');
 
