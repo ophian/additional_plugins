@@ -11,8 +11,8 @@ if (IN_serendipity !== true) {
 class serendipity_event_xsstrust extends serendipity_event
 {
     public $title = PLUGIN_EVENT_XSSTRUST_NAME;
+    public $protected = true;
 
-    private $protected = true;
     private $trusted_authors = null;
 
     function introspect(&$propbag)
