@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_xmlrpc extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_XMLRPC_NAME;
+    public $title = PLUGIN_EVENT_XMLRPC_NAME;
 
     function introspect(&$propbag)
     {

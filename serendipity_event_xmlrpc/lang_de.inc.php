@@ -1,27 +1,27 @@
 <?php
 
-@define('PLUGIN_EVENT_XMLRPC_NAME', 'Einträge via XML-RPC erstellen');
-@define('PLUGIN_EVENT_XMLRPC_DESC', 'Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)');
+@define('PLUGIN_EVENT_XMLRPC_NAME', 'EintrÃ¤ge via XML-RPC erstellen');
+@define('PLUGIN_EVENT_XMLRPC_DESC', 'ErmÃ¶glicht EintrÃ¤ge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)');
 @define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT', 'Standard-Kategorie');
-@define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC', 'Bestimmt die Standard-Kategorie für Blog-Artikel via XML-RPC, wenn der Client keine Kategorie setzt.');
+@define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC', 'Bestimmt die Standard-Kategorie fÃ¼r Blog-Artikel via XML-RPC, wenn der Client keine Kategorie setzt.');
 @define('PLUGIN_EVENT_XMLRPC_GMT', 'GMT-Zeitzone verwenden');
 
 @define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK','<div class="msg_hint msg-btm msg-sm"><b>Zur Information:</b><br>
-Dieses Blog hat eine URL, an der XML-RPC Aufrufe abgearbeitet werden. Modernere Clients können diese automatisch mit der Blog URL ermitteln, bei älteren Clients muss sie explizit angegeben werden.<br/>Diese XML-RPC URL ist: <b>%s</b></div>');
+Dieses Blog hat eine URL, an der XML-RPC Aufrufe abgearbeitet werden. Modernere Clients kÃ¶nnen diese automatisch mit der Blog URL ermitteln, bei Ã¤lteren Clients muss sie explizit angegeben werden.<br/>Diese XML-RPC URL ist: <b>%s</b></div>');
 
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG', 'Debug Log');
-@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC', 'Wenn Sie daran interessiert sind, was die XML-RPC Schnittstelle empfängt und antwortet, können Sie das Debug Log anschalten. Das Logfile wird als "rpc.log" im Plugin Verzeichnis angelegt.'); // Die \'debug\' Einstellung ist nur zum Auffinden von Problemen geeignet, sie produziert Antworten, mit denen ein Client nicht umgehen kann. Also bitte nicht in einem Live System einschalten!');
+@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC', 'Wenn Sie daran interessiert sind, was die XML-RPC Schnittstelle empfÃ¤ngt und antwortet, kÃ¶nnen Sie das Debug Log anschalten. Das Logfile wird als "rpc.log" im Plugin Verzeichnis angelegt.'); // Die \'debug\' Einstellung ist nur zum Auffinden von Problemen geeignet, sie produziert Antworten, mit denen ein Client nicht umgehen kann. Also bitte nicht in einem Live System einschalten!');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_NONE', 'ausgeschaltet');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_NORMAL', 'angeschaltet');
-@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_VERBOSE', 'debug: Nicht für Clients!');
+@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_VERBOSE', 'debug: Nicht fÃ¼r Clients!');
 
-@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION', 'WordPress Version vortäuschen');
-@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION_DESC', 'Die XML-RPC Schnittstelle kann auf WordPress Aufrufe reagieren. Wenn sie nach der installierten Software Version gefragt wird, antwortet sie normalerweise mit "Serendipity ' . $serendipity['version'] .'" (aktuelle Version). Wenn man hier eine Version (ohne Namen) einträgt, dann wird sie mit "WordPress x.y" antworten. Einige Clients könnten auf eine minimale WordPress Version testen; eine Version wie "3.2" wäre dann okay.');
+@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION', 'WordPress Version vortÃ¤uschen');
+@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION_DESC', 'Die XML-RPC Schnittstelle kann auf WordPress Aufrufe reagieren. Wenn sie nach der installierten Software Version gefragt wird, antwortet sie normalerweise mit "Serendipity ' . $serendipity['version'] .'" (aktuelle Version). Wenn man hier eine Version (ohne Namen) eintrÃ¤gt, dann wird sie mit "WordPress x.y" antworten. Einige Clients kÃ¶nnten auf eine minimale WordPress Version testen, eine Version wie "3.2" wÃ¤re dann okay.');
 @define('PLUGIN_EVENT_XMLRPC_HTMLCONVERT', 'Text Artikel nach HTML konvertieren');
-@define('PLUGIN_EVENT_XMLRPC_HTMLCONVERT_DESC', 'Das Plugin versucht zu erkennen, ob Artikel als reine Texte oder als HTML übermittelt werden. Bei reinem Text wird es Zeilenumbrüche in HTML umwandeln. Wenn Ihr Blog zB. das "Textile" oder das "NL2BR" Plugin für Artikel benutzt, sollten Sie diese Option ausschalten.');
+@define('PLUGIN_EVENT_XMLRPC_HTMLCONVERT_DESC', 'Das Plugin versucht zu erkennen, ob Artikel als reine Texte oder als HTML Ã¼bermittelt werden. Bei reinem Text wird es ZeilenumbrÃ¼che in HTML umwandeln. Wenn Ihr Blog zB. das "Textile" oder das "NL2BR" Plugin fÃ¼r Artikel benutzt, sollten Sie diese Option ausschalten.');
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR', 'Benutze Login als Kommentar Autor');
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DESC', 'Manche Clients speichern Kommentare mit einem generischen Autorennamen wie \'from WordPress\'. Wenn diese Option eingeschaltet ist, so wird immer der Name des eingeloggten Benutzers als Autor genommen.');
-@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DEFAULT', 'Autor nicht verändern');
+@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DEFAULT', 'Autor nicht verÃ¤ndern');
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_LOGIN', 'Loginname als Autor');
 @define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_REALNAME', 'Publizierter Name als Autor');
 @define('PLUGIN_EVENT_XMLRPC_UPLOADDIR', 'Upload Verzeichnis');
@@ -29,7 +29,7 @@ Dieses Blog hat eine URL, an der XML-RPC Aufrufe abgearbeitet werden. Modernere 
 
 @define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', '<h3>SPAM an AntiSpam Plugins signalisieren</h3>
 <div class="msg_hint msg-btm msg-sm">Das Plugin kann SPAM und HAM Signale an AntiSpam Plugins senden.<br/>
-Dies wird von dem AntiSpam Plugin (das dies unterstützt) genauso abgearbeitet, als ob in der Admin Oberfläche die Knöpfe Ham oder Spam gedrückt wurden.<br/>
+Dies wird von dem AntiSpam Plugin (das dies unterstÃ¼tzt) genauso abgearbeitet, als ob in der Admin OberflÃ¤che die KnÃ¶pfe Ham oder Spam gedrÃ¼ckt wurden.<br/>
 Da allerdings manche Clients keinen eigenen Spam Knopf anbieten, sondern nur "Moderieren" und "Freischalten", kann man hier einstellen, wann diese Signale verschickt werden sollen.<br/>
 Bei einem Client ohne separaten Spam Knopf will man das Signal z.B. schicken, wenn man einen Kommentar moderiert.</div>');
 @define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM', 'Kommentar wurde als SPAM markiert');

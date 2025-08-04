@@ -1,50 +1,50 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/14
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/01/16
  */
 
-@define('PLUGIN_EVENT_XMLRPC_NAME', 'Posílání pøíspìvkù pomocí XML-RPC');
-@define('PLUGIN_EVENT_XMLRPC_DESC', 'Umo¾òuje posílat/editovat pøíspìvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)');
-@define('PLUGIN_EVENT_XMLRPC_GMT', 'Pou¾ívat èas ve formátu GMT');
-@define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT', 'Vıchozí kategorie');
-@define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC', 'Upøesnìte vıchozí kategorii, kam se mají umístit poslané pøíspìvky, pokud u nich není zadána kategorie.');
+@define('PLUGIN_EVENT_XMLRPC_NAME', 'PosÃ­lÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯ pomocÃ­ XML-RPC');
+@define('PLUGIN_EVENT_XMLRPC_DESC', 'UmoÅ¾Åˆuje posÃ­lat/editovat pÅ™Ã­spÄ›vky pomocÃ­ XML-RPC API (MT, Blogger, WordPress Endpoints)');
+@define('PLUGIN_EVENT_XMLRPC_GMT', 'PouÅ¾Ã­vat Äas ve formÃ¡tu GMT');
+@define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT', 'VÃ½chozÃ­ kategorie');
+@define('PLUGIN_EVENT_XMLRPC_DEFAULTCAT_DESC', 'UpÅ™esnÄ›te vÃ½chozÃ­ kategorii, kam se majÃ­ umÃ­stit poslanÃ© pÅ™Ã­spÄ›vky, pokud u nich nenÃ­ zadÃ¡na kategorie.');
 
 // Next lines were translated on 2012/01/16
 @define('PLUGIN_EVENT_XMLRPC_DOC_RPCLINK', '<div class="msg_hint msg-btm msg-sm"><b>Pro informaci:</b><br/>
-Tento blog disponuje URL adresou, která zpracovává volání XMLRPC. Moderní klienti jsou schopni tutot RPC URL adresu zjistit automaticky ze základní URL adresy blogu, ale nìkterım star¹ím klientùm je tøeba zadat RPC URL explicitnì.<br/>Va¹e XML-RPC URL je: <b>%s</b></div>');
-@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG', 'Ladicí vıpisy');
-@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC', 'Pokud Vás zajímá, jaké zprávy XML-RPC dostává a odpovídá, zapnìte ladicí vıpisy. Logovací soubor se jmenuje rpc.log a je umístìn v adresáøi plugins.');
-@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_NONE', 'zakázáno');
+Tento blog disponuje URL adresou, kterÃ¡ zpracovÃ¡vÃ¡ volÃ¡nÃ­ XMLRPC. ModernÃ­ klienti jsou schopni tutot RPC URL adresu zjistit automaticky ze zÃ¡kladnÃ­ URL adresy blogu, ale nÄ›kterÃ½m starÅ¡Ã­m klientÅ¯m je tÅ™eba zadat RPC URL explicitnÄ›.<br/>VaÅ¡e XML-RPC URL je: <b>%s</b></div>');
+@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG', 'LadicÃ­ vÃ½pisy');
+@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_DESC', 'Pokud VÃ¡s zajÃ­mÃ¡, jakÃ© zprÃ¡vy XML-RPC dostÃ¡vÃ¡ a odpovÃ­dÃ¡, zapnÄ›te ladicÃ­ vÃ½pisy. LogovacÃ­ soubor se jmenuje rpc.log a je umÃ­stÄ›n v adresÃ¡Å™i plugins.');
+@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_NONE', 'zakÃ¡zÃ¡no');
 @define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_NORMAL', 'povoleno');
-@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_VERBOSE', 'ladìní: Nepou¾ívejte pro klienty!');
-@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION', 'Fale¹ná WordPress verze');
-@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION_DESC', 'Toto rozhraní XML-RPC umí odpovídat na volání typu WordPress. Normálnì pokud je dotazováno na pou¾ívanı software, odpovídá verzí Serendipity ' . $serendipity['version'] .'. Ale pokud zde zadáte èíslo verze, bude odpovídat jako WordPress (a èíslo zadané verze). Nìkteøí klienti kontrolují, jestli má WordPress dostateènì vysokou verzi, tak¾e hodnota 3.2 by mìla staèit.');
-@define('PLUGIN_EVENT_XMLRPC_HTMLCONVERT', 'Pøevádìt pøíspìvky z plaintextu do HTML');
-@define('PLUGIN_EVENT_XMLRPC_HTMLCONVERT_DESC', 'Plugin se sna¾í zjistit, jestli je tìlo pøíspìvku posíláno jako èistı text (plaintext), a pokud je, pak znaky nového øádku pøevádí na HTML tagy. Pokud pou¾íváte znaèkovací pluginy jako textile nebo nl2br, mìli byste tuto volbu vypnout.');
-@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR', 'Autor komentáøe z pøihla¹ovacího jména');
-@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DESC', 'Nìkteøí klienti posílají komentáøe s obecnım jménem autora, jako napø. \'komentáø z WordPressu\'. Pokud je tato volba zapnutá, jméno autora bude pøevzato nikoliv z poslaného pole "autor", ale z pøihla¹ovacího jména.');
-@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DEFAULT', 'Nemìnit autora');
-@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_LOGIN', 'Pou¾ít pøihla¹ovací jméno jako autora');
-@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_REALNAME', 'Pou¾ít skuteèné jméno jako autora');
-@define('PLUGIN_EVENT_XMLRPC_UPLOADDIR', 'Adresáø pro upload');
-@define('PLUGIN_EVENT_XMLRPC_UPLOADDIR_DESC', 'Pokud klienti nahrávají média (napø. obrázky a videa), do jakého adresáøe v mediatéce se mají ukládat?');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', '<div class="msg_hint msg-btm msg-sm"><h3>Hlásit SPAM AntiSpamovım pluginùm</h3>
-Tento plugin je schopen hlásit HAM a SPAM AntiSpamovım pluginùm, které umo¾òují pøijímat tyto hlá¹ky, aby na nì mohly reagovat (napø. se z nich uèit).<br/>
-Porovnejte s tlaèítky Spam/Ham v seznamu komentáøù. 
-Hlá¹ení tohoto pluginu budou mít stejnı úèinek jako kliknutí na tato tlaèítka v administraèní sekci.<br/>
-Pokud nìkteøí klienti nemají samostatná tlaèítka, ale pouze mo¾nosti povolit a po¾ádat o schválení (moderovat), mù¾ete nastavit, které hlá¹ky budou kdy poslány.<br/>
-Pokud Vá¹ klient neumí posílat hlá¹ení o spamu, mo¾ná se vám bude hodit, kdy¾ nastavíte, aby byl hlá¹en spam poka¾dé, kdy¾ zvolíte moderovat (moderate, po¾ádat o schválení).</div>');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM', 'Komentáø oznaèenı jako SPAM');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_DESC', 'Klient oznaèil komentáø jako SPAM');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED', 'Komentáø schválen');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED_DESC', 'Klient oznaèil komentáø jako schválenı');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING', 'Komentáø byl moderován');
-@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING_DESC', 'Klient oznaèil komentáø jako moderovanı (k dal¹ímu schválení)');
-@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE', 'Nedìlat nic');
-@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM', 'Hlásit jako SPAM');
-@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM', 'Hlásit jako HAM');
+@define('PLUGIN_EVENT_XMLRPC_DEBUGLOG_VERBOSE', 'ladÄ›nÃ­: NepouÅ¾Ã­vejte pro klienty!');
+@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION', 'FaleÅ¡nÃ¡ WordPress verze');
+@define('PLUGIN_EVENT_XMLRPC_WPFAKEVERSION_DESC', 'Toto rozhranÃ­ XML-RPC umÃ­ odpovÃ­dat na volÃ¡nÃ­ typu WordPress. NormÃ¡lnÄ› pokud je dotazovÃ¡no na pouÅ¾Ã­vanÃ½ software, odpovÃ­dÃ¡ verzÃ­ Serendipity ' . $serendipity['version'] .'. Ale pokud zde zadÃ¡te ÄÃ­slo verze, bude odpovÃ­dat jako WordPress (a ÄÃ­slo zadanÃ© verze). NÄ›kteÅ™Ã­ klienti kontrolujÃ­, jestli mÃ¡ WordPress dostateÄnÄ› vysokou verzi, takÅ¾e hodnota 3.2 by mÄ›la staÄit.');
+@define('PLUGIN_EVENT_XMLRPC_HTMLCONVERT', 'PÅ™evÃ¡dÄ›t pÅ™Ã­spÄ›vky z plaintextu do HTML');
+@define('PLUGIN_EVENT_XMLRPC_HTMLCONVERT_DESC', 'Plugin se snaÅ¾Ã­ zjistit, jestli je tÄ›lo pÅ™Ã­spÄ›vku posÃ­lÃ¡no jako ÄistÃ½ text (plaintext), a pokud je, pak znaky novÃ©ho Å™Ã¡dku pÅ™evÃ¡dÃ­ na HTML tagy. Pokud pouÅ¾Ã­vÃ¡te znaÄkovacÃ­ pluginy jako textile nebo nl2br, mÄ›li byste tuto volbu vypnout.');
+@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR', 'Autor komentÃ¡Å™e z pÅ™ihlaÅ¡ovacÃ­ho jmÃ©na');
+@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DESC', 'NÄ›kteÅ™Ã­ klienti posÃ­lajÃ­ komentÃ¡Å™e s obecnÃ½m jmÃ©nem autora, jako napÅ™. \'komentÃ¡Å™ z WordPressu\'. Pokud je tato volba zapnutÃ¡, jmÃ©no autora bude pÅ™evzato nikoliv z poslanÃ©ho pole "autor", ale z pÅ™ihlaÅ¡ovacÃ­ho jmÃ©na.');
+@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_DEFAULT', 'NemÄ›nit autora');
+@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_LOGIN', 'PouÅ¾Ã­t pÅ™ihlaÅ¡ovacÃ­ jmÃ©no jako autora');
+@define('PLUGIN_EVENT_XMLRPC_ASUREAUTHOR_REALNAME', 'PouÅ¾Ã­t skuteÄnÃ© jmÃ©no jako autora');
+@define('PLUGIN_EVENT_XMLRPC_UPLOADDIR', 'AdresÃ¡Å™ pro upload');
+@define('PLUGIN_EVENT_XMLRPC_UPLOADDIR_DESC', 'Pokud klienti nahrÃ¡vajÃ­ mÃ©dia (napÅ™. obrÃ¡zky a videa), do jakÃ©ho adresÃ¡Å™e v mediatÃ©ce se majÃ­ uklÃ¡dat?');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_HEADER', '<div class="msg_hint msg-btm msg-sm"><h3>HlÃ¡sit SPAM AntiSpamovÃ½m pluginÅ¯m</h3>
+Tento plugin je schopen hlÃ¡sit HAM a SPAM AntiSpamovÃ½m pluginÅ¯m, kterÃ© umoÅ¾ÅˆujÃ­ pÅ™ijÃ­mat tyto hlÃ¡Å¡ky, aby na nÄ› mohly reagovat (napÅ™. se z nich uÄit).<br/>
+Porovnejte s tlaÄÃ­tky Spam/Ham v seznamu komentÃ¡Å™Å¯. 
+HlÃ¡Å¡enÃ­ tohoto pluginu budou mÃ­t stejnÃ½ ÃºÄinek jako kliknutÃ­ na tato tlaÄÃ­tka v administraÄnÃ­ sekci.<br/>
+Pokud nÄ›kteÅ™Ã­ klienti nemajÃ­ samostatnÃ¡ tlaÄÃ­tka, ale pouze moÅ¾nosti povolit a poÅ¾Ã¡dat o schvÃ¡lenÃ­ (moderovat), mÅ¯Å¾ete nastavit, kterÃ© hlÃ¡Å¡ky budou kdy poslÃ¡ny.<br/>
+Pokud VÃ¡Å¡ klient neumÃ­ posÃ­lat hlÃ¡Å¡enÃ­ o spamu, moÅ¾nÃ¡ se vÃ¡m bude hodit, kdyÅ¾ nastavÃ­te, aby byl hlÃ¡Å¡en spam pokaÅ¾dÃ©, kdyÅ¾ zvolÃ­te moderovat (moderate, poÅ¾Ã¡dat o schvÃ¡lenÃ­).</div>');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM', 'KomentÃ¡Å™ oznaÄenÃ½ jako SPAM');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_SPAM_DESC', 'Klient oznaÄil komentÃ¡Å™ jako SPAM');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED', 'KomentÃ¡Å™ schvÃ¡len');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_APPROVED_DESC', 'Klient oznaÄil komentÃ¡Å™ jako schvÃ¡lenÃ½');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING', 'KomentÃ¡Å™ byl moderovÃ¡n');
+@define('PLUGIN_EVENT_XMLRPC_EVENT_PENDING_DESC', 'Klient oznaÄil komentÃ¡Å™ jako moderovanÃ½ (k dalÅ¡Ã­mu schvÃ¡lenÃ­)');
+@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_NONE', 'NedÄ›lat nic');
+@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_SPAM', 'HlÃ¡sit jako SPAM');
+@define('PLUGIN_EVENT_XMLRPC_EVENTVALUE_HAM', 'HlÃ¡sit jako HAM');
 
