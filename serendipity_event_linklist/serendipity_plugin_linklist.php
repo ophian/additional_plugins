@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_linklist extends serendipity_plugin
 {
-    var $title = PLUGIN_LINKS_NAME;
+    public $title = PLUGIN_LINKS_NAME;
 
     function introspect(&$propbag)
     {
@@ -20,7 +22,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '1.4.0');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
