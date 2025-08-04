@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_dsgvo_gdpr extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_DSGVO_GDPR_NAME;
+    public $title = PLUGIN_EVENT_DSGVO_GDPR_NAME;
 
     function introspect(&$propbag)
     {
@@ -18,11 +20,11 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '2.05');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.3.3'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('event_hooks',
@@ -471,12 +473,12 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         <div class="clearfix inputs">
             <div class="form_field">
                 <label for="filter_author"><?php echo AUTHOR; ?></label>
-                <textarea id="filter_author" name="serendipity[filter][author]"><?php echo isset($serendipity['POST']['filter']['author']) ? serendipity_specialchars($serendipity['POST']['filter']['author']) : ''; ?></textarea>
+                <textarea id="filter_author" name="serendipity[filter][author]"><?php echo isset($serendipity['POST']['filter']['author']) ? htmlspecialchars($serendipity['POST']['filter']['author']) : ''; ?></textarea>
             </div>
 
             <div class="form_field">
                 <label for="filter_email"><?php echo EMAIL; ?></label>
-                <textarea id="filter_email" name="serendipity[filter][email]"><?php echo isset($serendipity['POST']['filter']['email']) ? serendipity_specialchars($serendipity['POST']['filter']['email']) : ''; ?></textarea>
+                <textarea id="filter_email" name="serendipity[filter][email]"><?php echo isset($serendipity['POST']['filter']['email']) ? htmlspecialchars($serendipity['POST']['filter']['email']) : ''; ?></textarea>
             </div>
 
         </div>

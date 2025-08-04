@@ -1,36 +1,36 @@
 <?php
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_NAME', 'DSGVO / GDPR: Datenschutz-Grundverordnung');
-@define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-Erklärung und dafür benötigte Informationen');
-@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Ihre Datenschutzerklärung / Impressum');
-@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'Sie können die obige automatische Überprüfung als groben Entwurf einer Information sehen, deren Elemente Sie (soweit sie zutreffen) in Ihre Datenschutzerklärung aufnehmen sollten. Stellen Sie sicher, dass Ihre Datenschutzerklärung alle relevanten Informationen enthält. Wenden Sie sich an einen Anwalt, wenn Sie dabei Hilfe benötigen, wir können Ihnen aus Haftungsgründen leider keinen vollständigen Entwurf zur Verfügung stellen.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optionale URL zur Datenschutzerklärung');
-@define('PLUGIN_EVENT_DSGVO_GDPR_URL_DESC', 'Standardmäßig wird ein interner Link erstellt, der den Text Ihrer Datenschutzerklärung mit dem hier eingegebenen Text anzeigt (siehe textarea input form "Ihre Datenschutzerklärung / Impressum" weiter unten). Wenn Sie jedoch eine bestimmte URL (oder eine statische Seiten-URL) haben, mit der Sie Ihre Besucher verlinken möchten, können Sie diese hier eingeben. Dann wird der Text der Datenschutzerklärung nicht angezeigt und muss nicht eingegeben werden.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'Ausdrückliche Annahme in Formularen erforderlich?');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'Wenn aktiviert, müssen Besucher eine zusätzliche Checkbox für Blog-Kommentare oder Kontaktformulare aktivieren, um Ihre Datenschutzerklärung zu bestätigen.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_DESC', 'Dieses Plugin soll Blog-Besitzern helfen, die Ãœbereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewÃ¤hrleisten.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_MENU', 'GDPR-ErklÃ¤rung und dafÃ¼r benÃ¶tigte Informationen');
+@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT', 'Ihre DatenschutzerklÃ¤rung / Impressum');
+@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_DESC', 'Sie kÃ¶nnen die obige automatische ÃœberprÃ¼fung als groben Entwurf einer Information sehen, deren Elemente Sie (soweit sie zutreffen) in Ihre DatenschutzerklÃ¤rung aufnehmen sollten. Stellen Sie sicher, dass Ihre DatenschutzerklÃ¤rung alle relevanten Informationen enthÃ¤lt. Wenden Sie sich an einen Anwalt, wenn Sie dabei Hilfe benÃ¶tigen, wir kÃ¶nnen Ihnen aus HaftungsgrÃ¼nden leider keinen vollstÃ¤ndigen Entwurf zur VerfÃ¼gung stellen.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_URL', 'Optionale URL zur DatenschutzerklÃ¤rung');
+@define('PLUGIN_EVENT_DSGVO_GDPR_URL_DESC', 'StandardmÃ¤ÃŸig wird ein interner Link erstellt, der den Text Ihrer DatenschutzerklÃ¤rung mit dem hier eingegebenen Text anzeigt (siehe textarea input form "Ihre DatenschutzerklÃ¤rung / Impressum" weiter unten). Wenn Sie jedoch eine bestimmte URL (oder eine statische Seiten-URL) haben, mit der Sie Ihre Besucher verlinken mÃ¶chten, kÃ¶nnen Sie diese hier eingeben. Dann wird der Text der DatenschutzerklÃ¤rung nicht angezeigt und muss nicht eingegeben werden.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX', 'AusdrÃ¼ckliche Annahme in Formularen erforderlich?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_CHECKBOX_DESC', 'Wenn aktiviert, mÃ¼ssen Besucher eine zusÃ¤tzliche Checkbox fÃ¼r Blog-Kommentare oder Kontaktformulare aktivieren, um Ihre DatenschutzerklÃ¤rung zu bestÃ¤tigen.');
 
-@define('PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG', 'Wurde dieses Feld bereits unter einer anderen Sprache abgespeichert, löschen Sie den Inhalt und speichern Sie erneut, um eine angepasste Sprach-Version zum Speichern zu erhalten.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT', 'Text für Kommentarzustimmung');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC', 'Geben Sie hier den Text ein, der dem Benutzer zur Annahme Ihrer Aufgabenstellung angezeigt wird. Verwenden Sie %gdpr_url% als Platzhalter für die URL.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT', 'Ich bin damit einverstanden, dass meine Daten gespeichert werden. Bitte lesen Sie die <a href="%gdpr_url%" target="_blank" rel="noopener">Nutzungsbedingungen / Impressum</a> für weitere Details.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SAVENEWLANG', 'Wurde dieses Feld bereits unter einer anderen Sprache abgespeichert, lÃ¶schen Sie den Inhalt und speichern Sie erneut, um eine angepasste Sprach-Version zum Speichern zu erhalten.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT', 'Text fÃ¼r Kommentarzustimmung');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DESC', 'Geben Sie hier den Text ein, der dem Benutzer zur Annahme Ihrer Aufgabenstellung angezeigt wird. Verwenden Sie %gdpr_url% als Platzhalter fÃ¼r die URL.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_TEXT_DEFAULT', 'Ich bin damit einverstanden, dass meine Daten gespeichert werden. Bitte lesen Sie die <a href="%gdpr_url%" target="_blank" rel="noopener">Nutzungsbedingungen / Impressum</a> fÃ¼r weitere Details.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_INFO', 'Informationen zur GDPR-Relevanz Ihres Blogs');
-@define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity erlaubt es Plugins zu spezifizieren, welche Auswirkungen sie auf die Nutzung und Handhabung sensibler Daten in Ihrem Blog haben. An dieser Stelle werden diese Daten automatisch ausgewertet und zu Ihrer Information an dieser Stelle ausgegeben. Bitte stellen Sie sicher, dass Sie immer die neuesten Versionen ihrer Plugins verwenden. Sie sind selbst dafür verantwortlich, die von Ihnen genutzten Dienste dem Besucher zur Verfügung zu stellen. Wenn Sie Funktionen außerhalb vom Serendipity Kern und seinen Plugins (inkl. Spartacus) verwenden (benutzerdefinierte Plugins, benutzerdefinierte Vorlagen, Snippets), die relevant sind, sollten Sie diese in Ihre Datenschutzerklärung aufnehmen!');
+@define('PLUGIN_EVENT_DSGVO_GDPR_INFO_DESC', 'Serendipity erlaubt es Plugins zu spezifizieren, welche Auswirkungen sie auf die Nutzung und Handhabung sensibler Daten in Ihrem Blog haben. An dieser Stelle werden diese Daten automatisch ausgewertet und zu Ihrer Information an dieser Stelle ausgegeben. Bitte stellen Sie sicher, dass Sie immer die neuesten Versionen ihrer Plugins verwenden. Sie sind selbst dafÃ¼r verantwortlich, die von Ihnen genutzten Dienste dem Besucher zur VerfÃ¼gung zu stellen. Wenn Sie Funktionen auÃŸerhalb vom Serendipity Kern und seinen Plugins (inkl. Spartacus) verwenden (benutzerdefinierte Plugins, benutzerdefinierte Vorlagen, Snippets), die relevant sind, sollten Sie diese in Ihre DatenschutzerklÃ¤rung aufnehmen!');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE', 'Anonymisiere IPs?');
-@define('PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE_DESC', 'Wenn aktiviert, werden die letzten Teile der IP-Adresse (ipv4 und ipv6) durch "0" ersetzt. Dies bedeutet, dass überall dort, wo Serendipity die IP-Adresse des Besuchers speichert oder nutzt (auch für Anti-Spam-Methoden), die aufgezeichnete IP-Adresse nicht die tatsächliche IP-Adresse des Nutzers ist. Im Falle eines missbräuchlichen Zugriffs können Sie die tatsächliche IP, dann beispielsweise für einen Kommentar, nicht mehr erkennen.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_ANONYMIZE_DESC', 'Wenn aktiviert, werden die letzten Teile der IP-Adresse (ipv4 und ipv6) durch "0" ersetzt. Dies bedeutet, dass Ã¼berall dort, wo Serendipity die IP-Adresse des Besuchers speichert oder nutzt (auch fÃ¼r Anti-Spam-Methoden), die aufgezeichnete IP-Adresse nicht die tatsÃ¤chliche IP-Adresse des Nutzers ist. Im Falle eines missbrÃ¤uchlichen Zugriffs kÃ¶nnen Sie die tatsÃ¤chliche IP, dann beispielsweise fÃ¼r einen Kommentar, nicht mehr erkennen.');
 
-@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Link zur Erklärung in der Fußzeile anzeigen?');
-@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_DESC', 'Wenn aktiviert, wird ein Link zu Ihrer Datenschutzerklärung in die Fußzeile Ihres Blogs eingefügt. Sie können den angezeigten Text anpassen. Der Platzhalter %gdpr_url% kann für diesen Link verwendet werden.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT', 'Datenschutzerklärung Linktext');
-@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DESC', 'Wenn der Link zur Datenschutzerklärung aktiviert ist, geben Sie den Text ein, den Sie dort anzeigen möchten');
-@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DEFAULT', '<a href="%gdpr_url%">Datenschutzerklärung / Impressum</a>');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER', 'Link zur ErklÃ¤rung in der FuÃŸzeile anzeigen?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_DESC', 'Wenn aktiviert, wird ein Link zu Ihrer DatenschutzerklÃ¤rung in die FuÃŸzeile Ihres Blogs eingefÃ¼gt. Sie kÃ¶nnen den angezeigten Text anpassen. Der Platzhalter %gdpr_url% kann fÃ¼r diesen Link verwendet werden.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT', 'DatenschutzerklÃ¤rung Linktext');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DESC', 'Wenn der Link zur DatenschutzerklÃ¤rung aktiviert ist, geben Sie den Text ein, den Sie dort anzeigen mÃ¶chten');
+@define('PLUGIN_EVENT_DSGVO_GDPR_SHOW_IN_FOOTER_TEXT_DEFAULT', '<a href="%gdpr_url%">DatenschutzerklÃ¤rung / Impressum</a>');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_MENU', 'CookieConsent');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT','CookieConsent durch Osano aktivieren?');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_DESC', 'Wenn aktiviert, wird ein Cookie-Banner in Ihrem Blog angezeigt. Dabei wird die CookieConsent Javascript-Bibliothek verwendet. Es unterstützt nur den Typ der Cookie-Informationen. Sie können den Generator auf <a href="https://cookieconsent.insites.com/download/">https://cookieconsent.insites.com/download/</a> verwenden, um den eigentlichen Code zu erstellen; stellen Sie sicher, dass Sie NUR den Hauptskript-Teil hier einfügen und NICHT den Link zum CSS und JavaScript, um sicherzustellen, dass kein Code von fremden Servern geladen wird, sondern nur von Ihrem.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_DESC', 'Wenn aktiviert, wird ein Cookie-Banner in Ihrem Blog angezeigt. Dabei wird die CookieConsent Javascript-Bibliothek verwendet. Es unterstÃ¼tzt nur den Typ der Cookie-Informationen. Sie kÃ¶nnen den Generator auf <a href="https://cookieconsent.insites.com/download/">https://cookieconsent.insites.com/download/</a> verwenden, um den eigentlichen Code zu erstellen; stellen Sie sicher, dass Sie NUR den Hauptskript-Teil hier einfÃ¼gen und NICHT den Link zum CSS und JavaScript, um sicherzustellen, dass kein Code von fremden Servern geladen wird, sondern nur von Ihrem.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT', 'CookieConsent Code');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DESC', 'Dieses Javascript ist einfach zu lesen, hier können Sie alle Farben und Texte anpassen. Sie müssten ihre korrekte Domain Adresse eingeben und das Secure Attribute auf true oder false setzen, wenn ihr Blog unter einem gesicherten Zertifikat läuft. Sie können %gdpr_url% als Platzhalter für den Link zu Ihrer Datenschutzerklärung verwenden.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DESC', 'Dieses Javascript ist einfach zu lesen, hier kÃ¶nnen Sie alle Farben und Texte anpassen. Sie mÃ¼ssten ihre korrekte Domain Adresse eingeben und das Secure Attribute auf true oder false setzen, wenn ihr Blog unter einem gesicherten Zertifikat lÃ¤uft. Sie kÃ¶nnen %gdpr_url% als Platzhalter fÃ¼r den Link zu Ihrer DatenschutzerklÃ¤rung verwenden.');
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_TEXT_DEFAULT', '
 <script>
     window.addEventListener("load", function(){
@@ -54,7 +54,7 @@
       "content": {
         "message": "Diese Website verwendet Cookies.",
         "dismiss": "Verstanden",
-        "link": "Lesen Sie mehr in der Datenschutzerklärung",
+        "link": "Lesen Sie mehr in der DatenschutzerklÃ¤rung",
         "href": "%gdpr_url%"
       }
     })});
@@ -62,25 +62,25 @@
 ');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_PATH', 'CookieConsent javascript location');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_PATH_DESC', 'Dieses Plugin bündelt die JS und CSS der Cookie-Einwilligungsseite. Sie können hier auf andere Verzeichnisse verweisen. Stellen Sie sicher, dass die Dateien cookieconsent.min.css und cookieconsent.min.js heißen.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_ERROR', 'Sie müssen die Bedingungen akzeptieren, um einen Kommentar zu hinterlassen.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_ERROR', 'Dieses Blog hat noch keine Datenschutzerklärung erstellt, es muss in der Plugin-Konfiguration konfiguriert werden.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COOKIE_CONSENT_PATH_DESC', 'Dieses Plugin bÃ¼ndelt die JS und CSS der Cookie-Einwilligungsseite. Sie kÃ¶nnen hier auf andere Verzeichnisse verweisen. Stellen Sie sicher, dass die Dateien cookieconsent.min.css und cookieconsent.min.js heiÃŸen.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_COMMENTFORM_ERROR', 'Sie mÃ¼ssen die Bedingungen akzeptieren, um einen Kommentar zu hinterlassen.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_STATEMENT_ERROR', 'Dieses Blog hat noch keine DatenschutzerklÃ¤rung erstellt, es muss in der Plugin-Konfiguration konfiguriert werden.');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_SERENDIPITY_CORE', '
 
 <h4>Serendipity Kern</h4>
 
-<p>Serendipity verwendet ein sogenanntes "Session-Cookie" für Frontend und Backend. Ein Besucher erhält ein Cookie mit dem folgenden Inhalt:
-eine eindeutige ID, die auf dem Server verwendet wird, um temporäre Session-Benutzerdaten zu speichern (z.B. Login-Gültigkeit, Benutzereinstellungen).
-Dieses Cookie ist obligatorisch für die Anmeldung am Backend, aber optional für das Frontend.
-Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre Daten zu speichern.</p>
+<p>Serendipity verwendet ein sogenanntes "Session-Cookie" fÃ¼r Frontend und Backend. Ein Besucher erhÃ¤lt ein Cookie mit dem folgenden Inhalt:
+eine eindeutige ID, die auf dem Server verwendet wird, um temporÃ¤re Session-Benutzerdaten zu speichern (z.B. Login-GÃ¼ltigkeit, Benutzereinstellungen).
+Dieses Cookie ist obligatorisch fÃ¼r die Anmeldung am Backend, aber optional fÃ¼r das Frontend.
+Bestimmte Plugins kÃ¶nnen das Session-Cookie verwenden, um zusÃ¤tzliche temporÃ¤re Daten zu speichern.</p>
 
-<p>Die folgenden Daten können von der Serendipity-Anwendung auf dem Server gespeichert werden (temporär, ungültig nach dem vom Server konfigurierten Timeout, normalerweise im Zeitbereich von Stunden):</p>
+<p>Die folgenden Daten kÃ¶nnen von der Serendipity-Anwendung auf dem Server gespeichert werden (temporÃ¤r, ungÃ¼ltig nach dem vom Server konfigurierten Timeout, normalerweise im Zeitbereich von Stunden):</p>
 
 <ul>
     <li>HTTP-Browser-Referrer bei der Eingabe des Blogs</li>
     <li>Einzigartiges Autoren-ID-Token</li>
-    <li>Benutzerdaten eines angemeldeten Autors, wie sie in der Datenbank gespeichert sind, für einen schnelleren Zugriff auf:
+    <li>Benutzerdaten eines angemeldeten Autors, wie sie in der Datenbank gespeichert sind, fÃ¼r einen schnelleren Zugriff auf:
         <ul>
             <li>Passwort</li>
             <li>ID des Benutzers</li>
@@ -93,7 +93,7 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
     </li>
     <li>Letzter Blogeintrag beim Speichern</li>
     <li>Indikator, ob das Smarty Templating verwendet wird</li>
-    <li>Möglicher Inhalt eines generierten Captcha-Bildes</li>
+    <li>MÃ¶glicher Inhalt eines generierten Captcha-Bildes</li>
     <li>Das konfigurierte Frontend-Theme</li>
 </ul>
 
@@ -113,8 +113,8 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
     <li>Speichert in der Datenbank, wenn das Referrer-Tracking aktiviert ist (Statistik)</li>
     <li>Gespeichert bei den Kommentaren eines Besuchers und werden in der E-Mail, die an Moderatoren gesendet wird, angezeigt</li>
     <li>Speichert in der Logdatei (falls aktiviert) des Antispam-Spamblock-Plugins</li>
-    <li>Übermittelt im Antispam-Filter von Akismet (falls aktiviert)</li>
-    <li>Temporärer Nur-Lesezugriff zur Überprüfung von Referrern, Logins, IP-Flooding</li>
+    <li>Ãœbermittelt im Antispam-Filter von Akismet (falls aktiviert)</li>
+    <li>TemporÃ¤rer Nur-Lesezugriff zur ÃœberprÃ¼fung von Referrern, Logins, IP-Flooding</li>
 </ul>
 
 <p>Benutzereingaben von Besuchern (nicht von Redakteuren):</p>
@@ -124,14 +124,14 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
     <li>Referring URL beim Betreten des Blogs (wenn das Referrer-Tracking aktiviert ist, gespeichert in der Datenbanktabelle serendipity_referers)</li>
 </ul>
 
-<p>Zusätzlich sind derzeit die folgenden Plugins aktiviert und dies ist ihr automatisch generiertes Manifest:</p>.
+<p>ZusÃ¤tzlich sind derzeit die folgenden Plugins aktiviert und dies ist ihr automatisch generiertes Manifest:</p>.
 
 ');
 @define('PLUGIN_EVENT_DSGVO_GDPR_SERENDIPITY_CORE_THEMES', '
 
 <h2>Serendipity Kern Themes</h2>
 
-<p>Zusätzlich sind folgende Themes vorhanden und dies ist ihr automatisch generiertes Manifest:</p>.
+<p>ZusÃ¤tzlich sind folgende Themes vorhanden und dies ist ihr automatisch generiertes Manifest:</p>.
 
 ');
 
@@ -142,16 +142,16 @@ Bestimmte Plugins können das Session-Cookie verwenden, um zusätzliche temporäre 
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_USER_NO', 'Keine Speicherung von Benutzerdaten (oder nicht angegeben)');
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_YES', 'Speichert IP-Daten (in lokalen oder externen Speichermedien)');
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_STORAGE_IP_NO', 'Speichert keine IP-Daten (oder nicht spezifiziert)');
-@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES', 'Arbeitet mit IP-Daten (Lesezugriff, auch über Metadaten)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_YES', 'Arbeitet mit IP-Daten (Lesezugriff, auch Ã¼ber Metadaten)');
 @define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_USES_IP_NO', 'Verwendet keine IP-Daten (oder nicht spezifiziert)');
-@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES', 'Überträgt Benutzereingaben an Dienste / Dritte (nicht unbedingt gespeichert)');
-@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO', 'Übermittelt keine Benutzereingaben an Dienste / Dritte (oder nicht spezifiziert)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_YES', 'ÃœbertrÃ¤gt Benutzereingaben an Dienste / Dritte (nicht unbedingt gespeichert)');
+@define('PLUGIN_EVENT_DSGVO_GDPR_PLUGINS_ATTR_TRANSMITS_NO', 'Ãœbermittelt keine Benutzereingaben an Dienste / Dritte (oder nicht spezifiziert)');
 
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND', 'Verwaltung des Datenschutz-Plugins');
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_SB_TITLE', 'Kommentar-Benutzerdaten');
 @define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_TITLE', 'DSGVO/GDPR - Kommentar-Benutzerdaten verwalten');
-@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO', 'Hier können Sie einen passgenauen Benutzernamen oder eine E-Mail-Adresse eingeben, um alle Kommentar-Metadaten dieses Benutzer zu löschen oder die Kommentare zu exportieren. Sie können mehrere Namen mit einem Zeilenumbruch trennen.');
-@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_DELFAIL', 'Um Daten zu exportieren oder zu löschen, müssen Sie mindestens einen Benutzernamen oder eine E-Mail-Adresse angeben.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_INFO', 'Hier kÃ¶nnen Sie einen passgenauen Benutzernamen oder eine E-Mail-Adresse eingeben, um alle Kommentar-Metadaten dieses Benutzer zu lÃ¶schen oder die Kommentare zu exportieren. Sie kÃ¶nnen mehrere Namen mit einem Zeilenumbruch trennen.');
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_DELFAIL', 'Um Daten zu exportieren oder zu lÃ¶schen, mÃ¼ssen Sie mindestens einen Benutzernamen oder eine E-Mail-Adresse angeben.');
 
-@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_CHECK_REQUESTS', 'Momentan ist ein solches Auskunfts- bzw Löschersuchen nicht oder nur bedingt über die Email verifizierbar. Ist der Anfragende wirklich auch der Kommentator?');
+@define('PLUGIN_EVENT_DSGVO_GDPR_BACKEND_CHECK_REQUESTS', 'Momentan ist ein solches Auskunfts- bzw LÃ¶schersuchen nicht oder nur bedingt Ã¼ber die Email verifizierbar. Ist der Anfragende wirklich auch der Kommentator?');
 
