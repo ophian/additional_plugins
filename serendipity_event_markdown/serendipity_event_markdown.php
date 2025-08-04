@@ -12,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_markdown extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_MARKDOWN_NAME;
+    public $title = PLUGIN_EVENT_MARKDOWN_NAME;
 
     function introspect(&$propbag)
     {
@@ -27,7 +27,7 @@ class serendipity_event_markdown extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.0.2');
+        $propbag->add('version',       '2.0.3');
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array(
             'backend_entryform' => true,
