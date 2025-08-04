@@ -11,6 +11,8 @@
 // Steve Tonnesen.
 //
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -21,7 +23,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_todolist extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_TODOLIST_TITLE;
+    public $title = PLUGIN_EVENT_TODOLIST_TITLE;
 
     function introspect(&$propbag)
     {
@@ -35,11 +37,11 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '2.2.0');
+        $propbag->add('version', '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.2',
-            'smarty'      => '3.1',
-            'php'         => '7.3'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('configuration', array('note','title','display','category','cache','colorid','barlength','categorybarlength','barheight', 'font', 'fontsize','whitetextborder','outsidetext','backgroundcolor','cacheimages','numentries'));
         $propbag->add('stackable',     true);
@@ -1407,9 +1409,9 @@ class serendipity_event_todolist extends serendipity_event
                 }
 
                 if ($entry['id'] == $default) {
-                    $entrytext.= '<option value="' . $entry['id'] . '" selected="selected">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($title) : htmlspecialchars($title, ENT_COMPAT, LANG_CHARSET)) . "</option>\n";
+                    $entrytext.= '<option value="' . $entry['id'] . '" selected="selected">' . htmlspecialchars($title) . "</option>\n";
                 } else {
-                    $entrytext .= '<option value="' . $entry['id'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($title) : htmlspecialchars($title, ENT_COMPAT, LANG_CHARSET)) . "</option>\n";
+                    $entrytext .= '<option value="' . $entry['id'] . '">' . htmlspecialchars($title) . "</option>\n";
                 }
             }
         }
@@ -2020,7 +2022,7 @@ class serendipity_event_todolist extends serendipity_event
 ?>
                     <tr>
                         <td class="form_check"><input type="checkbox" name="serendipity[category_to_remove][]" value="<?php echo $category['categoryid']; ?>"></td>
-                        <td class="category_level_<?php echo $category['depth'] ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($category['category_name']) : htmlspecialchars($category['category_name'], ENT_COMPAT, LANG_CHARSET)) ?></td>
+                        <td class="category_level_<?php echo $category['depth'] ?>"><?php echo htmlspecialchars($category['category_name']) ?></td>
                         <td class="form_select"><select aria-labelledby="todolist_category_label" name="serendipity[category_to_recolor][<?php echo $category['categoryid'] ?>]"><?php echo $colortext ?></select></td>
                     </tr>
 <?php
