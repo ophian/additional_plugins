@@ -1,76 +1,76 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/04
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/12/25
  */
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_NAME', 'Markup: Vıstup na mobil');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_DESC', 'Tento plugin se stará o vytvoøení kódu optimalizovaného pro mobilní telefony (tzv. XHTML MP), pokud zjistí, ¾e stránku prohlí¾í prohlí¾eè pro mobily. Plugin je speciálnì optimalizován pro iPhone a iPod Touch. Plugin také mìní velikost obrázkù, aby se pøizpùsobily velikosti displeje.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_NAME', 'Markup: VÃ½stup na mobil');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_DESC', 'Tento plugin se starÃ¡ o vytvoÅ™enÃ­ kÃ³du optimalizovanÃ©ho pro mobilnÃ­ telefony (tzv. XHTML MP), pokud zjistÃ­, Å¾e strÃ¡nku prohlÃ­Å¾Ã­ prohlÃ­Å¾eÄ pro mobily. Plugin je speciÃ¡lnÄ› optimalizovÃ¡n pro iPhone a iPod Touch. Plugin takÃ© mÄ›nÃ­ velikost obrÃ¡zkÅ¯, aby se pÅ™izpÅ¯sobily velikosti displeje.');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_ENABLE_PLUGIN_NAME', 'Povolit plugin');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_ENABLE_PLUGIN_DESC', 'Povoluje optimalizace vıstupního HTML pro mobilní telefony');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_ENABLE_PLUGIN_DESC', 'Povoluje optimalizace vÃ½stupnÃ­ho HTML pro mobilnÃ­ telefony');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_MOBILE_TEMPLATE_NAME', '©ablona pro mobily');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_MOBILE_TEMPLATE_DESC', 'Jméno ¹ablony vzhledu pro mobilní telefony. Vıchozí je "xhtml_mp", která je distribuována s pluginem.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_MOBILE_TEMPLATE_NAME', 'Å ablona pro mobily');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_MOBILE_TEMPLATE_DESC', 'JmÃ©no Å¡ablony vzhledu pro mobilnÃ­ telefony. VÃ½chozÃ­ je "xhtml_mp", kterÃ¡ je distribuovÃ¡na s pluginem.');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_IPHONE_TEMPLATE_NAME', '¹ablona vzhledu pro iPohne');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_IPHONE_TEMPLATE_DESC', 'Jméno ¹ablony vzhledu pro iPhony. Vıchozí je "iphone,app", která je distribuována spoleènì s pluginem.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_IPHONE_TEMPLATE_NAME', 'Å¡ablona vzhledu pro iPohne');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_IPHONE_TEMPLATE_DESC', 'JmÃ©no Å¡ablony vzhledu pro iPhony. VÃ½chozÃ­ je "iphone,app", kterÃ¡ je distribuovÃ¡na spoleÄnÄ› s pluginem.');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_IMAGES_NAME', 'Zobrazovat obrázky');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_IMAGES_DESC', 'Zobrazovat obrázky v pøíspìvcích');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_IMAGES_NAME', 'Zobrazovat obrÃ¡zky');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_IMAGES_DESC', 'Zobrazovat obrÃ¡zky v pÅ™Ã­spÄ›vcÃ­ch');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SCALE_IMAGE_WIDTH_NAME', 'Maximální ¹íøka obrázku');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SCALE_IMAGE_WIDTH_DESC', 'Zmìní velikost obrázku na ¹íøku X pixelù. Nastavte 0 pro zakázání zmìny velikosti obrázkù. Vy¾aduje knihovnu GD!');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_NAME', 'Pøesmìrování (redirect)');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_DESC', 'Pøesmìrovává mobilní prohlí¾eèe na jinou webovou adresu (viz. ní¾e)');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SCALE_IMAGE_WIDTH_NAME', 'MaximÃ¡lnÃ­ Å¡Ã­Å™ka obrÃ¡zku');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SCALE_IMAGE_WIDTH_DESC', 'ZmÄ›nÃ­ velikost obrÃ¡zku na Å¡Ã­Å™ku X pixelÅ¯. Nastavte 0 pro zakÃ¡zÃ¡nÃ­ zmÄ›ny velikosti obrÃ¡zkÅ¯. VyÅ¾aduje knihovnu GD!');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_NAME', 'PÅ™esmÄ›rovÃ¡nÃ­ (redirect)');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_DESC', 'PÅ™esmÄ›rovÃ¡vÃ¡ mobilnÃ­ prohlÃ­Å¾eÄe na jinou webovou adresu (viz. nÃ­Å¾e)');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_URL_NAME', 'Cíl pøesmìrování');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_URL_DESC', 'Pøesmìrovat mobilní prohlí¾eèe na tuto adresu (napø. "m.vasblog.com"). Mù¾e to bıt jinı host, kde bì¾í stejná instance Serendipity, napø. z dùvodù optimalizace na vyhledávání (SEO).');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_URL_NAME', 'CÃ­l pÅ™esmÄ›rovÃ¡nÃ­');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REDIRECT_URL_DESC', 'PÅ™esmÄ›rovat mobilnÃ­ prohlÃ­Å¾eÄe na tuto adresu (napÅ™. "m.vasblog.com"). MÅ¯Å¾e to bÃ½t jinÃ½ host, kde bÄ›Å¾Ã­ stejnÃ¡ instance Serendipity, napÅ™. z dÅ¯vodÅ¯ optimalizace na vyhledÃ¡vÃ¡nÃ­ (SEO).');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_STICKY_HOST_NAME', 'Mobilní host');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_STICKY_HOST_DESC', 'Tento host bude v¾dycky vracet vıstup pro mobily. Nechte prázdné pro zakázání.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_STICKY_HOST_NAME', 'MobilnÃ­ host');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_STICKY_HOST_DESC', 'Tento host bude vÅ¾dycky vracet vÃ½stup pro mobily. Nechte prÃ¡zdnÃ© pro zakÃ¡zÃ¡nÃ­.');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_WURFL_NAME', 'Pou¾ít WURFL');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_WURFL_DESC', 'Pokud je tato volba zapnutá, velikost v¹ech obrázkù bude upravena tak, aby pøesnì sedìly na velikost displeje mobilního zaøízení. Pøi této funkci je pou¾itá optimalizovaná verze WURFL UAP (http://wurfl.sourceforge.net/). Nejnovìj¹í verze souboru "wurfl.xml" je na http://c.seo-mobile.de/. Tento soubor je ale stále dost velkı, proto je cachován. Cachování spotøebovává kolem 50MB na disku. Pokud stáhnete novı soubor "wurfl.xml", zadejte v prohlí¾eèi '.$serendipity['baseURL'].'plugins/serendipity_event_mobile_output/wurfl/update_cache.php pro vytvoøení cache. Tato funkce pou¾ívá vı¹e uvedení nastavení "Maximální ¹íøka obrázku" jako nouzovou hodnotu, pokud se nepodaøí zjistit velikost displeje. Tato funkce mù¾e zvı¹it zátì¾ serveru! DÙLE®ITÉ: webserver musí mít právo zápisu v adresáøi "wurfl/data/" kvùli cachi!');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_WURFL_NAME', 'PouÅ¾Ã­t WURFL');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_WURFL_DESC', 'Pokud je tato volba zapnutÃ¡, velikost vÅ¡ech obrÃ¡zkÅ¯ bude upravena tak, aby pÅ™esnÄ› sedÄ›ly na velikost displeje mobilnÃ­ho zaÅ™Ã­zenÃ­. PÅ™i tÃ©to funkci je pouÅ¾itÃ¡ optimalizovanÃ¡ verze WURFL UAP (http://wurfl.sourceforge.net/). NejnovÄ›jÅ¡Ã­ verze souboru "wurfl.xml" je na http://c.seo-mobile.de/. Tento soubor je ale stÃ¡le dost velkÃ½, proto je cachovÃ¡n. CachovÃ¡nÃ­ spotÅ™ebovÃ¡vÃ¡ kolem 50MB na disku. Pokud stÃ¡hnete novÃ½ soubor "wurfl.xml", zadejte v prohlÃ­Å¾eÄi '.$serendipity['baseURL'].'plugins/serendipity_event_mobile_output/wurfl/update_cache.php pro vytvoÅ™enÃ­ cache. Tato funkce pouÅ¾Ã­vÃ¡ vÃ½Å¡e uvedenÃ­ nastavenÃ­ "MaximÃ¡lnÃ­ Å¡Ã­Å™ka obrÃ¡zku" jako nouzovou hodnotu, pokud se nepodaÅ™Ã­ zjistit velikost displeje. Tato funkce mÅ¯Å¾e zvÃ½Å¡it zÃ¡tÄ›Å¾ serveru! DÅ®LEÅ½ITÃ‰: webserver musÃ­ mÃ­t prÃ¡vo zÃ¡pisu v adresÃ¡Å™i "wurfl/data/" kvÅ¯li cachi!');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_CATEGORIES_NAME', 'Zobrazovat kategorie');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_CATEGORIES_DESC', 'Zobrazit v¹echny kategorie v navigaèní patièce a pøidej funkci pøístupového tlaèítka. Pokud existuje více ne¾ 9 kategorií, s pøístupovım tlaèítkem bude asociováno pouze prvních 9.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_CATEGORIES_DESC', 'Zobrazit vÅ¡echny kategorie v navigaÄnÃ­ patiÄce a pÅ™idej funkci pÅ™Ã­stupovÃ©ho tlaÄÃ­tka. Pokud existuje vÃ­ce neÅ¾ 9 kategoriÃ­, s pÅ™Ã­stupovÃ½m tlaÄÃ­tkem bude asociovÃ¡no pouze prvnÃ­ch 9.');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_TAGS_NAME', 'Odstranit HTML tagy');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_TAGS_DESC', 'Èárkami oddìlenı seznam tagù, které se mají odstraòovat, napø. script, object, embed, ...');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_TAGS_DESC', 'ÄŒÃ¡rkami oddÄ›lenÃ½ seznam tagÅ¯, kterÃ© se majÃ­ odstraÅˆovat, napÅ™. script, object, embed, ...');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_ATTRIBUTES_NAME', 'Odstranit HTML atributy');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_ATTRIBUTES_DESC', 'Èárkami oddìlenı seznam atributù, které se mají odstranit, napø. onclick, onmouseover, style');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REMOVE_ATTRIBUTES_DESC', 'ÄŒÃ¡rkami oddÄ›lenÃ½ seznam atributÅ¯, kterÃ© se majÃ­ odstranit, napÅ™. onclick, onmouseover, style');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REWRITE_WIKIPEDIA_NAME', 'Pøepsat odkazy Wikipedie');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_REWRITE_WIKIPEDIA_DESC', 'Pøepisuje odkaz smìøující na Wikipedii tak, aby smìøovaly na stejné heslo na mobilní Wikipedii (http://wikipedia.7val.com/)');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REWRITE_WIKIPEDIA_NAME', 'PÅ™epsat odkazy Wikipedie');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_REWRITE_WIKIPEDIA_DESC', 'PÅ™episuje odkaz smÄ›Å™ujÃ­cÃ­ na Wikipedii tak, aby smÄ›Å™ovaly na stejnÃ© heslo na mobilnÃ­ Wikipedii (http://wikipedia.7val.com/)');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_DEBUG_PASSWORD_NAME', 'Ladicí heslo');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_DEBUG_PASSWORD_DESC', 'Zadejte heslo, po jeho¾ zadání budou zobrazeny ladicí zprávy. Ty zborazíte pøidáním ?mpDebug=HESLO k URL adrese blogu');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_DEBUG_PASSWORD_NAME', 'LadicÃ­ heslo');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_DEBUG_PASSWORD_DESC', 'Zadejte heslo, po jehoÅ¾ zadÃ¡nÃ­ budou zobrazeny ladicÃ­ zprÃ¡vy. Ty zborazÃ­te pÅ™idÃ¡nÃ­m ?mpDebug=HESLO k URL adrese blogu');
 
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_NAVIGATION', 'Navigace');
 
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_NAME', 'Vytvoøit mapu stránek pro mobily');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_DESC', 'Vytváøí soubor mobile_sitemap.xml(.gz) v koøenovém adresáøi Serendipity pro vyhledávací roboty jako je Google, Ask.com apod.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_NAME', 'VytvoÅ™it mapu strÃ¡nek pro mobily');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_DESC', 'VytvÃ¡Å™Ã­ soubor mobile_sitemap.xml(.gz) v koÅ™enovÃ©m adresÃ¡Å™i Serendipity pro vyhledÃ¡vacÃ­ roboty jako je Google, Ask.com apod.');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_NAME', 'Oznamovat aktualizace');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_DESC', 'Oznamovat aktualizace ní¾e zadanım slu¾bám');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_URL_NAME', 'Seznam URL pro oznámení');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_URL_DESC', 'URL adresy pro posílání oznámení o aktualizacích (%s je nahrazeno URL adresou na soubor s mapou stránek, více slu¾eb oddìlujte støedníkem ";", pokud potøebujete zadat støedník do URL adresy, pou¾ijte "%3B").');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_DESC', 'Oznamovat aktualizace nÃ­Å¾e zadanÃ½m sluÅ¾bÃ¡m');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_URL_NAME', 'Seznam URL pro oznÃ¡menÃ­');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_URL_DESC', 'URL adresy pro posÃ­lÃ¡nÃ­ oznÃ¡menÃ­ o aktualizacÃ­ch (%s je nahrazeno URL adresou na soubor s mapou strÃ¡nek, vÃ­ce sluÅ¾eb oddÄ›lujte stÅ™ednÃ­kem ";", pokud potÅ™ebujete zadat stÅ™ednÃ­k do URL adresy, pouÅ¾ijte "%3B").');
 @define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_GZIP_NAME', 'Gzipovat soubor s mapou mobile_sitemap.xml');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_GZIP_DESC', 'Protokol pro mobilní mapu stránek podporuje gzipované soubory pro zmìn¹ení datového toku. Pokud pøi pou¾ití této funkce narazíte na problémy, mù¾ete ji zkusit vypnout. (Pozn. Pokud Va¹e instalace PHP nepodporuje funkce gzip, plugin bude automaticky tvoøit nezipovanou mapu stránek. Tedy obecnì není nutné tuto volbu vypínat.)');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_PERMALINK_WARNING', 'Varování: pro vygenerování správné mapy stránek musíte mít v nastavení pluginù plugin "permalink" umístìnı pøed pluginem "Sitemap".');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_FAILEDOPEN', 'Nelze otevøít soubor pro psaní.');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_UNKNOWN_HOST', 'Cíl oznámení o aktualizaci nenalezen.');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_ERROR', 'Nepodaøilo se ohlásit aktualizaci na %s: %s<br/>');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_OK', 'Aktualizovaná mapa stránek odeslána na %s.<br/>');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL', 'Pokud se nepodaøilo zapsat mapu stránek na %s, udìlejte to teï náv¹tìvou <a href="%s">tohoto odkazu</a>.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_GZIP_DESC', 'Protokol pro mobilnÃ­ mapu strÃ¡nek podporuje gzipovanÃ© soubory pro zmÄ›nÅ¡enÃ­ datovÃ©ho toku. Pokud pÅ™i pouÅ¾itÃ­ tÃ©to funkce narazÃ­te na problÃ©my, mÅ¯Å¾ete ji zkusit vypnout. (Pozn. Pokud VaÅ¡e instalace PHP nepodporuje funkce gzip, plugin bude automaticky tvoÅ™it nezipovanou mapu strÃ¡nek. Tedy obecnÄ› nenÃ­ nutnÃ© tuto volbu vypÃ­nat.)');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_PERMALINK_WARNING', 'VarovÃ¡nÃ­: pro vygenerovÃ¡nÃ­ sprÃ¡vnÃ© mapy strÃ¡nek musÃ­te mÃ­t v nastavenÃ­ pluginÅ¯ plugin "permalink" umÃ­stÄ›nÃ½ pÅ™ed pluginem "Sitemap".');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_FAILEDOPEN', 'Nelze otevÅ™Ã­t soubor pro psanÃ­.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_UNKNOWN_HOST', 'CÃ­l oznÃ¡menÃ­ o aktualizaci nenalezen.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_ERROR', 'NepodaÅ™ilo se ohlÃ¡sit aktualizaci na %s: %s<br/>');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_OK', 'AktualizovanÃ¡ mapa strÃ¡nek odeslÃ¡na na %s.<br/>');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SITEMAP_REPORT_MANUAL', 'Pokud se nepodaÅ™ilo zapsat mapu strÃ¡nek na %s, udÄ›lejte to teÄ nÃ¡vÅ¡tÄ›vou <a href="%s">tohoto odkazu</a>.');
 
 // Next lines were translated on 2010/12/25
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME', '©ablona pro Androidy');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC', 'Název ¹ablony pro telefony Android. Vıchozí je "android,app", která je souèástí pluginu.');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME', 'Malé ochutnávky');
-@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC', 'Pokud je zapnuto, bude v pøehledu pøíspìvkù zobrazen pouze první odstavec pøíspìvku. Opaènì je zobrazeno celé tìlo bez roz¹íøené textové èásti jako obvykle.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_NAME', 'Å ablona pro Androidy');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_ANDROID_TEMPLATE_DESC', 'NÃ¡zev Å¡ablony pro telefony Android. VÃ½chozÃ­ je "android,app", kterÃ¡ je souÄÃ¡stÃ­ pluginu.');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_NAME', 'MalÃ© ochutnÃ¡vky');
+@define('PLUGIN_EVENT_MOBILE_OUTPUT_SMALLTEASER_DESC', 'Pokud je zapnuto, bude v pÅ™ehledu pÅ™Ã­spÄ›vkÅ¯ zobrazen pouze prvnÃ­ odstavec pÅ™Ã­spÄ›vku. OpaÄnÄ› je zobrazeno celÃ© tÄ›lo bez rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti jako obvykle.');
 

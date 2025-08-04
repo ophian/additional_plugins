@@ -11,10 +11,12 @@ TODO:
   - Testing, testing and some testing indeed!
 */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
-@define('PLUGIN_EVENT_MOBILE_VERSION','1.10');
+@define('PLUGIN_EVENT_MOBILE_VERSION','2.0.0');
 @define('PLUGIN_EVENT_MOBILE_AUTHORS','Pelle Boese, Grischa Brockhaus, Ian Styx');
 
 @define('PLUGIN_EVENT_MOBILE_TPL_IPHONE','iphone.app');
@@ -39,10 +41,10 @@ if (file_exists($template)) {
 
 class serendipity_event_mobile_output extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_MOBILE_OUTPUT_NAME;
-    var $cleanup_tag, $cleanup_checkfor, $cleanup_val, $cleanup_parse;
+    public $title = PLUGIN_EVENT_MOBILE_OUTPUT_NAME;
 
-    var $debugItems = array();
+    private $cleanup_tag, $cleanup_checkfor, $cleanup_val, $cleanup_parse;
+    private $debugItems = array();
 
     function generate_content(&$title)
     {
@@ -109,9 +111,9 @@ class serendipity_event_mobile_output extends serendipity_event
         $propbag->add('author',        PLUGIN_EVENT_MOBILE_AUTHORS);
         $propbag->add('version',       PLUGIN_EVENT_MOBILE_VERSION);
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.0.0',
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2',
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('groups', array('MARKUP'));
@@ -350,7 +352,7 @@ class serendipity_event_mobile_output extends serendipity_event
             $this->debugItems[] = 'Trying to scale images with WURFL';
 
             // already did a wurfl check for this device in our session?
-            if ($_SESSION['mobile_plugin']['ua']==$_SERVER['HTTP_USER_AGENT'] && $_SESSION['mobile_plugin']['wurfl']['width']) {
+            if ($_SESSION['mobile_plugin']['ua'] == $_SERVER['HTTP_USER_AGENT'] && $_SESSION['mobile_plugin']['wurfl']['width']) {
                 // got the wurfl result stored in session
                 $imageWidth = $_SESSION['mobile_plugin']['wurfl']['width'];
                 $this->debugItems[] = 'We don\'t need to query WURFL again as the result was stored in our session';
