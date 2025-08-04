@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_google_analytics extends serendipity_event
  {
-    var $title = PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME;
+    public $title = PLUGIN_EVENT_GOOGLE_ANALYTICS_NAME;
 
     // Docs:
     // - Install Google Tag Manager for web pages: https://developers.google.com/tag-platform/tag-manager/web
@@ -28,11 +30,11 @@ class serendipity_event_google_analytics extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_GOOGLE_ANALYTICS_DESC);
         $propbag->add('stackable', false);
         $propbag->add('author', 'Jari Turkia, kleinerChemiker, Ian Styx');
-        $propbag->add('version', '2.2.0');
+        $propbag->add('version', '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '4.0',
-            'smarty'      => '4.1.0',
-            'php'         => '8.1.0')
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2')
         );
         $propbag->add('groups', array('STATISTICS' ));
         $propbag->add('cachable_events', array('frontend_display' => true ));
