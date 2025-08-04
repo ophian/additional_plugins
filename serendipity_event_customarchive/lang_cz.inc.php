@@ -1,15 +1,15 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/05
  */
 
-@define('PLUGIN_CUSTOMARCHIVE_TITLE', 'Pøizpùsobitelnı archiv pøíspìvkù');
-@define('PLUGIN_CUSTOMARCHIVE_TITLE_BLAHBLAH', 'Zobrazuje náv¹tìvníkovi blogu v¹echny dosud vydané èlánky s mo¾ností tøídìní. Odkaz na tuto stránku by mìl bıt vlo¾en do HTML nugetu (bloku).');
-@define('PLUGIN_CUSTOMARCHIVE_PERMALINK', 'Permalink (stálı odkaz)');
-@define('PLUGIN_CUSTOMARCHIVE_PAGETITLE', 'Zkrácené URL jméno (kvùli zpìtní kompatibilitì)');
-@define('PLUGIN_CUSTOMARCHIVE_PERMALINK_BLAHBLAH', 'Definuje stálı odkaz, pod kterım bude pøístupná stránka s archivem. Musí to bıt absolutní HTTP cesta a musí konèit .htm nebo .html!');
-@define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT', 'Formátovat jako èlánek?');
-@define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT_BLAHBLAH', 'Pokud je nastaveno "Ano", pak je stránka formátována stejnì jako pøíspìvky (barvy, nadpisy, okraje, apod.) (Vıchozí: Ano).');
+@define('PLUGIN_CUSTOMARCHIVE_TITLE', 'PÅ™izpÅ¯sobitelnÃ½ archiv pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_CUSTOMARCHIVE_TITLE_BLAHBLAH', 'Zobrazuje nÃ¡vÅ¡tÄ›vnÃ­kovi blogu vÅ¡echny dosud vydanÃ© ÄlÃ¡nky s moÅ¾nostÃ­ tÅ™Ã­dÄ›nÃ­. Odkaz na tuto strÃ¡nku by mÄ›l bÃ½t vloÅ¾en do HTML nugetu (bloku).');
+@define('PLUGIN_CUSTOMARCHIVE_PERMALINK', 'Permalink (stÃ¡lÃ½ odkaz)');
+@define('PLUGIN_CUSTOMARCHIVE_PAGETITLE', 'ZkrÃ¡cenÃ© URL jmÃ©no (kvÅ¯li zpÄ›tnÃ­ kompatibilitÄ›)');
+@define('PLUGIN_CUSTOMARCHIVE_PERMALINK_BLAHBLAH', 'Definuje stÃ¡lÃ½ odkaz, pod kterÃ½m bude pÅ™Ã­stupnÃ¡ strÃ¡nka s archivem. MusÃ­ to bÃ½t absolutnÃ­ HTTP cesta a musÃ­ konÄit .htm nebo .html!');
+@define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT', 'FormÃ¡tovat jako ÄlÃ¡nek?');
+@define('PLUGIN_CUSTOMARCHIVE_ARTICLEFORMAT_BLAHBLAH', 'Pokud je nastaveno "Ano", pak je strÃ¡nka formÃ¡tovÃ¡na stejnÄ› jako pÅ™Ã­spÄ›vky (barvy, nadpisy, okraje, apod.) (VÃ½chozÃ­: Ano).');
 

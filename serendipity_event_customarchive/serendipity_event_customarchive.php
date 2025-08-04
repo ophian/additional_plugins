@@ -72,6 +72,8 @@ sortings.
 
 */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -81,7 +83,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_customarchive extends serendipity_event
 {
-    var $title = PLUGIN_CUSTOMARCHIVE_TITLE;
+    public $title = PLUGIN_CUSTOMARCHIVE_TITLE;
 
     function introspect(&$propbag)
     {
@@ -92,11 +94,11 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '1.24');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.0.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
