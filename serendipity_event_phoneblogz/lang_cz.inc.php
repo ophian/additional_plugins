@@ -1,23 +1,23 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/26
  */
 
 @define('PLUGIN_EVENT_PHONEBLOGZ_NAME', 'Phoneblogz');
-@define('PLUGIN_EVENT_PHONEBLOGZ_USERS_NAME', 'UæivatelÈ sluæby Phoneblogz');
-@define('PLUGIN_EVENT_PHONEBLOGZ_DESC', 'Tento plugin umoæÚuje vypisovat zpr·vy ze sluæby Phoneblogz.');
-@define('PLUGIN_EVENT_PHONEBLOGZ_TEXT_DEFAULT', 'Nov˝ PhoneBlog byl vloæen uæivatelem [USER]! [Click here] pro poslech p¯ÌspÏvku! FlashovÈ animace vypadajÌ jako: [FLASH]');
-@define('PLUGIN_EVENT_PHONEBLOGZ_ACCESSCODE', 'P¯Ìstupov˝ kÛd Phoneblogz');
-@define('PLUGIN_EVENT_PHONEBLOGZ_PASSWORD', 'Heslo k Vaπemu ˙Ëtu na Phoneblogz');
-@define('PLUGIN_EVENT_PHONEBLOGZ_TEXT', 'Obsah Vaπich Phoneblogz p¯ÌspÏvk˘');
-@define('PLUGIN_EVENT_PHONEBLOGZ_SUBJECT', 'P¯edmÏt p¯ÌspÏvk˘ Phoneblogz');
-@define('PLUGIN_EVENT_PHONEBLOGZ_NOTIFYURL', 'OznamovacÌ URL adresa');
+@define('PLUGIN_EVENT_PHONEBLOGZ_USERS_NAME', 'U≈æivatel√© slu≈æby Phoneblogz');
+@define('PLUGIN_EVENT_PHONEBLOGZ_DESC', 'Tento plugin umo≈æ≈àuje vypisovat zpr√°vy ze slu≈æby Phoneblogz.');
+@define('PLUGIN_EVENT_PHONEBLOGZ_TEXT_DEFAULT', 'Nov√Ω PhoneBlog byl vlo≈æen u≈æivatelem [USER]! [Click here] pro poslech p≈ô√≠spƒõvku! Flashov√© animace vypadaj√≠ jako: [FLASH]');
+@define('PLUGIN_EVENT_PHONEBLOGZ_ACCESSCODE', 'P≈ô√≠stupov√Ω k√≥d Phoneblogz');
+@define('PLUGIN_EVENT_PHONEBLOGZ_PASSWORD', 'Heslo k Va≈°emu √∫ƒçtu na Phoneblogz');
+@define('PLUGIN_EVENT_PHONEBLOGZ_TEXT', 'Obsah Va≈°ich Phoneblogz p≈ô√≠spƒõvk≈Ø');
+@define('PLUGIN_EVENT_PHONEBLOGZ_SUBJECT', 'P≈ôedmƒõt p≈ô√≠spƒõvk≈Ø Phoneblogz');
+@define('PLUGIN_EVENT_PHONEBLOGZ_NOTIFYURL', 'Oznamovac√≠ URL adresa');
 @define('PLUGIN_EVENT_PHONEBLOGZ_NOTIFYURL_DEFAULT', $serendipity['baseURL'] . $serendipity['indexFile'] . '?/plugin/phoneblogz');
-@define('PLUGIN_EVENT_PHONEBLOGZ_SUBJECT_DEFAULT', 'Zpr·va Phoneblogz od [USER]');
-@define('PLUGIN_EVENT_PHONEBLOGZ_UPDATED', 'ZmÏny byly ˙spÏπnÏ uloæeny');
-@define('PLUGIN_EVENT_PHONEBLOGZ_SEEBELOW', 'NÌæe jsou vypsanÈ Vaπe poslednÌ p¯ÌspÏvky PhoneBlogz');
+@define('PLUGIN_EVENT_PHONEBLOGZ_SUBJECT_DEFAULT', 'Zpr√°va Phoneblogz od [USER]');
+@define('PLUGIN_EVENT_PHONEBLOGZ_UPDATED', 'Zmƒõny byly √∫spƒõ≈°nƒõ ulo≈æeny');
+@define('PLUGIN_EVENT_PHONEBLOGZ_SEEBELOW', 'N√≠≈æe jsou vypsan√© Va≈°e posledn√≠ p≈ô√≠spƒõvky PhoneBlogz');
 
-@define('PLUGIN_EVENT_PHONEBLOGZ_USERS_HEADING', 'NÌæe je seznam uæivatel˘ PhoneBlogz<br >a uæivatelÈ Serendipity, kte¯Ì jim odpovÌdajÌ');
+@define('PLUGIN_EVENT_PHONEBLOGZ_USERS_HEADING', 'N√≠≈æe je seznam u≈æivatel≈Ø PhoneBlogz<br >a u≈æivatel√© Serendipity, kte≈ô√≠ jim odpov√≠daj√≠');
 

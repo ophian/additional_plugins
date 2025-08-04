@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,7 +12,7 @@ include 'phoneblogz-api.php';
 
 class serendipity_event_phoneblogz extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_PHONEBLOGZ_NAME;
+    public $title = PLUGIN_EVENT_PHONEBLOGZ_NAME;
 
     function introspect(&$propbag)
     {
@@ -20,11 +22,11 @@ class serendipity_event_phoneblogz extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_PHONEBLOGZ_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, phoneblogz.com');
-        $propbag->add('version',     '0.12');
+        $propbag->add('version',     '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks', array(
             'external_plugin'                                  => true,
@@ -204,30 +206,12 @@ class serendipity_event_phoneblogz extends serendipity_event
             return array('error' => "Could not write file $new_file.");
         }
 
-        if (function_exists('serendipity_request_object')) {
-            $req = serendipity_request_object($url);
-            $response = $req->send();
-            if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
-                return array('error' => "Could not download file " .
-                    (function_exists('serendipity_specialchars')
-                        ? serendipity_specialchars($url)
-                        : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET))
-                    );
-            } else {
-                $fc = $response->getBody();
-            }
+        $req = serendipity_request_object($url);
+        $response = $req->send();
+        if (PEAR::isError($req->send()) || $response->getStatus() != '200') {
+            return array('error' => "Could not download file " . htmlspecialchars($url));
         } else {
-            require_once (defined('S9Y_PEAR_PATH') ? S9Y_PEAR_PATH : S9Y_INCLUDE_PATH . 'bundled-libs/') . 'HTTP/Request.php';
-            $req = new HTTP_Request($url);
-            if (PEAR::isError($req->sendRequest()) || $req->getResponseCode() != '200') {
-                return array('error' => "Could not download file " .
-                    (function_exists('serendipity_specialchars')
-                        ? serendipity_specialchars($url)
-                        : htmlspecialchars($url, ENT_COMPAT, LANG_CHARSET))
-                    );
-            } else {
-                $fc = $req->getResponseBody();
-            }
+            $fc = $response->getBody();
         }
 
         $success = @fwrite($ifp, $fc);
