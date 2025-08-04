@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_assigncategories extends serendipity_event
 {
-    var $title = PLUGIN_ASSIGNCATEGORIES_NAME;
+    public $title = PLUGIN_ASSIGNCATEGORIES_NAME;
 
     function introspect(&$propbag)
     {
@@ -20,7 +20,7 @@ class serendipity_event_assigncategories extends serendipity_event
         $propbag->add('description',   PLUGIN_ASSIGNCATEGORIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
