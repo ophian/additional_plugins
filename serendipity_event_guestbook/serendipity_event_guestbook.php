@@ -14,7 +14,7 @@ class serendipity_event_guestbook extends serendipity_event
 {
     public $title = PLUGIN_GUESTBOOK_TITLE;
 
-    protected $filter_defaults;
+    private $filter_defaults;
 
     /**
      * Declare Serendipity backend properties.
@@ -59,7 +59,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '5.0.3');
+        $propbag->add('version',      '5.0.4');
         $propbag->add('requirements', array(
                         'serendipity' => '5.0',
                         'smarty'      => '4.1',

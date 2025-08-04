@@ -15,7 +15,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_guestbook extends serendipity_plugin
 {
-    var $title = PLUGIN_GUESTSIDE_NAME;
+    public $title = PLUGIN_GUESTSIDE_NAME;
     #var $conty = array('%serendipity_event_guestbook%/showapp', '%serendipity_event_guestbook%/automoderate');
 
     function introspect(&$propbag)
@@ -26,7 +26,7 @@ class serendipity_plugin_guestbook extends serendipity_plugin
         $propbag->add('description',   PLUGIN_GUESTSIDE_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Jaap Boerma ( j@webbict.com ), Tadashi Jokagi <elf2000@users.sourceforge.net>, Ian Styx');
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.0.2');
         $propbag->add('requirements', array(
                         'serendipity' => '5.0',
                         'smarty'      => '4.1',

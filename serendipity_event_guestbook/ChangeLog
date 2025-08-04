@@ -1,3 +1,7 @@
+5.0.4 + 2.0.2:
+--------------
+ * Convert for Visibility property declaration (minor)
+
 5.0.3:
 ------
  * Fix another type issue
