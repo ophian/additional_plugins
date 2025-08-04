@@ -7,8 +7,8 @@
  */
 
 @define('PLUGIN_EVENT_DBCLEAN_NAME', 'DBClean');
-@define('PLUGIN_EVENT_DBCLEAN_DESC', 'Datenbank aufräumen');
-@define('PLUGIN_EVENT_DBCLEAN_NAME_MENU', 'Lösche alte Daten');
+@define('PLUGIN_EVENT_DBCLEAN_DESC', 'Datenbank aufrÃ¤umen');
+@define('PLUGIN_EVENT_DBCLEAN_NAME_MENU', 'LÃ¶sche alte Daten');
 @define('PLUGIN_EVENT_DBCLEAN_MENU_KEEP', 'Behalte Daten der letzten');
 @define('PLUGIN_EVENT_DBCLEAN_TABLE', 'Tabelle');
 

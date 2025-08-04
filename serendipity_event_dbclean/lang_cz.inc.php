@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2011/02/11
  */
 
-@define('PLUGIN_EVENT_DBCLEAN_NAME', 'VyËiπtÏnÌ datab·ze');
-@define('PLUGIN_EVENT_DBCLEAN_DESC', '»istÌ datab·zi');
-@define('PLUGIN_EVENT_DBCLEAN_NAME_MENU', 'Smazat star· data');
-@define('PLUGIN_EVENT_DBCLEAN_MENU_KEEP', 'Zachovat data od poslednÌ(ho)');
+@define('PLUGIN_EVENT_DBCLEAN_NAME', 'Vyƒçi≈°tƒõn√≠ datab√°ze');
+@define('PLUGIN_EVENT_DBCLEAN_DESC', 'ƒåist√≠ datab√°zi');
+@define('PLUGIN_EVENT_DBCLEAN_NAME_MENU', 'Smazat star√° data');
+@define('PLUGIN_EVENT_DBCLEAN_MENU_KEEP', 'Zachovat data od posledn√≠(ho)');
 @define('PLUGIN_EVENT_DBCLEAN_TABLE', 'Tabulka');
 
