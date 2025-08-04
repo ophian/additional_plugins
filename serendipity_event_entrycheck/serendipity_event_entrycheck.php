@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_entrycheck extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_ENTRYCHECK_TITLE;
+    public $title = PLUGIN_EVENT_ENTRYCHECK_TITLE;
 
     function introspect(&$propbag)
     {
@@ -20,7 +20,7 @@ class serendipity_event_entrycheck extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_ENTRYCHECK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
