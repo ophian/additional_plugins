@@ -1,3 +1,7 @@
+5.0.3:
+------
+ * Convert for Visibility property declaration (minor)
+
 5.0.2:
 ------
  * Cast fix setCookie() 2cd parameter to string

@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_statistics extends serendipity_plugin
 {
-    var $title = PLUGIN_EVENT_STATISTICS_NAME;
+    public $title = PLUGIN_EVENT_STATISTICS_NAME;
 
     function introspect(&$propbag)
     {

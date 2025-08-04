@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_statistics extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_STATISTICS_NAME;
+    public $title = PLUGIN_EVENT_STATISTICS_NAME;
 
     /**
      * API
@@ -23,7 +23,7 @@ class serendipity_event_statistics extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_STATISTICS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx');
-        $propbag->add('version',       '5.0.2');
+        $propbag->add('version',       '5.0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
