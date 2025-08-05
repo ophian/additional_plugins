@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -14,11 +16,11 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_MYCALENDAR_SIDE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Markus Gerstel, Ian Styx');
-        $propbag->add('version',       '0.16');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
         $propbag->add('configuration', array('title', 'items', 'datefm', 'datefm2', 'showtime', 'autoprune', 'countdown', 'skipfirst', 'rss'));
@@ -132,14 +134,14 @@ class serendipity_plugin_mycalendar extends serendipity_plugin
 
         $olddays = 0;
         foreach($items AS $item) {
-            $cont = serendipity_specialchars($item['eventname']);
+            $cont = htmlspecialchars($item['eventname']);
             if (!empty($item['eventurl'])) {
                 if (!empty($item['eventurltitle'])) {
                     $ltitle = $item['eventurltitle'];
                 } else {
                     $ltitle = $item['eventname'];
                 }
-                $cont = '<a href="' . serendipity_specialchars($item['eventurl']) . '" title="' . serendipity_specialchars($ltitle) . '">' . $cont . '</a>';
+                $cont = '<a href="' . htmlspecialchars($item['eventurl']) . '" title="' . htmlspecialchars($ltitle) . '">' . $cont . '</a>';
             }
 
             $daystostart = ceil(($item['eventdate'] - $ts) / 86400);

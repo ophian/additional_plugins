@@ -9,30 +9,30 @@
 //
 //  serendipity_event_mycalendar.php
 //
-@define('PLUGIN_MYCALENDAR_TITLE', 'Моят календар');
-@define('PLUGIN_MYCALENDAR_DESC', 'Поддържа персонален календар');
-@define('PLUGIN_MYCALENDAR_EVENT_MISSINGDATA', 'Не е въведено нищо');
-@define('PLUGIN_MYCALENDAR_EVENTLIST', 'Списък на предстоящи събития. За да изтриете събитие, изчистете двете полета.');
-@define('PLUGIN_MYCALENDAR_EVENTNAME', 'Име на събитието');
-@define('PLUGIN_MYCALENDAR_EVENTURI', 'Връзка към URL за това събитие (по избор)');
-@define('PLUGIN_MYCALENDAR_EVENTURI_TITLE', 'Име на връзката');
-@define('PLUGIN_MYCALENDAR_EVENTDATE', 'Дата на събитието');
+@define('PLUGIN_MYCALENDAR_TITLE', 'РњРѕСЏС‚ РєР°Р»РµРЅРґР°СЂ');
+@define('PLUGIN_MYCALENDAR_DESC', 'РџРѕРґРґСЉСЂР¶Р° РїРµСЂСЃРѕРЅР°Р»РµРЅ РєР°Р»РµРЅРґР°СЂ');
+@define('PLUGIN_MYCALENDAR_EVENT_MISSINGDATA', 'РќРµ Рµ РІСЉРІРµРґРµРЅРѕ РЅРёС‰Рѕ');
+@define('PLUGIN_MYCALENDAR_EVENTLIST', 'РЎРїРёСЃСЉРє РЅР° РїСЂРµРґСЃС‚РѕСЏС‰Рё СЃСЉР±РёС‚РёСЏ. Р—Р° РґР° РёР·С‚СЂРёРµС‚Рµ СЃСЉР±РёС‚РёРµ, РёР·С‡РёСЃС‚РµС‚Рµ РґРІРµС‚Рµ РїРѕР»РµС‚Р°.');
+@define('PLUGIN_MYCALENDAR_EVENTNAME', 'РРјРµ РЅР° СЃСЉР±РёС‚РёРµС‚Рѕ');
+@define('PLUGIN_MYCALENDAR_EVENTURI', 'Р’СЂСЉР·РєР° РєСЉРј URL Р·Р° С‚РѕРІР° СЃСЉР±РёС‚РёРµ (РїРѕ РёР·Р±РѕСЂ)');
+@define('PLUGIN_MYCALENDAR_EVENTURI_TITLE', 'РРјРµ РЅР° РІСЂСЉР·РєР°С‚Р°');
+@define('PLUGIN_MYCALENDAR_EVENTDATE', 'Р”Р°С‚Р° РЅР° СЃСЉР±РёС‚РёРµС‚Рѕ');
 
 //
 //  serendipity_plugin_mycalendar.php
 //
-@define('PLUGIN_MYCALENDAR_SIDE_NAME',     'Моят календар');
-@define('PLUGIN_MYCALENDAR_SIDE_DESC',     'Показва Вашият персонален календар с X бъдещи събития');
-@define('PLUGIN_MYCALENDAR_SIDE_ITEMS',         'Брой на събитията');
-@define('PLUGIN_MYCALENDAR_SIDE_ITEMS_DESC',    'Колко събития да се показват на страничната приставка ?');
-@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME',      'Време на активност');
-@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME_DESC', 'Колко време след датата събитията да се показват на страничната приставка ?');
-@define('PLUGIN_MYCALENDAR_SIDE_PRUNE',         'Автоматично изтриване');
-@define('PLUGIN_MYCALENDAR_SIDE_PRUNE_DESC',    'Изтриване на събитията след като те се случат ?');
-@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN',         'Обратен брояч');
-@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN_DESC',    'Показване на броя на дните до датата на събитието ?');
-@define('PLUGIN_MYCALENDAR_SIDE_SKIPFIRSTFUTURE',   'Без обратен брояч за първото бъдещо събитие ?');
+@define('PLUGIN_MYCALENDAR_SIDE_NAME',     'РњРѕСЏС‚ РєР°Р»РµРЅРґР°СЂ');
+@define('PLUGIN_MYCALENDAR_SIDE_DESC',     'РџРѕРєР°Р·РІР° Р’Р°С€РёСЏС‚ РїРµСЂСЃРѕРЅР°Р»РµРЅ РєР°Р»РµРЅРґР°СЂ СЃ X Р±СЉРґРµС‰Рё СЃСЉР±РёС‚РёСЏ');
+@define('PLUGIN_MYCALENDAR_SIDE_ITEMS',         'Р‘СЂРѕР№ РЅР° СЃСЉР±РёС‚РёСЏС‚Р°');
+@define('PLUGIN_MYCALENDAR_SIDE_ITEMS_DESC',    'РљРѕР»РєРѕ СЃСЉР±РёС‚РёСЏ РґР° СЃРµ РїРѕРєР°Р·РІР°С‚ РЅР° СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР° ?');
+@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME',      'Р’СЂРµРјРµ РЅР° Р°РєС‚РёРІРЅРѕСЃС‚');
+@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME_DESC', 'РљРѕР»РєРѕ РІСЂРµРјРµ СЃР»РµРґ РґР°С‚Р°С‚Р° СЃСЉР±РёС‚РёСЏС‚Р° РґР° СЃРµ РїРѕРєР°Р·РІР°С‚ РЅР° СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР° ?'); 
+@define('PLUGIN_MYCALENDAR_SIDE_PRUNE',         'РђРІС‚РѕРјР°С‚РёС‡РЅРѕ РёР·С‚СЂРёРІР°РЅРµ');
+@define('PLUGIN_MYCALENDAR_SIDE_PRUNE_DESC',    'РР·С‚СЂРёРІР°РЅРµ РЅР° СЃСЉР±РёС‚РёСЏС‚Р° СЃР»РµРґ РєР°С‚Рѕ С‚Рµ СЃРµ СЃР»СѓС‡Р°С‚ ?');
+@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN',         'РћР±СЂР°С‚РµРЅ Р±СЂРѕСЏС‡');
+@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN_DESC',    'РџРѕРєР°Р·РІР°РЅРµ РЅР° Р±СЂРѕСЏ РЅР° РґРЅРёС‚Рµ РґРѕ РґР°С‚Р°С‚Р° РЅР° СЃСЉР±РёС‚РёРµС‚Рѕ ?');
+@define('PLUGIN_MYCALENDAR_SIDE_SKIPFIRSTFUTURE',   'Р‘РµР· РѕР±СЂР°С‚РµРЅ Р±СЂРѕСЏС‡ Р·Р° РїСЉСЂРІРѕС‚Рѕ Р±СЉРґРµС‰Рѕ СЃСЉР±РёС‚РёРµ ?');
 
-@define('PLUGIN_MYCALENDAR_EVENTDATE2', 'Крайна дата за събитието');
-@define('PLUGIN_MYCALENDAR_RSS', 'Показване на връзка за емисия RSS 2.0');
+@define('PLUGIN_MYCALENDAR_EVENTDATE2', 'РљСЂР°Р№РЅР° РґР°С‚Р° Р·Р° СЃСЉР±РёС‚РёРµС‚Рѕ');
+@define('PLUGIN_MYCALENDAR_RSS', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° РІСЂСЉР·РєР° Р·Р° РµРјРёСЃРёСЏ RSS 2.0');
 

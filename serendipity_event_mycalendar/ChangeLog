@@ -1,3 +1,12 @@
+1.0.0:
+------
+
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Raises requirements for Serendipity Styx 5.0
+ * Use native htmlspecialchars()
+ * Declare strict types
+ * Fix a type issue sending $serendipity['authorid'] to serendipity_plugin_api::load_plugin() on PDO::PostgreSQL
+
 0.25:
 -----
 

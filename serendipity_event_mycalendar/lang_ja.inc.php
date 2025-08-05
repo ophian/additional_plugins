@@ -3,7 +3,7 @@
 /**
  *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
- *  EN-Revision: 1.3
+ *  EN-Revision: 1.2
  */
 
 //

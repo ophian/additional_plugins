@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/23
  */
@@ -9,30 +9,30 @@
 //
 //  serendipity_event_mycalendar.php
 //
-@define('PLUGIN_MYCALENDAR_TITLE',              'M˘j kalend·¯');
-@define('PLUGIN_MYCALENDAR_DESC',               'Spr·va osobnÌho kalend·¯e');
-@define('PLUGIN_MYCALENDAR_EVENT_MISSINGDATA',  'ChybÏjÌcÌ vstupnÌ data');
-@define('PLUGIN_MYCALENDAR_EVENTLIST',          'Toto je list nadch·zejÌcÌch ud·lostÌ. Ke smaz·nÌ ud·losti jednoduπe vymaæte obÏ pole.');
-@define('PLUGIN_MYCALENDAR_EVENTNAME',          'N·zev ud·losti');
-@define('PLUGIN_MYCALENDAR_EVENTURI',           'P¯Ìpadn· URL adresa, kter· se v·æe k ud·losti');
+@define('PLUGIN_MYCALENDAR_TITLE',              'M≈Øj kalend√°≈ô');
+@define('PLUGIN_MYCALENDAR_DESC',               'Spr√°va osobn√≠ho kalend√°≈ôe');
+@define('PLUGIN_MYCALENDAR_EVENT_MISSINGDATA',  'Chybƒõj√≠c√≠ vstupn√≠ data');
+@define('PLUGIN_MYCALENDAR_EVENTLIST',          'Toto je list nadch√°zej√≠c√≠ch ud√°lost√≠. Ke smaz√°n√≠ ud√°losti jednodu≈°e vyma≈æte obƒõ pole.');
+@define('PLUGIN_MYCALENDAR_EVENTNAME',          'N√°zev ud√°losti');
+@define('PLUGIN_MYCALENDAR_EVENTURI',           'P≈ô√≠padn√° URL adresa, kter√° se v√°≈æe k ud√°losti');
 @define('PLUGIN_MYCALENDAR_EVENTURI_TITLE',     'Nadpis odkazu');
-@define('PLUGIN_MYCALENDAR_EVENTDATE',          'Datum ud·losti');
+@define('PLUGIN_MYCALENDAR_EVENTDATE',          'Datum ud√°losti');
 
 //
 //  serendipity_plugin_mycalendar.php
 //
-@define('PLUGIN_MYCALENDAR_SIDE_NAME',          'M˘j kalend·¯');
-@define('PLUGIN_MYCALENDAR_SIDE_DESC',          'Zobrazuje V·π osobnÌ kalend·¯ s X nadch·zejÌcÌmi ud·lsotmi.');
-@define('PLUGIN_MYCALENDAR_SIDE_ITEMS',         'PoËet ud·lostÌ');
-@define('PLUGIN_MYCALENDAR_SIDE_ITEMS_DESC',    'Kolik ud·lostÌ zobrazovat?');
-@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME',      'Trv·nÌ ud·losti');
-@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME_DESC', 'Kolik dnÌ po svÈm datu majÌ b˝t ud·losti zobrazov·ny.');
-@define('PLUGIN_MYCALENDAR_SIDE_PRUNE',         '»iπtÏnÌ');
-@define('PLUGIN_MYCALENDAR_SIDE_PRUNE_DESC',    'Vymazat ud·lost potÈ, co probÏhla?');
-@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN',     'OdpoËet');
-@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN_DESC','Zobrazit poËet dnÌ, kterÈ do ud·lsoti zb˝vajÌ?');
-@define('PLUGIN_MYCALENDAR_SIDE_SKIPFIRSTFUTURE','Nezobrazovat odpoËet pro nejbliæπÌ ud·lost?');
+@define('PLUGIN_MYCALENDAR_SIDE_NAME',          'M≈Øj kalend√°≈ô');
+@define('PLUGIN_MYCALENDAR_SIDE_DESC',          'Zobrazuje V√°≈° osobn√≠ kalend√°≈ô s X nadch√°zej√≠c√≠mi ud√°lsotmi.');
+@define('PLUGIN_MYCALENDAR_SIDE_ITEMS',         'Poƒçet ud√°lost√≠');
+@define('PLUGIN_MYCALENDAR_SIDE_ITEMS_DESC',    'Kolik ud√°lost√≠ zobrazovat?');
+@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME',      'Trv√°n√≠ ud√°losti');
+@define('PLUGIN_MYCALENDAR_SIDE_SHOWTIME_DESC', 'Kolik dn√≠ po sv√©m datu maj√≠ b√Ωt ud√°losti zobrazov√°ny.');
+@define('PLUGIN_MYCALENDAR_SIDE_PRUNE',         'ƒåi≈°tƒõn√≠');
+@define('PLUGIN_MYCALENDAR_SIDE_PRUNE_DESC',    'Vymazat ud√°lost pot√©, co probƒõhla?');
+@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN',     'Odpoƒçet');
+@define('PLUGIN_MYCALENDAR_SIDE_COUNTDOWN_DESC','Zobrazit poƒçet dn√≠, kter√© do ud√°lsoti zb√Ωvaj√≠?');
+@define('PLUGIN_MYCALENDAR_SIDE_SKIPFIRSTFUTURE','Nezobrazovat odpoƒçet pro nejbli≈æ≈°√≠ ud√°lost?');
 
-@define('PLUGIN_MYCALENDAR_EVENTDATE2',         'Ud·lost a datum');
+@define('PLUGIN_MYCALENDAR_EVENTDATE2',         'Ud√°lost a datum');
 @define('PLUGIN_MYCALENDAR_RSS',                'Zobrazit RSS 2.0 odkaz');
 
