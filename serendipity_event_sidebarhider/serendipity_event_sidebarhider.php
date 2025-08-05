@@ -20,7 +20,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -418,7 +418,7 @@ class serendipity_event_sidebarhider extends serendipity_event
 
         $enabled = serendipity_db_bool($this->get_config('enable', 'true'));
         foreach ($sidebar AS $plugin_data) {
-            $plugin =& serendipity_plugin_api::load_plugin($plugin_data['name'], $plugin_data['authorid'], $plugin_data['path']);
+            $plugin =& serendipity_plugin_api::load_plugin($plugin_data['name'], (string) $plugin_data['authorid'], $plugin_data['path']); // INT to STRING cast for PDO::PostgreSQL
             if (is_object($plugin)) {
                 $checked        = "";
                 $checked_member = "";
