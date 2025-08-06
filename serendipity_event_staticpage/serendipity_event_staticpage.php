@@ -102,7 +102,7 @@ class serendipity_event_staticpage extends serendipity_event
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '7.2.0');
+        $propbag->add('version', '7.2.1');
         $propbag->add('requirements', array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -2233,7 +2233,7 @@ class serendipity_event_staticpage extends serendipity_event
                 $t = date_parse_from_format($d, $this->staticpage['timestamp']);
                 $this->staticpage['timestamp'] = mktime($t['hour'], $t['minute'], $t['second'], $t['month'], $t['day'], $t['year']);
             } else {
-                $this->staticpage['timestamp'] = strtotime($this->staticpage['timestamp']);
+                $this->staticpage['timestamp'] = strtotime((string) $this->staticpage['timestamp']);
             }
         }
 
