@@ -74,7 +74,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.1.0');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -223,14 +223,25 @@ class serendipity_event_aggregator extends serendipity_event
         # Schema extension (version 2)
         if ($this->get_config('db_version') < 2) {
             echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
-            $sql = "CREATE TABLE {$serendipity['dbPrefix']}aggregator_md5 (
+            if (preg_match('@(postgres|pgsql)@i', $serendipity['dbType'])) {
+                $sql = "CREATE TABLE {$serendipity['dbPrefix']}aggregator_md5 (
+                          entryid {AUTOINCREMENT} {PRIMARY},
+                          md5         varchar(32) NOT NULL default '',
+                          timestamp   int(10) {UNSIGNED} default null
+                        );";
+                serendipity_db_schema_import($sql);
+                serendipity_db_query("CREATE INDEX md5_idx ON {$serendipity['dbPrefix']}aggregator_md5 USING btree (md5)");
+                serendipity_db_query("CREATE INDEX timestamp_idx ON {$serendipity['dbPrefix']}aggregator_md5 USING btree (timestamp)");
+            } else {
+                $sql = "CREATE TABLE {$serendipity['dbPrefix']}aggregator_md5 (
                           entryid {AUTOINCREMENT} {PRIMARY},
                           md5         varchar(32) NOT NULL default '',
                           timestamp   int(10) {UNSIGNED} default null,
                           key md5_idx (md5),
                           key timestamp_idx (timestamp)
                         );";
-            serendipity_db_schema_import($sql);
+                serendipity_db_schema_import($sql);
+            }
 
             $sql = "INSERT INTO {$serendipity['dbPrefix']}aggregator_md5
                         ( entryid, md5, timestamp )
@@ -248,7 +259,6 @@ class serendipity_event_aggregator extends serendipity_event
 
         # Schema extension (version 3)
         if ($this->get_config('db_version') < 3) {
-            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $sql = "CREATE TABLE {$serendipity['dbPrefix']}aggregator_feedcat (
                          feedid int(11) not null,
                          categoryid int(11) not null
@@ -273,6 +283,7 @@ class serendipity_event_aggregator extends serendipity_event
                           DROP categoryid;";
             serendipity_db_schema_import($sql);
 
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $this->set_config('db_version', '3');
         }
 
@@ -282,6 +293,7 @@ class serendipity_event_aggregator extends serendipity_event
                           ADD COLUMN charset varchar(255);";
             serendipity_db_schema_import($sql);
 
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $this->set_config('db_version', '4');
         }
 
@@ -291,6 +303,7 @@ class serendipity_event_aggregator extends serendipity_event
                           ADD COLUMN match_expression varchar(255);";
             serendipity_db_schema_import($sql);
 
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $this->set_config('db_version', '5');
         }
 
@@ -302,11 +315,12 @@ class serendipity_event_aggregator extends serendipity_event
                          categoryid int(11) not null,
                          entrydate int(11) not null,
                          entrytitle text,
-                         entrybody longtext,
+                         entrybody {TEXT},
                          entryurl text
                         );";
             serendipity_db_schema_import($sql);
 
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $this->set_config('db_version', '6');
         }
 
@@ -326,7 +340,9 @@ class serendipity_event_aggregator extends serendipity_event
             $sql = "CREATE INDEX fl_feedid_3 ON {$serendipity['dbPrefix']}aggregator_feedlist (feedid, entrydate, categoryid)";
             serendipity_db_schema_import($sql);
 
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
             $this->set_config('db_version', '7');
+            echo '<span class="msg_success"><span class="icon-ok-circled"></span> *** SETUP DB version ' . $this->get_config('db_version') . "</span>\n";
         }
     }
 

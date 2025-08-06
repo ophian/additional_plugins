@@ -1,3 +1,8 @@
+2.1.0:
+------
+ * Fix creating tables for PostgreSQL
+ * Allow to follow db version progress on install
+
 2.0.0:
 ------
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
