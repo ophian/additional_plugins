@@ -51,6 +51,7 @@
  * @version 0.5.1
  *
  */
+#[AllowDynamicProperties]
 class idna_convert
 {
     /**

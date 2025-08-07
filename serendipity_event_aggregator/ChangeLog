@@ -1,3 +1,9 @@
+2.2.0:
+------
+ * Fix creating tables for PostgreSQL with type on PDO
+ * Allow PHP 8 dynamic properties in IDNA_CONVERT class
+ * Use correct hash value for serendipity_hash(()
+
 2.1.0:
 ------
  * Fix creating tables for PostgreSQL

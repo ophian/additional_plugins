@@ -57,8 +57,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_aggregator extends serendipity_event
 {
-    private $debug;
     public $title = PLUGIN_AGGREGATOR_TITLE;
+
+    private $debug;
 
     /**
      * API
@@ -74,7 +75,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '2.2.0');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -463,12 +464,14 @@ class serendipity_event_aggregator extends serendipity_event
         $t  = time() - 86400 * $age;
         if ($this->debug) printf("DEBUG: Expire cutoff %s\n", $t);
 
+        $castFieldType = preg_match('@(postgres|pgsql)@i', $serendipity['dbType']) ? "CAST('af.feedid' as TEXT)" : 'af.feedid';
+
         $q = "SELECT e.id
                 FROM {$serendipity['dbPrefix']}entries AS e
      LEFT OUTER JOIN {$serendipity['dbPrefix']}entryproperties AS ep
                   ON e.id = ep.entryid
      LEFT OUTER JOIN {$serendipity['dbPrefix']}aggregator_feeds AS af
-                  ON ep.value = af.feedid
+                  ON ep.value = $castFieldType
                WHERE ep.property = 'ep_aggregator_feed'
                  AND e.comments < 1
                  AND e.extended IS NULL
@@ -623,7 +626,7 @@ class serendipity_event_aggregator extends serendipity_event
         if (!is_array($res = serendipity_db_query($query))) {
             serendipity_db_insert('authors', array('realname'      => $array['feedname'],
                                                    'username'      => $array['feedname'],
-                                                   'password'      => serendipity_hash(mt_rand()),
+                                                   'password'      => serendipity_hash(random_bytes(32)),
                                                    'mail_comments' => 0,
                                                    'mail_trackbacks' => 0,
                                                    'email'         => $array['htmlurl'],
@@ -1104,7 +1107,7 @@ class serendipity_event_aggregator extends serendipity_event
 
             $sql = "INSERT INTO {$serendipity['dbPrefix']}entryproperties
                                 (entryid, property, value)
-                         VALUES ('$entryid', 'ep_aggregator_author', '" . serendipity_db_escape_string($feed['author']) . "')";
+                         VALUES ('$entryid', 'ep_aggregator_author', '" . serendipity_db_escape_string((string) $feed['author']) . "')";
             serendipity_db_query($sql);
 
             $sql = "INSERT INTO {$serendipity['dbPrefix']}entryproperties
@@ -1358,7 +1361,7 @@ class serendipity_event_aggregator extends serendipity_event
 
                 // hwa: new SimplePie code  ; lifted from the SimplePie demo
                 $simplefeed = new SimplePie();
-                $simplefeed->cache=false;
+                $simplefeed->cache=null;
 
                 $simplefeed->set_feed_url($feed['feedurl']);
 
