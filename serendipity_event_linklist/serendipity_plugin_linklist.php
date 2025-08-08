@@ -375,7 +375,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         }
 
         /* XML definition */
-        $xml = @xml_parser_create('UTF-8');
+        $xml = xml_parser_create('UTF-8');
         $linkxml = serendipity_utf8_encode($links);
         xml_parse_into_struct($xml, '<list>' . $linkxml . '</list>', $struct, $index);
         xml_parser_free($xml);
