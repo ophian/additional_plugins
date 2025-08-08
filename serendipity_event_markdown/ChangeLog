@@ -1,3 +1,7 @@
+2.1.0:
+------
+ * Dis-allow frontend_comment hook info when comment RichText Editor is used and markdown is just kept active for historic entries
+
 2.0.4:
 ------
  * Add missing space after external link SVG in frontend_comment
