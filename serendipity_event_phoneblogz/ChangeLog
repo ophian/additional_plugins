@@ -1,3 +1,7 @@
+1.1.0:
+------
+ * Fix-up for PHP 8.4  xml_set_* deprecation sets
+
 1.0.0:
 ------
  * Declare strict types

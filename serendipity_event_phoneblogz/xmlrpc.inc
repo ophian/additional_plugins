@@ -1578,9 +1578,9 @@
 			// the xml parser to give us back data in the expected charset
 			xml_parser_set_option($parser, XML_OPTION_TARGET_ENCODING, $xmlrpc_internalencoding);
 
-			xml_set_element_handler($parser, 'xmlrpc_se', 'xmlrpc_ee');
-			xml_set_character_data_handler($parser, 'xmlrpc_cd');
-			xml_set_default_handler($parser, 'xmlrpc_dh');
+            xml_set_element_handler($parser, [$this, 'XML_RPC_se'], [$this, 'XML_RPC_ee']);
+            xml_set_character_data_handler($parser, [$this, 'XML_RPC_cd']);
+			xml_set_default_handler($parser, [$this, 'xmlrpc_dh']);
 			//$xmlrpc_value=new xmlrpcval;
 
 			if (!xml_parse($parser, $data, sizeof($data)))

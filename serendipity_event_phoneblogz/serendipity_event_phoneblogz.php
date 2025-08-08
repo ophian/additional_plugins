@@ -22,7 +22,7 @@ class serendipity_event_phoneblogz extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_PHONEBLOGZ_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, phoneblogz.com');
-        $propbag->add('version',     '1.0.0');
+        $propbag->add('version',     '1.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
