@@ -240,11 +240,11 @@ $GLOBALS['XML_RPC_xh'] = array();
  *
  * @return void
  */
-function XML_RPC_se($parser_resource, $name, $attrs)
+function XML_RPC_se($parser_instance, $name, $attrs)
 {
     global $XML_RPC_xh, $XML_RPC_valid_parents;
 
-    $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
+    $parser = spl_object_id($parser_instance);
 
     // if invalid xmlrpc already detected, skip all processing
     if ($XML_RPC_xh[$parser]['isf'] >= 2) {
@@ -369,11 +369,11 @@ function XML_RPC_se($parser_resource, $name, $attrs)
  *
  * @return void
  */
-function XML_RPC_ee($parser_resource, $name)
+function XML_RPC_ee($parser_instance, $name)
 {
     global $XML_RPC_xh;
 
-    $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
+    $parser = spl_object_id($parser_instance);
 
     if ($XML_RPC_xh[$parser]['isf'] >= 2) {
         return;
@@ -506,11 +506,11 @@ function XML_RPC_ee($parser_resource, $name)
  *
  * @return void
  */
-function XML_RPC_cd($parser_resource, $data)
+function XML_RPC_cd($parser_instance, $data)
 {
     global $XML_RPC_xh, $XML_RPC_backslash;
 
-    $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
+    $parser = spl_object_id($parser_instance);
 
     if ($XML_RPC_xh[$parser]['lv'] != 3) {
         // "lookforvalue==3" means that we've found an entire value
@@ -1431,8 +1431,8 @@ class XML_RPC_Message extends XML_RPC_Base
         global $XML_RPC_xh, $XML_RPC_err, $XML_RPC_str, $XML_RPC_defencoding;
 
         $encoding = $this->getEncoding($data);
-        $parser_resource = xml_parser_create($encoding);
-        $parser = is_resource($parser_resource) ? ((int) $parser_resource) : spl_object_id($parser_resource);
+        $parser_instance = xml_parser_create($encoding);
+        $parser = spl_object_id($parser_instance);
 
         $XML_RPC_xh = array();
         $XML_RPC_xh[$parser] = array();
@@ -1444,9 +1444,9 @@ class XML_RPC_Message extends XML_RPC_Base
         $XML_RPC_xh[$parser]['stack'] = array();
         $XML_RPC_xh[$parser]['valuestack'] = array();
 
-        xml_parser_set_option($parser_resource, XML_OPTION_CASE_FOLDING, true);
-        xml_set_element_handler($parser_resource, 'XML_RPC_se', 'XML_RPC_ee');
-        xml_set_character_data_handler($parser_resource, 'XML_RPC_cd');
+        xml_parser_set_option($parser_instance, XML_OPTION_CASE_FOLDING, true);
+        xml_set_element_handler($parser_instance, [$this, 'XML_RPC_se'], [$this, 'XML_RPC_ee']);
+        xml_set_character_data_handler($parser_instance, [$this, 'XML_RPC_cd']);
 
         $hdrfnd = 0;
         if ($this->debug) {
@@ -1466,7 +1466,7 @@ class XML_RPC_Message extends XML_RPC_Base
                 $r = new XML_RPC_Response(0, $XML_RPC_err['http_error'],
                                           $XML_RPC_str['http_error'] . ' (' .
                                           $errstr . ')');
-                xml_parser_free($parser_resource);
+                xml_parser_free($parser_instance);
                 return $r;
         }
 
@@ -1489,23 +1489,23 @@ class XML_RPC_Message extends XML_RPC_Base
         // Check is_final data is the last piece of data sent in this parse
         $end = (is_countable($data) && false === $final) ? false : true;
 
-        if (!xml_parse($parser_resource, $data, $end)) {
+        if (!xml_parse($parser_instance, $data, $end)) {
             // thanks to Peter Kocks <peter.kocks@baygate.com>
-            if (xml_get_current_line_number($parser_resource) == 1) {
+            if (xml_get_current_line_number($parser_instance) == 1) {
                 $errstr = 'XML error at line 1, check URL';
             } else {
                 $errstr = sprintf('XML error: %s at line %d',
-                                  xml_error_string(xml_get_error_code($parser_resource)),
-                                  xml_get_current_line_number($parser_resource));
+                                  xml_error_string(xml_get_error_code($parser_instance)),
+                                  xml_get_current_line_number($parser_instance));
             }
             error_log($errstr);
             $r = new XML_RPC_Response(0, $XML_RPC_err['invalid_return'],
                                       $XML_RPC_str['invalid_return']);
-            xml_parser_free($parser_resource);
+            xml_parser_free($parser_instance);
             return $r;
         }
 
-        xml_parser_free($parser_resource);
+        xml_parser_free($parser_instance);
 
         if ($this->debug) {
             print "\n<pre style=\"display:block\">---PARSED---\n";
