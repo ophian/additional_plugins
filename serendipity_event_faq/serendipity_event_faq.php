@@ -79,7 +79,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '2.0.1');
+        $propbag->add('version',      '2.0.2');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -1202,10 +1202,10 @@ class serendipity_event_faq extends serendipity_event
             $cbag = new serendipity_property_bag;
             $this->introspect_faq_item($config_item, $cbag);
 
-            $inspectConfig['cname'] = htmlspecialchars($cbag->get('name'));
-            $inspectConfig['cdesc'] = htmlspecialchars($cbag->get('description'));
+            $inspectConfig['cname'] = htmlspecialchars((string) $cbag->get('name'));
+            $inspectConfig['cdesc'] = htmlspecialchars((string) $cbag->get('description'));
             $inspectConfig['value'] = $value = $this->getFaq($config_item, 'unset'); // case hidden
-            $inspectConfig['lang_direction'] = $lang_direction = htmlspecialchars($cbag->get('lang_direction'));
+            $inspectConfig['lang_direction'] = $lang_direction = htmlspecialchars((string) $cbag->get('lang_direction'));
 
             $type = $cbag->get('type');
             if (empty($lang_direction)) {
@@ -1222,7 +1222,7 @@ class serendipity_event_faq extends serendipity_event
 
             $hvalue =   (!isset($serendipity['POST']['faqSubmit']) && isset($serendipity['POST']['plugin'][$config_item])
                             ? htmlspecialchars($serendipity['POST']['plugin'][$config_item])
-                            : htmlspecialchars($value)
+                            : htmlspecialchars((string) $value)
                         );
 
             $inspectConfig['config_item']   = $config_item;
@@ -1304,10 +1304,10 @@ class serendipity_event_faq extends serendipity_event
             $cbag = new serendipity_property_bag;
             $this->introspect_category_item($config_item, $cbag);
 
-            $inspectConfig['cname'] = htmlspecialchars($cbag->get('name'));
-            $inspectConfig['cdesc'] = htmlspecialchars($cbag->get('description'));
+            $inspectConfig['cname'] = htmlspecialchars((string) $cbag->get('name'));
+            $inspectConfig['cdesc'] = htmlspecialchars((string) $cbag->get('description'));
             $inspectConfig['value'] = $value = $this->getCategory($config_item, 'unset'); // default case hidden
-            $inspectConfig['lang_direction'] = $lang_direction = htmlspecialchars($cbag->get('lang_direction'));
+            $inspectConfig['lang_direction'] = $lang_direction = htmlspecialchars((string) $cbag->get('lang_direction'));
 
             $type = $cbag->get('type');
             if (empty($lang_direction)) {
@@ -1324,7 +1324,7 @@ class serendipity_event_faq extends serendipity_event
 
             $hvalue =   (!isset($serendipity['POST']['categorySubmit']) && isset($serendipity['POST']['plugin'][$config_item])
                             ? htmlspecialchars($serendipity['POST']['plugin'][$config_item])
-                            : htmlspecialchars($value)
+                            : htmlspecialchars((string) $value)
                         );
 
             $inspectConfig['config_item']   = $config_item;

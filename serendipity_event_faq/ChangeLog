@@ -1,3 +1,8 @@
+2.0.2:
+------
+ * Fix some type issues for string functions on NULL
+ * Fix RichText editor toolbar styling
+
 2.0.1 + 1.0.1:
 --------------
  * Convert for Visibility property declaration (minor)

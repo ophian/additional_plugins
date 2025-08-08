@@ -73,7 +73,6 @@
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
 }
 .hook_buttons .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
@@ -81,7 +80,7 @@
 }
 #backend_faq_formpage .form_field textarea,
 #backend_faq_formpage .form_field div:not(.action_field) {
-    display: block;
+    display: flex;
 }
 .faq_config_desc {
     color: #5E7A94;
