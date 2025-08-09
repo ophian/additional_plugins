@@ -1,3 +1,7 @@
+2.4.0:
+------
+ * Fix-up XML/RPC * for PHP 8.5 deprecation. The socket_set_timeout() alias function has been deprecated.
+
 2.3.0:
 ------
  * Fix-up XML/RPC * for PHP 8.4 deprecation sets and convert parser_resource to parser_instance naming
