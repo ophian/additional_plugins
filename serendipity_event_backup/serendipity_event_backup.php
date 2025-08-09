@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -21,12 +23,12 @@ class serendipity_event_backup extends serendipity_event
         $propbag->add('name',          PLUGIN_BACKUP_TITLE);
         $propbag->add('description',   PLUGIN_BACKUP_DESC);
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '1.3.0');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('author',       'Alexander Mieland, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -217,7 +219,7 @@ class serendipity_event_backup extends serendipity_event
         $BACKUPDIR = $this->get_config('abspath_backupdir');
         $filetime = date("Y-m-d-H-i",time());
         $success = 0;
-        @ignore_user_abort(1);
+        @ignore_user_abort(true);
         @set_time_limit(0);
         if ($complete == 1) {
             unset($tables);
@@ -395,7 +397,7 @@ class serendipity_event_backup extends serendipity_event
                         foreach ($THIS AS $key => $val) {
                             if (!intval($key) AND $key != "0") {
                                 $insert_text1 .= "".$key.",";
-                                $insert_text2 .= "'".addslashes($val)."',";
+                                $insert_text2 .= "'".addslashes($val ?? '')."',";
                             }
                         }
                         $insert_text1 = substr($insert_text1, 0, (strlen($insert_text1)-1));
@@ -445,7 +447,7 @@ class serendipity_event_backup extends serendipity_event
 
         if ($backupconfig['auto_backup'] == 1) {
             $now = time();
-            @ignore_user_abort(1);
+            @ignore_user_abort(true);
             @set_time_limit(0);
             if (($backupconfig['last_backup']+$backupconfig['time_backup']) <= $now) {
                 $UPDATECONF = "UPDATE {$serendipity['dbPrefix']}dma_htmlbackup SET ";
@@ -509,7 +511,7 @@ class serendipity_event_backup extends serendipity_event
         $pack = intval($backupdata_array[4]);
         if ($backupconfig['auto_backup'] == 1) {
             $now = time();
-            @ignore_user_abort(1);
+            @ignore_user_abort(true);
             @set_time_limit(0);
             if (($backupconfig['last_backup'] + $backupconfig['time_backup']) <= $now) {
                 if ($backupconfig['data_backup'] != "") {
@@ -593,7 +595,7 @@ class serendipity_event_backup extends serendipity_event
         $exclude = unserialize(trim($backupdata_array[1]));
 
         if ($backupconfig['auto_backdel'] == 1) {
-            @ignore_user_abort(1);
+            @ignore_user_abort(true);
             @set_time_limit(0);
             $now = time();
             $fe = opendir($backupdir);
@@ -638,7 +640,7 @@ class serendipity_event_backup extends serendipity_event
         $drop = intval($backupdata_array[3]);
         $pack = intval($backupdata_array[4]);
         if ($backupconfig['auto_backdel'] == 1) {
-            @ignore_user_abort(1);
+            @ignore_user_abort(true);
             @set_time_limit(0);
             $now = time();
             $fe = opendir($backupdir);
@@ -1205,9 +1207,9 @@ class serendipity_event_backup extends serendipity_event
         foreach($dirs AS $dir) {
             if (is_array($exclude) && count($exclude) >= 1) {
                 if (!in_array($dir, $exclude)) {
-                    $BACKUPFORM .= '                <option value="'.$dir.'" selected>'.$s9ydir."/".$dir."</option>\n";
+                    $BACKUPFORM .= '                <option value="'.$dir.'" selected>'.str_replace(['\\', '//'], '/', $s9ydir."/".$dir)."</option>\n";
                 } else {
-                    $BACKUPFORM .= '                <option value="'.$dir.'">'.$s9ydir."/".$dir."</option>\n";
+                    $BACKUPFORM .= '                <option value="'.$dir.'">'.str_replace(['\\', '//'], '/', $s9ydir."/".$dir)."</option>\n";
                 }
             } else {
                 $BACKUPFORM .= '                <option value="'.$dir.'"';

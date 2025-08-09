@@ -1,58 +1,58 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/25
  */
 
-@define('PLUGIN_BACKUP_TITLE', 'Z·lohov·nÌ');
-@define('PLUGIN_BACKUP_DESC', 'Zp¯ÌstupÚuje moænost automatickÈho z·lohov·nÌ Serendepity - datab·zov˝ch tabulek i soubor˘. V souËasnosti je podporov·na pouze datab·ze MySQL(i). VAROV¡NÕ: Plugin nefunguje optim·lnÏ s velkou datab·zÌ nebo velk˝m mnoæstvÌm soubor˘.');
-@define('PLUGIN_BACKUP_ABSPATH_BACKUPDIR', 'AbsolutnÌ cesta k adres·¯i pro z·lohy');
-@define('PLUGIN_BACKUP_ABSPATH_BACKUPDIR_BLAHBLAH', 'Tento adres·¯ by mÏl b˝t mimo adres·¯ s webov˝mi str·nkami. Webserver musÌ mÌt pr·va z·pisu do tohoto adres·¯e!');
+@define('PLUGIN_BACKUP_TITLE', 'Z√°lohov√°n√≠');
+@define('PLUGIN_BACKUP_DESC', 'Zp≈ô√≠stup≈àuje mo≈ænost automatick√©ho z√°lohov√°n√≠ Serendepity - datab√°zov√Ωch tabulek i soubor≈Ø. V souƒçasnosti je podporov√°na pouze datab√°ze MySQL(i). VAROV√ÅN√ç: Plugin nefunguje optim√°lnƒõ s velkou datab√°z√≠ nebo velk√Ωm mno≈æstv√≠m soubor≈Ø.');
+@define('PLUGIN_BACKUP_ABSPATH_BACKUPDIR', 'Absolutn√≠ cesta k adres√°≈ôi pro z√°lohy');
+@define('PLUGIN_BACKUP_ABSPATH_BACKUPDIR_BLAHBLAH', 'Tento adres√°≈ô by mƒõl b√Ωt mimo adres√°≈ô s webov√Ωmi str√°nkami. Webserver mus√≠ m√≠t pr√°va z√°pisu do tohoto adres√°≈ôe!');
 
-@define('PLUGIN_BACKUP_NOT_FOUND', 'Z·loha nenalezena');
-@define('PLUGIN_BACKUP_SQL_RECOVERED', 'Z·loha SQL obnovena');
-@define('PLUGIN_BACKUP_AUTO_SQL_BACKUP_STARTED', 'AutomatickÈ z·lohov·nÌ SQL datab·ze spuπtÏno');
-@define('PLUGIN_BACKUP_AUTO_SQL_BACKUP_STOPPED', 'AutomatickÈ z·lohov·nÌ SQL datab·ze zastaveno');
-@define('PLUGIN_BACKUP_AUTO_SQL_DELETE_STARTED', 'AutomatickÈ maz·nÌ SQL datab·ze spuπtÏno');
-@define('PLUGIN_BACKUP_AUTO_SQL_DELETE_STOPPED', 'AutomatickÈ maz·nÌ SQL datab·ze zastaveno');
-@define('PLUGIN_BACKUP_SQL_SAVED', 'Z·loha SQL datab·ze uloæena');
-@define('PLUGIN_BACKUP_HTML_RECOVERED', 'Z·loha HTML obnovena');
-@define('PLUGIN_BACKUP_AUTO_HTML_BACKUP_STARTED', 'AutomatickÈ z·lohov·nÌ HTML str·nek spuπtÏno');
-@define('PLUGIN_BACKUP_AUTO_HTML_BACKUP_STOPPED', 'AutomatickÈ z·lohov·nÌ HTML str·nek zastaveno');
-@define('PLUGIN_BACKUP_AUTO_HTML_DELETE_STARTED', 'AutomatickÈ maz·nÌ HTML str·nek spuπtÏno');
-@define('PLUGIN_BACKUP_AUTO_HTML_DELETE_STOPPED', 'AutomatickÈ maz·nÌ HTML str·nek zastaveno');
-@define('PLUGIN_BACKUP_HTML_SAVED', 'Z·loha HTML soubor˘ uloæena');
-@define('PLUGIN_BACKUP_PLEASE_CHOOSE', 'vyberte prosÌm');
+@define('PLUGIN_BACKUP_NOT_FOUND', 'Z√°loha nenalezena');
+@define('PLUGIN_BACKUP_SQL_RECOVERED', 'Z√°loha SQL obnovena');
+@define('PLUGIN_BACKUP_AUTO_SQL_BACKUP_STARTED', 'Automatick√© z√°lohov√°n√≠ SQL datab√°ze spu≈°tƒõno');
+@define('PLUGIN_BACKUP_AUTO_SQL_BACKUP_STOPPED', 'Automatick√© z√°lohov√°n√≠ SQL datab√°ze zastaveno');
+@define('PLUGIN_BACKUP_AUTO_SQL_DELETE_STARTED', 'Automatick√© maz√°n√≠ SQL datab√°ze spu≈°tƒõno');
+@define('PLUGIN_BACKUP_AUTO_SQL_DELETE_STOPPED', 'Automatick√© maz√°n√≠ SQL datab√°ze zastaveno');
+@define('PLUGIN_BACKUP_SQL_SAVED', 'Z√°loha SQL datab√°ze ulo≈æena');
+@define('PLUGIN_BACKUP_HTML_RECOVERED', 'Z√°loha HTML obnovena');
+@define('PLUGIN_BACKUP_AUTO_HTML_BACKUP_STARTED', 'Automatick√© z√°lohov√°n√≠ HTML str√°nek spu≈°tƒõno');
+@define('PLUGIN_BACKUP_AUTO_HTML_BACKUP_STOPPED', 'Automatick√© z√°lohov√°n√≠ HTML str√°nek zastaveno');
+@define('PLUGIN_BACKUP_AUTO_HTML_DELETE_STARTED', 'Automatick√© maz√°n√≠ HTML str√°nek spu≈°tƒõno');
+@define('PLUGIN_BACKUP_AUTO_HTML_DELETE_STOPPED', 'Automatick√© maz√°n√≠ HTML str√°nek zastaveno');
+@define('PLUGIN_BACKUP_HTML_SAVED', 'Z√°loha HTML soubor≈Ø ulo≈æena');
+@define('PLUGIN_BACKUP_PLEASE_CHOOSE', 'vyberte pros√≠m');
 @define('PLUGIN_BACKUP_STRUCT_AND_DATA', 'Struktura a data');
 @define('PLUGIN_BACKUP_ONLY_STRUCT', 'Pouze struktura');
 @define('PLUGIN_BACKUP_ONLY_DATA', 'Pouze data');
-@define('PLUGIN_BACKUP_WITH_DROP_TABLE', 'VËetnÏ smaz·nÌ tabulek (DROP TABLE)');
+@define('PLUGIN_BACKUP_WITH_DROP_TABLE', 'Vƒçetnƒõ smaz√°n√≠ tabulek (DROP TABLE)');
 @define('PLUGIN_BACKUP_ZIPPED', 'sbaleno - gzip');
-@define('PLUGIN_BACKUP_WHOLE_DATABASE', 'Cel· datab·ze');
-@define('PLUGIN_BACKUP_START_BACKUP', 'Spustit z·lohov·nÌ...');
+@define('PLUGIN_BACKUP_WHOLE_DATABASE', 'Cel√° datab√°ze');
+@define('PLUGIN_BACKUP_START_BACKUP', 'Spustit z√°lohov√°n√≠...');
 @define('PLUGIN_BACKUP_MINUTES', 'minuty');
 @define('PLUGIN_BACKUP_HOUR', 'hodina');
 @define('PLUGIN_BACKUP_HOURS', 'hodiny');
 @define('PLUGIN_BACKUP_DAYS', 'dny');
-@define('PLUGIN_BACKUP_WEEKS', 't˝dny');
-@define('PLUGIN_BACKUP_EVERY', 'kaæd˝');
-@define('PLUGIN_BACKUP_MONTHS', 'mÏsÌce');
-@define('PLUGIN_BACKUP_AUTO_BACKUP', 'AutomatickÈ z·lohov·nÌ');
-@define('PLUGIN_BACKUP_ACTIVATE_AUTO_BACKUP', 'Aktivovat automatickÈ z·lohov·nÌ');
-@define('PLUGIN_BACKUP_TIME_BET_BACKUPS', 'Perioda z·lohov·nÌ');
-@define('PLUGIN_BACKUP_DEL_OLD_BACKUPS', 'Mazat starÈ z·lohy');
-@define('PLUGIN_BACKUP_ACTIVATE_AUTO_DELETE', 'Aktivovat automatickÈ maz·nÌ star˝ch z·loh');
-@define('PLUGIN_BACKUP_OLDER_THAN', 'Z·lohy starπÌ neæ');
-@define('PLUGIN_BACKUP_WILL_BE_DELETED', 'budou smaz·ny');
-@define('PLUGIN_BACKUP_FILENAME', 'JmÈno souboru');
+@define('PLUGIN_BACKUP_WEEKS', 't√Ωdny');
+@define('PLUGIN_BACKUP_EVERY', 'ka≈æd√Ω');
+@define('PLUGIN_BACKUP_MONTHS', 'mƒõs√≠ce');
+@define('PLUGIN_BACKUP_AUTO_BACKUP', 'Automatick√© z√°lohov√°n√≠');
+@define('PLUGIN_BACKUP_ACTIVATE_AUTO_BACKUP', 'Aktivovat automatick√© z√°lohov√°n√≠');
+@define('PLUGIN_BACKUP_TIME_BET_BACKUPS', 'Perioda z√°lohov√°n√≠');
+@define('PLUGIN_BACKUP_DEL_OLD_BACKUPS', 'Mazat star√© z√°lohy');
+@define('PLUGIN_BACKUP_ACTIVATE_AUTO_DELETE', 'Aktivovat automatick√© maz√°n√≠ star√Ωch z√°loh');
+@define('PLUGIN_BACKUP_OLDER_THAN', 'Z√°lohy star≈°√≠ ne≈æ');
+@define('PLUGIN_BACKUP_WILL_BE_DELETED', 'budou smaz√°ny');
+@define('PLUGIN_BACKUP_FILENAME', 'Jm√©no souboru');
 @define('PLUGIN_BACKUP_FILESIZE', 'Velikost');
 @define('PLUGIN_BACKUP_DATE', 'Datum');
 @define('PLUGIN_BACKUP_OPTION', 'Volba');
-@define('PLUGIN_BACKUP_RECOVER_THIS', 'Obnovit datab·zi pomocÌ tÈto z·lohy...');
+@define('PLUGIN_BACKUP_RECOVER_THIS', 'Obnovit datab√°zi pomoc√≠ t√©to z√°lohy...');
 @define('PLUGIN_BACKUP_DELETE', 'Smazat');
-@define('PLUGIN_BACKUP_NO_BACKUPS', 'æ·dnÈ z·lohy');
-@define('PLUGIN_BACKUP_WHOLE_BLOG', 'Cel· Serendipity');
-@define('PLUGIN_BACKUP_SQL_BACKUP', 'Z·loha SQL datab·ze');
-@define('PLUGIN_BACKUP_HTML_BACKUP', 'Z·loha HTML soubor˘');
+@define('PLUGIN_BACKUP_NO_BACKUPS', '≈æ√°dn√© z√°lohy');
+@define('PLUGIN_BACKUP_WHOLE_BLOG', 'Cel√° Serendipity');
+@define('PLUGIN_BACKUP_SQL_BACKUP', 'Z√°loha SQL datab√°ze');
+@define('PLUGIN_BACKUP_HTML_BACKUP', 'Z√°loha HTML soubor≈Ø');
 
