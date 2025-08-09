@@ -25,7 +25,7 @@
     margin-right: .5rem;
 }
 #faqBackendPage li.col {
-    width: 60%;
+    width: auto;
 }
 #faqBackendPage li.empty {
     width: 1.45rem; /* 24px */
@@ -61,10 +61,13 @@
 #backend_faq_formpage .submit_set {
     margin: 1.5em auto;
 }
+#faqBackendPage .action_field {
+    float: right;
+}
 #faqBackendPage .action_field,
 #backend_faq_formpage .action_field,
 #backend_faq_formpage .plain_editor {
-    float: right;
+    margin-top: 1em;
 }
 #backend_faq_formpage .hook_buttons {
     display: inline;
@@ -75,12 +78,11 @@
     display: -webkit-flex;
     display: flex;
 }
+#backend_faq_formpage .plain_editor .hook_buttons .serendipity_emoticon_bar {
+    display: block ruby;
+}
 .hook_buttons .serendipity_toggle_emoticon_bar.serendipityPrettyButton {
     margin-top: 0;
-}
-#backend_faq_formpage .form_field textarea,
-#backend_faq_formpage .form_field div:not(.action_field) {
-    display: flex;
 }
 .faq_config_desc {
     color: #5E7A94;
@@ -130,6 +132,18 @@
 [data-color-mode="dark"] .faq_lang {
     border-color: var(--color-alert-info-border);
     background: var(--color-bg-overlay);
+}
+
+@media only screen and (min-width: 640px) {
+    #backend_faq_formpage .action_field,
+    #backend_faq_formpage .plain_editor {
+        float: right;
+        margin-right: .25em;
+        margin-top: -1.75em;
+    }
+    #faqBackendPage li.col {
+        width: 80%;
+    }
 }
 
 /* LARGER SCREENS */

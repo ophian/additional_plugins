@@ -1,3 +1,9 @@
+2.0.3:
+------
+ * Fix RichText editor toolbar styling fix before
+ * Fix some more type issues for string functions on NULL
+ * Fix a triggered Error deprecation
+
 2.0.2:
 ------
  * Fix some type issues for string functions on NULL

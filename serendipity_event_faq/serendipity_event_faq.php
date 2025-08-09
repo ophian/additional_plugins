@@ -79,7 +79,7 @@ class serendipity_event_faq extends serendipity_event
         $propbag->add('name',         FAQ_NAME);
         $propbag->add('description',  FAQ_NAME_DESC);
         $propbag->add('author',       'Falk Doering, Ian Styx');
-        $propbag->add('version',      '2.0.2');
+        $propbag->add('version',      '2.0.3');
         $propbag->add('copyright',    'LGPL');
         $propbag->add('stackable',    false);
         $propbag->add('requirements', array(
@@ -386,7 +386,7 @@ class serendipity_event_faq extends serendipity_event
             $this->faq['changedate'] = time();
             $this->faq['changetype'] = 'new';
             if (!is_numeric($this->faq['cid'])) {
-                trigger_error("The {$this->faq['cid']} (cid) parameter must contain a valid 'category id' key", E_USER_ERROR);
+                trigger_error("The {$this->faq['cid']} (cid) parameter must contain a valid 'category id' key");
                 return;
             }
             $q = "SELECT COUNT(id) AS counter
@@ -445,6 +445,8 @@ class serendipity_event_faq extends serendipity_event
     {
         global $serendipity;
 
+        if (!$cid) return false;
+
         $q = "SELECT id, question
                 FROM {$serendipity['dbPrefix']}faqs
                WHERE cid = $cid
@@ -455,6 +457,8 @@ class serendipity_event_faq extends serendipity_event
     function fetchCategory(&$id)
     {
         global $serendipity;
+
+        if (!$id) return false;
 
         $q = "SELECT *
                 FROM {$serendipity['dbPrefix']}faq_categorys
@@ -1216,7 +1220,7 @@ class serendipity_event_faq extends serendipity_event
             }
             // check the special cases
             if (($config_item == 'language' || $config_item == 'id' || $config_item == 'cid')
-                    && $type == 'hidden' && trim($value) == '') {
+                    && $type == 'hidden' && trim((string) $value) == '') {
                 $inspectConfig['value'] = $value = $cbag->get('value'); // case 'language' prop type hidden 'default' = 'value'!
             }
 
@@ -1318,7 +1322,7 @@ class serendipity_event_faq extends serendipity_event
             }
             // check the special cases
             if (($config_item == 'language' || $config_item == 'id' || $config_item == 'cid')
-                    && $type == 'hidden' && trim($value) == '') {
+                    && $type == 'hidden' && trim((string) $value) == '') {
                 $inspectConfig['value'] = $value = $cbag->get('value'); // case 'language' prop type hidden 'default' = 'value'!
             }
 
