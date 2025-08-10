@@ -136,10 +136,10 @@ class serendipity_plugin_flickrbadge
 												"people");
 			$nsid = $user_data['user']['nsid'];
 			$photos = $flickr->getPublicPhotos(array('user_id' => $nsid,
-					'page' => 1, 'per_page' => (integer)$this->get_config('image_number')), 'people');
+					'page' => 1, 'per_page' => (int)$this->get_config('image_number')), 'people');
 
 			$counter = 0;
-			$column_max = (integer)$this->get_config('column_count');
+			$column_max = (int)$this->get_config('column_count');
 
 			if ($column_max > 0) {
 				?>

@@ -1,3 +1,7 @@
+DEV 1.0.0:
+------
+ * Prep for PHP 8.5. (Non-canonical cast names (boolean), (integer), (double), and (binary) have been deprecated.)
+
 0.14:
 -----
  * Fixed wrong Serendipity core constant names
