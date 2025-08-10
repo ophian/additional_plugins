@@ -915,11 +915,11 @@
 <description>Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -6838,11 +6838,11 @@
 <description>Tento plugin umožňuje vypisovat zprávy ze služby Phoneblogz.</description>
 <maintainers><maintainer><name>Garvin Hicking, phoneblogz.com</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-08-08</date>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_phoneblogz">
       <file>ChangeLog</file>
