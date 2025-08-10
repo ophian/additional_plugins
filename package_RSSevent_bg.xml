@@ -256,8 +256,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_disqus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Disqus comments&lt;/b&gt;&lt;br /&gt;Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:22:13 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Disqus comments&lt;/b&gt;&lt;br /&gt;Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 15:54:06 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_disqus</guid>
 </item>
 <item>
@@ -382,8 +382,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_feed</link>
 <category>Event Plugins</category>
 <author>Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;The Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 18 Sep 2022 10:36:32 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;The Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 15:49:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_feed</guid>
 </item>
 <item>
@@ -571,8 +571,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_karma</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;Карма&lt;/b&gt;&lt;br /&gt;Дава възможност посетителите да оценяват качеството на вашите статии&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;Карма&lt;/b&gt;&lt;br /&gt;Дава възможност посетителите да оценяват качеството на вашите статии&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 15:43:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_karma</guid>
 </item>
 <item>
@@ -796,8 +796,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_openid</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Rob Richards, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_openid&lt;br /&gt;OpenID Authentication&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate using an OpenID, their Google or Yahoo account.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 02 Aug 2021 17:30:17 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_openid&lt;br /&gt;OpenID Authentication&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate using an OpenID, their Google or Yahoo account.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 16:05:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_openid</guid>
 </item>
 <item>
@@ -805,8 +805,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_osm</link>
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_osm&lt;br /&gt;OpenStreetMap integration&lt;/b&gt;&lt;br /&gt;Provides an interactive map for *.gpx uploads and geo-tagged entries&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Mon, 30 Jan 2023 10:22:20 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_osm&lt;br /&gt;OpenStreetMap integration&lt;/b&gt;&lt;br /&gt;Provides an interactive map for *.gpx uploads and geo-tagged entries&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 15:21:31 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_osm</guid>
 </item>
 <item>
@@ -814,8 +814,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_osm</link>
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_static_osm&lt;br /&gt;OpenStreetMap static files&lt;/b&gt;&lt;br /&gt;Includes scripts and stylesheets for OpenStreetMap support&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Mon, 30 Jan 2023 11:10:47 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_static_osm&lt;br /&gt;OpenStreetMap static files&lt;/b&gt;&lt;br /&gt;Includes scripts and stylesheets for OpenStreetMap support&lt;br/&gt;For: Serendipity 4.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 15:23:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_static_osm</guid>
 </item>
 <item>
@@ -985,8 +985,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_social</link>
 <category>Event Plugins</category>
 <author>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein</author>
-<content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Wed, 19 May 2021 19:30:51 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Share Buttons&lt;/b&gt;&lt;br /&gt;Show social share buttons for services like Facebook and Twitter using shariff.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 15:58:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
 </item>
 <item>

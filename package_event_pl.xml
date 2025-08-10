@@ -1713,11 +1713,11 @@
 <description>Disqus.com is a webservice that allows you to manage comments, with central logins. It stores and manages comments outside of your Serendipity installation, and is embedded using JavaScript. For more information see disqus.com.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.6</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -1726,11 +1726,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_disqus.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_disqus/ChangeLog</file>
@@ -1739,8 +1735,6 @@
     <file>serendipity_event_disqus/lang_de.inc.php</file>
     <file>serendipity_event_disqus/lang_en.inc.php</file>
     <file>serendipity_event_disqus/serendipity_event_disqus.php</file>
-    <file>serendipity_event_disqus/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_disqus/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2728,34 +2722,33 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_feed</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_feed/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Dashboard Feed Reader</summary>
 <groups>BACKEND_ADMIN,BACKEND_DASHBOARD,BACKEND_FEATURES</groups>
 <description>The Dashboard S9y Feedle</description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.05</version>
-  <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-09-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_feed">
+      <file>ChangeLog</file>
       <file>feedblock.tpl</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_feed.php</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_feed/ChangeLog</file>
     <file>serendipity_event_feed/feedblock.tpl</file>
     <file>serendipity_event_feed/lang_de.inc.php</file>
     <file>serendipity_event_feed/lang_en.inc.php</file>
     <file>serendipity_event_feed/serendipity_event_feed.php</file>
-    <file>serendipity_event_feed/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -4735,11 +4728,11 @@
 <description>Niechaj odwiedzający Twoją stronę ocenią jakość Twoich wpisów</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.24</version>
-  <requirements:s9yVersion>3.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -4779,22 +4772,6 @@
       <file>lang_tn.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_event_karma.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cn.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_pt_PT.inc.php</file>
-        <file>lang_ru.inc.php</file>
-        <file>lang_sk.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -4833,20 +4810,6 @@
     <file>serendipity_event_karma/lang_tn.inc.php</file>
     <file>serendipity_event_karma/lang_zh.inc.php</file>
     <file>serendipity_event_karma/serendipity_event_karma.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_ru.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_sk.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_karma/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6462,11 +6425,11 @@
 <description>Allows authors to authenticate using an OpenID, their Google or Yahoo account.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Rob Richards, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>5.1.3</requirements:phpVersion>
-  <date>2021-08-02</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_openid">
       <file>ChangeLog</file>
@@ -6547,11 +6510,67 @@
           </dir>
         </dir>
       </dir>
-      <file>serendipity_event_openid.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
+      <dir name="php-openid-3.0.3">
+        <file>.gitignore</file>
+        <dir name="Auth">
+          <dir name="OpenID">
+            <file>Association.php</file>
+            <file>AX.php</file>
+            <file>BigMath.php</file>
+            <file>Consumer.php</file>
+            <file>CryptUtil.php</file>
+            <file>DatabaseConnection.php</file>
+            <file>DiffieHellman.php</file>
+            <file>Discover.php</file>
+            <file>DumbStore.php</file>
+            <file>Extension.php</file>
+            <file>FileStore.php</file>
+            <file>HMAC.php</file>
+            <file>Interface.php</file>
+            <file>KVForm.php</file>
+            <file>MDB2Store.php</file>
+            <file>MemcachedStore.php</file>
+            <file>Message.php</file>
+            <file>MySQLStore.php</file>
+            <file>Nonce.php</file>
+            <file>PAPE.php</file>
+            <file>Parse.php</file>
+            <file>PostgreSQLStore.php</file>
+            <file>PredisStore.php</file>
+            <file>Server.php</file>
+            <file>ServerRequest.php</file>
+            <file>SQLiteStore.php</file>
+            <file>SQLStore.php</file>
+            <file>SReg.php</file>
+            <file>TrustRoot.php</file>
+            <file>URINorm.php</file>
+          </dir>
+          <file>OpenID.php</file>
+          <dir name="Yadis">
+            <file>HTTPFetcher.php</file>
+            <file>Manager.php</file>
+            <file>Misc.php</file>
+            <file>ParanoidHTTPFetcher.php</file>
+            <file>ParseHTML.php</file>
+            <file>PlainHTTPFetcher.php</file>
+            <file>XML.php</file>
+            <file>XRDS.php</file>
+            <file>XRI.php</file>
+            <file>XRIRes.php</file>
+            <file>Yadis.php</file>
+          </dir>
+        </dir>
+        <file>CHANGES-2.1.0</file>
+        <file>composer.json</file>
+        <dir name="contrib">
+        </dir>
+        <file>COPYING</file>
+        <file>NEWS.md</file>
+        <file>README.Debian</file>
+        <file>README.git</file>
+        <file>README.md</file>
       </dir>
+      <file>serendipity_event_openid.php</file>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -6619,9 +6638,57 @@
     <file>serendipity_event_openid/PHP-openid/README.SERENDIPITY</file>
     <file>serendipity_event_openid/PHP-openid/Services/.empty</file>
     <file>serendipity_event_openid/PHP-openid/Services/Yadis/.empty</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/.gitignore</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Association.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/AX.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/BigMath.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Consumer.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/CryptUtil.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/DatabaseConnection.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/DiffieHellman.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Discover.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/DumbStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Extension.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/FileStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/HMAC.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Interface.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/KVForm.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/MDB2Store.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/MemcachedStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Message.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/MySQLStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Nonce.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/PAPE.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Parse.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/PostgreSQLStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/PredisStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/Server.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/ServerRequest.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/SQLiteStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/SQLStore.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/SReg.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/TrustRoot.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID/URINorm.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/OpenID.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/HTTPFetcher.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/Manager.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/Misc.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/ParanoidHTTPFetcher.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/ParseHTML.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/PlainHTTPFetcher.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/XML.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/XRDS.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/XRI.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/XRIRes.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/Auth/Yadis/Yadis.php</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/CHANGES-2.1.0</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/composer.json</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/COPYING</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/NEWS.md</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/README.Debian</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/README.git</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/README.md</file>
     <file>serendipity_event_openid/serendipity_event_openid.php</file>
-    <file>serendipity_event_openid/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_openid/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6634,11 +6701,11 @@
 <description>Provides an interactive map for *.gpx uploads and geo-tagged entries</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.10.0</version>
-  <requirements:s9yVersion>2.3</requirements:s9yVersion>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-01-30</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -6656,10 +6723,6 @@
       </dir>
       <file>serendipity_event_osm.php</file>
       <file>serendipity_event_static_osm.php</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -6676,8 +6739,6 @@
     <file>serendipity_event_osm/resources/osm.js</file>
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
     <file>serendipity_event_osm/serendipity_event_static_osm.php</file>
-    <file>serendipity_event_osm/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_osm/UTF-8/lang_es.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6690,11 +6751,11 @@
 <description>Includes scripts and stylesheets for OpenStreetMap support</description>
 <maintainers><maintainer><name>Kathi Sewelies</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.10.0</version>
-  <requirements:s9yVersion>2.3</requirements:s9yVersion>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-01-30</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -6712,10 +6773,6 @@
       </dir>
       <file>serendipity_event_osm.php</file>
       <file>serendipity_event_static_osm.php</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -6732,8 +6789,6 @@
     <file>serendipity_event_osm/resources/osm.js</file>
     <file>serendipity_event_osm/serendipity_event_osm.php</file>
     <file>serendipity_event_osm/serendipity_event_static_osm.php</file>
-    <file>serendipity_event_osm/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_osm/UTF-8/lang_es.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8450,11 +8505,11 @@
 <description>Show social share buttons for services like Facebook and Twitter using shariff.</description>
 <maintainers><maintainer><name>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.30</version>
-  <requirements:s9yVersion>2.9</requirements:s9yVersion>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-05-19</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
@@ -8474,9 +8529,6 @@
       <file>serendipity_event_social.php</file>
       <file>shariff.complete.css</file>
       <file>shariff.min.js</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -8495,7 +8547,6 @@
     <file>serendipity_event_social/serendipity_event_social.php</file>
     <file>serendipity_event_social/shariff.complete.css</file>
     <file>serendipity_event_social/shariff.min.js</file>
-    <file>serendipity_event_social/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
