@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -18,10 +20,10 @@ class serendipity_event_social extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
-        $propbag->add('version',       '0.30');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.9',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array(
                                         'frontend_display:html:per_entry' => true,
@@ -201,7 +203,7 @@ class serendipity_event_social extends serendipity_event
                         # /\s+/: multiple newline and whitespaces
                         echo '    <!--serendipity_event_shariff-->' . "\n";
                         echo '    <meta name="twitter:card" content="summary" />' . "\n";
-                        echo '    <meta property="og:title" content="' . serendipity_specialchars($entry['title'], null, LANG_CHARSET, false) . '" />' . "\n";
+                        echo '    <meta property="og:title" content="' . htmlspecialchars($entry['title'], double_encode: false) . '" />' . "\n";
 
                         $meta_description = $entry['properties']['meta_description'] ?? '';
                         if (empty($meta_description)) {
@@ -212,10 +214,10 @@ class serendipity_event_social extends serendipity_event
                             $meta_description = trim(preg_replace('/\s+/', ' ', substr(strip_tags($description_body), 0, 200))) . '...';
                         }
 
-                        echo '    <meta property="og:description" content="' . serendipity_specialchars($meta_description, null, LANG_CHARSET, false) . '" />' . "\n";
+                        echo '    <meta property="og:description" content="' . htmlspecialchars($meta_description, double_encode: false) . '" />' . "\n";
                         echo '    <meta property="og:type" content="article" />' . "\n";
                         echo '    <meta property="og:site_name" content="' . $serendipity['blogTitle'] . '" />' . "\n";
-                        echo '    <meta property="og:url" content="'. $blogURL . serendipity_specialchars($_SERVER['REQUEST_URI']) . '" />' . "\n";
+                        echo '    <meta property="og:url" content="'. $blogURL . htmlspecialchars($_SERVER['REQUEST_URI']) . '" />' . "\n";
 
                         // set default image from plugin configuration
                         $social_image = $this->get_config('social_image', '');
@@ -264,7 +266,7 @@ class serendipity_event_social extends serendipity_event
 
             <fieldset id="edit_entry_social_image" class="entryproperties_social_image">
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_SOCIAL_ENTRY_IMAGE; ?></legend></span>
-                <textarea data-configitem="properties_entry_image" name="serendipity[properties][entry_image]" class="change_preview" id="properties_entry_image" style="width: 94%"><?php echo serendipity_specialchars($entry_image); ?></textarea>
+                <textarea data-configitem="properties_entry_image" name="serendipity[properties][entry_image]" class="change_preview" id="properties_entry_image" style="width: 94%"><?php echo htmlspecialchars($entry_image); ?></textarea>
                 <button class="customfieldMedia" type="button" name="insImage" title="<?php echo MEDIA ; ?>"><span class="icon-picture" aria-hidden="true"></span><span class="visuallyhidden"><?php echo MEDIA ; ?></span></button>
 <?php
             if (!empty($entry_image)) {
