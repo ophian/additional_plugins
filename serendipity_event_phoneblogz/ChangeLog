@@ -1,3 +1,7 @@
+1.1.1:
+------
+ * Prep for PHP 8.5. (Non-canonical cast names (boolean), (integer), (double), and (binary) have been deprecated.)
+
 1.1.0:
 ------
  * Fix-up for PHP 8.4  xml_set_* deprecation sets

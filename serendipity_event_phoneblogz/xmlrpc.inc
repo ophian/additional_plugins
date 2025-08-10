@@ -779,8 +779,8 @@
 					else
 					{
 						// it's ok, add it on
-						//$_xh[$parser]['st'].=(double)$_xh[$parser]['ac'];
-						$_xh[$parser]['value']=(double)$_xh[$parser]['ac'];
+						//$_xh[$parser]['st'].=(float)$_xh[$parser]['ac'];
+						$_xh[$parser]['value']=(float)$_xh[$parser]['ac'];
 					}
 				}
 				else
