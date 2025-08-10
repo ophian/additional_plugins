@@ -1,6 +1,11 @@
 <?php
 
-if (IN_serendipity !== true) { die ("Don't hack!"); }
+declare(strict_types=1);
+
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 @define('PLUGIN_KARMA_DB_VERSION', '2.3');
@@ -44,11 +49,11 @@ class serendipity_event_karma extends serendipity_event
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '2.24');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.3.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array(
             'external_plugin'             => true,
@@ -1254,7 +1259,7 @@ if ($h == 15) {
                         if (is_array($sql_rows)) {
                             foreach($sql_rows AS $id => $row) {
     ?>
-            <dt><a href="<?php echo serendipity_archiveURL($row['id'], $row['title'], 'serendipityHTTPPath', true, array('timestamp' => $row['timestamp'])); ?>"><?php echo serendipity_specialchars($row['title']); ?></a></dt>
+            <dt><a href="<?php echo serendipity_archiveURL($row['id'], $row['title'], 'serendipityHTTPPath', true, array('timestamp' => $row['timestamp'])); ?>"><?php echo htmlspecialchars($row['title']); ?></a></dt>
             <dd><?php echo $row['no']; ?> <?php echo constant('PLUGIN_KARMA_STATISTICS_' . strtoupper($rows[0]) . '_NO'); ?></dd>
     <?php
                             }
@@ -1677,7 +1682,7 @@ if ($h == 15) {
                     }
 
                     // URL; expected to be event_display and karmalog, respectively
-                    $url = '?serendipity[adminModule]='.serendipity_specialchars($serendipity['GET']['adminModule']).'&serendipity[adminAction]='.serendipity_specialchars($serendipity['GET']['adminAction']);
+                    $url = '?serendipity[adminModule]='.htmlspecialchars($serendipity['GET']['adminModule']).'&serendipity[adminAction]='.htmlspecialchars($serendipity['GET']['adminAction']);
                     $and = ''; // init
 
                     // Filters
@@ -1698,22 +1703,22 @@ if ($h == 15) {
         <div class='clearfix'>
             <div class='form_field'>
                 <label for='serendipity_filter_useragent'>User Agent</label>
-                <input id='serendipity_filter_useragent' name='serendipity[filter][user_agent]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['user_agent'] ?? null))."'>
+                <input id='serendipity_filter_useragent' name='serendipity[filter][user_agent]' type='text' value='".htmlspecialchars(($serendipity['GET']['filter']['user_agent'] ?? null))."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_ip'>IP</label>
-                <input id='serendipity_filter_ip' name='serendipity[filter][ip]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['ip'] ?? null))."'>
+                <input id='serendipity_filter_ip' name='serendipity[filter][ip]' type='text' value='".htmlspecialchars(($serendipity['GET']['filter']['ip'] ?? null))."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_entryid'>Entry ID</label>
-                <input id='serendipity_filter_entryid' name='serendipity[filter][entryid]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['entryid'] ?? null))."'>
+                <input id='serendipity_filter_entryid' name='serendipity[filter][entryid]' type='text' value='".htmlspecialchars(($serendipity['GET']['filter']['entryid'] ?? null))."'>
             </div>
 
             <div class='form_field'>
                 <label for='serendipity_filter_title'>Entry title</label>
-                <input id='serendipity_filter_title' name='serendipity[filter][title]' type='text' value='".serendipity_specialchars(($serendipity['GET']['filter']['title'] ?? null))."'>
+                <input id='serendipity_filter_title' name='serendipity[filter][title]' type='text' value='".htmlspecialchars(($serendipity['GET']['filter']['title'] ?? null))."'>
             </div>
         </div>
 
@@ -1726,22 +1731,22 @@ if ($h == 15) {
                     if (!empty($serendipity['GET']['filter']['entryid'])) {
                         $val = $serendipity['GET']['filter']['entryid'];
                         $and .= "AND l.entryid = '" . serendipity_db_escape_string($val) . "'";
-                        $searchString .= "&amp;serendipity['filter']['entryid']=".serendipity_specialchars($val);
+                        $searchString .= "&amp;serendipity['filter']['entryid']=".htmlspecialchars($val);
                     }
                     if (!empty($serendipity['GET']['filter']['ip'])) {
                         $val = $serendipity['GET']['filter']['ip'];
                         $and .= "AND l.ip = '" . serendipity_db_escape_string($val) . "'";
-                        $searchString .= "&amp;serendipity['filter']['ip']=".serendipity_specialchars($val);
+                        $searchString .= "&amp;serendipity['filter']['ip']=".htmlspecialchars($val);
                     }
                     if (!empty($serendipity['GET']['filter']['user_agent'])) {
                         $val = $serendipity['GET']['filter']['user_agent'];
                         $and .= "AND l.user_agent LIKE '%" . serendipity_db_escape_string($val) . "%'";
-                        $searchString .= "&amp;serendipity['filter']['user_agent']=".serendipity_specialchars($val);
+                        $searchString .= "&amp;serendipity['filter']['user_agent']=".htmlspecialchars($val);
                     }
                     if (!empty($serendipity['GET']['filter']['title'])) {
                         $val = $serendipity['GET']['filter']['title'];
                         $and .= "AND e.title LIKE '%" . serendipity_db_escape_string($val) . "%'";
-                        $searchString .= "&amp;serendipity['filter']['title']=".serendipity_specialchars($val);
+                        $searchString .= "&amp;serendipity['filter']['title']=".htmlspecialchars($val);
                     }
 
                     // Sorting (controls go after filtering controls in form above)

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *  @author Serge Shakhovsky <sadtg@mail.ru> http://blog.sadtg.ru
@@ -10,11 +10,11 @@
 @define('PLUGIN_KARMA_BLAHBLAH', 'Позволяет посетителям оценивать ваши записи');
 @define('PLUGIN_KARMA_VOTETEXT', 'Карма этой статьи: ');
 @define('PLUGIN_KARMA_RATE', 'Оцените эту статью: %s');
-@define('PLUGIN_KARMA_VOTEPOINT_1', 'Очень хорошо!');
-@define('PLUGIN_KARMA_VOTEPOINT_2', 'Хорошо');
+@define('PLUGIN_KARMA_VOTEPOINT_5', 'Очень хорошо!');
+@define('PLUGIN_KARMA_VOTEPOINT_4', 'Хорошо');
 @define('PLUGIN_KARMA_VOTEPOINT_3', 'Нормально');
-@define('PLUGIN_KARMA_VOTEPOINT_4', 'Не интересно');
-@define('PLUGIN_KARMA_VOTEPOINT_5', 'Ужасно');
+@define('PLUGIN_KARMA_VOTEPOINT_2', 'Не интересно');
+@define('PLUGIN_KARMA_VOTEPOINT_1', 'Ужасно');
 @define('PLUGIN_KARMA_VOTED', 'Выбранная вами оценка "%s" сохранена.');
 @define('PLUGIN_KARMA_INVALID', 'Ваш голос не учтен из-за ошибки системы голосования. Да здравствует демократия!');
 @define('PLUGIN_KARMA_ALREADYVOTED', 'Ваш голос уже был учтен.');
@@ -48,4 +48,3 @@
 @define('PLUGIN_KARMA_STATISTICS_POINTS_NO', 'очков');
 
 @define('PLUGIN_KARMA_STARRATING', 'Включить отдельное голосование по этой записи?');
-
