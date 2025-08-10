@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -19,11 +21,11 @@ class serendipity_event_disqus extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '0.6');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display:html:per_entry' => true,

@@ -1,34 +1,34 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2011/06/19
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/06/22
  */
-@define('PLUGIN_DISQUS_TITLE', 'Komentáøe Disqus');
-@define('PLUGIN_DISQUS_DESC', 'Disqus.com je webová slu¾ba pro správu komentáøù. Ukládá a spravuje komentáøe vnì instalace serendipity a je do blogu vkládána pomocí JavaScriptu. Pro více informací pøejdìte na www.disqus.com.');
-@define('PLUGIN_DISQUS_DESC2', 'Kdy¾ jsou zapnuté komentáøe disqus, pak pøirozenì nefungují vestavìné funkce serendipity tıkající se komentáøù.
+@define('PLUGIN_DISQUS_TITLE', 'KomentÃ¡Å™e Disqus');
+@define('PLUGIN_DISQUS_DESC', 'Disqus.com je webovÃ¡ sluÅ¾ba pro sprÃ¡vu komentÃ¡Å™Å¯. UklÃ¡dÃ¡ a spravuje komentÃ¡Å™e vnÄ› instalace serendipity a je do blogu vklÃ¡dÃ¡na pomocÃ­ JavaScriptu. Pro vÃ­ce informacÃ­ pÅ™ejdÄ›te na www.disqus.com.');
+@define('PLUGIN_DISQUS_DESC2', 'KdyÅ¾ jsou zapnutÃ© komentÃ¡Å™e disqus, pak pÅ™irozenÄ› nefungujÃ­ vestavÄ›nÃ© funkce serendipity tÃ½kajÃ­cÃ­ se komentÃ¡Å™Å¯.
 
-Vnitønì tento plugin pou¾ívá CSS ke skrytí komentáøù, formuláøù a odezev serendipity. Nastavuje vlastnost "display:none" pro následující tøídy CSS:
+VnitÅ™nÄ› tento plugin pouÅ¾Ã­vÃ¡ CSS ke skrytÃ­ komentÃ¡Å™Å¯, formulÃ¡Å™Å¯ a odezev serendipity. Nastavuje vlastnost "display:none" pro nÃ¡sledujÃ­cÃ­ tÅ™Ã­dy CSS:
 
 .serendipity_comments
 .serendipity_section_comments
 .serendipity_section_trackbacks
 .serendipity_section_commentform
 
-Pokud va¹e ¹ablona/styl vzhledu pou¾ívá jiné názvy, musíte tyto názvy pøidat do názvù tøíd va¹í ¹ablony, a nebo musíte schovat komentáøe sami.
+Pokud vaÅ¡e Å¡ablona/styl vzhledu pouÅ¾Ã­vÃ¡ jinÃ© nÃ¡zvy, musÃ­te tyto nÃ¡zvy pÅ™idat do nÃ¡zvÅ¯ tÅ™Ã­d vaÅ¡Ã­ Å¡ablony, a nebo musÃ­te schovat komentÃ¡Å™e sami.
 
-Plugin umístí vıstup komentáøù disqus do promìnné Smarty {$entry.plugin_display_dat} A {$entry.disqus}, které mù¾ete umístit do ¹ablony entries.tpl na libovolné místo ve smyèce {$entry}.
+Plugin umÃ­stÃ­ vÃ½stup komentÃ¡Å™Å¯ disqus do promÄ›nnÃ© Smarty {$entry.plugin_display_dat} A {$entry.disqus}, kterÃ© mÅ¯Å¾ete umÃ­stit do Å¡ablony entries.tpl na libovolnÃ© mÃ­sto ve smyÄce {$entry}.
 ');
-@define('PLUGIN_DISQUS_ENABLE_SINCE', 'Povolit disqus.com pro pøíspìvky od...');
-@define('PLUGIN_DISQUS_ENABLE_SINCE_DESC', 'Zadejte datum (R-m-d), po kterém se budou zobrazovat komentáøe disqus místo vestavìnıch komentáøù serendipity. Star¹í komentáøe se budou zobrazovat správnì z databáze serendipity.');
-@define('PLUGIN_DISQUS_SHORTNAME', 'Krátkı název úètu disqus');
-@define('PLUGIN_DISQUS_SHORTNAME_DESC', 'Zadejte krátkı název (shortname), které jste si zaregistrovali pod úètem disqus.');
+@define('PLUGIN_DISQUS_ENABLE_SINCE', 'Povolit disqus.com pro pÅ™Ã­spÄ›vky od...');
+@define('PLUGIN_DISQUS_ENABLE_SINCE_DESC', 'Zadejte datum (R-m-d), po kterÃ©m se budou zobrazovat komentÃ¡Å™e disqus mÃ­sto vestavÄ›nÃ½ch komentÃ¡Å™Å¯ serendipity. StarÅ¡Ã­ komentÃ¡Å™e se budou zobrazovat sprÃ¡vnÄ› z databÃ¡ze serendipity.');
+@define('PLUGIN_DISQUS_SHORTNAME', 'KrÃ¡tkÃ½ nÃ¡zev ÃºÄtu disqus');
+@define('PLUGIN_DISQUS_SHORTNAME_DESC', 'Zadejte krÃ¡tkÃ½ nÃ¡zev (shortname), kterÃ© jste si zaregistrovali pod ÃºÄtem disqus.');
 
 // Next lines were translated on 2012/06/22
-@define('PLUGIN_DISQUS_FOOTERCOMMENTLINK', 'Nechat nastavit DISQUS poèet komentáøù v patièce');
-@define('PLUGIN_DISQUS_FOOTERCOMMENTLINK_DESC', 'Proto¾e poèet komentáøù k pøíspìvku obecnì není známı, tento plugin vkládá do patièky pouze text "Komentáøe" místo správného "N komentáøù". Mù¾ete nechat DISQUS, aby tento text správnì nahrazoval, ale v nìkterıch ¹ablonách se to nemusí zobrazovat korektnì. Pak zde mù¾ete dynamické nahrazení poètu komentáøù vypnout.');
-@define('PLUGIN_DISQUS_HIDE_COMMENTCSS', 'Skrıt css komentáøù');
-@define('PLUGIN_DISQUS_HIDE_COMMENTCSS_DESC', 'Pokud jsou komentáøe disqus.com nainstalovány a zapnuty, ¾ádná z funkcí, která závisí na interních komentáøích seerendipity nebude fungovat. Tento plugin internì pou¾ívá CSS styly ke skrytí komentáøù Serendipity a formuláøe pro jejich vlo¾ení. Dìje se tak prostım nastavením vlastnosti "display:none" pro pøíslu¹né CSS tøídy. Zadejte zde prosím CSS tøídy, které pou¾íváte ve va¹í ¹ablonì k zobrazení komentáøù a formuláøe pro jejich vlo¾ení. Vıchozí nastavení bude fungovat na vìt¹inì ¹ablon (stylù vzhledu).');
+@define('PLUGIN_DISQUS_FOOTERCOMMENTLINK', 'Nechat nastavit DISQUS poÄet komentÃ¡Å™Å¯ v patiÄce');
+@define('PLUGIN_DISQUS_FOOTERCOMMENTLINK_DESC', 'ProtoÅ¾e poÄet komentÃ¡Å™Å¯ k pÅ™Ã­spÄ›vku obecnÄ› nenÃ­ znÃ¡mÃ½, tento plugin vklÃ¡dÃ¡ do patiÄky pouze text "KomentÃ¡Å™e" mÃ­sto sprÃ¡vnÃ©ho "N komentÃ¡Å™Å¯". MÅ¯Å¾ete nechat DISQUS, aby tento text sprÃ¡vnÄ› nahrazoval, ale v nÄ›kterÃ½ch Å¡ablonÃ¡ch se to nemusÃ­ zobrazovat korektnÄ›. Pak zde mÅ¯Å¾ete dynamickÃ© nahrazenÃ­ poÄtu komentÃ¡Å™Å¯ vypnout.');
+@define('PLUGIN_DISQUS_HIDE_COMMENTCSS', 'SkrÃ½t css komentÃ¡Å™Å¯');
+@define('PLUGIN_DISQUS_HIDE_COMMENTCSS_DESC', 'Pokud jsou komentÃ¡Å™e disqus.com nainstalovÃ¡ny a zapnuty, Å¾Ã¡dnÃ¡ z funkcÃ­, kterÃ¡ zÃ¡visÃ­ na internÃ­ch komentÃ¡Å™Ã­ch seerendipity nebude fungovat. Tento plugin internÄ› pouÅ¾Ã­vÃ¡ CSS styly ke skrytÃ­ komentÃ¡Å™Å¯ Serendipity a formulÃ¡Å™e pro jejich vloÅ¾enÃ­. DÄ›je se tak prostÃ½m nastavenÃ­m vlastnosti "display:none" pro pÅ™Ã­sluÅ¡nÃ© CSS tÅ™Ã­dy. Zadejte zde prosÃ­m CSS tÅ™Ã­dy, kterÃ© pouÅ¾Ã­vÃ¡te ve vaÅ¡Ã­ Å¡ablonÄ› k zobrazenÃ­ komentÃ¡Å™Å¯ a formulÃ¡Å™e pro jejich vloÅ¾enÃ­. VÃ½chozÃ­ nastavenÃ­ bude fungovat na vÄ›tÅ¡inÄ› Å¡ablon (stylÅ¯ vzhledu).');
 
