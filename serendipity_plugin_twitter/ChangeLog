@@ -9,6 +9,10 @@ TODO:
 * Twitter announcements/credentials etc. per author instead of
   only per central blog
 
+DEV 3.0.0:
+------
+ * Prep for PHP 8.5. (Non-canonical cast names (boolean), (integer), (double), and (binary) have been deprecated.)
+
 2.4.0:
 ------
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
