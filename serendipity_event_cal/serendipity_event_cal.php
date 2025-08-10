@@ -73,7 +73,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '3.0.0');
+        $propbag->add('version',        '3.0.1');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '5.0',
@@ -2235,8 +2235,8 @@ class serendipity_event_cal extends serendipity_event
             if (isset($_REQUEST['calendar']['ev']))   $ev = (int)$_REQUEST['calendar']['ev'];
             if (isset($_REQUEST['calendar']['cw']))   $cw = (int)$_REQUEST['calendar']['cw'];
 
-            if (isset($_POST['calendar']['cw_prev'])) $cw_prev = (boolean)$_POST['calendar']['cw_prev'];
-            if (isset($_POST['calendar']['cw_next'])) $cw_next = (boolean)$_POST['calendar']['cw_next'];
+            if (isset($_POST['calendar']['cw_prev'])) $cw_prev = (bool)$_POST['calendar']['cw_prev'];
+            if (isset($_POST['calendar']['cw_next'])) $cw_next = (bool)$_POST['calendar']['cw_next'];
 
             if ( (!empty($cw_prev) || !empty($cw_next)) == true && isset($_POST['calendar']['cm']) )
                 $post_cm = (int)$_POST['calendar']['cm'];
