@@ -1,3 +1,11 @@
+2.0.0:
+------
+ * Declare strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Raise requirements for Styx 5.0
+ * Testwise upgrade tp PHP-openID-3.0.3 including patch
+
 1.5:
 ----
 

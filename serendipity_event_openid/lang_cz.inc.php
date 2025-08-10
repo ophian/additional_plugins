@@ -1,59 +1,59 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/16
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/05/13
  */
-@define('PLUGIN_OPENID_NAME',     'Pøihla¹ování pomocí OpenID');
-@define('PLUGIN_OPENID_DESC',     'Umo¾òuje autorùm pøihlásit se pomocí OpenID.');
+@define('PLUGIN_OPENID_NAME',     'PÅ™ihlaÅ¡ovÃ¡nÃ­ pomocÃ­ OpenID');
+@define('PLUGIN_OPENID_DESC',     'UmoÅ¾Åˆuje autorÅ¯m pÅ™ihlÃ¡sit se pomocÃ­ OpenID.');
 
-@define('PLUGIN_OPENID_EXISTS', 'S tímto OpenID u¾ jste se zaregistrovali.');
-@define('PLUGIN_OPENID_WRONG_ACTIVATION', 'Nesprávná aktivaèní URL adresa!');
+@define('PLUGIN_OPENID_EXISTS', 'S tÃ­mto OpenID uÅ¾ jste se zaregistrovali.');
+@define('PLUGIN_OPENID_WRONG_ACTIVATION', 'NesprÃ¡vnÃ¡ aktivaÄnÃ­ URL adresa!');
 
-@define('PLUGIN_EVENT_OPENID_SELECT', 'OpenID svázané s tímto úètem');
+@define('PLUGIN_EVENT_OPENID_SELECT', 'OpenID svÃ¡zanÃ© s tÃ­mto ÃºÄtem');
 
 @define('PLUGIN_OPENID_SERVER', 'OpenID server');
-@define('PLUGIN_OPENID_SERVER_DESC', 'OpenID server pro pou¾ití delegáta (vy¾aduje naplnìné OpenID delegáty)');
+@define('PLUGIN_OPENID_SERVER_DESC', 'OpenID server pro pouÅ¾itÃ­ delegÃ¡ta (vyÅ¾aduje naplnÄ›nÃ© OpenID delegÃ¡ty)');
 
-@define('PLUGIN_OPENID_DELEGATE', 'OpenID delegát');
-@define('PLUGIN_OPENID_DELEGATE_DESC', 'OpenID delegát (vy¾aduje naplnìnı OpenID server)');
+@define('PLUGIN_OPENID_DELEGATE', 'OpenID delegÃ¡t');
+@define('PLUGIN_OPENID_DELEGATE_DESC', 'OpenID delegÃ¡t (vyÅ¾aduje naplnÄ›nÃ½ OpenID server)');
 
-@define('PLUGIN_OPENID_XRDS_LOC', 'Umístìní OpenID XRDS');
-@define('PLUGIN_OPENID_XRDS_LOC_DESC', 'URL adresa pro umístìní XRDS dokumentù (vy¾aduje naplnìnı OpenID server)');
+@define('PLUGIN_OPENID_XRDS_LOC', 'UmÃ­stÄ›nÃ­ OpenID XRDS');
+@define('PLUGIN_OPENID_XRDS_LOC_DESC', 'URL adresa pro umÃ­stÄ›nÃ­ XRDS dokumentÅ¯ (vyÅ¾aduje naplnÄ›nÃ½ OpenID server)');
 
-@define('PLUGIN_OPENID_UPDATE_SUCCESS', 'OpenID server byl aktualizován');
-@define('PLUGIN_OPENID_UPDATE_FAIL', 'Pøi aktualizaci OpenID serveru se vyskytla chyba');
-@define('PLUGIN_OPENID_INVALID_RESPONSE', 'Bylo zadáno nesprávné OpenID');
+@define('PLUGIN_OPENID_UPDATE_SUCCESS', 'OpenID server byl aktualizovÃ¡n');
+@define('PLUGIN_OPENID_UPDATE_FAIL', 'PÅ™i aktualizaci OpenID serveru se vyskytla chyba');
+@define('PLUGIN_OPENID_INVALID_RESPONSE', 'Bylo zadÃ¡no nesprÃ¡vnÃ© OpenID');
 
 // Next lines were translated on 2012/05/13
-@define('PLUGIN_OPENID_DESCRIPTION', '<h3>Pou¾ití OpenID k pøihlá¹ení do blogu</h3>' .
-'<p>Tento plugin nevy¾aduje ¾ádné nastavení, abyste se mohli pøihlásit do blogu pomocí OpenID (OpenID je samonastavovací)</p>' .
-'<p>Nicménì u¾ivatelé, kteøí chtìjí pou¾ít OpenID k pøihlá¹ení, musejí mít nastavenou OpenID URL adresu, pomocí které se chtìjí pøihla¹ovat. ' . 
-'Tedy pokud chcete vyu¾ívat OpenID k pøihla¹ování, jdìte na va¹i <a href="serendipity_admin.php?serendipity[adminModule]=personal">profilovou stránku Serendipity</a> a nastavte si OpenID URL (dole na stránce).</p>' .
-'<p>Také tam najdete tlaèítka pro úèty <b>Google</b>, <b>Yahoo</b> a <b>Aol</b>. Tyto slu¾by jsou také poskytovateli OpenID a tlaèítka vám pomohou nastavit je.<br/>' .
-'Mù¾ete ale nastavit <b>pouze jedno OpenID spojení pro jeden u¾ivatelskı úèet</b>.</p>');
-@define('PLUGIN_OPENID_DELEGATION_DESCRIPTION', '<h3>Nastavení pøesmìrování OpenID (nepovinné)</h3>' .
-'<p>Pokud chcete pou¾ít blog jako poskytovatele OpenID URL k pøihla¹ování k jinım webovım slu¾bám, které podporují OpenID, mù¾ete zde nastavit pøesmìrování z va¹eho blogu na slu¾bu, kde je ulo¾eno va¹e ID.<br/>' .
-'Tento plugin pøidá nìkteré informace do HTML kódu va¹eho blogu, kterı bude informovat slu¾by, kde hledat va¹e ID, pokud bude vá¹ blog dotazován na OpenID.</p>' .
-'<p>Nastavení pøesmìrování je zcela nepovinné a není potøeba k pøihlá¹ení do blogu pomocí OpenID.</p>');
-@define('PLUGIN_OPENID_LOGIN_USERS', 'Pøihlá¹ování z vıbìru u¾ivatelù');
-@define('PLUGIN_OPENID_LOGIN_USERS_DESC', 'Poté, co si autoøi blogu nastaví jejich OpenID, mù¾ou si pro pøihlá¹ení vybrat své jméno ze seznamu autorù a tím se pøihlásit.
-Aèkoliv je to velmi poholdnı zpùsob pøihla¹ování, má to nevıhodu, ¾e zobrazujete v¹em náv¹tìvníkùm jména v¹ech va¹ich autorù.
-Obyèejnì to není problém, proto¾e jsou jména zobrazována i u pøíspìvkù.
-Ale pokud se vám to nelíbí, mù¾ete zde tuto vlastnost vypnout. Pak se bude zobrazovat obyèejné políèko pro zadání OpenID URL.');
+@define('PLUGIN_OPENID_DESCRIPTION', '<h3>PouÅ¾itÃ­ OpenID k pÅ™ihlÃ¡Å¡enÃ­ do blogu</h3>' .
+'<p>Tento plugin nevyÅ¾aduje Å¾Ã¡dnÃ© nastavenÃ­, abyste se mohli pÅ™ihlÃ¡sit do blogu pomocÃ­ OpenID (OpenID je samonastavovacÃ­)</p>' .
+'<p>NicmÃ©nÄ› uÅ¾ivatelÃ©, kteÅ™Ã­ chtÄ›jÃ­ pouÅ¾Ã­t OpenID k pÅ™ihlÃ¡Å¡enÃ­, musejÃ­ mÃ­t nastavenou OpenID URL adresu, pomocÃ­ kterÃ© se chtÄ›jÃ­ pÅ™ihlaÅ¡ovat. ' . 
+'Tedy pokud chcete vyuÅ¾Ã­vat OpenID k pÅ™ihlaÅ¡ovÃ¡nÃ­, jdÄ›te na vaÅ¡i <a href="serendipity_admin.php?serendipity[adminModule]=personal">profilovou strÃ¡nku Serendipity</a> a nastavte si OpenID URL (dole na strÃ¡nce).</p>' .
+'<p>TakÃ© tam najdete tlaÄÃ­tka pro ÃºÄty <b>Google</b>, <b>Yahoo</b> a <b>Aol</b>. Tyto sluÅ¾by jsou takÃ© poskytovateli OpenID a tlaÄÃ­tka vÃ¡m pomohou nastavit je.<br/>' .
+'MÅ¯Å¾ete ale nastavit <b>pouze jedno OpenID spojenÃ­ pro jeden uÅ¾ivatelskÃ½ ÃºÄet</b>.</p>');
+@define('PLUGIN_OPENID_DELEGATION_DESCRIPTION', '<h3>NastavenÃ­ pÅ™esmÄ›rovÃ¡nÃ­ OpenID (nepovinnÃ©)</h3>' .
+'<p>Pokud chcete pouÅ¾Ã­t blog jako poskytovatele OpenID URL k pÅ™ihlaÅ¡ovÃ¡nÃ­ k jinÃ½m webovÃ½m sluÅ¾bÃ¡m, kterÃ© podporujÃ­ OpenID, mÅ¯Å¾ete zde nastavit pÅ™esmÄ›rovÃ¡nÃ­ z vaÅ¡eho blogu na sluÅ¾bu, kde je uloÅ¾eno vaÅ¡e ID.<br/>' .
+'Tento plugin pÅ™idÃ¡ nÄ›kterÃ© informace do HTML kÃ³du vaÅ¡eho blogu, kterÃ½ bude informovat sluÅ¾by, kde hledat vaÅ¡e ID, pokud bude vÃ¡Å¡ blog dotazovÃ¡n na OpenID.</p>' .
+'<p>NastavenÃ­ pÅ™esmÄ›rovÃ¡nÃ­ je zcela nepovinnÃ© a nenÃ­ potÅ™eba k pÅ™ihlÃ¡Å¡enÃ­ do blogu pomocÃ­ OpenID.</p>');
+@define('PLUGIN_OPENID_LOGIN_USERS', 'PÅ™ihlÃ¡Å¡ovÃ¡nÃ­ z vÃ½bÄ›ru uÅ¾ivatelÅ¯');
+@define('PLUGIN_OPENID_LOGIN_USERS_DESC', 'PotÃ©, co si autoÅ™i blogu nastavÃ­ jejich OpenID, mÅ¯Å¾ou si pro pÅ™ihlÃ¡Å¡enÃ­ vybrat svÃ© jmÃ©no ze seznamu autorÅ¯ a tÃ­m se pÅ™ihlÃ¡sit.
+AÄkoliv je to velmi poholdnÃ½ zpÅ¯sob pÅ™ihlaÅ¡ovÃ¡nÃ­, mÃ¡ to nevÃ½hodu, Å¾e zobrazujete vÅ¡em nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m jmÃ©na vÅ¡ech vaÅ¡ich autorÅ¯.
+ObyÄejnÄ› to nenÃ­ problÃ©m, protoÅ¾e jsou jmÃ©na zobrazovÃ¡na i u pÅ™Ã­spÄ›vkÅ¯.
+Ale pokud se vÃ¡m to nelÃ­bÃ­, mÅ¯Å¾ete zde tuto vlastnost vypnout. Pak se bude zobrazovat obyÄejnÃ© polÃ­Äko pro zadÃ¡nÃ­ OpenID URL.');
 @define('PLUGIN_OPENID_VERSION_SUPPORTED', 'Verze OpenID');
-@define('PLUGIN_OPENID_VERSION_SUPPORTED_DESC', 'Verze, kterou podporuje vá¹ poskytovatel OpenID. Obvykle je v poøádku volba "obì", ale pokud víte, ¾e vá¹ poskytovatel podporuje pouze verzi 1, nebo pouze verzi 2, nastavte to právì zde.');
+@define('PLUGIN_OPENID_VERSION_SUPPORTED_DESC', 'Verze, kterou podporuje vÃ¡Å¡ poskytovatel OpenID. Obvykle je v poÅ™Ã¡dku volba "obÄ›", ale pokud vÃ­te, Å¾e vÃ¡Å¡ poskytovatel podporuje pouze verzi 1, nebo pouze verzi 2, nastavte to prÃ¡vÄ› zde.');
 @define('PLUGIN_OPENID_VERSION_SUPPORTED_V1', 'Pouze OpenID verze 1');
 @define('PLUGIN_OPENID_VERSION_SUPPORTED_V2', 'Pouze OpenID verze 2');
-@define('PLUGIN_OPENID_VERSION_SUPPORTED_BOTH', 'Obì dvì verze OpenID');
-@define('PLUGIN_OPENID_LOGIN_INPUT', 'Pøihlá¹ení pomocí OpenID');
-@define('PLUGIN_OPENID_LOGIN_WITH_GOOGLE', 'Pøihlá¹ení pomocí úètu Google');
-@define('PLUGIN_OPENID_SET_GOOGLE_OID', 'Nastavte vá¹ úèet Google jako OpenID');
-@define('PLUGIN_OPENID_LOGIN_WITH_YAHOO', 'Pøihlá¹ení pomocí úètu Yahoo');
-@define('PLUGIN_OPENID_SET_YAHOO_OID', 'Nastavte vá¹ úèet Yahoo jako OpenID');
-@define('PLUGIN_OPENID_LOGIN_WITH_AOL', 'Pøihlá¹ení pomocí úètu Aol');
-@define('PLUGIN_OPENID_SET_AOL_OID', 'Nastavte vá¹ úèet Aol jako OpenID');
-@define('PLUGIN_OPENID_LOGIN_NOOPENID', 'V souèasnosti nemá ¾ádnı z autorù nastavené pøihlá¹ení pomocí OpenID.<br/>
-Pokud se chcete pøihla¹ovat pomocí OpenID, nastavte prosím nejdøíve patøiènì vá¹ u¾ivatelskı úèet.<br/>Díky.');
+@define('PLUGIN_OPENID_VERSION_SUPPORTED_BOTH', 'ObÄ› dvÄ› verze OpenID');
+@define('PLUGIN_OPENID_LOGIN_INPUT', 'PÅ™ihlÃ¡Å¡enÃ­ pomocÃ­ OpenID');
+@define('PLUGIN_OPENID_LOGIN_WITH_GOOGLE', 'PÅ™ihlÃ¡Å¡enÃ­ pomocÃ­ ÃºÄtu Google');
+@define('PLUGIN_OPENID_SET_GOOGLE_OID', 'Nastavte vÃ¡Å¡ ÃºÄet Google jako OpenID');
+@define('PLUGIN_OPENID_LOGIN_WITH_YAHOO', 'PÅ™ihlÃ¡Å¡enÃ­ pomocÃ­ ÃºÄtu Yahoo');
+@define('PLUGIN_OPENID_SET_YAHOO_OID', 'Nastavte vÃ¡Å¡ ÃºÄet Yahoo jako OpenID');
+@define('PLUGIN_OPENID_LOGIN_WITH_AOL', 'PÅ™ihlÃ¡Å¡enÃ­ pomocÃ­ ÃºÄtu Aol');
+@define('PLUGIN_OPENID_SET_AOL_OID', 'Nastavte vÃ¡Å¡ ÃºÄet Aol jako OpenID');
+@define('PLUGIN_OPENID_LOGIN_NOOPENID', 'V souÄasnosti nemÃ¡ Å¾Ã¡dnÃ½ z autorÅ¯ nastavenÃ© pÅ™ihlÃ¡Å¡enÃ­ pomocÃ­ OpenID.<br/>
+Pokud se chcete pÅ™ihlaÅ¡ovat pomocÃ­ OpenID, nastavte prosÃ­m nejdÅ™Ã­ve patÅ™iÄnÄ› vÃ¡Å¡ uÅ¾ivatelskÃ½ ÃºÄet.<br/>DÃ­ky.');

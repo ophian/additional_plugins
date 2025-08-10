@@ -1,0 +1,23 @@
+{
+    "name": "openid/php-openid",
+    "description": "OpenID library for PHP5",
+    "keywords": ["openid", "authentication", "yadis", "auth"],
+    "license": "Apache-2.0",
+    "homepage": "http://github.com/openid/php-openid",
+    "authors": [
+        {
+            "name": "JanRain Inc.",
+            "homepage": "http://www.openidenabled.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "ext-gmp": "*",
+        "ext-curl": "*",
+        "ext-dom": "*"
+    },
+    "autoload": {
+        "classmap": ["Auth"]
+    },
+    "include-path": ["."]
+}
