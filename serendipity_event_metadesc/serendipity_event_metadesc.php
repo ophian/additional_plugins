@@ -24,7 +24,7 @@ class serendipity_event_metadesc extends serendipity_event
         $propbag->add('description',   PLUGIN_METADESC_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Don Chambers, Ian Styx');
-        $propbag->add('version',       '1.0.0');
+        $propbag->add('version',       '1.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -224,7 +224,7 @@ class serendipity_event_metadesc extends serendipity_event
 
                         if (serendipity_db_bool($this->get_config('escape'))) {
                             $md = htmlspecialchars($default_description, double_encode: false);
-                            $mk = htmlspecialchars($default_keywords, false);
+                            $mk = htmlspecialchars($default_keywords, double_encode: false);
                         } else {
                             $md = $default_description;
                             $mk = $default_keywords;
