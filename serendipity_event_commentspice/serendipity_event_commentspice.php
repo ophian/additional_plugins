@@ -30,7 +30,7 @@ class serendipity_event_commentspice extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',        '2.6.1');
+        $propbag->add('version',        '2.6.2');
 
         $propbag->add('event_hooks',    array(
             'entry_display'                 => true,
