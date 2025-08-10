@@ -239,9 +239,9 @@
         if ( $usables & ( 1 << 0 ))     $pwdSource .= "1234567890";
         if ( $usables & ( 1 << 1 ))     $pwdSource .= "abcdefghijklmnopqrstuvwxyz";
         if ( $usables & ( 1 << 2 ))     $pwdSource .= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        srand ((double) microtime() * 1000000);
+        srand ((float) microtime() * 1000000);
         while ( $pwdLen ) {
-            srand ((double) microtime() * 1000000);
+            srand ((float) microtime() * 1000000);
             $STRING .= substr( $pwdSource, rand( 0, strlen( $pwdSource )), 1);
             $pwdLen--;
         }
