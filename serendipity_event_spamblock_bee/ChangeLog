@@ -1,3 +1,7 @@
+2.0.2
+------
+ * Prep for PHP 8.5. (Non-canonical cast names (boolean), (integer), (double), and (binary) have been deprecated.)
+
 2.0.1:
 ------
  * Convert for Visibility property declaration (minor)
