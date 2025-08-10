@@ -1,3 +1,12 @@
+3.0.0:
+------
+ * Declare strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Raise requirements for Styx 5.0
+ * OpenLayers updated to v10.6.0
+   https://github.com/openlayers/openlayers/releases/tag/v10.6.0
+
+
 2.10.0:
 ------
  * OpenLayers updated to v10.5.0

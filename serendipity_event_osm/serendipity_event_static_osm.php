@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -22,8 +24,8 @@ class serendipity_event_static_osm extends serendipity_event
         $propbag->add('author', PLUGIN_EVENT_OSM_AUTHOR);
         $propbag->add('version', PLUGIN_EVENT_OSM_VERSION);
         $propbag->add('requirements', array(
-            'serendipity' => '2.3',
-            'php'         => '7.4'
+            'serendipity' => '4.0',
+            'php'         => '8.2'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_ENTRY_RELATED'));
