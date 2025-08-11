@@ -1,15 +1,15 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/14
  */
 
-@define('PLUGIN_EVENT_CRONJOB_NAME', 'Plánovaè úloh');
-@define('PLUGIN_EVENT_CRONJOB_DESC', 'Tento plugin periodicky vykonává pluginy, které poskytují/vy¾adují opakované vykonávání. Podrobnosti v konfiguraci pluginu.');
-@define('PLUGIN_EVENT_CRONJOB_DETAILS', 'Tento plugin poskytuje nové API hooky pro ostatní pluginy (cronjob_5min, cronjob_30min, cronjob_1h, cronjob_12h, cronjob_daily, cronjob_weekly, cronjob_monthly). POZNÁMKA: Vykonání skriptù je závislé na Va¹ich náv¹tìvnících. Pokud nikdo nenav¹tìvuje Va¹e stránky, ¾ádné úlohy nemohou bıt spu¹tìny. Pokud vlastníte server s programem pro spou¹tìní úloh (jako napøíklad Cron), je lep¹ím øe¹ením pøidat do jeho konfiguraèní tabulky záznam <br /><br />5 * * * wget http://vasBlog/index.php?serendipity[cronjob]=all.<br /><br />A pak mù¾ete zakázat vykonávání úloh na základì náv¹tìv u¾ivatelù.');
-@define('PLUGIN_EVENT_CRONJOB_VISITOR', 'Povolit spou¹tìní úloh na základì náv¹tìv u¾ivatelù?');
-@define('PLUGIN_EVENT_CRONJOB_VISITOR_DESC', 'Pokud je tato volba povolena, plánované úlohy budou spou¹tìny náv¹tìvami blogu. K tomu bude do stránek blogu vlo¾en obrázek o rozmìrech 0 pixelù (kterı volá index.php?serendipity[cronjob]=true), kterı se stará o spu¹tìní úloh. Pro ty z Vás, kteøí nemáte mo¾nost spou¹tìt úlohy pøímo na serveru (nemáte mo¾nost pou¾ívat Cron nebo podobnı nástro), je to jediná mo¾nost, jak periodicky opakovat nìkteré úlohy. Pamatujte, ¾e takovéto spou¹tìní úloh je závislé na náv¹tìvách Va¹ich stránek, tedy èasové prodlevy mezi jednotlivımi spu¹tìními skriptu nebudou pøesné. (Napøíklad úloze nastavené na opakování ka¾dou hodinu se mù¾e stát, ¾e nebude bìhem 3 hodin spu¹tìna ani jednou, pokud bìhem tìch tøí hodin na blog nepøijde jedinı náv¹tìvník.)');
-@define('PLUGIN_EVENT_CRONJOB_LOG', 'Poslední aktivita plánovaèe úloh');
+@define('PLUGIN_EVENT_CRONJOB_NAME', 'PlÃ¡novaÄ Ãºloh');
+@define('PLUGIN_EVENT_CRONJOB_DESC', 'Tento plugin periodicky vykonÃ¡vÃ¡ pluginy, kterÃ© poskytujÃ­/vyÅ¾adujÃ­ opakovanÃ© vykonÃ¡vÃ¡nÃ­. Podrobnosti v konfiguraci pluginu.');
+@define('PLUGIN_EVENT_CRONJOB_DETAILS', 'Tento plugin poskytuje novÃ© API hooky pro ostatnÃ­ pluginy (cronjob_5min, cronjob_30min, cronjob_1h, cronjob_12h, cronjob_daily, cronjob_weekly, cronjob_monthly). POZNÃMKA: VykonÃ¡nÃ­ skriptÅ¯ je zÃ¡vislÃ© na VaÅ¡ich nÃ¡vÅ¡tÄ›vnÃ­cÃ­ch. Pokud nikdo nenavÅ¡tÄ›vuje VaÅ¡e strÃ¡nky, Å¾Ã¡dnÃ© Ãºlohy nemohou bÃ½t spuÅ¡tÄ›ny. Pokud vlastnÃ­te server s programem pro spouÅ¡tÄ›nÃ­ Ãºloh (jako napÅ™Ã­klad Cron), je lepÅ¡Ã­m Å™eÅ¡enÃ­m pÅ™idat do jeho konfiguraÄnÃ­ tabulky zÃ¡znam <br /><br />5 * * * wget http://vasBlog/index.php?serendipity[cronjob]=all.<br /><br />A pak mÅ¯Å¾ete zakÃ¡zat vykonÃ¡vÃ¡nÃ­ Ãºloh na zÃ¡kladÄ› nÃ¡vÅ¡tÄ›v uÅ¾ivatelÅ¯.');
+@define('PLUGIN_EVENT_CRONJOB_VISITOR', 'Povolit spouÅ¡tÄ›nÃ­ Ãºloh na zÃ¡kladÄ› nÃ¡vÅ¡tÄ›v uÅ¾ivatelÅ¯?');
+@define('PLUGIN_EVENT_CRONJOB_VISITOR_DESC', 'Pokud je tato volba povolena, plÃ¡novanÃ© Ãºlohy budou spouÅ¡tÄ›ny nÃ¡vÅ¡tÄ›vami blogu. K tomu bude do strÃ¡nek blogu vloÅ¾en obrÃ¡zek o rozmÄ›rech 0 pixelÅ¯ (kterÃ½ volÃ¡ index.php?serendipity[cronjob]=true), kterÃ½ se starÃ¡ o spuÅ¡tÄ›nÃ­ Ãºloh. Pro ty z VÃ¡s, kteÅ™Ã­ nemÃ¡te moÅ¾nost spouÅ¡tÄ›t Ãºlohy pÅ™Ã­mo na serveru (nemÃ¡te moÅ¾nost pouÅ¾Ã­vat Cron nebo podobnÃ½ nÃ¡stro), je to jedinÃ¡ moÅ¾nost, jak periodicky opakovat nÄ›kterÃ© Ãºlohy. Pamatujte, Å¾e takovÃ©to spouÅ¡tÄ›nÃ­ Ãºloh je zÃ¡vislÃ© na nÃ¡vÅ¡tÄ›vÃ¡ch VaÅ¡ich strÃ¡nek, tedy ÄasovÃ© prodlevy mezi jednotlivÃ½mi spuÅ¡tÄ›nÃ­mi skriptu nebudou pÅ™esnÃ©. (NapÅ™Ã­klad Ãºloze nastavenÃ© na opakovÃ¡nÃ­ kaÅ¾dou hodinu se mÅ¯Å¾e stÃ¡t, Å¾e nebude bÄ›hem 3 hodin spuÅ¡tÄ›na ani jednou, pokud bÄ›hem tÄ›ch tÅ™Ã­ hodin na blog nepÅ™ijde jedinÃ½ nÃ¡vÅ¡tÄ›vnÃ­k.)');
+@define('PLUGIN_EVENT_CRONJOB_LOG', 'PoslednÃ­ aktivita plÃ¡novaÄe Ãºloh');
 @define('PLUGIN_EVENT_CRONJOB_CHOOSE', 'Kdy spustit?');
 
