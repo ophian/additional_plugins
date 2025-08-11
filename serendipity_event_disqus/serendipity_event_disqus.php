@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_disqus extends serendipity_event
 {
-    var $title = PLUGIN_DISQUS_TITLE;
+    public $title = PLUGIN_DISQUS_TITLE;
 
     function introspect(&$propbag)
     {
