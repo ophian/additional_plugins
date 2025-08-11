@@ -10,10 +10,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_newsbox extends serendipity_event
 {
-    var $services;
-    var $html = '<div class="newsbox"><i>No news today.</i></div>';
-    var $isFrontPage = false;
-    var $got_content = array();
+    private $html = '<div class="newsbox"><i>No news today.</i></div>';
+    private $isFrontPage = false;
+    private $got_content = array();
 
     function introspect(&$propbag)
     {
