@@ -1,44 +1,44 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2012/01/11
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2012/02/04
  */
 
 @define('PLUGIN_EVENT_OEMBED_NAME', 'oEmbed');
-@define('PLUGIN_EVENT_OEMBED_DESC', 'oEmbed je formát, kterı umo¾òuje vkládat do blogu jiné stránky z internetu. Umo¾òuje zobrazovat v pøíspìvcích vlo¾enı obsah (jako tweety, fotky nebo videa), kdy¾ autor pøíspìvku napí¹e odkaz na zdroj obsahu, ani¾ by bylo potøeba pøímo parsovat cílovou stránku.');
+@define('PLUGIN_EVENT_OEMBED_DESC', 'oEmbed je formÃ¡t, kterÃ½ umoÅ¾Åˆuje vklÃ¡dat do blogu jinÃ© strÃ¡nky z internetu. UmoÅ¾Åˆuje zobrazovat v pÅ™Ã­spÄ›vcÃ­ch vloÅ¾enÃ½ obsah (jako tweety, fotky nebo videa), kdyÅ¾ autor pÅ™Ã­spÄ›vku napÃ­Å¡e odkaz na zdroj obsahu, aniÅ¾ by bylo potÅ™eba pÅ™Ã­mo parsovat cÃ­lovou strÃ¡nku.');
 
-@define('PLUGIN_EVENT_OEMBED_MAXWIDTH', 'Maximální ¹íøka vlo¾eného objektu');
-@define('PLUGIN_EVENT_OEMBED_MAXWIDTH_DESC', 'Toto je maximální ¹íøka vlo¾eného obsahu. Ne v¹echny slu¾by pro vkládání obsahu toto nastavení podporují, ale vìt¹ina ano.');
-@define('PLUGIN_EVENT_OEMBED_MAXHEIGHT','Maximální vı¹ka vlo¾eného objektu');
-@define('PLUGIN_EVENT_OEMBED_MAXHEIGHT_DESC','Toto je maximální vı¹ka vlo¾eného obsahu. Ne v¹echny slu¾by pro vkládání obsahu toto nastavení podporují, ale vìt¹ina ano.');
+@define('PLUGIN_EVENT_OEMBED_MAXWIDTH', 'MaximÃ¡lnÃ­ Å¡Ã­Å™ka vloÅ¾enÃ©ho objektu');
+@define('PLUGIN_EVENT_OEMBED_MAXWIDTH_DESC', 'Toto je maximÃ¡lnÃ­ Å¡Ã­Å™ka vloÅ¾enÃ©ho obsahu. Ne vÅ¡echny sluÅ¾by pro vklÃ¡dÃ¡nÃ­ obsahu toto nastavenÃ­ podporujÃ­, ale vÄ›tÅ¡ina ano.');
+@define('PLUGIN_EVENT_OEMBED_MAXHEIGHT', 'MaximÃ¡lnÃ­ vÃ½Å¡ka vloÅ¾enÃ©ho objektu');
+@define('PLUGIN_EVENT_OEMBED_MAXHEIGHT_DESC', 'Toto je maximÃ¡lnÃ­ vÃ½Å¡ka vloÅ¾enÃ©ho obsahu. Ne vÅ¡echny sluÅ¾by pro vklÃ¡dÃ¡nÃ­ obsahu toto nastavenÃ­ podporujÃ­, ale vÄ›tÅ¡ina ano.');
 
-@define('PLUGIN_EVENT_OEMBED_GENERIC_SERVICE', 'Obecnı poskytovatel oEmbed');
-#@define('PLUGIN_EVENT_OEMBED_GENERIC_SERVICE_DESC','Pokud plugin není schopen rozlu¹tit URL, proto¾e ji je¹tì nezná, mù¾e ji zpracovat "obecnım poskytovatelem". Tyto slu¾by implementují oEmbed pro velkı poèet slu¾eb, které nemají oEmbed. Na vıbìr jsou dvì mo¾nosti: oohembed.com (døíve bezplatná slu¾ba koupená firmou Embedly a s velmi omezenım API) nebo embed.ly (dobøe spravovaná a udr¾ovaná slu¾ba pro mnoho oEmbed slu¾eb, viz http://embed.ly/providers, ale k pou¾ití je tøeba získat API klíè.');
-@define('PLUGIN_EVENT_OEMBED_SERVICE_NONE', '®ádnı obecnı poskytovatel');
-@define('PLUGIN_EVENT_OEMBED_SERVICE_OOHEMBED', 'oohembed (zdarma, ale omezenı)');
-@define('PLUGIN_EVENT_OEMBED_SERVICE_EMBEDLY', 'embed.ly (potøeba API klíè)');
-@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY','embed.ly API klíè');
-#@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY_DESC','abyste mohli pou¾ívat embed.ly, potøebujete API klíè. Úèet zdarma umo¾òuje 10000 pou¾ití za mìsíc, co¾ by mìlo staèit i pro silnì vytí¾ené blogy, proto¾e vısledky jsou lokálnì cachovány a vkládány pouze jedenkrát na URL. Úèet zdarma mù¾ete zaregistrovat na http://app.embed.ly/pricing/free');
+@define('PLUGIN_EVENT_OEMBED_GENERIC_SERVICE', 'ObecnÃ½ poskytovatel oEmbed');
+#@define('PLUGIN_EVENT_OEMBED_GENERIC_SERVICE_DESC', 'Pokud plugin nenÃ­ schopen rozluÅ¡tit URL, protoÅ¾e ji jeÅ¡tÄ› neznÃ¡, mÅ¯Å¾e ji zpracovat "obecnÃ½m poskytovatelem". Tyto sluÅ¾by implementujÃ­ oEmbed pro velkÃ½ poÄet sluÅ¾eb, kterÃ© nemajÃ­ oEmbed. Na vÃ½bÄ›r jsou dvÄ› moÅ¾nosti: oohembed.com (dÅ™Ã­ve bezplatnÃ¡ sluÅ¾ba koupenÃ¡ firmou Embedly a s velmi omezenÃ½m API) nebo embed.ly (dobÅ™e spravovanÃ¡ a udrÅ¾ovanÃ¡ sluÅ¾ba pro mnoho oEmbed sluÅ¾eb, viz http://embed.ly/providers, ale k pouÅ¾itÃ­ je tÅ™eba zÃ­skat API klÃ­Ä.');
+@define('PLUGIN_EVENT_OEMBED_SERVICE_NONE', 'Å½Ã¡dnÃ½ obecnÃ½ poskytovatel');
+@define('PLUGIN_EVENT_OEMBED_SERVICE_OOHEMBED', 'oohembed (zdarma, ale omezenÃ½)');
+@define('PLUGIN_EVENT_OEMBED_SERVICE_EMBEDLY', 'embed.ly (potÅ™eba API klÃ­Ä)');
+@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY', 'embed.ly API klÃ­Ä');
+#@define('PLUGIN_EVENT_OEMBED_EMBEDLY_APIKEY_DESC', 'abyste mohli pouÅ¾Ã­vat embed.ly, potÅ™ebujete API klÃ­Ä. ÃšÄet zdarma umoÅ¾Åˆuje 10000 pouÅ¾itÃ­ za mÄ›sÃ­c, coÅ¾ by mÄ›lo staÄit i pro silnÄ› vytÃ­Å¾enÃ© blogy, protoÅ¾e vÃ½sledky jsou lokÃ¡lnÄ› cachovÃ¡ny a vklÃ¡dÃ¡ny pouze jedenkrÃ¡t na URL. ÃšÄet zdarma mÅ¯Å¾ete zaregistrovat na http://app.embed.ly/pricing/free');
 
 @define('PLUGIN_EVENT_OEMBED_INFO', '<h3>Plugin oEmbed</h3>' .
 '<p>'.
-'Tento plugin zobarzuje místo zadané URL adresy její reprezentaci pro známé webové slu¾by. Napøíklad kdy¾ zadáte odkaz na youtube, nezobrazí odkaz na youtube, nıbr¾ rovnou odkazované video. Místo odkazu na flickr zobrazuje rovnou obrázek.<br/>' .
-'Syntaxe pro pou¾ití tohoto pluginu je <b>[embed <i>odkaz</i>]</b> (nebo <b>[e <i>odkaz</i>]</b> pokud máte rad¹i zkratky).<br/>'.
-'Pokud slu¾ba (adresa) není pluginem v souèasnosti podporována, bude zobrazen pouze klikatelnı odkaz.<br/>'.
+'Tento plugin zobarzuje mÃ­sto zadanÃ© URL adresy jejÃ­ reprezentaci pro znÃ¡mÃ© webovÃ© sluÅ¾by. NapÅ™Ã­klad kdyÅ¾ zadÃ¡te odkaz na youtube, nezobrazÃ­ odkaz na youtube, nÃ½brÅ¾ rovnou odkazovanÃ© video. MÃ­sto odkazu na flickr zobrazuje rovnou obrÃ¡zek.<br/>' .
+'Syntaxe pro pouÅ¾itÃ­ tohoto pluginu je <b>[embed <i>odkaz</i>]</b> (nebo <b>[e <i>odkaz</i>]</b> pokud mÃ¡te radÅ¡i zkratky).<br/>'.
+'Pokud sluÅ¾ba (adresa) nenÃ­ pluginem v souÄasnosti podporovÃ¡na, bude zobrazen pouze klikatelnÃ½ odkaz.<br/>'.
 '</p><p>'.
-'Zaøaïte prosím tento plugin na zaèátek seznamu pluginù, aby zadanı odkaz nemohl bıt zmìnìn jinım pluginem (napø. pøidáním href)'.
+'ZaÅ™aÄte prosÃ­m tento plugin na zaÄÃ¡tek seznamu pluginÅ¯, aby zadanÃ½ odkaz nemohl bÃ½t zmÄ›nÄ›n jinÃ½m pluginem (napÅ™. pÅ™idÃ¡nÃ­m href)'.
 '</p>');
 
 @define('PLUGIN_EVENT_OEMBED_SUPPORTED', '<p>'.
-'Plugin podporuje následující reprezentace odkazù, ani¾ by bylo potøeba nastavovat obecnı fallback:%s'.
+'Plugin podporuje nÃ¡sledujÃ­cÃ­ reprezentace odkazÅ¯, aniÅ¾ by bylo potÅ™eba nastavovat obecnÃ½ fallback:%s'.
 '</p>');
 
 // Next lines were translated on 2012/02/04
-@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO', 'Pøehrávaè Audioboo');
-@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_DESC', 'Audioboo podporuje rùzné pøehrávaèe (viz http://audioboo.fm/boos/649785-ein-erster-testboo.embed?labs=1). Vyberte si, kterı se vám nejvíce líbí.');
-@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_STANDARD', 'standardní');
-@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_FULLFEATURED', 'plná vıbava (vy¾aduje JavaScript)');
+@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO', 'PÅ™ehrÃ¡vaÄ Audioboo');
+@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_DESC', 'Audioboo podporuje rÅ¯znÃ© pÅ™ehrÃ¡vaÄe (viz http://audioboo.fm/boos/649785-ein-erster-testboo.embed?labs=1). Vyberte si, kterÃ½ se vÃ¡m nejvÃ­ce lÃ­bÃ­.');
+@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_STANDARD', 'standardnÃ­');
+@define('PLUGIN_EVENT_OEMBED_PLAYER_BOO_FULLFEATURED', 'plnÃ¡ vÃ½bava (vyÅ¾aduje JavaScript)');
 
