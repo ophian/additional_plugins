@@ -1,23 +1,22 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/08
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/03/12
  */
 
-@define('PLUGIN_EVENT_COMMUNITYRATING_TITLE', 'Hodnocení');
-@define('PLUGIN_EVENT_COMMUNITYRATING_DESC', 'Mù¾ete hodnotit vırobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v pøíslu¹nıch pøíspìvcích. Také umo¾òuje sdíle hodnocení s ostatními u¾ivateli tohoto pluginu. Tento plugin vy¾aduje zásah do ¹ablon, pøeètìte si prosím soubor README.');
-@define('PLUGIN_EVENT_COMMUNITYRATING_TYPES', 'Zadejte typ hodnocení');
+@define('PLUGIN_EVENT_COMMUNITYRATING_TITLE', 'HodnocenÃ­');
+@define('PLUGIN_EVENT_COMMUNITYRATING_DESC', 'MÅ¯Å¾ete hodnotit vÃ½robky, filmy nebo cokoliv jinÃ©ho a zobrazovat jejich hodnocenÃ­ v pÅ™Ã­sluÅ¡nÃ½ch pÅ™Ã­spÄ›vcÃ­ch. TakÃ© umoÅ¾Åˆuje sdÃ­le hodnocenÃ­ s ostatnÃ­mi uÅ¾ivateli tohoto pluginu. Tento plugin vyÅ¾aduje zÃ¡sah do Å¡ablon, pÅ™eÄtÄ›te si prosÃ­m soubor README.');
+@define('PLUGIN_EVENT_COMMUNITYRATING_TYPES', 'Zadejte typ hodnocenÃ­');
 @define('PLUGIN_EVENT_COMMUNITYRATING_TYPES_DEFAULT', 'IMDB, Amazon');
 
 @define('PLUGIN_EVENT_COMMUNITYRATING_ID', 'ID');
-@define('PLUGIN_EVENT_COMMUNITYRATING_RATING', 'Hodnocení');
+@define('PLUGIN_EVENT_COMMUNITYRATING_RATING', 'HodnocenÃ­');
 
-@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING', 'Prùmìrné hodnocení');
-@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_DESC', 'Zobrazit nejlépe hodnocené filmy podle jejich prùmìrného hodnocení');
+@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING', 'PrÅ¯mÄ›rnÃ© hodnocenÃ­');
+@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_DESC', 'Zobrazit nejlÃ©pe hodnocenÃ© filmy podle jejich prÅ¯mÄ›rnÃ©ho hodnocenÃ­');
 
-@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN', 'Èasovı rozsah filmù');
-@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN_DESC', 'Zadejte poèet dní, ze kterıch bude poèítán prùmìr');
-
+@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN', 'ÄŒasovÃ½ rozsah filmÅ¯');
+@define('PLUGIN_EVENT_COMMUNITYRATING_AVGRATING_TIMESPAN_DESC', 'Zadejte poÄet dnÃ­, ze kterÃ½ch bude poÄÃ­tÃ¡n prÅ¯mÄ›r');

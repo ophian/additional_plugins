@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,8 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_communityrating extends serendipity_event
 {
-    var $services;
-    var $title = PLUGIN_EVENT_COMMUNITYRATING_TITLE;
+    public $title = PLUGIN_EVENT_COMMUNITYRATING_TITLE;
 
     function introspect(&$propbag)
     {
@@ -19,11 +20,11 @@ class serendipity_event_communityrating extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_COMMUNITYRATING_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Lewe Zipfel, Ian Styx');
-        $propbag->add('version',       '1.20');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.7',
-            'smarty'      => '3.1.0',
-            'php'         => '5.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'backend_publish'                                   => true,
@@ -146,8 +147,8 @@ class serendipity_event_communityrating extends serendipity_event
 ?>
                 <div class="form_field">
                     <strong><?php echo $prop; ?>:</strong><br />
-                    <label title="<?php echo PLUGIN_EVENT_COMMUNITYRATING_ID; ?>" for="properties_rating_id"><?php echo PLUGIN_EVENT_COMMUNITYRATING_ID; ?></label>: <input class="input_textbox" id="properties_rating_id" type="text" name="serendipity[properties][<?php echo $prop . '_id'; ?>]" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($vals['id']) : htmlspecialchars($vals['id'], ENT_COMPAT, LANG_CHARSET)); ?>" size="10" />
-                    <label title="<?php echo PLUGIN_EVENT_COMMUNITYRATING_RATING; ?>" for="properties_rating_points"><?php echo PLUGIN_EVENT_COMMUNITYRATING_RATING; ?></label>: <input class="input_textbox" id="properties_rating_points" type="text" name="serendipity[properties][<?php echo $prop . '_rating'; ?>]" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($vals['rating']) : htmlspecialchars($vals['rating'], ENT_COMPAT, LANG_CHARSET)); ?>" size="2" />
+                    <label title="<?php echo PLUGIN_EVENT_COMMUNITYRATING_ID; ?>" for="properties_rating_id"><?php echo PLUGIN_EVENT_COMMUNITYRATING_ID; ?></label>: <input class="input_textbox" id="properties_rating_id" type="text" name="serendipity[properties][<?php echo $prop . '_id'; ?>]" value="<?php echo htmlspecialchars($vals['id']); ?>" size="10" />
+                    <label title="<?php echo PLUGIN_EVENT_COMMUNITYRATING_RATING; ?>" for="properties_rating_points"><?php echo PLUGIN_EVENT_COMMUNITYRATING_RATING; ?></label>: <input class="input_textbox" id="properties_rating_points" type="text" name="serendipity[properties][<?php echo $prop . '_rating'; ?>]" value="<?php echo htmlspecialchars($vals['rating']); ?>" size="2" />
                 </div>
 <?php
                     }
