@@ -1,10 +1,24 @@
 <?php
-// $Id: Include.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to include the results of a
+* Includes the contents of another PHP script into the source text.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
+
+/**
+* 
+* This class implements a Text_Wiki_Parse_Default to include the results of a
 * script directly into the source at parse-time; thus, the output of the
 * script will be parsed by Text_Wiki.  This differs from the 'embed'
 * rule, which incorporates the results at render-time, meaning that the
@@ -16,13 +30,15 @@
 * occur if the embedded output has <script> or other similar tags.  Be
 * careful.
 *
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
 */
 
-class Text_Wiki_Parse_Include extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Include extends Text_Wiki_Parse {
     
     var $conf = array(
         'base' => '/path/to/scripts/'

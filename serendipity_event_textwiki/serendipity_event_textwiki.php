@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -11,7 +13,7 @@ class serendipity_event_textwiki extends serendipity_event
 
     var $wikiRules  = array(
         'prefilter' => array(
-            'file' => 'Text/Wiki/Rule/prefilter.php',
+            'file' => 'Text/Wiki/Parse/Default/Prefilter.php',
             'name' => 'Text_Wiki_Rule_prefilter',
             'flag' => true,
             'conf' => array(),
@@ -19,7 +21,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'delimiter' => array(
-            'file' => 'Text/Wiki/Rule/delimiter.php',
+            'file' => 'Text/Wiki/Parse/Default/Delimiter.php',
             'name' => 'Text_Wiki_Rule_delimiter',
             'flag' => true,
             'conf' => array(),
@@ -27,7 +29,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'code' => array(
-            'file' => 'Text/Wiki/Rule/code.php',
+            'file' => 'Text/Wiki/Parse/Default/Code.php',
             'name' => 'Text_Wiki_Rule_code',
             'flag' => true,
             'conf' => array(),
@@ -35,7 +37,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'phpcode' => array(
-            'file' => 'Text/Wiki/Rule/phpcode.php',
+            'file' => 'Text/Wiki/Parse/Default/Phpcode.php',
             'name' => 'Text_Wiki_Rule_phpcode',
             'flag' => true,
             'conf' => array(),
@@ -43,7 +45,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'html' => array(
-            'file' => 'Text/Wiki/Rule/html.php',
+            'file' => 'Text/Wiki/Parse/Default/Html.php',
             'name' => 'Text_Wiki_Rule_html',
             'flag' => false,
             'conf' => array(),
@@ -51,7 +53,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'raw' => array(
-            'file' => 'Text/Wiki/Rule/raw.php',
+            'file' => 'Text/Wiki/Parse/Default/Raw.php',
             'name' => 'Text_Wiki_Rule_raw',
             'flag' => true,
             'conf' => array(),
@@ -59,7 +61,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'include' => array(
-            'file' => 'Text/Wiki/Rule/include.php',
+            'file' => 'Text/Wiki/Parse/Default/Include.php',
             'name' => 'Text_Wiki_Rule_include',
             'flag' => false,
             'conf' => array(
@@ -73,7 +75,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'heading' => array(
-            'file' => 'Text/Wiki/Rule/heading.php',
+            'file' => 'Text/Wiki/Parse/Default/Heading.php',
             'name' => 'Text_Wiki_Rule_heading',
             'flag' => true,
             'conf' => array(),
@@ -81,7 +83,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'horiz' => array(
-            'file' => 'Text/Wiki/Rule/horiz.php',
+            'file' => 'Text/Wiki/Parse/Default/Horiz.php',
             'name' => 'Text_Wiki_Rule_horiz',
             'flag' => true,
             'conf' => array(),
@@ -89,7 +91,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'break' => array(
-            'file' => 'Text/Wiki/Rule/break.php',
+            'file' => 'Text/Wiki/Parse/Default/Break.php',
             'name' => 'Text_Wiki_Rule_break',
             'flag' => true,
             'conf' => array(),
@@ -97,7 +99,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'blockquote' => array(
-            'file' => 'Text/Wiki/Rule/blockquote.php',
+            'file' => 'Text/Wiki/Parse/Default/Blockquote.php',
             'name' => 'Text_Wiki_Rule_blockquote',
             'flag' => true,
             'conf' => array(),
@@ -105,7 +107,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'list' => array(
-            'file' => 'Text/Wiki/Rule/list.php',
+            'file' => 'Text/Wiki/Parse/Default/List.php',
             'name' => 'Text_Wiki_Rule_list',
             'flag' => true,
             'conf' => array(),
@@ -113,7 +115,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'deflist' => array(
-            'file' => 'Text/Wiki/Rule/deflist.php',
+            'file' => 'Text/Wiki/Parse/Default/Deflist.php',
             'name' => 'Text_Wiki_Rule_deflist',
             'flag' => true,
             'conf' => array(),
@@ -121,7 +123,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'table' => array(
-            'file' => 'Text/Wiki/Rule/table.php',
+            'file' => 'Text/Wiki/Parse/Default/Table.php',
             'name' => 'Text_Wiki_Rule_table',
             'flag' => true,
             'conf' => array(
@@ -133,7 +135,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'embed' => array(
-            'file' => 'Text/Wiki/Rule/embed.php',
+            'file' => 'Text/Wiki/Parse/Default/Embed.php',
             'name' => 'Text_Wiki_Rule_embed',
             'flag' => false,
             'conf' => array(
@@ -147,7 +149,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'image' => array(
-            'file' => 'Text/Wiki/Rule/image.php',
+            'file' => 'Text/Wiki/Parse/Default/Image.php',
             'name' => 'Text_Wiki_Rule_image',
             'flag' => true,
             'conf' => array(
@@ -161,7 +163,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'phplookup' => array(
-            'file' => 'Text/Wiki/Rule/phplookup.php',
+            'file' => 'Text/Wiki/Parse/Default/Phplookup.php',
             'name' => 'Text_Wiki_Rule_phplookup',
             'flag' => true,
             'conf' => array(),
@@ -169,7 +171,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'toc' => array(
-            'file' => 'Text/Wiki/Rule/toc.php',
+            'file' => 'Text/Wiki/Parse/Default/Toc.php',
             'name' => 'Text_Wiki_Rule_toc',
             'flag' => true,
             'conf' => array(),
@@ -177,7 +179,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'newline' => array(
-            'file' => 'Text/Wiki/Rule/newline.php',
+            'file' => 'Text/Wiki/Parse/Default/Newline.php',
             'name' => 'Text_Wiki_Rule_newline',
             'flag' => true,
             'conf' => array(
@@ -196,7 +198,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'center' => array(
-            'file' => 'Text/Wiki/Rule/center.php',
+            'file' => 'Text/Wiki/Parse/Default/Center.php',
             'name' => 'Text_Wiki_Rule_center',
             'flag' => true,
             'conf' => array(),
@@ -204,7 +206,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'paragraph' => array(
-            'file' => 'Text/Wiki/Rule/paragraph.php',
+            'file' => 'Text/Wiki/Parse/Default/Paragraph.php',
             'name' => 'Text_Wiki_Rule_paragraph',
             'flag' => true,
             'conf' => array(
@@ -224,7 +226,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'url' => array(
-            'file' => 'Text/Wiki/Rule/url.php',
+            'file' => 'Text/Wiki/Parse/Default/Url.php',
             'name' => 'Text_Wiki_Rule_url',
             'flag' => true,
             'conf' => array(
@@ -238,7 +240,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'freelink' => array(
-            'file' => 'Text/Wiki/Rule/freelink.php',
+            'file' => 'Text/Wiki/Parse/Default/Freelink.php',
             'name' => 'Text_Wiki_Rule_freelink',
             'flag' => false,
             'conf' => array(
@@ -267,7 +269,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'interwiki' => array(
-            'file' => 'Text/Wiki/Rule/interwiki.php',
+            'file' => 'Text/Wiki/Parse/Default/Interwiki.php',
             'name' => 'Text_Wiki_Rule_interwiki',
             'flag' => true,
             'conf' => array(
@@ -286,7 +288,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'wikilink' => array(
-            'file' => 'Text/Wiki/Rule/wikilink.php',
+            'file' => 'Text/Wiki/Parse/Default/Wikilink.php',
             'name' => 'Text_Wiki_Rule_wikilink',
             'flag' => false,
             'conf' => array(
@@ -315,7 +317,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'colortext' => array(
-            'file' => 'Text/Wiki/Rule/colortext.php',
+            'file' => 'Text/Wiki/Parse/Default/Colortext.php',
             'name' => 'Text_Wiki_Rule_colortext',
             'flag' => true,
             'conf' => array(),
@@ -323,7 +325,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'strong' => array(
-            'file' => 'Text/Wiki/Rule/strong.php',
+            'file' => 'Text/Wiki/Parse/Default/Strong.php',
             'name' => 'Text_Wiki_Rule_strong',
             'flag' => true,
             'conf' => array(),
@@ -331,7 +333,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'bold' => array(
-            'file' => 'Text/Wiki/Rule/bold.php',
+            'file' => 'Text/Wiki/Parse/Default/Bold.php',
             'name' => 'Text_Wiki_Rule_bold',
             'flag' => true,
             'conf' => array(),
@@ -339,7 +341,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'emphasis' => array(
-            'file' => 'Text/Wiki/Rule/emphasis.php',
+            'file' => 'Text/Wiki/Parse/Default/Emphasis.php',
             'name' => 'Text_Wiki_Rule_emphasis',
             'flag' => true,
             'conf' => array(),
@@ -347,15 +349,23 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'italic' => array(
-            'file' => 'Text/Wiki/Rule/italic.php',
+            'file' => 'Text/Wiki/Parse/Default/Italic.php',
             'name' => 'Text_Wiki_Rule_italic',
             'flag' => true,
             'conf' => array(),
             'desc' => PLUGIN_EVENT_TEXTWIKI_RULE_DESC_ITALIC
         ),
 
+        'underline' => array(
+            'file' => 'Text/Wiki/Parse/Default/Underline.php',
+            'name' => 'Text_Wiki_Rule_underline',
+            'flag' => true,
+            'conf' => array(),
+            'desc' => PLUGIN_EVENT_TEXTWIKI_RULE_DESC_UNDERLINE
+        ),
+
         'tt' => array(
-            'file' => 'Text/Wiki/Rule/tt.php',
+            'file' => 'Text/Wiki/Parse/Default/Tt.php',
             'name' => 'Text_Wiki_Rule_tt',
             'flag' => true,
             'conf' => array(),
@@ -363,15 +373,23 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'superscript' => array(
-            'file' => 'Text/Wiki/Rule/superscript.php',
+            'file' => 'Text/Wiki/Parse/Default/Superscript.php',
             'name' => 'Text_Wiki_Rule_superscript',
             'flag' => true,
             'conf' => array(),
             'desc' => PLUGIN_EVENT_TEXTWIKI_RULE_DESC_SUPERSCRIPT
         ),
 
+        'subscript' => array(
+            'file' => 'Text/Wiki/Parse/Default/Subscript.php',
+            'name' => 'Text_Wiki_Rule_subscript',
+            'flag' => true,
+            'conf' => array(),
+            'desc' => PLUGIN_EVENT_TEXTWIKI_RULE_DESC_SUBSCRIPT
+        ),
+
         'revise' => array(
-            'file' => 'Text/Wiki/Rule/revise.php',
+            'file' => 'Text/Wiki/Parse/Default/Revise.php',
             'name' => 'Text_Wiki_Rule_revise',
             'flag' => true,
             'conf' => array(),
@@ -379,7 +397,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'tighten' => array(
-            'file' => 'Text/Wiki/Rule/tighten.php',
+            'file' => 'Text/Wiki/Parse/Default/Tighten.php',
             'name' => 'Text_Wiki_Rule_tighten',
             'flag' => true,
             'conf' => array(),
@@ -387,7 +405,7 @@ class serendipity_event_textwiki extends serendipity_event
         ),
 
         'entities' => array(
-            'file' => 'Text/Wiki/Rule/entities.php',
+            'file' => 'Text/Wiki/Parse/Default/Entities.php',
             'name' => 'Text_Wiki_Rule_entities',
             'flag' => true,
             'conf' => array(),
@@ -395,8 +413,9 @@ class serendipity_event_textwiki extends serendipity_event
         )
     );
 
-    var $nonWikiRules = array();
-    var $title = PLUGIN_EVENT_TEXTWIKI_NAME;
+    public $title = PLUGIN_EVENT_TEXTWIKI_NAME;
+
+    private $nonWikiRules = array();
 
     function introspect(&$propbag)
     {
@@ -406,11 +425,11 @@ class serendipity_event_textwiki extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTWIKI_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tobias Schlitt, Ian Styx');
-        $propbag->add('version',       '1.11');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'frontend_comment' => true));

@@ -1,10 +1,26 @@
 <?php
-// $Id: Embed.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to embed the contents of a URL
+* Embeds the results of a PHP script at render-time.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
+
+/**
+* 
+* Embeds the results of a PHP script at render-time.
+* 
+* This class implements a Text_Wiki_Parse_Default to embed the contents of a URL
 * inside the page at render-time.  Typically used to get script output.
 * This differs from the 'include' rule, which incorporates results at
 * parse-time; 'embed' output does not get parsed by Text_Wiki, while
@@ -14,13 +30,15 @@
 * occur if the embedded output has <script> or other similar tags.  Be
 * careful.
 *
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
 */
 
-class Text_Wiki_Parse_Embed extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Embed extends Text_Wiki_Parse {
     
     var $conf = array(
         'base' => '/path/to/scripts/'
@@ -85,4 +103,3 @@ class Text_Wiki_Parse_Embed extends Text_Wiki_Parse {
         );
     }
 }
-?>

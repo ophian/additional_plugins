@@ -1,22 +1,40 @@
 <?php
-// $Id: Table.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to find source text marked as a
+* Parses for table markup.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
+
+/**
+* 
+* Parses for table markup.
+* 
+* This class implements a Text_Wiki_Parse_Default to find source text marked as a
 * set of table rows, where a line start and ends with double-pipes (||)
 * and uses double-pipes to separate table cells.  The rows must be on
 * sequential lines (no blank lines between them) -- a blank line
 * indicates the beginning of a new table.
 *
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
 */
 
-class Text_Wiki_Parse_Table extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Table extends Text_Wiki_Parse {
     
     
     /**

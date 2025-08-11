@@ -1,13 +1,29 @@
 <?php
 
 /**
-* 
+*
 * Parse for URLS in the source text.
-* 
+*
+* @category Text
+*
+* @package Text_Wiki
+*
+* @author Paul M. Jones <pmjones@php.net>
+*
+* @license LGPL
+*
+* @version $Id$
+*
+*/
+
+/**
+*
+* Parse for URLS in the source text.
+*
 * Various URL markings are supported: inline (the URL by itself),
-* numbered or footnote reference (where the URL is enclosed in square brackets), and
-* named reference (where the URL is enclosed in square brackets and has a
-* name included inside the brackets).  E.g.:
+* numbered or footnote reference (where the URL is enclosed in square
+* brackets), and named reference (where the URL is enclosed in square
+* brackets and has a name included inside the brackets).  E.g.:
 *
 * inline    -- http://example.com
 * numbered  -- [http://example.com]
@@ -18,47 +34,47 @@
 * format).
 *
 * Token options are:
-* 
+*
 * 'type' => ['inline'|'footnote'|'descr'] the type of URL
-* 
+*
 * 'href' => the URL link href portion
-* 
+*
 * 'text' => the displayed text of the URL link
-* 
-* $Id: Url.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-* 
-* @author Paul M. Jones <pmjones@ciaweb.net>
+*
+* @category Text
 *
 * @package Text_Wiki
 *
+* @author Paul M. Jones <pmjones@php.net>
+*
 */
 
-class Text_Wiki_Parse_Url extends Text_Wiki_Parse {
-    
-    
+class Text_Wiki_Parse_Default_Url extends Text_Wiki_Parse {
+
+
     /**
-    * 
+    *
     * Keeps a running count of numbered-reference URLs.
-    * 
+    *
     * @access public
-    * 
+    *
     * @var int
-    * 
+    *
     */
-    
+
     var $footnoteCount = 0;
-    
-    
+
+
     /**
-    * 
+    *
     * URL schemes recognized by this rule.
-    * 
+    *
     * @access public
-    * 
+    *
     * @var array
-    * 
+    *
     */
-    
+
     var $conf = array(
         'schemes' => array(
             'http://',
@@ -69,22 +85,22 @@ class Text_Wiki_Parse_Url extends Text_Wiki_Parse {
             'mailto:'
         )
     );
-    
-    
+
+
     /**
-    * 
+    *
     * Constructor.
-    * 
+    *
     * We override the constructor so we can comment the regex nicely.
-    * 
+    *
     * @access public
-    * 
+    *
     */
-    
+
     function __construct(&$obj)
     {
-        parent::Text_Wiki_Parse($obj);
-        
+        parent::__construct($obj);
+
         // convert the list of recognized schemes to a regex-safe string,
         // where the pattern delim is a slash
         $tmp = array();
@@ -93,7 +109,7 @@ class Text_Wiki_Parse_Url extends Text_Wiki_Parse {
             $tmp[] = preg_quote($val, '/');
         }
         $schemes = implode('|', $tmp);
-        
+
         // build the regex
         $this->regex =
             "($schemes)" . // allowed schemes
@@ -101,87 +117,108 @@ class Text_Wiki_Parse_Url extends Text_Wiki_Parse {
             "[^ \\/\"\'{$this->wiki->delim}]*\\/" . // no spaces, backslashes, slashes, double-quotes, single quotes, or delimiters;
             ")*" . // end pattern
             "[^ \\t\\n\\/\"\'{$this->wiki->delim}]*" .
-            "[A-Za-z0-9\\/?=&~_]";
+            "[A-Za-z0-9\\/?=&~_#]";
     }
-    
-    
+
     /**
-    * 
+    *
+    * Constructor.
+    *
+    * We override the constructor so we can comment the regex nicely.
+    *
+    * @access public
+    *
+    */
+
+    function Text_Wiki_Parse_Default_Url(&$obj)
+    {
+        self::__construct($obj);
+    }
+
+
+    /**
+    *
     * Find three different kinds of URLs in the source text.
     *
     * @access public
-    * 
+    *
     */
-    
+
     function parse()
     {
         // -------------------------------------------------------------
-        // 
+        //
         // Described-reference (named) URLs.
-        // 
-        
+        //
+
         // the regular expression for this kind of URL
         $tmp_regex = '/\[(' . $this->regex . ') ([^\]]+)\]/';
-        
+
         // use a custom callback processing method to generate
         // the replacement text for matches.
         $this->wiki->source = preg_replace_callback(
             $tmp_regex,
-            array(&$this, 'processDescr'),
+            function ($matches) {
+                return $this->processDescr($matches);
+            },
             $this->wiki->source
         );
-        
-        
+
+
         // -------------------------------------------------------------
-        // 
+        //
         // Numbered-reference (footnote-style) URLs.
-        // 
-        
+        //
+
         // the regular expression for this kind of URL
         $tmp_regex = '/\[(' . $this->regex . ')\]/U';
-        
+
         // use a custom callback processing method to generate
         // the replacement text for matches.
         $this->wiki->source = preg_replace_callback(
             $tmp_regex,
-            array(&$this, 'processFootnote'),
+            function ($matches) {
+                return $this->processFootnote($matches);
+            },
             $this->wiki->source
         );
-        
-        
+
+
         // -------------------------------------------------------------
-        // 
+        //
         // Normal inline URLs.
-        // 
-        
+        //
+
         // the regular expression for this kind of URL
-        
+
         $tmp_regex = '/(^|[^A-Za-z])(' . $this->regex . ')(.*?)/';
-        
+
         // use the standard callback for inline URLs
         $this->wiki->source = preg_replace_callback(
             $tmp_regex,
-            array(&$this, 'process'),
+            function ($matches) {
+                return $this->process($matches);
+            },
             $this->wiki->source
         );
     }
-    
-    
+
+
     /**
-    * 
+    *
     * Process inline URLs.
-    * 
+    *
     * @param array &$matches
-    * 
+    *
     * @param array $matches An array of matches from the parse() method
     * as generated by preg_replace_callback.  $matches[0] is the full
     * matched string, $matches[1] is the first matched pattern,
     * $matches[2] is the second matched pattern, and so on.
-    * 
+    *
     * @return string The processed text replacement.
-    * 
-    */ 
-    
+    *
+    */
+
     function process(&$matches)
     {
         // set options
@@ -190,65 +227,65 @@ class Text_Wiki_Parse_Url extends Text_Wiki_Parse {
             'href' => $matches[2],
             'text' => $matches[2]
         );
-        
+
         // tokenize
         return $matches[1] . $this->wiki->addToken($this->rule, $options) . $matches[5];
     }
-    
-    
+
+
     /**
-    * 
+    *
     * Process numbered (footnote) URLs.
-    * 
+    *
     * Token options are:
     * @param array &$matches
-    * 
+    *
     * @param array $matches An array of matches from the parse() method
     * as generated by preg_replace_callback.  $matches[0] is the full
     * matched string, $matches[1] is the first matched pattern,
     * $matches[2] is the second matched pattern, and so on.
-    * 
+    *
     * @return string The processed text replacement.
-    * 
-    */ 
-    
+    *
+    */
+
     function processFootnote(&$matches)
     {
-        // keep a running count for footnotes 
+        // keep a running count for footnotes
         $this->footnoteCount++;
-        
+
         // set options
         $options = array(
             'type' => 'footnote',
             'href' => $matches[1],
             'text' => $this->footnoteCount
         );
-        
+
         // tokenize
         return $this->wiki->addToken($this->rule, $options);
     }
-    
-    
+
+
     /**
-    * 
+    *
     * Process described-reference (named-reference) URLs.
-    * 
+    *
     * Token options are:
     *     'type' => ['inline'|'footnote'|'descr'] the type of URL
     *     'href' => the URL link href portion
     *     'text' => the displayed text of the URL link
-    * 
+    *
     * @param array &$matches
-    * 
+    *
     * @param array $matches An array of matches from the parse() method
     * as generated by preg_replace_callback.  $matches[0] is the full
     * matched string, $matches[1] is the first matched pattern,
     * $matches[2] is the second matched pattern, and so on.
-    * 
+    *
     * @return string The processed text replacement.
-    * 
-    */ 
-    
+    *
+    */
+
     function processDescr(&$matches)
     {
         // set options
@@ -257,11 +294,9 @@ class Text_Wiki_Parse_Url extends Text_Wiki_Parse {
             'href' => $matches[1],
             'text' => $matches[4]
         );
-        
+
         // tokenize
         return $this->wiki->addToken($this->rule, $options);
     }
-
 }
-
 ?>

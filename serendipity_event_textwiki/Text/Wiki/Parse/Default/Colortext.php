@@ -1,19 +1,34 @@
 <?php
-// $Id: Colortext.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to find source text marked for
-* coloring.
-*
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* Parses for colorized text.
+* 
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
 */
 
-class Text_Wiki_Parse_Colortext extends Text_Wiki_Parse {
+/**
+* 
+* Parses for colorized text.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+*/
+
+class Text_Wiki_Parse_Default_Colortext extends Text_Wiki_Parse {
     
     /**
     * 
@@ -71,4 +86,3 @@ class Text_Wiki_Parse_Colortext extends Text_Wiki_Parse {
         return $start . $matches[2] . $end;
     }
 }
-?>

@@ -1,20 +1,38 @@
 <?php
-// $Id: Newline.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to mark implied line breaks in the
+* Parses for implied line breaks indicated by newlines.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
+
+/**
+* 
+* Parses for implied line breaks indicated by newlines.
+* 
+* This class implements a Text_Wiki_Parse_Default to mark implied line breaks in the
 * source text, usually a single carriage return in the middle of a paragraph
 * or block-quoted text.
 *
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
 */
 
-class Text_Wiki_Parse_Newline extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Newline extends Text_Wiki_Parse {
     
     
     /**

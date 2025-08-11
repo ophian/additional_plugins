@@ -2,6 +2,24 @@
 
 /**
 * 
+* Parses for anchor targets.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Manuel Holtgrewe <purestorm at ggnore dot net>
+*
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
+
+/**
+* 
 * This class implements a Text_Wiki_Parse to add an anchor target name
 * in the wiki page.
 *
@@ -9,11 +27,13 @@
 *
 * @author Paul M. Jones <pmjones at ciaweb dot net>
 *
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
 */
 
-class Text_Wiki_Parse_Anchor extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Anchor extends Text_Wiki_Parse {
     
     
     /**
@@ -64,4 +84,3 @@ class Text_Wiki_Parse_Anchor extends Text_Wiki_Parse {
         return $start . trim($text) . $end;
     }
 }
-?>

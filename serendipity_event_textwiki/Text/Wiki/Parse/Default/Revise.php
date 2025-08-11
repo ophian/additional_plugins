@@ -1,19 +1,34 @@
 <?php
-// $Id: Revise.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to find source text marked for
-* revision.
-*
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* Parses for text marked as revised (insert/delete).
+* 
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
 */
 
-class Text_Wiki_Parse_Revise extends Text_Wiki_Parse {
+/**
+* 
+* Parses for text marked as revised (insert/delete).
+*
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+*/
+
+class Text_Wiki_Parse_Default_Revise extends Text_Wiki_Parse {
     
     
     /**

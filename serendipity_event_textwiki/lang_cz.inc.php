@@ -2,13 +2,13 @@
 
 /**
  *  @version 1381.0
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/03/08
  */
 
 @define('PLUGIN_EVENT_TEXTWIKI_NAME', 'Markup: Wiki');
-@define('PLUGIN_EVENT_TEXTWIKI_DESC', 'P¯ev·dÌ znaËky Text_Wiki do HTML');
-@define('PLUGIN_EVENT_TEXTWIKI_TRANSFORM', 'PouæitÌ znaËek <a href="http://c2.com/cgi/wiki">Wiki</a> je povoleno');
+@define('PLUGIN_EVENT_TEXTWIKI_DESC', 'P≈ôev√°d√≠ znaƒçky Text_Wiki do HTML');
+@define('PLUGIN_EVENT_TEXTWIKI_TRANSFORM', 'Pou≈æit√≠ znaƒçek <a href="http://c2.com/cgi/wiki">Wiki</a> je povoleno');
 

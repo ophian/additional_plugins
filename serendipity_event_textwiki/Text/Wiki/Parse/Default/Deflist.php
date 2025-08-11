@@ -1,23 +1,41 @@
 <?php
-// $Id: Deflist.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to find source text marked as a
+* Parses for definition lists.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
+
+/**
+* 
+* Parses for definition lists.
+* 
+* This class implements a Text_Wiki_Parse_Default to find source text marked as a
 * definition list.  In short, if a line starts with ':' then it is a
-* definition list item; another ':' on the same lines indicates the end
+* definition list item; another ':' on the same line indicates the end
 * of the definition term and the beginning of the definition narrative.
 * The list items must be on sequential lines (no blank lines between
 * them) -- a blank line indicates the beginning of a new list.
 *
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
 */
 
-class Text_Wiki_Parse_Deflist extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Deflist extends Text_Wiki_Parse {
     
     
     /**
@@ -101,4 +119,3 @@ class Text_Wiki_Parse_Deflist extends Text_Wiki_Parse {
         return "\n" . $return . "\n\n";
     }
 }
-?>

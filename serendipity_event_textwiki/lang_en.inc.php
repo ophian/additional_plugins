@@ -57,9 +57,12 @@
 @define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_BOLD', '\'\'\'Text\'\'\' is marked bold. Default is on.');
 @define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_EMPHASIS', '//Text// is marked emphasised. Default is on.');
 @define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_ITALIC', '\'\'Text\'\' is marked italic. Default is on.');
-@define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_TT', '{{Text}} is writen in teletext (monotype). Default is on.');
+@define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_TT', '{{Text}} is written in teletext (monotype). Default is on.');
 @define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_SUPERSCRIPT', '^^Text^^ is written in superscript. Default is on.');
 @define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_REVISE', 'Enables marking texts as revisions using "@@---delete this text+++insert this text@@". Default is on.');
 @define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_TIGHTEN', 'Finds more than 3 newlines and reduces them to 2 newlines (paragraph). Default is on.');
 @define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_ENTITIES', 'Escapes HTML entities. Default is on.');
+
+@define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_UNDERLINE', '__Text__ is marked underline. Default is on.');
+@define('PLUGIN_EVENT_TEXTWIKI_RULE_DESC_SUBSCRIPT', ',,Text,, is written in subscript. Default is on.');
 

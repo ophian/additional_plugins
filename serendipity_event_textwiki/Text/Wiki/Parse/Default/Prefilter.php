@@ -1,6 +1,20 @@
 <?php
-// $Id: Prefilter.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
 
+/**
+* 
+* "Pre-filter" the source text.
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
 
 /**
 * 
@@ -11,13 +25,15 @@
 * to the top and end of the source text, compress 3 or more newlines to
 * 2 newlines.
 *
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
 */
 
-class Text_Wiki_Parse_Prefilter extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Prefilter extends Text_Wiki_Parse {
     
     
     /**
@@ -49,6 +65,12 @@ class Text_Wiki_Parse_Prefilter extends Text_Wiki_Parse {
         // add extra newlines at the top and end; this
         // seems to help many rules.
         $this->wiki->source = "\n" . $this->wiki->source . "\n\n";
+
+        $this->wiki->source = str_replace("\n----\n","\n\n----\n\n",
+                                          $this->wiki->source);
+        $this->wiki->source = preg_replace("/\n(\\+{1,6})(.*)\n/m",
+                                           "\n\n\\1 \\2\n\n",
+                                           $this->wiki->source);
         
         // finally, compress all instances of 3 or more newlines
         // down to two newlines.

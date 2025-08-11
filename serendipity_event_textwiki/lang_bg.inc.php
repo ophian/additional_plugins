@@ -5,7 +5,7 @@
  *  @author Ivan Cenov jwalker@hotmail.bg
  */
 
-@define('PLUGIN_EVENT_TEXTWIKI_NAME',     'Форматиране на текст: Wiki');
-@define('PLUGIN_EVENT_TEXTWIKI_DESC',     'Форматиране на текст чрез Text_Wiki конвертор');
-@define('PLUGIN_EVENT_TEXTWIKI_TRANSFORM', 'Форматиране <a href="http://c2.com/cgi/wiki">Wiki</a> е разрешено');
+@define('PLUGIN_EVENT_TEXTWIKI_NAME', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РЅР° С‚РµРєСЃС‚: Wiki');
+@define('PLUGIN_EVENT_TEXTWIKI_DESC', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РЅР° С‚РµРєСЃС‚ С‡СЂРµР· Text_Wiki РєРѕРЅРІРµСЂС‚РѕСЂ');
+@define('PLUGIN_EVENT_TEXTWIKI_TRANSFORM', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ <a href="http://c2.com/cgi/wiki">Wiki</a> Рµ СЂР°Р·СЂРµС€РµРЅРѕ');
 

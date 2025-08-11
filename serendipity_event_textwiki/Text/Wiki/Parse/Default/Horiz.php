@@ -1,19 +1,37 @@
 <?php
-// $Id: Horiz.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to find source text marked to
-* be a horizontal rule, as defined by four dashed on their own line.
-*
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* Parses for horizontal ruling lines.
+* 
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
 */
 
-class Text_Wiki_Parse_Horiz extends Text_Wiki_Parse {
+/**
+* 
+* Parses for horizontal ruling lines.
+* 
+* This class implements a Text_Wiki_Parse_Default to find source text marked to
+* be a horizontal rule, as defined by four dashed on their own line.
+*
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+*/
+
+class Text_Wiki_Parse_Default_Horiz extends Text_Wiki_Parse {
     
     
     /**

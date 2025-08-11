@@ -1,20 +1,38 @@
 <?php
-// $Id: Raw.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
+* 
+* Parses for text marked as "raw" (i.e., to be rendered as-is).
+* 
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
+*/
+
+/**
+* 
+* Parses for text marked as "raw" (i.e., to be rendered as-is).
 * 
 * This class implements a Text_Wiki rule to find sections of the source
 * text that are not to be processed by Text_Wiki.  These blocks of "raw"
 * text will be rendered as they were found.
 *
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
 */
 
-class Text_Wiki_Parse_Raw extends Text_Wiki_Parse {
+class Text_Wiki_Parse_Default_Raw extends Text_Wiki_Parse {
     
     
     /**

@@ -1,19 +1,37 @@
 <?php
-// $Id: Break.php,v 1.1 2005/01/31 15:46:52 pmjones Exp $
-
 
 /**
 * 
-* This class implements a Text_Wiki_Parse to mark forced line breaks in the
-* source text.
-*
-* @author Paul M. Jones <pmjones@ciaweb.net>
-*
+* Parses for explicit line breaks.
+* 
+* @category Text
+* 
 * @package Text_Wiki
-*
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+* @license LGPL
+* 
+* @version $Id$
+* 
 */
 
-class Text_Wiki_Parse_Break extends Text_Wiki_Parse {
+/**
+* 
+* Parses for explicit line breaks.
+* 
+* This class implements a Text_Wiki_Parse_Default to mark forced line breaks in the
+* source text.
+*
+* @category Text
+* 
+* @package Text_Wiki
+* 
+* @author Paul M. Jones <pmjones@php.net>
+* 
+*/
+
+class Text_Wiki_Parse_Default_Break extends Text_Wiki_Parse {
     
     
     /**
@@ -51,4 +69,3 @@ class Text_Wiki_Parse_Break extends Text_Wiki_Parse {
     }
 }
 
-?>
