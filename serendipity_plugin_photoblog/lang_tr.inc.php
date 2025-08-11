@@ -6,10 +6,10 @@
  *  First public version: lang_tr.inc.php
  */
 
-@define('PLUGIN_PHOTOBLOG_TITLE',           'FotoGünlük Kayıtları');
-@define('PLUGIN_PHOTOBLOG_BLAHBLAH',        'En son yayınladığınız fotogünlük kayıtlarınızdaki küçükresimleri gösterir (olaylar eklentisine bakın).');
-@define('PLUGIN_PHOTOBLOG_NUMBER',          'Kayıtların sayısı');
-@define('PLUGIN_PHOTOBLOG_NUMBER_BLAHBLAH', 'Kaç adet fotogünlük kaydı gösterilsin? (öntanımlı: 5)');
-@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',    'Sadece Resimler mi gösterilsin?');
-@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH', 'Beraberindeki açıklayıcı yazıyla gösterilmesi seçeneği haricinde, sadece fotoğrafların gösterimi.');
+@define('PLUGIN_PHOTOBLOG_TITLE',           'FotoGÃ¼nlÃ¼k KayÄ±tlarÄ±');
+@define('PLUGIN_PHOTOBLOG_BLAHBLAH',        'En son yayÄ±nladÄ±ÄŸÄ±nÄ±z fotogÃ¼nlÃ¼k kayÄ±tlarÄ±nÄ±zdaki kÃ¼Ã§Ã¼kresimleri gÃ¶sterir (olaylar eklentisine bakÄ±n).');
+@define('PLUGIN_PHOTOBLOG_NUMBER',          'KayÄ±tlarÄ±n sayÄ±sÄ±');
+@define('PLUGIN_PHOTOBLOG_NUMBER_BLAHBLAH', 'KaÃ§ adet fotogÃ¼nlÃ¼k kaydÄ± gÃ¶sterilsin? (Ã¶ntanÄ±mlÄ±: 5)');
+@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',    'Sadece Resimler mi gÃ¶sterilsin?');
+@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH', 'Beraberindeki aÃ§Ä±klayÄ±cÄ± yazÄ±yla gÃ¶sterilmesi seÃ§eneÄŸi haricinde, sadece fotoÄŸraflarÄ±n gÃ¶sterimi.');
 

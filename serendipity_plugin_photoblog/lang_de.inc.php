@@ -1,9 +1,9 @@
 <?php
 
-@define('PLUGIN_PHOTOBLOG_TITLE',           'Photoblog Einträge');
-@define('PLUGIN_PHOTOBLOG_BLAHBLAH',        'Zeigt die Vorschaubilder der letzten Photoblog Einträge (siehe Ereignis-Plugin).');
-@define('PLUGIN_PHOTOBLOG_NUMBER',          'Anzahl der Einträge');
-@define('PLUGIN_PHOTOBLOG_NUMBER_BLAHBLAH', 'Wie viele Einträge sollen dargestellt werden? (Standard: 5)');
+@define('PLUGIN_PHOTOBLOG_TITLE',           'Photoblog EintrÃ¤ge');
+@define('PLUGIN_PHOTOBLOG_BLAHBLAH',        'Zeigt die Vorschaubilder der letzten Photoblog EintrÃ¤ge (siehe Ereignis-Plugin).');
+@define('PLUGIN_PHOTOBLOG_NUMBER',          'Anzahl der EintrÃ¤ge');
+@define('PLUGIN_PHOTOBLOG_NUMBER_BLAHBLAH', 'Wie viele EintrÃ¤ge sollen dargestellt werden? (Standard: 5)');
 @define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',    'Nur Bilder darstellen?');
-@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH', 'Zeigt nur die Einträge mit Bildern an, ansonsten alle.');
+@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH', 'Zeigt nur die EintrÃ¤ge mit Bildern an, ansonsten alle.');
 

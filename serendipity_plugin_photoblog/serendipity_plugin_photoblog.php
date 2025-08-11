@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -14,12 +16,12 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
         $propbag->add('description', PLUGIN_PHOTOBLOG_BLAHBLAH);
         $propbag->add('configuration', array('number', 'showpicsonly'));
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version',     '1.3');
+        $propbag->add('version',     '2.0.0');
         $propbag->add('groups', array('IMAGES'));
         $this->dependencies = array('serendipity_event_thumbnails' => 'keep');
     }
@@ -133,7 +135,7 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
                     $thumbsize     = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $thumbbasename);
                 }
 
-                echo '<a href="' . $entryLink . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '">';
+                echo '<a href="' . $entryLink . '" title="' . htmlspecialchars($entry['title']) . '">';
                 if (isset($photo)) {
                     echo '<img style="margin:5px;" src="' . $imgsrc . '" width=' . $thumbsize[0] . ' height=' . $thumbsize[1];
                     if (isset($id) && ($id == $entry['id'])) {

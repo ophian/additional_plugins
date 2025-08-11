@@ -1,16 +1,16 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/24
  */
 
 @define('PLUGIN_PHOTOBLOG_TITLE',                   'Fotoblog');
-@define('PLUGIN_PHOTOBLOG_BLAHBLAH',                'Ukazuje n·hledy poslednÌch p¯ÌspÏvk˘ s obr·zkem Fotoblogu (viz. plugin ud·lostÌ Fotoblog).');
-@define('PLUGIN_PHOTOBLOG_NUMBER',                  'PoËet p¯ÌspÏvk˘');
-@define('PLUGIN_PHOTOBLOG_NUMBER_BLAHBLAH',         'Kolik p¯ÌspÏvk˘ m· b˝t zobrazeno? (StandardnÏ: 5)');
-@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',            'Pouze obr·zky?');
-@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH',   'Zobrazit pouze p¯ÌspÏvky, kterÈ obsahujÌ obr·zek Fotoblogu a ostatnÌ p¯ÌspÏvky nezobrazovat?');
+@define('PLUGIN_PHOTOBLOG_BLAHBLAH',                'Ukazuje n√°hledy posledn√≠ch p≈ô√≠spƒõvk≈Ø s obr√°zkem Fotoblogu (viz. plugin ud√°lost√≠ Fotoblog).');
+@define('PLUGIN_PHOTOBLOG_NUMBER',                  'Poƒçet p≈ô√≠spƒõvk≈Ø');
+@define('PLUGIN_PHOTOBLOG_NUMBER_BLAHBLAH',         'Kolik p≈ô√≠spƒõvk≈Ø m√° b√Ωt zobrazeno? (Standardnƒõ: 5)');
+@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY',            'Pouze obr√°zky?');
+@define('PLUGIN_PHOTOBLOG_SHOWPICSONLY_BLAHBLAH',   'Zobrazit pouze p≈ô√≠spƒõvky, kter√© obsahuj√≠ obr√°zek Fotoblogu a ostatn√≠ p≈ô√≠spƒõvky nezobrazovat?');
 
 ?>
