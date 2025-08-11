@@ -34,7 +34,7 @@ class serendipity_event_suggest extends serendipity_event
             'serendipity' => '5.0',
             'smarty'      => '4.1',
             'php'         => '8.2'
-                                        ));
+        ));
         $propbag->add('stackable',      true);
         $propbag->add('license',        'Commercial');
         $propbag->add('legal',          array(
