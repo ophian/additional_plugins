@@ -1,11 +1,11 @@
 <?php
 
 /**
- *  @version
+ *  @version 
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_EVENT_QUOTES_NAME', 'Ôîðìàòèðàíå íà òåêñò: Êàâè÷êè');
-@define('PLUGIN_EVENT_QUOTES_DESC', 'Ïðåîáðàçóâà ïðàâèòå êàâè÷êè â íàêëîíåíè.');
+@define('PLUGIN_EVENT_QUOTES_NAME', 'Ð¤Ð¾Ñ€Ð¼Ð°Ñ‚Ð¸Ñ€Ð°Ð½Ðµ Ð½Ð° Ñ‚ÐµÐºÑÑ‚: ÐšÐ°Ð²Ð¸Ñ‡ÐºÐ¸');
+@define('PLUGIN_EVENT_QUOTES_DESC', 'ÐŸÑ€ÐµÐ¾Ð±Ñ€Ð°Ð·ÑƒÐ²Ð° Ð¿Ñ€Ð°Ð²Ð¸Ñ‚Ðµ ÐºÐ°Ð²Ð¸Ñ‡ÐºÐ¸ Ð² Ð½Ð°ÐºÐ»Ð¾Ð½ÐµÐ½Ð¸.');
 

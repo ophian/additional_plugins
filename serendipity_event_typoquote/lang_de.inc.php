@@ -1,5 +1,5 @@
 <?php
 
-@define('PLUGIN_EVENT_QUOTES_NAME', 'Textformatierung: Typografische Anführungszeichen');
-@define('PLUGIN_EVENT_QUOTES_DESC', 'Wandelt normale Anführungszeichen in typografische Anführungszeichen');
+@define('PLUGIN_EVENT_QUOTES_NAME', 'Textformatierung: Typografische AnfÃ¼hrungszeichen');
+@define('PLUGIN_EVENT_QUOTES_DESC', 'Wandelt normale AnfÃ¼hrungszeichen in typografische AnfÃ¼hrungszeichen');
 

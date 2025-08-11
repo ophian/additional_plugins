@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/24
  */
 
-@define('PLUGIN_EVENT_QUOTES_NAME', 'Markup: Typografické uvozovky');
-@define('PLUGIN_EVENT_QUOTES_DESC', 'Pøevádí rovné uvozovky na kulaté. Také mù¾ete pou¾ít PHP knihovnu SmartyPants (od Michela Fortina, který vy¹el ze SmartyPants od Johna Grubera), pak budou v pøíspìvcích aplikovány dal¹í typografické úpravy.');
-@define('PLUGIN_EVENT_QUOTES_SMARTYPANTS_NAME','Pou¾ívat knihovnu SmartyPants?');
-@define('PLUGIN_EVENT_QUOTES_SMARTYPANTS_DESC','Pou¾ijte PHP knihovnu SmartyPants k dal¹ím typografickým pøevodùm. Podrobnosti na http://www.michelf.com/projects/php-smartypants/.');
+@define('PLUGIN_EVENT_QUOTES_NAME',     'Markup: TypografickÃ© uvozovky');
+@define('PLUGIN_EVENT_QUOTES_DESC',     'PÅ™evÃ¡dÃ­ rovnÃ© uvozovky na kulatÃ©. TakÃ© mÅ¯Å¾ete pouÅ¾Ã­t PHP knihovnu SmartyPants (od Michela Fortina, kterÃ½ vyÅ¡el ze SmartyPants od Johna Grubera), pak budou v pÅ™Ã­spÄ›vcÃ­ch aplikovÃ¡ny dalÅ¡Ã­ typografickÃ© Ãºpravy.');
+@define('PLUGIN_EVENT_QUOTES_SMARTYPANTS_NAME','PouÅ¾Ã­vat knihovnu SmartyPants?');
+@define('PLUGIN_EVENT_QUOTES_SMARTYPANTS_DESC','PouÅ¾ijte PHP knihovnu SmartyPants k dalÅ¡Ã­m typografickÃ½m pÅ™evodÅ¯m. Podrobnosti na http://www.michelf.com/projects/php-smartypants/.');
 
