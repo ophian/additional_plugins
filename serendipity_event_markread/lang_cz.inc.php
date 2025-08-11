@@ -1,17 +1,17 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/25
  */
 
-@define('PLUGIN_MARKREAD_NAME',             'Pøeèteno/Nepøeèteno oznaèování pøíspìvkù u¾ivateli');
-@define('PLUGIN_MARKREAD_MSG',              'Pøíspìvek byl oznaèen jako pøeètenı. Pokud se okno nezavøe samo, zavøete ho ruènì.');
+@define('PLUGIN_MARKREAD_NAME',             'PÅ™eÄteno/NepÅ™eÄteno oznaÄovÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯ uÅ¾ivateli');
+@define('PLUGIN_MARKREAD_MSG',              'PÅ™Ã­spÄ›vek byl oznaÄen jako pÅ™eÄtenÃ½. Pokud se okno nezavÅ™e samo, zavÅ™ete ho ruÄnÄ›.');
 
-@define('PLUGIN_MARKREAD_MARKLINK',         'Text odkazu pro oznaèení èlánku jako pøeèteného. (nepøeètenı èlánek)');
-@define('PLUGIN_MARKREAD_MARKLINK_DEFAULT', '<b>Nepøeèteno</b>');
+@define('PLUGIN_MARKREAD_MARKLINK',         'Text odkazu pro oznaÄenÃ­ ÄlÃ¡nku jako pÅ™eÄtenÃ©ho. (nepÅ™eÄtenÃ½ ÄlÃ¡nek)');
+@define('PLUGIN_MARKREAD_MARKLINK_DEFAULT', '<b>NepÅ™eÄteno</b>');
 
-@define('PLUGIN_MARKREAD_MARKTEXT',         'Text, kterı se zobrazí, kdy¾ je pøíspìvek pøeètenı');
-@define('PLUGIN_MARKREAD_MARKTEXT_DEFAULT', 'Pøeèteno');
+@define('PLUGIN_MARKREAD_MARKTEXT',         'Text, kterÃ½ se zobrazÃ­, kdyÅ¾ je pÅ™Ã­spÄ›vek pÅ™eÄtenÃ½');
+@define('PLUGIN_MARKREAD_MARKTEXT_DEFAULT', 'PÅ™eÄteno');
 

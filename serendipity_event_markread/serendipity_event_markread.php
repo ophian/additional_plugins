@@ -12,6 +12,8 @@
 // Then you can use CSS to differently style .serendipity_title_read and .serendipity_title_unread for each entry.
 
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -20,7 +22,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_markread extends serendipity_event
 {
-    var $title = PLUGIN_MARKREAD_NAME;
+    public $title = PLUGIN_MARKREAD_NAME;
 
     function introspect(&$propbag)
     {
@@ -30,11 +32,11 @@ class serendipity_event_markread extends serendipity_event
         $propbag->add('description',   PLUGIN_MARKREAD_NAME);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '1.6');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array(
             'frontend_configure'       => true,
