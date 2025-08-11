@@ -6,14 +6,14 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_RELATEDLINKS_TITLE', 'Powi±zane wpisy/linki');
-@define('PLUGIN_EVENT_RELATEDLINKS_DESC', 'Wstaw powi±zane z danym wpisem linki do innych wpisów lub stron. Mo¿esz swobodnie zmieniaæ sposób prezentowania linków przez edycjê szablonu smarty "plugin_relatedlinks.tpl". Proszê zwróciæ uwagê, ¿e ten plugin pokazuje dane tylko w pe³nym widoku wpisu (wymaga wy¶wietlenia pe³nej jego tre¶ci).');
-@define('PLUGIN_EVENT_RELATEDLINKS_ENTERDESC', 'Wstaw powi±zane z tym wpisem linki, które chcesz pokazaæ. Jeden URL (nie kod HTML!) na liniê (to znaczy linie separowane znakiem nowej linii - po prostu wci¶nij enter aby przej¶c do nowej linii). Je¶li chcesz dodaæ opis, wprowad¼ go wed³ug nastêpuj±cego schematu: http://przyklad.com/link.html=Przyk³ad owa strona. Wszystko co znajdzie siê w linii po znaku "=" bêdzie traktowane jako opis linku. Je¶li nie wprowadzisz opisu, zostanie wy¶wietlony sam link.');
-@define('PLUGIN_EVENT_RELATEDLINKS_LIST', 'Powi±zane linki:');
+@define('PLUGIN_EVENT_RELATEDLINKS_TITLE', 'PowiÄ…zane wpisy/linki');
+@define('PLUGIN_EVENT_RELATEDLINKS_DESC', 'Wstaw powiÄ…zane z danym wpisem linki do innych wpisÃ³w lub stron. MoÅ¼esz swobodnie zmieniaÄ‡ sposÃ³b prezentowania linkÃ³w przez edycjÄ™ szablonu smarty "plugin_relatedlinks.tpl". ProszÄ™ zwrÃ³ciÄ‡ uwagÄ™, Å¼e ten plugin pokazuje dane tylko w peÅ‚nym widoku wpisu (wymaga wyÅ›wietlenia peÅ‚nej jego treÅ›ci).');
+@define('PLUGIN_EVENT_RELATEDLINKS_ENTERDESC', 'Wstaw powiÄ…zane z tym wpisem linki, ktÃ³re chcesz pokazaÄ‡. Jeden URL (nie kod HTML!) na liniÄ™ (to znaczy linie separowane znakiem nowej linii - po prostu wciÅ›nij enter aby przejÅ›c do nowej linii). JeÅ›li chcesz dodaÄ‡ opis, wprowadÅº go wedÅ‚ug nastÄ™pujÄ…cego schematu: http://przyklad.com/link.html=PrzykÅ‚ad owa strona. Wszystko co znajdzie siÄ™ w linii po znaku "=" bÄ™dzie traktowane jako opis linku. JeÅ›li nie wprowadzisz opisu, zostanie wyÅ›wietlony sam link.');
+@define('PLUGIN_EVENT_RELATEDLINKS_LIST', 'PowiÄ…zane linki:');
 
 @define('PLUGIN_EVENT_RELATEDLINKS_POSITION', 'Umieszczenie wtyczki');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_DESC', 'Umie¶ciæ wynik dzia³ania wtyczki w stopce wpisu czy u¿yæ w tym celu szablonu Smarty? Je¶li uaktywnisz szablon Smarty, musisz dodaæ tê liniê do szablonu entries.tpl swojego schematu: {serendipity_hookPlugin hook="frontend_display_relatedlinks" data=$entry hookAll="true"}{$RELATEDLINKS}. Liniê umie¶æ w pêtli foreach, w której definiowane jest wy¶wietlanie zmiennej $entry (np. w miejscu wy¶wietlania komentarzy, ¶ladów czy rozszerzonej tre¶ci wpisu).');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_FOOTER', 'Umie¶æ w stopce wpisu');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_BODY', 'Umie¶æ w tre¶ci wpisu');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_SMARTY', 'U¿yj wywo³ania Smarty');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_DESC', 'UmieÅ›ciÄ‡ wynik dziaÅ‚ania wtyczki w stopce wpisu czy uÅ¼yÄ‡ w tym celu szablonu Smarty? JeÅ›li uaktywnisz szablon Smarty, musisz dodaÄ‡ tÄ™ liniÄ™ do szablonu entries.tpl swojego schematu: {serendipity_hookPlugin hook="frontend_display_relatedlinks" data=$entry hookAll="true"}{$RELATEDLINKS}. LiniÄ™ umieÅ›Ä‡ w pÄ™tli foreach, w ktÃ³rej definiowane jest wyÅ›wietlanie zmiennej $entry (np. w miejscu wyÅ›wietlania komentarzy, Å›ladÃ³w czy rozszerzonej treÅ›ci wpisu).');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_FOOTER', 'UmieÅ›Ä‡ w stopce wpisu');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_BODY', 'UmieÅ›Ä‡ w treÅ›ci wpisu');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_SMARTY', 'UÅ¼yj wywoÅ‚ania Smarty');
 

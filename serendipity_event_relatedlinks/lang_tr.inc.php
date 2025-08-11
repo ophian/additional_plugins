@@ -6,17 +6,17 @@
  *  First public version: lang_tr.inc.php
  */
 
-@define('PLUGIN_EVENT_RELATEDLINKS_TITLE', 'İlgili yazılar/makaleler/web bağlantıları');
-@define('PLUGIN_EVENT_RELATEDLINKS_DESC', 'Yazı başına konuyla ilgili sitede mevcut yazı-makale ya da site dışı web bağlantısı ekle. Ölçeklenebilirlik amacıyla  "plugin_relatedlinks.tpl" adlı Smarty-Şablon dosyasını düzenleyerek web sayfası çıktını istediğin görünümde oluşturabilirsin.Not: Bu eklenti sadece yazının ayrıntılı-tam gösterimi sırasında etkin olur.');
-@define('PLUGIN_EVENT_RELATEDLINKS_ENTERDESC', 'Göstermek istediğiniz ilgili web bağlantısını yazın. Her satır için bir URL adresi (HTML kodu içermesin!)  (altsatırlar yeni satırbaşları anlamına gelir)yazın. Açıklama eklemek isterseniz, şu formatı kullanabilirsiniz: http://ornek.com/link.html=Ornek Link. Şu işaretten sonraki herşey "=" açıklama amacıyla kullanılacaktır. Eğer açıklama yazmazsanız, sadece web bağlantınız başlık olarak görüntülenecektir.');
-@define('PLUGIN_EVENT_RELATEDLINKS_LIST', 'İlgili Web Bağlantıları:');
+@define('PLUGIN_EVENT_RELATEDLINKS_TITLE', 'Ä°lgili yazÄ±lar/makaleler/web baÄŸlantÄ±larÄ±');
+@define('PLUGIN_EVENT_RELATEDLINKS_DESC', 'YazÄ± baÅŸÄ±na konuyla ilgili sitede mevcut yazÄ±-makale ya da site dÄ±ÅŸÄ± web baÄŸlantÄ±sÄ± ekle. Ã–lÃ§eklenebilirlik amacÄ±yla  "plugin_relatedlinks.tpl" adlÄ± Smarty-Åablon dosyasÄ±nÄ± dÃ¼zenleyerek web sayfasÄ± Ã§Ä±ktÄ±nÄ± istediÄŸin gÃ¶rÃ¼nÃ¼mde oluÅŸturabilirsin.Not: Bu eklenti sadece yazÄ±nÄ±n ayrÄ±ntÄ±lÄ±-tam gÃ¶sterimi sÄ±rasÄ±nda etkin olur.');
+@define('PLUGIN_EVENT_RELATEDLINKS_ENTERDESC', 'GÃ¶stermek istediÄŸiniz ilgili web baÄŸlantÄ±sÄ±nÄ± yazÄ±n. Her satÄ±r iÃ§in bir URL adresi (HTML kodu iÃ§ermesin!)  (altsatÄ±rlar yeni satÄ±rbaÅŸlarÄ± anlamÄ±na gelir)yazÄ±n. AÃ§Ä±klama eklemek isterseniz, ÅŸu formatÄ± kullanabilirsiniz: http://ornek.com/link.html=Ornek Link. Åu iÅŸaretten sonraki herÅŸey "=" aÃ§Ä±klama amacÄ±yla kullanÄ±lacaktÄ±r. EÄŸer aÃ§Ä±klama yazmazsanÄ±z, sadece web baÄŸlantÄ±nÄ±z baÅŸlÄ±k olarak gÃ¶rÃ¼ntÃ¼lenecektir.');
+@define('PLUGIN_EVENT_RELATEDLINKS_LIST', 'Ä°lgili Web BaÄŸlantÄ±larÄ±:');
 
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION', 'İlgili yazılar/web bağlantıları için yerleşim düzeni');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_DESC', 'Yazınızın altına ilgili makale ve web bağlantılarını ekleme ya da Smarty Şablonlama sistemini kullanma seçeneğidir. Eğer Smarty şablonlama sistemini etkin kılarsanız, şu aşağıdaki satırı entries.tpl şablon dosyanıza, foreach döngüsünde $entry değişkeni neredeyse  oraya eklemeniz gerekmektedir.(burada görüşler, izdüşümleri ve yazının daha fazla yazı ekleme gövde bölgesi gösterilmektedir): {serendipity_hookPlugin hook="frontend_display_relatedlinks" data=$entry hookAll="true"}{$RELATEDLINKS}');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_FOOTER', 'Yazı altına yerleştir');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_BODY', 'Yazının içine yerleştir');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_SMARTY', 'Smarty çağrısı kullan');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION', 'Ä°lgili yazÄ±lar/web baÄŸlantÄ±larÄ± iÃ§in yerleÅŸim dÃ¼zeni');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_DESC', 'YazÄ±nÄ±zÄ±n altÄ±na ilgili makale ve web baÄŸlantÄ±larÄ±nÄ± ekleme ya da Smarty Åablonlama sistemini kullanma seÃ§eneÄŸidir. EÄŸer Smarty ÅŸablonlama sistemini etkin kÄ±larsanÄ±z, ÅŸu aÅŸaÄŸÄ±daki satÄ±rÄ± entries.tpl ÅŸablon dosyanÄ±za, foreach dÃ¶ngÃ¼sÃ¼nde $entry deÄŸiÅŸkeni neredeyse  oraya eklemeniz gerekmektedir.(burada gÃ¶rÃ¼ÅŸler, izdÃ¼ÅŸÃ¼mleri ve yazÄ±nÄ±n daha fazla yazÄ± ekleme gÃ¶vde bÃ¶lgesi gÃ¶sterilmektedir): {serendipity_hookPlugin hook="frontend_display_relatedlinks" data=$entry hookAll="true"}{$RELATEDLINKS}');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_FOOTER', 'YazÄ± altÄ±na yerleÅŸtir');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_BODY', 'YazÄ±nÄ±n iÃ§ine yerleÅŸtir');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_SMARTY', 'Smarty Ã§aÄŸrÄ±sÄ± kullan');
 
-@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR', 'Bağlantı ayırma karakteri');
-@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC', 'Yazınızdaki URL adreslerini ve açıklamaları ayıracak bir harf karakteri ekleyin. Bu karakterin URL ya da başlıkta mevcut olmadığına emin olun, bunun gibi bir karakterle ayrım yapın: "|".');
+@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR', 'BaÄŸlantÄ± ayÄ±rma karakteri');
+@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC', 'YazÄ±nÄ±zdaki URL adreslerini ve aÃ§Ä±klamalarÄ± ayÄ±racak bir harf karakteri ekleyin. Bu karakterin URL ya da baÅŸlÄ±kta mevcut olmadÄ±ÄŸÄ±na emin olun, bunun gibi bir karakterle ayrÄ±m yapÄ±n: "|".');
 

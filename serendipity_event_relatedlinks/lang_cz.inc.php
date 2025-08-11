@@ -3,19 +3,21 @@
 /**
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/15
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/02/23
  */
 
-@define('PLUGIN_EVENT_RELATEDLINKS_TITLE',		'Odkazy na podobnÈ prÌspevky/str·nky');
-@define('PLUGIN_EVENT_RELATEDLINKS_DESC',		'Vloæte odkazy na podobnÈ prÌspevky/str·nky. K lepπÌmu prizpusobenÌ v˝stupu muæete upravit Smarty πablonu "plugin_relatedlinks.tpl". Tento modul zobrazuje data pouze v detailnÌm zobrazenÌ prÌspevku.');
-@define('PLUGIN_EVENT_RELATEDLINKS_ENTERDESC',		'Vloæte odkazy, kterÈ chcete zobrazit. Jedno URL (æ·dnÈ HTML) na r·dku (tzn. oddelenÈ koncem r·dky). Chcete-li vloæit popis, pouæijte tento form·t: http://priklad.cz/odkaz.html=Nejak˝ odkaz. Vπe za znakem "=" bude pouæito jako popis. Pokud nenÌ popis vloæen, zobrazÌ se mÌsto nej samotn· adresa (URL).');
-@define('PLUGIN_EVENT_RELATEDLINKS_LIST',		'PodobnÈ prÌspevky/str·nky:');
+@define('PLUGIN_EVENT_RELATEDLINKS_TITLE',		'Odkazy na podobn√© pr√≠spevky/str√°nky');
+@define('PLUGIN_EVENT_RELATEDLINKS_DESC',		'Vlo≈æte odkazy na podobn√© pr√≠spevky/str√°nky. K lep≈°√≠mu prizpusoben√≠ v√Ωstupu mu≈æete upravit Smarty ≈°ablonu "plugin_relatedlinks.tpl". Tento modul zobrazuje data pouze v detailn√≠m zobrazen√≠ pr√≠spevku.');
+@define('PLUGIN_EVENT_RELATEDLINKS_ENTERDESC',		'Vlo≈æte odkazy, kter√© chcete zobrazit. Jedno URL (≈æ√°dn√© HTML) na r√°dku (tzn. oddelen√© koncem r√°dky). Chcete-li vlo≈æit popis, pou≈æijte tento form√°t: http://priklad.cz/odkaz.html=Nejak√Ω odkaz. V≈°e za znakem "=" bude pou≈æito jako popis. Pokud nen√≠ popis vlo≈æen, zobraz√≠ se m√≠sto nej samotn√° adresa (URL).');
+@define('PLUGIN_EVENT_RELATEDLINKS_LIST',		'Podobn√© pr√≠spevky/str√°nky:');
 
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION',		'UmÌstenÌ odkazu na podobnÈ str·nky');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_DESC',		'Pridat seznam odkazu do z·patÌ prÌspevku nebo pouæÌt Smarty πablony? Pokud aktivujete Smarty πablony, budete muset do svÈ πablony entries.tpl do foreach cyklu, kde je nastaveno $entry (tzn. tam, kde se zobrazujÌ koment·re rozπÌren· verze prÌspevku) pridat: {serendipity_hookPlugin hook="frontend_display_relatedlinks" data=$entry hookAll="true"}{$RELATEDLINKS}');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_FOOTER',		'UmÌstit v z·patÌ prÌspevku');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_BODY',		'UmÌstit v tele prÌspevku');
-@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_SMARTY',		'PouæÌt Smarty');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION',		'Um√≠sten√≠ odkazu na podobn√© str√°nky');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_DESC',		'Pridat seznam odkazu do z√°pat√≠ pr√≠spevku nebo pou≈æ√≠t Smarty ≈°ablony? Pokud aktivujete Smarty ≈°ablony, budete muset do sv√© ≈°ablony entries.tpl do foreach cyklu, kde je nastaveno $entry (tzn. tam, kde se zobrazuj√≠ koment√°re roz≈°√≠ren√° verze pr√≠spevku) pridat: {serendipity_hookPlugin hook="frontend_display_relatedlinks" data=$entry hookAll="true"}{$RELATEDLINKS}');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_FOOTER',		'Um√≠stit v z√°pat√≠ pr√≠spevku');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_BODY',		'Um√≠stit v tele pr√≠spevku');
+@define('PLUGIN_EVENT_RELATEDLINKS_POSITION_SMARTY',		'Pou≈æ√≠t Smarty');
 
-@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR',		'Znak pro oddÏlenÌ odkaz˘');
-@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC',		'Zadejte znak, kter˝ bude oddÏlovat URL adresy a popisky. BuÔte opatrnÌ p¯i jeho v˝bÏru, nesmÌ existovat ani v URL ani v popisku. Vhodn˝ znak je t¯eba "|".');
+@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR',		'Znak pro oddƒõlen√≠ odkaz≈Ø');
+@define('PLUGIN_EVENT_RELATEDLINKS_EXPLODECHAR_DESC',		'Zadejte znak, kter√Ω bude oddƒõlovat URL adresy a popisky. Buƒète opatrn√≠ p≈ôi jeho v√Ωbƒõru, nesm√≠ existovat ani v URL ani v popisku. Vhodn√Ω znak je t≈ôeba "|".');
 
