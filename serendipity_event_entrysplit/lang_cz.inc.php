@@ -1,20 +1,21 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/16
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/17
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/02/23
  */
 
-@define('PLUGIN_ENTRYSPLIT_NAME',		'Dìlení dlouhıch pøíspìvkù');
-@define('PLUGIN_ENTRYSPLIT_BLAHBLAH',		'Umo¾òuje rozdìlit dlouhé pøíspìvky do nìkolika podstránek');
-@define('PLUGIN_ENTRYSPLIT_CHAR',		'Zalomení stránky');
-@define('PLUGIN_ENTRYSPLIT_CHAR_DESC',		'Jaká sekvence znakù je pou¾ita pro oznaèení konce stránky? Tuto sekvenci je tøeba zadat do pøíspìvku na místo, kde má bıt zalomení stránky. Pokud je tato volba prázdná, dìlení je provedeno na základì délky textu.');
-@define('PLUGIN_ENTRYSPLIT_LENGTH',		'Délka podstránky');
-@define('PLUGIN_ENTRYSPLIT_LENGTH_DESC',		'Pokud nezadáte zalomení stránky ruènì, bude vynuceno po zde zadaném poètu znakù.');
-@define('PLUGIN_ENTRYSPLIT_PAGES',		'Stránky');
-@define('PLUGIN_ENTRYSPLIT_SHOWBODY',		'Chcete zobrazovat tìlo pøíspìvku na následujících stránkách?');
-@define('PLUGIN_ENTRYSPLIT_PAGES_ALL',		'V¹e');
+@define('PLUGIN_ENTRYSPLIT_NAME',		'DÄ›lenÃ­ dlouhÃ½ch pÅ™Ã­spÄ›vkÅ¯');
+@define('PLUGIN_ENTRYSPLIT_BLAHBLAH',		'UmoÅ¾Åˆuje rozdÄ›lit dlouhÃ© pÅ™Ã­spÄ›vky do nÄ›kolika podstrÃ¡nek');
+@define('PLUGIN_ENTRYSPLIT_CHAR',		'ZalomenÃ­ strÃ¡nky');
+@define('PLUGIN_ENTRYSPLIT_CHAR_DESC',		'JakÃ¡ sekvence znakÅ¯ je pouÅ¾ita pro oznaÄenÃ­ konce strÃ¡nky? Tuto sekvenci je tÅ™eba zadat do pÅ™Ã­spÄ›vku na mÃ­sto, kde mÃ¡ bÃ½t zalomenÃ­ strÃ¡nky. Pokud je tato volba prÃ¡zdnÃ¡, dÄ›lenÃ­ je provedeno na zÃ¡kladÄ› dÃ©lky textu.');
+@define('PLUGIN_ENTRYSPLIT_LENGTH',		'DÃ©lka podstrÃ¡nky');
+@define('PLUGIN_ENTRYSPLIT_LENGTH_DESC',		'Pokud nezadÃ¡te zalomenÃ­ strÃ¡nky ruÄnÄ›, bude vynuceno po zde zadanÃ©m poÄtu znakÅ¯.');
+@define('PLUGIN_ENTRYSPLIT_PAGES',		'StrÃ¡nky');
+@define('PLUGIN_ENTRYSPLIT_SHOWBODY',		'Chcete zobrazovat tÄ›lo pÅ™Ã­spÄ›vku na nÃ¡sledujÃ­cÃ­ch strÃ¡nkÃ¡ch?');
+@define('PLUGIN_ENTRYSPLIT_PAGES_ALL',		'VÅ¡e');
 @define('PLUGIN_ENTRYSPLIT_TOC',		'Obsah');
-

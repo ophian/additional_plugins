@@ -6,15 +6,15 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_ENTRYSPLIT_NAME', 'Uzun yazıları kendiliğinden böl');
-@define('PLUGIN_ENTRYSPLIT_BLAHBLAH', 'Uzun yazıların çeşitli alt sayfalara bölünmesi seçeneğini etkinleştirir.');
+@define('PLUGIN_ENTRYSPLIT_NAME', 'Uzun yazÄ±larÄ± kendiliÄŸinden bÃ¶l');
+@define('PLUGIN_ENTRYSPLIT_BLAHBLAH', 'Uzun yazÄ±larÄ±n Ã§eÅŸitli alt sayfalara bÃ¶lÃ¼nmesi seÃ§eneÄŸini etkinleÅŸtirir.');
 @define('PLUGIN_ENTRYSPLIT_CHAR', 'Sayfa Kesme');
-@define('PLUGIN_ENTRYSPLIT_CHAR_DESC', 'Sayfa bölünmesini göstermek için hangi karakter kullanılsın? Yazınızın içine bu kesme karakterini eklemeniz gerekir. Eğer kullanılmazsa, sayfalara bölme işlemi yazının uzunluğuna göre sistem tarafından kendiliğinden gerçekleştirilir.');
-@define('PLUGIN_ENTRYSPLIT_LENGTH', 'Bir alt sayfanın uzunluğu');
-@define('PLUGIN_ENTRYSPLIT_LENGTH_DESC', 'Eğer sayfa bölme işlemini siz gerçekleştirmeyeceksiniz, belli bir harf sayısından sonra kendiliğinden bölme işleminin gerçekleşmesi için');
+@define('PLUGIN_ENTRYSPLIT_CHAR_DESC', 'Sayfa bÃ¶lÃ¼nmesini gÃ¶stermek iÃ§in hangi karakter kullanÄ±lsÄ±n? YazÄ±nÄ±zÄ±n iÃ§ine bu kesme karakterini eklemeniz gerekir. EÄŸer kullanÄ±lmazsa, sayfalara bÃ¶lme iÅŸlemi yazÄ±nÄ±n uzunluÄŸuna gÃ¶re sistem tarafÄ±ndan kendiliÄŸinden gerÃ§ekleÅŸtirilir.');
+@define('PLUGIN_ENTRYSPLIT_LENGTH', 'Bir alt sayfanÄ±n uzunluÄŸu');
+@define('PLUGIN_ENTRYSPLIT_LENGTH_DESC', 'EÄŸer sayfa bÃ¶lme iÅŸlemini siz gerÃ§ekleÅŸtirmeyeceksiniz, belli bir harf sayÄ±sÄ±ndan sonra kendiliÄŸinden bÃ¶lme iÅŸleminin gerÃ§ekleÅŸmesi iÃ§in');
 @define('PLUGIN_ENTRYSPLIT_PAGES', 'Sayfalar');
-@define('PLUGIN_ENTRYSPLIT_SHOWBODY', 'Takip eden bölünmüş sayfaları görmek ister misiniz?');
-@define('PLUGIN_ENTRYSPLIT_PAGES_ALL', 'Tümünü');
+@define('PLUGIN_ENTRYSPLIT_SHOWBODY', 'Takip eden bÃ¶lÃ¼nmÃ¼ÅŸ sayfalarÄ± gÃ¶rmek ister misiniz?');
+@define('PLUGIN_ENTRYSPLIT_PAGES_ALL', 'TÃ¼mÃ¼nÃ¼');
 @define('PLUGIN_ENTRYSPLIT_PAGES_NEXT', NEXT);
 @define('PLUGIN_ENTRYSPLIT_PAGES_PREV', PREVIOUS);
 @define('PLUGIN_ENTRYSPLIT_TOC', 'Table of Contents');
