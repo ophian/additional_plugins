@@ -1,6 +1,8 @@
 <?php
 // Contributed by Damian Luszczymak <info@daim-city.de>
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -15,8 +17,9 @@ include dirname(__FILE__) . '/classes/json.php4.include.php';
 
 class serendipity_plugin_twitter extends serendipity_plugin
 {
-    var $title = PLUGIN_TWITTER_TITLE;
-    var $debug = false;
+    public $title = PLUGIN_TWITTER_TITLE;
+
+    private $debug = false;
 
     function introspect(&$propbag)
     {
@@ -29,9 +32,9 @@ class serendipity_plugin_twitter extends serendipity_plugin
         //$propbag->add('website',       'http://board.s9y.org');
         $propbag->add('version',       PLUGIN_TWITTER_VERSION);
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
 
         $configuration =
