@@ -1,14 +1,13 @@
 <?php
 
-/** We reuse most of that code and language constants, so include this before we
-    do anything else */
-include_once $serendipity['serendipityPath'] . 'plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php';
-
-// Probe for a language include with constants. Still include defines later on, if some constants were missing
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
+
+/** We reuse most of that code and language constants, so include this before we do anything else */
+include_once $serendipity['serendipityPath'] . 'plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php';
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -22,10 +21,10 @@ class serendipity_event_backendrss extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_BACKENDRSS_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Sebastian Nohn, Ian Styx');
-        $propbag->add('version',       '1.8');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '3.0',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'backend_frontpage_display' => true

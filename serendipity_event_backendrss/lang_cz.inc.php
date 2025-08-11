@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/22
  */
 
-@define('PLUGIN_EVENT_BACKENDRSS_NAME', 'Zobrazení RSS kanálu v administraèní sekci');
-@define('PLUGIN_EVENT_BACKENDRSS_DESC', 'Zobrazuje RSS kanál na pøehledové stránce v administraèní sekci (stránka tìsnì po pøihlá¹ení).');
+@define('PLUGIN_EVENT_BACKENDRSS_NAME', 'ZobrazenÃ­ RSS kanÃ¡lu v administraÄnÃ­ sekci');
+@define('PLUGIN_EVENT_BACKENDRSS_DESC', 'Zobrazuje RSS kanÃ¡l na pÅ™ehledovÃ© strÃ¡nce v administraÄnÃ­ sekci (strÃ¡nka tÄ›snÄ› po pÅ™ihlÃ¡Å¡enÃ­).');
 
