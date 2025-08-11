@@ -1,28 +1,27 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/07
  */
-
-@define('PLUGIN_EVENT_MIMETEX_NOTE','Plugin vykresluje obrázky gif podle vstupu TeXu. Závisím na externím spustitelním programu. Vy¾aduje buï MimeTex nebo plnou verzi laTeX. MimeTex je podstatnì jednodu¹¹í nainstalovat, ale nevykresluje fonty tak èistì jako opravdovı LaTeX. LaTeX vykresluje pomocí pozmìnìné knihovny GPL <a href="http://www.mayer.dial.pipex.com/tex.htm">LatexRender</a>, která se li¹í podle distribuce LaTeXu a pomocí ImageMagicku (kterı závisí na Ghostcriptu).<br />  Pro více informací ètìte <a href="http://www.forkosh.com/mimetex.html">http://www.forkosh.com/mimetex.html</a><br />');
-@define('PLUGIN_EVENT_MIMETEX_NAME', 'Interpret pøíkazù MimeTex/LaTeX');
+@define('PLUGIN_EVENT_MIMETEX_NOTE','Plugin vykresluje obrÃ¡zky gif podle vstupu TeXu. ZÃ¡visÃ­m na externÃ­m spustitelnÃ­m programu. VyÅ¾aduje buÄ MimeTex nebo plnou verzi laTeX. MimeTex je podstatnÄ› jednoduÅ¡Å¡Ã­ nainstalovat, ale nevykresluje fonty tak ÄistÄ› jako opravdovÃ½ LaTeX. LaTeX vykresluje pomocÃ­ pozmÄ›nÄ›nÃ© knihovny GPL <a href="http://www.mayer.dial.pipex.com/tex.htm">LatexRender</a>, kterÃ¡ se liÅ¡Ã­ podle distribuce LaTeXu a pomocÃ­ ImageMagicku (kterÃ½ zÃ¡visÃ­ na Ghostcriptu).<br />  Pro vÃ­ce informacÃ­ ÄtÄ›te <a href="http://www.forkosh.com/mimetex.html">http://www.forkosh.com/mimetex.html</a><br />');
+@define('PLUGIN_EVENT_MIMETEX_NAME', 'Interpret pÅ™Ã­kazÅ¯ MimeTex/LaTeX');
 @define('PLUGIN_EVENT_MIMETEX_NAME_BUTTON', 'TeX');
-@define('PLUGIN_EVENT_MIMETEX_DESC', 'Vytvoøí obrázky gif z vırazu TeX pou¾itím softwaru MimeTex nebo LaTeX');
+@define('PLUGIN_EVENT_MIMETEX_DESC', 'VytvoÅ™Ã­ obrÃ¡zky gif z vÃ½razu TeX pouÅ¾itÃ­m softwaru MimeTex nebo LaTeX');
 @define('PLUGIN_EVENT_MIMETEX_PATH', 'Cesta k instalaci MimeTex');
-@define('PLUGIN_EVENT_MIMETEX_REPLACE_DESC', 'Pokud je povoleno, øetìzce TeXu mezi tagy [tex][/tex] (napø.: [tex]\frac{2}{3}[/tex] pro vykreslení zlomku 2/3) budou dynamicky pøemìnìny. Pokud je vypnuto, øetìzce TeXu musí bıt do pøíspìvku vlo¾eny pomocí tlaèítka TeX nad polem editoru.');
-@define('PLUGIN_EVENT_MIMETEX_OR_LATEX', 'Pou¾ít MimeTeX nebo LaTeX?');
-@define('PLUGIN_EVENT_MIMETEX_OR_LATEX_BLAHBLAH', 'Jako vykreslovací stroj se má pou¾ít MimeTeX nebo LaTeX? Jeden z nich musí bıt nainstalovanı navíc vedle pluginu, plugin sám o sobì neumí vykreslovat pøíkazy TeX bez jejich pøítomnosti.');
+@define('PLUGIN_EVENT_MIMETEX_REPLACE_DESC', 'Pokud je povoleno, Å™etÄ›zce TeXu mezi tagy [tex][/tex] (napÅ™.: [tex]\frac{2}{3}[/tex] pro vykreslenÃ­ zlomku 2/3) budou dynamicky pÅ™emÄ›nÄ›ny. Pokud je vypnuto, Å™etÄ›zce TeXu musÃ­ bÃ½t do pÅ™Ã­spÄ›vku vloÅ¾eny pomocÃ­ tlaÄÃ­tka TeX nad polem editoru.');
+@define('PLUGIN_EVENT_MIMETEX_OR_LATEX', 'PouÅ¾Ã­t MimeTeX nebo LaTeX?');
+@define('PLUGIN_EVENT_MIMETEX_OR_LATEX_BLAHBLAH', 'Jako vykreslovacÃ­ stroj se mÃ¡ pouÅ¾Ã­t MimeTeX nebo LaTeX? Jeden z nich musÃ­ bÃ½t nainstalovanÃ½ navÃ­c vedle pluginu, plugin sÃ¡m o sobÄ› neumÃ­ vykreslovat pÅ™Ã­kazy TeX bez jejich pÅ™Ã­tomnosti.');
 @define('PLUGIN_EVENT_MIMETEX_OR_LATEX_LATEX','LaTeX');
 @define('PLUGIN_EVENT_MIMETEX_OR_LATEX_MIMETEX','MimeTeX');
 @define('PLUGIN_EVENT_MIMETEX_LATEXPATH','Cesta k LaTeXu');
-@define('PLUGIN_EVENT_MIMETEX_LATEXPATH_DESC','Absolutní cesta ke spustitelnım souborùm LaTeXu.');
+@define('PLUGIN_EVENT_MIMETEX_LATEXPATH_DESC','AbsolutnÃ­ cesta ke spustitelnÃ½m souborÅ¯m LaTeXu.');
 @define('PLUGIN_EVENT_MIMETEX_DVIPSPATH','Cesta k dvips');
-@define('PLUGIN_EVENT_MIMETEX_DVIPSPATH_DESC','Absolutní cesta ke spustitelnému souboru dvips.');
+@define('PLUGIN_EVENT_MIMETEX_DVIPSPATH_DESC','AbsolutnÃ­ cesta ke spustitelnÃ©mu souboru dvips.');
 @define('PLUGIN_EVENT_MIMETEX_CONVERTPATH','Cesta k convert');
-@define('PLUGIN_EVENT_MIMETEX_CONVERTPATH_DESC','Absolutní cesta ke spustitelnému souboru convert.');
-@define('PLUGIN_EVENT_MIMETEX_ADDTRANSPARENCY','Pou¾ívat prùhledné pozadí v obrázcích?');
-@define('PLUGIN_EVENT_MIMETEX_ADDTRANSPARENCY_DESC','Pøepíná, jestli má bıt u vısledného gif obrázku pou¾ita prùhledná barva. To je vhodné u blogù s tmavım nebo rùznorodım pozadím. Pamatujte, ¾e døíve vytvoøené obrázky nebudou znovu tvoøeny a zùstanou v pùvodní verzi.');
-@define('PLUGIN_EVENT_MIMETEX_FILETYPE','Typ obrázku');
-@define('PLUGIN_EVENT_MIMETEX_FILETYPE_DESC','LatexRendere umí poskytnout obrázky buï ve formátu gif nebo png.');
+@define('PLUGIN_EVENT_MIMETEX_CONVERTPATH_DESC','AbsolutnÃ­ cesta ke spustitelnÃ©mu souboru convert.');
+@define('PLUGIN_EVENT_MIMETEX_ADDTRANSPARENCY','PouÅ¾Ã­vat prÅ¯hlednÃ© pozadÃ­ v obrÃ¡zcÃ­ch?');
+@define('PLUGIN_EVENT_MIMETEX_ADDTRANSPARENCY_DESC','PÅ™epÃ­nÃ¡, jestli mÃ¡ bÃ½t u vÃ½slednÃ©ho gif obrÃ¡zku pouÅ¾ita prÅ¯hlednÃ¡ barva. To je vhodnÃ© u blogÅ¯ s tmavÃ½m nebo rÅ¯znorodÃ½m pozadÃ­m. Pamatujte, Å¾e dÅ™Ã­ve vytvoÅ™enÃ© obrÃ¡zky nebudou znovu tvoÅ™eny a zÅ¯stanou v pÅ¯vodnÃ­ verzi.');
+@define('PLUGIN_EVENT_MIMETEX_FILETYPE','Typ obrÃ¡zku');
+@define('PLUGIN_EVENT_MIMETEX_FILETYPE_DESC','LatexRendere umÃ­ poskytnout obrÃ¡zky buÄ ve formÃ¡tu gif nebo png.');
 
