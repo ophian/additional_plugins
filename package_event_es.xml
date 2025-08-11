@@ -319,11 +319,11 @@
 <description>Displays a RSS feed on the overview page (right after login) to the administration interface</description>
 <maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
-  <requirements:s9yVersion>3.0</requirements:s9yVersion>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_backendrss">
       <file>ChangeLog</file>
@@ -332,11 +332,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_backendrss.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_backendrss/ChangeLog</file>
@@ -345,8 +341,6 @@
     <file>serendipity_event_backendrss/lang_de.inc.php</file>
     <file>serendipity_event_backendrss/lang_en.inc.php</file>
     <file>serendipity_event_backendrss/serendipity_event_backendrss.php</file>
-    <file>serendipity_event_backendrss/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_backendrss/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1253,11 +1247,11 @@
 <description>You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.</description>
 <maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.20</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -1281,9 +1275,6 @@
       <file>serendipity_event_communityrating.php</file>
       <file>serendipity_plugin_communityrating.php</file>
       <file>smarty.inc.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -1306,7 +1297,6 @@
     <file>serendipity_event_communityrating/serendipity_event_communityrating.php</file>
     <file>serendipity_event_communityrating/serendipity_plugin_communityrating.php</file>
     <file>serendipity_event_communityrating/smarty.inc.php</file>
-    <file>serendipity_event_communityrating/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1525,11 +1515,11 @@
 <description>This plugin periodically executes plugins that provide/require periodic tasks. See the configuration of this plugin for details.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.0</version>
-  <requirements:s9yVersion>3.2</requirements:s9yVersion>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-03-15</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>ChangeLog</file>
@@ -1538,11 +1528,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_cronjob.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_cronjob/ChangeLog</file>
@@ -1551,8 +1537,6 @@
     <file>serendipity_event_cronjob/lang_de.inc.php</file>
     <file>serendipity_event_cronjob/lang_en.inc.php</file>
     <file>serendipity_event_cronjob/serendipity_event_cronjob.php</file>
-    <file>serendipity_event_cronjob/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_cronjob/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2445,11 +2429,11 @@
 <description>Enables you to split longer entries into several subpages and provides you with an auto-generated table of contents</description>
 <maintainers><maintainer><name>Garvin Hicking, Tadashi Jokagi, Thomas Werner</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-15</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_entrysplit">
       <file>ChangeLog</file>
@@ -2460,14 +2444,7 @@
       <file>lang_ja.inc.php</file>
       <file>lang_tr.inc.php</file>
       <file>serendipity_event_entrysplit.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_entrysplit/ChangeLog</file>
@@ -2478,11 +2455,6 @@
     <file>serendipity_event_entrysplit/lang_ja.inc.php</file>
     <file>serendipity_event_entrysplit/lang_tr.inc.php</file>
     <file>serendipity_event_entrysplit/serendipity_event_entrysplit.php</file>
-    <file>serendipity_event_entrysplit/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_entrysplit/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_entrysplit/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_entrysplit/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_entrysplit/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5548,11 +5520,11 @@
 <description>Validates the login credentials of an author using the sidebar login form</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.05</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-03-22</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_loginform">
       <file>ChangeLog</file>
@@ -5560,11 +5532,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_loginform.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_loginform/ChangeLog</file>
@@ -5572,8 +5540,6 @@
     <file>serendipity_event_loginform/lang_de.inc.php</file>
     <file>serendipity_event_loginform/lang_en.inc.php</file>
     <file>serendipity_event_loginform/serendipity_event_loginform.php</file>
-    <file>serendipity_event_loginform/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_loginform/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5671,11 +5637,11 @@
 <description>Permite a los usuarios enviar un artículo a un amigo por correo</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.25</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-04-06</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_mailentry">
       <file>ChangeLog</file>
@@ -5689,17 +5655,7 @@
       <file>lang_tr.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_event_mailentry.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_tr.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_mailentry/ChangeLog</file>
@@ -5713,14 +5669,6 @@
     <file>serendipity_event_mailentry/lang_tr.inc.php</file>
     <file>serendipity_event_mailentry/lang_zh.inc.php</file>
     <file>serendipity_event_mailentry/serendipity_event_mailentry.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_tr.inc.php</file>
-    <file>serendipity_event_mailentry/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5807,11 +5755,11 @@
 <description>Show read/unread state of entries for visitors</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_markread">
       <file>ChangeLog</file>
@@ -5820,12 +5768,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_markread.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_markread/ChangeLog</file>
@@ -5834,9 +5777,6 @@
     <file>serendipity_event_markread/lang_de.inc.php</file>
     <file>serendipity_event_markread/lang_en.inc.php</file>
     <file>serendipity_event_markread/serendipity_event_markread.php</file>
-    <file>serendipity_event_markread/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_markread/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_markread/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5953,11 +5893,11 @@
 <description>Create Gifs from TeX expressions using MimeTex or LaTeX</description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
       <file>ChangeLog</file>
@@ -5973,10 +5913,6 @@
       </dir>
       <file>serendipity_event_mimetex.js</file>
       <file>serendipity_event_mimetex.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -5989,8 +5925,6 @@
     <file>serendipity_event_mimetex/latexrender/class.latexrender.php</file>
     <file>serendipity_event_mimetex/serendipity_event_mimetex.js</file>
     <file>serendipity_event_mimetex/serendipity_event_mimetex.php</file>
-    <file>serendipity_event_mimetex/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_mimetex/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6313,7 +6247,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -6341,11 +6275,11 @@
 <description>oEmbed is a format for allowing an embedded representation of a URL on your blog. It allows blog articles to display embedded content (such as tweets, photos or videos) when a user posts a link to that resource, without having to parse the resource directly.</description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.22</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2022-04-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_oembed">
       <file>ChangeLog</file>
@@ -6378,10 +6312,6 @@
       <file>OEmbedDatabase.php</file>
       <file>OEmbedTemplater.php</file>
       <file>serendipity_event_oembed.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -6411,8 +6341,6 @@
     <file>serendipity_event_oembed/OEmbedDatabase.php</file>
     <file>serendipity_event_oembed/OEmbedTemplater.php</file>
     <file>serendipity_event_oembed/serendipity_event_oembed.php</file>
-    <file>serendipity_event_oembed/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_oembed/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -7967,11 +7895,11 @@
 <description>Load comments made from other users without reloading the page.</description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.3</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2021-08-12</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_realtimecomments">
       <file>ChangeLog</file>
@@ -7980,12 +7908,7 @@
       <file>lang_en.inc.php</file>
       <file>rtcomments.js</file>
       <file>serendipity_event_realtimecomments.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_en.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_realtimecomments/ChangeLog</file>
@@ -7994,9 +7917,6 @@
     <file>serendipity_event_realtimecomments/lang_en.inc.php</file>
     <file>serendipity_event_realtimecomments/rtcomments.js</file>
     <file>serendipity_event_realtimecomments/serendipity_event_realtimecomments.php</file>
-    <file>serendipity_event_realtimecomments/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_realtimecomments/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_realtimecomments/UTF-8/lang_en.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8111,11 +8031,11 @@
 <description>Insert related links/entries per entry. For flexibility you can edit the &quot;plugin_relatedlinks.tpl&quot; Smarty-Template file to adjust the output. Note that this plugin only outputs data in the detailed/full entry view.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.11</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_relatedlinks">
       <file>ChangeLog</file>
@@ -8128,15 +8048,7 @@
       <file>lang_tr.inc.php</file>
       <file>plugin_relatedlinks.tpl</file>
       <file>serendipity_event_relatedlinks.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_relatedlinks/ChangeLog</file>
@@ -8149,12 +8061,6 @@
     <file>serendipity_event_relatedlinks/lang_tr.inc.php</file>
     <file>serendipity_event_relatedlinks/plugin_relatedlinks.tpl</file>
     <file>serendipity_event_relatedlinks/serendipity_event_relatedlinks.php</file>
-    <file>serendipity_event_relatedlinks/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_relatedlinks/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_relatedlinks/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_relatedlinks/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_relatedlinks/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_relatedlinks/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8939,11 +8845,11 @@
 <description>Allows non-registered authors to suggest entries for publishing</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.21</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.0</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_suggest">
       <file>ChangeLog</file>
@@ -8955,12 +8861,7 @@
       <file>plugin_suggest.tpl</file>
       <file>serendipity_event_suggest.php</file>
       <file>suggest.js</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_suggest/ChangeLog</file>
@@ -8972,9 +8873,6 @@
     <file>serendipity_event_suggest/plugin_suggest.tpl</file>
     <file>serendipity_event_suggest/serendipity_event_suggest.php</file>
     <file>serendipity_event_suggest/suggest.js</file>
-    <file>serendipity_event_suggest/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_suggest/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_suggest/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -9336,11 +9234,11 @@
 <description>Dar formato al texto utilizando Text_Wiki</description>
 <maintainers><maintainer><name>Tobias Schlitt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.11</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_textwiki">
       <file>ChangeLog</file>
@@ -9361,6 +9259,7 @@
       <dir name="Text">
         <file>BUNDLE_NOTICE</file>
         <dir name="Wiki">
+          <file>Default.php</file>
           <dir name="Parse">
             <dir name="Default">
               <file>Anchor.php</file>
@@ -9390,22 +9289,26 @@
               <file>Prefilter.php</file>
               <file>Raw.php</file>
               <file>Revise.php</file>
+              <file>Smiley.php</file>
               <file>Strong.php</file>
+              <file>Subscript.php</file>
               <file>Superscript.php</file>
               <file>Table.php</file>
               <file>Tighten.php</file>
               <file>Toc.php</file>
               <file>Tt.php</file>
+              <file>Underline.php</file>
               <file>Url.php</file>
               <file>Wikilink.php</file>
             </dir>
           </dir>
           <file>Parse.php</file>
           <dir name="Render">
-            <dir name="Latex">
+            <dir name="Docbook">
               <file>Anchor.php</file>
               <file>Blockquote.php</file>
               <file>Bold.php</file>
+              <file>Box.php</file>
               <file>Break.php</file>
               <file>Center.php</file>
               <file>Code.php</file>
@@ -9414,6 +9317,7 @@
               <file>Delimiter.php</file>
               <file>Embed.php</file>
               <file>Emphasis.php</file>
+              <file>Font.php</file>
               <file>Freelink.php</file>
               <file>Function.php</file>
               <file>Heading.php</file>
@@ -9425,17 +9329,73 @@
               <file>Italic.php</file>
               <file>List.php</file>
               <file>Newline.php</file>
+              <file>Page.php</file>
               <file>Paragraph.php</file>
               <file>Phplookup.php</file>
+              <file>Plugin.php</file>
               <file>Prefilter.php</file>
+              <file>Preformatted.php</file>
               <file>Raw.php</file>
               <file>Revise.php</file>
+              <file>Smiley.php</file>
+              <file>Specialchar.php</file>
               <file>Strong.php</file>
+              <file>Subscript.php</file>
               <file>Superscript.php</file>
               <file>Table.php</file>
               <file>Tighten.php</file>
+              <file>Titlebar.php</file>
               <file>Toc.php</file>
               <file>Tt.php</file>
+              <file>Underline.php</file>
+              <file>Url.php</file>
+              <file>Wikilink.php</file>
+            </dir>
+            <file>Docbook.php</file>
+            <dir name="Latex">
+              <file>Anchor.php</file>
+              <file>Blockquote.php</file>
+              <file>Bold.php</file>
+              <file>Box.php</file>
+              <file>Break.php</file>
+              <file>Center.php</file>
+              <file>Code.php</file>
+              <file>Colortext.php</file>
+              <file>Deflist.php</file>
+              <file>Delimiter.php</file>
+              <file>Embed.php</file>
+              <file>Emphasis.php</file>
+              <file>Font.php</file>
+              <file>Freelink.php</file>
+              <file>Function.php</file>
+              <file>Heading.php</file>
+              <file>Horiz.php</file>
+              <file>Html.php</file>
+              <file>Image.php</file>
+              <file>Include.php</file>
+              <file>Interwiki.php</file>
+              <file>Italic.php</file>
+              <file>List.php</file>
+              <file>Newline.php</file>
+              <file>Page.php</file>
+              <file>Paragraph.php</file>
+              <file>Phplookup.php</file>
+              <file>Plugin.php</file>
+              <file>Prefilter.php</file>
+              <file>Preformatted.php</file>
+              <file>Raw.php</file>
+              <file>Revise.php</file>
+              <file>Smiley.php</file>
+              <file>Specialchar.php</file>
+              <file>Strong.php</file>
+              <file>Subscript.php</file>
+              <file>Superscript.php</file>
+              <file>Table.php</file>
+              <file>Tighten.php</file>
+              <file>Titlebar.php</file>
+              <file>Toc.php</file>
+              <file>Tt.php</file>
+              <file>Underline.php</file>
               <file>Url.php</file>
               <file>Wikilink.php</file>
             </dir>
@@ -9444,6 +9404,7 @@
               <file>Anchor.php</file>
               <file>Blockquote.php</file>
               <file>Bold.php</file>
+              <file>Box.php</file>
               <file>Break.php</file>
               <file>Center.php</file>
               <file>Code.php</file>
@@ -9452,6 +9413,7 @@
               <file>Delimiter.php</file>
               <file>Embed.php</file>
               <file>Emphasis.php</file>
+              <file>Font.php</file>
               <file>Freelink.php</file>
               <file>Function.php</file>
               <file>Heading.php</file>
@@ -9463,25 +9425,35 @@
               <file>Italic.php</file>
               <file>List.php</file>
               <file>Newline.php</file>
+              <file>Page.php</file>
               <file>Paragraph.php</file>
               <file>Phplookup.php</file>
+              <file>Plugin.php</file>
               <file>Prefilter.php</file>
+              <file>Preformatted.php</file>
               <file>Raw.php</file>
               <file>Revise.php</file>
+              <file>Smiley.php</file>
+              <file>Specialchar.php</file>
               <file>Strong.php</file>
+              <file>Subscript.php</file>
               <file>Superscript.php</file>
               <file>Table.php</file>
               <file>Tighten.php</file>
+              <file>Titlebar.php</file>
               <file>Toc.php</file>
               <file>Tt.php</file>
+              <file>Underline.php</file>
               <file>Url.php</file>
               <file>Wikilink.php</file>
             </dir>
             <file>Plain.php</file>
             <dir name="Xhtml">
+              <file>Address.php</file>
               <file>Anchor.php</file>
               <file>Blockquote.php</file>
               <file>Bold.php</file>
+              <file>Box.php</file>
               <file>Break.php</file>
               <file>Center.php</file>
               <file>Code.php</file>
@@ -9490,6 +9462,7 @@
               <file>Delimiter.php</file>
               <file>Embed.php</file>
               <file>Emphasis.php</file>
+              <file>Font.php</file>
               <file>Freelink.php</file>
               <file>Function.php</file>
               <file>Heading.php</file>
@@ -9501,77 +9474,33 @@
               <file>Italic.php</file>
               <file>List.php</file>
               <file>Newline.php</file>
+              <file>Page.php</file>
               <file>Paragraph.php</file>
               <file>Phplookup.php</file>
+              <file>Plugin.php</file>
               <file>Prefilter.php</file>
+              <file>Preformatted.php</file>
               <file>Raw.php</file>
               <file>Revise.php</file>
+              <file>Smiley.php</file>
+              <file>Specialchar.php</file>
               <file>Strong.php</file>
+              <file>Subscript.php</file>
               <file>Superscript.php</file>
               <file>Table.php</file>
               <file>Tighten.php</file>
+              <file>Titlebar.php</file>
               <file>Toc.php</file>
               <file>Tt.php</file>
+              <file>Underline.php</file>
               <file>Url.php</file>
               <file>Wikilink.php</file>
             </dir>
             <file>Xhtml.php</file>
           </dir>
           <file>Render.php</file>
-          <dir name="Rule">
-            <file>blockquote.php</file>
-            <file>bold.php</file>
-            <file>break.php</file>
-            <file>center.php</file>
-            <file>code.php</file>
-            <file>colortext.php</file>
-            <file>deflist.php</file>
-            <file>delimiter.php</file>
-            <file>embed.php</file>
-            <file>emphasis.php</file>
-            <file>entities.php</file>
-            <file>freelink.php</file>
-            <file>heading.php</file>
-            <file>horiz.php</file>
-            <file>html.php</file>
-            <file>image.php</file>
-            <file>include.php</file>
-            <file>interwiki.php</file>
-            <file>italic.php</file>
-            <file>list.php</file>
-            <file>newline.php</file>
-            <file>paragraph.php</file>
-            <file>phpcode.php</file>
-            <file>phplookup.php</file>
-            <file>prefilter.php</file>
-            <file>raw.php</file>
-            <file>revise.php</file>
-            <file>strong.php</file>
-            <file>superscript.php</file>
-            <file>table.php</file>
-            <file>tighten.php</file>
-            <file>toc.php</file>
-            <file>tt.php</file>
-            <file>url.php</file>
-            <file>wikilink.php</file>
-          </dir>
-          <file>Rule.php</file>
         </dir>
         <file>Wiki.php</file>
-      </dir>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cn.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_pt_PT.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
       </dir>
     </dir>
   </filelist>
@@ -9592,6 +9521,7 @@
     <file>serendipity_event_textwiki/lang_zh.inc.php</file>
     <file>serendipity_event_textwiki/serendipity_event_textwiki.php</file>
     <file>serendipity_event_textwiki/Text/BUNDLE_NOTICE</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Default.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Anchor.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Blockquote.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Bold.php</file>
@@ -9619,18 +9549,68 @@
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Prefilter.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Raw.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Smiley.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Subscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Superscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Table.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Tighten.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Toc.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Underline.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Url.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse/Default/Wikilink.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Parse.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Anchor.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Blockquote.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Box.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Break.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Center.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Code.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Colortext.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Deflist.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Delimiter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Embed.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Font.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Freelink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Function.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Heading.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Horiz.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Html.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Image.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Include.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Interwiki.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Italic.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/List.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Page.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Paragraph.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Plugin.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Preformatted.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Raw.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Smiley.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Specialchar.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Subscript.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Superscript.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Table.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Titlebar.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Toc.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Underline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Url.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook/Wikilink.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Docbook.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Anchor.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Blockquote.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Box.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Break.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Center.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Code.php</file>
@@ -9639,6 +9619,7 @@
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Delimiter.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Embed.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Font.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Freelink.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Function.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Heading.php</file>
@@ -9650,23 +9631,32 @@
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Italic.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/List.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Page.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Paragraph.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Plugin.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Preformatted.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Raw.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Smiley.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Specialchar.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Subscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Superscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Table.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Titlebar.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Toc.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Underline.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Url.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex/Wikilink.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Latex.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Anchor.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Blockquote.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Box.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Break.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Center.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Code.php</file>
@@ -9675,6 +9665,7 @@
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Delimiter.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Embed.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Font.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Freelink.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Function.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Heading.php</file>
@@ -9686,23 +9677,33 @@
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Italic.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/List.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Page.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Paragraph.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Plugin.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Preformatted.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Raw.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Smiley.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Specialchar.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Subscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Superscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Table.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Titlebar.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Toc.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Underline.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Url.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain/Wikilink.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Plain.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Address.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Anchor.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Blockquote.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Bold.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Box.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Break.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Center.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Code.php</file>
@@ -9711,6 +9712,7 @@
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Delimiter.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Embed.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Emphasis.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Font.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Freelink.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Function.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Heading.php</file>
@@ -9722,70 +9724,30 @@
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Italic.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/List.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Newline.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Page.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Paragraph.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Phplookup.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Plugin.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Prefilter.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Preformatted.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Raw.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Revise.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Smiley.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Specialchar.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Strong.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Subscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Superscript.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Table.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Tighten.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Titlebar.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Toc.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Tt.php</file>
+    <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Underline.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Url.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml/Wikilink.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render/Xhtml.php</file>
     <file>serendipity_event_textwiki/Text/Wiki/Render.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/blockquote.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/bold.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/break.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/center.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/code.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/colortext.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/deflist.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/delimiter.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/embed.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/emphasis.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/entities.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/freelink.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/heading.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/horiz.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/html.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/image.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/include.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/interwiki.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/italic.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/list.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/newline.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/paragraph.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/phpcode.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/phplookup.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/prefilter.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/raw.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/revise.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/strong.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/superscript.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/table.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/tighten.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/toc.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/tt.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/url.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule/wikilink.php</file>
-    <file>serendipity_event_textwiki/Text/Wiki/Rule.php</file>
     <file>serendipity_event_textwiki/Text/Wiki.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_textwiki/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -10278,11 +10240,11 @@
 <description>Convert straight quotes to smart quotes.  Also can use SmartyPants PHP library (by Michel Fortin, based on SmartyPants by John Gruber) to provide further typographic replacement.</description>
 <maintainers><maintainer><name>Jonathan Spalink and Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-10</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
       <file>ChangeLog</file>
@@ -10293,12 +10255,7 @@
       <file>serendipity_event_typoquote.php</file>
       <file>SmartyPants-Markup.txt</file>
       <file>smartypants.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_typoquote/ChangeLog</file>
@@ -10309,9 +10266,6 @@
     <file>serendipity_event_typoquote/serendipity_event_typoquote.php</file>
     <file>serendipity_event_typoquote/SmartyPants-Markup.txt</file>
     <file>serendipity_event_typoquote/smartypants.php</file>
-    <file>serendipity_event_typoquote/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_typoquote/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_typoquote/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

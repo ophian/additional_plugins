@@ -76,8 +76,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backendrss</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Zobrazení RSS kanálu v administrační sekci&lt;/b&gt;&lt;br /&gt;Zobrazuje RSS kanál na přehledové stránce v administrační sekci (stránka těsně po přihlášení).&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Zobrazení RSS kanálu v administrační sekci&lt;/b&gt;&lt;br /&gt;Zobrazuje RSS kanál na přehledové stránce v administrační sekci (stránka těsně po přihlášení).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:12:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
@@ -166,8 +166,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_communityrating</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Lewe Zipfel, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Hodnocení&lt;/b&gt;&lt;br /&gt;Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:37:11 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Hodnocení&lt;/b&gt;&lt;br /&gt;Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:19:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
@@ -211,8 +211,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cronjob</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Plánovač úloh&lt;/b&gt;&lt;br /&gt;Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Tue, 15 Mar 2022 15:14:11 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Plánovač úloh&lt;/b&gt;&lt;br /&gt;Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 18:54:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
@@ -257,7 +257,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Komentáře Disqus&lt;/b&gt;&lt;br /&gt;Disqus.com je webová služba pro správu komentářů. Ukládá a spravuje komentáře vně instalace serendipity a je do blogu vkládána pomocí JavaScriptu. Pro více informací přejděte na www.disqus.com.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 10 Aug 2025 15:54:06 +0200</pubDate>
+<pubDate>Sun, 10 Aug 2025 19:48:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_disqus</guid>
 </item>
 <item>
@@ -337,8 +337,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrysplit</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Tadashi Jokagi, Thomas Werner</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrysplit&lt;br /&gt;Dělení dlouhých příspěvků&lt;/b&gt;&lt;br /&gt;Umožňuje rozdělit dlouhé příspěvky do několika podstránek&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:20:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_entrysplit&lt;br /&gt;Dělení dlouhých příspěvků&lt;/b&gt;&lt;br /&gt;Umožňuje rozdělit dlouhé příspěvky do několika podstránek&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:26:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrysplit</guid>
 </item>
 <item>
@@ -661,8 +661,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_loginform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_loginform&lt;br /&gt;Ověření přihlášení autorů&lt;/b&gt;&lt;br /&gt;Ověřuje správnost přihlašovacích údajů autora, který se přihlašuje přes formulář v postranním sloupci&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:25 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_loginform&lt;br /&gt;Ověření přihlášení autorů&lt;/b&gt;&lt;br /&gt;Ověřuje správnost přihlašovacích údajů autora, který se přihlašuje přes formulář v postranním sloupci&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:14:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_loginform</guid>
 </item>
 <item>
@@ -688,8 +688,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mailentry</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_mailentry&lt;br /&gt;Posílání příspěvku emailem&lt;/b&gt;&lt;br /&gt;Umožňuje uživatelům poslat příspěvek emailem kamarádovi. Dejte pozor, tento plugin může zvýšit provoz po síti, pokud začnou   spamboti zneužívat této funkce.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 14:01:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mailentry&lt;br /&gt;Posílání příspěvku emailem&lt;/b&gt;&lt;br /&gt;Umožňuje uživatelům poslat příspěvek emailem kamarádovi. Dejte pozor, tento plugin může zvýšit provoz po síti, pokud začnou   spamboti zneužívat této funkce.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:47:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mailentry</guid>
 </item>
 <item>
@@ -706,8 +706,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_markread</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Přečteno/Nepřečteno označování příspěvků uživateli&lt;/b&gt;&lt;br /&gt;Přečteno/Nepřečteno označování příspěvků uživateli&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:58:23 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Přečteno/Nepřečteno označování příspěvků uživateli&lt;/b&gt;&lt;br /&gt;Přečteno/Nepřečteno označování příspěvků uživateli&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:47:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markread</guid>
 </item>
 <item>
@@ -733,8 +733,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mimetex</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_mimetex&lt;br /&gt;Interpret příkazů MimeTex/LaTeX&lt;/b&gt;&lt;br /&gt;Vytvoří obrázky gif z výrazu TeX použitím softwaru MimeTex nebo LaTeX&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:14:44 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mimetex&lt;br /&gt;Interpret příkazů MimeTex/LaTeX&lt;/b&gt;&lt;br /&gt;Vytvoří obrázky gif z výrazu TeX použitím softwaru MimeTex nebo LaTeX&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:46:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mimetex</guid>
 </item>
 <item>
@@ -779,7 +779,7 @@
 <category>Event Plugins</category>
 <author>Jude Anthony, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Blok s novinkami&lt;/b&gt;&lt;br /&gt;Seskupte příspěvky z jedné kategorie na výchozí stránce blogu do jednoho bloku místo obvyklého výpisu příspěvků. Podporuje vnořené bloky s novinkami.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 11 Aug 2025 12:23:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_newsbox</guid>
 </item>
 <item>
@@ -787,8 +787,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_oembed</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed&lt;/b&gt;&lt;br /&gt;oEmbed je formát, který umožňuje vkládat do blogu jiné stránky z internetu. Umožňuje zobrazovat v příspěvcích vložený obsah (jako tweety, fotky nebo videa), když autor příspěvku napíše odkaz na zdroj obsahu, aniž by bylo potřeba přímo parsovat cílovou stránku.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 18 Apr 2022 12:24:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed&lt;/b&gt;&lt;br /&gt;oEmbed je formát, který umožňuje vkládat do blogu jiné stránky z internetu. Umožňuje zobrazovat v příspěvcích vložený obsah (jako tweety, fotky nebo videa), když autor příspěvku napíše odkaz na zdroj obsahu, aniž by bylo potřeba přímo parsovat cílovou stránku.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:46:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_oembed</guid>
 </item>
 <item>
@@ -913,8 +913,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_realtimecomments</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_realtimecomments&lt;br /&gt;Komentáře v reálném čase&lt;/b&gt;&lt;br /&gt;Aktualizuje komentáře od ostatních uživatelů bez znovunačtení stránky.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:26:06 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_realtimecomments&lt;br /&gt;Komentáře v reálném čase&lt;/b&gt;&lt;br /&gt;Aktualizuje komentáře od ostatních uživatelů bez znovunačtení stránky.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:30:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_realtimecomments</guid>
 </item>
 <item>
@@ -940,8 +940,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_relatedlinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;Odkazy na podobné príspevky/stránky&lt;/b&gt;&lt;br /&gt;Vložte odkazy na podobné príspevky/stránky. K lepšímu prizpusobení výstupu mužete upravit Smarty šablonu &quot;plugin_relatedlinks.tpl&quot;. Tento modul zobrazuje data pouze v detailním zobrazení príspevku.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;Odkazy na podobné príspevky/stránky&lt;/b&gt;&lt;br /&gt;Vložte odkazy na podobné príspevky/stránky. K lepšímu prizpusobení výstupu mužete upravit Smarty šablonu &quot;plugin_relatedlinks.tpl&quot;. Tento modul zobrazuje data pouze v detailním zobrazení príspevku.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:32:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_relatedlinks</guid>
 </item>
 <item>
@@ -1048,8 +1048,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_suggest</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Návrhy na nové články&lt;/b&gt;&lt;br /&gt;Umožňuje neregistrovaným návštěvníkům navrhovat články, které by se měly vydat.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Návrhy na nové články&lt;/b&gt;&lt;br /&gt;Umožňuje neregistrovaným návštěvníkům navrhovat články, které by se měly vydat.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:33:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
@@ -1093,8 +1093,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textwiki</link>
 <category>Event Plugins</category>
 <author>Tobias Schlitt, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Markup: Wiki&lt;/b&gt;&lt;br /&gt;Převádí značky Text_Wiki do HTML&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:07:03 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Markup: Wiki&lt;/b&gt;&lt;br /&gt;Převádí značky Text_Wiki do HTML&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 11:58:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1165,8 +1165,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_typoquote</link>
 <category>Event Plugins</category>
 <author>Jonathan Spalink and Matthew Groeninger, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Markup: Typografické uvozovky&lt;/b&gt;&lt;br /&gt;Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích aplikovány další typografické úpravy.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:04:41 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Markup: Typografické uvozovky&lt;/b&gt;&lt;br /&gt;Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích aplikovány další typografické úpravy.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:46:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typoquote</guid>
 </item>
 <item>

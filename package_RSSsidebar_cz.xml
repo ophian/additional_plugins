@@ -13,8 +13,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_communityrating</link>
 <category>Sidebar Plugins</category>
 <author>Lewe Zipfel, Garvin Hicking. Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_communityrating&lt;br /&gt;Průměrné hodnocení&lt;/b&gt;&lt;br /&gt;Zobrazit nejlépe hodnocené filmy podle jejich průměrného hodnocení&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 07 Nov 2022 09:44:27 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_communityrating&lt;br /&gt;Průměrné hodnocení&lt;/b&gt;&lt;br /&gt;Zobrazit nejlépe hodnocené filmy podle jejich průměrného hodnocení&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:47:11 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_communityrating</guid>
 </item>
 <item>
@@ -319,8 +319,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_photoblog</link>
 <category>Sidebar Plugins</category>
 <author>Cameron MacFarland</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_photoblog&lt;br /&gt;Fotoblog&lt;/b&gt;&lt;br /&gt;Ukazuje náhledy posledních příspěvků s obrázkem Fotoblogu (viz. plugin událostí Fotoblog).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 12:55:44 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_photoblog&lt;br /&gt;Fotoblog&lt;/b&gt;&lt;br /&gt;Ukazuje náhledy posledních příspěvků s obrázkem Fotoblogu (viz. plugin událostí Fotoblog).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:15:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_photoblog</guid>
 </item>
 <item>
@@ -445,8 +445,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_twitter</link>
 <category>Sidebar Plugins</category>
 <author>Grischa Brockhaus, Damian Luszczymak, Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;Twitter&lt;/b&gt;&lt;br /&gt;Zobrazuje Vaše nejnovější příspěvky na Twitteru&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 10 Feb 2023 10:02:09 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;Twitter&lt;/b&gt;&lt;br /&gt;Zobrazuje Vaše nejnovější příspěvky na Twitteru&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:00:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_twitter</guid>
 </item>
 <item>

@@ -72,12 +72,12 @@
 <guid isPermaLink="false">serendipity_event_backend</guid>
 </item>
 <item>
-<title>Display RSS-Feed in Backend Overview: Displays a RSS feed on the overview page (right after login) to the administration interface</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backendrss</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Display RSS-Feed in Backend Overview&lt;/b&gt;&lt;br /&gt;Displays a RSS feed on the overview page (right after login) to the administration interface&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:12:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
@@ -166,8 +166,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_communityrating</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Lewe Zipfel, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:37:11 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:19:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
@@ -211,8 +211,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_cronjob</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Cronjob-Planer&lt;/b&gt;&lt;br /&gt;Dieses Plugin führt andere Plugins, die regelmäßig bestimmte Aufgaben ausführen sollen, in bestimmten Zeitabständen aus. Einzelheiten finden Sie in der Konfiguration dieses Plugins.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Tue, 15 Mar 2022 15:14:11 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Cronjob-Planer&lt;/b&gt;&lt;br /&gt;Dieses Plugin führt andere Plugins, die regelmäßig bestimmte Aufgaben ausführen sollen, in bestimmten Zeitabständen aus. Einzelheiten finden Sie in der Konfiguration dieses Plugins.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 18:54:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
@@ -257,7 +257,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Disqus-Kommentare&lt;/b&gt;&lt;br /&gt;Disqus.com ist ein Webservice, mit dem Sie Kommentare zentral verwalten können. Der Dienst speichert und verwaltet Kommentare außerhalb Ihrer Serendipity-Installation und ist mit JavaScript eingebettet. Weitere Informationen finden Sie unter https://disqus.com/.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 10 Aug 2025 15:54:06 +0200</pubDate>
+<pubDate>Sun, 10 Aug 2025 19:48:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_disqus</guid>
 </item>
 <item>
@@ -337,8 +337,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_entrysplit</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Tadashi Jokagi, Thomas Werner</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrysplit&lt;br /&gt;Lange Einträge aufteilen&lt;/b&gt;&lt;br /&gt;Erlaubt die Aufteilung eines langen Artikels in mehrere Unterseiten sowie das Einfügen eines Inhaltsverzeichnisses&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:20:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_entrysplit&lt;br /&gt;Lange Einträge aufteilen&lt;/b&gt;&lt;br /&gt;Erlaubt die Aufteilung eines langen Artikels in mehrere Unterseiten sowie das Einfügen eines Inhaltsverzeichnisses&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:26:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrysplit</guid>
 </item>
 <item>
@@ -661,8 +661,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_loginform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_loginform&lt;br /&gt;Überprüft Autoren-Login&lt;/b&gt;&lt;br /&gt;Überprüft die Logindaten des Autoren nach Benutzung des Login-Formulars in der Seitenleiste&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:25 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_loginform&lt;br /&gt;Überprüft Autoren-Login&lt;/b&gt;&lt;br /&gt;Überprüft die Logindaten des Autoren nach Benutzung des Login-Formulars in der Seitenleiste&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:14:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_loginform</guid>
 </item>
 <item>
@@ -688,8 +688,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mailentry</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_mailentry&lt;br /&gt;Eintrag per E-Mail verschicken&lt;/b&gt;&lt;br /&gt;Erlaubt es Besuchern einen Eintrag per E-Mail an einen Freund zu verschicken&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 14:01:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mailentry&lt;br /&gt;Eintrag per E-Mail verschicken&lt;/b&gt;&lt;br /&gt;Erlaubt es Besuchern einen Eintrag per E-Mail an einen Freund zu verschicken&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:47:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mailentry</guid>
 </item>
 <item>
@@ -706,8 +706,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_markread</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;/b&gt;&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:58:23 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;/b&gt;&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:47:33 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markread</guid>
 </item>
 <item>
@@ -733,8 +733,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mimetex</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_mimetex&lt;br /&gt;MimeTex Tex Interpreter&lt;/b&gt;&lt;br /&gt;Erzeugt ein GIF von TeX-Ausdrücken mittels MimeTex&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:14:44 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mimetex&lt;br /&gt;MimeTex Tex Interpreter&lt;/b&gt;&lt;br /&gt;Erzeugt ein GIF von TeX-Ausdrücken mittels MimeTex&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:46:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mimetex</guid>
 </item>
 <item>
@@ -779,7 +779,7 @@
 <category>Event Plugins</category>
 <author>Jude Anthony, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Newsbox&lt;/b&gt;&lt;br /&gt;Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 11 Aug 2025 12:23:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_newsbox</guid>
 </item>
 <item>
@@ -787,8 +787,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_oembed</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed Plugin&lt;/b&gt;&lt;br /&gt;oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 18 Apr 2022 12:24:44 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed Plugin&lt;/b&gt;&lt;br /&gt;oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:46:48 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_oembed</guid>
 </item>
 <item>
@@ -913,8 +913,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_realtimecomments</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_realtimecomments&lt;br /&gt;Echtzeit-Kommentare&lt;/b&gt;&lt;br /&gt;Lade Kommentare, die gerade gespeichert wurden, und stelle sie ohne Neuladen der Seite dar.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:26:06 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_realtimecomments&lt;br /&gt;Echtzeit-Kommentare&lt;/b&gt;&lt;br /&gt;Lade Kommentare, die gerade gespeichert wurden, und stelle sie ohne Neuladen der Seite dar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:30:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_realtimecomments</guid>
 </item>
 <item>
@@ -940,8 +940,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_relatedlinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;Verwandte Links/Einträge&lt;/b&gt;&lt;br /&gt;Fügt verwandte Links/Einträge in die Artikelansicht ein, die manuell für jeden Eintrag eingegeben werden können. Für flexible Ausgabe kann das Smarty-Template &quot;plugin_relatedlinks.tpl&quot; angepasst werde.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;Verwandte Links/Einträge&lt;/b&gt;&lt;br /&gt;Fügt verwandte Links/Einträge in die Artikelansicht ein, die manuell für jeden Eintrag eingegeben werden können. Für flexible Ausgabe kann das Smarty-Template &quot;plugin_relatedlinks.tpl&quot; angepasst werde.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:32:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_relatedlinks</guid>
 </item>
 <item>
@@ -1048,8 +1048,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_suggest</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Bestätigung für Artikel&lt;/b&gt;&lt;br /&gt;Erlaubt nicht registrierten Autoren, eigene Artikel vorzuschlagen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Bestätigung für Artikel&lt;/b&gt;&lt;br /&gt;Erlaubt nicht registrierten Autoren, eigene Artikel vorzuschlagen&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 12:33:03 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
@@ -1093,8 +1093,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_textwiki</link>
 <category>Event Plugins</category>
 <author>Tobias Schlitt, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Textformatierung: Wiki&lt;/b&gt;&lt;br /&gt;Wiki-Formatierung durchführen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:07:03 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Textformatierung: Wiki&lt;/b&gt;&lt;br /&gt;Wiki-Formatierung durchführen&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 11:58:32 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1165,8 +1165,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_typoquote</link>
 <category>Event Plugins</category>
 <author>Jonathan Spalink and Matthew Groeninger, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Textformatierung: Typografische Anführungszeichen&lt;/b&gt;&lt;br /&gt;Wandelt normale Anführungszeichen in typografische Anführungszeichen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:04:41 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Textformatierung: Typografische Anführungszeichen&lt;/b&gt;&lt;br /&gt;Wandelt normale Anführungszeichen in typografische Anführungszeichen&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 10 Aug 2025 19:46:08 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typoquote</guid>
 </item>
 <item>
