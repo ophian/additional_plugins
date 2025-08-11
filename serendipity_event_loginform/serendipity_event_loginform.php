@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -16,11 +18,11 @@ class serendipity_event_loginform extends serendipity_event
         $propbag->add('description', PLUGIN_EVENT_LOGINFORM_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking');
-        $propbag->add('version',     '1.05');
+        $propbag->add('version',     '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks', array('frontend_configure' => true));
         $propbag->add('groups', array('FRONTEND_FEATURES'));

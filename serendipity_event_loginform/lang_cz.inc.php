@@ -1,15 +1,14 @@
 <?php
 
 /**
- * @author Vladimir Ajgl <vlada@ajgl.cz>
- * @translated 2009/02/16
- * @author Vladimír Ajgl <vlada@ajgl.cz>
- * @revisionDate 2009/08/26
+ *  @author Vladimir Ajgl <vlada@ajgl.cz>
+ *  @translated 2009/02/16
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_EVENT_LOGINFORM_NAME', 'Ovìøení pøihlá¹ení autorù');
-@define('PLUGIN_EVENT_LOGINFORM_DESC', 'Ovìøuje správnost pøihla¹ovacích údajù autora, kterı se pøihla¹uje pøes formuláø v postranním sloupci');
+@define('PLUGIN_EVENT_LOGINFORM_NAME',		'OvÄ›Å™enÃ­ pÅ™ihlÃ¡Å¡enÃ­ autorÅ¯');
+@define('PLUGIN_EVENT_LOGINFORM_DESC',		'OvÄ›Å™uje sprÃ¡vnost pÅ™ihlaÅ¡ovacÃ­ch ÃºdajÅ¯ autora, kterÃ½ se pÅ™ihlaÅ¡uje pÅ™es formulÃ¡Å™ v postrannÃ­m sloupci');
 
-@define('LOGOUTURL_NAME', 'URL adresa stránky po odhlá¹ení');
-@define('LOGOUTURL_DESC', 'URL adresa, na kterou bude u¾ivatel pøesmìrován po odhlá¹ení (plná, absolutní URL adresa s poèáteèním http://). Pokud je ponecháno prázdné, pou¾ije se vıchozí stránka Serendipity.');
-
+@define('LOGOUTURL_NAME',		'URL adresa strÃ¡nky po odhlÃ¡Å¡enÃ­');
+@define('LOGOUTURL_DESC',		'URL adresa, na kterou bude uÅ¾ivatel pÅ™esmÄ›rovÃ¡n po odhlÃ¡Å¡enÃ­ (plnÃ¡, absolutnÃ­ URL adresa s poÄÃ¡teÄnÃ­m http://). Pokud je ponechÃ¡no prÃ¡zdnÃ©, pouÅ¾ije se vÃ½chozÃ­ strÃ¡nka Serendipity.');
