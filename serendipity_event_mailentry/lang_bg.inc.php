@@ -6,15 +6,15 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_MAILENTRY_NAME',         'Изпращане на статията по e-mail');
-@define('PLUGIN_MAILENTRY_DESC',         'Дава възможност за изпращане на статия по e-mail на приятел. Трябва да се има предвид, че тази приставка може да предизвика автоматичен трафик, ако се използва от роботи.');
-@define('PLUGIN_MAILENTRY_TO',           'e-mail на получателя:');
-@define('PLUGIN_MAILENTRY_FROM_NAME',    'Вашето име');
-@define('PLUGIN_MAILENTRY_FROM_ADDR',    'Вашият e-mail адрес:');
-@define('PLUGIN_MAILENTRY_MESSAGE',      'Съобщение (може да се остави празно)');
-@define('PLUGIN_MAILENTRY_SEND',         'Изпращане');
-@define('PLUGIN_MAILENTRY_TO_INVALID',   'Адресът на получателя е неправилен. Статията не беше изпратена.');
-@define('PLUGIN_MAILENTRY_SUCCESS',      'Статията е изпратена успешно.');
-@define('PLUGIN_MAILENTRY_FAILURE',      'Статията не беше изпратена поради някаква причина.');
-@define('PLUGIN_MAILENTRY_EMAIL',        "%s прочете това в %s и мисли, че може би ще бъде интересно и за Вас:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
+@define('PLUGIN_MAILENTRY_NAME',         'РР·РїСЂР°С‰Р°РЅРµ РЅР° СЃС‚Р°С‚РёСЏС‚Р° РїРѕ e-mail');
+@define('PLUGIN_MAILENTRY_DESC',         'Р”Р°РІР° РІСЉР·РјРѕР¶РЅРѕСЃС‚ Р·Р° РёР·РїСЂР°С‰Р°РЅРµ РЅР° СЃС‚Р°С‚РёСЏ РїРѕ e-mail РЅР° РїСЂРёСЏС‚РµР». РўСЂСЏР±РІР° РґР° СЃРµ РёРјР° РїСЂРµРґРІРёРґ, С‡Рµ С‚Р°Р·Рё РїСЂРёСЃС‚Р°РІРєР° РјРѕР¶Рµ РґР° РїСЂРµРґРёР·РІРёРєР° Р°РІС‚РѕРјР°С‚РёС‡РµРЅ С‚СЂР°С„РёРє, Р°РєРѕ СЃРµ РёР·РїРѕР»Р·РІР° РѕС‚ СЂРѕР±РѕС‚Рё.');
+@define('PLUGIN_MAILENTRY_TO',           'e-mail РЅР° РїРѕР»СѓС‡Р°С‚РµР»СЏ:');
+@define('PLUGIN_MAILENTRY_FROM_NAME',    'Р’Р°С€РµС‚Рѕ РёРјРµ');
+@define('PLUGIN_MAILENTRY_FROM_ADDR',    'Р’Р°С€РёСЏС‚ e-mail Р°РґСЂРµСЃ:');
+@define('PLUGIN_MAILENTRY_MESSAGE',      'РЎСЉРѕР±С‰РµРЅРёРµ (РјРѕР¶Рµ РґР° СЃРµ РѕСЃС‚Р°РІРё РїСЂР°Р·РЅРѕ)');
+@define('PLUGIN_MAILENTRY_SEND',         'РР·РїСЂР°С‰Р°РЅРµ');
+@define('PLUGIN_MAILENTRY_TO_INVALID',   'РђРґСЂРµСЃСЉС‚ РЅР° РїРѕР»СѓС‡Р°С‚РµР»СЏ Рµ РЅРµРїСЂР°РІРёР»РµРЅ. РЎС‚Р°С‚РёСЏС‚Р° РЅРµ Р±РµС€Рµ РёР·РїСЂР°С‚РµРЅР°.');
+@define('PLUGIN_MAILENTRY_SUCCESS',      'РЎС‚Р°С‚РёСЏС‚Р° Рµ РёР·РїСЂР°С‚РµРЅР° СѓСЃРїРµС€РЅРѕ.');
+@define('PLUGIN_MAILENTRY_FAILURE',      'РЎС‚Р°С‚РёСЏС‚Р° РЅРµ Р±РµС€Рµ РёР·РїСЂР°С‚РµРЅР° РїРѕСЂР°РґРё РЅСЏРєР°РєРІР° РїСЂРёС‡РёРЅР°.');
+@define('PLUGIN_MAILENTRY_EMAIL',        "%s РїСЂРѕС‡РµС‚Рµ С‚РѕРІР° РІ %s Рё РјРёСЃР»Рё, С‡Рµ РјРѕР¶Рµ Р±Рё С‰Рµ Р±СЉРґРµ РёРЅС‚РµСЂРµСЃРЅРѕ Рё Р·Р° Р’Р°СЃ:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
 

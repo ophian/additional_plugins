@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,18 +10,18 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_mailentry extends serendipity_event
 {
-    var $title = PLUGIN_MAILENTRY_NAME;
+    public $title = PLUGIN_MAILENTRY_NAME;
 
     function introspect(&$propbag)
     {
         $propbag->add('name',        PLUGIN_MAILENTRY_NAME);
         $propbag->add('description', PLUGIN_MAILENTRY_DESC);
         $propbag->add('configuration', array('title'));
-        $propbag->add('version',     '1.25');
+        $propbag->add('version',     '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',
                       array('frontend_display:html:per_entry' => true));

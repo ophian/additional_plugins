@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/08/15
  */
 
-@define('PLUGIN_MAILENTRY_NAME',         'Posílání pøíspìvku emailem');
-@define('PLUGIN_MAILENTRY_DESC',         'Umo¾òuje u¾ivatelùm poslat pøíspìvek emailem kamarádovi. Dejte pozor, tento plugin mù¾e zvı¹it provoz po síti, pokud zaènou   spamboti zneu¾ívat této funkce.');
-@define('PLUGIN_MAILENTRY_TO',           'Po¹lete èlánek mailem komu:');
-@define('PLUGIN_MAILENTRY_FROM_NAME',    'Va¹e jméno:');
-@define('PLUGIN_MAILENTRY_FROM_ADDR',    'Va¹e emailová adresa:');
-@define('PLUGIN_MAILENTRY_MESSAGE',      'Zpráva (nepovinná):');
+@define('PLUGIN_MAILENTRY_NAME',         'PosÃ­lÃ¡nÃ­ pÅ™Ã­spÄ›vku emailem');
+@define('PLUGIN_MAILENTRY_DESC',         'UmoÅ¾Åˆuje uÅ¾ivatelÅ¯m poslat pÅ™Ã­spÄ›vek emailem kamarÃ¡dovi. Dejte pozor, tento plugin mÅ¯Å¾e zvÃ½Å¡it provoz po sÃ­ti, pokud zaÄnou   spamboti zneuÅ¾Ã­vat tÃ©to funkce.');
+@define('PLUGIN_MAILENTRY_TO',           'PoÅ¡lete ÄlÃ¡nek mailem komu:');
+@define('PLUGIN_MAILENTRY_FROM_NAME',    'VaÅ¡e jmÃ©no:');
+@define('PLUGIN_MAILENTRY_FROM_ADDR',    'VaÅ¡e emailovÃ¡ adresa:');
+@define('PLUGIN_MAILENTRY_MESSAGE',      'ZprÃ¡va (nepovinnÃ¡):');
 @define('PLUGIN_MAILENTRY_SEND',         'Poslat');
-@define('PLUGIN_MAILENTRY_TO_INVALID',   'Adresa pøíjemce není správná. Èlánek nemohl bıt odeslán.');
-@define('PLUGIN_MAILENTRY_SUCCESS',      'Email úspì¹nì odeslán.');
-@define('PLUGIN_MAILENTRY_FAILURE',      'Nezdaøilo se poslat email.');
-@define('PLUGIN_MAILENTRY_EMAIL',        "%s èetl následující èlánek na blogu %s a myslí si, ¾e by Tì mohl zajímat:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
+@define('PLUGIN_MAILENTRY_TO_INVALID',   'Adresa pÅ™Ã­jemce nenÃ­ sprÃ¡vnÃ¡. ÄŒlÃ¡nek nemohl bÃ½t odeslÃ¡n.');
+@define('PLUGIN_MAILENTRY_SUCCESS',      'Email ÃºspÄ›Å¡nÄ› odeslÃ¡n.');
+@define('PLUGIN_MAILENTRY_FAILURE',      'NezdaÅ™ilo se poslat email.');
+@define('PLUGIN_MAILENTRY_EMAIL',        "%s Äetl nÃ¡sledujÃ­cÃ­ ÄlÃ¡nek na blogu %s a myslÃ­ si, Å¾e by TÄ› mohl zajÃ­mat:\r\n\r\n%s\r\n%s\r\n\r\n%s\r\n%s\r\n");
 
