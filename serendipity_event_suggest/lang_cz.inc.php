@@ -1,33 +1,33 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/27
  */
 
-@define('PLUGIN_SUGGEST_TITLE',          'Návrhy na nové èlánky');
-@define('PLUGIN_SUGGEST_DESC',           'Umo¾òuje neregistrovanım náv¹tìvníkùm navrhovat èlánky, které by se mìly vydat.');
-@define('PLUGIN_SUGGEST_AUTHOR',         'Kterému registrovanému autorovi mají bıt èlánky pøiøazeny?');
-@define('PLUGIN_SUGGEST_PERMALINK',      'Stálı odkaz (permalink) k formuláøi pro návrh èlánku');
-@define('PLUGIN_SUGGEST_PERMALINK_DESC', 'Zadejte hezkou URL adresu, pod kterou má bıt pøístupnı formuláø. Musí bıt ve formátu absolutní HTTP cesty a konèit .htm nebo .html!');
-@define('PLUGIN_SUGGEST_PAGETITLE',      'Jedineènı identifikátor této stránky');
-@define('PLUGIN_SUGGEST_PAGETITLE_DESC', 'Definujte jedineènı identifikátor stránky, kterı je pou¾it pro pøenos promìnnıch. Zadávejte pouze znaky bez diakritiky a èísla, ¾ádné speciální znaky nebo interpunkci.');
-@define('PLUGIN_SUGGEST_MESSAGE',        'Tìlo èlánku');
-@define('PLUGIN_SUGGEST_SENT',           'Text zobrazenı pod návrhem èlánku.');
-@define('PLUGIN_SUGGEST_SENT_HTML',      'Va¹e zpráva byla v poøádku doruèena.');
-@define('PLUGIN_SUGGEST_ERROR_HTML',     'Pøi odesílání emailu se vyskytla chyba. Buï jste zadali ¹patnou adresu, nebo se server dloube v nose.');
-@define('PLUGIN_SUGGEST_ERROR_DATA',     'Jméno, email ani text èlánku nesmí bıt prázdné!');
-@define('PLUGIN_SUGGEST_EMAIL',          'Email pro nové èlánky');
-@define('PLUGIN_SUGGEST_TITLE',          'Návrhy na nové èlánky');
-@define('PLUGIN_SUGGEST_MAIL',           "Navrhli jste novı èlánek. Pro jeho pøedání na¹im editorùm kliknìte prosím na tento odkaz:\n %s");
+@define('PLUGIN_SUGGEST_TITLE',          'NÃ¡vrhy na novÃ© ÄlÃ¡nky');
+@define('PLUGIN_SUGGEST_DESC',           'UmoÅ¾Åˆuje neregistrovanÃ½m nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m navrhovat ÄlÃ¡nky, kterÃ© by se mÄ›ly vydat.');
+@define('PLUGIN_SUGGEST_AUTHOR',         'KterÃ©mu registrovanÃ©mu autorovi majÃ­ bÃ½t ÄlÃ¡nky pÅ™iÅ™azeny?');
+@define('PLUGIN_SUGGEST_PERMALINK',      'StÃ¡lÃ½ odkaz (permalink) k formulÃ¡Å™i pro nÃ¡vrh ÄlÃ¡nku');
+@define('PLUGIN_SUGGEST_PERMALINK_DESC', 'Zadejte hezkou URL adresu, pod kterou mÃ¡ bÃ½t pÅ™Ã­stupnÃ½ formulÃ¡Å™. MusÃ­ bÃ½t ve formÃ¡tu absolutnÃ­ HTTP cesty a konÄit .htm nebo .html!');
+@define('PLUGIN_SUGGEST_PAGETITLE',      'JedineÄnÃ½ identifikÃ¡tor tÃ©to strÃ¡nky');
+@define('PLUGIN_SUGGEST_PAGETITLE_DESC', 'Definujte jedineÄnÃ½ identifikÃ¡tor strÃ¡nky, kterÃ½ je pouÅ¾it pro pÅ™enos promÄ›nnÃ½ch. ZadÃ¡vejte pouze znaky bez diakritiky a ÄÃ­sla, Å¾Ã¡dnÃ© speciÃ¡lnÃ­ znaky nebo interpunkci.');
+@define('PLUGIN_SUGGEST_MESSAGE',        'TÄ›lo ÄlÃ¡nku');
+@define('PLUGIN_SUGGEST_SENT',           'Text zobrazenÃ½ pod nÃ¡vrhem ÄlÃ¡nku.');
+@define('PLUGIN_SUGGEST_SENT_HTML',      'VaÅ¡e zprÃ¡va byla v poÅ™Ã¡dku doruÄena.');
+@define('PLUGIN_SUGGEST_ERROR_HTML',     'PÅ™i odesÃ­lÃ¡nÃ­ emailu se vyskytla chyba. BuÄ jste zadali Å¡patnou adresu, nebo se server dloube v nose.');
+@define('PLUGIN_SUGGEST_ERROR_DATA',     'JmÃ©no, email ani text ÄlÃ¡nku nesmÃ­ bÃ½t prÃ¡zdnÃ©!');
+@define('PLUGIN_SUGGEST_EMAIL',          'Email pro novÃ© ÄlÃ¡nky');
+@define('PLUGIN_SUGGEST_TITLE',          'NÃ¡vrhy na novÃ© ÄlÃ¡nky');
+@define('PLUGIN_SUGGEST_MAIL',           "Navrhli jste novÃ½ ÄlÃ¡nek. Pro jeho pÅ™edÃ¡nÃ­ naÅ¡im editorÅ¯m kliknÄ›te prosÃ­m na tento odkaz:\n %s");
 
-@define('PLUGIN_SUGGEST_VALIDATE', 'Vá¹ èlánek byl pøedán a v nejbli¾¹í dobì si ho pøeètou na¹i editoøi');
-@define('PLUGIN_SUGGEST_VALIDATE_ERROR', 'Va¹e zadaní nemohlo bıt potvrzeno. Zkontrolujte prosím svùj pøíspìvek.');
-@define('PLUGIN_SUGGEST_NOTE', 'Dìkujeme za èlánek. Brzy bude proèten na¹imi editory. Brzy po kliknutí na odkaz obdr¾íte potvrzovací email.');
-@define('PLUGIN_SUGGEST_INTRO', 'Zadejte prosím návrh èlánku do formuláøe ní¾e.');
-@define('PLUGIN_SUGGEST_SEND', 'Poslat èlánek');
+@define('PLUGIN_SUGGEST_VALIDATE', 'VÃ¡Å¡ ÄlÃ¡nek byl pÅ™edÃ¡n a v nejbliÅ¾Å¡Ã­ dobÄ› si ho pÅ™eÄtou naÅ¡i editoÅ™i');
+@define('PLUGIN_SUGGEST_VALIDATE_ERROR', 'VaÅ¡e zadanÃ­ nemohlo bÃ½t potvrzeno. Zkontrolujte prosÃ­m svÅ¯j pÅ™Ã­spÄ›vek.');
+@define('PLUGIN_SUGGEST_NOTE', 'DÄ›kujeme za ÄlÃ¡nek. Brzy bude proÄten naÅ¡imi editory. Brzy po kliknutÃ­ na odkaz obdrÅ¾Ã­te potvrzovacÃ­ email.');
+@define('PLUGIN_SUGGEST_INTRO', 'Zadejte prosÃ­m nÃ¡vrh ÄlÃ¡nku do formulÃ¡Å™e nÃ­Å¾e.');
+@define('PLUGIN_SUGGEST_SEND', 'Poslat ÄlÃ¡nek');
 
-@define('PLUGIN_SUGGEST_PUBLISHED', 'Vá¹ èlánek byl zveøejnìn.');
-@define('PLUGIN_SUGGEST_INFORM', 'Autor byl informován o zveøejnìní èlánku.');
-@define('PLUGIN_SUGGEST_META', 'Tento pøíspìvek ("%s") byl potvrzen dne %s z IP adresy %s u¾ivatelem %s.');
+@define('PLUGIN_SUGGEST_PUBLISHED', 'VÃ¡Å¡ ÄlÃ¡nek byl zveÅ™ejnÄ›n.');
+@define('PLUGIN_SUGGEST_INFORM', 'Autor byl informovÃ¡n o zveÅ™ejnÄ›nÃ­ ÄlÃ¡nku.');
+@define('PLUGIN_SUGGEST_META', 'Tento pÅ™Ã­spÄ›vek ("%s") byl potvrzen dne %s z IP adresy %s uÅ¾ivatelem %s.');
 
