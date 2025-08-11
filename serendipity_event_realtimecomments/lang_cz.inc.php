@@ -1,13 +1,12 @@
 <?php
 
 /**
- * @author VladimÌr Ajgl <vlada@ajgl.cz>
- * @translated 2010/05/10
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  @translated 2010/05/10
  */
-@define('PLUGIN_EVENT_REALTIMECOMMENTS_NAME', 'Koment·¯e v re·lnÈm Ëase');
-@define('PLUGIN_EVENT_REALTIMECOMMENTS_DESC', 'Aktualizuje koment·¯e od ostatnÌch uæivatel˘ bez znovunaËtenÌ str·nky.');
-@define('PLUGIN_EVENT_REALTIMECOMMENTS_PATH', 'Cesta k pluginu');
-@define('PLUGIN_EVENT_REALTIMECOMMENTS_PATH_DESC', 'Pokud je zad·na cesta k pluginu, nenÌ zjiπªov·na dynamicky, coæ podstatnÏ zlepπuje v˝konnost blogu. P¯Ìklad http://www.example.com/plugins/serendipity_event_realtimecomments/ (d·vejte pozor na povinnÈ lomÌtko "/" na konci).');
-@define('PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL', 'Interval');
-@define('PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL_DESC', 'Jak Ëasto m· plugin zjiπªovat novÈ koment·¯e (ve vte¯in·ch)?');
-
+@define('PLUGIN_EVENT_REALTIMECOMMENTS_NAME',     'Koment√°≈ôe v re√°ln√©m ƒçase');
+@define('PLUGIN_EVENT_REALTIMECOMMENTS_DESC',     'Aktualizuje koment√°≈ôe od ostatn√≠ch u≈æivatel≈Ø bez znovunaƒçten√≠ str√°nky.');
+@define('PLUGIN_EVENT_REALTIMECOMMENTS_PATH',     'Cesta k pluginu');
+@define('PLUGIN_EVENT_REALTIMECOMMENTS_PATH_DESC',     'Pokud je zad√°na cesta k pluginu, nen√≠ zji≈°≈•ov√°na dynamicky, co≈æ podstatnƒõ zlep≈°uje v√Ωkonnost blogu. P≈ô√≠klad http://www.example.com/plugins/serendipity_event_realtimecomments/ (d√°vejte pozor na povinn√© lom√≠tko "/" na konci).');
+@define('PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL',     'Interval');
+@define('PLUGIN_EVENT_REALTIMECOMMENTS_INTERVAL_DESC',     'Jak ƒçasto m√° plugin zji≈°≈•ovat nov√© koment√°≈ôe (ve vte≈ôin√°ch)?');
