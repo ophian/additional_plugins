@@ -7,13 +7,13 @@
 @define('PLUGIN_EVENT_SMTPMAIL_SMTP_PORT', 'Port des SMTP Servers');
 @define('PLUGIN_EVENT_SMTPMAIL_SMTP_PORT_DESC', '(default: 25)');
 @define('PLUGIN_EVENT_SMTPMAIL_POP3_SERVER', 'Adresse des POP3 Servers');
-@define('PLUGIN_EVENT_SMTPMAIL_POP3_SERVER_DESC', 'Wird nur benötigt falls du als Authentifizierungsmethode "POP3 before SMTP" verwendest.');
+@define('PLUGIN_EVENT_SMTPMAIL_POP3_SERVER_DESC', 'Wird nur benÃ¶tigt falls du als Authentifizierungsmethode "POP3 before SMTP" verwendest.');
 @define('PLUGIN_EVENT_SMTPMAIL_POP3_PORT', 'Port des POP3 Servers');
-@define('PLUGIN_EVENT_SMTPMAIL_POP3_PORT_DESC', 'Wird nur benötigt falls du als Authentifizierungsmethode "POP3 before SMTP" verwendest. (Default: 110)');
+@define('PLUGIN_EVENT_SMTPMAIL_POP3_PORT_DESC', 'Wird nur benÃ¶tigt falls du als Authentifizierungsmethode "POP3 before SMTP" verwendest. (Default: 110)');
 @define('PLUGIN_EVENT_SMTPMAIL_AUTH', 'Authentifizierungsmethode');
 @define('PLUGIN_EVENT_SMTPMAIL_AUTH_DESC', '');
 @define('PLUGIN_EVENT_SMTPMAIL_SECURE', 'Sichere Verbindung nutzen');
-@define('PLUGIN_EVENT_SMTPMAIL_SECURE_DESC', 'Manche Server verlangen eine sichere Verbindung für die Anmeldung.');
+@define('PLUGIN_EVENT_SMTPMAIL_SECURE_DESC', 'Manche Server verlangen eine sichere Verbindung fÃ¼r die Anmeldung.');
 @define('PLUGIN_EVENT_SMTPMAIL_USER', 'Username');
 @define('PLUGIN_EVENT_SMTPMAIL_USER_DESC', '');
 @define('PLUGIN_EVENT_SMTPMAIL_PASSWD', 'Passwort');

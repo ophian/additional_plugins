@@ -1,24 +1,24 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/14
  */
 @define('PLUGIN_EVENT_SMTPMAIL_NAME', 'SMTP Mail');
-@define('PLUGIN_EVENT_SMTPMAIL_DESC', 'PouæitÌ SMTP serveru pro odesÌl·nÌ poπty');
+@define('PLUGIN_EVENT_SMTPMAIL_DESC', 'Pou≈æit√≠ SMTP serveru pro odes√≠l√°n√≠ po≈°ty');
 @define('PLUGIN_EVENT_SMTPMAIL_SMTP_SERVER', 'SMTP server');
-@define('PLUGIN_EVENT_SMTPMAIL_SMTP_SERVER_DESC', 'Adresa, na kterÈ se nalÈz· SMTP server, p¯es kter˝ se majÌ odesÌlat maily.');
+@define('PLUGIN_EVENT_SMTPMAIL_SMTP_SERVER_DESC', 'Adresa, na kter√© se nal√©z√° SMTP server, p≈ôes kter√Ω se maj√≠ odes√≠lat maily.');
 @define('PLUGIN_EVENT_SMTPMAIL_SMTP_PORT', 'Port SMTP serveru');
-@define('PLUGIN_EVENT_SMTPMAIL_SMTP_PORT_DESC', '(V˝chozÌ: 25)');
+@define('PLUGIN_EVENT_SMTPMAIL_SMTP_PORT_DESC', '(V√Ωchoz√≠: 25)');
 @define('PLUGIN_EVENT_SMTPMAIL_POP3_SERVER', 'POP3 server');
-@define('PLUGIN_EVENT_SMTPMAIL_POP3_SERVER_DESC', 'NastavenÌ je vyæadov·no pouze pokud V·π mailov˝ server vyæaduje funkci "POP3 before SMTP".');
+@define('PLUGIN_EVENT_SMTPMAIL_POP3_SERVER_DESC', 'Nastaven√≠ je vy≈æadov√°no pouze pokud V√°≈° mailov√Ω server vy≈æaduje funkci "POP3 before SMTP".');
 @define('PLUGIN_EVENT_SMTPMAIL_POP3_PORT', 'Port POP3 serveru');
-@define('PLUGIN_EVENT_SMTPMAIL_POP3_PORT_DESC', 'NastavenÌ je vyæadov·no pouze pokud V·π mailov˝ server vyæaduje funkci "POP3 before SMTP". (V˝chozÌ hodnota: 110)');
-@define('PLUGIN_EVENT_SMTPMAIL_AUTH', 'Metoda p¯ihl·πenÌ');
+@define('PLUGIN_EVENT_SMTPMAIL_POP3_PORT_DESC', 'Nastaven√≠ je vy≈æadov√°no pouze pokud V√°≈° mailov√Ω server vy≈æaduje funkci "POP3 before SMTP". (V√Ωchoz√≠ hodnota: 110)');
+@define('PLUGIN_EVENT_SMTPMAIL_AUTH', 'Metoda p≈ôihl√°≈°en√≠');
 @define('PLUGIN_EVENT_SMTPMAIL_AUTH_DESC', '');
-@define('PLUGIN_EVENT_SMTPMAIL_SECURE', 'PouæÌt zabezpeËenÈ p¯ipojenÌ');
-@define('PLUGIN_EVENT_SMTPMAIL_SECURE_DESC', 'NÏkterÈ SMTP servery vyæadujÌ p¯ipojenÌ zabezpeËen˝m (πifrovan˝m) p¯ipojenÌm.');
-@define('PLUGIN_EVENT_SMTPMAIL_USER', 'UæivatelskÈ jmÈno');
+@define('PLUGIN_EVENT_SMTPMAIL_SECURE', 'Pou≈æ√≠t zabezpeƒçen√© p≈ôipojen√≠');
+@define('PLUGIN_EVENT_SMTPMAIL_SECURE_DESC', 'Nƒõkter√© SMTP servery vy≈æaduj√≠ p≈ôipojen√≠ zabezpeƒçen√Ωm (≈°ifrovan√Ωm) p≈ôipojen√≠m.');
+@define('PLUGIN_EVENT_SMTPMAIL_USER', 'U≈æivatelsk√© jm√©no');
 @define('PLUGIN_EVENT_SMTPMAIL_USER_DESC', '');
 @define('PLUGIN_EVENT_SMTPMAIL_PASSWD', 'Heslo');
 @define('PLUGIN_EVENT_SMTPMAIL_PASSWD_DESC', '');

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,7 +13,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_smtpmail extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_SMTPMAIL_NAME;
+    public $title = PLUGIN_EVENT_SMTPMAIL_NAME;
 
     function introspect(&$propbag)
     {
@@ -20,11 +23,12 @@ class serendipity_event_smtpmail extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SMTPMAIL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'kleinerChemiker, Ian Styx');
-        $propbag->add('version',       '1.57');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('license',       'GPL');
         $propbag->add('requirements',  array(
-            'serendipity' => '4.0',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'backend_sendmail' => true
