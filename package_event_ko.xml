@@ -3981,7 +3981,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-08-11</date>
+  <date>2025-08-12</date>
   <filelist>
     <dir name="serendipity_event_glossary">
       <file>ChangeLog</file>
