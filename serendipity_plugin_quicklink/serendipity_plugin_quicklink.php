@@ -2,6 +2,8 @@
 
 /* Contributed by Omid Mottaghi Rad (http://oxygenws.com/) */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_quicklink extends serendipity_plugin
 {
-    var $title = PLUGIN_QUICKLINK_NAME;
+    public $title = PLUGIN_QUICKLINK_NAME;
 
     function introspect(&$propbag)
     {
@@ -20,11 +22,11 @@ class serendipity_plugin_quicklink extends serendipity_plugin
         $propbag->add('description',   PLUGIN_QUICKLINK_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi Rad');
-        $propbag->add('version',       '1.1');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
 
         $propbag->add('configuration', array('max_entries',
@@ -278,9 +280,9 @@ initToolTips();
                 // create tool tip string
                 $tip = '';
                 if ($show_tip){
-                    $tip = (function_exists('serendipity_specialchars') ? serendipity_specialchars(serendipity_strftime($timestamp, $row['stamp'])) : htmlspecialchars(serendipity_strftime($timestamp, $row['stamp']), ENT_COMPAT, LANG_CHARSET));
+                    $tip = htmlspecialchars(serendipity_strftime($timestamp, $row['stamp']));
                     if( trim($row['description']) != ''){
-                        $tip .= '<br />' . nl2br((function_exists('serendipity_specialchars') ? serendipity_specialchars($row['description']) : htmlspecialchars($row['description'], ENT_COMPAT, LANG_CHARSET)));
+                        $tip .= '<br />' . nl2br(htmlspecialchars($row['description']));
                     }
                     $tip = ' onMouseOver="toolTip(\'' . $tip . '\')" onMouseOut="toolTip()"';
                 }
@@ -293,7 +295,7 @@ initToolTips();
                 }
 
                 // create link string
-                $link = '<a href="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($row['link']) : htmlspecialchars($row['link'], ENT_COMPAT, LANG_CHARSET)) . '"' . $tip . ' target="_blank" rel="noopener">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($label) : htmlspecialchars($label, ENT_COMPAT, LANG_CHARSET)) . '</a>';
+                $link = '<a href="' . htmlspecialchars($row['link']) . '"' . $tip . ' target="_blank" rel="noopener">' . htmlspecialchars($label) . '</a>';
 
                 // create delete link string
                 $deleteLink = '';

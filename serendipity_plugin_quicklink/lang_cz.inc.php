@@ -1,25 +1,25 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/08
  */
 
-@define('PLUGIN_QUICKLINK_NAME',		'RychlÈ odkazy');
-@define('PLUGIN_QUICKLINK_BLAHBLAH',		'Zobrazuje blok pro rychlÈ odkazy');
-@define('PLUGIN_QUICKLINK_MAXENTRIES',		'Maxim·lnÌ poËet odkaz˘');
-@define('PLUGIN_QUICKLINK_MAXENTRIES_BLAHBLAH',		'Kolik odkaz˘ se m· zobrazovat na kaædÈ stranÏ? (v˝chozÌ: 15)');
+@define('PLUGIN_QUICKLINK_NAME',		'Rychl√© odkazy');
+@define('PLUGIN_QUICKLINK_BLAHBLAH',		'Zobrazuje blok pro rychl√© odkazy');
+@define('PLUGIN_QUICKLINK_MAXENTRIES',		'Maxim√°ln√≠ poƒçet odkaz≈Ø');
+@define('PLUGIN_QUICKLINK_MAXENTRIES_BLAHBLAH',		'Kolik odkaz≈Ø se m√° zobrazovat na ka≈æd√© stranƒõ? (v√Ωchoz√≠: 15)');
 @define('PLUGIN_QUICKLINK_TITLE',		'Nadpis');
-@define('PLUGIN_QUICKLINK_TITLE_BLAHBLAH',		'Nadpis bloku s rychl˝mi odkazy');
+@define('PLUGIN_QUICKLINK_TITLE_BLAHBLAH',		'Nadpis bloku s rychl√Ωmi odkazy');
 @define('PLUGIN_QUICKLINK_DELETE',		'Smazat');
-@define('PLUGIN_QUICKLINK_DELETE_BLAHBLAH',		'Zadejte text mazacÌho odkazu');
+@define('PLUGIN_QUICKLINK_DELETE_BLAHBLAH',		'Zadejte text mazac√≠ho odkazu');
 @define('PLUGIN_QUICKLINK_SUBMIT',		'Poslat');
-@define('PLUGIN_QUICKLINK_SUBMIT_BLAHBLAH',		'Zadejte text odesÌlacÌho tlaËÌtka');
-@define('PLUGIN_QUICKLINK_SHOW_TIP',		'Zobrazovat n·povÏdu u odkaz˘?');
-@define('PLUGIN_QUICKLINK_SHOW_TIP_BLAHBLAH',		'Toto zobrazuje n·povÏdu (obdelnÌËek, kter˝ se objevÌ po najetÌ myπÌ nad odkaz), kter· obsahuje popis a datum vloæenÌ odkazu. N·povÏda je jedin˝ zp˘sob, jak zobrazit popis odkazu!');
-@define('PLUGIN_QUICKLINK_PUBLIC',		'Ve¯ejn˝?');
-@define('PLUGIN_QUICKLINK_PUBLIC_BLAHBLAH',		'Pokud je povoleno, vπichni n·vπtÏvnÌci blogu smÌ posÌlat odkazy.');
+@define('PLUGIN_QUICKLINK_SUBMIT_BLAHBLAH',		'Zadejte text odes√≠lac√≠ho tlaƒç√≠tka');
+@define('PLUGIN_QUICKLINK_SHOW_TIP',		'Zobrazovat n√°povƒõdu u odkaz≈Ø?');
+@define('PLUGIN_QUICKLINK_SHOW_TIP_BLAHBLAH',		'Toto zobrazuje n√°povƒõdu (obdeln√≠ƒçek, kter√Ω se objev√≠ po najet√≠ my≈°√≠ nad odkaz), kter√° obsahuje popis a datum vlo≈æen√≠ odkazu. N√°povƒõda je jedin√Ω zp≈Øsob, jak zobrazit popis odkazu!');
+@define('PLUGIN_QUICKLINK_PUBLIC',		'Ve≈ôejn√Ω?');
+@define('PLUGIN_QUICKLINK_PUBLIC_BLAHBLAH',		'Pokud je povoleno, v≈°ichni n√°v≈°tƒõvn√≠ci blogu sm√≠ pos√≠lat odkazy.');
 
-@define('PLUGIN_QUICKLINK_ALERT',		'Jsi si jist˝?');
+@define('PLUGIN_QUICKLINK_ALERT',		'Jsi si jist√Ω?');
 @define('PLUGIN_QUICKLINK_LABEL',		'Popis');
 
