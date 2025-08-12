@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,8 +10,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_versioning extends serendipity_event
 {
-    var $title = VERSIONING_TITLE;
-    var $cache = array();
+    public $title = VERSIONING_TITLE;
+
+    private $cache = array();
 
     function introspect(&$propbag)
     {
@@ -27,11 +30,11 @@ class serendipity_event_versioning extends serendipity_event
         ));
 
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '0.16');
+        $propbag->add('version', '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('stackable', false);
         $propbag->add('groups', array('BACKEND_EDITOR', 'BACKEND_FEATURES'));
@@ -258,7 +261,7 @@ class serendipity_event_versioning extends serendipity_event
                         $msg = '<div class="serendipity_versioningInfo">' . VERSIONING_TITLE . ':<br />%s</div>';
                         $html = '<ul>';
                         foreach($versions AS $version) {
-                            $html .= '<li><a href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($eventData[0]['id'], 'revision' . $version['version'], 'serendipityHTTPPath', false) . '&amp;serendipity[version_selected]=' . $version['id'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars(sprintf(VERSIONING_REVISION, $version['version'], serendipity_strftime($date_time_format, (int) $version['version_date'], true), $version['realname'])) : htmlspecialchars(sprintf(VERSIONING_REVISION, $version['version'], serendipity_strftime($date_time_format, $version['version_date'], true), $version['realname']), ENT_COMPAT, LANG_CHARSET)) . '</a></li>';
+                            $html .= '<li><a href="' . $serendipity['serendipityHTTPPath'] . $serendipity['indexFile'] . '?' . serendipity_archiveURL($eventData[0]['id'], 'revision' . $version['version'], 'serendipityHTTPPath', false) . '&amp;serendipity[version_selected]=' . $version['id'] . '">' . htmlspecialchars(sprintf(VERSIONING_REVISION, $version['version'], serendipity_strftime($date_time_format, (int) $version['version_date'], true), $version['realname'])) . '</a></li>';
                         }
                         $html .= '</ul>';
 
@@ -298,29 +301,19 @@ class serendipity_event_versioning extends serendipity_event
                     <select name="serendipity[versioning]">
 <?php
                         foreach($versions AS $version) {
-                            $text = (function_exists('serendipity_specialchars')
-                                ? serendipity_specialchars(
+                            $text = htmlspecialchars(
                                     sprintf(
                                         VERSIONING_REVISION,
                                         $version['version'],
                                         serendipity_strftime($date_time_format, (int) $version['version_date'], true),
                                         $version['realname']
                                     )
-                                )
-                                : htmlspecialchars(
-                                    sprintf(
-                                        VERSIONING_REVISION,
-                                        $version['version'],
-                                        serendipity_strftime($date_time_format, (int) $version['version_date'], true),
-                                        $version['realname']
-                                    ), ENT_COMPAT, LANG_CHARSET
-                                )
-                            );
+                                );
                             echo '                        <option value="' . $version['id'] . '"' . ($serendipity['POST']['versioning'] == $version['id'] ? ' selected="selected"' : '') . '>' . $text . '</option>' . "\n";
                         }
 ?>
                     </select>
-                    <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", (function_exists('serendipity_specialchars') ? serendipity_specialchars(VERSIONING_CHANGE_WARNING) : htmlspecialchars(VERSIONING_CHANGE_WARNING, ENT_COMPAT, LANG_CHARSET))); ?>');" />
+                    <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", htmlspecialchars(VERSIONING_CHANGE_WARNING)); ?>');" />
                 </div>
             </fieldset>
 
