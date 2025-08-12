@@ -3,12 +3,12 @@
 /**
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/15
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_NUGGET_MULTI_NAME', 'Jazykovì závislý HTML blok');
-@define('PLUGIN_NUGGET_MULTI_DESC', 'Pro zadaný jazyk zobrazuje v postranním sloupci HTML blok.');
-@define('PLUGIN_NUGGET_MULTI_LANG', 'Výbìr jazyka');
-@define('PLUGIN_NUGGET_MULTI_ALL', 'V¹echny jazyky');
+@define('PLUGIN_NUGGET_MULTI_NAME', 'JazykovÄ› zÃ¡vislÃ½ HTML blok');
+@define('PLUGIN_NUGGET_MULTI_DESC', 'Pro zadanÃ½ jazyk zobrazuje v postrannÃ­m sloupci HTML blok.');
+@define('PLUGIN_NUGGET_MULTI_LANG', 'VÃ½bÄ›r jazyka');
+@define('PLUGIN_NUGGET_MULTI_ALL', 'VÅ¡echny jazyky');
 

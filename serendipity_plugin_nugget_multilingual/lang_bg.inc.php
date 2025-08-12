@@ -5,8 +5,8 @@
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.1
  */
-@define('PLUGIN_NUGGET_MULTI_NAME', 'Езиково специфичен HTML блок');
-@define('PLUGIN_NUGGET_MULTI_DESC', 'Показва HTML блок в страничния панел за указан език или всички езици');
-@define('PLUGIN_NUGGET_MULTI_LANG', 'Изберете език');
-@define('PLUGIN_NUGGET_MULTI_ALL', 'Всички езици');
+@define('PLUGIN_NUGGET_MULTI_NAME', 'Р•Р·РёРєРѕРІРѕ СЃРїРµС†РёС„РёС‡РµРЅ HTML Р±Р»РѕРє');
+@define('PLUGIN_NUGGET_MULTI_DESC', 'РџРѕРєР°Р·РІР° HTML Р±Р»РѕРє РІ СЃС‚СЂР°РЅРёС‡РЅРёСЏ РїР°РЅРµР» Р·Р° СѓРєР°Р·Р°РЅ РµР·РёРє РёР»Рё РІСЃРёС‡РєРё РµР·РёС†Рё');
+@define('PLUGIN_NUGGET_MULTI_LANG', 'РР·Р±РµСЂРµС‚Рµ РµР·РёРє');
+@define('PLUGIN_NUGGET_MULTI_ALL', 'Р’СЃРёС‡РєРё РµР·РёС†Рё');
 
