@@ -1,21 +1,21 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/21
  */
 
 @define('PLUGIN_HTTPAUTH_NAME', 'HTTP autentifikace');
-@define('PLUGIN_HTTPAUTH_BLAHBLAH', 'Ovìøuje u¾ivatele pomocí HTTP auth s pou¾itím jejich serendipity pøihla¹ovacích dat.');
+@define('PLUGIN_HTTPAUTH_BLAHBLAH', 'OvÄ›Å™uje uÅ¾ivatele pomocÃ­ HTTP auth s pouÅ¾itÃ­m jejich serendipity pÅ™ihlaÅ¡ovacÃ­ch dat.');
 
 @define('PLUGIN_HTTPAUTH_REMOTEUSER', 'Povolit REMOTE_USER autentifikace?');
-@define('PLUGIN_HTTPAUTH_REMOTEUSER_DESC', 'Pokud je povoleno, u¾ivatelé mohou bıt autentifikováni pomocí serveru IIS/Apache. Ty budou ukládat centrální serverovou promìnnou REMOTE_USER se jménem pøihlá¹eného u¾ivatele a Serendipity se pak mù¾e pøihlásit pomocí tohoto u¾ivatelského jména. Pokud umo¾níte tuto volbu, mìjte na pamìti, ¾e vá¹ vlastní autentifikaèní systém musí zaruèovat, ¾e se pøihlásí pouze k tomu oprávnìní u¾ivatelé, proto¾e tato volba pøemos»uje pøihla¹ovací systém Serendipity!');
+@define('PLUGIN_HTTPAUTH_REMOTEUSER_DESC', 'Pokud je povoleno, uÅ¾ivatelÃ© mohou bÃ½t autentifikovÃ¡ni pomocÃ­ serveru IIS/Apache. Ty budou uklÃ¡dat centrÃ¡lnÃ­ serverovou promÄ›nnou REMOTE_USER se jmÃ©nem pÅ™ihlÃ¡Å¡enÃ©ho uÅ¾ivatele a Serendipity se pak mÅ¯Å¾e pÅ™ihlÃ¡sit pomocÃ­ tohoto uÅ¾ivatelskÃ©ho jmÃ©na. Pokud umoÅ¾nÃ­te tuto volbu, mÄ›jte na pamÄ›ti, Å¾e vÃ¡Å¡ vlastnÃ­ autentifikaÄnÃ­ systÃ©m musÃ­ zaruÄovat, Å¾e se pÅ™ihlÃ¡sÃ­ pouze k tomu oprÃ¡vnÄ›nÃ­ uÅ¾ivatelÃ©, protoÅ¾e tato volba pÅ™emosÅ¥uje pÅ™ihlaÅ¡ovacÃ­ systÃ©m Serendipity!');
 @define('PLUGIN_HTTPAUTH_REMOTEUSER_WILDCARD', 'Povolit wildcard autentifikaci?');
-@define('PLUGIN_HTTPAUTH_REMOTEUSER_WILDCARD_DESC', 'Tato volba se pou¾ije pouze pokud je zapnuta autentifikace pomocí REMOTE_USER. Pokud je toto nastavení pou¾ito, pak ka¾dı REMOTE_USER, kterı není v databázi serendipity, bude pøihlá¹en jako vıchozí u¾ivatel. To znamená, ¾e pokud se u¾ivatel pøihlásí jako "Pepan", ale v Serendipity ¾ádnı takovı úèet neexistuje, pak bude u¾ivatel pøihlá¹en jako "Náv¹tìvník".');
+@define('PLUGIN_HTTPAUTH_REMOTEUSER_WILDCARD_DESC', 'Tato volba se pouÅ¾ije pouze pokud je zapnuta autentifikace pomocÃ­ REMOTE_USER. Pokud je toto nastavenÃ­ pouÅ¾ito, pak kaÅ¾dÃ½ REMOTE_USER, kterÃ½ nenÃ­ v databÃ¡zi serendipity, bude pÅ™ihlÃ¡Å¡en jako vÃ½chozÃ­ uÅ¾ivatel. To znamenÃ¡, Å¾e pokud se uÅ¾ivatel pÅ™ihlÃ¡sÃ­ jako "Pepan", ale v Serendipity Å¾Ã¡dnÃ½ takovÃ½ ÃºÄet neexistuje, pak bude uÅ¾ivatel pÅ™ihlÃ¡Å¡en jako "NÃ¡vÅ¡tÄ›vnÃ­k".');
 @define('PLUGIN_HTTPAUTH_REMOTEUSER_AUTHORID', 'Wildcard autentifikace: ID autora');
-@define('PLUGIN_HTTPAUTH_REMOTEUSER_AUTHORID_DESC', 'Zadejte ID autora, pod kterım bude pøihlá¹en ka¾á "wildcard" pøihlá¹enı u¾ivatel.');
-@define('PLUGIN_HTTPAUTH_REMOTEUSER_USERLEVEL', 'Wildcard autentifikace: Oprávnìní');
-@define('PLUGIN_HTTPAUTH_REMOTEUSER_USERLEVEL_DESC', 'Zadejte oprávnìní, kterımi bude disponovat u¾ivatele pøihlá¹enı jako "wildacard".');
-@define('PLUGIN_HTTPAUTH_FRONTEND', 'Vy¾adovat autentifikaci pro frontend');
-@define('PLUGIN_HTTPAUTH_FRONTEND_DESC', 'Má bıt autentifikaèní rutina vy¾adována u¾ pro frontend blogu? Pokud ano, pak je pøístup k blogu nemo¾nı bez pøhlá¹ení. Pokud volba není zapnuta, pak je pøihá¹ení vy¾adováno pouze pro pøístup do backendu (zadní - admnistrátorské èásti) blogu.');
+@define('PLUGIN_HTTPAUTH_REMOTEUSER_AUTHORID_DESC', 'Zadejte ID autora, pod kterÃ½m bude pÅ™ihlÃ¡Å¡en kaÅ¾Ã¡ "wildcard" pÅ™ihlÃ¡Å¡enÃ½ uÅ¾ivatel.');
+@define('PLUGIN_HTTPAUTH_REMOTEUSER_USERLEVEL', 'Wildcard autentifikace: OprÃ¡vnÄ›nÃ­');
+@define('PLUGIN_HTTPAUTH_REMOTEUSER_USERLEVEL_DESC', 'Zadejte oprÃ¡vnÄ›nÃ­, kterÃ½mi bude disponovat uÅ¾ivatele pÅ™ihlÃ¡Å¡enÃ½ jako "wildacard".');
+@define('PLUGIN_HTTPAUTH_FRONTEND', 'VyÅ¾adovat autentifikaci pro frontend');
+@define('PLUGIN_HTTPAUTH_FRONTEND_DESC', 'MÃ¡ bÃ½t autentifikaÄnÃ­ rutina vyÅ¾adovÃ¡na uÅ¾ pro frontend blogu? Pokud ano, pak je pÅ™Ã­stup k blogu nemoÅ¾nÃ½ bez pÅ™hlÃ¡Å¡enÃ­. Pokud volba nenÃ­ zapnuta, pak je pÅ™ihÃ¡Å¡enÃ­ vyÅ¾adovÃ¡no pouze pro pÅ™Ã­stup do backendu (zadnÃ­ - admnistrÃ¡torskÃ© ÄÃ¡sti) blogu.');
 
