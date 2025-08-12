@@ -8,21 +8,21 @@
 
 @define('PLUGIN_POLL_ACTIVATE', 'Aktywuj');
 @define('PLUGIN_POLL_ADD', 'Dodaj');
-@define('PLUGIN_POLL_VOTES', 'g³osów');
-@define('PLUGIN_POLLBOX_TOTALVOTES', 'Razem %d g³osów.');
-@define('PLUGIN_POLLBOX_VOTE', 'G³osuj');
-@define('PLUGIN_POLLBOX_SHOWRESULTS', 'Poka¿ rezultaty.');
-@define('PLUGIN_POLL_TITLE_SIDEBAR', 'Umieszcza w Panelu Bocznym aktualnie aktywne g³osowanie (poll)');
-@define('PLUGIN_POLL_ARCHIVE', 'Archiwa g³osowañ');
+@define('PLUGIN_POLL_VOTES', 'gÅ‚osÃ³w');
+@define('PLUGIN_POLLBOX_TOTALVOTES', 'Razem %d gÅ‚osÃ³w.');
+@define('PLUGIN_POLLBOX_VOTE', 'GÅ‚osuj');
+@define('PLUGIN_POLLBOX_SHOWRESULTS', 'PokaÅ¼ rezultaty.');
+@define('PLUGIN_POLL_TITLE_SIDEBAR', 'Umieszcza w Panelu Bocznym aktualnie aktywne gÅ‚osowanie (poll)');
+@define('PLUGIN_POLL_ARCHIVE', 'Archiwa gÅ‚osowaÅ„');
 
-@define('PLUGIN_POLL_TITLE', 'G³osowania');
-@define('PLUGIN_POLL_TITLE_BLAHBLAH', 'Obs³uguje Twoje g³osowania (polle)');
+@define('PLUGIN_POLL_TITLE', 'GÅ‚osowania');
+@define('PLUGIN_POLL_TITLE_BLAHBLAH', 'ObsÅ‚uguje Twoje gÅ‚osowania (polle)');
 @define('PLUGIN_POLL_PERMALINK', 'Permalink');
-@define('PLUGIN_POLL_PAGETITLE', 'Skrócona nazwa URLa (kompatybilno¶æ wsteczna)');
-@define('PLUGIN_POLL_PERMALINK_BLAHBLAH', 'Definiuje permalink dla adresu URL. Wymaga podania ¶cie¿ki HTTP i musi koñczyæ siê .htm lub .html!');
-@define('PLUGIN_POLL_ARTICLEFORMAT', 'Formatowaæ jak wpis?');
-@define('PLUGIN_POLL_ARTICLEFORMAT_BLAHBLAH', 'Je¶li zostanie zaznaczona opcja "Tak", wyniki g³osowania bêd± pokazywane za pomoc± formatowania u¿ywanego do wy¶wietlania wpisów (kolory, ramki itd.) (Standardowo: Tak)');
-@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE', 'Tytu³ strony w trybie "Formatowaæ jak wpis"');
-@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'U¿ywaj±c trybu "Formatowaæ jak wpis" mo¿esz tu zdefiniowaæ tytu³ strony, jaki poka¿e siê w miejscu, w którym normalnie wy¶wietlana jest data zamieszczenia wpisu.');
-@define('PLUGIN_POLL_SELECT', 'Wybierz g³osowanie lub stwórz nowe');
+@define('PLUGIN_POLL_PAGETITLE', 'SkrÃ³cona nazwa URLa (kompatybilnoÅ›Ä‡ wsteczna)');
+@define('PLUGIN_POLL_PERMALINK_BLAHBLAH', 'Definiuje permalink dla adresu URL. Wymaga podania Å›cieÅ¼ki HTTP i musi koÅ„czyÄ‡ siÄ™ .htm lub .html!');
+@define('PLUGIN_POLL_ARTICLEFORMAT', 'FormatowaÄ‡ jak wpis?');
+@define('PLUGIN_POLL_ARTICLEFORMAT_BLAHBLAH', 'JeÅ›li zostanie zaznaczona opcja "Tak", wyniki gÅ‚osowania bÄ™dÄ… pokazywane za pomocÄ… formatowania uÅ¼ywanego do wyÅ›wietlania wpisÃ³w (kolory, ramki itd.) (Standardowo: Tak)');
+@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE', 'TytuÅ‚ strony w trybie "FormatowaÄ‡ jak wpis"');
+@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH', 'UÅ¼ywajÄ…c trybu "FormatowaÄ‡ jak wpis" moÅ¼esz tu zdefiniowaÄ‡ tytuÅ‚ strony, jaki pokaÅ¼e siÄ™ w miejscu, w ktÃ³rym normalnie wyÅ›wietlana jest data zamieszczenia wpisu.');
+@define('PLUGIN_POLL_SELECT', 'Wybierz gÅ‚osowanie lub stwÃ³rz nowe');
 

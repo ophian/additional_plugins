@@ -3,7 +3,7 @@
 /**
  *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
- *  EN-Revision: 1.1
+ *  EN-Revision: 1.9
  */
 
 @define('PLUGIN_POLL_ACTIVATE', '有効化');
@@ -14,7 +14,6 @@
 @define('PLUGIN_POLLBOX_SHOWRESULTS',     '結果を見ます。');
 @define('PLUGIN_POLL_TITLE_SIDEBAR', 'サイドバーに現在の投票を表示');
 @define('PLUGIN_POLL_ARCHIVE', '投票の書庫');
-
 @define('PLUGIN_POLL_TITLE', '投票管理');
 @define('PLUGIN_POLL_TITLE_BLAHBLAH', '投票の管理');
 @define('PLUGIN_POLL_PERMALINK', '固定リンク');

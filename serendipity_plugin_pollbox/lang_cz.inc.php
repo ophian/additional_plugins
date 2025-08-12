@@ -1,30 +1,32 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/30
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/15
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/02/23
  */
 
 @define('PLUGIN_POLL_ACTIVATE',		'Aktivovat');
-@define('PLUGIN_POLL_ADD',		'Pøidat');
-@define('PLUGIN_POLL_VOTES',		'Hlasù');
-@define('PLUGIN_POLLBOX_TOTALVOTES',		'Celkem %d hlasù.');
+@define('PLUGIN_POLL_ADD',		'PÅ™idat');
+@define('PLUGIN_POLL_VOTES',		'HlasÅ¯');
+@define('PLUGIN_POLLBOX_TOTALVOTES',		'Celkem %d hlasÅ¯.');
 @define('PLUGIN_POLLBOX_VOTE',		'Hlasuj');
-@define('PLUGIN_POLLBOX_SHOWRESULTS',		'Zobraz vısledky.');
-@define('PLUGIN_POLL_TITLE_SIDEBAR',		'V postranním sloupci zobrazí aktuální anketu');
+@define('PLUGIN_POLLBOX_SHOWRESULTS',		'Zobraz vÃ½sledky.');
+@define('PLUGIN_POLL_TITLE_SIDEBAR',		'V postrannÃ­m sloupci zobrazÃ­ aktuÃ¡lnÃ­ anketu');
 @define('PLUGIN_POLL_ARCHIVE',		'Archiv anket');
 
 @define('PLUGIN_POLL_TITLE',		'Ankety');
-@define('PLUGIN_POLL_TITLE_BLAHBLAH',		'Správa anket');
-@define('PLUGIN_POLL_PERMALINK',		'Stálı odkaz (permalink)');
-@define('PLUGIN_POLL_PAGETITLE',		'zkrácené URL jméno (kvùli zpìtné kompatibilitì, v novıch verzích ignorujte)');
-@define('PLUGIN_POLL_PERMALINK_BLAHBLAH',		'Definuje stálı odkaz (permalink), pod kterım budou ankety pøístupné. Je tøeba zada absolutní HTTP cestu a musí konèit na .htm nebo .html!');
-@define('PLUGIN_POLL_ARTICLEFORMAT',		'Formátovat jako èlánky?');
-@define('PLUGIN_POLL_ARTICLEFORMAT_BLAHBLAH',		'Pokud je nastaveno na ANO, stránka s anketami bude formátována jako bì¾né pøíspìvky (záznamy), tzn. barvy, okraje, atd. (Standardnì: ANO)');
-@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE',		'Nadpis stránky v módu "Formátovat jako èlánek"');
-@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH',		'Pokud pou¾íváte formátování stejné jako u bì¾nıch pøíspìvkù, mù¾ete zde zadat, jakı text se má zobrazit na místì, kde se obvykle zobrazuje DATUM.');
-@define('PLUGIN_POLL_SELECT',		'Vyberte anketu, která má bıt vytvoøena nebo upravena');
+@define('PLUGIN_POLL_TITLE_BLAHBLAH',		'SprÃ¡va anket');
+@define('PLUGIN_POLL_PERMALINK',		'StÃ¡lÃ½ odkaz (permalink)');
+@define('PLUGIN_POLL_PAGETITLE',		'zkrÃ¡cenÃ© URL jmÃ©no (kvÅ¯li zpÄ›tnÃ© kompatibilitÄ›, v novÃ½ch verzÃ­ch ignorujte)');
+@define('PLUGIN_POLL_PERMALINK_BLAHBLAH',		'Definuje stÃ¡lÃ½ odkaz (permalink), pod kterÃ½m budou ankety pÅ™Ã­stupnÃ©. Je tÅ™eba zada absolutnÃ­ HTTP cestu a musÃ­ konÄit na .htm nebo .html!');
+@define('PLUGIN_POLL_ARTICLEFORMAT',		'FormÃ¡tovat jako ÄlÃ¡nky?');
+@define('PLUGIN_POLL_ARTICLEFORMAT_BLAHBLAH',		'Pokud je nastaveno na ANO, strÃ¡nka s anketami bude formÃ¡tovÃ¡na jako bÄ›Å¾nÃ© pÅ™Ã­spÄ›vky (zÃ¡znamy), tzn. barvy, okraje, atd. (StandardnÄ›: ANO)');
+@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE',		'Nadpis strÃ¡nky v mÃ³du "FormÃ¡tovat jako ÄlÃ¡nek"');
+@define('PLUGIN_POLL_ARTICLEFORMAT_PAGETITLE_BLAHBLAH',		'Pokud pouÅ¾Ã­vÃ¡te formÃ¡tovÃ¡nÃ­ stejnÃ© jako u bÄ›Å¾nÃ½ch pÅ™Ã­spÄ›vkÅ¯, mÅ¯Å¾ete zde zadat, jakÃ½ text se mÃ¡ zobrazit na mÃ­stÄ›, kde se obvykle zobrazuje DATUM.');
+@define('PLUGIN_POLL_SELECT',		'Vyberte anketu, kterÃ¡ mÃ¡ bÃ½t vytvoÅ™ena nebo upravena');
 

@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 class serendipity_common_pollbox
 {
-    var $poll = array();
+    private $poll = array();
 
     static function poll($pollid = null)
     {
