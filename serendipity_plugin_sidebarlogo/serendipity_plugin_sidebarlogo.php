@@ -1,6 +1,8 @@
 <?php
 /* Contributed by Adam Krause (http://www.pigslipstick.com/), Oliver Gerlach (http://www.stumblingpilgrim.net/) */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -9,62 +11,63 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_sidebarlogo extends serendipity_plugin
 {
-    var $title = PLUGIN_SIDEBARLOGO_NAME;
+    public  $title = PLUGIN_SIDEBARLOGO_NAME;
 
     function introspect(&$propbag)
     {
         global $serendipity;
 
-            $propbag->add('name',          PLUGIN_SIDEBARLOGO_NAME);
-            $propbag->add('description',   PLUGIN_SIDEBARLOGO_DESC);
-            $propbag->add('stackable',     true);
-            $propbag->add('author',        'Adam Krause & Oliver Gerlach, Ian Styx');
-            $propbag->add('version',       '0.8');
-            $propbag->add('requirements',  array('serendipity' => '3.0',
-                                                 'smarty'      => '3.1',
-                                                 'php'         => '7.0'
-                                                 ));
+        $propbag->add('name',          PLUGIN_SIDEBARLOGO_NAME);
+        $propbag->add('description',   PLUGIN_SIDEBARLOGO_DESC);
+        $propbag->add('stackable',     true);
+        $propbag->add('author',        'Adam Krause & Oliver Gerlach, Ian Styx');
+        $propbag->add('version',       '1.0.0');
+        $propbag->add('requirements',  array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
+        ));
 
-            $propbag->add('configuration', array('title',
-                                                 'image',
-                                                 'imagewidth',
-                                                 'imageheight',
-                                                 'imagetext',
-                                                 'description',
-                                                 'imagestyle',
-                                                 'descriptionstyle',
-                                                 'sitename',
-                                                 'sitenamestyle',
-                                                 'sitetag',
-                                                 'sitetagstyle',
-                                                 'contact',
-                                                 'contactstyle',
-                                                 'copyright',
-                                                 'copyrightstyle',
-                                                 'delimiterstyle',
-                                                 'sequence',
-                                                 ));
-            // select the appropriate groups in spartacus that match this plugin
-            $propbag->add('groups',        array('FRONTEND_FEATURES'));
-            // group config options. All options not in this list remain ungrouped and are visible always
-            $propbag->add('config_groups', array(
-                        PLUGIN_SIDEBARLOGO_GROUP_MOREOPTIONS => array(
-                        'sitename',
-                        'sitetag',
-                        'contact',
-                        'copyright',
-                        'sequence'
-                    ),
-                        PLUGIN_SIDEBARLOGO_GROUP_STYLES => array(
-                        'imagestyle',
-                        'descriptionstyle',
-                        'sitenamestyle',
-                        'sitetagstyle',
-                        'contactstyle',
-                        'copyrightstyle',
-                        'delimiterstyle'
-                    )
-            ));
+        $propbag->add('configuration', array('title',
+                                             'image',
+                                             'imagewidth',
+                                             'imageheight',
+                                             'imagetext',
+                                             'description',
+                                             'imagestyle',
+                                             'descriptionstyle',
+                                             'sitename',
+                                             'sitenamestyle',
+                                             'sitetag',
+                                             'sitetagstyle',
+                                             'contact',
+                                             'contactstyle',
+                                             'copyright',
+                                             'copyrightstyle',
+                                             'delimiterstyle',
+                                             'sequence',
+                                             ));
+        // select the appropriate groups in spartacus that match this plugin
+        $propbag->add('groups',        array('FRONTEND_FEATURES'));
+        // group config options. All options not in this list remain ungrouped and are visible always
+        $propbag->add('config_groups', array(
+                    PLUGIN_SIDEBARLOGO_GROUP_MOREOPTIONS => array(
+                    'sitename',
+                    'sitetag',
+                    'contact',
+                    'copyright',
+                    'sequence'
+                ),
+                    PLUGIN_SIDEBARLOGO_GROUP_STYLES => array(
+                    'imagestyle',
+                    'descriptionstyle',
+                    'sitenamestyle',
+                    'sitetagstyle',
+                    'contactstyle',
+                    'copyrightstyle',
+                    'delimiterstyle'
+                )
+        ));
     }
 
     function introspect_config_item($name, &$propbag)

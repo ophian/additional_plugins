@@ -1,32 +1,32 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/14
  */
 
 @define('PLUGIN_SIDEBARLOGO_NAME',		'SideBar Logo');
-@define('PLUGIN_SIDEBARLOGO_DESC',		'Zobrazuje panel/blok, kter˝ obsahuje Vaπe logo, jmÈno str·nky a dalπÌ informaËnÌ ˙daje.');
+@define('PLUGIN_SIDEBARLOGO_DESC',		'Zobrazuje panel/blok, kter√Ω obsahuje Va≈°e logo, jm√©no str√°nky a dal≈°√≠ informaƒçn√≠ √∫daje.');
 @define('PLUGIN_SIDEBARLOGO_TITLE',		'Nadpis bloku');
-@define('PLUGIN_SIDEBARLOGO_TITLE_DESC',		'Text, kter˝ se zobrazuje v z·hlavÌ informaËnÌho bloku');
-@define('PLUGIN_SIDEBARLOGO_SITENAME',		'N·zev');
-@define('PLUGIN_SIDEBARLOGO_SITENAME_DESC',		'N·zev VaπÌ str·nky (nap¯. Americk· poboËka ©koda Auto)');
+@define('PLUGIN_SIDEBARLOGO_TITLE_DESC',		'Text, kter√Ω se zobrazuje v z√°hlav√≠ informaƒçn√≠ho bloku');
+@define('PLUGIN_SIDEBARLOGO_SITENAME',		'N√°zev');
+@define('PLUGIN_SIDEBARLOGO_SITENAME_DESC',		'N√°zev Va≈°√≠ str√°nky (nap≈ô. Americk√° poboƒçka ≈†koda Auto)');
 @define('PLUGIN_SIDEBARLOGO_SITETAG',		'Slogan');
-@define('PLUGIN_SIDEBARLOGO_SITETAG_DESC',		'Slogan nebo motto str·nky (nap¯. Auta pro vπechny)');
+@define('PLUGIN_SIDEBARLOGO_SITETAG_DESC',		'Slogan nebo motto str√°nky (nap≈ô. Auta pro v≈°echny)');
 @define('PLUGIN_SIDEBARLOGO_IMAGE',		'Logo');
-@define('PLUGIN_SIDEBARLOGO_IMAGE_DESC',		'Vyberte obr·zek z mediatÈky');
-@define('PLUGIN_SIDEBARLOGO_IMAGEWIDTH',		'©Ì¯ka obr·zku');
-@define('PLUGIN_SIDEBARLOGO_IMAGEWIDTH_DESC',		'Omezte logo na πÌ¯ku (ponechte pr·zdnÈ pro æ·dnÈ omezov·nÌ, jinak nap¯. 50px, nebo 200%)');
-@define('PLUGIN_SIDEBARLOGO_IMAGEHEIGHT',		'V˝πka obr·zku');
-@define('PLUGIN_SIDEBARLOGO_IMAGEHEIGHT_DESC',		'Omezte logo na v˝πku (ponechte pr·zdnÈ pro æ·dnÈ omezov·nÌ, jinak nap¯. 50px, nebo 200%)');
+@define('PLUGIN_SIDEBARLOGO_IMAGE_DESC',		'Vyberte obr√°zek z mediat√©ky');
+@define('PLUGIN_SIDEBARLOGO_IMAGEWIDTH',		'≈†√≠≈ôka obr√°zku');
+@define('PLUGIN_SIDEBARLOGO_IMAGEWIDTH_DESC',		'Omezte logo na ≈°√≠≈ôku (ponechte pr√°zdn√© pro ≈æ√°dn√© omezov√°n√≠, jinak nap≈ô. 50px, nebo 200%)');
+@define('PLUGIN_SIDEBARLOGO_IMAGEHEIGHT',		'V√Ω≈°ka obr√°zku');
+@define('PLUGIN_SIDEBARLOGO_IMAGEHEIGHT_DESC',		'Omezte logo na v√Ω≈°ku (ponechte pr√°zdn√© pro ≈æ√°dn√© omezov√°n√≠, jinak nap≈ô. 50px, nebo 200%)');
 @define('PLUGIN_SIDEBARLOGO_DESCRIPTION',		'Popis');
-@define('PLUGIN_SIDEBARLOGO_DESCRIPTION_DESC',		'Popis ˙Ëelu a cÌle Vaπich str·nek');
+@define('PLUGIN_SIDEBARLOGO_DESCRIPTION_DESC',		'Popis √∫ƒçelu a c√≠le Va≈°ich str√°nek');
 @define('PLUGIN_SIDEBARLOGO_CONTACT',		'Kontakt');
-@define('PLUGIN_SIDEBARLOGO_CONTACT_DESC',		'Emailov· adresa nebo nebo mailto odkaz (nap¯. "Kontaktujte mne <a href=mailto:reditel@skodaauto.cz>Franta</a>")');
+@define('PLUGIN_SIDEBARLOGO_CONTACT_DESC',		'Emailov√° adresa nebo nebo mailto odkaz (nap≈ô. "Kontaktujte mne <a href=mailto:reditel@skodaauto.cz>Franta</a>")');
 @define('PLUGIN_SIDEBARLOGO_COPYRIGHT',		'Copyright');
-@define('PLUGIN_SIDEBARLOGO_COPYRIGHT_DESC',		'Drobn˝ text pouæit˝ pro informace o vlastnick˝ch pr·vech (symbol pro copyright vloæÌte pomocÌ: "&copy;")');
+@define('PLUGIN_SIDEBARLOGO_COPYRIGHT_DESC',		'Drobn√Ω text pou≈æit√Ω pro informace o vlastnick√Ωch pr√°vech (symbol pro copyright vlo≈æ√≠te pomoc√≠: "&copy;")');
 @define('PLUGIN_SIDEBARLOGO_STYLE',		'Styl obsahu');
-@define('PLUGIN_SIDEBARLOGO_STYLE_DESC',		'Napiπte styl obsahuj v bloku s informacemi (pro nahr·nÌ v˝chozÌho nastavenÌ vymaæte a 2x uloæte nastavenÌ)');
-@define('PLUGIN_SIDEBARLOGO_SEQUENCE',		'Po¯adÌ');
-@define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC',		'Po¯adÌ jednotliv˝ch prvk˘ SideBar Logo');
+@define('PLUGIN_SIDEBARLOGO_STYLE_DESC',		'Napi≈°te styl obsahuj v bloku s informacemi (pro nahr√°n√≠ v√Ωchoz√≠ho nastaven√≠ vyma≈æte a 2x ulo≈æte nastaven√≠)');
+@define('PLUGIN_SIDEBARLOGO_SEQUENCE',		'Po≈ôad√≠');
+@define('PLUGIN_SIDEBARLOGO_SEQUENCE_DESC',		'Po≈ôad√≠ jednotliv√Ωch prvk≈Ø SideBar Logo');
 
