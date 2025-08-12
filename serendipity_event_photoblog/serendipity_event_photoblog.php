@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '1.15');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '2.0.0');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
 class serendipity_event_photoblog extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_PHOTOBLOG_TITLE;
+    public $title = PLUGIN_EVENT_PHOTOBLOG_TITLE;
 
     function introspect(&$propbag)
     {
@@ -21,9 +23,9 @@ class serendipity_event_photoblog extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Cameron MacFarland, Ian Styx');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('version',   PLUGIN_EVENT_PHOTOBLOG_VERSION);
 

@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @version 
+ *  @version
  *  @author Ahmet Usal <ahmetusal@gmail.com>
  *  First public version: lang_tr.inc.php
  */
 
-@define('PLUGIN_EVENT_PHOTOBLOG_TITLE', 'FotoGünlük Kayıtları');
-@define('PLUGIN_EVENT_PHOTOBLOG_DESC', 'En son yayınladığınız fotogünlük kayıtlarınızdaki küçükresimleri gösterir (olaylar eklentisine bakın).');
+@define('PLUGIN_EVENT_PHOTOBLOG_TITLE', 'FotoGÃ¼nlÃ¼k KayÃ½tlarÃ½');
+@define('PLUGIN_EVENT_PHOTOBLOG_DESC', 'En son yayÃ½nladÃ½Ã°Ã½nÃ½z fotogÃ¼nlÃ¼k kayÃ½tlarÃ½nÃ½zdaki kÃ¼Ã§Ã¼kresimleri gÃ¶sterir (olaylar eklentisine bakÃ½n).');
 @define('PLUGIN_EVENT_PHOTOBLOG_SELECTPHOTO', 'Select a photo to include in this entry:');
 
