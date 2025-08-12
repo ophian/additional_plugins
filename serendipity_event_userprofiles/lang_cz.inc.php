@@ -1,23 +1,25 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Czech translation to userprofiles plugin
  *  CS-Revision date: 1.3.2007
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/02/15
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/02/23
  */
 
 //
 //  for serendipity_event_userprofiles.php
 //
 
-@define('PLUGIN_EVENT_USERPROFILES_CITY',		'MÏsto');
-@define('PLUGIN_EVENT_USERPROFILES_COUNTRY',		'ZemÏ');
+@define('PLUGIN_EVENT_USERPROFILES_CITY',		'Mƒõsto');
+@define('PLUGIN_EVENT_USERPROFILES_COUNTRY',		'Zemƒõ');
 @define('PLUGIN_EVENT_USERPROFILES_URL',		'Web');
-@define('PLUGIN_EVENT_USERPROFILES_OCCUPATION',		'Povol·nÌ');
-@define('PLUGIN_EVENT_USERPROFILES_HOBBIES',		'Z·jmy a z·liby');
+@define('PLUGIN_EVENT_USERPROFILES_OCCUPATION',		'Povol√°n√≠');
+@define('PLUGIN_EVENT_USERPROFILES_HOBBIES',		'Z√°jmy a z√°liby');
 @define('PLUGIN_EVENT_USERPROFILES_YAHOO',		'Yahoo');
 @define('PLUGIN_EVENT_USERPROFILES_AIM',		'AIM');
 @define('PLUGIN_EVENT_USERPROFILES_JABBER',		'Jabber');
@@ -25,69 +27,69 @@
 @define('PLUGIN_EVENT_USERPROFILES_MSN',		'MSN');
 @define('PLUGIN_EVENT_USERPROFILES_SKYPE',		'Skype');
 @define('PLUGIN_EVENT_USERPROFILES_STREET',		'Ulice');
-@define('PLUGIN_EVENT_USERPROFILES_BIRTHDAY',		'Den narozenÌ');
+@define('PLUGIN_EVENT_USERPROFILES_BIRTHDAY',		'Den narozen√≠');
 
-@define('PLUGIN_EVENT_USERPROFILES_SHOWEMAIL',		'Ukaæ e-maily');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWCITY',		'Ukaæ mÏsto');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWCOUNTRY',		'Ukaæ zemi');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWURL',		'Ukaæ web');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWOCCUPATION',		'Ukaæ povol·nÌ');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWHOBBIES',		'Ukaæ z·liby');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWYAHOO',		'Ukaæ Yahoo');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWAIM',		'Ukaæ AIM');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWJABBER',		'Ukaæ Jabber');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWICQ',		'Ukaæ ICQ');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWMSN',		'Ukaæ MSN');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWSKYPE',		'Ukaæ Skype');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWSTREET',		'Ukaæ ulici');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWEMAIL',		'Uka≈æ e-maily');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWCITY',		'Uka≈æ mƒõsto');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWCOUNTRY',		'Uka≈æ zemi');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWURL',		'Uka≈æ web');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWOCCUPATION',		'Uka≈æ povol√°n√≠');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWHOBBIES',		'Uka≈æ z√°liby');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWYAHOO',		'Uka≈æ Yahoo');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWAIM',		'Uka≈æ AIM');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWJABBER',		'Uka≈æ Jabber');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWICQ',		'Uka≈æ ICQ');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWMSN',		'Uka≈æ MSN');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWSKYPE',		'Uka≈æ Skype');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWSTREET',		'Uka≈æ ulici');
 
-@define('PLUGIN_EVENT_USERPROFILES_SHOW',		'Zobraz uæivatelsk˝ profil vybranÈho autora:');
-@define('PLUGIN_EVENT_USERPROFILES_TITLE',		'Profily uæivatel˘');
-@define('PLUGIN_EVENT_USERPROFILES_DESC',		'Zobrazuje jednoduchÈ profily uæivatel˘ a dovoluje p¯iloæit jejich fotku.');
-@define('PLUGIN_EVENT_USERPROFILES_SELECT',		'Vyber uæivatele k editaci.');
-@define('PLUGIN_EVENT_USERPROFILES_VCARD',		'Vytvo¯ vizitku');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT',		'Vizitka vytvo¯ena v %s');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',		'Tuto vizitku naleznete v hnihovnÏ mÈdiÌ.');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',		'Nelze vytvo¯it vizitku');
+@define('PLUGIN_EVENT_USERPROFILES_SHOW',		'Zobraz u≈æivatelsk√Ω profil vybran√©ho autora:');
+@define('PLUGIN_EVENT_USERPROFILES_TITLE',		'Profily u≈æivatel≈Ø');
+@define('PLUGIN_EVENT_USERPROFILES_DESC',		'Zobrazuje jednoduch√© profily u≈æivatel≈Ø a dovoluje p≈ôilo≈æit jejich fotku.');
+@define('PLUGIN_EVENT_USERPROFILES_SELECT',		'Vyber u≈æivatele k editaci.');
+@define('PLUGIN_EVENT_USERPROFILES_VCARD',		'Vytvo≈ô vizitku');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT',		'Vizitka vytvo≈ôena v %s');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',		'Tuto vizitku naleznete v hnihovnƒõ m√©di√≠.');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',		'Nelze vytvo≈ôit vizitku');
 
-@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION',		'P¯Ìpona souboru');
-@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION_BLAHBLAH',		'P¯Ìpona (typ - jpg, gif, ...) obr·zk˘ autor˘');
-@define('PLUGIN_EVENT_AUTHORPIC_ENABLED',		'Zobrazit fotku uæivatele v p¯ÌspÏvku?');
-@define('PLUGIN_EVENT_AUTHORPIC_ENABLED_DESC',		'Pokud je povoleno, fotka uæivatele bude zobrazena u kaædÈho jeho p¯ÌspÏvku. Vizu·lnÏ to ukazuje, kdo p¯ÌspÏvek napsal. Soubor s obr·zkem musÌ b˝t nejd¯Ìve vloæen do podadres·¯e "img" vaπÌ vybranÈ πablony (template) a musÌ b˝t pojmenov·n stejnÏ jako je autorovo jmÈno. Vπechny speci·lnÌ znaky (uvozovky, mezery, ...) musÌ b˝t ve jmÈnÏ souboru nahrazeny znakem "_" (podtræÌtko).');
+@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION',		'P≈ô√≠pona souboru');
+@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION_BLAHBLAH',		'P≈ô√≠pona (typ - jpg, gif, ...) obr√°zk≈Ø autor≈Ø');
+@define('PLUGIN_EVENT_AUTHORPIC_ENABLED',		'Zobrazit fotku u≈æivatele v p≈ô√≠spƒõvku?');
+@define('PLUGIN_EVENT_AUTHORPIC_ENABLED_DESC',		'Pokud je povoleno, fotka u≈æivatele bude zobrazena u ka≈æd√©ho jeho p≈ô√≠spƒõvku. Vizu√°lnƒõ to ukazuje, kdo p≈ô√≠spƒõvek napsal. Soubor s obr√°zkem mus√≠ b√Ωt nejd≈ô√≠ve vlo≈æen do podadres√°≈ôe "img" va≈°√≠ vybran√© ≈°ablony (template) a mus√≠ b√Ωt pojmenov√°n stejnƒõ jako je autorovo jm√©no. V≈°echny speci√°ln√≠ znaky (uvozovky, mezery, ...) mus√≠ b√Ωt ve jm√©nƒõ souboru nahrazeny znakem "_" (podtr≈æ√≠tko).');
 
 //
 //  for serendipity_plugin_userprofiles.php
 //
 @define('PLUGIN_USERPROFILES_NAME',		'Serendipity Authors');
-@define('PLUGIN_USERPROFILES_NAME_DESC',		'Zobrazuje rozπÌ¯enÈ profily autor˘/uæivatel˘');
+@define('PLUGIN_USERPROFILES_NAME_DESC',		'Zobrazuje roz≈°√≠≈ôen√© profily autor≈Ø/u≈æivatel≈Ø');
 @define('PLUGIN_USERPROFILES_TITLE',		'Nadpis');
-@define('PLUGIN_USERPROFILES_TITLE_DESC',		'Nadpis, kter˝ se bude zobrazovat v postrannÌm panelu:');
-@define('PLUGIN_USERPROFILES_TITLE_DEFAULT',		'Auto¯i');
+@define('PLUGIN_USERPROFILES_TITLE_DESC',		'Nadpis, kter√Ω se bude zobrazovat v postrann√≠m panelu:');
+@define('PLUGIN_USERPROFILES_TITLE_DEFAULT',		'Auto≈ôi');
 
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT',		'Zobrazit poËet koment·¯˘?');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_BLAHBLAH',		'Chcete zobrazit poËet koment·¯˘, kterÈ n·vπtÏvnÌk napsal? Volba m˘æe b˝t zak·z·na, nebo m˘æete p¯ipojit p¯ed/za poËet koment·¯˘ k tÏlu koment·¯e, anebo m˘æete vloæit poËet koment·¯˘ kamkoliv se v·m zlÌbÌ, a to editacÌ πablony comments.tpl. Text, kter˝ musÌte vloæit, je: {$comment.plugin_commentcount} . M˘æete upravit vzhled oblasti skrz css t¯Ìdu .serendipity_commentcount.');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_APPEND',		'P¯ipojit za koment·¯');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND',		'P¯ipojit p¯ed koment·¯');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY',		'RuËnÌ umÌstÏnÌ v πablonÏ');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT',		'Zobrazit poƒçet koment√°≈ô≈Ø?');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_BLAHBLAH',		'Chcete zobrazit poƒçet koment√°≈ô≈Ø, kter√© n√°v≈°tƒõvn√≠k napsal? Volba m≈Ø≈æe b√Ωt zak√°z√°na, nebo m≈Ø≈æete p≈ôipojit p≈ôed/za poƒçet koment√°≈ô≈Ø k tƒõlu koment√°≈ôe, anebo m≈Ø≈æete vlo≈æit poƒçet koment√°≈ô≈Ø kamkoliv se v√°m zl√≠b√≠, a to editac√≠ ≈°ablony comments.tpl. Text, kter√Ω mus√≠te vlo≈æit, je: {$comment.plugin_commentcount} . M≈Ø≈æete upravit vzhled oblasti skrz css t≈ô√≠du .serendipity_commentcount.');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_APPEND',		'P≈ôipojit za koment√°≈ô');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND',		'P≈ôipojit p≈ôed koment√°≈ô');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY',		'Ruƒçn√≠ um√≠stƒõn√≠ v ≈°ablonƒõ');
 
-@define('PLUGIN_USERPROFILES_GRAVATAR',		'Pouæij spÌπe Gravatar neæ mÌstnÌ obr·zek?');
-@define('PLUGIN_USERPROFILES_GRAVATAR_DESC',		'Pouæije Gravatar obr·zek sdruæen˝ s vaπÌ emailovou adresou.  Registrace na <a href="www.gravatar.com">www.gravatar.com</a>');
-@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE',		'Velikost Gravatar obr·zku');
-@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE_DESC',		'Nastavuje velikost zobrazenÌ obr·zku Gravatar, ve ËtvereËnÌch pixelech. Max je 80.');
-@define('PLUGIN_USERPROFILES_GRAVATAR_RATING',		'Maxim·lnÌ Gravatar hodnocenÌ');
-@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC',		'Nastavuje nejvyππÌ povolenÈ hodnocenÌ pro Gravatar.  G, PG, R nebo X.');
-@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT',		'UmÌstÏnÌ defaultnÌho Gravatar obr·zku');
-@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT_DESC',		'Up¯esÚuje umÌstÏnÌ obr·zku k zobrazenÌ, pokud uæivatel nem· Gravatar.');
+@define('PLUGIN_USERPROFILES_GRAVATAR',		'Pou≈æij sp√≠≈°e Gravatar ne≈æ m√≠stn√≠ obr√°zek?');
+@define('PLUGIN_USERPROFILES_GRAVATAR_DESC',		'Pou≈æije Gravatar obr√°zek sdru≈æen√Ω s va≈°√≠ emailovou adresou.  Registrace na <a href="www.gravatar.com">www.gravatar.com</a>');
+@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE',		'Velikost Gravatar obr√°zku');
+@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE_DESC',		'Nastavuje velikost zobrazen√≠ obr√°zku Gravatar, ve ƒçtvereƒçn√≠ch pixelech. Max je 80.');
+@define('PLUGIN_USERPROFILES_GRAVATAR_RATING',		'Maxim√°ln√≠ Gravatar hodnocen√≠');
+@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC',		'Nastavuje nejvy≈°≈°√≠ povolen√© hodnocen√≠ pro Gravatar.  G, PG, R nebo X.');
+@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT',		'Um√≠stƒõn√≠ defaultn√≠ho Gravatar obr√°zku');
+@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT_DESC',		'Up≈ôes≈àuje um√≠stƒõn√≠ obr√°zku k zobrazen√≠, pokud u≈æivatel nem√° Gravatar.');
 
-@define('PLUGIN_USERPROFILES_BIRTHDAYSNAME',		'Narozeniny uæivatel˘');
+@define('PLUGIN_USERPROFILES_BIRTHDAYSNAME',		'Narozeniny u≈æivatel≈Ø');
 @define('PLUGIN_USERPROFILES_BIRTHDAYTITLE',		'Narozeniny');
-@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE_DESCRIPTION',		'Uk·æe, kdy majÌ uæivatelÈ narozeniny.');
+@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE_DESCRIPTION',		'Uk√°≈æe, kdy maj√≠ u≈æivatel√© narozeniny.');
 @define('PLUGIN_USERPROFILES_BIRTHDAYTITLE_DEFAULT',		'narozeniny');
 
-@define('PLUGIN_USERPROFILES_BIRTHDAYIN',		'Narozeniny za %d dn˘');
-@define('PLUGIN_USERPROFILES_BIRTHDAYTODAY',		'Dnes slavÌ narozeniny.');
+@define('PLUGIN_USERPROFILES_BIRTHDAYIN',		'Narozeniny za %d dn≈Ø');
+@define('PLUGIN_USERPROFILES_BIRTHDAYTODAY',		'Dnes slav√≠ narozeniny.');
 
-@define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS',		'Omez p¯i zobrazenÌ poËet lidÌ, kte¯Ì majÌ narozeniny, na toto ËÌslo');
-@define('PLUGIN_USERPROFILES_SHOWAUTHORS',		'Zobrazovat seznam uæivatel˘?');
-@define('PLUGIN_USERPROFILES_SHOWGROUPS',		'Zobrazovat odkaz na podrobnosti o skupin·ch?');
+@define('PLUGIN_USERPROFILES_BIRTHDAYNUMBERS',		'Omez p≈ôi zobrazen√≠ poƒçet lid√≠, kte≈ô√≠ maj√≠ narozeniny, na toto ƒç√≠slo');
+@define('PLUGIN_USERPROFILES_SHOWAUTHORS',		'Zobrazovat seznam u≈æivatel≈Ø?');
+@define('PLUGIN_USERPROFILES_SHOWGROUPS',		'Zobrazovat odkaz na podrobnosti o skupin√°ch?');
 

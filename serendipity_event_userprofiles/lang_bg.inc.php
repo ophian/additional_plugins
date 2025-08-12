@@ -10,77 +10,77 @@
 //  for serendipity_event_userprofiles.php
 //
 
-@define('PLUGIN_EVENT_USERPROFILES_CITY',               'Град');
-@define('PLUGIN_EVENT_USERPROFILES_COUNTRY',            'Държава');
-@define('PLUGIN_EVENT_USERPROFILES_URL',                'Интернет страница');
-@define('PLUGIN_EVENT_USERPROFILES_OCCUPATION',         'Работа');
-@define('PLUGIN_EVENT_USERPROFILES_HOBBIES',            'Хобита');
+@define('PLUGIN_EVENT_USERPROFILES_CITY',               'Р“СЂР°Рґ');
+@define('PLUGIN_EVENT_USERPROFILES_COUNTRY',            'Р”СЉСЂР¶Р°РІР°');
+@define('PLUGIN_EVENT_USERPROFILES_URL',                'РРЅС‚РµСЂРЅРµС‚ СЃС‚СЂР°РЅРёС†Р°');
+@define('PLUGIN_EVENT_USERPROFILES_OCCUPATION',         'Р Р°Р±РѕС‚Р°');
+@define('PLUGIN_EVENT_USERPROFILES_HOBBIES',            'РҐРѕР±РёС‚Р°');
 @define('PLUGIN_EVENT_USERPROFILES_YAHOO',              'Yahoo');
 @define('PLUGIN_EVENT_USERPROFILES_AIM',                'AIM');
 @define('PLUGIN_EVENT_USERPROFILES_JABBER',             'Jabber');
 @define('PLUGIN_EVENT_USERPROFILES_ICQ',                'ICQ');
 @define('PLUGIN_EVENT_USERPROFILES_MSN',                'MSN');
 @define('PLUGIN_EVENT_USERPROFILES_SKYPE',               'Skype');
-@define('PLUGIN_EVENT_USERPROFILES_STREET',             'Улица');
-@define('PLUGIN_EVENT_USERPROFILES_BIRTHDAY',           'Рожден ден');
+@define('PLUGIN_EVENT_USERPROFILES_STREET',             'РЈР»РёС†Р°');
+@define('PLUGIN_EVENT_USERPROFILES_BIRTHDAY',           'Р РѕР¶РґРµРЅ РґРµРЅ');
 
-@define('PLUGIN_EVENT_USERPROFILES_SHOWEMAIL',          'Показване на e-mail адрес');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWCITY',           'Показване на \'Град\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWCOUNTRY',        'Показване на \'Държава\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWURL',            'Показване на \'Интернет страница\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWOCCUPATION',     'Показване на \'работа\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWHOBBIES',        'Показване на \'Хобита\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWYAHOO',          'Показване на \'Yahoo\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWAIM',            'Показване на \'AIM\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWJABBER',         'Показване на \'Jabber\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWICQ',            'Показване на \'ICQ\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWMSN',            'Показване на \'MSN\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWSKYPE',          'Показване на \'Skype\'');
-@define('PLUGIN_EVENT_USERPROFILES_SHOWSTREET',         'Показване на \'Улица\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWEMAIL',          'РџРѕРєР°Р·РІР°РЅРµ РЅР° e-mail Р°РґСЂРµСЃ');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWCITY',           'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'Р“СЂР°Рґ\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWCOUNTRY',        'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'Р”СЉСЂР¶Р°РІР°\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWURL',            'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'РРЅС‚РµСЂРЅРµС‚ СЃС‚СЂР°РЅРёС†Р°\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWOCCUPATION',     'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'СЂР°Р±РѕС‚Р°\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWHOBBIES',        'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'РҐРѕР±РёС‚Р°\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWYAHOO',          'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'Yahoo\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWAIM',            'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'AIM\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWJABBER',         'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'Jabber\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWICQ',            'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'ICQ\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWMSN',            'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'MSN\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWSKYPE',          'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'Skype\'');
+@define('PLUGIN_EVENT_USERPROFILES_SHOWSTREET',         'РџРѕРєР°Р·РІР°РЅРµ РЅР° \'РЈР»РёС†Р°\'');
 
-@define('PLUGIN_EVENT_USERPROFILES_SHOW',               'Потребителски профил');
-@define('PLUGIN_EVENT_USERPROFILES_TITLE',              'Потребителски профили');
-@define('PLUGIN_EVENT_USERPROFILES_DESC',               'Показва профил на автора с възможност за вграждане на негова снимка.');
-@define('PLUGIN_EVENT_USERPROFILES_SELECT',             'Изберете автор за редактиране');
-@define('PLUGIN_EVENT_USERPROFILES_VCARD',              'Създаване на VCard');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT',    'VCard е създадена в %s');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',  'Можете да намерите създадената VCard в медийната библиотека (\'uploads/...\').');
-@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',    'Невъзможност за създаване на VCard.');
+@define('PLUGIN_EVENT_USERPROFILES_SHOW',               'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РїСЂРѕС„РёР»');
+@define('PLUGIN_EVENT_USERPROFILES_TITLE',              'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РїСЂРѕС„РёР»Рё');
+@define('PLUGIN_EVENT_USERPROFILES_DESC',               'РџРѕРєР°Р·РІР° РїСЂРѕС„РёР» РЅР° Р°РІС‚РѕСЂР° СЃ РІСЉР·РјРѕР¶РЅРѕСЃС‚ Р·Р° РІРіСЂР°Р¶РґР°РЅРµ РЅР° РЅРµРіРѕРІР° СЃРЅРёРјРєР°.');
+@define('PLUGIN_EVENT_USERPROFILES_SELECT',             'РР·Р±РµСЂРµС‚Рµ Р°РІС‚РѕСЂ Р·Р° СЂРµРґР°РєС‚РёСЂР°РЅРµ');
+@define('PLUGIN_EVENT_USERPROFILES_VCARD',              'РЎСЉР·РґР°РІР°РЅРµ РЅР° VCard');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_AT',    'VCard Рµ СЃСЉР·РґР°РґРµРЅР° РІ %s');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDCREATED_NOTE',  'РњРѕР¶РµС‚Рµ РґР° РЅР°РјРµСЂРёС‚Рµ СЃСЉР·РґР°РґРµРЅР°С‚Р° VCard РІ РјРµРґРёР№РЅР°С‚Р° Р±РёР±Р»РёРѕС‚РµРєР° (\'uploads/...\').');
+@define('PLUGIN_EVENT_USERPROFILES_VCARDNOTCREATED',    'РќРµРІСЉР·РјРѕР¶РЅРѕСЃС‚ Р·Р° СЃСЉР·РґР°РІР°РЅРµ РЅР° VCard.');
 
-@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION', 'Тип на снимката');
-@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION_BLAHBLAH', 'Тип на файла, съдържащ снимката на автора на статията (jpg, png ...) ?');
-@define('PLUGIN_EVENT_AUTHORPIC_ENABLED', 'Снимка на автора в статиите ?');
-@define('PLUGIN_EVENT_AUTHORPIC_ENABLED_DESC', 'При избор \'Да\' снимка на автора ще бъде показвана в статиите, за да се вижда кой ги е писал. Файлът със снимката трябва да бъде записан в поддиректория \'img\' на избраната от вас тема (\'templates/your_template/img\') и трябва да бъде с име името на автора. Всички специални символи (кавички, интервали, ...) трябва да бъдат заменени с  \'_\' в името на файла.');
+@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION', 'РўРёРї РЅР° СЃРЅРёРјРєР°С‚Р°');
+@define('PLUGIN_EVENT_AUTHORPIC_EXTENSION_BLAHBLAH', 'РўРёРї РЅР° С„Р°Р№Р»Р°, СЃСЉРґСЉСЂР¶Р°С‰ СЃРЅРёРјРєР°С‚Р° РЅР° Р°РІС‚РѕСЂР° РЅР° СЃС‚Р°С‚РёСЏС‚Р° (jpg, png ...) ?');
+@define('PLUGIN_EVENT_AUTHORPIC_ENABLED', 'РЎРЅРёРјРєР° РЅР° Р°РІС‚РѕСЂР° РІ СЃС‚Р°С‚РёРёС‚Рµ ?');
+@define('PLUGIN_EVENT_AUTHORPIC_ENABLED_DESC', 'РџСЂРё РёР·Р±РѕСЂ \'Р”Р°\' СЃРЅРёРјРєР° РЅР° Р°РІС‚РѕСЂР° С‰Рµ Р±СЉРґРµ РїРѕРєР°Р·РІР°РЅР° РІ СЃС‚Р°С‚РёРёС‚Рµ, Р·Р° РґР° СЃРµ РІРёР¶РґР° РєРѕР№ РіРё Рµ РїРёСЃР°Р». Р¤Р°Р№Р»СЉС‚ СЃСЉСЃ СЃРЅРёРјРєР°С‚Р° С‚СЂСЏР±РІР° РґР° Р±СЉРґРµ Р·Р°РїРёСЃР°РЅ РІ РїРѕРґРґРёСЂРµРєС‚РѕСЂРёСЏ \'img\' РЅР° РёР·Р±СЂР°РЅР°С‚Р° РѕС‚ РІР°СЃ С‚РµРјР° (\'templates/your_template/img\') Рё С‚СЂСЏР±РІР° РґР° Р±СЉРґРµ СЃ РёРјРµ РёРјРµС‚Рѕ РЅР° Р°РІС‚РѕСЂР°. Р’СЃРёС‡РєРё СЃРїРµС†РёР°Р»РЅРё СЃРёРјРІРѕР»Рё (РєР°РІРёС‡РєРё, РёРЅС‚РµСЂРІР°Р»Рё, ...) С‚СЂСЏР±РІР° РґР° Р±СЉРґР°С‚ Р·Р°РјРµРЅРµРЅРё СЃ  \'_\' РІ РёРјРµС‚Рѕ РЅР° С„Р°Р№Р»Р°.');
 
 //
 //  for serendipity_plugin_userprofiles.php
 //
-@define('PLUGIN_USERPROFILES_NAME',          "Авторите на този блог");
-@define('PLUGIN_USERPROFILES_NAME_DESC',     "Показва списък на авторите, писали статии за този блог.");
-@define('PLUGIN_USERPROFILES_TITLE',         "Заглавие");
-@define('PLUGIN_USERPROFILES_TITLE_DESC',    "Въведете заглавието на страничната приставка, съдържаща списъка на авторите.");
-@define('PLUGIN_USERPROFILES_TITLE_DEFAULT', "Автори");
+@define('PLUGIN_USERPROFILES_NAME',          "РђРІС‚РѕСЂРёС‚Рµ РЅР° С‚РѕР·Рё Р±Р»РѕРі");
+@define('PLUGIN_USERPROFILES_NAME_DESC',     "РџРѕРєР°Р·РІР° СЃРїРёСЃСЉРє РЅР° Р°РІС‚РѕСЂРёС‚Рµ, РїРёСЃР°Р»Рё СЃС‚Р°С‚РёРё Р·Р° С‚РѕР·Рё Р±Р»РѕРі.");
+@define('PLUGIN_USERPROFILES_TITLE',         "Р—Р°РіР»Р°РІРёРµ");
+@define('PLUGIN_USERPROFILES_TITLE_DESC',    "Р’СЉРІРµРґРµС‚Рµ Р·Р°РіР»Р°РІРёРµС‚Рѕ РЅР° СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР°, СЃСЉРґСЉСЂР¶Р°С‰Р° СЃРїРёСЃСЉРєР° РЅР° Р°РІС‚РѕСЂРёС‚Рµ.");
+@define('PLUGIN_USERPROFILES_TITLE_DEFAULT', "РђРІС‚РѕСЂРё");
 
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT', 'Показване на броя на коментарите ?');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_BLAHBLAH', 'Можете да показвате броя на коментарите, които е направил посетителят, автор на текущия коментар. Това може да бъде забранено или числото да бъде добавено преди/след тялото на коментара. Можете също така да го поставите, където желаете вътре в коментара като редактирате вашия шаблон comments.tpl и поставите в него {$comment.plugin_commentcount} на място, което искате. Накрая, освен това можете да промените начина на извеждане чрез редактиране на CSS клас .serendipity_commentcount.');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_APPEND', 'След тялото на коментара');
-@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND', 'Преди тялото на коментара');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° Р±СЂРѕСЏ РЅР° РєРѕРјРµРЅС‚Р°СЂРёС‚Рµ ?');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_BLAHBLAH', 'РњРѕР¶РµС‚Рµ РґР° РїРѕРєР°Р·РІР°С‚Рµ Р±СЂРѕСЏ РЅР° РєРѕРјРµРЅС‚Р°СЂРёС‚Рµ, РєРѕРёС‚Рѕ Рµ РЅР°РїСЂР°РІРёР» РїРѕСЃРµС‚РёС‚РµР»СЏС‚, Р°РІС‚РѕСЂ РЅР° С‚РµРєСѓС‰РёСЏ РєРѕРјРµРЅС‚Р°СЂ. РўРѕРІР° РјРѕР¶Рµ РґР° Р±СЉРґРµ Р·Р°Р±СЂР°РЅРµРЅРѕ РёР»Рё С‡РёСЃР»РѕС‚Рѕ РґР° Р±СЉРґРµ РґРѕР±Р°РІРµРЅРѕ РїСЂРµРґРё/СЃР»РµРґ С‚СЏР»РѕС‚Рѕ РЅР° РєРѕРјРµРЅС‚Р°СЂР°. РњРѕР¶РµС‚Рµ СЃСЉС‰Рѕ С‚Р°РєР° РґР° РіРѕ РїРѕСЃС‚Р°РІРёС‚Рµ, РєСЉРґРµС‚Рѕ Р¶РµР»Р°РµС‚Рµ РІСЉС‚СЂРµ РІ РєРѕРјРµРЅС‚Р°СЂР° РєР°С‚Рѕ СЂРµРґР°РєС‚РёСЂР°С‚Рµ РІР°С€РёСЏ С€Р°Р±Р»РѕРЅ comments.tpl Рё РїРѕСЃС‚Р°РІРёС‚Рµ РІ РЅРµРіРѕ {$comment.plugin_commentcount} РЅР° РјСЏСЃС‚Рѕ, РєРѕРµС‚Рѕ РёСЃРєР°С‚Рµ. РќР°РєСЂР°СЏ, РѕСЃРІРµРЅ С‚РѕРІР° РјРѕР¶РµС‚Рµ РґР° РїСЂРѕРјРµРЅРёС‚Рµ РЅР°С‡РёРЅР° РЅР° РёР·РІРµР¶РґР°РЅРµ С‡СЂРµР· СЂРµРґР°РєС‚РёСЂР°РЅРµ РЅР° CSS РєР»Р°СЃ .serendipity_commentcount.');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_APPEND', 'РЎР»РµРґ С‚СЏР»РѕС‚Рѕ РЅР° РєРѕРјРµРЅС‚Р°СЂР°');
+@define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_PREPEND', 'РџСЂРµРґРё С‚СЏР»РѕС‚Рѕ РЅР° РєРѕРјРµРЅС‚Р°СЂР°');
 @define('PLUGIN_EVENT_AUTHORPIC_COMMENTCOUNT_SMARTY', '{$comment.plugin_commentcount}');
 
-@define('PLUGIN_USERPROFILES_GRAVATAR', 'Използване на Gravatar вместо локално изображение (avatar) ?');
-@define('PLUGIN_USERPROFILES_GRAVATAR_DESC', 'Използва Gravatar (глобален avatar), асоцииран с вашия e-mail адрес. Трябва предварително да се регистрирате в http://www.gravatar.com');
-@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE', 'Размер на изображението');
-@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE_DESC', 'Размер на изображението', 'Установява размера на изображението в пиксели. Размерите по X и Y са еднакви, като максималната стойност е 80.');
-@define('PLUGIN_USERPROFILES_GRAVATAR_RATING', 'Максимален рейтинг на Gravatar');
-@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC','Установява максималния позволен рейтинг за Gravatars. G, PG, R или X.');
-@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT', 'Място на Gravatar по подразбиране');
-@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT_DESC', 'Указва мястото на картинката, която да се показва, когато потребителят не е избрал Gravatar за себе си.');
+@define('PLUGIN_USERPROFILES_GRAVATAR', 'РР·РїРѕР»Р·РІР°РЅРµ РЅР° Gravatar РІРјРµСЃС‚Рѕ Р»РѕРєР°Р»РЅРѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ (avatar) ?');
+@define('PLUGIN_USERPROFILES_GRAVATAR_DESC', 'РР·РїРѕР»Р·РІР° Gravatar (РіР»РѕР±Р°Р»РµРЅ avatar), Р°СЃРѕС†РёРёСЂР°РЅ СЃ РІР°С€РёСЏ e-mail Р°РґСЂРµСЃ. РўСЂСЏР±РІР° РїСЂРµРґРІР°СЂРёС‚РµР»РЅРѕ РґР° СЃРµ СЂРµРіРёСЃС‚СЂРёСЂР°С‚Рµ РІ http://www.gravatar.com');
+@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE', 'Р Р°Р·РјРµСЂ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёРµС‚Рѕ');
+@define('PLUGIN_USERPROFILES_GRAVATAR_SIZE_DESC', 'Р Р°Р·РјРµСЂ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёРµС‚Рѕ', 'РЈСЃС‚Р°РЅРѕРІСЏРІР° СЂР°Р·РјРµСЂР° РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёРµС‚Рѕ РІ РїРёРєСЃРµР»Рё. Р Р°Р·РјРµСЂРёС‚Рµ РїРѕ X Рё Y СЃР° РµРґРЅР°РєРІРё, РєР°С‚Рѕ РјР°РєСЃРёРјР°Р»РЅР°С‚Р° СЃС‚РѕР№РЅРѕСЃС‚ Рµ 80.');
+@define('PLUGIN_USERPROFILES_GRAVATAR_RATING', 'РњР°РєСЃРёРјР°Р»РµРЅ СЂРµР№С‚РёРЅРі РЅР° Gravatar');
+@define('PLUGIN_USERPROFILES_GRAVATAR_RATING_DESC','РЈСЃС‚Р°РЅРѕРІСЏРІР° РјР°РєСЃРёРјР°Р»РЅРёСЏ РїРѕР·РІРѕР»РµРЅ СЂРµР№С‚РёРЅРі Р·Р° Gravatars. G, PG, R РёР»Рё X.');
+@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT', 'РњСЏСЃС‚Рѕ РЅР° Gravatar РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ');
+@define('PLUGIN_USERPROFILES_GRAVATAR_DEFAULT_DESC', 'РЈРєР°Р·РІР° РјСЏСЃС‚РѕС‚Рѕ РЅР° РєР°СЂС‚РёРЅРєР°С‚Р°, РєРѕСЏС‚Рѕ РґР° СЃРµ РїРѕРєР°Р·РІР°, РєРѕРіР°С‚Рѕ РїРѕС‚СЂРµР±РёС‚РµР»СЏС‚ РЅРµ Рµ РёР·Р±СЂР°Р» Gravatar Р·Р° СЃРµР±Рµ СЃРё.');
 
-@define('PLUGIN_USERPROFILES_BIRTHDAYSNAME', 'Рожденни дни на потребителите');
-@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE', 'Рожденни дни');
-@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE_DESCRIPTION', 'Показва кога потребителите има рожденни дни');
-@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE_DEFAULT', 'рожденни дни');
+@define('PLUGIN_USERPROFILES_BIRTHDAYSNAME', 'Р РѕР¶РґРµРЅРЅРё РґРЅРё РЅР° РїРѕС‚СЂРµР±РёС‚РµР»РёС‚Рµ');
+@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE', 'Р РѕР¶РґРµРЅРЅРё РґРЅРё');
+@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE_DESCRIPTION', 'РџРѕРєР°Р·РІР° РєРѕРіР° РїРѕС‚СЂРµР±РёС‚РµР»РёС‚Рµ РёРјР° СЂРѕР¶РґРµРЅРЅРё РґРЅРё');
+@define('PLUGIN_USERPROFILES_BIRTHDAYTITLE_DEFAULT', 'СЂРѕР¶РґРµРЅРЅРё РґРЅРё');
 
-@define('PLUGIN_USERPROFILES_BIRTHDAYIN', 'Рожден ден след %d дни');
-@define('PLUGIN_USERPROFILES_BIRTHDAYTODAY', 'Рожден ден днес');
+@define('PLUGIN_USERPROFILES_BIRTHDAYIN', 'Р РѕР¶РґРµРЅ РґРµРЅ СЃР»РµРґ %d РґРЅРё');
+@define('PLUGIN_USERPROFILES_BIRTHDAYTODAY', 'Р РѕР¶РґРµРЅ РґРµРЅ РґРЅРµСЃ');
 
