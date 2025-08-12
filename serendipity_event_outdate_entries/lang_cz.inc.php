@@ -1,17 +1,18 @@
 <?php
 
 /**
- * @author Vladimír Ajgl <vlada@ajgl.cz>
- * @translated 2009/02/17
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
+ *  @translated 2009/02/17
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/02/23
  */
 
-@define('PLUGIN_EVENT_OUTDATE', 'Schovat/smazat staré pøíspìvky');
-@define('PLUGIN_EVENT_OUTDATE_DESC', 'Pro nepøihlá¹ené ètenáøe schová v¹echny pøíspìvky star¹í ne¾ nastavenı èas, tyto pøíspìvky jsou viditelné pouze pøihlá¹enım u¾ivatelùm/autorùm.');
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT', 'Kdy mají bıt pøíspìvky schovány?');
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_DESC', 'Zadejte dobu, po jejím¾ uplynutí od vydání bude pøíspìvek schován. (ve dnech, 0 pro deaktivaci volby)');
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY', 'Kdy mají bıt pøíspìvky "odlepeny"?');
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY_DESC', 'Zadejte dobu, po jejím¾ uplynutí od vydání bude pøíspìveku zru¹en pøíznak "pøilepenı". (ve dnech, 0 pro deaktivaci volby)');
+@define('PLUGIN_EVENT_OUTDATE', 'Schovat/smazat starÃ© pÅ™Ã­spÄ›vky');
+@define('PLUGIN_EVENT_OUTDATE_DESC', 'Pro nepÅ™ihlÃ¡Å¡enÃ© ÄtenÃ¡Å™e schovÃ¡ vÅ¡echny pÅ™Ã­spÄ›vky starÅ¡Ã­ neÅ¾ nastavenÃ½ Äas, tyto pÅ™Ã­spÄ›vky jsou viditelnÃ© pouze pÅ™ihlÃ¡Å¡enÃ½m uÅ¾ivatelÅ¯m/autorÅ¯m.');
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT', 'Kdy majÃ­ bÃ½t pÅ™Ã­spÄ›vky schovÃ¡ny?');
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_DESC', 'Zadejte dobu, po jejÃ­mÅ¾ uplynutÃ­ od vydÃ¡nÃ­ bude pÅ™Ã­spÄ›vek schovÃ¡n. (ve dnech, 0 pro deaktivaci volby)');
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY', 'Kdy majÃ­ bÃ½t pÅ™Ã­spÄ›vky "odlepeny"?');
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_STICKY_DESC', 'Zadejte dobu, po jejÃ­mÅ¾ uplynutÃ­ od vydÃ¡nÃ­ bude pÅ™Ã­spÄ›veku zruÅ¡en pÅ™Ã­znak "pÅ™ilepenÃ½". (ve dnech, 0 pro deaktivaci volby)');
 
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD', 'Pøídavné pole "Datum expirace"');
-@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD_DESC', 'Pokud pou¾íváte pøídavnı modul "Roz¹íøené vlastnosti pøíspìvkù", mù¾ete definovat pøídavné pole, do kterého zadáte datum, kdy pøíspìvku vypr¹í platnost. Datum musí mít formát RRRR-MM-DD. Tento plugin najde toto datum vypr¹ení platnosti a nastaví pøíspìvek jako KONCEPT, tak¾e zmizí ze zobrazení pøíspìvkù. Zde zadejte název pøídavného pole (napøíklad "DatumExpirace").');
-
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD', 'PÅ™Ã­davnÃ© pole "Datum expirace"');
+@define('PLUGIN_EVENT_OUTDATE_TIMEOUT_EXPIRY_FIELD_DESC', 'Pokud pouÅ¾Ã­vÃ¡te pÅ™Ã­davnÃ½ modul "RozÅ¡Ã­Å™enÃ© vlastnosti pÅ™Ã­spÄ›vkÅ¯", mÅ¯Å¾ete definovat pÅ™Ã­davnÃ© pole, do kterÃ©ho zadÃ¡te datum, kdy pÅ™Ã­spÄ›vku vyprÅ¡Ã­ platnost. Datum musÃ­ mÃ­t formÃ¡t RRRR-MM-DD. Tento plugin najde toto datum vyprÅ¡enÃ­ platnosti a nastavÃ­ pÅ™Ã­spÄ›vek jako KONCEPT, takÅ¾e zmizÃ­ ze zobrazenÃ­ pÅ™Ã­spÄ›vkÅ¯. Zde zadejte nÃ¡zev pÅ™Ã­davnÃ©ho pole (napÅ™Ã­klad "DatumExpirace").');
