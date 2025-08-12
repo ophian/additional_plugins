@@ -3,15 +3,15 @@
 /**
  *  @author Vladimir Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/15
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_KARMARANKING_DESC', 'Zobrazuje celkovÈ skÛre autor˘');
+@define('PLUGIN_KARMARANKING_DESC', 'Zobrazuje celkov√© sk√≥re autor≈Ø');
 @define('PLUGIN_KARMARANKING_PROP_TITLE', 'Nadpis');
-@define('PLUGIN_KARMARANKING_PROP_TITLE_DESC', 'Nadpis postrannÌho bloku');
-@define('PLUGIN_KARMARANKING_PROP_COUNT', 'PoËet autor˘');
-@define('PLUGIN_KARMARANKING_PROP_COUNT_DESC', 'Kolik autor˘ m· b˝t zobrazeno?');
+@define('PLUGIN_KARMARANKING_PROP_TITLE_DESC', 'Nadpis postrann√≠ho bloku');
+@define('PLUGIN_KARMARANKING_PROP_COUNT', 'Poƒçet autor≈Ø');
+@define('PLUGIN_KARMARANKING_PROP_COUNT_DESC', 'Kolik autor≈Ø m√° b√Ωt zobrazeno?');
 @define('PLUGIN_KARMARANKING_AUTHOR', 'Autor');
 @define('PLUGIN_KARMARANKING_TOTAL', 'Celkem');
 
