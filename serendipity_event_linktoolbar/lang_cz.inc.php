@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
 @define('PLUGIN_LINKTOOLBAR_TITLE', 'HTML Link metatagy');
-@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'Zobrazuje metatagy <link rel="start|up|prev|next"> v HTML hlavièce stránky blogu. To umo¾òuje v nìkterıch prohlí¾eèích lep¹í navigaci ve stránkách. Check your themes index.tpl file to avoid double sets.');
+@define('PLUGIN_LINKTOOLBAR_TITLE_DESC', 'Zobrazuje metatagy <link rel="start|up|prev|next"> v HTML hlaviÄce strÃ¡nky blogu. To umoÅ¾Åˆuje v nÄ›kterÃ½ch prohlÃ­Å¾eÄÃ­ch lepÅ¡Ã­ navigaci ve strÃ¡nkÃ¡ch. Check your themes index.tpl file to avoid double sets.');
 
