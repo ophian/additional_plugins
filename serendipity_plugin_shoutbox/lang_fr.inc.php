@@ -16,12 +16,12 @@
 @define('PLUGIN_SHOUTBOX_NAME', 'Shoutbox');
 @define('PLUGIN_SHOUTBOX_DELETE', 'Effacer');
 @define('PLUGIN_SHOUTBOX_SUBMIT', 'Crier');
-@define('PLUGIN_SHOUTBOX_BLAHBLAH', 'Affiche une shoutbox où les visiteurs peuvent donner des commentaires en vrac');
-@define('PLUGIN_SHOUTBOX_WORDWRAP', 'Retour à la ligne');
-@define('PLUGIN_SHOUTBOX_WORDWRAP_BLAHBLAH', 'Retour a la ligne automatique après X mots. Valeur par défaut: 30');
-@define('PLUGIN_SHOUTBOX_MAXCHARS', 'Caractères par commentaire');
-@define('PLUGIN_SHOUTBOX_MAXCHARS_BLAHBLAH', 'Définit le nombre maximum de caractères pour un commentaire. Valeur par défaut: 120');
+@define('PLUGIN_SHOUTBOX_BLAHBLAH', 'Affiche une shoutbox oÃ¹ les visiteurs peuvent donner des commentaires en vrac');
+@define('PLUGIN_SHOUTBOX_WORDWRAP', 'Retour Ã  la ligne');
+@define('PLUGIN_SHOUTBOX_WORDWRAP_BLAHBLAH', 'Retour a la ligne automatique aprÃ¨s X mots. Valeur par dÃ©faut: 30');
+@define('PLUGIN_SHOUTBOX_MAXCHARS', 'CaractÃ¨res par commentaire');
+@define('PLUGIN_SHOUTBOX_MAXCHARS_BLAHBLAH', 'DÃ©finit le nombre maximum de caractÃ¨res pour un commentaire. Valeur par dÃ©faut: 120');
 @define('PLUGIN_SHOUTBOX_MAXENTRIES', 'Nombre de commentaires');
-@define('PLUGIN_SHOUTBOX_MAXENTRIES_BLAHBLAH', 'Définit le nombre maximum de commentaires à afficher.');
+@define('PLUGIN_SHOUTBOX_MAXENTRIES_BLAHBLAH', 'DÃ©finit le nombre maximum de commentaires Ã  afficher.');
 
 /* vim: set sts=4 ts=4 expandtab : */

@@ -2,26 +2,26 @@
 
 /**
  *  @version 1381.1
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/06/14
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/15
  */
 
-@define('PLUGIN_SHOUTBOX_NAME',                 'Vıkøièník');
+@define('PLUGIN_SHOUTBOX_NAME',                 'VÃ½kÅ™iÄnÃ­k');
 @define('PLUGIN_SHOUTBOX_DELETE',               'Smazat');
-@define('PLUGIN_SHOUTBOX_SUBMIT',               'Po¹li vıkøik do svìta');
-@define('PLUGIN_SHOUTBOX_BLAHBLAH',             'Zobrazuje okno pro vıkøiky, tzn. komentáøe, které nejsou poslané ke konkrétnímu pøíspìvku');
-@define('PLUGIN_SHOUTBOX_WORDWRAP',             'Zalamování slov');
-@define('PLUGIN_SHOUTBOX_WORDWRAP_BLAHBLAH',    'Po kolika slovech se má vıkøik zalomit? (Pøednastaveno: 30)');
-@define('PLUGIN_SHOUTBOX_MAXCHARS',             'Maximální poèet znakù');
-@define('PLUGIN_SHOUTBOX_MAXCHARS_BLAHBLAH',    'Kolik znakù z ka¾dého pøíspìvku má bıt nanejvı¹ zobrazeno? (Pøednastaveno: 120)');
-@define('PLUGIN_SHOUTBOX_MAXENTRIES',           'Poèet vıkøikù');
-@define('PLUGIN_SHOUTBOX_MAXENTRIES_BLAHBLAH',  'Kolik posledních vıkøikù se má zobrazovat? (Pøednastaveno: 15)');
+@define('PLUGIN_SHOUTBOX_SUBMIT',               'PoÅ¡li vÃ½kÅ™ik do svÄ›ta');
+@define('PLUGIN_SHOUTBOX_BLAHBLAH',             'Zobrazuje okno pro vÃ½kÅ™iky, tzn. komentÃ¡Å™e, kterÃ© nejsou poslanÃ© ke konkrÃ©tnÃ­mu pÅ™Ã­spÄ›vku');
+@define('PLUGIN_SHOUTBOX_WORDWRAP',             'ZalamovÃ¡nÃ­ slov');
+@define('PLUGIN_SHOUTBOX_WORDWRAP_BLAHBLAH',    'Po kolika slovech se mÃ¡ vÃ½kÅ™ik zalomit? (PÅ™ednastaveno: 30)');
+@define('PLUGIN_SHOUTBOX_MAXCHARS',             'MaximÃ¡lnÃ­ poÄet znakÅ¯');
+@define('PLUGIN_SHOUTBOX_MAXCHARS_BLAHBLAH',    'Kolik znakÅ¯ z kaÅ¾dÃ©ho pÅ™Ã­spÄ›vku mÃ¡ bÃ½t nanejvÃ½Å¡ zobrazeno? (PÅ™ednastaveno: 120)');
+@define('PLUGIN_SHOUTBOX_MAXENTRIES',           'PoÄet vÃ½kÅ™ikÅ¯');
+@define('PLUGIN_SHOUTBOX_MAXENTRIES_BLAHBLAH',  'Kolik poslednÃ­ch vÃ½kÅ™ikÅ¯ se mÃ¡ zobrazovat? (PÅ™ednastaveno: 15)');
 @define('GENERAL_PLUGIN_BOX_COLS',              'Sloupce shoutboxu');
-@define('GENERAL_PLUGIN_BOX_COLS_BLAHBLAH',     'Poèet sloupcù pole pro zadávání vıkøikù');
-@define('GENERAL_PLUGIN_BOX_ROWS',              'Poèet øádek shoutboxu');
-@define('GENERAL_PLUGIN_BOX_ROWS_BLAHBLAH',     'Poèet øádek pole pro zadávání vıkøikù');
+@define('GENERAL_PLUGIN_BOX_COLS_BLAHBLAH',     'PoÄet sloupcÅ¯ pole pro zadÃ¡vÃ¡nÃ­ vÃ½kÅ™ikÅ¯');
+@define('GENERAL_PLUGIN_BOX_ROWS',              'PoÄet Å™Ã¡dek shoutboxu');
+@define('GENERAL_PLUGIN_BOX_ROWS_BLAHBLAH',     'PoÄet Å™Ã¡dek pole pro zadÃ¡vÃ¡nÃ­ vÃ½kÅ™ikÅ¯');
 

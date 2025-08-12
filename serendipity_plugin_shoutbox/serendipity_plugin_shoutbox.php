@@ -2,6 +2,8 @@
 
 /* Contributed by Matthias Lange (http://blog.dinnri.de/ml/) */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_shoutbox extends serendipity_plugin
 {
-    var $title = PLUGIN_SHOUTBOX_NAME;
+    public $title = PLUGIN_SHOUTBOX_NAME;
 
     function introspect(&$propbag)
     {
@@ -20,10 +22,10 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SHOUTBOX_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Lange, Ian Styx');
-        $propbag->add('version',       '1.06');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'php'         => '5.3.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
 
         $propbag->add('configuration', array(
@@ -211,8 +213,8 @@ class serendipity_plugin_shoutbox extends serendipity_plugin
                 serendipity_plugin_api::hook_event('frontend_display', $entry);
                 $entry['comment'] = wordwrap($entry['comment'], $wordwrap, "\n", 1);
 
-                echo '<div class="serendipity_shoutbox_date">' . serendipity_strftime(serendipity_specialchars($dateformat), $row['stamp']) . "</div>\n"
-                    . '<div class="serendipity_shoutbox_comment">' . serendipity_specialchars($entry['comment']) . "</div>\n"
+                echo '<div class="serendipity_shoutbox_date">' . serendipity_strftime(htmlspecialchars($dateformat), $row['stamp']) . "</div>\n"
+                    . '<div class="serendipity_shoutbox_comment">' . htmlspecialchars($entry['comment']) . "</div>\n"
                     . '<div class="serendipity_shoutbox_delete">' . $deleteLink . "</div>\n\n";
             }
         }
