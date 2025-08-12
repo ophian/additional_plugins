@@ -1,25 +1,25 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/07/14
  */
 
-@define('PLUGIN_EVENT_TOOLTIPS_NAME', 'Tooltips - n·povÏda, tipy');
-@define('PLUGIN_EVENT_TOOLTIPS_DESC', 'Aktivuje obr·zky a texty n·povÏdy.');
-@define('PLUGIN_EVENT_TOOLTIPS_FULLIMAGES_NAME', 'Zobrazovat p˘vodnÌ obr·zky?');
-@define('PLUGIN_EVENT_TOOLTIPS_FULLIMAGES_DESC', 'Zobrazovat p˘vodnÌ obr·zek v tooltipu, pokud uæivatel najede na n·hled obr·zku?');
-@define('PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_NAME', 'NahrazovacÌ tag');
-@define('PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_DESC', 'Zadejte HTML tag, kter˝ realizuje tooltip. V˝chozÌ: <a>');
+@define('PLUGIN_EVENT_TOOLTIPS_NAME', 'Tooltips - n√°povƒõda, tipy');
+@define('PLUGIN_EVENT_TOOLTIPS_DESC', 'Aktivuje obr√°zky a texty n√°povƒõdy.');
+@define('PLUGIN_EVENT_TOOLTIPS_FULLIMAGES_NAME', 'Zobrazovat p≈Øvodn√≠ obr√°zky?');
+@define('PLUGIN_EVENT_TOOLTIPS_FULLIMAGES_DESC', 'Zobrazovat p≈Øvodn√≠ obr√°zek v tooltipu, pokud u≈æivatel najede na n√°hled obr√°zku?');
+@define('PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_NAME', 'Nahrazovac√≠ tag');
+@define('PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_DESC', 'Zadejte HTML tag, kter√Ω realizuje tooltip. V√Ωchoz√≠: <a>');
 @define('PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_A', 'Hyperlink <a>');
 @define('PLUGIN_EVENT_TOOLTIPS_REPLACEWITHTAG_ACRONYM', 'Akronym <acronym>');
-@define('PLUGIN_EVENT_TOOLTIPS_TOOLTIPSTAG_NAME', 'Nahrazovan˝ tag');
-@define('PLUGIN_EVENT_TOOLTIPS_TOOLTIPSTAG_DESC', 'M˘æete pouæÌt tag [s9y-tooltips ...]...[/s9y-tooltips].');
-@define('PLUGIN_EVENT_TOOLTIPS_CLEANUP_NAME', 'Aktivovat ËiπtÏnÌ toolitp˘');
-@define('PLUGIN_EVENT_TOOLTIPS_CLEANUP_DESC', 'OdstranÌ nezpracovanÈ tooltip tagy a atributy.');
-@define('PLUGIN_EVENT_TOOLTIPS_BGCOLOR_NAME', 'Barva pozadÌ');
+@define('PLUGIN_EVENT_TOOLTIPS_TOOLTIPSTAG_NAME', 'Nahrazovan√Ω tag');
+@define('PLUGIN_EVENT_TOOLTIPS_TOOLTIPSTAG_DESC', 'M≈Ø≈æete pou≈æ√≠t tag [s9y-tooltips ...]...[/s9y-tooltips].');
+@define('PLUGIN_EVENT_TOOLTIPS_CLEANUP_NAME', 'Aktivovat ƒçi≈°tƒõn√≠ toolitp≈Ø');
+@define('PLUGIN_EVENT_TOOLTIPS_CLEANUP_DESC', 'Odstran√≠ nezpracovan√© tooltip tagy a atributy.');
+@define('PLUGIN_EVENT_TOOLTIPS_BGCOLOR_NAME', 'Barva pozad√≠');
 @define('PLUGIN_EVENT_TOOLTIPS_BGCOLOR_DESC', '');
-@define('PLUGIN_EVENT_TOOLTIPS_FGCOLOR_NAME', 'Barva pop¯edÌ');
+@define('PLUGIN_EVENT_TOOLTIPS_FGCOLOR_NAME', 'Barva pop≈ôed√≠');
 @define('PLUGIN_EVENT_TOOLTIPS_FGCOLOR_DESC', '');
 @define('PLUGIN_EVENT_TOOLTIPS_TEXTCOLOR_NAME', 'Barva textu');
 @define('PLUGIN_EVENT_TOOLTIPS_TEXTCOLOR_DESC', '');
