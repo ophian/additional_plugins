@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '1.58');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '2.0.0');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -37,7 +37,7 @@ if (IN_serendipity !== true) {
 class serendipity_event_popfetcher extends serendipity_event
 {
 
-    var $title = PLUGIN_MF_NAME;
+    public $title = PLUGIN_MF_NAME;
 
     function introspect(&$propbag)
     {
@@ -47,8 +47,8 @@ class serendipity_event_popfetcher extends serendipity_event
         $propbag->add('author',       'Jason Levitt');
         $propbag->add('version',      POPFETCHER_VERSION);
         $propbag->add('requirements', array(
-            'serendipity' => '2.1',
-            'php' => '7.4.0'
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
 
         $propbag->add('event_hooks',   array(
@@ -842,7 +842,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 $displayed_class = "popfetcherimage";
             }
             $attfile = $serendipity['serendipityHTTPPath'].$serendipity['uploadHTTPPath'].$maildir.$filename;
-            $attlink = '<a class="'. $displayed_class .'" href="' . $attfile . '" target="_blank" rel="noopener"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$displayed_file.'" alt="'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($this->stripsubject($subject)) : htmlspecialchars($this->stripsubject($subject), ENT_COMPAT, LANG_CHARSET)).'" /></a>';
+            $attlink = '<a class="'. $displayed_class .'" href="' . $attfile . '" target="_blank" rel="noopener"><img src="'.$serendipity['serendipityHTTPPath'].$serendipity['uploadPath'].$maildir.$displayed_file.'" alt="'.htmlspecialchars($this->stripsubject($subject)).'" /></a>';
 
             if ($this->inline_picture($p->headers['content-id'], $postbody, $postex, $attfile, $attlink)) {
                 return true;
@@ -1174,7 +1174,7 @@ class serendipity_event_popfetcher extends serendipity_event
                     }
                 }
                 if (!$validSender) {
-                    $this->out('<br />'.sprintf(MF_ERROR_ONLYFROM, '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($from) : htmlspecialchars($from, ENT_COMPAT, LANG_CHARSET)) . '"', '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($onlyfrom) : htmlspecialchars($onlyfrom, ENT_COMPAT, LANG_CHARSET)) . '"'));
+                    $this->out('<br />'.sprintf(MF_ERROR_ONLYFROM, '"' . htmlspecialchars($from) . '"', '"' . htmlspecialchars($onlyfrom) . '"'));
                     continue;
                 }
             }
@@ -1191,7 +1191,7 @@ class serendipity_event_popfetcher extends serendipity_event
 
             $this->out( '<hr />');
             $this->out( MF_MSG5  . $date . '<br />');
-            $this->out( MF_MSG6  . (function_exists('serendipity_specialchars') ? serendipity_specialchars($from) : htmlspecialchars($from, ENT_COMPAT, LANG_CHARSET)) . '<br />');
+            $this->out( MF_MSG6  . htmlspecialchars($from) . '<br />');
             $this->out( MF_MSG16 . $subject . '<br />');
 
             // Find the author associated with the from address and
@@ -1215,7 +1215,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 }
 
                 if (is_null($useAuthor)) {
-                    $this->out( '<br />'.sprintf(MF_ERROR_NOAUTHOR, '"' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($clean) : htmlspecialchars($clean, ENT_COMPAT, LANG_CHARSET)) . '"'));
+                    $this->out( '<br />'.sprintf(MF_ERROR_NOAUTHOR, '"' . htmlspecialchars($clean) . '"'));
                     continue;
                 }
             } else {

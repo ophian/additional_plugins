@@ -1,3 +1,10 @@
+2.0.0:
+------
+ * Declare strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Raise requirements for Styx 5.0
+
 1.58:
 -----
  * Better catch empty HTTP_REFERER

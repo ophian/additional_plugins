@@ -1,135 +1,135 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/18
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/10/23
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/11/21
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/06/19
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/14
  */
 
-@define('PLUGIN_MF_NAME', 'POP3 stahovaè');
-@define('PLUGIN_MF', 'POP3 stahovaè');
-@define('PLUGIN_MF_DESC', 'Stahuje zprávy z emailu a zobrazí je vèetnì pøíloh v bloku v postranním sloupci (speciální podpora pro mobilní telefony)');
+@define('PLUGIN_MF_NAME', 'POP3 stahovaÄ');
+@define('PLUGIN_MF', 'POP3 stahovaÄ');
+@define('PLUGIN_MF_DESC', 'Stahuje zprÃ¡vy z emailu a zobrazÃ­ je vÄetnÄ› pÅ™Ã­loh v bloku v postrannÃ­m sloupci (speciÃ¡lnÃ­ podpora pro mobilnÃ­ telefony)');
 @define('PLUGIN_MF_AM', 'Typ pluginu');
-@define('PLUGIN_MF_AM_DESC', 'Pokud je nastaveno na "Interní", mù¾ete spustit POP3 stahovaè pouze z administraèní sekce. Pokud je nastaveno "Externí", mù¾ete spustit POP3 stahovaè pouze zvnìj¹ku (typicky jako úlohu cronu). Vıchozí je "Interní".');
-@define('PLUGIN_MF_HN', 'Jméno pro externí spou¹tìní');
-@define('PLUGIN_MF_HN_DESC', 'Tento název je pou¾it pro spu¹tìní stahovaèe zvnìj¹ku. Nastavte na nìjaké obtí¾nì uhodnutelné jméno, aby Vám skript nemohla spustit neoprávnìná osoba. Podtr¾ítka nejsou povolena. Pokud je nastaven Typ na Interní, pak toto nastavení nemá ¾ádnı úèinek. Vıchozí: "popfetcher".');
-@define('PLUGIN_MF_MS', 'Mailovı server');
-@define('PLUGIN_MF_MS_DESC', 'Doména, na které bì¾í POP3 mailovı server, napø. "vasedomena.cz"');
-@define('PLUGIN_MF_MD', 'Adresáø pro upload');
-@define('PLUGIN_MF_MD_DESC', 'Sta¾ené pøílohy budou ulo¾eny do tohoto adresáøe. Vıchozí nastavení je shodné s upload adresáøem Serendipity (zde prázdná hodnota). Pokud zadáte jinı adresáø, musí jeho jméno konèit lomítkem "/". Napø: "dovolena/".');
+@define('PLUGIN_MF_AM_DESC', 'Pokud je nastaveno na "InternÃ­", mÅ¯Å¾ete spustit POP3 stahovaÄ pouze z administraÄnÃ­ sekce. Pokud je nastaveno "ExternÃ­", mÅ¯Å¾ete spustit POP3 stahovaÄ pouze zvnÄ›jÅ¡ku (typicky jako Ãºlohu cronu). VÃ½chozÃ­ je "InternÃ­".');
+@define('PLUGIN_MF_HN', 'JmÃ©no pro externÃ­ spouÅ¡tÄ›nÃ­');
+@define('PLUGIN_MF_HN_DESC', 'Tento nÃ¡zev je pouÅ¾it pro spuÅ¡tÄ›nÃ­ stahovaÄe zvnÄ›jÅ¡ku. Nastavte na nÄ›jakÃ© obtÃ­Å¾nÄ› uhodnutelnÃ© jmÃ©no, aby VÃ¡m skript nemohla spustit neoprÃ¡vnÄ›nÃ¡ osoba. PodtrÅ¾Ã­tka nejsou povolena. Pokud je nastaven Typ na InternÃ­, pak toto nastavenÃ­ nemÃ¡ Å¾Ã¡dnÃ½ ÃºÄinek. VÃ½chozÃ­: "popfetcher".');
+@define('PLUGIN_MF_MS', 'MailovÃ½ server');
+@define('PLUGIN_MF_MS_DESC', 'DomÃ©na, na kterÃ© bÄ›Å¾Ã­ POP3 mailovÃ½ server, napÅ™. "vasedomena.cz"');
+@define('PLUGIN_MF_MD', 'AdresÃ¡Å™ pro upload');
+@define('PLUGIN_MF_MD_DESC', 'StaÅ¾enÃ© pÅ™Ã­lohy budou uloÅ¾eny do tohoto adresÃ¡Å™e. VÃ½chozÃ­ nastavenÃ­ je shodnÃ© s upload adresÃ¡Å™em Serendipity (zde prÃ¡zdnÃ¡ hodnota). Pokud zadÃ¡te jinÃ½ adresÃ¡Å™, musÃ­ jeho jmÃ©no konÄit lomÃ­tkem "/". NapÅ™: "dovolena/".');
 @define('PLUGIN_MF_PP', 'POP3 port');
-@define('PLUGIN_MF_PP_DESC', 'Èíslo portu na serveru, na kterém bì¾í slu¾ba POP3. Pokud je nastaveno na 995, POP3 stahovaè se pokusí pøipojit zabezpeèenım pøipojením (POP3 over SSL). Vıchozí: 110.');
-@define('PLUGIN_MF_MU', 'U¾ivatelské jméno');
-@define('PLUGIN_MF_MU_DESC', 'Pøihla¹ovací jméno k po¹tì');
+@define('PLUGIN_MF_PP_DESC', 'ÄŒÃ­slo portu na serveru, na kterÃ©m bÄ›Å¾Ã­ sluÅ¾ba POP3. Pokud je nastaveno na 995, POP3 stahovaÄ se pokusÃ­ pÅ™ipojit zabezpeÄenÃ½m pÅ™ipojenÃ­m (POP3 over SSL). VÃ½chozÃ­: 110.');
+@define('PLUGIN_MF_MU', 'UÅ¾ivatelskÃ© jmÃ©no');
+@define('PLUGIN_MF_MU_DESC', 'PÅ™ihlaÅ¡ovacÃ­ jmÃ©no k poÅ¡tÄ›');
 @define('PLUGIN_MF_CAT', 'Kategorie');
-@define('PLUGIN_MF_CAT_DESC', 'Kategorie blogu, ve které se budou publikovat maily. Vıchozí je ¾ádná kategorie (prázdné políèko)');
+@define('PLUGIN_MF_CAT_DESC', 'Kategorie blogu, ve kterÃ© se budou publikovat maily. VÃ½chozÃ­ je Å¾Ã¡dnÃ¡ kategorie (prÃ¡zdnÃ© polÃ­Äko)');
 @define('PLUGIN_MF_MP', 'Heslo');
-@define('PLUGIN_MF_MP_DESC', 'Heslo k po¹tì');
+@define('PLUGIN_MF_MP_DESC', 'Heslo k poÅ¡tÄ›');
 @define('PLUGIN_MF_TO', 'Timeout');
-@define('PLUGIN_MF_TO_DESC', 'Poèet vteøin, po kterıch se ukonèí pokus o pøipojení k mailovému serveru. Vıchozí: 30.');
-@define('PLUGIN_MF_DF', 'Pøíznak "Smazat"');
-@define('PLUGIN_MF_PF_DESC', 'Pokud je nastaveno na "Publikovat", pøíspìvky blogu s emaily jsou po sta¾ení okam¾itì publikovány. Pokud je nastaveno "Koncept", pak jsou ulo¾eny jako koncept a zveøejnìny teprve po pøepnutí administrátorem do stavu "publikovat". Vıchozí: "Koncept". (Toto nastavení je ignorováno, pokud je pøíznak "Blog" nastaven na "Ne".)');
-@define('PLUGIN_MF_PF', 'Pøíznak "Publikovat"');
-@define('PLUGIN_MF_BF_DESC', 'Pokud nastaveno na "Ano", pøílohy jsou ulo¾eny do adresáøe pro stahování, pøipojeny k textu mailu a dohromady jsou vystaveny jako pøíspìvek blogu. Pokud je nastaveno na "Ne", pøílohy mailu jsou ulo¾eny do adresáøe pro stahování a zbytek mailu (tj. v¹echen text) je zahozen.');
-@define('PLUGIN_MF_BF', 'Pøíznak "Blog"');
-@define('PLUGIN_MF_DF_DESC', 'Pokud je nastaveno "Ano", pak je mail po sta¾ení smazán ze serveru. Obvyklé nastavení je "Ano", pokud plugin netestujete.');
-@define('PLUGIN_MF_AF', 'Pøíznak "APOP"');
-@define('PLUGIN_MF_AF_DESC', 'Pokud je nastaveno "Ano", stahovaè se pokusí pøihla¹ovat metodou APOP. Vıchozí: "Ne".');
+@define('PLUGIN_MF_TO_DESC', 'PoÄet vteÅ™in, po kterÃ½ch se ukonÄÃ­ pokus o pÅ™ipojenÃ­ k mailovÃ©mu serveru. VÃ½chozÃ­: 30.');
+@define('PLUGIN_MF_DF', 'PÅ™Ã­znak "Smazat"');
+@define('PLUGIN_MF_PF_DESC', 'Pokud je nastaveno na "Publikovat", pÅ™Ã­spÄ›vky blogu s emaily jsou po staÅ¾enÃ­ okamÅ¾itÄ› publikovÃ¡ny. Pokud je nastaveno "Koncept", pak jsou uloÅ¾eny jako koncept a zveÅ™ejnÄ›ny teprve po pÅ™epnutÃ­ administrÃ¡torem do stavu "publikovat". VÃ½chozÃ­: "Koncept". (Toto nastavenÃ­ je ignorovÃ¡no, pokud je pÅ™Ã­znak "Blog" nastaven na "Ne".)');
+@define('PLUGIN_MF_PF', 'PÅ™Ã­znak "Publikovat"');
+@define('PLUGIN_MF_BF_DESC', 'Pokud nastaveno na "Ano", pÅ™Ã­lohy jsou uloÅ¾eny do adresÃ¡Å™e pro stahovÃ¡nÃ­, pÅ™ipojeny k textu mailu a dohromady jsou vystaveny jako pÅ™Ã­spÄ›vek blogu. Pokud je nastaveno na "Ne", pÅ™Ã­lohy mailu jsou uloÅ¾eny do adresÃ¡Å™e pro stahovÃ¡nÃ­ a zbytek mailu (tj. vÅ¡echen text) je zahozen.');
+@define('PLUGIN_MF_BF', 'PÅ™Ã­znak "Blog"');
+@define('PLUGIN_MF_DF_DESC', 'Pokud je nastaveno "Ano", pak je mail po staÅ¾enÃ­ smazÃ¡n ze serveru. ObvyklÃ© nastavenÃ­ je "Ano", pokud plugin netestujete.');
+@define('PLUGIN_MF_AF', 'PÅ™Ã­znak "APOP"');
+@define('PLUGIN_MF_AF_DESC', 'Pokud je nastaveno "Ano", stahovaÄ se pokusÃ­ pÅ™ihlaÅ¡ovat metodou APOP. VÃ½chozÃ­: "Ne".');
 @define('ERROR_CHECK', 'CHYBA:');
-@define('INTERNAL_MF', 'Interní');
-@define('EXTERNAL_MF', 'Externí');
+@define('INTERNAL_MF', 'InternÃ­');
+@define('EXTERNAL_MF', 'ExternÃ­');
 @define('PUBLISH_MF', 'Publikovat');
 @define('DRAFT_MF', 'Koncept');
-@define('MF_ERROR1', 'CHYBA: nelze se pøipojit k mailovému serveru');
-@define('MF_ERROR2', 'CHYBA: nepodaøilo se pøihlásit k mailovému úètu (chybné jméno a/nebo heslo)');
-@define('MF_ERROR3', 'CHYBA: z po¹tovního úètu nelze získat UIDL info. Pravdìpodobnì nepodporuje UIDL.');
-@define('MF_ERROR4', 'CHYBA: problém pøi stahování mailu');
-@define('MF_ERROR5', 'CHYBA: nelze vytvoøit soubor: ');
-@define('MF_ERROR6', 'CHYBA: adresáø pro stahování není zapisovatelnı. Jdìte do nastavení pluginu a zmìòte adresáø nebo zmìòte pøístupová práva k aktuálnímu adresáøi.');
-@define('MF_ERROR7', 'CHYBA: cesta k adresáøi pro stahování musí konèit lomítkem "/". Jdìte do nastavení pluginu a opravte nastavení.');
-@define('MF_ERROR8', 'CHYBA: Vámi zadaná kategorie blogu pro zveøejòování mailù neexistuje.');
-@define('MF_ERROR9', 'CHYBA: nezdaøilo se dekódování mailu, mail má chybnı MIME formát. (Chyba je na stranì odesílatele mailu.)');
-@define('MF_ERROR10', 'CHYBA: Nelze nalézt SprintPCS Picture/Video Share URL.');
-@define('MF_ERROR11', 'CHYBA: Nepodaøilo se stáhnout SprintPCS Picture/Video URL.');
-@define('MF_ERROR13', 'CHYBA: Nepodaøilo se otevøít soubor s obrázkem/videem');
-@define('MF_ERROR14', 'CHYBA: Nelze otevøít novı soubor pro SprintPCS sound memo.');
-@define('MF_MSG1', 'Ve Va¹í mailové schránce nejsou ¾ádné zprávy');
-@define('MF_MSG2', 'Poèet mailù sta¾enıch z Va¹í schránky');
-@define('MF_MSG3', '[Hlavièka s datem nenalezena]');
-@define('MF_MSG4', '[Hlavièka "Od" nenalezena - neznámı odesílatel]');
+@define('MF_ERROR1', 'CHYBA: nelze se pÅ™ipojit k mailovÃ©mu serveru');
+@define('MF_ERROR2', 'CHYBA: nepodaÅ™ilo se pÅ™ihlÃ¡sit k mailovÃ©mu ÃºÄtu (chybnÃ© jmÃ©no a/nebo heslo)');
+@define('MF_ERROR3', 'CHYBA: z poÅ¡tovnÃ­ho ÃºÄtu nelze zÃ­skat UIDL info. PravdÄ›podobnÄ› nepodporuje UIDL.');
+@define('MF_ERROR4', 'CHYBA: problÃ©m pÅ™i stahovÃ¡nÃ­ mailu');
+@define('MF_ERROR5', 'CHYBA: nelze vytvoÅ™it soubor: ');
+@define('MF_ERROR6', 'CHYBA: adresÃ¡Å™ pro stahovÃ¡nÃ­ nenÃ­ zapisovatelnÃ½. JdÄ›te do nastavenÃ­ pluginu a zmÄ›Åˆte adresÃ¡Å™ nebo zmÄ›Åˆte pÅ™Ã­stupovÃ¡ prÃ¡va k aktuÃ¡lnÃ­mu adresÃ¡Å™i.');
+@define('MF_ERROR7', 'CHYBA: cesta k adresÃ¡Å™i pro stahovÃ¡nÃ­ musÃ­ konÄit lomÃ­tkem "/". JdÄ›te do nastavenÃ­ pluginu a opravte nastavenÃ­.');
+@define('MF_ERROR8', 'CHYBA: VÃ¡mi zadanÃ¡ kategorie blogu pro zveÅ™ejÅˆovÃ¡nÃ­ mailÅ¯ neexistuje.');
+@define('MF_ERROR9', 'CHYBA: nezdaÅ™ilo se dekÃ³dovÃ¡nÃ­ mailu, mail mÃ¡ chybnÃ½ MIME formÃ¡t. (Chyba je na stranÄ› odesÃ­latele mailu.)');
+@define('MF_ERROR10', 'CHYBA: Nelze nalÃ©zt SprintPCS Picture/Video Share URL.');
+@define('MF_ERROR11', 'CHYBA: NepodaÅ™ilo se stÃ¡hnout SprintPCS Picture/Video URL.');
+@define('MF_ERROR13', 'CHYBA: NepodaÅ™ilo se otevÅ™Ã­t soubor s obrÃ¡zkem/videem');
+@define('MF_ERROR14', 'CHYBA: Nelze otevÅ™Ã­t novÃ½ soubor pro SprintPCS sound memo.');
+@define('MF_MSG1', 'Ve VaÅ¡Ã­ mailovÃ© schrÃ¡nce nejsou Å¾Ã¡dnÃ© zprÃ¡vy');
+@define('MF_MSG2', 'PoÄet mailÅ¯ staÅ¾enÃ½ch z VaÅ¡Ã­ schrÃ¡nky');
+@define('MF_MSG3', '[HlaviÄka s datem nenalezena]');
+@define('MF_MSG4', '[HlaviÄka "Od" nenalezena - neznÃ¡mÃ½ odesÃ­latel]');
 @define('MF_MSG5', 'Datum: ');
 @define('MF_MSG6', 'Od: ');
 @define('MF_MSG7', 'DATA MAILU');
-@define('MF_MSG8', 'ÈÁST MAILU -- Nalezena pøíloha se jménem: ');
-@define('MF_MSG9', 'ÈÁST MAILU -- Zpráva nalezena, ¾ádné pøílohy');
-@define('MF_MSG10', 'V mailu nebyl nalezen ¾ádnı text ani pøílohy');
-@define('MF_MSG11', 'V¹echny zprávy byly smazány z mailového serveru');
-@define('MF_MSG12', 'V¹echny zprávy jsou stále ulo¾eny na mailovém serveru');
-@define('MF_MSG13', 'Pøíloha byla ulo¾ena jako soubor: ');
-@define('MF_MSG14', 'Soubor pojmenovanı jako pøíloha ji¾ existuje. Pøíloha bude ulo¾ena jako soubor: ');
-@define('MF_MSG15', 'Publikuji novı pøíspìvek blogu s èíslem');
-@define('MF_MSG16', 'Pøedmìt: ');
-@define('MF_MSG17', '[Hlavièka s pøedmìtem nebyla nalezena]');
-@define('MF_MSG18', 'Kliknìte pro plnou velikost obrázku');
-@define('MF_MSG19', 'Zpráva pravdìpodobnì obsahuje vir. Mail byl pøeskoèen kvùli pøíloze s podezøelım jménem.');
-@define('MF_MSG20', 'Pøeskoèena zpráva bez pøíloh');
+@define('MF_MSG8', 'ÄŒÃST MAILU -- Nalezena pÅ™Ã­loha se jmÃ©nem: ');
+@define('MF_MSG9', 'ÄŒÃST MAILU -- ZprÃ¡va nalezena, Å¾Ã¡dnÃ© pÅ™Ã­lohy');
+@define('MF_MSG10', 'V mailu nebyl nalezen Å¾Ã¡dnÃ½ text ani pÅ™Ã­lohy');
+@define('MF_MSG11', 'VÅ¡echny zprÃ¡vy byly smazÃ¡ny z mailovÃ©ho serveru');
+@define('MF_MSG12', 'VÅ¡echny zprÃ¡vy jsou stÃ¡le uloÅ¾eny na mailovÃ©m serveru');
+@define('MF_MSG13', 'PÅ™Ã­loha byla uloÅ¾ena jako soubor: ');
+@define('MF_MSG14', 'Soubor pojmenovanÃ½ jako pÅ™Ã­loha jiÅ¾ existuje. PÅ™Ã­loha bude uloÅ¾ena jako soubor: ');
+@define('MF_MSG15', 'Publikuji novÃ½ pÅ™Ã­spÄ›vek blogu s ÄÃ­slem');
+@define('MF_MSG16', 'PÅ™edmÄ›t: ');
+@define('MF_MSG17', '[HlaviÄka s pÅ™edmÄ›tem nebyla nalezena]');
+@define('MF_MSG18', 'KliknÄ›te pro plnou velikost obrÃ¡zku');
+@define('MF_MSG19', 'ZprÃ¡va pravdÄ›podobnÄ› obsahuje vir. Mail byl pÅ™eskoÄen kvÅ¯li pÅ™Ã­loze s podezÅ™elÃ½m jmÃ©nem.');
+@define('MF_MSG20', 'PÅ™eskoÄena zprÃ¡va bez pÅ™Ã­loh');
 @define('MF_MSG21', 'Sound Memo');
-@define('MF_MSG22', 'Kliknìte pro video');
+@define('MF_MSG22', 'KliknÄ›te pro video');
 @define('MF_MSG23', 'Mobil @');
-@define('MF_TEXTBODY', 'Zobrazit plaintextové pøílohy v tìle pøíspìvku?');
-@define('MF_TEXTBODY_DESC', 'Pokud je aktivováno, v¹echny pøílohy, které obsahují pouze text budou pøidány do tìla pøíspìvku na blogu. Pokud není aktivováno, tyto pøílohy budou ulo¾eny jako samostatné soubory a do pøíspìvku bude vlo¾en pouze odkaz na nì.');
-@define('MF_TEXTBODY_FIRST', 'První textová pøíloha je vlo¾ena jako tìlo pøíspìvku, ostatní jako roz¹íøená textová èást.');
-@define('MF_TEXTBODY_FIRST_DESC', 'Nastavení je pou¾ito pouze pokud jsou plaintextové pøílohy vkládány do tìla pøíspìvku (viz. vı¹e). Pokud je aktivováno, bude pouze první textová pøíloha pou¾ita jako tìlo pøíspìvku (perex, teaser), ostatní budou ulo¾eny do "roz¹íøené textové èásti" pøíspìvku. Budou se tudí¾ zobrazovat pouze pøi zobrazení jednoho konkrétního pøíspìvku a ne na pøehledovıch stránkách, jako je napø. hlavní stránka.');
+@define('MF_TEXTBODY', 'Zobrazit plaintextovÃ© pÅ™Ã­lohy v tÄ›le pÅ™Ã­spÄ›vku?');
+@define('MF_TEXTBODY_DESC', 'Pokud je aktivovÃ¡no, vÅ¡echny pÅ™Ã­lohy, kterÃ© obsahujÃ­ pouze text budou pÅ™idÃ¡ny do tÄ›la pÅ™Ã­spÄ›vku na blogu. Pokud nenÃ­ aktivovÃ¡no, tyto pÅ™Ã­lohy budou uloÅ¾eny jako samostatnÃ© soubory a do pÅ™Ã­spÄ›vku bude vloÅ¾en pouze odkaz na nÄ›.');
+@define('MF_TEXTBODY_FIRST', 'PrvnÃ­ textovÃ¡ pÅ™Ã­loha je vloÅ¾ena jako tÄ›lo pÅ™Ã­spÄ›vku, ostatnÃ­ jako rozÅ¡Ã­Å™enÃ¡ textovÃ¡ ÄÃ¡st.');
+@define('MF_TEXTBODY_FIRST_DESC', 'NastavenÃ­ je pouÅ¾ito pouze pokud jsou plaintextovÃ© pÅ™Ã­lohy vklÃ¡dÃ¡ny do tÄ›la pÅ™Ã­spÄ›vku (viz. vÃ½Å¡e). Pokud je aktivovÃ¡no, bude pouze prvnÃ­ textovÃ¡ pÅ™Ã­loha pouÅ¾ita jako tÄ›lo pÅ™Ã­spÄ›vku (perex, teaser), ostatnÃ­ budou uloÅ¾eny do "rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti" pÅ™Ã­spÄ›vku. Budou se tudÃ­Å¾ zobrazovat pouze pÅ™i zobrazenÃ­ jednoho konkrÃ©tnÃ­ho pÅ™Ã­spÄ›vku a ne na pÅ™ehledovÃ½ch strÃ¡nkÃ¡ch, jako je napÅ™. hlavnÃ­ strÃ¡nka.');
 @define('MF_MYSELF', 'Autor');
-@define('MF_AUTHOR_DESC', 'Nastavte autora, kterı se bude zobrazovat jako autor u pøíspìvkù obsahujících sta¾ené maily.');
-@define('PLUGIN_MF_STRIPTAGS', 'Odstranit z mailu v¹echny HTML tagy');
-@define('PLUGIN_MF_STRIPTAGS_DESC', 'Odstraní z mailu v¹echny HTML tagy, pøípadné formátování mailu tak bude ztraceno. Nehrozí ale rozházení stránky vlivem kukaèèího HTML kódu.');
+@define('MF_AUTHOR_DESC', 'Nastavte autora, kterÃ½ se bude zobrazovat jako autor u pÅ™Ã­spÄ›vkÅ¯ obsahujÃ­cÃ­ch staÅ¾enÃ© maily.');
+@define('PLUGIN_MF_STRIPTAGS', 'Odstranit z mailu vÅ¡echny HTML tagy');
+@define('PLUGIN_MF_STRIPTAGS_DESC', 'OdstranÃ­ z mailu vÅ¡echny HTML tagy, pÅ™Ã­padnÃ© formÃ¡tovÃ¡nÃ­ mailu tak bude ztraceno. NehrozÃ­ ale rozhÃ¡zenÃ­ strÃ¡nky vlivem kukaÄÄÃ­ho HTML kÃ³du.');
 
-@define('PLUGIN_MF_ADDFLAG', 'Oøezat reklamy?');
-@define('PLUGIN_MF_ADDFLAG_DESC', 'Má POP3 stahovaè odstraòovat z mailu reklamní grafku a texty? Tento filter v souèasnosti funguje pouze pro T-Mobile a O2.');
+@define('PLUGIN_MF_ADDFLAG', 'OÅ™ezat reklamy?');
+@define('PLUGIN_MF_ADDFLAG_DESC', 'MÃ¡ POP3 stahovaÄ odstraÅˆovat z mailu reklamnÃ­ grafku a texty? Tento filter v souÄasnosti funguje pouze pro T-Mobile a O2.');
 
-@define('PLUGIN_MF_STRIPTEXT', 'Oøíznout text na speciálním znaku');
-@define('PLUGIN_MF_STRIPTEXT_DESC', 'Pokud chcete oøezat z mailù reklamy nebo jinı ne¾ádoucí text, mù¾ete zde zadat "kouzelnı øetìzec". V¹echen text, kterı se v mailu nachází za tímto øetìzcem, bude odstranìn a nebude se zobrazovat v pøíspìvku.');
+@define('PLUGIN_MF_STRIPTEXT', 'OÅ™Ã­znout text na speciÃ¡lnÃ­m znaku');
+@define('PLUGIN_MF_STRIPTEXT_DESC', 'Pokud chcete oÅ™ezat z mailÅ¯ reklamy nebo jinÃ½ neÅ¾Ã¡doucÃ­ text, mÅ¯Å¾ete zde zadat "kouzelnÃ½ Å™etÄ›zec". VÅ¡echen text, kterÃ½ se v mailu nachÃ¡zÃ­ za tÃ­mto Å™etÄ›zcem, bude odstranÄ›n a nebude se zobrazovat v pÅ™Ã­spÄ›vku.');
 
-@define('PLUGIN_MF_ONLYFROM', 'Omezení na konkrétní odesílatele');
-@define('PLUGIN_MF_ONLYFROM_DESC', 'Pokud chcete povolit posílání mailù do blogu pouze z jedné mailové adresy, jednodu¹e ji sem zadejte. Pokud ponecháte políèko prázdné, na blogu budou zobrazovány v¹echny sta¾ené maily. Separate multiple mail adresses with a semicolon.');
-@define('MF_ERROR_ONLYFROM', 'Emailová adresa %s se neshoduje s povolenou adresou %s. Mail byl ignorován.');
-@define('MF_ERROR_NOAUTHOR', '®ádnı z autorù nemá adresu %s. Mail byl pøeskoèen.');
+@define('PLUGIN_MF_ONLYFROM', 'OmezenÃ­ na konkrÃ©tnÃ­ odesÃ­latele');
+@define('PLUGIN_MF_ONLYFROM_DESC', 'Pokud chcete povolit posÃ­lÃ¡nÃ­ mailÅ¯ do blogu pouze z jednÃ© mailovÃ© adresy, jednoduÅ¡e ji sem zadejte. Pokud ponechÃ¡te polÃ­Äko prÃ¡zdnÃ©, na blogu budou zobrazovÃ¡ny vÅ¡echny staÅ¾enÃ© maily. Separate multiple mail adresses with a semicolon.');
+@define('MF_ERROR_ONLYFROM', 'EmailovÃ¡ adresa %s se neshoduje s povolenou adresou %s. Mail byl ignorovÃ¡n.');
+@define('MF_ERROR_NOAUTHOR', 'Å½Ã¡dnÃ½ z autorÅ¯ nemÃ¡ adresu %s. Mail byl pÅ™eskoÄen.');
 
-@define('PLUGIN_MF_SPLITTEXT', 'Zadejte øetìzec, kterı oddìluje tìlo a roz¹íøenou textovou èást pøíspìvku');
-@define('PLUGIN_MF_SPLITTEXT_DESC', 'Pomocí tohoto nastavení mù¾ete zajistit, ¾e se èást meilu bude ukládat do tìla pøíspìvku a zbytek do roz¹íøené textové èásti. Pokud POP3 stahovaè nalezne v mailu zde zadanı øetìzec, v¹echno pøed ním vlo¾í do tìla pøíspìvku a v¹echno za ním do roz¹íøené textové èásti. Zvolte jedineènı text, kterı se nemù¾e ocitnout v bì¾ném textu, jako napø. "xxx-SPLIT-xxx". Zadání této volby mù¾e pøekrıt jiné nastavení pro zpracování mailù!');
+@define('PLUGIN_MF_SPLITTEXT', 'Zadejte Å™etÄ›zec, kterÃ½ oddÄ›luje tÄ›lo a rozÅ¡Ã­Å™enou textovou ÄÃ¡st pÅ™Ã­spÄ›vku');
+@define('PLUGIN_MF_SPLITTEXT_DESC', 'PomocÃ­ tohoto nastavenÃ­ mÅ¯Å¾ete zajistit, Å¾e se ÄÃ¡st meilu bude uklÃ¡dat do tÄ›la pÅ™Ã­spÄ›vku a zbytek do rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti. Pokud POP3 stahovaÄ nalezne v mailu zde zadanÃ½ Å™etÄ›zec, vÅ¡echno pÅ™ed nÃ­m vloÅ¾Ã­ do tÄ›la pÅ™Ã­spÄ›vku a vÅ¡echno za nÃ­m do rozÅ¡Ã­Å™enÃ© textovÃ© ÄÃ¡sti. Zvolte jedineÄnÃ½ text, kterÃ½ se nemÅ¯Å¾e ocitnout v bÄ›Å¾nÃ©m textu, jako napÅ™. "xxx-SPLIT-xxx". ZadÃ¡nÃ­ tÃ©to volby mÅ¯Å¾e pÅ™ekrÃ½t jinÃ© nastavenÃ­ pro zpracovÃ¡nÃ­ mailÅ¯!');
 
-@define('PLUGIN_MF_USETEXT', 'Text hledanı v mailu');
-@define('PLUGIN_MF_USETEXT_DESC', 'Pokud chcete z mailù vkládat do pøíspìvkù pouze urèitou èást, mù¾ete zde zadat "kouzelnı øetìzec", podle které stahovaè pozná, kterou èást mailu má pou¾ít. Následnì pak musíte tento øetìzec napsat do ka¾dého mailu a oznaèit tak text urèenı pro blog. Zadejte øetìzec, kterı se v mailech nemù¾e náhodnì objevit, dobré je napø. "xxx-BLOG-xxx".');
-@define('PLUGIN_MF_CRONJOB', 'Tento plugin lze aktivovat pomocí Serendipity Cronjob pluginu. Instalujte jej, pokud chcete spou¹tìt stahovaè v pravidelnıch intervalech.');
+@define('PLUGIN_MF_USETEXT', 'Text hledanÃ½ v mailu');
+@define('PLUGIN_MF_USETEXT_DESC', 'Pokud chcete z mailÅ¯ vklÃ¡dat do pÅ™Ã­spÄ›vkÅ¯ pouze urÄitou ÄÃ¡st, mÅ¯Å¾ete zde zadat "kouzelnÃ½ Å™etÄ›zec", podle kterÃ© stahovaÄ poznÃ¡, kterou ÄÃ¡st mailu mÃ¡ pouÅ¾Ã­t. NÃ¡slednÄ› pak musÃ­te tento Å™etÄ›zec napsat do kaÅ¾dÃ©ho mailu a oznaÄit tak text urÄenÃ½ pro blog. Zadejte Å™etÄ›zec, kterÃ½ se v mailech nemÅ¯Å¾e nÃ¡hodnÄ› objevit, dobrÃ© je napÅ™. "xxx-BLOG-xxx".');
+@define('PLUGIN_MF_CRONJOB', 'Tento plugin lze aktivovat pomocÃ­ Serendipity Cronjob pluginu. Instalujte jej, pokud chcete spouÅ¡tÄ›t stahovaÄ v pravidelnÃ½ch intervalech.');
 
-@define('PLUGIN_MF_TEXTPREF', 'Upøednostòovat text');
-@define('PLUGIN_MF_TEXTPREF_DESC', 'Nìkterá zaøízení posílají maily, které jsou psané ve formátu HTML, ale zároveò mají ten samı obsah pouze v neformátovaném textu. Tak¾e z mail dostanete dvakrát ten samı text. Pomocí této volby mù¾ete urèit, kterou èást chcete pou¾ívat.');
-@define('PLUGIN_MF_TEXTPREF_BOTH', 'Obì èásti');
+@define('PLUGIN_MF_TEXTPREF', 'UpÅ™ednostÅˆovat text');
+@define('PLUGIN_MF_TEXTPREF_DESC', 'NÄ›kterÃ¡ zaÅ™Ã­zenÃ­ posÃ­lajÃ­ maily, kterÃ© jsou psanÃ© ve formÃ¡tu HTML, ale zÃ¡roveÅˆ majÃ­ ten samÃ½ obsah pouze v neformÃ¡tovanÃ©m textu. TakÅ¾e z mail dostanete dvakrÃ¡t ten samÃ½ text. PomocÃ­ tÃ©to volby mÅ¯Å¾ete urÄit, kterou ÄÃ¡st chcete pouÅ¾Ã­vat.');
+@define('PLUGIN_MF_TEXTPREF_BOTH', 'ObÄ› ÄÃ¡sti');
 @define('PLUGIN_MF_TEXTPREF_HTML', 'HTML');
-@define('PLUGIN_MF_TEXTPREF_PLAIN', 'Èistı text');
+@define('PLUGIN_MF_TEXTPREF_PLAIN', 'ÄŒistÃ½ text');
 
 // Next lines were translated on 2009/10/23
 
-@define('PLUGIN_MF_USEDATE', 'Upøednostnit èas odeslání pøíchozího mailu pøed èasem doruèení');
-@define('PLUGIN_MF_REPLY', 'Komentáø/odpovìï místo pøíspìvku v blogu.');
-@define('PLUGIN_MF_REPLY_ERROR1', 'Nebyl nalezen ¾ádnı pøíspìvek, kterı by se shodoval s pøedmìtem mailu. Mail nebyl ulo¾en.');
-@define('PLUGIN_MF_REPLY_ERROR2', 'Nelze ulo¾it komentáø.');
+@define('PLUGIN_MF_USEDATE', 'UpÅ™ednostnit Äas odeslÃ¡nÃ­ pÅ™Ã­chozÃ­ho mailu pÅ™ed Äasem doruÄenÃ­');
+@define('PLUGIN_MF_REPLY', 'KomentÃ¡Å™/odpovÄ›Ä mÃ­sto pÅ™Ã­spÄ›vku v blogu.');
+@define('PLUGIN_MF_REPLY_ERROR1', 'Nebyl nalezen Å¾Ã¡dnÃ½ pÅ™Ã­spÄ›vek, kterÃ½ by se shodoval s pÅ™edmÄ›tem mailu. Mail nebyl uloÅ¾en.');
+@define('PLUGIN_MF_REPLY_ERROR2', 'Nelze uloÅ¾it komentÃ¡Å™.');
 
 // Next lines were translated on 2009/11/21
 
-@define('PLUGIN_MF_SUBFOLDER', 'Ukládat pøílohy v podadresáøích pojmenovanıch jako 2010/02/ pro zachování chronologického poøadí?');
-@define('PLUGIN_MF_DEBUG', 'Ukládat ladicí zprávy do souboru uploads/popfetcher-RRRR-MM.log?');
+@define('PLUGIN_MF_SUBFOLDER', 'UklÃ¡dat pÅ™Ã­lohy v podadresÃ¡Å™Ã­ch pojmenovanÃ½ch jako 2010/02/ pro zachovÃ¡nÃ­ chronologickÃ©ho poÅ™adÃ­?');
+@define('PLUGIN_MF_DEBUG', 'UklÃ¡dat ladicÃ­ zprÃ¡vy do souboru uploads/popfetcher-RRRR-MM.log?');
 
 // Next lines were translated on 2011/06/19
 
-@define('THUMBNAIL_VIEW', 'Zobrazovat náhledy v tìle pøíspìvku');
-@define('THUMBNAIL_VIEW_DESC', 'Kdy¾ chcete zobrazit v tìle pøíspìvku náhledy pøipojenıch obrázkù. Pokud nastavíte "NE", budou se zobrazovat obrázky v plné velikosti.');
+@define('THUMBNAIL_VIEW', 'Zobrazovat nÃ¡hledy v tÄ›le pÅ™Ã­spÄ›vku');
+@define('THUMBNAIL_VIEW_DESC', 'KdyÅ¾ chcete zobrazit v tÄ›le pÅ™Ã­spÄ›vku nÃ¡hledy pÅ™ipojenÃ½ch obrÃ¡zkÅ¯. Pokud nastavÃ­te "NE", budou se zobrazovat obrÃ¡zky v plnÃ© velikosti.');
 
