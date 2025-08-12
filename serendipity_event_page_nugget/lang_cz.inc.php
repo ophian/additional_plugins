@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/17
  */
 
-@define('PLUGIN_PAGE_NUGGET_NAME', 'HTML blok (nuget) na str·nce');
-@define('PLUGIN_PAGE_NUGGET_DESC', 'UmÌstÌ HTML blok na vrπek nebo spodek str·nky, p¯ÌpadnÏ do tagu HEAD v z·hlavÌ str·nky');
-@define('PLUGIN_PAGE_NUGGET_PLACE', 'UmÌstÏnÌ nugetu');
-@define('PLUGIN_PAGE_NUGGET_HEAD', 'tag HEAD v z·hlavÌ str·nky');
-@define('PLUGIN_PAGE_NUGGET_TOP', 'Vrπek str·nky');
-@define('PLUGIN_PAGE_NUGGET_ART_FOOT', 'Z·patÌ p¯ÌspÏvku');
-@define('PLUGIN_PAGE_NUGGET_BOTTOM', 'Konec obsahovÈ Ë·sti str·nky');
-@define('PLUGIN_PAGE_NUGGET_FOOT', 'Konec str·nky');
-@define('PLUGIN_PAGE_NUGGET_MARKUP_NO', 'Nelze pouæÌt spolu s volbou "v HEAD tagu str·nky".');
+@define('PLUGIN_PAGE_NUGGET_NAME', 'HTML blok (nuget) na str√°nce');
+@define('PLUGIN_PAGE_NUGGET_DESC', 'Um√≠st√≠ HTML blok na vr≈°ek nebo spodek str√°nky, p≈ô√≠padnƒõ do tagu HEAD v z√°hlav√≠ str√°nky');
+@define('PLUGIN_PAGE_NUGGET_PLACE', 'Um√≠stƒõn√≠ nugetu');
+@define('PLUGIN_PAGE_NUGGET_HEAD', 'tag HEAD v z√°hlav√≠ str√°nky');
+@define('PLUGIN_PAGE_NUGGET_TOP', 'Vr≈°ek str√°nky');
+@define('PLUGIN_PAGE_NUGGET_ART_FOOT', 'Z√°pat√≠ p≈ô√≠spƒõvku');
+@define('PLUGIN_PAGE_NUGGET_BOTTOM', 'Konec obsahov√© ƒç√°sti str√°nky');
+@define('PLUGIN_PAGE_NUGGET_FOOT', 'Konec str√°nky');
+@define('PLUGIN_PAGE_NUGGET_MARKUP_NO', 'Nelze pou≈æ√≠t spolu s volbou "v HEAD tagu str√°nky".');
 @define('PLUGIN_PAGE_NUGGET_LANG', 'Vyberte jazyk');
-@define('PLUGIN_PAGE_NUGGET_ALL', 'Vπechny jazyky');
-@define('PLUGIN_PAGE_NUGGET_NOSHOW', ' Nezobrazuje se na aktu·lnÌ str·nce.');
+@define('PLUGIN_PAGE_NUGGET_ALL', 'V≈°echny jazyky');
+@define('PLUGIN_PAGE_NUGGET_NOSHOW', ' Nezobrazuje se na aktu√°ln√≠ str√°nce.');
 

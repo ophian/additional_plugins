@@ -1,4 +1,5 @@
 <?php
+
 # Translated by: Wesley Hwang-Chung <wesley96@gmail.com>
 # (c) 2005 http://www.tool-box.info/
 
@@ -8,16 +9,16 @@
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_PAGE_NUGGET_NAME', 'HTML блок');
-@define('PLUGIN_PAGE_NUGGET_DESC', 'Поставя HTML блок на различни места в страницата или вътре в нейния HEAD таг');
-@define('PLUGIN_PAGE_NUGGET_PLACE', 'Място на блока');
-@define('PLUGIN_PAGE_NUGGET_HEAD', 'HEAD таг на страницата');
-@define('PLUGIN_PAGE_NUGGET_TOP', 'Над съдържанието');
-@define('PLUGIN_PAGE_NUGGET_ART_FOOT', 'Под статията');
-@define('PLUGIN_PAGE_NUGGET_BOTTOM', 'Под съдържанието');
-@define('PLUGIN_PAGE_NUGGET_FOOT', 'В края на страницата');
-@define('PLUGIN_PAGE_NUGGET_MARKUP_NO', 'Не е приложимо с опция HEAD таг. ');
-@define('PLUGIN_PAGE_NUGGET_LANG', 'Език');
-@define('PLUGIN_PAGE_NUGGET_ALL', 'Всички езици');
-@define('PLUGIN_PAGE_NUGGET_NOSHOW', ' (не се показва на действителната страница)');
+@define('PLUGIN_PAGE_NUGGET_NAME', 'HTML Р±Р»РѕРє');
+@define('PLUGIN_PAGE_NUGGET_DESC', 'РџРѕСЃС‚Р°РІСЏ HTML Р±Р»РѕРє РЅР° СЂР°Р·Р»РёС‡РЅРё РјРµСЃС‚Р° РІ СЃС‚СЂР°РЅРёС†Р°С‚Р° РёР»Рё РІСЉС‚СЂРµ РІ РЅРµР№РЅРёСЏ HEAD С‚Р°Рі');
+@define('PLUGIN_PAGE_NUGGET_PLACE', 'РњСЏСЃС‚Рѕ РЅР° Р±Р»РѕРєР°');
+@define('PLUGIN_PAGE_NUGGET_HEAD', 'HEAD С‚Р°Рі РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('PLUGIN_PAGE_NUGGET_TOP', 'РќР°Рґ СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ');
+@define('PLUGIN_PAGE_NUGGET_ART_FOOT', 'РџРѕРґ СЃС‚Р°С‚РёСЏС‚Р°');
+@define('PLUGIN_PAGE_NUGGET_BOTTOM', 'РџРѕРґ СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ');
+@define('PLUGIN_PAGE_NUGGET_FOOT', 'Р’ РєСЂР°СЏ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р°');
+@define('PLUGIN_PAGE_NUGGET_MARKUP_NO', 'РќРµ Рµ РїСЂРёР»РѕР¶РёРјРѕ СЃ РѕРїС†РёСЏ HEAD С‚Р°Рі. ');
+@define('PLUGIN_PAGE_NUGGET_LANG', 'Р•Р·РёРє');
+@define('PLUGIN_PAGE_NUGGET_ALL', 'Р’СЃРёС‡РєРё РµР·РёС†Рё');
+@define('PLUGIN_PAGE_NUGGET_NOSHOW', ' (РЅРµ СЃРµ РїРѕРєР°Р·РІР° РЅР° РґРµР№СЃС‚РІРёС‚РµР»РЅР°С‚Р° СЃС‚СЂР°РЅРёС†Р°)');
 
