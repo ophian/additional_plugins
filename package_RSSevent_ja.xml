@@ -304,7 +304,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;表情アイコンツールバーの表示&lt;/b&gt;&lt;br /&gt;エントリに挿入する表情アイコンとスマイルを選択するツールバーを表示します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 11 Aug 2025 14:48:28 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
@@ -492,8 +492,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_glossary</link>
 <category>Event Plugins</category>
 <author>Rob Antonishen, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_glossary&lt;br /&gt;用語集&lt;/b&gt;&lt;br /&gt;ユーザーが定義した用語集をハイライトテキストとツールチップにします。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:19:02 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_glossary&lt;br /&gt;用語集&lt;/b&gt;&lt;br /&gt;ユーザーが定義した用語集をハイライトテキストとツールチップにします。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:51:15 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_glossary</guid>
 </item>
 <item>
@@ -546,8 +546,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_httpauth</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_httpauth&lt;br /&gt;HTTP-Authentication&lt;/b&gt;&lt;br /&gt;Authenticates users via HTTP auth using their s9y user login data.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:41:37 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_httpauth&lt;br /&gt;HTTP-Authentication&lt;/b&gt;&lt;br /&gt;Authenticates users via HTTP auth using their s9y user login data.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:59:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_httpauth</guid>
 </item>
 <item>
@@ -618,8 +618,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_linktoolbar</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML リンクのメタタグ&lt;/b&gt;&lt;br /&gt;よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。 Check your themes index.tpl file to avoid double sets.&lt;br/&gt;For: Serendipity 3.7</content:encoded>
-<pubDate>Sun, 30 Jan 2022 18:44:20 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML リンクのメタタグ&lt;/b&gt;&lt;br /&gt;よりよいナビゲーションのためにフロントエンドに link rel=&quot;start|up|prev|next|canonical&quot; メタタグを挿入します。 Check your themes index.tpl file to avoid double sets.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:35:35 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktoolbar</guid>
 </item>
 <item>
@@ -825,8 +825,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_outdate_entries</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Hide/delete entries after a specific timespan&lt;/b&gt;&lt;br /&gt;Hides all entries which are older than a specified age, so that they are only visible for registered users/authors. And similar more.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Hide/delete entries after a specific timespan&lt;/b&gt;&lt;br /&gt;Hides all entries which are older than a specified age, so that they are only visible for registered users/authors. And similar more.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 13:43:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
@@ -834,8 +834,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_page_nugget</link>
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_event_page_nugget&lt;br /&gt;HTML Nugget on Page&lt;/b&gt;&lt;br /&gt;Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:18:31 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_page_nugget&lt;br /&gt;HTML Nugget on Page&lt;/b&gt;&lt;br /&gt;Puts an HTML nugget on top or bottom of the page, or inside the page's HEAD tag&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 15:15:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_page_nugget</guid>
 </item>
 <item>
@@ -852,8 +852,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_photoblog</link>
 <category>Event Plugins</category>
 <author>Cameron MacFarland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;フォトログエントリ&lt;/b&gt;&lt;br /&gt;一つの画像をエントリに追加します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 28 Jan 2023 11:07:25 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;フォトログエントリ&lt;/b&gt;&lt;br /&gt;一つの画像をエントリに追加します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 13:48:16 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
 </item>
 <item>
@@ -870,8 +870,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_popfetcher</link>
 <category>Event Plugins</category>
 <author>Jason Levitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Fetches and publishes email and attachments from a POP3 email account (with special cell phone support)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 13:53:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>
@@ -951,8 +951,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_responsiveimages</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
-<pubDate>Wed, 30 Nov 2022 14:37:38 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:07:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
@@ -978,8 +978,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_smtpmail</link>
 <category>Event Plugins</category>
 <author>kleinerChemiker, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Use a SMTP server to send your mails&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Sun, 27 Apr 2025 17:51:40 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Use a SMTP server to send your mails&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:55:50 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
@@ -1051,7 +1051,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Suggest entries&lt;/b&gt;&lt;br /&gt;Allows non-registered authors to suggest entries for publishing&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 12:33:03 +0200</pubDate>
+<pubDate>Mon, 11 Aug 2025 15:09:26 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
@@ -1059,8 +1059,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_templatechooser</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson</author>
-<content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;テンプレート選択&lt;/b&gt;&lt;br /&gt;訪問者がすぐさまテンプレートを変更することを許可します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 15 Jul 2023 13:33:24 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;テンプレート選択&lt;/b&gt;&lt;br /&gt;訪問者がすぐさまテンプレートを変更することを許可します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:13:13 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_templatechooser</guid>
 </item>
 <item>
@@ -1104,8 +1104,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_thumbnails</link>
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
-<content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;サムネイルページ&lt;/b&gt;&lt;br /&gt;サムネイルページを表示します。アドレスは「index.php?serendipity[tnpage]=thumbs」です。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 19 Feb 2023 12:53:38 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;サムネイルページ&lt;/b&gt;&lt;br /&gt;サムネイルページを表示します。アドレスは「index.php?serendipity[tnpage]=thumbs」です。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:10:25 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>
@@ -1131,8 +1131,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tooltips</link>
 <category>Event Plugins</category>
 <author>Enrico Stahn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_tooltips&lt;br /&gt;ツールチップ&lt;/b&gt;&lt;br /&gt;ツールチップテキストと画像を起動します。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:05:43 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_tooltips&lt;br /&gt;ツールチップ&lt;/b&gt;&lt;br /&gt;ツールチップテキストと画像を起動します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 15:01:19 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tooltips</guid>
 </item>
 <item>
@@ -1194,8 +1194,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;ユーザープロフィール&lt;/b&gt;&lt;br /&gt;簡単なユーザープロフィールを表示します。&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;ユーザープロフィール&lt;/b&gt;&lt;br /&gt;簡単なユーザープロフィールを表示します。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 13:57:51 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
@@ -1203,8 +1203,8 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_versioning</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_versioning&lt;br /&gt;Versioning of entries&lt;/b&gt;&lt;br /&gt;Can store and retrieve older versions of an entry&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_versioning&lt;br /&gt;Versioning of entries&lt;/b&gt;&lt;br /&gt;Can store and retrieve older versions of an entry&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Tue, 12 Aug 2025 17:28:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>

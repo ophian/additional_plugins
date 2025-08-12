@@ -130,8 +130,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;Birthdays of users&lt;/b&gt;&lt;br /&gt;none&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 25 Aug 2021 18:04:31 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;Birthdays of users&lt;/b&gt;&lt;br /&gt;none&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 13:57:01 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles_birthdays</guid>
 </item>
 <item>
@@ -202,18 +202,9 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_externalphp</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;External PHP Application&lt;/b&gt;&lt;br /&gt;Shows an external PHP application inside your blog with your blogs design and all formattings. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 23 Oct 2019 11:28:58 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;External PHP Application&lt;/b&gt;&lt;br /&gt;Shows an external PHP application inside your blog with your blogs design and all formattings. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:25:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_externalphp</guid>
-</item>
-<item>
-<title>Feedburner Sidebar: Adds assorted functionality of the feedburner service into the sidebar.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_feedburnersidebar</link>
-<category>Sidebar Plugins</category>
-<author>Aaron Axelsen</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_feedburnersidebar&lt;br /&gt;Feedburner Sidebar&lt;/b&gt;&lt;br /&gt;Adds assorted functionality of the feedburner service into the sidebar.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:08:24 +0200</pubDate>
-<guid isPermaLink="false">serendipity_plugin_feedburnersidebar</guid>
 </item>
 <item>
 <title>flickr Photostream: Display the latest photos from flickr Photostreams.</title>
@@ -283,8 +274,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_karmaranking</link>
 <category>Sidebar Plugins</category>
 <author>Andreas Brandmaier</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_karmaranking&lt;br /&gt;Karma Ranking&lt;/b&gt;&lt;br /&gt;Shows overall score by author&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 15:42:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_karmaranking&lt;br /&gt;Karma Ranking&lt;/b&gt;&lt;br /&gt;Shows overall score by author&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:30:49 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_karmaranking</guid>
 </item>
 <item>
@@ -292,8 +283,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_loginform</link>
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Neil Dudman</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Authors login&lt;/b&gt;&lt;br /&gt;Show a login form for authors&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:55 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Authors login&lt;/b&gt;&lt;br /&gt;Show a login form for authors&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:15:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_loginform</guid>
 </item>
 <item>
@@ -301,8 +292,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_nugget_multilingual</link>
 <category>Sidebar Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_nugget_multilingual&lt;br /&gt;Language-Specific HTML Nugget&lt;/b&gt;&lt;br /&gt;Shows an HTML nugget on the sidebar, for a specific language.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_nugget_multilingual&lt;br /&gt;Language-Specific HTML Nugget&lt;/b&gt;&lt;br /&gt;Shows an HTML nugget on the sidebar, for a specific language.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:17:00 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_nugget_multilingual</guid>
 </item>
 <item>
@@ -338,7 +329,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Evan Nemerson</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_pollbox&lt;br /&gt;Polls&lt;/b&gt;&lt;br /&gt;Shows the current poll in your sidebar&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Mon, 27 Jun 2022 18:12:20 +0200</pubDate>
+<pubDate>Mon, 11 Aug 2025 13:32:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pollbox</guid>
 </item>
 <item>
@@ -355,8 +346,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_quicklink</link>
 <category>Sidebar Plugins</category>
 <author>Omid Mottaghi Rad</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_quicklink&lt;br /&gt;Quick Link&lt;/b&gt;&lt;br /&gt;Displays a box for quick links&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:07:54 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_quicklink&lt;br /&gt;Quick Link&lt;/b&gt;&lt;br /&gt;Displays a box for quick links&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 15:07:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_quicklink</guid>
 </item>
 <item>
@@ -373,8 +364,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutbox</link>
 <category>Sidebar Plugins</category>
 <author>Matthias Lange, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;实时发言&lt;/b&gt;&lt;br /&gt;显示一个用于实时发言的文本框。此类发言并不一定准对某一具体文章。&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 14 Jul 2023 10:46:18 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;实时发言&lt;/b&gt;&lt;br /&gt;显示一个用于实时发言的文本框。此类发言并不一定准对某一具体文章。&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:21:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutbox</guid>
 </item>
 <item>
@@ -382,8 +373,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_shoutcast</link>
 <category>Sidebar Plugins</category>
 <author>John Mann</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_shoutcast&lt;br /&gt;Shoutcast&lt;/b&gt;&lt;br /&gt;Display Shoutcast stream information in the sidebar.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 10 Feb 2023 10:19:09 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_shoutcast&lt;br /&gt;Shoutcast&lt;/b&gt;&lt;br /&gt;Display Shoutcast stream information in the sidebar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:21:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutcast</guid>
 </item>
 <item>
@@ -400,8 +391,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_sidebarlogo</link>
 <category>Sidebar Plugins</category>
 <author>Adam Krause &amp; Oliver Gerlach, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_sidebarlogo&lt;br /&gt;SideBar Logo&lt;/b&gt;&lt;br /&gt;Displays a panel containing your logo with a description including all relevant information about your site (an about box).&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Mon, 24 Jan 2022 12:44:20 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_sidebarlogo&lt;br /&gt;SideBar Logo&lt;/b&gt;&lt;br /&gt;Displays a panel containing your logo with a description including all relevant information about your site (an about box).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:01:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_sidebarlogo</guid>
 </item>
 <item>
@@ -418,8 +409,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_timezones</link>
 <category>Sidebar Plugins</category>
 <author>Christoph Eunicke &lt;s9y-plugin@eunicke.org&gt;, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_timezones&lt;br /&gt;Timezones&lt;/b&gt;&lt;br /&gt;Shows the time of up to four timezones&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 07 Feb 2022 16:54:09 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_timezones&lt;br /&gt;Timezones&lt;/b&gt;&lt;br /&gt;Shows the time of up to four timezones&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 11 Aug 2025 14:05:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_timezones</guid>
 </item>
 <item>

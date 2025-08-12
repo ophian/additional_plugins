@@ -2261,11 +2261,11 @@
 <description>Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.1.1</version>
+  <version>4.1.2</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2278,13 +2278,7 @@
       <file>lang_ja.inc.php</file>
       <file>plugin_emoticon.png</file>
       <file>serendipity_event_emoticonchooser.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_emoticonchooser/ChangeLog</file>
@@ -2297,10 +2291,6 @@
     <file>serendipity_event_emoticonchooser/lang_ja.inc.php</file>
     <file>serendipity_event_emoticonchooser/plugin_emoticon.png</file>
     <file>serendipity_event_emoticonchooser/serendipity_event_emoticonchooser.php</file>
-    <file>serendipity_event_emoticonchooser/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_emoticonchooser/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_emoticonchooser/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_emoticonchooser/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -3987,11 +3977,11 @@
 <description>A user defined glossary as highlighted text with a tooltip.</description>
 <maintainers><maintainer><name>Rob Antonishen, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_glossary">
       <file>ChangeLog</file>
@@ -4001,12 +3991,7 @@
       <file>lang_it.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_glossary.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_glossary/ChangeLog</file>
@@ -4016,9 +4001,6 @@
     <file>serendipity_event_glossary/lang_it.inc.php</file>
     <file>serendipity_event_glossary/lang_ja.inc.php</file>
     <file>serendipity_event_glossary/serendipity_event_glossary.php</file>
-    <file>serendipity_event_glossary/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_glossary/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_glossary/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -4572,36 +4554,33 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_httpauth</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_httpauth/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTTP-Authentifizierung</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Authentifiziert Benutzer über HTTP-Authentifizierung (basic_auth) mit ihren s9y-Anmeldedaten.</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_httpauth">
+      <file>ChangeLog</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_httpauth.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_httpauth/ChangeLog</file>
     <file>serendipity_event_httpauth/lang_cz.inc.php</file>
     <file>serendipity_event_httpauth/lang_de.inc.php</file>
     <file>serendipity_event_httpauth/lang_en.inc.php</file>
     <file>serendipity_event_httpauth/serendipity_event_httpauth.php</file>
-    <file>serendipity_event_httpauth/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_httpauth/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -5252,11 +5231,11 @@
 <description>Fügt SEO canonical link Tags als rel=&quot;start|up|prev|next|canonical&quot; in dden head Kopf ihres Themes ein, um so u.a. mittels spezieller Tools (Mozilla Erweiterungen, ...) durch Meta-Ebenen zu navigieren. Überprüfen Sie die Datei index.tpl Ihres Themes, um doppelte Auszeichnungen zu vermeiden.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.3</version>
-  <requirements:s9yVersion>3.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.2</requirements:phpVersion>
-  <date>2022-01-30</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_linktoolbar">
       <file>ChangeLog</file>
@@ -5266,12 +5245,7 @@
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_event_linktoolbar.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_linktoolbar/ChangeLog</file>
@@ -5281,9 +5255,6 @@
     <file>serendipity_event_linktoolbar/lang_en.inc.php</file>
     <file>serendipity_event_linktoolbar/lang_ja.inc.php</file>
     <file>serendipity_event_linktoolbar/serendipity_event_linktoolbar.php</file>
-    <file>serendipity_event_linktoolbar/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_linktoolbar/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_linktoolbar/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6729,11 +6700,11 @@
 <description>Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zur Artikel Behandlung.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.1</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_outdate_entries">
       <file>ChangeLog</file>
@@ -6742,12 +6713,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_outdate_entries.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_outdate_entries/ChangeLog</file>
@@ -6756,9 +6722,6 @@
     <file>serendipity_event_outdate_entries/lang_de.inc.php</file>
     <file>serendipity_event_outdate_entries/lang_en.inc.php</file>
     <file>serendipity_event_outdate_entries/serendipity_event_outdate_entries.php</file>
-    <file>serendipity_event_outdate_entries/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_outdate_entries/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_outdate_entries/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6771,11 +6734,11 @@
 <description>Setzt einen HTML-Klotz in die Seite(n), an deren Anfang, Ende oder ins head-Element.</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-15</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_page_nugget">
       <file>ChangeLog</file>
@@ -6787,13 +6750,7 @@
       <file>lang_ko.inc.php</file>
       <file>README</file>
       <file>serendipity_event_page_nugget.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ko.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_page_nugget/ChangeLog</file>
@@ -6805,10 +6762,6 @@
     <file>serendipity_event_page_nugget/lang_ko.inc.php</file>
     <file>serendipity_event_page_nugget/README</file>
     <file>serendipity_event_page_nugget/serendipity_event_page_nugget.php</file>
-    <file>serendipity_event_page_nugget/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_page_nugget/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_page_nugget/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_page_nugget/UTF-8/lang_ko.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -6859,11 +6812,11 @@
 <description>Ein Bild zu einem Eintrag hinzufügen</description>
 <maintainers><maintainer><name>Cameron MacFarland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.15</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-01-28</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
       <file>ChangeLog</file>
@@ -6873,13 +6826,7 @@
       <file>lang_ja.inc.php</file>
       <file>lang_tr.inc.php</file>
       <file>serendipity_event_photoblog.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_photoblog/ChangeLog</file>
@@ -6889,10 +6836,6 @@
     <file>serendipity_event_photoblog/lang_ja.inc.php</file>
     <file>serendipity_event_photoblog/lang_tr.inc.php</file>
     <file>serendipity_event_photoblog/serendipity_event_photoblog.php</file>
-    <file>serendipity_event_photoblog/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_photoblog/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_photoblog/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_photoblog/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -7125,11 +7068,11 @@
 <description>Holt E-Mail inkl. Anhängen ab und veröffentlicht sie von einem POP3 E-Mail-Account (mit spezieller Handy-Unterstützung)</description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.58</version>
-  <requirements:s9yVersion>2.1</requirements:s9yVersion>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -7150,10 +7093,6 @@
         <file>mail_germany_o2.txt</file>
       </dir>
       <file>tmobile.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
       <file>verizon.php</file>
     </dir>
   </filelist>
@@ -7174,8 +7113,6 @@
     <file>serendipity_event_popfetcher/testcases/mail_germany_mmstt.txt</file>
     <file>serendipity_event_popfetcher/testcases/mail_germany_o2.txt</file>
     <file>serendipity_event_popfetcher/tmobile.php</file>
-    <file>serendipity_event_popfetcher/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_popfetcher/UTF-8/lang_de.inc.php</file>
     <file>serendipity_event_popfetcher/verizon.php</file>
   </serendipityFilelist>
 </release>
@@ -8073,28 +8010,24 @@
 <description>Skaliert Grafiken mit Hilfe von HTML5 und dem s9y-Backend passend zur Breite des Viewports des Besuchers</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
-  <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
-  <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2022-11-30</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_responsiveimages.php</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_responsiveimages/ChangeLog</file>
     <file>serendipity_event_responsiveimages/lang_de.inc.php</file>
     <file>serendipity_event_responsiveimages/lang_en.inc.php</file>
     <file>serendipity_event_responsiveimages/serendipity_event_responsiveimages.php</file>
-    <file>serendipity_event_responsiveimages/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8223,11 +8156,11 @@
 <description>Nutze einen beliebigen SMTP Server zum Versenden deiner Mails</description>
 <maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.57</version>
-  <requirements:s9yVersion>4.0</requirements:s9yVersion>
-  <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-04-27</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -8313,10 +8246,6 @@
         <file>VERSION</file>
       </dir>
       <file>serendipity_event_smtpmail.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -8397,8 +8326,6 @@
     <file>serendipity_event_smtpmail/PHPMailer/src/SMTP.php</file>
     <file>serendipity_event_smtpmail/PHPMailer/VERSION</file>
     <file>serendipity_event_smtpmail/serendipity_event_smtpmail.php</file>
-    <file>serendipity_event_smtpmail/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_smtpmail/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8878,19 +8805,21 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_templatechooser</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_templatechooser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Themeauswahl</summary>
 <groups>BACKEND_TEMPLATES</groups>
 <description>Ermöglicht Besuchern das Theme zu ändern</description>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-07-15</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_templatechooser">
+      <file>ChangeLog</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cn.inc.php</file>
       <file>lang_cz.inc.php</file>
@@ -8906,24 +8835,10 @@
       <file>lang_tn.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_event_templatechooser.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cn.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_pt_PT.inc.php</file>
-        <file>lang_sk.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_templatechooser/ChangeLog</file>
     <file>serendipity_event_templatechooser/lang_bg.inc.php</file>
     <file>serendipity_event_templatechooser/lang_cn.inc.php</file>
     <file>serendipity_event_templatechooser/lang_cz.inc.php</file>
@@ -8939,19 +8854,6 @@
     <file>serendipity_event_templatechooser/lang_tn.inc.php</file>
     <file>serendipity_event_templatechooser/lang_zh.inc.php</file>
     <file>serendipity_event_templatechooser/serendipity_event_templatechooser.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_sk.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_templatechooser/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -9760,11 +9662,11 @@
 <description>Zeigt eine Seite mit Thumbnails des Photoblog-Plugins. Die URL ist index.php?serendipity[tnpage]=thumbs</description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.0</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-02-19</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
       <file>ChangeLog</file>
@@ -9774,13 +9676,7 @@
       <file>lang_ja.inc.php</file>
       <file>lang_tr.inc.php</file>
       <file>serendipity_event_thumbnails.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_tr.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_thumbnails/ChangeLog</file>
@@ -9790,10 +9686,6 @@
     <file>serendipity_event_thumbnails/lang_ja.inc.php</file>
     <file>serendipity_event_thumbnails/lang_tr.inc.php</file>
     <file>serendipity_event_thumbnails/serendipity_event_thumbnails.php</file>
-    <file>serendipity_event_thumbnails/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_thumbnails/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_thumbnails/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_thumbnails/UTF-8/lang_tr.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -10018,11 +9910,11 @@
 <description>Aktiviert Tooltips für Textbereiche und Bilder.</description>
 <maintainers><maintainer><name>Enrico Stahn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.9</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.6</requirements:smyVersion>
-  <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_tooltips">
       <file>ChangeLog</file>
@@ -10044,11 +9936,6 @@
         <file>overlib_shadow.js</file>
       </dir>
       <file>serendipity_event_tooltips.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -10069,9 +9956,6 @@
     <file>serendipity_event_tooltips/overlib/overlib_setonoff.js</file>
     <file>serendipity_event_tooltips/overlib/overlib_shadow.js</file>
     <file>serendipity_event_tooltips/serendipity_event_tooltips.php</file>
-    <file>serendipity_event_tooltips/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_tooltips/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_tooltips/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -10409,11 +10293,11 @@
 <description>Zeigt einfache Benutzerprofile</description>
 <maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5.0</version>
-  <requirements:s9yVersion>3.5</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-11</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -10428,13 +10312,7 @@
       <file>serendipity_event_userprofiles.php</file>
       <file>serendipity_plugin_userprofiles.php</file>
       <file>serendipity_plugin_userprofiles_birthdays.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_userprofiles/ChangeLog</file>
@@ -10449,10 +10327,6 @@
     <file>serendipity_event_userprofiles/serendipity_event_userprofiles.php</file>
     <file>serendipity_event_userprofiles/serendipity_plugin_userprofiles.php</file>
     <file>serendipity_event_userprofiles/serendipity_plugin_userprofiles_birthdays.php</file>
-    <file>serendipity_event_userprofiles/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_userprofiles/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_userprofiles/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_userprofiles/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -10465,11 +10339,11 @@
 <description>Ältere Versionen werden gespeichert und können wiederhergestellt werden</description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.16</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-12</date>
   <filelist>
     <dir name="serendipity_event_versioning">
       <file>ChangeLog</file>
@@ -10478,12 +10352,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_versioning.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_versioning/ChangeLog</file>
@@ -10492,9 +10361,6 @@
     <file>serendipity_event_versioning/lang_de.inc.php</file>
     <file>serendipity_event_versioning/lang_en.inc.php</file>
     <file>serendipity_event_versioning/serendipity_event_versioning.php</file>
-    <file>serendipity_event_versioning/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_versioning/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_versioning/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -11257,13 +11123,7 @@
       <file>lang_pl.inc.php</file>
       <file>serendipity_event_pollbox.php</file>
       <file>serendipity_plugin_pollbox.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_pollbox/ChangeLog</file>
@@ -11275,10 +11135,6 @@
     <file>serendipity_plugin_pollbox/lang_pl.inc.php</file>
     <file>serendipity_plugin_pollbox/serendipity_event_pollbox.php</file>
     <file>serendipity_plugin_pollbox/serendipity_plugin_pollbox.php</file>
-    <file>serendipity_plugin_pollbox/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_pollbox/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_pollbox/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_plugin_pollbox/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
