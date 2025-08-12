@@ -2,6 +2,8 @@
 
 /* serendipity_plugin_timezones.php from Christoph Eunicke <s9y-plugin@eunicke.org> */
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,7 +12,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_timezones extends serendipity_plugin
 {
-    var $title = PLUGIN_TIMEZONES_TITLE;
+    public $title = PLUGIN_TIMEZONES_TITLE;
 
     function introspect(&$propbag)
     {
@@ -22,11 +24,11 @@ class serendipity_plugin_timezones extends serendipity_plugin
                                                        'zone4_text', 'zone4_name', 'zone4_format', 'timeshift4'));
         $propbag->add('author',         'Christoph Eunicke <s9y-plugin@eunicke.org>, Ian Styx');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '0.7');
+        $propbag->add('version',        '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
     }

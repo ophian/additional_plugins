@@ -6,25 +6,25 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_TIMEZONES_TITLE', 'Времеви зони');
-@define('PLUGIN_TIMEZONES_BLAHBLAH', 'Показва времето в две времеви зони');
-@define('PLUGIN_TIMEZONES_NUGGET_TITLE', 'Име');
-@define('PLUGIN_TIMEZONES_NUGGET_TITLE_BLABLAH', 'Име на страничната приставка, която ще съдържа времевите зони');
+@define('PLUGIN_TIMEZONES_TITLE', 'Р’СЂРµРјРµРІРё Р·РѕРЅРё');
+@define('PLUGIN_TIMEZONES_BLAHBLAH', 'РџРѕРєР°Р·РІР° РІСЂРµРјРµС‚Рѕ РІ РґРІРµ РІСЂРµРјРµРІРё Р·РѕРЅРё');
+@define('PLUGIN_TIMEZONES_NUGGET_TITLE', 'РРјРµ');
+@define('PLUGIN_TIMEZONES_NUGGET_TITLE_BLABLAH', 'РРјРµ РЅР° СЃС‚СЂР°РЅРёС‡РЅР°С‚Р° РїСЂРёСЃС‚Р°РІРєР°, РєРѕСЏС‚Рѕ С‰Рµ СЃСЉРґСЉСЂР¶Р° РІСЂРµРјРµРІРёС‚Рµ Р·РѕРЅРё');
 
-@define('PLUGIN_TIMEZONES_ZONE1_TEXT', 'Първа зона');
-@define('PLUGIN_TIMEZONES_ZONE1_TEXT_BLABLAH', 'Място (държава/град) на първата зона.');
-@define('PLUGIN_TIMEZONES_ZONE1_NAME', 'Код на първа зона');
-@define('PLUGIN_TIMEZONES_ZONE1_NAME_BLABLAH', 'Код на първата зона. (например CET)');
-@define('PLUGIN_TIMEZONES_ZONE1_FORMAT', 'Формат на времето за първа зона');
-@define('PLUGIN_TIMEZONES_ZONE1_FORMAT_BLABLAH', 'Форматиращ стринг, както се иска от PEAR::Date (Вижте http://pear.php.net/package/Date/docs/1.4.5/apidoc/Date/Date.html#methodformat)');
+@define('PLUGIN_TIMEZONES_ZONE1_TEXT', 'РџСЉСЂРІР° Р·РѕРЅР°');
+@define('PLUGIN_TIMEZONES_ZONE1_TEXT_BLABLAH', 'РњСЏСЃС‚Рѕ (РґСЉСЂР¶Р°РІР°/РіСЂР°Рґ) РЅР° РїСЉСЂРІР°С‚Р° Р·РѕРЅР°.');
+@define('PLUGIN_TIMEZONES_ZONE1_NAME', 'РљРѕРґ РЅР° РїСЉСЂРІР° Р·РѕРЅР°');
+@define('PLUGIN_TIMEZONES_ZONE1_NAME_BLABLAH', 'РљРѕРґ РЅР° РїСЉСЂРІР°С‚Р° Р·РѕРЅР°. (РЅР°РїСЂРёРјРµСЂ CET)');
+@define('PLUGIN_TIMEZONES_ZONE1_FORMAT', 'Р¤РѕСЂРјР°С‚ РЅР° РІСЂРµРјРµС‚Рѕ Р·Р° РїСЉСЂРІР° Р·РѕРЅР°');
+@define('PLUGIN_TIMEZONES_ZONE1_FORMAT_BLABLAH', 'Р¤РѕСЂРјР°С‚РёСЂР°С‰ СЃС‚СЂРёРЅРі, РєР°РєС‚Рѕ СЃРµ РёСЃРєР° РѕС‚ PEAR::Date (Р’РёР¶С‚Рµ http://pear.php.net/package/Date/docs/1.4.5/apidoc/Date/Date.html#methodformat)');
 
-@define('PLUGIN_TIMEZONES_ZONE2_TEXT', 'Втора зона');
-@define('PLUGIN_TIMEZONES_ZONE2_TEXT_BLABLAH', 'Място (държава/град) на втората зона.');
-@define('PLUGIN_TIMEZONES_ZONE2_NAME', 'Код на втора зона');
-@define('PLUGIN_TIMEZONES_ZONE2_NAME_BLABLAH', 'Код на втора зона. (например PST)');
-@define('PLUGIN_TIMEZONES_ZONE2_FORMAT', 'Формат на времето за втора зона');
-@define('PLUGIN_TIMEZONES_ZONE2_FORMAT_BLABLAH', 'Форматиращ стринг (подобно като за първа зона)');
+@define('PLUGIN_TIMEZONES_ZONE2_TEXT', 'Р’С‚РѕСЂР° Р·РѕРЅР°');
+@define('PLUGIN_TIMEZONES_ZONE2_TEXT_BLABLAH', 'РњСЏСЃС‚Рѕ (РґСЉСЂР¶Р°РІР°/РіСЂР°Рґ) РЅР° РІС‚РѕСЂР°С‚Р° Р·РѕРЅР°.');
+@define('PLUGIN_TIMEZONES_ZONE2_NAME', 'РљРѕРґ РЅР° РІС‚РѕСЂР° Р·РѕРЅР°');
+@define('PLUGIN_TIMEZONES_ZONE2_NAME_BLABLAH', 'РљРѕРґ РЅР° РІС‚РѕСЂР° Р·РѕРЅР°. (РЅР°РїСЂРёРјРµСЂ PST)');
+@define('PLUGIN_TIMEZONES_ZONE2_FORMAT', 'Р¤РѕСЂРјР°С‚ РЅР° РІСЂРµРјРµС‚Рѕ Р·Р° РІС‚РѕСЂР° Р·РѕРЅР°');
+@define('PLUGIN_TIMEZONES_ZONE2_FORMAT_BLABLAH', 'Р¤РѕСЂРјР°С‚РёСЂР°С‰ СЃС‚СЂРёРЅРі (РїРѕРґРѕР±РЅРѕ РєР°С‚Рѕ Р·Р° РїСЉСЂРІР° Р·РѕРЅР°)');
 
-@define('PLUGIN_TIMEZONES_TIMESHIFT', 'Отместване');
-@define('PLUGIN_TIMEZONES_TIMESHIFT_BLABLAH', 'Отместване в секунди (необходимо е само ако PEAR::Date не е инсталирано)');
+@define('PLUGIN_TIMEZONES_TIMESHIFT', 'РћС‚РјРµСЃС‚РІР°РЅРµ');
+@define('PLUGIN_TIMEZONES_TIMESHIFT_BLABLAH', 'РћС‚РјРµСЃС‚РІР°РЅРµ РІ СЃРµРєСѓРЅРґРё (РЅРµРѕР±С…РѕРґРёРјРѕ Рµ СЃР°РјРѕ Р°РєРѕ PEAR::Date РЅРµ Рµ РёРЅСЃС‚Р°Р»РёСЂР°РЅРѕ)');
 
