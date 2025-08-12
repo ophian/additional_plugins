@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  @author Martin Matu¹ka <martin@matuska.org>
+ *  @author Martin MatuÅ¡ka <martin@matuska.org>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'Výber ¹ablón');
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'Umo¾nuje náv¹tevníkom zmeni» ¹ablónu (= vzhµad) podµa vlastného výberu');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'VÃ½ber Å¡ablÃ³n');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'UmoÅ¾nuje nÃ¡vÅ¡tevnÃ­kom zmeniÅ¥ Å¡ablÃ³nu (= vzhÄ¾ad) podÄ¾a vlastnÃ©ho vÃ½beru');
 

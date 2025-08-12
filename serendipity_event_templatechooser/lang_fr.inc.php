@@ -13,6 +13,6 @@
 #                                                                        #
 ##########################################################################
 
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME', 'Sélecteur de thème');
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC', 'Permet aux utilisateurs de votre blog de changer le thème visuel');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME', 'SÃ©lecteur de thÃ¨me');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC', 'Permet aux utilisateurs de votre blog de changer le thÃ¨me visuel');
 

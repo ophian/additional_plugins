@@ -5,6 +5,6 @@
  *  @author Ivan Cenov jwalker@hotmail.bg
  */
 
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'Селектор на шаблони');
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'Позволява на посетителите на сайта да сменят темата на блога в движение.');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'РЎРµР»РµРєС‚РѕСЂ РЅР° С€Р°Р±Р»РѕРЅРё');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'РџРѕР·РІРѕР»СЏРІР° РЅР° РїРѕСЃРµС‚РёС‚РµР»РёС‚Рµ РЅР° СЃР°Р№С‚Р° РґР° СЃРјРµРЅСЏС‚ С‚РµРјР°С‚Р° РЅР° Р±Р»РѕРіР° РІ РґРІРёР¶РµРЅРёРµ.');
 

@@ -8,7 +8,7 @@
 # http://www.jannis.to/programming/serendipity.html                      #
 #                                                                        #
 # Translated by                                                          #
-# Jo„o P Matos <jmatos@math.ist.utl.pt>                                  #
+# Jo√£o P Matos <jmatos@math.ist.utl.pt>                                  #
 #                                                                        #
 ##########################################################################
 

@@ -6,6 +6,6 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'Wybór schematu');
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'Pozwala odwiedzaj±cym na wybór schematu (template) strony');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'WybÃ³r schematu');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'Pozwala odwiedzajÄ…cym na wybÃ³r schematu (template) strony');
 

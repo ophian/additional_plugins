@@ -2,10 +2,10 @@
 
 /**
  *  @version $Revision: 1381 $
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'Výbìr ¹ablon');
-@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'Umo¾òuje náv¹tìvníkùm Va¹eho webu zmìnit ¹ablonu (= vzhled) podle libosti');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_NAME',     'VÃ½bÄ›r Å¡ablon');
+@define('PLUGIN_EVENT_TEMPLATECHOOSER_DESC',     'UmoÅ¾Åˆuje nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m VaÅ¡eho webu zmÄ›nit Å¡ablonu (= vzhled) podle libosti');
 
