@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/22
  */
 
-@define('PLUGIN_EVENT_GLOSSARY_NAME', 'Rejstøík');
-@define('PLUGIN_EVENT_GLOSSARY_DESC', 'U¾ivatelem definovanı rejstøík slov, která se v textu zvırazòují a po najetí my¹í se k nim v malém rámeèku ukazuje vysvìtlivka');
-@define('PLUGIN_EVENT_GLOSSARY_SEP', 'Oddìlovaè');
-@define('PLUGIN_EVENT_GLOSSARY_SEP_BLAHBLAH', 'To je znak, kterı oddìluje slovo rejstøíku a jeho definic (vysvìtlivku). Vıchozí hodnota je dvojteèka ":"');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE', 'Formátovací styl');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE_BLAHBLAH', 'Zvıraznit termín/slovo, nebo pøidat [?] za nìj?');
-@define('PLUGIN_EVENT_GLOSSARY_MARKALL', 'Zvırazòovat v¹echny vıskyty termínu');
-@define('PLUGIN_EVENT_GLOSSARY_MARKALL_BLAHBLAH', 'Vıchozí hodnota je "ne". Pøi "ne" bude zvıraznìn pouze první vıskyt termínu.');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE_HILITE', 'Zıraznit slovo');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE_APPEND', 'Pøipojit [?] za slovo');
-@define('PLUGIN_EVENT_GLOSSARY_LIST', 'Rejstøík');
-@define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Zadejte slova do rejstøíku, jedno na ka¾dı øádek ve formátu "termín/slovo"<oddìlovaè>"definice/vysvìtlivka"<cr>');
+@define('PLUGIN_EVENT_GLOSSARY_NAME', 'RejstÅ™Ã­k');
+@define('PLUGIN_EVENT_GLOSSARY_DESC', 'UÅ¾ivatelem definovanÃ½ rejstÅ™Ã­k slov, kterÃ¡ se v textu zvÃ½razÅˆujÃ­ a po najetÃ­ myÅ¡Ã­ se k nim v malÃ©m rÃ¡meÄku ukazuje vysvÄ›tlivka');
+@define('PLUGIN_EVENT_GLOSSARY_SEP', 'OddÄ›lovaÄ');
+@define('PLUGIN_EVENT_GLOSSARY_SEP_BLAHBLAH', 'To je znak, kterÃ½ oddÄ›luje slovo rejstÅ™Ã­ku a jeho definic (vysvÄ›tlivku). VÃ½chozÃ­ hodnota je dvojteÄka ":"');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE', 'FormÃ¡tovacÃ­ styl');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE_BLAHBLAH', 'ZvÃ½raznit termÃ­n/slovo, nebo pÅ™idat [?] za nÄ›j?');
+@define('PLUGIN_EVENT_GLOSSARY_MARKALL', 'ZvÃ½razÅˆovat vÅ¡echny vÃ½skyty termÃ­nu');
+@define('PLUGIN_EVENT_GLOSSARY_MARKALL_BLAHBLAH', 'VÃ½chozÃ­ hodnota je "ne". PÅ™i "ne" bude zvÃ½raznÄ›n pouze prvnÃ­ vÃ½skyt termÃ­nu.');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE_HILITE', 'ZÃ½raznit slovo');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE_APPEND', 'PÅ™ipojit [?] za slovo');
+@define('PLUGIN_EVENT_GLOSSARY_LIST', 'RejstÅ™Ã­k');
+@define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Zadejte slova do rejstÅ™Ã­ku, jedno na kaÅ¾dÃ½ Å™Ã¡dek ve formÃ¡tu "termÃ­n/slovo"<oddÄ›lovaÄ>"definice/vysvÄ›tlivka"<cr>');
 

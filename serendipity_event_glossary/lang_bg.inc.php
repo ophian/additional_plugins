@@ -6,16 +6,16 @@
  *  EN-Revision: 1.3
  */
 
-@define('PLUGIN_EVENT_GLOSSARY_NAME', 'Речник');
-@define('PLUGIN_EVENT_GLOSSARY_DESC', 'Потребителски речник на термини и дефиниции за тях. Термините се открояват в текста, а дефинициите се извеждат като подсказки.');
-@define('PLUGIN_EVENT_GLOSSARY_SEP', 'Разделител');
-@define('PLUGIN_EVENT_GLOSSARY_SEP_BLAHBLAH', 'Разделител между термина и дефиницията (по подразбиране се използва \':\').');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE', 'Начин на маркиране на термините');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE_BLAHBLAH', 'Открояване на термините или добавяне на [?] след тях.');
-@define('PLUGIN_EVENT_GLOSSARY_MARKALL', 'Маркиране на всички появи на термините');
-@define('PLUGIN_EVENT_GLOSSARY_MARKALL_BLAHBLAH', 'По подразбиране не. Маркира се само първата поява на термините.');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE_HILITE', 'Открояване на термините');
-@define('PLUGIN_EVENT_GLOSSARY_TYPE_APPEND', 'Добавяне на [?] след термините');
-@define('PLUGIN_EVENT_GLOSSARY_LIST', 'Списък');
-@define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Въведете терминолoгичния списък, по един термин на ред: \'термин\'<разделител>\'дефиниция\'');
+@define('PLUGIN_EVENT_GLOSSARY_NAME', 'Р РµС‡РЅРёРє');
+@define('PLUGIN_EVENT_GLOSSARY_DESC', 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё СЂРµС‡РЅРёРє РЅР° С‚РµСЂРјРёРЅРё Рё РґРµС„РёРЅРёС†РёРё Р·Р° С‚СЏС…. РўРµСЂРјРёРЅРёС‚Рµ СЃРµ РѕС‚РєСЂРѕСЏРІР°С‚ РІ С‚РµРєСЃС‚Р°, Р° РґРµС„РёРЅРёС†РёРёС‚Рµ СЃРµ РёР·РІРµР¶РґР°С‚ РєР°С‚Рѕ РїРѕРґСЃРєР°Р·РєРё.');
+@define('PLUGIN_EVENT_GLOSSARY_SEP', 'Р Р°Р·РґРµР»РёС‚РµР»');
+@define('PLUGIN_EVENT_GLOSSARY_SEP_BLAHBLAH', 'Р Р°Р·РґРµР»РёС‚РµР» РјРµР¶РґСѓ С‚РµСЂРјРёРЅР° Рё РґРµС„РёРЅРёС†РёСЏС‚Р° (РїРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ СЃРµ РёР·РїРѕР»Р·РІР° \':\').');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE', 'РќР°С‡РёРЅ РЅР° РјР°СЂРєРёСЂР°РЅРµ РЅР° С‚РµСЂРјРёРЅРёС‚Рµ');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE_BLAHBLAH', 'РћС‚РєСЂРѕСЏРІР°РЅРµ РЅР° С‚РµСЂРјРёРЅРёС‚Рµ РёР»Рё РґРѕР±Р°РІСЏРЅРµ РЅР° [?] СЃР»РµРґ С‚СЏС….');
+@define('PLUGIN_EVENT_GLOSSARY_MARKALL', 'РњР°СЂРєРёСЂР°РЅРµ РЅР° РІСЃРёС‡РєРё РїРѕСЏРІРё РЅР° С‚РµСЂРјРёРЅРёС‚Рµ');
+@define('PLUGIN_EVENT_GLOSSARY_MARKALL_BLAHBLAH', 'РџРѕ РїРѕРґСЂР°Р·Р±РёСЂР°РЅРµ РЅРµ. РњР°СЂРєРёСЂР° СЃРµ СЃР°РјРѕ РїСЉСЂРІР°С‚Р° РїРѕСЏРІР° РЅР° С‚РµСЂРјРёРЅРёС‚Рµ.');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE_HILITE', 'РћС‚РєСЂРѕСЏРІР°РЅРµ РЅР° С‚РµСЂРјРёРЅРёС‚Рµ');
+@define('PLUGIN_EVENT_GLOSSARY_TYPE_APPEND', 'Р”РѕР±Р°РІСЏРЅРµ РЅР° [?] СЃР»РµРґ С‚РµСЂРјРёРЅРёС‚Рµ');
+@define('PLUGIN_EVENT_GLOSSARY_LIST', 'РЎРїРёСЃСЉРє');
+@define('PLUGIN_EVENT_GLOSSARY_LIST_BLAHBLAH', 'Р’СЉРІРµРґРµС‚Рµ С‚РµСЂРјРёРЅРѕР»oРіРёС‡РЅРёСЏ СЃРїРёСЃСЉРє, РїРѕ РµРґРёРЅ С‚РµСЂРјРёРЅ РЅР° СЂРµРґ: \'С‚РµСЂРјРёРЅ\'<СЂР°Р·РґРµР»РёС‚РµР»>\'РґРµС„РёРЅРёС†РёСЏ\'');
 

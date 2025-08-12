@@ -11,6 +11,7 @@
          made consistent with new probe for language include
 */
 
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -20,7 +21,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_glossary extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_GLOSSARY_NAME;
+    public $title = PLUGIN_EVENT_GLOSSARY_NAME;
 
     function introspect(&$propbag)
     {
@@ -30,11 +31,11 @@ class serendipity_event_glossary extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_GLOSSARY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author', 'Rob Antonishen, Ian Styx');
-        $propbag->add('version', '1.9');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.3.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('cachable_events', array('frontend_display' => true));
         $propbag->add('groups', array('MARKUP'));
@@ -150,13 +151,13 @@ class serendipity_event_glossary extends serendipity_event
                     $lines = explode("\n", $this->get_config('list'));
 
                     foreach($lines as $line) {
-		    	$temp = explode($this->get_config('separator',':'), $line);
-   	                $s = trim($temp[0]);
-   	                $r = trim($temp[1]);
-   	                if ((strlen($s) > 0) && ctype_alnum($s) && (strlen($r) > 0)){
-   	                    $terms[] = array($s,(function_exists('serendipity_specialchars') ? serendipity_specialchars($r) : htmlspecialchars($r, ENT_COMPAT, LANG_CHARSET)));
-   	                }
-		    }
+                        $temp = explode($this->get_config('separator',':'), $line);
+                        $s = trim($temp[0]);
+                        $r = trim($temp[1]);
+                        if ((strlen($s) > 0) && ctype_alnum($s) && (strlen($r) > 0)){
+                            $terms[] = array($s, htmlspecialchars($r));
+                        }
+                    }
 
                     /* go through markup elements and call the markup function if there are terms*/
                     if (count($terms) > 0) {
@@ -169,7 +170,6 @@ class serendipity_event_glossary extends serendipity_event
                             }
                         }
                     }
-                    return true;
                     break;
 
                 case 'css':
@@ -182,7 +182,6 @@ class serendipity_event_glossary extends serendipity_event
                         $eventData .= '    cursor: help;' . "\n";
                         $eventData .= '}' . "\n";
                     }
-                    return true;
                     break;
 
                 default:
