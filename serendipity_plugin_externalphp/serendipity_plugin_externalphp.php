@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_externalphp extends serendipity_plugin
 {
-    var $title = PLUGIN_EXTERNALPHP_TITLE;
+    public $title = PLUGIN_EXTERNALPHP_TITLE;
 
     function introspect(&$propbag)
     {
@@ -26,11 +28,11 @@ class serendipity_plugin_externalphp extends serendipity_plugin
         $propbag->add('description', PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH);
         $propbag->add('configuration', array('title', 'include', 'markup'));
         $propbag->add('author', 'Garvin Hicking');
-        $propbag->add('version', '1.2');
+        $propbag->add('version', '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('stackable', true);

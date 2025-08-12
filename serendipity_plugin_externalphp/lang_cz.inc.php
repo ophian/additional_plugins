@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @author VladimÌr Ajgl <vlada@ajgl.cz>
- * @translated 2009/03/08
- * @author VladimÌr Ajgl <vlada@ajgl.cz>
- * @revisionDate 2009/03/14
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  @translated 2009/03/08
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  @revisionDate 2009/03/14
  */
 
-@define('PLUGIN_EXTERNALPHP_TITLE', 'ExternÌ PHP aplikace');
-@define('PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH', 'Zobrazuje v˝stup externÌ PHP aplikace uvnit¯ blogu, v designu a form·tov·nÌ blogu. POUÆÕVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPE»NOSTNÕ RIZIKA, PROTOÆE UMOÆ“UJE VLOÆIT LIBOVOLN› PHP K”D! TENTO PLUGIN MŸÆE POUÆÕVAT POUZE ADMINISTR¡TOR!');
-@define('PLUGIN_EXTERNALPHP_PERMALINK', 'St·l˝ odkaz');
-@define('PLUGIN_EXTERNALPHP_PAGETITLE', 'Zkr·cen· URL adresa str·nky (kv˘li zpÏtnÈ kompatibilitÏ)');
-@define('PLUGIN_EXTERNALPHP_PERMALINK_BLAHBLAH', 'Definuje st·lou adresu odkazu. NutnÈ zadat absolutnÌ HTTP cestu, vËetnÏ ukonËujÌcÌho .htm nebo .html!');
-@define('PLUGIN_EXTERNALPHP_INCLUDE', 'Soubor k vloæenÌ');
-@define('PLUGIN_EXTERNALPHP_INCLUDE_DESC', 'Pln· absolutnÌ cesta k PHP souboru, kter˝ se m· vloæit');
-@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT', 'Form·tovat jako p¯ÌspÏvek?');
-@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT_BLAHBLAH', 'Pokud je "Ano", v˝stup je automaticky form·tov·n jako p¯ÌspÏvek/Ël·nek (barvy, r·meËky apod.) (v˝chozÌ: Ano)');
+@define('PLUGIN_EXTERNALPHP_TITLE',		'Extern√≠ PHP aplikace');
+@define('PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH',		'Zobrazuje v√Ωstup extern√≠ PHP aplikace uvnit≈ô blogu, v designu a form√°tov√°n√≠ blogu. POU≈Ω√çVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEƒåNOSTN√ç RIZIKA, PROTO≈ΩE UMO≈Ω≈áUJE VLO≈ΩIT LIBOVOLN√ù PHP K√ìD! TENTO PLUGIN M≈Æ≈ΩE POU≈Ω√çVAT POUZE ADMINISTR√ÅTOR!');
+@define('PLUGIN_EXTERNALPHP_PERMALINK',		'St√°l√Ω odkaz');
+@define('PLUGIN_EXTERNALPHP_PAGETITLE',		'Zkr√°cen√° URL adresa str√°nky (kv≈Øli zpƒõtn√© kompatibilitƒõ)');
+@define('PLUGIN_EXTERNALPHP_PERMALINK_BLAHBLAH',		'Definuje st√°lou adresu odkazu. Nutn√© zadat absolutn√≠ HTTP cestu, vƒçetnƒõ ukonƒçuj√≠c√≠ho .htm nebo .html!');
+@define('PLUGIN_EXTERNALPHP_INCLUDE',		'Soubor k vlo≈æen√≠');
+@define('PLUGIN_EXTERNALPHP_INCLUDE_DESC',		'Pln√° absolutn√≠ cesta k PHP souboru, kter√Ω se m√° vlo≈æit');
+@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT',		'Form√°tovat jako p≈ô√≠spƒõvek?');
+@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT_BLAHBLAH',		'Pokud je "Ano", v√Ωstup je automaticky form√°tov√°n jako p≈ô√≠spƒõvek/ƒçl√°nek (barvy, r√°meƒçky apod.) (v√Ωchoz√≠: Ano)');
 
