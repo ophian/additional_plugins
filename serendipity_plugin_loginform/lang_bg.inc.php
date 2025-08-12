@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @version
- * @author Ivan Cenov jwalker@hotmail.bg
- * EN-Revision: 1.2
+ *  @version
+ *  @author Ivan Cenov jwalker@hotmail.bg
+ *  EN-Revision: 1.2
  */
-@define('PLUGIN_LOGINFORM_NAME', 'Âõîä çà àâòîðè');
-@define('PLUGIN_LOGINFORM_DESC', 'Ïîêàçâà ôîðìà çà âõîä íà àâòîðè');
+@define('PLUGIN_LOGINFORM_NAME',     'Ð’Ñ…Ð¾Ð´ Ð·Ð° Ð°Ð²Ñ‚Ð¾Ñ€Ð¸');
+@define('PLUGIN_LOGINFORM_DESC',     'ÐŸÐ¾ÐºÐ°Ð·Ð²Ð° Ñ„Ð¾Ñ€Ð¼Ð° Ð·Ð° Ð²Ñ…Ð¾Ð´ Ð½Ð° Ð°Ð²Ñ‚Ð¾Ñ€Ð¸');
 
