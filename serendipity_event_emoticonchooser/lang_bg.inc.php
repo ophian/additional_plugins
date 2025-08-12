@@ -6,10 +6,10 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_TITLE', 'Показва лента с картинки - "усмивки"');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_DESC', 'Показва лента за избор на картинки, изразяващи емоции (emoticons). Не работи с WYSIWYG редактор.');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_COMMENTS', 'Показване на лентата при редактиране на коментари ?');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP', 'Показване на лентата само като "изскачащ" елемент / прозорец ?');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT', 'Име на връзката чрез която се показват наличните картинки');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'Усмивки');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_TITLE', 'РџРѕРєР°Р·РІР° Р»РµРЅС‚Р° СЃ РєР°СЂС‚РёРЅРєРё - "СѓСЃРјРёРІРєРё"');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_DESC', 'РџРѕРєР°Р·РІР° Р»РµРЅС‚Р° Р·Р° РёР·Р±РѕСЂ РЅР° РєР°СЂС‚РёРЅРєРё, РёР·СЂР°Р·СЏРІР°С‰Рё РµРјРѕС†РёРё (emoticons). РќРµ СЂР°Р±РѕС‚Рё СЃ WYSIWYG СЂРµРґР°РєС‚РѕСЂ.');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_COMMENTS', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° Р»РµРЅС‚Р°С‚Р° РїСЂРё СЂРµРґР°РєС‚РёСЂР°РЅРµ РЅР° РєРѕРјРµРЅС‚Р°СЂРё ?');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP', 'РџРѕРєР°Р·РІР°РЅРµ РЅР° Р»РµРЅС‚Р°С‚Р° СЃР°РјРѕ РєР°С‚Рѕ "РёР·СЃРєР°С‡Р°С‰" РµР»РµРјРµРЅС‚ / РїСЂРѕР·РѕСЂРµС† ?');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT', 'РРјРµ РЅР° РІСЂСЉР·РєР°С‚Р° С‡СЂРµР· РєРѕСЏС‚Рѕ СЃРµ РїРѕРєР°Р·РІР°С‚ РЅР°Р»РёС‡РЅРёС‚Рµ РєР°СЂС‚РёРЅРєРё');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'РЈСЃРјРёРІРєРё');
 

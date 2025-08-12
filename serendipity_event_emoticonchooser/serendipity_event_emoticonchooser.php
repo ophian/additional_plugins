@@ -33,7 +33,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '4.1.1');
+        $propbag->add('version',       '4.1.2');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -189,7 +189,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
             <div class="emoticonchooser">
                 <form action="" method="post">
-                    <input type="hidden" name="txtarea" value="<?php echo serendipity_specialchars($_GET['txtarea']) ?>">
+                    <input type="hidden" name="txtarea" value="<?php echo htmlspecialchars($_GET['txtarea']) ?>">
                     <fieldset id="main_emoticonchooser" class="">
                         <legend><?php echo PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT ?></legend>
 

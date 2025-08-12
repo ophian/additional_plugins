@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/30
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2013/06/22
  */
 
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_TITLE', 'Liπta smajlÌk˘');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_DESC', 'ZobrazÌ liπtu se smajlÌky, kterÈ je moænÈ vloæit do textu p¯ÌspÏvku nebo koment·¯e.');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_COMMENTS', 'Zobrazit smajlÌkovou liπtu u koment·¯˘?');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP', 'Zobrazit smajlÌkovou liπtu jako vyskakovacÌ (popup) blok?');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT', 'Nadpis odkazu k zobrazenÌ popup bloku se smajlÌky.');
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'SmajlÌci');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_TITLE', 'Li≈°ta smajl√≠k≈Ø');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_DESC', 'Zobraz√≠ li≈°tu se smajl√≠ky, kter√© je mo≈æn√© vlo≈æit do textu p≈ô√≠spƒõvku nebo koment√°≈ôe.');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_COMMENTS', 'Zobrazit smajl√≠kovou li≈°tu u koment√°≈ô≈Ø?');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP', 'Zobrazit smajl√≠kovou li≈°tu jako vyskakovac√≠ (popup) blok?');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT', 'Nadpis odkazu k zobrazen√≠ popup bloku se smajl√≠ky.');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUPTEXT_DEFAULT', 'Smajl√≠ci');
 
 // Next lines were translated on 2013/06/22
-@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP_BUTTON', 'Zobrazit polÌËko pro v˝bÏr smajlÌk˘ jako tlaËÌtko?');
+@define('PLUGIN_EVENT_EMOTICONCHOOSER_POPUP_BUTTON', 'Zobrazit pol√≠ƒçko pro v√Ωbƒõr smajl√≠k≈Ø jako tlaƒç√≠tko?');
 
