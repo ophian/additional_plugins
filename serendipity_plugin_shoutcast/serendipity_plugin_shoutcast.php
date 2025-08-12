@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -21,11 +23,11 @@ class serendipity_plugin_shoutcast extends serendipity_plugin {
         $propbag->add('description', PLUGIN_SIDEBAR_SHOUTCAST_DESC);
         $propbag->add('author',        'John Mann');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1',
-            'smarty'      => '3.1.6',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',  '1.08');
+        $propbag->add('version',  '2.0.0');
         $propbag->add('configuration', array('title',
             'server',
             'port'));
