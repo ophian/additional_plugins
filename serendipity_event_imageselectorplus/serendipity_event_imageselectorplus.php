@@ -867,8 +867,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
             $exif_mode = 'internal';
         } elseif ($exiftype) {
             $exif_mode = 'jhead';
-            $pfxlines  = 'jhead '.$infile;
-            $exif_raw  = explode("\n", @$pfxlines);
+            $exif_raw  = explode("\n", 'jhead '.$infile);
             $exif      = array();
 
             foreach((array)$exif_raw AS $line) {
