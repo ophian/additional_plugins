@@ -692,16 +692,13 @@ class XML_RPC_Server
                                       sprintf('XML error: %s at line %d',
                                               xml_error_string(xml_get_error_code($parser_instance)),
                                               xml_get_current_line_number($parser_instance)));
-            xml_parser_free($parser_instance);
         } elseif ($XML_RPC_xh[$parser]['isf'] > 1) {
             $r = new XML_RPC_Response(0,
                                       $XML_RPC_err['invalid_request'],
                                       $XML_RPC_str['invalid_request']
                                       . ': '
                                       . $XML_RPC_xh[$parser]['isf_reason']);
-            xml_parser_free($parser_instance);
         } else {
-            xml_parser_free($parser_instance);
             $m = new XML_RPC_Message($XML_RPC_xh[$parser]['method']);
             // now add parameters in
             for ($i = 0; $i < sizeof($XML_RPC_xh[$parser]['params']); $i++) {
