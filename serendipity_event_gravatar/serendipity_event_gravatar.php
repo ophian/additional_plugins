@@ -11,7 +11,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '2.0.0');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '2.0.1');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -919,7 +919,7 @@ class serendipity_event_gravatar extends serendipity_event
             $vals = array();
             $index = array();
             $success = xml_parse_into_struct($parser, $response, $vals, $index);
-            xml_parser_free($parser);
+
             if ($success) {
                 foreach ($index['LINK'] AS $index) {
                     if ($vals[$index]['attributes']['REL'] == 'image') {
@@ -980,7 +980,7 @@ class serendipity_event_gravatar extends serendipity_event
             $parser = xml_parser_create();
             $vals=array(); $index=array();
             $success = xml_parse_into_struct($parser, $response, $vals, $index);
-            xml_parser_free($parser);
+
             if ($success) {
                 $img_url = $vals[$index['PROFILE_IMAGE_URL'][0]]['value'];
                 $success = $this->saveAndResponseAvatar($eventData, $img_url);
