@@ -29,7 +29,7 @@ class serendipity_event_contactform extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'backend_title', 'email', 'subject', 'counter', 'intro', 'sent', 'articleformat', 'dynamic_tpl', 'dynamic_fields', 'dynamic_fields_tpl', 'dynamic_fields_desc'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.0.1');
+        $propbag->add('version', '2.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -618,7 +618,7 @@ class serendipity_event_contactform extends serendipity_event
                 // Let's figure out what kind it is...
                 switch(strtolower($field_array[1])) {
 
-                    case 'checkbox';
+                    case 'checkbox':
                         $return_array[$field_array[0]]['type'] = 'checkbox';
                         //need to get options
                         $option_array = explode(',', $field_array[2]);
