@@ -28,7 +28,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '4.1.1');
+        $propbag->add('version',       '4.1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -407,7 +407,6 @@ class serendipity_event_linklist extends serendipity_event
                                 }
                                 $xml = xml_parser_create('UTF-8');
                                 xml_parse_into_struct($xml, '<list>'.serendipity_utf8_encode($eventData['links']).'</list>', $struct, $index);
-                                xml_parser_free($xml);
                                 $depth = -1;
                                 for($level[]=0, $i=1, $j=1; isset($struct[$i]); $i++, $j++) {
                                     if (isset($struct[$i]['type'])) {

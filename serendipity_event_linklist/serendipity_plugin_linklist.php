@@ -22,7 +22,7 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $propbag->add('description',   PLUGIN_LINKS_BLAHBLAH);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('configuration', array(
                                              'title',
                                              'prepend_text',
@@ -378,7 +378,6 @@ class serendipity_plugin_linklist extends serendipity_plugin
         $xml = xml_parser_create('UTF-8');
         $linkxml = serendipity_utf8_encode($links);
         xml_parse_into_struct($xml, '<list>' . $linkxml . '</list>', $struct, $index);
-        xml_parser_free($xml);
 
         if ($imgdir === 1 || $imgdir === "true" || $imgdir === true || $imgdir === '') {
             $imgdir = $serendipity['baseURL'] . 'plugins/' . $plugin_dir;
