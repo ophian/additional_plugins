@@ -1,3 +1,7 @@
+2.0.2:
+------
+ * Remove xml_parser_free() in module.tag.xmp. Function xml_parser_free() is deprecated since 8.5, as it has no effect since PHP 8.0
+
 2.0.1
 ------
  * Prep for PHP 8.5. (Non-canonical cast names (boolean), (integer), (double), and (binary) have been deprecated.)
