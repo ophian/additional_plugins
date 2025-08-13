@@ -352,7 +352,6 @@ function parse() {
 	}
 
 	fclose($fp);
-	xml_parser_free($xml_parser);
 
 	$check_patch_params = false;
 	if ( defined('WURFL_PATCH_FILE') && file_exists(WURFL_PATCH_FILE) ) {
@@ -374,7 +373,6 @@ function parse() {
 		    }
 		}
 		fclose($fp);
-		xml_parser_free($xml_parser);
 		// logging? $checkpatch_result['device']['id']
 	} else if ( defined('WURFL_PATCH_FILE') && !file_exists(WURFL_PATCH_FILE) ) {
 		wurfl_log('parse', WURFL_PATCH_FILE." does not exist");
