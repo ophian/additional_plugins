@@ -284,7 +284,7 @@ class UrlShortener
             $index = array();
             $parser = xml_parser_create();
             xml_parse_into_struct($parser, $response, $vals, $index);
-            xml_parser_free($parser);
+
             return $short_url = $vals[$index['URL'][0]][value];
         }
     }
@@ -313,7 +313,6 @@ class UrlShortener
                 $index = array();
                 $parser = xml_parser_create();
                 xml_parse_into_struct($parser, $xml, $vals, $index);
-                xml_parser_free($parser);
                 $short_url = 'http://delivr.com/' . $vals[$index['DELIVRID'][0]][value];
                 $shorturls['delivr'] = trim($short_url);
 
@@ -331,7 +330,6 @@ class UrlShortener
                 $index = array();
                 $parser = xml_parser_create();
                 xml_parse_into_struct($parser, $xml, $vals, $index);
-                xml_parser_free($parser);
                 $short_url = 'http://delivr.com/' . $vals[$index['DELIVRID'][0]][value];
                 $shorturls['delivr'] = trim($short_url);
             }
