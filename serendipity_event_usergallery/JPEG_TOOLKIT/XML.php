@@ -84,8 +84,6 @@ function read_xml_array_from_text( $xmltext )
         // will have to be removed later
         if ( xml_parser_set_option($xml_parser,XML_OPTION_SKIP_WHITE,0) == FALSE )
         {
-                // Error setting case folding - destroy the parser and return
-                xml_parser_free($xml_parser);
                 return FALSE;
         }
 
@@ -94,22 +92,14 @@ function read_xml_array_from_text( $xmltext )
         // casing is in reality XML standards violation
         if ( xml_parser_set_option($xml_parser,XML_OPTION_CASE_FOLDING,0) == FALSE )
         {
-                // Error setting case folding - destroy the parser and return
-                xml_parser_free($xml_parser);
                 return FALSE;
         }
 
         // Parse the XML text into a array structure
         if ( xml_parse_into_struct($xml_parser, $xmltext, $vals, $index) == 0 )
         {
-                // Error Parsing XML - destroy the parser and return
-                xml_parser_free($xml_parser);
                 return FALSE;
         }
-
-        // Destroy the xml parser
-        xml_parser_free($xml_parser);
-
 
         // Change: Fixed problem that caused the whitespace (especially newlines) to be destroyed when converting xml text to an xml array, as of revision 1.10
 
