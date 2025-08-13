@@ -23,7 +23,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '3.0.1');
+        $propbag->add('version',       '3.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -867,7 +867,8 @@ if (is_array($cats = serendipity_fetchCategories())) {
             $exif_mode = 'internal';
         } elseif ($exiftype) {
             $exif_mode = 'jhead';
-            $exif_raw  = explode("\n", @`jhead $infile`);
+            $pfxlines  = 'jhead '.$infile;
+            $exif_raw  = explode("\n", @$pfxlines);
             $exif      = array();
 
             foreach((array)$exif_raw AS $line) {
