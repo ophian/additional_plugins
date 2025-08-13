@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -55,11 +57,11 @@ class serendipity_plugin_microformats extends serendipity_plugin
         $propbag->add('description',   PLUGIN_MICROFORMATS_TITLE_D);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version',       '0.28');
+        $propbag->add('version',       '1.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_FEATURES'));
         $propbag->add('configuration', array('display_title', 'sort', 'purge', 'include_entries', 'icondisplay', 'timezone', 'eventlist_XML', 'explain'));
@@ -139,7 +141,6 @@ class serendipity_plugin_microformats extends serendipity_plugin
             $xml = xml_parser_create('ISO-8859-1');
             $linkxml = $this->get_config('eventlist_XML');
             xml_parse_into_struct($xml, $linkxml, $struct, $index);
-            xml_parser_free($xml);
 
             $i = 0;
             foreach($struct AS $k => $v) {
