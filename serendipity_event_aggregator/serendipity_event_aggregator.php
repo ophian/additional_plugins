@@ -75,7 +75,7 @@ class serendipity_event_aggregator extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.2.0');
+        $propbag->add('version',       '2.2.1');
         $propbag->add('author',       'Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1014,7 +1014,6 @@ class serendipity_event_aggregator extends serendipity_event
         xml_parser_set_option($p, XML_OPTION_CASE_FOLDING, 0);
         @xml_parser_set_option($p, XML_OPTION_TARGET_ENCODING, LANG_CHARSET);
         xml_parse_into_struct($p, $data, $vals, $index);
-        xml_parser_free($p);
 
         $i = 0;
         $tree = array();

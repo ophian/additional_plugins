@@ -1,3 +1,7 @@
+2.2.1:
+------
+ * Remove xml_parser_free(). Function xml_parser_free() is deprecated since 8.5, as it has no effect since PHP 8.0
+
 2.2.0:
 ------
  * Fix creating tables for PostgreSQL with type on PDO
