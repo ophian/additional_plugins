@@ -1,3 +1,7 @@
+2.0.4
+------
+ * Fix strtolower(): Argument #1 ($string) must be of type string, int given
+
 2.0.3
 ------
  * Fix JSON.parse JS error while mb_** function threw type errors: Argument #1 ($string) must be of type string, int given
