@@ -1029,10 +1029,10 @@ class serendipity_event_spamblock_bee extends serendipity_event
     function xorScramble($string, $key)
     {
         $scrambled = '';
-        $length    = mb_strlen($string, 'UTF-8');
+        $length    = mb_strlen((string) $string, 'UTF-8');
 
         for ($i = 0; $i < $length; ++$i) {
-            $chr        = mb_substr($string, $i, 1, 'UTF-8');
+            $chr        = mb_substr((string) $string, $i, 1, 'UTF-8');
             $ord        = $this->ordUtf8($chr);
             $scrambled .= $this->chrUtf8($ord ^ $key);
         }

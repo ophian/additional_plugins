@@ -1,3 +1,7 @@
+2.0.3
+------
+ * Fix JSON.parse JS error while mb_** function threw type errors: Argument #1 ($string) must be of type string, int given
+
 2.0.2
 ------
  * Prep for PHP 8.5. (Non-canonical cast names (boolean), (integer), (double), and (binary) have been deprecated.)
