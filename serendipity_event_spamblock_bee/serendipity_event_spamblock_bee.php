@@ -424,8 +424,8 @@ class serendipity_event_spamblock_bee extends serendipity_event
             // Check hidden Captcha
             if (PLUGIN_EVENT_SPAMBLOCK_SWTCH_OFF != $this->hiddenCaptchaHandle) {
                 $answer                  = trim(strtolower(($serendipity['POST']['beecaptcha'] ?? '')));
-                $correctAnswer           = (string) $this->getCaptchaAnswer();
-                $correctAnswer['answer'] = strtolower($correctAnswer['answer'] ?? '');
+                $correctAnswer           = $this->getCaptchaAnswer();
+                $correctAnswer['answer'] = strtolower((string) ($correctAnswer['answer'] ?? ''));
                 $isCorrect               = false;
 
                 // If provided answer is longer than 1000 characters and RegExp matching is on,
