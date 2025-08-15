@@ -12,7 +12,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '2.0.0');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '2.0.1');       // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -431,7 +431,7 @@ class serendipity_event_popfetcher extends serendipity_event
                 serendipity_sendComment($cid, $row['email'], $name, $email, $url, $id, $row['title'], $comments, $type, serendipity_db_bool($ca['moderate_comments']));
             }
 
-            serendipity_approveComment($cid, $id, true);
+            serendipity_approveComment($cid, (int) $id, true);
 
             return $cid;
         } else {
