@@ -1,3 +1,7 @@
+3.1.2:
+------
+ * Fix strict types on comments approve and comments delete
+
 3.1.1:
 ------
  * Fix a type error with floats awaiting array or string type in preg_replace

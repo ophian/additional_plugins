@@ -19,7 +19,7 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
         $propbag->add('description',    PLUGIN_EVENT_SPAMBLOCK_BAYES_DESC);
         $propbag->add('name',           $this->title);
-        $propbag->add('version',        '3.1.1');
+        $propbag->add('version',        '3.1.2');
         $propbag->add('requirements',   array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -254,13 +254,13 @@ class serendipity_event_spamblock_bayes extends serendipity_event
 
                                 // Ham shall be approved, Spam deleted
                                 if ($category == 'ham') {
-                                    serendipity_approveComment($id, $databaseComment['entry_id']);
+                                    serendipity_approveComment((int) $id, (int) $databaseComment['entry_id']);
                                 }
                                 if ($category == 'spam') {
                                     if ($this->get_config('recycler', true)) {
                                         $this->recycleComment($id, $databaseComment['entry_id']);
                                     }
-                                    serendipity_deleteComment($id, $databaseComment['entry_id']); // BE aware, if this is a comment parent, which already has threaded children, it is NOT nuked and only the comment body text is purged to contain COMMENT_DELETED, which is a core functionality AND can NOT be made undone in case it returns from recycler.
+                                    serendipity_deleteComment((int) $id, (int) $databaseComment['entry_id']); // BE aware, if this is a comment parent, which already has threaded children, it is NOT nuked and only the comment body text is purged to contain COMMENT_DELETED, which is a core functionality AND can NOT be made undone in case it returns from recycler.
                                 }
                             }
                             break;
@@ -332,16 +332,16 @@ class serendipity_event_spamblock_bayes extends serendipity_event
                     break;
 
                 case 'xmlrpc_comment_spam':
-                    $entry_id = $addData['id'];
-                    $comment_id = $addData['cid'];
+                    $entry_id = (int) $addData['id'];
+                    $comment_id = (int) $addData['cid'];
                     $comment = eventData['url'] . ' ' . strip_tags($eventData['body']) . ' ' . $eventData['name'] . ' ' . $eventData['email'];
                     $this->learn($eventData, 'spam');
                     serendipity_deleteComment($comment_id, $entry_id);
                      break;
 
                 case 'xmlrpc_comment_ham':
-                    $comment_id = $addData['cid'];
-                    $entry_id = $addData['id'];
+                    $comment_id = (int) $addData['cid'];
+                    $entry_id = (int) $addData['id'];
                     $comment = eventData['url'] . ' ' . strip_tags($eventData['body']) . ' ' . $eventData['name'] . ' ' . $eventData['email'];
                     $this->learn($comment, 'ham');
                     //moderated ham-comments should be instantly approved, that's why they need an id:
