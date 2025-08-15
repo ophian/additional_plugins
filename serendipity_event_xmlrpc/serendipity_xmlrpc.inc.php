@@ -664,7 +664,7 @@ function wp_deleteComment($message) {
         // We need the entryid, so fetch it:
         $sql = serendipity_db_query("SELECT entry_id FROM {$serendipity['dbPrefix']}comments WHERE id = ". $comment_id, true);
         $entry_id = $sql['entry_id'];
-        $result = serendipity_deleteComment($comment_id, $entry_id);
+        $result = serendipity_deleteComment((int) $comment_id, (int) $entry_id);
     }
     else {
         $result = false;
@@ -688,7 +688,7 @@ function wp_editComment($message) {
     }
 
     $val = $message->params[3];
-    $comment_id =  $val->getval();
+    $comment_id = (int) $val->getval();
     $val = $message->params[4];
     $rpccomment =  $val->getval();
 
@@ -707,7 +707,7 @@ function wp_editComment($message) {
 
         // If we fetched a row, process it
         if (is_array($commentInfo)) {
-            $entry_id = $commentInfo['entry_id'];
+            $entry_id = (int) $commentInfo['entry_id'];
             $entry_authorid = $commentInfo['entry_authorid'];
             $comment_status = $commentInfo['comment_status'];
 
