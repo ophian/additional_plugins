@@ -20,7 +20,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_DSGVO_GDPR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '3.0.0');
+        $propbag->add('version',       '3.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -327,6 +327,10 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         $out .= PLUGIN_EVENT_DSGVO_GDPR_SERENDIPITY_CORE_THEMES;
 
         foreach ($stack AS $theme => $info) {
+            if (!empty($info['engine'])) {
+                continue;
+            }
+
             if (file_exists($serendipity["serendipityPath"] . $serendipity["templatePath"] . $theme . "/legal.txt") || isset($static_info[$theme])) {
                 if ($theme == $serendipity['template']) {
                     $pointer = 'theme_active';
@@ -432,7 +436,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
 
                 if (isset($serendipity['POST']['delete'])) {
                     foreach($clist AS $comment) {
-                        if (serendipity_deleteComment($comment['id'], $comment['entry_id'])) {
+                        if (serendipity_deleteComment((int) $comment['id'], (int) $comment['entry_id'])) {
                             echo '<span class="msg_success"><span class="icon-ok-circled"></span> ' . sprintf(COMMENT_DELETED, $comment['id']) . "</span>\n";
                         }
                     }
@@ -484,8 +488,8 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
         </div>
 
         <div class="form_buttons">
-            <input name="serendipity[export]" value="CSV" type="submit">
             <input name="serendipity[delete]" class="state_cancel comments_multidelete" data-delmsg="<?php echo COMMENTS_DELETE_CONFIRM; ?>" value="<?php echo DELETE; ?>" type="submit">
+            <input name="serendipity[export]" value="CSV" type="submit">
         </div>
     </fieldset>
 
@@ -493,6 +497,7 @@ class serendipity_event_dsgvo_gdpr extends serendipity_event
 
 <p><em><?= PLUGIN_EVENT_DSGVO_GDPR_BACKEND_CHECK_REQUESTS ?></em></p>
 <?php
+/* NOTE: It is essential for browsers to have button order delete export to actually go to work with export ! */
     }
 
     function event_hook($event, &$bag, &$eventData, $addData = null)

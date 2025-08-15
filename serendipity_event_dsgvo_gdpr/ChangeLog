@@ -1,3 +1,9 @@
+3.1.0:
+------
+ * Re-add "Engine: XXX" theme info stack check to exclude info from child themes
+ * Fix submitting CVS export
+ * Fix some type issue calling core function
+
 3.0.0:
 ------
  * Declare strict types
