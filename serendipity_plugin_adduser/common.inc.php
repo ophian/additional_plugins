@@ -167,7 +167,7 @@ class serendipity_common_adduser
         return false;
     }
 
-    static function addAuthor(string $username, #[\SensitiveParameter] string $password, string $email, string $userlevel, bool $right_publish, bool $no_create) : string
+    static function addAuthor(string $username, #[\SensitiveParameter] string $password, string $email, int|string $userlevel, bool $right_publish, bool $no_create) : string
     {
         global $serendipity;
 
@@ -200,7 +200,7 @@ class serendipity_common_adduser
         return $hash;
     }
 
-    static function addUser(string &$username, #[\SensitiveParameter] string &$password, string &$email, string $userlevel, iterable $usergroups = array(),
+    static function addUser(string &$username, #[\SensitiveParameter] string &$password, string &$email, int|string $userlevel, iterable $usergroups = array(),
                             bool $no_create = false, bool $right_publish = true, bool $straight_insert = false, bool $approve = false, bool $use_captcha = false) : bool
     {
         global $serendipity;
