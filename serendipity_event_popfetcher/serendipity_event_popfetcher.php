@@ -14,7 +14,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '2.0.2');      // This version of Popfetcher
+define('POPFETCHER_VERSION',  '2.0.3');      // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -40,6 +40,8 @@ class serendipity_event_popfetcher extends serendipity_event
 {
 
     public $title = PLUGIN_MF_NAME;
+
+    private $debug = false;
 
     function introspect(&$propbag)
     {
@@ -360,7 +362,7 @@ class serendipity_event_popfetcher extends serendipity_event
             $fp = @fopen($serendipity['serendipityPath'] . 'uploads/popfetcher-' . date('Y-m') . '.log', 'a');
         }
 
-        if ($fp) {
+        if (isset($fp)) {
             fwrite($fp, date('Y-m-d H:i') . ': ' . $msg . "\n");
             fclose($fp);
         }
@@ -451,6 +453,15 @@ class serendipity_event_popfetcher extends serendipity_event
         $s = preg_replace('@((Re|Aw|Wg)\^*[0-9]*\s*:\s*)+@imsU', '', $subject);
         $s = trim($s);
         return $s;
+    }
+
+    function out_callback($msg, $internal = true)
+    {
+        if ($internal) {
+            return '<span class="msg_error">' . $msg . '</span>';
+        } else {
+            return '<br />'.$msg.'<br />';
+        }
     }
 
     function workEntry($subject, &$msgbody, $authorid, &$postex, &$cid, &$s)
@@ -951,9 +962,9 @@ class serendipity_event_popfetcher extends serendipity_event
         $serendipity['POST']['properties']['fake'] = 'fake';
         $_SESSION['serendipityRightPublish'] = true;
 
-        $this->out('<h3>' . PLUGIN_MF_NAME . ' v' . POPFETCHER_VERSION . ' @ ' . date("D M j G:i:s T Y") . '</h3>');
+        $this->out('<h3>' . PLUGIN_MF_NAME . ' v' . POPFETCHER_VERSION . ' @ ' . date("D M j G:i:s T Y") . "</h3>\n\n");
 
-        $debug_file    = null; // DEVELOPERS: If set to a filename, you can bypass fetching POP and use a file instead.
+        $debug_file = null; // DEVELOPERS: If set to a filename, you can bypass fetching POP and use a file instead.
         $debug_mail = $this->get_config('debug_mail');
         if (strlen($debug_mail) != '' && file_exists($debug_mail)) {
             $debug_file = $debug_mail;
@@ -965,8 +976,11 @@ class serendipity_event_popfetcher extends serendipity_event
         $authorid = $this->get_config('author');
 
         if (empty($authorid) || $authorid == 'empty') {
-            $authorid      = (isset($serendipity['authorid'])) ? $serendipity['authorid'] : 1;
+            $authorid = $serendipity['authorid'] ?? 1;
         }
+
+        // Find out if we run this plugin externally or from the admin menu
+        $adminmenu = serendipity_db_bool($this->get_config('adminmenu', 'true'));
 
         $mailserver    = trim($this->get_config('mailserver'));
         $mailport      = $this->get_config('mailport');
@@ -999,14 +1013,14 @@ class serendipity_event_popfetcher extends serendipity_event
         // Upload directory must end with a slash character
         if (strrchr($dirpath, '/') != '/'){
             $output = MF_ERROR7;
-            $this->out( '<br />'.$output.'<br />');
+            $this->out( $this->out_callback($output, $adminmenu) );
             return true;
         }
 
         // Upload directory must be writable
         if (!is_writable($dirpath)){
             $output = MF_ERROR6;
-            $this->out('<br />'.$output.'<br />');
+            $this->out( $this->out_callback($output, $adminmenu) );
             return true;
         }
 
@@ -1030,7 +1044,7 @@ class serendipity_event_popfetcher extends serendipity_event
             $cid = serendipity_fetchCategoryInfo(null, $category);
             if ($cid == false) {
                 $output = MF_ERROR8;
-                $this->out( '<br />'.$output.'<br />');
+                $this->out( $this->out_callback($output, $adminmenu) );
                 return true;
             }
         }
@@ -1042,7 +1056,7 @@ class serendipity_event_popfetcher extends serendipity_event
             // Attempt to connect to mail server
             if (!$pop3->connect($mailserver, $mailport)) {
                 $output = MF_ERROR1.': '.$pop3->ERROR;
-                $this->out( '<br />'.$output.'<br />');
+                $this->out( $this->out_callback($output, $adminmenu) );
                 return true;
             }
 
@@ -1053,27 +1067,27 @@ class serendipity_event_popfetcher extends serendipity_event
                 $Count = $pop3->login($mailuser, $mailpass);
             }
 
-            // Check for error retrieving number of msgs in mailbox
+            // Check for error retrieving number of messages in mailbox
             if (($Count === false) or ($Count == -1)) {
                 $output = MF_ERROR2.': '.$pop3->ERROR;
-                $this->out( '<br />'.$output.'<br />');
+                $this->out( $this->out_callback($output, $adminmenu) );
                 return true;
             }
 
-            // If no msgs in mailbox, exit
+            // If no messages in mailbox, exit
             if ($Count == 0) {
                 $output=MF_MSG1;
-                $this->out( '<br />'.$output.'<br />');
+                $this->out( $this->out_callback($output, $adminmenu) );
                 return true;
             }
 
-            // Get the list of email msgs
+            // Get the list of email messages
             $msglist = $pop3->uidl();
 
-            // Check for error in getting list of email msgs
+            // Check for error in getting list of email messages
             if (!is_array($msglist)) {
                 $output = MF_ERROR3.': '.$pop3->ERROR;
-                $this->out( '<br />'.$output.'<br />');
+                $this->out( $this->out_callback($output, $adminmenu) );
                 $pop3->quit();
                 return true;
             }
@@ -1100,7 +1114,7 @@ class serendipity_event_popfetcher extends serendipity_event
             // Should have an array. If not, there was an error
             if ( (!$MessArray) or (gettype($MessArray) != "array")) {
                 $output = MF_ERROR4.': '.$pop3->ERROR;
-                $this->out( '<br />'.$output.'<br />');
+                $this->out( $this->out_callback($output, $adminmenu) );
                 $pop3->quit();
                 return true;
             }
@@ -1305,7 +1319,7 @@ class serendipity_event_popfetcher extends serendipity_event
                         .<br />\n");
                     }
 
-                    // Handle msgs with attachments and messages with images that are inlined
+                    // Handle messages with attachments and messages with images that are inlined
                     if (( isset($p->disposition) AND $p->disposition == 'attachment' AND isset($p->body) )
                           OR
                         ( isset($p->disposition) AND $p->disposition == 'inline' AND isset($p->body) AND $p->ctype_primary == 'image')

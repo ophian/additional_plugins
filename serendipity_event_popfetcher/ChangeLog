@@ -1,3 +1,9 @@
+2.0.3:
+------
+ * Fix some PHP 8 variable issues
+ * Return some main message errors in Serendipity style when using default internal usage
+ * Testing this under REAL CONDITIONS is experimental, since a lot might have changed since 2004  ;-) Please report!
+
 2.0.2:
 ------
  * Add missing strict type declaration of v.2.0.0
