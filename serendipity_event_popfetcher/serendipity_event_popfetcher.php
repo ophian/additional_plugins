@@ -3,6 +3,8 @@
 //  from a POP3 email account (includes cell phone support for moblogging)
 // Author: Jason Levitt  fredb86@users.sourceforge.net
 
+declare(strict_types=1);
+
 require_once('class.pop3.php');
 require_once('mimeDecode.php');
 require_once('sprintpcs.php');
@@ -12,7 +14,7 @@ require_once('tmobile.php');
 require_once('o2.php');
 
 // Default values
-define('POPFETCHER_VERSION',  '2.0.1');       // This version of Popfetcher
+define('POPFETCHER_VERSION',  '2.0.2');      // This version of Popfetcher
 define('DEFAULT_ADMINMENU',   'true');       // True if run as sidebar plugin. False if external plugin.
 define('DEFAULT_HIDENAME',    'popfetcher'); // User should set this to something unguessable
 define('DEFAULT_MAILSERVER',  '');
@@ -21,8 +23,8 @@ define('DEFAULT_MAILPASS',    '');
 define('DEFAULT_DIR',         '');           // Leave blank for default top-level uploads directory
 define('DEFAULT_PORT',        '110');        // POP mail port
 define('DEFAULT_TIMEOUT',     '30');         // How many seconds to try to connect
-define('DEFAULT_DELETEFLAG',  'true');       // True if msgs are deleted from mbox after retrieval
-define('DEFAULT_STRIPTAGS',   'false');      // True if msgs get stripped before writing to database
+define('DEFAULT_DELETEFLAG',  'true');       // True if messages are deleted from mbox after retrieval
+define('DEFAULT_STRIPTAGS',   'false');      // True if messages get stripped before writing to database
 define('DEFAULT_APOPFLAG',    'false');      // True if APOP login is desired
 define('DEFAULT_BLOGFLAG',    'true');       // True if entire message is published as blog entry
 define('DEFAULT_PUBLISHFLAG', 'false');      // False if message is published as draft

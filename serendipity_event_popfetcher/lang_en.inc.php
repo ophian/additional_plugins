@@ -46,7 +46,7 @@
 @define('MF_ERROR1', 'ERROR: could not connect to mail server');
 @define('MF_ERROR2', 'ERROR: could not login to mail server');
 @define('MF_ERROR3', 'ERROR: could not get UIDL info from the mail box. It probably does not support UIDL');
-@define('MF_ERROR4', 'ERROR: error ocurred while fetching msg from your mail box');
+@define('MF_ERROR4', 'ERROR: error occurred while fetching message from your mail box');
 @define('MF_ERROR5', 'ERROR: could not create file: ');
 @define('MF_ERROR6', 'ERROR: your upload directory is not writable. Go to your plugin settings and change it.');
 @define('MF_ERROR7', 'ERROR: your upload directory path must end with a slash "/". Go to your plugin settings and change it.');
@@ -95,7 +95,7 @@
 @define('PLUGIN_MF_STRIPTEXT_DESC', 'If you want to cut advertisement or other texts, you can specify a "magic string" sequence here. All text after this special string is removed from your posting.');
 
 @define('PLUGIN_MF_ONLYFROM', 'Restrict e-mail sender');
-@define('PLUGIN_MF_ONLYFROM_DESC', 'If you only want to allow a certain e-mail address to send mails, you can enter it here. If you leave this field empty, all mails received for your configured account are stored in the blog. Separate multiple mail adresses with a semicolon.');
+@define('PLUGIN_MF_ONLYFROM_DESC', 'If you only want to allow a certain e-mail address to send mails, you can enter it here. If you leave this field empty, all mails received for your configured account are stored in the blog. Separate multiple mail addresses with a semicolon.');
 @define('MF_ERROR_ONLYFROM', 'E-mail address %s is not the same as configured restriction to %s. Ignoring mail.');
 @define('MF_ERROR_NOAUTHOR', 'No author with email address %s.  Skipping email.');
 @define('PLUGIN_MF_SPLITTEXT', 'Define a string which separates body/extended parts');

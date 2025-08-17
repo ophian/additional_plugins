@@ -10,7 +10,7 @@
 @define('PLUGIN_MF_AM', 'Plugin-Methode');
 @define('PLUGIN_MF_AM_DESC', 'Wenn auf "Intern" gesetzt, müssen Sie den POPfetcher über das Admin-Menü aufrufen. Wenn "Extern" eingestellt ist, kann POPfetcher nur über einen Cronjob aufgerufen werden. (Vorgabe ist "Intern".');
 @define('PLUGIN_MF_HN', 'Name für externen Aufruf');
-@define('PLUGIN_MF_HN_DESC', 'Bitte geben Sie eine Zeichenkette ein, über die das Plugin später gezielt aufgerufen werden kann. Diese Zeichenkette sollten nur sie kennen, so dass der Aufruf des Popfetcher vor fremden Besuchern geschützt ist. Wenn der Name z.B. auf "xyz123" gesetzt wird, kann der Aufruf mittels http://yourblog/index.php?/plugin/xyz1234" durchgeführt werden (auch automatisiert via wget/lynx). Falls der Aufruf des Plugins nicht auf "Extern" steht, hat diese Option keine Auswirkung.');
+@define('PLUGIN_MF_HN_DESC', 'Bitte geben Sie eine Zeichenkette ein, über die das Plugin später gezielt aufgerufen werden kann. Diese Zeichenkette sollten nur sie kennen, so dass der Aufruf des Popfetcher vor fremden Besuchern geschützt ist. Wenn der Name z.B. auf "xyz123" gesetzt wird, kann der Aufruf mittels https://yourblog/index.php?/plugin/xyz1234" durchgeführt werden (auch automatisiert via wget/lynx). Falls der Aufruf des Plugins nicht auf "Extern" steht, hat diese Option keine Auswirkung.');
 @define('PLUGIN_MF_MS', 'Mail-Server');
 @define('PLUGIN_MF_MS_DESC', 'Der Servername des POP3-Servers, z.B. yourdomain.com');
 @define('PLUGIN_MF_MD', 'Upload-Verzeichnis');
@@ -39,12 +39,12 @@
 @define('PUBLISH_MF', 'Publizieren');
 @define('DRAFT_MF', 'Entwurf');
 @define('MF_ERROR1', 'FEHLER: Konnte nicht zum Mailserver verbinden.');
-@define('MF_ERROR2', 'FEHLER: Login war nicht möglich (falsches Passowrt?).');
+@define('MF_ERROR2', 'FEHLER: Login war nicht möglich (falsches Passwort?).');
 @define('MF_ERROR3', 'FEHLER: Konnte keine UIDL Informationen von der Mailbox erhalten. UIDL wird wahrscheinlich nicht unterstützt.');
 @define('MF_ERROR4', 'FEHLER: Während des Abholvorgangs sind Fehler aufgetreten.');
 @define('MF_ERROR5', 'FEHLER: Konnte folgende Datei nicht anlegen: ');
-@define('MF_ERROR6', 'FEHLER: Das Upload Verzeichniss hat keine Schreibrechte. Bitte die Schreibrechte anpassen.');
-@define('MF_ERROR7', 'FEHLER: Das Upload Verzeichniss hat keinen "/" als Abschluss. Bitte korrigieren.');
+@define('MF_ERROR6', 'FEHLER: Das Upload Verzeichnis hat keine Schreibrechte. Bitte die Schreibrechte anpassen.');
+@define('MF_ERROR7', 'FEHLER: Das Upload Verzeichnis hat keinen "/" als Abschluss. Bitte korrigieren.');
 @define('MF_ERROR8', 'FEHLER: Die Blog Kategorie ist nicht angelegt.');
 @define('MF_ERROR9', 'FEHLER: Fehler bei mimeDecode: Die Mail ist keine korrekte MIME-Mail.');
 @define('MF_ERROR10', 'FEHLER: Konnte keine SprintPCS Picture/Video Share URL finden.');
@@ -92,7 +92,7 @@
 @define('MF_ERROR_ONLYFROM', 'E-Mail Absender %s entspricht nicht dem zugelassenen Absender %s. Ignoriere E-Mail.');
 
 @define('PLUGIN_MF_SPLITTEXT', 'Spezieller Text, der Text und erweiterten Eintrag einer E-Mail aufteilt');
-@define('PLUGIN_MF_SPLITTEXT_DESC', 'Falls Sie die Aufteilung der E-Mail in normalen Eintrag und erweiterten Eintrag manuell bestimmen wollen, können Sie diesen Trennungstext hier eingeben. Alles vor dem Auftreten dieses Texts wird dann in den normalen Eintrag gestellt, alles nach dem Text in den erweiterten Eintrag. Stellen Sie sicher, dass der spezielle Text einmalig vorkommt, also so etwas wie "xxx-TRENNER-xxx". Wenn Sie dieses Feld leerlassen, wird die E-Mail wie gewöhnlich aufgeteilt - sollten Sie hier einen Text eintragen, werden einige der anderen Konfigurationsoptionen ausgehebelt!');
+@define('PLUGIN_MF_SPLITTEXT_DESC', 'Falls Sie die Aufteilung der E-Mail in normalen Eintrag und erweiterten Eintrag manuell bestimmen wollen, können Sie diesen Trennungstext hier eingeben. Alles vor dem Auftreten dieses Texts wird dann in den normalen Eintrag gestellt, alles nach dem Text in den erweiterten Eintrag. Stellen Sie sicher, dass der spezielle Text einmalig vorkommt, also so etwas wie "xxx-TRENNER-xxx". Wenn Sie dieses Feld leer lassen, wird die E-Mail wie gewöhnlich aufgeteilt - sollten Sie hier einen Text eintragen, werden einige der anderen Konfigurationsoptionen ausgehebelt!');
 
 @define('PLUGIN_MF_USETEXT', 'Spezieller Text, der den Bloginhalt definiert');
 @define('PLUGIN_MF_USETEXT_DESC', 'Falls nur ein Ausschnitt der E-Mail als Blogeintrag genutzt werden soll, kann dieser Marker hier spezifiziert werden. Sobald der Begriff in der E-Mail auftaucht wird alles zwischen diesem Marker als Bloginhalt verwendet. Es ist sicherzustellen, dass der "magische" Textmarker innerhalb der E-Mail eindeutig ist, also z.B. "xxx-BLOG-xxx".');
@@ -110,7 +110,7 @@
 @define('PLUGIN_MF_REPLY_ERROR2', 'Konnte Kommentar nicht speichern.');
 
 @define('PLUGIN_MF_SUBFOLDER', 'Datei-Anhänge in Unterverzeichnissen wie 2019/02/ speichern?');
-@define('PLUGIN_MF_DEBUG', 'Fehler- und Debuggingmeldungen in uploads/popfetcher-YYYY-MM.log speichern?');
+@define('PLUGIN_MF_DEBUG', 'Fehler- und Debugging-Meldungen in uploads/popfetcher-YYYY-MM.log speichern?');
 
 @define('THUMBNAIL_VIEW', 'Vorschaubilder in Blog-Eintrag anzeigen');
 @define('THUMBNAIL_VIEW_DESC', 'Falls ein Thumbnail von angehängten Bildern im Blog-Eintrag dargestellt werden soll kann dies auf "Ja" gestellt werden. Wenn es auf "Nein" steht wird das vollständige Bild angezeigt.');

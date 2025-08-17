@@ -1,3 +1,8 @@
+2.0.2:
+------
+ * Add missing strict type declaration of v.2.0.0
+ * Fix some typos in [en, de] lang files
+
 2.0.1:
 ------
  * Cast fix an arg type of comment approve function call
