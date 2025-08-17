@@ -37,7 +37,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '3.0.0');
+        $propbag->add('version', '3.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -699,7 +699,6 @@ class serendipity_event_todolist extends serendipity_event
                             imagepng($image,$cap);
                         }
                         imagepng($image);
-                        imagedestroy($image);
                     } else {
                         header('Content-Type: image/png');
 
