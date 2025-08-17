@@ -98,8 +98,6 @@ function ycon($hash, $size, $bg_red, $bg_green, $bg_blue)
 
   imagecopyresampled($icon, $draw_icon, 0, 0, 0, 0, $size, $size, $draw_size, $draw_size);
 
-  imagedestroy($draw_icon);
-
   return $icon;
 }
 

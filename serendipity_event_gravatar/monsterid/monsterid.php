@@ -27,7 +27,6 @@ function build_monster($filename, $seed='',$size=''){
         if(!$im) die('Failed to load '.$file);
         imageSaveAlpha($im, true);
         imagecopy($monster,$im,0,0,0,0,120,120);
-        imagedestroy($im);
 
         // color the body
         if ($part == 'body') {
@@ -45,13 +44,10 @@ function build_monster($filename, $seed='',$size=''){
         if (!$out) return false; // Problems creating image!
         imagecopyresampled($out,$monster,0,0,0,0,$size,$size,120,120);
         imagepng($out,$filename);
-        imagedestroy($out);
-        imagedestroy($monster);
         return true;
     } else {
         //header ("Content-type: image/png");
         imagepng($monster,$filename);
-        imagedestroy($monster);
         return true;
     }
 }

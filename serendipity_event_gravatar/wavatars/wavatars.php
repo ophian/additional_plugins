@@ -89,7 +89,6 @@ function wavatar_apply_image ($base, $part)
         return;
     imageSaveAlpha($im, true);
     imagecopy($base,$im, 0, 0, 0, 0, WAVATAR_SIZE, WAVATAR_SIZE);
-    imagedestroy($im);
 
 }
 
@@ -133,11 +132,8 @@ function wavatar_build ($filename, $seed, $size)
         imagecopyresampled ($out,$avatar, 0, 0, 0, 0, $size, $size, WAVATAR_SIZE, WAVATAR_SIZE);
         //header ("Content-type: image/png");
         imagepng($out, $filename);
-        imagedestroy($out);
-        imagedestroy($avatar);
     } else {
         imagepng($avatar, $filename);
-        imagedestroy($avatar);
     }
     return true;
 }

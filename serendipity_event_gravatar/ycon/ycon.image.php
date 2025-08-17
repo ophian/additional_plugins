@@ -7,7 +7,6 @@ function build_ycon($filename, $seed='',$size='') {
     imagetruecolortopalette($image, false, 64);
 //    header('Content-type: image/png');
     imagepng($image,$filename);
-    imagedestroy($image);
     return true;
 }
 
