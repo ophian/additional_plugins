@@ -393,11 +393,11 @@
 <description>訪問者が PDF 形式でブログをダウンロードすることを許可します。</description>
 <maintainers><maintainer><name>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.4.7</version>
-  <requirements:s9yVersion>2.1</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-17</date>
   <filelist>
     <dir name="serendipity_event_blogpdf">
       <file>ChangeLog</file>
@@ -6849,11 +6849,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Adds &quot;podcasting&quot; capabilities (RSS enclosure, Video/Sound-Player)</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.2</version>
+  <version>2.0.3</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-08-13</date>
+  <date>2025-08-17</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -9761,11 +9761,11 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <description>Maintain a list of projects and their percentage completion.</description>
 <maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-08-04</date>
+  <date>2025-08-17</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>ChangeLog</file>

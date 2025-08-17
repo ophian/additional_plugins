@@ -94,8 +94,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_blogpdf</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt; Exportar el blog como pdf &lt;/b&gt;&lt;br /&gt; Exportar el blog completo como archivo pdf &lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt; Exportar el blog como pdf &lt;/b&gt;&lt;br /&gt; Exportar el blog completo como archivo pdf &lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Sun, 17 Aug 2025 11:45:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
@@ -860,7 +860,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Easy Podcasting Plugin&lt;/b&gt;&lt;br /&gt;Adds &quot;podcasting&quot; capabilities (RSS enclosure, Video/Sound-Player)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 13 Aug 2025 11:48:31 +0200</pubDate>
+<pubDate>Sun, 17 Aug 2025 11:47:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
@@ -1121,7 +1121,7 @@
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/Project-List&lt;/b&gt;&lt;br /&gt;Maintain a list of projects and their percentage completion.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 13:05:24 +0200</pubDate>
+<pubDate>Sun, 17 Aug 2025 11:50:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
