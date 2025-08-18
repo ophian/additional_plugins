@@ -6,15 +6,15 @@
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_EVENT_BLOGPDF_NAME', 'Експорт на блога в PDF файл');
-@define('PLUGIN_EVENT_BLOGPDF_DESC', 'Дава възможност на потребителите да записват блога в PDF формат');
-@define('PLUGIN_EVENT_BLOGPDF_DOWNLOAD', 'Запиши блога като PDF файл!');
-@define('PLUGIN_EVENT_BLOGPDF_PAGE', 'Страница');
-@define('PLUGIN_EVENT_BLOGPDF_EXPORT', 'Експорт блог');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW', 'Виж като PDF: ');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW_FULL', 'Целия блог');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY', 'Тази статия');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW_CATEGORY', 'Категория [%s]');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'Този месец');
-@define('PLUGIN_EVENT_BLOGPDF_MISSING', 'Невалиден плъгин оператор %s');
+@define('PLUGIN_EVENT_BLOGPDF_NAME', 'Р•РєСЃРїРѕСЂС‚ РЅР° Р±Р»РѕРіР° РІ PDF С„Р°Р№Р»');
+@define('PLUGIN_EVENT_BLOGPDF_DESC', 'Р”Р°РІР° РІСЉР·РјРѕР¶РЅРѕСЃС‚ РЅР° РїРѕС‚СЂРµР±РёС‚РµР»РёС‚Рµ РґР° Р·Р°РїРёСЃРІР°С‚ Р±Р»РѕРіР° РІ PDF С„РѕСЂРјР°С‚');
+@define('PLUGIN_EVENT_BLOGPDF_DOWNLOAD', 'Р—Р°РїРёС€Рё Р±Р»РѕРіР° РєР°С‚Рѕ PDF С„Р°Р№Р»!');
+@define('PLUGIN_EVENT_BLOGPDF_PAGE', 'РЎС‚СЂР°РЅРёС†Р°');
+@define('PLUGIN_EVENT_BLOGPDF_EXPORT', 'Р•РєСЃРїРѕСЂС‚ Р±Р»РѕРі');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW', 'Р’РёР¶ РєР°С‚Рѕ PDF: ');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW_FULL', 'Р¦РµР»РёСЏ Р±Р»РѕРі');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY', 'РўР°Р·Рё СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW_CATEGORY', 'РљР°С‚РµРіРѕСЂРёСЏ [%s]');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'РўРѕР·Рё РјРµСЃРµС†');
+@define('PLUGIN_EVENT_BLOGPDF_MISSING', 'РќРµРІР°Р»РёРґРµРЅ РїР»СЉРіРёРЅ РѕРїРµСЂР°С‚РѕСЂ %s');
 

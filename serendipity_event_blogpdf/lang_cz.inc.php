@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/14
  */
 
 @define('PLUGIN_EVENT_BLOGPDF_NAME', 'Export blogu do PDF');
-@define('PLUGIN_EVENT_BLOGPDF_DESC', 'Umo¾òuje náv¹tìvníkùm blogu stáhnout obsah blogu ve formátu PDF');
-@define('PLUGIN_EVENT_BLOGPDF_DOWNLOAD', 'Stáhnìte tento blog jako PDF!');
-@define('PLUGIN_EVENT_BLOGPDF_PAGE', 'Stránka');
+@define('PLUGIN_EVENT_BLOGPDF_DESC', 'UmoÅ¾Åˆuje nÃ¡vÅ¡tÄ›vnÃ­kÅ¯m blogu stÃ¡hnout obsah blogu ve formÃ¡tu PDF');
+@define('PLUGIN_EVENT_BLOGPDF_DOWNLOAD', 'StÃ¡hnÄ›te tento blog jako PDF!');
+@define('PLUGIN_EVENT_BLOGPDF_PAGE', 'StrÃ¡nka');
 @define('PLUGIN_EVENT_BLOGPDF_EXPORT', 'Export blogu');
 
 @define('PLUGIN_EVENT_BLOGPDF_VIEW', 'Zobrazit jako PDF: ');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW_FULL', 'Celý blog');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY', 'Tento pøíspìvek');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW_FULL', 'CelÃ½ blog');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW_ENTRY', 'Tento pÅ™Ã­spÄ›vek');
 @define('PLUGIN_EVENT_BLOGPDF_VIEW_CATEGORY', 'Kategorie %s');
-@define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'Tento mìsíc');
-@define('PLUGIN_EVENT_BLOGPDF_MISSING', 'Nesprávný parametr pluginu %s');
+@define('PLUGIN_EVENT_BLOGPDF_VIEW_MONTH', 'Tento mÄ›sÃ­c');
+@define('PLUGIN_EVENT_BLOGPDF_MISSING', 'NesprÃ¡vnÃ½ parametr pluginu %s');
 

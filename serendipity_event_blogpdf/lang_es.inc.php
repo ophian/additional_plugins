@@ -3,7 +3,7 @@
 @define('PLUGIN_EVENT_BLOGPDF_NAME', ' Exportar el blog como pdf ');
 @define('PLUGIN_EVENT_BLOGPDF_DESC', ' Exportar el blog completo como archivo pdf ');
 @define('PLUGIN_EVENT_BLOGPDF_DOWNLOAD', ' Descarga este blog como pdf!');
-@define('PLUGIN_EVENT_BLOGPDF_PAGE', ' p·gina ');
+@define('PLUGIN_EVENT_BLOGPDF_PAGE', ' p√°gina ');
 @define('PLUGIN_EVENT_BLOGPDF_EXPORT', ' Exportar Blog ');
 
 @define('PLUGIN_EVENT_BLOGPDF_VIEW', ' Ver como pdf:  ');

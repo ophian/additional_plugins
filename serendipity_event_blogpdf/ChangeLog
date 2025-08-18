@@ -1,3 +1,12 @@
+3.0.0:
+------
+ * Declare strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Cast fix several parameters for API calls
+ * Fix several PHP 8+ issues with deprecations or accessing non-set variables in the library files
+ * Raise requirements for Styx 5.0
+
 2.4.7:
 -----
  * Preparation for Styx 5 Series: Convert serendipity_mb('ucfirst' ... to native PHP function

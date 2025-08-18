@@ -7374,7 +7374,7 @@ class TCPDF {
 		if (($parsed === false) AND function_exists('imagecreatefrompng')) {
 			try {
 				// generate images
-				$img = imagecreatefrompng($file);
+				$img = @imagecreatefrompng($file);
 				$imgalpha = imagecreate($wpx, $hpx);
 				// generate gray scale palette (0 -> 255)
 				for ($c = 0; $c < 256; ++$c) {
@@ -7390,12 +7390,10 @@ class TCPDF {
 					}
 				}
 				imagepng($imgalpha, $tempfile_alpha);
-				imagedestroy($imgalpha);
 				// extract image without alpha channel
 				$imgplain = imagecreatetruecolor($wpx, $hpx);
 				imagecopy($imgplain, $img, 0, 0, 0, 0, $wpx, $hpx);
 				imagepng($imgplain, $tempfile_plain);
-				imagedestroy($imgplain);
 				$parsed = true;
 			} catch (Exception $e) {
 				// GD fails
@@ -18433,7 +18431,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 							if ($this->inxobj ?? false) {
 								// we are inside an XObject template
 								$opentagpos = strlen($this->xobjects[$this->xobjid]['outdata']);
-							} elseif (!$this->InFooter) {
+							} elseif (!($this->InFooter ?? false)) {
 								if (isset($this->footerlen[$this->page])) {
 									$this->footerpos[$this->page] = $this->pagelen[$this->page] - $this->footerlen[$this->page];
 								} else {
@@ -19673,11 +19671,11 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 					$this->y += $dom[$table_el]['border-spacing']['V'];
 				}
 				$this->Ln(0, $cell);
-				if ($this->current_column == $parent['startcolumn']) {
+				if (isset($parent['startcolumn']) && $this->current_column == $parent['startcolumn']) {
 					$this->x = $parent['startx'];
 				}
 				// account for booklet mode
-				if ($this->page > $parent['startpage']) {
+				if (isset($parent['startpage']) && $this->page > $parent['startpage']) {
 					if (($this->rtl) AND ($this->pagedim[$this->page]['orm'] != $this->pagedim[$parent['startpage']]['orm'])) {
 						$this->x -= ($this->pagedim[$this->page]['orm'] - $this->pagedim[$parent['startpage']]['orm']);
 					} elseif ((!$this->rtl) AND ($this->pagedim[$this->page]['olm'] != $this->pagedim[$parent['startpage']]['olm'])) {
@@ -19713,7 +19711,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 							}
 						}
 					}
-					if (isset($prevtrkey) AND ($dom[$trkey]['startpage'] > $dom[$prevtrkey]['endpage'])) {
+					if (isset($dom[$trkey]['startpage']) && isset($prevtrkey) AND ($dom[$trkey]['startpage'] > $dom[$prevtrkey]['endpage'])) {
 						$pgendy = $this->pagedim[$dom[$prevtrkey]['endpage']]['hk'] - $this->pagedim[$dom[$prevtrkey]['endpage']]['bm'];
 						$dom[$prevtrkey]['endy'] = $pgendy;
 						// update row-spanned cells
@@ -19933,7 +19931,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 						$this->y += $table_el['border-spacing']['V'];
 					}
 					$this->Ln(0, $cell);
-					$this->x = $parent['startx'];
+					$this->x = $parent['startx'] ?? null;
 					if ($endpage > $startpage) {
 						if (($this->rtl) AND ($this->pagedim[$endpage]['orm'] != $this->pagedim[$startpage]['orm'])) {
 							$this->x += ($this->pagedim[$endpage]['orm'] - $this->pagedim[$startpage]['orm']);

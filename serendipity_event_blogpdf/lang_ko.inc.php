@@ -1,5 +1,5 @@
 <?php
-# Translated by: Wesley Hwang-Chung <wesley96@gmail.com> 
+# Translated by: Wesley Hwang-Chung <wesley96@gmail.com>
 # (c) 2005 http://www.tool-box.info/
 
 @define('PLUGIN_EVENT_BLOGPDF_NAME', '블로그를 PDF로 내보내기');

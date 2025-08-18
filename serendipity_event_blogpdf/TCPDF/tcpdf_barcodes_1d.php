@@ -234,7 +234,6 @@ class TCPDFBarcode {
 			ob_start();
 			imagepng($png);
 			$imagedata = ob_get_clean();
-			imagedestroy($png);
 			return $imagedata;
 		}
 	}

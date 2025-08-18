@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -12,10 +14,11 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_blogpdf extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_BLOGPDF_NAME;
-    var $pdf;
-    var $single = false;
-    var $article_show = false;
+    public $title = PLUGIN_EVENT_BLOGPDF_NAME;
+
+    private $pdf;
+    private $single = false;
+    private $article_show = false;
 
     function introspect(&$propbag)
     {
@@ -26,11 +29,11 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '2.4.7');
+        $propbag->add('version',       '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.1',
-            'smarty'      => '3.1.0',
-            'php'         => '7.4.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'  => true,
@@ -293,7 +296,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
         if (!file_exists($feedcache) || filesize($feedcache) == 0 || filemtime($feedcache) < (time() - $cachetime)) {
             if ($this->single) {
-                $this->print_entry(0, $entries, $this->prep_out(serendipity_formatTime(DATE_FORMAT_ENTRY, $entries['timestamp'])));
+                $this->print_entry(0, $entries, $this->prep_out(serendipity_formatTime(DATE_FORMAT_ENTRY, (int) $entries['timestamp'])));
             } else {
                 $this->print_entries($entries);
             }
@@ -323,7 +326,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $addData = array('from' => 'serendipity_event_blogpdf:print_entry', 'no_scramble' => true);
         serendipity_plugin_api::hook_event('frontend_display', $entry, $addData);
 
-        $posted_by = ' ' . POSTED_BY . ' ' . serendipity_specialchars($entry['author']);
+        $posted_by = ' ' . POSTED_BY . ' ' . htmlspecialchars($entry['author']);
         if (is_array($entry['categories']) && sizeof($entry['categories']) > 0) {
             $posted_by .= ' ' . IN . ' ';
             $cats = array();
@@ -344,7 +347,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $this->pdf->Ln();
 
         if ($this->single) {
-            $this->printComments(serendipity_fetchComments($entry['id']));
+            $this->printComments(serendipity_fetchComments((int) $entry['id']));
         }
 
     }
@@ -358,7 +361,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $addData = array('from' => 'serendipity_event_blogpdf:printComments');
 
         foreach ($comments AS $i => $comment) {
-            $comment['comment'] = serendipity_specialchars(strip_tags($comment['body']));
+            $comment['comment'] = htmlspecialchars(strip_tags($comment['body']));
             if (!empty($comment['url']) && substr($comment['url'], 0, 7) != 'http://' && substr($comment['url'], 0, 8) != 'https://') {
                 $comment['url'] = 'http://' . $comment['url'];
             }
@@ -408,7 +411,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
         $lastDate = '';
         for ($x = 0, $num_entries = count($entries); $x < $num_entries; $x++) {
-            $d = $this->prep_out(serendipity_formatTime(DATE_FORMAT_ENTRY, $entries[$x]['timestamp']));
+            $d = $this->prep_out(serendipity_formatTime(DATE_FORMAT_ENTRY, (int) $entries[$x]['timestamp']));
             $bydate[$d][] = $entries[$x];
         }
 
