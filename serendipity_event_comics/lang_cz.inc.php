@@ -1,21 +1,21 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/26
  */
 
 @define('PLUGIN_COMICS_NAME', 'Komix');
-@define('PLUGIN_COMICS_DESC', 'Vydávejte na svém blogu komix');
+@define('PLUGIN_COMICS_DESC', 'VydÃ¡vejte na svÃ©m blogu komix');
 @define('PLUGIN_COMICS_CAT', 'Kategorie komixu');
-@define('PLUGIN_COMICS_CAT_DESC', 'Kategorie, která obsahuje komix. Komix by mìl bıt v hlavním tìle pøíspìvku. Vyberte "¾ádná" a komixy vypnete.');
-@define('PLUGIN_COMICS_LATEST', 'Nejnovìj¹í komix: ');
+@define('PLUGIN_COMICS_CAT_DESC', 'Kategorie, kterÃ¡ obsahuje komix. Komix by mÄ›l bÃ½t v hlavnÃ­m tÄ›le pÅ™Ã­spÄ›vku. Vyberte "Å¾Ã¡dnÃ¡" a komixy vypnete.');
+@define('PLUGIN_COMICS_LATEST', 'NejnovÄ›jÅ¡Ã­ komix: ');
 @define('PLUGIN_COMICS_TITLE', 'Zobrazit nadpis');
-@define('PLUGIN_COMICS_TITLE_DESC', 'Umístit nadpis s datem zveøejnìní na vr¹ek komixu.');
-@define('PLUGIN_COMICS_RAW', 'Surovı vıstup');
-@define('PLUGIN_COMICS_RAW_DESC', 'Natáhne tìlo pøíspìvku ani¾ by na nì uplatnil formátování a znaèkování. Pokud máte v tìlu pøíspìvku pouze obrázek s komixem, je zapnutí dobrá volba.');
-@define('PLUGIN_COMICS_HIDE', 'Skrıt pøíspìvky s komixem z hlavní stránky');
-@define('PLUGIN_COMICS_HIDE_DESC', 'Nezobrazovat na vıchozí stránce star¹í komixy jako samostatné pøíspìvky. Toto nastavení pøepí¹e nastavení v jinıch pluginech. Nejnovìj¹í komix nebude zobrazován jako samostatnı pøíspìvek v ka¾dém pøípadì.');
-@define('PLUGIN_COMICS_FIRST', 'První');
-@define('PLUGIN_COMICS_LAST', 'Poslední');
+@define('PLUGIN_COMICS_TITLE_DESC', 'UmÃ­stit nadpis s datem zveÅ™ejnÄ›nÃ­ na vrÅ¡ek komixu.');
+@define('PLUGIN_COMICS_RAW', 'SurovÃ½ vÃ½stup');
+@define('PLUGIN_COMICS_RAW_DESC', 'NatÃ¡hne tÄ›lo pÅ™Ã­spÄ›vku aniÅ¾ by na nÄ› uplatnil formÃ¡tovÃ¡nÃ­ a znaÄkovÃ¡nÃ­. Pokud mÃ¡te v tÄ›lu pÅ™Ã­spÄ›vku pouze obrÃ¡zek s komixem, je zapnutÃ­ dobrÃ¡ volba.');
+@define('PLUGIN_COMICS_HIDE', 'SkrÃ½t pÅ™Ã­spÄ›vky s komixem z hlavnÃ­ strÃ¡nky');
+@define('PLUGIN_COMICS_HIDE_DESC', 'Nezobrazovat na vÃ½chozÃ­ strÃ¡nce starÅ¡Ã­ komixy jako samostatnÃ© pÅ™Ã­spÄ›vky. Toto nastavenÃ­ pÅ™epÃ­Å¡e nastavenÃ­ v jinÃ½ch pluginech. NejnovÄ›jÅ¡Ã­ komix nebude zobrazovÃ¡n jako samostatnÃ½ pÅ™Ã­spÄ›vek v kaÅ¾dÃ©m pÅ™Ã­padÄ›.');
+@define('PLUGIN_COMICS_FIRST', 'PrvnÃ­');
+@define('PLUGIN_COMICS_LAST', 'PoslednÃ­');
 
