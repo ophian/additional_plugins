@@ -2,17 +2,17 @@
 
 /**
  *  @version
- *  @Author Ivan Cenov jwalker@hotmail.bg
+ *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_EXTERNALPHP_TITLE', 'Външно PHP приложение');
-@define('PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH', 'Показва външно PHP приложение в блога, интегрирано в неговия дизайн и форматиране. ИЗПОЛЗВАЙТЕ ТАЗИ ПРИСТАВКА С ВНИМАНИЕ, ЗАЩОТО МОЖЕТЕ ДА ЗАСТРАШИТЕ СИГУРНОСТТА НА БЛОГА С НЕЯ (ТЯ МОЖЕ ДА ИЗПЪЛНЯВА ВСЯКАКЪВ PHP ФАЙЛ). МОЖЕТЕ ДА ИЗПОЛЗВАТЕ ПРИСТАВКАТА САМО КАТО АДМИНИСТРАТОР!');
-@define('PLUGIN_EXTERNALPHP_PERMALINK', 'Постоянна връзка');
-@define('PLUGIN_EXTERNALPHP_PAGETITLE', 'Късо URL име (за съвместимост назад)');
-@define('PLUGIN_EXTERNALPHP_PERMALINK_BLAHBLAH', 'Дефинира постоянна връзка за URL. Трябва да бъде абсолютен HTTP път, завършващ на .htm или .html.');
-@define('PLUGIN_EXTERNALPHP_INCLUDE', 'PHP файл');
-@define('PLUGIN_EXTERNALPHP_INCLUDE_DESC', 'Абсолютен път до PHP файла, подлежащ на включване');
-@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT', 'Форматиране като статия');
-@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT_BLAHBLAH', 'При избор \'Да\' изходът от файла автоматично се форматира като статия (цветове, шрифтове и т.н.).');
+@define('PLUGIN_EXTERNALPHP_TITLE', 'Р’СЉРЅС€РЅРѕ PHP РїСЂРёР»РѕР¶РµРЅРёРµ');
+@define('PLUGIN_EXTERNALPHP_TITLE_BLAHBLAH', 'РџРѕРєР°Р·РІР° РІСЉРЅС€РЅРѕ PHP РїСЂРёР»РѕР¶РµРЅРёРµ РІ Р±Р»РѕРіР°, РёРЅС‚РµРіСЂРёСЂР°РЅРѕ РІ РЅРµРіРѕРІРёСЏ РґРёР·Р°Р№РЅ Рё С„РѕСЂРјР°С‚РёСЂР°РЅРµ. РР—РџРћР›Р—Р’РђР™РўР• РўРђР—Р РџР РРЎРўРђР’РљРђ РЎ Р’РќРРњРђРќРР•, Р—РђР©РћРўРћ РњРћР–Р•РўР• Р”Рђ Р—РђРЎРўР РђРЁРРўР• РЎРР“РЈР РќРћРЎРўРўРђ РќРђ Р‘Р›РћР“Рђ РЎ РќР•РЇ (РўРЇ РњРћР–Р• Р”Рђ РР—РџРЄР›РќРЇР’Рђ Р’РЎРЇРљРђРљРЄР’ PHP Р¤РђР™Р›). РњРћР–Р•РўР• Р”Рђ РР—РџРћР›Р—Р’РђРўР• РџР РРЎРўРђР’РљРђРўРђ РЎРђРњРћ РљРђРўРћ РђР”РњРРќРРЎРўР РђРўРћР !');
+@define('PLUGIN_EXTERNALPHP_PERMALINK', 'РџРѕСЃС‚РѕСЏРЅРЅР° РІСЂСЉР·РєР°');
+@define('PLUGIN_EXTERNALPHP_PAGETITLE', 'РљСЉСЃРѕ URL РёРјРµ (Р·Р° СЃСЉРІРјРµСЃС‚РёРјРѕСЃС‚ РЅР°Р·Р°Рґ)');
+@define('PLUGIN_EXTERNALPHP_PERMALINK_BLAHBLAH', 'Р”РµС„РёРЅРёСЂР° РїРѕСЃС‚РѕСЏРЅРЅР° РІСЂСЉР·РєР° Р·Р° URL. РўСЂСЏР±РІР° РґР° Р±СЉРґРµ Р°Р±СЃРѕР»СЋС‚РµРЅ HTTP РїСЉС‚, Р·Р°РІСЉСЂС€РІР°С‰ РЅР° .htm РёР»Рё .html.');
+@define('PLUGIN_EXTERNALPHP_INCLUDE', 'PHP С„Р°Р№Р»');
+@define('PLUGIN_EXTERNALPHP_INCLUDE_DESC', 'РђР±СЃРѕР»СЋС‚РµРЅ РїСЉС‚ РґРѕ PHP С„Р°Р№Р»Р°, РїРѕРґР»РµР¶Р°С‰ РЅР° РІРєР»СЋС‡РІР°РЅРµ');
+@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT', 'Р¤РѕСЂРјР°С‚РёСЂР°РЅРµ РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ');
+@define('PLUGIN_EXTERNALPHP_ARTICLEFORMAT_BLAHBLAH', 'РџСЂРё РёР·Р±РѕСЂ \'Р”Р°\' РёР·С…РѕРґСЉС‚ РѕС‚ С„Р°Р№Р»Р° Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ СЃРµ С„РѕСЂРјР°С‚РёСЂР° РєР°С‚Рѕ СЃС‚Р°С‚РёСЏ (С†РІРµС‚РѕРІРµ, С€СЂРёС„С‚РѕРІРµ Рё С‚.РЅ.).');
 

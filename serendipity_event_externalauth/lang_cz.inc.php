@@ -1,48 +1,48 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/17
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/17
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/06/19
  */
 
-@define('PLUGIN_EVENT_EXTERNALAUTH_TITLE',		'Externí ovìøování/sledování u¾ivatelù (LDAP)');
-@define('PLUGIN_EVENT_EXTERNALAUTH_DESC',		'Umo¾òuje pou¾ít vnìj¹í zdroj pro zji¹»ování správnosti pøihla¹ovacích údajù. Pøihla¹ovací jména jsou cachována v Serendipity databázi. Tento plugin umí také sledovat pøihlá¹ení do Serendipity.');
-@define('PLUGIN_EVENT_EXTERNALAUTH_SOURCE',		'Vnìj¹í zdroj autentifikace');
-@define('PLUGIN_EVENT_EXTERNALAUTH_SOURCE_DESC',		'Vyberte vnìj¹í zdroj pøihla¹ovacích dat');
-@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL',		'Vıchozí u¾ivatelská úroveò');
-@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_DESC',		'Jaká je vıchozí u¾ivatelská úroveò pro nového externího u¾ivatele, pokud nemá definovanou u¾ivatelskou úroveò?');
-@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_ATTR',		'Atribut u¾ivatelské úrovnì');
-@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_ATTR_DESC',		'Jakı atribut obsahuje informaci o u¾ivatelské úrovni pro nového externího u¾ivatele?');
-@define('PLUGIN_EVENT_EXTERNALAUTH_HOST',		'Autentifikaèní host');
-@define('PLUGIN_EVENT_EXTERNALAUTH_HOST_DESC',		'Zadejte umístìní/adresu autentifikaèního serveru');
-@define('PLUGIN_EVENT_EXTERNALAUTH_PORT',		'Autentifikaèní port');
-@define('PLUGIN_EVENT_EXTERNALAUTH_PORT_DESC',		'Zadejte port autentifikaèního serveru. Prázdná hodnota znamená standardní port.');
-@define('PLUGIN_EVENT_EXTERNALAUTH_RDN',		'Autentifikaèní øetìzec');
-@define('PLUGIN_EVENT_EXTERNALAUTH_RDN_DESC',		'Øetìzec pou¾itı pro autentifikaci. %1 bude nahrazeno u¾ivatelskım jménem, %2 heslem, %3 heslem zakódovanım v MD5. I pokud je nastaven "Øetìzec pro nalezení u¾ivatele", tato hodnota musí obsahovat základní DN pro vykonání dotazu.');
-@define('PLUGIN_EVENT_EXTERNALAUTH_FIRSTLOGIN',		'Provést pouze jednou za sezení');
-@define('PLUGIN_EVENT_EXTERNALAUTH_FIRSTLOGIN_DESC',		'Má se vnìj¹í autentifikace u¾ivatele pou¾ít pouze na zaèátku sezení (session), nebo pøi ka¾dém po¾adavku. ANO znamená vy¹¹í vıkon, NE znamená vy¹¹í bezpeènost.');
-@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_USER',		'LDAP DN jméno pou¾ité k pøipojení (bind)');
-@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_USER_DESC',		'Pokud Vá¹ LDAP nelze volnì prohlí¾et a je tøeba provést pøihlá¹ení pøed vykonáním dotazù, toto je u¾ivatelskı úèet pro prvotní pøihlá¹ení. V LDAP syntaxi napøíklad: CN=s9yldapuser,CN=Users,DC=ilog,DC=com');
-@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_PASSWORD',		'Heslo pro LDAP DN jméno pou¾ité pro pøipojení (bind)');
-@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_PASSWORD_DESC',		'Heslo pro pøihlá¹ení k LDAPu');
-@define('PLUGIN_EVENT_EXTERNALAUTH_QUERY',		'Dotaz pro nalezení u¾ivatele');
-@define('PLUGIN_EVENT_EXTERNALAUTH_QUERY_DESC',		'Dotaz, pomocí nìho¾ bude nalezen u¾ivatel. Pro LDAP to mù¾e bıt napøíklad (objectclass=*) nebo (&(objectcategory=person)(objectclass=user)(sAMAccountName=%1)). %1 bude nahrazeno u¾ivatelskım jménem, %2 heslem, %3 heslem zakódovanım pomocí MD5. Hledání probìhne v oblasti zadané "Autentifikaèním øetìzcem", napøíklad: DC=s9y,DC=org. Pokud je ponecháno prázdné, bude proveden jednoduchı dotaz pomocí "Autentifikaèního øetìzce".');
+@define('PLUGIN_EVENT_EXTERNALAUTH_TITLE',		'ExternÃ­ ovÄ›Å™ovÃ¡nÃ­/sledovÃ¡nÃ­ uÅ¾ivatelÅ¯ (LDAP)');
+@define('PLUGIN_EVENT_EXTERNALAUTH_DESC',		'UmoÅ¾Åˆuje pouÅ¾Ã­t vnÄ›jÅ¡Ã­ zdroj pro zjiÅ¡Å¥ovÃ¡nÃ­ sprÃ¡vnosti pÅ™ihlaÅ¡ovacÃ­ch ÃºdajÅ¯. PÅ™ihlaÅ¡ovacÃ­ jmÃ©na jsou cachovÃ¡na v Serendipity databÃ¡zi. Tento plugin umÃ­ takÃ© sledovat pÅ™ihlÃ¡Å¡enÃ­ do Serendipity.');
+@define('PLUGIN_EVENT_EXTERNALAUTH_SOURCE',		'VnÄ›jÅ¡Ã­ zdroj autentifikace');
+@define('PLUGIN_EVENT_EXTERNALAUTH_SOURCE_DESC',		'Vyberte vnÄ›jÅ¡Ã­ zdroj pÅ™ihlaÅ¡ovacÃ­ch dat');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL',		'VÃ½chozÃ­ uÅ¾ivatelskÃ¡ ÃºroveÅˆ');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_DESC',		'JakÃ¡ je vÃ½chozÃ­ uÅ¾ivatelskÃ¡ ÃºroveÅˆ pro novÃ©ho externÃ­ho uÅ¾ivatele, pokud nemÃ¡ definovanou uÅ¾ivatelskou ÃºroveÅˆ?');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_ATTR',		'Atribut uÅ¾ivatelskÃ© ÃºrovnÄ›');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_ATTR_DESC',		'JakÃ½ atribut obsahuje informaci o uÅ¾ivatelskÃ© Ãºrovni pro novÃ©ho externÃ­ho uÅ¾ivatele?');
+@define('PLUGIN_EVENT_EXTERNALAUTH_HOST',		'AutentifikaÄnÃ­ host');
+@define('PLUGIN_EVENT_EXTERNALAUTH_HOST_DESC',		'Zadejte umÃ­stÄ›nÃ­/adresu autentifikaÄnÃ­ho serveru');
+@define('PLUGIN_EVENT_EXTERNALAUTH_PORT',		'AutentifikaÄnÃ­ port');
+@define('PLUGIN_EVENT_EXTERNALAUTH_PORT_DESC',		'Zadejte port autentifikaÄnÃ­ho serveru. PrÃ¡zdnÃ¡ hodnota znamenÃ¡ standardnÃ­ port.');
+@define('PLUGIN_EVENT_EXTERNALAUTH_RDN',		'AutentifikaÄnÃ­ Å™etÄ›zec');
+@define('PLUGIN_EVENT_EXTERNALAUTH_RDN_DESC',		'Å˜etÄ›zec pouÅ¾itÃ½ pro autentifikaci. %1 bude nahrazeno uÅ¾ivatelskÃ½m jmÃ©nem, %2 heslem, %3 heslem zakÃ³dovanÃ½m v MD5. I pokud je nastaven "Å˜etÄ›zec pro nalezenÃ­ uÅ¾ivatele", tato hodnota musÃ­ obsahovat zÃ¡kladnÃ­ DN pro vykonÃ¡nÃ­ dotazu.');
+@define('PLUGIN_EVENT_EXTERNALAUTH_FIRSTLOGIN',		'ProvÃ©st pouze jednou za sezenÃ­');
+@define('PLUGIN_EVENT_EXTERNALAUTH_FIRSTLOGIN_DESC',		'MÃ¡ se vnÄ›jÅ¡Ã­ autentifikace uÅ¾ivatele pouÅ¾Ã­t pouze na zaÄÃ¡tku sezenÃ­ (session), nebo pÅ™i kaÅ¾dÃ©m poÅ¾adavku. ANO znamenÃ¡ vyÅ¡Å¡Ã­ vÃ½kon, NE znamenÃ¡ vyÅ¡Å¡Ã­ bezpeÄnost.');
+@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_USER',		'LDAP DN jmÃ©no pouÅ¾itÃ© k pÅ™ipojenÃ­ (bind)');
+@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_USER_DESC',		'Pokud VÃ¡Å¡ LDAP nelze volnÄ› prohlÃ­Å¾et a je tÅ™eba provÃ©st pÅ™ihlÃ¡Å¡enÃ­ pÅ™ed vykonÃ¡nÃ­m dotazÅ¯, toto je uÅ¾ivatelskÃ½ ÃºÄet pro prvotnÃ­ pÅ™ihlÃ¡Å¡enÃ­. V LDAP syntaxi napÅ™Ã­klad: CN=s9yldapuser,CN=Users,DC=ilog,DC=com');
+@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_PASSWORD',		'Heslo pro LDAP DN jmÃ©no pouÅ¾itÃ© pro pÅ™ipojenÃ­ (bind)');
+@define('PLUGIN_EVENT_EXTERNALAUTH_BIND_PASSWORD_DESC',		'Heslo pro pÅ™ihlÃ¡Å¡enÃ­ k LDAPu');
+@define('PLUGIN_EVENT_EXTERNALAUTH_QUERY',		'Dotaz pro nalezenÃ­ uÅ¾ivatele');
+@define('PLUGIN_EVENT_EXTERNALAUTH_QUERY_DESC',		'Dotaz, pomocÃ­ nÄ›hoÅ¾ bude nalezen uÅ¾ivatel. Pro LDAP to mÅ¯Å¾e bÃ½t napÅ™Ã­klad (objectclass=*) nebo (&(objectcategory=person)(objectclass=user)(sAMAccountName=%1)). %1 bude nahrazeno uÅ¾ivatelskÃ½m jmÃ©nem, %2 heslem, %3 heslem zakÃ³dovanÃ½m pomocÃ­ MD5. HledÃ¡nÃ­ probÄ›hne v oblasti zadanÃ© "AutentifikaÄnÃ­m Å™etÄ›zcem", napÅ™Ã­klad: DC=s9y,DC=org. Pokud je ponechÃ¡no prÃ¡zdnÃ©, bude proveden jednoduchÃ½ dotaz pomocÃ­ "AutentifikaÄnÃ­ho Å™etÄ›zce".');
 
-@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_CHIEF',		'©éf');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_CHIEF',		'Å Ã©f');
 @define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_EDITOR',		'Autor');
-@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_ADMIN',		'Administrátor');
-@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_DENY',		'Pøístup odepøen');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_ADMIN',		'AdministrÃ¡tor');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USERLEVEL_DENY',		'PÅ™Ã­stup odepÅ™en');
 
-@define('PLUGIN_EVENT_EXTERNALAUTH_ENABLE_LDAP',		'Povolit pøihá¹ení pøes LDAP?');
-@define('PLUGIN_EVENT_EXTERNALAUTH_ENABLE_LOGGING',		'Povolit logování pøístupù?');
+@define('PLUGIN_EVENT_EXTERNALAUTH_ENABLE_LDAP',		'Povolit pÅ™ihÃ¡Å¡enÃ­ pÅ™es LDAP?');
+@define('PLUGIN_EVENT_EXTERNALAUTH_ENABLE_LOGGING',		'Povolit logovÃ¡nÃ­ pÅ™Ã­stupÅ¯?');
 
-@define('PLUGIN_EVENT_EXTERNALAUTH_USER_WYSIWYG',		'Povolit WYSIWYG editor jako vıchozí?');
-@define('PLUGIN_EVENT_EXTERNALAUTH_USER_WYSIWYG_DESC',		'Nové u¾ivatelské úèty budou vytvoøeny s pøednastavenou volbou "Pou¾ívat WYSIWYG editor"?');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USER_WYSIWYG',		'Povolit WYSIWYG editor jako vÃ½chozÃ­?');
+@define('PLUGIN_EVENT_EXTERNALAUTH_USER_WYSIWYG_DESC',		'NovÃ© uÅ¾ivatelskÃ© ÃºÄty budou vytvoÅ™eny s pÅ™ednastavenou volbou "PouÅ¾Ã­vat WYSIWYG editor"?');
 
 // Next lines were translated on 2011/06/19
-@define('PLUGIN_EVENT_EXTERNALAUTH_FAIL2BAN',		'Logovací soubor fail2ban');
-@define('PLUGIN_EVENT_EXTERNALAUTH_FAIL2BAN_DESC',		'(Vy¾aduje Serendipity &gt;= 1.6) Tento plugin umí zapsat logovací soubor kompatibilní s formátem fail2ban, pokud je zaznamenán neúspì¹nı pokus o pøihlá¹ení. Pokud chcete zapnout tuto vlastnost, zadejte plnou cestu k souboru vèetnì cesty (napø. "/var/log/fail2ban_s9y.log"). Mo¾ná budete chtít zahrnout tento soubor do rotace systémovıch logù.');
+@define('PLUGIN_EVENT_EXTERNALAUTH_FAIL2BAN',		'LogovacÃ­ soubor fail2ban');
+@define('PLUGIN_EVENT_EXTERNALAUTH_FAIL2BAN_DESC',		'(VyÅ¾aduje Serendipity &gt;= 1.6) Tento plugin umÃ­ zapsat logovacÃ­ soubor kompatibilnÃ­ s formÃ¡tem fail2ban, pokud je zaznamenÃ¡n neÃºspÄ›Å¡nÃ½ pokus o pÅ™ihlÃ¡Å¡enÃ­. Pokud chcete zapnout tuto vlastnost, zadejte plnou cestu k souboru vÄetnÄ› cesty (napÅ™. "/var/log/fail2ban_s9y.log"). MoÅ¾nÃ¡ budete chtÃ­t zahrnout tento soubor do rotace systÃ©movÃ½ch logÅ¯.');
