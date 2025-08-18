@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,6 +10,8 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_prettify extends serendipity_event
 {
+    public $title = PLUGIN_PRETTIFY_NAME;
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -16,11 +20,12 @@ class serendipity_event_prettify extends serendipity_event
         $propbag->add('description',   PLUGIN_PRETTIFY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        PLUGIN_PRETTIFY_AUTH);
-        $propbag->add('version',       '1.6.3');
-        $propbag->add('requirements',  array('serendipity' => '1.6',
-                                             'smarty'      => '2.6.7',
-                                             'php'         => '4.1.0'
-                                             ));
+        $propbag->add('version', '2.0.0');
+        $propbag->add('requirements',  array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
+        ));
         $propbag->add('event_hooks',   array('frontend_header' => true,
                                              'frontend_footer' => true,
                                              'backend_entry_toolbar_body' => true,

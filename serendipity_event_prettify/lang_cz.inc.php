@@ -1,26 +1,26 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/11/21
  */
 
 @define('PLUGIN_PRETTIFY_NAME', 'Prettify pro Serendipity');
-@define('PLUGIN_PRETTIFY_DESC', 'Pou¾ít skript Prettify pro vybrou¹ení obsahu mezi tagy &lt;PRE&gt; pro jednoduché zvırazòování syntaxe.');
+@define('PLUGIN_PRETTIFY_DESC', 'PouÅ¾Ã­t skript Prettify pro vybrouÅ¡enÃ­ obsahu mezi tagy &lt;PRE&gt; pro jednoduchÃ© zvÃ½razÅˆovÃ¡nÃ­ syntaxe.');
 @define('PLUGIN_PRETTIFY_AUTH', 'Adam Krause');
 @define('PLUGIN_PRETTIFY_JSPATH', 'Cesta k prettify.js');
-@define('PLUGIN_PRETTIFY_JSPATH_DESC', 'Zadejte cestu ze základního adresáøe Serendipity ke skriptu prettify.js');
+@define('PLUGIN_PRETTIFY_JSPATH_DESC', 'Zadejte cestu ze zÃ¡kladnÃ­ho adresÃ¡Å™e Serendipity ke skriptu prettify.js');
 @define('PLUGIN_PRETTIFY_CSSPATH', 'Cesta k prettify.css');
-@define('PLUGIN_PRETTIFY_CSSPATH_DESC', 'Zadejte cestu ze základního adresáøe Serendipity k souboru prettify.css');
-@define('PLUGIN_PRETTIFY_GENERICPRE', 'Jak má Prettify zvırazòovat syntaxi uvnitø &lt;PRE&gt; tagu?');
-@define('PLUGIN_PRETTIFY_GENERICPRE_DESC', 'Pou¾ít obecná pravidla zvıraznìní syntaxe na v¹echen obsah uvnitø &lt;PRE&gt; tagu bez ohledu na upøesnìní jazyka ve tøíde (class) tagu?');
-@define('PLUGIN_PRETTIFY_GENERICPRE_TRUE', 'Obecnı');
+@define('PLUGIN_PRETTIFY_CSSPATH_DESC', 'Zadejte cestu ze zÃ¡kladnÃ­ho adresÃ¡Å™e Serendipity k souboru prettify.css');
+@define('PLUGIN_PRETTIFY_GENERICPRE', 'Jak mÃ¡ Prettify zvÃ½razÅˆovat syntaxi uvnitÅ™ &lt;PRE&gt; tagu?');
+@define('PLUGIN_PRETTIFY_GENERICPRE_DESC', 'PouÅ¾Ã­t obecnÃ¡ pravidla zvÃ½raznÄ›nÃ­ syntaxe na vÅ¡echen obsah uvnitÅ™ &lt;PRE&gt; tagu bez ohledu na upÅ™esnÄ›nÃ­ jazyka ve tÅ™Ã­de (class) tagu?');
+@define('PLUGIN_PRETTIFY_GENERICPRE_TRUE', 'ObecnÃ½');
 @define('PLUGIN_PRETTIFY_GENERICPRE_FALSE', 'Podle jazyka');
-@define('PLUGIN_PRETTIFY_GENERICCODE', 'Jak má Prettify zvırazòovat syntaxi uvnitø &lt;CODE&gt; tagu?');
-@define('PLUGIN_PRETTIFY_GENERICCODE_DESC', 'Pou¾ít obecná pravidla zvıraznìní syntaxe na v¹echen obsah uvnitø &lt;CODE&gt; tagu bez ohledu na upøesnìní jazyka ve tøíde (class) tagu?');
-@define('PLUGIN_PRETTIFY_GENERICCODE_TRUE', 'Obecnı');
+@define('PLUGIN_PRETTIFY_GENERICCODE', 'Jak mÃ¡ Prettify zvÃ½razÅˆovat syntaxi uvnitÅ™ &lt;CODE&gt; tagu?');
+@define('PLUGIN_PRETTIFY_GENERICCODE_DESC', 'PouÅ¾Ã­t obecnÃ¡ pravidla zvÃ½raznÄ›nÃ­ syntaxe na vÅ¡echen obsah uvnitÅ™ &lt;CODE&gt; tagu bez ohledu na upÅ™esnÄ›nÃ­ jazyka ve tÅ™Ã­de (class) tagu?');
+@define('PLUGIN_PRETTIFY_GENERICCODE_TRUE', 'ObecnÃ½');
 @define('PLUGIN_PRETTIFY_GENERICCODE_FALSE', 'Podle jazyka');
-@define('PLUGIN_PRETTIFY_CONVERTANGLE', 'Poskytnout tlaèítko v editoru na konverzi ¹pièatıch závorek');
-@define('PLUGIN_PRETTIFY_CONVERTANGLE_DESC', 'Objeví se pouze ve standardním (ne-WYSIWYG) editoru. Vyberte blok PRE/CODE a kliknìte na tlaèítko. Závorky se zakódují. WYSIWYG editory kódují ostré závorky automaticky.');
+@define('PLUGIN_PRETTIFY_CONVERTANGLE', 'Poskytnout tlaÄÃ­tko v editoru na konverzi Å¡piÄatÃ½ch zÃ¡vorek');
+@define('PLUGIN_PRETTIFY_CONVERTANGLE_DESC', 'ObjevÃ­ se pouze ve standardnÃ­m (ne-WYSIWYG) editoru. Vyberte blok PRE/CODE a kliknÄ›te na tlaÄÃ­tko. ZÃ¡vorky se zakÃ³dujÃ­. WYSIWYG editory kÃ³dujÃ­ ostrÃ© zÃ¡vorky automaticky.');
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_TRUE', 'Ano');
 @define('PLUGIN_PRETTIFY_CONVERTANGLE_FALSE', 'Ne');
