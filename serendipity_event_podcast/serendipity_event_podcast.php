@@ -108,7 +108,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.0.3');
+        $propbag->add('version', '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -828,30 +828,22 @@ class serendipity_event_podcast extends serendipity_event
      */
     function GetFileInfo($url)
     {
+        if (empty($url)) return;
+
         global $serendipity;
 
         $this->log("GetFileInfo for $url");
 
         $fileInfo = array();
 
-        // caching metadata
-        $cacheOptions = array(
-            'lifeTime'               => '2592000',
-            'automaticSerialization' => true,
-            'cacheDir' => $serendipity['serendipityPath'] . 'templates_c/'
-        );
-
         if (serendipity_db_bool($this->get_config('use_cache', 'true'))) {
             $this->log("GetFileInfo: Trying cached infos");
 
-            // md5 for not having strange characters in that id..
-            $cacheId = md5($url) . '.2';
+            // hash it for not having strange characters in that id..
+            $cacheId = hash('xxh128', $url);
 
-            include_once(S9Y_PEAR_PATH . "Cache/Lite.php");
-
-            $cache = new Cache_Lite($cacheOptions);
-            if ($fileInfo = $cache->get($cacheId)){
-                $this->log("GetFileInfo: Cached infos found in file $cacheId");
+            if ($fileInfo = unserialize(serendipity_getCacheItem("podcast_html_$cacheId") ?? '')) {
+                $this->log("GetFileInfo: Cached infos found in file podcast_html_$cacheId");
                 // return directly on cache hit
                 return $fileInfo;
             }
@@ -942,7 +934,7 @@ class serendipity_event_podcast extends serendipity_event
         }
 
         if (serendipity_db_bool($this->get_config('use_cache', 'true'))) {
-            $cache->save($fileInfo , $cacheId);
+            serendipity_cacheItem("podcast_html_$cacheId", serialize($fileInfo), 2592000);
         }
 
         return $fileInfo;
