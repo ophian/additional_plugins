@@ -6,6 +6,6 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'Pod∂wietlaj wyszukane frazy');
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Pod∂wietla frazy znalezione na Twojej stronie przez wyszukiwarki');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'Pod≈õwietlaj wyszukane frazy');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Pod≈õwietla frazy znalezione na Twojej stronie przez wyszukiwarki');
 

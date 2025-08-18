@@ -2,16 +2,16 @@
 
 /**
  *  @version 1381.0
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/10/06
  */
 
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'Zvıraznìní vyhledávanıch øetìzcù');
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Zvırazòuje øetìzce hledané v odkazujícím vyhledávaèi.');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'ZvÃ½raznÄ›nÃ­ vyhledÃ¡vanÃ½ch Å™etÄ›zcÅ¯');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'ZvÃ½razÅˆuje Å™etÄ›zce hledanÃ© v odkazujÃ­cÃ­m vyhledÃ¡vaÄi.');
 
 // Next lines were translated on 2010/10/06
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_STATICPAGE', 'Statické stránky');
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_STATICPAGE_DESC', 'Zvırazòovat (hledat) øetìzce ve statickıch stránkách?');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_STATICPAGE', 'StatickÃ© strÃ¡nky');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_STATICPAGE_DESC', 'ZvÃ½razÅˆovat (hledat) Å™etÄ›zce ve statickÃ½ch strÃ¡nkÃ¡ch?');
 

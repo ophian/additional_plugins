@@ -9,5 +9,5 @@
 ##########################################################################
 
 @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'Surligner les recherches');
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Surligne les termes d\'une recherche faite dans le moteur de recherche par lequel le visiteur est arrivé dans votre blog');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Surligne les termes d\'une recherche faite dans le moteur de recherche par lequel le visiteur est arrivÃ© dans votre blog');
 

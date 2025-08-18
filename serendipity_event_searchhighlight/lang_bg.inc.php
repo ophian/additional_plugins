@@ -5,6 +5,6 @@
  *  @author Ivan Cenov jwalker@hotmail.bg
  */
 
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'Оцветява (highlight) заявки за търсене');
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Оцветява заявките, използвани от търсещите машини (Google, Yahoo, Lycos и т.н.) за намиране на вашия блог.');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'РћС†РІРµС‚СЏРІР° (highlight) Р·Р°СЏРІРєРё Р·Р° С‚СЉСЂСЃРµРЅРµ');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'РћС†РІРµС‚СЏРІР° Р·Р°СЏРІРєРёС‚Рµ, РёР·РїРѕР»Р·РІР°РЅРё РѕС‚ С‚СЉСЂСЃРµС‰РёС‚Рµ РјР°С€РёРЅРё (Google, Yahoo, Lycos Рё С‚.РЅ.) Р·Р° РЅР°РјРёСЂР°РЅРµ РЅР° РІР°С€РёСЏ Р±Р»РѕРі.');
 

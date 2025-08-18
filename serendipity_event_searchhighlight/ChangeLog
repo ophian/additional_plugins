@@ -1,3 +1,10 @@
+3.0.0:
+------
+ * Declare strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Raise requirements for Styx 5.0
+
 2.4.0:
 ------
  * Refactor for the staticpage searchhighlight fix in v.6.77.

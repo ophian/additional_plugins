@@ -4,6 +4,8 @@
 /*  Authored by Tom Sommer, 2004  */
 /**********************************/
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -25,11 +27,11 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',       '2.4.0');
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.9',
-            'smarty'      => '3.1',
-            'php'         => '8.0'
+        $propbag->add('version',        '3.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array('frontend_display' => true, 'css' => true));
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
@@ -168,7 +170,7 @@ class serendipity_event_searchhighlight extends serendipity_event
                     $urlpath = $serendipity['rewrite'] == 'rewrite' ? parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH)
                                                                     : parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY);
                     if (!is_null($urlpath) && true === strpos($urlpath, 'search/')) {
-                        $urlpath = serendipity_specialchars(strip_tags($urlpath)); // avoid spoofing
+                        $urlpath = htmlspecialchars(strip_tags($urlpath)); // avoid spoofing
                         $path = explode('/', urldecode($urlpath)); // split and decode non ASCII
                         $query = $path[(array_search('search', $path)+1)];
                     }

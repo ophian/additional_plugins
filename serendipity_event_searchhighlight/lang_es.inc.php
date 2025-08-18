@@ -6,5 +6,5 @@
  */
 
 @define('PLUGIN_EVENT_SEARCHHIGHLIGHT_NAME', 'Resaltar las palabras referenciadas');
-@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Resalta las palabras de consulta utilizadas por el motor de búsqueda para encontrar tu página');
+@define('PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC', 'Resalta las palabras de consulta utilizadas por el motor de bÃºsqueda para encontrar tu pÃ¡gina');
 
