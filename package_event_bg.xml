@@ -1039,11 +1039,11 @@
 <description>Run webcomics in your blog</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.7</version>
-  <requirements:s9yVersion>1.7</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-08-14</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-18</date>
   <filelist>
     <dir name="serendipity_event_comics">
       <file>ChangeLog</file>
@@ -1054,12 +1054,7 @@
       <file>lang_ko.inc.php</file>
       <file>README</file>
       <file>serendipity_event_comics.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ko.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_comics/ChangeLog</file>
@@ -1070,9 +1065,6 @@
     <file>serendipity_event_comics/lang_ko.inc.php</file>
     <file>serendipity_event_comics/README</file>
     <file>serendipity_event_comics/serendipity_event_comics.php</file>
-    <file>serendipity_event_comics/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_comics/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_comics/UTF-8/lang_ko.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2439,11 +2431,11 @@
 <description>Allows to use external ressource to validate logins. Logins will be cached in the Serendipity database framework. This plugin can also track logins inside the Database.</description>
 <maintainers><maintainer><name>Garvin Hicking/Justin Alcorn</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.23</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-18</date>
   <filelist>
     <dir name="serendipity_event_externalauth">
       <file>ChangeLog</file>
@@ -2455,11 +2447,7 @@
       <file>ldap.zip</file>
       <file>serendipity.schema.example</file>
       <file>serendipity_event_externalauth.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_externalauth/ChangeLog</file>
@@ -2471,8 +2459,6 @@
     <file>serendipity_event_externalauth/ldap.zip</file>
     <file>serendipity_event_externalauth/serendipity.schema.example</file>
     <file>serendipity_event_externalauth/serendipity_event_externalauth.php</file>
-    <file>serendipity_event_externalauth/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_externalauth/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2485,11 +2471,11 @@
 <description>Показва външно PHP приложение в блога, интегрирано в неговия дизайн и форматиране. ИЗПОЛЗВАЙТЕ ТАЗИ ПРИСТАВКА С ВНИМАНИЕ, ЗАЩОТО МОЖЕТЕ ДА ЗАСТРАШИТЕ СИГУРНОСТТА НА БЛОГА С НЕЯ (ТЯ МОЖЕ ДА ИЗПЪЛНЯВА ВСЯКАКЪВ PHP ФАЙЛ). МОЖЕТЕ ДА ИЗПОЛЗВАТЕ ПРИСТАВКАТА САМО КАТО АДМИНИСТРАТОР!</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.8</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2022-10-17</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-18</date>
   <filelist>
     <dir name="serendipity_event_externalphp">
       <file>ChangeLog</file>
@@ -2498,12 +2484,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_event_externalphp.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_externalphp/ChangeLog</file>
@@ -2512,9 +2493,6 @@
     <file>serendipity_event_externalphp/lang_de.inc.php</file>
     <file>serendipity_event_externalphp/lang_en.inc.php</file>
     <file>serendipity_event_externalphp/serendipity_event_externalphp.php</file>
-    <file>serendipity_event_externalphp/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_externalphp/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_externalphp/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -7672,11 +7650,11 @@
 <description>Use Prettify to brush content between PRE tags for simple syntax highlighting.</description>
 <maintainers><maintainer><name>Adam Krause</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6.3</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-18</date>
   <filelist>
     <dir name="serendipity_event_prettify">
       <file>ChangeLog</file>
@@ -7698,10 +7676,6 @@
         <file>pre_bg.gif</file>
       </dir>
       <file>serendipity_event_prettify.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -7722,8 +7696,6 @@
     <file>serendipity_event_prettify/prettify/prettify.js</file>
     <file>serendipity_event_prettify/prettify/pre_bg.gif</file>
     <file>serendipity_event_prettify/serendipity_event_prettify.php</file>
-    <file>serendipity_event_prettify/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_prettify/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -8022,11 +7994,11 @@
 <description>Оцветява заявките, използвани от търсещите машини (Google, Yahoo, Lycos и т.н.) за намиране на вашия блог.</description>
 <maintainers><maintainer><name>Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.4.0</version>
-  <requirements:s9yVersion>2.9</requirements:s9yVersion>
-  <requirements:smyVersion>3.1</requirements:smyVersion>
-  <requirements:phpVersion>8.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <version>3.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-18</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -8045,21 +8017,7 @@
       <file>lang_tn.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_event_searchhighlight.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cn.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_sk.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_event_searchhighlight/ChangeLog</file>
@@ -8078,18 +8036,6 @@
     <file>serendipity_event_searchhighlight/lang_tn.inc.php</file>
     <file>serendipity_event_searchhighlight/lang_zh.inc.php</file>
     <file>serendipity_event_searchhighlight/serendipity_event_searchhighlight.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_sk.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_event_searchhighlight/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

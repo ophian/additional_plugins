@@ -130,8 +130,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_comics</link>
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_event_comics&lt;br /&gt;Comics&lt;/b&gt;&lt;br /&gt;Webcomics im Blog posten&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 14 Aug 2020 09:07:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_comics&lt;br /&gt;Comics&lt;/b&gt;&lt;br /&gt;Webcomics im Blog posten&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:38:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_comics</guid>
 </item>
 <item>
@@ -346,8 +346,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_externalauth</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking/Justin Alcorn</author>
-<content:encoded>&lt;b&gt;serendipity_event_externalauth&lt;br /&gt;Externe Benutzer-Authentifizierung (LDAP) [EXPERIMENTAL]&lt;/b&gt;&lt;br /&gt;Ermöglicht die externe authentifizierung für Logins der Benutzer. Die Zugangsdaten werden im lokalen Serendipity Datenbank-Framework gecached.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 12:53:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_externalauth&lt;br /&gt;Externe Benutzer-Authentifizierung (LDAP) [EXPERIMENTAL]&lt;/b&gt;&lt;br /&gt;Ermöglicht die externe authentifizierung für Logins der Benutzer. Die Zugangsdaten werden im lokalen Serendipity Datenbank-Framework gecached.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:46:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalauth</guid>
 </item>
 <item>
@@ -355,8 +355,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_externalphp</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;Externe PHP-Anwendung&lt;/b&gt;&lt;br /&gt;Bettet eine externe PHP Anwendung in Ihrem Blog ein, dass im gewohnten Design präsentiert wird. MIT VORSICHT BENUTZEN, DA DIESES PLUGIN GROSSE SICHERHEITSLÜCKEN ERMÖGLICHEN KANN WENN EINE BELIEBIGE PHP-DATEI EINGEBUNDEN WIRD! Dieses Plugin kann daher nur als Administrator konfiguriert werden.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 17 Oct 2022 12:45:11 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;Externe PHP-Anwendung&lt;/b&gt;&lt;br /&gt;Bettet eine externe PHP Anwendung in Ihrem Blog ein, dass im gewohnten Design präsentiert wird. MIT VORSICHT BENUTZEN, DA DIESES PLUGIN GROSSE SICHERHEITSLÜCKEN ERMÖGLICHEN KANN WENN EINE BELIEBIGE PHP-DATEI EINGEBUNDEN WIRD! Dieses Plugin kann daher nur als Administrator konfiguriert werden.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:35:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalphp</guid>
 </item>
 <item>
@@ -886,8 +886,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_prettify</link>
 <category>Event Plugins</category>
 <author>Adam Krause</author>
-<content:encoded>&lt;b&gt;serendipity_event_prettify&lt;br /&gt;Prettify für S9Y&lt;/b&gt;&lt;br /&gt;Prettify fügt Inhalten, die zwischen PRE-Tags stehen, simples Syntax-Highlighting hinzu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 13:20:16 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_prettify&lt;br /&gt;Prettify für S9Y&lt;/b&gt;&lt;br /&gt;Prettify fügt Inhalten, die zwischen PRE-Tags stehen, simples Syntax-Highlighting hinzu.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:48:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_prettify</guid>
 </item>
 <item>
@@ -958,8 +958,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_searchhighlight</link>
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Hebe Suchwörter hervor&lt;/b&gt;&lt;br /&gt;Hebt Suchwörter hervor, die ein User in einer Suchmaschine eingegeben hat&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Mon, 22 Jul 2024 16:29:24 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Hebe Suchwörter hervor&lt;/b&gt;&lt;br /&gt;Hebt Suchwörter hervor, die ein User in einer Suchmaschine eingegeben hat&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:31:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>

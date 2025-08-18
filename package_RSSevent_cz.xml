@@ -130,8 +130,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_comics</link>
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
-<content:encoded>&lt;b&gt;serendipity_event_comics&lt;br /&gt;Komix&lt;/b&gt;&lt;br /&gt;Vydávejte na svém blogu komix&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 14 Aug 2020 09:07:48 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_comics&lt;br /&gt;Komix&lt;/b&gt;&lt;br /&gt;Vydávejte na svém blogu komix&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:38:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_comics</guid>
 </item>
 <item>
@@ -346,8 +346,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_externalauth</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking/Justin Alcorn</author>
-<content:encoded>&lt;b&gt;serendipity_event_externalauth&lt;br /&gt;Externí ověřování/sledování uživatelů (LDAP)&lt;/b&gt;&lt;br /&gt;Umožňuje použít vnější zdroj pro zjišťování správnosti přihlašovacích údajů. Přihlašovací jména jsou cachována v Serendipity databázi. Tento plugin umí také sledovat přihlášení do Serendipity.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 12:53:59 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_externalauth&lt;br /&gt;Externí ověřování/sledování uživatelů (LDAP)&lt;/b&gt;&lt;br /&gt;Umožňuje použít vnější zdroj pro zjišťování správnosti přihlašovacích údajů. Přihlašovací jména jsou cachována v Serendipity databázi. Tento plugin umí také sledovat přihlášení do Serendipity.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:46:47 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalauth</guid>
 </item>
 <item>
@@ -355,8 +355,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_externalphp</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;Externí PHP aplikace&lt;/b&gt;&lt;br /&gt;Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 17 Oct 2022 12:45:11 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;Externí PHP aplikace&lt;/b&gt;&lt;br /&gt;Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:35:27 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalphp</guid>
 </item>
 <item>
@@ -886,8 +886,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_prettify</link>
 <category>Event Plugins</category>
 <author>Adam Krause</author>
-<content:encoded>&lt;b&gt;serendipity_event_prettify&lt;br /&gt;Prettify pro Serendipity&lt;/b&gt;&lt;br /&gt;Použít skript Prettify pro vybroušení obsahu mezi tagy &amp;lt;PRE&amp;gt; pro jednoduché zvýrazňování syntaxe.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 13:20:16 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_prettify&lt;br /&gt;Prettify pro Serendipity&lt;/b&gt;&lt;br /&gt;Použít skript Prettify pro vybroušení obsahu mezi tagy &amp;lt;PRE&amp;gt; pro jednoduché zvýrazňování syntaxe.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:48:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_prettify</guid>
 </item>
 <item>
@@ -958,8 +958,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_searchhighlight</link>
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Zvýraznění vyhledávaných řetězců&lt;/b&gt;&lt;br /&gt;Zvýrazňuje řetězce hledané v odkazujícím vyhledávači.&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Mon, 22 Jul 2024 16:29:24 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Zvýraznění vyhledávaných řetězců&lt;/b&gt;&lt;br /&gt;Zvýrazňuje řetězce hledané v odkazujícím vyhledávači.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Mon, 18 Aug 2025 13:31:43 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
