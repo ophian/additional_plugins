@@ -2,12 +2,12 @@
 
 /**
  *  @version: 1381
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_TEMPLATEDROPDOWN_NAME',         'V˝bÏr πablony');
-@define('PLUGIN_TEMPLATEDROPDOWN_DESC',         'Zobrazuje rozbalovacÌ polÌËko pro v˝bÏr πablony');
-@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT',       'PotvrzovacÌ tlaËÌtko?');
-@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC',  'Zobrazit potvrzovacÌ tlaËÌtko?');
+@define('PLUGIN_TEMPLATEDROPDOWN_NAME',         'V√Ωbƒõr ≈°ablony');
+@define('PLUGIN_TEMPLATEDROPDOWN_DESC',         'Zobrazuje rozbalovac√≠ pol√≠ƒçko pro v√Ωbƒõr ≈°ablony');
+@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT',       'Potvrzovac√≠ tlaƒç√≠tko?');
+@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC',  'Zobrazit potvrzovac√≠ tlaƒç√≠tko?');
 

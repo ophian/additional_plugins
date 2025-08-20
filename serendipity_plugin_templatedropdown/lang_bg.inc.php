@@ -5,8 +5,8 @@
  *  @author Ivan Cenov jwalker@hotmail.bg
  */
 
-@define('PLUGIN_TEMPLATEDROPDOWN_NAME', 'Избор на теми');
-@define('PLUGIN_TEMPLATEDROPDOWN_DESC', 'Показва падащ списък за избор на тема');
-@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT', 'Бутон \'Изпращане\'?');
-@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC', 'При избор \'Да\' смяната на темата ще се осъществява след натискане на бутон \'Продължаване\'.');
+@define('PLUGIN_TEMPLATEDROPDOWN_NAME', 'РР·Р±РѕСЂ РЅР° С‚РµРјРё');
+@define('PLUGIN_TEMPLATEDROPDOWN_DESC', 'РџРѕРєР°Р·РІР° РїР°РґР°С‰ СЃРїРёСЃСЉРє Р·Р° РёР·Р±РѕСЂ РЅР° С‚РµРјР°');
+@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT', 'Р‘СѓС‚РѕРЅ \'РР·РїСЂР°С‰Р°РЅРµ\'?');
+@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC', 'РџСЂРё РёР·Р±РѕСЂ \'Р”Р°\' СЃРјСЏРЅР°С‚Р° РЅР° С‚РµРјР°С‚Р° С‰Рµ СЃРµ РѕСЃСЉС‰РµСЃС‚РІСЏРІР° СЃР»РµРґ РЅР°С‚РёСЃРєР°РЅРµ РЅР° Р±СѓС‚РѕРЅ \'РџСЂРѕРґСЉР»Р¶Р°РІР°РЅРµ\'.');
 

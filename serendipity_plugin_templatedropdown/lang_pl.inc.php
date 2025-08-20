@@ -6,8 +6,8 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_TEMPLATEDROPDOWN_NAME', 'Wybór stylu');
-@define('PLUGIN_TEMPLATEDROPDOWN_DESC', 'Pokazuje pole wyboru, które umo¿liwia u¿ytkownikowi samodzielny wybór stylu, jakim ma byæ wy¶wietlany blog');
+@define('PLUGIN_TEMPLATEDROPDOWN_NAME', 'WybÃ³r stylu');
+@define('PLUGIN_TEMPLATEDROPDOWN_DESC', 'Pokazuje pole wyboru, ktÃ³re umoÅ¼liwia uÅ¼ytkownikowi samodzielny wybÃ³r stylu, jakim ma byÄ‡ wyÅ›wietlany blog');
 @define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT', 'Przycisk potwierdzenia (submit)?');
-@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC', 'Czy przycisk potwoerdzenia ma byæ pokazywany?');
+@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC', 'Czy przycisk potwoerdzenia ma byÄ‡ pokazywany?');
 

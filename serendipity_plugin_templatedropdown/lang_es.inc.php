@@ -7,7 +7,7 @@
  */
 
 @define('PLUGIN_TEMPLATEDROPDOWN_NAME', 'Caja desplegable de plantillas');
-@define('PLUGIN_TEMPLATEDROPDOWN_DESC', 'Muestra una caja desplegable para cambiar las plantillas');
-@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT', '¿Botón de enviar?');
-@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC', '¿Mostrar un botón de envío?');
+@define('PLUGIN_TEMPLATEDROPDOWN_DESC',  'Muestra una caja desplegable para cambiar las plantillas');
+@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT', 'Â¿BotÃ³n de enviar?');
+@define('PLUGIN_TEMPLATEDROPDOWN_SUBMIT_DESC', 'Â¿Mostrar un botÃ³n de envÃ­o?');
 

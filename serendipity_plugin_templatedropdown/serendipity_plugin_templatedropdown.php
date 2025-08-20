@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_templatedropdown extends serendipity_plugin
 {
-    var $title = PLUGIN_TEMPLATEDROPDOWN_NAME;
+    public $title = PLUGIN_TEMPLATEDROPDOWN_NAME;
 
     function introspect(&$propbag)
     {
@@ -18,11 +20,11 @@ class serendipity_plugin_templatedropdown extends serendipity_plugin
         $propbag->add('description',   PLUGIN_TEMPLATEDROPDOWN_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Evan Nemerson');
-        $propbag->add('version',       '1.3');
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('configuration', array('title', 'show_submit'));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
