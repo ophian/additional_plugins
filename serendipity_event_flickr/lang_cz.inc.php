@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/14
  */
 
 @define('PLUGIN_EVENT_FLICKR_NAME', 'Import z Flickru');
-@define('PLUGIN_EVENT_FLICKR_DESC', 'Importuje obrázky z flickr.com do knihovny médií');
-@define('PLUGIN_EVENT_FLICKR_APIKEY', 'API klíè');
-@define('PLUGIN_EVENT_FLICKR_APIKEY_INVALID', 'Klíè má 32 znakù a obsahuje pouze èíslice a písmenka [a-f] (klíè je v ¹estnáctkové èíselné soustavì)');
-@define('PLUGIN_EVENT_FLICKR_APIKEY_DESC', 'API klíè z http://www.flickr.com/services/api/');
-@define('PLUGIN_EVENT_FLICKR_IMPORT', 'Importovat obrázky ze slu¾by Flickr.com');
-@define('PLUGIN_EVENT_FLICKR_IMPORT2', 'Importovat obrázky ze slu¾by Flickr.com (krok 2)');
+@define('PLUGIN_EVENT_FLICKR_DESC', 'Importuje obrÃ¡zky z flickr.com do knihovny mÃ©diÃ­');
+@define('PLUGIN_EVENT_FLICKR_APIKEY', 'API klÃ­Ä');
+@define('PLUGIN_EVENT_FLICKR_APIKEY_INVALID', 'KlÃ­Ä mÃ¡ 32 znakÅ¯ a obsahuje pouze ÄÃ­slice a pÃ­smenka [a-f] (klÃ­Ä je v Å¡estnÃ¡ctkovÃ© ÄÃ­selnÃ© soustavÄ›)');
+@define('PLUGIN_EVENT_FLICKR_APIKEY_DESC', 'API klÃ­Ä z http://www.flickr.com/services/api/');
+@define('PLUGIN_EVENT_FLICKR_IMPORT', 'Importovat obrÃ¡zky ze sluÅ¾by Flickr.com');
+@define('PLUGIN_EVENT_FLICKR_IMPORT2', 'Importovat obrÃ¡zky ze sluÅ¾by Flickr.com (krok 2)');
 @define('PLUGIN_EVENT_FLICKR_TAGS', 'Tagy');
-@define('PLUGIN_EVENT_FLICKR_KEYWORDS', 'Klíèová slova');
+@define('PLUGIN_EVENT_FLICKR_KEYWORDS', 'KlÃ­ÄovÃ¡ slova');
 
-@define('PLUGIN_EVENT_FLICKR_IMPORT_BLAHBLAH', 'Plugin umí importovat pouze fotky oznaèené jako "veøejné" ("public"). Pamatujte na to, ¾e k fotkám existují jistá (autorská) práva.');
-@define('PLUGIN_EVENT_FLICKR_INSTALL', '<strong>/!\</strong> U nìkterıch poskytovatelù internetového pøipojení není mo¾né zmìnit cestu "include path" pomocí php funkce ini_set() (napø. slu¾ba Free.fr). Tento plugin pak zhavaruje, proto¾e nemù¾e najít nìkteré tøídy.<br /><br />V takovém pøípadì máte nejspí¹e na svém webovém úètu zvlá¹tní prostor, kam mù¾ete nahrát vlastní php skripty (na podrobnosti se ptejte poskytovatele internetového pøipojení). Na Free.fr napø. jednodu¹e vytvoøíte adresáø "include" v koøenovém adresáøi Va¹eho úètu. Pak zkopírujete v¹echno z podadresáøe phpFlickr/PEAR (podadresáø tohoto pluginu) do zmínìného "include" adresáøe.');
+@define('PLUGIN_EVENT_FLICKR_IMPORT_BLAHBLAH', 'Plugin umÃ­ importovat pouze fotky oznaÄenÃ© jako "veÅ™ejnÃ©" ("public"). Pamatujte na to, Å¾e k fotkÃ¡m existujÃ­ jistÃ¡ (autorskÃ¡) prÃ¡va.');
+@define('PLUGIN_EVENT_FLICKR_INSTALL', '<strong>/!\</strong> U nÄ›kterÃ½ch poskytovatelÅ¯ internetovÃ©ho pÅ™ipojenÃ­ nenÃ­ moÅ¾nÃ© zmÄ›nit cestu "include path" pomocÃ­ php funkce ini_set() (napÅ™. sluÅ¾ba Free.fr). Tento plugin pak zhavaruje, protoÅ¾e nemÅ¯Å¾e najÃ­t nÄ›kterÃ© tÅ™Ã­dy.<br /><br />V takovÃ©m pÅ™Ã­padÄ› mÃ¡te nejspÃ­Å¡e na svÃ©m webovÃ©m ÃºÄtu zvlÃ¡Å¡tnÃ­ prostor, kam mÅ¯Å¾ete nahrÃ¡t vlastnÃ­ php skripty (na podrobnosti se ptejte poskytovatele internetovÃ©ho pÅ™ipojenÃ­). Na Free.fr napÅ™. jednoduÅ¡e vytvoÅ™Ã­te adresÃ¡Å™ "include" v koÅ™enovÃ©m adresÃ¡Å™i VaÅ¡eho ÃºÄtu. Pak zkopÃ­rujete vÅ¡echno z podadresÃ¡Å™e phpFlickr/PEAR (podadresÃ¡Å™ tohoto pluginu) do zmÃ­nÄ›nÃ©ho "include" adresÃ¡Å™e.');
