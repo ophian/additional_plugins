@@ -12,11 +12,11 @@
 @define('PLUGIN_ADSENSE_DESC', 'Zeigt Werbung von Google.');
 
 @define('PLUGIN_ADSENSE_CLIENT_NAME', 'Client ID');
-@define('PLUGIN_ADSENSE_CLIENT_DESCRIPTION', 'Client-ID von Google, fängt mit "pub-" an.');
+@define('PLUGIN_ADSENSE_CLIENT_DESCRIPTION', 'Client-ID von Google, fÃ¤ngt mit "pub-" an.');
 
 @define('PLUGIN_ADSENSE_WIDTH', 'Breite');
 
-@define('PLUGIN_ADSENSE_HEIGHT', 'Höhe');
+@define('PLUGIN_ADSENSE_HEIGHT', 'HÃ¶he');
 
 @define('PLUGIN_ADSENSE_FORMAT_NAME', 'Anzeigenformat');
 @define('PLUGIN_ADSENSE_FORMAT_DESCRIPTION', 'Welches Anzeigenformat?');
@@ -34,10 +34,10 @@
 @define('PLUGIN_ADSENSE_TYPE_IMAGES_ONLY', 'nur Bildwerbung');
 
 @define('PLUGIN_ADSENSE_CHANNEL_NAME', 'Kanal (Channel)');
-@define('PLUGIN_ADSENSE_CHANNEL_DESCRIPTION', 'Optional, unterscheidet zwischen verschiedenen Werbekanälen. Die Nummer die Google vergeben hat, nicht der Name des Kanals!');
+@define('PLUGIN_ADSENSE_CHANNEL_DESCRIPTION', 'Optional, unterscheidet zwischen verschiedenen WerbekanÃ¤len. Die Nummer die Google vergeben hat, nicht der Name des Kanals!');
 
 @define('PLUGIN_ADSENSE_NUMBER_NAME', 'Anzahl');
-@define('PLUGIN_ADSENSE_NUMBER_DESCRIPTION', 'Anzahl der Anzeigen, die angezeigt werden sollen. Werbeblöcke werden durch <BR> Tags getrennt. ');
+@define('PLUGIN_ADSENSE_NUMBER_DESCRIPTION', 'Anzahl der Anzeigen, die angezeigt werden sollen. WerbeblÃ¶cke werden durch <BR> Tags getrennt. ');
 
 // Next lines were translated on 2009/08/20
 @define('PLUGIN_ADSENSE_SLOT_NAME', 'Slot ID');

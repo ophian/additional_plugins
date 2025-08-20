@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_google_adsense extends serendipity_plugin
 {
-    var $title = PLUGIN_ADSENSE_NAME;
+    public $title = PLUGIN_ADSENSE_NAME;
 
     function introspect(&$propbag)
     {
@@ -20,11 +22,11 @@ class serendipity_plugin_google_adsense extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADSENSE_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Jim Dabell');
-        $propbag->add('version',       '0.5');
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('version',        '1.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('configuration', array('client',
