@@ -8,10 +8,10 @@
 # http://www.jannis.to/programming/serendipity.html                      #
 #                                                                        #
 # Translated by                                                          #
-# Jo„o P. Matos <jmatos@math.ist.utl.pt>                                 #
+# Jo√£o P. Matos <jmatos@math.ist.utl.pt>                                 #
 #                                                                        #
 ##########################################################################
 
 @define('PLUGIN_SIDEBAR_CREATIVECOMMONS_NAME', 'Creative Commons');
-@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'Mostra uma notificaÁ„o Creative Commons na barra lateral.');
+@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'Mostra uma notifica√ß√£o Creative Commons na barra lateral.');
 

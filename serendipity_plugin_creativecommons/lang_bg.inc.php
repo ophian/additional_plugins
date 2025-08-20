@@ -6,4 +6,4 @@
  */
 
 @define('PLUGIN_SIDEBAR_CREATIVECOMMONS_NAME', 'Creative Commons');
-@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'Показва известяване от creative commons в страничния панел.');
+@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'РџРѕРєР°Р·РІР° РёР·РІРµСЃС‚СЏРІР°РЅРµ РѕС‚ creative commons РІ СЃС‚СЂР°РЅРёС‡РЅРёСЏ РїР°РЅРµР».');

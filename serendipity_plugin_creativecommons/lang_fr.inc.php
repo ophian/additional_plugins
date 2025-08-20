@@ -14,5 +14,5 @@
 ##########################################################################
 
 @define('PLUGIN_SIDEBAR_CREATIVECOMMONS_NAME', 'Creative Commons');
-@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'Affiche un contrat Creative Commons dans la barre latérale.');
+@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'Affiche un contrat Creative Commons dans la barre latÃ©rale.');
 

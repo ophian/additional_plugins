@@ -2,10 +2,10 @@
 
 /**
  *  @version $Revision: 1381 $
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
 @define('PLUGIN_SIDEBAR_CREATIVECOMMONS_NAME', 'Creative Commons');
-@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'V postrannÌm panelu zobrazuje podrobnosti pouæitÈ licence "Creative Commons" (Autorsk· pr·va)');
+@define('PLUGIN_SIDEBAR_CREATIVECOMMONS_DESC', 'V postrann√≠m panelu zobrazuje podrobnosti pou≈æit√© licence "Creative Commons" (Autorsk√° pr√°va)');
 
