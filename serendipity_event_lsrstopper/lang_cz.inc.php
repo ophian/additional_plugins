@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2013/03/31
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/13
  */
 @define('PLUGIN_EVENT_LSRSTOPPER_NAME', 'D64 LSR-Stopper');
-@define('PLUGIN_EVENT_LSRSTOPPER_DESC', 'PomocÌ tohoto pluginu zablokujete odkazy na mÈdia, kter· si n·rokujÌ autorsk· pr·va podle nÏmeckÈho "Leistungsschutzrecht" (Ochrana duπevnÌho vlastnictvÌ).');
-@define('PLUGIN_EVENT_LSRSTOPPER_USE_BLACKLIST_NAME', 'PouæÌt blacklist, kter˝ poskytuje D64. Jinak pouæije DNS sluæbu poskytovanou wazong.de.');
-@define('PLUGIN_EVENT_LSRSTOPPER_USE_BLACKLIST_DESC', 'VÌce informacÌ najdete na http://wordpress.org/extend/plugins/d64-lsr-stopper/ a takÈ na http://dentaku.wazong.de/2013/03/01/lsrdnsbl/');
+@define('PLUGIN_EVENT_LSRSTOPPER_DESC', 'Pomoc√≠ tohoto pluginu zablokujete odkazy na m√©dia, kter√° si n√°rokuj√≠ autorsk√° pr√°va podle nƒõmeck√©ho "Leistungsschutzrecht" (Ochrana du≈°evn√≠ho vlastnictv√≠).');
+@define('PLUGIN_EVENT_LSRSTOPPER_USE_BLACKLIST_NAME', 'Pou≈æ√≠t blacklist, kter√Ω poskytuje D64. Jinak pou≈æije DNS slu≈æbu poskytovanou wazong.de.');
+@define('PLUGIN_EVENT_LSRSTOPPER_USE_BLACKLIST_DESC', 'V√≠ce informac√≠ najdete na http://wordpress.org/extend/plugins/d64-lsr-stopper/ a tak√© na http://dentaku.wazong.de/2013/03/01/lsrdnsbl/');
