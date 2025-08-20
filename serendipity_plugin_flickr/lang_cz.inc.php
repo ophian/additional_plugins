@@ -2,66 +2,66 @@
 
 /**
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/23
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/08/21
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2013/04/14
  */
 @define('PLUGIN_SIDEBAR_FLICKR', 'Flickr Photostream');
-@define('PLUGIN_SIDEBAR_FLICKR_DESC', 'Zobrazuje nejnovÏjπÌ fotografie kan·lu Flickr Photostream.');
+@define('PLUGIN_SIDEBAR_FLICKR_DESC', 'Zobrazuje nejnovƒõj≈°√≠ fotografie kan√°lu Flickr Photostream.');
 @define('PLUGIN_EVENT_FLICKRCSS', 'Flickr Photostream CSS');
-@define('PLUGIN_EVENT_FLICKRCSS_DESC', 'Tento plugin je rozπÌ¯enÌm postrannÌho pluginu "Flickr Photostream" a p¯id·v· k nÏmu stylov·nÌ (CSS).');
+@define('PLUGIN_EVENT_FLICKRCSS_DESC', 'Tento plugin je roz≈°√≠≈ôen√≠m postrann√≠ho pluginu "Flickr Photostream" a p≈ôid√°v√° k nƒõmu stylov√°n√≠ (CSS).');
 
 @define('PLUGIN_SIDEBAR_FLICKR_TITLE_TITLE', 'Nadpis');
-@define('PLUGIN_SIDEBAR_FLICKR_TITLE_BLAHBLAH', 'Nadpis postrannÌho sloupce s Flickrem. M˘æe b˝t pr·zdn˝.');
-@define('PLUGIN_SIDEBAR_FLICKR_USER_TITLE', '⁄Ëet Flickr');
-@define('PLUGIN_SIDEBAR_FLICKR_USER_BLAHBLAH', 'UæivatelskÈ jmÈno nebo email');
+@define('PLUGIN_SIDEBAR_FLICKR_TITLE_BLAHBLAH', 'Nadpis postrann√≠ho sloupce s Flickrem. M≈Ø≈æe b√Ωt pr√°zdn√Ω.');
+@define('PLUGIN_SIDEBAR_FLICKR_USER_TITLE', '√öƒçet Flickr');
+@define('PLUGIN_SIDEBAR_FLICKR_USER_BLAHBLAH', 'U≈æivatelsk√© jm√©no nebo email');
 
-@define('PLUGIN_SIDEBAR_FLICKR_IMG_SQUARE', '»tverec');
-@define('PLUGIN_SIDEBAR_FLICKR_IMG_THUMBNAIL', 'N·hled');
-@define('PLUGIN_SIDEBAR_FLICKR_IMG_SMALL', 'Mal˝');
-@define('PLUGIN_SIDEBAR_FLICKR_IMG_MEDIUM', 'Prost¯ednÌ');
-@define('PLUGIN_SIDEBAR_FLICKR_IMG_LARGE', 'Velk˝');
-@define('PLUGIN_SIDEBAR_FLICKR_IMG_ORIGINAL', 'P˘vodnÌ');
+@define('PLUGIN_SIDEBAR_FLICKR_IMG_SQUARE', 'ƒåtverec');
+@define('PLUGIN_SIDEBAR_FLICKR_IMG_THUMBNAIL', 'N√°hled');
+@define('PLUGIN_SIDEBAR_FLICKR_IMG_SMALL', 'Mal√Ω');
+@define('PLUGIN_SIDEBAR_FLICKR_IMG_MEDIUM', 'Prost≈ôedn√≠');
+@define('PLUGIN_SIDEBAR_FLICKR_IMG_LARGE', 'Velk√Ω');
+@define('PLUGIN_SIDEBAR_FLICKR_IMG_ORIGINAL', 'P≈Øvodn√≠');
 
 @define('PLUGIN_SIDEBAR_FLICKR_LIGHTBOX_TITLE', 'Lightbox');
-@define('PLUGIN_SIDEBAR_FLICKR_LIGHTBOX_BLAHBLAH', 'Pro pouæitÌ pluginu LIghtbox pro zobrazenÌ obr·zk˘ FlickrShow, zadejte p¯i¯azenÈ tagy "rel". Pracuje pouze pokud je odkaz nastaven˝ na "JPG". V˝chozÌ: lightbox[lightbox_group_etnry_flickr]');
+@define('PLUGIN_SIDEBAR_FLICKR_LIGHTBOX_BLAHBLAH', 'Pro pou≈æit√≠ pluginu LIghtbox pro zobrazen√≠ obr√°zk≈Ø FlickrShow, zadejte p≈ôi≈ôazen√© tagy "rel". Pracuje pouze pokud je odkaz nastaven√Ω na "JPG". V√Ωchoz√≠: lightbox[lightbox_group_etnry_flickr]');
 
-@define('PLUGIN_SIDEBAR_FLICKR_SRCIMG_TITLE', 'Velikost n·hledu');
-@define('PLUGIN_SIDEBAR_FLICKR_TGTIMG_TITLE', 'Velikost odkazovanÈho obr·zku');
+@define('PLUGIN_SIDEBAR_FLICKR_SRCIMG_TITLE', 'Velikost n√°hledu');
+@define('PLUGIN_SIDEBAR_FLICKR_TGTIMG_TITLE', 'Velikost odkazovan√©ho obr√°zku');
 
-@define('PLUGIN_SIDEBAR_FLICKR_SHOWDATE', 'Zobrazovat datum obr·zku');
-@define('PLUGIN_SIDEBAR_FLICKR_SHOWTITLE', 'Zobrazovat popis obr·zku');
+@define('PLUGIN_SIDEBAR_FLICKR_SHOWDATE', 'Zobrazovat datum obr√°zku');
+@define('PLUGIN_SIDEBAR_FLICKR_SHOWTITLE', 'Zobrazovat popis obr√°zku');
 
-@define('PLUGIN_SIDEBAR_FLICKR_TGTLINK_TITLE', 'Odkaz obr·zku');
+@define('PLUGIN_SIDEBAR_FLICKR_TGTLINK_TITLE', 'Odkaz obr√°zku');
 @define('PLUGIN_SIDEBAR_FLICKR_TGTLINK_JPG', 'JPG');
 @define('PLUGIN_SIDEBAR_FLICKR_TGTLINK_FLICKR', 'Flickr');
 
-@define('PLUGIN_SIDEBAR_FLICKR_NUM_TITLE', 'PoËet zobrazen˝ch obr·zk˘');
+@define('PLUGIN_SIDEBAR_FLICKR_NUM_TITLE', 'Poƒçet zobrazen√Ωch obr√°zk≈Ø');
 @define('PLUGIN_SIDEBAR_FLICKR_NUM_BLAHBLAH', 'Min: 1, Max: 500');
 
 @define('PLUGIN_SIDEBAR_FLICKR_APIKEY_TITLE', 'Flickr API Key');
-@define('PLUGIN_SIDEBAR_FLICKR_APIKEY_BLAHBLAH', 'Abyste mohli vyuæÌvat tento plugin, musÌte vlastnit Flickrem vygenerovan˝ "Services API Key". Gener·tor najdete na http://www.flickr.com/services/api/key.gne. Registrace je jednoduch·, klÌË obdræÌte na poËk·nÌ.');
+@define('PLUGIN_SIDEBAR_FLICKR_APIKEY_BLAHBLAH', 'Abyste mohli vyu≈æ√≠vat tento plugin, mus√≠te vlastnit Flickrem vygenerovan√Ω "Services API Key". Gener√°tor najdete na http://www.flickr.com/services/api/key.gne. Registrace je jednoduch√°, kl√≠ƒç obdr≈æ√≠te na poƒçk√°n√≠.');
 
 @define('PLUGIN_SIDEBAR_FLICKR_APISECRET_TITLE', 'Flickr API Secret');
-@define('PLUGIN_SIDEBAR_FLICKR_APISECRET_DESC', 'Tajn˝ klÌË - nenÌ povinn˝, umoæÚuje zabezpeËen˝ p¯enos dat. Tento tajn˝ klÌË m˘æete obdræet/nastavit na Flickru na str·nce s profilem.');
+@define('PLUGIN_SIDEBAR_FLICKR_APISECRET_DESC', 'Tajn√Ω kl√≠ƒç - nen√≠ povinn√Ω, umo≈æ≈àuje zabezpeƒçen√Ω p≈ôenos dat. Tento tajn√Ω kl√≠ƒç m≈Ø≈æete obdr≈æet/nastavit na Flickru na str√°nce s profilem.');
 
 @define('PLUGIN_SIDEBAR_FLICKR_CACHE_TITLE', 'Cache timeout');
-@define('PLUGIN_SIDEBAR_FLICKR_CACHE_DESC', 'Tento plugin pouæÌv· cachov·nÌ PEAR::Cache_Lite. Zadejte Ëas mezi aktualizacemi obr·zk˘ ve vte¯in·ch. V˝chozÌ: 3600s = 1 hodina.');
+@define('PLUGIN_SIDEBAR_FLICKR_CACHE_DESC', 'Tento plugin pou≈æ√≠v√° cachov√°n√≠ PEAR::Cache_Lite. Zadejte ƒças mezi aktualizacemi obr√°zk≈Ø ve vte≈ôin√°ch. V√Ωchoz√≠: 3600s = 1 hodina.');
 
 @define('PLUGIN_SIDEBAR_FLICKR_SHOWRSS', 'Zobrazit RSS odkaz');
 @define('PLUGIN_SIDEBAR_FLICKR_SHOWPHOTOSTREAM', 'Zobrazit odkaz na Flickr Photostream');
 
-@define('PLUGIN_SIDEBAR_FLICKR_LINK_SHOWRSS', 'Flickr RSS kan·l');
+@define('PLUGIN_SIDEBAR_FLICKR_LINK_SHOWRSS', 'Flickr RSS kan√°l');
 @define('PLUGIN_SIDEBAR_FLICKR_LINK_PHOTOSTREAM', 'Flickr Photostream');
 
 /* Errors */
-@define('PLUGIN_SIDEBAR_FLICKR_ERROR_WRONGUSER', '⁄Ëet na Flickru neexistuje, nebo je πpatnÏ zadan˝ API klÌË.');
-@define('PLUGIN_SIDEBAR_FLICKR_ERROR_NOIMG', 'Æ·dnÈ obr·zky.');
+@define('PLUGIN_SIDEBAR_FLICKR_ERROR_WRONGUSER', '√öƒçet na Flickru neexistuje, nebo je ≈°patnƒõ zadan√Ω API kl√≠ƒç.');
+@define('PLUGIN_SIDEBAR_FLICKR_ERROR_NOIMG', '≈Ω√°dn√© obr√°zky.');
 
 // Next lines were translated on 2011/08/21
-@define('PLUGIN_SIDEBAR_FLICKR_NUMBEROFCHOICES', 'PoËet vybran˝ch obr·zk˘');
-@define('PLUGIN_SIDEBAR_FLICKR_USECHOICES', 'N·hodnÏ zamÌchat vybranÈ obr·zky?');
+@define('PLUGIN_SIDEBAR_FLICKR_NUMBEROFCHOICES', 'Poƒçet vybran√Ωch obr√°zk≈Ø');
+@define('PLUGIN_SIDEBAR_FLICKR_USECHOICES', 'N√°hodnƒõ zam√≠chat vybran√© obr√°zky?');
 
