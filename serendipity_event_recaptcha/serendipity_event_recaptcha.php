@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,7 +12,7 @@ require_once dirname(__FILE__) . '/recaptcha/recaptchalib.php';
 
 class serendipity_event_recaptcha extends serendipity_event
 {
-    var $error=null;
+    private $error=null;
 
     function introspect(&$propbag)
     {
@@ -22,12 +24,12 @@ class serendipity_event_recaptcha extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RECAPTCHA_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx');
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.0.0',
-            'smarty'      => '3.1.0',
-            'php'         => '7.0.0'
+        $propbag->add('version',        '1.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '0.36');
         $propbag->add('event_hooks',    array(
             'frontend_configure'   => true,
             'frontend_saveComment' => true,

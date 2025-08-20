@@ -3,42 +3,42 @@
 /**
  *  @version
  *  @author Translator Andy Blank <andy.blank@gmx.net>
- *  DE-Revision: Revision of lang_en.inc.php
+ *  DE-Revision: Revision of UTF-8/lang_en.inc.php
  */
 
 @define('PLUGIN_EVENT_RECAPTCHA_TITLE', 'Recaptcha');
-@define('PLUGIN_EVENT_RECAPTCHA_DESC', 'Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)');
+@define('PLUGIN_EVENT_RECAPTCHA_DESC', 'Recaptcha fÃ¼r die Kommentar-Funktion von Artikeln aktivieren (Sie mÃ¼ssen einen SchlÃ¼ssel anfordern)');
 
-@define('PLUGIN_EVENT_RECAPTCHA_HIDE', 'Recaptchas für Autoren deaktieren');
-@define('PLUGIN_EVENT_RECAPTCHA_HIDE_DESC', 'Autoren der folgenden Benutzergruppen soll es erlaubt sein, Kommentare zu veröffentlichen, ohne ein Recaptcha einzugeben.');
+@define('PLUGIN_EVENT_RECAPTCHA_HIDE', 'Recaptchas fÃ¼r Autoren deaktieren');
+@define('PLUGIN_EVENT_RECAPTCHA_HIDE_DESC', 'Autoren der folgenden Benutzergruppen soll es erlaubt sein, Kommentare zu verÃ¶ffentlichen, ohne ein Recaptcha einzugeben.');
 
 @define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA', 'Recaptcha aktivieren');
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_DESC', 'Wenn diese Funktion aktiviert ist, wird ein Recaptcha generiert. Diese spezielle Art von Capchas helfen Bücher zu digitalisieren. Weitere Informationen finden Sie unter https://www.google.com/recaptcha/. Statt der Eingabe der angezeigten Buchstaben, kann sich der Benutzer auch alternativ eine Nachricht anhören, und die gehörten Nummern eingeben. Wenn kein Captcha generiert wird, kann es seinm dass der Recapcha-Server nicht erreichbar ist.');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_DESC', 'Wenn diese Funktion aktiviert ist, wird ein Recaptcha generiert. Diese spezielle Art von Capchas helfen BÃ¼cher zu digitalisieren. Weitere Informationen finden Sie unter https://www.google.com/recaptcha/. Statt der Eingabe der angezeigten Buchstaben, kann sich der Benutzer auch alternativ eine Nachricht anhÃ¶ren, und die gehÃ¶rten Nummern eingeben. Wenn kein Captcha generiert wird, kann es sein, dass der Recapcha-Server nicht erreichbar ist.');
 
 @define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_STYLE', 'Stil der Recapchas welcher genutzt wird');
 @define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_STYLE_DESC', 'Rot, weiss oder schwarz-glasig. Dies funktioniert nur, wenn Javascript aktiviert ist.');
 
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB', 'Geben Sie den öffentlicher Schlüssel für Recaptcha ein');
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB_DESC', 'Öffentliches Schlüsselpaar für die Kommunikation mit dem reCAPTCHA Server. Ein öffentliches/privates Schlüsselpaar kann unter https://www.google.com/recaptcha/admin angefordert werden.');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB', 'Geben Sie den Ã¶ffentlicher SchlÃ¼ssel fÃ¼r Recaptcha ein');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB_DESC', 'Ã–ffentliches SchlÃ¼sselpaar fÃ¼r die Kommunikation mit dem reCAPTCHA Server. Ein Ã¶ffentliches/privates SchlÃ¼sselpaar kann unter https://www.google.com/recaptcha/admin angefordert werden.');
 
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV', 'Geben Sie den privaten Schlüssel für Recaptcha ein');
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV_DESC', 'Privates Schlüsselpaar für die Kommunikation mit dem reCAPTCHA Server. Ein öffentliches/privates Schlüsselpaar kann unter https://www.google.com/recaptcha/admin angefordert werden.');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV', 'Geben Sie den privaten SchlÃ¼ssel fÃ¼r Recaptcha ein');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV_DESC', 'Privates SchlÃ¼sselpaar fÃ¼r die Kommunikation mit dem reCAPTCHA Server. Ein Ã¶ffentliches/privates SchlÃ¼sselpaar kann unter https://www.google.com/recaptcha/admin angefordert werden.');
 
 @define('PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL', 'Anzahl der Tage nach der die Eingabe von Recaptchas erzwungen wird');
-@define('PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL_DESC', 'Recaptchas können abhängig vom Alter des Artikels erzwungen werden. Hier kann die Anzahl der Tage eingegeben werden, nach der die korrekte Eingabe eines Recaptchas notwendig wird. Ist dieser Wert 0, werden Recaptchas immer angezeigt.');
+@define('PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL_DESC', 'Recaptchas kÃ¶nnen abhÃ¤ngig vom Alter des Artikels erzwungen werden. Hier kann die Anzahl der Tage eingegeben werden, nach der die korrekte Eingabe eines Recaptchas notwendig wird. Ist dieser Wert 0, werden Recaptchas immer angezeigt.');
 
-@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE', 'Wählen Sie die Log-Methode');
-@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DESC', 'Das loggen von zurückgewiesenen Kommentaren kann mittels Datenbank oder (Text)Datei realisiert werden');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE', 'WÃ¤hlen Sie die Log-Methode');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DESC', 'Das loggen von zurÃ¼ckgewiesenen Kommentaren kann mittels Datenbank oder (Text)Datei realisiert werden');
 @define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_FILE', 'Datei (siehe Logdatei)');
 @define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DB', 'Datenbank');
 @define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_NONE', 'Kein Loggen');
 
 @define('PLUGIN_EVENT_RECAPTCHA_LOGFILE', 'Speicherort der Logdatei');
-@define('PLUGIN_EVENT_RECAPTCHA_LOGFILE_DESC', 'Informationen über zurückgewiesene/moderierte Kommentare können in eine Logdatei geschrieben werden. Um das Loggen zu deaktivieren, kann für diesen Wert eine leere Zeichenkette eingegeben werden.');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGFILE_DESC', 'Informationen Ã¼ber zurÃ¼ckgewiesene/moderierte Kommentare kÃ¶nnen in eine Logdatei geschrieben werden. Um das Loggen zu deaktivieren, kann fÃ¼r diesen Wert eine leere Zeichenkette eingegeben werden.');
 
-@define('PLUGIN_EVENT_RECAPTCHA_ERROR_CAPTCHAS', 'Sie haben keine gültige Zeichenkette in die Spam-Schutz Box eingegeben. Bitten betrachten Sie das angezeigte Bild an und geben Sie die entsprechenden Werte ein.');
-@define('PLUGIN_EVENT_RECAPTCHA_ERROR_RECAPTCHA', 'Sie haben keinen öffentlichen/privaten Schlüssel in der Recapcha-Konfiguration eingegeben. Es werden keine Recaptchas verwendet. Wenn Sie Recaptchas nutzen wollen, geben Sie bitte die entsprechenden Schlüssel im Konfigurations-Bereich des Recaptcha-Plugins ein oder verwenden Sie die herkömmlichen Captchas.');
+@define('PLUGIN_EVENT_RECAPTCHA_ERROR_CAPTCHAS', 'Sie haben keine gÃ¼ltige Zeichenkette in die Spam-Schutz Box eingegeben. Bitten betrachten Sie das angezeigte Bild an und geben Sie die entsprechenden Werte ein.');
+@define('PLUGIN_EVENT_RECAPTCHA_ERROR_RECAPTCHA', 'Sie haben keinen Ã¶ffentlichen/privaten SchlÃ¼ssel in der Recapcha-Konfiguration eingegeben. Es werden keine Recaptchas verwendet. Wenn Sie Recaptchas nutzen wollen, geben Sie bitte die entsprechenden SchlÃ¼ssel im Konfigurations-Bereich des Recaptcha-Plugins ein oder verwenden Sie die herkÃ¶mmlichen Captchas.');
 
-@define('PLUGIN_EVENT_RECAPTCHA_INFO1', 'Ein Recaptcha ist eine spezielle Art von <a href="https://de.wikipedia.com/wiki/Captcha">Captcha</a>. Im einfachsten Fall muss der Benutzer nur einen Haken setzen; ansonsten müssen verschiedene Bilderrätsel gelöst werden. Weitere Informationen finden Sie unter <a href="https://www.google.com/recaptcha/">https://www.google.com/recaptcha/</a>.<br/>Bitte beachten Sie, wenn sie Recaptcha nutzen wollen, dass Sie sich bei der genannten Webseite registrieren müssen. Einen Schlüssel können Sie <a href="https://www.google.com/recaptcha/admin');
+@define('PLUGIN_EVENT_RECAPTCHA_INFO1', 'Ein Recaptcha ist eine spezielle Art von <a href="https://de.wikipedia.com/wiki/Captcha">Captcha</a>. Im einfachsten Fall muss der Benutzer nur einen Haken setzen; ansonsten mÃ¼ssen verschiedene BilderrÃ¤tsel gelÃ¶st werden. Weitere Informationen finden Sie unter <a href="https://www.google.com/recaptcha/">https://www.google.com/recaptcha/</a>.<br/>Bitte beachten Sie, wenn sie Recaptcha nutzen wollen, dass Sie sich bei der genannten Webseite registrieren mÃ¼ssen. Einen SchlÃ¼ssel kÃ¶nnen Sie <a href="https://www.google.com/recaptcha/admin');
 @define('PLUGIN_EVENT_RECAPTCHA_INFO2', '">hier</a> anfordern. <br/> Bitte beachten Sie auch, dass dieses Plugin jedes Mal Anfragen an den reCAPTCHA Server sendet. Dies kann den Ladevorgang der Artikel verlangsamen. Wenn ein Timeout auftritt, wird kein Recaptcha angezeigt.');
 

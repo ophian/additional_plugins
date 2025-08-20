@@ -1,47 +1,47 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/21
  */
 
 @define('PLUGIN_EVENT_RECAPTCHA_TITLE', 'Recaptcha');
-@define('PLUGIN_EVENT_RECAPTCHA_DESC', 'Pøi vkládání komentáøù pou¾ívá systém kryptogramù Recaptcha (je tøeba pøedem za¾ádat o pøístupovı klíè)');
+@define('PLUGIN_EVENT_RECAPTCHA_DESC', 'PÅ™i vklÃ¡dÃ¡nÃ­ komentÃ¡Å™Å¯ pouÅ¾Ã­vÃ¡ systÃ©m kryptogramÅ¯ Recaptcha (je tÅ™eba pÅ™edem zaÅ¾Ã¡dat o pÅ™Ã­stupovÃ½ klÃ­Ä)');
 
-@define('PLUGIN_EVENT_RECAPTCHA_HIDE', 'Vypnout kryptogramy Recaptcha pro pøihlá¹ené u¾ivatele');
-@define('PLUGIN_EVENT_RECAPTCHA_HIDE_DESC', 'U¾ivatelé ve zde vybranıch skupinách mohou posílat komentáøe, ani¾ by museli zadávat Recaptcha kryptogramy');
-
-
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA', 'Pou¾ít kryptogramy Recaptcha');
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_DESC', 'Pokud je nastaveno, budou pou¾ity kryptogramy Recaptcha. To je speciální druh kryptogramù, kterı pomáhá pøi digitalizaci knih. Viz https://www.google.com/recaptcha/. U¾ivatel si mù¾e vybrat, ¾e místo zadávání zobrazenıch písmen mu bude pøehrána krátká zpráva obsahující èísla, která slou¾í jako kód. Pokud nejsou generovány ¾ádné kryptogramy, server je pravdìpodobnì mimo slu¾bu.');
-
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_STYLE', 'Kterı typ kryptogramù pou¾ít?');
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_STYLE_DESC', 'Vyberte jeden z následujících typù: red (èervenı), white (bílı), blackglass (èerné sklo). Tato volba funguje pouze s povolenım javascriptem.');
-
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB', 'Veøejnı klíè pro kryptogramy Recaptcha');
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB_DESC', 'Zadejte veøejnou (public) èást klíèe pro komunikaci se serveren reCAPTCHA. O vygenerování páru klíèe (veøejnı + soukromı klíè) mù¾ete po¾ádat na https://www.google.com/recaptcha/admin');
-
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV', 'Soukromı klíè recaptcha');
-@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV_DESC', 'Zadejte soukromou (private) èást klíèe pro komunikaci se serveren reCAPTCHA. O vygenerování páru klíèe (veøejnı + soukromı klíè) mù¾ete po¾ádat na https://www.google.com/recaptcha/admin');
-
-@define('PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL', 'Vynutit kryptogramy po uplynutí kolika dní?');
-@define('PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL_DESC', 'Pou¾ití kryptogramù mù¾e bıt vynuceno v závislosti na stáøí èlánkù. Zadejte poèet dní, po jejich¾ uplynutí od vydání èlánku je tøeba zadat kryptogram. Hodnota 0 znamená, ¾e kryptogramy budou pou¾ity v¾dy.');
+@define('PLUGIN_EVENT_RECAPTCHA_HIDE', 'Vypnout kryptogramy Recaptcha pro pÅ™ihlÃ¡Å¡enÃ© uÅ¾ivatele');
+@define('PLUGIN_EVENT_RECAPTCHA_HIDE_DESC', 'UÅ¾ivatelÃ© ve zde vybranÃ½ch skupinÃ¡ch mohou posÃ­lat komentÃ¡Å™e, aniÅ¾ by museli zadÃ¡vat Recaptcha kryptogramy');
 
 
-@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE', 'Vyberte metodu logování');
-@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DESC', 'Odmítnuté komentáøe je mo¾né logovat buï do databáze nebo do textového souboru.');
-@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_FILE', 'Soubor (viz volba "logfile" ní¾e)');
-@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DB', 'Databáze');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA', 'PouÅ¾Ã­t kryptogramy Recaptcha');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_DESC', 'Pokud je nastaveno, budou pouÅ¾ity kryptogramy Recaptcha. To je speciÃ¡lnÃ­ druh kryptogramÅ¯, kterÃ½ pomÃ¡hÃ¡ pÅ™i digitalizaci knih. Viz https://www.google.com/recaptcha/. UÅ¾ivatel si mÅ¯Å¾e vybrat, Å¾e mÃ­sto zadÃ¡vÃ¡nÃ­ zobrazenÃ½ch pÃ­smen mu bude pÅ™ehrÃ¡na krÃ¡tkÃ¡ zprÃ¡va obsahujÃ­cÃ­ ÄÃ­sla, kterÃ¡ slouÅ¾Ã­ jako kÃ³d. Pokud nejsou generovÃ¡ny Å¾Ã¡dnÃ© kryptogramy, server je pravdÄ›podobnÄ› mimo sluÅ¾bu.');
+
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_STYLE', 'KterÃ½ typ kryptogramÅ¯ pouÅ¾Ã­t?');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_STYLE_DESC', 'Vyberte jeden z nÃ¡sledujÃ­cÃ­ch typÅ¯: red (ÄervenÃ½), white (bÃ­lÃ½), blackglass (ÄernÃ© sklo). Tato volba funguje pouze s povolenÃ½m javascriptem.');
+
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB', 'VeÅ™ejnÃ½ klÃ­Ä pro kryptogramy Recaptcha');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PUB_DESC', 'Zadejte veÅ™ejnou (public) ÄÃ¡st klÃ­Äe pro komunikaci se serveren reCAPTCHA. O vygenerovÃ¡nÃ­ pÃ¡ru klÃ­Äe (veÅ™ejnÃ½ + soukromÃ½ klÃ­Ä) mÅ¯Å¾ete poÅ¾Ã¡dat na https://www.google.com/recaptcha/admin');
+
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV', 'SoukromÃ½ klÃ­Ä recaptcha');
+@define('PLUGIN_EVENT_RECAPTCHA_RECAPTCHA_PRIV_DESC', 'Zadejte soukromou (private) ÄÃ¡st klÃ­Äe pro komunikaci se serveren reCAPTCHA. O vygenerovÃ¡nÃ­ pÃ¡ru klÃ­Äe (veÅ™ejnÃ½ + soukromÃ½ klÃ­Ä) mÅ¯Å¾ete poÅ¾Ã¡dat na https://www.google.com/recaptcha/admin');
+
+@define('PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL', 'Vynutit kryptogramy po uplynutÃ­ kolika dnÃ­?');
+@define('PLUGIN_EVENT_RECAPTCHA_CAPTCHAS_TTL_DESC', 'PouÅ¾itÃ­ kryptogramÅ¯ mÅ¯Å¾e bÃ½t vynuceno v zÃ¡vislosti na stÃ¡Å™Ã­ ÄlÃ¡nkÅ¯. Zadejte poÄet dnÃ­, po jejichÅ¾ uplynutÃ­ od vydÃ¡nÃ­ ÄlÃ¡nku je tÅ™eba zadat kryptogram. Hodnota 0 znamenÃ¡, Å¾e kryptogramy budou pouÅ¾ity vÅ¾dy.');
+
+
+@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE', 'Vyberte metodu logovÃ¡nÃ­');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DESC', 'OdmÃ­tnutÃ© komentÃ¡Å™e je moÅ¾nÃ© logovat buÄ do databÃ¡ze nebo do textovÃ©ho souboru.');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_FILE', 'Soubor (viz volba "logfile" nÃ­Å¾e)');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_DB', 'DatabÃ¡ze');
 @define('PLUGIN_EVENT_RECAPTCHA_LOGTYPE_NONE', 'Nelogovat');
 
-@define('PLUGIN_EVENT_RECAPTCHA_LOGFILE', 'Umístìní souboru s logem');
-@define('PLUGIN_EVENT_RECAPTCHA_LOGFILE_DESC', 'Informace o odmítnutıch/schvalovanıch pøíspìvcích je mo¾né zapisovat do souboru. Zadejte zde prázdnı øetìzec pro vypnutí logování.');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGFILE', 'UmÃ­stÄ›nÃ­ souboru s logem');
+@define('PLUGIN_EVENT_RECAPTCHA_LOGFILE_DESC', 'Informace o odmÃ­tnutÃ½ch/schvalovanÃ½ch pÅ™Ã­spÄ›vcÃ­ch je moÅ¾nÃ© zapisovat do souboru. Zadejte zde prÃ¡zdnÃ½ Å™etÄ›zec pro vypnutÃ­ logovÃ¡nÃ­.');
 
-@define('PLUGIN_EVENT_RECAPTCHA_ERROR_CAPTCHAS', 'Nezadal(a) jsi správnı øetìzec podle antispamového obrázku. Podívej se na kryptogram prosím je¹tì jednou a zadej správné hodnoty.');
-@define('PLUGIN_EVENT_RECAPTCHA_ERROR_RECAPTCHA', 'Nezadali jste veøejnı/soukromı klíè v nastavení kryptogramù recaptcha. Kryptogramy budou vypnuty. Pokud je chcete pou¾ívat, zadejte prosím oba dva klíèe v nastavení pluginu Recaptcha, nebo pou¾ijte obyèejné kryptogramy (plugin "antispamové metody").');
+@define('PLUGIN_EVENT_RECAPTCHA_ERROR_CAPTCHAS', 'Nezadal(a) jsi sprÃ¡vnÃ½ Å™etÄ›zec podle antispamovÃ©ho obrÃ¡zku. PodÃ­vej se na kryptogram prosÃ­m jeÅ¡tÄ› jednou a zadej sprÃ¡vnÃ© hodnoty.');
+@define('PLUGIN_EVENT_RECAPTCHA_ERROR_RECAPTCHA', 'Nezadali jste veÅ™ejnÃ½/soukromÃ½ klÃ­Ä v nastavenÃ­ kryptogramÅ¯ recaptcha. Kryptogramy budou vypnuty. Pokud je chcete pouÅ¾Ã­vat, zadejte prosÃ­m oba dva klÃ­Äe v nastavenÃ­ pluginu Recaptcha, nebo pouÅ¾ijte obyÄejnÃ© kryptogramy (plugin "antispamovÃ© metody").');
 
-@define('PLUGIN_EVENT_RECAPTCHA_INFO1', 'Recaptcha je zvlá¹tní druh <a href="http://en.wikipedia.com/wiki/Captcha">kryptogramu</a>. U¾ivatel musí rozpoznat dvì slova. První systémem vızva-odpovìï (ochrana pøed spamem), a druhé, které pomáhá pøi digitalizaci knih. Navíc zrakovì posti¾ení lidé mohou pou¾ít audio-kryptogram. Pro více informací se podívejte na stránku <a href="https://www.google.com/recaptcha/">www.google.com/recaptcha/</a>.<br/>Pamatujte, ¾e abyste mohli pou¾ívat tento plugin, musíte se registrovat na zmínìné webové stránce.O klíè mù¾ete po¾ádat  <a href="https://www.google.com/recaptcha/admin');
-@define('PLUGIN_EVENT_RECAPTCHA_INFO2', '">tady</a>. <br/> Pamatujte také prosím, ¾e tento plugin se bude pøi ka¾dém komentáøi dotazovat serveru recaptcha, a mù¾e proto zpomalit naèítání stránek. Pokud bude server recaptcha vypnutı, pak nebudou pou¾ity ¾ádné kryptogramy.');
+@define('PLUGIN_EVENT_RECAPTCHA_INFO1', 'Recaptcha je zvlÃ¡Å¡tnÃ­ druh <a href="http://en.wikipedia.com/wiki/Captcha">kryptogramu</a>. UÅ¾ivatel musÃ­ rozpoznat dvÄ› slova. PrvnÃ­ systÃ©mem vÃ½zva-odpovÄ›Ä (ochrana pÅ™ed spamem), a druhÃ©, kterÃ© pomÃ¡hÃ¡ pÅ™i digitalizaci knih. NavÃ­c zrakovÄ› postiÅ¾enÃ­ lidÃ© mohou pouÅ¾Ã­t audio-kryptogram. Pro vÃ­ce informacÃ­ se podÃ­vejte na strÃ¡nku <a href="https://www.google.com/recaptcha/">www.google.com/recaptcha/</a>.<br/>Pamatujte, Å¾e abyste mohli pouÅ¾Ã­vat tento plugin, musÃ­te se registrovat na zmÃ­nÄ›nÃ© webovÃ© strÃ¡nce.O klÃ­Ä mÅ¯Å¾ete poÅ¾Ã¡dat  <a href="https://www.google.com/recaptcha/admin');
+@define('PLUGIN_EVENT_RECAPTCHA_INFO2', '">tady</a>. <br/> Pamatujte takÃ© prosÃ­m, Å¾e tento plugin se bude pÅ™i kaÅ¾dÃ©m komentÃ¡Å™i dotazovat serveru recaptcha, a mÅ¯Å¾e proto zpomalit naÄÃ­tÃ¡nÃ­ strÃ¡nek. Pokud bude server recaptcha vypnutÃ½, pak nebudou pouÅ¾ity Å¾Ã¡dnÃ© kryptogramy.');
 
