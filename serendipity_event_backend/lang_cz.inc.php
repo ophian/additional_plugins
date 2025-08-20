@@ -1,12 +1,12 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/01
  */
 
-@define('PLUGIN_BACKEND_TITLE', 'Zobrazování pøíspìvkù pomocí JavaScriptu');
-@define('PLUGIN_BACKEND_DESC', 'Poskytuje Javascriptovı vıstup nejnovìj¹ích èlánkù pro jejich vlo¾ení do cizích, externích stránek. (Pøeètìte si soubor README v adresáøi pluginu!)');
+@define('PLUGIN_BACKEND_TITLE', 'ZobrazovÃ¡nÃ­ pÅ™Ã­spÄ›vkÅ¯ pomocÃ­ JavaScriptu');
+@define('PLUGIN_BACKEND_DESC', 'Poskytuje JavascriptovÃ½ vÃ½stup nejnovÄ›jÅ¡Ã­ch ÄlÃ¡nkÅ¯ pro jejich vloÅ¾enÃ­ do cizÃ­ch, externÃ­ch strÃ¡nek. (PÅ™eÄtÄ›te si soubor README v adresÃ¡Å™i pluginu!)');
 @define('PLUGIN_BACKEND_BACKENDURL', 'Backend URL');
-@define('PLUGIN_BACKEND_BACKENDURL_BLAHBLAH', 'Url adresa backendu, která bude volána z cizích stránek (http://vas.blog.cz/' . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . 'plugin/[BACKEND_URL]).');
+@define('PLUGIN_BACKEND_BACKENDURL_BLAHBLAH', 'Url adresa backendu, kterÃ¡ bude volÃ¡na z cizÃ­ch strÃ¡nek (http://vas.blog.cz/' . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . 'plugin/[BACKEND_URL]).');
 

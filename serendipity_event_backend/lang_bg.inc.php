@@ -6,8 +6,8 @@
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_BACKEND_TITLE', 'Показва статии от блога чрез JavaScript');
-@define('PLUGIN_BACKEND_DESC', 'Тази приставка извежда статии от блога през JavaScript, така че те могат да бъдат включвани в други, външни сайтове. (Вижте файл README в директорията на приставката.)');
+@define('PLUGIN_BACKEND_TITLE', 'РџРѕРєР°Р·РІР° СЃС‚Р°С‚РёРё РѕС‚ Р±Р»РѕРіР° С‡СЂРµР· JavaScript');
+@define('PLUGIN_BACKEND_DESC', 'РўР°Р·Рё РїСЂРёСЃС‚Р°РІРєР° РёР·РІРµР¶РґР° СЃС‚Р°С‚РёРё РѕС‚ Р±Р»РѕРіР° РїСЂРµР· JavaScript, С‚Р°РєР° С‡Рµ С‚Рµ РјРѕРіР°С‚ РґР° Р±СЉРґР°С‚ РІРєР»СЋС‡РІР°РЅРё РІ РґСЂСѓРіРё, РІСЉРЅС€РЅРё СЃР°Р№С‚РѕРІРµ. (Р’РёР¶С‚Рµ С„Р°Р№Р» README РІ РґРёСЂРµРєС‚РѕСЂРёСЏС‚Р° РЅР° РїСЂРёСЃС‚Р°РІРєР°С‚Р°.)');
 @define('PLUGIN_BACKEND_BACKENDURL', 'URL');
-@define('PLUGIN_BACKEND_BACKENDURL_BLAHBLAH', 'Този URL се използва от външните сайтове за достъп до вашия блог. \'URL\' се заменя с това, което въведете тук. Евентуалните параметри се записват след URL, например: ' . $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . 'plugin/URL?details=1&category=mycat');
+@define('PLUGIN_BACKEND_BACKENDURL_BLAHBLAH', 'РўРѕР·Рё URL СЃРµ РёР·РїРѕР»Р·РІР° РѕС‚ РІСЉРЅС€РЅРёС‚Рµ СЃР°Р№С‚РѕРІРµ Р·Р° РґРѕСЃС‚СЉРї РґРѕ РІР°С€РёСЏ Р±Р»РѕРі. \'URL\' СЃРµ Р·Р°РјРµРЅСЏ СЃ С‚РѕРІР°, РєРѕРµС‚Рѕ РІСЉРІРµРґРµС‚Рµ С‚СѓРє. Р•РІРµРЅС‚СѓР°Р»РЅРёС‚Рµ РїР°СЂР°РјРµС‚СЂРё СЃРµ Р·Р°РїРёСЃРІР°С‚ СЃР»РµРґ URL, РЅР°РїСЂРёРјРµСЂ: ' . $serendipity['baseURL'] . ($serendipity['rewrite'] == "none" ? $serendipity['indexFile'] . "?/" : "") . 'plugin/URL?details=1&category=mycat');
 
