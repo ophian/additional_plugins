@@ -1,17 +1,17 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/08
  */@define('SERENDIPITY_PLUGIN_FLICKRBADGE_TITLE', 'Flickr badge');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_DESCRIPTION', 'Zobrazuje nejnovÏjπÌ fotky z Flickr.com (pozn. p¯ekladatele - StejnÈ vÏci umÌ plugin Flickr, kter˝ toho navÌc umÌ jeπtÏ vÌc.)');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_DESCRIPTION', 'Zobrazuje nejnovƒõj≈°√≠ fotky z Flickr.com (pozn. p≈ôekladatele - Stejn√© vƒõci um√≠ plugin Flickr, kter√Ω toho nav√≠c um√≠ je≈°tƒõ v√≠c.)');
 @define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_SIDEBARTITLE_TITLE', 'Nadpis bloku');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_SIDEBARTITLE_DESCRIPTION', 'Nadpis bloku v postrannÌm sloupci blogu');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_SIDEBARTITLE_DESCRIPTION', 'Nadpis bloku v postrann√≠m sloupci blogu');
 @define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_APIKEY_TITLE', 'Flickr API key');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_APIKEY_DESCRIPTION', 'KlÌË, kter˝ umoæÚuje p¯Ìstup k API Flickru. Pokud jej nem·te, m˘æete ho zÌskat na http://www.flickr.com.');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_USERNAME_TITLE', 'UæivatelskÈ jmÈno Flickr');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_USERNAME_DESCRIPTION', 'UæivatelskÈ jmÈno zaregistrovanÈ na Flickru');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_NUMBER_TITLE', 'PoËet obr·zk˘');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_NUMBER_DESCRIPTION', 'PoËet obr·zk˘, kterÈ se zobrazujÌ v bloku Flickr badge');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_COLUMNNUMBER_TITLE', 'PoËet obr·zk˘ na ¯·dce');
-@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_COLUMNNUMBER_DESCRIPTION', 'PoËet obr·zk˘ zobrazen˝ch v jednÈ ¯·dce');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_APIKEY_DESCRIPTION', 'Kl√≠ƒç, kter√Ω umo≈æ≈àuje p≈ô√≠stup k API Flickru. Pokud jej nem√°te, m≈Ø≈æete ho z√≠skat na http://www.flickr.com.');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_USERNAME_TITLE', 'U≈æivatelsk√© jm√©no Flickr');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_USERNAME_DESCRIPTION', 'U≈æivatelsk√© jm√©no zaregistrovan√© na Flickru');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_NUMBER_TITLE', 'Poƒçet obr√°zk≈Ø');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_NUMBER_DESCRIPTION', 'Poƒçet obr√°zk≈Ø, kter√© se zobrazuj√≠ v bloku Flickr badge');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_COLUMNNUMBER_TITLE', 'Poƒçet obr√°zk≈Ø na ≈ô√°dce');
+@define('SERENDIPITY_PLUGIN_FLICKRBADGE_CONFIG_COLUMNNUMBER_DESCRIPTION', 'Poƒçet obr√°zk≈Ø zobrazen√Ωch v jedn√© ≈ô√°dce');

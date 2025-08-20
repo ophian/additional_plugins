@@ -1,6 +1,9 @@
-DEV 1.0.0:
+1.0.0:
 ------
  * Prep for PHP 8.5. (Non-canonical cast names (boolean), (integer), (double), and (binary) have been deprecated.)
+ * Declare strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Raise requirements for Styx 5.0
 
 0.14:
 -----

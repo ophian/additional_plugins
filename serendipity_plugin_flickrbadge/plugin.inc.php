@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * serendipity_plugin_flickrbadge - Your last photos from Flickr.com
  *
@@ -56,7 +59,10 @@ class serendipity_plugin_flickrbadge
 											'column_count', 'flickr_api_key',
 											'flickr_username'));
 		$propbag->add('stackable', true);
-		$propbag->add('requirements', array('php' => '5.1', 'serendipity' => '1.6'));
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'php'         => '8.2'
+        ));
 		$propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
 		$propbag->add('author', 'Lars Strojny');
 		$propbag->add('version', SERENDIPITY_PLUGIN_FLICKRBADGE_VERSION);
