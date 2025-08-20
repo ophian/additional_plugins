@@ -247,8 +247,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_dejure</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, dejure.org, Thomas Hochstein, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_dejure&lt;br /&gt;dejure.org Rechtsvernetzung&lt;/b&gt;&lt;br /&gt;Verlinkt automatisch zitierte Gesetze und Rechtsprechung (Aktenzeichen und Fundstellen) mit den Inhalten von dejure.org.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:18:09 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_dejure&lt;br /&gt;dejure.org Rechtsvernetzung&lt;/b&gt;&lt;br /&gt;Verlinkt automatisch zitierte Gesetze und Rechtsprechung (Aktenzeichen und Fundstellen) mit den Inhalten von dejure.org.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:45:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dejure</guid>
 </item>
 <item>
@@ -364,8 +364,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_facebook</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 18 Apr 2022 12:25:40 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:59:59 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
@@ -409,8 +409,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_flickr</link>
 <category>Event Plugins</category>
 <author>Jay Bertrand</author>
-<content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Aus Flickr importieren&lt;/b&gt;&lt;br /&gt;Bilder von flickr.com in die Mediendatenbank importieren.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Jul 2020 07:57:52 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Aus Flickr importieren&lt;/b&gt;&lt;br /&gt;Bilder von flickr.com in die Mediendatenbank importieren.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:55:02 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickr</guid>
 </item>
 <item>
@@ -427,8 +427,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_forum</link>
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Diskussions-Forum / phpBB-Kommentare&lt;/b&gt;&lt;br /&gt;Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Diskussions-Forum / phpBB-Kommentare&lt;/b&gt;&lt;br /&gt;Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 11:22:12 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -445,8 +445,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geotag</link>
 <category>Event Plugins</category>
 <author>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr, Martin Sewelies, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_geotag&lt;br /&gt;Geotag&lt;/b&gt;&lt;br /&gt;Erlaubt Einträge mit Geokoordinaten zu versehen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 08 Oct 2024 18:17:22 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_geotag&lt;br /&gt;Geotag&lt;/b&gt;&lt;br /&gt;Erlaubt Einträge mit Geokoordinaten zu versehen&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:51:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geotag</guid>
 </item>
 <item>
@@ -454,8 +454,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geourl</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_geourl&lt;br /&gt;GeoURL&lt;/b&gt;&lt;br /&gt;GeoURL ordnet URLs Örtlichkeiten zu. Mehr Infos unter http://geourl.org/&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 22 Jul 2017 13:30:39 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_geourl&lt;br /&gt;GeoURL&lt;/b&gt;&lt;br /&gt;GeoURL ordnet URLs Örtlichkeiten zu. Mehr Infos unter http://geourl.org/&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 11:00:55 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geourl</guid>
 </item>
 <item>
@@ -463,8 +463,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_geo_json</link>
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_geo_json&lt;br /&gt;Geo-JSON&lt;/b&gt;&lt;br /&gt;Erstellt ein JSON-Object, welches alle Geo-Daten enthält und mit JavaScript verarbeitet werden kann&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Wed, 15 Mar 2023 10:37:40 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_geo_json&lt;br /&gt;Geo-JSON&lt;/b&gt;&lt;br /&gt;Erstellt ein JSON-Object, welches alle Geo-Daten enthält und mit JavaScript verarbeitet werden kann&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 11:27:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geo_json</guid>
 </item>
 <item>
@@ -481,8 +481,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_getid3</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_getid3&lt;br /&gt;getID3() Unterstützung zum Erkennen von Medien Eigenschaften&lt;/b&gt;&lt;br /&gt;Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften für Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:14:50 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_getid3&lt;br /&gt;getID3() Unterstützung zum Erkennen von Medien Eigenschaften&lt;/b&gt;&lt;br /&gt;Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften für Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 11:00:41 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_getid3</guid>
 </item>
 <item>
@@ -670,8 +670,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_lsrstopper</link>
 <category>Event Plugins</category>
 <author>Matthias Gutjahr</author>
-<content:encoded>&lt;b&gt;serendipity_event_lsrstopper&lt;br /&gt;D64 LSR-Stopper&lt;/b&gt;&lt;br /&gt;Mit diesem Plugin verhinderst du Verlinkungen zu Medien, deren Verlage das Leistungsschutzrecht unterstützen bzw. in Anspruch nehmen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 18:11:45 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_lsrstopper&lt;br /&gt;D64 LSR-Stopper&lt;/b&gt;&lt;br /&gt;Mit diesem Plugin verhinderst du Verlinkungen zu Medien, deren Verlage das Leistungsschutzrecht unterstützen bzw. in Anspruch nehmen.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:48:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_lsrstopper</guid>
 </item>
 <item>
@@ -769,8 +769,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_mymood</link>
 <category>Event Plugins</category>
 <author>Brett Profitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:57:46 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mymood</guid>
 </item>
 <item>
@@ -877,8 +877,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_portier</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Malte Paskuda, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_portier&lt;br /&gt;Portier Email Authentifizierung&lt;/b&gt;&lt;br /&gt;Ermöglicht Autoren, sich nur durch ihre Email einzuloggen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:22:36 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_portier&lt;br /&gt;Portier Email Authentifizierung&lt;/b&gt;&lt;br /&gt;Ermöglicht Autoren, sich nur durch ihre Email einzuloggen.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:44:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_portier</guid>
 </item>
 <item>
@@ -922,8 +922,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_recaptcha</link>
 <category>Event Plugins</category>
 <author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Wed, 30 Nov 2022 13:19:42 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:58:40 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_recaptcha</guid>
 </item>
 <item>
@@ -1111,8 +1111,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_tinypng</link>
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_tinypng&lt;br /&gt;Bilder komprimieren&lt;/b&gt;&lt;br /&gt;PNG- und JPG-Bilder mit dem TinyPNG-Dienst komprimieren.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 02 Dec 2019 12:32:11 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_tinypng&lt;br /&gt;Bilder komprimieren&lt;/b&gt;&lt;br /&gt;PNG- und JPG-Bilder mit dem TinyPNG-Dienst komprimieren.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 10:59:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tinypng</guid>
 </item>
 <item>
