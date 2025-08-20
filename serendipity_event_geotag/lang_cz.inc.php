@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * EN-Revision: Revision of lang_en.inc.php
  * Revision-date: 2008/01/27 17:35:00
- * Revision-author: Vladimír Ajgl <vlada@ajgl.cz>
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * Revision-author: VladimÃ­r Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @revisionDate 2009/06/30
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @revisionDate 2009/08/15
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @revisionDate 2012/01/10
- * @author Vladimír Ajgl <vlada@ajgl.cz>
+ * @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  * @revisionDate 2012/06/22
  */
 
@@ -20,96 +20,96 @@
 //
 
 @define('PLUGIN_EVENT_GEOTAG_TITLE', 'Geotag');
-@define('PLUGIN_EVENT_GEOTAG_DESC', 'Umo¾òuje pøidat k pøíspìvku zemìpisné souøadnice - geotag');
-@define('PLUGIN_EVENT_GEOTAG_LONG', 'Zemìpisná délka');
-@define('PLUGIN_EVENT_GEOTAG_LONG_DESC', 'Zemìpisná délka støedu mapy pøi editaci pøíspìvku - mapa pro zadávání souøadnic. Uplatní se pouze pokud v pøíspìvku ji¾ nejsou zadány souøadnice. Pokud jsou zadány, je mapa vystøedìna na zadanou souøadnici.');
-@define('PLUGIN_EVENT_GEOTAG_LAT', 'Zemìpisná ¹íøka');
-@define('PLUGIN_EVENT_GEOTAG_LAT_DESC', 'Zemìpisná ¹íøka støedu mapy pøi editaci pøíspìvku - mapa pro zadávání souøadnic. Uplatní se pouze pokud v pøíspìvku ji¾ nejsou zadány souøadnice. Pokud jsou zadány, je mapa vystøedìna na zadanou souøadnici.');
+@define('PLUGIN_EVENT_GEOTAG_DESC', 'UmoÅ¾Åˆuje pÅ™idat k pÅ™Ã­spÄ›vku zemÄ›pisnÃ© souÅ™adnice - geotag');
+@define('PLUGIN_EVENT_GEOTAG_LONG', 'ZemÄ›pisnÃ¡ dÃ©lka');
+@define('PLUGIN_EVENT_GEOTAG_LONG_DESC', 'ZemÄ›pisnÃ¡ dÃ©lka stÅ™edu mapy pÅ™i editaci pÅ™Ã­spÄ›vku - mapa pro zadÃ¡vÃ¡nÃ­ souÅ™adnic. UplatnÃ­ se pouze pokud v pÅ™Ã­spÄ›vku jiÅ¾ nejsou zadÃ¡ny souÅ™adnice. Pokud jsou zadÃ¡ny, je mapa vystÅ™edÄ›na na zadanou souÅ™adnici.');
+@define('PLUGIN_EVENT_GEOTAG_LAT', 'ZemÄ›pisnÃ¡ Å¡Ã­Å™ka');
+@define('PLUGIN_EVENT_GEOTAG_LAT_DESC', 'ZemÄ›pisnÃ¡ Å¡Ã­Å™ka stÅ™edu mapy pÅ™i editaci pÅ™Ã­spÄ›vku - mapa pro zadÃ¡vÃ¡nÃ­ souÅ™adnic. UplatnÃ­ se pouze pokud v pÅ™Ã­spÄ›vku jiÅ¾ nejsou zadÃ¡ny souÅ™adnice. Pokud jsou zadÃ¡ny, je mapa vystÅ™edÄ›na na zadanou souÅ™adnici.');
 @define('PLUGIN_EVENT_GEOTAG_ZOOM', 'Zoom');
-@define('PLUGIN_EVENT_GEOTAG_ZOOM_DESC', 'Pøiblí¾ení mapy pøi editaci pøíspìvku - mapa pro zadávání souøadnic.');
-@define('PLUGIN_EVENT_GEOTAG_FRONTEND_LABEL', 'Souøadnice');
+@define('PLUGIN_EVENT_GEOTAG_ZOOM_DESC', 'PÅ™iblÃ­Å¾enÃ­ mapy pÅ™i editaci pÅ™Ã­spÄ›vku - mapa pro zadÃ¡vÃ¡nÃ­ souÅ™adnic.');
+@define('PLUGIN_EVENT_GEOTAG_FRONTEND_LABEL', 'SouÅ™adnice');
 @define('PLUGIN_EVENT_GEOTAG_MAP_URL', 'URL mapy');
-@define('PLUGIN_EVENT_GEOTAG_MAP_DESC', 'Upøesnìte podrobnı link do mapy, napøíklad http://local.google.com/maps?q=%GEO_LAT%,%GEO_LONG%+(%TITLE%)&spn=0.1,0.1&t=h');
+@define('PLUGIN_EVENT_GEOTAG_MAP_DESC', 'UpÅ™esnÄ›te podrobnÃ½ link do mapy, napÅ™Ã­klad http://local.google.com/maps?q=%GEO_LAT%,%GEO_LONG%+(%TITLE%)&spn=0.1,0.1&t=h');
 @define('PLUGIN_EVENT_GEOTAG_API_KEY', 'Google Maps API key');
-@define('PLUGIN_EVENT_GEOTAG_API_KEY_DESC', 'Získejte ho na adrese http://www.google.com/apis/maps/signup.html. Ponechte prázdné, pokud nechcete pou¾ívát Google Maps location picker.');
+@define('PLUGIN_EVENT_GEOTAG_API_KEY_DESC', 'ZÃ­skejte ho na adrese http://www.google.com/apis/maps/signup.html. Ponechte prÃ¡zdnÃ©, pokud nechcete pouÅ¾Ã­vÃ¡t Google Maps location picker.');
 
 //
 // serendipity_plugin_geotag.php
 //
 
 @define('PLUGIN_GEOTAG_GMAP_NAME', "Geotag Google Map");
-@define('PLUGIN_GEOTAG_GMAP_NAME_DESC', "Tento plugin zobrazuje souøadnice u osouøadnicovanıch pøíspìvkù v mapách na Googlu");
+@define('PLUGIN_GEOTAG_GMAP_NAME_DESC', "Tento plugin zobrazuje souÅ™adnice u osouÅ™adnicovanÃ½ch pÅ™Ã­spÄ›vkÅ¯ v mapÃ¡ch na Googlu");
 @define('PLUGIN_GEOTAG_GMAP_TITLE', "Nadpis");
-@define('PLUGIN_GEOTAG_GMAP_TITLE_DESC', "Vlo¾te nadpis postraního panelu:");
+@define('PLUGIN_GEOTAG_GMAP_TITLE_DESC', "VloÅ¾te nadpis postranÃ­ho panelu:");
 @define('PLUGIN_GEOTAG_GMAP_TITLE_DEFAULT', "GMap");
 @define('PLUGIN_GEOTAG_GMAP_KEY', "Google Maps API Key");
-@define('PLUGIN_GEOTAG_GMAP_KEY_DESC', "Získejte jej na http://www.google.com/apis/maps/signup.html zadáním koøenové adresy va¹eho blogu:");
-@define('PLUGIN_GEOTAG_GMAP_WIDTH', "©íøka");
-@define('PLUGIN_GEOTAG_GMAP_WIDTH_DESC', "(vıchozí = 220).");
-@define('PLUGIN_GEOTAG_GMAP_HEIGHT', "Vı¹ka");
-@define('PLUGIN_GEOTAG_GMAP_HEIGHT_DESC', "(vıchozí = 150).");
+@define('PLUGIN_GEOTAG_GMAP_KEY_DESC', "ZÃ­skejte jej na http://www.google.com/apis/maps/signup.html zadÃ¡nÃ­m koÅ™enovÃ© adresy vaÅ¡eho blogu:");
+@define('PLUGIN_GEOTAG_GMAP_WIDTH', "Å Ã­Å™ka");
+@define('PLUGIN_GEOTAG_GMAP_WIDTH_DESC', "(vÃ½chozÃ­ = 220).");
+@define('PLUGIN_GEOTAG_GMAP_HEIGHT', "VÃ½Å¡ka");
+@define('PLUGIN_GEOTAG_GMAP_HEIGHT_DESC', "(vÃ½chozÃ­ = 150).");
 @define('PLUGIN_GEOTAG_GMAP_ZOOM', "Velikost zoomu");
-@define('PLUGIN_GEOTAG_GMAP_ZOOM_DESC', "(0-8) Pøi 0 je vidìt celı svìt, vìt¹í èísla pro bli¾¹í pohled.");
-@define('PLUGIN_GEOTAG_GMAP_LONGITUDE', "Zemìpisná délka");
-@define('PLUGIN_GEOTAG_GMAP_LONGITUDE_DESC', "Zemìpisná délka støedu mapy");
-@define('PLUGIN_GEOTAG_GMAP_LATITUDE', "Zemìpisná ¹íøka");
-@define('PLUGIN_GEOTAG_GMAP_LATITUDE_DESC', "Zemìpisná ¹íøka støedu mapy");
+@define('PLUGIN_GEOTAG_GMAP_ZOOM_DESC', "(0-8) PÅ™i 0 je vidÄ›t celÃ½ svÄ›t, vÄ›tÅ¡Ã­ ÄÃ­sla pro bliÅ¾Å¡Ã­ pohled.");
+@define('PLUGIN_GEOTAG_GMAP_LONGITUDE', "ZemÄ›pisnÃ¡ dÃ©lka");
+@define('PLUGIN_GEOTAG_GMAP_LONGITUDE_DESC', "ZemÄ›pisnÃ¡ dÃ©lka stÅ™edu mapy");
+@define('PLUGIN_GEOTAG_GMAP_LATITUDE', "ZemÄ›pisnÃ¡ Å¡Ã­Å™ka");
+@define('PLUGIN_GEOTAG_GMAP_LATITUDE_DESC', "ZemÄ›pisnÃ¡ Å¡Ã­Å™ka stÅ™edu mapy");
 @define('PLUGIN_GEOTAG_GMAP_TYPE', "Typ mapy");
-@define('PLUGIN_GEOTAG_GMAP_TYPE_DESC', "Satelitní, Mapa nebo Hybridní");
-@define('PLUGIN_GEOTAG_GMAP_SATELLITE', "Satelitní");
+@define('PLUGIN_GEOTAG_GMAP_TYPE_DESC', "SatelitnÃ­, Mapa nebo HybridnÃ­");
+@define('PLUGIN_GEOTAG_GMAP_SATELLITE', "SatelitnÃ­");
 @define('PLUGIN_GEOTAG_GMAP_MAP', "Mapa");
-@define('PLUGIN_GEOTAG_GMAP_HYBRID', "Hybridní");
+@define('PLUGIN_GEOTAG_GMAP_HYBRID', "HybridnÃ­");
 @define('PLUGIN_GEOTAG_GMAP_RSSURL', "RSS2 URL");
-@define('PLUGIN_GEOTAG_GMAP_RSSURL_DESC', "Pro volbu získávání geodat z RSS kanálu: URL na geotagovanı RSS2 kanál. Mù¾ete pou¾ít jednotlivou kategorii, nebo pøipojit v¹e - all=1.");
+@define('PLUGIN_GEOTAG_GMAP_RSSURL_DESC', "Pro volbu zÃ­skÃ¡vÃ¡nÃ­ geodat z RSS kanÃ¡lu: URL na geotagovanÃ½ RSS2 kanÃ¡l. MÅ¯Å¾ete pouÅ¾Ã­t jednotlivou kategorii, nebo pÅ™ipojit vÅ¡e - all=1.");
 
-@define('PLUGIN_GEOTAG_GMAP_DATABASE', 'databáze');
+@define('PLUGIN_GEOTAG_GMAP_DATABASE', 'databÃ¡ze');
 @define('PLUGIN_GEOTAG_GMAP_GEODATA_SOURCE', 'Zdroj geodat');
-@define('PLUGIN_GEOTAG_GMAP_GEODATA_SOURCE_DESC', 'Vyberte, odkud se mají získávat geodata. "RSS" znamená, ¾e javacsript bude naèítat rss kanál, kterı specifikujete ve volbì ní¾e, z nìj pak bude vysosávat souøadnice. "Databáze" znamená, ¾e se budou naèítat z databáze. RSS kanál je obecnìj¹í a sní¾í zatí¾ení pøístupu do databáze díky mo¾nosti cachování, ale pokud máte rozsáhlı blog, mù¾e u¾ivateli napoprvé trvat dlouhou dobu, ne¾ se stáhne kompletní RSS kanál.');
-@define('PLUGIN_GEOTAG_GMAP_CATEGORY_DESC', 'Pro volbu získávání geodat z databáze: Zde mù¾ete omezit zobrazování souøadnic na pøíspìvky z jediné kategorie.');
-@define('PLUGIN_GEOTAG_GMAP_GEOCODE', 'najít adresu');
-@define('PLUGIN_GEOTAG_GMAP_GEOCODE_TYPE_ADDRESS', 'Napi¹te adresu...');
-@define('PLUGIN_GEOTAG_GMAP_GEOCODE_MSG_PROGRESS', 'Sna¾ím se najít souøadnice...');
+@define('PLUGIN_GEOTAG_GMAP_GEODATA_SOURCE_DESC', 'Vyberte, odkud se majÃ­ zÃ­skÃ¡vat geodata. "RSS" znamenÃ¡, Å¾e javacsript bude naÄÃ­tat rss kanÃ¡l, kterÃ½ specifikujete ve volbÄ› nÃ­Å¾e, z nÄ›j pak bude vysosÃ¡vat souÅ™adnice. "DatabÃ¡ze" znamenÃ¡, Å¾e se budou naÄÃ­tat z databÃ¡ze. RSS kanÃ¡l je obecnÄ›jÅ¡Ã­ a snÃ­Å¾Ã­ zatÃ­Å¾enÃ­ pÅ™Ã­stupu do databÃ¡ze dÃ­ky moÅ¾nosti cachovÃ¡nÃ­, ale pokud mÃ¡te rozsÃ¡hlÃ½ blog, mÅ¯Å¾e uÅ¾ivateli napoprvÃ© trvat dlouhou dobu, neÅ¾ se stÃ¡hne kompletnÃ­ RSS kanÃ¡l.');
+@define('PLUGIN_GEOTAG_GMAP_CATEGORY_DESC', 'Pro volbu zÃ­skÃ¡vÃ¡nÃ­ geodat z databÃ¡ze: Zde mÅ¯Å¾ete omezit zobrazovÃ¡nÃ­ souÅ™adnic na pÅ™Ã­spÄ›vky z jedinÃ© kategorie.');
+@define('PLUGIN_GEOTAG_GMAP_GEOCODE', 'najÃ­t adresu');
+@define('PLUGIN_GEOTAG_GMAP_GEOCODE_TYPE_ADDRESS', 'NapiÅ¡te adresu...');
+@define('PLUGIN_GEOTAG_GMAP_GEOCODE_MSG_PROGRESS', 'SnaÅ¾Ã­m se najÃ­t souÅ™adnice...');
 @define('PLUGIN_GEOTAG_GMAP_GEOCODE_NOT_FOUND', 'nenalezeno:-(');
 @define('PLUGIN_GEOTAG_GMAP_GEOCODE_OK', 'OK');
 
 // Next lines were translated on 2012/01/10
 
-@define('PLUGIN_EVENT_GEOTAG_WARNING_GEOURL_PLUGIN', 'VAROVÁNÍ: nalezen plugin GeoUrl. Odinstalujte ho prosím, je zastaralı a dále neudr¾ovanı.<br/>V¹echny jeho funkce jsou zaji¹tìny i pluginem GeoTag. Plugin GeoTag je podrobnìj¹í, umí toho víc.');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_EDITOR', 'Nastavení editoru pøíspìvku');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER', 'Nastavení patièky pøíspìvku');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_LIST', 'Nastavení patièky pøíspìvku (v pøehledu pøíspìvkù)');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_SINGLE', 'Nastavení patièky pøíspìvku (pøi zobrazení jediného pøíspìvku)');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG', 'HTML hlavièka GeoTagu');
-@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG_DESC', 'Tento plugin pøidává <a href="http://en.wikipedia.org/wiki/Geotag#HTML_pages" target="_blank" rel="noopener">geourl meta tagy</a> do HTML hlavièky stránky. Tak umo¾òuje ostatním snadno zjistit zemìpisné souøadnice èlánku nebo blogu.');
-@define('PLUGIN_EVENT_GEOTAG_SERVICE_DESC', 'Chcete vytvoøit mapu do patièky stránky pomocí Google Map nebo pomocí Openstreetmap?');
-@define('PLUGIN_EVENT_GEOTAG_EDITOR_AUTOFILL', 'Automaticky vyplòovat polohu v editoru');
-@define('PLUGIN_EVENT_GEOTAG_EDITOR_AUTOFILL_DESC', 'To se pokusí automaticky zjistit Va¹i aktuální polohu pøi psaní pøíspìvku a zji¹»enou hodnotu pøedvyplní do políèka polohy. (Pouze pokud tuto funkci podporuje prohlí¾eè.)');
-@define('PLUGIN_EVENT_GEOTAG_MAP_LINK_BLANK', 'Otevøít odkazy z mapy v novém oknì');
-@define('PLUGIN_EVENT_GEOTAG_MAP_LINK_BLANK_DESC', 'Pøi kliknutí na polohu je otevøená google mapa. Má se zobrazovat v novém oknì prohlí¾eèe?');
+@define('PLUGIN_EVENT_GEOTAG_WARNING_GEOURL_PLUGIN', 'VAROVÃNÃ: nalezen plugin GeoUrl. Odinstalujte ho prosÃ­m, je zastaralÃ½ a dÃ¡le neudrÅ¾ovanÃ½.<br/>VÅ¡echny jeho funkce jsou zajiÅ¡tÄ›ny i pluginem GeoTag. Plugin GeoTag je podrobnÄ›jÅ¡Ã­, umÃ­ toho vÃ­c.');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_EDITOR', 'NastavenÃ­ editoru pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER', 'NastavenÃ­ patiÄky pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_LIST', 'NastavenÃ­ patiÄky pÅ™Ã­spÄ›vku (v pÅ™ehledu pÅ™Ã­spÄ›vkÅ¯)');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_FOOTER_SINGLE', 'NastavenÃ­ patiÄky pÅ™Ã­spÄ›vku (pÅ™i zobrazenÃ­ jedinÃ©ho pÅ™Ã­spÄ›vku)');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG', 'HTML hlaviÄka GeoTagu');
+@define('PLUGIN_EVENT_GEOTAG_HEADER_HDRTAG_DESC', 'Tento plugin pÅ™idÃ¡vÃ¡ <a href="http://en.wikipedia.org/wiki/Geotag#HTML_pages" target="_blank" rel="noopener">geourl meta tagy</a> do HTML hlaviÄky strÃ¡nky. Tak umoÅ¾Åˆuje ostatnÃ­m snadno zjistit zemÄ›pisnÃ© souÅ™adnice ÄlÃ¡nku nebo blogu.');
+@define('PLUGIN_EVENT_GEOTAG_SERVICE_DESC', 'Chcete vytvoÅ™it mapu do patiÄky strÃ¡nky pomocÃ­ Google Map nebo pomocÃ­ Openstreetmap?');
+@define('PLUGIN_EVENT_GEOTAG_EDITOR_AUTOFILL', 'Automaticky vyplÅˆovat polohu v editoru');
+@define('PLUGIN_EVENT_GEOTAG_EDITOR_AUTOFILL_DESC', 'To se pokusÃ­ automaticky zjistit VaÅ¡i aktuÃ¡lnÃ­ polohu pÅ™i psanÃ­ pÅ™Ã­spÄ›vku a zjiÅ¡Å¥enou hodnotu pÅ™edvyplnÃ­ do polÃ­Äka polohy. (Pouze pokud tuto funkci podporuje prohlÃ­Å¾eÄ.)');
+@define('PLUGIN_EVENT_GEOTAG_MAP_LINK_BLANK', 'OtevÅ™Ã­t odkazy z mapy v novÃ©m oknÄ›');
+@define('PLUGIN_EVENT_GEOTAG_MAP_LINK_BLANK_DESC', 'PÅ™i kliknutÃ­ na polohu je otevÅ™enÃ¡ google mapa. MÃ¡ se zobrazovat v novÃ©m oknÄ› prohlÃ­Å¾eÄe?');
 @define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE', 'Zobrazovat polohu jako mapu');
-@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_DESC', 'Místo zobrazování nicneøíkajících èíselnıch zemìpisnıch souøadnic mù¾ete v patièce pøíspìvku zobrazit malou mapku.');
-@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_HEIGHT', 'Vı¹ka mapy');
-@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_HEIGHT_DESC', 'Vı¹ka mapy v patièce');
-@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_WIDTH', '©íøka mapy');
-@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_WIDTH_DESC', '©íøka mapy v patièce');
+@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_DESC', 'MÃ­sto zobrazovÃ¡nÃ­ nicneÅ™Ã­kajÃ­cÃ­ch ÄÃ­selnÃ½ch zemÄ›pisnÃ½ch souÅ™adnic mÅ¯Å¾ete v patiÄce pÅ™Ã­spÄ›vku zobrazit malou mapku.');
+@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_HEIGHT', 'VÃ½Å¡ka mapy');
+@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_HEIGHT_DESC', 'VÃ½Å¡ka mapy v patiÄce');
+@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_WIDTH', 'Å Ã­Å™ka mapy');
+@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_WIDTH_DESC', 'Å Ã­Å™ka mapy v patiÄce');
 @define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_ZOOM', 'Zoom mapy');
-@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_ZOOM_DESC', 'Zoom faktor pro mapu v patièce. Èím vìt¹í èíslo, tím podrobnìj¹í mapa bude.');
-@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_TITLE', 'Zobrazovat polohu pøíspìvku');
-@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE', 'Google: Velikost mapovıch køí¾kù');
-@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_DESC', 'Mapa umo¾òuje pou¾ít rùznou velikost znaèkovacích køí¾kù. V závislosti na velikosti mapy byste se mìli vybrat velikost, která Vám nejvíc vyhovuje.');
-@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_TINY', 'Mròavé');
-@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_SMALL', 'Malé');
-@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_MID', 'Støední');
-@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_NORMAL', 'Normální');
-@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LAT', 'Zemìpsiná ¹íøka blogu');
-@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LAT_DESC', 'Zadejte zemìpsinou ¹íøku blogu. Bude pou¾ita u pøíspìvkù, které nemají pøiøazenou vlastní polohu, a u pøehledu pøíspìvkù. Ponechte prázdné pokud nechcete tyto stránky oznaèovat souøadnicemi.');
-@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LONG', 'Zemìpisná délka blogu');
-@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LONG_DESC', 'Zadejte zemìpsinou délku blogu. Bude pou¾ita u pøíspìvkù, které nemají pøiøazenou vlastní polohu, a u pøehledu pøíspìvkù. Ponechte prázdné pokud nechcete tyto stránky oznaèovat souøadnicemi.');
-@define('PLUGIN_EVENT_GEOTAG_GEOURL_PINGED', 'Slu¾ba GeoURL úspì¹nì kontaktována pro získání novıch souøadnic. Nav¹tivte <a href="http://geourl.org/near/?p='.$serendipity['baseURL'].'">Va¹e sousedy</a>!');
+@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_ZOOM_DESC', 'Zoom faktor pro mapu v patiÄce. ÄŒÃ­m vÄ›tÅ¡Ã­ ÄÃ­slo, tÃ­m podrobnÄ›jÅ¡Ã­ mapa bude.');
+@define('PLUGIN_EVENT_GEOTAG_SHOW_IMAGE_TITLE', 'Zobrazovat polohu pÅ™Ã­spÄ›vku');
+@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE', 'Google: Velikost mapovÃ½ch kÅ™Ã­Å¾kÅ¯');
+@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_DESC', 'Mapa umoÅ¾Åˆuje pouÅ¾Ã­t rÅ¯znou velikost znaÄkovacÃ­ch kÅ™Ã­Å¾kÅ¯. V zÃ¡vislosti na velikosti mapy byste se mÄ›li vybrat velikost, kterÃ¡ VÃ¡m nejvÃ­c vyhovuje.');
+@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_TINY', 'MrÅˆavÃ©');
+@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_SMALL', 'MalÃ©');
+@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_MID', 'StÅ™ednÃ­');
+@define('PLUGIN_EVENT_GEOTAG_IMAGE_MARKER_SIZE_NORMAL', 'NormÃ¡lnÃ­');
+@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LAT', 'ZemÄ›psinÃ¡ Å¡Ã­Å™ka blogu');
+@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LAT_DESC', 'Zadejte zemÄ›psinou Å¡Ã­Å™ku blogu. Bude pouÅ¾ita u pÅ™Ã­spÄ›vkÅ¯, kterÃ© nemajÃ­ pÅ™iÅ™azenou vlastnÃ­ polohu, a u pÅ™ehledu pÅ™Ã­spÄ›vkÅ¯. Ponechte prÃ¡zdnÃ© pokud nechcete tyto strÃ¡nky oznaÄovat souÅ™adnicemi.');
+@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LONG', 'ZemÄ›pisnÃ¡ dÃ©lka blogu');
+@define('PLUGIN_EVENT_GEOTAG_HDRTAG_DEFAULT_LONG_DESC', 'Zadejte zemÄ›psinou dÃ©lku blogu. Bude pouÅ¾ita u pÅ™Ã­spÄ›vkÅ¯, kterÃ© nemajÃ­ pÅ™iÅ™azenou vlastnÃ­ polohu, a u pÅ™ehledu pÅ™Ã­spÄ›vkÅ¯. Ponechte prÃ¡zdnÃ© pokud nechcete tyto strÃ¡nky oznaÄovat souÅ™adnicemi.');
+@define('PLUGIN_EVENT_GEOTAG_GEOURL_PINGED', 'SluÅ¾ba GeoURL ÃºspÄ›Å¡nÄ› kontaktovÃ¡na pro zÃ­skÃ¡nÃ­ novÃ½ch souÅ™adnic. NavÅ¡tivte <a href="http://geourl.org/near/?p='.$serendipity['baseURL'].'">VaÅ¡e sousedy</a>!');
 @define('PLUGIN_GEOTAG_GMAP_TERRAIN', 'Povrch');
-@define('PLUGIN_GEOTAG_SERVICE', 'Mapová slu¾ba');
-@define('PLUGIN_GEOTAG_SERVICE_DESC', 'Jako mapovı podklad mù¾ete pou¾ít buï mapy Googlu nebo Openstreetmap');
-@define('PLUGIN_GEOTAG_GMAP_GEOCODE_GET_CODE', 'va¹e aktuální poloha');
+@define('PLUGIN_GEOTAG_SERVICE', 'MapovÃ¡ sluÅ¾ba');
+@define('PLUGIN_GEOTAG_SERVICE_DESC', 'Jako mapovÃ½ podklad mÅ¯Å¾ete pouÅ¾Ã­t buÄ mapy Googlu nebo Openstreetmap');
+@define('PLUGIN_GEOTAG_GMAP_GEOCODE_GET_CODE', 'vaÅ¡e aktuÃ¡lnÃ­ poloha');
 
 // Next lines were translated on 2012/06/22
 @define('PLUGIN_EVENT_CLEAR_LOCATION', 'Smazat polohu');

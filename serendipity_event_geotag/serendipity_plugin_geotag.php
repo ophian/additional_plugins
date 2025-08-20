@@ -10,6 +10,8 @@
 //   or use the Network Links option ..
 // - link to larger google map
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -20,7 +22,6 @@ include dirname(__FILE__) . '/plugin_version.inc.php';
 
 class serendipity_plugin_geotag extends serendipity_plugin
 {
-
     function introspect(&$propbag)
     {
         $propbag->add('name',        PLUGIN_GEOTAG_GMAP_NAME);
@@ -29,17 +30,18 @@ class serendipity_plugin_geotag extends serendipity_plugin
         $propbag->add('stackable',   false);
         $propbag->add('version',     PLUGIN_EVENT_GEOTAG_VERSION);
         $propbag->add('configuration', array('title','service','key','width','height','latitude','longitude','zoom','type','rss_url','geodata_source','category'));
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups',      array('FRONTEND_EXTERNAL_SERVICES'));
     }
 
     function introspect_config_item($name, &$propbag)
     {
-      global $serendipity;
+        global $serendipity;
+
         switch($name) {
             case 'title':
                 $propbag->add('type',        'string');

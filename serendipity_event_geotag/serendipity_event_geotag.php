@@ -3,6 +3,8 @@
 // Zoran Kovacevic http://www.kovacevic.nl/blog
 // Shameless copy of serendipity_event_entryproperties and serendipity_event_multilingual
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -16,8 +18,8 @@ include dirname(__FILE__) . '/GeoTagDb.class.php';
 
 class serendipity_event_geotag extends serendipity_event
 {
-    var $services;
-    var $title = PLUGIN_EVENT_GEOTAG_TITLE;
+    public $services;
+    public $title = PLUGIN_EVENT_GEOTAG_TITLE;
 
     function introspect(&$propbag)
     {
@@ -28,10 +30,10 @@ class serendipity_event_geotag extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        PLUGIN_EVENT_GEOTAG_AUTHOR);
         $propbag->add('version',       PLUGIN_EVENT_GEOTAG_VERSION);
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.0',
-            'php'         => '5.2.0'
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'backend_publish'                                   => true,
@@ -751,7 +753,7 @@ class serendipity_event_geotag extends serendipity_event
     function headerGeoTagging($lat, $long, $title)
     {
         if (empty($lat) || empty($long)) return;
-        $title = (function_exists('serendipity_specialchars') ? serendipity_specialchars($title) : htmlspecialchars($title, ENT_COMPAT, LANG_CHARSET));
+        $title = htmlspecialchars($title);
         echo '<meta name="geo.placename" content="' . $title . '" />' . "\n";
         echo '<meta name="geo.position" content="'. $lat . ';' . $long . '" />' . "\n";
         echo '<meta name="geo.region" content="" />' . "\n";
