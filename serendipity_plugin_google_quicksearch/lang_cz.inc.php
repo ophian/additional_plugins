@@ -1,25 +1,25 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/07
  */
 
-@define('PLUGIN_GOOGLE_QS_NAME',		'Google prohled·v·nÌ');
+@define('PLUGIN_GOOGLE_QS_NAME',		'Google prohled√°v√°n√≠');
 @define('PLUGIN_GOOGLE_QS_GOOGLE',		'Google');
 @define('PLUGIN_GOOGLE_QS_ADSENSE',		'Google AdSense ID');
-@define('PLUGIN_GOOGLE_QS_ADSENSE_DESC',		'Vkl·dat identifik·tor sluæby Google AdSense for Search po Ë·sti name="client". Obvykle m· tvar "pub-1234567890123456". Ponechte pr·zdnÈ, pokud nepouæÌv·te Google AdSense.');
-@define('PLUGIN_GOOGLE_QS_BACKGROUND',		'Barva pozadÌ');
+@define('PLUGIN_GOOGLE_QS_ADSENSE_DESC',		'Vkl√°dat identifik√°tor slu≈æby Google AdSense for Search po ƒç√°sti name="client". Obvykle m√° tvar "pub-1234567890123456". Ponechte pr√°zdn√©, pokud nepou≈æ√≠v√°te Google AdSense.');
+@define('PLUGIN_GOOGLE_QS_BACKGROUND',		'Barva pozad√≠');
 @define('PLUGIN_GOOGLE_QS_TEXT',		'Barva textu');
-@define('PLUGIN_GOOGLE_QS_BORDER',		'Barva r·meËku');
+@define('PLUGIN_GOOGLE_QS_BORDER',		'Barva r√°meƒçku');
 @define('PLUGIN_GOOGLE_QS_TITLE',		'Barva nadpisu');
-@define('PLUGIN_GOOGLE_QS_FAINT_TEXT',		'Barva neplatnÈho textu');
+@define('PLUGIN_GOOGLE_QS_FAINT_TEXT',		'Barva neplatn√©ho textu');
 @define('PLUGIN_GOOGLE_QS_URL',		'Barva URL odkazu');
-@define('PLUGIN_GOOGLE_QS_LOGO_BACKGROUND',		'Barva pozadÌ loga');
-@define('PLUGIN_GOOGLE_QS_VISITED_URL',		'Barva navπtÌvenÈho URL odkazu');
-@define('PLUGIN_GOOGLE_QS_LOGO_PLACE',		'UmÌstÏnÌ loga (pouze u AdSense)');
-@define('PLUGIN_GOOGLE_QS_LOGO_URL',		'URL cesta k logu (pln· cesta)');
-@define('PLUGIN_GOOGLE_QS_ABOVE',		'Nad vyhled·vacÌm polem');
-@define('PLUGIN_GOOGLE_QS_LEFT',		'Vlevo od vyhled·vacÌho pole');
-@define('PLUGIN_GOOGLE_QS_SUBMIT',		'Zobrazit tlaËÌtko pro zad·nÌ vyhled·v·nÌ');
+@define('PLUGIN_GOOGLE_QS_LOGO_BACKGROUND',		'Barva pozad√≠ loga');
+@define('PLUGIN_GOOGLE_QS_VISITED_URL',		'Barva nav≈°t√≠ven√©ho URL odkazu');
+@define('PLUGIN_GOOGLE_QS_LOGO_PLACE',		'Um√≠stƒõn√≠ loga (pouze u AdSense)');
+@define('PLUGIN_GOOGLE_QS_LOGO_URL',		'URL cesta k logu (pln√° cesta)');
+@define('PLUGIN_GOOGLE_QS_ABOVE',		'Nad vyhled√°vac√≠m polem');
+@define('PLUGIN_GOOGLE_QS_LEFT',		'Vlevo od vyhled√°vac√≠ho pole');
+@define('PLUGIN_GOOGLE_QS_SUBMIT',		'Zobrazit tlaƒç√≠tko pro zad√°n√≠ vyhled√°v√°n√≠');
 

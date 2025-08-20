@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_google_quicksearch extends serendipity_plugin
 {
-    var $title = PLUGIN_GOOGLE_QS_NAME;
+    public $title = PLUGIN_GOOGLE_QS_NAME;
 
     function introspect(&$propbag)
     {
@@ -18,11 +20,11 @@ class serendipity_plugin_google_quicksearch extends serendipity_plugin
         $propbag->add('description',   SEARCH_FOR_ENTRY . ' (' . PLUGIN_GOOGLE_QS_GOOGLE . ')');
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Wesley Hwang-Chung');
-        $propbag->add('version',       '1.6');
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('configuration', array('submit', 'adsense', 'background', 'text', 'border', 'title_s', 'faint_text', 'url', 'logo_background', 'visited_url', 'logo_place', 'logo_url', 'logo_height', 'logo_width'));
         $propbag->add('groups',        array('FRONTEND_EXTERNAL_SERVICES'));
