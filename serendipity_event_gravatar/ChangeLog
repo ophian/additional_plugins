@@ -1,3 +1,7 @@
+2.0.3:
+------
+ * Use native html_entity_decode()
+
 2.0.2:
 ------
  * Remove imagedestroy(). Function imagedestroy() is deprecated since 8.5, as it has no effect since PHP 8.0

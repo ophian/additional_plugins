@@ -11,7 +11,7 @@ if (IN_serendipity !== true) {
 
 @define('CANT_EXECUTE_EXTENSION', 'Cannot execute the %s extension library. Please allow in PHP.ini or load the missing module via servers package manager.');
 
-@define('PLUGIN_EVENT_GRAVATAR_VERSION', '2.0.2');
+@define('PLUGIN_EVENT_GRAVATAR_VERSION', '2.0.3');
 
 // Defines the maximum available method  slots in the configuration.
 @define('PLUGIN_EVENT_GRAVATAR_METHOD_MAX', 6);
@@ -767,7 +767,7 @@ class serendipity_event_gravatar extends serendipity_event
                                           ($mode=='F' && preg_match('/<link[^>]+rel="(?:shortcut )?icon"[^>]+?href="([^"]+?)"/si', $fContent, $matches)))
                 {
                     // Attempt to grab an avatar link from their webpage URL
-                    $linkUrl = (function_exists('serendipity_entity_decode') ? serendipity_entity_decode($matches[1]) : html_entity_decode($matches[1], ENT_COMPAT, LANG_CHARSET));
+                    $linkUrl = html_entity_decode($matches[1], ENT_COMPAT, LANG_CHARSET);
                     if (substr($linkUrl, 0, 1) == '/') {
                         if ($urlParts = parse_url($url)) {
                             $faviconURL = $urlParts['scheme'] . '://' . $urlParts['host'] . $linkUrl;
