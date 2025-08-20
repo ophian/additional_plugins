@@ -1,26 +1,26 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/07
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/13
  */
 
 @define('PLUGIN_GGOPIS_NAME',		'Status z Gadu-Gadu');
-@define('PLUGIN_GGOPIS_DESC',		'Zobrazuje popis stavu z Gadu-Gadu IM (Instant Messenger = protokol pro posÌl·nÌ zpr·v, alternativa ICQ, Jabberu apod.)');
-@define('PLUGIN_GGOPIS_GGGATEID',		'UID identifik·tor Gadu-Gadu br·ny');
+@define('PLUGIN_GGOPIS_DESC',		'Zobrazuje popis stavu z Gadu-Gadu IM (Instant Messenger = protokol pro pos√≠l√°n√≠ zpr√°v, alternativa ICQ, Jabberu apod.)');
+@define('PLUGIN_GGOPIS_GGGATEID',		'UID identifik√°tor Gadu-Gadu br√°ny');
 @define('PLUGIN_GGOPIS_GGGATEID_DESC',		' ');
-@define('PLUGIN_GGOPIS_GGGATEPASSWD',		'Heslo ke Gadu-Gadu br·nÏ');
+@define('PLUGIN_GGOPIS_GGGATEPASSWD',		'Heslo ke Gadu-Gadu br√°nƒõ');
 @define('PLUGIN_GGOPIS_GGGATEPASSWD_DESC',		' ');
-@define('PLUGIN_GGOPIS_GGID',		'Gadu-Gadu UID, jehoæ status se m· sledovat');
+@define('PLUGIN_GGOPIS_GGID',		'Gadu-Gadu UID, jeho≈æ status se m√° sledovat');
 @define('PLUGIN_GGOPIS_GGID_DESC',		' ');
 
-@define('PLUGIN_GGOPIS_MSG_NOCONNTOAPPMSG',		'SpojenÌ na appmsg.gadu-gadu.pl nebylo stanoveno, moæn· je zahlcen: ');
-@define('PLUGIN_GGOPIS_MSG_CONNERROR',		'Chyba spojenÌ');
-@define('PLUGIN_GGOPIS_MSG_CONNUNEXPCLOSED',		'SpojenÌ bylo neoËek·vanÏ p¯eruπeno');
-@define('PLUGIN_GGOPIS_MSG_UNKNOWNERROR',		'Nezn·m· chyba');
-@define('PLUGIN_GGOPIS_MSG_INCORRPASSWD',		'Nespr·vnÈ heslo');
-@define('PLUGIN_GGOPIS_MSG_SENDCONTACTSERROR',		'Chyba p¯i posÌl·nÌ seznamu kontakt˘');
-@define('PLUGIN_GGOPIS_MSG_NOSTATUSDESC',		'Æ·dn˝ popis statutu');
+@define('PLUGIN_GGOPIS_MSG_NOCONNTOAPPMSG',		'Spojen√≠ na appmsg.gadu-gadu.pl nebylo stanoveno, mo≈æn√° je zahlcen: ');
+@define('PLUGIN_GGOPIS_MSG_CONNERROR',		'Chyba spojen√≠');
+@define('PLUGIN_GGOPIS_MSG_CONNUNEXPCLOSED',		'Spojen√≠ bylo neoƒçek√°vanƒõ p≈ôeru≈°eno');
+@define('PLUGIN_GGOPIS_MSG_UNKNOWNERROR',		'Nezn√°m√° chyba');
+@define('PLUGIN_GGOPIS_MSG_INCORRPASSWD',		'Nespr√°vn√© heslo');
+@define('PLUGIN_GGOPIS_MSG_SENDCONTACTSERROR',		'Chyba p≈ôi pos√≠l√°n√≠ seznamu kontakt≈Ø');
+@define('PLUGIN_GGOPIS_MSG_NOSTATUSDESC',		'≈Ω√°dn√Ω popis statutu');
 
