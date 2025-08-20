@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -16,10 +18,10 @@ class serendipity_event_portier extends serendipity_event
         $propbag->add('description', PLUGIN_PORTIER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Grischa Brockhaus, Malte Paskuda, Ian Styx');
-        $propbag->add('version',     '1.0.1');
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'php'         => '7.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('BACKEND_USERMANAGEMENT'));
         $propbag->add('event_hooks', array(

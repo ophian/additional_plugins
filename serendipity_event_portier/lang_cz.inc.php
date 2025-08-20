@@ -1,4 +1,4 @@
 <?php
 
-@define('PLUGIN_PORTIER_NAME', 'Portier Email pøihla¹ování');
+@define('PLUGIN_PORTIER_NAME', 'Portier Email pÅ™ihlaÅ¡ovÃ¡nÃ­');
 
