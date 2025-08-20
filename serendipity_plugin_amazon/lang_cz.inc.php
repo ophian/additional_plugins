@@ -1,44 +1,44 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/07
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/09/23
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/11/21
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/08/04
  */
 
-@define('PLUGIN_AMAZON_TITLE',              'DoporuËenÌ Amazon');
-@define('PLUGIN_AMAZON_DESC',               'DoporuËenÈ produkty z Amazon v r·mci partnerskÈho programu Amazon');
+@define('PLUGIN_AMAZON_TITLE',              'Doporuƒçen√≠ Amazon');
+@define('PLUGIN_AMAZON_DESC',               'Doporuƒçen√© produkty z Amazon v r√°mci partnersk√©ho programu Amazon');
 @define('PLUGIN_AMAZON_PROP_TITLE',         'Nadpis');
-@define('PLUGIN_AMAZON_PROP_TITLE_DESC',    'Nadpis bloku s doporuËenÌmi Amazon');
+@define('PLUGIN_AMAZON_PROP_TITLE_DESC',    'Nadpis bloku s doporuƒçen√≠mi Amazon');
 @define('PLUGIN_AMAZON_ASIN',               'Seznam ASIN');
-@define('PLUGIN_AMAZON_ASIN_DESC',          'Seznam ASIN (oddÏlenÈ Ë·rkou), kterÈ chcete doporuËovat');
-@define('PLUGIN_AMAZON_ASIN_CNT',           'Kolik produkt˘ se m· zobrazovat?');
+@define('PLUGIN_AMAZON_ASIN_DESC',          'Seznam ASIN (oddƒõlen√© ƒç√°rkou), kter√© chcete doporuƒçovat');
+@define('PLUGIN_AMAZON_ASIN_CNT',           'Kolik produkt≈Ø se m√° zobrazovat?');
 
 // Next lines were translated on 2009/09/23
 
-@define('PLUGIN_AMAZON_NEW_WINDOW',         'OtvÌrat odkazy v novÈm oknÏ');
-@define('PLUGIN_AMAZON_SMALL_MED',          'Velikost zobrazen˝ch n·hled˘');
-@define('PLUGIN_AMAZON_SMALL',              'MalÈ');
-@define('PLUGIN_AMAZON_MEDIUM',             'St¯ednÌ');
-@define('PLUGIN_AMAZON_LARGE',              'VelkÈ');
-@define('PLUGIN_AMAZON_SIDEBAR_CACHE',      '»as cachov·nÌ');
-@define('PLUGIN_AMAZON_SIDEBAR_CACHE_DESC', 'PoËet minut na cachov·nÌ v˝stupu pluginu. Poæadavky na Amazon jsou cachov·ny po 24 hodin·ch, zatÌmco zobrazen˝ text je cachov·n po 60 minut·ch. Toto nastavenÌ umoæÚuje lehkÈ zv˝πenÌ v˝konu tÌm, æe se nebude aktualizovat v˝stup podle serveru Amazon bÏhem doby cachov·nÌ. VypnÏte cachov·nÌ nastavenÌm "0".');
-@define('PLUGIN_AMAZON_SERVER',             'V˝chozÌ server');
-@define('PLUGIN_AMAZON_SERVER_DESC',        'Server Amazon, kter˝ hodl·te pouæÌt');
-@define('PLUGIN_AMAZON_GERMANY',            'NÏmecko');
+@define('PLUGIN_AMAZON_NEW_WINDOW',         'Otv√≠rat odkazy v nov√©m oknƒõ');
+@define('PLUGIN_AMAZON_SMALL_MED',          'Velikost zobrazen√Ωch n√°hled≈Ø');
+@define('PLUGIN_AMAZON_SMALL',              'Mal√©');
+@define('PLUGIN_AMAZON_MEDIUM',             'St≈ôedn√≠');
+@define('PLUGIN_AMAZON_LARGE',              'Velk√©');
+@define('PLUGIN_AMAZON_SIDEBAR_CACHE',      'ƒåas cachov√°n√≠');
+@define('PLUGIN_AMAZON_SIDEBAR_CACHE_DESC', 'Poƒçet minut na cachov√°n√≠ v√Ωstupu pluginu. Po≈æadavky na Amazon jsou cachov√°ny po 24 hodin√°ch, zat√≠mco zobrazen√Ω text je cachov√°n po 60 minut√°ch. Toto nastaven√≠ umo≈æ≈àuje lehk√© zv√Ω≈°en√≠ v√Ωkonu t√≠m, ≈æe se nebude aktualizovat v√Ωstup podle serveru Amazon bƒõhem doby cachov√°n√≠. Vypnƒõte cachov√°n√≠ nastaven√≠m "0".');
+@define('PLUGIN_AMAZON_SERVER',             'V√Ωchoz√≠ server');
+@define('PLUGIN_AMAZON_SERVER_DESC',        'Server Amazon, kter√Ω hodl√°te pou≈æ√≠t');
+@define('PLUGIN_AMAZON_GERMANY',            'Nƒõmecko');
 @define('PLUGIN_AMAZON_JAPAN',              'Japonsko');
-@define('PLUGIN_AMAZON_UK',                 'Velk· Brit·nie');
+@define('PLUGIN_AMAZON_UK',                 'Velk√° Brit√°nie');
 @define('PLUGIN_AMAZON_US',                 'USA');
 @define('PLUGIN_AMAZON_CA',                 'Kanada');
 @define('PLUGIN_AMAZON_FR',                 'Francie');
-@define('PLUGIN_AMAZON_DEPENDS_ON',         'Tento plugin z·visÌ na pluginu ud·lostÌ <a href="https://ophian.github.io/plugins/#group_BACKEND_EDITOR" >Amazon Media Button</a>. Nainstaujte prosÌm zmÌnÏn˝ plugin a nastavte ho pro p¯ipojenÌ k Amazonu.');
+@define('PLUGIN_AMAZON_DEPENDS_ON',         'Tento plugin z√°vis√≠ na pluginu ud√°lost√≠ <a href="https://ophian.github.io/plugins/#group_BACKEND_EDITOR" >Amazon Media Button</a>. Nainstaujte pros√≠m zm√≠nƒõn√Ω plugin a nastavte ho pro p≈ôipojen√≠ k Amazonu.');
 
 // Next lines were translated on 2011/08/04
-@define('PLUGIN_AMAZON_TRACK_GOOGLE',       'Sledov·nÌ klik˘ pomocÌ Google Analytics');
-@define('DESC_PLUGIN_AMAZON_TRACK_GOOGLE',  'Vyæaduje nainstalovan˝ plugin Google Analytics.');
+@define('PLUGIN_AMAZON_TRACK_GOOGLE',       'Sledov√°n√≠ klik≈Ø pomoc√≠ Google Analytics');
+@define('DESC_PLUGIN_AMAZON_TRACK_GOOGLE',  'Vy≈æaduje nainstalovan√Ω plugin Google Analytics.');
 

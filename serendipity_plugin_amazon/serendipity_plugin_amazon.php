@@ -10,7 +10,6 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_amazon extends serendipity_plugin
 {
-
     function introspect(&$propbag)
     {
         $propbag->add('name',           PLUGIN_AMAZON_TITLE);
@@ -18,11 +17,11 @@ class serendipity_plugin_amazon extends serendipity_plugin
         $propbag->add('configuration',  array('title','server', 'newwindows', 'small_medium_large','button','asin','cnt','cache','tracking'));
         $propbag->add('author',         'Matthew Groeninger, (original plugin by Thomas Nesges)');
         $propbag->add('stackable',      true);
-        $propbag->add('version',        '2.0.0');
+        $propbag->add('version',        '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
-            'php'         => '8.2.0'
+            'php'         => '8.2'
         ));
         $this->dependencies = array('serendipity_event_amazonchooser' => 'keep');
         $propbag->add('groups', array('FRONTEND_EXTERNAL_SERVICES'));
