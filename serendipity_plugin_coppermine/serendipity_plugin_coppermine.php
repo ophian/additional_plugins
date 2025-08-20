@@ -4,6 +4,8 @@
 // Show recent/popular/random thumbnails from a Coppermine (http://coppermine.sourceforge.net) gallery
 
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -12,7 +14,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_coppermine extends serendipity_plugin
 {
-    var $title = PLUGIN_CPGS_NAME;
+    public $title = PLUGIN_CPGS_NAME;
 
 	function introspect(&$propbag)
 	{
@@ -23,8 +25,11 @@ class serendipity_plugin_coppermine extends serendipity_plugin
 
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Matthew Maude');
-        $propbag->add('version',       '1.5');
-        $propbag->add('requirements',  array('serendipity' => '2.0'));
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'php'         => '8.2'
+        ));
         $propbag->add('groups', array('IMAGES'));
 		$propbag->add('configuration', array('cm_server','cm_prefix','cm_path','cm_title','cm_db','cm_user','cm_pass','cm_size','cm_count','cm_type','cm_plugin_title','cm_albumlink','cm_album','cm_gallerypath','cm_resolve'));
 
