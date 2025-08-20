@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -15,12 +17,12 @@ class serendipity_event_mymood extends serendipity_event
 
         $propbag->add('name',          PLUGIN_MYMOOD_TITLE);
         $propbag->add('description',   PLUGIN_MYMOOD_DESC);
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.4'
+        $propbag->add('version',        '1.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '0.18');
         $propbag->add('author',       'Brett Profitt');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -356,9 +358,9 @@ class serendipity_event_mymood extends serendipity_event
             echo "<tr style='padding: 10px;' class='serendipity_admin_list_item serendipity_admin_list_item_$even'>\n";
             echo "  <td><em>$count</em></td>\n";
             echo "  <td style='text-align: center'><input class='input_checkbox' type='checkbox' value='1' name=\"serendipity[mymood][{$mood['mood_id']}][mood_delete]\"></td>\n";
-            echo "  <td><input class='input_textbox' type='text' name=\"serendipity[mymood][{$mood['mood_id']}][mood_name]\" value=\"" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($mood['mood_name']) : htmlspecialchars($mood['mood_name'], ENT_COMPAT, LANG_CHARSET)) . "\" /></td>\n";
-            echo "  <td><input class='input_textbox' style='width: 100%' type='text' name=\"serendipity[mymood][{$mood['mood_id']}][mood_img]\" value=\"" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($mood['mood_img']) : htmlspecialchars($mood['mood_img'], ENT_COMPAT, LANG_CHARSET)) . "\" /></td>\n";
-            echo "  <td style='text-align: center'><input class='input_textbox' style='text-align: center' type='text' size='5' name=\"serendipity[mymood][{$mood['mood_id']}][mood_ascii]\" value=\"" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($mood['mood_ascii']) : htmlspecialchars($mood['mood_ascii'], ENT_COMPAT, LANG_CHARSET)) . "\" /></td>\n";
+            echo "  <td><input class='input_textbox' type='text' name=\"serendipity[mymood][{$mood['mood_id']}][mood_name]\" value=\"" . htmlspecialchars($mood['mood_name']) . "\" /></td>\n";
+            echo "  <td><input class='input_textbox' style='width: 100%' type='text' name=\"serendipity[mymood][{$mood['mood_id']}][mood_img]\" value=\"" . htmlspecialchars($mood['mood_img']) . "\" /></td>\n";
+            echo "  <td style='text-align: center'><input class='input_textbox' style='text-align: center' type='text' size='5' name=\"serendipity[mymood][{$mood['mood_id']}][mood_ascii]\" value=\"" . htmlspecialchars($mood['mood_ascii']) . "\" /></td>\n";
             echo "</tr>\n";
 
             $count++;
