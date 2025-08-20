@@ -159,7 +159,7 @@ class serendipity_event_backend extends serendipity_event
                                         if ($date != "") {
                                             $date = "[".addslashes(htmlspecialchars($date))."] ";
                                         }
-                                        echo "    document.write('<span class=\"blog_point\">".(trim($point) !="" ? addslashes(htmlspecialchars(trim($point))." " : "") . "</span><span class=\"blog_date\">" . $date . "</span><a class=\"blog_link\" href=\"" . $entryurl . "\">" . addslashes($entries[$a]['title']) . "</a><br />');\n";
+                                        echo "    document.write('<span class=\"blog_point\">".(trim($point) !="" ? addslashes(htmlspecialchars(trim($point)))." " : "") . "</span><span class=\"blog_date\">" . $date . "</span><a class=\"blog_link\" href=\"" . $entryurl . "\">" . addslashes($entries[$a]['title']) . "</a><br />');\n";
                                     } else {
                                         echo "    document.write('<span class=\"blog_title\">".addslashes($entries[$a]['title'])."</span>');\n";
                                         echo "    document.write('<hr class=\"blog_hr\" />');\n";
