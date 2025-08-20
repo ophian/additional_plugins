@@ -1,13 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-class serendipity_event_tinypng extends serendipity_event {
-    var $title = PLUGIN_EVENT_TINYPNG_NAME;
+class serendipity_event_tinypng extends serendipity_event
+{
+    public $title = PLUGIN_EVENT_TINYPNG_NAME;
 
     function introspect(&$propbag)
     {
@@ -17,9 +20,10 @@ class serendipity_event_tinypng extends serendipity_event {
         $propbag->add('description',   PLUGIN_EVENT_TINYPNG_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '1.10');
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array('backend_image_add' => true));
         $propbag->add('groups', array('IMAGES'));
