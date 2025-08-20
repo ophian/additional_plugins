@@ -1,18 +1,17 @@
 <?php
 
 /**
- * lang_bg.inc.php
  *  @version
  *  @author Ivan Cenov jwalker@hotmail.bg
  *  EN-Revision: Revision of 1.1
  */
 
 @define('PLUGIN_EVENT_GEOURL_NAME',      'GeoURL');
-@define('PLUGIN_EVENT_GEOURL_DESC',      'GeoURL асоциира URL на блога с географски координати. Повече информация има на http://geourl.org/');
-@define('PLUGIN_EVENT_GEOURL_LAT',       'Географска ширина');
-@define('PLUGIN_EVENT_GEOURL_LAT_DESC',  'Географската ширина на мястото, където се намира вашият блог (например 50.0515)');
-@define('PLUGIN_EVENT_GEOURL_LONG',      'Географска дължина');
-@define('PLUGIN_EVENT_GEOURL_LONG_DESC', 'Географската дължина на мястото, където се намира вашият блог (например 6.6209)');
-@define('PLUGIN_EVENT_GEOURL_PINGED',    'GeoURL потвърди вашите координати. Посетете <a href="http://geourl.org/near/?p='.$serendipity['baseURL'].'">вашите съседи</a>!');
-@define('PLUGIN_EVENT_GEOURL_NOLATLONG', 'Географската ширина и дължина трябва да бъдат дадени в десетичен вид. Можете да намерите вашите координати чрез <a href="http://www.maporama.com">maporama</a> или някой <a href="http://geourl.org/resources.html">друг ресурс</a>.');
+@define('PLUGIN_EVENT_GEOURL_DESC',      'GeoURL Р°СЃРѕС†РёРёСЂР° URL РЅР° Р±Р»РѕРіР° СЃ РіРµРѕРіСЂР°С„СЃРєРё РєРѕРѕСЂРґРёРЅР°С‚Рё. РџРѕРІРµС‡Рµ РёРЅС„РѕСЂРјР°С†РёСЏ РёРјР° РЅР° http://geourl.org/');
+@define('PLUGIN_EVENT_GEOURL_LAT',       'Р“РµРѕРіСЂР°С„СЃРєР° С€РёСЂРёРЅР°');
+@define('PLUGIN_EVENT_GEOURL_LAT_DESC',  'Р“РµРѕРіСЂР°С„СЃРєР°С‚Р° С€РёСЂРёРЅР° РЅР° РјСЏСЃС‚РѕС‚Рѕ, РєСЉРґРµС‚Рѕ СЃРµ РЅР°РјРёСЂР° РІР°С€РёСЏС‚ Р±Р»РѕРі (РЅР°РїСЂРёРјРµСЂ 50.0515)');
+@define('PLUGIN_EVENT_GEOURL_LONG',      'Р“РµРѕРіСЂР°С„СЃРєР° РґСЉР»Р¶РёРЅР°');
+@define('PLUGIN_EVENT_GEOURL_LONG_DESC', 'Р“РµРѕРіСЂР°С„СЃРєР°С‚Р° РґСЉР»Р¶РёРЅР° РЅР° РјСЏСЃС‚РѕС‚Рѕ, РєСЉРґРµС‚Рѕ СЃРµ РЅР°РјРёСЂР° РІР°С€РёСЏС‚ Р±Р»РѕРі (РЅР°РїСЂРёРјРµСЂ 6.6209)');
+@define('PLUGIN_EVENT_GEOURL_PINGED',    'GeoURL РїРѕС‚РІСЉСЂРґРё РІР°С€РёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Рё. РџРѕСЃРµС‚РµС‚Рµ <a href="http://geourl.org/near/?p='.$serendipity['baseURL'].'">РІР°С€РёС‚Рµ СЃСЉСЃРµРґРё</a>!');
+@define('PLUGIN_EVENT_GEOURL_NOLATLONG', 'Р“РµРѕРіСЂР°С„СЃРєР°С‚Р° С€РёСЂРёРЅР° Рё РґСЉР»Р¶РёРЅР° С‚СЂСЏР±РІР° РґР° Р±СЉРґР°С‚ РґР°РґРµРЅРё РІ РґРµСЃРµС‚РёС‡РµРЅ РІРёРґ. РњРѕР¶РµС‚Рµ РґР° РЅР°РјРµСЂРёС‚Рµ РІР°С€РёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Рё С‡СЂРµР· <a href="http://www.maporama.com">maporama</a> РёР»Рё РЅСЏРєРѕР№ <a href="http://geourl.org/resources.html">РґСЂСѓРі СЂРµСЃСѓСЂСЃ</a>.');
 

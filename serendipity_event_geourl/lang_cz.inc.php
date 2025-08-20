@@ -1,17 +1,17 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  EN-Revision: Revision of lang_en.inc.php
  *  Translated on 2007/11/24
  */
 
 @define('PLUGIN_EVENT_GEOURL_NAME',      'GeoURL');
-@define('PLUGIN_EVENT_GEOURL_DESC',      'GeoURL vkládá informace o zemìpisné poloze URL blogu. Více informací na http://geourl.org/');
-@define('PLUGIN_EVENT_GEOURL_LAT',       'Zemìpisná ¹íøka');
-@define('PLUGIN_EVENT_GEOURL_LAT_DESC',  'Zemìpisná ¹íøka místa, kde je provozován blog, nebo kterého místa se tıká. Zadávejte v desetinné formì (napø. 50.0515)');
-@define('PLUGIN_EVENT_GEOURL_LONG',      'Zemìpisná délka');
-@define('PLUGIN_EVENT_GEOURL_LONG_DESC', 'Zemìpisná délka místa, kde je provozován blog, nebo kterého místa se tıká. Zadávejte v desetinné formì (napø. 6.6209)');
-@define('PLUGIN_EVENT_GEOURL_PINGED',    'Slu¾ba GeoURL úspì¹nì kontaktována, nové souøadnice zadány. Nav¹tivte <a href="http://geourl.org/near/?p='.$serendipity['baseURL'].'">své sousedy</a>!');
-@define('PLUGIN_EVENT_GEOURL_NOLATLONG', 'Zemìpisná délka a ¹íøka musí bát zadaná v desetinném formátu. Va¹e souøadnice naleznete pomocí <a href="http://www.maporama.com">maporamy</a> nebo <a href="http://geourl.org/resources.html">dal¹ích zdrojù</a>.');
+@define('PLUGIN_EVENT_GEOURL_DESC',      'GeoURL vklÃ¡dÃ¡ informace o zemÄ›pisnÃ© poloze URL blogu. VÃ­ce informacÃ­ na http://geourl.org/');
+@define('PLUGIN_EVENT_GEOURL_LAT',       'ZemÄ›pisnÃ¡ Å¡Ã­Å™ka');
+@define('PLUGIN_EVENT_GEOURL_LAT_DESC',  'ZemÄ›pisnÃ¡ Å¡Ã­Å™ka mÃ­sta, kde je provozovÃ¡n blog, nebo kterÃ©ho mÃ­sta se tÃ½kÃ¡. ZadÃ¡vejte v desetinnÃ© formÄ› (napÅ™. 50.0515)');
+@define('PLUGIN_EVENT_GEOURL_LONG',      'ZemÄ›pisnÃ¡ dÃ©lka');
+@define('PLUGIN_EVENT_GEOURL_LONG_DESC', 'ZemÄ›pisnÃ¡ dÃ©lka mÃ­sta, kde je provozovÃ¡n blog, nebo kterÃ©ho mÃ­sta se tÃ½kÃ¡. ZadÃ¡vejte v desetinnÃ© formÄ› (napÅ™. 6.6209)');
+@define('PLUGIN_EVENT_GEOURL_PINGED',    'SluÅ¾ba GeoURL ÃºspÄ›Å¡nÄ› kontaktovÃ¡na, novÃ© souÅ™adnice zadÃ¡ny. NavÅ¡tivte <a href="http://geourl.org/near/?p='.$serendipity['baseURL'].'">svÃ© sousedy</a>!');
+@define('PLUGIN_EVENT_GEOURL_NOLATLONG', 'ZemÄ›pisnÃ¡ dÃ©lka a Å¡Ã­Å™ka musÃ­ bÃ¡t zadanÃ¡ v desetinnÃ©m formÃ¡tu. VaÅ¡e souÅ™adnice naleznete pomocÃ­ <a href="http://www.maporama.com">maporamy</a> nebo <a href="http://geourl.org/resources.html">dalÅ¡Ã­ch zdrojÅ¯</a>.');
 
