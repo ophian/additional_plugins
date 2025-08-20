@@ -15,15 +15,15 @@
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_SITE',                 "Wikipedia Seite");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_SITE_DESC' ,           "Auf welcher Wikipedia Seite soll gesucht werden?");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_COLOR',                "Farbe");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_COLOR_DESC' ,          "Ist der Hintergrund eher hell oder dunkel? Wird benötigt zur Grafikauswahl");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_COLOR_DESC' ,          "Ist der Hintergrund eher hell oder dunkel? Wird benÃ¶tigt zur Grafikauswahl");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_COLOR_DARK' ,          "Dunkler Hintergrund");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_COLOR_LIGHT' ,         "Heller Hintergrund");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_TARGET',               "Zielfenster");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW',             "Zielfenster mit Javascript öffnen");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_TARGET_DESC' ,         "Wenn die Wikipediasuche in einem neuen Fenster durchgeführt werden soll, kann hier ein Fenstername angegeben werden (zB \"wikipedia\"). Diese Einstellung wird von \"".PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW."\" überschrieben.");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_DESC',        "Ein neues Ausgabefenster kann per Javascript in Höhe und Breite beeinflusst werden. Soll davon Gebrauch gemacht werden? Wird hier \"Ja\" gewählt, wird die Einstellung ".PLUGIN_WIKIPEDIAFINDER_PROP_TARGET." überschrieben.");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_HEIGHT',      "Javascript-Fenster: Höhe");
-@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_HEIGHT_DESC', "Höhe des Zielfensters. Nur wirksam bei aktiviertem \".PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW.\"");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW',             "Zielfenster mit Javascript Ã¶ffnen");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_TARGET_DESC' ,         "Wenn die Wikipediasuche in einem neuen Fenster durchgefÃ¼hrt werden soll, kann hier ein Fenstername angegeben werden (zB \"wikipedia\"). Diese Einstellung wird von \"".PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW."\" Ã¼berschrieben.");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_DESC',        "Ein neues Ausgabefenster kann per Javascript in HÃ¶he und Breite beeinflusst werden. Soll davon Gebrauch gemacht werden? Wird hier \"Ja\" gewÃ¤hlt, wird die Einstellung ".PLUGIN_WIKIPEDIAFINDER_PROP_TARGET." Ã¼berschrieben.");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_HEIGHT',      "Javascript-Fenster: HÃ¶he");
+@define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_HEIGHT_DESC', "HÃ¶he des Zielfensters. Nur wirksam bei aktiviertem \".PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW.\"");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH',       "Javascript-Fenster: Breite");
 @define('PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW_WIDTH_DESC',  "Breite des Zielfensters. Nur wirksam bei aktiviertem \".PLUGIN_WIKIPEDIAFINDER_PROP_JSWINDOW.\"");
 

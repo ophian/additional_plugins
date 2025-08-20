@@ -6,6 +6,8 @@
 // English translation and some Javascript-Debugging done by Paul Wistrand (http://paulwistrand.com)
 // Spanish translation by Francisco Ortiz <frortiz@gmail.com>
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -19,12 +21,12 @@ class serendipity_plugin_wikipedia_finder extends serendipity_plugin
         $propbag->add('name',           PLUGIN_WIKIPEDIAFINDER_TITLE);
         $propbag->add('description',    PLUGIN_WIKIPEDIAFINDER_DESC);
         $propbag->add('configuration',  array('title', 'site', 'color', 'target', 'jswindow', 'jswindow_height', 'jswindow_width'));
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',     '1.5');
         $propbag->add('groups',     array('FRONTEND_EXTERNAL_SERVICES'));
         $propbag->add('legal',      array(
             'services' => array(
