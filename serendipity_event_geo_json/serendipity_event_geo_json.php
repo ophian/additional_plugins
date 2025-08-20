@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -15,8 +17,12 @@ class serendipity_event_geo_json extends serendipity_event
         $propbag->add('copyright', 'GPL');
         $propbag->add('event_hooks', array('frontend_header' => true));
         $propbag->add('author', 'Kathi Sewelies');
-        $propbag->add('version', '0.6');
-        $propbag->add('requirements', array('serendipity' => '2.3'));
+        $propbag->add('version', '1.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'php'         => '8.2'
+        ));
+
         $propbag->add('stackable', false);
         $propbag->add('groups', array('FRONTEND_FEATURES'));
     }
