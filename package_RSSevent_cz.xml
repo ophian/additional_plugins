@@ -67,8 +67,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_backend</link>
 <category>Event Plugins</category>
 <author>Alexander Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backend&lt;br /&gt;Zobrazování příspěvků pomocí JavaScriptu&lt;/b&gt;&lt;br /&gt;Poskytuje Javascriptový výstup nejnovějších článků pro jejich vložení do cizích, externích stránek. (Přečtěte si soubor README v adresáři pluginu!)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:17:13 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_backend&lt;br /&gt;Zobrazování příspěvků pomocí JavaScriptu&lt;/b&gt;&lt;br /&gt;Poskytuje Javascriptový výstup nejnovějších článků pro jejich vložení do cizích, externích stránek. (Přečtěte si soubor README v adresáři pluginu!)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 13:50:17 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backend</guid>
 </item>
 <item>
@@ -518,7 +518,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Zobrazuje avatary (ikona či obrázek přispěvatele) v komentářích. Podporovány jsou služby Gravatar, Pavatar a Favatar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 17 Aug 2025 11:18:20 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 13:03:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
@@ -1282,8 +1282,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_plugin_flickr</link>
 <category>Event Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;Flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 14 Jul 2023 11:36:16 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;Flickr Photostream CSS&lt;/b&gt;&lt;br /&gt;Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Wed, 20 Aug 2025 11:59:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>

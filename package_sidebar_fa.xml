@@ -1395,11 +1395,11 @@
 <description>Recommend Products at Amazon within the Amazon-Partnerprogram</description>
 <maintainers><maintainer><name>Matthew Groeninger, (original plugin by Thomas Nesges)</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_amazon">
       <file>ChangeLog</file>
@@ -1410,12 +1410,7 @@
       <file>lang_en.inc.php</file>
       <file>lang_ja.inc.php</file>
       <file>serendipity_plugin_amazon.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_ja.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_amazon/ChangeLog</file>
@@ -1426,9 +1421,6 @@
     <file>serendipity_plugin_amazon/lang_en.inc.php</file>
     <file>serendipity_plugin_amazon/lang_ja.inc.php</file>
     <file>serendipity_plugin_amazon/serendipity_plugin_amazon.php</file>
-    <file>serendipity_plugin_amazon/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_amazon/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_amazon/UTF-8/lang_ja.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1474,11 +1466,11 @@
 <description>Display thumbnails from a Coppermine gallery in the sidebar</description>
 <maintainers><maintainer><name>Matthew Maude</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2022-09-22</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_coppermine">
       <file>lang_cz.inc.php</file>
@@ -1487,10 +1479,7 @@
       <file>README</file>
       <file>serendipity_plugin_coppermine.php</file>
       <file>styles.css</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_coppermine/lang_cz.inc.php</file>
@@ -1499,7 +1488,6 @@
     <file>serendipity_plugin_coppermine/README</file>
     <file>serendipity_plugin_coppermine/serendipity_plugin_coppermine.php</file>
     <file>serendipity_plugin_coppermine/styles.css</file>
-    <file>serendipity_plugin_coppermine/UTF-8/lang_cz.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1511,11 +1499,11 @@
 <description>Display a creative commons notification in the sidebar.</description>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2022-06-27</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_creativecommons">
       <file>lang_bg.inc.php</file>
@@ -1532,21 +1520,7 @@
       <file>lang_tn.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_plugin_creativecommons.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cn.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_pt_PT.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_creativecommons/lang_bg.inc.php</file>
@@ -1563,18 +1537,6 @@
     <file>serendipity_plugin_creativecommons/lang_tn.inc.php</file>
     <file>serendipity_plugin_creativecommons/lang_zh.inc.php</file>
     <file>serendipity_plugin_creativecommons/serendipity_plugin_creativecommons.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_plugin_creativecommons/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1663,11 +1625,11 @@
 <description>Display the latest photos from flickr Photostreams.</description>
 <maintainers><maintainer><name>Michael Kaiser, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.12</version>
-  <requirements:s9yVersion>2.0</requirements:s9yVersion>
-  <requirements:smyVersion>3.1.0</requirements:smyVersion>
-  <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>
@@ -1694,10 +1656,6 @@
       </dir>
       <file>serendipity_event_flickrcss.php</file>
       <file>serendipity_plugin_flickr.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -1721,8 +1679,6 @@
     <file>serendipity_plugin_flickr/phpFlickr/src/Util.php</file>
     <file>serendipity_plugin_flickr/serendipity_event_flickrcss.php</file>
     <file>serendipity_plugin_flickr/serendipity_plugin_flickr.php</file>
-    <file>serendipity_plugin_flickr/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_flickr/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1735,15 +1691,16 @@
 <description>Shows your last photos on Flickr.com</description>
 <maintainers><maintainer><name>Lars Strojny</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.14</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>5.1</requirements:phpVersion>
-  <date>2018-08-31</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_flickrbadge">
       <file>ChangeLog</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <dir name="lib">
         <dir name="flickr">
@@ -1754,23 +1711,18 @@
       </dir>
       <file>plugin.inc.php</file>
       <file>serendipity_plugin_flickrbadge.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_flickrbadge/ChangeLog</file>
     <file>serendipity_plugin_flickrbadge/lang_cz.inc.php</file>
+    <file>serendipity_plugin_flickrbadge/lang_de.inc.php</file>
     <file>serendipity_plugin_flickrbadge/lang_en.inc.php</file>
     <file>serendipity_plugin_flickrbadge/lib/flickr/abstract.php</file>
     <file>serendipity_plugin_flickrbadge/lib/flickr/filecache.php</file>
     <file>serendipity_plugin_flickrbadge/lib/flickr.php</file>
     <file>serendipity_plugin_flickrbadge/plugin.inc.php</file>
     <file>serendipity_plugin_flickrbadge/serendipity_plugin_flickrbadge.php</file>
-    <file>serendipity_plugin_flickrbadge/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_flickrbadge/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1783,11 +1735,11 @@
 <description>Gets and displays a status description of Gadu-Gadu IM</description>
 <maintainers><maintainer><name>Piotr Borys</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_ggopis">
       <file>ChangeLog</file>
@@ -1803,11 +1755,6 @@
       <file>lang_pl.inc.php</file>
       <file>README</file>
       <file>serendipity_plugin_ggopis.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_pl.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
@@ -1822,9 +1769,6 @@
     <file>serendipity_plugin_ggopis/lang_pl.inc.php</file>
     <file>serendipity_plugin_ggopis/README</file>
     <file>serendipity_plugin_ggopis/serendipity_plugin_ggopis.php</file>
-    <file>serendipity_plugin_ggopis/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_ggopis/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_ggopis/UTF-8/lang_pl.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1837,11 +1781,11 @@
 <description>Displays adverts from Google.</description>
 <maintainers><maintainer><name>Jim Dabell</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-05-24</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_google_adsense">
       <file>ChangeLog</file>
@@ -1851,12 +1795,7 @@
       <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <file>serendipity_plugin_google_adsense.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_google_adsense/ChangeLog</file>
@@ -1866,9 +1805,6 @@
     <file>serendipity_plugin_google_adsense/lang_de.inc.php</file>
     <file>serendipity_plugin_google_adsense/lang_en.inc.php</file>
     <file>serendipity_plugin_google_adsense/serendipity_plugin_google_adsense.php</file>
-    <file>serendipity_plugin_google_adsense/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_google_adsense/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_google_adsense/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1881,11 +1817,11 @@
 <description>جستجو (Google)</description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.6</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-04-03</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_google_quicksearch">
       <file>ChangeLog</file>
@@ -1895,12 +1831,7 @@
       <file>lang_ko.inc.php</file>
       <file>README</file>
       <file>serendipity_plugin_google_quicksearch.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_google_quicksearch/ChangeLog</file>
@@ -1910,9 +1841,6 @@
     <file>serendipity_plugin_google_quicksearch/lang_ko.inc.php</file>
     <file>serendipity_plugin_google_quicksearch/README</file>
     <file>serendipity_plugin_google_quicksearch/serendipity_plugin_google_quicksearch.php</file>
-    <file>serendipity_plugin_google_quicksearch/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_google_quicksearch/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_plugin_google_quicksearch/UTF-8/lang_ko.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -1925,15 +1853,16 @@
 <description>This plugin displays an album cover from last.fm which was on Heavy Rotation (top album) in the last week</description>
 <maintainers><maintainer><name>Lars Strojny</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.12</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
-  <requirements:phpVersion>5.1</requirements:phpVersion>
-  <date>2018-08-31</date>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_heavyrotation">
       <file>ChangeLog</file>
       <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
       <file>lang_en.inc.php</file>
       <dir name="lib">
         <file>album.php</file>
@@ -1951,15 +1880,12 @@
       </dir>
       <file>plugin.inc.php</file>
       <file>serendipity_plugin_heavyrotation.php</file>
-      <dir name="UTF-8">
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-      </dir>
     </dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_heavyrotation/ChangeLog</file>
     <file>serendipity_plugin_heavyrotation/lang_cz.inc.php</file>
+    <file>serendipity_plugin_heavyrotation/lang_de.inc.php</file>
     <file>serendipity_plugin_heavyrotation/lang_en.inc.php</file>
     <file>serendipity_plugin_heavyrotation/lib/album.php</file>
     <file>serendipity_plugin_heavyrotation/lib/albumhandler/chickeneggproblem.php</file>
@@ -1971,8 +1897,6 @@
     <file>serendipity_plugin_heavyrotation/lib/helper/aws_signed_request.php</file>
     <file>serendipity_plugin_heavyrotation/plugin.inc.php</file>
     <file>serendipity_plugin_heavyrotation/serendipity_plugin_heavyrotation.php</file>
-    <file>serendipity_plugin_heavyrotation/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_heavyrotation/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2207,11 +2131,11 @@
 <description>show statistics of Piwik in sidebar</description>
 <maintainers><maintainer><name>Bernd Distler, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>0.7</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2022-07-31</date>
+  <version>1.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_piwik">
       <file>ChangeLog</file>
@@ -2219,10 +2143,7 @@
       <file>lang_en.inc.php</file>
       <file>README.markdown</file>
       <file>serendipity_plugin_piwik.php</file>
-      <dir name="UTF-8">
-        <file>lang_de.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_piwik/ChangeLog</file>
@@ -2230,7 +2151,6 @@
     <file>serendipity_plugin_piwik/lang_en.inc.php</file>
     <file>serendipity_plugin_piwik/README.markdown</file>
     <file>serendipity_plugin_piwik/serendipity_plugin_piwik.php</file>
-    <file>serendipity_plugin_piwik/UTF-8/lang_de.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2548,11 +2468,11 @@
 <description>Show a box to change themes</description>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.3</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-03-22</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_templatedropdown">
       <file>lang_bg.inc.php</file>
@@ -2569,21 +2489,7 @@
       <file>lang_tn.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_plugin_templatedropdown.php</file>
-      <dir name="UTF-8">
-        <file>lang_bg.inc.php</file>
-        <file>lang_cn.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_ja.inc.php</file>
-        <file>lang_ko.inc.php</file>
-        <file>lang_pl.inc.php</file>
-        <file>lang_pt_PT.inc.php</file>
-        <file>lang_tn.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_templatedropdown/lang_bg.inc.php</file>
@@ -2600,18 +2506,6 @@
     <file>serendipity_plugin_templatedropdown/lang_tn.inc.php</file>
     <file>serendipity_plugin_templatedropdown/lang_zh.inc.php</file>
     <file>serendipity_plugin_templatedropdown/serendipity_plugin_templatedropdown.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_bg.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_ja.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_ko.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_pl.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_pt_PT.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_tn.inc.php</file>
-    <file>serendipity_plugin_templatedropdown/UTF-8/lang_zh.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>
@@ -2800,11 +2694,11 @@
 <description>Highlight a phrase and click the icon to search on using Wikipedia.</description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>1.5</version>
-  <requirements:s9yVersion>1.6</requirements:s9yVersion>
-  <requirements:smyVersion>2.6.7</requirements:smyVersion>
-  <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-04-03</date>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_wikipedia_finder">
       <file>ChangeLog</file>
@@ -2816,18 +2710,10 @@
       <file>lang_fr.inc.php</file>
       <file>lang_zh.inc.php</file>
       <file>serendipity_plugin_wikipedia_finder.php</file>
-      <dir name="UTF-8">
-        <file>lang_cn.inc.php</file>
-        <file>lang_cz.inc.php</file>
-        <file>lang_de.inc.php</file>
-        <file>lang_es.inc.php</file>
-        <file>lang_fr.inc.php</file>
-        <file>lang_zh.inc.php</file>
-      </dir>
       <file>wikipedia.png</file>
       <file>wikipedia_black.gif</file>
       <file>wikipedia_white.gif</file>
-    </dir>
+</dir>
   </filelist>
   <serendipityFilelist>
     <file>serendipity_plugin_wikipedia_finder/ChangeLog</file>
@@ -2839,12 +2725,6 @@
     <file>serendipity_plugin_wikipedia_finder/lang_fr.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/lang_zh.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/serendipity_plugin_wikipedia_finder.php</file>
-    <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_cn.inc.php</file>
-    <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_cz.inc.php</file>
-    <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_de.inc.php</file>
-    <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_es.inc.php</file>
-    <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_fr.inc.php</file>
-    <file>serendipity_plugin_wikipedia_finder/UTF-8/lang_zh.inc.php</file>
     <file>serendipity_plugin_wikipedia_finder/wikipedia.png</file>
     <file>serendipity_plugin_wikipedia_finder/wikipedia_black.gif</file>
     <file>serendipity_plugin_wikipedia_finder/wikipedia_white.gif</file>
