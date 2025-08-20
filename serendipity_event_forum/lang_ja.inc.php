@@ -8,7 +8,7 @@
 /**
  *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
- *  EN-Revision: 1.8
+ *  EN-Revision: 1.5
  */
 
 @define("PLUGIN_FORUM_TITLE", "ディスカッションフォーラム");
@@ -21,14 +21,12 @@
 @define('PLUGIN_FORUM_PAGEURL_BLAHBLAH', 'ページの URL を定義します (index.php?serendipity[subpage]=name)');
 @define("PLUGIN_FORUM_UPLOADDIR", "アップロードディレクトリへのサーバー上の絶対パス");
 @define("PLUGIN_FORUM_UPLOADDIR_BLAHBLAH", "デフォルト: ".$serendipity['serendipityPath'].'files');
-@define("PLUGIN_FORUM_DATEFORMAT", "エントリの実際の日付の書式を PHP の date() の値を用いて指定します。 (デフォルト: 「Y/m/d」)");
-@define("PLUGIN_FORUM_TIMEFORMAT", "時間の書式");
-@define("PLUGIN_FORUM_TIMEFORMAT_BLAHBLAH", "エントリの実際の日付の書式を PHP の date() の値を用いて指定します。 (デフォルト: 「h:ia」)");
+@define("PLUGIN_FORUM_DATEFORMAT", "The format of the entry's actual date, using PHPs date() variables. (デフォルト: \"Y/m/d, h:ia\")");
 @define("PLUGIN_FORUM_BGCOLOR_HEAD", "タイトルバーの背景色");
 @define("PLUGIN_FORUM_BGCOLOR_HEAD_BLAHBLAH", "すべてのタイトルバーの背景色です。");
 @define("PLUGIN_FORUM_BGCOLOR1", "1. 背景色");
 @define("PLUGIN_FORUM_BGCOLOR2", "2. 背景色");
-@define("PLUGIN_FORUM_APPLY_MARKUP", "マークアッププラグインを使うべきですか?");
+@define("PLUGIN_FORUM_APPLY_MARKUP", "Should markup-plugins be used?");
 @define("PLUGIN_FORUM_APPLY_MARKUP_BLAHBLAH", "「はい」の場合、すべてのマークアッププラグインがインストールされていた場合、投稿の書式に使えるでしょう (BB コード、表情文字、ギャラリー画像など...)");
 @define("PLUGIN_FORUM_ITEMSPERPAGE", "ページ毎の項目数");
 @define("PLUGIN_FORUM_ITEMSPERPAGE_BLAHBLAH", "1 ページ当たりどれ位項目を表示すべきかです。 (スレッド/投稿), デフォルト: 15");
@@ -50,10 +48,6 @@
 @define("FORUM_PLUGIN_NOTIFYMAIL_FROM_BLAHBLAH", "通知メールを送信するときの差出人電子メールアドレスです (From フィールド)");
 @define("FORUM_PLUGIN_NOTIFYMAIL_NAME", "通知メール: 差出人名");
 @define("FORUM_PLUGIN_NOTIFYMAIL_NAME_BLAHBLAH", "通知メールの送信者の名前です (From フィールド)");
-@define("FORUM_PLUGIN_ADMIN_NOTIFY", "管理者通知");
-@define("FORUM_PLUGIN_ADMIN_NOTIFY_BLAHBLAH", "新規トピックか返信が投稿されたとき、管理者は通知メールを受け取るべきですか?");
-@define("PLUGIN_FORUM_COLORTODAY", "「今日」の色");
-@define("PLUGIN_FORUM_COLORYESTERDAY", "「昨日」の色");
 
 
 @define("PLUGIN_FORUM_NO_BOARDS", "掲示板が定義されていません!");
@@ -107,16 +101,12 @@
 @define("PLUGIN_FORUM_POSTS", "投稿数");
 @define("PLUGIN_FORUM_VISITS", "訪問数");
 @define("PLUGIN_FORUM_UPLOAD_FILE","ファイルアップロード");
-@define("PLUGIN_FORUM_DOWNLOADCOUNT", "ダウンロード数:");
+@define("PLUGIN_FORUM_DOWNLOADCOUNT", "Downloads:");
 @define("PLUGIN_FORUM_REST_UPLOAD_USER", "ユーザーに残されたアップロード可能な数");
 @define("PLUGIN_FORUM_REST_UPLOAD_POST", "この投稿にユーザーに残されたアップロード可能な数");
 @define("PLUGIN_FORUM_ANNOUNCEMENT", "これを告知しますか?");
 @define("PLUGIN_FORUM_SUBSCRIBE", "このスレッドを購読しますか?");
 @define("PLUGIN_FORUM_UNSUBSCRIBE", "このスレッドの購読を止めますか?");
-@define("PLUGIN_FORUM_TODAY", "今日");
-@define("PLUGIN_FORUM_YESTERDAY", "昨日");
-@define("PLUGIN_FORUM_UPLOAD_OVERWRITE", "上書き");
-@define("PLUGIN_FORUM_UPLOAD_OVERWRITE_BLAHBLAH", "Should an already existent upload be overwritten with this upload?<br />Attention: This will overwrite *all* files with the same name and which are owned by you!");
 
 @define("PLUGIN_FORUM_ERR_MISSING_THREADTITLE", "エラー: スレッドの題名が無いか短すぎます (最短 4 文字)! エントリは保存されませんでした!");
 @define("PLUGIN_FORUM_ERR_MISSING_MESSAGE", "エラー: スレッドのテキストが無いか文字か過ぎます (最短 4 文字)! エントリは保存されませんでした!");

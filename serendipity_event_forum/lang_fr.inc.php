@@ -167,7 +167,7 @@ in our forum on
 
 
 @define('PLUGIN_FORUM_PHPBB_MIRROR', 'Activer phpBB mirroring?');
-@define('PLUGIN_FORUM_PHPBB_MIRROR_DESC', 'Si c`\'est actif,vos messages seront copies dans votre base PHPBB.n. Les commentaires seront ajoutes dans le forum phpBB au lieu d\'apparaître dans votre site.');
+@define('PLUGIN_FORUM_PHPBB_MIRROR_DESC', 'Si c`\'est actif,vos messages seront copies dans votre base PHPBB.n. Les commentaires seront ajoutes dans le forum phpBB au lieu d\'apparaÃ®tre dans votre site.');
 
 @define('FORUM_PLUGIN_PHPBB_USER', '(optional) phpBB database username');
 @define('FORUM_PLUGIN_PHPBB_PW', '(optional) phpBB database password');
