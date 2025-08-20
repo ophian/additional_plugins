@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -7,7 +9,7 @@ if (IN_serendipity !== true) {
 // Load possible language files.
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-define('DJO_VERSION', '1.13');
+define('DJO_VERSION', '2.0.0');
 define('CACHE_VORHALT', 4); # (Tage) Wann ein vernetzter Text aus dem Cache entfernt und neu vernetzt werden soll
 
 class serendipity_event_dejure extends serendipity_event
@@ -31,13 +33,11 @@ class serendipity_event_dejure extends serendipity_event
             )
         );
 
-        $propbag->add('requirements',
-            array(
-                'serendipity' => '1.6',
-                'smarty'      => '2.6.7',
-                'php'         => '4.3.0'
-            )
-        );
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
+        ));
 
         $propbag->add('configuration',
             array(

@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/27
- */@define('DEJURE_TITLE', 'Automatické odkazy Dejure.org');
-@define('DEJURE_DESCRIPTION', 'Automaticky vytváøí odkazy na citace a judikaturu (odkazy a zdroje informací) pomocí slu¾by dejure.org.');
-@define('DEJURE_MAIL', 'Emailová adresa vlastníka blogu');
-@define('DEJURE_MAIL_DESC', 'Tato informace je odeslána na dejure.org a slou¾í pouze pro komunikaci pøi technickıch obtí¾ích. Adresa nebude pou¾ita pro zasílání komerèních oznámení ani k jinım podobnım úèelùm!');
+ */@define('DEJURE_TITLE', 'AutomatickÃ© odkazy Dejure.org');
+@define('DEJURE_DESCRIPTION', 'Automaticky vytvÃ¡Å™Ã­ odkazy na citace a judikaturu (odkazy a zdroje informacÃ­) pomocÃ­ sluÅ¾by dejure.org.');
+@define('DEJURE_MAIL', 'EmailovÃ¡ adresa vlastnÃ­ka blogu');
+@define('DEJURE_MAIL_DESC', 'Tato informace je odeslÃ¡na na dejure.org a slouÅ¾Ã­ pouze pro komunikaci pÅ™i technickÃ½ch obtÃ­Å¾Ã­ch. Adresa nebude pouÅ¾ita pro zasÃ­lÃ¡nÃ­ komerÄnÃ­ch oznÃ¡menÃ­ ani k jinÃ½m podobnÃ½m ÃºÄelÅ¯m!');
 @define('DEJURE_NEWSLETTER', 'Newsletter');
-@define('DEJURE_NEWSLETTER_DESC', 'Chci se zapsat k odebírání aktualizací na slu¾bì dejure.org.');
-@define('DEJURE_TARGET', 'Otevírat odkazy v...');
-@define('DEJURE_TARGET_DESC', 'Prázdná hodnota zpùsobí otevírání odkazù ve stejném oknì, hodnota "_blank" v novém oknì.');
-@define('DEJURE_CSS', 'CSS tøída pro odkazy dejure.org');
+@define('DEJURE_NEWSLETTER_DESC', 'Chci se zapsat k odebÃ­rÃ¡nÃ­ aktualizacÃ­ na sluÅ¾bÄ› dejure.org.');
+@define('DEJURE_TARGET', 'OtevÃ­rat odkazy v...');
+@define('DEJURE_TARGET_DESC', 'PrÃ¡zdnÃ¡ hodnota zpÅ¯sobÃ­ otevÃ­rÃ¡nÃ­ odkazÅ¯ ve stejnÃ©m oknÄ›, hodnota "_blank" v novÃ©m oknÄ›.');
+@define('DEJURE_CSS', 'CSS tÅ™Ã­da pro odkazy dejure.org');
 @define('DEJURE_CSS_DESC', '');
-@define('DEJURE_LINKSTYLE', 'Styl odkazù dejure.org');
+@define('DEJURE_LINKSTYLE', 'Styl odkazÅ¯ dejure.org');
 @define('DEJURE_LINKSTYLE_DESC', '');
-@define('DEJURE_LINKSTYLE_SHORT', 'Odkazovat pouze následující èísla judikatur (napø. §_242_BGB; §_278_254_BGB)');
-@define('DEJURE_LINKSTYLE_WIDE', 'Pou¾ít detailní odkazy (napø. _§ 242 BGB_; _§ 278_, _254 BGB_)');
+@define('DEJURE_LINKSTYLE_SHORT', 'Odkazovat pouze nÃ¡sledujÃ­cÃ­ ÄÃ­sla judikatur (napÅ™. Â§_242_BGB; Â§_278_254_BGB)');
+@define('DEJURE_LINKSTYLE_WIDE', 'PouÅ¾Ã­t detailnÃ­ odkazy (napÅ™. _Â§ 242 BGB_; _Â§ 278_, _254 BGB_)');
