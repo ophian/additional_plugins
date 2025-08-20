@@ -1,25 +1,25 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/03/14
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/07/16
  */
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_TITLE',		'@Heavy Rotation@');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_DESCRIPTION',		'Tento p¯Ìdavn˝ modul zobrazuje ze serveru last.fm obal alba, kterÈ bylo minul˝ t˝den "Heavy Rotation" (prvnÌ v hitpar·dÏ)');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_DESCRIPTION',		'Tento p≈ô√≠davn√Ω modul zobrazuje ze serveru last.fm obal alba, kter√© bylo minul√Ω t√Ωden "Heavy Rotation" (prvn√≠ v hitpar√°dƒõ)');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_SIDEBARTITLE_TITLE',		'Nadpis bloku');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_SIDEBARTITLE_DESCRIPTION',		'Nadpis bloku s albem "Heavy Rotation"');
 @define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_AMAZONID_TITLE',		'Amazon API token');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_AMAZONID_DESCRIPTION',		'V·π klÌË v˝voj·¯e Amazon API');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_AMAZONCC_TITLE',		'KÛd zemÏ - podle Amazon');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_AMAZONCC_DESCRIPTION',		'Up¯esnÏte, kterou datab·zi m· plugin pouæÌt pro vyhled·v·nÌ p¯ebal˘ alb');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_ASUSERNAME_TITLE',		'Audioscrobbler/Last.fm uæivatelskÈ jmÈno');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_ASUSERNAME_DESCRIPTION',		'VyplÚte uæivatelskÈ jmÈno na www.last.fm, kterÈ se m· pouæÌt k zÌsk·nÌ Heavy Rotation. NejspÌπe je to Vaπe jmÈno.');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_AMAZONID_DESCRIPTION',		'V√°≈° kl√≠ƒç v√Ωvoj√°≈ôe Amazon API');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_AMAZONCC_TITLE',		'K√≥d zemƒõ - podle Amazon');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_AMAZONCC_DESCRIPTION',		'Up≈ôesnƒõte, kterou datab√°zi m√° plugin pou≈æ√≠t pro vyhled√°v√°n√≠ p≈ôebal≈Ø alb');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_ASUSERNAME_TITLE',		'Audioscrobbler/Last.fm u≈æivatelsk√© jm√©no');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_ASUSERNAME_DESCRIPTION',		'Vypl≈àte u≈æivatelsk√© jm√©no na www.last.fm, kter√© se m√° pou≈æ√≠t k z√≠sk√°n√≠ Heavy Rotation. Nejsp√≠≈°e je to Va≈°e jm√©no.');
 
 // Next lines were translated on 2011/07/16
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_HEIGHT_TITLE',		'V˝πka obr·zku ob·lky');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_HEIGHT_DESCRIPTION',		'V˝πka obr·zku ob·lky alba v pixelech');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_TITLE',		'©Ì¯ka obr·zku ob·lky');
-@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_DESCRIPTION',		'©Ì¯ka obr·zku ob·lky alba v pixelech');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_HEIGHT_TITLE',		'V√Ω≈°ka obr√°zku ob√°lky');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_HEIGHT_DESCRIPTION',		'V√Ω≈°ka obr√°zku ob√°lky alba v pixelech');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_TITLE',		'≈†√≠≈ôka obr√°zku ob√°lky');
+@define('SERENDIPITY_PLUGIN_HEAVYROTATION_CONFIG_COVER_WIDTH_DESCRIPTION',		'≈†√≠≈ôka obr√°zku ob√°lky alba v pixelech');
 
