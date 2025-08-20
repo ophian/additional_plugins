@@ -1,26 +1,26 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2011/04/17
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2013/04/21
  */
 
 @define('PLUGIN_EVENT_FACEBOOK_NAME', 'Facebook');
-@define('PLUGIN_EVENT_FACEBOOK_DESC', 'Importuje do blogu komentáøe u pøíspìvkù na facebooku (pomocí RSS Graffiti). Také do blogu vlo¾í facebookové OpenGraph Meta-Tagy. Pamatujte, ¾e pøidání talèítka "Líbí se mi" k pøíspìvkùm blogu je zaji¹»ováno pluginem serendipity_event_social!');
+@define('PLUGIN_EVENT_FACEBOOK_DESC', 'Importuje do blogu komentÃ¡Å™e u pÅ™Ã­spÄ›vkÅ¯ na facebooku (pomocÃ­ RSS Graffiti). TakÃ© do blogu vloÅ¾Ã­ facebookovÃ© OpenGraph Meta-Tagy. Pamatujte, Å¾e pÅ™idÃ¡nÃ­ talÄÃ­tka "LÃ­bÃ­ se mi" k pÅ™Ã­spÄ›vkÅ¯m blogu je zajiÅ¡Å¥ovÃ¡no pluginem serendipity_event_social!');
 
-@define('PLUGIN_EVENT_FACEBOOK_HOWTO', 'Komentáøe jsou importovány k pøíspìvkùm blogu pøiøazením URL adresy odkazu na facebook (odkazy musí bıt veøejné!), pro toto zpìtné volání je pou¾ita nastavená adresa Serendipity blogu (koøenová URL). Tento plugin mù¾e bıt spu¹tìn pomocí pluginu cronjob, nebo pomocí ruèního volání cronu (napø. wget) pøes blog (index.php?/plugin/facebookcomments).');
+@define('PLUGIN_EVENT_FACEBOOK_HOWTO', 'KomentÃ¡Å™e jsou importovÃ¡ny k pÅ™Ã­spÄ›vkÅ¯m blogu pÅ™iÅ™azenÃ­m URL adresy odkazu na facebook (odkazy musÃ­ bÃ½t veÅ™ejnÃ©!), pro toto zpÄ›tnÃ© volÃ¡nÃ­ je pouÅ¾ita nastavenÃ¡ adresa Serendipity blogu (koÅ™enovÃ¡ URL). Tento plugin mÅ¯Å¾e bÃ½t spuÅ¡tÄ›n pomocÃ­ pluginu cronjob, nebo pomocÃ­ ruÄnÃ­ho volÃ¡nÃ­ cronu (napÅ™. wget) pÅ™es blog (index.php?/plugin/facebookcomments).');
 
-@define('PLUGIN_EVENT_FACEBOOK_MODERATE', 'Mají bıt komentáøe z facebooku schvalovány?');
+@define('PLUGIN_EVENT_FACEBOOK_MODERATE', 'MajÃ­ bÃ½t komentÃ¡Å™e z facebooku schvalovÃ¡ny?');
 
-@define('PLUGIN_EVENT_FACEBOOK_USERS', 'U¾ivatelské jméno (jména) na facebooku');
-@define('PLUGIN_EVENT_FACEBOOK_USERS_DESC', 'Zadejte va¹e u¾ivatelské jméno nebo ID k facebooku, které má bıt spøa¾ené s blogem. Pamatujte, ¾e pouze veøejné úèty/pøíspìvky/komentáøe mohou bıt získány pomocí Facebook Graph API. Více u¾ivatelskıch jmen/ID mù¾e bıt vlo¾eno pomocí oddìlovaèe "," (èárka).');
+@define('PLUGIN_EVENT_FACEBOOK_USERS', 'UÅ¾ivatelskÃ© jmÃ©no (jmÃ©na) na facebooku');
+@define('PLUGIN_EVENT_FACEBOOK_USERS_DESC', 'Zadejte vaÅ¡e uÅ¾ivatelskÃ© jmÃ©no nebo ID k facebooku, kterÃ© mÃ¡ bÃ½t spÅ™aÅ¾enÃ© s blogem. Pamatujte, Å¾e pouze veÅ™ejnÃ© ÃºÄty/pÅ™Ã­spÄ›vky/komentÃ¡Å™e mohou bÃ½t zÃ­skÃ¡ny pomocÃ­ Facebook Graph API. VÃ­ce uÅ¾ivatelskÃ½ch jmen/ID mÅ¯Å¾e bÃ½t vloÅ¾eno pomocÃ­ oddÄ›lovaÄe "," (ÄÃ¡rka).');
 
-@define('PLUGIN_EVENT_FACEBOOK_VIA', 'Kterı øetìzec se má pøidávat k facebookovım komentáøùm?');
+@define('PLUGIN_EVENT_FACEBOOK_VIA', 'KterÃ½ Å™etÄ›zec se mÃ¡ pÅ™idÃ¡vat k facebookovÃ½m komentÃ¡Å™Å¯m?');
 
-@define('PLUGIN_EVENT_FACEBOOK_LIMIT', 'Kolik graph API polo¾ek se má stahovat');
-@define('PLUGIN_EVENT_FACEBOOK_LIMIT_DESC', 'Zadejte, kolik polo¾ek má vracet Facebook API request. Obvykle staèí posledních 25 polo¾ek. Pokud máte èasto aktualizovanı facebookovı úèet, mo¾ná budete chtít zvìt¹it limit. Èím vìt¹í limit bude, tím déle bude trvat aktualizace pomocí graph API.');
+@define('PLUGIN_EVENT_FACEBOOK_LIMIT', 'Kolik graph API poloÅ¾ek se mÃ¡ stahovat');
+@define('PLUGIN_EVENT_FACEBOOK_LIMIT_DESC', 'Zadejte, kolik poloÅ¾ek mÃ¡ vracet Facebook API request. Obvykle staÄÃ­ poslednÃ­ch 25 poloÅ¾ek. Pokud mÃ¡te Äasto aktualizovanÃ½ facebookovÃ½ ÃºÄet, moÅ¾nÃ¡ budete chtÃ­t zvÄ›tÅ¡it limit. ÄŒÃ­m vÄ›tÅ¡Ã­ limit bude, tÃ­m dÃ©le bude trvat aktualizace pomocÃ­ graph API.');
 
-@define('PLUGIN_AGGREGATOR_CRONJOB', 'Tento plugin vyu¾ívá Serendipity plugin Cronjob. Nainstalujte jej, pokud potøebujete vyu¾ívat pravidelnì opakované aktualizace.');
+@define('PLUGIN_AGGREGATOR_CRONJOB', 'Tento plugin vyuÅ¾Ã­vÃ¡ Serendipity plugin Cronjob. Nainstalujte jej, pokud potÅ™ebujete vyuÅ¾Ã­vat pravidelnÄ› opakovanÃ© aktualizace.');
 

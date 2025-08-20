@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,8 +10,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_facebook extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_FACEBOOK_NAME;
-    var $debug = false;
+    public $title = PLUGIN_EVENT_FACEBOOK_NAME;
+
+    private $debug = false;
 
     function introspect(&$propbag)
     {
@@ -19,12 +22,12 @@ class serendipity_event_facebook extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FACEBOOK_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('requirements',  array(
-            'serendipity' => '3.2',
-            'smarty'      => '3.1',
-            'php'         => '7.3'
+        $propbag->add('version',        '3.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.1.1');
         $propbag->add('groups', array('FRONTEND_VIEWS'));
         $propbag->add('event_hooks', array(
             'frontend_display'  => true,
@@ -474,13 +477,13 @@ class serendipity_event_facebook extends serendipity_event
 
                         // Taken from: http://developers.facebook.com/docs/opengraph/
                         echo '    <!--serendipity_event_facebook-->' . "\n";
-                        echo '    <meta property="og:title" content="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($entry['title']) : htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+                        echo '    <meta property="og:title" content="' . htmlspecialchars($entry['title']) . '" />' . "\n";
                         echo '    <meta property="og:description" content="' . substr(strip_tags($entry['body']), 0, 200) . '..." />' . "\n";
 
                         echo '    <meta property="og:type" content="article" />' . "\n";
                         echo '    <meta property="og:site_name" content="' . $serendipity['blogTitle'] . '" />' . "\n";
 
-                        echo '    <meta property="og:url" content="http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SERVER['REQUEST_URI']) : htmlspecialchars($_SERVER['REQUEST_URI'], ENT_COMPAT, LANG_CHARSET)) . '" />' . "\n";
+                        echo '    <meta property="og:url" content="http' . ($_SERVER['HTTPS'] ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . htmlspecialchars($_SERVER['REQUEST_URI']) . '" />' . "\n";
 
                         if (preg_match('@<img.*src=["\'](.+)["\']@imsU', $entry['body'] . $entry['extended'], $im)) {
                             if (preg_match('/^http/i', $im[1])) {
