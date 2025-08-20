@@ -186,10 +186,10 @@ class serendipity_plugin_piwik extends serendipity_plugin
             }
             echo '<ul class="plainList">'."\n";
             foreach($piwik_array_live AS $row) {
-                $piwik_live_visits = htmlspecialchars(html_entity_decode(urldecode($row['visits']), ENT_QUOTES), ENT_QUOTES));
-                $piwik_live_actions = htmlspecialchars(html_entity_decode(urldecode($row['actions']), ENT_QUOTES), ENT_QUOTES));
-                $piwik_live_visitsConverted = htmlspecialchars(html_entity_decode(urldecode($row['visitsConverted']), ENT_QUOTES), ENT_QUOTES));
-                $piwik_live_visitors = htmlspecialchars(html_entity_decode(urldecode($row['visitors']), ENT_QUOTES), ENT_QUOTES));
+                $piwik_live_visits = htmlspecialchars(html_entity_decode(urldecode($row['visits']), ENT_QUOTES), ENT_QUOTES);
+                $piwik_live_actions = htmlspecialchars(html_entity_decode(urldecode($row['actions']), ENT_QUOTES), ENT_QUOTES);
+                $piwik_live_visitsConverted = htmlspecialchars(html_entity_decode(urldecode($row['visitsConverted']), ENT_QUOTES), ENT_QUOTES);
+                $piwik_live_visitors = htmlspecialchars(html_entity_decode(urldecode($row['visitors']), ENT_QUOTES), ENT_QUOTES);
 
                 echo '    <li>'. PLUGIN_SIDEBAR_PIWIK_LIVE_VISITORS .': '. $piwik_live_visitors."</li>\n";
                 echo '    <li>'. PLUGIN_SIDEBAR_PIWIK_LIVE_VISITS .': '. $piwik_live_visits."</li>\n";
@@ -255,8 +255,8 @@ class serendipity_plugin_piwik extends serendipity_plugin
             }
             echo "<ol>\n";
             foreach($piwik_array_pagesurls AS $row) {
-                $piwik_content_pageurl = htmlspecialchars(html_entity_decode(urldecode($row['url']), ENT_QUOTES), ENT_QUOTES));
-                $piwik_content_pagelabel = htmlspecialchars(html_entity_decode(urldecode($row['label']), ENT_QUOTES), ENT_QUOTES));
+                $piwik_content_pageurl = htmlspecialchars(html_entity_decode(urldecode($row['url']), ENT_QUOTES), ENT_QUOTES);
+                $piwik_content_pagelabel = htmlspecialchars(html_entity_decode(urldecode($row['label']), ENT_QUOTES), ENT_QUOTES);
                 $piwik_content_pagelabel = str_replace($entries_remove, '', $piwik_content_pagelabel);
                 $piwik_content_hits = $row['nb_visits'];
                 echo '    <li><a href="' . $piwik_content_pageurl . '" title="' . $piwik_content_hits . ' ' . PLUGIN_SIDEBAR_PIWIK_ENTRIES_VIEWS . '">' . $piwik_content_pagelabel . "</a></li>\n";
