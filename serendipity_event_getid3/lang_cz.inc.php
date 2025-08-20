@@ -1,23 +1,23 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/05
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2011/10/16
  */
 
-@define('PLUGIN_GETID3', 'getID3() podpora pro získání vlastností média');
-@define('PLUGIN_GETID3_DESC', 'Pou¾ívá knihovnu getID3() k získání doplòujících informací o audio/video souborech. getID3() samotná není distribuována s tímto pluginem.');
-@define('PLUGIN_GETID3_INSTALL', 'Knihovna getID3() není z licenèních dùvodù distribuována s tímto pluginem, musíte si ji ruènì stáhnout z http://getid3.org/. Rozbalte soubory do adresáøe serendipity_event_getid3 nebo (a to je lep¹í volba) do adresáøe bundled-libs.');
+@define('PLUGIN_GETID3', 'getID3() podpora pro zÃ­skÃ¡nÃ­ vlastnostÃ­ mÃ©dia');
+@define('PLUGIN_GETID3_DESC', 'PouÅ¾Ã­vÃ¡ knihovnu getID3() k zÃ­skÃ¡nÃ­ doplÅˆujÃ­cÃ­ch informacÃ­ o audio/video souborech. getID3() samotnÃ¡ nenÃ­ distribuovÃ¡na s tÃ­mto pluginem.');
+@define('PLUGIN_GETID3_INSTALL', 'Knihovna getID3() nenÃ­ z licenÄnÃ­ch dÅ¯vodÅ¯ distribuovÃ¡na s tÃ­mto pluginem, musÃ­te si ji ruÄnÄ› stÃ¡hnout z http://getid3.org/. Rozbalte soubory do adresÃ¡Å™e serendipity_event_getid3 nebo (a to je lepÅ¡Ã­ volba) do adresÃ¡Å™e bundled-libs.');
 
 @define('PLUGIN_GETID3_INSTALL_DESC', 
 '<h3>Instalace</h3>' .
-'<p>Knihovna getID3() sama o sobì není distribuována s tímto pluginem. Musíte ji ruènì stáhnout z ' .
-'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a>. <b>Podporována je pouze verze knihovny 1.x!</b></p>' .
-'<p>Ve sta¾eném archivu najdete podadresáø getid3. Zkopírujte prosím obsah tohoto adresáøe do adresáøe Serendipity "bundled-libs".</p>');
+'<p>Knihovna getID3() sama o sobÄ› nenÃ­ distribuovÃ¡na s tÃ­mto pluginem. MusÃ­te ji ruÄnÄ› stÃ¡hnout z ' .
+'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a>. <b>PodporovÃ¡na je pouze verze knihovny 1.x!</b></p>' .
+'<p>Ve staÅ¾enÃ©m archivu najdete podadresÃ¡Å™ getid3. ZkopÃ­rujte prosÃ­m obsah tohoto adresÃ¡Å™e do adresÃ¡Å™e Serendipity "bundled-libs".</p>');
 
-@define('PLUGIN_GETID3_LIBNOTFOUND',    'Knihovna getID3 nebyla nalezena ani v adresáøi bundled-libs, ani v adresáøi pluginu!');
-@define('PLUGIN_GETID3_LIBFOUNDBUNDLED','Knihovna getID3 byla nalezena v adresáøi bundled-libs.');
-@define('PLUGIN_GETID3_LIBFOUNDPLUGIN', 'Knihovna getID3 nalezena v adresáøi pluginu.');
+@define('PLUGIN_GETID3_LIBNOTFOUND',    'Knihovna getID3 nebyla nalezena ani v adresÃ¡Å™i bundled-libs, ani v adresÃ¡Å™i pluginu!');
+@define('PLUGIN_GETID3_LIBFOUNDBUNDLED','Knihovna getID3 byla nalezena v adresÃ¡Å™i bundled-libs.');
+@define('PLUGIN_GETID3_LIBFOUNDPLUGIN', 'Knihovna getID3 nalezena v adresÃ¡Å™i pluginu.');
 

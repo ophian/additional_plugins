@@ -7,14 +7,14 @@
  *  @translated 2009/08/20
  */
 
-@define('PLUGIN_GETID3', 'getID3() Unterstützung zum Erkennen von Medien Eigenschaften');
-@define('PLUGIN_GETID3_DESC', 'Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften für Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.');
+@define('PLUGIN_GETID3', 'getID3() UnterstÃ¼tzung zum Erkennen von Medien Eigenschaften');
+@define('PLUGIN_GETID3_DESC', 'Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften fÃ¼r Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.');
 
 @define('PLUGIN_GETID3_INSTALL_DESC', 
 '<h3>Installationsanweisung</h3>' .
-'<p>Die Bibliothek getID3() wird nicht zusamen mit dem Plugin ausgeliefert. Sie müssen die getid3 Dateien selbst von ' .
-'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a> herunter laden. <b>Es wird nur die 1.x Version unterstützt!</b></p>' .
-'<p>In dem Archiv finden Sie ein Unterverzeichnis mit Namen getid3, dieses müssen Sie in das Serendipity Verzeichnis "bundled-libs" entpacken.</p>');
+'<p>Die Bibliothek getID3() wird nicht zusamen mit dem Plugin ausgeliefert. Sie mÃ¼ssen die getid3 Dateien selbst von ' .
+'<a href="http://getid3.org/" target="_blank" rel="noopener">getid3.org</a> herunter laden. <b>Es wird nur die 1.x Version unterstÃ¼tzt!</b></p>' .
+'<p>In dem Archiv finden Sie ein Unterverzeichnis mit Namen getid3, dieses mÃ¼ssen Sie in das Serendipity Verzeichnis "bundled-libs" entpacken.</p>');
 
 @define('PLUGIN_GETID3_LIBNOTFOUND', 'GetID3 wurde weder im bundled-lib noch im Plugin Verzeichnis gefunden!');
 @define('PLUGIN_GETID3_LIBFOUNDBUNDLED','GetID3 wurde unter den bundled-libs gefunden');
