@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,23 +10,22 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_randomblogdescription extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_NAME;
-    var $dbold = '';
+    public $title = PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_NAME;
+
+    private $dbold = '';
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',        PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_NAME);
         $propbag->add('description', PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Florian Anderiasch');
-        $propbag->add('version',     '0.7');
         $propbag->add('configuration', array('enabled', 'blogdescription'));
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1.6',
-            'php'         => '5.6.0'
+        $propbag->add('version',        '1.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks', array('frontend_configure' => true));
         $propbag->add('groups', array('BACKEND_METAINFORMATION'));

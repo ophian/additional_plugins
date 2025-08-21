@@ -1,15 +1,16 @@
 <?php
 
 /**
- * @author VladimÌr Ajgl <vlada@ajgl.cz>
- * EN-Revision: Revision of lang_en.inc.php
- * Translated on 2007/11/25
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
+ *  EN-Revision: Revision of lang_en.inc.php
+ *  Translated on 2007/11/25
  */
 
-@define('PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_NAME', 'N·hodn˝ podtitulek blogu');
-@define('PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_DESC', 'Zobrazuje n·hodn˝ podtitulek v z·hlavÌ blogu. (OddÏlen· datab·ze musÌ b˝t spravov·na ruËnÏ)');
-@define('RBD_ENTRIES', 'Podtitulky');
-@define('RBD_ENTRIES_BLAHBLAH', 'Jeden podtitulek na ¯·dce v n·sledujÌcÌm form·tu: [Ëetnost:]podtitulek (Nap¯Ìklad: "4:J· jsem blog" nebo jenom "J· jsem blog")');
-@define('RBD_ACTIVE', 'Zapnout?');
-@define('RBD_ACTIVE_BLAHBLAH', 'M· b˝t plugina aktivnÌ?');
+@define('PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_NAME',  'N√°hodn√Ω podtitulek blogu');
+@define('PLUGIN_EVENT_RANDOMBLOGDESCRIPTION_DESC',  'Zobrazuje n√°hodn√Ω podtitulek v z√°hlav√≠ blogu. (Oddƒõlen√° datab√°ze mus√≠ b√Ωt spravov√°na ruƒçnƒõ)');
+@define('RBD_ENTRIES',                              'Podtitulky');
+@define('RBD_ENTRIES_BLAHBLAH',                     'Jeden podtitulek na ≈ô√°dce v n√°sleduj√≠c√≠m form√°tu: [ƒçetnost:]podtitulek (Nap≈ô√≠klad: "4:J√° jsem blog" nebo jenom "J√° jsem blog")');
+@define('RBD_ACTIVE',                               'Zapnout?');
+@define('RBD_ACTIVE_BLAHBLAH',                      'M√° b√Ωt plugina aktivn√≠?');
 
+?>
