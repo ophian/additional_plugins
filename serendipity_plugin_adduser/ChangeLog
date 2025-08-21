@@ -1,3 +1,12 @@
+3.0.5:
+------
+ * Redirect to backend when logging-in via Plugin_loginbox template
+ * Use native htmlspecialchars()
+
+3.0.4:
+------
+ * Remove a global where not in need
+
 3.0.3:
 ------
  * Allow serendipity_common _adduser addUser and addAuthor methods 4th parameter INT type

@@ -234,7 +234,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $html .= '<select id="plugin_adduser_usergroups" name="serendipity[plugin][usergroups][]" multiple="true" size="5">';
         if (is_array($groups)) {
             foreach($groups AS $group) {
-                $html .= '<option value="'. $group['id'] .'"'. (isset($valid[$group['id']]) ? ' selected="selected"' : '') .'>'. (function_exists('serendipity_specialchars') ? serendipity_specialchars($group['name']) : htmlspecialchars($group['name'], ENT_COMPAT, LANG_CHARSET)) .'</option>' . "\n";
+                $html .= '<option value="'. $group['id'] .'"'. (isset($valid[$group['id']]) ? ' selected="selected"' : '') .'>'. htmlspecialchars($group['name']) .'</option>' . "\n";
             }
         }
 
