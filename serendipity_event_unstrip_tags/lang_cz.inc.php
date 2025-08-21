@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/22
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
-@define('PLUGIN_EVENT_UNSTRIP_NAME', 'Transformace HTML v komentáøích');
-@define('PLUGIN_EVENT_UNSTRIP_DESC', 'Umo¾òuje vkládat HTML tagy do komentáøù k pøíspìvkùm (místo jejich odstranìní, bez tohoto modulu jsou pøevádìny na HTML entity). Musí bıt první ze v¹ech znaèkovacích (markup) pluginù v seznamu pluginù událostí!');
-@define('PLUGIN_EVENT_UNSTRIP_TRANSFORM', 'HTML tagy budou pøevedeny na entity.');
+@define('PLUGIN_EVENT_UNSTRIP_NAME', 'Transformace HTML v komentÃ¡Å™Ã­ch');
+@define('PLUGIN_EVENT_UNSTRIP_DESC', 'UmoÅ¾Åˆuje vklÃ¡dat HTML tagy do komentÃ¡Å™Å¯ k pÅ™Ã­spÄ›vkÅ¯m (mÃ­sto jejich odstranÄ›nÃ­, bez tohoto modulu jsou pÅ™evÃ¡dÄ›ny na HTML entity). MusÃ­ bÃ½t prvnÃ­ ze vÅ¡ech znaÄkovacÃ­ch (markup) pluginÅ¯ v seznamu pluginÅ¯ udÃ¡lostÃ­!');
+@define('PLUGIN_EVENT_UNSTRIP_TRANSFORM', 'HTML tagy budou pÅ™evedeny na entity.');
 
