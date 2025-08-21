@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ('Don\'t hack!');
 }
@@ -11,9 +13,9 @@ if (IN_serendipity !== true) {
 // Feb 12, 2009 by J.M.Roth <jm+dpsh@roth.lu>
 class serendipity_event_dpsyntaxhighlighter extends serendipity_event {
 
-    var $title = PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_NAME;
+    public $title = PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_NAME;
 
-    var $version = '3.0.83'; // helps to be easily able to upgrade on upstream upgrade
+    private $version = '3.0.83'; // helps to be easily able to upgrade on upstream upgrade
 
     /**
      * _get_directory_match support function:
@@ -38,16 +40,14 @@ class serendipity_event_dpsyntaxhighlighter extends serendipity_event {
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',           PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_NAME);
         $propbag->add('description',    PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_DESC);
         $propbag->add('author',         'Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)');
-        $propbag->add('version',        '3.20');
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.2.0'
+        $propbag->add('version',        '4.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array('frontend_header' => true, 'frontend_footer' => true, 'backend_preview' => true));
         $propbag->add('stackable',      false);

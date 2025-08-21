@@ -1,19 +1,19 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/31
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2010/03/06
  */
 
-@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_NAME', 'Zvırazòovaè syntaxe dp.SyntaxHighlighter');
-@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_DESC', 'Tento plugin je JavaScriptovı zvırazòovaè syntaxe zalo¾enı na stejnojmeném kódu Alexe Gorbaèeva.'
-       .'Tento plugin zatì¾uje server ménì ne¾ GeSHi a vkládá ménì znaèek do HTML kódu. Pøedstavuje èistìj¹í, odlehèenìj¹í alternativu ke GeSHi. '
-       .'Plugin vy¾aduje pou¾ití ¹ablony vzhledu, kterı podporuje následující hooky: frontend_header, frontend_footer (a volitelnì také backend_preview pro'
-       .'zobrazování i v administraèní sekci).');
-@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_PATH', 'Cesta ke skriptùm');
-@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_PATH_DESC', 'Zadejte plnou HTTP cestu (v¹echno po názvu Va¹í domény), která vede do adresáøe s tímto pluginem.');
-@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_THEME', 'Vyberte téma (¹ablonu vzhledu)');
-@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_THEME_DESC', 'Vyberte téma (¹ablonu vzhledu, styl) pro zvıraznìní syntaxe, která se nejlépe hodí k Va¹emu blogu.');
+@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_NAME', 'ZvÃ½razÅˆovaÄ syntaxe dp.SyntaxHighlighter');
+@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_DESC', 'Tento plugin je JavaScriptovÃ½ zvÃ½razÅˆovaÄ syntaxe zaloÅ¾enÃ½ na stejnojmenÃ©m kÃ³du Alexe GorbaÄeva.'
+       .'Tento plugin zatÄ›Å¾uje server mÃ©nÄ› neÅ¾ GeSHi a vklÃ¡dÃ¡ mÃ©nÄ› znaÄek do HTML kÃ³du. PÅ™edstavuje ÄistÄ›jÅ¡Ã­, odlehÄenÄ›jÅ¡Ã­ alternativu ke GeSHi. '
+       .'Plugin vyÅ¾aduje pouÅ¾itÃ­ Å¡ablony vzhledu, kterÃ½ podporuje nÃ¡sledujÃ­cÃ­ hooky: frontend_header, frontend_footer (a volitelnÄ› takÃ© backend_preview pro'
+       .'zobrazovÃ¡nÃ­ i v administraÄnÃ­ sekci).');
+@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_PATH', 'Cesta ke skriptÅ¯m');
+@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_PATH_DESC', 'Zadejte plnou HTTP cestu (vÅ¡echno po nÃ¡zvu VaÅ¡Ã­ domÃ©ny), kterÃ¡ vede do adresÃ¡Å™e s tÃ­mto pluginem.');
+@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_THEME', 'Vyberte tÃ©ma (Å¡ablonu vzhledu)');
+@define('PLUGIN_EVENT_DPSYNTAXHIGHLIGHTER_THEME_DESC', 'Vyberte tÃ©ma (Å¡ablonu vzhledu, styl) pro zvÃ½raznÄ›nÃ­ syntaxe, kterÃ¡ se nejlÃ©pe hodÃ­ k VaÅ¡emu blogu.');
 
