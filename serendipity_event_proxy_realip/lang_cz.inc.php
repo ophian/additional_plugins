@@ -1,11 +1,11 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2013/03/31
  */
 @define('PLUGIN_EVENT_PROXY_REALIP_NAME', 'Proxy Real-IP');
-@define('PLUGIN_EVENT_PROXY_REALIP_DESC', 'Nastaví správnou náv¹tìvnickou IP adresu pro ètenáøe, kteøí pou¾ívají Proxy webserver. Mìl by bıt prvním pluginem v seznamu pluginù.');
-@define('PLUGIN_EVENT_PROXY_REALIP_VAR', 'Promìnná s IP adresou');
-@define('PLUGIN_EVENT_PROXY_REALIP_VAR_DESC', 'Název promìnné, která obsahuje správnou IP adresu. napø. $_SERVER[\'X-FORWARDED-FOR\']');
+@define('PLUGIN_EVENT_PROXY_REALIP_DESC', 'NastavÃ­ sprÃ¡vnou nÃ¡vÅ¡tÄ›vnickou IP adresu pro ÄtenÃ¡Å™e, kteÅ™Ã­ pouÅ¾Ã­vajÃ­ Proxy webserver. MÄ›l by bÃ½t prvnÃ­m pluginem v seznamu pluginÅ¯.');
+@define('PLUGIN_EVENT_PROXY_REALIP_VAR', 'PromÄ›nnÃ¡ s IP adresou');
+@define('PLUGIN_EVENT_PROXY_REALIP_VAR_DESC', 'NÃ¡zev promÄ›nnÃ©, kterÃ¡ obsahuje sprÃ¡vnou IP adresu. napÅ™. $_SERVER[\'X-FORWARDED-FOR\']');
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
   die("Don't hack!");
 }
@@ -8,21 +10,19 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_proxy_realip extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_PROXY_REALIP_NAME;
+    public $title = PLUGIN_EVENT_PROXY_REALIP_NAME;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name', PLUGIN_EVENT_PROXY_REALIP_NAME);
         $propbag->add('description', PLUGIN_EVENT_PROXY_REALIP_DESC);
         $propbag->add('stackable', false);
         $propbag->add('author', 'kleinerChemiker');
-        $propbag->add('version', '1.0.2');
-        $propbag->add('requirements', array(
-            'serendipity'   => '1.6.2',
-            'smarty'        => '2.6.7',
-            'php'           => '5.3.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('BACKEND_FEATURES'));
         $propbag->add('event_hooks', array('frontend_configure' => true));
