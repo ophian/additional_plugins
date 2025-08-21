@@ -18,15 +18,13 @@ class serendipity_event_flickr extends serendipity_event
     // should describe the plugin: author, version, requirements, ...
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_FLICKR_NAME);
         $propbag->add('description',   PLUGIN_EVENT_FLICKR_DESC);
         $propbag->add('groups',        array('IMAGES'));
         $propbag->add('stackable',     false);
         $propbag->add('license',       'GPL');
         $propbag->add('author',        'Jay Bertrand');
-        $propbag->add('version',        '1.0.0');
+        $propbag->add('version',        '1.0.1');
         $propbag->add('requirements',   array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
