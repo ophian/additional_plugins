@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,18 +12,15 @@ class serendipity_event_ljupdate extends serendipity_event
 {
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name', PLUGIN_LJUPDATE_TITLE);
         $propbag->add('description', PLUGIN_LJUPDATE_DESCRIPTION);
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('author', 'Kaustubh Srikanth, Ivan Makhonin');
-        $propbag->add('version', '1.14');
-
 
         $propbag->add('event_hooks',    array(
             'backend_display'      => true,
@@ -357,7 +356,7 @@ class serendipity_event_ljupdate extends serendipity_event
 
                         $login_url = '//blog.myspace.com/index.cfm?fuseaction=login.process';
                         $login_params = "email=$ms_userid&password=$ms_passwd&Remember=0";
-                        echo "Opening URL $login_url with data " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($login_params) : htmlspecialchars($login_params, ENT_COMPAT, LANG_CHARSET)) . "<br />\n";
+                        echo "Opening URL $login_url with data " . htmlspecialchars($login_params) . "<br />\n";
 
                         $ch = curl_init();
                         curl_setopt($ch, CURLOPT_URL, $login_url);
@@ -377,7 +376,7 @@ class serendipity_event_ljupdate extends serendipity_event
                         $post_url = '//blog.myspace.com/index.cfm?fuseaction=blog.processCreate';
                         $post_params = "postMonth=$month&postDay=$day&postYear=$year&postHour=$hour&postMinute=$minute&postTimeMarker=$marker&subject=$subject&body=$content";
 
-                        echo "Opening URL $post_url with data " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($post_params) : htmlspecialchars($post_params, ENT_COMPAT, LANG_CHARSET)) . "<br />\n";
+                        echo "Opening URL $post_url with data " . htmlspecialchars($post_params) . "<br />\n";
 
                         $ch = curl_init();
                         curl_setopt($ch, CURLOPT_URL, $post_url);

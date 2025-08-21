@@ -6,28 +6,28 @@
  *  EN-Revision: Revision of lang_en.inc.php
  */
 
-@define('PLUGIN_LJUPDATE_TITLE', 'LJ/MySpace/Serendipity Güncelleme Eklentisi');
-@define('PLUGIN_LJUPDATE_DESCRIPTION', 'XMLRPC teknolojisini kullanarak  yazýlarýnýzý Livejournal/MySpace/Serendipity yazýlýmlarýna göndererek kendiliðinden yayýnlanmasýný saðlayabilirsiniz.');
+@define('PLUGIN_LJUPDATE_TITLE', 'LJ/MySpace/Serendipity GÃ¼ncelleme Eklentisi');
+@define('PLUGIN_LJUPDATE_DESCRIPTION', 'XMLRPC teknolojisini kullanarak  yazÄ±larÄ±nÄ±zÄ± Livejournal/MySpace/Serendipity yazÄ±lÄ±mlarÄ±na gÃ¶ndererek kendiliÄŸinden yayÄ±nlanmasÄ±nÄ± saÄŸlayabilirsiniz.');
 @define('PLUGIN_LJUPDATE_SERVER', 'LJ Sunucusu');
-@define('PLUGIN_LJUPDATE_SERVER_DESC', 'Kullandýðýnýz sunucu (normalde www.livejournal.com)');
-@define('PLUGIN_LJUPDATE_USERNAME', 'Kullanýcý Adý');
-@define('PLUGIN_LJUPDATE_USERNAME_DESC', 'LJ/MySpace alanýna baðlanmak için kullandýðýnýz kullanýcý adý');
-@define('PLUGIN_LJUPDATE_PASSWORD', 'Þifre');
-@define('PLUGIN_LJUPDATE_PASSWORD_DESC', 'LJ/MySpace alanýna baðlanmak için kullandýðýnýz þifre');
-@define('PLUGIN_LJUPDATE_UPDATE', 'LJ Güncelleme Seçenekleri');
-@define('PLUGIN_LJUPDATE_MIRROR', 'Bu yazýyý benim Livejournal hesabýma aynala');
-@define('PLUGIN_LJUPDATE_USERPIC', 'Kullanýcý Resmi');
-@define('PLUGIN_LJUPDATE_SECURITY', 'Güvenlik');
+@define('PLUGIN_LJUPDATE_SERVER_DESC', 'KullandÄ±ÄŸÄ±nÄ±z sunucu (normalde www.livejournal.com)');
+@define('PLUGIN_LJUPDATE_USERNAME', 'KullanÄ±cÄ± AdÄ±');
+@define('PLUGIN_LJUPDATE_USERNAME_DESC', 'LJ/MySpace alanÄ±na baÄŸlanmak iÃ§in kullandÄ±ÄŸÄ±nÄ±z kullanÄ±cÄ± adÄ±');
+@define('PLUGIN_LJUPDATE_PASSWORD', 'Åžifre');
+@define('PLUGIN_LJUPDATE_PASSWORD_DESC', 'LJ/MySpace alanÄ±na baÄŸlanmak iÃ§in kullandÄ±ÄŸÄ±nÄ±z ÅŸifre');
+@define('PLUGIN_LJUPDATE_UPDATE', 'LJ GÃ¼ncelleme SeÃ§enekleri');
+@define('PLUGIN_LJUPDATE_MIRROR', 'Bu yazÄ±yÄ± benim Livejournal hesabÄ±ma aynala');
+@define('PLUGIN_LJUPDATE_USERPIC', 'KullanÄ±cÄ± Resmi');
+@define('PLUGIN_LJUPDATE_SECURITY', 'GÃ¼venlik');
 @define('PLUGIN_LJUPDATE_SECURITY_PUBLIC', 'Anonim');
-@define('PLUGIN_LJUPDATE_SECURITY_PRIVATE', 'Özel');
-@define('PLUGIN_LJUPDATE_SECURITY_FRIENDS', 'Arkadaþlar');
-@define('PLUGIN_LJUPATE_CURRENTMUSIC', 'Þuanki müzik');
-@define('PLUGIN_LJUPATE_CURRENTMOOD', 'Þuanki durum');
+@define('PLUGIN_LJUPDATE_SECURITY_PRIVATE', 'Ã–zel');
+@define('PLUGIN_LJUPDATE_SECURITY_FRIENDS', 'ArkadaÅŸlar');
+@define('PLUGIN_LJUPATE_CURRENTMUSIC', 'Åžuanki mÃ¼zik');
+@define('PLUGIN_LJUPATE_CURRENTMOOD', 'Åžuanki durum');
 @define('PLUGIN_LJUPDATE_CUT', 'LJ Kesme Metni');
-@define('PLUGIN_LJUPDATE_CUT_DESC', 'Bu metin yazýyý bölmeden önce kullanýlacak. Tüm geniþletilmiþ uzun yazýlarýnýz LJ alanýnda kýsaltýlýp kesilerek gösterilir.');
-@define('PLUGIN_LJUPDATE_READCOMMENTS', 'gönderilen/okunan görüþler');
-@define('PLUGIN_LJUPDATE_COMMENTS', 'LJ görüþleri devredýþý');
+@define('PLUGIN_LJUPDATE_CUT_DESC', 'Bu metin yazÄ±yÄ± bÃ¶lmeden Ã¶nce kullanÄ±lacak. TÃ¼m geniÅŸletilmiÅŸ uzun yazÄ±larÄ±nÄ±z LJ alanÄ±nda kÄ±saltÄ±lÄ±p kesilerek gÃ¶sterilir.');
+@define('PLUGIN_LJUPDATE_READCOMMENTS', 'gÃ¶nderilen/okunan gÃ¶rÃ¼ÅŸler');
+@define('PLUGIN_LJUPDATE_COMMENTS', 'LJ gÃ¶rÃ¼ÅŸleri devredÄ±ÅŸÄ±');
 
-@define('PLUGIN_LJUPDATE_CATEGORY', 'Yabancý Konubaþlýðý ID Numarasý');
-@define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Bir konu baþlýðýnýn ID numarasýný yazýn(Serendipity içinde yayýnlanacaksa');
+@define('PLUGIN_LJUPDATE_CATEGORY', 'YabancÄ± KonubaÅŸlÄ±ÄŸÄ± ID NumarasÄ±');
+@define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Bir konu baÅŸlÄ±ÄŸÄ±nÄ±n ID numarasÄ±nÄ± yazÄ±n(Serendipity iÃ§inde yayÄ±nlanacaksa');
 

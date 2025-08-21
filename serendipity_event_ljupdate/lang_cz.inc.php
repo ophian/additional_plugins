@@ -1,32 +1,32 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/27
  */
 
 @define('PLUGIN_LJUPDATE_TITLE', 'LJ/MySpace/Serendipity aktualizace');
-@define('PLUGIN_LJUPDATE_DESCRIPTION', 'PouæÌv· XMLRPC protokol pro zasÌl·nÌ p¯ÌspÏvk˘ na LiveJournal/MySpace/Serendipity');
+@define('PLUGIN_LJUPDATE_DESCRIPTION', 'Pou≈æ√≠v√° XMLRPC protokol pro zas√≠l√°n√≠ p≈ô√≠spƒõvk≈Ø na LiveJournal/MySpace/Serendipity');
 @define('PLUGIN_LJUPDATE_SERVER', 'LiveJournal server');
-@define('PLUGIN_LJUPDATE_SERVER_DESC', 'Server, kter˝ pouæÌv·te (obvykle www.livejournal.com)');
-@define('PLUGIN_LJUPDATE_USERNAME', 'UæivatelskÈ jmÈno');
-@define('PLUGIN_LJUPDATE_USERNAME_DESC', 'P¯ihlaπovacÌ jmÈno do sluæeb LiveJournal/MySpace');
+@define('PLUGIN_LJUPDATE_SERVER_DESC', 'Server, kter√Ω pou≈æ√≠v√°te (obvykle www.livejournal.com)');
+@define('PLUGIN_LJUPDATE_USERNAME', 'U≈æivatelsk√© jm√©no');
+@define('PLUGIN_LJUPDATE_USERNAME_DESC', 'P≈ôihla≈°ovac√≠ jm√©no do slu≈æeb LiveJournal/MySpace');
 @define('PLUGIN_LJUPDATE_PASSWORD', 'Heslo');
-@define('PLUGIN_LJUPDATE_PASSWORD_DESC', 'Heslo pro p¯ihl·πenÌ do LiveJournal/MySpace');
+@define('PLUGIN_LJUPDATE_PASSWORD_DESC', 'Heslo pro p≈ôihl√°≈°en√≠ do LiveJournal/MySpace');
 @define('PLUGIN_LJUPDATE_UPDATE', 'Volby LiveJournal Update');
-@define('PLUGIN_LJUPDATE_MIRROR', 'Zrcadlit tento p¯ÌspÏvek v mÈm LiveJournalu');
-@define('PLUGIN_LJUPDATE_USERPIC', 'Obr·zek uæivatele');
-@define('PLUGIN_LJUPDATE_SECURITY', 'BezpeËnost');
-@define('PLUGIN_LJUPDATE_SECURITY_PUBLIC', 'Ve¯ejn˝');
-@define('PLUGIN_LJUPDATE_SECURITY_PRIVATE', 'Soukrom˝');
-@define('PLUGIN_LJUPDATE_SECURITY_FRIENDS', 'Kamar·di');
-@define('PLUGIN_LJUPATE_CURRENTMUSIC', 'Pr·vÏ poslouch·m');
-@define('PLUGIN_LJUPATE_CURRENTMOOD', 'Moment·lnÌ n·lada');
+@define('PLUGIN_LJUPDATE_MIRROR', 'Zrcadlit tento p≈ô√≠spƒõvek v m√©m LiveJournalu');
+@define('PLUGIN_LJUPDATE_USERPIC', 'Obr√°zek u≈æivatele');
+@define('PLUGIN_LJUPDATE_SECURITY', 'Bezpeƒçnost');
+@define('PLUGIN_LJUPDATE_SECURITY_PUBLIC', 'Ve≈ôejn√Ω');
+@define('PLUGIN_LJUPDATE_SECURITY_PRIVATE', 'Soukrom√Ω');
+@define('PLUGIN_LJUPDATE_SECURITY_FRIENDS', 'Kamar√°di');
+@define('PLUGIN_LJUPATE_CURRENTMUSIC', 'Pr√°vƒõ poslouch√°m');
+@define('PLUGIN_LJUPATE_CURRENTMOOD', 'Moment√°ln√≠ n√°lada');
 @define('PLUGIN_LJUPDATE_CUT', 'LiveJournal Cut Text');
-@define('PLUGIN_LJUPDATE_CUT_DESC', 'Tento text bude umÌstÏn p¯ed p¯edÏl. Vπechny p¯ÌspÏvky s rozπÌ¯enou textovou Ë·stÌ se na LiveJournalu objevÌ s p¯edÏlem.');
-@define('PLUGIN_LJUPDATE_READCOMMENTS', 'poslat/ËÌst koment·¯e');
-@define('PLUGIN_LJUPDATE_COMMENTS', 'Vypnout koment·¯e LiveJournalu');
+@define('PLUGIN_LJUPDATE_CUT_DESC', 'Tento text bude um√≠stƒõn p≈ôed p≈ôedƒõl. V≈°echny p≈ô√≠spƒõvky s roz≈°√≠≈ôenou textovou ƒç√°st√≠ se na LiveJournalu objev√≠ s p≈ôedƒõlem.');
+@define('PLUGIN_LJUPDATE_READCOMMENTS', 'poslat/ƒç√≠st koment√°≈ôe');
+@define('PLUGIN_LJUPDATE_COMMENTS', 'Vypnout koment√°≈ôe LiveJournalu');
 
-@define('PLUGIN_LJUPDATE_CATEGORY', 'ID identifik·tor cizÌ kategorie');
-@define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Zadejte ID kategorie, do kterÈ chcete posÌlat p¯ÌspÏvky (tato volba se pouæije p¯i posÌl·nÌ do blog˘ Serendipity)');
+@define('PLUGIN_LJUPDATE_CATEGORY', 'ID identifik√°tor ciz√≠ kategorie');
+@define('PLUGIN_LJUPDATE_CATEGORY_DESC', 'Zadejte ID kategorie, do kter√© chcete pos√≠lat p≈ô√≠spƒõvky (tato volba se pou≈æije p≈ôi pos√≠l√°n√≠ do blog≈Ø Serendipity)');
 
