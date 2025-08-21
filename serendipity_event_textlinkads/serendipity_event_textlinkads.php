@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,23 +10,21 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_textlinkads extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_TEXTLINKADS_TITLE;
+    public $title = PLUGIN_EVENT_TEXTLINKADS_TITLE;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_TEXTLINKADS_TITLE);
         $propbag->add('description',   PLUGIN_EVENT_TEXTLINKADS_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('version',        '1.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups',        array('FRONTEND_EXTERNAL_SERVICES'));
-        $propbag->add('version',       '0.15');
         $propbag->add('configuration', array('htmlid', 'xmlfilename'));
         $propbag->add('event_hooks',   array(
             'css'                  => true,
@@ -234,7 +234,7 @@ class serendipity_event_textlinkads extends serendipity_event
     
         $basedir = dirname(__FILE__) . '/';
         if (!is_dir($basedir . $params['dir'])) {
-            echo __FUNCTION__ .": dir '{$basedir}" . (function_exists('serendipity_specialchars') ? serendipity_specialchars($params['dir']) : htmlspecialchars($params['dir'], ENT_COMPAT, LANG_CHARSET)) . " does not exist";
+            echo __FUNCTION__ .": dir '{$basedir}" . htmlspecialchars($params['dir']) . " does not exist";
             return;
         }
 

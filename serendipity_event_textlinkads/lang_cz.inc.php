@@ -1,20 +1,20 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/04
  */
 
-@define('PLUGIN_EVENT_TEXTLINKADS_TITLE', 'Vlo¾ené reklamy (TextLinkAds.com, vlastní)');
-@define('PLUGIN_EVENT_TEXTLINKADS_DESC', 'Vkládá reklamy do blogu.');
-@define('PLUGIN_EVENT_TEXTLINKADS_INFO', '<p>Je tøeba upravit soubory ¹ablon *.tpl a zadat, kam mají bıt vkládány reklamy, jinak se na blogu reklamy neobjeví. Pou¾ijte následující kód ¹ablonovacího systému Smarty pro vlo¾ení reklam TextLinkAd.com: {serendipity_hookPlugin hook="external_service_tla" hookAll="true"}. Pokud chcete pou¾ít vlastní metodu pro vlo¾ení textovıch reklam, pou¾ijte tuto funkci Smarty následovnì:</p>
+@define('PLUGIN_EVENT_TEXTLINKADS_TITLE', 'VloÅ¾enÃ© reklamy (TextLinkAds.com, vlastnÃ­)');
+@define('PLUGIN_EVENT_TEXTLINKADS_DESC', 'VklÃ¡dÃ¡ reklamy do blogu.');
+@define('PLUGIN_EVENT_TEXTLINKADS_INFO', '<p>Je tÅ™eba upravit soubory Å¡ablon *.tpl a zadat, kam majÃ­ bÃ½t vklÃ¡dÃ¡ny reklamy, jinak se na blogu reklamy neobjevÃ­. PouÅ¾ijte nÃ¡sledujÃ­cÃ­ kÃ³d Å¡ablonovacÃ­ho systÃ©mu Smarty pro vloÅ¾enÃ­ reklam TextLinkAd.com: {serendipity_hookPlugin hook="external_service_tla" hookAll="true"}. Pokud chcete pouÅ¾Ã­t vlastnÃ­ metodu pro vloÅ¾enÃ­ textovÃ½ch reklam, pouÅ¾ijte tuto funkci Smarty nÃ¡sledovnÄ›:</p>
 <p>{serendipity_hookPlugin hook="external_service_ad" hookAll="true" data="X:Y"}</p>
-<p>V kódu vı¹e nahraïte "X" jménem podadresáøe (relativí cesta vzhledem k adresáøi s pluginy - obvykle "plugins/"), kde umístíte jednotlivé reklamy. Plugin pak v pravidelnıch intervalech danıch parametrem "Y" ("weekly", "daily", "hourly", "half-hour", "per-call") projede adresáø a náhodnì vybere jeden z pøítomnıch *.html souborù a zobrazí jeho obsah jako reklamu.</p>
-<p>Napøíklad, máte podadresáøe "hlavicky" a "paticky". V podadresáøi "hlavicky" máte soubory "hezka.html", "vtipna.html" a "obrovska.html". V podadresáøi "paticky" jsou sobory "obrovska.html" a "hrozna.html". Pak pozmìníte ¹ablonu index.tpl tak, ¾e nahoru vlo¾íte:</p>
+<p>V kÃ³du vÃ½Å¡e nahraÄte "X" jmÃ©nem podadresÃ¡Å™e (relativÃ­ cesta vzhledem k adresÃ¡Å™i s pluginy - obvykle "plugins/"), kde umÃ­stÃ­te jednotlivÃ© reklamy. Plugin pak v pravidelnÃ½ch intervalech danÃ½ch parametrem "Y" ("weekly", "daily", "hourly", "half-hour", "per-call") projede adresÃ¡Å™ a nÃ¡hodnÄ› vybere jeden z pÅ™Ã­tomnÃ½ch *.html souborÅ¯ a zobrazÃ­ jeho obsah jako reklamu.</p>
+<p>NapÅ™Ã­klad, mÃ¡te podadresÃ¡Å™e "hlavicky" a "paticky". V podadresÃ¡Å™i "hlavicky" mÃ¡te soubory "hezka.html", "vtipna.html" a "obrovska.html". V podadresÃ¡Å™i "paticky" jsou sobory "obrovska.html" a "hrozna.html". Pak pozmÄ›nÃ­te Å¡ablonu index.tpl tak, Å¾e nahoru vloÅ¾Ã­te:</p>
 <p>{serendipity_hookPlugin hook="external_service_ad" hookAll="true" data="hlavicky:daily"}</p>
-<p>a do èásti s patièkou vlo¾íte následující:</p>
+<p>a do ÄÃ¡sti s patiÄkou vloÅ¾Ã­te nÃ¡sledujÃ­cÃ­:</p>
 <p>{serendipity_hookPlugin hook="external_service_ad" hookAll="true" data="paticky:weekly"}</p>
-<p>Kdy¾ pak budete prohlí¾et blog, uvidíte na místech vlo¾ení kódu reklamy, které se budou mìnit se zadanou frekvencí. Do HTML souborù mù¾ete vlo¾it libovolnı HTML kód (napø. libovolnı JavaScrip, GoogleAdSense, apod.)');
-@define('PLUGIN_EVENT_TEXTLINKADS_HTMLID', '(Pouze TextLinkAds) CSS ID identifikátor HTML tagu, kterı obsahuje textové reklamy');
-@define('PLUGIN_EVENT_TEXTLINKADS_XMLFILENAME', '(Pouze TextLinkAds) Jméno lokálního souboru, pdo ukládání textovıch odkazù');
+<p>KdyÅ¾ pak budete prohlÃ­Å¾et blog, uvidÃ­te na mÃ­stech vloÅ¾enÃ­ kÃ³du reklamy, kterÃ© se budou mÄ›nit se zadanou frekvencÃ­. Do HTML souborÅ¯ mÅ¯Å¾ete vloÅ¾it libovolnÃ½ HTML kÃ³d (napÅ™. libovolnÃ½ JavaScrip, GoogleAdSense, apod.)');
+@define('PLUGIN_EVENT_TEXTLINKADS_HTMLID', '(Pouze TextLinkAds) CSS ID identifikÃ¡tor HTML tagu, kterÃ½ obsahuje textovÃ© reklamy');
+@define('PLUGIN_EVENT_TEXTLINKADS_XMLFILENAME', '(Pouze TextLinkAds) JmÃ©no lokÃ¡lnÃ­ho souboru, pdo uklÃ¡dÃ¡nÃ­ textovÃ½ch odkazÅ¯');
 
