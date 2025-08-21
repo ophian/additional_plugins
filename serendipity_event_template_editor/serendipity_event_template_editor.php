@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,21 +10,21 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_template_editor extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_TEMPLATE_EDITOR_NAME;
-    var $pluginPath;
+    public $title = PLUGIN_EVENT_TEMPLATE_EDITOR_NAME;
+
+    private $pluginPath;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_TEMPLATE_EDITOR_NAME);
         $propbag->add('description',   PLUGIN_EVENT_TEMPLATE_EDITOR_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda');
         $propbag->add('license',       'GPL');
-        $propbag->add('version',       '0.10');
-        $propbag->add('requirements',  array(
-            'serendipity' => '2.0'
+        $propbag->add('version',        '1.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array('backend_templates_configuration_bottom' => true,
                                              'backend_templates_configuration_none' => true,
@@ -192,13 +194,13 @@ class serendipity_event_template_editor extends serendipity_event
                     }
 
                     if (isset($serendipity['GET']['message'])) {
-                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['message']) : htmlspecialchars($serendipity['GET']['message'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
+                        echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span>' . htmlspecialchars($serendipity['GET']['message']) . '</span>';
                     }
                     if (isset($serendipity['GET']['success'])) {
-                        echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['success']) : htmlspecialchars($serendipity['GET']['success'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
+                        echo '<span class="msg_success"><span class="icon-ok-circled" aria-hidden="true"></span> ' . htmlspecialchars($serendipity['GET']['success']) . '</span>';
                     }
                     if (isset($serendipity['GET']['error'])) {
-                        echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($serendipity['GET']['error']) : htmlspecialchars($serendipity['GET']['error'], ENT_COMPAT, LANG_CHARSET)) . '</span>';
+                        echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> ' . htmlspecialchars($serendipity['GET']['error']) . '</span>';
                     }
 
                     #only necessary for delivering the javascript and css
@@ -325,7 +327,7 @@ class serendipity_event_template_editor extends serendipity_event
         echo '<h2>' . $heading . '</h2>
         <form action="'.$serendipity['baseURL'] . 'index.php?/plugin/template_editor_save" method="post">
             <input type="hidden" name="path" value="' . $path . '">
-            <textarea id="template_editor" name="content" rows="30">'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($content) : htmlspecialchars($content, ENT_COMPAT, LANG_CHARSET)).'</textarea>
+            <textarea id="template_editor" name="content" rows="30">'.htmlspecialchars($content).'</textarea>
             <div class="form_buttons">
                 <input type="submit" value="' . SAVE . '">
             </div>
@@ -494,8 +496,8 @@ class serendipity_event_template_editor extends serendipity_event
                 //Now that the fork is created we need to set it instantly
                 //but only if copying succeeded
                 if (is_dir($template_path . $fork_template)) {
-                    $themeInfo = serendipity_fetchTemplateInfo((function_exists('serendipity_specialchars') ? serendipity_specialchars($fork_template) : htmlspecialchars($fork_template, ENT_COMPAT, LANG_CHARSET)));
-                    serendipity_set_config_var('template', (function_exists('serendipity_specialchars') ? serendipity_specialchars($fork_template) : htmlspecialchars($fork_template, ENT_COMPAT, LANG_CHARSET)));
+                    $themeInfo = serendipity_fetchTemplateInfo(htmlspecialchars($fork_template));
+                    serendipity_set_config_var('template', htmlspecialchars($fork_template));
                     serendipity_set_config_var('template_engine', isset($themeInfo['engine']) ? $themeInfo['engine'] : 'default');
                 }
             } else {
