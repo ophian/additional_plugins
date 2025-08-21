@@ -1,14 +1,14 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/12/29
  */
 
-@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_NAME', 'Markup: klikateln· emailov· adresa - s protispamovou ochranou');
-@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_DESC', 'UmoæÚuje vloæit do blogu klikatelnou emailovou adresu, ale vkl·d· ji upravenou tak, aby ji nepoznaly internetovÈ roboty, kterÈ hledajÌ mailovÈ adresy.');
-@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE', 'Pouæit· metoda');
-@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE_NONE', 'æ·dn· metoda - pouze klikateln˝ odkaz');
+@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_NAME', 'Markup: klikateln√° emailov√° adresa - s protispamovou ochranou');
+@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_DESC', 'Umo≈æ≈àuje vlo≈æit do blogu klikatelnou emailovou adresu, ale vkl√°d√° ji upravenou tak, aby ji nepoznaly internetov√© roboty, kter√© hledaj√≠ mailov√© adresy.');
+@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE', 'Pou≈æit√° metoda');
+@define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE_NONE', '≈æ√°dn√° metoda - pouze klikateln√Ω odkaz');
 @define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE_JS', 'Javascript');
 @define('PLUGIN_EVENT_EMAIL_BOT_OBFUSCATOR_TYPE_HTML', 'HTML entity');
 
