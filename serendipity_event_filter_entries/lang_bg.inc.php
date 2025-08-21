@@ -6,6 +6,6 @@
  *  EN-Revision: 1.1
  */
 
-@define('PLUGIN_EVENT_FILTER_ENTRIES_NAME', 'Филтриране на статии');
-@define('PLUGIN_EVENT_FILTER_ENTRIES_DESC', 'Позволява посетителите да филтрират статиите по различни критерии');
+@define('PLUGIN_EVENT_FILTER_ENTRIES_NAME', 'Р¤РёР»С‚СЂРёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёРё');
+@define('PLUGIN_EVENT_FILTER_ENTRIES_DESC', 'РџРѕР·РІРѕР»СЏРІР° РїРѕСЃРµС‚РёС‚РµР»РёС‚Рµ РґР° С„РёР»С‚СЂРёСЂР°С‚ СЃС‚Р°С‚РёРёС‚Рµ РїРѕ СЂР°Р·Р»РёС‡РЅРё РєСЂРёС‚РµСЂРёРё');
 

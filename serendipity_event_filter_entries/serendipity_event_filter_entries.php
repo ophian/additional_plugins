@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -8,22 +10,21 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_filter_entries extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_FILTER_ENTRIES_NAME;
-    var $fetchLimit;
+    public $title = PLUGIN_EVENT_FILTER_ENTRIES_NAME;
+
+    private $fetchLimit;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_FILTER_ENTRIES_NAME);
         $propbag->add('description',   PLUGIN_EVENT_FILTER_ENTRIES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.2.1');
-        $propbag->add('requirements',  array(
-            'serendipity' => '3.0',
-            'smarty'      => '3.1',
-            'php'         => '7.2'
+        $propbag->add('version',        '3.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',    array(
             'external_plugin'    => true,
@@ -141,7 +142,7 @@ class serendipity_event_filter_entries extends serendipity_event
                     $users = serendipity_fetchUsers();
                     if (is_array($users)) {
                         foreach ($users AS $user) {
-                            echo '<option value="' . $user['authorid'] . '"' . (isset($_SESSION['filter']['author']) && $_SESSION['filter']['author'] == $user['authorid'] ? ' selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($user['realname']) : htmlspecialchars($user['realname'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+                            echo '<option value="' . $user['authorid'] . '"' . (isset($_SESSION['filter']['author']) && $_SESSION['filter']['author'] == $user['authorid'] ? ' selected="selected"' : '') . '>' . htmlspecialchars($user['realname']) . '</option>' . "\n";
                         }
                     }
 ?>              </select>
@@ -159,7 +160,7 @@ class serendipity_event_filter_entries extends serendipity_event
 ?>              </select>
             </td>
             <td width="80"><span title="<?= REQUIRED_FIELD ?>"><?php echo CONTENT ?> *</span></td>
-            <td><input size="10" type="text" name="filter[body]" value="<?php echo (isset($_SESSION['filter']['body']) ? (function_exists('serendipity_specialchars') ? serendipity_specialchars($_SESSION['filter']['body']) : htmlspecialchars($_SESSION['filter']['body'], ENT_COMPAT, LANG_CHARSET)) : '') ?>"/></td>
+            <td><input size="10" type="text" name="filter[body]" value="<?php echo (isset($_SESSION['filter']['body']) ? htmlspecialchars($_SESSION['filter']['body']) : '') ?>"/></td>
         </tr>
         <tr>
             <td colspan="6" style="text-align: left"><strong><?php echo SORT_ORDER ?></strong></td>
