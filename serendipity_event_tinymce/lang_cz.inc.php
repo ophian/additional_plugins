@@ -1,48 +1,48 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/26
  */
 
 @define('PLUGIN_EVENT_TINYMCE_NAME',            'TinyMCE jako WYSIWYG editor');
-@define('PLUGIN_EVENT_TINYMCE_DESC',            'Pou¾ije TiniMCE WYSIWYG editor pro psaní pøíspìvkù. Vy¾aduje Serendipity 1.6 nebo novìj¹í. Po instalaci si pøeètìte instalaèního prùvodce v nastavení tohoto pluginu.');
-@define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY',    'Pou¾ít pouze v pøíspìvcích');
-@define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY_DESC','Pokud je zapnuto, TinyMCE bude pou¾ito pouze k úpravám pøíspìvku, nebude pou¾ito v ostatních pluginech.');
-@define('PLUGIN_EVENT_TINYMCE_IMANAGER',        'Zapnout pou¾ití nástroje iManager?');
-@define('PLUGIN_EVENT_TINYMCE_IMANAGER_DESC',   'iManager je pru¾nı nástroj pro správu obrázkù (vy¾aduje knihovnu GD). Podívejte se na http://www.j-cons.com/ a pøeètìte si tam instalaèní pøíruèku, s její pomocí dokonèete instalaci nástroje.');
-@define('PLUGIN_EVENT_TINYMCE_PLUGINS',         'Pøídavné pluginy pro TinyMCE');
-@define('PLUGIN_EVENT_TINYMCE_PLUGINS_DESC',    'Napi¹te jména adresáøù (oddìlená èárkou). Adresáøe musí bıt v adresáøi pluginu TinyMCE. Pozornì ètìte dokumentaci ke ka¾démuu z pluginù pro TinyMCE. Seznam pluginù dodávanıch s TinyMCE najdete na stránce: http://wiki.moxiecode.com/index.php/TinyMCE:Plugins');
-@define('PLUGIN_EVENT_TINYMCE_BUTTONS1',        'Tlaèítková li¹ta 1');
-@define('PLUGIN_EVENT_TINYMCE_BUTTONS1_DESC',   'Zadejte tlaèítka, která mají bıt viditelnı v první tlaèítkové li¹tì. Mezera znamená oddìlovaè v li¹tì, pokud sma¾ete obsah, bude nata¾ena vıchozí li¹ta TinyMCE. Tlaèítka, která lze pou¾ít, jsou zobrazena na http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference');
-@define('PLUGIN_EVENT_TINYMCE_BUTTONS2',        'Tlaèítková li¹ta 2');
-@define('PLUGIN_EVENT_TINYMCE_BUTTONS2_DESC',   'Zadejte tlaèítka, která mají bıt viditelnı v druhé tlaèítkové li¹tì.');
-@define('PLUGIN_EVENT_TINYMCE_BUTTONS3',        'Tlaèítková li¹ta 3');
-@define('PLUGIN_EVENT_TINYMCE_BUTTONS3_DESC',   'Zadejte tlaèítka, která mají bıt viditelnı v tøetí tlaèítkové li¹tì.');
+@define('PLUGIN_EVENT_TINYMCE_DESC',            'PouÅ¾ije TiniMCE WYSIWYG editor pro psanÃ­ pÅ™Ã­spÄ›vkÅ¯. VyÅ¾aduje Serendipity 1.6 nebo novÄ›jÅ¡Ã­. Po instalaci si pÅ™eÄtÄ›te instalaÄnÃ­ho prÅ¯vodce v nastavenÃ­ tohoto pluginu.');
+@define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY',    'PouÅ¾Ã­t pouze v pÅ™Ã­spÄ›vcÃ­ch');
+@define('PLUGIN_EVENT_TINYMCE_ARTICLE_ONLY_DESC','Pokud je zapnuto, TinyMCE bude pouÅ¾ito pouze k ÃºpravÃ¡m pÅ™Ã­spÄ›vku, nebude pouÅ¾ito v ostatnÃ­ch pluginech.');
+@define('PLUGIN_EVENT_TINYMCE_IMANAGER',        'Zapnout pouÅ¾itÃ­ nÃ¡stroje iManager?');
+@define('PLUGIN_EVENT_TINYMCE_IMANAGER_DESC',   'iManager je pruÅ¾nÃ½ nÃ¡stroj pro sprÃ¡vu obrÃ¡zkÅ¯ (vyÅ¾aduje knihovnu GD). PodÃ­vejte se na http://www.j-cons.com/ a pÅ™eÄtÄ›te si tam instalaÄnÃ­ pÅ™Ã­ruÄku, s jejÃ­ pomocÃ­ dokonÄete instalaci nÃ¡stroje.');
+@define('PLUGIN_EVENT_TINYMCE_PLUGINS',         'PÅ™Ã­davnÃ© pluginy pro TinyMCE');
+@define('PLUGIN_EVENT_TINYMCE_PLUGINS_DESC',    'NapiÅ¡te jmÃ©na adresÃ¡Å™Å¯ (oddÄ›lenÃ¡ ÄÃ¡rkou). AdresÃ¡Å™e musÃ­ bÃ½t v adresÃ¡Å™i pluginu TinyMCE. PozornÄ› ÄtÄ›te dokumentaci ke kaÅ¾dÃ©muu z pluginÅ¯ pro TinyMCE. Seznam pluginÅ¯ dodÃ¡vanÃ½ch s TinyMCE najdete na strÃ¡nce: http://wiki.moxiecode.com/index.php/TinyMCE:Plugins');
+@define('PLUGIN_EVENT_TINYMCE_BUTTONS1',        'TlaÄÃ­tkovÃ¡ liÅ¡ta 1');
+@define('PLUGIN_EVENT_TINYMCE_BUTTONS1_DESC',   'Zadejte tlaÄÃ­tka, kterÃ¡ majÃ­ bÃ½t viditelnÃ½ v prvnÃ­ tlaÄÃ­tkovÃ© liÅ¡tÄ›. Mezera znamenÃ¡ oddÄ›lovaÄ v liÅ¡tÄ›, pokud smaÅ¾ete obsah, bude nataÅ¾ena vÃ½chozÃ­ liÅ¡ta TinyMCE. TlaÄÃ­tka, kterÃ¡ lze pouÅ¾Ã­t, jsou zobrazena na http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference');
+@define('PLUGIN_EVENT_TINYMCE_BUTTONS2',        'TlaÄÃ­tkovÃ¡ liÅ¡ta 2');
+@define('PLUGIN_EVENT_TINYMCE_BUTTONS2_DESC',   'Zadejte tlaÄÃ­tka, kterÃ¡ majÃ­ bÃ½t viditelnÃ½ v druhÃ© tlaÄÃ­tkovÃ© liÅ¡tÄ›.');
+@define('PLUGIN_EVENT_TINYMCE_BUTTONS3',        'TlaÄÃ­tkovÃ¡ liÅ¡ta 3');
+@define('PLUGIN_EVENT_TINYMCE_BUTTONS3_DESC',   'Zadejte tlaÄÃ­tka, kterÃ¡ majÃ­ bÃ½t viditelnÃ½ v tÅ™etÃ­ tlaÄÃ­tkovÃ© liÅ¡tÄ›.');
 @define('PLUGIN_EVENT_TINYMCE_SPELLING',        'Kontrola pravopisu v Mozille');
-@define('PLUGIN_EVENT_TINYMCE_SPELLING_DESC',   'TinyMCE umí vyu¾ívat kontrolu pravopisu ve Firefoxu.');
-@define('PLUGIN_EVENT_TINYMCE_RELURLS',         'Pøevést na relativní URL adresy');
-@define('PLUGIN_EVENT_TINYMCE_RELURLS_DESC',    'TinyMCE umí pøevádìt místní URL adresy do relativního formátu. Tedy z adresy "http://vas.blog.cz/test.html" se stane "/test.html". Relativní URL adresy jsou dùle¾ité, pokud plánujete dìlat zmìny v blogu, nebo pokud chcete k blogu pøistupovat z rùznıch domén. Na druhou stranu relativní adresy mohou nìkde pùsobit problémy.');
+@define('PLUGIN_EVENT_TINYMCE_SPELLING_DESC',   'TinyMCE umÃ­ vyuÅ¾Ã­vat kontrolu pravopisu ve Firefoxu.');
+@define('PLUGIN_EVENT_TINYMCE_RELURLS',         'PÅ™evÃ©st na relativnÃ­ URL adresy');
+@define('PLUGIN_EVENT_TINYMCE_RELURLS_DESC',    'TinyMCE umÃ­ pÅ™evÃ¡dÄ›t mÃ­stnÃ­ URL adresy do relativnÃ­ho formÃ¡tu. Tedy z adresy "http://vas.blog.cz/test.html" se stane "/test.html". RelativnÃ­ URL adresy jsou dÅ¯leÅ¾itÃ©, pokud plÃ¡nujete dÄ›lat zmÄ›ny v blogu, nebo pokud chcete k blogu pÅ™istupovat z rÅ¯znÃ½ch domÃ©n. Na druhou stranu relativnÃ­ adresy mohou nÄ›kde pÅ¯sobit problÃ©my.');
 @define('PLUGIN_EVENT_TINYMCE_VFYHTML',         'Kontrolovat HTML');
-@define('PLUGIN_EVENT_TINYMCE_VFYHTML_DESC',    'TinyMCE se pokou¹í transformovat zadanı èlánek na pokud mo¾no validní HTML kód. Sma¾e tagy, které nejsou souèástí HTML specifikace. Napø. kódy z YouTube èasto podle této specifikace nejsou a jsou tudí¾ smazány bìhem ulo¾ení èlánku. Tato volba mù¾e toto chování vypnout nebo zapnout.');
-@define('PLUGIN_EVENT_TINYMCE_CLEANUP',         'Vyèistit kód');
-@define('PLUGIN_EVENT_TINYMCE_CLEANUP_DESC',    'TinyMCE èistí kód pøíspìvku pøi otevírání a ukládání. Pokud tuto volbu vypnete, TinyMCE se HTML kódu ani nedotkne, ale zùstane na Vás zkontrolovat, jestli je kód validní. Vypnutí volby [' . PLUGIN_EVENT_TINYMCE_VFYHTML . '] je ve vìt¹inì pøípadù lep¹í øe¹ení.');
-@define('PLUGIN_EVENT_TINYMCE_HTTPREL',         'Relativní HTTP cesta pluginu');
-@define('PLUGIN_EVENT_TINYMCE_HTTPREL_DESC',    'Definuje HTTP cestu k pluginu relativnì ke koøenu serveru. Pokud jste nezmìnili strukturu permalinkù pro tento plugin a pokud Vá¹ blog nebì¾í na serveru v podadresáøi, pak by mìlo dobøe fungovat vıchozí nastavení.');
-@define('PLUGIN_EVENT_TINYMCE_INSTALL',         '<br /><br /><strong>Instalaèní pøíruèka:</strong><br />
+@define('PLUGIN_EVENT_TINYMCE_VFYHTML_DESC',    'TinyMCE se pokouÅ¡Ã­ transformovat zadanÃ½ ÄlÃ¡nek na pokud moÅ¾no validnÃ­ HTML kÃ³d. SmaÅ¾e tagy, kterÃ© nejsou souÄÃ¡stÃ­ HTML specifikace. NapÅ™. kÃ³dy z YouTube Äasto podle tÃ©to specifikace nejsou a jsou tudÃ­Å¾ smazÃ¡ny bÄ›hem uloÅ¾enÃ­ ÄlÃ¡nku. Tato volba mÅ¯Å¾e toto chovÃ¡nÃ­ vypnout nebo zapnout.');
+@define('PLUGIN_EVENT_TINYMCE_CLEANUP',         'VyÄistit kÃ³d');
+@define('PLUGIN_EVENT_TINYMCE_CLEANUP_DESC',    'TinyMCE ÄistÃ­ kÃ³d pÅ™Ã­spÄ›vku pÅ™i otevÃ­rÃ¡nÃ­ a uklÃ¡dÃ¡nÃ­. Pokud tuto volbu vypnete, TinyMCE se HTML kÃ³du ani nedotkne, ale zÅ¯stane na VÃ¡s zkontrolovat, jestli je kÃ³d validnÃ­. VypnutÃ­ volby [' . PLUGIN_EVENT_TINYMCE_VFYHTML . '] je ve vÄ›tÅ¡inÄ› pÅ™Ã­padÅ¯ lepÅ¡Ã­ Å™eÅ¡enÃ­.');
+@define('PLUGIN_EVENT_TINYMCE_HTTPREL',         'RelativnÃ­ HTTP cesta pluginu');
+@define('PLUGIN_EVENT_TINYMCE_HTTPREL_DESC',    'Definuje HTTP cestu k pluginu relativnÄ› ke koÅ™enu serveru. Pokud jste nezmÄ›nili strukturu permalinkÅ¯ pro tento plugin a pokud VÃ¡Å¡ blog nebÄ›Å¾Ã­ na serveru v podadresÃ¡Å™i, pak by mÄ›lo dobÅ™e fungovat vÃ½chozÃ­ nastavenÃ­.');
+@define('PLUGIN_EVENT_TINYMCE_INSTALL',         '<br /><br /><strong>InstalaÄnÃ­ pÅ™Ã­ruÄka:</strong><br />
 <ul>
-<li><a href="http://tinymce.moxiecode.com/download.php" target="_blank" rel="noopener">Stáhnìte TinyMCE, TinyMCE compressor</a> (Pouze TinyMCE 2.0 nebo novìj¹í).</li>
-<li><b>TinyMCE</b>: Rozbalte do adresáøe "tinymce" v adresáøi ' . dirname(__FILE__) . '.</li>
-<li>TinyMCE compressor rozbalte do adresáøe "tinymce/jscripts/tiny_mce/" v adresáøi ' . dirname(__FILE__) . ' (Pouze TinyMCE 2.0 nebo novìj¹í).</li>
-<li>Mù¾ete stáhnout iManager, ale není to poviné (vy¾aduje PHP knihovnu GD):
+<li><a href="http://tinymce.moxiecode.com/download.php" target="_blank" rel="noopener">StÃ¡hnÄ›te TinyMCE, TinyMCE compressor</a> (Pouze TinyMCE 2.0 nebo novÄ›jÅ¡Ã­).</li>
+<li><b>TinyMCE</b>: Rozbalte do adresÃ¡Å™e "tinymce" v adresÃ¡Å™i ' . dirname(__FILE__) . '.</li>
+<li>TinyMCE compressor rozbalte do adresÃ¡Å™e "tinymce/jscripts/tiny_mce/" v adresÃ¡Å™i ' . dirname(__FILE__) . ' (Pouze TinyMCE 2.0 nebo novÄ›jÅ¡Ã­).</li>
+<li>MÅ¯Å¾ete stÃ¡hnout iManager, ale nenÃ­ to povinÃ© (vyÅ¾aduje PHP knihovnu GD):
 <ul>
-<li>Rozbalte iManager do adresáøe "tinymce/jscripts/tiny_mce/plugins/imanager"</li>
-<li>Upravte konfiguraèní soubor "tinymce/jscripts/tiny_mce/plugins/imanager/config/config.inc.php"</li>
-<li>Nastavte hodnoty pro $cfg["ilibs"] a $cfg["ilibs_dir"]. Zadejte následující relativní HTTP cestu k adresáøi pro sta¾ené soubory Serendipity: "' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . '"</li>
-<li>Ujistìte se, ¾e adresáøe imanager/scripts/phpThumb/cache a imanager/temp mají nastavená práva zápisu (777)</li>
+<li>Rozbalte iManager do adresÃ¡Å™e "tinymce/jscripts/tiny_mce/plugins/imanager"</li>
+<li>Upravte konfiguraÄnÃ­ soubor "tinymce/jscripts/tiny_mce/plugins/imanager/config/config.inc.php"</li>
+<li>Nastavte hodnoty pro $cfg["ilibs"] a $cfg["ilibs_dir"]. Zadejte nÃ¡sledujÃ­cÃ­ relativnÃ­ HTTP cestu k adresÃ¡Å™i pro staÅ¾enÃ© soubory Serendipity: "' . $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . '"</li>
+<li>UjistÄ›te se, Å¾e adresÃ¡Å™e imanager/scripts/phpThumb/cache a imanager/temp majÃ­ nastavenÃ¡ prÃ¡va zÃ¡pisu (777)</li>
 </ul>
 </li>
-<li>V nastavení pluginu TinyMCE zadejte relativní HTTP cestu k adresáøi pluginu.</li>
-<li>Ujistìte se, ¾e jste v Osobním nastavení Serendipity povolili pou¾ití WYSIWYG editoru.</li>
+<li>V nastavenÃ­ pluginu TinyMCE zadejte relativnÃ­ HTTP cestu k adresÃ¡Å™i pluginu.</li>
+<li>UjistÄ›te se, Å¾e jste v OsobnÃ­m nastavenÃ­ Serendipity povolili pouÅ¾itÃ­ WYSIWYG editoru.</li>
 </ul>');
 
