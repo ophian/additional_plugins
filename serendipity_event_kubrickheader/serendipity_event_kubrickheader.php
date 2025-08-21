@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 if (IN_serendipity !== true) {
     die ("Don't hack!");
@@ -9,22 +10,20 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_kubrickheader extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_KUBRICKHEADER_NAME;
+    public $title = PLUGIN_EVENT_KUBRICKHEADER_NAME;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('style',         PLUGIN_EVENT_KUBRICKHEADER_STYLE);
         $propbag->add('name',          PLUGIN_EVENT_KUBRICKHEADER_NAME);
         $propbag->add('description',   PLUGIN_EVENT_KUBRICKHEADER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Sebastian Mayeres, Jude Anthony');
-        $propbag->add('version',       '1.6');
-        $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('event_hooks',   array('css' => true));
         $propbag->add('configuration', array('img','style', 'default_position'));

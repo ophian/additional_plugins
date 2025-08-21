@@ -1,11 +1,11 @@
 <?php
 
 @define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC',     'Welchen Style benutzen Sie ?');
-@define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC_BLAH',	'Wählen Sie den Style, den Sie für den Blog benutzen');
+@define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC_BLAH',	'WÃ¤hlen Sie den Style, den Sie fÃ¼r den Blog benutzen');
 @define('PLUGIN_EVENT_KUBRICKHEADER_NAME',     'Kubrick/Joshua-Template Bild im Kopfbereich');
 @define('PLUGIN_EVENT_KUBRICKHEADER_KUBRICK',     'Kubrick');
 @define('PLUGIN_EVENT_KUBRICKHEADER_JOSHUA',     'Joshua');
 @define('PLUGIN_EVENT_KUBRICKHEADER_DESC',     'Wechselt das Bild im Kubrick/Joshua-Template');
 @define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE',     'Bild');
-@define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE_DESC',  'Entweder direkt ein Bild eingeben oder den Namen eines Verzeichnisses (mit abschließendem Slash) eingeben, und das Plugin wird zufällig ein .jpg/.jpeg/.png Bild dieses Verzeichnisses auswählen.');
+@define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE_DESC',  'Entweder direkt ein Bild eingeben oder den Namen eines Verzeichnisses (mit abschlieÃŸendem Slash) eingeben, und das Plugin wird zufÃ¤llig ein .jpg/.jpeg/.png Bild dieses Verzeichnisses auswÃ¤hlen.');
 

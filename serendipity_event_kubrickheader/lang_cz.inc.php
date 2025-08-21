@@ -1,30 +1,30 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/30
  */
 
-@define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC',      'Kterou πablonu vzhledu pouæÌv·te?');
-@define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC_BLAH', 'Vyberte πablonu vzhledu/styl, kter˝ m·te aktu·lnÏ nastaven˝.');
+@define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC',      'Kterou ≈°ablonu vzhledu pou≈æ√≠v√°te?');
+@define('PLUGIN_EVENT_KUBRICKHEADER_STYLE_DESC_BLAH', 'Vyberte ≈°ablonu vzhledu/styl, kter√Ω m√°te aktu√°lnƒõ nastaven√Ω.');
 @define('PLUGIN_EVENT_KUBRICKHEADER_KUBRICK',         'Kubrick');
 @define('PLUGIN_EVENT_KUBRICKHEADER_JOSHUA',          'Joshua');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT',         'V˝chozÌ πablona');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION', 'Poloha obr·zku (pouze u v˝chozÌ πablony)');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_DESC', 'Kde v hlaviËce je umÌstÏnÈ logo?');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_TOPLEFT', 'Naho¯e vlevo');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_TOPCENTER', 'Naho¯e uprost¯ed');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_TOPRIGHT', 'Naho¯e vpravo');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_CENTERLEFT', 'Uprost¯ed vlevo');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_CENTERCENTER', 'Uprost¯ed uprost¯ed');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_CENTERRIGHT', 'Uprost¯ed vpravo');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT',         'V√Ωchoz√≠ ≈°ablona');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION', 'Poloha obr√°zku (pouze u v√Ωchoz√≠ ≈°ablony)');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_DESC', 'Kde v hlaviƒçce je um√≠stƒõn√© logo?');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_TOPLEFT', 'Naho≈ôe vlevo');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_TOPCENTER', 'Naho≈ôe uprost≈ôed');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_TOPRIGHT', 'Naho≈ôe vpravo');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_CENTERLEFT', 'Uprost≈ôed vlevo');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_CENTERCENTER', 'Uprost≈ôed uprost≈ôed');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_CENTERRIGHT', 'Uprost≈ôed vpravo');
 @define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_BOTTOMLEFT', 'Dole vlevo');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_BOTTOMCENTER', 'Dole uprost¯ed');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_BOTTOMCENTER', 'Dole uprost≈ôed');
 @define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_POSITION_BOTTOMRIGHT', 'Dole vpravo');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_REPLACE_TEXT', 'NahrazenÌ obr·zku textem (pouze v˝chozÌ πablona)');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_REPLACE_TEXT', 'Nahrazen√≠ obr√°zku textem (pouze v√Ωchoz√≠ ≈°ablona)');
 @define('PLUGIN_EVENT_KUBRICKHEADER_DEFAULT_REPLACE_TEXT_DESC', 'Nahradit text (metoda Phark)?');
-@define('PLUGIN_EVENT_KUBRICKHEADER_NAME',            'Z·hlavÌ πablony/Obr·zek - logo');
-@define('PLUGIN_EVENT_KUBRICKHEADER_DESC',            'P¯epÌn·nÌ obr·zku v z·hlavÌ pro r˘znÈ πablony');
-@define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE',           'Obr·zek');
-@define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE_DESC',     'BuÔ zadejte obr·zek, kter˝ chcete pouæÌt, nebo zadejte n·zev adres·¯e (s ukonËujÌcÌm lomÌtkem!) a plugin bude st¯Ìdat vπechny obr·zky *.jpg/*.jpeg/*.png/*.gif z tohoto adres·¯e.');
+@define('PLUGIN_EVENT_KUBRICKHEADER_NAME',            'Z√°hlav√≠ ≈°ablony/Obr√°zek - logo');
+@define('PLUGIN_EVENT_KUBRICKHEADER_DESC',            'P≈ôep√≠n√°n√≠ obr√°zku v z√°hlav√≠ pro r≈Øzn√© ≈°ablony');
+@define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE',           'Obr√°zek');
+@define('PLUGIN_EVENT_KUBRICKHEADER_IMAGE_DESC',     'Buƒè zadejte obr√°zek, kter√Ω chcete pou≈æ√≠t, nebo zadejte n√°zev adres√°≈ôe (s ukonƒçuj√≠c√≠m lom√≠tkem!) a plugin bude st≈ô√≠dat v≈°echny obr√°zky *.jpg/*.jpeg/*.png/*.gif z tohoto adres√°≈ôe.');
 
