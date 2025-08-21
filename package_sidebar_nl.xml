@@ -483,7 +483,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-08-13</date>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -895,7 +895,7 @@
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -1353,7 +1353,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-08-04</date>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -1913,7 +1913,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_imagesidebar">
       <file>ChangeLog</file>
@@ -2279,7 +2279,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_randomquotes">
       <file>ChangeLog</file>
@@ -2555,7 +2555,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_topexits">
       <file>serendipity_plugin_topexits.php</file>
@@ -2578,7 +2578,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-08-20</date>
   <filelist>
     <dir name="serendipity_plugin_topreferrers">
       <file>serendipity_plugin_topreferrers.php</file>

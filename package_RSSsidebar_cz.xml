@@ -68,7 +68,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Nadcházející události&lt;/b&gt;&lt;br /&gt;Zobrazit nejbližší a doporučené události v postranním sloupci a použít na ně mikroformat hCalendar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 13 Aug 2025 11:05:45 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:35:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
@@ -122,7 +122,7 @@
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;Serendipity Authors&lt;/b&gt;&lt;br /&gt;Zobrazuje rozšířené profily autorů/uživatelů&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:55:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
 </item>
 <item>
@@ -149,7 +149,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;Samoregistrace nových uživatelů&lt;/b&gt;&lt;br /&gt;Umožňuje návštěvníkům webu vytvořit si vlastní uživatelský účet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) můžete určit, jestli komentáře mohou posílat pouze registrovaní uživatelé.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 14:06:58 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:54:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Jednotné zobrazování obrázků v postranním sloupci&lt;/b&gt;&lt;br /&gt;Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do databáze Coppermine galerie (pouze pokud běží na MySQL) a samozřejmě i ke Knihovně médií Serendipity. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:35:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
@@ -356,7 +356,7 @@
 <category>Sidebar Plugins</category>
 <author>Florian Solcher</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Náhodný citát&lt;/b&gt;&lt;br /&gt;Zobrazuje blok s náhodně vybraným citátem&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:52:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_randomquotes</guid>
 </item>
 <item>
@@ -419,7 +419,7 @@
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top výstupy&lt;/b&gt;&lt;br /&gt;Nejčastější výstupy z tohoto weblogu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:34:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topexits</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top odkazovače&lt;/b&gt;&lt;br /&gt;Nejčastější připojení k tomuto weblogu&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:34:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
 </item>
 <item>

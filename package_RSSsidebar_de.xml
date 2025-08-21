@@ -68,7 +68,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Kommende Termine&lt;/b&gt;&lt;br /&gt;Anzeige kommender Termine in der Seitenleiste, ausgezeichnet mit dem hCalendar-Microformat&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 13 Aug 2025 11:05:45 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:35:42 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
@@ -122,7 +122,7 @@
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;Serendipity Autoren&lt;/b&gt;&lt;br /&gt;Zeigt eine Liste aller Autoren&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:55:09 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
 </item>
 <item>
@@ -149,7 +149,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;Registrierung neuer User&lt;/b&gt;&lt;br /&gt;Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 14:06:58 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:54:20 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Integrierte Bildanzeige in der Seitenleiste&lt;/b&gt;&lt;br /&gt;Bietet die Möglichkeit, Bilder in der Seitenleiste anzuzeigen. Die Quelle der Bilder ist konfigurierbar. Das Plugin ist in der Lage, auf die Styx Mediathek zuzugreifen. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:35:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
@@ -356,7 +356,7 @@
 <category>Sidebar Plugins</category>
 <author>Florian Solcher</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Zufallszitat&lt;/b&gt;&lt;br /&gt;Zeigt einen Zufallszitatsblock&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:52:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_randomquotes</guid>
 </item>
 <item>
@@ -419,7 +419,7 @@
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;Top Exits&lt;/b&gt;&lt;br /&gt;Zeigt die Top-Exit-Links des Blogs&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:34:34 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topexits</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;Top Referrer&lt;/b&gt;&lt;br /&gt;Zeigt die Top-Seiten, die auf das Blog linken&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:29 +0200</pubDate>
+<pubDate>Wed, 20 Aug 2025 18:34:44 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
 </item>
 <item>
