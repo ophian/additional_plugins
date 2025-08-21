@@ -1,8 +1,8 @@
 <?php
 
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME', 'Layout-Plugin: Èçãëåä çà ïðèíòåð');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH', 'Ïî-äîáúð èçãëåä çà ïå÷àò íà Âàøèòå ñòàòèè');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS', 'Ïå÷àò íà ñòðàíè÷íèÿ ïàíåë');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'Ïå÷àò íà äîïúëíèòåëíèòå äàííè êúì ñòàòèÿòà');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'Ïå÷àò íà êîìåíòàðèòå');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME', 'Layout-Plugin: Ð˜Ð·Ð³Ð»ÐµÐ´ Ð·Ð° Ð¿Ñ€Ð¸Ð½Ñ‚ÐµÑ€');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH', 'ÐŸÐ¾-Ð´Ð¾Ð±ÑŠÑ€ Ð¸Ð·Ð³Ð»ÐµÐ´ Ð·Ð° Ð¿ÐµÑ‡Ð°Ñ‚ Ð½Ð° Ð’Ð°ÑˆÐ¸Ñ‚Ðµ ÑÑ‚Ð°Ñ‚Ð¸Ð¸');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS', 'ÐŸÐµÑ‡Ð°Ñ‚ Ð½Ð° ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ‡Ð½Ð¸Ñ Ð¿Ð°Ð½ÐµÐ»');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'ÐŸÐµÑ‡Ð°Ñ‚ Ð½Ð° Ð´Ð¾Ð¿ÑŠÐ»Ð½Ð¸Ñ‚ÐµÐ»Ð½Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ð¸ ÐºÑŠÐ¼ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð°');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'ÐŸÐµÑ‡Ð°Ñ‚ Ð½Ð° ÐºÐ¾Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ñ‚Ðµ');
 

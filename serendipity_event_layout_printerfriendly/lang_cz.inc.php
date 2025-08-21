@@ -1,15 +1,15 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/02/22
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @revisionDate 2009/08/26
  */
 
 @define('PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME', 'Layout plugin: verze pro tisk');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH', 'P¯i pouæitÌ funkce "vytisknout str·nku" v prohlÌæeËi uvidÌte v˝stup, kter˝ bude na tisk·rnÏ lÈpe vypadat.');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS', 'Tisknout postranÌ sloupce?');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'Tisknout patiËky?');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'Tisknout koment·¯e?');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH', 'P≈ôi pou≈æit√≠ funkce "vytisknout str√°nku" v prohl√≠≈æeƒçi uvid√≠te v√Ωstup, kter√Ω bude na tisk√°rnƒõ l√©pe vypadat.');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS', 'Tisknout postran√≠ sloupce?');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'Tisknout patiƒçky?');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'Tisknout koment√°≈ôe?');
 

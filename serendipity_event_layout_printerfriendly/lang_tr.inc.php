@@ -1,8 +1,8 @@
 <?php
 
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME', 'Sayfa Mizanpajý-Eklentisi: Yazýcý Dostu Sürümü');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH', 'Tarayýcýnýzýn yazdýrma iþlevselliðini kullanarak, Yazýnýz için daha iyi bir yazýcý çýktýsý görünümü saðlayabilirsiniz');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS', 'Yanbloðu yazdýr');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'Alt Bölümü yazdýr');
-@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'Görüþleri yazdýr');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME', 'Sayfa MizanpajÄ±-Eklentisi: YazÄ±cÄ± Dostu SÃ¼rÃ¼mÃ¼');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH', 'TarayÄ±cÄ±nÄ±zÄ±n yazdÄ±rma iÅŸlevselliÄŸini kullanarak, YazÄ±nÄ±z iÃ§in daha iyi bir yazÄ±cÄ± Ã§Ä±ktÄ±sÄ± gÃ¶rÃ¼nÃ¼mÃ¼ saÄŸlayabilirsiniz');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_SIDEBARS', 'YanbloÄŸu yazdÄ±r');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_FOOTER', 'Alt BÃ¶lÃ¼mÃ¼ yazdÄ±r');
+@define('PLUGIN_LAYOUT_PRINTERFRIENDLY_COMMENTS', 'GÃ¶rÃ¼ÅŸleri yazdÄ±r');
 

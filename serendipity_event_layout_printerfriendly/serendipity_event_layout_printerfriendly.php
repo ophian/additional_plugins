@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -12,18 +14,16 @@ class serendipity_event_layout_printerfriendly extends serendipity_event
 {
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_LAYOUT_PRINTERFRIENDLY_NAME);
         $propbag->add('description',   PLUGIN_LAYOUT_PRINTERFRIENDLY_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Sebastian Nohn');
-        $propbag->add('requirements',  array(
-            'serendipity' => '0.7',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+        $propbag->add('version',        '2.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
-        $propbag->add('version',       '1.2');
         $propbag->add('event_hooks',   array('frontend_header' => true,
 					     'external_plugin' => true));
         $propbag->add('configuration', array('display_sidebars',
