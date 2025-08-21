@@ -1,10 +1,10 @@
 <?php
 
 /**
- *  @author Vladimír Ajgl <vlada@ajgl.cz>
+ *  @author VladimÃ­r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/05/17
  */
 
 @define('PLUGIN_EVENT_REGEXPMARKUP_NAME', 'Markup: RegexpMarkup');
-@define('PLUGIN_EVENT_REGEXPMARKUP_DESC', 'Provádí pøevod znaèek pou¾itím libovolného u¾ivatelem zadaného souboru s regexp vırazy. Podívejte se na pøíklady v podadresáøi "regexps" tohoto pluginu.');
+@define('PLUGIN_EVENT_REGEXPMARKUP_DESC', 'ProvÃ¡dÃ­ pÅ™evod znaÄek pouÅ¾itÃ­m libovolnÃ©ho uÅ¾ivatelem zadanÃ©ho souboru s regexp vÃ½razy. PodÃ­vejte se na pÅ™Ã­klady v podadresÃ¡Å™i "regexps" tohoto pluginu.');
 
