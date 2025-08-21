@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -14,22 +16,20 @@ global $CPG;
 
 class serendipity_event_cpgselector extends serendipity_event
 {
-    var $title = PLUGIN_CPG_NAME;
+    public $title = PLUGIN_CPG_NAME;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_CPG_NAME);
         $propbag->add('description',   PLUGIN_CPG_DESC);
 
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Matthew Maude (modified by Jim Davies)');
-        $propbag->add('version',       '2.13');
-            $propbag->add('requirements',  array(
-                'serendipity' => '2.0',
-                'php'         => '5.1.0'
-            ));
+        $propbag->add('version',        '3.0.0');
+        $propbag->add('requirements',   array(
+            'serendipity' => '5.0',
+            'php'         => '8.2'
+        ));
 
         $propbag->add('configuration', array('server', 'database', 'prefix', 'user', 'password', 'path', 'button', 'usenormal', 'maxwidth', 'maxheight'));
 

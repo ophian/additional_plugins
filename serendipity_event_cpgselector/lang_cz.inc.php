@@ -1,42 +1,42 @@
 <?php
 
 /**
- *  @author VladimÌr Ajgl <vlada@ajgl.cz>
+ *  @author Vladim√≠r Ajgl <vlada@ajgl.cz>
  *  @translated 2009/06/27
  */
 
 @define('PLUGIN_CPG_NAME',     		'Coppermine Selector');
-@define('PLUGIN_CPG_DESC',     		'VybÌr· obr·zky z webovÈ galerie Coppermine');
+@define('PLUGIN_CPG_DESC',     		'Vyb√≠r√° obr√°zky z webov√© galerie Coppermine');
 
 @define('PLUGIN_CPG_SERVER_NAME',	'Server');
-@define('PLUGIN_CPG_SERVER_DESC',	'SQL server obsahujÌcÌ datab·zi galerie Coppermine');
+@define('PLUGIN_CPG_SERVER_DESC',	'SQL server obsahuj√≠c√≠ datab√°zi galerie Coppermine');
 
-@define('PLUGIN_CPG_DB_NAME',		'Datab·ze');
-@define('PLUGIN_CPG_DB_DESC',		'N·zev SQL datab·ze s tabulkami galerie Coppermine');
+@define('PLUGIN_CPG_DB_NAME',		'Datab√°ze');
+@define('PLUGIN_CPG_DB_DESC',		'N√°zev SQL datab√°ze s tabulkami galerie Coppermine');
 
 @define('PLUGIN_CPG_PREFIX_NAME',	'Prefix');
-@define('PLUGIN_CPG_PREFIX_DESC',	'P¯edpona datab·zov˝ch tabulek galerie Coppermine');
+@define('PLUGIN_CPG_PREFIX_DESC',	'P≈ôedpona datab√°zov√Ωch tabulek galerie Coppermine');
 
-@define('PLUGIN_CPG_USER_NAME',		'UæivatelskÈ jmÈno');
-@define('PLUGIN_CPG_USER_DESC',		'P¯ihlaπovacÌ jmÈno do datab·ze');
+@define('PLUGIN_CPG_USER_NAME',		'U≈æivatelsk√© jm√©no');
+@define('PLUGIN_CPG_USER_DESC',		'P≈ôihla≈°ovac√≠ jm√©no do datab√°ze');
 
 @define('PLUGIN_CPG_PASSWORD_NAME',	'Heslo');
-@define('PLUGIN_CPG_PASSWORD_DESC',	'Heslo do datab·ze');
+@define('PLUGIN_CPG_PASSWORD_DESC',	'Heslo do datab√°ze');
 
 @define('PLUGIN_CPG_URL_NAME',		'URL adresa');
 @define('PLUGIN_CPG_URL_DESC',		'URL adresa galerie');
 
 @define('PLUGIN_CPG_LABEL_NAME',	'Nadpis');
-@define('PLUGIN_CPG_LABEL_DESC',	'Nadpis liπty s tlaËÌtky');
+@define('PLUGIN_CPG_LABEL_DESC',	'Nadpis li≈°ty s tlaƒç√≠tky');
 
-@define('PLUGIN_CPG_NORMAL_NAME',	'Norm·lnÌ velikost');
-@define('PLUGIN_CPG_NORMAL_DESC',	'Zobrazovat obr·zky v norm·lnÌ velikosti a ne v plnÈ velikosti');
+@define('PLUGIN_CPG_NORMAL_NAME',	'Norm√°ln√≠ velikost');
+@define('PLUGIN_CPG_NORMAL_DESC',	'Zobrazovat obr√°zky v norm√°ln√≠ velikosti a ne v pln√© velikosti');
 
-@define('PLUGIN_CPG_MAXWIDTH_NAME',	'Maxim·lnÌ πÌ¯ka');
-@define('PLUGIN_CPG_MAXWIDTH_DESC',	'Maxim·lnÌ πÌ¯ka pro obr·zky v plnÈ velikosti. Nastavte 0 pro zruπenÌ limitu pro πÌ¯ku.');
+@define('PLUGIN_CPG_MAXWIDTH_NAME',	'Maxim√°ln√≠ ≈°√≠≈ôka');
+@define('PLUGIN_CPG_MAXWIDTH_DESC',	'Maxim√°ln√≠ ≈°√≠≈ôka pro obr√°zky v pln√© velikosti. Nastavte 0 pro zru≈°en√≠ limitu pro ≈°√≠≈ôku.');
 
-@define('PLUGIN_CPG_MAXHEIGHT_NAME',	'Maxim·lnÌ v˝πka');
-@define('PLUGIN_CPG_MAXHEIGHT_DESC',	'Maxim·lnÌ v˝πka pro obr·zky v plnÈ velikosti. Nastavte 0 pro zruπenÌ limitu pro v˝πku.');
+@define('PLUGIN_CPG_MAXHEIGHT_NAME',	'Maxim√°ln√≠ v√Ω≈°ka');
+@define('PLUGIN_CPG_MAXHEIGHT_DESC',	'Maxim√°ln√≠ v√Ω≈°ka pro obr√°zky v pln√© velikosti. Nastavte 0 pro zru≈°en√≠ limitu pro v√Ω≈°ku.');
 
-@define('PLUGIN_CPG_TITLE',			'Vyberte hlavnÌ obr·zek galerie');
+@define('PLUGIN_CPG_TITLE',			'Vyberte hlavn√≠ obr√°zek galerie');
 

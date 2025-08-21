@@ -6,38 +6,38 @@
  *  EN-Revision: 1.2
  */
 
-@define('PLUGIN_CPG_NAME',     		'Coppermine селектор');
-@define('PLUGIN_CPG_DESC',     		'Избира картинки от галерия Coppermine при редактиране на статии');
+@define('PLUGIN_CPG_NAME',     		'Coppermine СЃРµР»РµРєС‚РѕСЂ');
+@define('PLUGIN_CPG_DESC',     		'РР·Р±РёСЂР° РєР°СЂС‚РёРЅРєРё РѕС‚ РіР°Р»РµСЂРёСЏ Coppermine РїСЂРё СЂРµРґР°РєС‚РёСЂР°РЅРµ РЅР° СЃС‚Р°С‚РёРё');
 
-@define('PLUGIN_CPG_SERVER_NAME',	'Сървър');
-@define('PLUGIN_CPG_SERVER_DESC',	'SQL сървър');
+@define('PLUGIN_CPG_SERVER_NAME',	'РЎСЉСЂРІСЉСЂ');
+@define('PLUGIN_CPG_SERVER_DESC',	'SQL СЃСЉСЂРІСЉСЂ');
 
-@define('PLUGIN_CPG_DB_NAME',		'База данни');
-@define('PLUGIN_CPG_DB_DESC',		'SQL база данни');
+@define('PLUGIN_CPG_DB_NAME',		'Р‘Р°Р·Р° РґР°РЅРЅРё');
+@define('PLUGIN_CPG_DB_DESC',		'SQL Р±Р°Р·Р° РґР°РЅРЅРё');
 
-@define('PLUGIN_CPG_PREFIX_NAME',	'Префикс');
-@define('PLUGIN_CPG_PREFIX_DESC',	'Префикс на таблиците в базата данни');
+@define('PLUGIN_CPG_PREFIX_NAME',	'РџСЂРµС„РёРєСЃ');
+@define('PLUGIN_CPG_PREFIX_DESC',	'РџСЂРµС„РёРєСЃ РЅР° С‚Р°Р±Р»РёС†РёС‚Рµ РІ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё');
 
-@define('PLUGIN_CPG_USER_NAME',		'Потребителско име (username)');
-@define('PLUGIN_CPG_USER_DESC',		'Потребителско име (username) в базата данни');
+@define('PLUGIN_CPG_USER_NAME',		'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ (username)');
+@define('PLUGIN_CPG_USER_DESC',		'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ (username) РІ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё');
 
-@define('PLUGIN_CPG_PASSWORD_NAME',	'Парола');
-@define('PLUGIN_CPG_PASSWORD_DESC',	'Потребителска парола за базата данни');
+@define('PLUGIN_CPG_PASSWORD_NAME',	'РџР°СЂРѕР»Р°');
+@define('PLUGIN_CPG_PASSWORD_DESC',	'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєР° РїР°СЂРѕР»Р° Р·Р° Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё');
 
 @define('PLUGIN_CPG_URL_NAME',		'URL');
-@define('PLUGIN_CPG_URL_DESC',		'URL на галерията');
+@define('PLUGIN_CPG_URL_DESC',		'URL РЅР° РіР°Р»РµСЂРёСЏС‚Р°');
 
-@define('PLUGIN_CPG_LABEL_NAME',	'Име');
-@define('PLUGIN_CPG_LABEL_DESC',	'Име на бутона на туулбара');
+@define('PLUGIN_CPG_LABEL_NAME',	'РРјРµ');
+@define('PLUGIN_CPG_LABEL_DESC',	'РРјРµ РЅР° Р±СѓС‚РѕРЅР° РЅР° С‚СѓСѓР»Р±Р°СЂР°');
 
-@define('PLUGIN_CPG_NORMAL_NAME',	'Нормален размер');
-@define('PLUGIN_CPG_NORMAL_DESC',	'Използване на нормален размер на изображението вместо истинския (голям) размер.');
+@define('PLUGIN_CPG_NORMAL_NAME',	'РќРѕСЂРјР°Р»РµРЅ СЂР°Р·РјРµСЂ');
+@define('PLUGIN_CPG_NORMAL_DESC',	'РР·РїРѕР»Р·РІР°РЅРµ РЅР° РЅРѕСЂРјР°Р»РµРЅ СЂР°Р·РјРµСЂ РЅР° РёР·РѕР±СЂР°Р¶РµРЅРёРµС‚Рѕ РІРјРµСЃС‚Рѕ РёСЃС‚РёРЅСЃРєРёСЏ (РіРѕР»СЏРј) СЂР°Р·РјРµСЂ.');
 
-@define('PLUGIN_CPG_MAXWIDTH_NAME',	'Максимална широчина');
-@define('PLUGIN_CPG_MAXWIDTH_DESC',	'Максималната широчина за истински (голям) размер. Стойност 0 премахва ограничението.');
+@define('PLUGIN_CPG_MAXWIDTH_NAME',	'РњР°РєСЃРёРјР°Р»РЅР° С€РёСЂРѕС‡РёРЅР°');
+@define('PLUGIN_CPG_MAXWIDTH_DESC',	'РњР°РєСЃРёРјР°Р»РЅР°С‚Р° С€РёСЂРѕС‡РёРЅР° Р·Р° РёСЃС‚РёРЅСЃРєРё (РіРѕР»СЏРј) СЂР°Р·РјРµСЂ. РЎС‚РѕР№РЅРѕСЃС‚ 0 РїСЂРµРјР°С…РІР° РѕРіСЂР°РЅРёС‡РµРЅРёРµС‚Рѕ.');
 
-@define('PLUGIN_CPG_MAXHEIGHT_NAME',	'Максимална височина');
-@define('PLUGIN_CPG_MAXHEIGHT_DESC',	'Максималната височина за истински (голям) размер. Стойност 0 премахва ограничението.');
+@define('PLUGIN_CPG_MAXHEIGHT_NAME',	'РњР°РєСЃРёРјР°Р»РЅР° РІРёСЃРѕС‡РёРЅР°');
+@define('PLUGIN_CPG_MAXHEIGHT_DESC',	'РњР°РєСЃРёРјР°Р»РЅР°С‚Р° РІРёСЃРѕС‡РёРЅР° Р·Р° РёСЃС‚РёРЅСЃРєРё (РіРѕР»СЏРј) СЂР°Р·РјРµСЂ. РЎС‚РѕР№РЅРѕСЃС‚ 0 РїСЂРµРјР°С…РІР° РѕРіСЂР°РЅРёС‡РµРЅРёРµС‚Рѕ.');
 
-@define('PLUGIN_CPG_TITLE',			'Изберете картинка от галерията');
+@define('PLUGIN_CPG_TITLE',			'РР·Р±РµСЂРµС‚Рµ РєР°СЂС‚РёРЅРєР° РѕС‚ РіР°Р»РµСЂРёСЏС‚Р°');
 

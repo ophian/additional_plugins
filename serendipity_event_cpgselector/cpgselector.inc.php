@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function cpg_init() {
 
     global $CPG;
@@ -193,7 +195,7 @@ function cpg_displayImageList($page = 0, $lineBreak = NULL, $manage = false, $ur
 <?php
     foreach($CPG['get'] AS $g_key => $g_val) {
         if ( !is_array($g_val) && $g_key != 'page' ) {
-            echo '<input type="hidden" name="CPG_POST[' . $g_key . ']" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($g_val) : htmlspecialchars($g_val, ENT_COMPAT, LANG_CHARSET)) . '" />';
+            echo '<input type="hidden" name="CPG_POST[' . $g_key . ']" value="' . htmlspecialchars($g_val) . '" />';
         }
     }
 ?>
@@ -328,7 +330,7 @@ function cpg_getImages(&$totalImages, $first = 0, $count = 10, $album = NULL, $o
 
     $result = @mysqli_query($db,$query);
     if (!$result) {
-        echo 'Error performing query: ' . serendipity_specialchars(mysqli_error($db)) . '<br>';
+        echo 'Error performing query: ' . htmlspecialchars(mysqli_error($db)) . '<br>';
         cpg_end($db);
         return NULL;
     }
@@ -339,7 +341,7 @@ function cpg_getImages(&$totalImages, $first = 0, $count = 10, $album = NULL, $o
 
     $result = @mysqli_query($db,$query);
     if (!$result) {
-        echo 'Error performing query: ' . serendipity_specialchars(mysqli_error($db)) . '<br>';
+        echo 'Error performing query: ' . htmlspecialchars(mysqli_error($db)) . '<br>';
         cpg_end($db);
         return NULL;
     }
@@ -403,7 +405,7 @@ function cpg_getImage($id) {
 
     $result = @mysqli_query($db,$query);
     if (!$result) {
-        echo 'Error performing query: ' . serendipity_specialchars(mysqli_error($db)) . '<br>';
+        echo 'Error performing query: ' . htmlspecialchars(mysqli_error($db)) . '<br>';
         cpg_end($db);
         return NULL;
     }
@@ -476,7 +478,7 @@ function cpg_getAlbums() {
 
     $result = @mysqli_query($db,$query);
     if (!$result) {
-        echo 'Error performing query: ' . serendipity_specialchars(mysqli_error($db)) . '<br>';
+        echo 'Error performing query: ' . htmlspecialchars(mysqli_error($db)) . '<br>';
         cpg_end($db);
         return NULL;
     }
@@ -606,10 +608,10 @@ function cpg_imageSelector_done(textarea)
                 <input type="hidden" name="thumbName" value="<?php echo $image['thumbnail']; ?>" />
                 <input type="hidden" name="cpg_link" value="<?php echo $image['link']; ?>" />
                 <?php if (!empty($CPG['htmltarget'])) { ?>
-                <input type="hidden" name="htmltarget" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($CPG['htmltarget']) : htmlspecialchars($CPG['htmltarget'], ENT_COMPAT, LANG_CHARSET)); ?>" />
+                <input type="hidden" name="htmltarget" value="<?php echo htmlspecialchars($CPG['htmltarget']); ?>" />
                 <?php } ?>
                 <?php if (!empty($CPG['filename_only'])) { ?>
-                <input type="hidden" name="filename_only" value="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($CPG['filename_only']) : htmlspecialchars($CPG['filename_only'], ENT_COMPAT, LANG_CHARSET)); ?>" />
+                <input type="hidden" name="filename_only" value="<?php echo htmlspecialchars($CPG['filename_only']); ?>" />
                 <?php } ?>
 
                 <b><?php echo IMAGE_SIZE; ?>:</b>
@@ -657,14 +659,14 @@ function cpg_imageSelector_done(textarea)
         if (!empty($CPG['filename_only'])) {
 ?>
     <script type="text/javascript">
-        self.opener.serendipity.serendipity_imageSelector_addToElement('<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($imgName) : htmlspecialchars($imgName, ENT_COMPAT, LANG_CHARSET)); ?>', '<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($CPG['htmltarget']) : htmlspecialchars($CPG['htmltarget'], ENT_COMPAT, LANG_CHARSET)); ?>');
+        self.opener.serendipity.serendipity_imageSelector_addToElement('<?php echo htmlspecialchars($imgName); ?>', '<?php echo htmlspecialchars($CPG['htmltarget']); ?>');
         self.close();
     </script>
 <?php
         } else {
 ?>
     <script type="text/javascript">
-    block = '<a href="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($imgName) : htmlspecialchars($imgName, ENT_COMPAT, LANG_CHARSET)); ?>" title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($file['name'] . '.' . $file['extension']) : htmlspecialchars($file['name'] . '.' . $file['extension'], ENT_COMPAT, LANG_CHARSET)); ?>" target="_blank" rel="noopener"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($file['name'] . '.' . $file['extension']) : htmlspecialchars($file['name'] . '.' . $file['extension'], ENT_COMPAT, LANG_CHARSET)); ?></a>';
+    block = '<a href="<?php echo htmlspecialchars($imgName); ?>" title="<?php echo htmlspecialchars($file['name'] . '.' . $file['extension']); ?>" target="_blank" rel="noopener"><?php echo htmlspecialchars($file['name'] . '.' . $file['extension']); ?></a>';
     if (self.opener.editorref) {
         self.opener.editorref.surroundHTML(block, '');
     } else {
