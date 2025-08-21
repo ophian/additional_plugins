@@ -10,9 +10,8 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_template_editor extends serendipity_event
 {
+    public $pluginPath;
     public $title = PLUGIN_EVENT_TEMPLATE_EDITOR_NAME;
-
-    private $pluginPath;
 
     function introspect(&$propbag)
     {
