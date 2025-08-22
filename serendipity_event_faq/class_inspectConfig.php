@@ -44,10 +44,10 @@ class icSelect extends inspectConfig
                 <select id="<?php echo $inspectConfig['cname']; ?><?php echo $inspectConfig['elcount']; ?>" class="direction_<?php echo $inspectConfig['lang_direction']; ?>" name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]">
 <?php
         foreach($select AS $select_value => $select_desc) {
-            $id = function_exists('serendipity_specialchars') ? serendipity_specialchars($inspectConfig['config_item'] . $select_value) : htmlspecialchars($inspectConfig['config_item'] . $select_value, ENT_COMPAT, LANG_CHARSET);
+            $id = htmlspecialchars($inspectConfig['config_item'] . $select_value);
 ?>
-                    <option value="<?php echo $select_value; ?>"<?php echo ($select_value == $inspectConfig['hvalue'] ? ' selected="selected"' : ''); ?> title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET)); ?>">
-                        <?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($select_desc) : htmlspecialchars($select_desc, ENT_COMPAT, LANG_CHARSET))."\n"; ?>
+                    <option value="<?php echo $select_value; ?>"<?php echo ($select_value == $inspectConfig['hvalue'] ? ' selected="selected"' : ''); ?> title="<?php echo htmlspecialchars($select_desc); ?>">
+                        <?php echo htmlspecialchars($select_desc)."\n"; ?>
                     </option>
 <?php
         }
@@ -125,7 +125,7 @@ class icRadio extends inspectConfig
 <?php
         $counter = 0;
         foreach($radio['value'] AS $radio_index => $radio_value) {
-            $id = (function_exists('serendipity_specialchars') ? serendipity_specialchars($inspectConfig['config_item'] . $radio_value) : htmlspecialchars($inspectConfig['config_item'] . $radio_value, ENT_COMPAT, LANG_CHARSET));
+            $id = htmlspecialchars($inspectConfig['config_item'] . $radio_value);
             $counter++;
             $checked = "";
 
@@ -143,8 +143,8 @@ class icRadio extends inspectConfig
 <?php
             }
 ?>
-                <input class="direction_<?php echo $inspectConfig['lang_direction']; ?> input_radio" type="radio" id="serendipity_plugin_<?php echo $id; ?>" name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]" value="<?php echo $radio_value; ?>" <?php echo $checked ?> title="<?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?>" />
-                <label for="serendipity_plugin_<?php echo $id; ?>"><?php echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($radio['desc'][$radio_index]) : htmlspecialchars($radio['desc'][$radio_index], ENT_COMPAT, LANG_CHARSET)); ?></label>
+                <input class="direction_<?php echo $inspectConfig['lang_direction']; ?> input_radio" type="radio" id="serendipity_plugin_<?php echo $id; ?>" name="serendipity[plugin][<?php echo $inspectConfig['config_item']; ?>]" value="<?php echo $radio_value; ?>" <?php echo $checked ?> title="<?php echo htmlspecialchars($radio['desc'][$radio_index]); ?>" />
+                <label for="serendipity_plugin_<?php echo $id; ?>"><?php echo htmlspecialchars($radio['desc'][$radio_index]); ?></label>
 <?php
             if ($counter == $per_row) {
                 $counter = 0;

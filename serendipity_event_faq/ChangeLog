@@ -1,3 +1,7 @@
+2.0.4:
+------
+ * Use native htmlspecialchars()
+
 2.0.3:
 ------
  * Fix RichText editor toolbar styling fix before
