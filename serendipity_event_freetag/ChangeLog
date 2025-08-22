@@ -1,3 +1,7 @@
+6.4.1:
+------
+ * Use native htmlspecialchars()
+
 6.4.0 & 4.2.0 (sb plugin):
 --------------------------
  * Add extended option to add different XML icons [by pure standard theme] and/or svg styled by CSS

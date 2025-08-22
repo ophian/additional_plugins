@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.4.0');
+        $propbag->add('version',       '6.4.1');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -536,7 +536,7 @@ class serendipity_event_freetag extends serendipity_event
             if (empty($tag)) {
                 continue;
             }
-            $links[] = '<a href="' . $taglink . self::makeURLTag($tag) . '" title="' . serendipity_specialchars($tag) . '" rel="tag">' . serendipity_specialchars($tag) . '</a>';
+            $links[] = '<a href="' . $taglink . self::makeURLTag($tag) . '" title="' . htmlspecialchars($tag) . '" rel="tag">' . htmlspecialchars($tag) . '</a>';
         }
 
         if ($extended_smarty) {
@@ -629,13 +629,13 @@ class serendipity_event_freetag extends serendipity_event
             $ret['description'] = PLUGIN_EVENT_FREETAG_RELATED_ENTRIES;
             foreach($entries AS $entryid => $title) {
                 // prepare preset anchor link in a simple array
-                $ret['entries'][] = '<a href="' . serendipity_archiveURL($entryid, $title, 'baseURL', true, array('timestamp' => $fakets)) . '" title="' . serendipity_specialchars($title) . '">' . serendipity_specialchars($title) . '</a>';
+                $ret['entries'][] = '<a href="' . serendipity_archiveURL($entryid, $title, 'baseURL', true, array('timestamp' => $fakets)) . '" title="' . htmlspecialchars($title) . '">' . htmlspecialchars($title) . '</a>';
                 // You can have EITHER / OR, NOT both(!), without compat break - that means, switching here by hand or have to add another plugin config option for this case.
-                #$ret['entries'][] = array('url' => serendipity_archiveURL($entryid, serendipity_specialchars($title), 'baseURL', true, array('timestamp' => $fakets)) , 'title' => serendipity_specialchars($title));
+                #$ret['entries'][] = array('url' => serendipity_archiveURL($entryid, htmlspecialchars($title), 'baseURL', true, array('timestamp' => $fakets)) , 'title' => htmlspecialchars($title));
                 /*
                 Returning the entries array this way will need you to extend the array readout in the entries.tpl extended example and may need to run this "flattened" loop as
                 foreach($entries AS $entry) {
-                    $ret['entries'][] = array('url' => serendipity_archiveURL($entry['id'], serendipity_specialchars($entry['title']), 'baseURL', true, array('timestamp' => $fakets)) , 'title' => serendipity_specialchars($entry['title']) , 'and so on' => 'for more additions per key' );
+                    $ret['entries'][] = array('url' => serendipity_archiveURL($entry['id'], htmlspecialchars($entry['title']), 'baseURL', true, array('timestamp' => $fakets)) , 'title' => htmlspecialchars($entry['title']) , 'and so on' => 'for more additions per key' );
                 }
                 since now being a full multi-dimensional array, if you want to add more like an entries teaser image for example.
                 See: http://board.s9y.org/viewtopic.php?f=4&t=20260&p=10443603#p10443603 ff
@@ -649,7 +649,7 @@ class serendipity_event_freetag extends serendipity_event
             $ret  = "\n".'<div class="serendipity_freeTag_related">' . PLUGIN_EVENT_FREETAG_RELATED_ENTRIES;
             $ret .= "\n    <ul class=\"plainList\">\n";
             foreach($entries AS $entryid => $title) {
-                $ret .= '    <li> <a href="' . serendipity_archiveURL($entryid, $title, 'baseURL', true, array('timestamp' => $fakets)) . '" title="' . serendipity_specialchars($title) . '">' . serendipity_specialchars($title) . "</a></li>\n";
+                $ret .= '    <li> <a href="' . serendipity_archiveURL($entryid, $title, 'baseURL', true, array('timestamp' => $fakets)) . '" title="' . htmlspecialchars($title) . '">' . htmlspecialchars($title) . "</a></li>\n";
             }
             $ret .= "    </ul>\n</div>\n";
         }
@@ -772,7 +772,7 @@ class serendipity_event_freetag extends serendipity_event
                 continue;
             }
 
-            $title = serendipity_specialchars($name);
+            $title = htmlspecialchars($name);
 
             if (!$first && !$nl) {
                 if (!$scaling) {
@@ -1306,7 +1306,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 case 'frontend_rss':
                     if (!empty($this->displayTag)) {
-                        $eventData['title'] .= serendipity_utf8_encode(serendipity_specialchars(' (' . sprintf(PLUGIN_EVENT_FREETAG_USING, $this->displayTag) . ')'));
+                        $eventData['title'] .= serendipity_utf8_encode(htmlspecialchars(' (' . sprintf(PLUGIN_EVENT_FREETAG_USING, $this->displayTag) . ')'));
                     }
                     break;
 
@@ -1316,7 +1316,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             $this->displayTagCloud($eventData['plugin_vars']['tag']); // single url tag only
                         } else {
                             $thistags = is_array($this->displayTag) ? implode(', ', $this->displayTag) : $this->displayTag;
-                            $serendipity['smarty']->assign('freetag_tagTitle', serendipity_specialchars($thistags));
+                            $serendipity['smarty']->assign('freetag_tagTitle', htmlspecialchars($thistags));
                             $serendipity['smarty']->assign('freetag_isList', true); // do not show the related tags cloud markup itself!
                             echo $this->parseTemplate('plugin_freetag.tpl');
                         }
@@ -1647,7 +1647,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $this->displayTag = $tag;
         }
         $thistags = is_array($this->displayTag) ? implode(', ', $this->displayTag) : $this->displayTag;
-        $serendipity['smarty']->assign('freetag_tagTitle', serendipity_specialchars($thistags));
+        $serendipity['smarty']->assign('freetag_tagTitle', htmlspecialchars($thistags));
 
         if (!empty($tags)) {
             $useRotCanvas = serendipity_db_bool($this->get_config('use_rotacloud', 'false'));
@@ -1875,7 +1875,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 $not_first = true;
             }
-            echo serendipity_specialchars($r['tag']);
+            echo htmlspecialchars($r['tag']);
         }
         echo "\">\n";
     }
@@ -2151,7 +2151,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         foreach($tagList AS $tag) {
-            $out .= serendipity_utf8_encode("<$element>" . serendipity_specialchars($tag) ."</$element>\n");
+            $out .= serendipity_utf8_encode("<$element>" . htmlspecialchars($tag) ."</$element>\n");
         }
         return $out;
     }
@@ -2182,13 +2182,13 @@ document.addEventListener("DOMContentLoaded", function() {
             if (false === serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
                 // Since this is extra stuff, we need to regular assign the subtitle header and not use $serendipity['head_subtitle'] !
                 if (count($param) > 1) {
-                    if (function_exists('serendipity_specialchars')) {
-                        $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('serendipity_specialchars', $param))));
+                    if (function_exists('htmlspecialchars')) {
+                        $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('htmlspecialchars', $param))));
                     } else {
                         $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('self::callback_map', $param))));
                     }
                 } else {
-                    $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, serendipity_specialchars($param[0])));
+                    $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, htmlspecialchars($param[0])));
                 }
             }
 
@@ -2224,7 +2224,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $param = urldecode($param[0]);
             $param = urldecode($param); // for doubled encoded tag umlauts via search engine backlinks
             $param = strip_tags($param);
-            $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, serendipity_specialchars($param));
+            $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, htmlspecialchars($param));
             $emit_404 = true;
         } else {
             if (!$tagged_as_list) {
@@ -2233,8 +2233,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             $param = array_map('strip_tags', $param);
             $param = array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
-            if (function_exists('serendipity_specialchars')) {
-                $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('serendipity_specialchars', $param)));
+            if (function_exists('htmlspecialchars')) {
+                $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('htmlspecialchars', $param)));
             } else {
                 $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('self::callback_map', $param)));
             }
@@ -2245,8 +2245,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (is_array($param)) {
             array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
         }
-        if (function_exists('serendipity_specialchars')) {
-            $param = is_array($param) ? array_map('serendipity_specialchars', $param) : serendipity_specialchars($param);
+        if (function_exists('htmlspecialchars')) {
+            $param = is_array($param) ? array_map('htmlspecialchars', $param) : htmlspecialchars($param);
         } else {
             $param = is_array($param) ? array_map('self::callback_map', $param) : htmlspecialchars($param, ENT_COMPAT, LANG_CHARSET);
         }
@@ -2476,7 +2476,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (count($taglist) === 0) {
             return;
         }
-        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']);
+        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . htmlspecialchars($this->_eventData['GET']['tagview']);
 ?>
 
 <table class="freetags_manage">
@@ -2604,7 +2604,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 $keys[$key['tag']] = $key['keywords'];
             }
         }
-        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']);
+        $url = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . htmlspecialchars($this->_eventData['GET']['tagview']);
 
         echo '<span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_FREETAG_KEYWORDS_DESC . "</span>\n";
 ?>
@@ -2628,7 +2628,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (isset($serendipity['GET']['tag']) && urldecode($serendipity['GET']['tag']) == $tag) {
 ?>
                     <a id="edit"></a>
-                    <textarea rows="4" cols="40" name="serendipity[keywords]"><?php echo serendipity_specialchars((isset($keys[$tag]) ? $keys[$tag] :'')) ?></textarea>
+                    <textarea rows="4" cols="40" name="serendipity[keywords]"><?php echo htmlspecialchars((isset($keys[$tag]) ? $keys[$tag] :'')) ?></textarea>
 <?php
                 } else {
                         if (isset($keys[$tag])) echo $keys[$tag];
@@ -2718,8 +2718,8 @@ document.addEventListener("DOMContentLoaded", function() {
             printf(
                 PLUGIN_EVENT_FREETAG_GLOBALCAT2TAG_ENTRY,
                 $id,
-                serendipity_specialchars($props['title']),
-                serendipity_specialchars(implode(', ', $newtags))
+                htmlspecialchars($props['title']),
+                htmlspecialchars(implode(', ', $newtags))
             );
             echo "    </li>\n";
         }
@@ -2765,7 +2765,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 unset($entry['orderkey']);
                 unset($entry['loginname']);
                 unset($entry['email']);
-                printf('    <li>%d - "%s"', $entry['id'], serendipity_specialchars($entry['title']));
+                printf('    <li>%d - "%s"', $entry['id'], htmlspecialchars($entry['title']));
                 $serendipity['POST']['properties']['fake'] = 'fake';
                 $current_cat = $entry['categories'];
                 $entry['categories'] = array();
@@ -2861,7 +2861,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 echo '<form action="" method="GET">'."\n";
                 echo '    <input type="hidden" name="serendipity[adminModule]" value="event_display">';
                 echo '    <input type="hidden" name="serendipity[adminAction]" value="managetags">';
-                echo '    <input type="hidden" name="serendipity[tagview]" value="' . serendipity_specialchars($this->_eventData['GET']['tagview']) . '">'."\n";
+                echo '    <input type="hidden" name="serendipity[tagview]" value="' . htmlspecialchars($this->_eventData['GET']['tagview']) . '">'."\n";
                 echo '    <input type="hidden" name="serendipity[perform]" value="true">'."\n";
                 echo '    <input type="submit" name="submit" value="'.PLUGIN_EVENT_FREETAG_MANAGE_CLEANUP_PERFORM.'">'."\n";
                 echo "</form>\n";
@@ -2961,7 +2961,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 $tags = array(); // avoid having "[] operator not supported for strings" errors
                             }
                             $tags[] = $tag;
-                            $kaddmsg .= sprintf('    <li>' . PLUGIN_EVENT_FREETAG_KEYWORDS_ADD . "</li>\n", serendipity_specialchars($keyword), serendipity_specialchars($tag));
+                            $kaddmsg .= sprintf('    <li>' . PLUGIN_EVENT_FREETAG_KEYWORDS_ADD . "</li>\n", htmlspecialchars($keyword), htmlspecialchars($tag));
                             if (!empty($tags)) {
                                 $key2tagIDs[] = $eventData['id']; // gather ids to updertEntries
                             }
@@ -3105,7 +3105,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div id="edit_entry_freetags_need_to_save"><em><?php echo PLUGIN_EVENT_FREETAG_MPFDESC; ?></em></div>
                 <div class="form_field">
                     <label for="properties_freetag_tagList" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_ENTERDESC; ?>:</label>
-                    <input id="properties_freetag_tagList" class="wickEnabled" dir="<?php echo $dir_reverse; ?>" type="text" name="serendipity[properties][freetag_tagList]" value="<?php echo serendipity_specialchars($tagList) ?>">
+                    <input id="properties_freetag_tagList" class="wickEnabled" dir="<?php echo $dir_reverse; ?>" type="text" name="serendipity[properties][freetag_tagList]" value="<?php echo htmlspecialchars($tagList) ?>">
                 </div>
                 <div class="form_check">
                     <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" type="checkbox" value="true">
@@ -3203,11 +3203,11 @@ document.addEventListener("DOMContentLoaded", function() {
 <form action="" method="GET">
     <input type="hidden" name="serendipity[adminModule]" value="event_display">
     <input type="hidden" name="serendipity[adminAction]" value="managetags">
-    <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->_eventData['GET']['tagview']) ?>">
+    <input type="hidden" name="serendipity[tagview]" value="<?php echo htmlspecialchars($this->_eventData['GET']['tagview']) ?>">
     <input type="hidden" name="serendipity[tagaction]" value="rename">
     <input type="hidden" name="serendipity[commit]" value="true">
-    <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>">
-    <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]"> <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>">
+    <input type="hidden" name="serendipity[tag]" value="<?php echo htmlspecialchars($tag) ?>">
+    <?php echo htmlspecialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]"> <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>">
 </form>
 
 <?php
@@ -3262,14 +3262,14 @@ document.addEventListener("DOMContentLoaded", function() {
      */
     private function displayDeleteTag($tag, &$eventData)
     {
-        $no  = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']);
-        $yes = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . serendipity_specialchars($this->_eventData['GET']['tagview']).
+        $no  = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . htmlspecialchars($this->_eventData['GET']['tagview']);
+        $yes = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . htmlspecialchars($this->_eventData['GET']['tagview']).
                     "&amp;serendipity[tagaction]=delete".
                     "&amp;serendipity[tag]=".urlencode($tag)."&amp;serendipity[commit]=true";
 ?>
 
         <div class="msg_notice">
-            <h3> <?php printf(PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE, serendipity_specialchars($tag)) ?></h3>
+            <h3> <?php printf(PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE, htmlspecialchars($tag)) ?></h3>
             <a class="button_link state_submit" href="<?php echo $yes; ?>"><?php echo YES; ?></a> &nbsp; &nbsp; <a class="button_link state_cancel" href="<?php echo $no; ?>"><?php echo NO; ?></a>
         </div>
 
@@ -3312,13 +3312,13 @@ document.addEventListener("DOMContentLoaded", function() {
         <form action="" method="GET">
             <input type="hidden" name="serendipity[adminModule]" value="event_display">
             <input type="hidden" name="serendipity[adminAction]" value="managetags">
-            <input type="hidden" name="serendipity[tagview]" value="<?php echo serendipity_specialchars($this->_eventData['GET']['tagview']) ?>">
+            <input type="hidden" name="serendipity[tagview]" value="<?php echo htmlspecialchars($this->_eventData['GET']['tagview']) ?>">
             <input type="hidden" name="serendipity[tagaction]" value="split">
             <input type="hidden" name="serendipity[commit]" value="true">
-            <input type="hidden" name="serendipity[tag]" value="<?php echo serendipity_specialchars($tag) ?>">
+            <input type="hidden" name="serendipity[tag]" value="<?php echo htmlspecialchars($tag) ?>">
             <p><?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?><br>
                 foobarbaz =&gt; foo,bar,baz</p>
-            <?php echo serendipity_specialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo serendipity_specialchars($newtag) ?>">
+            <?php echo htmlspecialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo htmlspecialchars($newtag) ?>">
             <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>">
         </form>
 
