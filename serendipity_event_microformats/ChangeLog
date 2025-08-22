@@ -1,3 +1,7 @@
+1.0.1:
+------
+ * Use native htmlspecialchars() and more
+
 1.0.0 (sidebar plugin):
 ------
  * Declare strict types

@@ -12,9 +12,9 @@ if (IN_serendipity !== true) {
 
 class serendipity_plugin_microformats extends serendipity_plugin
 {
-    var $title = PLUGIN_MICROFORMATS_TITLE_N;
+    public $title = PLUGIN_MICROFORMATS_TITLE_N;
 
-    var $timezones  = array('-1200' => '-12 (IDLW)',
+    private $timezones  = array('-1200' => '-12 (IDLW)',
                             '-1100' => '-11 (NT)',
                             '-1000' => '-10 (HST)',
                             '-0900' => '-9 (AKST)',
@@ -49,8 +49,6 @@ class serendipity_plugin_microformats extends serendipity_plugin
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $this->title = $this->get_config('display_title', $this->title);
 
         $propbag->add('name',          $this->title);
