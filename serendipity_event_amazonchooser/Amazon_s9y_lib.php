@@ -421,70 +421,70 @@ function Amazon_AttributesText ($SearchIndex,$items,$country_url) {
             $item['strings']['largeurl'] = rawurldecode($item['LARGEIMAGE']['LARGEIMAGE_URL']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LISTPRICE_FORMATTEDPRICE'])) {
-            $item['strings']['price'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LISTPRICE_FORMATTEDPRICE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LISTPRICE_FORMATTEDPRICE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['price'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LISTPRICE_FORMATTEDPRICE']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PRODUCTGROUP'])) {
             if ($SearchIndex == "" || !isset($SearchIndex)) {
                 $SearchIndex = $item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PRODUCTGROUP'];
             }
-            $item['strings']['productgroup'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PRODUCTGROUP']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PRODUCTGROUP'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['productgroup'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PRODUCTGROUP']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LANGUAGES_LANGUAGE_NAME'])) {
-            $item['strings']['productlanguage'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LANGUAGES_LANGUAGE_NAME']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LANGUAGES_LANGUAGE_NAME'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['productlanguage'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_LANGUAGES_LANGUAGE_NAME']);
         }
         if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE'])) {
-            $item['strings']['releasedate'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['releasedate'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE']);
         }
         if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RUNNINGTIME'])) {
-            $item['strings']['running'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RUNNINGTIME']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RUNNINGTIME'], ENT_COMPAT, LANG_CHARSET)).' '.(function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RUNNINGTIME_UNITS']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RUNNINGTIME_UNITS'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['running'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RUNNINGTIME']).' '.htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RUNNINGTIME_UNITS']);
         }
         if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFDISCS'])) {
-            $item['strings']['numberofdiscs'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFDISCS']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFDISCS'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['numberofdiscs'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFDISCS']);
         }
         if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FORMAT'])) {
-            $item['strings']['format'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FORMAT']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FORMAT'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['format'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FORMAT']);
         }
         if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ISBN'])) {
-            $item['strings']['ISBN'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ISBN']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ISBN'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['ISBN'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ISBN']);
         }
         if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_EAN']) && $euro) {
-            $item['strings']['EAN'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_EAN']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_EAN'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['EAN'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_EAN']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_TITLE'])) {
-            $item['strings']['title'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_TITLE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_TITLE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['title'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_TITLE']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_HARDWAREPLATFORM'])) {
-            $item['strings']['platform'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_HARDWAREPLATFORM']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_HARDWAREPLATFORM'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['platform'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_HARDWAREPLATFORM']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_GENRE'])) {
-            $item['strings']['genre'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_GENRE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_GENRE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['genre'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_GENRE']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ESRBAGERATING'])) {
-            $item['strings']['esrbarating'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ESRBAGERATING']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ESRBAGERATING'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['esrbarating'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ESRBAGERATING']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUDIENCERATING'])) {
-            $item['strings']['audiencerating'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUDIENCERATING']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUDIENCERATING'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['audiencerating'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUDIENCERATING']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MODEL'])) {
-            $item['strings']['model'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MODEL']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MODEL'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['model'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MODEL']);
         }
         if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMAPERTURE'])) {
-            $item['strings']['maxaperture'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMAPERTURE_UNITS']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMAPERTURE_UNITS'], ENT_COMPAT, LANG_CHARSET))."/".(function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMAPERTURE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMAPERTURE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['maxaperture'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMAPERTURE_UNITS'])."/".htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMAPERTURE']);
         }
         if ((isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MINIMUMFOCALLENGTH'])) && (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMFOCALLENGTH']))) {
-            $item['strings']['focallength'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MINIMUMFOCALLENGTH']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MINIMUMFOCALLENGTH'], ENT_COMPAT, LANG_CHARSET)).'-'.(function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMFOCALLENGTH']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMFOCALLENGTH'], ENT_COMPAT, LANG_CHARSET)).' '.(function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MINIMUMFOCALLENGTH_UNITS']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MINIMUMFOCALLENGTH_UNITS'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['focallength'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MINIMUMFOCALLENGTH']).'-'.htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MAXIMUMFOCALLENGTH']);
         }
         if ((isset($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALNEW']) && ($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALNEW'] != 0))  && (isset($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTNEWPRICE_FORMATTEDPRICE']))) {
-            $item['strings']['newoffers'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALNEW']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALNEW'], ENT_COMPAT, LANG_CHARSET)) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_NEW') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTNEWPRICE_FORMATTEDPRICE']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTNEWPRICE_FORMATTEDPRICE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['newoffers'] = htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALNEW']) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_NEW') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTNEWPRICE_FORMATTEDPRICE']);
         }
         if ((isset($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALUSED']) && ($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALUSED'] != 0))  && (isset($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTUSEDPRICE_FORMATTEDPRICE']))) {
-             $item['strings']['usedoffers'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALUSED']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALUSED'], ENT_COMPAT, LANG_CHARSET)) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_USED') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTUSEDPRICE_FORMATTEDPRICE']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTUSEDPRICE_FORMATTEDPRICE'], ENT_COMPAT, LANG_CHARSET));
+             $item['strings']['usedoffers'] = htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALUSED']) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_USED') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTUSEDPRICE_FORMATTEDPRICE']);
         }
         if ((isset($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALCOLLECTABLE']) && ($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALCOLLECTABLE'] != 0))  && (isset($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTCOLLECTABLEPRICE_FORMATTEDPRICE']))) {
-            $item['strings']['collectableoffers'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALCOLLECTABLE']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALCOLLECTABLE'], ENT_COMPAT, LANG_CHARSET)) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_COLLECTABLE') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTCOLLECTABLEPRICE_FORMATTEDPRICE']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTCOLLECTABLEPRICE_FORMATTEDPRICE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['collectableoffers'] = htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALCOLLECTABLE']) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_COLLECTABLE') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTCOLLECTABLEPRICE_FORMATTEDPRICE']);
         }
         if ((isset($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALREFURBISHED']) && ($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALREFURBISHED'] != 0))  && (isset($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTREFURBISHEDPRICE_FORMATTEDPRICE']))) {
-            $item['strings']['refurboffers'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALREFURBISHED']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALREFURBISHED'], ENT_COMPAT, LANG_CHARSET)) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_REFURBISHED') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTREFURBISHEDPRICE_FORMATTEDPRICE']) : htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTREFURBISHEDPRICE_FORMATTEDPRICE'], ENT_COMPAT, LANG_CHARSET));
+            $item['strings']['refurboffers'] = htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_TOTALREFURBISHED']) . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_REFURBISHED') . " " . constant('PLUGIN_EVENT_AMAZONCHOOSER_FROM') . " " . htmlspecialchars($item['OFFERSUMMARY']['OFFERSUMMARY_LOWESTREFURBISHEDPRICE_FORMATTEDPRICE']);
         }
         switch ($SearchIndex) {
             case 'Books':
@@ -493,20 +493,20 @@ function Amazon_AttributesText ($SearchIndex,$items,$country_url) {
             case 'KindleStore':
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR'])) {
                     if (is_array($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR'])) {
-                        $item['strings']['author'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR'])) : htmlspecialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR']), ENT_COMPAT, LANG_CHARSET));
+                        $item['strings']['author'] = htmlspecialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR']));
                     } else {
-                        $item['strings']['author'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR'], ENT_COMPAT, LANG_CHARSET));
+                        $item['strings']['author'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_AUTHOR']);
                     }
                 }
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'])) {
-                    $item['strings']['publisher'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['publisher'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']);
                 }
                 if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PUBLICATIONDATE'])) {
-                    $item['strings']['publicationdate'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PUBLICATIONDATE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PUBLICATIONDATE'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['publicationdate'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_PUBLICATIONDATE']);
                     unset($item['strings']['releasedate']);
                 }
                 if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFPAGES'])) {
-                    $item['strings']['numberofpages'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFPAGES']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFPAGES'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['numberofpages'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_NUMBEROFPAGES']);
                 }
                 break;
             case 'VHS':
@@ -514,19 +514,19 @@ function Amazon_AttributesText ($SearchIndex,$items,$country_url) {
             case 'DVD':
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR'])) {
                     if (is_array($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR'])) {
-                        $item['strings']['actor'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR'])) : htmlspecialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR']), ENT_COMPAT, LANG_CHARSET));
+                        $item['strings']['actor'] = htmlspecialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR']));
                     } else {
-                        $item['strings']['actor'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR'], ENT_COMPAT, LANG_CHARSET));
+                        $item['strings']['actor'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ACTOR']);
                     }
                 }
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'])) {
-                    $item['strings']['distributor'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['distributor'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']);
                 }
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_DIRECTOR'])) {
-                    $item['strings']['director'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_DIRECTOR']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_DIRECTOR'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['director'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_DIRECTOR']);
                 }
                 if (!empty($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE'])) {
-                    $item['strings']['releasedate'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['releasedate'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_RELEASEDATE']);
                 }
                 break;
             case 'Music':
@@ -537,33 +537,33 @@ function Amazon_AttributesText ($SearchIndex,$items,$country_url) {
             case 'MusicTracks':
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST'])) {
                     if (is_array($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST'])) {
-                        $item['strings']['artist'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST'])) : htmlspecialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST']), ENT_COMPAT, LANG_CHARSET));
+                        $item['strings']['artist'] = htmlspecialchars(implode(', ',$item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST']));
                     } else {
-                        $item['strings']['artist'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST'], ENT_COMPAT, LANG_CHARSET));
+                        $item['strings']['artist'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_ARTIST']);
                     }
                 }
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'])) {
-                    $item['strings']['distributor'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['distributor'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']);
                 }
                 break;
             case 'Software':
             case 'VideoGames':
             case 'SoftwareVideoGames':
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'])) {
-                    $item['strings']['distributor'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['distributor'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']);
                 }
                 break;
             case 'Apparel':
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_BRAND'])) {
-                    $item['strings']['brand'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_BRAND']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_BRAND'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['brand'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_BRAND']);
                 }
                 break;
             default:
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'])) {
-                    $item['strings']['distributor'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['distributor'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_MANUFACTURER']);
                 }
                 if (isset($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FEATURE'])) {
-                    $item['strings']['feature'] = (function_exists('serendipity_specialchars') ? serendipity_specialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FEATURE']) : htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FEATURE'], ENT_COMPAT, LANG_CHARSET));
+                    $item['strings']['feature'] = htmlspecialchars($item['ITEMATTRIBUTES']['ITEMATTRIBUTES_FEATURE']);
                 }
                 break;
         }
