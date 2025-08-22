@@ -135,7 +135,7 @@ function communityrating_serendipity_show($params, $smarty) {
     $content = $serendipity['smarty']->fetch('file:'. $tfile);
 
 	if (!empty($params['escaped'])) {
-        echo serendipity_utf8_encode((function_exists('serendipity_specialchars') ? serendipity_specialchars($content) : htmlspecialchars($content, ENT_COMPAT, LANG_CHARSET)));
+        echo serendipity_utf8_encode(htmlspecialchars($content));
 	} else {
         echo $content;
 	}
