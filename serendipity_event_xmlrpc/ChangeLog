@@ -1,3 +1,7 @@
+2.4.3:
+------
+ * Use native htmlspecialchars()
+
 2.4.2:
 ------
  * Cast fix arg types of comment delete and approve function calls
