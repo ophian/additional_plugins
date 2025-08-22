@@ -67,8 +67,9 @@ class subplug_sidebar
 
 class serendipity_plugin_imagesidebar extends serendipity_plugin
 {
-    var $title = PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME;
-    var $object_extend = '';
+    public $title = PLUGIN_SIDEBAR_IMAGESIDEBAR_NAME;
+
+    private $object_extend = '';
 
     function introspect(&$propbag)
     {
@@ -78,7 +79,7 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
         $propbag->add('description',   PLUGIN_SIDEBAR_IMAGESIDEBAR_DESC . ' PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.');
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx');
-        $propbag->add('version',       '4.0.5');
+        $propbag->add('version',       '4.1.0');
         $propbag->add('license',       'BSD');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
@@ -191,8 +192,6 @@ class serendipity_plugin_imagesidebar extends serendipity_plugin
 
     function generate_content(&$title)
     {
-        global $serendipity;
-
         $title = $this->get_config('title');
         if (!is_object($this->object_extend)) {
             $this->object_extend = $this->create_sub_class(true);

@@ -1,3 +1,7 @@
+4.1.0:
+------
+ * Use native htmlspecialchars()
+
 4.0.5:
 4.0.4:
 4.0.3:
