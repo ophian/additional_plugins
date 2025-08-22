@@ -121,8 +121,8 @@
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_userprofiles</link>
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
-<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;Serendipity Authors&lt;/b&gt;&lt;br /&gt;Zobrazuje rozšířené profily autorů/uživatelů&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 18:55:09 +0200</pubDate>
+<content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;Serendipity Authors&lt;/b&gt;&lt;br /&gt;Zobrazuje rozšířené profily autorů/uživatelů&lt;br/&gt;For: Serendipity 5.0</content:encoded>
+<pubDate>Fri, 22 Aug 2025 10:05:29 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Jednotné zobrazování obrázků v postranním sloupci&lt;/b&gt;&lt;br /&gt;Umožňuje zobrazovat obrázky v postranním sloupci. Zdrojů těchto obrázků může být vícero. Plugin se dokáže připojit do databáze Coppermine galerie (pouze pokud běží na MySQL) a samozřejmě i ke Knihovně médií Serendipity. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 18:35:04 +0200</pubDate>
+<pubDate>Fri, 22 Aug 2025 10:09:23 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
@@ -356,7 +356,7 @@
 <category>Sidebar Plugins</category>
 <author>Florian Solcher</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Náhodný citát&lt;/b&gt;&lt;br /&gt;Zobrazuje blok s náhodně vybraným citátem&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 18:52:56 +0200</pubDate>
+<pubDate>Fri, 22 Aug 2025 10:12:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_randomquotes</guid>
 </item>
 <item>
