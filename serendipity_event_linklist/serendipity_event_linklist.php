@@ -12,12 +12,10 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_linklist extends serendipity_event
 {
-    var $title = PLUGIN_LINKLIST_TITLE;
+    public $title = PLUGIN_LINKLIST_TITLE;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name', PLUGIN_LINKLIST_TITLE);
         $propbag->add('description', PLUGIN_LINKLIST_DESC);
         $propbag->add('event_hooks',  array('backend_sidebar_entries_event_display_linklist'  => true,
@@ -28,7 +26,7 @@ class serendipity_event_linklist extends serendipity_event
                                             'external_plugin'                                 => true
                                             ));
         $propbag->add('author',        'Matthew Groeninger, Omid Mottaghi Rad, Ian Styx');
-        $propbag->add('version',       '4.1.2');
+        $propbag->add('version',       '4.1.3');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
