@@ -13,43 +13,41 @@ if (IN_serendipity !== true) {
 class serendipity_event_karma extends serendipity_event
 {
     /** @var string Status of current voting action */
-    var $karmaVote    = '';
+    private $karmaVote    = '';
     /** @var int ID of entry to vote on */
-    var $karmaId      = '';
+    private $karmaId      = '';
     /** @var int Minutes until voting will be enabled, if a timeout is in effect */
-    var $karmaTimeOut = '';
+    private $karmaTimeOut = '';
     /** @var int Points for this entry: current vote until voting is recorded,
      *  total points after voting is recorded
      */
-    var $karmaVoting  = '';
+    private $karmaVoting  = '';
 
     /** @var string The name of the image to be used in graphic rating bars */
-    var $image_name = 'stars-def-yellow-green-md.png';
+    private $image_name = 'stars-def-yellow-green-md.png';
     /** @var int The width of the rating bar image */
-    var $image_width = '';
+    private $image_width = '';
     /** @var int The height of the rating bar image */
-    var $image_height = '';
+    private $image_height = '';
 
     /** @var string The HTML to be used in backend preview */
-    var $select_html = '';
+    private $select_html = '';
     /** @var string The CSS to be added for backend preview */
-    var $select_css = '';
+    private $select_css = '';
 
     /** @var string Title if included as sidebar content */
-    var $title        = PLUGIN_KARMA_NAME;
+    public $title = PLUGIN_KARMA_NAME;
 
     /* The max width/height ratio of a single-segment image */
-    var $max_segment_ratio = 1.0;
+    private $max_segment_ratio = 1.0;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_KARMA_NAME);
         $propbag->add('description',   PLUGIN_KARMA_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx');
-        $propbag->add('version',       '3.0.0');
+        $propbag->add('version',       '3.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
