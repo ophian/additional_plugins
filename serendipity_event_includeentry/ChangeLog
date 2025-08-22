@@ -1,10 +1,14 @@
+3.1.1:
+------
+ * Use native htmlspecialchars()
+
 3.1.0:
 ------
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
 
 3.0.0:
 ------
- * add strict types
+ * Add strict types
  * Raise requirements for Styx 5.0
  * This and that...
 

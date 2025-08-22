@@ -34,7 +34,7 @@ class serendipity_event_includeentry extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_INCLUDEENTRY_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '3.1.0');
+        $propbag->add('version',       '3.1.1');
         $propbag->add('scrambles_true_content', true);
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
