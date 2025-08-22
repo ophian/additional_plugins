@@ -12,7 +12,7 @@ if (IN_serendipity !== true) {
 // Extend the base class
 class serendipity_event_feed extends serendipity_plugin
 {
-    var $title = PLUGIN_DASHBOARD_FEEDME_PLUGIN_TITLE;
+    public $title = PLUGIN_DASHBOARD_FEEDME_PLUGIN_TITLE;
 
     // Setup metadata
     function introspect(&$propbag)
@@ -21,7 +21,7 @@ class serendipity_event_feed extends serendipity_plugin
         $propbag->add('description',    PLUGIN_DASHBOARD_FEEDME_PLUGIN_DESC);
         $propbag->add('stackable',      false);
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '2.0.0');
+        $propbag->add('version',        '2.0.1');
         $propbag->add('requirements',   array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
