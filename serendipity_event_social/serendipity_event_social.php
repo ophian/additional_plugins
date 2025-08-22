@@ -10,17 +10,15 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_social extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_SOCIAL_NAME;
+    public $title = PLUGIN_EVENT_SOCIAL_NAME;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          PLUGIN_EVENT_SOCIAL_NAME);
         $propbag->add('description',   PLUGIN_EVENT_SOCIAL_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein');
-        $propbag->add('version',       '1.0.0');
+        $propbag->add('version',       '1.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
