@@ -94,7 +94,7 @@ class serendipity_event_customarchive extends serendipity_event
         $propbag->add('event_hooks',  array('entries_header' => true, 'entry_display' => true, 'genpage' => true));
         $propbag->add('configuration', array('permalink', 'pagetitle', 'articleformat', 'exclude_emptyyears'));
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.0.0');
+        $propbag->add('version', '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -152,7 +152,7 @@ class serendipity_event_customarchive extends serendipity_event
 
         echo '<select name="serendipity[' . $name . ']">' . "\n";
         foreach ($values AS $value) {
-            echo '<option value="' . $value['value'] . '" ' . ($serendipity['GET'][$name] == $value['value'] ? 'selected="selected"' : '') . '>' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($value['desc']) : htmlspecialchars($value['desc'], ENT_COMPAT, LANG_CHARSET)) . '</option>' . "\n";
+            echo '<option value="' . $value['value'] . '" ' . ($serendipity['GET'][$name] == $value['value'] ? 'selected="selected"' : '') . '>' . htmlspecialchars($value['desc']) . '</option>' . "\n";
         }
         echo '</select>' . "\n";
     }
@@ -224,7 +224,7 @@ class serendipity_event_customarchive extends serendipity_event
                                array('timestamp' => $entry['timestamp'])
                             );
 
-                $entryHTML = '<a href="' . $entryLink . '" title="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($title) : htmlspecialchars($title, ENT_COMPAT, LANG_CHARSET)) . '">' . $title . '</a><br />';
+                $entryHTML = '<a href="' . $entryLink . '" title="' . htmlspecialchars($title) . '">' . $title . '</a><br />';
                 $key       = '';
 
                 switch($serendipity['GET']['custom_sortfield']) {
