@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -9,22 +11,20 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_stalkerbuster extends serendipity_event
 {
-    var $title = PLUGIN_STALKERBUSTER;
+    public $title = PLUGIN_STALKERBUSTER;
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $this->title = $this->get_config('title', $this->title);
         $propbag->add('name',          PLUGIN_STALKERBUSTER);
         $propbag->add('description',   PLUGIN_STALKERBUSTER_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.03');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '1.6',
-            'smarty'      => '2.6.7',
-            'php'         => '5.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('configuration', array(
             'mail',
