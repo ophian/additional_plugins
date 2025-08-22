@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -9,21 +11,19 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_mailcc extends serendipity_event
 {
-    var $title = 'Adds CC to all sent emails';
+    public $title = 'Adds CC to all sent emails';
 
     function introspect(&$propbag)
     {
-        global $serendipity;
-
         $propbag->add('name',          'Adds CC to all sent emails');
         $propbag->add('description',   '(Notice: Make sure that the all of your authors have the option to receive comment notification emails activated, or else no mails will be created that can be CCed');
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking');
-        $propbag->add('version',       '1.02');
+        $propbag->add('version',       '2.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '0.8',
-            'smarty'      => '2.6.7',
-            'php'         => '4.1.0'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('groups', array('BACKEND_FEATURES'));
         $propbag->add('event_hooks',   array('backend_sendmail' => true));
