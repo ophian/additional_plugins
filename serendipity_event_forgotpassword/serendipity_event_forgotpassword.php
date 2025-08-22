@@ -10,7 +10,7 @@ if (IN_serendipity !== true) {
 
 class serendipity_event_forgotpassword extends serendipity_event
 {
-    var $title = PLUGIN_EVENT_FORGOTPASSWORD_NAME;
+    public $title = PLUGIN_EVENT_FORGOTPASSWORD_NAME;
 
     function introspect(&$propbag)
     {
@@ -18,7 +18,7 @@ class serendipity_event_forgotpassword extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_FORGOTPASSWORD_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Omid Mottaghi, Ian Styx');
-        $propbag->add('version',       '1.0.0');
+        $propbag->add('version',       '1.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
