@@ -34,7 +34,7 @@ class serendipity_event_contentrewrite extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_CONTENTREWRITE_DESCRIPTION);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -235,8 +235,8 @@ class serendipity_event_contentrewrite extends serendipity_event
             foreach($this->rewrite_from AS $key => $val) {
 ?>
     <tr>
-        <th style="font-size: 8pt; color: white;"><?php echo serendipity_specialchars($val); ?></th>
-        <td><?php echo serendipity_specialchars($this->rewrite_to[$key]); ?></td>
+        <th style="font-size: 8pt; color: white;"><?php echo htmlspecialchars($val); ?></th>
+        <td><?php echo htmlspecialchars($this->rewrite_to[$key]); ?></td>
     </tr>
 <?php
             }
