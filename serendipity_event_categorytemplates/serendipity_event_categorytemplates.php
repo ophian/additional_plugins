@@ -29,7 +29,7 @@ class serendipity_event_categorytemplates extends serendipity_event
         $propbag->add('description',   PLUGIN_CATEGORYTEMPLATES_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Judebert, Ian Styx');
-        $propbag->add('version',       '2.6.0');
+        $propbag->add('version',       '2.6.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -694,7 +694,7 @@ class serendipity_event_categorytemplates extends serendipity_event
             <div class="radio_field">
                 <label for="pass"><?php echo PLUGIN_CATEGORYTEMPLATES_PASS; ?></label>
                 <input class="input_textbox" id="pass" type="text" name="serendipity[cat][pass]" value="<?php echo $this->fetchProp($eventData, 'pass'); ?>">
-                <i class="icon-info-circled" aria-hidden="true" title="<?php echo serendipity_specialchars(ENTRY_PAGE_PASSWORD_INFO_SET); ?>"></i>
+                <i class="icon-info-circled" aria-hidden="true" title="<?php echo htmlspecialchars(ENTRY_PAGE_PASSWORD_INFO_SET); ?>"></i>
             </div>
         </div>
 <?php }
