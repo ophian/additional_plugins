@@ -16,7 +16,7 @@ class serendipity_event_flattr extends serendipity_event
     /**
      * @var string
      */
-    var $title = PLUGIN_FLATTR_NAME;
+    public $title = PLUGIN_FLATTR_NAME;
 
     private $flattr_cats = [];
     private $flattr_langs = [];
@@ -64,7 +64,7 @@ class serendipity_event_flattr extends serendipity_event
             'add_to_feed',
         ));
         $propbag->add('author',  'Garvin Hicking, Joachim Breitner', 'Matthias Gutjahr, Ian Styx');
-        $propbag->add('version', '2.0.0');
+        $propbag->add('version', '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
