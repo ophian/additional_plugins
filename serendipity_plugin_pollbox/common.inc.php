@@ -64,7 +64,7 @@ class serendipity_common_pollbox
                 if (empty($option['title'])) {
                     continue;
                 }
-                echo '<input class="pollitem" type="radio" style="width: 15px; margin: 0px;" name="serendipity[vote]" value="' . $optid . '" /> ' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($option['title']) : htmlspecialchars($option['title'], ENT_COMPAT, LANG_CHARSET)) . '<br />';
+                echo '<input class="pollitem" type="radio" style="width: 15px; margin: 0px;" name="serendipity[vote]" value="' . $optid . '" /> ' . htmlspecialchars($option['title']) . '<br />';
             }
         }
         echo '<input class="pollsubmit" type="submit" name="serendipity[goVote]" value="' . GO . '" />';
@@ -79,7 +79,7 @@ class serendipity_common_pollbox
         asort($sorted);
 
         foreach($sorted AS $title => $votes) {
-            echo (function_exists('serendipity_specialchars') ? serendipity_specialchars($title) : htmlspecialchars($title, ENT_COMPAT, LANG_CHARSET)) . '<br />';
+            echo htmlspecialchars($title) . '<br />';
             if ($this->poll['votes'] > 0) {
                 $total = ceil(($votes / $this->poll['votes']) * 100);
             } else {

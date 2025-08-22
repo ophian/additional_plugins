@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
@@ -10,7 +12,7 @@ include_once dirname(__FILE__) . '/common.inc.php';
 
 class serendipity_event_pollbox extends serendipity_event
 {
-    var $poll = array();
+    private $poll = array();
 
     function introspect(&$propbag)
     {
@@ -28,11 +30,11 @@ class serendipity_event_pollbox extends serendipity_event
         $propbag->add('configuration', array('permalink', "articleformat", "pagetitle", "articleformattitle"));
         $propbag->add('author', 'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('groups', array('STATISTICS'));
-        $propbag->add('version', '2.27');
+        $propbag->add('version', '3.0.0');
         $propbag->add('requirements',  array(
-            'serendipity' => '2.0',
-            'smarty'      => '3.1',
-            'php'         => '7.4'
+            'serendipity' => '5.0',
+            'smarty'      => '4.1',
+            'php'         => '8.2'
         ));
         $propbag->add('stackable', false);
         $propbag->add('legal',  array(
@@ -175,7 +177,7 @@ class serendipity_event_pollbox extends serendipity_event
             $polls =& $_poll;
             if (is_array($polls)) {
                 foreach($polls AS $poll) {
-                    echo '<a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[subpage]=' . $this->get_config('pagetitle') . '&amp;serendipity[voteId]=' . $poll['id'] . '">' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($poll['title']) : htmlspecialchars($poll['title'], ENT_COMPAT, LANG_CHARSET)) . '</a>, ' . serendipity_strftime(DATE_FORMAT_ENTRY, $poll['timestamp']) . '<br />';
+                    echo '<a href="' . $serendipity['baseURL'] . $serendipity['indexFile'] . '?serendipity[subpage]=' . $this->get_config('pagetitle') . '&amp;serendipity[voteId]=' . $poll['id'] . '">' . htmlspecialchars($poll['title']) . '</a>, ' . serendipity_strftime(DATE_FORMAT_ENTRY, $poll['timestamp']) . '<br />';
                 }
             }
             echo '</div>';
@@ -327,7 +329,7 @@ class serendipity_event_pollbox extends serendipity_event
         if (is_array($polls)) {
             foreach($polls AS $poll) {
                 echo ' <option value="' . $poll['id'] . '" ' . ($serendipity['POST']['poll'] == $poll['id'] ? 'selected="selected"' : '') . '>';
-                echo ($poll['active'] == 1 ? '*' : '') . (function_exists('serendipity_specialchars') ? serendipity_specialchars($poll['title']) : htmlspecialchars($poll['title'], ENT_COMPAT, LANG_CHARSET)) . ' (' . serendipity_strftime('%d.%m.%Y', $poll['timestamp']) . ')</option>';
+                echo ($poll['active'] == 1 ? '*' : '') . htmlspecialchars($poll['title']) . ' (' . serendipity_strftime('%d.%m.%Y', $poll['timestamp']) . ')</option>';
             }
         }
         echo '</select>';
@@ -353,7 +355,7 @@ class serendipity_event_pollbox extends serendipity_event
 
         echo '<div class="form_field">';
         echo '<label for="serendipity_current_poll_title" class="block_level">' . TITLE . '</label>';
-        echo '<input id="serendipity_current_poll_title" type="text" name="serendipity[currentPoll][title]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($this->poll['title']) : htmlspecialchars($this->poll['title'], ENT_COMPAT, LANG_CHARSET)) . '">';
+        echo '<input id="serendipity_current_poll_title" type="text" name="serendipity[currentPoll][title]" value="' . htmlspecialchars($this->poll['title']) . '">';
         echo '</div>';
 
         echo '<h3>' . CREATE . '</h3>';
@@ -362,7 +364,7 @@ class serendipity_event_pollbox extends serendipity_event
             foreach((array)$this->poll['options'] AS $optid => $option) {
                 echo '<li><div class="form_select">';
                 echo '<label for="serendipity_polloption_' . $optid . '" class="block_level">' . TITLE . '</label>';
-                echo ' <input id="serendipity_polloption_' . $optid . '" type="text" name="serendipity[pollOptions][' . $optid . '][title]" value="' . (function_exists('serendipity_specialchars') ? serendipity_specialchars($option['title']) : htmlspecialchars($option['title'], ENT_COMPAT, LANG_CHARSET)) . '">';
+                echo ' <input id="serendipity_polloption_' . $optid . '" type="text" name="serendipity[pollOptions][' . $optid . '][title]" value="' . htmlspecialchars($option['title']) . '">';
                 echo ' <input class="state_cancel" type="submit" name="serendipity[pollOptionRemove][' . $optid . ']" value="' . DELETE . '">';
                 echo ' <span>' . (int)$option['votes'] . ' ' . PLUGIN_POLL_VOTES . '</span>';
                 echo '</div></li>';
