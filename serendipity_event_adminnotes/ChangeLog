@@ -1,3 +1,7 @@
+1.1.1:
+-----
+ * Fix a stylesheet false declaration error
+
 1.1.0:
 -----
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0

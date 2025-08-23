@@ -24,7 +24,7 @@ class serendipity_event_adminnotes extends serendipity_event
             'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '1.1.0');
+        $propbag->add('version',       '1.1.1');
         $propbag->add('author',        'Garvin Hicking, Matthias Mees, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('configuration', array('feedback', 'limit', 'expire', 'html', 'markup', 'cutoff'));
@@ -514,7 +514,7 @@ function fulltext_toggle(id) {
 /* plugin adminnotes start */
 
 .note_subject { margin: 0px 0px 1em; }
-.note_subject h3 { line height: 1.6; margin: 0; }
+.note_subject h3 { line-height: 1.6; margin: 0; }
 .note_new { border: 2px solid rgb(0, 255, 0); margin: -0.2em; padding: 0.2em; }
 
 /* plugin adminnotes end */
