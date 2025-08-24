@@ -28,7 +28,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '2.1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -742,15 +742,15 @@ class serendipity_event_wikilinks extends serendipity_event
                 $title = urlencode($ltitle);
                 $body  = '<h2>' . htmlspecialchars($ltitle) . '</h2>';
 
-                $admin_url2 = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[pre][headline]=' . $title . '&amp;serendipity[pre][content]=' . $body . '&amp;serendipity[pre][pagetitle]=' . $title;
+                $admin_url2 = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[pre][headline]=' . $title . '&amp;serendipity[pre][content]=' . urlencode($body) . '&amp;serendipity[pre][pagetitle]=' . $title;
                 if ($otype == 'staticpage') {
-                    $admin_url = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[pre][headline]=' . $title . '&amp;serendipity[pre][content]=' . $body . '&amp;serendipity[pre][pagetitle]=' . $title;
+                    $admin_url = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=staticpages&amp;serendipity[staticpagecategory]=pages&amp;serendipity[pre][headline]=' . $title . '&amp;serendipity[pre][content]=' . urlencode($body) . '&amp;serendipity[pre][pagetitle]=' . $title;
                     $admin_title = PLUGIN_EVENT_WIKILINKS_CREATE_STATICPAGE;
                 } elseif ($otype == 'mixed') {
-                    $admin_url = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=new&amp;serendipity[title]=' . $title . '&amp;serendipity[body]=' . $body;
+                    $admin_url = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=new&amp;serendipity[title]=' . $title . '&amp;serendipity[body]=' . urlencode($body);
                     $admin_title = PLUGIN_EVENT_WIKILINKS_CREATE_INTERNAL;
                 } else {
-                    $admin_url = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=new&amp;serendipity[title]=' . $title . '&amp;serendipity[body]=' . $body;
+                    $admin_url = $serendipity['baseURL'] . 'serendipity_admin.php?serendipity[adminModule]=entries&amp;serendipity[adminAction]=new&amp;serendipity[title]=' . $title . '&amp;serendipity[body]=' . urlencode($body);
                     $admin_title = PLUGIN_EVENT_WIKILINKS_CREATE_INTERNAL;
                 }
             } else {
