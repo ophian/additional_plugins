@@ -1229,7 +1229,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Wiki връзки в статиите&lt;/b&gt;&lt;br /&gt;Можете да поставяте нови/съществуващи връзки към вашите статии чрез [[title]], към статични страници чрез ((title)) и връзки към двете чрез {{title}}.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Sun, 24 Aug 2025 10:10:30 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
