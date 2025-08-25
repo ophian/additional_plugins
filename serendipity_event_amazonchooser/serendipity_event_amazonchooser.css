@@ -85,13 +85,13 @@ img.serendipity_amazonchr_pic {
 
 div.serendipity_amazonchr_block {
   float: left;
-  padding-left: 1%;
+  padding-left: 1em;
   max-width: 500px;
 }
 
 div.serendipity_amazonchr_attr {
   font-size:1em;
-  padding: 2px -2px 2px -2px;
+  padding: 2px 0;
 }
 
 div.serendipity_amazonchr_offer {

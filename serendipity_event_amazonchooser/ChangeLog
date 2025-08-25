@@ -1,3 +1,7 @@
+1.2.2:
+------
+ * Fix a stylesheet issue with padding
+
 1.2.1:
 ------
  * Use native htmlspecialchars()
