@@ -23,7 +23,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '3.0.2');
+        $propbag->add('version',       '3.0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -641,8 +641,8 @@ if (is_array($cats = serendipity_fetchCategories())) {
 
                 case 'backend_entry_presave':
                     if (isset($eventData['id']) && is_numeric($eventData['id'])) {
-                        $eventData['body']     = str_replace('{{s9yisp_entryid}}', $eventData['id'], $eventData['body']);
-                        $eventData['extended'] = str_replace('{{s9yisp_entryid}}', $eventData['id'], $eventData['extended']);
+                        $eventData['body']     = str_replace('{{s9yisp_entryid}}', (string) $eventData['id'], $eventData['body']);
+                        $eventData['extended'] = str_replace('{{s9yisp_entryid}}', (string) $eventData['id'], $eventData['extended']);
                         $this->gotMilk = true;
                     } else {
                         $this->cache['body']     = $eventData['body'];
@@ -653,16 +653,16 @@ if (is_array($cats = serendipity_fetchCategories())) {
                 case 'backend_publish':
                 case 'backend_save':
                     if ($this->gotMilk === false) {
-                        $old = md5($this->cache['body']) . md5($this->cache['extended']);
-                        $this->cache['body']     = str_replace('{{s9yisp_entryid}}', $eventData['id'], $this->cache['body']);
-                        $this->cache['extended'] = str_replace('{{s9yisp_entryid}}', $eventData['id'], $this->cache['extended']);
-                        $new = md5($this->cache['body']) . md5($this->cache['extended']);
+                        $old = hash('xxh3', $this->cache['body']) . hash('xxh3', $this->cache['extended']);
+                        $this->cache['body']     = str_replace('{{s9yisp_entryid}}', (string) $eventData['id'], $this->cache['body']);
+                        $this->cache['extended'] = str_replace('{{s9yisp_entryid}}', (string) $eventData['id'], $this->cache['extended']);
+                        $new = hash('xxh3', $this->cache['body']) . hash('xxh3', $this->cache['extended']);
 
                         if ($old != $new) {
                             serendipity_db_query("UPDATE {$serendipity['dbPrefix']}entries
                                                      SET body     = '" . serendipity_db_escape_string($this->cache['body']) . "',
                                                          extended = '" . serendipity_db_escape_string($this->cache['extended']) . "'
-                                                   WHERE       id = " . (int)$eventData['id']);
+                                                   WHERE       id = " . (int) $eventData['id']);
                         }
                     }
                     break;

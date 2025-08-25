@@ -1,3 +1,8 @@
+3.0.3:
+------
+ * Fix type issues with caching on str_replace()
+ * Convert MD5() cash hash to hash('xxh3', ...)
+
 3.0.2:
 ------
  * Fix a PHP 8.5 deprecation of backtick (`) operator
