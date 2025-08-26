@@ -154,7 +154,7 @@
 }
 .dlm_page_header h4 {
     background-color: rgb(248, 248, 248); 
-    background: -moz-linear-gradient(center top , rgb(238, 238, 238), rgb(159, 182, 205)) repeat scroll 0% 0% transparent; 
+    background: repeat scroll 0% 0% transparent linear-gradient(70deg, rgb(238, 238, 238), rgb(159, 182, 205));
     border-bottom: 1px solid rgb(187, 187, 187);
     margin: 2px 0 16px 0;
     padding: 2px 0 2px 20px;
@@ -536,6 +536,7 @@ input#dlm_file_rename { border: 1px solid #888; background-color: rgb(221, 230, 
 }
 [data-color-mode="dark"] .dlm_page_header h4, [data-color-mode="dark"] #uploads h4 {
     background-color: var(--color-bg-overlay);
+    background: repeat scroll 0% 0% transparent linear-gradient(70deg, var(--color-bg-backdrop), var(--color-bg-info));
     border-bottom-color: var(--color-border-tertiary);
     margin-top: 0;
 }
