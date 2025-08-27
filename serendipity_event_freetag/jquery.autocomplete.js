@@ -13,6 +13,7 @@
  *
  */
 /* 07/2023 - fix size() is not a function issue, while deprecated in JQuery version: 1.8 and removed in: 3.0. Replaced by .length property. */
+/* 08/2025 - fix jQuery.isArray() is not a function issue, while deprecated in JQuery version: 3.0 and removed in: 4.0. Replaced by Array.isArray(). */
 
 ;
 (function ($) {
@@ -306,7 +307,7 @@ $.Autocompleter = function (input, options) {
 
     function _initSource() {
         var array, url;
-        if ($.isArray(options.source)) {
+        if (Array.isArray(options.source)) {
             array = options.source;
             source = function (request, response) {
                 response($.ui.autocomplete.filter(array, request.term));

@@ -1,3 +1,7 @@
+6.4.2:
+------
+ * Fixup jquery.autocomplete javascript to support jQuery 4.0.0 revisions, fixing use of removed deprecated functions.
+
 6.4.1:
 ------
  * Use native htmlspecialchars()
