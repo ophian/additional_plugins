@@ -682,7 +682,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
 
             if ($this->answerRetrievalMethod == 'json') {
                 $jsProperties['url'] = $serendipity['baseURL'] . 'index.php/plugin/spamblockbeecaptcha';
-                echo '<script>var spamBeeData = ' . json_encode($jsProperties) . ';</script>' . "\n";
+                echo '    <script>var spamBeeData = ' . json_encode($jsProperties) . ';</script>' . "\n";
             } else {
                 $scrambleKey                 = rand();
                 $answer                      = rawurlencode($this->xorScramble($answer, $scrambleKey));
