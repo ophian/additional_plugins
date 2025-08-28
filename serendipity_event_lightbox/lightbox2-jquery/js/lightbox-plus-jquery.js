@@ -6782,7 +6782,7 @@ function vendorPropName( name ) {
 
 // Return a potentially-mapped jQuery.cssProps or vendor prefixed property
 function finalPropName( name ) {
-	var final = jQuery.cssProps[ name ] || vendorProps[ name ];
+	var final = vendorProps[ name ];
 
 	if ( final ) {
 		return final;
@@ -10905,6 +10905,7 @@ jQuery.holdReady = function( hold ) {
 		jQuery.ready( true );
 	}
 };
+/*NOTE: These were removed in jQuery 4.0.0 revisions*/
 jQuery.isArray = Array.isArray;
 jQuery.parseJSON = JSON.parse;
 jQuery.nodeName = nodeName;
