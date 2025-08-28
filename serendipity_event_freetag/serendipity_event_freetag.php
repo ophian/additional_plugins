@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.4.2');
+        $propbag->add('version',       '6.4.3');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -838,7 +838,7 @@ class serendipity_event_freetag extends serendipity_event
                     </div>
                     <script type="text/javascript">
                         document.addEventListener("DOMContentLoaded", function() {
-                            if (!jQuery.isFunction(jQuery.fn.tagcanvas) ) { return false; }
+                            if (typeof jQuery.fn.tagcanvas !== "function") { return false; }
                             // check B53+ theme color mode
                             let bstr = localStorage.getItem("theme");
                             // check default pure theme color mode
@@ -865,7 +865,7 @@ class serendipity_event_freetag extends serendipity_event
             echo '                    </div>
                     <script type="text/javascript">
                         document.addEventListener("DOMContentLoaded", function() {
-                            if (!jQuery.isFunction(jQuery.fn.awesomeCloud) ) { return false; }
+                            if (typeof jQuery.fn.awesomeCloud !== "function") { return false; }
                             // check B53+ theme color mode
                             let bstr = localStorage.getItem("theme");
                             // check default pure theme color mode
