@@ -423,14 +423,14 @@ class serendipity_event_spamblock_bee extends serendipity_event
 
             // Check hidden Captcha
             if (PLUGIN_EVENT_SPAMBLOCK_SWTCH_OFF != $this->hiddenCaptchaHandle) {
-                $answer                  = trim(strtolower(($serendipity['POST']['beecaptcha'] ?? '')));
+                $answer                  = trim(strtolower($serendipity['POST']['beecaptcha'] ?? ''));
                 $correctAnswer           = $this->getCaptchaAnswer();
                 $correctAnswer['answer'] = strtolower((string) ($correctAnswer['answer'] ?? ''));
                 $isCorrect               = false;
 
                 // If provided answer is longer than 1000 characters and RegExp matching is on,
                 // reject comment for security reasons (minimize risk of ReDoS)
-                if ($this->useRegularExpressions && mb_strlen((string) $answer) > 1000) {
+                if ($this->useRegularExpressions && mb_strlen($answer) > 1000) {
                     $this->processComment($this->hiddenCaptchaHandle, $eventData, $addData, PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_HCAPTCHA, "BEE HiddenCaptcha [ Captcha input too long ]");
                     return false;
                 }
@@ -465,8 +465,8 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 }
 
                 if (!$isCorrect) {
-                    if (mb_strlen((string) $answer) > 40) {
-                        $answer = mb_substr((string) $answer, 0, 40) . '..';
+                    if (mb_strlen($answer) > 40) {
+                        $answer = mb_substr($answer, 0, 40) . '..';
                     }
                     $this->processComment($this->hiddenCaptchaHandle, $eventData, $addData, PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_HCAPTCHA, "BEE HiddenCaptcha [ $correctAnswer[answer] != $answer ]");
                     return $isCorrect;

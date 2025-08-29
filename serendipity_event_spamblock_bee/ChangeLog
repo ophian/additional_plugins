@@ -1,3 +1,7 @@
+2.0.8:
+------
+ * Revert some too paranoid type casts from 2.0.7
+
 2.0.7:
 ------
  * Fix some (possible) type issues with PHP string functions
