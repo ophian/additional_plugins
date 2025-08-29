@@ -1004,7 +1004,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamblock Bee (Honeypot, Skrytá Captcha)&lt;/b&gt;&lt;br /&gt;Implementuje jednoduché ale velmi účinné antispamové algoritmy.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 29 Aug 2025 10:59:15 +0200</pubDate>
+<pubDate>Fri, 29 Aug 2025 16:06:07 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
