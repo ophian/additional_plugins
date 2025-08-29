@@ -413,8 +413,8 @@ class serendipity_event_spamblock_bee extends serendipity_event
             // Check for Honey Pot:
             $phone = $serendipity['POST']['phone'] ?? null;
             if ($this->useHoneyPot && (!empty($phone) || $phone == '0') ) {
-                if (mb_strlen($phone) > 40) {
-                    $phone = mb_substr($phone, 0, 40) . '..';
+                if (mb_strlen((string) $phone) > 40) {
+                    $phone = mb_substr((string) $phone, 0, 40) . '..';
                 }
                 $this->spamlog($eventData['id'], 'REJECTED', "BEE Honeypot [" . $phone . "]", $addData);
                 $eventData = array('allow_comments' => false);
@@ -430,7 +430,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
 
                 // If provided answer is longer than 1000 characters and RegExp matching is on,
                 // reject comment for security reasons (minimize risk of ReDoS)
-                if ($this->useRegularExpressions && mb_strlen($answer) > 1000) {
+                if ($this->useRegularExpressions && mb_strlen((string) $answer) > 1000) {
                     $this->processComment($this->hiddenCaptchaHandle, $eventData, $addData, PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_HCAPTCHA, "BEE HiddenCaptcha [ Captcha input too long ]");
                     return false;
                 }
@@ -465,8 +465,8 @@ class serendipity_event_spamblock_bee extends serendipity_event
                 }
 
                 if (!$isCorrect) {
-                    if (mb_strlen($answer) > 40) {
-                        $answer = mb_substr($answer, 0, 40) . '..';
+                    if (mb_strlen((string) $answer) > 40) {
+                        $answer = mb_substr((string) $answer, 0, 40) . '..';
                     }
                     $this->processComment($this->hiddenCaptchaHandle, $eventData, $addData, PLUGIN_EVENT_SPAMBLOCK_BEE_ERROR_HCAPTCHA, "BEE HiddenCaptcha [ $correctAnswer[answer] != $answer ]");
                     return $isCorrect;
@@ -711,9 +711,9 @@ class serendipity_event_spamblock_bee extends serendipity_event
 
                     // URL encode all characters to make values appear almost equal
                     $encVal = '';
-                    $valLength = mb_strlen($value);
+                    $valLength = mb_strlen((string) $value);
                     for ($i = 0; $i < $valLength; ++$i) {
-                        $encVal .= '%' . bin2hex(mb_substr($value, $i, 1));
+                        $encVal .= '%' . bin2hex(mb_substr((string) $value, $i, 1));
                     }
 
                     echo 'var ' . $varName . " = unescape('" . $encVal . "');";
