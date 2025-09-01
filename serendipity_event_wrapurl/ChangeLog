@@ -1,0 +1,40 @@
+1.0.0:
+------
+ * Return from retired plugins since early 2017. Since this probably was a mistake.
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Use native htmlspecialchars()
+ * Declare strict types
+ * Raise requirements for Styx 5.0
+
+
+0.12:
+----
+
+ * Optimize URI args load
+
+[Version 0.11 2016/07/21] by Ian
+
+    - Plugin consistent changes
+    - load LANG with lang API, extends required Serendipity version
+    - Append CSS, not prepend
+    - Change class name to lowercase
+
+
+[Version 0.10.1 2014/11/25] by Onli
+
+    - Use serendipity_specialchars fix
+
+[Version 0.10 2014/04/08] by Garvin
+
+    - Propagate $smarty.env.staticpage_pagetitle (and the others) so that it can be used in entries.tpl
+
+[Version 0.9 2011/08/13] by Ian
+
+    - changed css output to support newline breaks in serendipity.css (more a cosmetic change)
+
+[Version 0.8 2010/12/02] by Ian
+
+    - added     styleable id, to be individual to every single used wrapurl event, like "plugin_wrapurl_PAGETITLE" eg. #plugin_wrapurl_name1 { /* your css notation */ }
+                This fixes the individual height setting, which did not work correctly in 0.7 taking always the last occurance of serendipity_event_wrapurl plugin
+    - changed   surrounding table around iframe to a styleable div tag in plugin and your individual template css-file (optional)
+    - changed   lang <en> file to support changes
