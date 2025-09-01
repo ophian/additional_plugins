@@ -14,7 +14,7 @@
 <category>Sidebar Plugins</category>
 <author>Lewe Zipfel, Garvin Hicking. Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_communityrating&lt;br /&gt;Average Rating&lt;/b&gt;&lt;br /&gt;Shows top-rated movies by their average rating&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 10 Aug 2025 19:47:11 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_communityrating</guid>
 </item>
 <item>
@@ -23,7 +23,7 @@
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_faq&lt;br /&gt;FAQs Category Chooser&lt;/b&gt;&lt;br /&gt;Choose the categories you will display on the blog.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 15:32:45 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:36 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_faq</guid>
 </item>
 <item>
@@ -32,7 +32,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_freetag&lt;br /&gt;Show tagged entries&lt;/b&gt;&lt;br /&gt;Shows a list of existing tags for entries&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_freetag</guid>
 </item>
 <item>
@@ -41,7 +41,7 @@
 <category>Sidebar Plugins</category>
 <author>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr, Martin Sewelies, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_geotag&lt;br /&gt;Geotag Google/OSM Map&lt;/b&gt;&lt;br /&gt;This plugin displays a Google Map or Openstreetmap with geotagged entries&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 11:01:34 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_geotag</guid>
 </item>
 <item>
@@ -50,7 +50,7 @@
 <category>Sidebar Plugins</category>
 <author>Jaap Boerma ( j@webbict.com ), Tadashi Jokagi &lt;elf2000@users.sourceforge.net&gt;, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_guestbook&lt;br /&gt;Guestbook Sidebar&lt;/b&gt;&lt;br /&gt;Display the latest guestbook items in the sidebar&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 15:30:09 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_guestbook</guid>
 </item>
 <item>
@@ -59,7 +59,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_linklist&lt;br /&gt;Link List&lt;/b&gt;&lt;br /&gt;Links manager - Shows your favorite links in the sidebar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 13 Aug 2025 11:43:41 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_linklist</guid>
 </item>
 <item>
@@ -68,7 +68,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_microformats&lt;br /&gt;Upcoming Events&lt;/b&gt;&lt;br /&gt;Display upcoming and recommended events in the sidebar and apply the hCalendar microformat to them.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 18:35:42 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_microformats</guid>
 </item>
 <item>
@@ -77,7 +77,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_multilingual&lt;br /&gt;Choose Language&lt;/b&gt;&lt;br /&gt;Allows visitors to change the frontend interface language&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 15:26:50 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_multilingual</guid>
 </item>
 <item>
@@ -86,7 +86,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Markus Gerstel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_mycalendar&lt;br /&gt;My Calendar&lt;/b&gt;&lt;br /&gt;Shows your personal calendar with X upcoming scheduled events&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 05 Aug 2025 19:35:12 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_mycalendar</guid>
 </item>
 <item>
@@ -95,7 +95,7 @@
 <category>Sidebar Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_spamblock_bee&lt;br /&gt;Spam Report&lt;/b&gt;&lt;br /&gt;Prints out a statistic about your comment spam if your antispam plugins report to the DB.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 14:20:19 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_spamblock_bee</guid>
 </item>
 <item>
@@ -104,7 +104,7 @@
 <category>Sidebar Plugins</category>
 <author>Rob Antonishen, Falk Doering, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_staticpage&lt;br /&gt;Static Page List&lt;/b&gt;&lt;br /&gt;This plugin displays a configurable list of the static pages.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_staticpage</guid>
 </item>
 <item>
@@ -113,7 +113,7 @@
 <category>Sidebar Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_statistics&lt;br /&gt;Statistics&lt;/b&gt;&lt;br /&gt;Statistics&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 11:35:57 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:37 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_statistics</guid>
 </item>
 <item>
@@ -122,7 +122,7 @@
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_userprofiles&lt;br /&gt;Serendipity Authors&lt;/b&gt;&lt;br /&gt;Shows a list for all Authors&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 22 Aug 2025 10:05:29 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles</guid>
 </item>
 <item>
@@ -131,7 +131,7 @@
 <category>Sidebar Plugins</category>
 <author>Falk Doering</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_userprofiles_birthdays&lt;br /&gt;Birthdays of users&lt;/b&gt;&lt;br /&gt;none&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 13:57:01 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_userprofiles_birthdays</guid>
 </item>
 <item>
@@ -140,7 +140,7 @@
 <category>Sidebar Plugins</category>
 <author>Loris Zena, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_xsstrust&lt;br /&gt;Show trusted users&lt;/b&gt;&lt;br /&gt;Displays all users with their ethics (represented by a traffic light). Green light means 'cool'; yellow light means 'warning'; red light means 'banned'. The administrator can easily modify this value for each user.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 14:08:54 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_xsstrust</guid>
 </item>
 <item>
@@ -149,7 +149,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_adduser&lt;br /&gt;User Self-Registration&lt;/b&gt;&lt;br /&gt;Allows blog visitors to create their own author account. Together with the Event-plugin (index.php?serendipity[subpage]=adduser) you can choose whether only registered users may post comments.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 18:54:20 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_adduser</guid>
 </item>
 <item>
@@ -158,7 +158,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthew Groeninger, (original plugin by Thomas Nesges)</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_amazon&lt;br /&gt;Amazon Recommendations&lt;/b&gt;&lt;br /&gt;Recommend Products at Amazon within the Amazon-Partnerprogram&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 11:53:52 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_amazon</guid>
 </item>
 <item>
@@ -167,7 +167,7 @@
 <category>Sidebar Plugins</category>
 <author>Jackson Miller, Sebastian Bauer</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_category_dhtml_menu&lt;br /&gt;Category Tree Menu&lt;/b&gt;&lt;br /&gt;DHTML category menu.  Requires PEAR::HTML_TreeMenu.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_category_dhtml_menu</guid>
 </item>
 <item>
@@ -176,7 +176,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthew Maude</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_coppermine&lt;br /&gt;Coppermine Thumbnails&lt;/b&gt;&lt;br /&gt;Display thumbnails from a Coppermine gallery in the sidebar&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 11:55:37 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_coppermine</guid>
 </item>
 <item>
@@ -185,7 +185,7 @@
 <category>Sidebar Plugins</category>
 <author>Evan Nemerson, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_creativecommons&lt;br /&gt;Creative Commons&lt;/b&gt;&lt;br /&gt;Display a creative commons notification in the sidebar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 11:53:28 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_creativecommons</guid>
 </item>
 <item>
@@ -194,7 +194,7 @@
 <category>Sidebar Plugins</category>
 <author>Dustin Hawkins</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_currently&lt;br /&gt;Currently...&lt;/b&gt;&lt;br /&gt;Displays items you are currently listening, playing, or reading...&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_currently</guid>
 </item>
 <item>
@@ -203,7 +203,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_externalphp&lt;br /&gt;External PHP Application&lt;/b&gt;&lt;br /&gt;Shows an external PHP application inside your blog with your blogs design and all formattings. USE WITH CARE, THIS PLUGIN HAS SECURITY IMPLICATIONS AS IT INCLUDES ANY GENERIC PHP FILE! YOU CAN ONLY USE THIS PLUGIN AS ADMIN!&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:25:37 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_externalphp</guid>
 </item>
 <item>
@@ -212,7 +212,7 @@
 <category>Sidebar Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_flickr&lt;br /&gt;flickr Photostream&lt;/b&gt;&lt;br /&gt;Display the latest photos from flickr Photostreams.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 11:58:44 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_flickr</guid>
 </item>
 <item>
@@ -221,7 +221,7 @@
 <category>Sidebar Plugins</category>
 <author>Lars Strojny</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_flickrbadge&lt;br /&gt;Flickr badge&lt;/b&gt;&lt;br /&gt;Shows your last photos on Flickr.com&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 12:40:17 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_flickrbadge</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Sidebar Plugins</category>
 <author>Piotr Borys</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_ggopis&lt;br /&gt;Gadu-Gadu IM status description&lt;/b&gt;&lt;br /&gt;Gets and displays a status description of Gadu-Gadu IM&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 12:44:02 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_ggopis</guid>
 </item>
 <item>
@@ -239,7 +239,7 @@
 <category>Sidebar Plugins</category>
 <author>Jim Dabell</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_google_adsense&lt;br /&gt;AdSense&lt;/b&gt;&lt;br /&gt;Displays adverts from Google.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 12:45:58 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_google_adsense</guid>
 </item>
 <item>
@@ -248,7 +248,7 @@
 <category>Sidebar Plugins</category>
 <author>Wesley Hwang-Chung</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_google_quicksearch&lt;br /&gt;Google குறுந்தேடல்&lt;/b&gt;&lt;br /&gt;குறிப்பைத் தேடுக (Google)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 12:47:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_google_quicksearch</guid>
 </item>
 <item>
@@ -257,7 +257,7 @@
 <category>Sidebar Plugins</category>
 <author>Lars Strojny</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_heavyrotation&lt;br /&gt;On »Heavy Rotation«&lt;/b&gt;&lt;br /&gt;This plugin displays an album cover from last.fm which was on Heavy Rotation (top album) in the last week&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 12:48:34 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_heavyrotation</guid>
 </item>
 <item>
@@ -266,7 +266,7 @@
 <category>Sidebar Plugins</category>
 <author>Andrew Brown (Menalto code), Matthew Groeninger (Unified/Media Lib. Code), Stefan Lange-Hegermann (Zooomr Code), Matthew Maude (Coppermine code), Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_imagesidebar&lt;br /&gt;Unified Sidebar Image Display&lt;/b&gt;&lt;br /&gt;Offers the ability to display images in the sidebar. The source of the images is configurable. The plugin is able to access a Coppermine database directory (MySQL only), or access images in the Serendipity Media Library. PLEASE NOTE: This plugin has been checked working with recent Serendipity installs for the Serendipity Media Library only.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 22 Aug 2025 10:09:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_imagesidebar</guid>
 </item>
 <item>
@@ -275,7 +275,7 @@
 <category>Sidebar Plugins</category>
 <author>Andreas Brandmaier</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_karmaranking&lt;br /&gt;Karma Ranking&lt;/b&gt;&lt;br /&gt;Shows overall score by author&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:30:49 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_karmaranking</guid>
 </item>
 <item>
@@ -284,7 +284,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Neil Dudman</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_loginform&lt;br /&gt;Authors login&lt;/b&gt;&lt;br /&gt;Show a login form for authors&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:15:55 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_loginform</guid>
 </item>
 <item>
@@ -293,7 +293,7 @@
 <category>Sidebar Plugins</category>
 <author>Wesley Hwang-Chung</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_nugget_multilingual&lt;br /&gt;Language-Specific HTML Nugget&lt;/b&gt;&lt;br /&gt;Shows an HTML nugget on the sidebar, for a specific language.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:17:00 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_nugget_multilingual</guid>
 </item>
 <item>
@@ -302,7 +302,7 @@
 <category>Sidebar Plugins</category>
 <author>Christian Lescuyer</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_pagerank&lt;br /&gt;Google PageRank&lt;/b&gt;&lt;br /&gt;Dynamic display of Google PageRank&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 04 Aug 2025 11:38:57 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pagerank</guid>
 </item>
 <item>
@@ -311,7 +311,7 @@
 <category>Sidebar Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_photoblog&lt;br /&gt;Photoblog Entries&lt;/b&gt;&lt;br /&gt;Shows the thumbnails of the most recent photoblog entries (see event plugin).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 10 Aug 2025 19:15:18 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_photoblog</guid>
 </item>
 <item>
@@ -320,7 +320,7 @@
 <category>Sidebar Plugins</category>
 <author>Bernd Distler, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_piwik&lt;br /&gt;Piwik&lt;/b&gt;&lt;br /&gt;show statistics of Piwik in sidebar&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 13:52:44 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_piwik</guid>
 </item>
 <item>
@@ -329,7 +329,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking, Evan Nemerson</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_pollbox&lt;br /&gt;Polls&lt;/b&gt;&lt;br /&gt;Shows the current poll in your sidebar&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Mon, 11 Aug 2025 13:32:18 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_pollbox</guid>
 </item>
 <item>
@@ -338,7 +338,7 @@
 <category>Sidebar Plugins</category>
 <author>Kaustubh Srikanth</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_popularentries&lt;br /&gt;Popular Entries&lt;/b&gt;&lt;br /&gt;Shows the titles and number of comments of the most popular entries calculated according to the entries most commented on.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Tue, 05 Aug 2025 18:58:37 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_popularentries</guid>
 </item>
 <item>
@@ -347,7 +347,7 @@
 <category>Sidebar Plugins</category>
 <author>Omid Mottaghi Rad</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_quicklink&lt;br /&gt;Quick Link&lt;/b&gt;&lt;br /&gt;Displays a box for quick links&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 15:07:17 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_quicklink</guid>
 </item>
 <item>
@@ -356,7 +356,7 @@
 <category>Sidebar Plugins</category>
 <author>Florian Solcher</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_randomquotes&lt;br /&gt;Random Quotes&lt;/b&gt;&lt;br /&gt;Shows a block with a random quotation&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 22 Aug 2025 10:12:18 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_randomquotes</guid>
 </item>
 <item>
@@ -365,7 +365,7 @@
 <category>Sidebar Plugins</category>
 <author>Matthias Lange, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_shoutbox&lt;br /&gt;Shoutbox&lt;/b&gt;&lt;br /&gt;Displays a shoutbox for unrelated comments&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:21:44 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutbox</guid>
 </item>
 <item>
@@ -374,7 +374,7 @@
 <category>Sidebar Plugins</category>
 <author>John Mann</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_shoutcast&lt;br /&gt;Shoutcast&lt;/b&gt;&lt;br /&gt;Display Shoutcast stream information in the sidebar.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:21:20 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_shoutcast</guid>
 </item>
 <item>
@@ -383,7 +383,7 @@
 <category>Sidebar Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_showentries&lt;br /&gt;Show Entries in sidebar&lt;/b&gt;&lt;br /&gt;Shows entries of special categories in your sidebar. Good for Sidebar Moblogging!&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:51:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_showentries</guid>
 </item>
 <item>
@@ -392,7 +392,7 @@
 <category>Sidebar Plugins</category>
 <author>Adam Krause &amp; Oliver Gerlach, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_sidebarlogo&lt;br /&gt;SideBar Logo&lt;/b&gt;&lt;br /&gt;Displays a panel containing your logo with a description including all relevant information about your site (an about box).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:01:23 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_sidebarlogo</guid>
 </item>
 <item>
@@ -401,7 +401,7 @@
 <category>Sidebar Plugins</category>
 <author>Evan Nemerson</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_templatedropdown&lt;br /&gt;Theme dropdown&lt;/b&gt;&lt;br /&gt;Show a box to change themes&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 13:33:41 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_templatedropdown</guid>
 </item>
 <item>
@@ -410,7 +410,7 @@
 <category>Sidebar Plugins</category>
 <author>Christoph Eunicke &lt;s9y-plugin@eunicke.org&gt;, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_timezones&lt;br /&gt;Timezones&lt;/b&gt;&lt;br /&gt;Shows the time of up to four timezones&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 14:05:07 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_timezones</guid>
 </item>
 <item>
@@ -419,7 +419,7 @@
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_topexits&lt;br /&gt;வேற்று இணையங்கள்&lt;/b&gt;&lt;br /&gt;உங்கள் வலைகுறிப்பில் அன்பர்கள் அதிக எண்ணிக்கையில் பார்க்கும் வேற்று இணையங்கள்&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 22 Aug 2025 10:48:32 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topexits</guid>
 </item>
 <item>
@@ -428,7 +428,7 @@
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_topreferrers&lt;br /&gt;மேற்குறிப்பாளர்கள்&lt;/b&gt;&lt;br /&gt;உங்கள் வலைகுறிப்பை அதிக எண்ணிக்கையில் சுட்டிக்காட்டும் இணையங்கள்&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 22 Aug 2025 10:48:46 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_topreferrers</guid>
 </item>
 <item>
@@ -437,7 +437,7 @@
 <category>Sidebar Plugins</category>
 <author>Grischa Brockhaus, Damian Luszczymak, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_twitter&lt;br /&gt;Twitter Timeline&lt;/b&gt;&lt;br /&gt;Show your current Twitter entries&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 11 Aug 2025 12:00:34 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_twitter</guid>
 </item>
 <item>
@@ -446,7 +446,7 @@
 <category>Sidebar Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_wikipedia_finder&lt;br /&gt;Wikipedia Finder&lt;/b&gt;&lt;br /&gt;Highlight a phrase and click the icon to search on using Wikipedia.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 20 Aug 2025 13:36:12 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 12:09:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_plugin_wikipedia_finder</guid>
 </item>
 </channel>
