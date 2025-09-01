@@ -15,7 +15,7 @@
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.5</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -59,7 +59,7 @@
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -127,7 +127,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -196,16 +196,16 @@
 <name>serendipity_event_assigncategories</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_assigncategories/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Асоцииране на категориите</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Дава възможност за асоцииране на няколко категории с дадена статия</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_assigncategories">
       <file>ChangeLog</file>
@@ -255,7 +255,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
       <file>ChangeLog</file>
@@ -297,11 +297,11 @@
 <description>When the Serendipity Backend (once a day) detects an update, this plugin adds the option to manually download or start an automatic and secured upgrade of the Blog directly with one click from within the administration area. It is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!</description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
+  <version>2.5.1</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -342,16 +342,16 @@
 <name>serendipity_event_backend</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backend/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Показва статии от блога чрез JavaScript</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Тази приставка извежда статии от блога през JavaScript, така че те могат да бъдат включвани в други, външни сайтове. (Вижте файл README в директорията на приставката.)</description>
+<description></description>
 <maintainers><maintainer><name>Alexander Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_backend">
       <file>backend.html</file>
@@ -396,16 +396,16 @@
 <name>serendipity_event_backendrss</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backendrss/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Показва RSS емисия в административната страница</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Показва RSS емисия в административната страница, веднага след влизането в системата.</description>
+<description></description>
 <maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_backendrss">
       <file>ChangeLog</file>
@@ -449,7 +449,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_backup">
       <file>backup.sh</file>
@@ -492,16 +492,16 @@
 <name>serendipity_event_blogpdf</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_blogpdf/ChangeLog</changelog>
 <license>GPL (Uses LGPL TCPDF</license>
-<summary>Експорт на блога в PDF файл</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Дава възможност на потребителите да записват блога в PDF формат</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.4.6</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_blogpdf">
       <file>ChangeLog</file>
@@ -1021,7 +1021,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -1108,7 +1108,7 @@
 <name>serendipity_event_categorytemplates</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_categorytemplates/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Свойства/шаблони за категории</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_VIEWS,BACKEND_TEMPLATES</groups>
 <description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
@@ -1117,7 +1117,7 @@
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1170,7 +1170,7 @@
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.31</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2017-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_challengeresponse">
       <file>serendipity_event_challengeresponse.php</file>
@@ -1194,7 +1194,7 @@
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.13</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
@@ -1318,7 +1318,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-08-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_comics">
       <file>ChangeLog</file>
@@ -1370,7 +1370,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-03-12</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_commentedit">
       <file>ChangeLog</file>
@@ -1413,16 +1413,16 @@
 <name>serendipity_event_commentsearch</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentsearch/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Търси в коментарите при бързо търсене</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Ако тази приставка е инсталирана, бързото търсене ще се изпълнява и в коментарите</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.2.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
       <file>ChangeLog</file>
@@ -1474,7 +1474,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1552,7 +1552,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -1615,16 +1615,16 @@
 <name>serendipity_event_contactform</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contactform/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Форма за обратна връзка</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Показва форма за изпращане на e-mail в блога като статична страница. Тя може да бъде достигната или чрез постоянна връзка, указана тук при конфигурирането на приставката или чрез 'index.php?serendipity[subpage]=contactform'. Можете да промените външния вид на формата като поставите файл 'plugin_contactform.tpl' в директорията на вашата тема и я модифицирате там. Captchas от приставка Spamblock (ако са позволени) ще бъдат приложени.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.49</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1693,16 +1693,16 @@
 <name>serendipity_event_contentrewrite</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contentrewrite/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Подмяна на съдържание</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Заменя думи с нов избран стринг (може да се използва за акроними)</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.7</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
       <file>ChangeLog</file>
@@ -1775,16 +1775,16 @@
 <name>serendipity_event_cpgselector</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cpgselector/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Coppermine селектор</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR,IMAGES</groups>
-<description>Избира картинки от галерия Coppermine при редактиране на статии</description>
+<description></description>
 <maintainers><maintainer><name>Matthew Maude (modified by Jim Davies)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.13</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2022-08-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
       <file>ChangeLog</file>
@@ -1838,7 +1838,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1924,7 +1924,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-03-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>ChangeLog</file>
@@ -1970,7 +1970,7 @@
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
@@ -2013,16 +2013,16 @@
 <name>serendipity_event_custom_permalinks</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_custom_permalinks/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Постоянни връзки към статии</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Дефинира постоянни връзки, които могат да се използват за достъп до избрани статии. Разрешени са варианти, които НЕ СЕ използват вече в структурата /archives/ . Но всяка друга (виртуална) директория е позволена.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.27</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
       <file>ChangeLog</file>
@@ -2068,7 +2068,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
       <file>ChangeLog</file>
@@ -2116,7 +2116,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.3.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dejure">
       <file>ChangeLog</file>
@@ -2160,7 +2160,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -2206,7 +2206,7 @@
   <requirements:s9yVersion>3.3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -2530,7 +2530,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dpsyntaxhighlighter">
       <file>ChangeLog</file>
@@ -2674,7 +2674,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -2714,7 +2714,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -2759,16 +2759,16 @@
 <name>serendipity_event_emoticonchooser</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_emoticonchooser/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Показва лента с картинки - &quot;усмивки&quot;</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Показва лента за избор на картинки, изразяващи емоции (emoticons). Не работи с WYSIWYG редактор.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.35</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.8</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2817,16 +2817,16 @@
 <name>serendipity_event_entrycheck</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrycheck/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Правила за публикуване на статии</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Прилага няколко проверки на статията преди тя да бъде публикувана.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.21</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
       <file>ChangeLog</file>
@@ -2871,16 +2871,16 @@
 <name>serendipity_event_entrylastmodified</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrylastmodified/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Показва съобщения с датите на последните промени на статиите</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Показва кога (дата и час) са направени последните промени на статиите, веднага след тяхното съдържание. При непроменяните статии се извежда текст, поясняващ, че те не са променяни.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2019-07-13</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrylastmodified">
       <file>ChangeLog</file>
@@ -2921,16 +2921,16 @@
 <name>serendipity_event_entrypaging</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrypaging/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Връзки към предишна/следваща статия</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Поставя връзки към предишната и следващата статия в страницата на настоящата статия. Това позволява по-лесно разглеждане на статиите.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.85</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2981,16 +2981,16 @@
 <name>serendipity_event_entrysplit</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrysplit/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Разделяне на дълги статии</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Позволява разделянето на дълги статии в няколко части (страници), които се извеждат последователно</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Tadashi Jokagi, Thomas Werner</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrysplit">
       <file>ChangeLog</file>
@@ -3044,7 +3044,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_externalauth">
       <file>ChangeLog</file>
@@ -3087,16 +3087,16 @@
 <name>serendipity_event_externalphp</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_externalphp/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Външно PHP приложение</summary>
+<summary></summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Показва външно PHP приложение в блога, интегрирано в неговия дизайн и форматиране. ИЗПОЛЗВАЙТЕ ТАЗИ ПРИСТАВКА С ВНИМАНИЕ, ЗАЩОТО МОЖЕТЕ ДА ЗАСТРАШИТЕ СИГУРНОСТТА НА БЛОГА С НЕЯ (ТЯ МОЖЕ ДА ИЗПЪЛНЯВА ВСЯКАКЪВ PHP ФАЙЛ). МОЖЕТЕ ДА ИЗПОЛЗВАТЕ ПРИСТАВКАТА САМО КАТО АДМИНИСТРАТОР!</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2022-10-17</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_externalphp">
       <file>ChangeLog</file>
@@ -3142,7 +3142,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-04-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>ChangeLog</file>
@@ -3179,16 +3179,16 @@
 <name>serendipity_event_faq</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_faq/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Често задавани въпроси</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Редактира списък от често задавани въпроси.</description>
+<description></description>
 <maintainers><maintainer><name>Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.60</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -3309,7 +3309,7 @@
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-09-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_feed">
       <file>feedblock.tpl</file>
@@ -3334,16 +3334,16 @@
 <name>serendipity_event_filter_entries</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_filter_entries/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Филтриране на статии</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Позволява посетителите да филтрират статиите по различни критерии</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.2.0</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_filter_entries">
       <file>ChangeLog</file>
@@ -3393,7 +3393,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3439,7 +3439,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-07-02</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_flickr">
       <file>ChangeLog</file>
@@ -3488,16 +3488,16 @@
 <name>serendipity_event_forgotpassword</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_forgotpassword/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Забравена парола</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Сменя паролата на избран потребител</description>
+<description></description>
 <maintainers><maintainer><name>Omid Mottaghi</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.16</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_forgotpassword">
       <file>ChangeLog</file>
@@ -3551,7 +3551,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_forum">
       <file>AUTHORS</file>
@@ -3822,16 +3822,16 @@
 <name>serendipity_event_freetag</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_freetag/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Маркиране на статии</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Позволява свободно маркиране на статиите</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>6.0.0</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -3935,7 +3935,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geotag">
       <file>ChangeLog</file>
@@ -3986,14 +3986,14 @@
 <license>GPL</license>
 <summary>GeoURL</summary>
 <groups>BACKEND_METAINFORMATION</groups>
-<description>GeoURL асоциира URL на блога с географски координати. Повече информация има на http://geourl.org/</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2017-07-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geourl">
       <file>ChangeLog</file>
@@ -4043,7 +4043,7 @@
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2023-03-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geo_json">
       <file>ChangeLog</file>
@@ -4074,19 +4074,19 @@
 <name>serendipity_event_geshi</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geshi/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Форматиране на текст: GeSHi</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Синтактично оцветяване на програмни текстове. Приложение: [geshi lang=lang_name [,ln={y|n}]] програмен текст (без HTML) [/geshi]. Поддържани езици: actionscript, ada, apache, asm, asp, bash, c, c_mac, caddcl, cadlisp, cpp, csharp (C#), css, delphi, html4strict, java, javascript, lisp, lua, mpasm, nsis, objc, oobas, oracle8, pascal, perl, php, python, qbasic, smarty, vb, vbnet, visualfoxpro, xml</description>
+<description></description>
 <maintainers><maintainer><name>David Rolston, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2022-11-24</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geshi">
-      <file>CHANGELOG</file>
+      <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <dir name="geshi">
@@ -4367,7 +4367,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_geshi/CHANGELOG</file>
+    <file>serendipity_event_geshi/ChangeLog</file>
     <file>serendipity_event_geshi/documentation_cs.html</file>
     <file>serendipity_event_geshi/documentation_cz.html</file>
     <file>serendipity_event_geshi/geshi/4cs.php</file>
@@ -4648,16 +4648,16 @@
 <name>serendipity_event_getid3</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_getid3/ChangeLog</changelog>
 <license>GPL</license>
-<summary>getID3() поддръжка за извличане на свойствата на медийни файлове.</summary>
+<summary></summary>
 <groups>IMAGES</groups>
-<description>Използва библиотека getID3() за извличане на свойствата на филми/аудио. getID3() не се разпространява с тази приставка.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-07-01</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_getid3">
       <file>ChangeLog</file>
@@ -4698,16 +4698,16 @@
 <name>serendipity_event_glossary</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_glossary/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Речник</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Потребителски речник на термини и дефиниции за тях. Термините се открояват в текста, а дефинициите се извеждат като подсказки.</description>
+<description></description>
 <maintainers><maintainer><name>Rob Antonishen, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_glossary">
       <file>ChangeLog</file>
@@ -4755,7 +4755,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.1.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -4801,7 +4801,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -4859,7 +4859,7 @@
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -5211,7 +5211,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -5325,16 +5325,16 @@
 <package version="1.0">
 <name>serendipity_event_head_nugget</name>
 <license>GPL</license>
-<summary>HTML блок в HEAD тага на страницата</summary>
+<summary></summary>
 <groups>BACKEND_METAINFORMATION</groups>
-<description>Тази приставка позволява вмъкване на HTML код в HEAD тага страницата. Можете да използвате това например за мета-тагове или включване на JavaScript скриптове. Забележка: Приставката е остаряла и може напълно да бъде заменена от serendipity_event_page_nugget.</description>
+<description></description>
 <maintainers><maintainer><name>Jannis Hermanns</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_head_nugget">
       <file>lang_bg.inc.php</file>
@@ -5381,7 +5381,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_httpauth">
       <file>lang_cs.inc.php</file>
@@ -5412,16 +5412,16 @@
 <name>serendipity_event_imageselectorplus</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_imageselectorplus/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Допълнителни опции за медийния менажер</summary>
+<summary></summary>
 <groups>IMAGES,MARKUP</groups>
-<description>Дава допълнителни опции при вмъкване на изображения чрез медийния менажер</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.6.7</version>
   <requirements:s9yVersion>3.6.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -5474,16 +5474,16 @@
 <name>serendipity_event_includeentry</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_includeentry/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: Включване на статия/шаблон/блок в статия</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Тази приставка дава възможност за включване на елементи от статия в друга статия. Използвайте този код: [s9y-include-entry:XXX:YYY]. Заменете XXX идентификатора на статията (цяло число), а YYY с идентификатор на частта за включване (например &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). Освен това в административния панел е включено нова команда в менюто за поддръжка на шаблони (заготовки на статии) и блокове, които можете да включвате във Вашите статии.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.37</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -5528,16 +5528,16 @@
 <name>serendipity_event_karma</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_karma/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Карма</summary>
+<summary></summary>
 <groups>STATISTICS</groups>
-<description>Дава възможност посетителите да оценяват качеството на вашите статии</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.24</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -5666,7 +5666,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_kubrickheader">
       <file>lang_cs.inc.php</file>
@@ -5696,16 +5696,16 @@
 <package version="1.0">
 <name>serendipity_event_layout_printerfriendly</name>
 <license>GPL</license>
-<summary>Layout-Plugin: Изглед за принтер</summary>
+<summary></summary>
 <groups>BACKEND_TEMPLATES</groups>
-<description>По-добър изглед за печат на Вашите статии</description>
+<description></description>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_layout_printerfriendly">
       <file>lang_bg.inc.php</file>
@@ -5753,7 +5753,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -6058,16 +6058,16 @@
 <name>serendipity_event_linklist</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linklist/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Списък от връзки</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS,BACKEND_FEATURES</groups>
-<description>Менажер на връзките - показва връзки към други сайтове в странична приставка.</description>
+<description></description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.5.1</version>
   <requirements:s9yVersion>3.2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -6165,7 +6165,7 @@
   <requirements:s9yVersion>3.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.2</requirements:phpVersion>
-  <date>2022-01-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_linktoolbar">
       <file>ChangeLog</file>
@@ -6215,7 +6215,7 @@
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -6269,7 +6269,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
-  <date>2022-09-17</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_livecomment">
       <file>ChangeLog</file>
@@ -6349,16 +6349,16 @@
 <package version="1.0">
 <name>serendipity_event_livesearch</name>
 <license>GPL</license>
-<summary>Живо (активно) търсене</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Подобрява вътрешната функция за търсене като добавя обновяване на резултатите след всяко въвеждане на символи в стринга за търсене (JavaScript)</description>
+<description></description>
 <maintainers><maintainer><name>Christian Stocker, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-04-05</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_livesearch">
       <file>lang_bg.inc.php</file>
@@ -6448,7 +6448,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_ljupdate">
       <file>ChangeLog</file>
@@ -6498,7 +6498,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-03-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_loginform">
       <file>ChangeLog</file>
@@ -6540,7 +6540,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.2</requirements:phpVersion>
-  <date>2016-08-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_lsrstopper">
       <file>ChangeLog</file>
@@ -6607,7 +6607,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2017-02-10</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mailcc">
       <file>serendipity_event_mailcc.php</file>
@@ -6622,16 +6622,16 @@
 <name>serendipity_event_mailentry</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mailentry/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Изпращане на статията по e-mail</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Дава възможност за изпращане на статия по e-mail на приятел. Трябва да се има предвид, че тази приставка може да предизвика автоматичен трафик, ако се използва от роботи.</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-04-06</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mailentry">
       <file>ChangeLog</file>
@@ -6688,16 +6688,16 @@
 <name>serendipity_event_markdown</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_markdown/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Форматиране на текст: Markdown</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Прилага текстово форматиране Markdown</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.43</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -6778,16 +6778,16 @@
 <name>serendipity_event_markread</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_markread/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Показва дали статиите са прочетени от посетителите</summary>
+<summary></summary>
 <groups>STATISTICS</groups>
-<description>Показва дали статиите са прочетени от посетителите</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_markread">
       <file>ChangeLog</file>
@@ -6833,7 +6833,7 @@
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
@@ -6887,7 +6887,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -6967,7 +6967,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
       <file>ChangeLog</file>
@@ -7021,7 +7021,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.0.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mobile_output">
       <file>ChangeLog</file>
@@ -7200,16 +7200,16 @@
 <name>serendipity_event_multilingual</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_multilingual/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Многоезични статии</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
-<description>Позволява създаването на версии на статиите на различни езици</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.16</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -7276,16 +7276,16 @@
 <name>serendipity_event_mycalendar</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mycalendar/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Моят календар</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Поддържа персонален календар</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.24</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
@@ -7341,7 +7341,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mymood">
       <file>ChangeLog</file>
@@ -7385,7 +7385,7 @@
   <requirements:s9yVersion>2.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -7425,7 +7425,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2022-04-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_oembed">
       <file>ChangeLog</file>
@@ -7515,7 +7515,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.3</requirements:phpVersion>
-  <date>2021-08-02</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_openid">
       <file>ChangeLog</file>
@@ -7598,6 +7598,11 @@
           </dir>
         </dir>
       </dir>
+      <dir name="php-openid-3.0.3">
+        <file>.gitignore</file>
+        <dir name="contrib">
+        </dir>
+      </dir>
       <file>serendipity_event_openid.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
@@ -7673,6 +7678,7 @@
     <file>serendipity_event_openid/PHP-openid/README.SERENDIPITY</file>
     <file>serendipity_event_openid/PHP-openid/Services/.empty</file>
     <file>serendipity_event_openid/PHP-openid/Services/Yadis/.empty</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/.gitignore</file>
     <file>serendipity_event_openid/serendipity_event_openid.php</file>
     <file>serendipity_event_openid/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_openid/UTF-8/lang_cz.inc.php</file>
@@ -7693,7 +7699,7 @@
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-01-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -7749,7 +7755,7 @@
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-01-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -7796,16 +7802,16 @@
 <name>serendipity_event_outdate_entries</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_outdate_entries/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Скриване на статии от нерегистрирани посетители на блога</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Скрива всички статии, които са по-стари от определена възраст, така че те да бъдат виждани само от регистирани посетители и автори</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.1.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_outdate_entries">
       <file>ChangeLog</file>
@@ -7842,16 +7848,16 @@
 <name>serendipity_event_page_nugget</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_page_nugget/ChangeLog</changelog>
 <license>GPL</license>
-<summary>HTML блок</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Поставя HTML блок на различни места в страницата или вътре в нейния HEAD таг</description>
+<description></description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_page_nugget">
       <file>ChangeLog</file>
@@ -7907,7 +7913,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_phoneblogz">
       <file>ChangeLog</file>
@@ -7953,7 +7959,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-01-28</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
       <file>ChangeLog</file>
@@ -8003,7 +8009,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -8237,7 +8243,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -8307,7 +8313,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_portier">
       <file>ChangeLog</file>
@@ -8877,7 +8883,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_prettify">
       <file>ChangeLog</file>
@@ -8945,7 +8951,7 @@
   <requirements:s9yVersion>1.6.2</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_proxy_realip">
       <file>ChangeLog</file>
@@ -8991,7 +8997,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-01-23</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_randomblogdescription">
       <file>ChangeLog</file>
@@ -9033,7 +9039,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2021-08-12</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_realtimecomments">
       <file>ChangeLog</file>
@@ -9079,7 +9085,7 @@
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-11-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_recaptcha">
       <file>ChangeLog</file>
@@ -9124,16 +9130,16 @@
 <name>serendipity_event_regexpmarkup</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_regexpmarkup/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Форматиране на текст: RegexpMarkup</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Форматиране на текст чрез потребителски файлове с регулярни изрази. Вижте примерите в поддиректория &quot;regexps&quot; на тази приставка.</description>
+<description></description>
 <maintainers><maintainer><name>Rob Antonishen, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_regexpmarkup">
       <file>ChangeLog</file>
@@ -9182,16 +9188,16 @@
 <name>serendipity_event_relatedlinks</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_relatedlinks/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Подобни статии/връзки</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Вмъква връзки към подобни (свързани с тази статия) други статии или WEB страници. За постигане на гъвкавост можете да редактирате файл &quot;plugin_relatedlinks.tpl&quot; (Smarty-Template), за да настроите как да изглежда статията. Забележка: Тази приставка извежда връзките само в детайлен / пълен вид на статията.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_relatedlinks">
       <file>ChangeLog</file>
@@ -9251,7 +9257,7 @@
   <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2022-11-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -9276,16 +9282,16 @@
 <name>serendipity_event_searchhighlight</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_searchhighlight/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Оцветява (highlight) заявки за търсене</summary>
+<summary></summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Оцветява заявките, използвани от търсещите машини (Google, Yahoo, Lycos и т.н.) за намиране на вашия блог.</description>
+<description></description>
 <maintainers><maintainer><name>Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.4.0</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -9371,7 +9377,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.1.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_sidebarhider">
       <file>ChangeLog</file>
@@ -9419,7 +9425,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-04-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -9611,7 +9617,7 @@
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-05-19</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
@@ -9669,7 +9675,7 @@
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="b8">
@@ -9747,7 +9753,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -9803,7 +9809,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_rbl">
       <file>ChangeLog</file>
@@ -9851,7 +9857,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_surbl">
       <file>ChangeLog</file>
@@ -9896,7 +9902,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_stalkerbuster">
       <file>lang_en.inc.php</file>
@@ -9922,7 +9928,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -9956,16 +9962,16 @@
 <website>https://ophian.github.io/</website>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_staticpage/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Статични страници</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES,FRONTEND_FEATURES</groups>
-<description>Показва статични страници във вашия блог използвайки общия дизайн на блога. Добавя нова команда към административното меню.</description>
+<description></description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>6.82</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -10116,16 +10122,16 @@
 <name>serendipity_event_statistics</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_statistics/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Статистика</summary>
+<summary></summary>
 <groups>STATISTICS</groups>
-<description>Добавя връзка към интересни статистически данни в страницата на постингите, включително и брояч на посетителите</description>
+<description></description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>4.5.3</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -10228,16 +10234,16 @@
 <name>serendipity_event_suggest</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_suggest/ChangeLog</changelog>
 <license>Commercial</license>
-<summary>Предложения за статии</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Дава възможност на нерегистрирани автори да предлагат статии за публикуване.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.21</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_suggest">
       <file>ChangeLog</file>
@@ -10281,16 +10287,16 @@
 <package version="1.0">
 <name>serendipity_event_templatechooser</name>
 <license>GPL</license>
-<summary>Селектор на шаблони</summary>
+<summary></summary>
 <groups>BACKEND_TEMPLATES</groups>
-<description>Позволява на посетителите на сайта да сменят темата на блога в движение.</description>
+<description></description>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-07-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_templatechooser">
       <file>lang_bg.inc.php</file>
@@ -10374,7 +10380,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2021-08-12</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_template_editor">
       <file>ChangeLog</file>
@@ -10469,16 +10475,16 @@
 <name>serendipity_event_textile</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textile/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Форматиране на текст: Textile</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Форматиране на текст чрез Textile конвертор.</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.13.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>ChangeLog</file>
@@ -10617,14 +10623,14 @@
 <license>GPL</license>
 <summary>TextLinkAds.com Ad</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Вгражда рекламни банери в страниците на блога.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_textlinkads">
       <file>ChangeLog</file>
@@ -10673,16 +10679,16 @@
 <name>serendipity_event_textwiki</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textwiki/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Форматиране на текст: Wiki</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Форматиране на текст чрез Text_Wiki конвертор</description>
+<description></description>
 <maintainers><maintainer><name>Tobias Schlitt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_textwiki">
       <file>ChangeLog</file>
@@ -11148,7 +11154,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-02-19</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
       <file>ChangeLog</file>
@@ -11198,7 +11204,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-07-01</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_tinymce">
       <file>ChangeLog</file>
@@ -11266,7 +11272,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2019-12-02</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_tinypng">
       <file>Changelog</file>
@@ -11319,16 +11325,16 @@
 <name>serendipity_event_todolist</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_todolist/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Задачи/Проекти</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Поддържа списък от проекти и степента на изпълнението им.</description>
+<description></description>
 <maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.2.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>ChangeLog</file>
@@ -11494,7 +11500,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_tooltips">
       <file>ChangeLog</file>
@@ -11555,16 +11561,16 @@
 <name>serendipity_event_trackback</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_trackback/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Управление на проследяванията</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Позволява подробен контрол върху проследяванията при създаване на статии</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.40</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
@@ -11622,7 +11628,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
       <file>ChangeLog</file>
@@ -11704,7 +11710,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -11769,16 +11775,16 @@
 <name>serendipity_event_typoquote</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_typoquote/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Форматиране на текст: Кавички</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Преобразува правите кавички в наклонени.</description>
+<description></description>
 <maintainers><maintainer><name>Jonathan Spalink and Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
       <file>ChangeLog</file>
@@ -11827,7 +11833,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-07-29</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_unstrip_tags">
       <file>lang_cs.inc.php</file>
@@ -11867,7 +11873,7 @@
   <requirements:s9yVersion>3.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
@@ -11968,16 +11974,16 @@
 <name>serendipity_event_userprofiles</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_userprofiles/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Потребителски профили</summary>
+<summary></summary>
 <groups>BACKEND_USERMANAGEMENT,BACKEND_TEMPLATES</groups>
-<description>Показва профил на автора с възможност за вграждане на негова снимка.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5.0</version>
   <requirements:s9yVersion>3.5</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -12028,16 +12034,16 @@
 <name>serendipity_event_versioning</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_versioning/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Версии на статиите</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES</groups>
-<description>Съхранява версии на статиите и може да възстановява стари версии при необходимост.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.16</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_versioning">
       <file>ChangeLog</file>
@@ -12083,7 +12089,7 @@
   <requirements:s9yVersion>2.2.1</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
       <file>changeLog</file>
@@ -12110,16 +12116,16 @@
 <name>serendipity_event_weblogping</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_weblogping/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Анонсиране на статии</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Изпраща известия за нови статии на онлайн услуги</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.24</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.6</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>
@@ -12200,16 +12206,16 @@
 <name>serendipity_event_wikilinks</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wikilinks/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Wiki връзки в статиите</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Можете да поставяте нови/съществуващи връзки към вашите статии чрез [[title]], към статични страници чрез ((title)) и връзки към двете чрез {{title}}.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -12263,7 +12269,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_wordwrap">
       <file>ChangeLog</file>
@@ -12309,7 +12315,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12371,7 +12377,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
       <file>ChangeLog</file>
@@ -12749,7 +12755,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12791,7 +12797,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12853,7 +12859,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>
@@ -12931,7 +12937,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
       <file>ChangeLog</file>
@@ -12985,7 +12991,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>

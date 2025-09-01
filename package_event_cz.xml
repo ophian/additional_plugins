@@ -6,16 +6,16 @@
 <name>serendipity_event_adminnotes</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_adminnotes/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Rychlé poznámky</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES,BACKEND_DASHBOARD</groups>
-<description>Zobrazuje v administrační sekci oznámení přihlášeným uživatelům</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.37</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.5</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -50,16 +50,16 @@
 <name>serendipity_event_aggregator</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_aggregator/ChangeLog</changelog>
 <license>GPL (IDN converter) or BSD (Onyx) or BSD-3 (SimplePie)</license>
-<summary>RSS agregátor</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Zobrazuje zprávy z mnoha RSS kanálů. DŮLEŽITÁ POZNÁMKA: Aktualizace a &quot;krmení&quot; agregátoru je v současnosti nutno dělat ručně pomocí Cronjobs nebo podobně. Volejte následující adresu v libovolných časových intervalech: index.php?/plugin/aggregator</description>
+<description></description>
 <maintainers><maintainer><name>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>2.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -118,16 +118,16 @@
 <name>serendipity_event_amazonchooser</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_amazonchooser/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Tlačítko médií Amazon</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Přidává tlačítko, které umožňuje vkládat do příspěvků výsledky hledání na Amazon.com</description>
+<description></description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.88</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -196,16 +196,16 @@
 <name>serendipity_event_assigncategories</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_assigncategories/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Přiřazení více kategorií</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Umožňuje přiřadit příspěvku více kategorií</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_assigncategories">
       <file>ChangeLog</file>
@@ -246,16 +246,16 @@
 <name>serendipity_event_autotitle</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_autotitle/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: Automatický titulek</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Nastaví automaticky parametr title=&quot;...&quot; v odkazech - &amp;lt;a href=&quot;...&quot; title=&quot;...&quot;&amp;gt;.</description>
+<description></description>
 <maintainers><maintainer><name>Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
       <file>ChangeLog</file>
@@ -292,16 +292,16 @@
 <name>serendipity_event_autoupdate</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_autoupdate/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Automatické aktualizace</summary>
+<summary></summary>
 <groups>BACKEND_ADMIN,BACKEND_DASHBOARD,BACKEND_FEATURES</groups>
-<description>Když &quot;tabule&quot; detekuje aktualizace, tento plugin přidá možnost automatické aktualizace blogu kliknutím na jediné tlačítko v administrační sekci. With Styx 2.1+ it is recommended to use it in combination with the modemaintain (maintenance-) event plugin. For Autoupdate Notifications you have to enable the global Serendipity configuration option in &quot;Configuration:: General Settings: Update notification&quot; to &quot;stable&quot; or &quot;beta&quot; to use and get notifications at all!</description>
+<description></description>
 <maintainers><maintainer><name>onli, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.5.0</version>
+  <version>2.5.1</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -342,16 +342,16 @@
 <name>serendipity_event_backend</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backend/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zobrazování příspěvků pomocí JavaScriptu</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Poskytuje Javascriptový výstup nejnovějších článků pro jejich vložení do cizích, externích stránek. (Přečtěte si soubor README v adresáři pluginu!)</description>
+<description></description>
 <maintainers><maintainer><name>Alexander Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_backend">
       <file>backend.html</file>
@@ -396,16 +396,16 @@
 <name>serendipity_event_backendrss</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backendrss/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zobrazení RSS kanálu v administrační sekci</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Zobrazuje RSS kanál na přehledové stránce v administrační sekci (stránka těsně po přihlášení).</description>
+<description></description>
 <maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_backendrss">
       <file>ChangeLog</file>
@@ -440,16 +440,16 @@
 <name>serendipity_event_backup</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backup/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zálohování</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS,BACKEND_FEATURES</groups>
-<description>Zpřístupňuje možnost automatického zálohování Serendepity - databázových tabulek i souborů. V současnosti je podporována pouze databáze MySQL(i). VAROVÁNÍ: Plugin nefunguje optimálně s velkou databází nebo velkým množstvím souborů.</description>
+<description></description>
 <maintainers><maintainer><name>Alexander Mieland, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.3.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_backup">
       <file>backup.sh</file>
@@ -494,14 +494,14 @@
 <license>GPL (Uses LGPL TCPDF</license>
 <summary>Export blogu do PDF</summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Umožňuje návštěvníkům blogu stáhnout obsah blogu ve formátu PDF</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.4.6</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_blogpdf">
       <file>ChangeLog</file>
@@ -1012,16 +1012,16 @@
 <name>serendipity_event_cal</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cal/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Kalendář akcí</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
-<description>Zobrazuje kalendář akcí jako samostatnou stránku v blogu. Design stránky zůstává stejný jako u zbytku blogu. (MySQL only)</description>
+<description></description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.3.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -1108,7 +1108,7 @@
 <name>serendipity_event_categorytemplates</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_categorytemplates/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Vlastnosti/šablona vzhledu pro kategorie</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_VIEWS,BACKEND_TEMPLATES</groups>
 <description>This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.</description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Ian Styx</name><role>lead</role></maintainer></maintainers>
@@ -1117,7 +1117,7 @@
   <requirements:s9yVersion>2.7.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -1170,7 +1170,7 @@
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.31</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2017-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_challengeresponse">
       <file>serendipity_event_challengeresponse.php</file>
@@ -1187,14 +1187,14 @@
 <license>GPL</license>
 <summary>CKEditor Plus</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Používá CKEditor jako výchozí WYSIWYG editor. Tento editor je aktuálním state-of-art. Použití: Doporučeno! Po instalaci přejděte na stránku s nastavením tohoto pluginu a čtěte další instrukce.</description>
+<description></description>
 <maintainers><maintainer><name>Rustam Abdullaev, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>4.22.1.3</version>
   <requirements:s9yVersion>2.6.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.13</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_ckeditor">
       <file>basic_toolbar.css</file>
@@ -1311,14 +1311,14 @@
 <license>GPL</license>
 <summary>Komix</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Vydávejte na svém blogu komix</description>
+<description></description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-08-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_comics">
       <file>ChangeLog</file>
@@ -1361,16 +1361,16 @@
 <name>serendipity_event_commentedit</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentedit/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Editace komentářů</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Povoluje uživatelům měnit vlastní komentáře i poté, co již byly odeslány.</description>
+<description></description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-03-12</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_commentedit">
       <file>ChangeLog</file>
@@ -1413,16 +1413,16 @@
 <name>serendipity_event_commentsearch</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentsearch/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Hledání v komentářích</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Pokud je tento plugin nainstalovaný, rychlé vyhledávání bude prohledávat také komentáře</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.2.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
       <file>ChangeLog</file>
@@ -1465,16 +1465,16 @@
 <name>serendipity_event_commentspice</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentspice/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Komentářové koření</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Okořeňte formulář pro zadání komentářů pomocí twitteru komentujícího, odkazem na poslední článek nebo pravidly pro ne-sledování.</description>
+<description></description>
 <maintainers><maintainer><name>Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.4.2</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1543,16 +1543,16 @@
 <name>serendipity_event_communityrating</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_communityrating/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Hodnocení</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Můžete hodnotit výrobky, filmy nebo cokoliv jiného a zobrazovat jejich hodnocení v příslušných příspěvcích. Také umožňuje sdíle hodnocení s ostatními uživateli tohoto pluginu. Tento plugin vyžaduje zásah do šablon, přečtěte si prosím soubor README.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Lewe Zipfel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.20</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -1615,16 +1615,16 @@
 <name>serendipity_event_contactform</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contactform/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Kontaktní formulář</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Zobrazuje kontaktní formulář k poslání e-mailu jako statickou stránku. Přístup k fromuláři buď pomocí stálého odkazu (permalinku) nebo na adrese index.php?serendipity[subpage]=contactform. Vzhled fromuláře si můžete upravit podle svého vložením souboru plugin_contactform.tpl do adresáře s Vaší šablonou. Kryptogramy z pluginu SpamBlock budou použity, pokud je SpamBlock nainstalován.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.49</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1693,16 +1693,16 @@
 <name>serendipity_event_contentrewrite</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contentrewrite/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Přepisovač obsahu</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Nahrazuje slovat libovolným řetězcem (užitečné pro vkládání akronymů)</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.7</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
       <file>ChangeLog</file>
@@ -1777,14 +1777,14 @@
 <license>GPL</license>
 <summary>Coppermine Selector</summary>
 <groups>BACKEND_EDITOR,IMAGES</groups>
-<description>Vybírá obrázky z webové galerie Coppermine</description>
+<description></description>
 <maintainers><maintainer><name>Matthew Maude (modified by Jim Davies)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.13</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2022-08-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
       <file>ChangeLog</file>
@@ -1831,14 +1831,14 @@
 <license>GPL</license>
 <summary>Licence Creative Commons</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Výběr a zobreazení licence Creative Commons (autorská práva) pro obsah Vašeho webu.</description>
+<description></description>
 <maintainers><maintainer><name>Evan Nemerson, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.0</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1915,16 +1915,16 @@
 <name>serendipity_event_cronjob</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cronjob/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Plánovač úloh</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Tento plugin periodicky vykonává pluginy, které poskytují/vyžadují opakované vykonávání. Podrobnosti v konfiguraci pluginu.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.1.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-03-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>ChangeLog</file>
@@ -1961,16 +1961,16 @@
 <name>serendipity_event_customarchive</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_customarchive/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Přizpůsobitelný archiv příspěvků</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Zobrazuje návštěvníkovi blogu všechny dosud vydané články s možností třídění. Odkaz na tuto stránku by měl být vložen do HTML nugetu (bloku).</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.24</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
@@ -2013,16 +2013,16 @@
 <name>serendipity_event_custom_permalinks</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_custom_permalinks/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Stálé odkazy pro příspěvky</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Můžete definovat stálé odkazy k jednotlivým příspěvkům. Lze použít pouze URL vzory, které JEŠTĚ NEJSOU používané - používání stálých odkazů ve tvaru /archives/odkaz není tedy možné. Ale používání jakéhokoliv jiného (virtuálního) adresáře možné je.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.27</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
       <file>ChangeLog</file>
@@ -2059,16 +2059,16 @@
 <name>serendipity_event_dbclean</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dbclean/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Vyčištění databáze</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Čistí databázi</description>
+<description></description>
 <maintainers><maintainer><name>Malte Paskuda, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
       <file>ChangeLog</file>
@@ -2107,16 +2107,16 @@
 <name>serendipity_event_dejure</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dejure/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Automatické odkazy Dejure.org</summary>
+<summary></summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Automaticky vytváří odkazy na citace a judikaturu (odkazy a zdroje informací) pomocí služby dejure.org.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, dejure.org, Thomas Hochstein, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.13</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.3.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dejure">
       <file>ChangeLog</file>
@@ -2151,16 +2151,16 @@
 <name>serendipity_event_disqus</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_disqus/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Komentáře Disqus</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Disqus.com je webová služba pro správu komentářů. Ukládá a spravuje komentáře vně instalace serendipity a je do blogu vkládána pomocí JavaScriptu. Pro více informací přejděte na www.disqus.com.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -2199,14 +2199,14 @@
 <license>GPL</license>
 <summary>Downloadmanager</summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Zajišťuje Serendipity všechny funkce download managera. Při odinstalování jsou odstraněny všechny tabulky z databáze (ztráta všech dat)!!!</description>
+<description></description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.65</version>
   <requirements:s9yVersion>3.3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -2521,16 +2521,16 @@
 <name>serendipity_event_dpsyntaxhighlighter</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dpsyntaxhighlighter/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zvýrazňovač syntaxe dp.SyntaxHighlighter</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Tento plugin je JavaScriptový zvýrazňovač syntaxe založený na stejnojmeném kódu Alexe Gorbačeva.Tento plugin zatěžuje server méně než GeSHi a vkládá méně značek do HTML kódu. Představuje čistější, odlehčenější alternativu ke GeSHi. Plugin vyžaduje použití šablony vzhledu, který podporuje následující hooky: frontend_header, frontend_footer (a volitelně také backend_preview prozobrazování i v administrační sekci).</description>
+<description></description>
 <maintainers><maintainer><name>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.20</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dpsyntaxhighlighter">
       <file>ChangeLog</file>
@@ -2674,7 +2674,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -2705,16 +2705,16 @@
 <name>serendipity_event_email_bot_obfuscator</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_email_bot_obfuscator/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: klikatelná emailová adresa - s protispamovou ochranou</summary>
+<summary></summary>
 <groups>ANTISPAM,MARKUP</groups>
-<description>Umožňuje vložit do blogu klikatelnou emailovou adresu, ale vkládá ji upravenou tak, aby ji nepoznaly internetové roboty, které hledají mailové adresy.</description>
+<description></description>
 <maintainers><maintainer><name>Stephan Manske, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.07</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -2759,16 +2759,16 @@
 <name>serendipity_event_emoticonchooser</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_emoticonchooser/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Lišta smajlíků</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.35</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.8</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2817,16 +2817,16 @@
 <name>serendipity_event_entrycheck</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrycheck/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Pravidla vydávání příspěvků</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Provádí kontrolu příspěvku před jeho vydáním.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.21</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
       <file>ChangeLog</file>
@@ -2871,16 +2871,16 @@
 <name>serendipity_event_entrylastmodified</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrylastmodified/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zobrazit datum poslední změny</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Na úvodní stránce blogu zobrazuje u každého příspěvku zprávu o datu poslední změny. Pro příspěvky, které nikdy nebyly pozměňovány, zobrazuje zprávu, že nikdy nebyly měněny.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2019-07-13</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrylastmodified">
       <file>ChangeLog</file>
@@ -2921,16 +2921,16 @@
 <name>serendipity_event_entrypaging</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrypaging/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Odkaz na další/předchozí příspěvek</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Umožňuje prohlížení dalších/předchozích příspěvků</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.85</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2981,16 +2981,16 @@
 <name>serendipity_event_entrysplit</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrysplit/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Dělení dlouhých příspěvků</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Umožňuje rozdělit dlouhé příspěvky do několika podstránek</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Tadashi Jokagi, Thomas Werner</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_entrysplit">
       <file>ChangeLog</file>
@@ -3035,16 +3035,16 @@
 <name>serendipity_event_externalauth</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_externalauth/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Externí ověřování/sledování uživatelů (LDAP)</summary>
+<summary></summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
-<description>Umožňuje použít vnější zdroj pro zjišťování správnosti přihlašovacích údajů. Přihlašovací jména jsou cachována v Serendipity databázi. Tento plugin umí také sledovat přihlášení do Serendipity.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking/Justin Alcorn</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.23</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_externalauth">
       <file>ChangeLog</file>
@@ -3087,16 +3087,16 @@
 <name>serendipity_event_externalphp</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_externalphp/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Externí PHP aplikace</summary>
+<summary></summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Zobrazuje výstup externí PHP aplikace uvnitř blogu, v designu a formátování blogu. POUŽÍVAT S ROZVAHOU, TENTO PLUGIN S SEBOU NESE BEZPEČNOSTNÍ RIZIKA, PROTOŽE UMOŽŇUJE VLOŽIT LIBOVOLNÝ PHP KÓD! TENTO PLUGIN MŮŽE POUŽÍVAT POUZE ADMINISTRÁTOR!</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2022-10-17</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_externalphp">
       <file>ChangeLog</file>
@@ -3135,14 +3135,14 @@
 <license>GPL</license>
 <summary>Facebook</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Importuje do blogu komentáře u příspěvků na facebooku (pomocí RSS Graffiti). Také do blogu vloží facebookové OpenGraph Meta-Tagy. Pamatujte, že přidání talčítka &quot;Líbí se mi&quot; k příspěvkům blogu je zajišťováno pluginem serendipity_event_social!</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.1.1</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2022-04-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>ChangeLog</file>
@@ -3179,16 +3179,16 @@
 <name>serendipity_event_faq</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_faq/ChangeLog</changelog>
 <license>GPL</license>
-<summary>FAQ - Často kladené otázky</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Správa FAQ - často kladených otázek</description>
+<description></description>
 <maintainers><maintainer><name>Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.60</version>
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -3309,7 +3309,7 @@
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-09-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_feed">
       <file>feedblock.tpl</file>
@@ -3334,16 +3334,16 @@
 <name>serendipity_event_filter_entries</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_filter_entries/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Filtrování příspěvků</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Umožňuje návštěvníkům blogu filtrovat/řadit příspěvky podle různých pravidel</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.2.0</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_filter_entries">
       <file>ChangeLog</file>
@@ -3386,14 +3386,14 @@
 <license>GPL</license>
 <summary>Flattr</summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Flattr je platforma pro sociální mikroplatby, která čtenáři umožňuje ocenit drobným příspěvkem obsah, který se mu líbí. Tento plugin vkládá do příspěvků a RSS kanálů tlačítka &quot;Flattr&quot; (tzv. Flattr Badges). U každého příspěvku můžete jednotlivě zadat nastavení Flattru. Pokud tak neučiníte, použije se globální nastavení.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Joachim Breitner</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.21</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -3432,14 +3432,14 @@
 <license>GPL</license>
 <summary>Import z Flickru</summary>
 <groups>IMAGES</groups>
-<description>Importuje obrázky z flickr.com do knihovny médií</description>
+<description></description>
 <maintainers><maintainer><name>Jay Bertrand</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.8</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-07-02</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_flickr">
       <file>ChangeLog</file>
@@ -3488,16 +3488,16 @@
 <name>serendipity_event_forgotpassword</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_forgotpassword/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zapomenuté heslo</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Vybranému uživateli umožňuje změnit heslo.</description>
+<description></description>
 <maintainers><maintainer><name>Omid Mottaghi</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.16</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_forgotpassword">
       <file>ChangeLog</file>
@@ -3542,16 +3542,16 @@
 <name>serendipity_event_forum</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_forum/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Diskusní fórum / zrcadlení phpBB fóra</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS</groups>
-<description>Poskytuje kompletní diskusní fórum. Alternativě umožňuje přístup do diskusního fóra phpBB.</description>
+<description></description>
 <maintainers><maintainer><name>Alexander 'dma147' Mieland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.46</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_forum">
       <file>AUTHORS</file>
@@ -3822,16 +3822,16 @@
 <name>serendipity_event_freetag</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_freetag/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Klíčová slova</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Umožňuje libovolné přidávání klíčových slov k příspěvkům</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>6.0.0</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -3928,14 +3928,14 @@
 <license>GPL</license>
 <summary>Geotag</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Umožňuje přidat k příspěvku zeměpisné souřadnice - geotag</description>
+<description></description>
 <maintainers><maintainer><name>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr, Martin Sewelies, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.45</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geotag">
       <file>ChangeLog</file>
@@ -3986,14 +3986,14 @@
 <license>GPL</license>
 <summary>GeoURL</summary>
 <groups>BACKEND_METAINFORMATION</groups>
-<description>GeoURL vkládá informace o zeměpisné poloze URL blogu. Více informací na http://geourl.org/</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2017-07-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geourl">
       <file>ChangeLog</file>
@@ -4043,7 +4043,7 @@
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2023-03-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geo_json">
       <file>ChangeLog</file>
@@ -4076,17 +4076,17 @@
 <license>GPL</license>
 <summary>Markup: GeSHi</summary>
 <groups>MARKUP</groups>
-<description>Barevné zvýrazňování syntaxe počítačových jazyků. Použití tagů: [geshi lang=nazev_jazyku [,ln={y|n}]]programový kód[/geshi]</description>
+<description></description>
 <maintainers><maintainer><name>David Rolston, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2022-11-24</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geshi">
-      <file>CHANGELOG</file>
+      <file>ChangeLog</file>
       <file>documentation_cs.html</file>
       <file>documentation_cz.html</file>
       <dir name="geshi">
@@ -4367,7 +4367,7 @@
     </dir>
   </filelist>
   <serendipityFilelist>
-    <file>serendipity_event_geshi/CHANGELOG</file>
+    <file>serendipity_event_geshi/ChangeLog</file>
     <file>serendipity_event_geshi/documentation_cs.html</file>
     <file>serendipity_event_geshi/documentation_cz.html</file>
     <file>serendipity_event_geshi/geshi/4cs.php</file>
@@ -4648,16 +4648,16 @@
 <name>serendipity_event_getid3</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_getid3/ChangeLog</changelog>
 <license>GPL</license>
-<summary>getID3() podpora pro získání vlastností média</summary>
+<summary></summary>
 <groups>IMAGES</groups>
-<description>Používá knihovnu getID3() k získání doplňujících informací o audio/video souborech. getID3() samotná není distribuována s tímto pluginem.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-07-01</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_getid3">
       <file>ChangeLog</file>
@@ -4698,16 +4698,16 @@
 <name>serendipity_event_glossary</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_glossary/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Rejstřík</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Uživatelem definovaný rejstřík slov, která se v textu zvýrazňují a po najetí myší se k nim v malém rámečku ukazuje vysvětlivka</description>
+<description></description>
 <maintainers><maintainer><name>Rob Antonishen, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_glossary">
       <file>ChangeLog</file>
@@ -4755,7 +4755,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.1.0</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -4792,16 +4792,16 @@
 <name>serendipity_event_google_sitemap</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_google_sitemap/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Generátor mapy stránek pro vyhledávače</summary>
+<summary></summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Vytváří soubor sitemap.xml.gz, který používají nejrůznější webové vyhledávače (Google, MSN, Yahoo nebo Ask)</description>
+<description></description>
 <maintainers><maintainer><name>Boris, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.75</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-10-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -4852,14 +4852,14 @@
 <license>GPL</license>
 <summary>Avatar Plugin</summary>
 <groups>IMAGES</groups>
-<description>Zobrazuje avatary (ikona či obrázek přispěvatele) v komentářích. Podporovány jsou služby Gravatar, Pavatar a Favatar.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.79</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -5202,16 +5202,16 @@
 <name>serendipity_event_guestbook</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_guestbook/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Návštěvní kniha</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
-<description>Zobrazuje návštěvní knihu jako stránku blogu. Vzhled je totožný s ostatními stránkami.</description>
+<description></description>
 <maintainers><maintainer><name>Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>4.2.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -5325,16 +5325,16 @@
 <package version="1.0">
 <name>serendipity_event_head_nugget</name>
 <license>GPL</license>
-<summary>HTML kód v záhlaví stránky (HTML-Head Nugget)</summary>
+<summary></summary>
 <groups>BACKEND_METAINFORMATION</groups>
-<description>Umožňuje vložit HTML kód do &lt;HEAD&gt; oblasti html kódu stránky. Použití pro vložení meta-tagů nebo vložení JavaScriptu.</description>
+<description></description>
 <maintainers><maintainer><name>Jannis Hermanns</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_head_nugget">
       <file>lang_bg.inc.php</file>
@@ -5374,14 +5374,14 @@
 <license>GPL</license>
 <summary>HTTP autentifikace</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
-<description>Ověřuje uživatele pomocí HTTP auth s použitím jejich serendipity přihlašovacích dat.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_httpauth">
       <file>lang_cs.inc.php</file>
@@ -5412,16 +5412,16 @@
 <name>serendipity_event_imageselectorplus</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_imageselectorplus/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Rozšířené volby pro práci s médii</summary>
+<summary></summary>
 <groups>IMAGES,MARKUP</groups>
-<description>Rozšiřuje možnosti vkládání obrázků z knihovny médií - quickblog a hromadné vkládání obrázků (více v dokumentaci v adresáři plugins/serendipity_evnets_imageselectorplus).</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.6.7</version>
   <requirements:s9yVersion>3.6.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -5474,16 +5474,16 @@
 <name>serendipity_event_includeentry</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_includeentry/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: Vložení příspěvku/šablony/bloku</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Umožňuje přidat do příspěvku tagy, které zajistí vložení část jiného příspěvku. Použijte tuto značku: [s9y-include-entry:XXX:YYY]. Nahraďte XXX číslem ID odkazovaného příspěvku a YYY nahraďte názvem pole příspěvku, které chcete vložit (např. &quot;body&quot;, &quot;title&quot;, &quot;extended&quot;, ...). Také můžete využít nové funkce menu pro správu šablon a bloků, které je možno vložit mezi příspěvky.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.37</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -5530,14 +5530,14 @@
 <license>GPL</license>
 <summary>Karma</summary>
 <groups>STATISTICS</groups>
-<description>Čtenáři hodnotí kvalitu Vašich příspěvků</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.24</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -5657,16 +5657,16 @@
 <package version="1.0">
 <name>serendipity_event_kubrickheader</name>
 <license>GPL</license>
-<summary>Záhlaví šablony/Obrázek - logo</summary>
+<summary></summary>
 <groups>IMAGES</groups>
-<description>Přepínání obrázku v záhlaví pro různé šablony</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Sebastian Mayeres, Jude Anthony</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_kubrickheader">
       <file>lang_cs.inc.php</file>
@@ -5698,14 +5698,14 @@
 <license>GPL</license>
 <summary>Layout plugin: verze pro tisk</summary>
 <groups>BACKEND_TEMPLATES</groups>
-<description>Při použití funkce &quot;vytisknout stránku&quot; v prohlížeči uvidíte výstup, který bude na tiskárně lépe vypadat.</description>
+<description></description>
 <maintainers><maintainer><name>Sebastian Nohn</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>0.7</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_layout_printerfriendly">
       <file>lang_bg.inc.php</file>
@@ -5753,7 +5753,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_lightbox">
       <file>ChangeLog</file>
@@ -6060,14 +6060,14 @@
 <license>GPL</license>
 <summary>Link List</summary>
 <groups>FRONTEND_VIEWS,BACKEND_FEATURES</groups>
-<description>Správce odkazů (linků) - V bočním panelu zobrazuje vaše oblíbené odkazy.</description>
+<description></description>
 <maintainers><maintainer><name>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.5.1</version>
   <requirements:s9yVersion>3.2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -6158,14 +6158,14 @@
 <license>GPL</license>
 <summary>HTML Link metatagy</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Zobrazuje metatagy &lt;link rel=&quot;start|up|prev|next&quot;&gt; v HTML hlavičce stránky blogu. To umožňuje v některých prohlížečích lepší navigaci ve stránkách. Check your themes index.tpl file to avoid double sets.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6.3</version>
   <requirements:s9yVersion>3.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.2</requirements:phpVersion>
-  <date>2022-01-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_linktoolbar">
       <file>ChangeLog</file>
@@ -6206,16 +6206,16 @@
 <name>serendipity_event_linktrimmer</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linktrimmer/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zkracovač adres</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7.8</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -6260,16 +6260,16 @@
 <name>serendipity_event_livecomment</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_livecomment/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Vylepšené políčko komentářů</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Používá JavaScript k ukázání náhledu komentáře a značkovací tlačítka</description>
+<description></description>
 <maintainers><maintainer><name>Malte Paskuda, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.5.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
-  <date>2022-09-17</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_livecomment">
       <file>ChangeLog</file>
@@ -6351,14 +6351,14 @@
 <license>GPL</license>
 <summary>Livesearch</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Vylepší vnitřní vyhledávací funkci přidáním našeptávače v reálném čase (JavaScript)</description>
+<description></description>
 <maintainers><maintainer><name>Christian Stocker, Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.4.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-04-05</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_livesearch">
       <file>lang_bg.inc.php</file>
@@ -6441,14 +6441,14 @@
 <license>GPL</license>
 <summary>LJ/MySpace/Serendipity aktualizace</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Používá XMLRPC protokol pro zasílání příspěvků na LiveJournal/MySpace/Serendipity</description>
+<description></description>
 <maintainers><maintainer><name>Kaustubh Srikanth, Ivan Makhonin</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.14</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_ljupdate">
       <file>ChangeLog</file>
@@ -6489,16 +6489,16 @@
 <name>serendipity_event_loginform</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_loginform/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Ověření přihlášení autorů</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Ověřuje správnost přihlašovacích údajů autora, který se přihlašuje přes formulář v postranním sloupci</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.05</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-03-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_loginform">
       <file>ChangeLog</file>
@@ -6533,14 +6533,14 @@
 <license>GPL</license>
 <summary>D64 LSR-Stopper</summary>
 <groups>MARKUP</groups>
-<description>Pomocí tohoto pluginu zablokujete odkazy na média, která si nárokují autorská práva podle německého &quot;Leistungsschutzrecht&quot; (Ochrana duševního vlastnictví).</description>
+<description></description>
 <maintainers><maintainer><name>Matthias Gutjahr</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.2</requirements:phpVersion>
-  <date>2016-08-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_lsrstopper">
       <file>ChangeLog</file>
@@ -6607,7 +6607,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2017-02-10</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mailcc">
       <file>serendipity_event_mailcc.php</file>
@@ -6622,16 +6622,16 @@
 <name>serendipity_event_mailentry</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mailentry/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Posílání příspěvku emailem</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Umožňuje uživatelům poslat příspěvek emailem kamarádovi. Dejte pozor, tento plugin může zvýšit provoz po síti, pokud začnou   spamboti zneužívat této funkce.</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.25</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-04-06</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mailentry">
       <file>ChangeLog</file>
@@ -6690,14 +6690,14 @@
 <license>GPL</license>
 <summary>Markup: Markdown</summary>
 <groups>MARKUP</groups>
-<description>Převádí značky Markdown na HTML v textu příspěvku</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team and Jan Lehnardt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.43</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -6778,16 +6778,16 @@
 <name>serendipity_event_markread</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_markread/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Přečteno/Nepřečteno označování příspěvků uživateli</summary>
+<summary></summary>
 <groups>STATISTICS</groups>
-<description>Přečteno/Nepřečteno označování příspěvků uživateli</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_markread">
       <file>ChangeLog</file>
@@ -6826,14 +6826,14 @@
 <license>GPL</license>
 <summary>HTML META tagy</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_METAINFORMATION</groups>
-<description>Zadejte HTML meta tagy pro klíčová slova nebo popis blogu. Také můžete zadávat různý titulek pro jednotlivé stránky blogu a výchozí hodnotu pro klíčová slova/popis pro stránky se zobrazenm více příspěvků (výchozí stránka, přehledy kategorií).</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Judebert, Don Chambers, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.32</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
@@ -6878,16 +6878,16 @@
 <name>serendipity_event_microformats</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_microformats/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Mikroformáty</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR,BACKEND_TEMPLATES</groups>
-<description>Tento plugin poskytuje jednoduché publikování přehledů (nebo událostí); podporuje příslušné mikroformáty.</description>
+<description></description>
 <maintainers><maintainer><name>Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.54</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -6958,16 +6958,16 @@
 <name>serendipity_event_mimetex</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mimetex/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Interpret příkazů MimeTex/LaTeX</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Vytvoří obrázky gif z výrazu TeX použitím softwaru MimeTex nebo LaTeX</description>
+<description></description>
 <maintainers><maintainer><name>Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
       <file>ChangeLog</file>
@@ -7012,16 +7012,16 @@
 <name>serendipity_event_mobile_output</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mobile_output/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: Výstup na mobil</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Tento plugin se stará o vytvoření kódu optimalizovaného pro mobilní telefony (tzv. XHTML MP), pokud zjistí, že stránku prohlíží prohlížeč pro mobily. Plugin je speciálně optimalizován pro iPhone a iPod Touch. Plugin také mění velikost obrázků, aby se přizpůsobily velikosti displeje.</description>
+<description></description>
 <maintainers><maintainer><name>Pelle Boese, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.10</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.0.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mobile_output">
       <file>ChangeLog</file>
@@ -7200,16 +7200,16 @@
 <name>serendipity_event_multilingual</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_multilingual/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Vízejazyčné záznamy</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
-<description>Umožňuje vytvořit příspěvek (záznam) ve více jazykových variantách. Obsahuje též fromulář pro výběr základního jazyka blogu.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>3.16</version>
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -7276,16 +7276,16 @@
 <name>serendipity_event_mycalendar</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mycalendar/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Můj kalendář</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Správa osobního kalendáře</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.24</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
@@ -7332,16 +7332,16 @@
 <name>serendipity_event_mymood</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mymood/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Moje nálada</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
-<description>Umožňuje vám přidávat vaší momentální náladu nebo nálady k příspvěkům.</description>
+<description></description>
 <maintainers><maintainer><name>Brett Profitt</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.18</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mymood">
       <file>ChangeLog</file>
@@ -7378,14 +7378,14 @@
 <license>GPL</license>
 <summary>Blok s novinkami</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
-<description>Seskupte příspěvky z jedné kategorie na výchozí stránce blogu do jednoho bloku místo obvyklého výpisu příspěvků. Podporuje vnořené bloky s novinkami.</description>
+<description></description>
 <maintainers><maintainer><name>Jude Anthony, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>2.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -7418,14 +7418,14 @@
 <license>GPL</license>
 <summary>oEmbed</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>oEmbed je formát, který umožňuje vkládat do blogu jiné stránky z internetu. Umožňuje zobrazovat v příspěvcích vložený obsah (jako tweety, fotky nebo videa), když autor příspěvku napíše odkaz na zdroj obsahu, aniž by bylo potřeba přímo parsovat cílovou stránku.</description>
+<description></description>
 <maintainers><maintainer><name>Grischa Brockhaus</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.22</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2022-04-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_oembed">
       <file>ChangeLog</file>
@@ -7506,16 +7506,16 @@
 <name>serendipity_event_openid</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_openid/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Přihlašování pomocí OpenID</summary>
+<summary></summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
-<description>Umožňuje autorům přihlásit se pomocí OpenID.</description>
+<description></description>
 <maintainers><maintainer><name>Grischa Brockhaus, Rob Richards, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.3</requirements:phpVersion>
-  <date>2021-08-02</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_openid">
       <file>ChangeLog</file>
@@ -7598,6 +7598,11 @@
           </dir>
         </dir>
       </dir>
+      <dir name="php-openid-3.0.3">
+        <file>.gitignore</file>
+        <dir name="contrib">
+        </dir>
+      </dir>
       <file>serendipity_event_openid.php</file>
       <dir name="UTF-8">
         <file>lang_cs.inc.php</file>
@@ -7673,6 +7678,7 @@
     <file>serendipity_event_openid/PHP-openid/README.SERENDIPITY</file>
     <file>serendipity_event_openid/PHP-openid/Services/.empty</file>
     <file>serendipity_event_openid/PHP-openid/Services/Yadis/.empty</file>
+    <file>serendipity_event_openid/php-openid-3.0.3/.gitignore</file>
     <file>serendipity_event_openid/serendipity_event_openid.php</file>
     <file>serendipity_event_openid/UTF-8/lang_cs.inc.php</file>
     <file>serendipity_event_openid/UTF-8/lang_cz.inc.php</file>
@@ -7693,7 +7699,7 @@
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-01-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -7749,7 +7755,7 @@
   <requirements:s9yVersion>2.3</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-01-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -7796,16 +7802,16 @@
 <name>serendipity_event_outdate_entries</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_outdate_entries/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Schovat/smazat staré příspěvky</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Pro nepřihlášené čtenáře schová všechny příspěvky starší než nastavený čas, tyto příspěvky jsou viditelné pouze přihlášeným uživatelům/autorům.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.1.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_outdate_entries">
       <file>ChangeLog</file>
@@ -7842,16 +7848,16 @@
 <name>serendipity_event_page_nugget</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_page_nugget/ChangeLog</changelog>
 <license>GPL</license>
-<summary>HTML blok (nuget) na stránce</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
-<description>Umístí HTML blok na vršek nebo spodek stránky, případně do tagu HEAD v záhlaví stránky</description>
+<description></description>
 <maintainers><maintainer><name>Wesley Hwang-Chung</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2018-08-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_page_nugget">
       <file>ChangeLog</file>
@@ -7900,14 +7906,14 @@
 <license>GPL</license>
 <summary>Phoneblogz</summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Tento plugin umožňuje vypisovat zprávy ze služby Phoneblogz.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, phoneblogz.com</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_phoneblogz">
       <file>ChangeLog</file>
@@ -7946,14 +7952,14 @@
 <license>GPL</license>
 <summary>Fotoblog</summary>
 <groups>IMAGES</groups>
-<description>Přidá do příspěvku jednu fotku</description>
+<description></description>
 <maintainers><maintainer><name>Cameron MacFarland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.15</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-01-28</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
       <file>ChangeLog</file>
@@ -7996,14 +8002,14 @@
 <license>GPL</license>
 <summary>Podcasting plugin</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Přidává &quot;podcastovací&quot; možnosti (RSS zapouzdření, přehrávač videa a/nebo hudby)</description>
+<description></description>
 <maintainers><maintainer><name>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.54</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -8228,16 +8234,16 @@
 <name>serendipity_event_popfetcher</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_popfetcher/ChangeLog</changelog>
 <license>GPL</license>
-<summary>POP3 stahovač</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Stahuje zprávy z emailu a zobrazí je včetně příloh v bloku v postranním sloupci (speciální podpora pro mobilní telefony)</description>
+<description></description>
 <maintainers><maintainer><name>Jason Levitt</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.58</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -8298,7 +8304,7 @@
 <name>serendipity_event_portier</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_portier/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Portier Email přihlašování</summary>
+<summary></summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
 <description>Allows authors to authenticate only using their email.</description>
 <maintainers><maintainer><name>Grischa Brockhaus, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
@@ -8307,7 +8313,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2019-08-09</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_portier">
       <file>ChangeLog</file>
@@ -8870,14 +8876,14 @@
 <license>GPL</license>
 <summary>Prettify pro Serendipity</summary>
 <groups>MARKUP</groups>
-<description>Použít skript Prettify pro vybroušení obsahu mezi tagy &amp;lt;PRE&amp;gt; pro jednoduché zvýrazňování syntaxe.</description>
+<description></description>
 <maintainers><maintainer><name>Adam Krause</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_prettify">
       <file>ChangeLog</file>
@@ -8938,14 +8944,14 @@
 <license>GPL</license>
 <summary>Proxy Real-IP</summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Nastaví správnou návštěvnickou IP adresu pro čtenáře, kteří používají Proxy webserver. Měl by být prvním pluginem v seznamu pluginů.</description>
+<description></description>
 <maintainers><maintainer><name>kleinerChemiker</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.0.2</version>
   <requirements:s9yVersion>1.6.2</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_proxy_realip">
       <file>ChangeLog</file>
@@ -8982,16 +8988,16 @@
 <name>serendipity_event_randomblogdescription</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_randomblogdescription/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Náhodný podtitulek blogu</summary>
+<summary></summary>
 <groups>BACKEND_METAINFORMATION</groups>
-<description>Zobrazuje náhodný podtitulek v záhlaví blogu. (Oddělená databáze musí být spravována ručně)</description>
+<description></description>
 <maintainers><maintainer><name>Florian Anderiasch</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.7</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-01-23</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_randomblogdescription">
       <file>ChangeLog</file>
@@ -9024,16 +9030,16 @@
 <name>serendipity_event_realtimecomments</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_realtimecomments/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Komentáře v reálném čase</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Aktualizuje komentáře od ostatních uživatelů bez znovunačtení stránky.</description>
+<description></description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.3</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2021-08-12</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_realtimecomments">
       <file>ChangeLog</file>
@@ -9072,14 +9078,14 @@
 <license>GPL</license>
 <summary>Recaptcha</summary>
 <groups>ANTISPAM</groups>
-<description>Při vkládání komentářů používá systém kryptogramů Recaptcha (je třeba předem zažádat o přístupový klíč)</description>
+<description></description>
 <maintainers><maintainer><name>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.36</version>
   <requirements:s9yVersion>2.0.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.0.0</requirements:phpVersion>
-  <date>2022-11-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_recaptcha">
       <file>ChangeLog</file>
@@ -9126,14 +9132,14 @@
 <license>GPL</license>
 <summary>Markup: RegexpMarkup</summary>
 <groups>MARKUP</groups>
-<description>Provádí převod značek použitím libovolného uživatelem zadaného souboru s regexp výrazy. Podívejte se na příklady v podadresáři &quot;regexps&quot; tohoto pluginu.</description>
+<description></description>
 <maintainers><maintainer><name>Rob Antonishen, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.2</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_regexpmarkup">
       <file>ChangeLog</file>
@@ -9182,16 +9188,16 @@
 <name>serendipity_event_relatedlinks</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_relatedlinks/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Odkazy na podobné príspevky/stránky</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Vložte odkazy na podobné príspevky/stránky. K lepšímu prizpusobení výstupu mužete upravit Smarty šablonu &quot;plugin_relatedlinks.tpl&quot;. Tento modul zobrazuje data pouze v detailním zobrazení príspevku.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_relatedlinks">
       <file>ChangeLog</file>
@@ -9251,7 +9257,7 @@
   <requirements:s9yVersion>3.0.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2022-11-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -9276,16 +9282,16 @@
 <name>serendipity_event_searchhighlight</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_searchhighlight/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Zvýraznění vyhledávaných řetězců</summary>
+<summary></summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Zvýrazňuje řetězce hledané v odkazujícím vyhledávači.</description>
+<description></description>
 <maintainers><maintainer><name>Tom Sommer, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.4.0</version>
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.0</requirements:phpVersion>
-  <date>2024-07-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -9362,16 +9368,16 @@
 <name>serendipity_event_sidebarhider</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_sidebarhider/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Přepínání stavu postranního sloupce (sbalený/rozbalený)</summary>
+<summary></summary>
 <groups>BACKEND_TEMPLATES</groups>
-<description>Smrští postranní sloupce pouze na jejich nadpisy. Přidává nastavení do psaní příspěvků a také položku &quot;Správa postranních sloupců&quot; do administrační sekce.</description>
+<description></description>
 <maintainers><maintainer><name>Tys von Gaza, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.51</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.1.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_sidebarhider">
       <file>ChangeLog</file>
@@ -9412,14 +9418,14 @@
 <license>GPL</license>
 <summary>SMTP Mail</summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Použití SMTP serveru pro odesílání pošty</description>
+<description></description>
 <maintainers><maintainer><name>kleinerChemiker, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.57</version>
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-04-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -9611,7 +9617,7 @@
   <requirements:s9yVersion>2.9</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2021-05-19</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
@@ -9662,14 +9668,14 @@
 <license>GPL</license>
 <summary>Spamblock (Bayes)</summary>
 <groups>ANTISPAM</groups>
-<description>Detekce spamu pomocí adaptivního algoritmu, který se dokáže sám učit.</description>
+<description></description>
 <maintainers><maintainer><name>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.9.5</version>
   <requirements:s9yVersion>2.1.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="b8">
@@ -9738,16 +9744,16 @@
 <name>serendipity_event_spamblock_bee</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_bee/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Spamblock Bee (Honeypot, Skrytá Captcha)</summary>
+<summary></summary>
 <groups>ANTISPAM</groups>
-<description>Implementuje jednoduché ale velmi účinné antispamové algoritmy.</description>
+<description></description>
 <maintainers><maintainer><name>Grischa Brockhaus, Janek Bevendorff, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6.8</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -9794,16 +9800,16 @@
 <name>serendipity_event_spamblock_rbl</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_rbl/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Antispamová ochrana (RBL)</summary>
+<summary></summary>
 <groups>ANTISPAM</groups>
-<description>Odmítne komentáře, které jsou zadány ze adres, které jsou vedeny v blacklistu RBL. Pozor, že tato volba může znemožnit posílání komentářů uživatelům, kteří sedí za proxy serverem nebo kteří používají vytáčené spojení.</description>
+<description></description>
 <maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_rbl">
       <file>ChangeLog</file>
@@ -9844,14 +9850,14 @@
 <license>GPL</license>
 <summary>Spam Protector (SURBL)</summary>
 <groups>ANTISPAM</groups>
-<description>Zamítne komentáře, které obsahují URL adresy z černé listiny.</description>
+<description></description>
 <maintainers><maintainer><name>Sebastian Nohn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_surbl">
       <file>ChangeLog</file>
@@ -9896,7 +9902,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_stalkerbuster">
       <file>lang_en.inc.php</file>
@@ -9913,16 +9919,16 @@
 <name>serendipity_event_startcat</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_startcat/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Kategorie na výchozí stránce</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Umožňuje zobrazovat na výchozí stránce blogu příspěvky pouze z jedné kategorie</description>
+<description></description>
 <maintainers><maintainer><name>Stefan Willoughby, Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.12</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -9956,16 +9962,16 @@
 <website>https://ophian.github.io/</website>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_staticpage/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Statické stránky</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES,FRONTEND_FEATURES</groups>
-<description>Zobrazuje v blogu statické stránky se stejným designem jako mají běžné přspěvky. Přidá nové menu do adminstrátorského rozhraní.</description>
+<description></description>
 <maintainers><maintainer><name>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>6.82</version>
   <requirements:s9yVersion>2.9.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>8.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -10118,14 +10124,14 @@
 <license>GPL</license>
 <summary>Statistiky</summary>
 <groups>STATISTICS</groups>
-<description>Zobrazení statistik záznamů</description>
+<description></description>
 <maintainers><maintainer><name>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>4.5.3</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -10228,16 +10234,16 @@
 <name>serendipity_event_suggest</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_suggest/ChangeLog</changelog>
 <license>Commercial</license>
-<summary>Návrhy na nové články</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Umožňuje neregistrovaným návštěvníkům navrhovat články, které by se měly vydat.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.21</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_suggest">
       <file>ChangeLog</file>
@@ -10281,16 +10287,16 @@
 <package version="1.0">
 <name>serendipity_event_templatechooser</name>
 <license>GPL</license>
-<summary>Výběr šablon</summary>
+<summary></summary>
 <groups>BACKEND_TEMPLATES</groups>
-<description>Umožňuje návštěvníkům Vašeho webu změnit šablonu (= vzhled) podle libosti</description>
+<description></description>
 <maintainers><maintainer><name>Evan Nemerson</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-07-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_templatechooser">
       <file>lang_bg.inc.php</file>
@@ -10365,16 +10371,16 @@
 <name>serendipity_event_template_editor</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_template_editor/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Editor stylů vzhledu</summary>
+<summary></summary>
 <groups>BACKEND_FEATURES</groups>
-<description>Upravujte soubory aktuálního stylu vzhledu/šablony přímo z adminstrační sekce.</description>
+<description></description>
 <maintainers><maintainer><name>Malte Paskuda</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.10</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2021-08-12</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_template_editor">
       <file>ChangeLog</file>
@@ -10471,14 +10477,14 @@
 <license>GPL</license>
 <summary>Markup: Textile</summary>
 <groups>MARKUP</groups>
-<description>Převádí text se značkami Textile do HTML</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team, Lars Strojny, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.13.1</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>ChangeLog</file>
@@ -10615,16 +10621,16 @@
 <name>serendipity_event_textlinkads</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textlinkads/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Vložené reklamy (TextLinkAds.com, vlastní)</summary>
+<summary></summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Vkládá reklamy do blogu.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.15</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_textlinkads">
       <file>ChangeLog</file>
@@ -10675,14 +10681,14 @@
 <license>GPL</license>
 <summary>Markup: Wiki</summary>
 <groups>MARKUP</groups>
-<description>Převádí značky Text_Wiki do HTML</description>
+<description></description>
 <maintainers><maintainer><name>Tobias Schlitt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.11</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_textwiki">
       <file>ChangeLog</file>
@@ -11139,16 +11145,16 @@
 <name>serendipity_event_thumbnails</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_thumbnails/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Náhledy příspěvků</summary>
+<summary></summary>
 <groups>IMAGES</groups>
-<description>Zobrazí stránku s náhledy článků. Její adresa je index.php?serendipity[tnpage]=thumbs</description>
+<description></description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6.0</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-02-19</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
       <file>ChangeLog</file>
@@ -11191,14 +11197,14 @@
 <license>GPL</license>
 <summary>TinyMCE jako WYSIWYG editor</summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Použije TiniMCE WYSIWYG editor pro psaní příspěvků. Vyžaduje Serendipity 1.6 nebo novější. Po instalaci si přečtěte instalačního průvodce v nastavení tohoto pluginu.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-07-01</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_tinymce">
       <file>ChangeLog</file>
@@ -11266,7 +11272,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2019-12-02</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_tinypng">
       <file>Changelog</file>
@@ -11319,16 +11325,16 @@
 <name>serendipity_event_todolist</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_todolist/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Seznam úkolů / ToDo list / projektové řízení</summary>
+<summary></summary>
 <groups>FRONTEND_FEATURES</groups>
-<description>Správa seznamu projektů/úkolů a jejich splnění v procentech</description>
+<description></description>
 <maintainers><maintainer><name>Steven Tonnesen, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.2.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>ChangeLog</file>
@@ -11485,16 +11491,16 @@
 <name>serendipity_event_tooltips</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_tooltips/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Tooltips - nápověda, tipy</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR,MARKUP</groups>
-<description>Aktivuje obrázky a texty nápovědy.</description>
+<description></description>
 <maintainers><maintainer><name>Enrico Stahn, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.9</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_tooltips">
       <file>ChangeLog</file>
@@ -11555,16 +11561,16 @@
 <name>serendipity_event_trackback</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_trackback/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Správa odezev</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Umožňuje podrobnou kontrolu chování odezev, jak jsou posílány při vytváření příspěvků</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.40</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2024-10-08</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
@@ -11613,16 +11619,16 @@
 <name>serendipity_event_trackexits</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_trackexits/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: Sledování odchodů</summary>
+<summary></summary>
 <groups>STATISTICS</groups>
-<description>Sleduje kliknutí na URL adresy mimo blog</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.16</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
       <file>ChangeLog</file>
@@ -11695,16 +11701,16 @@
 <name>serendipity_event_typesetbuttons</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_typesetbuttons/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Rozšířená tlačítka pro ne-WYSIWYG editor</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Přidá tlačítka pro vložení kódů různých html entit (čárky, tečky, uvozovky) + další akce.</description>
+<description></description>
 <maintainers><maintainer><name>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.00</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -11769,16 +11775,16 @@
 <name>serendipity_event_typoquote</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_typoquote/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: Typografické uvozovky</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Převádí rovné uvozovky na kulaté. Také můžete použít PHP knihovnu SmartyPants (od Michela Fortina, který vyšel ze SmartyPants od Johna Grubera), pak budou v příspěvcích aplikovány další typografické úpravy.</description>
+<description></description>
 <maintainers><maintainer><name>Jonathan Spalink and Matthew Groeninger, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
       <file>ChangeLog</file>
@@ -11818,16 +11824,16 @@
 <package version="1.0">
 <name>serendipity_event_unstrip_tags</name>
 <license>GPL</license>
-<summary>Transformace HTML v komentářích</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Umožňuje vkládat HTML tagy do komentářů k příspěvkům (místo jejich odstranění, bez tohoto modulu jsou převáděny na HTML entity). Musí být první ze všech značkovacích (markup) pluginů v seznamu pluginů událostí!</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.04</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2020-07-29</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_unstrip_tags">
       <file>lang_cs.inc.php</file>
@@ -11867,7 +11873,7 @@
   <requirements:s9yVersion>3.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
@@ -11968,16 +11974,16 @@
 <name>serendipity_event_userprofiles</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_userprofiles/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Profily uživatelů</summary>
+<summary></summary>
 <groups>BACKEND_USERMANAGEMENT,BACKEND_TEMPLATES</groups>
-<description>Zobrazuje jednoduché profily uživatelů a dovoluje přiložit jejich fotku.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.5.0</version>
   <requirements:s9yVersion>3.5</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -12028,16 +12034,16 @@
 <name>serendipity_event_versioning</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_versioning/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Starší verze příspěvků</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES</groups>
-<description>Umožňuje ukládat starší verze příspěvků a obnovovat je</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>0.16</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2024-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_versioning">
       <file>ChangeLog</file>
@@ -12083,7 +12089,7 @@
   <requirements:s9yVersion>2.2.1</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
       <file>changeLog</file>
@@ -12110,16 +12116,16 @@
 <name>serendipity_event_weblogping</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_weblogping/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Oznamování pøíspìvkù</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Posílá oznámení o nových příspěvcích na on-line internetové služby.</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.24</version>
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.6</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>
@@ -12200,16 +12206,16 @@
 <name>serendipity_event_wikilinks</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wikilinks/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Wiki odkazy v příspěvcích</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.6.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -12254,16 +12260,16 @@
 <name>serendipity_event_wordwrap</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wordwrap/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Markup: Zalamování dlouhého textu</summary>
+<summary></summary>
 <groups>MARKUP</groups>
-<description>Vkládá nové řádky do dlouhých příspěvků / komentářů</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.06</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2020-12-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_wordwrap">
       <file>ChangeLog</file>
@@ -12300,16 +12306,16 @@
 <name>serendipity_event_xmlrpc</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_xmlrpc/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Posílání příspěvků pomocí XML-RPC</summary>
+<summary></summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
+<description></description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.87</version>
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -12362,16 +12368,16 @@
 <name>serendipity_event_xsstrust</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_xsstrust/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Nástroje pro důvěryhodnou správu více-uživatelských blogů</summary>
+<summary></summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_USERMANAGEMENT,MARKUP</groups>
-<description>Tento plugin umožňuje upřesnit, kteří autoři na více-uživatelském blogu jsou důvěryhodní a lze se spolehnout, že se nebudou pokoušet o hackování. Všichni ostatní autoři jsou bráni jako potenciálně nebezpeční a nemohou vytvřátet příspěvky v HTML kódu.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.1.0</version>
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
       <file>ChangeLog</file>
@@ -12740,16 +12746,16 @@
 <name>serendipity_event_youtube</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_youtube/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Rozšířená tlačítka editoru: Youtube apod.</summary>
+<summary></summary>
 <groups>BACKEND_EDITOR</groups>
-<description>Přidává tlačítka do editačního formuláře pro lehčí vkládání HTML/JS akriptů jako např. Youtube apod.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.7</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -12782,16 +12788,16 @@
 <name>serendipity_event_adduser</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_adduser/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Samoregistrace nových uživatelů</summary>
+<summary></summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
-<description>Umožňuje návštěvníkům webu vytvořit si vlastní uživatelský účet. Dohromady s pluginem událostí (index.php?serendipity[subpage]=adduser) můžete určit, jestli komentáře mohou posílat pouze registrovaní uživatelé.</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.56</version>
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -12846,14 +12852,14 @@
 <license>GPL</license>
 <summary>Flickr Photostream CSS</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Tento plugin je rozšířením postranního pluginu &quot;Flickr Photostream&quot; a přidává k němu stylování (CSS).</description>
+<description></description>
 <maintainers><maintainer><name>Michael Kaiser, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.08</version>
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>
@@ -12924,14 +12930,14 @@
 <license>GPL</license>
 <summary>Ankety</summary>
 <groups>STATISTICS</groups>
-<description>Správa anket</description>
+<description></description>
 <maintainers><maintainer><name>Garvin Hicking, Matthias Mees, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.27</version>
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2024-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
       <file>ChangeLog</file>
@@ -12976,16 +12982,16 @@
 <name>serendipity_event_twitter</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_twitter/ChangeLog</changelog>
 <license>GPL</license>
-<summary>Mikroblogování (Twitter, Identica)</summary>
+<summary></summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Přidává klienta Twitter/Identica do administrační sekce a stahuje nové tweety a oznámuje nové články na účtu mikroblogu.</description>
+<description></description>
 <maintainers><maintainer><name>Grischa Brockhaus, Peter Heimann, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>2.2.0</version>
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>

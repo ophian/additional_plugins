@@ -15,7 +15,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2022-11-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -87,7 +87,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -209,7 +209,7 @@
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -313,7 +313,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2017-02-02</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_geotag">
       <file>ChangeLog</file>
@@ -371,7 +371,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.0.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -495,7 +495,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -593,7 +593,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2023-02-10</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -673,7 +673,7 @@
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -749,7 +749,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-11-30</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
@@ -805,7 +805,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -854,14 +854,14 @@
 <license>GPL</license>
 <summary>Statik Sayfalar Listesi</summary>
 <groups>FRONTEND_VIEWS</groups>
-<description>Bu eklenti statik sayfaların yapılandırılabilir bir listesini gösterir.</description>
+<description></description>
 <maintainers><maintainer><name>Rob Antonishen, Falk Doering, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.35</version>
   <requirements:s9yVersion>2.1.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -1021,7 +1021,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -1133,7 +1133,7 @@
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.3.0</requirements:phpVersion>
-  <date>2023-12-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -1193,7 +1193,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2021-08-25</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -1253,7 +1253,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
       <file>ChangeLog</file>
@@ -1631,7 +1631,7 @@
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -1693,7 +1693,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_amazon">
       <file>ChangeLog</file>
@@ -1744,7 +1744,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.0</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_category_dhtml_menu">
       <file>lang_bg.inc.php</file>
@@ -1787,7 +1787,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2022-09-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_coppermine">
       <file>lang_cs.inc.php</file>
@@ -1828,7 +1828,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2022-06-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_creativecommons">
       <file>lang_bg.inc.php</file>
@@ -1908,7 +1908,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>5.6</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_currently">
       <file>ChangeLog</file>
@@ -1963,7 +1963,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-10-23</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_externalphp">
       <file>lang_bg.inc.php</file>
@@ -2007,7 +2007,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-07-01</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_feedburnersidebar">
       <file>ChangeLog</file>
@@ -2049,7 +2049,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>
@@ -2127,7 +2127,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1</requirements:phpVersion>
-  <date>2018-08-31</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_flickrbadge">
       <file>ChangeLog</file>
@@ -2179,7 +2179,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_ggopis">
       <file>ChangeLog</file>
@@ -2239,7 +2239,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-05-24</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_google_adsense">
       <file>ChangeLog</file>
@@ -2289,7 +2289,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-04-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_google_quicksearch">
       <file>ChangeLog</file>
@@ -2337,7 +2337,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1</requirements:phpVersion>
-  <date>2018-08-31</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_heavyrotation">
       <file>ChangeLog</file>
@@ -2401,7 +2401,7 @@
   <requirements:s9yVersion>3.2</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.3</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_imagesidebar">
       <file>ChangeLog</file>
@@ -2456,7 +2456,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2019-08-18</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_karmaranking">
       <file>lang_cs.inc.php</file>
@@ -2496,7 +2496,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2020-03-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_loginform">
       <file>ChangeLog</file>
@@ -2552,7 +2552,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.4</requirements:phpVersion>
-  <date>2023-11-26</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_nugget_multilingual">
       <file>ChangeLog</file>
@@ -2604,7 +2604,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_pagerank">
       <file>ChangeLog</file>
@@ -2640,16 +2640,16 @@
 <package version="1.0">
 <name>serendipity_plugin_photoblog</name>
 <license>GPL</license>
-<summary>FotoGünlük Kayıtları</summary>
+<summary></summary>
 <groups>IMAGES</groups>
-<description>En son yayınladığınız fotogünlük kayıtlarınızdaki küçükresimleri gösterir (olaylar eklentisine bakın).</description>
+<description></description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
   <version>1.3</version>
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-12-15</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_photoblog">
       <file>lang_cs.inc.php</file>
@@ -2697,7 +2697,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2022-07-31</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_piwik">
       <file>ChangeLog</file>
@@ -2733,7 +2733,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2022-06-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
       <file>ChangeLog</file>
@@ -2787,7 +2787,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_popularentries">
       <file>ChangeLog</file>
@@ -2845,7 +2845,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-07-01</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_quicklink">
       <file>ChangeLog</file>
@@ -2887,7 +2887,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>5.6.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_randomquotes">
       <file>ChangeLog</file>
@@ -2933,7 +2933,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>5.3.0</requirements:phpVersion>
-  <date>2023-07-14</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_shoutbox">
       <file>ChangeLog</file>
@@ -3011,7 +3011,7 @@
   <requirements:s9yVersion>2.1</requirements:s9yVersion>
   <requirements:smyVersion>3.1.6</requirements:smyVersion>
   <requirements:phpVersion>7.4.0</requirements:phpVersion>
-  <date>2023-02-10</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_shoutcast">
       <file>ChangeLog</file>
@@ -3059,7 +3059,7 @@
   <requirements:s9yVersion>1.7</requirements:s9yVersion>
   <requirements:smyVersion>3.1.0</requirements:smyVersion>
   <requirements:phpVersion>5.2.0</requirements:phpVersion>
-  <date>2025-07-27</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_showentries">
       <file>ChangeLog</file>
@@ -3115,7 +3115,7 @@
   <requirements:s9yVersion>3.0</requirements:s9yVersion>
   <requirements:smyVersion>3.1</requirements:smyVersion>
   <requirements:phpVersion>7.0</requirements:phpVersion>
-  <date>2022-01-24</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_sidebarlogo">
       <file>ChangeLog</file>
@@ -3156,7 +3156,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2020-03-22</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_templatedropdown">
       <file>lang_bg.inc.php</file>
@@ -3236,7 +3236,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2022-02-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_timezones">
       <file>ChangeLog</file>
@@ -3281,7 +3281,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_topexits">
       <file>serendipity_plugin_topexits.php</file>
@@ -3304,7 +3304,7 @@
   <requirements:s9yVersion>0.8</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2016-07-07</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_topreferrers">
       <file>serendipity_plugin_topreferrers.php</file>
@@ -3328,7 +3328,7 @@
   <requirements:s9yVersion>2.0</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>5.1.0</requirements:phpVersion>
-  <date>2023-02-10</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
@@ -3436,7 +3436,7 @@
   <requirements:s9yVersion>1.6</requirements:s9yVersion>
   <requirements:smyVersion>2.6.7</requirements:smyVersion>
   <requirements:phpVersion>4.1.0</requirements:phpVersion>
-  <date>2018-04-03</date>
+  <date>2025-09-01</date>
   <filelist>
     <dir name="serendipity_plugin_wikipedia_finder">
       <file>ChangeLog</file>

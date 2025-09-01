@@ -9,111 +9,111 @@
 <dc:language>en</dc:language>
 <generator>Serendipity SPARTACUS</generator>
 <item>
-<title>QuickNotes: Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_adminnotes</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_adminnotes&lt;br /&gt;QuickNotes&lt;/b&gt;&lt;br /&gt;Zeigt Hinweise für angemeldete Autoren in der Admin-Oberfläche an.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adminnotes</guid>
 </item>
 <item>
-<title>RSS Aggregator: Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_aggregator</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson, Garvin Hicking, Kristian Koehntopp, Thomas Schulz, Claus Schmidt, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_aggregator&lt;br /&gt;RSS Aggregator&lt;/b&gt;&lt;br /&gt;Aggregiert Einträge von mehreren RSS Feeds (&quot;Planet&quot;). WICHTIGER HINWEIS: Die Aktualisierung des Aggregators muss derzeit noch manuell via Crontab aufgerufen werden. Rufen Sie im gewünschten Abstand per cronjob o.ä. folgende URL auf: index.php?/plugin/aggregator&lt;br/&gt;For: Serendipity 2.2</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_aggregator</guid>
 </item>
 <item>
-<title>Amazon Medien-Button: Fügt einen Button zum Artikeleditor hinzu, über den eine Amazon.com Suche für Produkte ausgeführt werden kann und die Ergebnisse in den Eintrag eingebettet werden</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_amazonchooser</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_amazonchooser&lt;br /&gt;Amazon Medien-Button&lt;/b&gt;&lt;br /&gt;Fügt einen Button zum Artikeleditor hinzu, über den eine Amazon.com Suche für Produkte ausgeführt werden kann und die Ergebnisse in den Eintrag eingebettet werden&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_amazonchooser</guid>
 </item>
 <item>
-<title>Kategorien zuweisen: Ermöglicht mehrere Kategorien zu bestehenden Einträgen zuzuweisen, bzw. die Zuweisungen schnell für alle Artikel zu ändern.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_assigncategories</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_assigncategories&lt;br /&gt;Kategorien zuweisen&lt;/b&gt;&lt;br /&gt;Ermöglicht mehrere Kategorien zu bestehenden Einträgen zuzuweisen, bzw. die Zuweisungen schnell für alle Artikel zu ändern.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_assigncategories</guid>
 </item>
 <item>
-<title>Markup: Auto-Titel: Fügt automatisch den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_autotitle</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_autotitle&lt;br /&gt;Markup: Auto-Titel&lt;/b&gt;&lt;br /&gt;Fügt automatisch den Titel der verlinkten Seite als als &quot;title&quot;-Tag zum Link hinzu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autotitle</guid>
 </item>
 <item>
-<title>Serendipity Autoupdate: Sobald das Serendipity Backend (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in die Startseite des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Es ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_autoupdate</link>
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_autoupdate&lt;br /&gt;Serendipity Autoupdate&lt;/b&gt;&lt;br /&gt;Sobald das Serendipity Backend (einmal am Tag) ein Serendipity Update entdeckt, setzt dieses Plugin eine Ein-Klick Option in die Startseite des Backends, um ein manuelles Download oder ein automatisches und gesichertes Upgrade der Blogsoftware zu starten. Es ist zu empfehlen, dieses Plugin in Kombination mit dem modemaintain (Wartungs-) Ereignis Plugin zu nutzen. Für Autoupdate Hinweise müssen Sie die globale Serendipity Konfigurationsoption in &quot;Einstellungen:: Generelle Einstellungen: Update-Hinweis&quot; auf &quot;stable&quot; oder &quot;beta&quot; stellen, um es überhaupt über das Dashboard nutzen zu können!&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:39:14 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:58:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_autoupdate</guid>
 </item>
 <item>
-<title>Zeige Einträge mittels JavaScript: Stellt JavaScript Ausgabe der letzten Einträge zum Einbinden in andere, externe Webseiten bereit. (Siehe README im Plugin Verzeichnis!)</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_backend</link>
 <category>Event Plugins</category>
 <author>Alexander Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backend&lt;br /&gt;Zeige Einträge mittels JavaScript&lt;/b&gt;&lt;br /&gt;Stellt JavaScript Ausgabe der letzten Einträge zum Einbinden in andere, externe Webseiten bereit. (Siehe README im Plugin Verzeichnis!)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:17:13 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backend</guid>
 </item>
 <item>
-<title>Display RSS-Feed in Backend Overview: Displays a RSS feed on the overview page (right after login) to the administration interface</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_backendrss</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backendrss&lt;br /&gt;Display RSS-Feed in Backend Overview&lt;/b&gt;&lt;br /&gt;Displays a RSS feed on the overview page (right after login) to the administration interface&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backendrss</guid>
 </item>
 <item>
-<title>Backup-Interface: Bietet die Möglichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstützt. WARNUNG: Dieses Plugin funktioniert nicht gut mit großen Datenbanken oder Verzeichnissen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_backup</link>
 <category>Event Plugins</category>
 <author>Alexander Mieland, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_backup&lt;br /&gt;Backup-Interface&lt;/b&gt;&lt;br /&gt;Bietet die Möglichkeit, automatisch Backups von Ihren Serendipity - den Datenbanktabellen, der gesamten Datenbank und den Dateien - zu erstellen. Derzeit werden nur MySQL(i)-Datenbanken unterstützt. WARNUNG: Dieses Plugin funktioniert nicht gut mit großen Datenbanken oder Verzeichnissen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_backup</guid>
 </item>
 <item>
-<title>Blog als PDF exportieren: Exportiert alle Einträge des Blogs in eine PDF-Datei</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_blogpdf</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_blogpdf&lt;br /&gt;Blog als PDF exportieren&lt;/b&gt;&lt;br /&gt;Exportiert alle Einträge des Blogs in eine PDF-Datei&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_blogpdf</guid>
 </item>
 <item>
-<title>Event-Terminkalender: Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_cal</link>
 <category>Event Plugins</category>
 <author>Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_cal&lt;br /&gt;Event-Terminkalender&lt;/b&gt;&lt;br /&gt;Zeigt einen Terminkalender innerhalb des Blogs mit dem Blog-Design und allen Formatierungen an. Unterstützt Backend/Frontend Administration, vielfache Termine und iCal Export. (Nur MySQL)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cal</guid>
 </item>
 <item>
-<title>Eigenschaften/Templates von Kategorien: Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: Speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten und RSS-Feeds.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_categorytemplates</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Eigenschaften/Templates von Kategorien&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht erweiterte Eigenschaften für Kategorien und deren Einträge festzulegen: Speziell angepasste Templates, Anzeigereihenfolge, Anzeigeanzahl, Passwort-Schutz und Ausschluss aus anderen Eintragslisten und RSS-Feeds.&lt;br/&gt;For: Serendipity 2.7.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -122,16 +122,16 @@
 <category>Event Plugins</category>
 <author>Nobody</author>
 <content:encoded>&lt;b&gt;serendipity_event_challengeresponse&lt;br /&gt;Spam: Challenge/Response&lt;/b&gt;&lt;br /&gt;A simple example for custom Spam verification.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Fri, 18 Aug 2017 10:41:27 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_challengeresponse</guid>
 </item>
 <item>
-<title>CKEditor Plus: Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_ckeditor</link>
 <category>Event Plugins</category>
 <author>Rustam Abdullaev, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_ckeditor&lt;br /&gt;CKEditor Plus&lt;/b&gt;&lt;br /&gt;Nutzt CKEditor als Standard WYSIWYG Editor. Benutzung für JS-Editoren: Empfohlen! Nach der Installation, lesen Sie die Plugin Konfigurations Seite für mehr Informationen.&lt;br/&gt;For: Serendipity 2.6.2</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ckeditor</guid>
 </item>
 <item>
@@ -140,16 +140,16 @@
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
 <content:encoded>&lt;b&gt;serendipity_event_comics&lt;br /&gt;Comics&lt;/b&gt;&lt;br /&gt;Webcomics im Blog posten&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 14 Aug 2020 09:07:48 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_comics</guid>
 </item>
 <item>
-<title>Kommentarbearbeitung: Ermöglicht Besuchern ihren Kommentar nachträglich zu editieren.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_commentedit</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentedit&lt;br /&gt;Kommentarbearbeitung&lt;/b&gt;&lt;br /&gt;Ermöglicht Besuchern ihren Kommentar nachträglich zu editieren.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 12 Mar 2023 18:57:37 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentedit</guid>
 </item>
 <item>
@@ -158,16 +158,16 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_commentsearch&lt;br /&gt;Durchsuche Kommentare mit der Schnellsuche&lt;/b&gt;&lt;br /&gt;Wenn dieses Plugin installiert ist, durchsucht die Schnellsuche Ihres Blogs auch die Kommentare.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentsearch</guid>
 </item>
 <item>
-<title>Comment Spice: Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_commentspice</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_commentspice&lt;br /&gt;Comment Spice&lt;/b&gt;&lt;br /&gt;Würze Deinen Kommentarbereich mit Extras wie einem Twitterlink oder einem Link auf den letzten Artikel des Kommentators und nofollow nach bestimmten Regeln.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_commentspice</guid>
 </item>
 <item>
@@ -176,79 +176,79 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Lewe Zipfel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_communityrating&lt;br /&gt;Community Rating&lt;/b&gt;&lt;br /&gt;You can rate products, movies or anything else and display your rating within your associated entries. Also enables you to share your ratings with other users of these plugins. This plugin requires you to edit template files, please read the README file.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:37:11 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_communityrating</guid>
 </item>
 <item>
-<title>Kontaktformular: Stellt ein E-Mail Kontaktformular auf Ihrem Blog als statische Seite dar. Darauf kann entweder über den (virtuellen) Permalink oder aus Kompatibilitätsgründen mittels index.php?serendipity[subpage]=contactform zugegriffen werden. Die Darstellung kann durch Smarty Templates angepasst werden, indem die Datei plugin_contactform.tpl in Ihren Templateordner kopiert und modifiziert wird. Captchas der Spamblock-Plugins (falls aktiviert) werden angewendet.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_contactform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_contactform&lt;br /&gt;Kontaktformular&lt;/b&gt;&lt;br /&gt;Stellt ein E-Mail Kontaktformular auf Ihrem Blog als statische Seite dar. Darauf kann entweder über den (virtuellen) Permalink oder aus Kompatibilitätsgründen mittels index.php?serendipity[subpage]=contactform zugegriffen werden. Die Darstellung kann durch Smarty Templates angepasst werden, indem die Datei plugin_contactform.tpl in Ihren Templateordner kopiert und modifiziert wird. Captchas der Spamblock-Plugins (falls aktiviert) werden angewendet.&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contactform</guid>
 </item>
 <item>
-<title>Wort-Ersetzer: Ersetzt ein Wort mit einem neuen Inhalt, z.B. für Akronyme</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_contentrewrite</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_contentrewrite&lt;br /&gt;Wort-Ersetzer&lt;/b&gt;&lt;br /&gt;Ersetzt ein Wort mit einem neuen Inhalt, z.B. für Akronyme&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 14 Jul 2023 11:16:41 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_contentrewrite</guid>
 </item>
 <item>
-<title>Coppermine-Selektor: Wählen Sie Bilder aus einer Coppermine-Galerie für neue Einträge aus.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_cpgselector</link>
 <category>Event Plugins</category>
 <author>Matthew Maude (modified by Jim Davies)</author>
-<content:encoded>&lt;b&gt;serendipity_event_cpgselector&lt;br /&gt;Coppermine-Selektor&lt;/b&gt;&lt;br /&gt;Wählen Sie Bilder aus einer Coppermine-Galerie für neue Einträge aus.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 15 Aug 2022 10:29:51 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cpgselector</guid>
 </item>
 <item>
-<title>Creative Commons Lizenz: Wählen Sie eine Lizenz für den Inhalt</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_creativecommons</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_creativecommons&lt;br /&gt;Creative Commons Lizenz&lt;/b&gt;&lt;br /&gt;Wählen Sie eine Lizenz für den Inhalt&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_creativecommons</guid>
 </item>
 <item>
-<title>Cronjob-Planer: Dieses Plugin führt andere Plugins, die regelmäßig bestimmte Aufgaben ausführen sollen, in bestimmten Zeitabständen aus. Einzelheiten finden Sie in der Konfiguration dieses Plugins.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_cronjob</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_cronjob&lt;br /&gt;Cronjob-Planer&lt;/b&gt;&lt;br /&gt;Dieses Plugin führt andere Plugins, die regelmäßig bestimmte Aufgaben ausführen sollen, in bestimmten Zeitabständen aus. Einzelheiten finden Sie in der Konfiguration dieses Plugins.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Tue, 15 Mar 2022 15:14:11 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_cronjob</guid>
 </item>
 <item>
-<title>Sortierbares Archiv der Einträge: Zeigt eine sortierbare Ansicht aller Artikel für den Besucher an. Der Link zu dieser eigenständigen Seite sollte in einem eigenen HTML Klotz verlinkt werden!</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_customarchive</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_customarchive&lt;br /&gt;Sortierbares Archiv der Einträge&lt;/b&gt;&lt;br /&gt;Zeigt eine sortierbare Ansicht aller Artikel für den Besucher an. Der Link zu dieser eigenständigen Seite sollte in einem eigenen HTML Klotz verlinkt werden!&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_customarchive</guid>
 </item>
 <item>
-<title>Frei-definierbare Permalinks zu Einträgen: Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_custom_permalinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Frei-definierbare Permalinks zu Einträgen&lt;/b&gt;&lt;br /&gt;Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
-<title>DBClean: Datenbank aufräumen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_dbclean</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_dbclean&lt;br /&gt;DBClean&lt;/b&gt;&lt;br /&gt;Datenbank aufräumen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dbclean</guid>
 </item>
 <item>
@@ -257,133 +257,133 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, dejure.org, Thomas Hochstein, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_dejure&lt;br /&gt;dejure.org Rechtsvernetzung&lt;/b&gt;&lt;br /&gt;Verlinkt automatisch zitierte Gesetze und Rechtsprechung (Aktenzeichen und Fundstellen) mit den Inhalten von dejure.org.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:18:09 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dejure</guid>
 </item>
 <item>
-<title>Disqus-Kommentare: Disqus.com ist ein Webservice, mit dem Sie Kommentare zentral verwalten können. Der Dienst speichert und verwaltet Kommentare außerhalb Ihrer Serendipity-Installation und ist mit JavaScript eingebettet. Weitere Informationen finden Sie unter https://disqus.com/.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_disqus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_disqus&lt;br /&gt;Disqus-Kommentare&lt;/b&gt;&lt;br /&gt;Disqus.com ist ein Webservice, mit dem Sie Kommentare zentral verwalten können. Der Dienst speichert und verwaltet Kommentare außerhalb Ihrer Serendipity-Installation und ist mit JavaScript eingebettet. Weitere Informationen finden Sie unter https://disqus.com/.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:22:13 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_disqus</guid>
 </item>
 <item>
-<title>Downloadmanager: Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_downloadmanager</link>
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_downloadmanager&lt;br /&gt;Downloadmanager&lt;/b&gt;&lt;br /&gt;Stellt einen kompletten Downloadmanager zur Verfügung. Bei Deinstallation werden alle zugehörigen Tabellen gelöscht!&lt;br/&gt;For: Serendipity 3.3.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_downloadmanager</guid>
 </item>
 <item>
-<title>Markup: Syntax-Hervorhebung: Dieses Plugin ist ein JavaScript-Syntax-Hervorheber, der auf dem gleichnamigen Code von Alex Gorbatchev basiert. Es benötigt weniger serverseitige Ressourcen als GeSHi und zeigt im eigentlichen HTML-Code weniger Markups an; eine leichtgewichtigere, sauberere Alternative. Dieses Plugin benötigt das zugehörige Theme, um die folgenden Hooks bereitzustellen: frontend_header, frontend_footer (und optional backend_preview im Admin-Theme).</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_dpsyntaxhighlighter</link>
 <category>Event Plugins</category>
 <author>Alex Gorbatchev (core), Brendon Kozlowski and J.M. Roth (plugin)</author>
-<content:encoded>&lt;b&gt;serendipity_event_dpsyntaxhighlighter&lt;br /&gt;Markup: Syntax-Hervorhebung&lt;/b&gt;&lt;br /&gt;Dieses Plugin ist ein JavaScript-Syntax-Hervorheber, der auf dem gleichnamigen Code von Alex Gorbatchev basiert. Es benötigt weniger serverseitige Ressourcen als GeSHi und zeigt im eigentlichen HTML-Code weniger Markups an; eine leichtgewichtigere, sauberere Alternative. Dieses Plugin benötigt das zugehörige Theme, um die folgenden Hooks bereitzustellen: frontend_header, frontend_footer (und optional backend_preview im Admin-Theme).&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 16:19:47 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dpsyntaxhighlighter</guid>
 </item>
 <item>
-<title>DSGVO / GDPR: Datenschutz-Grundverordnung: Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_dsgvo_gdpr</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_dsgvo_gdpr&lt;br /&gt;DSGVO / GDPR: Datenschutz-Grundverordnung&lt;/b&gt;&lt;br /&gt;Dieses Plugin soll Blog-Besitzern helfen, die Übereinstimmung mit dem Allgemeinen Datenschutzgesetz zu gewährleisten.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_dsgvo_gdpr</guid>
 </item>
 <item>
-<title>Textformatierung: Klickbare E-Mail-Adressen - Verschleiern von E-Mail-Adressen : Macht E-Mail-Adressen klickbar, aber verschleiert sie, um sie vor Spambots zu schützen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_email_bot_obfuscator</link>
 <category>Event Plugins</category>
 <author>Stephan Manske, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_email_bot_obfuscator&lt;br /&gt;Textformatierung: Klickbare E-Mail-Adressen - Verschleiern von E-Mail-Adressen &lt;/b&gt;&lt;br /&gt;Macht E-Mail-Adressen klickbar, aber verschleiert sie, um sie vor Spambots zu schützen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:20:46 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_email_bot_obfuscator</guid>
 </item>
 <item>
-<title>Smiley-Auswahlleiste: Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_emoticonchooser</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jay Bertrandt, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_emoticonchooser&lt;br /&gt;Smiley-Auswahlleiste&lt;/b&gt;&lt;br /&gt;Zeigt eine Auswahlleiste bei der Erstellung eines Eintrags um Smileys einzufügen.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_emoticonchooser</guid>
 </item>
 <item>
-<title>Regeln für Veröffentlichungen: Führt einige Prüfungen vor der Veröffentlichung eines Artikels durch.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_entrycheck</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Gregor Voeltz, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrycheck&lt;br /&gt;Regeln für Veröffentlichungen&lt;/b&gt;&lt;br /&gt;Führt einige Prüfungen vor der Veröffentlichung eines Artikels durch.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrycheck</guid>
 </item>
 <item>
-<title>Datum der letzten Aktualisierung eines Eintrags anzeigen: Zeigt das Datum der letzten Aktualisierung eines Eintrags auf der Übersichtsseite des Blogs an.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_entrylastmodified</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrylastmodified&lt;br /&gt;Datum der letzten Aktualisierung eines Eintrags anzeigen&lt;/b&gt;&lt;br /&gt;Zeigt das Datum der letzten Aktualisierung eines Eintrags auf der Übersichtsseite des Blogs an.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sat, 13 Jul 2019 13:51:40 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrylastmodified</guid>
 </item>
 <item>
-<title>Nächster/Voriger Artikel: Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_entrypaging</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrypaging&lt;br /&gt;Nächster/Voriger Artikel&lt;/b&gt;&lt;br /&gt;Ermöglicht beim Betrachten eines Eintrages in der Eintragsliste vor und zurück zu blättern&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrypaging</guid>
 </item>
 <item>
-<title>Lange Einträge aufteilen: Erlaubt die Aufteilung eines langen Artikels in mehrere Unterseiten sowie das Einfügen eines Inhaltsverzeichnisses</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_entrysplit</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Tadashi Jokagi, Thomas Werner</author>
-<content:encoded>&lt;b&gt;serendipity_event_entrysplit&lt;br /&gt;Lange Einträge aufteilen&lt;/b&gt;&lt;br /&gt;Erlaubt die Aufteilung eines langen Artikels in mehrere Unterseiten sowie das Einfügen eines Inhaltsverzeichnisses&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:20:48 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_entrysplit</guid>
 </item>
 <item>
-<title>Externe Benutzer-Authentifizierung (LDAP) [EXPERIMENTAL]: Ermöglicht die externe authentifizierung für Logins der Benutzer. Die Zugangsdaten werden im lokalen Serendipity Datenbank-Framework gecached.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_externalauth</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking/Justin Alcorn</author>
-<content:encoded>&lt;b&gt;serendipity_event_externalauth&lt;br /&gt;Externe Benutzer-Authentifizierung (LDAP) [EXPERIMENTAL]&lt;/b&gt;&lt;br /&gt;Ermöglicht die externe authentifizierung für Logins der Benutzer. Die Zugangsdaten werden im lokalen Serendipity Datenbank-Framework gecached.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 12:53:59 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalauth</guid>
 </item>
 <item>
-<title>Externe PHP-Anwendung: Bettet eine externe PHP Anwendung in Ihrem Blog ein, dass im gewohnten Design präsentiert wird. MIT VORSICHT BENUTZEN, DA DIESES PLUGIN GROSSE SICHERHEITSLÜCKEN ERMÖGLICHEN KANN WENN EINE BELIEBIGE PHP-DATEI EINGEBUNDEN WIRD! Dieses Plugin kann daher nur als Administrator konfiguriert werden.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_externalphp</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_externalphp&lt;br /&gt;Externe PHP-Anwendung&lt;/b&gt;&lt;br /&gt;Bettet eine externe PHP Anwendung in Ihrem Blog ein, dass im gewohnten Design präsentiert wird. MIT VORSICHT BENUTZEN, DA DIESES PLUGIN GROSSE SICHERHEITSLÜCKEN ERMÖGLICHEN KANN WENN EINE BELIEBIGE PHP-DATEI EINGEBUNDEN WIRD! Dieses Plugin kann daher nur als Administrator konfiguriert werden.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 17 Oct 2022 12:45:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_externalphp</guid>
 </item>
 <item>
-<title>Facebook (Experimentell!): Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_facebook</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_facebook&lt;br /&gt;Facebook (Experimentell!)&lt;/b&gt;&lt;br /&gt;Importiert Kommentare von Facebook-Posts (vergleichbar RSS-Graffiti) zurück in den Blog. Bettet auch Facebook-OpenGraph-Meta-Tags in den Blog ein.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Mon, 18 Apr 2022 12:25:40 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_facebook</guid>
 </item>
 <item>
-<title>FAQs: Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_faq</link>
 <category>Event Plugins</category>
 <author>Falk Doering, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_faq&lt;br /&gt;FAQs&lt;/b&gt;&lt;br /&gt;Liste von Fragen und Antworten werden übersichtlich aufbereitet dargestellt.&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_faq</guid>
 </item>
 <item>
@@ -392,25 +392,25 @@
 <category>Event Plugins</category>
 <author>Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_feed&lt;br /&gt;Dashboard Feed Reader&lt;/b&gt;&lt;br /&gt;Das Dashboard S9y Feedle&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Sun, 18 Sep 2022 10:36:32 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_feed</guid>
 </item>
 <item>
-<title>Filtern von Einträgen im Frontend: Ermöglich Besuchern die Einträge im Blog nach Kriterien zu durchsuchen/sortieren</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_filter_entries</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_filter_entries&lt;br /&gt;Filtern von Einträgen im Frontend&lt;/b&gt;&lt;br /&gt;Ermöglich Besuchern die Einträge im Blog nach Kriterien zu durchsuchen/sortieren&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_filter_entries</guid>
 </item>
 <item>
-<title>Flattr: Flattr ist eine Social-Micropayment-Plattform, mit der man Liebe versprühen kann für Artikel, die man liebt. Das Plugin bindet &quot;Flattr&quot;-Buttons in den Blogeinträgen und RSS-Feeds ein. Flattr-spezifische Attribute können sowohl global als auch pro Eintrag vergeben werden.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_flattr</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Joachim Breitner</author>
-<content:encoded>&lt;b&gt;serendipity_event_flattr&lt;br /&gt;Flattr&lt;/b&gt;&lt;br /&gt;Flattr ist eine Social-Micropayment-Plattform, mit der man Liebe versprühen kann für Artikel, die man liebt. Das Plugin bindet &quot;Flattr&quot;-Buttons in den Blogeinträgen und RSS-Feeds ein. Flattr-spezifische Attribute können sowohl global als auch pro Eintrag vergeben werden.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flattr</guid>
 </item>
 <item>
@@ -419,25 +419,25 @@
 <category>Event Plugins</category>
 <author>Jay Bertrand</author>
 <content:encoded>&lt;b&gt;serendipity_event_flickr&lt;br /&gt;Aus Flickr importieren&lt;/b&gt;&lt;br /&gt;Bilder von flickr.com in die Mediendatenbank importieren.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 02 Jul 2020 07:57:52 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickr</guid>
 </item>
 <item>
-<title>Passwort vergessen: Ändere das Passwort für ausgewählten Benutzer</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_forgotpassword</link>
 <category>Event Plugins</category>
 <author>Omid Mottaghi</author>
-<content:encoded>&lt;b&gt;serendipity_event_forgotpassword&lt;br /&gt;Passwort vergessen&lt;/b&gt;&lt;br /&gt;Ändere das Passwort für ausgewählten Benutzer&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_forgotpassword</guid>
 </item>
 <item>
-<title>Diskussions-Forum / phpBB-Kommentare: Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_forum</link>
 <category>Event Plugins</category>
 <author>Alexander 'dma147' Mieland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_forum&lt;br /&gt;Diskussions-Forum / phpBB-Kommentare&lt;/b&gt;&lt;br /&gt;Stellt ein komplettes Diskussions-Forum zur Verfügung, kann alternativ Blog-Kommentare in eine phpBB-Installation spiegeln.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_forum</guid>
 </item>
 <item>
@@ -446,34 +446,34 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Freie Artikel-Tags&lt;/b&gt;&lt;br /&gt;Erlaubt das freie Tagging von Artikeln&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
-<title>Geotag: Erlaubt Einträge mit Geokoordinaten zu versehen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_geotag</link>
 <category>Event Plugins</category>
 <author>Zoran Kovacevic, Grischa Brockhaus, Matthias Gutjahr, Martin Sewelies, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_geotag&lt;br /&gt;Geotag&lt;/b&gt;&lt;br /&gt;Erlaubt Einträge mit Geokoordinaten zu versehen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 08 Oct 2024 18:17:22 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geotag</guid>
 </item>
 <item>
-<title>GeoURL: GeoURL ordnet URLs Örtlichkeiten zu. Mehr Infos unter http://geourl.org/</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_geourl</link>
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
-<content:encoded>&lt;b&gt;serendipity_event_geourl&lt;br /&gt;GeoURL&lt;/b&gt;&lt;br /&gt;GeoURL ordnet URLs Örtlichkeiten zu. Mehr Infos unter http://geourl.org/&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 22 Jul 2017 13:30:39 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geourl</guid>
 </item>
 <item>
-<title>Geo-JSON: Erstellt ein JSON-Object, welches alle Geo-Daten enthält und mit JavaScript verarbeitet werden kann</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_geo_json</link>
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_geo_json&lt;br /&gt;Geo-JSON&lt;/b&gt;&lt;br /&gt;Erstellt ein JSON-Object, welches alle Geo-Daten enthält und mit JavaScript verarbeitet werden kann&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Wed, 15 Mar 2023 10:37:40 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geo_json</guid>
 </item>
 <item>
@@ -482,16 +482,16 @@
 <category>Event Plugins</category>
 <author>David Rolston, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_geshi&lt;br /&gt;Textformatierung: GeSHi&lt;/b&gt;&lt;br /&gt;Computer Language Color Syntax Highlighting. Benutzen Sie das Tag [geshi lang=php][/geshi]&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Thu, 24 Nov 2022 11:31:07 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_geshi</guid>
 </item>
 <item>
-<title>getID3() Unterstützung zum Erkennen von Medien Eigenschaften: Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften für Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_getid3</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_getid3&lt;br /&gt;getID3() Unterstützung zum Erkennen von Medien Eigenschaften&lt;/b&gt;&lt;br /&gt;Benutzt die getID3() Bibliothek um erweiterte Medien Eigenschaften für Filme und Audios zu erkennen. getID3() selbst wird nicht mit dem Plugin ausgeliefert.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:14:50 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_getid3</guid>
 </item>
 <item>
@@ -500,88 +500,88 @@
 <category>Event Plugins</category>
 <author>Rob Antonishen, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_glossary&lt;br /&gt;Glossary&lt;/b&gt;&lt;br /&gt;A user defined glossary as highlighted text with a tooltip.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:19:02 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_glossary</guid>
 </item>
 <item>
-<title>Google Analytics 4: Dieses Plugin fügt Google Analytics 4 Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_google_analytics</link>
 <category>Event Plugins</category>
 <author>Jari Turkia, kleinerChemiker, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_analytics&lt;br /&gt;Google Analytics 4&lt;/b&gt;&lt;br /&gt;Dieses Plugin fügt Google Analytics 4 Funktionalität hinzu. So können auch externe Links oder Downloads verfolgt werden.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Fri, 18 Oct 2024 20:57:37 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_analytics</guid>
 </item>
 <item>
-<title>Suchmaschinen-Sitemap Generator: Erstellt eine sitemap.xml.gz für verschiedene Suchmaschinen-Crawler (Google, MSN, Yahoo und Ask).</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_google_sitemap</link>
 <category>Event Plugins</category>
 <author>Boris, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_google_sitemap&lt;br /&gt;Suchmaschinen-Sitemap Generator&lt;/b&gt;&lt;br /&gt;Erstellt eine sitemap.xml.gz für verschiedene Suchmaschinen-Crawler (Google, MSN, Yahoo und Ask).&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Fri, 18 Oct 2024 20:57:56 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_google_sitemap</guid>
 </item>
 <item>
-<title>Avatar Plugin: Avatare bei Kommentaren anzeigen. Unterstützt werden Gravatare, Pavatare, Favatare, Wavatare, Monster ID, Identicon, Twitter und Identica Avatare</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_gravatar</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_gravatar&lt;br /&gt;Avatar Plugin&lt;/b&gt;&lt;br /&gt;Avatare bei Kommentaren anzeigen. Unterstützt werden Gravatare, Pavatare, Favatare, Wavatare, Monster ID, Identicon, Twitter und Identica Avatare&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_gravatar</guid>
 </item>
 <item>
-<title>Gästebuch: Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_guestbook</link>
 <category>Event Plugins</category>
 <author>Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_guestbook&lt;br /&gt;Gästebuch&lt;/b&gt;&lt;br /&gt;Zeigt ein Gästebuch innerhalb des Blogs mit dem gewählten Design und allen Formatierungen an.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_guestbook</guid>
 </item>
 <item>
-<title>HTML-Code für den Head-Bereich (HTML-Kopf Klotz): Beinhaltet HTML-Markup, welches im HEAD-Bereich des Blogs eingebunden werden kann, z.B. für Meta-Tags oder JavaScripts.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_head_nugget</link>
 <category>Event Plugins</category>
 <author>Jannis Hermanns</author>
-<content:encoded>&lt;b&gt;serendipity_event_head_nugget&lt;br /&gt;HTML-Code für den Head-Bereich (HTML-Kopf Klotz)&lt;/b&gt;&lt;br /&gt;Beinhaltet HTML-Markup, welches im HEAD-Bereich des Blogs eingebunden werden kann, z.B. für Meta-Tags oder JavaScripts.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_head_nugget</guid>
 </item>
 <item>
-<title>HTTP-Authentifizierung: Authentifiziert Benutzer über HTTP-Authentifizierung (basic_auth) mit ihren s9y-Anmeldedaten.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_httpauth</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_httpauth&lt;br /&gt;HTTP-Authentifizierung&lt;/b&gt;&lt;br /&gt;Authentifiziert Benutzer über HTTP-Authentifizierung (basic_auth) mit ihren s9y-Anmeldedaten.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:41:37 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_httpauth</guid>
 </item>
 <item>
-<title>Erweiterte Optionen für Bildauswahl: Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_imageselectorplus</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_imageselectorplus&lt;br /&gt;Erweiterte Optionen für Bildauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht erweiterte Optionen beim Einfügen von Bildern aus der Mediathek.&lt;br/&gt;For: Serendipity 3.6.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_imageselectorplus</guid>
 </item>
 <item>
-<title>Textformatierung: Eintragsdaten einfügen: Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_includeentry</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_includeentry&lt;br /&gt;Textformatierung: Eintragsdaten einfügen&lt;/b&gt;&lt;br /&gt;Ermöglicht das Hinzufügen von HTML-ähnlichen Tags um Teile von anderen Einträgen einzubinden. Benutzen Sie folgende Formatierung: [s9y-include-entry:XXX:YYY]. Ersetzen Sie XXX mit der Ziel-ID des Eintrags und YYY mit dem Zielfeldnamen der Datenbank (z.B. &quot;body&quot;, &quot;extended&quot;, &quot;title&quot; usw.).&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_includeentry</guid>
 </item>
 <item>
-<title>Karma: Abstimmung über die Einträge</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_karma</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Judebert, Gregor Voeltz, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_karma&lt;br /&gt;Karma&lt;/b&gt;&lt;br /&gt;Abstimmung über die Einträge&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_karma</guid>
 </item>
 <item>
@@ -590,25 +590,25 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Sebastian Mayeres, Jude Anthony</author>
 <content:encoded>&lt;b&gt;serendipity_event_kubrickheader&lt;br /&gt;Kubrick/Joshua-Template Bild im Kopfbereich&lt;/b&gt;&lt;br /&gt;Wechselt das Bild im Kubrick/Joshua-Template&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 30 Aug 2018 15:02:46 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_kubrickheader</guid>
 </item>
 <item>
-<title>Layout-Plugin: Druckfreundliche Version: Ermöglicht den besseren Ausdruck eines Eintrages im Browser</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_layout_printerfriendly</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn</author>
-<content:encoded>&lt;b&gt;serendipity_event_layout_printerfriendly&lt;br /&gt;Layout-Plugin: Druckfreundliche Version&lt;/b&gt;&lt;br /&gt;Ermöglicht den besseren Ausdruck eines Eintrages im Browser&lt;br/&gt;For: Serendipity 0.7</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:46:24 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_layout_printerfriendly</guid>
 </item>
 <item>
-<title>Lightbox für Blog Einträge mit Bildern: Lightbox JS ist ein Skript, mit dem Bilder der aktuellen Seite (via Modal Overlay pattern) überlagert angezeigt werden können. Es lässt sich schnell einrichten, um Popup-Bilder für den Benutzer ansprechend oder gemeinsam karusselartig über Javascripte zu präsentieren. Dieses Plugin durchsucht Ihre Einträge und fügt jedem Bild-verweisenden Link ein HTML &quot;rel-Attribut&quot; hinzu, um die lightbox Anzeige verwenden zu können. Wenn Sie also möchten, dass Ihre Vorschaubilder groß angezeigt werden, müssen Sie Ihre Bilder als Links zur großen Version einfügen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_lightbox</link>
 <category>Event Plugins</category>
 <author>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_lightbox&lt;br /&gt;Lightbox für Blog Einträge mit Bildern&lt;/b&gt;&lt;br /&gt;Lightbox JS ist ein Skript, mit dem Bilder der aktuellen Seite (via Modal Overlay pattern) überlagert angezeigt werden können. Es lässt sich schnell einrichten, um Popup-Bilder für den Benutzer ansprechend oder gemeinsam karusselartig über Javascripte zu präsentieren. Dieses Plugin durchsucht Ihre Einträge und fügt jedem Bild-verweisenden Link ein HTML &quot;rel-Attribut&quot; hinzu, um die lightbox Anzeige verwenden zu können. Wenn Sie also möchten, dass Ihre Vorschaubilder groß angezeigt werden, müssen Sie Ihre Bilder als Links zur großen Version einfügen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_lightbox</guid>
 </item>
 <item>
@@ -617,25 +617,25 @@
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Omid Mottaghi Rad, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_linklist&lt;br /&gt;Linkliste&lt;/b&gt;&lt;br /&gt;Linkmanager - zeigt Ihre Lieblingslinks in der Seitenleiste an.&lt;br/&gt;For: Serendipity 3.2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linklist</guid>
 </item>
 <item>
-<title>HTML Link Metatags: Fügt SEO canonical link Tags als rel=&quot;start|up|prev|next|canonical&quot; in dden head Kopf ihres Themes ein, um so u.a. mittels spezieller Tools (Mozilla Erweiterungen, ...) durch Meta-Ebenen zu navigieren. Überprüfen Sie die Datei index.tpl Ihres Themes, um doppelte Auszeichnungen zu vermeiden.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_linktoolbar</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktoolbar&lt;br /&gt;HTML Link Metatags&lt;/b&gt;&lt;br /&gt;Fügt SEO canonical link Tags als rel=&quot;start|up|prev|next|canonical&quot; in dden head Kopf ihres Themes ein, um so u.a. mittels spezieller Tools (Mozilla Erweiterungen, ...) durch Meta-Ebenen zu navigieren. Überprüfen Sie die Datei index.tpl Ihres Themes, um doppelte Auszeichnungen zu vermeiden.&lt;br/&gt;For: Serendipity 3.7</content:encoded>
-<pubDate>Sun, 30 Jan 2022 18:44:20 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktoolbar</guid>
 </item>
 <item>
-<title>Linkverkürzung: Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_linktrimmer</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_linktrimmer&lt;br /&gt;Linkverkürzung&lt;/b&gt;&lt;br /&gt;Ermöglicht Linkverkürzung zur Weiterleitung in Ihrem eigenen Blog, z.B. vermittels tr.im, tinyurl.com usw.&lt;br/&gt;For: Serendipity 2.1.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_linktrimmer</guid>
 </item>
 <item>
@@ -644,7 +644,7 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda, Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_livecomment&lt;br /&gt;Erweiterter Kommentarbereich&lt;/b&gt;&lt;br /&gt;Eine Livevorschau und Formatierungsbuttons erweitern den Kommentarbereich mittels JavaScript.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 17 Sep 2022 12:47:20 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_livecomment</guid>
 </item>
 <item>
@@ -653,25 +653,25 @@
 <category>Event Plugins</category>
 <author>Christian Stocker, Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_livesearch&lt;br /&gt;LiveSearch&lt;/b&gt;&lt;br /&gt;Erweitert die Suchfunktion mit einer Live-aktualisierung (JavaScript)&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 05 Apr 2019 10:54:47 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_livesearch</guid>
 </item>
 <item>
-<title>LiveJournal/MySpace/Serendipity Aktualisierung: Benutzt XML-RPC Methoden um Einträge zu einem LiveJournal/MySpace/Serendipity zu übertragen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_ljupdate</link>
 <category>Event Plugins</category>
 <author>Kaustubh Srikanth, Ivan Makhonin</author>
-<content:encoded>&lt;b&gt;serendipity_event_ljupdate&lt;br /&gt;LiveJournal/MySpace/Serendipity Aktualisierung&lt;/b&gt;&lt;br /&gt;Benutzt XML-RPC Methoden um Einträge zu einem LiveJournal/MySpace/Serendipity zu übertragen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_ljupdate</guid>
 </item>
 <item>
-<title>Überprüft Autoren-Login: Überprüft die Logindaten des Autoren nach Benutzung des Login-Formulars in der Seitenleiste</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_loginform</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_loginform&lt;br /&gt;Überprüft Autoren-Login&lt;/b&gt;&lt;br /&gt;Überprüft die Logindaten des Autoren nach Benutzung des Login-Formulars in der Seitenleiste&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 22 Mar 2020 15:51:25 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_loginform</guid>
 </item>
 <item>
@@ -680,7 +680,7 @@
 <category>Event Plugins</category>
 <author>Matthias Gutjahr</author>
 <content:encoded>&lt;b&gt;serendipity_event_lsrstopper&lt;br /&gt;D64 LSR-Stopper&lt;/b&gt;&lt;br /&gt;Mit diesem Plugin verhinderst du Verlinkungen zu Medien, deren Verlage das Leistungsschutzrecht unterstützen bzw. in Anspruch nehmen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sat, 27 Aug 2016 18:11:45 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_lsrstopper</guid>
 </item>
 <item>
@@ -689,7 +689,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_mailcc&lt;br /&gt;Adds CC to all sent emails&lt;/b&gt;&lt;br /&gt;(Notice: Make sure that the all of your authors have the option to receive comment notification emails activated, or else no mails will be created that can be CCed&lt;br/&gt;For: Serendipity 0.8</content:encoded>
-<pubDate>Fri, 10 Feb 2017 15:26:23 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mailcc</guid>
 </item>
 <item>
@@ -698,79 +698,79 @@
 <category>Event Plugins</category>
 <author>Serendipity Team</author>
 <content:encoded>&lt;b&gt;serendipity_event_mailentry&lt;br /&gt;Eintrag per E-Mail verschicken&lt;/b&gt;&lt;br /&gt;Erlaubt es Besuchern einen Eintrag per E-Mail an einen Freund zu verschicken&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Fri, 06 Apr 2018 14:01:48 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mailentry</guid>
 </item>
 <item>
-<title>Textformatierung: Markdown: Markdown-Textformatierung durchführen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_markdown</link>
 <category>Event Plugins</category>
 <author>Serendipity Team and Jan Lehnardt, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_markdown&lt;br /&gt;Textformatierung: Markdown&lt;/b&gt;&lt;br /&gt;Markdown-Textformatierung durchführen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markdown</guid>
 </item>
 <item>
-<title>Einträge für Besucher als gelesenen / ungelesenen anzeigen: Einträge für Besucher als gelesenen / ungelesenen anzeigen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_markread</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_markread&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;/b&gt;&lt;br /&gt;Einträge für Besucher als gelesenen / ungelesenen anzeigen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 14:58:23 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_markread</guid>
 </item>
 <item>
-<title>HTML Meta-Tags: Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seiten mit mehr als einem Eintrag.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_metadesc</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML Meta-Tags&lt;/b&gt;&lt;br /&gt;Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seiten mit mehr als einem Eintrag.&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:33:59 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
-<title>Microformats: Dieses Plugin ermöglicht es, auf einfache Weise Rezensionen zu veröffentlichen und Veranstaltungen anzukündigen: Es unterstützt die jeweiligen Mikroformate.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_microformats</link>
 <category>Event Plugins</category>
 <author>Matthias Gutjahr, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_microformats&lt;br /&gt;Microformats&lt;/b&gt;&lt;br /&gt;Dieses Plugin ermöglicht es, auf einfache Weise Rezensionen zu veröffentlichen und Veranstaltungen anzukündigen: Es unterstützt die jeweiligen Mikroformate.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_microformats</guid>
 </item>
 <item>
-<title>MimeTex Tex Interpreter: Erzeugt ein GIF von TeX-Ausdrücken mittels MimeTex</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_mimetex</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_mimetex&lt;br /&gt;MimeTex Tex Interpreter&lt;/b&gt;&lt;br /&gt;Erzeugt ein GIF von TeX-Ausdrücken mittels MimeTex&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:14:44 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mimetex</guid>
 </item>
 <item>
-<title>Markup: Mobile Ausgabe: Dieses Plugin erkennt automatisch mobile Endgeräte und gibt optimiertes XHTML MP für diese aus. Für das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.</title>
+<title>Markup: Mobile Ausgabe: Dieses Plugin erkennt automatisch mobile Endgeraete und gibt optimiertes XHTML MP fuer diese aus. Fuer das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.</title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_mobile_output</link>
 <category>Event Plugins</category>
 <author>Pelle Boese, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Mobile Ausgabe&lt;/b&gt;&lt;br /&gt;Dieses Plugin erkennt automatisch mobile Endgeräte und gibt optimiertes XHTML MP für diese aus. Für das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 13:24:25 +0100</pubDate>
+<content:encoded>&lt;b&gt;serendipity_event_mobile_output&lt;br /&gt;Markup: Mobile Ausgabe&lt;/b&gt;&lt;br /&gt;Dieses Plugin erkennt automatisch mobile Endgeraete und gibt optimiertes XHTML MP fuer diese aus. Fuer das Apple iPhone und den iPod Touch wird eine speziell angepasste Seite ausgegeben. Weiterhin werden Bilder automatisch passend skaliert.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mobile_output</guid>
 </item>
 <item>
-<title>Multilinguale Einträge: Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_multilingual</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Wesley Hwang-Chung, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_multilingual&lt;br /&gt;Multilinguale Einträge&lt;/b&gt;&lt;br /&gt;Erlaubt die Erstellung mehrerer Sprachversionen eines Eintrags&lt;br/&gt;For: Serendipity 3.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_multilingual</guid>
 </item>
 <item>
-<title>Mein Kalender: Pflegt einen persönlichen Kalender</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_mycalendar</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Markus Gerstel, Grischa Brockhaus, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_mycalendar&lt;br /&gt;Mein Kalender&lt;/b&gt;&lt;br /&gt;Pflegt einen persönlichen Kalender&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mycalendar</guid>
 </item>
 <item>
@@ -779,7 +779,7 @@
 <category>Event Plugins</category>
 <author>Brett Profitt</author>
 <content:encoded>&lt;b&gt;serendipity_event_mymood&lt;br /&gt;My Mood&lt;/b&gt;&lt;br /&gt;Allows you to add your current mood or moods to entries.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_mymood</guid>
 </item>
 <item>
@@ -788,52 +788,52 @@
 <category>Event Plugins</category>
 <author>Jude Anthony, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_newsbox&lt;br /&gt;Newsbox&lt;/b&gt;&lt;br /&gt;Group a category's entries in a frontpage box instead of the usual article listing. Supports nested newsboxes.&lt;br/&gt;For: Serendipity 2.7</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_newsbox</guid>
 </item>
 <item>
-<title>oEmbed Plugin: oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_oembed</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus</author>
-<content:encoded>&lt;b&gt;serendipity_event_oembed&lt;br /&gt;oEmbed Plugin&lt;/b&gt;&lt;br /&gt;oEmbed ist ein Format für die eingebettete Darstellung einer URL in Ihrem Blog. Es erlaubt Blog-Artikeln, eingebettete Inhalte (wie Tweets, Fotos oder Videos) anzuzeigen, wenn ein Benutzer einen Link zu dieser Ressource veröffentlicht, ohne die Ressource direkt analysieren zu müssen.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Mon, 18 Apr 2022 12:24:44 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_oembed</guid>
 </item>
 <item>
-<title>OpenID Authentifizierung: Ermöglicht es Autoren des Blogs, sich mit ihrer OpenID (oder Google/Yahoo Account) einzuloggen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_openid</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Rob Richards, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_openid&lt;br /&gt;OpenID Authentifizierung&lt;/b&gt;&lt;br /&gt;Ermöglicht es Autoren des Blogs, sich mit ihrer OpenID (oder Google/Yahoo Account) einzuloggen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Mon, 02 Aug 2021 17:30:17 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_openid</guid>
 </item>
 <item>
-<title>OpenStreetMap Integration: Bietet eine interaktive Karte für *.gpx Uploads und Blogs mit Geo-Daten</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_osm</link>
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_osm&lt;br /&gt;OpenStreetMap Integration&lt;/b&gt;&lt;br /&gt;Bietet eine interaktive Karte für *.gpx Uploads und Blogs mit Geo-Daten&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Mon, 30 Jan 2023 10:22:20 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_osm</guid>
 </item>
 <item>
-<title>OpenStreetMap Statische Dateien: Fügt Scripte und Stylesheets für OpenStreetMap ein</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_osm</link>
 <category>Event Plugins</category>
 <author>Kathi Sewelies</author>
-<content:encoded>&lt;b&gt;serendipity_event_static_osm&lt;br /&gt;OpenStreetMap Statische Dateien&lt;/b&gt;&lt;br /&gt;Fügt Scripte und Stylesheets für OpenStreetMap ein&lt;br/&gt;For: Serendipity 2.3</content:encoded>
-<pubDate>Mon, 30 Jan 2023 11:10:47 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_static_osm</guid>
 </item>
 <item>
-<title>Einträge nach Verfallsdatum ausblenden: Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zur Artikel Behandlung.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_outdate_entries</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_outdate_entries&lt;br /&gt;Einträge nach Verfallsdatum ausblenden&lt;/b&gt;&lt;br /&gt;Blendet alle Einträge die ein definiertes Alter überschritten haben aus, so dass sie nur für registrierte Benutzer sichtbar sind. Sowie weitere, ähnliche Methoden zur Artikel Behandlung.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Tue, 26 Dec 2023 17:55:07 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_outdate_entries</guid>
 </item>
 <item>
@@ -842,7 +842,7 @@
 <category>Event Plugins</category>
 <author>Wesley Hwang-Chung</author>
 <content:encoded>&lt;b&gt;serendipity_event_page_nugget&lt;br /&gt;HTML-Klotz in Seite(n)&lt;/b&gt;&lt;br /&gt;Setzt einen HTML-Klotz in die Seite(n), an deren Anfang, Ende oder ins head-Element.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Wed, 15 Aug 2018 17:18:31 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_page_nugget</guid>
 </item>
 <item>
@@ -851,52 +851,52 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, phoneblogz.com</author>
 <content:encoded>&lt;b&gt;serendipity_event_phoneblogz&lt;br /&gt;Phoneblogz&lt;/b&gt;&lt;br /&gt;This plugin allows to fetch messages from Phoneblogz.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_phoneblogz</guid>
 </item>
 <item>
-<title>Photoblog Einträge/Bilder: Ein Bild zu einem Eintrag hinzufügen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_photoblog</link>
 <category>Event Plugins</category>
 <author>Cameron MacFarland, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;Photoblog Einträge/Bilder&lt;/b&gt;&lt;br /&gt;Ein Bild zu einem Eintrag hinzufügen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 28 Jan 2023 11:07:25 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
 </item>
 <item>
-<title>Easy Podcasting Plugin: Fügt &quot;Podcasting&quot; Fähigkeiten hinzu (RSS enclosure, Video/Sound-Player)</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_podcast</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_podcast&lt;br /&gt;Easy Podcasting Plugin&lt;/b&gt;&lt;br /&gt;Fügt &quot;Podcasting&quot; Fähigkeiten hinzu (RSS enclosure, Video/Sound-Player)&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_podcast</guid>
 </item>
 <item>
-<title>POPfetcher: Holt E-Mail inkl. Anhängen ab und veröffentlicht sie von einem POP3 E-Mail-Account (mit spezieller Handy-Unterstützung)</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_popfetcher</link>
 <category>Event Plugins</category>
 <author>Jason Levitt</author>
-<content:encoded>&lt;b&gt;serendipity_event_popfetcher&lt;br /&gt;POPfetcher&lt;/b&gt;&lt;br /&gt;Holt E-Mail inkl. Anhängen ab und veröffentlicht sie von einem POP3 E-Mail-Account (mit spezieller Handy-Unterstützung)&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_popfetcher</guid>
 </item>
 <item>
-<title>Portier Email Authentifizierung: Ermöglicht Autoren, sich nur durch ihre Email einzuloggen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_portier</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Malte Paskuda, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_portier&lt;br /&gt;Portier Email Authentifizierung&lt;/b&gt;&lt;br /&gt;Ermöglicht Autoren, sich nur durch ihre Email einzuloggen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Fri, 09 Aug 2019 11:22:36 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_portier</guid>
 </item>
 <item>
-<title>Prettify für S9Y: Prettify fügt Inhalten, die zwischen PRE-Tags stehen, simples Syntax-Highlighting hinzu.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_prettify</link>
 <category>Event Plugins</category>
 <author>Adam Krause</author>
-<content:encoded>&lt;b&gt;serendipity_event_prettify&lt;br /&gt;Prettify für S9Y&lt;/b&gt;&lt;br /&gt;Prettify fügt Inhalten, die zwischen PRE-Tags stehen, simples Syntax-Highlighting hinzu.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Tue, 15 Dec 2020 13:20:16 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_prettify</guid>
 </item>
 <item>
@@ -905,16 +905,16 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker</author>
 <content:encoded>&lt;b&gt;serendipity_event_proxy_realip&lt;br /&gt;Proxy Real-IP&lt;/b&gt;&lt;br /&gt;Setzt die richtige IP des Besuchers bei Benutzung eines Proxy vor dem Webserver. Sollte das erste Plugin in der Liste sein.&lt;br/&gt;For: Serendipity 1.6.2</content:encoded>
-<pubDate>Thu, 07 Jul 2016 12:39:28 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_proxy_realip</guid>
 </item>
 <item>
-<title>Zufällige Beschreibung des Blogs: Zeigt eine zufällige Beschreibung unter dem Titel an.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_randomblogdescription</link>
 <category>Event Plugins</category>
 <author>Florian Anderiasch</author>
-<content:encoded>&lt;b&gt;serendipity_event_randomblogdescription&lt;br /&gt;Zufällige Beschreibung des Blogs&lt;/b&gt;&lt;br /&gt;Zeigt eine zufällige Beschreibung unter dem Titel an.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 23 Jan 2020 13:32:20 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_randomblogdescription</guid>
 </item>
 <item>
@@ -923,16 +923,16 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_realtimecomments&lt;br /&gt;Echtzeit-Kommentare&lt;/b&gt;&lt;br /&gt;Lade Kommentare, die gerade gespeichert wurden, und stelle sie ohne Neuladen der Seite dar.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:26:06 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_realtimecomments</guid>
 </item>
 <item>
-<title>Recaptcha: Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_recaptcha</link>
 <category>Event Plugins</category>
 <author>Christian Brabandt (based on work of Garvin Hicking, Sebastian Nohn), Garvin Hicking, Thomas Hochstein, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_recaptcha&lt;br /&gt;Recaptcha&lt;/b&gt;&lt;br /&gt;Recaptcha für die Kommentar-Funktion von Artikeln aktivieren (Sie müssen einen Schlüssel anfordern)&lt;br/&gt;For: Serendipity 2.0.0</content:encoded>
-<pubDate>Wed, 30 Nov 2022 13:19:42 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_recaptcha</guid>
 </item>
 <item>
@@ -941,16 +941,16 @@
 <category>Event Plugins</category>
 <author>Rob Antonishen, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_regexpmarkup&lt;br /&gt;Textformatierung: Regexp&lt;/b&gt;&lt;br /&gt;Textformatierung mittels benutzerdefinierter regexp-Datei. Beachten Sie die Beispieldateien im &quot;regexps&quot;-Unterverzeichnis dieses Plugins.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:13:54 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_regexpmarkup</guid>
 </item>
 <item>
-<title>Verwandte Links/Einträge: Fügt verwandte Links/Einträge in die Artikelansicht ein, die manuell für jeden Eintrag eingegeben werden können. Für flexible Ausgabe kann das Smarty-Template &quot;plugin_relatedlinks.tpl&quot; angepasst werde.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_relatedlinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_relatedlinks&lt;br /&gt;Verwandte Links/Einträge&lt;/b&gt;&lt;br /&gt;Fügt verwandte Links/Einträge in die Artikelansicht ein, die manuell für jeden Eintrag eingegeben werden können. Für flexible Ausgabe kann das Smarty-Template &quot;plugin_relatedlinks.tpl&quot; angepasst werde.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_relatedlinks</guid>
 </item>
 <item>
@@ -959,25 +959,25 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Skaliert Grafiken mit Hilfe von HTML5 und dem s9y-Backend passend zur Breite des Viewports des Besuchers&lt;br/&gt;For: Serendipity 3.0.0</content:encoded>
-<pubDate>Wed, 30 Nov 2022 14:37:38 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
-<title>Hebe Suchwörter hervor: Hebt Suchwörter hervor, die ein User in einer Suchmaschine eingegeben hat</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_searchhighlight</link>
 <category>Event Plugins</category>
 <author>Tom Sommer, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_searchhighlight&lt;br /&gt;Hebe Suchwörter hervor&lt;/b&gt;&lt;br /&gt;Hebt Suchwörter hervor, die ein User in einer Suchmaschine eingegeben hat&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Mon, 22 Jul 2024 16:29:24 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_searchhighlight</guid>
 </item>
 <item>
-<title>Seitenleisten ein/ausklappbar machen: Verkleinert Seitenleisten-Elemente auf ihren Titel und ermöglicht das individuelle Ausklappen. Zusätzliche Konfiguration siehe Einträge -&gt; Seitenleisten verwalten in der Administrationsoberfläche.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_sidebarhider</link>
 <category>Event Plugins</category>
 <author>Tys von Gaza, Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_sidebarhider&lt;br /&gt;Seitenleisten ein/ausklappbar machen&lt;/b&gt;&lt;br /&gt;Verkleinert Seitenleisten-Elemente auf ihren Titel und ermöglicht das individuelle Ausklappen. Zusätzliche Konfiguration siehe Einträge -&gt; Seitenleisten verwalten in der Administrationsoberfläche.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_sidebarhider</guid>
 </item>
 <item>
@@ -986,16 +986,16 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Nutze einen beliebigen SMTP Server zum Versenden deiner Mails&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Sun, 27 Apr 2025 17:51:40 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
-<title>Sharebuttons: Zeige Sharebuttons für Netzwerke wie Facebook und Twitter (nutzt shariff)</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_social</link>
 <category>Event Plugins</category>
 <author>onli, Matthias Mees, Thomas Hochstein, Ian Styx, Mario Hommel, Thomas Hochstein</author>
-<content:encoded>&lt;b&gt;serendipity_event_social&lt;br /&gt;Sharebuttons&lt;/b&gt;&lt;br /&gt;Zeige Sharebuttons für Netzwerke wie Facebook und Twitter (nutzt shariff)&lt;br/&gt;For: Serendipity 2.9</content:encoded>
-<pubDate>Wed, 19 May 2021 19:30:51 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_social</guid>
 </item>
 <item>
@@ -1004,25 +1004,25 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Malte Paskuda, based upon b8 by Tobias Leupold, Mario Hommmel, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_bayes&lt;br /&gt;Spamschutz (Bayes)&lt;/b&gt;&lt;br /&gt;Filtert Kommentare mittels eines lernenden Algorithmus.&lt;br/&gt;For: Serendipity 2.1.2</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bayes</guid>
 </item>
 <item>
-<title>Spamschutz Biene (Honeypot, Verstecktes Captcha): Implementiert Kommentar AntiSpam Maßnahmen, die einfach zu konfigurieren aber sehr effektiv sind.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_spamblock_bee</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Janek Bevendorff, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_bee&lt;br /&gt;Spamschutz Biene (Honeypot, Verstecktes Captcha)&lt;/b&gt;&lt;br /&gt;Implementiert Kommentar AntiSpam Maßnahmen, die einfach zu konfigurieren aber sehr effektiv sind.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_bee</guid>
 </item>
 <item>
-<title>Spamschutz (RBL): Blockiert SPAM Anhand von IP-Blacklists. Wird diese Option aktiviert, werden Kommentare abgewiesen die von IPs stammen, die in einer RBL/Blacklist geführt werden. Die Aktivierung kann Dial-Up oder Proxy-User betreffen!</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_spamblock_rbl</link>
 <category>Event Plugins</category>
 <author>Sebastian Nohn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_spamblock_rbl&lt;br /&gt;Spamschutz (RBL)&lt;/b&gt;&lt;br /&gt;Blockiert SPAM Anhand von IP-Blacklists. Wird diese Option aktiviert, werden Kommentare abgewiesen die von IPs stammen, die in einer RBL/Blacklist geführt werden. Die Aktivierung kann Dial-Up oder Proxy-User betreffen!&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_rbl</guid>
 </item>
 <item>
@@ -1031,7 +1031,7 @@
 <category>Event Plugins</category>
 <author>Sebastian Nohn, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_spamblock_surbl&lt;br /&gt;Spamschutz (SURBL)&lt;/b&gt;&lt;br /&gt;Kommentare abweisen deren URLs geblacklistet sind.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_spamblock_surbl</guid>
 </item>
 <item>
@@ -1040,52 +1040,52 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_stalkerbuster&lt;br /&gt;StalkerBuster (TM,C,R)&lt;/b&gt;&lt;br /&gt;Denies access to baddies. Write line-separated list of blocked cookies to a stalkerbuster.php file in your root.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 11:40:55 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_stalkerbuster</guid>
 </item>
 <item>
-<title>Kategorie als Startseite: Ermöglicht, die Artikel einer speziellen Kategorie anstelle der Übersicht aller Artikel auf der Startseite anzuzeigen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_startcat</link>
 <category>Event Plugins</category>
 <author>Stefan Willoughby, Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_startcat&lt;br /&gt;Kategorie als Startseite&lt;/b&gt;&lt;br /&gt;Ermöglicht, die Artikel einer speziellen Kategorie anstelle der Übersicht aller Artikel auf der Startseite anzuzeigen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_startcat</guid>
 </item>
 <item>
-<title>Statische Seiten: Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_staticpage</link>
 <category>Event Plugins</category>
 <author>Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers</author>
-<content:encoded>&lt;b&gt;serendipity_event_staticpage&lt;br /&gt;Statische Seiten&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige statische Seiten innerhalb des Blogs mit dem Blog-Design und allen Formatierungen. Fügt einen neuen Menüpunkt in der Admin-Oberfläche hinzu!&lt;br/&gt;For: Serendipity 2.9.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_staticpage</guid>
 </item>
 <item>
-<title>Statistiken: Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_statistics</link>
 <category>Event Plugins</category>
 <author>Arnan de Gans, Garvin Hicking, Fredrik Sandberg, kalkin, Matthias Mees, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_statistics&lt;br /&gt;Statistiken&lt;/b&gt;&lt;br /&gt;Zeigt einen Link zu informativen Statistiken (inkl. Besucherzähler) in der Administrationsoberfläche an.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:10 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_statistics</guid>
 </item>
 <item>
-<title>Bestätigung für Artikel: Erlaubt nicht registrierten Autoren, eigene Artikel vorzuschlagen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_suggest</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_suggest&lt;br /&gt;Bestätigung für Artikel&lt;/b&gt;&lt;br /&gt;Erlaubt nicht registrierten Autoren, eigene Artikel vorzuschlagen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 26 Nov 2023 11:25:59 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_suggest</guid>
 </item>
 <item>
-<title>Themeauswahl: Ermöglicht Besuchern das Theme zu ändern</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_templatechooser</link>
 <category>Event Plugins</category>
 <author>Evan Nemerson</author>
-<content:encoded>&lt;b&gt;serendipity_event_templatechooser&lt;br /&gt;Themeauswahl&lt;/b&gt;&lt;br /&gt;Ermöglicht Besuchern das Theme zu ändern&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sat, 15 Jul 2023 13:33:24 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_templatechooser</guid>
 </item>
 <item>
@@ -1094,16 +1094,16 @@
 <category>Event Plugins</category>
 <author>Malte Paskuda</author>
 <content:encoded>&lt;b&gt;serendipity_event_template_editor&lt;br /&gt;Template-Editor&lt;/b&gt;&lt;br /&gt;Bearbeite die Dateien des derzeit genutzen Templates direkt im Adminbereich.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 12 Aug 2021 15:32:07 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_template_editor</guid>
 </item>
 <item>
-<title>Textformatierung: Textile: Textile-Formatierung durchführen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_textile</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Textformatierung: Textile&lt;/b&gt;&lt;br /&gt;Textile-Formatierung durchführen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
@@ -1112,16 +1112,16 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
 <content:encoded>&lt;b&gt;serendipity_event_textlinkads&lt;br /&gt;Werbeanzeigen einbetten (TextLinkAds.com oder benutzerdefiniert)&lt;/b&gt;&lt;br /&gt;Werbenanzeigen ins Blog einbetten.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 18 Aug 2019 16:29:32 +0200</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textlinkads</guid>
 </item>
 <item>
-<title>Textformatierung: Wiki: Wiki-Formatierung durchführen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_textwiki</link>
 <category>Event Plugins</category>
 <author>Tobias Schlitt, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_textwiki&lt;br /&gt;Textformatierung: Wiki&lt;/b&gt;&lt;br /&gt;Wiki-Formatierung durchführen&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:07:03 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_textwiki</guid>
 </item>
 <item>
@@ -1130,16 +1130,16 @@
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;Thumbnail-Seite des Photoblog-Plugins&lt;/b&gt;&lt;br /&gt;Zeigt eine Seite mit Thumbnails des Photoblog-Plugins. Die URL ist index.php?serendipity[tnpage]=thumbs&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 19 Feb 2023 12:53:38 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>
-<title>TinyMCE als WYSIWYG Editor benutzen: Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_tinymce</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_tinymce&lt;br /&gt;TinyMCE als WYSIWYG Editor benutzen&lt;/b&gt;&lt;br /&gt;Es wird Serendipity ab Version 1.6 benötigt. Bitte lesen Sie nach der Installation die weitere Installationsbeschreibung in der Plugin Konfiguration.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 01 Jul 2020 13:08:54 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tinymce</guid>
 </item>
 <item>
@@ -1148,7 +1148,7 @@
 <category>Event Plugins</category>
 <author>onli, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_tinypng&lt;br /&gt;Bilder komprimieren&lt;/b&gt;&lt;br /&gt;PNG- und JPG-Bilder mit dem TinyPNG-Dienst komprimieren.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Mon, 02 Dec 2019 12:32:11 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tinypng</guid>
 </item>
 <item>
@@ -1157,70 +1157,70 @@
 <category>Event Plugins</category>
 <author>Steven Tonnesen, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_todolist&lt;br /&gt;ToDo/Projekt-Liste&lt;/b&gt;&lt;br /&gt;Verwaltet eine Liste von Projekten und deren aktuellem Status&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_todolist</guid>
 </item>
 <item>
-<title>Tooltips: Aktiviert Tooltips für Textbereiche und Bilder.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_tooltips</link>
 <category>Event Plugins</category>
 <author>Enrico Stahn, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_tooltips&lt;br /&gt;Tooltips&lt;/b&gt;&lt;br /&gt;Aktiviert Tooltips für Textbereiche und Bilder.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:05:43 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_tooltips</guid>
 </item>
 <item>
-<title>Trackbacks kontrollieren: Ermöglicht beim Anlegen eines Eintrages zu weiteren URLs Trackbacks zu schicken oder Trackbacks zu deaktivieren</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_trackback</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackbacks kontrollieren&lt;/b&gt;&lt;br /&gt;Ermöglicht beim Anlegen eines Eintrages zu weiteren URLs Trackbacks zu schicken oder Trackbacks zu deaktivieren&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Tue, 08 Oct 2024 17:28:04 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
-<title>Textformatierung: Externe Links zählen: Click auf Externe Links verfolgen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_trackexits</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_trackexits&lt;br /&gt;Textformatierung: Externe Links zählen&lt;/b&gt;&lt;br /&gt;Click auf Externe Links verfolgen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:05:09 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackexits</guid>
 </item>
 <item>
-<title>Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG: Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_typesetbuttons</link>
 <category>Event Plugins</category>
 <author>Matthew Groeninger, Malte Diers, Matthias Gutjahr, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_typesetbuttons&lt;br /&gt;Sonderzeichen/Erweiterte Buttons für Non-WYSIWYG&lt;/b&gt;&lt;br /&gt;Fügt Buttons für diverse Sonderzeichen und Aktionen in die Oberfläche zum Erzeugen eines Artikels ein. Dieses Plugin funktioniert nicht mit dem WYSIWYG-Editor zusammen.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typesetbuttons</guid>
 </item>
 <item>
-<title>Textformatierung: Typografische Anführungszeichen: Wandelt normale Anführungszeichen in typografische Anführungszeichen</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_typoquote</link>
 <category>Event Plugins</category>
 <author>Jonathan Spalink and Matthew Groeninger, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_typoquote&lt;br /&gt;Textformatierung: Typografische Anführungszeichen&lt;/b&gt;&lt;br /&gt;Wandelt normale Anführungszeichen in typografische Anführungszeichen&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:04:41 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_typoquote</guid>
 </item>
 <item>
-<title>HTML in Kommentaren maskieren: Üblicherweise wird HTML in Kommentaren komplett entfernt (strip_tags). Hiermit wird HTML nur in seine Entities umgewandelt. Dieses Plugin sollte vor anderen Textformatierungs-Plugin stehen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_unstrip_tags</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_unstrip_tags&lt;br /&gt;HTML in Kommentaren maskieren&lt;/b&gt;&lt;br /&gt;Üblicherweise wird HTML in Kommentaren komplett entfernt (strip_tags). Hiermit wird HTML nur in seine Entities umgewandelt. Dieses Plugin sollte vor anderen Textformatierungs-Plugin stehen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Wed, 29 Jul 2020 18:50:16 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_unstrip_tags</guid>
 </item>
 <item>
-<title>Bildergalerie: Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_usergallery</link>
 <category>Event Plugins</category>
 <author>Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_usergallery&lt;br /&gt;Bildergalerie&lt;/b&gt;&lt;br /&gt;Ermöglicht Bildergalerien aus der Mediathek oder Ordnern auszugehen.&lt;br/&gt;For: Serendipity 3.7</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_usergallery</guid>
 </item>
 <item>
@@ -1229,97 +1229,97 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Falk Doering, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_userprofiles&lt;br /&gt;Benutzerprofile&lt;/b&gt;&lt;br /&gt;Zeigt einfache Benutzerprofile&lt;br/&gt;For: Serendipity 3.5</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_userprofiles</guid>
 </item>
 <item>
-<title>Versionierung der Einträge: Ältere Versionen werden gespeichert und können wiederhergestellt werden</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_versioning</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking</author>
-<content:encoded>&lt;b&gt;serendipity_event_versioning&lt;br /&gt;Versionierung der Einträge&lt;/b&gt;&lt;br /&gt;Ältere Versionen werden gespeichert und können wiederhergestellt werden&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Sun, 14 Jul 2024 12:08:42 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_versioning</guid>
 </item>
 <item>
-<title>VG Wort: Integriert Zählmarken der VG Wort.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_vgwort</link>
 <category>Event Plugins</category>
 <author>Malte Paskuda, Thomas Hochstein</author>
-<content:encoded>&lt;b&gt;serendipity_event_vgwort&lt;br /&gt;VG Wort&lt;/b&gt;&lt;br /&gt;Integriert Zählmarken der VG Wort.&lt;br/&gt;For: Serendipity 2.2.1</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_vgwort</guid>
 </item>
 <item>
-<title>Einträge ankündigen: Benachrichtigt diverse Internetseiten, dass ein neuer Eintrag erstellt wurde.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_weblogping</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Einträge ankündigen&lt;/b&gt;&lt;br /&gt;Benachrichtigt diverse Internetseiten, dass ein neuer Eintrag erstellt wurde.&lt;br/&gt;For: Serendipity 2.1</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_weblogping</guid>
 </item>
 <item>
-<title>Freie Wiki-Links für Einträge: Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_wikilinks</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Grischa Brockhaus, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_wikilinks&lt;br /&gt;Freie Wiki-Links für Einträge&lt;/b&gt;&lt;br /&gt;Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wikilinks</guid>
 </item>
 <item>
-<title>Textformatierung: Texte umbrechen: Fügt Umbrüche für lange Einträge/Kommentare ein.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_wordwrap</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_wordwrap&lt;br /&gt;Textformatierung: Texte umbrechen&lt;/b&gt;&lt;br /&gt;Fügt Umbrüche für lange Einträge/Kommentare ein.&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Thu, 03 Dec 2020 10:40:09 +0100</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wordwrap</guid>
 </item>
 <item>
-<title>Einträge via XML-RPC erstellen: Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_xmlrpc</link>
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Einträge via XML-RPC erstellen&lt;/b&gt;&lt;br /&gt;Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
-<title>Einstellungen für vertrauenswürdige Mehrbenutzer-Blogs / HTMLPurifier: Dieses Plugin gibt an, welchen Autoren eines Mehrbenutzer-Blogs Sie genug trauen und von denen Sie keine Hackangriffe erwarten. Alle anderen Autoren dürfen kein HTML mehr verwenden!</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_xsstrust</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_xsstrust&lt;br /&gt;Einstellungen für vertrauenswürdige Mehrbenutzer-Blogs / HTMLPurifier&lt;/b&gt;&lt;br /&gt;Dieses Plugin gibt an, welchen Autoren eines Mehrbenutzer-Blogs Sie genug trauen und von denen Sie keine Hackangriffe erwarten. Alle anderen Autoren dürfen kein HTML mehr verwenden!&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_xsstrust</guid>
 </item>
 <item>
-<title>Zusätzliche Editor-Buttons: Youtube usw.: Bietet mehr Schaltflächen für den Editor, um einen einfachen Zugriff auf HTML-/Javescript-Snippets wie Youtube usw. zu ermöglichen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_event_youtube</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_youtube&lt;br /&gt;Zusätzliche Editor-Buttons: Youtube usw.&lt;/b&gt;&lt;br /&gt;Bietet mehr Schaltflächen für den Editor, um einen einfachen Zugriff auf HTML-/Javescript-Snippets wie Youtube usw. zu ermöglichen.&lt;br/&gt;For: Serendipity 1.6</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_youtube</guid>
 </item>
 <item>
-<title>Registrierung neuer User: Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_plugin_adduser</link>
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;Registrierung neuer User&lt;/b&gt;&lt;br /&gt;Ermöglicht es Blog-Besuchern sich einen eigenen Autoren-Account anzulegen. Zusammen mit dem Event-Plugin kann über (index.php?serendipity[subpage]=adduser) eingestellt werden ob nur registrierte Benutzer Kommentare posten dürfen.&lt;br/&gt;For: Serendipity 4.0</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
-<title>flickr Fotostream CSS: Dieses Plugin ist eine Ergänzung zum flickr Fotostream-Seitenleistenplugin und sorgt für ein ansprechendes Aussehen der Bilddarstellung.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_plugin_flickr</link>
 <category>Event Plugins</category>
 <author>Michael Kaiser, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_flickrcss&lt;br /&gt;flickr Fotostream CSS&lt;/b&gt;&lt;br /&gt;Dieses Plugin ist eine Ergänzung zum flickr Fotostream-Seitenleistenplugin und sorgt für ein ansprechendes Aussehen der Bilddarstellung.&lt;br/&gt;For: Serendipity 1.7</content:encoded>
-<pubDate>Fri, 14 Jul 2023 11:36:16 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_flickrcss</guid>
 </item>
 <item>
@@ -1328,16 +1328,16 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Matthias Mees, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_pollbox&lt;br /&gt;Umfragen&lt;/b&gt;&lt;br /&gt;Verwaltet beliebige Umfragen!&lt;br/&gt;For: Serendipity 2.0</content:encoded>
-<pubDate>Wed, 07 Feb 2024 14:47:10 +0100</pubDate>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_pollbox</guid>
 </item>
 <item>
-<title>Microblogging (Twitter,Identica): Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.</title>
+<title></title>
 <link>https://github.com/ophian/additional_plugins/tree/legacy/serendipity_plugin_twitter</link>
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Peter Heimann, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_twitter&lt;br /&gt;Microblogging (Twitter,Identica)&lt;/b&gt;&lt;br /&gt;Fügt einen Twitter/Identica Client zum Administrator Interface hinzu, sucht nach Tweetbacks und kündigt neue Artikel über Twitter/Identica Accounts an.&lt;br/&gt;For: Serendipity 3.2</content:encoded>
-<pubDate>Sun, 27 Jul 2025 16:13:11 +0200</pubDate>
+<content:encoded></content:encoded>
+<pubDate>Mon, 01 Sep 2025 11:56:05 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_twitter</guid>
 </item>
 </channel>
