@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+2.0.4:
+------
+ * Fix trash $files iterator on NULL
+
 2.0.3:
 ------
  * Fix a wrong set CSS h4 header gradient

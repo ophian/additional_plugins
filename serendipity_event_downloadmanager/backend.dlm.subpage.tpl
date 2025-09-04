@@ -1,4 +1,4 @@
-{* backend.dlm.subpage.tpl last modified 2024-02-05 *}
+{* backend.dlm.subpage.tpl last modified 2024-09-04 *}
 {if $dlmgbl.thispage == 2 && $dlmcfs.catfiles === true}
 {* Show all files in category *}
 
@@ -59,7 +59,7 @@
 
 {if $dlmgbl.thispage == 2 && $dlmtfp.thisftp === true}
 {* Show all ftp/trash files in income dir *}
-    <p id="dlm_ftp_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm2'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{if $dlmtfp.ddiv === true}{serendipity_getFile file="img/minus.png"}{else}{serendipity_getFile file="img/plus.png"}{/if}" id="optiondlm2" alt="+/-"> {$CONST.PLUGIN_DOWNLOADMANAGER_INCOMINGTABLE}</a> {$dlmtfp.ftpfiles.f_arr|@count}</p>
+    <p id="dlm_ftp_header" class="dlm_backend_option"><a href="#" onclick="showConfig('dlm2'); return false" title="{$CONST.TOGGLE_OPTION}"><img src="{if $dlmtfp.ddiv === true}{serendipity_getFile file="img/minus.png"}{else}{serendipity_getFile file="img/plus.png"}{/if}" id="optiondlm2" alt="+/-"> {$CONST.PLUGIN_DOWNLOADMANAGER_INCOMINGTABLE}</a> {if isset($dlmtfp.ftpfiles.f_arr)}{$dlmtfp.ftpfiles.f_arr|@count}{else}0{/if}</p>
     <!-- // div container page {$dlmgbl.thispage} dlm(2) -->
     <div id="dlm2" class="dlm_backend_ftp_box">
         <form name="ftpcheckform" method="post" action="./serendipity_admin.php?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=downloadmanager&amp;thiscat={$dlmgbl.thiscat}{if $dlmtfp.ct === true}&amp;cleantrash=1{/if}">

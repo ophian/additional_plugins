@@ -46,7 +46,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '2.0.3');
+        $propbag->add('version',       '2.0.4');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -2608,21 +2608,24 @@ class serendipity_event_downloadmanager extends serendipity_event
             $this->backend_dlm_refresh($url);
         }
 
-        foreach($files['f_arr'] AS $key => $val) {
-            $mime = $this->getMime($val);
-            $_val = $this->encodeToUTF($val); // OK win decode for stats
-            // otherwise thrown Warning: filemtime(): and filesize(): stat failed warning on LINUX
-            // are thrown for the lowered permissions - which is actually want we want in ftpdir
-            $filedate = date($this->globs['dateformat'], @filemtime($_val));
-            $filesize = @filesize($_val);
-            $filesize = $this->calcFilesize($filesize);
-            #$val = htmlspecialchars($val);
-            $files[] = array(
-                            'filename' => str_replace($absinth.'/', '', $val),
-                            'filesize' => $filesize,
-                            'filedate' => $filedate,
-                            'filemime' => $mime
-            );
+        $files ??= [];
+        if (!empty($files['f_arr'])) {
+            foreach($files['f_arr'] AS $key => $val) {
+                $mime = $this->getMime($val);
+                $_val = $this->encodeToUTF($val); // OK win decode for stats
+                // otherwise thrown Warning: filemtime(): and filesize(): stat failed warning on LINUX
+                // are thrown for the lowered permissions - which is actually want we want in ftpdir
+                $filedate = date($this->globs['dateformat'], @filemtime($_val));
+                $filesize = @filesize($_val);
+                $filesize = $this->calcFilesize($filesize);
+                #$val = htmlspecialchars($val);
+                $files[] = array(
+                                'filename' => str_replace($absinth.'/', '', $val),
+                                'filesize' => $filesize,
+                                'filedate' => $filedate,
+                                'filemime' => $mime
+                );
+            }
         }
 
         // assign the Backend FTP/trash vars to Smarty template page section 'thisftp'
