@@ -4,7 +4,7 @@
 <packages>
 <package version="1.0">
 <name>serendipity_event_adminnotes</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_adminnotes/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_adminnotes/ChangeLog</changelog>
 <license>GPL</license>
 <summary>QuickNotes</summary>
 <groups>BACKEND_FEATURES,BACKEND_DASHBOARD</groups>
@@ -15,7 +15,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_adminnotes">
       <file>ChangeLog</file>
@@ -38,7 +38,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_aggregator</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_aggregator/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_aggregator/ChangeLog</changelog>
 <license>GPL (IDN converter) or BSD (Onyx) or BSD-3 (SimplePie)</license>
 <summary>RSS アグリゲータ</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -49,7 +49,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_aggregator">
       <file>ChangeLog</file>
@@ -92,7 +92,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_amazonchooser</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_amazonchooser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_amazonchooser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Amazon メディアボタン</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -103,7 +103,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_amazonchooser">
       <file>Amazon_s9y_lib.php</file>
@@ -156,7 +156,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_assigncategories</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_assigncategories/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_assigncategories/ChangeLog</changelog>
 <license>GPL</license>
 <summary>カテゴリの割り当て</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -167,7 +167,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_assigncategories">
       <file>ChangeLog</file>
@@ -192,7 +192,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_autotitle</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_autotitle/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_autotitle/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Autotitle</summary>
 <groups>MARKUP</groups>
@@ -203,7 +203,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_autotitle">
       <file>ChangeLog</file>
@@ -226,7 +226,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_autoupdate</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_autoupdate/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_autoupdate/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Serendipity Autoupdate</summary>
 <groups>BACKEND_ADMIN,BACKEND_DASHBOARD,BACKEND_FEATURES</groups>
@@ -237,7 +237,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_autoupdate">
       <file>ChangeLog</file>
@@ -264,7 +264,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backend</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_backend/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backend/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Show entries via JavaScript</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -275,7 +275,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_backend">
       <file>backend.html</file>
@@ -304,7 +304,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backendrss</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_backendrss/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backendrss/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Display RSS-Feed in Backend Overview</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -315,7 +315,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_backendrss">
       <file>ChangeLog</file>
@@ -338,7 +338,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_backup</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_backup/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_backup/ChangeLog</changelog>
 <license>GPL</license>
 <summary>バックアップインターフェース</summary>
 <groups>FRONTEND_FULL_MODS,BACKEND_FEATURES</groups>
@@ -349,7 +349,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_backup">
       <file>backup.sh</file>
@@ -378,7 +378,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_blogpdf</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_blogpdf/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_blogpdf/ChangeLog</changelog>
 <license>GPL (Uses LGPL TCPDF</license>
 <summary>PDF でブログをエクスポートする</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -389,7 +389,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_blogpdf">
       <file>ChangeLog</file>
@@ -876,7 +876,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_cal</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cal/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cal/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Event-Calendar</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
@@ -887,7 +887,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_cal">
       <file>backend_inherits.css</file>
@@ -960,7 +960,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_categorytemplates</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_categorytemplates/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_categorytemplates/ChangeLog</changelog>
 <license>GPL</license>
 <summary>カテゴリのプロパティとテンプレート</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_VIEWS,BACKEND_TEMPLATES</groups>
@@ -971,7 +971,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_categorytemplates">
       <file>ChangeLog</file>
@@ -998,7 +998,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_challengeresponse</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_challengeresponse/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_challengeresponse/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spam: Challenge/Response</summary>
 <groups>ANTISPAM</groups>
@@ -1009,7 +1009,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_challengeresponse">
       <file>ChangeLog</file>
@@ -1024,7 +1024,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_comics</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_comics/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_comics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Comics</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -1035,7 +1035,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_comics">
       <file>ChangeLog</file>
@@ -1062,7 +1062,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_commentedit</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_commentedit/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentedit/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Comment Edit</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1073,7 +1073,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_commentedit">
       <file>ChangeLog</file>
@@ -1102,7 +1102,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_commentsearch</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_commentsearch/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentsearch/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Searches comments on quicksearch</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -1113,7 +1113,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_commentsearch">
       <file>ChangeLog</file>
@@ -1140,7 +1140,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_commentspice</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_commentspice/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_commentspice/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Comment Spice</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1151,7 +1151,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_commentspice">
       <file>ChangeLog</file>
@@ -1206,7 +1206,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_communityrating</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_communityrating/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_communityrating/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Community Rating</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -1217,7 +1217,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_communityrating">
       <file>ChangeLog</file>
@@ -1268,7 +1268,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_contactform</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_contactform/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contactform/ChangeLog</changelog>
 <license>GPL</license>
 <summary>お問合せフォーム</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -1279,7 +1279,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_contactform">
       <file>ChangeLog</file>
@@ -1320,7 +1320,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_contentrewrite</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_contentrewrite/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_contentrewrite/ChangeLog</changelog>
 <license>GPL</license>
 <summary>コンテントリライター</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -1331,7 +1331,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_contentrewrite">
       <file>ChangeLog</file>
@@ -1372,7 +1372,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_cpgselector</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cpgselector/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cpgselector/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Coppermine Selector</summary>
 <groups>BACKEND_EDITOR,IMAGES</groups>
@@ -1383,7 +1383,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_cpgselector">
       <file>ChangeLog</file>
@@ -1412,7 +1412,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_creativecommons</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_creativecommons/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_creativecommons/ChangeLog</changelog>
 <license>GPL</license>
 <summary>クリエイティブコモンライセンス</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -1423,7 +1423,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_creativecommons">
       <file>ChangeLog</file>
@@ -1466,7 +1466,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_cronjob</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_cronjob/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_cronjob/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Cronjob scheduler</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -1477,7 +1477,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_cronjob">
       <file>ChangeLog</file>
@@ -1500,7 +1500,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_customarchive</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_customarchive/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_customarchive/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Customizable Entries Archive</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -1511,7 +1511,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_customarchive">
       <file>asc.gif</file>
@@ -1540,7 +1540,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_custom_permalinks</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_custom_permalinks/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_custom_permalinks/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Custom Permalinks for Entries</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -1551,7 +1551,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_custom_permalinks">
       <file>ChangeLog</file>
@@ -1574,7 +1574,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_dbclean</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dbclean/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dbclean/ChangeLog</changelog>
 <license>GPL</license>
 <summary>DBClean</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -1585,7 +1585,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_dbclean">
       <file>ChangeLog</file>
@@ -1608,7 +1608,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_dejure</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dejure/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dejure/ChangeLog</changelog>
 <license>GPL</license>
 <summary>dejure.org automatic linking</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -1619,7 +1619,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_dejure">
       <file>ChangeLog</file>
@@ -1642,7 +1642,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_disqus</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_disqus/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_disqus/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Disqus comments</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -1653,7 +1653,7 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_disqus">
       <file>ChangeLog</file>
@@ -1676,7 +1676,7 @@
 </package>
 <package version="1.0">
 <name>serendipity_event_downloadmanager</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_downloadmanager/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_downloadmanager/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ダウンロードマネージャー</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -1688,7 +1688,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-04</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_downloadmanager">
       <file>AUTHORS</file>
@@ -1985,7 +1985,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_dpsyntaxhighlighter</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dpsyntaxhighlighter/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dpsyntaxhighlighter/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Syntax Highlighter</summary>
 <groups>MARKUP</groups>
@@ -1996,7 +1996,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_dpsyntaxhighlighter">
       <file>ChangeLog</file>
@@ -2117,7 +2117,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_dsgvo_gdpr</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_dsgvo_gdpr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_dsgvo_gdpr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>DSGVO / GDPR: General Data Protection Regulation</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
@@ -2128,7 +2128,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_dsgvo_gdpr">
       <file>ChangeLog</file>
@@ -2153,7 +2153,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_email_bot_obfuscator</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_email_bot_obfuscator/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_email_bot_obfuscator/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: clickable email addresses - but with antispam</summary>
 <groups>ANTISPAM,MARKUP</groups>
@@ -2164,7 +2164,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_email_bot_obfuscator">
       <file>ChangeLog</file>
@@ -2195,7 +2195,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_emoticonchooser</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_emoticonchooser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_emoticonchooser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>表情アイコンツールバーの表示</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -2206,7 +2206,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -2237,7 +2237,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_entrycheck</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrycheck/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrycheck/ChangeLog</changelog>
 <license>GPL</license>
 <summary>公開のルール</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -2248,7 +2248,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_entrycheck">
       <file>ChangeLog</file>
@@ -2275,7 +2275,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_entrylastmodified</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrylastmodified/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrylastmodified/ChangeLog</changelog>
 <license>GPL</license>
 <summary>最終更新日を表示する</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -2286,7 +2286,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_entrylastmodified">
       <file>ChangeLog</file>
@@ -2311,7 +2311,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_entrypaging</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrypaging/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrypaging/ChangeLog</changelog>
 <license>GPL</license>
 <summary>次/前のエントリへのリンク</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -2322,7 +2322,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_entrypaging">
       <file>ChangeLog</file>
@@ -2353,7 +2353,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_entrysplit</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_entrysplit/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_entrysplit/ChangeLog</changelog>
 <license>GPL</license>
 <summary>長いエントリの分割</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -2364,7 +2364,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_entrysplit">
       <file>ChangeLog</file>
@@ -2391,7 +2391,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_externalauth</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_externalauth/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_externalauth/ChangeLog</changelog>
 <license>GPL</license>
 <summary>External user authentication (LDAP)/tracking</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -2402,7 +2402,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_externalauth">
       <file>ChangeLog</file>
@@ -2431,7 +2431,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_externalphp</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_externalphp/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_externalphp/ChangeLog</changelog>
 <license>GPL</license>
 <summary>External PHP Application</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -2442,7 +2442,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_externalphp">
       <file>ChangeLog</file>
@@ -2465,7 +2465,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_facebook</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_facebook/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_facebook/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Facebook</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -2476,7 +2476,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_facebook">
       <file>ChangeLog</file>
@@ -2499,7 +2499,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_faq</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_faq/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_faq/ChangeLog</changelog>
 <license>GPL</license>
 <summary>よくある質問と回答(Frequently Asked Questions)</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -2510,7 +2510,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_faq">
       <dir name="alternatives">
@@ -2605,7 +2605,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_feed</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_feed/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_feed/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Dashboard Feed Reader</summary>
 <groups>BACKEND_ADMIN,BACKEND_DASHBOARD,BACKEND_FEATURES</groups>
@@ -2616,7 +2616,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_feed">
       <file>ChangeLog</file>
@@ -2637,7 +2637,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_filter_entries</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_filter_entries/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_filter_entries/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Frontend entry filtering</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -2648,7 +2648,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_filter_entries">
       <file>ChangeLog</file>
@@ -2673,7 +2673,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_flattr</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_flattr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_flattr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Flattr</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -2684,7 +2684,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_flattr">
       <file>ChangeLog</file>
@@ -2707,7 +2707,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_flickr</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_flickr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_flickr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Import from Flickr</summary>
 <groups>IMAGES</groups>
@@ -2718,7 +2718,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_flickr">
       <file>ChangeLog</file>
@@ -2751,7 +2751,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_forgotpassword</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_forgotpassword/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_forgotpassword/ChangeLog</changelog>
 <license>GPL</license>
 <summary>パスワード忘れ</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -2762,7 +2762,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_forgotpassword">
       <file>ChangeLog</file>
@@ -2787,7 +2787,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_forum</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_forum/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_forum/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ディスカッションフォーラム</summary>
 <groups>FRONTEND_FULL_MODS</groups>
@@ -2798,7 +2798,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_forum">
       <file>AUTHORS</file>
@@ -3051,7 +3051,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_freetag</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_freetag/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_freetag/ChangeLog</changelog>
 <license>GPL</license>
 <summary>エントリーのタグ</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -3062,7 +3062,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <file>ChangeLog</file>
@@ -3125,7 +3125,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_geotag</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geotag/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geotag/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Geotag</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -3136,7 +3136,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_geotag">
       <file>ChangeLog</file>
@@ -3171,7 +3171,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_geourl</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geourl/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geourl/ChangeLog</changelog>
 <license>GPL</license>
 <summary>GeoURL</summary>
 <groups>BACKEND_METAINFORMATION</groups>
@@ -3182,7 +3182,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_geourl">
       <file>ChangeLog</file>
@@ -3207,7 +3207,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_geo_json</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geo_json/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geo_json/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Geo-JSON</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -3218,7 +3218,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_geo_json">
       <file>ChangeLog</file>
@@ -3241,7 +3241,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_geshi</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_geshi/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_geshi/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: GeSHi</summary>
 <groups>MARKUP</groups>
@@ -3252,7 +3252,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_geshi">
       <file>ChangeLog</file>
@@ -3801,7 +3801,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_getid3</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_getid3/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_getid3/ChangeLog</changelog>
 <license>GPL</license>
 <summary>getID3() support for fetching media properties</summary>
 <groups>IMAGES</groups>
@@ -3812,7 +3812,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_getid3">
       <file>ChangeLog</file>
@@ -3837,7 +3837,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_glossary</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_glossary/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_glossary/ChangeLog</changelog>
 <license>GPL</license>
 <summary>用語集</summary>
 <groups>MARKUP</groups>
@@ -3848,7 +3848,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_glossary">
       <file>ChangeLog</file>
@@ -3873,7 +3873,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_google_analytics</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_google_analytics/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_google_analytics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Google Analytics 4</summary>
 <groups>STATISTICS</groups>
@@ -3884,7 +3884,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_google_analytics">
       <file>ChangeLog</file>
@@ -3907,7 +3907,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_google_sitemap</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_google_sitemap/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_google_sitemap/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Sitemap Generator (for Crawlers)</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -3918,7 +3918,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_google_sitemap">
       <file>ChangeLog</file>
@@ -3947,7 +3947,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_gravatar</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_gravatar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_gravatar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Avatar Plugin</summary>
 <groups>IMAGES</groups>
@@ -3958,7 +3958,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_gravatar">
       <file>ChangeLog</file>
@@ -4285,7 +4285,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_guestbook</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_guestbook/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_guestbook/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Guestbook</summary>
 <groups>FRONTEND_FEATURES,BACKEND_FEATURES</groups>
@@ -4296,7 +4296,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_guestbook">
       <file>ChangeLog</file>
@@ -4385,7 +4385,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_head_nugget</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_head_nugget/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_head_nugget/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML-Code inside head (HTML-Head Nugget)</summary>
 <groups>BACKEND_METAINFORMATION</groups>
@@ -4396,7 +4396,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_head_nugget">
       <file>ChangeLog</file>
@@ -4421,7 +4421,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_httpauth</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_httpauth/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_httpauth/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTTP-Authentication</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -4432,7 +4432,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_httpauth">
       <file>ChangeLog</file>
@@ -4453,7 +4453,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_imageselectorplus</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_imageselectorplus/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_imageselectorplus/ChangeLog</changelog>
 <license>GPL</license>
 <summary>メディアマネージャーの拡張されたオプション</summary>
 <groups>IMAGES,MARKUP</groups>
@@ -4464,7 +4464,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_imageselectorplus">
       <file>ChangeLog</file>
@@ -4499,7 +4499,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_includeentry</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_includeentry/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_includeentry/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Include entry data/templates/blocks</summary>
 <groups>MARKUP</groups>
@@ -4510,7 +4510,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_includeentry">
       <file>ChangeLog</file>
@@ -4539,7 +4539,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_karma</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_karma/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_karma/ChangeLog</changelog>
 <license>GPL</license>
 <summary>評価</summary>
 <groups>STATISTICS</groups>
@@ -4550,7 +4550,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_karma">
       <file>ChangeLog</file>
@@ -4633,7 +4633,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_kubrickheader</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_kubrickheader/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_kubrickheader/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Template Header/Logo Image</summary>
 <groups>IMAGES</groups>
@@ -4644,7 +4644,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_kubrickheader">
       <file>ChangeLog</file>
@@ -4665,7 +4665,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_layout_printerfriendly</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_layout_printerfriendly/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_layout_printerfriendly/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Layout-Plugin: Printerfriendly version</summary>
 <groups>BACKEND_TEMPLATES</groups>
@@ -4676,7 +4676,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_layout_printerfriendly">
       <file>ChangeLog</file>
@@ -4701,7 +4701,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_lightbox</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_lightbox/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_lightbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Lightbox for entry images</summary>
 <groups>IMAGES</groups>
@@ -5001,7 +5001,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_linklist</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linklist/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linklist/ChangeLog</changelog>
 <license>GPL</license>
 <summary>リンク集</summary>
 <groups>FRONTEND_VIEWS,BACKEND_FEATURES</groups>
@@ -5012,7 +5012,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_linklist">
       <file>ChangeLog</file>
@@ -5081,7 +5081,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_linktoolbar</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linktoolbar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linktoolbar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML リンクのメタタグ</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -5092,7 +5092,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_linktoolbar">
       <file>ChangeLog</file>
@@ -5117,7 +5117,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_linktrimmer</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_linktrimmer/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_linktrimmer/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Linktrimmer</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -5128,7 +5128,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -5159,7 +5159,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_livecomment</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_livecomment/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_livecomment/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Enhanced Comment Area</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -5170,7 +5170,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_livecomment">
       <file>ChangeLog</file>
@@ -5237,7 +5237,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_livesearch</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_livesearch/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_livesearch/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ライブサーチ</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -5248,7 +5248,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_livesearch">
       <file>ChangeLog</file>
@@ -5295,7 +5295,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_ljupdate</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_ljupdate/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_ljupdate/ChangeLog</changelog>
 <license>GPL</license>
 <summary>LJ/MySpace 更新プラグイン</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -5306,7 +5306,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_ljupdate">
       <file>ChangeLog</file>
@@ -5331,7 +5331,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_loginform</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_loginform/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_loginform/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Validates authors login</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -5342,7 +5342,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_loginform">
       <file>ChangeLog</file>
@@ -5363,7 +5363,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_lsrstopper</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_lsrstopper/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_lsrstopper/ChangeLog</changelog>
 <license>GPL</license>
 <summary>D64 LSR-Stopper</summary>
 <groups>MARKUP</groups>
@@ -5374,7 +5374,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_lsrstopper">
       <file>ChangeLog</file>
@@ -5429,7 +5429,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_mailcc">
       <file>serendipity_event_mailcc.php</file>
@@ -5442,7 +5442,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_mailentry</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mailentry/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mailentry/ChangeLog</changelog>
 <license>GPL</license>
 <summary>電子メールエントリ</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -5453,7 +5453,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_mailentry">
       <file>ChangeLog</file>
@@ -5486,7 +5486,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_markdown</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_markdown/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_markdown/ChangeLog</changelog>
 <license>GPL</license>
 <summary>マークアップ: Markdown</summary>
 <groups>MARKUP</groups>
@@ -5497,7 +5497,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_markdown">
       <file>ChangeLog</file>
@@ -5560,7 +5560,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_markread</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_markread/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_markread/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Show read/unread state of entries for visitors</summary>
 <groups>STATISTICS</groups>
@@ -5571,7 +5571,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_markread">
       <file>ChangeLog</file>
@@ -5594,7 +5594,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_metadesc</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_metadesc/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_metadesc/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML META-Tags</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_METAINFORMATION</groups>
@@ -5605,7 +5605,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_metadesc">
       <file>ChangeLog</file>
@@ -5632,7 +5632,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_microformats</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_microformats/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_microformats/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Microformats</summary>
 <groups>BACKEND_EDITOR,BACKEND_TEMPLATES</groups>
@@ -5643,7 +5643,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_microformats">
       <file>ChangeLog</file>
@@ -5698,7 +5698,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_mimetex</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mimetex/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mimetex/ChangeLog</changelog>
 <license>GPL</license>
 <summary>MimeTex/LaTeX TeX Interpreter</summary>
 <groups>MARKUP</groups>
@@ -5709,7 +5709,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_mimetex">
       <file>ChangeLog</file>
@@ -5742,7 +5742,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_mobile_output</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mobile_output/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mobile_output/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Mobile Output</summary>
 <groups>MARKUP</groups>
@@ -5753,7 +5753,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_mobile_output">
       <file>ChangeLog</file>
@@ -5918,7 +5918,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_multilingual</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_multilingual/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_multilingual/ChangeLog</changelog>
 <license>GPL</license>
 <summary>多言語エントリ</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
@@ -5929,7 +5929,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_multilingual">
       <file>ChangeLog</file>
@@ -5970,7 +5970,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_mycalendar</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mycalendar/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mycalendar/ChangeLog</changelog>
 <license>GPL</license>
 <summary>自分のカレンダー</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -5981,7 +5981,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_mycalendar">
       <file>ChangeLog</file>
@@ -6010,7 +6010,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_mymood</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_mymood/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_mymood/ChangeLog</changelog>
 <license>GPL</license>
 <summary>My Mood</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_EDITOR</groups>
@@ -6021,7 +6021,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_mymood">
       <file>ChangeLog</file>
@@ -6044,7 +6044,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_newsbox</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_newsbox/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_newsbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Newsbox</summary>
 <groups>FRONTEND_VIEWS,FRONTEND_FEATURES</groups>
@@ -6055,7 +6055,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_newsbox">
       <file>ChangeLog</file>
@@ -6076,7 +6076,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_oembed</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_oembed/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_oembed/ChangeLog</changelog>
 <license>GPL</license>
 <summary>oEmbed Plugin</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -6087,7 +6087,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_oembed">
       <file>ChangeLog</file>
@@ -6154,7 +6154,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_openid</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_openid/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_openid/ChangeLog</changelog>
 <license>GPL</license>
 <summary>OpenID Authentication</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -6165,7 +6165,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_openid">
       <file>ChangeLog</file>
@@ -6430,7 +6430,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_osm</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_osm/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_osm/ChangeLog</changelog>
 <license>GPL</license>
 <summary>OpenStreetMap integration</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -6441,7 +6441,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -6480,7 +6480,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_static_osm</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_osm/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_osm/ChangeLog</changelog>
 <license>GPL</license>
 <summary>OpenStreetMap static files</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -6491,7 +6491,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>4.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_osm">
       <file>ChangeLog</file>
@@ -6530,7 +6530,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_outdate_entries</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_outdate_entries/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_outdate_entries/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Hide/delete entries after a specific timespan</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -6541,7 +6541,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_outdate_entries">
       <file>ChangeLog</file>
@@ -6564,7 +6564,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_page_nugget</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_page_nugget/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_page_nugget/ChangeLog</changelog>
 <license>GPL</license>
 <summary>HTML Nugget on Page</summary>
 <groups>FRONTEND_ENTRY_RELATED</groups>
@@ -6575,7 +6575,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_page_nugget">
       <file>ChangeLog</file>
@@ -6604,7 +6604,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_phoneblogz</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_phoneblogz/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_phoneblogz/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Phoneblogz</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -6615,7 +6615,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_phoneblogz">
       <file>ChangeLog</file>
@@ -6642,7 +6642,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_photoblog</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_photoblog/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_photoblog/ChangeLog</changelog>
 <license>GPL</license>
 <summary>フォトログエントリ</summary>
 <groups>IMAGES</groups>
@@ -6653,7 +6653,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
       <file>ChangeLog</file>
@@ -6678,7 +6678,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_podcast</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_podcast/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_podcast/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Easy Podcasting Plugin</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -6689,7 +6689,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_podcast">
       <file>ChangeLog</file>
@@ -6898,7 +6898,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_popfetcher</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_popfetcher/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_popfetcher/ChangeLog</changelog>
 <license>GPL</license>
 <summary>POPfetcher</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -6909,7 +6909,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_popfetcher">
       <file>ChangeLog</file>
@@ -6956,7 +6956,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_portier</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_portier/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_portier/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Portier Email Authentication</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -6967,7 +6967,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_portier">
       <file>ChangeLog</file>
@@ -7514,7 +7514,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_prettify</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_prettify/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_prettify/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Prettify for S9Y</summary>
 <groups>MARKUP</groups>
@@ -7525,7 +7525,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_prettify">
       <file>ChangeLog</file>
@@ -7572,7 +7572,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_proxy_realip</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_proxy_realip/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_proxy_realip/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Proxy Real-IP</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -7583,7 +7583,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_proxy_realip">
       <file>ChangeLog</file>
@@ -7606,7 +7606,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_randomblogdescription</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_randomblogdescription/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_randomblogdescription/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Random Blog Description</summary>
 <groups>BACKEND_METAINFORMATION</groups>
@@ -7617,7 +7617,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_randomblogdescription">
       <file>ChangeLog</file>
@@ -7638,7 +7638,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_realtimecomments</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_realtimecomments/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_realtimecomments/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Realtime Comments</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -7649,7 +7649,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_realtimecomments">
       <file>ChangeLog</file>
@@ -7672,7 +7672,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_recaptcha</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_recaptcha/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_recaptcha/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Recaptcha</summary>
 <groups>ANTISPAM</groups>
@@ -7683,7 +7683,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_recaptcha">
       <file>ChangeLog</file>
@@ -7714,7 +7714,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_regexpmarkup</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_regexpmarkup/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_regexpmarkup/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: RegexpMarkup</summary>
 <groups>MARKUP</groups>
@@ -7725,7 +7725,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_regexpmarkup">
       <file>ChangeLog</file>
@@ -7760,7 +7760,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_relatedlinks</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_relatedlinks/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_relatedlinks/ChangeLog</changelog>
 <license>GPL</license>
 <summary>関連エントリとリンク</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -7771,7 +7771,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_relatedlinks">
       <file>ChangeLog</file>
@@ -7802,7 +7802,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_responsiveimages</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_responsiveimages/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_responsiveimages/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Responsive Images</summary>
 <groups>MARKUP</groups>
@@ -7813,7 +7813,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -7832,7 +7832,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_searchhighlight</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_searchhighlight/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_searchhighlight/ChangeLog</changelog>
 <license>GPL</license>
 <summary>検索キーワードをハイライト</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -7843,7 +7843,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_searchhighlight">
       <file>ChangeLog</file>
@@ -7886,7 +7886,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_sidebarhider</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_sidebarhider/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_sidebarhider/ChangeLog</changelog>
 <license>GPL</license>
 <summary>サイドバーの状態切り替え (折り畳み/展開)</summary>
 <groups>BACKEND_TEMPLATES</groups>
@@ -7897,7 +7897,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_sidebarhider">
       <file>ChangeLog</file>
@@ -7922,7 +7922,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_smtpmail</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_smtpmail/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_smtpmail/ChangeLog</changelog>
 <license>GPL</license>
 <summary>SMTP Mail</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -7933,7 +7933,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_smtpmail">
       <file>ChangeLog</file>
@@ -8104,7 +8104,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_social</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_social/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_social/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Share Buttons</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -8115,7 +8115,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_social">
       <file>ChangeLog</file>
@@ -8158,7 +8158,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_spamblock_bayes</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_bayes/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_bayes/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spamblock (Bayes)</summary>
 <groups>ANTISPAM</groups>
@@ -8169,7 +8169,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bayes">
       <dir name="b8">
@@ -8226,7 +8226,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_spamblock_bee</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_spamblock_bee/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_spamblock_bee/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Spamblock Bee (Honeypot, Hidden Captcha)</summary>
 <groups>ANTISPAM</groups>
@@ -8237,7 +8237,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_spamblock_bee">
       <file>ChangeLog</file>
@@ -8282,7 +8282,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_stalkerbuster">
       <file>lang_en.inc.php</file>
@@ -8297,7 +8297,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_startcat</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_startcat/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_startcat/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Start Page Category</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -8308,7 +8308,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_startcat">
       <file>ChangeLog</file>
@@ -8330,7 +8330,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 <package version="1.0">
 <name>serendipity_event_staticpage</name>
 <website>https://ophian.github.io/</website>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_staticpage/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_staticpage/ChangeLog</changelog>
 <license>GPL</license>
 <summary>静的ページ</summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES,FRONTEND_FEATURES</groups>
@@ -8341,7 +8341,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_staticpage">
       <file>backend_staticpage.tpl</file>
@@ -8464,7 +8464,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_statistics</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_statistics/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_statistics/ChangeLog</changelog>
 <license>GPL</license>
 <summary>統計情報</summary>
 <groups>STATISTICS</groups>
@@ -8475,7 +8475,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_statistics">
       <file>botlist.txt</file>
@@ -8538,7 +8538,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_suggest</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_suggest/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_suggest/ChangeLog</changelog>
 <license>Commercial</license>
 <summary>Suggest entries</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -8549,7 +8549,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_suggest">
       <file>ChangeLog</file>
@@ -8578,7 +8578,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_templatechooser</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_templatechooser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_templatechooser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>テンプレート選択</summary>
 <groups>BACKEND_TEMPLATES</groups>
@@ -8589,7 +8589,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_templatechooser">
       <file>ChangeLog</file>
@@ -8632,7 +8632,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_template_editor</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_template_editor/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_template_editor/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Template Editor</summary>
 <groups>BACKEND_FEATURES</groups>
@@ -8643,7 +8643,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_template_editor">
       <file>ChangeLog</file>
@@ -8726,7 +8726,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_textile</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_textile/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textile/ChangeLog</changelog>
 <license>GPL</license>
 <summary>マークアップ: テクスタイル</summary>
 <groups>MARKUP</groups>
@@ -8737,7 +8737,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_textile">
       <file>ChangeLog</file>
@@ -8842,7 +8842,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_textlinkads</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_textlinkads/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textlinkads/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Embed Ads (TextLinkAds.com, Custom)</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -8853,7 +8853,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_textlinkads">
       <file>ChangeLog</file>
@@ -8888,7 +8888,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_textwiki</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_textwiki/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_textwiki/ChangeLog</changelog>
 <license>GPL</license>
 <summary>マークアップ: Wiki</summary>
 <groups>MARKUP</groups>
@@ -8899,7 +8899,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_textwiki">
       <file>ChangeLog</file>
@@ -9414,7 +9414,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_thumbnails</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_thumbnails/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_thumbnails/ChangeLog</changelog>
 <license>GPL</license>
 <summary>サムネイルページ</summary>
 <groups>IMAGES</groups>
@@ -9425,7 +9425,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
       <file>ChangeLog</file>
@@ -9449,8 +9449,66 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </release>
 </package>
 <package version="1.0">
+<name>serendipity_event_tinymce</name>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_tinymce/ChangeLog</changelog>
+<license>GPL</license>
+<summary>Uses TinyMCE as WYSIWYG editor</summary>
+<groups>BACKEND_EDITOR</groups>
+<description>Utilizes the TinyMCE WYSIWYG editor. Requires Serendipity 1.6 or later. After installation, read the installation guide in the configuration screen for this plugin.</description>
+<maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
+<release>
+  <version>2.0.0</version>
+  <requirements:s9yVersion>5.0</requirements:s9yVersion>
+  <requirements:smyVersion>4.1</requirements:smyVersion>
+  <requirements:phpVersion>8.2</requirements:phpVersion>
+  <date>2025-09-05</date>
+  <filelist>
+    <dir name="serendipity_event_tinymce">
+      <file>ChangeLog</file>
+      <file>lang_cz.inc.php</file>
+      <file>lang_de.inc.php</file>
+      <file>lang_en.inc.php</file>
+      <file>serendipity_event_tinymce.php</file>
+      <dir name="tinymce">
+        <dir name="jscripts">
+          <dir name="tiny_mce">
+            <dir name="plugins">
+              <dir name="s9ymdb">
+                <file>.cvsignore</file>
+                <file>editor_plugin.js</file>
+                <file>editor_plugin_src.js</file>
+                <dir name="images">
+                  <file>s9ymdb.gif</file>
+                </dir>
+                <dir name="langs">
+                  <file>de.js</file>
+                  <file>en.js</file>
+                </dir>
+              </dir>
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+  </filelist>
+  <serendipityFilelist>
+    <file>serendipity_event_tinymce/ChangeLog</file>
+    <file>serendipity_event_tinymce/lang_cz.inc.php</file>
+    <file>serendipity_event_tinymce/lang_de.inc.php</file>
+    <file>serendipity_event_tinymce/lang_en.inc.php</file>
+    <file>serendipity_event_tinymce/serendipity_event_tinymce.php</file>
+    <file>serendipity_event_tinymce/tinymce/jscripts/tiny_mce/plugins/s9ymdb/.cvsignore</file>
+    <file>serendipity_event_tinymce/tinymce/jscripts/tiny_mce/plugins/s9ymdb/editor_plugin.js</file>
+    <file>serendipity_event_tinymce/tinymce/jscripts/tiny_mce/plugins/s9ymdb/editor_plugin_src.js</file>
+    <file>serendipity_event_tinymce/tinymce/jscripts/tiny_mce/plugins/s9ymdb/images/s9ymdb.gif</file>
+    <file>serendipity_event_tinymce/tinymce/jscripts/tiny_mce/plugins/s9ymdb/langs/de.js</file>
+    <file>serendipity_event_tinymce/tinymce/jscripts/tiny_mce/plugins/s9ymdb/langs/en.js</file>
+  </serendipityFilelist>
+</release>
+</package>
+<package version="1.0">
 <name>serendipity_event_tinypng</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_tinypng/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_tinypng/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Compress Images</summary>
 <groups>IMAGES</groups>
@@ -9461,7 +9519,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_tinypng">
       <file>Changelog</file>
@@ -9508,7 +9566,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_todolist</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_todolist/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_todolist/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ToDo/プロジェクト一覧</summary>
 <groups>FRONTEND_FEATURES</groups>
@@ -9519,7 +9577,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_todolist">
       <file>ChangeLog</file>
@@ -9658,7 +9716,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_tooltips</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_tooltips/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_tooltips/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ツールチップ</summary>
 <groups>BACKEND_EDITOR,MARKUP</groups>
@@ -9669,7 +9727,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_tooltips">
       <file>ChangeLog</file>
@@ -9716,7 +9774,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_trackback</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_trackback/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_trackback/ChangeLog</changelog>
 <license>GPL</license>
 <summary>トラックバック制御</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -9727,7 +9785,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_trackback">
       <file>ChangeLog</file>
@@ -9756,7 +9814,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_trackexits</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_trackexits/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_trackexits/ChangeLog</changelog>
 <license>GPL</license>
 <summary>マークアップ: 退出追跡</summary>
 <groups>STATISTICS</groups>
@@ -9767,7 +9825,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_trackexits">
       <file>ChangeLog</file>
@@ -9808,7 +9866,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_typesetbuttons</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_typesetbuttons/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_typesetbuttons/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Typeset/Extended Buttons for non-WYSIWYG editors</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -9819,7 +9877,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_typesetbuttons">
       <dir name="buttons">
@@ -9872,7 +9930,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_typoquote</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_typoquote/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_typoquote/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Typographic Smart Quotes</summary>
 <groups>MARKUP</groups>
@@ -9883,7 +9941,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_typoquote">
       <file>ChangeLog</file>
@@ -9910,7 +9968,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_unstrip_tags</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_unstrip_tags/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_unstrip_tags/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Transforms HTML for comments</summary>
 <groups>MARKUP</groups>
@@ -9921,7 +9979,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_unstrip_tags">
       <file>ChangeLog</file>
@@ -9942,7 +10000,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_usergallery</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_usergallery/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_usergallery/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ギャラリー表示</summary>
 <groups>IMAGES</groups>
@@ -9953,7 +10011,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_usergallery">
       <file>ChangeLog</file>
@@ -10038,7 +10096,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_userprofiles</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_userprofiles/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_userprofiles/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ユーザープロフィール</summary>
 <groups>BACKEND_USERMANAGEMENT,BACKEND_TEMPLATES</groups>
@@ -10049,7 +10107,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_userprofiles">
       <file>ChangeLog</file>
@@ -10084,7 +10142,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_versioning</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_versioning/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_versioning/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Versioning of entries</summary>
 <groups>BACKEND_EDITOR,BACKEND_FEATURES</groups>
@@ -10095,7 +10153,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_versioning">
       <file>ChangeLog</file>
@@ -10118,7 +10176,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_vgwort</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_vgwort/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_vgwort/ChangeLog</changelog>
 <license>GPL</license>
 <summary>VG Wort</summary>
 <groups>MARKUP</groups>
@@ -10129,7 +10187,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>2.1</requirements:smyVersion>
   <requirements:phpVersion>4.3</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_vgwort">
       <file>changeLog</file>
@@ -10150,7 +10208,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_weblogping</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_weblogping/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_weblogping/ChangeLog</changelog>
 <license>GPL</license>
 <summary>アナウンスエントリ一覧</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -10161,7 +10219,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_weblogping">
       <file>ChangeLog</file>
@@ -10210,7 +10268,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_wikilinks</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_wikilinks/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wikilinks/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Free Wiki links for your entries</summary>
 <groups>MARKUP</groups>
@@ -10221,7 +10279,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -10252,7 +10310,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_wordwrap</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_wordwrap/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wordwrap/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Markup: Wordwrap long text</summary>
 <groups>MARKUP</groups>
@@ -10263,7 +10321,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_wordwrap">
       <file>ChangeLog</file>
@@ -10286,7 +10344,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_wrapurl</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_wrapurl/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_wrapurl/ChangeLog</changelog>
 <license>GPL</license>
 <summary>WrapURL: </summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -10297,7 +10355,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_wrapurl">
       <file>ChangeLog</file>
@@ -10318,7 +10376,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_xmlrpc</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_xmlrpc/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_xmlrpc/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Post via XML-RPC</summary>
 <groups>FRONTEND_FULL_MODS,FRONTEND_EXTERNAL_SERVICES</groups>
@@ -10329,7 +10387,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_xmlrpc">
       <file>ChangeLog</file>
@@ -10368,7 +10426,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_xsstrust</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_xsstrust/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_xsstrust/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Options for trustworthy editing on multi-user blogs / HTMLPurifier</summary>
 <groups>FRONTEND_ENTRY_RELATED,BACKEND_USERMANAGEMENT,MARKUP</groups>
@@ -10379,7 +10437,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_xsstrust">
       <file>ChangeLog</file>
@@ -10734,7 +10792,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_youtube</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_youtube/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_event_youtube/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Extended Editor Buttons: Youtube etc.</summary>
 <groups>BACKEND_EDITOR</groups>
@@ -10745,7 +10803,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
@@ -10766,7 +10824,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_adduser</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_adduser/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_adduser/ChangeLog</changelog>
 <license>GPL</license>
 <summary>ユーザー自身での登録</summary>
 <groups>BACKEND_USERMANAGEMENT</groups>
@@ -10777,7 +10835,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_plugin_adduser">
       <file>ChangeLog</file>
@@ -10812,7 +10870,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_flickrcss</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_flickr/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_flickr/ChangeLog</changelog>
 <license>GPL</license>
 <summary>flickr Photostream CSS</summary>
 <groups>FRONTEND_EXTERNAL_SERVICES</groups>
@@ -10823,7 +10881,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_plugin_flickr">
       <file>ChangeLog</file>
@@ -10878,7 +10936,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_pollbox</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_pollbox/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_pollbox/ChangeLog</changelog>
 <license>GPL</license>
 <summary>投票管理</summary>
 <groups>STATISTICS</groups>
@@ -10889,7 +10947,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_plugin_pollbox">
       <file>ChangeLog</file>
@@ -10918,7 +10976,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
 </package>
 <package version="1.0">
 <name>serendipity_event_twitter</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_plugin_twitter/ChangeLog</changelog>
+<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/legacy/serendipity_plugin_twitter/ChangeLog</changelog>
 <license>GPL</license>
 <summary>Microblogging (Twitter,Identica)</summary>
 <groups>FRONTEND_VIEWS</groups>
@@ -10929,7 +10987,7 @@ s9yに十分なダウンロードマネージャーの能力を提供します�
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-01</date>
+  <date>2025-09-05</date>
   <filelist>
     <dir name="serendipity_plugin_twitter">
       <file>ChangeLog</file>
