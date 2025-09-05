@@ -16,7 +16,7 @@ class serendipity_event_autoupdate extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOUPDATE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'onli, Ian Styx');
-        $propbag->add('version',       '2.5.1');
+        $propbag->add('version',       '2.6.0');
         $propbag->add('configuration', array('download_url', 'releasefile_url', 'purge_zips'));
         $propbag->add('requirements',  array(
             'serendipity' => '3.0',
@@ -728,9 +728,10 @@ EOS;
         $checksumFile = (string)$updateDir . 'serendipity/checksums.inc.php';
 
         // Serendipity BETA version release files prior to Styx 2.1-beta2 did not have checksums
-        // The switch from v4 to v5-beta1 needs to skip too since it relies on new 'xxh128' hashes instead of md5() once and only
+        // The switch from v4 to v5-(betaX,rcX,Final versions) needs to skip too since it relies on new 'xxh128' hashes instead of md5() once and only
         // version_compare(new_version, existing_version, operator)
-        if (preg_match('@\-(beta|rc).*@', $serendipity['version']) && (version_compare($version, '2.1-beta2', '<') || ($serendipity['version'][0] < 5 && substr($version, 0, 2) == '5.0'))) {
+        if ((FALSE !== strpos($version, 'beta') && version_compare($version, '2.1-beta2', '<'))
+        || ($serendipity['version'][0] < 5 && substr($version, 0, 2) == '5.0')) {
             return true;
         }
         include_once $checksumFile;

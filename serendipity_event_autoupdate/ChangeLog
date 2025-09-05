@@ -1,3 +1,8 @@
+2.6.0:
+------
+
+ * Fix verification check between versions - in special between Styx 4 and Styx 5 revisions, which now should do on BETA, RC and for the upcoming FINAL.
+
 2.5.1:
 ------
 
