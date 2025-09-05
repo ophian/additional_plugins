@@ -1,3 +1,8 @@
+3.2.0:
+------
+ * Fixes for jQuery 4.0.0 revisions: Deprecated APIs removed.
+   Changed magnific-popup js asset. jQuery.isFunction to typeof value === "function".
+
 3.1.1:
 ------
  * Convert for Visibility property declaration (minor)
