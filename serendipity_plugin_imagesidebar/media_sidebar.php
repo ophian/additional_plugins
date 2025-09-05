@@ -211,8 +211,11 @@ class media_sidebar extends subplug_sidebar {
             if ($next_update > time()) {
                 $update = false;
             } else {
-                $next_update = $this->calc_update_time($rotate_time, $next_update);
-                $this->set_config('media_next_update', $next_update);
+                $_next_update = $this->calc_update_time($rotate_time, $next_update);
+                // Avoid Uncaught mysqli_sql_exception: Duplicate entry '...imagesidebar:...' for key 'PRIMARY'
+                if ($_next_update != $next_update) {
+                    $this->set_config('media_next_update', $_next_update);
+                }
             }
         }
 

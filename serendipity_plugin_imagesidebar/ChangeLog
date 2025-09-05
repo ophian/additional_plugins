@@ -1,3 +1,7 @@
+4.1.1:
+------
+ * Avoid database saving error on Duplicate entry '...imagesidebar:...' for key 'PRIMARY'
+
 4.1.0:
 ------
  * Use native htmlspecialchars()
