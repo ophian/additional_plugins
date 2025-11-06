@@ -488,7 +488,7 @@ class PhpFlickr
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($curl);
             $this->response = $response;
-            curl_close($curl);
+            $curl = NULL;
 
             $rsp = explode("\n", $response);
             foreach ($rsp as $line) {
@@ -549,7 +549,7 @@ class PhpFlickr
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($curl);
             $this->response = $response;
-            curl_close($curl);
+            $curl = NULL;
 
             $rsp = explode("\n", $response);
             foreach ($rsp as $line) {
@@ -611,7 +611,7 @@ class PhpFlickr
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($curl);
             $this->response = $response;
-            curl_close($curl);
+            $curl = NULL;
 
             if ($async == 1) {
                 $find = 'ticketid';
