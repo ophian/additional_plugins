@@ -31,7 +31,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.0.1');
+        $propbag->add('version', '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -174,6 +174,9 @@ meta_properties_permalink {
                         $title = 'unknown';
                     }
 
+                    // check an already saved permalink
+                    $saved_permalink = !empty($permalink) ? $permalink : '';
+
                     if (empty($permalink)) {
                         $permalink = $serendipity['rewrite'] != 'none'
                                    ? $serendipity['serendipityHTTPPath'] . 'permalink/' . serendipity_makeFilename($title) . '.html'
@@ -190,9 +193,48 @@ meta_properties_permalink {
                     </legend>
                 </span>
                 <div class="form_field">
-                    <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo htmlspecialchars($permalink); ?>">
+                  <legend>
+                    <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo htmlspecialchars($saved_permalink); ?>">
+                  </legend>
+<?php
+    if (empty($saved_permalink)) {
+?>
+                  <div style="margin-top:.5rem;">
+                    <button type="button" id="btnPastePermalink" title="Click to insert"><?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_ADDBUTTON; ?></button>
+                    <label for="properties_permalink">
+                      <span style="margin-top:.5rem;">" <em><?php echo htmlspecialchars($permalink); ?></em> "</span>
+                    </label>
+                  </div>
+
+                  <script>
+                  (function () {
+                    // safely encoded JS string from PHP
+                    var permalink = <?php echo json_encode($permalink); ?>;
+                    var btn = document.getElementById('btnPastePermalink');
+                    var input = document.getElementById('properties_permalink');
+
+                    // If there's no permalink, disable the button (optional UX)
+                    if (!permalink) {
+                      btn.disabled = true;
+                      btn.title = 'No permalink available';
+                      return;
+                    }
+
+                    btn.addEventListener('click', function () {
+                      if (!input) return;
+                      input.value = permalink;
+                      // notify any listeners/frameworks of the programmatic change
+                      input.dispatchEvent(new Event('input', { bubbles: true }));
+                      input.dispatchEvent(new Event('change', { bubbles: true }));
+                      input.focus();
+                    });
+                  })();
+                  </script>
                 </div>
-                <div id="meta_properties_permalink" class="clearfix xfield_info additional_info">
+<?php
+    }
+?>
+                <div id="meta_properties_permalink" class="clearfix field_info additional_info">
                     <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>
                 </div>
             </fieldset>
@@ -206,7 +248,9 @@ meta_properties_permalink {
                         return true;
                     }
                     serendipity_db_query("DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = '" . $eventData['id'] . "' AND property = 'permalink'");
-                    serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, value, property) VALUES ('" . $eventData['id'] . "', '" . serendipity_db_escape_string($serendipity['POST']['permalink']) . "', 'permalink')");
+                    if ($eventData['id'] > 0 && !empty($serendipity['POST']['permalink'])) {
+                        serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, value, property) VALUES ('" . $eventData['id'] . "', '" . serendipity_db_escape_string($serendipity['POST']['permalink']) . "', 'permalink')");
+                    }
                     break;
 
                 default:

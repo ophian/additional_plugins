@@ -1,3 +1,12 @@
+2.1.0:
+------
+ * Improve entry saving for emptied custom links to return to the origin entries archives structure
+ * Remove the given example link from the permalink input field to not accidentally save entries with the preconfigured permalink URL string.
+   Instead have a button to put it in on demand.
+   An empty field means: No permalink.
+   No button and example URL for a custom permalink URL is given when the entry was already saved with an URL, which then is in the field already.
+   Check your _entryproperties database table for WHERE property = 'permalink' to know all your already saved permalinks and nuke the ones you did not want to be a custom permalink.
+
 2.0.1:
 ------
  * Convert for Visibility property declaration (minor)
