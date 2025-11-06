@@ -160,7 +160,7 @@ class Auth_Yadis_ParanoidHTTPFetcher extends Auth_Yadis_HTTPFetcher {
                 $redir = true;
             } else {
                 $redir = false;
-                curl_close($c);
+                $c = NULL;
 
                 if (defined('Auth_OpenID_VERIFY_HOST') &&
                     Auth_OpenID_VERIFY_HOST == true &&
@@ -245,7 +245,7 @@ class Auth_Yadis_ParanoidHTTPFetcher extends Auth_Yadis_HTTPFetcher {
         }
         $body = $this->data;
 
-        curl_close($c);
+        $c = NULL;
 
         $new_headers = $extra_headers;
 
