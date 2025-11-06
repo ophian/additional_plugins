@@ -1,3 +1,7 @@
+3.0.2:
+------
+ * Prep curl_close() for PHP 8.5 deprecation in the TCPDF lib
+
 3.0.1:
 ------
  * Remove a global where not in need

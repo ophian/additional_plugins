@@ -1839,7 +1839,7 @@ class TCPDF_STATIC {
 		}
 		curl_exec($crs);
 		$code = curl_getinfo($crs, CURLINFO_HTTP_CODE);
-		curl_close($crs);
+		$crs = NULL;
 		return ($code == 200);
 	}
 
@@ -1974,7 +1974,7 @@ class TCPDF_STATIC {
 				    curl_setopt($crs, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS | CURLPROTO_HTTP |  CURLPROTO_FTP | CURLPROTO_FTPS);
 				}
 				$ret = curl_exec($crs);
-				curl_close($crs);
+				$crs = NULL;
 				if ($ret !== false) {
 					return $ret;
 				}
