@@ -16,7 +16,7 @@ class CurlFetcher
             //$file_content = curl_exec($ch);
             $file_content = CurlFetcher::curl_exec_follow($ch, $max_redirects);
 
-            curl_close($ch);
+            $ch = NULL;
         }
         else {
             $context = array ( 'http' => array ( 'method' => 'GET', 'max_redirects' => $max_redirects, ),);
@@ -64,7 +64,7 @@ class CurlFetcher
                         }
                     }
                 } while ($code && --$mr);
-                curl_close($rch);
+                $rch = NULL;
                 if (!$mr) {
                     if ($maxredirect === null) {
                         trigger_error('Too many redirects. When following redirects, libcurl hit the maximum amount.', E_USER_WARNING);
