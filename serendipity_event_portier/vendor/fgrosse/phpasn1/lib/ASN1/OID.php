@@ -181,7 +181,7 @@ class OID
         curl_setopt($ch, CURLOPT_HEADER, 0);
 
         $contents = curl_exec($ch);
-        curl_close($ch);
+        $ch = NULL;
 
         // This pattern needs to be updated as soon as the website layout of oid-info.com changes
         preg_match_all('#<tt>(.+)\(\d+\)</tt>#si', $contents, $oidName);
