@@ -24,7 +24,7 @@ class serendipity_event_autotitle extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_AUTOTITLE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '1.0.0');
+        $propbag->add('version',       '1.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -216,7 +216,7 @@ class serendipity_event_autotitle extends serendipity_event
                 // that's why curl is not the default
                 curl_setopt($ch, CURLOPT_TIMEOUT, "20");
                 $page = curl_exec($ch);
-                curl_close($ch);
+                $ch = NULL;
             }
         }
         return $page;
