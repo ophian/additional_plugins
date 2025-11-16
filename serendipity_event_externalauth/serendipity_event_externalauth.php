@@ -20,7 +20,7 @@ class serendipity_event_externalauth extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_EXTERNALAUTH_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking/Justin Alcorn');
-        $propbag->add('version', '2.0.0');
+        $propbag->add('version', '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -236,7 +236,7 @@ class serendipity_event_externalauth extends serendipity_event
             return false;
         }
 
-        if ($_SESSION['login_tracked_' . $type]) {
+        if (isset($_SESSION['login_tracked_' . $type]) && $_SESSION['login_tracked_' . $type]) {
            return false;
         }
 

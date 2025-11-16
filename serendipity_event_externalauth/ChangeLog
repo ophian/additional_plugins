@@ -1,3 +1,13 @@
+2.0.1
+-----
+ * Fix a non-set variable check notice error
+
+2.0.0
+-----
+ * Declare strict types
+ * Re-/Move UTF-8 lang file to plugin root for Styx 5.0
+ * Raise requirements for Styx 5.0
+
 1.24:
 -----
  * Use lang API & UP
