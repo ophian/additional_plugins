@@ -1,3 +1,7 @@
+3.0.3:
+------
+ * Cast serendipity_fetchCategoryInfo() category parameter for strict types usage
+
 3.0.2:
 ------
  * Prep curl_close() for PHP 8.5 deprecation in the TCPDF lib
