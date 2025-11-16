@@ -347,7 +347,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking/Justin Alcorn</author>
 <content:encoded>&lt;b&gt;serendipity_event_externalauth&lt;br /&gt;Externe Benutzer-Authentifizierung (LDAP) [EXPERIMENTAL]&lt;/b&gt;&lt;br /&gt;Ermöglicht die externe authentifizierung für Logins der Benutzer. Die Zugangsdaten werden im lokalen Serendipity Datenbank-Framework gecached.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Sun, 16 Nov 2025 18:13:56 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_externalauth</guid>
 </item>
 <item>
