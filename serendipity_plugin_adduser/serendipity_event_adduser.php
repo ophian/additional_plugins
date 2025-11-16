@@ -16,7 +16,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, Ian Styx');
-        $propbag->add('version',     '3.0.5');
+        $propbag->add('version',     '3.0.6');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -163,6 +163,12 @@ class serendipity_event_adduser extends serendipity_event
                         $serendipity['csuccess'] = 'true';
                     }
 
+                    if (!serendipity_db_bool($eventData['allow_comments'])) {
+                        // check the entry global via spamblock in combine with false set registered_only
+                        $eventData = array('allow_comments' => (serendipity_db_bool($serendipity['addUser_allow_comments']) && !serendipity_db_bool($this->get_config('registered_only', 'false'))));
+                        unset($serendipity['addUser_allow_comments']);
+                    }
+
                     if (serendipity_db_bool($this->get_config('registered_only', 'false')) && !serendipity_userLoggedIn() && $addData['source2'] != 'adduser') {
                         $eventData = array('allow_comments' => false);
                         $serendipity['messagestack']['comments'][] = PLUGIN_ADDUSER_REGISTERED_ONLY_REASON;
@@ -175,7 +181,7 @@ class serendipity_event_adduser extends serendipity_event
                         return false;
                     }
 
-                    if (serendipity_db_bool($this->get_config('true_identities', 'true')) && !serendipity_userLoggedIn()) {
+                    if (!empty($addData['name']) && serendipity_db_bool($this->get_config('true_identities', 'true')) && !serendipity_userLoggedIn()) {
                         $user = str_replace("\xc2\xa0b", '', $addData['name']);
                         $user = serendipity_db_escape_string(preg_replace('@\s+@', ' ', trim($user)));
                         $user = trim($user);

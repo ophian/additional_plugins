@@ -1,3 +1,8 @@
+3.0.6:
+------
+ * Fix issue not allowing to access entry 'allow_comments' and so preventing subscription comments - has dependency in the spamblock plugin of Styx 5.0rc2/final
+ * Better check 'frontend_saveComment' variables
+
 3.0.5:
 ------
  * Redirect to backend when logging-in via Plugin_loginbox template
