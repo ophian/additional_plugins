@@ -18,7 +18,7 @@ class serendipity_event_portier extends serendipity_event
         $propbag->add('description', PLUGIN_PORTIER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Grischa Brockhaus, Malte Paskuda, Ian Styx');
-        $propbag->add('version',        '2.0.1');
+        $propbag->add('version',        '2.0.2');
         $propbag->add('requirements',   array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -114,7 +114,7 @@ class serendipity_event_portier extends serendipity_event
                     if ($eventData) {
                         return true;
                     }
-                    if ($_SESSION['serendipityAuthedUser'] == true) {
+                    if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true) {
                         $eventData = $this->reauth();
                     }
                     return;

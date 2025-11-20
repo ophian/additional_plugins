@@ -1,3 +1,7 @@
+2.0.2
+-----
+ * Strict check $_SESSION['serendipityAuthedUser']
+
 2.0.1:
 ------
  * Prep curl_close() for PHP 8.5 deprecation in the vendor libs
