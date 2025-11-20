@@ -20,7 +20,7 @@ class serendipity_event_externalauth extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_EXTERNALAUTH_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking/Justin Alcorn');
-        $propbag->add('version', '2.0.1');
+        $propbag->add('version', '2.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -293,7 +293,7 @@ class serendipity_event_externalauth extends serendipity_event
                         $md5_password = md5($addData['password']);
                     }
 
-                    if ($_SESSION['serendipityAuthedUser'] == true && serendipity_db_bool($this->get_config('firstlogin'))) {
+                    if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true && serendipity_db_bool($this->get_config('firstlogin'))) {
                         $this->debugmsg('Already authenticated, do not need to do that again');
                         return true;
                     }
