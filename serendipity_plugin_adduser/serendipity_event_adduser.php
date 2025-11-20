@@ -16,7 +16,7 @@ class serendipity_event_adduser extends serendipity_event
         $propbag->add('description', PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Garvin Hicking, Ian Styx');
-        $propbag->add('version',     '3.0.6');
+        $propbag->add('version',     '3.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -251,13 +251,23 @@ class serendipity_event_adduser extends serendipity_event
                         }
                     }
 
-                    if ((serendipity_db_bool($this->get_config('registered_only', 'false')) || serendipity_db_bool($this->get_config('true_identities', 'true'))) && isset($_SESSION['serendipityAuthedUser'])) {
+                    // paranoid check, borowed by serendipity_admin.php
+                    if (IS_installed === true) {
+                        /* Check author token to insure session not hijacked */
+                        if (!isset($_SESSION['author_token']) || !isset($serendipity['COOKIE']['author_token'])
+                        || ($_SESSION['author_token'] !== $serendipity['COOKIE']['author_token'])) {
+                            $_SESSION['serendipityAuthedUser'] = false;
+                            serendipity_session_destroy();
+                        }
+                    }
+
+                    if ((serendipity_db_bool($this->get_config('registered_only', 'false')) || serendipity_db_bool($this->get_config('true_identities', 'true'))) && isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true) {
                         if (defined('IN_serendipity_admin') && $serendipity['GET']['adminAction'] == 'doEdit') {
                             // void
                         } else {
                             $serendipity['COOKIE']['name']  = (isset($_SESSION['serendipityRealname']) ? $_SESSION['serendipityRealname'] : $_SESSION['serendipityUser'] ?? null);
                             $serendipity['COOKIE']['email'] = $_SESSION['serendipityEmail'] ?? null;
-                            if (isset($serendipity['POST']['comment'])) {
+                            if (isset($serendipity['POST']['comment']) && !empty($serendipity['COOKIE']['name']) && !empty($serendipity['COOKIE']['email'])) {
                                 $serendipity['POST']['name']  = $serendipity['COOKIE']['name'];
                                 $serendipity['POST']['email'] = $serendipity['COOKIE']['email'];
                             }
