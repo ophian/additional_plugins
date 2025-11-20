@@ -347,7 +347,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking/Justin Alcorn</author>
 <content:encoded>&lt;b&gt;serendipity_event_externalauth&lt;br /&gt;External user authentication (LDAP)/tracking&lt;/b&gt;&lt;br /&gt;Allows to use external ressource to validate logins. Logins will be cached in the Serendipity database framework. This plugin can also track logins inside the Database.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 16 Nov 2025 18:13:56 +0100</pubDate>
+<pubDate>Thu, 20 Nov 2025 16:09:52 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_externalauth</guid>
 </item>
 <item>
@@ -797,7 +797,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Rob Richards, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_openid&lt;br /&gt;OpenID Authentication&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate using an OpenID, their Google or Yahoo account.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Thu, 06 Nov 2025 09:21:00 +0100</pubDate>
+<pubDate>Thu, 20 Nov 2025 16:29:33 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_openid</guid>
 </item>
 <item>
@@ -878,7 +878,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_portier&lt;br /&gt;Portier Email Authentication&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate only using their email.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Thu, 06 Nov 2025 09:22:27 +0100</pubDate>
+<pubDate>Thu, 20 Nov 2025 16:28:14 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_portier</guid>
 </item>
 <item>
@@ -1283,7 +1283,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_adduser&lt;br /&gt;Auto-enregistrement des utilisateurs&lt;/b&gt;&lt;br /&gt;Permettre aux visiteurs du blog de créer leur propre compte utilisateur. En conjonction avec le plugin d'évènement (index.php?serendipity[subpage]=adduser), vous pouvez décider de n'autoriser que les utilisateurs enregistrés à poster des commentaires.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sun, 16 Nov 2025 16:45:35 +0100</pubDate>
+<pubDate>Thu, 20 Nov 2025 16:19:43 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_adduser</guid>
 </item>
 <item>
