@@ -18,7 +18,7 @@ class serendipity_event_openid extends serendipity_event
         $propbag->add('description', PLUGIN_OPENID_DESC);
         $propbag->add('stackable',   false);
         $propbag->add('author',      'Grischa Brockhaus, Rob Richards, Ian Styx');
-        $propbag->add('version',     '2.0.2');
+        $propbag->add('version',     '2.0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -220,7 +220,7 @@ class serendipity_event_openid extends serendipity_event
             $openidurl = "https://www.aol.com";
         }
         
-        if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] == true) {
+        if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true) {
             $eventData = serendipity_common_openid::reauth_openid();
             if (!empty($openidurl) && !empty($serendipity['POST']['openidflag'])) {
                 /* Check that openid isn't already associated with another login */
@@ -277,7 +277,7 @@ class serendipity_event_openid extends serendipity_event
     {
         global $serendipity;
         
-        if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] == true) {
+        if (isset($_SESSION['serendipityAuthedUser']) && $_SESSION['serendipityAuthedUser'] === true) {
             if (! empty($serendipity['GET']['openidflag']) && ($serendipity['GET']['openidflag'] == 3)) {
                 if ($checkRet = serendipity_common_openid::authenticate_openid($_GET, $this->get_consumertest_path(), true)) {
                     if (serendipity_common_openid::updateOpenID($checkRet['openID'], $serendipity['authorid'])) {
