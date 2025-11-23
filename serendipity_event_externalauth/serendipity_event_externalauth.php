@@ -20,7 +20,7 @@ class serendipity_event_externalauth extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_EXTERNALAUTH_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking/Justin Alcorn');
-        $propbag->add('version', '2.0.2');
+        $propbag->add('version', '2.0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -242,7 +242,7 @@ class serendipity_event_externalauth extends serendipity_event
 
         $timestamp = time();
         $authorid  = (int)$serendipity['authorid'];
-        $referer   = serendipity_db_escape_string($_SERVER['HTTP_REFERER']);
+        $referer   = serendipity_db_escape_string($_SERVER['HTTP_REFERER'] ?? '');
         $ip        = serendipity_db_escape_string($_SERVER['REMOTE_ADDR']);
         $ua        = serendipity_db_escape_string($_SERVER['HTTP_USER_AGENT']);
         $i = serendipity_db_query("INSERT INTO {$serendipity['dbPrefix']}loginlog (timestamp, authorid, action, ip, referer, user_agent)
