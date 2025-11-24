@@ -22,7 +22,7 @@ class serendipity_event_thumbnails extends serendipity_event
         $propbag->add('configuration', array('number'));
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version', '2.0.0');
+        $propbag->add('version', '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -116,7 +116,7 @@ class serendipity_event_thumbnails extends serendipity_event
                             );
                 $photo = $this->getPhoto($entry['id']);
                 if (isset($photo)) {
-                    $file = serendipity_fetchImageFromDatabase($photo['photoid'], (defined('IN_serendipity_admin') ? 'discard' : 'read'));
+                    $file = serendipity_fetchImageFromDatabase((int) $photo['photoid'], (defined('IN_serendipity_admin') ? 'discard' : 'read'));
                     $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] .'.'. $file['extension'];
                     $thumbbasename = $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension'];
                     $thumbName     = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $thumbbasename;
