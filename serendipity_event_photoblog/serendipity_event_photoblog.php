@@ -6,7 +6,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '2.0.0');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '2.0.1');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -168,7 +168,7 @@ class serendipity_event_photoblog extends serendipity_event
         } elseif (isset($serendipity['GET']['id'])) {
             $row = $this->getPhoto($serendipity['GET']['id']);
             if (isset($row)) {
-                $file = serendipity_fetchImageFromDatabase($row['photoid']);
+                $file = serendipity_fetchImageFromDatabase((int) $row['photoid']);
                 if ($row['use_thumbnail'] === 'true' || $row['use_thumbnail'] === 't' || $row['use_thumbnail'] === 1) {
                     $file['use_thumbnail'] = 'true';
                 }
@@ -248,7 +248,7 @@ class serendipity_event_photoblog extends serendipity_event
                     $row = $this->getPhoto($eventData[$i]['id']);
                 }
                 if (isset($row)) {
-                    $file = serendipity_fetchImageFromDatabase($row['photoid']);
+                    $file = serendipity_fetchImageFromDatabase((int) $row['photoid']);
                     if (!empty($file)) {
                         $thumbstring = $this->return_thumbstr($row);
                         $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring .'.'. $file['extension'];
