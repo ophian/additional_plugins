@@ -21,7 +21,7 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
             'php'         => '8.2'
         ));
         $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version',     '2.0.0');
+        $propbag->add('version',     '2.0.1');
         $propbag->add('groups', array('IMAGES'));
         $this->dependencies = array('serendipity_event_thumbnails' => 'keep');
     }
@@ -128,7 +128,7 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
                 if (($showpicsonly == 'true') && (isset($photo)) || ($showpicsonly != 'true'))
                 {
                 if (isset($photo)) {
-                    $file = serendipity_fetchImageFromDatabase($photo['photoid']);
+                    $file = serendipity_fetchImageFromDatabase((int) $photo['photoid']);
                     $imgsrc= $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] .'.'. $file['extension'];
                     $thumbbasename = $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension'];
                     $thumbName     = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $thumbbasename;
