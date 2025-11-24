@@ -23,7 +23,7 @@ class serendipity_event_responsiveimages extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_RESPONSIVE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -171,9 +171,9 @@ class serendipity_event_responsiveimages extends serendipity_event
             preg_match('@<!-- s9ymdb:\d+ --><img[^>]+width=["\'](\d+)["\']@', $text, $matches);
 
             if (!empty($matches[1])) {
-                $srcset = $this->createSrcset($imgId, $matches[1]);
+                $srcset = $this->createSrcset((int) $imgId, $matches[1]);
             } else {
-                $srcset = $this->createSrcset($imgId);
+                $srcset = $this->createSrcset((int) $imgId);
             }
 
             $callback = function($matches) use ($srcset) {
