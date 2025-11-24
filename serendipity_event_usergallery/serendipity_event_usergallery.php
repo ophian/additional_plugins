@@ -22,7 +22,7 @@ class serendipity_event_usergallery extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_USERGALLERY_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Arnan de Gans, Matthew Groeninger, Stefan Willoughby, Ian Styx');
-        $propbag->add('version',       '4.1.1');
+        $propbag->add('version',       '4.1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -457,14 +457,14 @@ class serendipity_event_usergallery extends serendipity_event
         }
 
         if (isset($serendipity['GET']['image'])) {
-            $this->displayImage($serendipity['GET']['image'], $orderby, $order);
+            $this->displayImage((int) $serendipity['GET']['image'], $orderby, $order);
         } else {
             $num_cols       = $this->get_config('num_cols');
             $base_directory = $this->get_config('base_directory');
             $show_objects   = serendipity_db_bool($this->get_config('show_objects', 'false'));
 
             if ($this->get_config('style') == "thumbpage")  {
-                $images_per_page   = $this->get_config('images_per_page');
+                $images_per_page   = (int) $this->get_config('images_per_page');
                 $display_dir_tree  = $this->get_config('display_dir_tree', 'no');
                 $show_1lvl_sub     = $this->get_config('show_1lvl_sub', 'no');
                 $dir_list          = $this->get_config('dir_list');
