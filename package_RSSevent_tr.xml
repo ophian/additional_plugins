@@ -851,7 +851,7 @@
 <category>Event Plugins</category>
 <author>Cameron MacFarland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;FotoGünlük Kayýtlarý&lt;/b&gt;&lt;br /&gt;En son yayýnladýðýnýz fotogünlük kayýtlarýnýzdaki küçükresimleri gösterir (olaylar eklentisine bakýn).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Mon, 24 Nov 2025 11:54:04 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
 </item>
 <item>
@@ -950,7 +950,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_responsiveimages&lt;br /&gt;Responsive Images&lt;/b&gt;&lt;br /&gt;Use HTML5 and the s9y backend to scale images to the visitors viewport width&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Mon, 24 Nov 2025 11:53:18 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_responsiveimages</guid>
 </item>
 <item>
@@ -1103,7 +1103,7 @@
 <category>Event Plugins</category>
 <author>Cameron MacFarland</author>
 <content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;Küçükresim Sayfası&lt;/b&gt;&lt;br /&gt;Küçükresimlerin gösterimi. URL adresi index.php?serendipity[tnpage]=thumbs&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
+<pubDate>Mon, 24 Nov 2025 11:51:09 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>

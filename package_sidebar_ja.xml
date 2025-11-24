@@ -2095,11 +2095,11 @@
 <description>もっとも最新のフォトログエントリのサムネイルを表示します (イベントプラグインを参照ください)</description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
+  <date>2025-11-24</date>
   <filelist>
     <dir name="serendipity_plugin_photoblog">
       <file>ChangeLog</file>

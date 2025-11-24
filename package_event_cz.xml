@@ -6648,11 +6648,11 @@
 <description>Přidá do příspěvku jednu fotku</description>
 <maintainers><maintainer><name>Cameron MacFarland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
+  <date>2025-11-24</date>
   <filelist>
     <dir name="serendipity_event_photoblog">
       <file>ChangeLog</file>
@@ -7808,11 +7808,11 @@
 <description>Use HTML5 and the s9y backend to scale images to the visitors viewport width</description>
 <maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
+  <date>2025-11-24</date>
   <filelist>
     <dir name="serendipity_event_responsiveimages">
       <file>ChangeLog</file>
@@ -9420,11 +9420,11 @@
 <description>Zobrazí stránku s náhledy článků. Její adresa je index.php?serendipity[tnpage]=thumbs</description>
 <maintainers><maintainer><name>Cameron MacFarland</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
+  <date>2025-11-24</date>
   <filelist>
     <dir name="serendipity_event_thumbnails">
       <file>ChangeLog</file>
