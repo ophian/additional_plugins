@@ -1,3 +1,7 @@
+2.1.0:
+------
+ * Improve for Serendipity Styx Picture Container with image variations
+
 2.0.1:
 ------
  * Fix some function parameter type issues for Styx 5.0

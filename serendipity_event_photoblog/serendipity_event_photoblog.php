@@ -6,7 +6,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '2.0.1');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '2.1.0');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -127,7 +127,7 @@ class serendipity_event_photoblog extends serendipity_event
             $use_thumbnail = 1;
         }
         $ext = array_pop($filebits);
-        $f = implode(".", $filebits);
+        $f = $filebits[0];
         $fullpath = implode("/", $bits);
         $uploads = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'];
         $path = substr($fullpath, strlen($uploads)) . "/";
@@ -138,14 +138,15 @@ class serendipity_event_photoblog extends serendipity_event
         $file = serendipity_db_query($q, true);
 
         if (!isset($file) || !is_array($file)) {
-            $thumb = array_pop($filebits);
-            $f = implode(".", $filebits);
-            $q = "SELECT * FROM {$serendipity['dbPrefix']}images WHERE name='" . serendipity_db_escape_string($f) . "' and extension='" . serendipity_db_escape_string($ext) . "' and path='" . serendipity_db_escape_string($path) . "'" ;
-            $file = serendipity_db_query($q, true);
-            if (!isset($file) || !is_array($file)) {
+// redundant
+#            $thumb = array_pop($filebits);
+#            $f = $filebits[0];
+#            $q = "SELECT * FROM {$serendipity['dbPrefix']}images WHERE name='" . serendipity_db_escape_string($f) . "' and extension='" . serendipity_db_escape_string($ext) . "' and path='" . serendipity_db_escape_string($path) . "'" ;
+#            $file = serendipity_db_query($q, true);
+#            if (!isset($file) || !is_array($file)) {
                 echo "Photoblog: Couldn't find file";
                 $file = null;
-            }
+#               }
         }
         if (is_array($file)) {
             $file['use_thumbnail'] = $use_thumbnail;
@@ -236,8 +237,21 @@ class serendipity_event_photoblog extends serendipity_event
             if (!empty($prop_val)) {
                 $file = $this->parsePhotoname($prop_val);
                 $thumbstring = $this->return_thumbstr($file);
-                $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring.'.'. $file['extension'];
-                $img = '<div align="center"><img src="' . $imgsrc . '" /></div>';
+                $imgFSPAvif = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.avif';
+                $imgsrcAvif = (file_exists($imgFSPAvif) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.avif' : '');
+                $imgFSPWebp = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.webp';
+                $imgsrcWebp = (file_exists($imgFSPWebp) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.webp' : '');
+                $imgsrcAvif = @filesize($imgFSPAvif) < @filesize($imgFSPWebp) ? $imgsrcAvif : '';
+                $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring . '.' . $file['extension'];
+                $thumbsize  = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . $file['name'] . $thumbstring . '.' . $file['extension']);
+                $img = '
+    <!-- s9ymdb:' . $file['id'] . ' -->
+    <picture>
+        <source type="image/avif" srcset="' . $imgsrcAvif . '">
+        <source type="image/webp" srcset="' . $imgsrcWebp . '">
+        <img class="serendipity_image_center" src="' . $imgsrc . '" width="' . $thumbsize[0] . '" height="' . $thumbsize[1] . '" loading="lazy" alt="" />
+    </picture>
+';
                 $eventData[0]['body'] = $img . $eventData[0]['body'];
             }
         } else {
@@ -251,8 +265,21 @@ class serendipity_event_photoblog extends serendipity_event
                     $file = serendipity_fetchImageFromDatabase((int) $row['photoid']);
                     if (!empty($file)) {
                         $thumbstring = $this->return_thumbstr($row);
-                        $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring .'.'. $file['extension'];
-                        $img = '<div align="center"><img src="' . $imgsrc . '" /></div>';
+                        $imgFSPAvif = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.avif';
+                        $imgsrcAvif = (file_exists($imgFSPAvif) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.avif' : '');
+                        $imgFSPWebp = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.webp';
+                        $imgsrcWebp = (file_exists($imgFSPWebp) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . $thumbstring . '.webp' : '');
+                        $imgsrcAvif = @filesize($imgFSPAvif) < @filesize($imgFSPWebp) ? $imgsrcAvif : '';
+                        $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . $thumbstring . '.' . $file['extension'];
+                        $thumbsize  = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . $file['name'] . $thumbstring . '.' . $file['extension']);
+                        $img = '
+    <!-- s9ymdb:' . $row['photoid'] . ' -->
+    <picture>
+        <source type="image/avif" srcset="' . $imgsrcAvif . '">
+        <source type="image/webp" srcset="' . $imgsrcWebp . '">
+        <img class="serendipity_image_center" src="' . $imgsrc . '" width="' . $thumbsize[0] . '" height="' . $thumbsize[1] . '" loading="lazy" alt="" />
+    </picture>
+';
                         $eventData[$i]['body'] = $img . $eventData[$i]['body'];
                     }
                 }
