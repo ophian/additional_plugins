@@ -851,7 +851,7 @@
 <category>Event Plugins</category>
 <author>Cameron MacFarland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_photoblog&lt;br /&gt;Photoblog Entries&lt;/b&gt;&lt;br /&gt;Adds a single image to an entry.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 24 Nov 2025 11:54:04 +0100</pubDate>
+<pubDate>Wed, 26 Nov 2025 16:15:37 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_photoblog</guid>
 </item>
 <item>
@@ -1101,9 +1101,9 @@
 <title>Thumbnail Page: Shows a thumbnail page. Address is index.php?serendipity[tnpage]=thumbs</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_thumbnails</link>
 <category>Event Plugins</category>
-<author>Cameron MacFarland</author>
+<author>Cameron MacFarland, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_thumbnails&lt;br /&gt;Thumbnail Page&lt;/b&gt;&lt;br /&gt;Shows a thumbnail page. Address is index.php?serendipity[tnpage]=thumbs&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Mon, 24 Nov 2025 11:51:09 +0100</pubDate>
+<pubDate>Wed, 26 Nov 2025 15:55:56 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_thumbnails</guid>
 </item>
 <item>
