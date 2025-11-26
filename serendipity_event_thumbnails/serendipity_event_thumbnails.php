@@ -21,8 +21,8 @@ class serendipity_event_thumbnails extends serendipity_event
             'entry_display' => true));
         $propbag->add('configuration', array('number'));
         $propbag->add('stackable',     false);
-        $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version', '2.0.1');
+        $propbag->add('author',        'Cameron MacFarland, Ian Styx');
+        $propbag->add('version', '2.1.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -105,7 +105,7 @@ class serendipity_event_thumbnails extends serendipity_event
         if (isset($entries) && is_array($entries)) {
             echo "<div class=\"c$cols col serendipity_image_block\">\n";
             foreach ($entries AS $k => $entry) {
-                echo '<div style="margin: 5px">';
+                echo '<div>';
                 serendipity_initPermalinks();
                 $entryLink = serendipity_archiveURL(
                                $entry['id'],
@@ -118,18 +118,29 @@ class serendipity_event_thumbnails extends serendipity_event
                 if (isset($photo)) {
                     $file = serendipity_fetchImageFromDatabase((int) $photo['photoid'], (defined('IN_serendipity_admin') ? 'discard' : 'read'));
                     $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] .'.'. $file['extension'];
+                    $imgFSPAvif = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] .'.avif';
+                    $imgsrcAvif = (file_exists($imgFSPAvif) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] .'.avif' : '');
+                    $imgFSPWebp = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] .'.webp';
+                    $imgsrcWebp = (file_exists($imgFSPWebp) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] .'.webp' : '');
+                    $imgsrcAvif = @filesize($imgFSPAvif) < @filesize($imgFSPWebp) ? $imgsrcAvif : '';
                     $thumbbasename = $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension'];
                     $thumbName     = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $thumbbasename;
                     $thumbsize     = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $thumbbasename);
                 }
-
                 echo '<a class="serendipity_image_link" href="' . $entryLink . '" title="' . htmlspecialchars($entry['title'], ENT_COMPAT, LANG_CHARSET) . '">';
                 if (isset($photo)) {
-                    echo '<img class="serendipity_image_left" src="' . $imgsrc . '" width=' . $thumbsize[0] . ' height=' . $thumbsize[1];
+                    echo '
+    <!-- s9ymdb:' . $photo['photoid'] . ' -->
+    <picture>
+        <source type="image/avif" srcset="' . $imgsrcAvif . '">
+        <source type="image/webp" srcset="' . $imgsrcWebp . '">
+        <img class="serendipity_image_left" src="' . $imgsrc . '" width=' . $thumbsize[0] . ' height=' . $thumbsize[1];
                     if (isset($id) && ($id == $entry['id'])) {
                         echo ' border=4';
                     }
-                    echo ' />';
+                    echo ' loading="lazy" alt="" />
+    </picture>
+';
                 } else {
                     if (isset($id) && ($id == $entry['id'])) {
                         echo '<b>';
