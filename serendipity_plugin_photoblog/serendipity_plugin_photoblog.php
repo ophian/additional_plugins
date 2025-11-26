@@ -20,8 +20,8 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('author',        'Cameron MacFarland');
-        $propbag->add('version',     '2.0.1');
+        $propbag->add('author',        'Cameron MacFarland, Ian Styx');
+        $propbag->add('version',     '2.1.0');
         $propbag->add('groups', array('IMAGES'));
         $this->dependencies = array('serendipity_event_thumbnails' => 'keep');
     }
@@ -125,33 +125,45 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
                             );
                 $photo = $this->getPhoto($entry['id']);
 
-                if (($showpicsonly == 'true') && (isset($photo)) || ($showpicsonly != 'true'))
-                {
-                if (isset($photo)) {
-                    $file = serendipity_fetchImageFromDatabase((int) $photo['photoid']);
-                    $imgsrc= $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] .'.'. $file['extension'];
-                    $thumbbasename = $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension'];
-                    $thumbName     = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $thumbbasename;
-                    $thumbsize     = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $thumbbasename);
-                }
+                if (($showpicsonly == 'true') && (isset($photo)) || ($showpicsonly != 'true')) {
+                    if (isset($photo)) {
+                        $file = serendipity_fetchImageFromDatabase((int) $photo['photoid']);
+                        $imgFSPAvif = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] . '.avif';
+                        $imgsrcAvif = (file_exists($imgFSPAvif) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] . '.avif' : '');
+                        $imgFSPWebp = $serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] . '.webp';
+                        $imgsrcWebp = (file_exists($imgFSPWebp) ? $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . '.v/' . $file['name'] . '.' . $file['thumbnail_name'] . '.webp' : '');
+                        $imgsrcAvif = @filesize($imgFSPAvif) < @filesize($imgFSPWebp) ? $imgsrcAvif : '';
+                        $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension'];
+                        $thumbsize  = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension']);
+                        $img = '
+    <!-- s9ymdb:' . $row['photoid'] . ' -->
+    <picture>
+        <source type="image/avif" srcset="' . $imgsrcAvif . '">
+        <source type="image/webp" srcset="' . $imgsrcWebp . '">
+        <img class="serendipity_image_center" src="' . $imgsrc . '" width="' . $thumbsize[0] . '" height="' . $thumbsize[1] . '" loading="lazy" alt="" />
+    </picture>
+';
+                    }
 
-                echo '<a href="' . $entryLink . '" title="' . htmlspecialchars($entry['title']) . '">';
-                if (isset($photo)) {
-                    echo '<img style="margin:5px;" src="' . $imgsrc . '" width=' . $thumbsize[0] . ' height=' . $thumbsize[1];
-                    if (isset($id) && ($id == $entry['id'])) {
-                        echo ' border=4';
+                    if (!isset($photo)) {
+                        echo '<p>';
                     }
-                    echo ' />';
-                } else {
-                    if (isset($id) && ($id == $entry['id'])) {
-                        echo '<b>';
+                    echo '<a href="' . $entryLink . '" title="' . htmlspecialchars($entry['title']) . '">';
+                    if (isset($photo)) {
+                        echo $img;
+                    } else {
+                        if (isset($id) && ($id == $entry['id'])) {
+                            echo '<b>';
+                        }
+                        echo $entry['title'];
+                        if (isset($id) && ($id == $entry['id'])) {
+                            echo '</b>';
+                        }
                     }
-                    echo $entry['title'];
-                    if (isset($id) && ($id == $entry['id'])) {
-                        echo '</b>';
+                    echo '</a>';
+                    if (!isset($photo)) {
+                        echo '</p>';
                     }
-                }
-                echo '</a><br />';
                 }
             }
         }
