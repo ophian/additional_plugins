@@ -21,7 +21,7 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
             'php'         => '8.2'
         ));
         $propbag->add('author',        'Cameron MacFarland, Ian Styx');
-        $propbag->add('version',     '2.1.0');
+        $propbag->add('version',     '2.1.1');
         $propbag->add('groups', array('IMAGES'));
         $this->dependencies = array('serendipity_event_thumbnails' => 'keep');
     }
@@ -136,7 +136,7 @@ class serendipity_plugin_photoblog extends serendipity_plugin {
                         $imgsrc = $serendipity['serendipityHTTPPath'] . $serendipity['uploadHTTPPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension'];
                         $thumbsize  = @getimagesize($serendipity['serendipityPath'] . $serendipity['uploadPath'] . $file['path'] . $file['name'] . '.' . $file['thumbnail_name'] . '.' . $file['extension']);
                         $img = '
-    <!-- s9ymdb:' . $row['photoid'] . ' -->
+    <!-- s9ymdb:' . $photo['photoid'] . ' -->
     <picture>
         <source type="image/avif" srcset="' . $imgsrcAvif . '">
         <source type="image/webp" srcset="' . $imgsrcWebp . '">
