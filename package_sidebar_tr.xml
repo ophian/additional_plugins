@@ -2095,11 +2095,11 @@
 <description>En son yayınladığınız fotogünlük kayıtlarınızdaki küçükresimleri gösterir (olaylar eklentisine bakın).</description>
 <maintainers><maintainer><name>Cameron MacFarland, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.0</version>
+  <version>2.1.1</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-11-26</date>
+  <date>2025-11-27</date>
   <filelist>
     <dir name="serendipity_plugin_photoblog">
       <file>ChangeLog</file>
