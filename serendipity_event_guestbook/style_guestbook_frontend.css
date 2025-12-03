@@ -1,4 +1,4 @@
-/* style_guestbook_frontend.css - for v.3.90 - 2021-01-01 Ian */
+/* style_guestbook_frontend.css - for v.5.1.0 - 2025-12-03 Ian */
 
 /******** Begin Guestbook Styles *********/
 
@@ -15,10 +15,14 @@
     -webkit-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
 }
-.input-text label, .input-select label, .input-textarea label {
+.input-text label, .input-select label, .input-textarea > label {
     display: block;
     font-weight: bold;
     margin: 10px 0 4px;
+}
+.input-textarea textarea#serendipity_commentform_comment {
+    display: block;
+    margin-bottom: 1em;
 }
 
 .serendipity_guestbook  {

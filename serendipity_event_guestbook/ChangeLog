@@ -1,3 +1,8 @@
+5.1.0:
+------
+ * Use global flag for guestbook disabled captchas
+ * Fix some frontend styles for [ pure ] standard theme
+
 5.0.4 + 2.0.2:
 --------------
  * Convert for Visibility property declaration (minor)

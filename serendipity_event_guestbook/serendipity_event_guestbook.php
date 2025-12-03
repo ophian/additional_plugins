@@ -59,7 +59,7 @@ class serendipity_event_guestbook extends serendipity_event
                         'dateformat'
                     ));
         $propbag->add('author',       'Ian Styx');
-        $propbag->add('version',      '5.0.4');
+        $propbag->add('version',      '5.1.0');
         $propbag->add('requirements', array(
                         'serendipity' => '5.0',
                         'smarty'      => '4.1',
@@ -1364,6 +1364,10 @@ class serendipity_event_guestbook extends serendipity_event
                         } else {
                             $eventData = array('clean_page' => true);
                         }
+                    }
+                    // set global flag
+                    if (!serendipity_db_bool($this->get_config('showcaptcha', 'true'))) {
+                        $serendipity['plugins']['disable_internal_captcha'] = true;
                     }
                     break;
 
