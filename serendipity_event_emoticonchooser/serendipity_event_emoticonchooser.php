@@ -33,7 +33,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '4.1.2');
+        $propbag->add('version',       '4.1.3');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -273,7 +273,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                         $button = serendipity_db_bool($this->get_config('button', 'false'));
                         $backend = (defined('IN_serendipity_admin') && IN_serendipity_admin === true);
                         if (serendipity_db_bool($this->get_config('popup', 'false'))) {
-                            $popupstyle = '; display: none';
+                            $popupstyle = !empty($style) ? '; display: none' : '';
                             $popuplink  = ($backend || (!$backend && $button))
                                         ? '<input type="button" onclick="toggle_emoticon_bar_' . $func . '(); return false" href="#" class="serendipity_toggle_emoticon_bar' . $popcl . '" value="'.$this->get_config('popuptext').'">'
                                         : '<a class="serendipity_toggle_emoticon_bar' . $popcl . '" href="#" onclick="toggle_emoticon_bar_' . $func . '(); return false">' . $this->get_config('popuptext') . '</a>';
