@@ -20,7 +20,7 @@ class serendipity_event_sidebarhider extends serendipity_event
         $propbag->add('description',   PLUGIN_SIDEBAR_HIDER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tys von Gaza, Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -305,12 +305,6 @@ class serendipity_event_sidebarhider extends serendipity_event
                     }
 
                     $parts = explode('[/&]', $uri_parts[0]);
-                    if (!empty($parts[1])) {
-                        $param = (int) $parts[1];
-                    } else {
-                        $param = null;
-                    }
-
                     switch($parts[0]) {
                         case 'sidebarhider.js':
                             header('Content-Type: application/javascript');

@@ -1,3 +1,7 @@
+2.0.2:
+------
+ * Remove irritating and unused exploded array param[1], causing possible PHP 8.5 type errors while parsing through looped external_plugin hook
+
 2.0.1:
 ------
  * Fix a type issue sending $serendipity['authorid'] to serendipity_plugin_api::load_plugin() on PDO::PostgreSQL
