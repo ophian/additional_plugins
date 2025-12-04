@@ -4001,11 +4001,6 @@ class serendipity_event_staticpage extends serendipity_event
 
                 case 'external_plugin':
                     $parts = explode('_', $eventData);
-                    if (!empty($parts[1])) {
-                        $param = (int)$parts[1];
-                    } else {
-                        $param = null;
-                    }
                     // might need a lib refresh some day - Please note to use this with a unique single name only, since you could else get this lib bound-in more than once!
                     if ($parts[0] == 'spdtree.js') {
                         header('Content-Type: text/javascript');
