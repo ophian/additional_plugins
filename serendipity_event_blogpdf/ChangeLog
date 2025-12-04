@@ -1,3 +1,7 @@
+3.0.4:
+------
+ * Remove int cast for exploded array param[1], causing possible PHP 8.5 type errors while parsing through looped external_plugin hook
+
 3.0.3:
 ------
  * Cast serendipity_fetchCategoryInfo() category parameter for strict types usage

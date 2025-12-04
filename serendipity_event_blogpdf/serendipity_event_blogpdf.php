@@ -27,7 +27,7 @@ class serendipity_event_blogpdf extends serendipity_event
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Olivier Plathey, Steven Wittens, Ian Styx');
         $propbag->add('license',       'GPL (Uses LGPL TCPDF');
-        $propbag->add('version',       '3.0.3');
+        $propbag->add('version',       '3.0.4');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -175,7 +175,7 @@ class serendipity_event_blogpdf extends serendipity_event
 
                     $parts = explode('_', $eventData);
                     if (!empty($parts[1])) {
-                        $param = (int) $parts[1];
+                        $param = $parts[1];
                     } else {
                         $param = null;
                     }
