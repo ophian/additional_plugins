@@ -37,7 +37,7 @@ class serendipity_event_todolist extends serendipity_event
                                             'backend_sidebar_entries'                               => true
                                             ));
         $propbag->add('author', 'Steven Tonnesen, Matthias Mees, Ian Styx');
-        $propbag->add('version', '3.0.1');
+        $propbag->add('version', '3.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -458,9 +458,10 @@ class serendipity_event_todolist extends serendipity_event
                 case 'external_plugin':
                     $parts     = explode('_', $eventData);
                     if (!empty($parts[1])) {
-                        $param = (int)$parts[1];
+                        $param = $parts[1];
                         $param = preg_replace('/[^0-9\.]/','',$param);
                         $param = preg_replace('/^0+/','',$param);
+                        $param = (int) $param;
                         if ($param < 0) {
                             $param = 0;
                         } elseif ($param > 100) {
