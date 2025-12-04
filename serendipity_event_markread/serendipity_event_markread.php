@@ -32,7 +32,7 @@ class serendipity_event_markread extends serendipity_event
         $propbag->add('description',   PLUGIN_MARKREAD_NAME);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -177,7 +177,7 @@ class serendipity_event_markread extends serendipity_event
                 case 'external_plugin':
                     $parts = explode('_', $eventData);
                     if (!empty($parts[1])) {
-                        $param = (int)$parts[1];
+                        $param = $parts[1];
                     } else {
                         return;
                     }
