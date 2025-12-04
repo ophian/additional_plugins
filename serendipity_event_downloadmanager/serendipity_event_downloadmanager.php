@@ -46,7 +46,7 @@ class serendipity_event_downloadmanager extends serendipity_event
             'php'         => '8.2'
         ));
 
-        $propbag->add('version',       '2.0.4');
+        $propbag->add('version',       '2.0.5');
         $propbag->add('author',       'Alexander \'dma147\' Mieland, Grischa Brockhaus, Ian Styx');
         $propbag->add('stackable',     false);
         $propbag->add('event_hooks',   array(
@@ -1981,12 +1981,6 @@ class serendipity_event_downloadmanager extends serendipity_event
                     }
 
                     $parts = explode('_', $uri_parts[0]);
-                    if (!empty($parts[1])) {
-                        $param = (int) $parts[1];
-                    } else {
-                        $param = null;
-                    }
-
                     switch($parts[0]) {
                         case 'dlfile':
 

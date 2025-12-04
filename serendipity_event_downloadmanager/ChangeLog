@@ -1,6 +1,10 @@
 ChangeLog:
 """"""""""
 
+2.0.5:
+------
+ * Remove irritating and unused exploded array param[1], causing possible PHP 8.5 type errors while parsing through looped external_plugin hook
+
 2.0.4:
 ------
  * Fix trash $files iterator on NULL
