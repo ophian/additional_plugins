@@ -977,7 +977,7 @@
 <category>Event Plugins</category>
 <author>kleinerChemiker, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_smtpmail&lt;br /&gt;SMTP Mail&lt;/b&gt;&lt;br /&gt;Použití SMTP serveru pro odesílání pošty&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Fri, 05 Dec 2025 12:43:24 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_smtpmail</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Markup: Textile&lt;/b&gt;&lt;br /&gt;Převádí text se značkami Textile do HTML&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Fri, 05 Dec 2025 12:36:55 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
