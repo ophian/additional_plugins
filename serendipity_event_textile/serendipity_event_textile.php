@@ -20,7 +20,7 @@ class serendipity_event_textile extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_TEXTILE_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Serendipity Team, Lars Strojny, Ian Styx');
-        $propbag->add('version',       '2.0.2');
+        $propbag->add('version',       '2.0.3');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -247,7 +247,7 @@ class serendipity_event_textile extends serendipity_event
                     break;
 
                 case 'frontend_comment':
-                    if (serendipity_db_bool($this->get_config('COMMENT', 'true'))) {
+                    if (serendipity_db_bool($this->get_config('COMMENT', 'true')) && !empty($eventData['allow_comments']) && !($serendipity['allowHtmlComment'] === true)) {
                         echo '<div class="serendipity_commentDirection serendipity_comment_textile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/><title>External link</title></svg> ' . sprintf(PLUGIN_EVENT_TEXTILE_TRANSFORM, 'https://textile-lang.com/') . "</div>\n";
                     }
                     break;

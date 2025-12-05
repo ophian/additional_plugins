@@ -1,3 +1,7 @@
+2.0.3:
+------
+ * Do not display frontend comment textile markup allowed message when having enabled allowHtmlComment
+
 2.0.2:
 ------
  * Improve consistency of external link reference for frontend_comment hook
