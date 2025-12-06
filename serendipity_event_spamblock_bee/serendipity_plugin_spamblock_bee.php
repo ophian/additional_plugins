@@ -111,7 +111,7 @@ Bayes:%Bayes%'
         $days     = explode(',', $this->get_config('days'));
         $searches = preg_split('/(?:\r?\n|\r)/', $this->get_config('db_search_pattern'));
 
-        $todayAtMidnight = mktime(0,0,0, date("n"), date("j"), date("Y"));
+        $todayAtMidnight = mktime(0,0,0, (int)date("n"), (int)date("j"), (int)date("Y"));
         $timestampDay    = 60 * 60 * 24;
         $statsString     = '';
 
