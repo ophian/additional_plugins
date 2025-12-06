@@ -1,3 +1,7 @@
+6.4.4:
+------
+ * Cast fix some tags to string when being an integer tag
+
 6.4.3:
 ------
  * Fixup rotating and word cloud scriptlets to support jQuery 4.0.0 revisions, fixing use of removed deprecated functions.

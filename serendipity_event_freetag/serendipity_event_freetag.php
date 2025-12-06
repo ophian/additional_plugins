@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.4.3');
+        $propbag->add('version',       '6.4.4');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -492,7 +492,7 @@ class serendipity_event_freetag extends serendipity_event
      */
     static function makeURLTag($tag)
     {
-        return str_replace('.', '%FF', urlencode($tag)); // RQ: why is this here ? Isn't %ff not ÿ = %FF = %C3%BF ?
+        return str_replace('.', '%FF', urlencode((string)$tag)); // RQ: why is this here ? Isn't %ff not ÿ = %FF = %C3%BF ? // cast to string, while might be an int when a year or so
     }
 
     /**
@@ -772,7 +772,7 @@ class serendipity_event_freetag extends serendipity_event
                 continue;
             }
 
-            $title = htmlspecialchars($name);
+            $title = htmlspecialchars((string)$name); // might be an int when a year or so
 
             if (!$first && !$nl) {
                 if (!$scaling) {
