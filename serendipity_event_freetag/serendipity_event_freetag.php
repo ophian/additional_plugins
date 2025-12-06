@@ -2151,7 +2151,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         foreach($tagList AS $tag) {
-            $out .= serendipity_utf8_encode("<$element>" . htmlspecialchars((string$tag) ."</$element>\n"); )// cast integer tags to string
+            $out .= serendipity_utf8_encode("<$element>" . htmlspecialchars((string)$tag) ."</$element>\n"); // cast integer tags to string
         }
         return $out;
     }
