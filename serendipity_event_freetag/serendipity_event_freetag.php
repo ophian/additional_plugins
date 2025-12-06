@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.4.4');
+        $propbag->add('version',       '6.4.5');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -532,11 +532,11 @@ class serendipity_event_freetag extends serendipity_event
         }
 
         foreach($tags AS $tag) {
-            $tag = trim($tag);
+            $tag = trim((string)$tag); // cast integer tags to string
             if (empty($tag)) {
                 continue;
             }
-            $links[] = '<a href="' . $taglink . self::makeURLTag($tag) . '" title="' . htmlspecialchars($tag) . '" rel="tag">' . htmlspecialchars($tag) . '</a>';
+            $links[] = '<a href="' . $taglink . self::makeURLTag($tag) . '" title="' . htmlspecialchars((string)$tag) . '" rel="tag">' . htmlspecialchars((string)$tag) . '</a>'; // cast integer tags to string
         }
 
         if ($extended_smarty) {
@@ -1579,7 +1579,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $tags = array();
         $freetags = explode(',', $tagList);
         foreach($freetags AS $tag) {
-            $tag = trim($tag);
+            $tag = trim((string)$tag); // cast integer tags to string
             if (!empty($tag)) {
                 $tags[] = $tag;
             }
@@ -2151,7 +2151,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         foreach($tagList AS $tag) {
-            $out .= serendipity_utf8_encode("<$element>" . htmlspecialchars($tag) ."</$element>\n");
+            $out .= serendipity_utf8_encode("<$element>" . htmlspecialchars((string$tag) ."</$element>\n"); )// cast integer tags to string
         }
         return $out;
     }
@@ -2495,9 +2495,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <td><?php echo $tag; ?></td>
             <td><?php echo $weight; ?></td>
             <td>
-                <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></span></a>
-                <a class="button_link" title="<?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-resize-full" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></span></a>
-                <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode($tag)?>"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></span></a>
+                <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=rename&amp;serendipity[tag]=<?php echo urlencode((string)$tag)?>"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?></span></a>
+                <a class="button_link" title="<?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=split&amp;serendipity[tag]=<?php echo urlencode((string)$tag)?>"><span class="icon-resize-full" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo  PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?></span></a>
+                <a class="button_link" title="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?>" href="<?php echo $url?>&amp;serendipity[tagaction]=delete&amp;serendipity[tag]=<?php echo urlencode((string)$tag)?>"><span class="icon-trash" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_DELETE ?></span></a>
             </td>
         </tr>
 <?php
@@ -2644,7 +2644,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <?php
                 } else {
 ?>
-                    <a class="button_link" title="<?php echo EDIT ?>" href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode($tag)?>#edit"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo EDIT ?></span></a>
+                    <a class="button_link" title="<?php echo EDIT ?>" href="<?php echo $url ?>&amp;serendipity%5Btag%5D=<?php echo urlencode((string)$tag)?>#edit"><span class="icon-edit" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo EDIT ?></span></a>
 <?php
                 }
 ?>
@@ -2955,13 +2955,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (preg_match($regex, $searchtext) > 0) {
                     foreach($ktags AS $tag => $is_assigned) {
                         // also checks strtolowered keywords - so not too strict - even though the old storage of strtolower tags has been abandoned
-                        if (!is_array($tags) || (!in_array(strtolower($tag), $tags) && !in_array($tag, $tags))) {
+                        if (!is_array($tags) || (!in_array(strtolower((string)$tag), $tags) && !in_array($tag, $tags))) { // cast integer tags to string
 
                             if (!is_array($tags) && !empty($tag)) {
                                 $tags = array(); // avoid having "[] operator not supported for strings" errors
                             }
                             $tags[] = $tag;
-                            $kaddmsg .= sprintf('    <li>' . PLUGIN_EVENT_FREETAG_KEYWORDS_ADD . "</li>\n", htmlspecialchars($keyword), htmlspecialchars($tag));
+                            $kaddmsg .= sprintf('    <li>' . PLUGIN_EVENT_FREETAG_KEYWORDS_ADD . "</li>\n", htmlspecialchars($keyword), htmlspecialchars((string)$tag)); // cast integer tags to string
                             if (!empty($tags)) {
                                 $key2tagIDs[] = $eventData['id']; // gather ids to updertEntries
                             }
@@ -3087,7 +3087,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (serendipity_db_bool($this->get_config('admin_ftayt', 'false'))) {
             $wicktags = array();
             foreach ($tagsArray AS $k => $v) {
-                $wicktags[] = '\'' . addslashes($k) . '\'';
+                $wicktags[] = '\'' . addslashes((string)$k) . '\''; // cast integer tags to string
             }
             echo '            <link rel="stylesheet" type="text/css" href="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.css">
             <script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.js"></script>
@@ -3134,9 +3134,9 @@ document.addEventListener("DOMContentLoaded", function() {
             $lastletter = '';
             foreach ($tagsArray AS $tag => $count) {
                 if (function_exists('mb_strtoupper')) {
-                    $upc = mb_strtoupper(mb_substr($tag, 0, 1, LANG_CHARSET), LANG_CHARSET);
+                    $upc = mb_strtoupper(mb_substr((string)$tag, 0, 1, LANG_CHARSET), LANG_CHARSET); // cast integer tags to string
                 } else {
-                    $upc = strtoupper(substr($tag, 0, 1));
+                    $upc = strtoupper(substr((string)$tag, 0, 1)); // cast integer tags to string
                 }
                 if ($index && $upc != $lastletter) {
                     // HEY - do NOT remove this FEATURE(!) for 2.0+!! Is configurable by option!
@@ -3206,8 +3206,8 @@ document.addEventListener("DOMContentLoaded", function() {
     <input type="hidden" name="serendipity[tagview]" value="<?php echo htmlspecialchars($this->_eventData['GET']['tagview']) ?>">
     <input type="hidden" name="serendipity[tagaction]" value="rename">
     <input type="hidden" name="serendipity[commit]" value="true">
-    <input type="hidden" name="serendipity[tag]" value="<?php echo htmlspecialchars($tag) ?>">
-    <?php echo htmlspecialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]"> <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>">
+    <input type="hidden" name="serendipity[tag]" value="<?php echo htmlspecialchars((string)$tag) ?>">
+    <?php echo htmlspecialchars((string)$tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtag]"> <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_RENAME ?>">
 </form>
 
 <?php
@@ -3265,11 +3265,11 @@ document.addEventListener("DOMContentLoaded", function() {
         $no  = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . htmlspecialchars($this->_eventData['GET']['tagview']);
         $yes = FREETAG_MANAGE_URL . "&amp;serendipity[tagview]=" . htmlspecialchars($this->_eventData['GET']['tagview']).
                     "&amp;serendipity[tagaction]=delete".
-                    "&amp;serendipity[tag]=".urlencode($tag)."&amp;serendipity[commit]=true";
+                    "&amp;serendipity[tag]=".urlencode((string)$tag)."&amp;serendipity[commit]=true"; // cast integer tags to string
 ?>
 
         <div class="msg_notice">
-            <h3> <?php printf(PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE, htmlspecialchars($tag)) ?></h3>
+            <h3> <?php printf(PLUGIN_EVENT_FREETAG_MANAGE_CONFIRM_DELETE, htmlspecialchars((string)$tag)) ?></h3>
             <a class="button_link state_submit" href="<?php echo $yes; ?>"><?php echo YES; ?></a> &nbsp; &nbsp; <a class="button_link state_cancel" href="<?php echo $no; ?>"><?php echo NO; ?></a>
         </div>
 
@@ -3303,7 +3303,7 @@ document.addEventListener("DOMContentLoaded", function() {
     private function displaySplitTag($tag, &$eventData)
     {
         if (strstr($tag, ' ')) {
-            $newtag = str_replace(' ', ',', $tag);
+            $newtag = str_replace(' ', ',', (string)$tag); // cast integer tags to string
         } else {
             $newtag = '';
         }
@@ -3315,10 +3315,10 @@ document.addEventListener("DOMContentLoaded", function() {
             <input type="hidden" name="serendipity[tagview]" value="<?php echo htmlspecialchars($this->_eventData['GET']['tagview']) ?>">
             <input type="hidden" name="serendipity[tagaction]" value="split">
             <input type="hidden" name="serendipity[commit]" value="true">
-            <input type="hidden" name="serendipity[tag]" value="<?php echo htmlspecialchars($tag) ?>">
+            <input type="hidden" name="serendipity[tag]" value="<?php echo htmlspecialchars((string)$tag) ?>">
             <p><?php echo PLUGIN_EVENT_FREETAG_MANAGE_INFO_SPLIT ?><br>
                 foobarbaz =&gt; foo,bar,baz</p>
-            <?php echo htmlspecialchars($tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo htmlspecialchars($newtag) ?>">
+            <?php echo htmlspecialchars((string)$tag) ?> =&gt; <input class="input_textbox" type="text" name="serendipity[newtags]" value="<?php echo htmlspecialchars($newtag) ?>">
             <input class="input_button" type="submit" name="submit" value="<?php echo PLUGIN_EVENT_FREETAG_MANAGE_ACTION_SPLIT ?>">
         </form>
 
