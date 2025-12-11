@@ -73,7 +73,7 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '3.0.1');
+        $propbag->add('version',        '3.0.2');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
                                             'serendipity' => '5.0',
@@ -843,7 +843,7 @@ class serendipity_event_cal extends serendipity_event
     function display_options($options, $current)
     {
         foreach ($options AS $k => $v) {
-            $opt[] = '<option value="' . $k . '"' . ($k == $current ? ' selected="selected"' : '') . '>' . htmlentities($v, ENT_QUOTES, 'UTF-8') . '</option>';
+            $opt[] = '<option value="' . $k . '"' . ($k == $current ? ' selected="selected"' : '') . '>' . htmlentities((string)$v, ENT_QUOTES, 'UTF-8') . '</option>';
         }
         return $opt;
     }
@@ -2957,7 +2957,7 @@ class serendipity_event_cal extends serendipity_event
         if (isset($serendipity['eventcal']['adminpost']) && is_array($serendipity['eventcal']['adminpost'])) {
             /* there is a returning admin event insert or replace error - give back the form vars of db select event array */
             foreach($serendipity['eventcal']['adminpost'] AS $ak => $av) {
-                $$ak = trim(stripslashes($av));
+                $$ak = trim(stripslashes((string)$av));
             }
             unset($serendipity['eventcal']['adminpost']);
         }
@@ -2965,7 +2965,7 @@ class serendipity_event_cal extends serendipity_event
         if (is_array($serendipity['eventcal']) && isset($serendipity['eventcal']['setopen']) && $serendipity['eventcal']['setopen'] === true) {
             /* there is a returning admin/public event validation error - give back the form vars - backforming $type to $tipo is done in draw_add() function */
             foreach($_POST['calendar'] AS $ck => $cv) {
-                $$ck = trim(stripslashes($cv));
+                $$ck = trim(stripslashes((string)$cv));
             }
             if (!isset($which)) $which = $_POST['calendar']['recur'];     // recur needs to be handled as list($which, ...) to return to form safely
             if (!isset($day))   $day   = $_POST['calendar']['recur_day']; // recur_day needs to be handled as list(..., $day) to return to form safely
@@ -3082,7 +3082,7 @@ class serendipity_event_cal extends serendipity_event
         if (isset($serendipity['eventcal']['adminpost']) && is_array($serendipity['eventcal']['adminpost'])) {
             /* there is a returning admin event insert or replace error - give back the form vars of db select event array */
             foreach($serendipity['eventcal']['adminpost'] AS $ak => $av) {
-                $$ak = trim(stripslashes($av));
+                $$ak = trim(stripslashes((string)$av));
             }
             unset($serendipity['eventcal']['adminpost']);
         }
