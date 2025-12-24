@@ -33,7 +33,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '4.1.3');
+        $propbag->add('version',       '4.1.4');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -225,7 +225,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
                 // frontend commentform, backend comments edit/reply commentform
                 case 'frontend_comment':
                     // per option OR per state allowHtmlComment true, so break PLAIN TEXT (editor) only building button, script and content
-                    if (serendipity_db_bool($this->get_config('comments', 'false')) === false || ($serendipity['wysiwyg'] && $serendipity['allowHtmlComment'])) {
+                    if (serendipity_db_bool($this->get_config('comments', 'false')) === false || $serendipity['allowHtmlComment']) {
                         break; // TinyMCE itself has Emojis and isn't able to place emoticons like CKE was... (see conditional below for the js file binding)
                     }
 
@@ -418,7 +418,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
 
                 case 'frontend_footer':
                     // don't load with allowHtmlComment true for TinyMCE in frontend commentform
-                    if ((empty($noemojs) || (empty($noemojs) && empty($serendipity['allowHtmlComment']))) || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments' && empty($serendipity['allowHtmlComment']) && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
+                    if ((empty($serendipity['allowHtmlComment']) && empty($noemojs)) || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments' && empty($serendipity['allowHtmlComment']) && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php

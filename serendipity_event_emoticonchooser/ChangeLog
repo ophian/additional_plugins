@@ -1,3 +1,7 @@
+4.1.4:
+------
+ * Fix condition to prevent frontend output with htmlcomments (TinyMCE) and the load of related js
+
 4.1.3:
 ------
  * Fix an inline style concatenation
