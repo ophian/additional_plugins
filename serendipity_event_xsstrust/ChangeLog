@@ -1,3 +1,8 @@
+2.0.0:
+------
+ * Add a frontend sidebar table (.table) selector to separate style issues
+   against upcoming Styx 5.1 [pure] standard theme.
+
 2.1.1 + 2.0.0:
 --------------
  * Convert for Visibility property declaration (minor)

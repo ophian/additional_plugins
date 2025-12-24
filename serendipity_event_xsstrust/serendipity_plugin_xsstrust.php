@@ -22,7 +22,7 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ETHICS_BLAHBLAH);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Loris Zena, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -218,7 +218,7 @@ class serendipity_plugin_xsstrust extends serendipity_plugin
         echo PLUGIN_ETHICS_REDLIGHT;
 ?>
         </p>
-        <table align="center" width="100%">
+        <table class="table" align="center" width="100%">
 <?php
         $sql = serendipity_db_query($q);
         if ($sql && is_array($sql)) {
