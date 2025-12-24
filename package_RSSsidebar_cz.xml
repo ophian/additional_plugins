@@ -140,7 +140,7 @@
 <category>Sidebar Plugins</category>
 <author>Loris Zena, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_plugin_xsstrust&lt;br /&gt;Zobrazit důvěryhodné autory&lt;/b&gt;&lt;br /&gt;Zobrazuje uživatele s vyobrazením jejich etické úrovně (vyjádřenou semaforem). Zelená znamená &quot;v pohodě&quot;; oranžová znamená &quot;podezřelý&quot;; a červená znamená &quot;zakázaný&quot;. Administrátor může lehce měnit tyto hodnoty u jednotlivých uživatelů.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
+<pubDate>Wed, 24 Dec 2025 14:20:34 +0100</pubDate>
 <guid isPermaLink="false">serendipity_plugin_xsstrust</guid>
 </item>
 <item>
