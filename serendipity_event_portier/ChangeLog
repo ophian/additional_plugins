@@ -1,3 +1,7 @@
+2.0.3
+-----
+ * Raise composer php_unit version for GHSA-vvj3-c3rp-c85p
+
 2.0.2
 -----
  * Strict check $_SESSION['serendipityAuthedUser']
