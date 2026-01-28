@@ -1,3 +1,7 @@
+2.0.4
+-----
+ * Raise composer php_unit version for GHSA-vvj3-c3rp-c85p
+
 2.0.3:
 ------
  * Do not display frontend comment textile markup allowed message when having enabled allowHtmlComment
