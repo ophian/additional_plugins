@@ -878,7 +878,7 @@
 <category>Event Plugins</category>
 <author>Grischa Brockhaus, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_portier&lt;br /&gt;Portier Email Authentication&lt;/b&gt;&lt;br /&gt;Allows authors to authenticate only using their email.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Thu, 20 Nov 2025 16:28:14 +0100</pubDate>
+<pubDate>Wed, 28 Jan 2026 15:59:19 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_portier</guid>
 </item>
 <item>
@@ -1076,7 +1076,7 @@
 <category>Event Plugins</category>
 <author>Serendipity Team, Lars Strojny, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_textile&lt;br /&gt;Форматиране на текст: Textile&lt;/b&gt;&lt;br /&gt;Форматиране на текст чрез Textile конвертор.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Dec 2025 12:36:55 +0100</pubDate>
+<pubDate>Wed, 28 Jan 2026 16:02:12 +0100</pubDate>
 <guid isPermaLink="false">serendipity_event_textile</guid>
 </item>
 <item>
