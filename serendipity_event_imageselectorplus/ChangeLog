@@ -1,3 +1,7 @@
+3.0.4:
+------
+ * Better check EXIF extension usage for exif mime type
+
 3.0.3:
 ------
  * Fix type issues with caching on str_replace()
