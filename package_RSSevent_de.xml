@@ -648,15 +648,6 @@
 <guid isPermaLink="false">serendipity_event_livesearch</guid>
 </item>
 <item>
-<title>LiveJournal/MySpace/Serendipity Aktualisierung: Benutzt XML-RPC Methoden um Einträge zu einem LiveJournal/MySpace/Serendipity zu übertragen</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_ljupdate</link>
-<category>Event Plugins</category>
-<author>Kaustubh Srikanth, Ivan Makhonin</author>
-<content:encoded>&lt;b&gt;serendipity_event_ljupdate&lt;br /&gt;LiveJournal/MySpace/Serendipity Aktualisierung&lt;/b&gt;&lt;br /&gt;Benutzt XML-RPC Methoden um Einträge zu einem LiveJournal/MySpace/Serendipity zu übertragen&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_ljupdate</guid>
-</item>
-<item>
 <title>Überprüft Autoren-Login: Überprüft die Logindaten des Autoren nach Benutzung des Login-Formulars in der Seitenleiste</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_loginform</link>
 <category>Event Plugins</category>
@@ -1215,15 +1206,6 @@
 <guid isPermaLink="false">serendipity_event_vgwort</guid>
 </item>
 <item>
-<title>Einträge ankündigen: Benachrichtigt diverse Internetseiten, dass ein neuer Eintrag erstellt wurde.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
-<category>Event Plugins</category>
-<author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Einträge ankündigen&lt;/b&gt;&lt;br /&gt;Benachrichtigt diverse Internetseiten, dass ein neuer Eintrag erstellt wurde.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_weblogping</guid>
-</item>
-<item>
 <title>Freie Wiki-Links für Einträge: Ermöglicht Links zu blog-internen Einträgen via [[Titel]], Links zu Statischen Seiten via ((Titel)) und einen Link zu beidem via {{Titel}}. Zudem wird ein Button zu internen Einträgen bereitgestellt. Referenzen können am Ende eines Blogeintrags eingehangen werden.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wikilinks</link>
 <category>Event Plugins</category>
@@ -1249,15 +1231,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;WrapURL: &lt;/b&gt;&lt;br /&gt;Umschließt eine weitere Seite in einem IFRAME, der im (body) Artikeltextbereich angezeigt werden soll.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
 <pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wrapurl</guid>
-</item>
-<item>
-<title>Einträge via XML-RPC erstellen: Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xmlrpc</link>
-<category>Event Plugins</category>
-<author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Einträge via XML-RPC erstellen&lt;/b&gt;&lt;br /&gt;Ermöglicht Einträge via XML-RPC API zu erstellen/bearbeiten (MT, Blogger, WordPress API-Endpunkte)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
 <title>Einstellungen für vertrauenswürdige Mehrbenutzer-Blogs / HTMLPurifier: Dieses Plugin gibt an, welchen Autoren eines Mehrbenutzer-Blogs Sie genug trauen und von denen Sie keine Hackangriffe erwarten. Alle anderen Autoren dürfen kein HTML mehr verwenden!</title>

@@ -5293,42 +5293,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_ljupdate</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_ljupdate/ChangeLog</changelog>
-<license>GPL</license>
-<summary>LJ/MySpace/Serendipity aktualizace</summary>
-<groups>BACKEND_EDITOR</groups>
-<description>Používá XMLRPC protokol pro zasílání příspěvků na LiveJournal/MySpace/Serendipity</description>
-<maintainers><maintainer><name>Kaustubh Srikanth, Ivan Makhonin</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>2.0.0</version>
-  <requirements:s9yVersion>5.0</requirements:s9yVersion>
-  <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
-  <filelist>
-    <dir name="serendipity_event_ljupdate">
-      <file>ChangeLog</file>
-      <file>lang_cz.inc.php</file>
-      <file>lang_de.inc.php</file>
-      <file>lang_en.inc.php</file>
-      <file>lang_ja.inc.php</file>
-      <file>lang_tr.inc.php</file>
-      <file>serendipity_event_ljupdate.php</file>
-</dir>
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_ljupdate/ChangeLog</file>
-    <file>serendipity_event_ljupdate/lang_cz.inc.php</file>
-    <file>serendipity_event_ljupdate/lang_de.inc.php</file>
-    <file>serendipity_event_ljupdate/lang_en.inc.php</file>
-    <file>serendipity_event_ljupdate/lang_ja.inc.php</file>
-    <file>serendipity_event_ljupdate/lang_tr.inc.php</file>
-    <file>serendipity_event_ljupdate/serendipity_event_ljupdate.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_loginform</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_loginform/ChangeLog</changelog>
 <license>GPL</license>
@@ -10148,66 +10112,6 @@
 </release>
 </package>
 <package version="1.0">
-<name>serendipity_event_weblogping</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_weblogping/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Oznamování pøíspìvkù</summary>
-<groups>BACKEND_EDITOR</groups>
-<description>Posílá oznámení o nových příspěvcích na on-line internetové služby.</description>
-<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>2.0.1</version>
-  <requirements:s9yVersion>5.0</requirements:s9yVersion>
-  <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
-  <filelist>
-    <dir name="serendipity_event_weblogping">
-      <file>ChangeLog</file>
-      <file>lang_bg.inc.php</file>
-      <file>lang_cn.inc.php</file>
-      <file>lang_cz.inc.php</file>
-      <file>lang_de.inc.php</file>
-      <file>lang_en.inc.php</file>
-      <file>lang_es.inc.php</file>
-      <file>lang_fr.inc.php</file>
-      <file>lang_ja.inc.php</file>
-      <file>lang_ko.inc.php</file>
-      <file>lang_pl.inc.php</file>
-      <file>lang_pt_PT.inc.php</file>
-      <file>lang_tn.inc.php</file>
-      <file>lang_zh.inc.php</file>
-      <file>serendipity_event_weblogping.php</file>
-      <file>servicesdb_de.inc.php</file>
-      <file>servicesdb_en.inc.php</file>
-      <file>servicesdb_ja.inc.php</file>
-      <file>servicesdb_tn.inc.php</file>
-</dir>
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_weblogping/ChangeLog</file>
-    <file>serendipity_event_weblogping/lang_bg.inc.php</file>
-    <file>serendipity_event_weblogping/lang_cn.inc.php</file>
-    <file>serendipity_event_weblogping/lang_cz.inc.php</file>
-    <file>serendipity_event_weblogping/lang_de.inc.php</file>
-    <file>serendipity_event_weblogping/lang_en.inc.php</file>
-    <file>serendipity_event_weblogping/lang_es.inc.php</file>
-    <file>serendipity_event_weblogping/lang_fr.inc.php</file>
-    <file>serendipity_event_weblogping/lang_ja.inc.php</file>
-    <file>serendipity_event_weblogping/lang_ko.inc.php</file>
-    <file>serendipity_event_weblogping/lang_pl.inc.php</file>
-    <file>serendipity_event_weblogping/lang_pt_PT.inc.php</file>
-    <file>serendipity_event_weblogping/lang_tn.inc.php</file>
-    <file>serendipity_event_weblogping/lang_zh.inc.php</file>
-    <file>serendipity_event_weblogping/serendipity_event_weblogping.php</file>
-    <file>serendipity_event_weblogping/servicesdb_de.inc.php</file>
-    <file>serendipity_event_weblogping/servicesdb_en.inc.php</file>
-    <file>serendipity_event_weblogping/servicesdb_ja.inc.php</file>
-    <file>serendipity_event_weblogping/servicesdb_tn.inc.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
 <name>serendipity_event_wikilinks</name>
 <changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_wikilinks/ChangeLog</changelog>
 <license>GPL</license>
@@ -10312,56 +10216,6 @@
     <file>serendipity_event_wrapurl/lang_de.inc.php</file>
     <file>serendipity_event_wrapurl/lang_en.inc.php</file>
     <file>serendipity_event_wrapurl/serendipity_event_wrapurl.php</file>
-  </serendipityFilelist>
-</release>
-</package>
-<package version="1.0">
-<name>serendipity_event_xmlrpc</name>
-<changelog>https://raw.githubusercontent.com/ophian/additional_plugins/master/serendipity_event_xmlrpc/ChangeLog</changelog>
-<license>GPL</license>
-<summary>Posílání příspěvků pomocí XML-RPC</summary>
-<groups>FRONTEND_FULL_MODS,FRONTEND_EXTERNAL_SERVICES</groups>
-<description>Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)</description>
-<maintainers><maintainer><name>Serendipity Team, Ian Styx</name><role>lead</role></maintainer></maintainers>
-<release>
-  <version>2.4.3</version>
-  <requirements:s9yVersion>5.0</requirements:s9yVersion>
-  <requirements:smyVersion>4.1</requirements:smyVersion>
-  <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
-  <filelist>
-    <dir name="serendipity_event_xmlrpc">
-      <file>ChangeLog</file>
-      <file>documentation_cz.html</file>
-      <file>lang_cz.inc.php</file>
-      <file>lang_de.inc.php</file>
-      <file>lang_en.inc.php</file>
-      <dir name="PEAR">
-        <dir name="XML">
-          <file>BUNDLE_NOTICE</file>
-          <dir name="RPC">
-            <file>Dump.php</file>
-            <file>Server.php</file>
-          </dir>
-          <file>RPC.php</file>
-        </dir>
-      </dir>
-      <file>serendipity_event_xmlrpc.php</file>
-      <file>serendipity_xmlrpc.inc.php</file>
-    </dir>
-  </filelist>
-  <serendipityFilelist>
-    <file>serendipity_event_xmlrpc/ChangeLog</file>
-    <file>serendipity_event_xmlrpc/documentation_cz.html</file>
-    <file>serendipity_event_xmlrpc/lang_cz.inc.php</file>
-    <file>serendipity_event_xmlrpc/lang_de.inc.php</file>
-    <file>serendipity_event_xmlrpc/lang_en.inc.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/BUNDLE_NOTICE</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Dump.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC/Server.php</file>
-    <file>serendipity_event_xmlrpc/PEAR/XML/RPC.php</file>
-    <file>serendipity_event_xmlrpc/serendipity_event_xmlrpc.php</file>
-    <file>serendipity_event_xmlrpc/serendipity_xmlrpc.inc.php</file>
   </serendipityFilelist>
 </release>
 </package>

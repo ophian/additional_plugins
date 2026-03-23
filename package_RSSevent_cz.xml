@@ -648,15 +648,6 @@
 <guid isPermaLink="false">serendipity_event_livesearch</guid>
 </item>
 <item>
-<title>LJ/MySpace/Serendipity aktualizace: Používá XMLRPC protokol pro zasílání příspěvků na LiveJournal/MySpace/Serendipity</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_ljupdate</link>
-<category>Event Plugins</category>
-<author>Kaustubh Srikanth, Ivan Makhonin</author>
-<content:encoded>&lt;b&gt;serendipity_event_ljupdate&lt;br /&gt;LJ/MySpace/Serendipity aktualizace&lt;/b&gt;&lt;br /&gt;Používá XMLRPC protokol pro zasílání příspěvků na LiveJournal/MySpace/Serendipity&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_ljupdate</guid>
-</item>
-<item>
 <title>Ověření přihlášení autorů: Ověřuje správnost přihlašovacích údajů autora, který se přihlašuje přes formulář v postranním sloupci</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_loginform</link>
 <category>Event Plugins</category>
@@ -1215,15 +1206,6 @@
 <guid isPermaLink="false">serendipity_event_vgwort</guid>
 </item>
 <item>
-<title>Oznamování pøíspìvkù: Posílá oznámení o nových příspěvcích na on-line internetové služby.</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_weblogping</link>
-<category>Event Plugins</category>
-<author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_weblogping&lt;br /&gt;Oznamování pøíspìvkù&lt;/b&gt;&lt;br /&gt;Posílá oznámení o nových příspěvcích na on-line internetové služby.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_weblogping</guid>
-</item>
-<item>
 <title>Wiki odkazy v příspěvcích: V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.</title>
 <link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_wikilinks</link>
 <category>Event Plugins</category>
@@ -1249,15 +1231,6 @@
 <content:encoded>&lt;b&gt;serendipity_event_wrapurl&lt;br /&gt;Vložení cizí stránky: &lt;/b&gt;&lt;br /&gt;Do těla blogu vloží IFRAME, který zobrazuje jinou cizí stránku&lt;br/&gt;For: Serendipity 5.0</content:encoded>
 <pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_wrapurl</guid>
-</item>
-<item>
-<title>Posílání příspěvků pomocí XML-RPC: Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)</title>
-<link>https://github.com/ophian/additional_plugins/tree/master/serendipity_event_xmlrpc</link>
-<category>Event Plugins</category>
-<author>Serendipity Team, Ian Styx</author>
-<content:encoded>&lt;b&gt;serendipity_event_xmlrpc&lt;br /&gt;Posílání příspěvků pomocí XML-RPC&lt;/b&gt;&lt;br /&gt;Umožňuje posílat/editovat příspěvky pomocí XML-RPC API (MT, Blogger, WordPress Endpoints)&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
-<guid isPermaLink="false">serendipity_event_xmlrpc</guid>
 </item>
 <item>
 <title>Nástroje pro důvěryhodnou správu více-uživatelských blogů: Tento plugin umožňuje upřesnit, kteří autoři na více-uživatelském blogu jsou důvěryhodní a lze se spolehnout, že se nebudou pokoušet o hackování. Všichni ostatní autoři jsou bráni jako potenciálně nebezpeční a nemohou vytvřátet příspěvky v HTML kódu.</title>
