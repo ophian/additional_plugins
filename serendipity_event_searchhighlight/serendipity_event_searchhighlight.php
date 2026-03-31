@@ -27,7 +27,7 @@ class serendipity_event_searchhighlight extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_SEARCHHIGHLIGHT_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Tom Sommer, Ian Styx');
-        $propbag->add('version',        '3.0.0');
+        $propbag->add('version',        '3.0.1');
         $propbag->add('requirements',   array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -99,28 +99,28 @@ class serendipity_event_searchhighlight extends serendipity_event
         $url = parse_url($this->uri);
 
         /* Patterns should be placed in the order in which they are most likely to occur */
-        if ( preg_match('@^(www\.)?google\.@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^(www\.)?google\.@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_GOOGLE;
         }
-        if ( preg_match('@^search\.yahoo\.@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^search\.yahoo\.@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_YAHOO;
         }
-        if ( preg_match('@^search\.lycos\.@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^search\.lycos\.@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_LYCOS;
         }
-        if ( preg_match('@^search\.msn\.@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^search\.msn\.@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_MSN;
         }
-        if ( preg_match('@^(www\.)?altavista\.@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^(www\.)?altavista\.@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_ALTAVISTA;
         }
-        if ( preg_match('@^suche\.aol\.de@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^suche\.aol\.de@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_DE;
         }
-        if ( preg_match('@^search\.aol\.com@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^search\.aol\.com@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_COM;
         }
-        if ( preg_match('@^(www\.)?bing\.@i', $url['host']) ) {
+        if (isset($url['host']) && preg_match('@^(www\.)?bing\.@i', $url['host'])) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_BING;
         }
 
@@ -129,7 +129,7 @@ class serendipity_event_searchhighlight extends serendipity_event
             return $this->getSearchEngine();
         }
 
-        if ($url['host'] == $_SERVER['HTTP_HOST']) {
+        if (isset($url['host']) && $url['host'] == $_SERVER['HTTP_HOST']) {
             return PLUGIN_EVENT_SEARCHHIGHLIGHT_S9Y;
         }
 
@@ -182,16 +182,16 @@ class serendipity_event_searchhighlight extends serendipity_event
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_DE :
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_ALTAVISTA :
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_GOOGLE :
-                $query = $pStr['q'];
+                $query = $pStr['q'] ?? null;
                 break;
 
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_YAHOO :
-                $query = $pStr['p'];
+                $query = $pStr['p'] ?? null;
                 break;
 
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_AOL_COM :
             case PLUGIN_EVENT_SEARCHHIGHLIGHT_LYCOS :
-                $query = $pStr['query'];
+                $query = $pStr['query'] ?? null;
                 break;
 
             default:

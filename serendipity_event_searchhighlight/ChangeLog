@@ -1,3 +1,7 @@
+3.0.1:
+------
+ * Add a variable fallback and add some checks
+
 3.0.0:
 ------
  * Declare strict types
