@@ -145,7 +145,7 @@ class serendipity_event_osm extends serendipity_event
         if (is_array($cats)) {
             $cats = serendipity_walkRecursive($cats, 'categoryid', 'parentid', VIEWMODE_THREADED);
             foreach($cats AS $cat) {
-                $categories[$cat['categoryid']] = str_repeat('   ', $cat['depth']) . $cat['category_name'];
+                $categories[$cat['categoryid']] = str_repeat('   ', $cat['depth']) . $cat['category_name'];
             }
         }
         return $categories;

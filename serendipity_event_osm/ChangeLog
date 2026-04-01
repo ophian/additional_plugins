@@ -1,3 +1,7 @@
+3.0.1:
+------
+ * Fix adding "no-break space" instead of spaces
+
 3.0.0:
 ------
  * Declare strict types
