@@ -270,7 +270,7 @@ $language_data = array(
             'xmerl_eventp', 'xmerl_scan', 'xmerl_xpath', 'xmerl_xs',
             'xmerl_xsd', 'xref', 'yecc', 'zip', 'zlib', 'zlib_stub'
             ),
-        // Binary modifiers
+        // Binary modifiers
         6 => array(
             'big', 'binary', 'float', 'integer', 'little', 'signed', 'unit', 'unsigned'
             )
