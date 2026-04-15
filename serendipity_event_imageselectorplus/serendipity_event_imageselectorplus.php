@@ -23,7 +23,7 @@ class serendipity_event_imageselectorplus extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_IMAGESELECTORPLUS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Vladimir Ajgl, Adam Charnock, Ian Styx');
-        $propbag->add('version',       '3.0.4');
+        $propbag->add('version',       '3.0.5');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -1017,7 +1017,7 @@ if (is_array($cats = serendipity_fetchCategories())) {
                     // the order of pictures in xml entry
                     // and at the same time we calculate thumbs size
 
-                    $thumb_size = $serendipity['thumbSize'];
+                    $thumb_size = (int)$serendipity['thumbSize'];
                     $order      = array();
                     if (is_array($t)) {
                         for ($j = 0, $tcount = count($t); $j < $tcount; $j++) {

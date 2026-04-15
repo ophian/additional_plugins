@@ -1,3 +1,7 @@
+3.0.5:
+------
+ * Cast type of $thumb_size to INT
+
 3.0.4:
 ------
  * Better check EXIF extension usage for exif mime type
