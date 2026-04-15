@@ -1,3 +1,7 @@
+4.1.3:
+------
+ * Trying to fix remaining "Duplicate entry ..." error by not using strict type check on this case
+
 4.1.2:
 4.1.1:
 ------
