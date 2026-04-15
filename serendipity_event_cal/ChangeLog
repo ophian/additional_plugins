@@ -3,6 +3,12 @@
 * 
 
 
+3.1.0:
+------
+ * Secure fix HTTP_HOST by using a new Styx 5.1 method
+ * Fix checking template path issue with plugin stylesheet
+ * Raise requirements for Styx 5.1
+
 3.0.2:
 ------
  * Cast some values for PHP string functions to string type

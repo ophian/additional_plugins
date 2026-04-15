@@ -73,10 +73,10 @@ class serendipity_event_cal extends serendipity_event
                                         )
                     );
         $propbag->add('author',         'Ian Styx');
-        $propbag->add('version',        '3.0.2');
+        $propbag->add('version',        '3.1.0');
         $propbag->add('groups',         array('FRONTEND_FEATURES', 'BACKEND_FEATURES'));
         $propbag->add('requirements',   array(
-                                            'serendipity' => '5.0',
+                                            'serendipity' => '5.1',
                                             'smarty'      => '4.1',
                                             'php'         => '8.2'
                                         )
@@ -1154,6 +1154,8 @@ class serendipity_event_cal extends serendipity_event
             $headers = array();
         }
 
+        $host = serendipity_getCleanHost();
+
         // Fix special characters
         $fromName = str_replace(array('"', "\r", "\n"), array("'", '', ''), $from_name);
         $fromMail = str_replace(array("\r","\n"), '', $from_address);
@@ -1188,7 +1190,7 @@ class serendipity_event_cal extends serendipity_event
             $maildata['headers'][] = 'X-Mailer: ' . $maildata['version'];
             $maildata['headers'][] = 'X-Engine: PHP/'. phpversion();
         }
-        $maildata['headers'][] = 'Message-ID: <'. md5(microtime() . uniqid(time())) .'@'. $_SERVER['HTTP_HOST'] .'>';
+        $maildata['headers'][] = 'Message-ID: <'. md5(microtime() . uniqid(time())) .'@'. $host .'>';
         $maildata['headers'][] = 'MIME-Version: 1.0';
         // Precedence priority of bulk, junk, or list. These priorities will cause well-designed programs (such as the vacation reply program) to
         // skip automatically replying to such messages. Also, this prevents most email servers from returning the message if it cannot be delivered.
@@ -2700,7 +2702,7 @@ class serendipity_event_cal extends serendipity_event
                     if (strpos($eventData, '#eventcal_wrapper') === false) {
 
                         $tfile = serendipity_getTemplateFile('style_eventcal.css', 'serendipityPath');
-                        if ($tfile) echo str_replace('{TEMPLATE_PATH}', 'templates/' . $serendipity['template'] . '/', @file_get_contents($tfile));
+                        if ($tfile && $tfile != 'style_eventcal.css') echo str_replace('{TEMPLATE_PATH}', 'templates/' . $serendipity['template'] . '/', @file_get_contents($tfile));
 
                         if (!$tfile || $tfile == 'style_eventcal.css') {
                             $tfile = dirname(__FILE__) . '/style_eventcal.css';
