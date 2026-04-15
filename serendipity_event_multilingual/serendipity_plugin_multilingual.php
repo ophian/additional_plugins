@@ -64,7 +64,7 @@ class serendipity_plugin_multilingual extends serendipity_event
             $conf[] = $lkey;
         }
         $propbag->add('configuration', $conf);
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.0.2');
         $propbag->add('groups',        array('FRONTEND_VIEWS'));
         $this->dependencies = array('serendipity_event_multilingual' => 'remove');
     }
@@ -126,7 +126,7 @@ class serendipity_plugin_multilingual extends serendipity_event
         $probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_names.inc.php';
         if (file_exists($probelang)) {
             include $probelang;
-        }
+        } else $mlp['lang'] = null;
 
         $languages = serendipity_db_bool($this->get_config('langified', 'false')) ? $mlp['lang'] : $serendipity['languages'];
         $setlang   = $_COOKIE['serendipity']['serendipityLanguage'] ?? ($_SESSION['serendipityLanguage'] ?? $serendipity['lang']);
