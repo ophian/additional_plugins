@@ -125,7 +125,7 @@ class serendipity_plugin_multilingual extends serendipity_event
         $url   = serendipity_currentURL(true);
 
         if (!isset($mlp['lang'])) {
-            $probelang = dirname(__FILE__) . '/' . 'lang_names.inc.php';
+            $probelang = dirname(__FILE__) . '/lang_names.inc.php';
             if (file_exists($probelang)) {
                 include $probelang;
             }

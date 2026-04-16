@@ -297,7 +297,7 @@ class serendipity_event_multilingual extends serendipity_event
         }
 
         if (!isset($mlp['lang'])) {
-            $probelang = dirname(__FILE__) . '/' . 'lang_names.inc.php';
+            $probelang = dirname(__FILE__) . '/lang_names.inc.php';
             if (file_exists($probelang)) {
                 include $probelang;
             }
