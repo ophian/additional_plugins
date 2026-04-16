@@ -31,7 +31,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '8.2'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '4.0.3');
+        $propbag->add('version',        '4.0.4');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -287,6 +287,7 @@ class serendipity_event_multilingual extends serendipity_event
     {
         global $serendipity;
         static $default_lang = null;
+        static $mlp = null;
 
         $return = false;
         $langs = array();
@@ -295,11 +296,12 @@ class serendipity_event_multilingual extends serendipity_event
             return $return; // Only variables returned by references
         }
 
-        $probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_names.inc.php';
-        if (file_exists($probelang)) {
-            include $probelang;
-        } else $mlp['lang'] = null;
-
+        if (!isset($mlp['lang'])) {
+            $probelang = dirname(__FILE__) . '/' . 'lang_names.inc.php';
+            if (file_exists($probelang)) {
+                include $probelang;
+            }
+        }
         $languages = serendipity_db_bool($this->get_config('langified', 'false')) ? $mlp['lang'] : $serendipity['languages'];
 
         foreach($properties AS $key => $lang) {

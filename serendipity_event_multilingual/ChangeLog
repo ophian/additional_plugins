@@ -1,3 +1,8 @@
+4.0.4 + 2.0.3:
+--------------
+ * Fix the real cause of 4.0.3 + 2.0.2: pointing into removed UTF-8/ dir
+ * Load once only by static property
+
 4.0.3 + 2.0.2:
 --------------
  * Declare $mlp['lang'] variable for a short moment between Styx 4 and 5 versions changing the lang handlers
