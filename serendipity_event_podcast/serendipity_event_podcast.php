@@ -108,7 +108,7 @@ class serendipity_event_podcast extends serendipity_event
         ));
 
         $propbag->add('author', 'Grischa Brockhaus, Hannes Gassert, Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.1.0');
+        $propbag->add('version', '2.1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -370,6 +370,7 @@ class serendipity_event_podcast extends serendipity_event
 
     function iTunify(&$eventData)
     {
+        if (!isset($eventData['per_entry_display_dat'])) return;
         $eventData['per_entry_display_dat'] .= '<itunes:author>' . htmlspecialchars($eventData['author']) . '</itunes:author>' . "\n";
         $eventData['per_entry_display_dat'] .= '<itunes:subtitle>' . htmlspecialchars($eventData['title']) . '</itunes:subtitle>' . "\n";
         $eventData['per_entry_display_dat'] .= '<itunes:summary>' . htmlspecialchars(strip_tags($eventData['feed_body'])) . '</itunes:summary>' . "\n";
@@ -439,13 +440,13 @@ class serendipity_event_podcast extends serendipity_event
                     $urlsRewwrittenByPlayerCode = $eventData['podcastUrlsRewrittenByPlayerCode'];
                     foreach($urlsRewwrittenByPlayerCode AS $url) {
                         $fileInfo   = $this->GetFileInfo($url);
-                        $type       = $fileInfo['mime'];
-                        $enclosure = $this->GetEnclosure($event, $url, $type, $fileInfo['length'], $fileInfo['md5']);
+                        $type       = $fileInfo['mime'] ?? '';
+                        $enclosure = $this->GetEnclosure($event, $url, $type, $fileInfo['length'] ?? '', $fileInfo['md5'] ?? '');
 
                         if (!empty($enclosure)) {
                             $this->iTunify($eventData, $enclosure);
                             if (empty($addedEnclosures[$enclosure])) {
-                                $eventData['display_dat'] .= $enclosure;
+                                if (isset($eventData['display_dat'])) $eventData['display_dat'] .= $enclosure;
                                 if ($firstmedia_only) return true;
                             }
                             $addedEnclosures[$enclosure] = 1;
