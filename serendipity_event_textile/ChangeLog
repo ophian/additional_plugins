@@ -1,3 +1,8 @@
+2.1.0:
+-------
+
+ * Add new upgrade lib4 version php-textile-4.1.4
+
 2.0.4
 -----
  * Raise composer php_unit version for GHSA-vvj3-c3rp-c85p
