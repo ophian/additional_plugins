@@ -7,5 +7,5 @@
  */
 
 @define('PLUGIN_EVENT_BACKENDRSS_NAME', 'Zeigt einen RSS-Feed in der Administrationsoberfläche an');
-@define('PLUGIN_EVENT_BACKENDRSS_DESC', 'Zeigt einen RSS-Feed in der Administrationsoberfläche an');
+@define('PLUGIN_EVENT_BACKENDRSS_DESC', 'Zeigt einen RSS-Feed auf der Übersichtsseite der Administrationsoberfläche an');
 

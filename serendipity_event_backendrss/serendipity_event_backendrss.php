@@ -13,6 +13,8 @@ include_once $serendipity['serendipityPath'] . 'plugins/serendipity_plugin_remot
 
 class serendipity_event_backendrss extends serendipity_event
 {
+    public $title = PLUGIN_EVENT_BACKENDRSS_TITLE;
+
     function introspect(&$propbag)
     {
         global $serendipity;
@@ -21,7 +23,7 @@ class serendipity_event_backendrss extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_BACKENDRSS_DESC);
         $propbag->add('stackable',     true);
         $propbag->add('author',        'Sebastian Nohn, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
