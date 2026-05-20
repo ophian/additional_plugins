@@ -1117,19 +1117,7 @@ class serendipity_event_spamblock_bee extends serendipity_event
                     return;
                 }
                 if (strpos($logfile, '%') !== false) {
-                    /*
-                      strftime is infected by thread unsafe locales, which is plenty of reason to deprecate it, with additional pro reasons for doing so being its disparate functionality among different os-es and libc's.
-                      Deprecation also doesn't mean removal, which won't happen until PHP 9, giving developers plenty of time to move to a saner threadsafe locale API based on intl/icu.
-                      cheers Derick
-                    */
-                    if (PHP_VERSION_ID >= 80100 && PHP_VERSION_ICU === false) {
-                        $logfile = @strftime($logfile); // temporary disable deprecation notice with PHP 8.1 until found better solution with %A, %d. %B %Y alike formats, on frontend calls. Using date() replacement is doing well with generic formats like "%Y-%m-%d %H:%M:%S".
-                    } elseif (PHP_VERSION_ICU === true) {
-                        // ICU71 is fixed up from PHP 8.2
-                        $logfile = serendipity_toDateTimeMapper($logfile);
-                    } else {
-                        $logfile = strftime($logfile); // legacy default
-                    }
+                    $logfile = serendipity_toDateTimeMapper($logfile);
                 }
 
                 $fp = @fopen($logfile, 'a+');
@@ -1168,9 +1156,9 @@ class serendipity_event_spamblock_bee extends serendipity_event
                            serendipity_db_escape_string($switch),
                            serendipity_db_escape_string($reason),
                            serendipity_db_escape_string($id),
-                           serendipity_db_escape_string($addData['name']),
-                           serendipity_db_escape_string($addData['email']),
-                           serendipity_db_escape_string($addData['url']),
+                           substr(serendipity_db_escape_string($addData['name']), 0, 80),
+                           substr(serendipity_db_escape_string($addData['email']), 0, 200),
+                           substr(serendipity_db_escape_string($addData['url']), 0, 200),
                            substr(serendipity_db_escape_string($_SERVER['HTTP_USER_AGENT']), 0, 255),
                            serendipity_db_escape_string($_SERVER['REMOTE_ADDR']),
                            substr(serendipity_db_escape_string(isset($_SESSION['HTTP_REFERER']) ? $_SESSION['HTTP_REFERER'] : $_SERVER['HTTP_REFERER']), 0, 255),

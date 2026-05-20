@@ -1,3 +1,8 @@
+2.1.0:
+------
+ * Remove some obsolete legacy preparations on date to time functions
+ * Fix spamblocklog db field length error on spoofed comment data
+
 2.0.9:
 ------
  * Fix some wrong types for date() in sidebar plugin
