@@ -523,7 +523,7 @@ class serendipity_event_usergallery extends serendipity_event
                 } else {
                     // We weren't calling a gallery directory, so it is set up in the configuration. If it is the base 'uploads' directory there are never any permissions on it.
                     if ($limit_images_directory != '') {
-                        $perm_test_array = array(array('name' => str_replace("/", "", $limit_images_directory), 'depth'=>1, 'relpath' => $limit_images_directory, 'directory' => 1));
+                        $perm_test_array = array(array('name' => str_replace("/", "", $limit_images_directory), 'depth' => 1, 'relpath' => $limit_images_directory, 'directory' => 1));
                         if (serendipity_directoryACL($perm_test_array, 'read')) {
                             $permitted_gallery = true;
                         }
