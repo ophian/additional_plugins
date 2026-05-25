@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.2.0');
+        $propbag->add('version',        '3.3.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -35,22 +35,10 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('cachable_events', array('frontend_display' => true));
 
         $this->markup_elements = array(
-            array(
-              'name'     => 'ENTRY_BODY',
-              'element'  => 'body',
-            ),
-            array(
-              'name'     => 'EXTENDED_BODY',
-              'element'  => 'extended',
-            ),
-            array(
-              'name'     => 'COMMENT',
-              'element'  => 'comment',
-            ),
-            array(
-              'name'     => 'HTML_NUGGET',
-              'element'  => 'html_nugget',
-            )
+            array('name' => 'ENTRY_BODY', 'element' => 'body'),
+            array('name' => 'EXTENDED_BODY', 'element' => 'extended'),
+            array('name' => 'COMMENT', 'element' => 'comment'),
+            array('name' => 'HTML_NUGGET', 'element' => 'html_nugget')
         );
 
         $conf_array   = array();
@@ -89,7 +77,7 @@ class serendipity_event_lightbox extends serendipity_event
                 $propbag->add('type',           'select');
                 $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_TYPE);
                 $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_TYPE_DESC);
-                $propbag->add('select_values',  array('colorbox' => 'ColorBox', 'lightbox2jq' => 'Lightbox 2 jQuery', 'magnific' => 'Magnific-Popup', 'prettyPhoto' => 'prettyPhoto'));
+                $propbag->add('select_values',  array('colorbox' => 'ColorBox', 'lightbox2jq' => 'Lightbox 2 jQuery', 'magnific' => 'Magnific-Popup', 'photoswipe' => 'PhotoSwipe', 'prettyPhoto' => 'prettyPhoto'));
                 $propbag->add('default',        'lightbox2jq');
                 break;
 
@@ -168,6 +156,9 @@ class serendipity_event_lightbox extends serendipity_event
                 if ($type == 'lightbox2jq') {
                     $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp|avif)["\'])/i';
                     $sub   = '<a $1 rel=$3lightbox$3 $2';
+                } elseif ($type == 'photoswipe') {
+                    $regex = '/<a([^>]+)href=(["\'])([^"\']+\.(?:jpe?g|gif|png|webp|avif))(["\'])/i';
+                    $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel="pswp-enabled"';
                 } elseif ($type == 'prettyPhoto') {
                     $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp|avif)["\'])/i';
                     $sub   = '<a rel=$3prettyPhoto$3 $1 $2';
@@ -245,6 +236,122 @@ class serendipity_event_lightbox extends serendipity_event
                             }
                             echo '    <script type="text/javascript" src="' . $pluginDir . '/magnific-popup/jquery.magnific-popup.min.js" charset="utf-8"></script>' . "\n";
                             echo '    <script type="text/javascript" src="' . $pluginDir . '/magnific-popup/jquery.magnific-popup.init.js" charset="utf-8"></script>' . "\n";
+                        }
+                    }
+                    elseif ($type == 'photoswipe') {
+                        if (!empty($headcss) && $headcss) {
+                            echo '    <link rel="stylesheet" type="text/css" href="' . $pluginDir . '/photoswipe/photoswipe.css" media="print" onload="this.media=\'all\'">' . "\n";
+                            echo '    <style type="text/css">
+        /* Force-fix [pure]-theme [type="button"] auto set */
+        .pswp__button[type="button"] { width: 50px !important; }
+        .pswp__custom-caption {
+            background: rgba(0, 0, 0, 0.75);
+            font-size: 1rem;
+            color: #fff;
+            padding: .75em 1.25em;
+            border-radius: .75em;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            bottom: 1.5em;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 900px;
+        }
+        .hidden-caption-content, .pswp__custom-caption:empty { display: none; }
+    </style>';
+                        } else {
+                            echo '    <script type="module">
+        import PhotoSwipeLightbox from "' . $pluginDir . '/photoswipe/photoswipe-lightbox.esm.min.js";
+
+        const lightbox = new PhotoSwipeLightbox({';
+                            switch ($navigate) {
+                                case 'page':
+                                    echo '
+            gallery: "body",
+            children: "a[rel=\"pswp-enabled\"]",';
+                                    break;
+                                case 'entry':
+                                    // includes staticpages and other plugins
+                                    echo '
+            gallery: "#content",
+            children: "a[rel=\"pswp-enabled\"]",';
+                                    break;
+                                default:
+                                    echo '
+            gallery: "a[rel=\"pswp-enabled\"]",';
+                            }
+                            $init_js = $this->get_config('init_js', '');
+                            if (!empty($init_js)) {
+                                echo $init_js;
+                            }
+                            echo '
+            pswpModule: () => import("' . $pluginDir . '/photoswipe/photoswipe.esm.min.js"),
+            wheelToZoom: true,
+            closeOnVerticalDrag: true,
+            // Extra bottom padding to keep image clear of the caption bar
+            padding: { top: 20, bottom: 100, left: 20, right: 20 }
+        });
+
+        lightbox.addFilter("itemData", (itemData) => {
+            const linkEl = itemData.element;
+            if (linkEl) {
+                itemData.src = linkEl.getAttribute("href");
+                itemData.title = linkEl.getAttribute("title");
+                // Detect thumbnail aspect ratio to prevent jumpy opening animations
+                const imgEl = linkEl.querySelector("img");
+                if (imgEl && imgEl.naturalWidth) {
+                    const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
+                    itemData.w = 1200;
+                    itemData.h = 1200 / ratio;
+                }
+            }
+            return itemData;
+        });
+
+        // Dynamically update true dimensions once the full image has loaded
+        lightbox.on("gettingData", (e) => {
+            const { data } = e;
+            const img = new Image();
+            img.onload = () => {
+                data.w = img.naturalWidth;
+                data.h = img.naturalHeight;
+                if (lightbox.pswp) {
+                    lightbox.pswp.updateSize(true);
+                }
+            };
+            img.src = data.src;
+        });
+
+        // Register the custom caption element to the Root interface layer
+        lightbox.on("uiRegister", function() {
+            lightbox.pswp.ui.registerElement({
+                name: "custom-caption",
+                order: 9,
+                tagName: "div",
+                appendTo: "root",
+                onInit: (el, pswp) => {
+                    pswp.on("change", () => {
+                        const currSlideElement = lightbox.pswp.currSlide.data.element;
+                        let captionText = null;
+                        if (currSlideElement) {
+                          const hasComment = currSlideElement.parentElement.nextElementSibling;
+                          if (hasComment !== null && hasComment.className == "serendipity_imageComment_txt") {
+                            // get caption from element with class "serendipity_imageComment_txt"
+                            captionText = hasComment.innerText;
+                          } else {
+                            // get caption from title attribute
+                            captionText = currSlideElement.getAttribute("title");
+                          }
+                        }
+                        // or fall back to alt attribute or empty nothing
+                        el.innerHTML = captionText || (currSlideElement.querySelector("img").getAttribute("alt") || "");
+                   });
+                }
+            });
+        });
+        lightbox.init();
+    </script>' . "\n";
                         }
                     }
                     // PrettyPhoto code - http://www.no-margin-for-errors.com/projects/prettyPhoto/ - init with :visible to ensure to not show hidden elements via hideafter function in imageselectorplus ranges
