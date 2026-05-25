@@ -553,8 +553,8 @@ class serendipity_event_usergallery extends serendipity_event
                 }
 
                 // SQL counted items of each dir
-                $where = $show_objects ? '' : "WHERE mime LIKE 'image/%'";
-                $query = "SELECT path, count(id) FROM {$serendipity['dbPrefix']}images " . $where . " GROUP BY path";
+                $where = $show_objects ? '' : "WHERE mime LIKE 'image/%' ";
+                $query = "SELECT path, count(id) FROM {$serendipity['dbPrefix']}images " . $where . "GROUP BY path";
                 $rs    = serendipity_db_query($query, false, 'assoc');
 
                 if (is_array($rs)) {
