@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.4.5');
+        $propbag->add('version',       '6.4.7');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1106,6 +1106,22 @@ a.button_link.tagview_active {
 
 #backend_freetag_list a.tagzoom {
     font-size: 0.875em;
+}
+#backend_freetag_list {
+  display: inline;
+}
+#backend_freetag_list .caps {
+  font-size: x-large;
+  font-weight: bold;
+  vertical-align: bottom;
+  background-color: transparent;
+  color: initial;
+  line-height: 1;
+}
+[data-color-mode="dark"] #backend_freetag_list .caps {
+  background-color: var(--color-bg-backdrop);
+  color: var(--color-highlight-text);
+  text-shadow: var(--color-autocomplete-shadow);
 }
 
 .plainList.freetags_list .odd {
@@ -3109,9 +3125,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="form_check">
                     <input id="properties_freetag_kill" name="serendipity[properties][freetag_kill]" type="checkbox" value="true">
-                    <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?>
-                        <button class="toggle_info button_link" type="button" data-href="#freetag_delete_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span></button>
-                    </label>
+                    <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
+                    <button class="toggle_info button_link" type="button" data-href="#freetag_delete_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span></button>
                 </div>
                 <div id="edit_entry_submit" class="jump_to_edit_entry_submit freetag_entry_submit">
                     <a href="#top" class="x-button_link x-button_up" title="<?php echo UP; ?>">
@@ -3140,7 +3155,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 if ($index && $upc != $lastletter) {
                     // HEY - do NOT remove this FEATURE(!) for 2.0+!! Is configurable by option!
-                    echo "                    <strong>|" . $upc . ":</strong>\n";
+                    echo "                    <span class=\"caps\">" . $upc . "</span>\n";
                 }
                 echo "                    <a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$tag}')\">{$tag}</a>\n";
                 $lastletter = $upc;
