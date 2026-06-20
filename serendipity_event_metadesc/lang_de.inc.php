@@ -13,7 +13,7 @@ als Meta-Beschreibung verwendet. Kann auf Basis der Liste von HTML-Tags für die
 werden die standardmäßigen Meta-Schlüsselwörter für Seiten mit nicht nur einem Eintrag verwendet.<br /><br />Vorschlag für die Meta-Beschreibung<sup>*</sup>: 20-30 Wörter, maximal 120-180 Zeichen inklusive Leerzeichen.<br />Vorschlag für die Meta-Schlüsselwörter<sup>*</sup>: 15-20 Wörter, vor allem Schlüsselbegriffe und -phrasen aus dem Inhalt des Eintrags.');
 @define('PLUGIN_METADESC_DESCRIPTION', 'Meta-Beschreibung:');
 @define('PLUGIN_METADESC_KEYWORDS', 'Meta-Schlüsselwörter:');
-@define('PLUGIN_METADESC_HEADTITLE_DESC', 'Das title-Element einer HTML-Seite kann über das unten stehende Feld eingestellt werden. Bleibt dieses Feld leer, wird das title-Element über das Template bestimmt, üblicherweise ist es dann "Titel des Eintrags - Blog-Titel".  <br /><br />Vorschlag<sup>*</sup>: 3-9 Wörter, maximal 64 Zeichen inklusive Leerzeichen, die wichtigsten Wörter zuerst..');
+@define('PLUGIN_METADESC_HEADTITLE_DESC', 'Das title-Element einer HTML-Seite kann über das unten stehende Feld eingestellt werden. Bleibt dieses Feld leer, wird das title-Element über das Template bestimmt, üblicherweise ist es dann "Titel des Eintrags - Blog-Titel".  <br /><br />Vorschlag<sup>*</sup>: 3-9 Wörter, maximal 64 Zeichen inklusive Leerzeichen, die wichtigsten Wörter zuerst.');
 @define('PLUGIN_METADESC_HEADTITLE', 'title-Element der HTML-Seite');
 @define('PLUGIN_METADESC_LENGTH', 'Länge');
 @define('PLUGIN_METADESC_WORDS', 'Wörter');

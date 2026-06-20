@@ -1,3 +1,7 @@
+1.0.2:
+------
+ * Improve entry_metadesc backend fieldset items
+
 1.0.1:
 ------
  * Fix htmlspecialchars 4th parameter double_encode flag missing
