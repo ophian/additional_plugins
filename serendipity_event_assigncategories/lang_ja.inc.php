@@ -3,7 +3,7 @@
 /**
  *  @version
  *  @author Tadashi Jokagi <elf2000@users.sourceforge.net>
- *  EN-Revision: 1.1
+ *  EN-Revision: 1.5
  */
 
 @define('PLUGIN_ASSIGNCATEGORIES_NAME', 'カテゴリの割り当て');
