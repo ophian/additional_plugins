@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Stálé odkazy pro příspěvky&lt;/b&gt;&lt;br /&gt;Můžete definovat stálé odkazy k jednotlivým příspěvkům. Lze použít pouze URL vzory, které JEŠTĚ NEJSOU používané - používání stálých odkazů ve tvaru /archives/odkaz není tedy možné. Ale používání jakéhokoliv jiného (virtuálního) adresáře možné je.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 05 Nov 2025 13:30:37 +0100</pubDate>
+<pubDate>Sat, 20 Jun 2026 12:59:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML META tagy&lt;/b&gt;&lt;br /&gt;Zadejte HTML meta tagy pro klíčová slova nebo popis blogu. Také můžete zadávat různý titulek pro jednotlivé stránky blogu a výchozí hodnotu pro klíčová slova/popis pro stránky se zobrazenm více příspěvků (výchozí stránka, přehledy kategorií).&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Sat, 20 Jun 2026 16:42:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -1130,7 +1130,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Správa odezev&lt;/b&gt;&lt;br /&gt;Umožňuje podrobnou kontrolu chování odezev, jak jsou posílány při vytváření příspěvků&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
+<pubDate>Sat, 20 Jun 2026 14:52:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>

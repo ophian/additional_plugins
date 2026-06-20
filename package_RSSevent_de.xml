@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Frei-definierbare Permalinks zu Einträgen&lt;/b&gt;&lt;br /&gt;Ermöglicht die Eingabe eines individuellen Permalinks (dauerhafter Link) um spezifische Artikel aufzurufen. Es können nur URL-Muster verwendet werden, die nicht bereits intern verwendet werden - eigene Permalinks innerhalb der /archives/ Struktur sind daher nicht möglich. Aber andere, auch nicht existierende, Verzeichnisse können verwendet werden.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 05 Nov 2025 13:30:37 +0100</pubDate>
+<pubDate>Sat, 20 Jun 2026 12:59:04 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -707,7 +707,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Don Chambers, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_metadesc&lt;br /&gt;HTML Meta-Tags&lt;/b&gt;&lt;br /&gt;Setzt Tags für HTML Meta-Schlüsselwörter/-Beschreibungen und das title-Element für Seiten mit nur einem einzelnen Eintrag bzw. allgemeine Meta-Schlüsselwörter/-Beschreibungen für Seiten mit mehr als einem Eintrag.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Sat, 20 Jun 2026 16:42:54 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_metadesc</guid>
 </item>
 <item>
@@ -1130,7 +1130,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Trackbacks kontrollieren&lt;/b&gt;&lt;br /&gt;Ermöglicht beim Anlegen eines Eintrages zu weiteren URLs Trackbacks zu schicken oder Trackbacks zu deaktivieren&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:57 +0200</pubDate>
+<pubDate>Sat, 20 Jun 2026 14:52:39 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
