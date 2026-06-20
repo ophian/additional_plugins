@@ -31,7 +31,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.1.0');
+        $propbag->add('version', '2.1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -152,6 +152,19 @@ meta_properties_permalink {
     margin-top: 0;
     margin-bottom: 0;
 }
+.entryproperties_custompermalinks .form_field div,
+.entryproperties_custompermalinks .form_field span {
+    margin-top: .5rem;
+}
+.entryproperties_custompermalinks .form_field div {
+    display: inline-flex;
+}
+.entryproperties_custompermalinks .form_field button {
+    margin-right: 1rem;
+}
+.entryproperties_custompermalinks .form_field span {
+  font-size: .875em;
+}
 
 /* serendipity_event_custom_permalink backend end */
 
@@ -194,15 +207,15 @@ meta_properties_permalink {
                 </span>
                 <div class="form_field">
                   <legend>
-                    <input id="properties_permalink" class="input_textbox" type="text" style="width: 100%;" name="serendipity[permalink]" value="<?php echo htmlspecialchars($saved_permalink); ?>">
+                    <input id="properties_permalink" class="input_textbox" type="text" name="serendipity[permalink]" value="<?php echo htmlspecialchars($saved_permalink); ?>">
                   </legend>
 <?php
     if (empty($saved_permalink)) {
 ?>
-                  <div style="margin-top:.5rem;">
+                  <div>
                     <button type="button" id="btnPastePermalink" title="Click to insert"><?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_ADDBUTTON; ?></button>
                     <label for="properties_permalink">
-                      <span style="margin-top:.5rem;">" <em><?php echo htmlspecialchars($permalink); ?></em> "</span>
+                      <span><em><?php echo htmlspecialchars($permalink); ?></em></span>
                     </label>
                   </div>
 
@@ -234,8 +247,8 @@ meta_properties_permalink {
 <?php
     }
 ?>
-                <div id="meta_properties_permalink" class="clearfix field_info additional_info">
-                    <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>
+                <div id="meta_properties_permalink" class="additional_info">
+                    <span class="msg_hint msg-btm"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_CUSTOM_PERMALINKS_PL_DESC; ?></span>
                 </div>
             </fieldset>
 
