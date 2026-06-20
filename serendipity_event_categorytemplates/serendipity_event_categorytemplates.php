@@ -863,7 +863,7 @@ class serendipity_event_categorytemplates extends serendipity_event
                             // Send distinct usage request. The default SELECT DISTINCT e.timestamp is enough for all related cases
                             $eventData['distinct'] = true;
                         }
-                        $tp = ($event == 'frontend_fetchcategories') ? 'c' : 'ec';  // table prefix
+                        $tp = ($event == 'frontend_fetchcategories') ? 'c' : 'ec'; // table prefix
                         foreach ($this->bycategory AS $bcat) {
                             if ($bcat['template'] == $serendipity['template']) {
                                 $conds[] = "($tp.categoryid = " . (int)$bcat['categoryid'] . ")";
