@@ -1,3 +1,8 @@
+2.0.1:
+------
+ * Improve entry_trackbacks backend fieldset items
+ * Improve some lang file constants
+
 2.0.0:
 ------
  * Re-/Move UTF-8 lang file to plugin root for Styx 5.0

@@ -22,7 +22,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '2.0.0');
+        $propbag->add('version',       '2.0.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -214,15 +214,15 @@ class serendipity_event_trackback extends serendipity_event
                 <input class="input_radio" type="radio" id="checkbox_enable_trackback_1" <?php echo ($serendipity['POST']['enable_trackback'] == 'on'        ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="on" /><label for="checkbox_enable_trackback_1"><?php echo ACTIVATE_AUTODISCOVERY; ?></label><br />
                 <input class="input_radio" type="radio" id="checkbox_enable_trackback_2" <?php echo ($serendipity['POST']['enable_trackback'] == 'off'       ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="off" /><label for="checkbox_enable_trackback_2"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL; ?></label><br />
                 <input class="input_radio" type="radio" id="checkbox_enable_trackback_3" <?php echo ($serendipity['POST']['enable_trackback'] == 'selective' ? 'checked="checked"' : ''); ?> name="serendipity[enable_trackback]" value="selective" /><label for="checkbox_enable_trackback_3"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLETRACKSEL; ?></label>
-                <button class="toggle_info button_link" type="button" data-href="#trackback_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span></button><br />
-                <div id="trackback_tab_info" class="clearfix field_info additional_info" style="width: 100%;"><span class="icon-info-circled"></span> <?= PLUGIN_EVENT_MTRACKBACK_CONTROL ?></div><br>
+                <button class="toggle_info button_link" type="button" data-href="#trackback_tab_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"><?= MORE ?></span></button>
+                <div id="trackback_tab_info" class="msg_hint msg-btm additional_info"><span class="icon-info-circled"></span> <?= PLUGIN_EVENT_MTRACKBACK_CONTROL ?></div>
 
-                <span class="wrap_legend"><label for="input_additional_trackbacks"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL; ?></label></span>
-                <span class="wrap_right"><span class="buttonless_link state_cancel" type="button" href="#edit_entry_trackbacks" onclick="clearFieldTrackbacks();">
+                <div class="msg-t1 wrap_legend"><label for="input_additional_trackbacks"><?php echo PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL; ?></label>
+                <div class="wrap_right"><span class="buttonless_link state_cancel" type="button" href="#edit_entry_trackbacks" onclick="clearFieldTrackbacks();">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                   <title><?= CLEAR_FIELD ?></title>
                   <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                </svg></span></span>
+                </svg></span></div></div>
                 <div data-tooltip=" [i] &nbsp;&nbsp;<?= PLUGIN_EVENT_MTRACKBACK_CONTROL_SHORT ?>"></div>
 
                 <textarea rows="5" cols="50" id="input_additional_trackbacks" name="serendipity[additional_trackbacks]"><?php echo trim(implode("\n", $trackbackURLs)); ?></textarea>
@@ -262,7 +262,17 @@ class serendipity_event_trackback extends serendipity_event
 #edit_entry_trackbacks .wrap_right:after {
     clear: right;
 }
-
+#edit_entry_trackbacks .wrap_legend span {
+    display: inline;
+    font-size: .875rem;
+}
+#input_additional_trackbacks {
+    font-size: .875em;
+    padding: .25em;
+}
+[data-color-mode="dark"] #input_additional_trackbacks {
+    background-color: var(--color-box-bg-info);
+}
 #edit_entry_trackbacks .clearChecked[data-tooltip]:before {
     position: absolute;
     content: attr(data-tooltip);

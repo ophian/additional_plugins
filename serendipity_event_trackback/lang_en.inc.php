@@ -8,7 +8,7 @@
 
 @define('PLUGIN_EVENT_MTRACKBACK_TITLETITLE', 'Trackback-Control');
 @define('PLUGIN_EVENT_MTRACKBACK_TITLEDESC', 'Allows granular control over how trackbacks are sent when creating entries');
-@define('PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL', 'Additional links to trackback (separate with spaces [" "]) ');
+@define('PLUGIN_EVENT_MTRACKBACK_TITLEADDITIONAL', 'Additional links to trackback <span>(separate with spaces)</span>');
 @define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKOWN', 'Send trackbacks to your own blog?');
 @define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKALL', 'Disable the global use of trackbacks');
 @define('PLUGIN_EVENT_MTRACKBACK_TITLETRACKSEL', 'Only send trackbacks to URLs listed below');
