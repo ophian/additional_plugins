@@ -1,3 +1,7 @@
+2.0.2:
+------
+ * Improve entry_trackbacks backend fieldset textarea item, adding default class init selector on empty for dark mode coloring
+
 2.0.1:
 ------
  * Improve entry_trackbacks backend fieldset items

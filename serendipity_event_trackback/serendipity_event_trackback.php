@@ -22,7 +22,7 @@ class serendipity_event_trackback extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_MTRACKBACK_TITLEDESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Malte Paskuda, Ian Styx');
-        $propbag->add('version',       '2.0.1');
+        $propbag->add('version',       '2.0.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -225,7 +225,7 @@ class serendipity_event_trackback extends serendipity_event
                 </svg></span></div></div>
                 <div data-tooltip=" [i] &nbsp;&nbsp;<?= PLUGIN_EVENT_MTRACKBACK_CONTROL_SHORT ?>"></div>
 
-                <textarea rows="5" cols="50" id="input_additional_trackbacks" name="serendipity[additional_trackbacks]"><?php echo trim(implode("\n", $trackbackURLs)); ?></textarea>
+                <textarea rows="5" cols="50" id="input_additional_trackbacks" <?=empty($trackbackURLs[0])?'class="init" ':''?>name="serendipity[additional_trackbacks]"><?php echo trim(implode("\n", $trackbackURLs)); ?></textarea>
             </fieldset>
 
             <script> function clearFieldTrackbacks() { document.getElementById("input_additional_trackbacks").value = ""; $('div[data-tooltip]').addClass('clearChecked'); } </script>
@@ -272,6 +272,9 @@ class serendipity_event_trackback extends serendipity_event
 }
 [data-color-mode="dark"] #input_additional_trackbacks {
     background-color: var(--color-box-bg-info);
+}
+[data-color-mode="dark"] #input_additional_trackbacks.init {
+    background-color: var(--color-bg-primary);
 }
 #edit_entry_trackbacks .clearChecked[data-tooltip]:before {
     position: absolute;
