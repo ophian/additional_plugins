@@ -113,7 +113,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Judebert, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_categorytemplates&lt;br /&gt;Свойства/шаблони за категории&lt;/b&gt;&lt;br /&gt;This plugin provides additional properties for categories and their entries, including custom templates, sort order, display limit, password protection, hiding from other entry lists including RSS.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Fri, 05 Sep 2025 13:53:56 +0200</pubDate>
+<pubDate>Sat, 20 Jun 2026 17:08:52 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_categorytemplates</guid>
 </item>
 <item>
@@ -230,7 +230,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_custom_permalinks&lt;br /&gt;Постоянни връзки към статии&lt;/b&gt;&lt;br /&gt;Дефинира постоянни връзки, които могат да се използват за достъп до избрани статии. Разрешени са варианти, които НЕ СЕ използват вече в структурата /archives/ . Но всяка друга (виртуална) директория е позволена.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sat, 20 Jun 2026 12:59:04 +0200</pubDate>
+<pubDate>Wed, 24 Jun 2026 19:16:38 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_custom_permalinks</guid>
 </item>
 <item>
@@ -1130,7 +1130,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_trackback&lt;br /&gt;Управление на проследяванията&lt;/b&gt;&lt;br /&gt;Позволява подробен контрол върху проследяванията при създаване на статии&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Sat, 20 Jun 2026 14:52:39 +0200</pubDate>
+<pubDate>Sun, 21 Jun 2026 17:48:58 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_trackback</guid>
 </item>
 <item>
