@@ -1,3 +1,7 @@
+2.1.2:
+------
+ * Reduce font-size of button "Use this URL for the field:" in backend fieldset items
+
 2.1.1:
 ------
  * Improve custom_permalink backend fieldset items

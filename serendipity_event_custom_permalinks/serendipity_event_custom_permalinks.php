@@ -31,7 +31,7 @@ class serendipity_event_custom_permalinks extends serendipity_event
                                         'backend_display'                   => true));
 
         $propbag->add('author', 'Garvin Hicking, Ian Styx');
-        $propbag->add('version', '2.1.1');
+        $propbag->add('version', '2.1.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -161,6 +161,7 @@ meta_properties_permalink {
 }
 .entryproperties_custompermalinks .form_field button {
     margin-right: 1rem;
+    font-size: .8125rem;
 }
 .entryproperties_custompermalinks .form_field span {
   font-size: .875em;
