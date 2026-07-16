@@ -1,3 +1,8 @@
+6.5.0:
+------
+ * Fix jquery.autocomplete for jQuery 4+
+   Fix jQuery 4.0+ incompatibilities: removed $.isFunction(), $.proxy(), and .bind().
+
 6.4.7:
 ------
  * Re-style backend_freetag_list 'admin_delimiter' list

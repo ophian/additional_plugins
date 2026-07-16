@@ -5,8 +5,8 @@
  * Copyright (c) 2009 Jörn Zaefferer
  *
  * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
  *
  * With small modifications by Alfonso Gómez-Arzola.
  * See changelog for details.
@@ -14,6 +14,7 @@
  */
 /* 07/2023 - fix size() is not a function issue, while deprecated in JQuery version: 1.8 and removed in: 3.0. Replaced by .length property. */
 /* 08/2025 - fix jQuery.isArray() is not a function issue, while deprecated in JQuery version: 3.0 and removed in: 4.0. Replaced by Array.isArray(). */
+/* 07/2026 - fix jQuery 4.0+ incompatibilities: removed $.isFunction(), $.proxy(), and .bind(). */
 
 ;
 (function ($) {
@@ -480,7 +481,7 @@ $.Autocompleter = function (input, options) {
         }
 
         $input.trigger(event, data);
-        return !( $.isFunction(callback) &&
+        return !( typeof callback === "function" &&
             callback.apply(input, [ event ].concat(data)) === false ||
             event.isDefaultPrevented() );
     }
@@ -533,7 +534,7 @@ $.Autocompleter = function (input, options) {
         _setOptions(key);
 
         return this;
-    };
+    }
 
     this.enable = function () {
         return _setOption('disabled', false);
@@ -583,8 +584,8 @@ var Menu = function (options, input) {
             .appendTo(_appendTo())
             .hover(onHover),
         list = $("<ul>").appendTo(element)
-            .bind("mouseover", 'li', onMouseOver)
-            .bind("click", 'li', onClick);
+            .on("mouseover", 'li', onMouseOver)
+            .on("click", 'li', onClick);
 
     function _appendTo() {
         //specified element ?
@@ -667,7 +668,7 @@ var Menu = function (options, input) {
     }
 
     function getExtended(key) {
-        return $.proxy(api[key], api);
+        return api[key].bind(api);
     }
 
     function hasScroll() {
@@ -787,7 +788,7 @@ $.fn.autocomplete = function (options) {
         this.each(function () {
             var instance = $.data(this, Autocompleter.key);
 
-            if (typeof instance == 'object' && $.isFunction(instance[options])) {
+            if (typeof instance == 'object' && typeof instance[options] === 'function') {
                 var methodValue = instance[ options ].apply(instance, args);
 
                 if (methodValue !== instance && methodValue !== undefined) {
@@ -808,48 +809,4 @@ $.fn.autocomplete = function (options) {
     });
 };
 
-//TODO :: re-enable autofill
-/*$.fn.selection = function (start, end) {
-    if (start !== undefined) {
-        return this.each(function () {
-            if (this.createTextRange) {
-                var selRange = this.createTextRange();
-                if (end === undefined || start == end) {
-                    selRange.move("character", start);
-                    selRange.select();
-                } else {
-                    selRange.collapse(true);
-                    selRange.moveStart("character", start);
-                    selRange.moveEnd("character", end);
-                    selRange.select();
-                }
-            } else if (this.setSelectionRange) {
-                this.setSelectionRange(start, end);
-            } else if (this.selectionStart) {
-                this.selectionStart = start;
-                this.selectionEnd = end;
-            }
-        });
-    }
-    var field = this[0];
-    if (field.createTextRange) {
-        var range = document.selection.createRange(),
-            orig = field.value,
-            teststring = "<->",
-            textLength = range.text.length;
-        range.text = teststring;
-        var caretAt = field.value.indexOf(teststring);
-        field.value = orig;
-        this.selection(caretAt, caretAt + textLength);
-        return {
-            start: caretAt,
-            end: caretAt + textLength
-        };
-    } else if (field.selectionStart !== undefined) {
-        return {
-            start: field.selectionStart,
-            end: field.selectionEnd
-        };
-    }
-};*/
 })(jQuery);
