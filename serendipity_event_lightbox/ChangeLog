@@ -1,3 +1,8 @@
+3.3.1:
+------
+ * PhotoSwipe: Add entry/page-level gallery grouping support with proper rel attribute handling for image grouping by entry or page scope
+ * PhotoSwipe: Fix image dimension distortion on consecutive images by resetting zoom cache and adding fallback dimension handling for proper aspect ratio preservation
+
 3.3.0:
 ------
  * Add ES6 PhotoSwipe lightbox

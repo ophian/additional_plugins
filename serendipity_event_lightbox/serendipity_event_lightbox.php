@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.0');
+        $propbag->add('version',        '3.3.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -304,6 +304,10 @@ class serendipity_event_lightbox extends serendipity_event
                     const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
                     itemData.w = 1200;
                     itemData.h = 1200 / ratio;
+                } else {
+                    // Fallback dimensions if we can\'t get thumbnail dimensions
+                    itemData.w = 1200;
+                    itemData.h = 900;
                 }
             }
             return itemData;
@@ -313,18 +317,30 @@ class serendipity_event_lightbox extends serendipity_event
         lightbox.on("gettingData", (e) => {
             const { data } = e;
             const img = new Image();
+
             img.onload = () => {
+                // Set actual dimensions from loaded image
                 data.w = img.naturalWidth;
                 data.h = img.naturalHeight;
+
+                // Force PhotoSwipe to recalculate layout with new dimensions
                 if (lightbox.pswp) {
+                    // Clear any cached zoom levels to prevent distortion
+                    lightbox.pswp.currSlide.zoomLevel = null;
                     lightbox.pswp.updateSize(true);
                 }
             };
+
+            img.onerror = () => {
+                // If image fails to load, keep estimated dimensions
+                console.warn("Failed to load image for dimensions:", data.src);
+            };
+
             img.src = data.src;
         });
 
-        // Register the custom caption element to the Root interface layer
-        lightbox.on("uiRegister", function() {
+         // Register the custom caption element to the Root interface layer
+         lightbox.on("uiRegister", function() {
             lightbox.pswp.ui.registerElement({
                 name: "custom-caption",
                 order: 9,
@@ -335,18 +351,18 @@ class serendipity_event_lightbox extends serendipity_event
                         const currSlideElement = lightbox.pswp.currSlide.data.element;
                         let captionText = null;
                         if (currSlideElement) {
-                          const hasComment = currSlideElement.parentElement.nextElementSibling;
-                          if (hasComment !== null && hasComment.className == "serendipity_imageComment_txt") {
-                            // get caption from element with class "serendipity_imageComment_txt"
-                            captionText = hasComment.innerText;
-                          } else {
-                            // get caption from title attribute
-                            captionText = currSlideElement.getAttribute("title");
-                          }
+                            const hasComment = currSlideElement.parentElement.nextElementSibling;
+                            if (hasComment !== null && hasComment.className == "serendipity_imageComment_txt") {
+                                // get caption from element with class "serendipity_imageComment_txt"
+                                captionText = hasComment.innerText;
+                            } else {
+                                // get caption from title attribute
+                                captionText = currSlideElement.getAttribute("title");
+                            }
                         }
                         // or fall back to alt attribute or empty nothing
                         el.innerHTML = captionText || (currSlideElement.querySelector("img").getAttribute("alt") || "");
-                   });
+                    });
                 }
             });
         });
@@ -399,6 +415,12 @@ class serendipity_event_lightbox extends serendipity_event
                             $sub   = '<a rel=$3prettyPhoto[' . $eventData['id'] . ']$3 $1 $2';
                         } elseif ($navigate == 'page') {
                             $sub   = '<a rel=$3prettyPhoto[]$3 $1 $2';
+                        }
+                    } elseif ($type == 'photoswipe') {
+                        if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
+                            $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel=$3photoswipe[' . $eventData['id'] . ']$3';
+                        } elseif ($navigate == 'page') {
+                            $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel=$3photoswipe[]$3';
                         }
                     } elseif ($type == 'colorbox') {
                         if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
