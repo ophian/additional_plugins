@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.1');
+        $propbag->add('version',        '3.3.2');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -418,9 +418,9 @@ class serendipity_event_lightbox extends serendipity_event
                         }
                     } elseif ($type == 'photoswipe') {
                         if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
-                            $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel=$3photoswipe[' . $eventData['id'] . ']$3';
+                            $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel=$2photoswipe[' . $eventData['id'] . ']$4';
                         } elseif ($navigate == 'page') {
-                            $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel=$3photoswipe[]$3';
+                            $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel=$2photoswipe[]$4';
                         }
                     } elseif ($type == 'colorbox') {
                         if (isset($navigate) && $navigate == 'entry' && isset($eventData['id'])) {
