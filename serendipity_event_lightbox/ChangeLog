@@ -1,3 +1,7 @@
+3.3.3:
+------
+ * PhotoSwipe: Fix consistency of photoswipe keyword and usage
+
 3.3.2:
 ------
  * PhotoSwipe: Fix entry/page-level gallery grouping support with proper rel attribute handling accidentally using wrong regex capture group

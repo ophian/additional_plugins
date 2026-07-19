@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.2');
+        $propbag->add('version',        '3.3.3');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -158,7 +158,7 @@ class serendipity_event_lightbox extends serendipity_event
                     $sub   = '<a $1 rel=$3lightbox$3 $2';
                 } elseif ($type == 'photoswipe') {
                     $regex = '/<a([^>]+)href=(["\'])([^"\']+\.(?:jpe?g|gif|png|webp|avif))(["\'])/i';
-                    $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel="pswp-enabled"';
+                    $sub   = '<a$1href=$2$3$4 data-pswp-src=$2$3$4 rel=$2photoswipe$4';
                 } elseif ($type == 'prettyPhoto') {
                     $regex = '/<a([^>]+)(href=(["\'])[^"\']*\.(jpe?g|gif|png|webp|avif)["\'])/i';
                     $sub   = '<a rel=$3prettyPhoto$3 $1 $2';
@@ -269,17 +269,17 @@ class serendipity_event_lightbox extends serendipity_event
                                 case 'page':
                                     echo '
             gallery: "body",
-            children: "a[rel=\"pswp-enabled\"]",';
+            children: "a[rel^=\"photoswipe\"]",';
                                     break;
                                 case 'entry':
                                     // includes staticpages and other plugins
                                     echo '
             gallery: "#content",
-            children: "a[rel=\"pswp-enabled\"]",';
+            children: "a[rel^=\"photoswipe\"]",';
                                     break;
                                 default:
                                     echo '
-            gallery: "a[rel=\"pswp-enabled\"]",';
+            gallery: "a[rel^=\"photoswipe\"]",';
                             }
                             $init_js = $this->get_config('init_js', '');
                             if (!empty($init_js)) {
@@ -296,8 +296,10 @@ class serendipity_event_lightbox extends serendipity_event
         lightbox.addFilter("itemData", (itemData) => {
             const linkEl = itemData.element;
             if (linkEl) {
-                itemData.src = linkEl.getAttribute("href");
+                // Prefer explicit data-pswp-src set by PHP; fallback to href
+                itemData.src = linkEl.getAttribute("data-pswp-src") || linkEl.getAttribute("href");
                 itemData.title = linkEl.getAttribute("title");
+
                 // Detect thumbnail aspect ratio to prevent jumpy opening animations
                 const imgEl = linkEl.querySelector("img");
                 if (imgEl && imgEl.naturalWidth) {
