@@ -1,3 +1,8 @@
+3.3.4:
+------
+ * PhotoSwipe: Fix entry only galleries selection for [pure] standard theme.
+               Please also read the extended custom init info information box for other / custom themes.
+
 3.3.3:
 ------
  * PhotoSwipe: Fix consistency of photoswipe keyword and usage

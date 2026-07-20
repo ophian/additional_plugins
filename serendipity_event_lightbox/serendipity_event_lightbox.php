@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.3');
+        $propbag->add('version',        '3.3.4');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -261,6 +261,8 @@ class serendipity_event_lightbox extends serendipity_event
         .hidden-caption-content, .pswp__custom-caption:empty { display: none; }
     </style>';
                         } else {
+                            // check for staticpage views (and other plugins)
+                            if ($serendipity['view'] == 'plugin') $navigate = 'page';
                             echo '    <script type="module">
         import PhotoSwipeLightbox from "' . $pluginDir . '/photoswipe/photoswipe-lightbox.esm.min.js";
 
@@ -271,11 +273,11 @@ class serendipity_event_lightbox extends serendipity_event
             gallery: "body",
             children: "a[rel^=\"photoswipe\"]",';
                                     break;
+                                // selector is based on [pure]-standard theme usage
                                 case 'entry':
-                                    // includes staticpages and other plugins
                                     echo '
-            gallery: "#content",
-            children: "a[rel^=\"photoswipe\"]",';
+            gallery: ".post_content",
+            children: "a[rel^=\"photoswipe\"]",';// check only these with equal ID matches
                                     break;
                                 default:
                                     echo '

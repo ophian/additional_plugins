@@ -23,5 +23,7 @@
 @define('PLUGIN_EVENT_LIGHTBOX_GALLERY_PAGE', 'Gallery with photos of the page');
 
 @define('PLUGIN_EVENT_LIGHTBOX_INIT_JS', 'Additional JavaScript init configuration');
-@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Some lightbox types allow to pass custom configuration objects, so you can enter "{social_tools: false}" for example. Currently works with prettyPhoto only.');
+@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Some lightbox types allow to pass custom configuration objects, so you can enter "{social_tools: false}" for example (in prettyPhoto only).
+Others like "PhotoSwipe" are picky about the selector to grab entry only galleries. The default build in grabs them by the ["pure"] standard theme default entries → DIV class selector « class="post_content" » and in staticpages « class="post_content" » names.
+Check the class name you theme is using and add here, in example for a Garlant named theme: « gallery: ".garland_entry", » (without « »).');
 

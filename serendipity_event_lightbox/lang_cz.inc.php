@@ -27,4 +27,5 @@
 
 // Next lines were translated on 2012/05/13
 @define('PLUGIN_EVENT_LIGHTBOX_INIT_JS', 'Objekt s inicializačním nastavením JavaScriptu');
-@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Některé typy Lightboxu (např. prettyPhoto) umožňují zadání libovolného objektu s nastavním, takže můžete zadat např. "(social_tools: false)". Currently works with prettyPhoto only.');
+#retranslate from en
+#@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Některé typy Lightboxu (např. prettyPhoto) umožňují zadání libovolného objektu s nastavním, takže můžete zadat např. "(social_tools: false)". Currently works with prettyPhoto only.');

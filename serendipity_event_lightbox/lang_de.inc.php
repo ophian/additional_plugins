@@ -23,4 +23,7 @@
 @define('PLUGIN_EVENT_LIGHTBOX_GALLERY_PAGE', 'alle Fotos der Seite');
 
 @define('PLUGIN_EVENT_LIGHTBOX_INIT_JS', 'Optionale JavaScript Start Konfiguration');
-@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Manche Lightbox Typen erlauben bestimmte Konfigurationsparameter einzufügen, so dass man beispielsweise "{social_tools: false}" einfügen kann. Dies ist zur Zeit nur mit prettyPhoto möglich.');
+@define('PLUGIN_EVENT_LIGHTBOX_INIT_JS_DESC', 'Einige Lightbox-Typen erlauben die Übergabe von benutzerdefinierten Konfigurationsobjekten, sodass Sie z.B. "{social_tools: false}" eingeben können (nur in prettyPhoto).
+Andere wie "PhotoSwipe" sind pingelig bei der Auswahl des Selektors, um nur Eintrags-Galerien zu erfassen. Der Standard-Build erfasst diese anhand des ["pure"] Standard-Theme entries → DIV-Klassenselektors « class="post_content" » und bei statischen Seiten durch die Namen "page_content".
+Überprüfen Sie den Klassennamen, den Ihr Theme verwendet, und fügen Sie ihn hier ein, z.B. für ein Garland-Theme: « gallery: ".garland_entry", » (ohne « »).');
+
