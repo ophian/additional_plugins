@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.5');
+        $propbag->add('version',        '3.3.6');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -308,8 +308,17 @@ class serendipity_event_lightbox extends serendipity_event
                 const imgEl = linkEl.querySelector("img");
                 if (imgEl && imgEl.naturalWidth) {
                     const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
-                    itemData.w = 1200;
-                    itemData.h = 1200 / ratio;
+
+                    // Preserve aspect ratio based on original orientation
+                    if (ratio >= 1) {
+                        // Landscape or square
+                        itemData.w = 1200;
+                        itemData.h = 1200 / ratio;
+                    } else {
+                        // Portrait
+                        itemData.h = 1200;
+                        itemData.w = 1200 * ratio;
+                    }
                 } else {
                     // Fallback dimensions if we can\'t get thumbnail dimensions
                     itemData.w = 1200;

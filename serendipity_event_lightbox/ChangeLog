@@ -1,3 +1,7 @@
+3.3.6:
+------
+ * PhotoSwipe: Fix wrong ratio math for portrait images
+
 3.3.5:
 ------
  * PhotoSwipe: Remove very old anchors possible onclick handler since we don't need both popups
