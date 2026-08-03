@@ -31,7 +31,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '8.2'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '4.0.4');
+        $propbag->add('version',        '4.1.0');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -498,16 +498,20 @@ class serendipity_event_multilingual extends serendipity_event
                     $property = serendipity_fetchEntryProperties((int) $eventData['id']);
 
                     foreach($this->supported_properties AS $prop_key) {
-                        $prop_val = (isset($serendipity['POST']['properties'][$prop_key]) ? $serendipity['POST']['properties'][$prop_key] : null);
+                        $prop_val = $serendipity['POST']['properties'][$prop_key] ?? null;
+                        if (!$prop_val) continue;
                         if (!isset($property[$prop_key]) && !empty($prop_val)) {
                             $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($prop_key) . "', '" . serendipity_db_escape_string($prop_val) . "')";
                         } elseif (isset($property[$prop_key]) && $property[$prop_key] != $prop_val && !empty($prop_val)) {
                             $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($prop_val) . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
                         } else {
-                            $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
+                            // Avoid dropping pre posted multilingual entry data if selected lang is still set !!!!
+                            if (empty($prop_key) || $prop_val == 'all') {
+                                $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
+                            }
                         }
 
-                        serendipity_db_query($q);
+                        if (isset($q)) serendipity_db_query($q);
                     }
                     break;
 

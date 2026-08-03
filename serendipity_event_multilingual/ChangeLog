@@ -1,3 +1,7 @@
+4.1.0:
+------
+ * Avoid dropping pre posted multilingual entry property data from database if selected lang is still set
+
 4.0.4 + 2.0.3:
 --------------
  * Fix the real cause of 4.0.3 + 2.0.2: pointing into removed UTF-8/ dir
