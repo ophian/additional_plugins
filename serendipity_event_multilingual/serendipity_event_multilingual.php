@@ -31,7 +31,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '8.2'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '4.1.0');
+        $propbag->add('version',        '4.2.0');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -153,7 +153,7 @@ class serendipity_event_multilingual extends serendipity_event
 
         if (!isset($serendipity['languages'][$this->showlang])) {
             $this->showlang = '';
-            if ($serendipity['expose_s9y']) serendipity_header('X-Serendipity-ML-SL-RESET: ' . $this->cleanheader(($serendipity['default_lang'] ?? '')));
+            if ($serendipity['expose_s9y']) serendipity_header('X-Serendipity-ML-SL-RESET: ' . $this->cleanheader($serendipity['default_lang'] ?? ''));
         }
 
         if (!headers_sent()) {
@@ -483,6 +483,13 @@ class serendipity_event_multilingual extends serendipity_event
                         return true;
                     }
 
+                    // SUBMITted POST properties
+
+                    // for bool
+                    $purge = serendipity_get_bool($serendipity['POST']['properties']['purge_ml_entry'] ?? null);
+
+                    // for strings
+                    $posted = $serendipity['POST']['properties']['lang_selected'] ?? null;
                     $ls = &$serendipity['POST']['properties']['lang_selected'];
 
                     $this->supported_properties[] = 'multilingual_title_' . $ls;
@@ -494,24 +501,203 @@ class serendipity_event_multilingual extends serendipity_event
                     $this->supported_properties[] = 'multilingual_extended_' . $ls;
                     $serendipity['POST']['properties']['multilingual_extended_' . $ls] = $serendipity['POST']['extended'];
 
-                    // Get existing data
+                    // Get existing data from database
                     $property = serendipity_fetchEntryProperties((int) $eventData['id']);
 
-                    foreach($this->supported_properties AS $prop_key) {
-                        $prop_val = $serendipity['POST']['properties'][$prop_key] ?? null;
-                        if (!$prop_val) continue;
-                        if (!isset($property[$prop_key]) && !empty($prop_val)) {
-                            $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($prop_key) . "', '" . serendipity_db_escape_string($prop_val) . "')";
-                        } elseif (isset($property[$prop_key]) && $property[$prop_key] != $prop_val && !empty($prop_val)) {
-                            $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($prop_val) . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
+                    // ATOMIC section START outside the generic `foreach`, specifically for lang_selected
+                    // helper functions
+                    function normalize_lang_list(string $s): string {
+                        $arr = array_filter(array_map('trim', explode(',', $s)), fn($v) => $v !== '');
+                        $arr = array_values(array_unique($arr));
+                        return implode(', ', $arr); // i.e. 'fr, es, se, fi' ,... w/ space
+                    }
+
+                    // Preferred: Use the stored DB value as the source of truth
+                    $stored = $property['lang_selected'] ?? '';
+
+                    // normalize stored to array
+                    $stored_arr = array_filter(array_map('trim', explode(',', $stored)), fn($v) => $v !== ''); // i.e. ['fr','es','se','fi'] ,... w/o space
+                    // default: no Query
+                    $q = null;
+
+                    if (is_null($purge)) {
+                        // Normal Save: Only change this if the user has actually selected a language
+                        if ($posted === null || $posted === '') {
+                            // do nothing: keep stored as is
+                            $q = null;
                         } else {
-                            // Avoid dropping pre posted multilingual entry data if selected lang is still set !!!!
-                            if (empty($prop_key) || $prop_val == 'all') {
-                                $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
+                            // Merge posted in stored (idempotent)
+                            if (!in_array($posted, $stored_arr, true)) {
+                                $stored_arr[] = $posted;
+                            }
+                            $new_val = normalize_lang_list(implode(', ', $stored_arr));
+                            if ($new_val !== $stored) {
+                                if (isset($property['lang_selected'])) {
+                                    $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($new_val)
+                                       . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = 'lang_selected'";
+                                } else {
+                                    $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES ("
+                                       . (int)$eventData['id'] . ", 'lang_selected', '" . serendipity_db_escape_string($new_val) . "')";
+                                }
                             }
                         }
+                    } elseif ($purge === true) {
+                        // Purge: Remove the currently selected language (posted) from stored
+                        if ($posted !== null && ($posted_trim = trim((string)$posted)) !== '') {
+                            // Remove the posted language from Source-of-Truth array
+                            $stored_arr = array_values(array_diff($stored_arr, [$posted_trim]));
+                            if (count($stored_arr) > 0) {
+                                $new_val = normalize_lang_list(implode(', ', $stored_arr));
+                                $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($new_val)
+                                   . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = 'lang_selected'";
+                            } else {
+                                // no languages left -> delete the lang_selected property
+                                $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id']
+                                   . " AND property = 'lang_selected'";
+                            }
+                        }
+                    }
 
-                        if (isset($q)) serendipity_db_query($q);
+                    // EXECUTE query when set
+                    if (isset($q)) {
+                        serendipity_db_query($q, expectError: true); // actually the delete query itself does not need expectError true Query, but who cares...
+
+                        // IMPORTANT: Update the "in-memory" snapshot so the following foreach sees the current state
+                        if (isset($new_val)) {
+                            // update/insert case -> new normalized value
+                            $property['lang_selected'] = $new_val;
+                        } else {
+                            // if no $new_val and we executed a DELETE, clear the property
+                            // detect delete by checking if $stored_arr is empty OR $q contains "DELETE"
+                            if (str_contains($q, 'DELETE FROM')) {
+                                unset($property['lang_selected']);
+                            } else {
+                                // otherwise keep what is already available (defensive)
+                            }
+                        }
+                        $q = null; // Important reset for the END of foreach procedure storage ! YES, it now definetely is NIL at generic `foreach` END.
+                    }
+                    // END ATOMIC procedure for "lang_selected"
+
+                    // Short handles for the MAIN properties
+                    $titleKey = 'multilingual_title_' . $ls;
+                    $bodyKey  = 'multilingual_body_' . $ls;
+                    $extKey   = 'multilingual_extended_' . $ls;
+
+                    $deleted_props = [];
+
+                    // MAIN execution loop
+                    foreach ($this->supported_properties AS $prop_key) {
+
+                        // Raw values from POST (can be null or '')
+                        $prop_val = $serendipity['POST']['properties'][$prop_key] ?? null;
+                        $prev     = $serendipity['POST']['properties']['lang_prev'] ?? null;
+
+                        // Grouped handling of the three multilingual-fields for the selected language:
+                        if (in_array($prop_key, [$titleKey, $bodyKey, $extKey], true)) {
+                            // Values from POST (may be set seperately)
+                            $t = $serendipity['POST']['properties'][$titleKey] ?? null;
+                            $b = $serendipity['POST']['properties'][$bodyKey]  ?? null;
+                            $e = $serendipity['POST']['properties'][$extKey]   ?? null;
+
+                            // Unless it's the forced "clear everything" case: perform an INSERT/UPDATE for each of the
+                            // three fields individually only if they are not empty
+                            foreach ([$titleKey => $t, $bodyKey => $b, $extKey => $e] as $k => $val) {
+                                // Explicit per-field clear => DELETE (only when the POST key exists and value is the empty string)
+                                if (array_key_exists($k, $serendipity['POST']['properties']) && $val === '') {
+                                    if (isset($property[$k])) {
+                                        $dq = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id']
+                                            . " AND property = '" . serendipity_db_escape_string($k) . "'";
+                                        serendipity_db_query($dq, expectError: true);
+
+                                        $deleted_props[$k] = true;
+                                        unset($serendipity['POST']['properties'][$k]);
+                                        unset($property[$k]);
+                                    }
+                                    continue;
+                                }
+
+                                // Not submitted / absent => skip
+                                if (!array_key_exists($k, $serendipity['POST']['properties']) || $val === null) {
+                                    continue;
+                                }
+
+                                // If we reach here, $val is present and non-null.
+                                // Optionally ignore empty strings (we handled explicit clears above).
+                                if ($val === '') {
+                                    // IGNORE: No INSERT/UPDATE/DELETE under normal circumstances
+                                    continue;
+                                }
+
+                                if (!isset($property[$k])) {
+                                    $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES ("
+                                       . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($k) . "', '"
+                                       . serendipity_db_escape_string($val) . "')";
+                                } elseif ($property[$k] != $val) {
+                                    $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($val)
+                                       . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($k) . "'";
+                                } else {
+                                    $q = null; // safety unchanged
+                                }
+
+                                if (isset($q)) {
+                                    serendipity_db_query($q, expectError: true);
+                                }
+                            }
+
+                            // Group processed; moving on to the next supported_property
+                            continue;
+                        }
+
+                        // General treatment for all other properties that are not skipped:
+                        // Normal Save (no purge)
+                        $isEmptyValue = ($prop_val === null || $prop_val === '');
+
+                        // Database operations
+                        if (is_null($purge) && $prop_key !== 'lang_selected') { // avoid adding single to concatenated - use atomic only
+                            if (!empty($deleted_props[$prop_key])) {
+                                // Skip further processing for this prop in this run — it was just purged
+                                $q = null;
+                                continue; // or skip the null q
+                            }
+                            if (!isset($property[$prop_key]) && !$isEmptyValue) {
+                                $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES ("
+                                   . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($prop_key) . "', '"
+                                   . serendipity_db_escape_string($prop_val) . "')";
+                            } elseif (isset($property[$prop_key]) && $property[$prop_key] != $prop_val && !$isEmptyValue) {
+                                $q = "UPDATE {$serendipity['dbPrefix']}entryproperties SET value = '" . serendipity_db_escape_string($prop_val)
+                                   . "' WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($prop_key) . "'";
+                            } else {
+                                // Normally, IGNORE if $prop_val is empty (do not delete), unless we want
+                                // empty individual fields to result in a DELETE without a purge.
+                                // Current policy: IGNORE
+                                $q = null;
+                            }
+                        } elseif ($purge === true) {
+                            // Explicit Purge: Handle the selected language-specific properties reliably
+                            if (!empty($posted)) {
+                                $keys = ['multilingual_title_', 'multilingual_body_', 'multilingual_extended_'];
+                                foreach ($keys as $prefix) {
+                                    $k = $prefix . $posted;
+                                    if (isset($property[$k])) {
+                                        $dq = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id']
+                                            . " AND property = '" . serendipity_db_escape_string($k) . "'";
+                                        serendipity_db_query($dq);
+                                        $deleted_props[$k] = true;
+                                        #unset($serendipity['POST']['properties'][$k]); // A defensive remove to avoids later INSERTs from POST
+                                        // ( BUT I have learned what loop eroding unset($property[$prop_key]) did to the code loops, resulting in overwriting previous DELETEs !)
+                                    }
+                                }
+                            }
+                            // Fallback line placeholder PURGE for other properties ? Keep it in mind at least.
+                        // purge true END
+                        } else {
+                            $q = null; // safety
+                        }
+
+                        if (isset($q )) {
+                            serendipity_db_query($q, expectError: true); // This avoids e.g. "Duplicate entry 'ID-supported_property' (mostly on multilingual_body_en) for key 'prop_idx'" publish saving errors (also see others above)
+                        }
                     }
                     break;
 
@@ -686,10 +872,28 @@ class serendipity_event_multilingual extends serendipity_event
                     break;
 
                 case 'backend_display':
-                    if (isset($serendipity['POST']['properties']['lang_selected'])) {
-                        $lang_selected = $serendipity['POST']['properties']['lang_selected'];
+                    // Hold the the previously selected language until next submit to check against
+                    $prev = $_SESSION['multilingual_selected_lang'] ?? null; // if set, use the sessions stored lang
+                    #unset($_SESSION['multilingual_selected_lang']); // pointless, since we're going to overwrite it anyway. This session is just used to keep a prev lang state. Here and only.
+                    $lang_selected = $serendipity['POST']['properties']['lang_selected'] ?? '';
+                    $_SESSION['multilingual_selected_lang'] = $lang_selected; // store the current POST lang to the session lang 
+
+                    // When user has selected "Standard", the old "prev" value must not be reset:
+                    if ($lang_selected === '') {
+                        $lang_prev = '';
+                        // Also, completely clear out the Session variable so that nothing gets repopulated
+                        $_SESSION['multilingual_selected_lang'] = '';
                     } else {
-                        $lang_selected = '';
+                        // Otherwise, use the existing logic, but be defensive (isset/empty checks)
+                        $post_prev = $serendipity['POST']['properties']['lang_prev'] ?? null;
+                        if ($serendipity['lang'] != $lang_selected
+                            && (!empty($post_prev) || $post_prev === $lang_selected)
+                            && !empty($prev)
+                        ) {
+                            $lang_prev = $prev;
+                        } else {
+                            $lang_prev = $lang_selected;
+                        }
                     }
 
                     $use_lang = $serendipity['languages'];
@@ -700,6 +904,9 @@ class serendipity_event_multilingual extends serendipity_event
                     foreach($use_lang AS $code => $desc) {
                         $langs .= '                        <option value="' . $code . '"' . ($lang_selected == $code ? ' selected="selected"' : '') . '>' . htmlspecialchars($desc) . "</option>\n";
                     }
+
+                    // Workaround for PHP constant to JS value with a 2cd placeholder %s
+                    $template = sprintf(PLUGIN_SIDEBAR_MULTILINGUAL_JS_LANG_CHANGE_NOTIFICATION, '%s');
 ?>
             <fieldset id="edit_entry_multilingual" class="entryproperties_multilingual">
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_MULTILINGUAL_TITLE; ?></legend></span>
@@ -711,14 +918,72 @@ class serendipity_event_multilingual extends serendipity_event
                         <option value=""><?php echo USE_DEFAULT; ?></option>
 <?php echo $langs; ?>
                     </select>
+                    <input type="hidden" name="serendipity[properties][lang_prev]" value="<?php echo $lang_prev; ?>">
                     <input class="input_button" type="submit" name="serendipity[no_save]" value="<?php echo PLUGIN_EVENT_MULTILINGUAL_SWITCH; ?>">
+                    <span id="multilingual_prev_note" class="msg_notice" style="display: none" data-msg-template="<?php echo htmlspecialchars($template, ENT_QUOTES); ?>"></span>
 <?php
                     } else {
                         echo '                        <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> ' . PLUGIN_EVENT_MULTILINGUAL_NEEDTOSAVE . "</span>\n";
                     }
 ?>
                 </div>
+<?php
+                    if (!empty($serendipity['POST']['properties']['lang_selected'])) {
+?>
+                <div class="form_check">
+                    <input id="properties_multilingual_purge" name="serendipity[properties][purge_ml_entry]" type="checkbox" value="true">
+                    <label for="properties_multilingual_purge"><?php echo PLUGIN_EVENT_MULTILINGUAL_PURGE_ML_ENTRY;?></label>
+                    <button class="toggle_info button_link" type="button" data-href="#multilingual_purge_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> More</span></button>
+                </div>
+                <div id="multilingual_purge_info" class="additional_info">
+                    <span class="msg_hint msg-btm"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_MULTILINGUAL_PURGE_INFO_DESC; ?></span>
+                </div>
+<?php
+                    }
+?>
             </fieldset>
+            <script>
+            (function(){
+              const sel = document.getElementById('properties_lang_selected');
+              if (!sel) return;
+              const prevInput = document.querySelector('input[name="serendipity[properties][lang_prev]"]');
+              const note = document.getElementById('multilingual_prev_note');
+              const template = note && note.dataset && note.dataset.msgTemplate ? note.dataset.msgTemplate : "NOTE: You previously selected the language '%s'.";
+
+              // Record the old value (before the user action)
+              let oldVal = sel.value || '';
+
+              function updateNoteOnChange() {
+                const newVal = sel.value || '';
+                // Display notification only if the language has actually been changed to the empty default
+                if (oldVal !== '' && newVal === '') {
+                  // Capture the previous language (oldVal) for the message
+                  const prevLang = oldVal;
+                  if (prevInput) prevInput.value = '';
+                  if (note) {
+                    note.textContent = template.replace('%s', prevLang);
+                    note.style.display = 'inline-block';
+                    note.style.fontSize = 'smaller';
+                  }
+                } else {
+                  if (note) note.style.display = 'none';
+                }
+                oldVal = newVal;
+              }
+
+              sel.addEventListener('change', updateNoteOnChange, false);
+
+              // Defensive: Before submitting, make sure once again that prev is empty, when select == ''
+              const form = sel.closest('form');
+              if (form) {
+                form.addEventListener('submit', function(){
+                  try {
+                    if (sel.value === '' && prevInput) prevInput.value = '';
+                  } catch (err) { /* ignore */ }
+                }, false);
+              }
+            })();
+            </script>
 
 <?php
                     break;

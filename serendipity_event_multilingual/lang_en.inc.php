@@ -47,4 +47,24 @@
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_SIZE', 'Font size');
 
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_LANGIFIED_DESC', 'Default: in English. Pertains select-title of sidebar selectbox.');
+@define('PLUGIN_EVENT_MULTILINGUAL_PURGE_ML_ENTRY', 'Check, to delete an existing multilingual Entry via entryform submit');
+@define('PLUGIN_EVENT_MULTILINGUAL_PURGE_INFO_DESC', 'You came along, that this additional selection push can be used to create and manage a blog entry multilingually.<br>
+   Recap: To do this, write a blog entry in the actual blog language (example) "English" and save it as usual. When you call it again from
+   the database, the entryproperties event plugin now provides an additional option in the <b>Advanced Options</b>, with which you
+   can select or create a language version (eg. "German") for editing. Depending on the optional setting in the multilingual plugin,
+   the same entry is now made available as an German language pendant of the same entry, either filled in as a copy or not. Now change
+   and write your German text and the German heading and save it. Technically, this is a language copy of the old entry and is stored
+   in the entryproperties database table.<br>
+   The backend entry list still only lists the origin English blog entry, but marks it with the additional language as a multilingual entry.
+   If you click on the &laquo;title&raquo; or &laquo;Edit&raquo;, the original English entry will be displayed again for editing.
+   If you now - as before - simply change the multilingual selection language to "German", then your German-speaking Entry will appear.<br>
+   You can now repeat this process for another language (i.e. Spanish), or apply it directly to the “English” post you just
+   created for another language. - And so on. These respective language entries can also be edited later.<br>
+   If you later want to delete an extended language entry (e.g., Spanish), load that language entry and check the "purge" box before
+   saving the entry again as usual.<br>
+   This language entry should now be deleted from the database entryproperties table, but it is still being displayed in the entry form
+   after saving because you are still in the Spanish language configuration setting.<br>
+   Now, switch back to German (your first multilingual entry copy) or better jump to the backends entries list, and you’ll notice that
+   the notification signal for the extended Spanish language entry "es" has disappeared.'); // Translators, check the language this is written for and use equivalent example languages
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_JS_LANG_CHANGE_NOTIFICATION', 'ATTENTION: You previously selected the language "%s". If you select "Standard", no active language will be loaded. Care for your work, since a direct save would probably directly save into origin entry.');
 

@@ -38,4 +38,25 @@
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_SIZE', 'Schriftkegelgröße');
 
 @define('PLUGIN_SIDEBAR_MULTILINGUAL_LANGIFIED_DESC', 'Default: in Englisch. Betrifft Select-Titel der Seitenleisten Selectbox.');
+@define('PLUGIN_EVENT_MULTILINGUAL_PURGE_INFO_DESC', 'Wie Sie bereits erfahren haben, kann über diese zusätzliche Auswahl ein Blogeintrag multilingual erstellt und verwaltet werden.<br>
+   Zusammenfassend: Schreiben Sie einen Blog Eintrag in der eigentlichen Blogsprache (Beispiel) "Deutsch" und speichern diesen wie gewohnt ab.
+   Bei einen erneuten Aufruf aus der Datenbank hat das entryproperties event Plugin nun einen zusätzliche Auswahlmöglichkeit in den
+   <b>Erweiterten Optionen</b> bereitgestellt, mit dem Sie eine Sprachversion (zb, "Englisch") zur Bearbeitung auswählen bzw.
+   erstellen können. Je nach optionaler Einstellung im multilingual Plugin, wird nun derselbe Eintrag, textlich als Kopie bereits
+   befüllt oder nicht, als englischsprachiges Pendent desselben Eintrags bereitgestellt. Jetzt ändern und schreiben Sie ihren
+   englischen Text und die englische Überschrift und speichern denselben ab. Technisch gesehen ist dies also eine Sprachkopie
+   des alten Eintrags und wird in der entryproperties Datenbanktabelle gespeichert.<br>
+   Die Backend Eintrags Liste führt weiterhin nur den originären deutschen Blogeintag auf, markiert diesen aber mit der zusätzlichen
+   Sprache als multilingualen Eintrag. Klicken Sie auf den &laquo;Titel&raquo; oder &laquo;Bearbeiten&raquo; wird wieder der originale,
+   deutschsprachige Eintrag zur Bearbeitung ausgegeben.<br>
+   Wechseln Sie nun - wie vordem - einfach die multilinguale Auswahl-Sprache nach "Englisch", so sollte Ihr englischsprachiger Eintrag erscheinen.<br>
+   Dies kann nun für eine weitere Sprache wiederholt werden oder gleich aus dem eben erstellten "englischen" Beitrag für eine weitere Sprache vollzogen werden.
+   - Und so weiter. Diese jeweiligen Spracheinträge sind auch nachträglich veränderbar.<br>
+   Möchten Sie nun später einen dieser erweiternden Spracheinträge (zB. Spanisch) löschen wollen, so laden Sie diesen Spracheintrag
+   wie besprochen und markieren/setzen Sie die Checkbox zur Löschung, bevor Sie den Blog-Eintrag wie immer erneut abspeichern.<br>
+   Dieser Spracheintrag sollte nun in der Datenbank entryproperties Tabelle gelöscht sein, wird aber im Eintragsformular nach dem Speichern
+   immer noch angezeigt, da Sie sich ja immer noch in der "Spanischen" Sprachkondition befinden.<br>
+   Wechseln Sie diese nun zurück auf ihren ersterstellten multiligualen (englischen) Eintrag oder springen Sie besser zur Eintragsliste
+   des Backends und Sie werden sehen, dass die Auszeichnung für den erweiterten Spanischen Spracheintrag "es" verschwunden ist.');
+@define('PLUGIN_SIDEBAR_MULTILINGUAL_JS_LANG_CHANGE_NOTIFICATION', 'ACHTUNG: Sie haben zuvor Sprache "%s" ausgewählt. Bei "Standard" wird keine aktive Sprache geladen und sie würden beim Speichern wahrscheinlich direkt in den ursprünglichen Eintrag sichern.');
 

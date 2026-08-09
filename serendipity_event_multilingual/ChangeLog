@@ -1,3 +1,16 @@
+4.2.0:
+------
+ * Refactored multilingual entries for MORE than ONE langified entry
+ * Refactored Saving on modified/re-edited multilingual entries
+ * Refactored the multilingual entries purge to do this explicitely now
+ * Added language constant for better declarations/helper texts
+ * Fix: Duplicate entry 'ID-supported_property' (mostly on multilingual_body_en) for key 'prop_idx'" publish saving errors
+ * You may - on SAVE - need the include/compat.inc.php file serendipity_get_bool() strict_type fix,
+   which will come with next Styx 5.2.0 release version.
+   If you don't get an error, you are lucky using the $serendipity['production'] true setup,
+   else head to github and grab the file yourself.
+ * Remove 'cs' in lang_names.inc file array
+
 4.1.0:
 ------
  * Avoid dropping pre posted multilingual entry property data from database if selected lang is still set
