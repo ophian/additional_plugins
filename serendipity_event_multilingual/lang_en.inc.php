@@ -56,8 +56,8 @@
    and write your German text and the German heading and save it. Technically, this is a language copy of the old entry and is stored
    in the entryproperties database table.</p>
    <p>The backend entry list still only lists the origin English blog entry, but now marks it with the additional language as a multilingual entry.
-   If you click on the &laquo;title&raquo; or &laquo;Edit&raquo;, the original English entry will be displayed again for editing.
-   If you now - as before - simply change the multilingual selection language to "German", then your German-speaking Entry will appear.</p>
+   If you click on the &laquo;title&raquo; or &laquo;Edit&raquo;, the original English entry will be displayed again for editing.</p>
+   <p>If you now - as before - simply change the multilingual selection language to "German", then your German-speaking Entry will appear.</p>
    <p>You can now repeat this process for another language (i.e. Spanish), or apply it directly to the "English" post you just
    created for another language. - And so on. These respective language entries can also be edited later.</p>
    <p>If you later want to DELETE an extended language entry (e.g., Spanish), load that language entry and check the "purge" box before

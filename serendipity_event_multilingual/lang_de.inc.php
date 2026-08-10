@@ -49,12 +49,13 @@
    <p>Die Backend Eintrags Liste führt weiterhin nur den originären deutschen Blogeintag auf, markiert diesen aber mit der zusätzlichen
    Sprache als multilingualen Eintrag. Klicken Sie auf den &laquo;Titel&raquo; oder &laquo;Bearbeiten&raquo; wird wieder der originale,
    deutschsprachige Eintrag zur Bearbeitung ausgegeben.</p>
-   <p>Wechseln Sie nun - wie vordem - einfach die multilinguale Auswahl-Sprache nach "Englisch", so sollte Ihr englischsprachiger Eintrag erscheinen.<br>
-   Dies kann nun für eine weitere Sprache wiederholt werden oder gleich aus dem eben erstellten "englischen" Beitrag für eine weitere Sprache vollzogen werden.
+   <p>Wechseln Sie nun - wie vordem - einfach die multilinguale Auswahl-Sprache nach "Englisch", so sollte Ihr englischsprachiger Eintrag erscheinen.</p>
+   <p>Dies kann nun für eine weitere Sprache wiederholt werden oder gleich aus dem eben erstellten "englischen" Beitrag für eine weitere Sprache vollzogen werden.
    - Und so weiter. Diese jeweiligen Spracheinträge sind auch nachträglich veränderbar.</p>
    <p>Möchten Sie nun später einen dieser erweiternden Spracheinträge (zB. Spanisch) löschen wollen, so laden Sie diesen Spracheintrag
    wie besprochen und markieren/setzen Sie die Checkbox zur Löschung, bevor Sie den Blog-Eintrag wie immer erneut abspeichern.</p>
-   <p>Die Kopf "Header success" Anzeigen nach dem Speichern sind für den normalen Eintrags-Ablauf gestaltet und besagen, dass der Eintrag gespeichert wurde, obwohl Sie ihn ja mittels der Checkbox gelöscht haben. Lassen Sie sich davon nicht beirren.</p>
+   <p>Die Kopf "Header success" Anzeigen nach dem Speichern sind für den normalen Eintrags-Ablauf gestaltet und besagen, dass der Eintrag gespeichert wurde,
+   obwohl Sie ihn ja mittels der Checkbox gelöscht haben. Lassen Sie sich davon nicht beirren.</p>
    <p>Dieser Spracheintrag sollte nun in der Datenbank entryproperties Tabelle gelöscht sein, wird aber im Eintragsformular nach dem Speichern
    immer noch angezeigt, da Sie sich ja immer noch in der "Spanischen" Sprachkondition befinden. Ein erneutes Speichern würde ihn mit den gezeigten Daten wieder anlegen.</p>
    <p>Wechseln Sie diese nun zurück auf ihren ersterstellten multiligualen (englischen) Eintrag oder springen Sie besser zur Eintragsliste
