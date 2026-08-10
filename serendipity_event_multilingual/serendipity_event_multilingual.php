@@ -31,7 +31,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '8.2'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '4.2.0');
+        $propbag->add('version',        '4.2.1');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -568,7 +568,6 @@ class serendipity_event_multilingual extends serendipity_event
                             $property['lang_selected'] = $new_val;
                         } else {
                             // if no $new_val and we executed a DELETE, clear the property
-                            // detect delete by checking if $stored_arr is empty OR $q contains "DELETE"
                             if (str_contains($q, 'DELETE FROM')) {
                                 unset($property['lang_selected']);
                             } else {
@@ -684,8 +683,8 @@ class serendipity_event_multilingual extends serendipity_event
                                             . " AND property = '" . serendipity_db_escape_string($k) . "'";
                                         serendipity_db_query($dq);
                                         $deleted_props[$k] = true;
-                                        #unset($serendipity['POST']['properties'][$k]); // A defensive remove to avoids later INSERTs from POST
-                                        // ( BUT I have learned what loop eroding unset($property[$prop_key]) did to the code loops, resulting in overwriting previous DELETEs !)
+                                        #unset($serendipity['POST']['properties'][$k]); // A defensive remove to avoid later INSERTs from POST
+                                        // ( BUT - I have learned what "loop eroding" unset($property[$prop_key]) did to the code loops, resulting in overwriting previous DELETEs !)
                                     }
                                 }
                             }
@@ -872,6 +871,9 @@ class serendipity_event_multilingual extends serendipity_event
                     break;
 
                 case 'backend_display':
+                    if ($serendipity['GET']['adminAction'] == 'new' && isset($_SESSION['multilingual_selected_lang'])) {
+                        $_SESSION['multilingual_selected_lang'] = null;
+                    }
                     // Hold the the previously selected language until next submit to check against
                     $prev = $_SESSION['multilingual_selected_lang'] ?? null; // if set, use the sessions stored lang
                     #unset($_SESSION['multilingual_selected_lang']); // pointless, since we're going to overwrite it anyway. This session is just used to keep a prev lang state. Here and only.
@@ -928,7 +930,7 @@ class serendipity_event_multilingual extends serendipity_event
 ?>
                 </div>
 <?php
-                    if (!empty($serendipity['POST']['properties']['lang_selected'])) {
+                    if (!empty($lang_selected)) {
 ?>
                 <div class="form_check">
                     <input id="properties_multilingual_purge" name="serendipity[properties][purge_ml_entry]" type="checkbox" value="true">
@@ -936,7 +938,7 @@ class serendipity_event_multilingual extends serendipity_event
                     <button class="toggle_info button_link" type="button" data-href="#multilingual_purge_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> More</span></button>
                 </div>
                 <div id="multilingual_purge_info" class="additional_info">
-                    <span class="msg_hint msg-btm"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_MULTILINGUAL_PURGE_INFO_DESC; ?></span>
+                    <span class="msg_hint msg-btm msg-long"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_MULTILINGUAL_PURGE_INFO_DESC; ?></span>
                 </div>
 <?php
                     }

@@ -1,3 +1,8 @@
+4.2.1:
+------
+ * Cleanup and minor improvements
+ * Improve some info helper texts
+
 4.2.0:
 ------
  * Refactored multilingual entries for MORE than ONE langified entry
