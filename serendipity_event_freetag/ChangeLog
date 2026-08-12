@@ -1,3 +1,8 @@
+6.5.1:
+------
+ * Cleanup and consistency for next UPGRADE
+ * Fix another place to cast integer tags to string
+
 6.5.0:
 ------
  * Fix jquery.autocomplete for jQuery 4+

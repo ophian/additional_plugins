@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.5.0');
+        $propbag->add('version',       '6.5.1');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -493,19 +493,6 @@ class serendipity_event_freetag extends serendipity_event
     static function makeURLTag($tag)
     {
         return str_replace('.', '%FF', urlencode((string)$tag)); // RQ: why is this here ? Isn't %ff not ÿ = %FF = %C3%BF ? // cast to string, while might be an int when a year or so
-    }
-
-    /**
-     * Simple callback method for array_map(), to avoid
-     * array_map('htmlspecialchars', $array) missing the PHP 5.4+ changes
-     *
-     * @param   array   $param tags
-     * @return  array
-     * @see     specialchars_mapper()
-     */
-    function callback_map($a)
-    {
-        return htmlspecialchars($a, ENT_COMPAT, LANG_CHARSET);
     }
 
     /**
@@ -1305,7 +1292,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
 
                 case 'backend_display':
-                    $this->backend_display(($eventData['id'] ?? null)); // new entry forms don't have $eventData['id'] set
+                    $this->backend_display($eventData['id'] ?? null); // new entry forms don't have $eventData['id'] set
                     break;
 
                 case 'frontend_entryproperties':
@@ -2198,11 +2185,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (false === serendipity_db_bool($this->get_config('show_tagcloud', 'true'))) {
                 // Since this is extra stuff, we need to regular assign the subtitle header and not use $serendipity['head_subtitle'] !
                 if (count($param) > 1) {
-                    if (function_exists('htmlspecialchars')) {
-                        $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('htmlspecialchars', $param))));
-                    } else {
-                        $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('self::callback_map', $param))));
-                    }
+                    $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('htmlspecialchars', $param))));
                 } else {
                     $serendipity['smarty']->assign('head_subtitle', sprintf(PLUGIN_EVENT_FREETAG_USING, htmlspecialchars($param[0])));
                 }
@@ -2249,11 +2232,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             $param = array_map('strip_tags', $param);
             $param = array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
-            if (function_exists('htmlspecialchars')) {
-                $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('htmlspecialchars', $param)));
-            } else {
-                $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('self::callback_map', $param)));
-            }
+            $serendipity['head_subtitle'] = sprintf(PLUGIN_EVENT_FREETAG_USING, implode(', ', array_map('htmlspecialchars', $param)));
             $emit_404 = true;
         }
         // for XSS secureness, while using doubled decode
@@ -2261,11 +2240,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (is_array($param)) {
             array_filter($param); // filter out all left BOOL, NULL and EMPTY elements, which still are possible by removing XSS with strip_tags
         }
-        if (function_exists('htmlspecialchars')) {
-            $param = is_array($param) ? array_map('htmlspecialchars', $param) : htmlspecialchars($param);
-        } else {
-            $param = is_array($param) ? array_map('self::callback_map', $param) : htmlspecialchars($param, ENT_COMPAT, LANG_CHARSET);
-        }
+        $param = is_array($param) ? array_map('htmlspecialchars', $param) : htmlspecialchars($param);
 
         $this->tags['show'] = $param;
         $serendipity['plugin_vars']['tag'] = $param;
@@ -2276,7 +2251,7 @@ document.addEventListener("DOMContentLoaded", function() {
             @define('PLUGIN_VARS_TAG', $param);
         }
 
-        $serendipity['GET']['subpage'] = isset($eventData) ? $eventData : null;
+        $serendipity['GET']['subpage'] = $eventData ?? null;
         unset($serendipity['GET']['category']); // No restriction should be enforced here.
 
         $_tmpFetchLimit = $serendipity['fetchLimit'];
@@ -3136,7 +3111,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </a>
                 </div>
                 <div id="freetag_delete_info" class="additional_info">
-                    <span class="msg_hint msg-btm"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_FREETAG_KILL_INFO_DESC; ?></span>
+                    <span class="msg_hint msg-btm msg-sm"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_FREETAG_KILL_INFO_DESC; ?></span>
                 </div>
 <?php
 
@@ -3317,7 +3292,7 @@ document.addEventListener("DOMContentLoaded", function() {
      */
     private function displaySplitTag($tag, &$eventData)
     {
-        if (strstr($tag, ' ')) {
+        if (strstr((string)$tag, ' ')) { // cast integer tags to string
             $newtag = str_replace(' ', ',', (string)$tag); // cast integer tags to string
         } else {
             $newtag = '';
