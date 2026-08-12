@@ -31,7 +31,7 @@ class serendipity_event_multilingual extends serendipity_event
             'php'         => '8.2'
         ));
         $propbag->add('groups',         array('FRONTEND_ENTRY_RELATED', 'BACKEND_EDITOR'));
-        $propbag->add('version',        '4.2.1');
+        $propbag->add('version',        '4.2.2');
         $propbag->add('configuration',  array('copytext', 'placement', 'langified', 'tagged_title', 'tagged_entries', 'tagged_sidebar', 'langswitch'));
         $propbag->add('event_hooks',    array(
                 'frontend_fetchentries'     => true,
@@ -908,7 +908,7 @@ class serendipity_event_multilingual extends serendipity_event
                     }
 
                     // Workaround for PHP constant to JS value with a 2cd placeholder %s
-                    $template = sprintf(PLUGIN_SIDEBAR_MULTILINGUAL_JS_LANG_CHANGE_NOTIFICATION, '%s');
+                    $template = sprintf(PLUGIN_EVENT_MULTILINGUAL_JS_LANG_CHANGE_NOTIFICATION, '%s');
 ?>
             <fieldset id="edit_entry_multilingual" class="entryproperties_multilingual">
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_MULTILINGUAL_TITLE; ?></legend></span>
@@ -938,7 +938,7 @@ class serendipity_event_multilingual extends serendipity_event
                     <button class="toggle_info button_link" type="button" data-href="#multilingual_purge_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> More</span></button>
                 </div>
                 <div id="multilingual_purge_info" class="additional_info">
-                    <span class="msg_hint msg-btm msg-long"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_MULTILINGUAL_PURGE_INFO_DESC; ?></span>
+                    <span class="msg_hint msg-btm msg-sm"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_MULTILINGUAL_PURGE_INFO_DESC; ?></span>
                 </div>
 <?php
                     }
