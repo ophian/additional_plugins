@@ -90,7 +90,7 @@ keine verlorene Funktion.
 
 **Was einem Vorschlag hilft:**
 - Das Wort selbst (Grundform reicht – flektierte Formen werden meist
-  automatisch abgeleitet, siehe [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md)).
+  automatisch abgeleitet, siehe [`LANGUAGE_GUIDE.de.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.de.md)).
 - Wo du es tatsächlich als Störung erlebt hast (ein konkreter Artikel, ein
   konkreter unerwünschter Auto-Vorschlag) – echte Beispiele sind schneller
   zu klären als Hypothesen.
@@ -106,5 +106,5 @@ keine verlorene Funktion.
 
 Für die komplette Begründung, wie diese Liste aufgebaut ist (Strategie zur
 Verb-Flexion, Umgang mit Plural, warum manche kurzen Wörter trotz
-Wirkungslosigkeit drinbleiben, usw.), siehe [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md) in diesem
+Wirkungslosigkeit drinbleiben, usw.), siehe [`LANGUAGE_GUIDE.de.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.de.md) in diesem
 Repository.
