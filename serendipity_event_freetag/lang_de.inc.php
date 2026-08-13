@@ -142,3 +142,23 @@
 @define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB', 'Nutze Plugin jQuery lib');
 @define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB_DESC', 'Lade Plugin jQuery lib nur im Frontend, wenn ihr Theme im header oder footer nicht schon das "default" jquery.js lädt.');
 
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT', 'Auto-Tag Vorschläge abschalten?');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT_DESC', 'Der Nutzung von Auto-Tag Vorschlägen widersprechen? (Zum Beispiel, wenn Sie generell andere Spracheinstellungen und Sprachen für Einträge als Deutsch oder Englisch nutzen.)');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_LLM', 'Auto-Tag Vorschläge per LLM API');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_LLM_DESC', 'Experimentelles Auto-Tag Vorschäge zurückerhalten wenn man seinen Text automatisiert an ein large language model (LLM) sendet. Schreibe ‹ none ›, oder leer lassen für NO-USE. Setzen Sie Ihren LLM API key zu der LLM der Wahl (derzeit unterstützt: Anthropic (claude-sonnet-5), Gemini (gemini-3.1-flash-lite), OpenAI (gpt-5.6-luna) und Ollama (gemma4) local unter "http://localhost:11434"). Dies ist eine experimentelle Funktion zur Verwendung von LLMs für automatische Tags, die noch nie LIVE getestet wurde. Falls Sie Probleme feststellen, diese Funktion erweitern möchten oder sich die API-URLs dieser LLMs ändern, geben Sie bitte Feedback.');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS', 'Auto-Tag Vorschläge');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_INFO', 'Auto-Tag Vorschläge sind augenblicklich nur für [de/en] Sprachen verfügbar. Sie funktionieren vor allem aufgrund ihrer unterschiedlichen sprachlichen Anforderungen anders: Im Deutschen werden Substantive anhand der Großschreibung abgeglichen, während im Englischen kuratierte Stoppwortlisten zum Einsatz kommen. Wenn Sie also Tag Vorschläge erhalten die nicht unbedingt vorgeschlagen werden sollten, stellen Sie diese im freetag autotag discussion thread #71 auf GitHub zur Diskussion, um später in künftigen Plugin updates enthalten zu sein.
+
+Präambel: Manuell eingefügte oder bereits vorhandene Tags haben immer Priorität gegenüber auto-tag Stoppwörtern, so dass Sie beispielsweise immer noch Verben als Tags verwenden können.
+
+Ein paar INTERNA die Sie vorher wissen sollten:
+ - [de] Wörter/Verben die mit -s enden, sollen in ihre Singularform zurückfallen ( Plugin/s ), außer einigen Ausnahmen ( zB. „Mytho/s“ ). Wir sind besonders an Letzteren interessiert. Dies trifft insbesondere auch technische- oder Lehnwörter aus anderen Sprachen. Seien Sie unsere Augen!
+ - [en] „Negative“ Ausnahmewörter sind in der englischen Stoppwortliste enthalten, und zwar insbesondere durch Verben, Adjektive, Pronomen, Flexionen, Adverbien, Amerikanisch/Britische Sprachpaare, etc. Sollten Sie auf seltene Fälle stoßen, die hier noch fehlen, teilen Sie uns diese bitte ebenfalls mit.
+
+Wenn Sie helfen möchten das Auto-Tag Vorschlagssystem für weitere Sprachen auszubauen, lesen Sie bitte die erweiterte Dokumentation als Markdown Datei um die Struktur des Ansatzes zu verstehen und nutzen Sie das vorformulierte KI PROMPT für eine eventuelle Zusammenarbeit mit einer KI im freetag auto/docs/ Verzeichnis.
+
+Danke !');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_SAVEFIRST', 'Keine Vorschläge ohne vorhandenem Eintrag !');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_DATATITLE', 'FreeTag: Auto-Tagging Kontext-Vorschau');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_SWITCHLANG', 'Umschalten für Eintragskontext Tags in [%s]');
+

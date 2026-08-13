@@ -155,3 +155,23 @@
 @define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB', 'Use plugin jQuery lib');
 @define('PLUGIN_EVENT_FREETAG_ALLOW_JQUERYLIB_DESC', 'Enable only, if your theme does not already load the jquery.js library in its page header or footer.');
 
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT', 'Dismiss Auto-Tag suggestions?');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT_DESC', 'Opt-Out the use of Auto-Tag suggestions? (For example, if your language settings or your blog entries language are set to a language other than German or English.)');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_LLM', 'Auto-Tag suggestions per LLM API');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_LLM_DESC', 'Experimental Auto-Tag get-back suggestions per automated entry text push to a large language model (LLM). Set ‹ none ›, or leave empty for NO-USE. Add your LLM API key here to the LLM of choice (currently supported: Anthropic (claude-sonnet-5), Gemini (gemini-3.1-flash-lite), OpenAI (gpt-5.6-luna) and Ollama (gemma4) local under "http://localhost:11434"). This is an experimental feature to use LLMs for auto tags that has never been tested LIVE. If you find issues or want to extend this feature, or these LLMs raise their API URLs, please give feedback.');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS', 'Auto-Tag suggestions');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_INFO', 'Auto-Tag suggestions currently are supported for [de/en] languages only. They mainly work different because of their language architecture needs, in general matching Nouns by capitalization in [de] vs curated stopword lists in [en]. If you get suggested tag words that should not be in there, please head to the freetag autotag discussion thread #71 at GitHub to discuss and to find their way into future plugin updates.
+
+PREAMBLE: Manual added or pre-chosen tags always have priority against autotag stopwords, so you can still tag verbs for example.
+
+Some INTERNALS to know about:
+ - [de] Words/Verbs ending with -s shall fall back to their singular form ( Plugin/s ), except some exceptions (i.e. “Mytho/s” ). We are specifically interested in these latter. This also hits tec/loanwords from other languages. So keep an eye on it!
+ - [en] “Negative” exception words are covered by the english stopword list, specifically by verbs, adjectives, pronouns, inflections, adverbs, American/British spelling pairs, etc. If you encounter some missing rare cases, please disclose them too.
+
+If you want to help developing further languages, please read the extended markdown files for the needs and use the specialized AI PROMPT added to the freetag auto/docs/ directory when developing with an AI system.
+
+Thank you !');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_SAVEFIRST', 'Write & Save your entry first for suggestions !');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_DATATITLE', 'FreeTag: Auto-Tagging context preview');
+@define('PLUGIN_EVENT_FREETAG_AUTOTAGS_SWITCHLANG', 'Click to get suggestions for [%s] entry context');
+

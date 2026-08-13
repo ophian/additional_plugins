@@ -1,3 +1,13 @@
+6.6.0:
+------
+ * Add NEW auto tag suggestions feature.
+   Current supported languages are Englisch and German.
+   The auto-tag plugin option is enabled per default. Please Opt-Out for none.
+   If you find issues, or want to suggest an improvement please head to "https://github.com/ophian/styx/discussions/71".
+   Make sure to have really READ all the descriptions, notes and all other additional helper texts,
+   or even the extended documentary if you are willing to help to extend this for other languages
+   and improve this feature for us all, placed into the auto/docs subfolder.
+
 6.5.1:
 ------
  * Cleanup and consistency for next UPGRADE

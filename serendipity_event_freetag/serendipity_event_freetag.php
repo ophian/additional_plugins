@@ -81,7 +81,7 @@ class serendipity_event_freetag extends serendipity_event
             'taglink',
             'extended_smarty',
             'collation',
-            'admin_show_taglist', 'admin_delimiter', 'admin_ftayt',
+            'admin_show_taglist', 'admin_autotags', 'admin_autotags_llm', 'admin_delimiter', 'admin_ftayt',
 
             'separator1', 'config_cloudgrouper',
             'show_tagcloud', 'show_ft_jquery',
@@ -263,6 +263,20 @@ class serendipity_event_freetag extends serendipity_event
                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_ADMIN_TAGLIST);
                 $propbag->add('description', '');
                 $propbag->add('default',     'true');
+                break;
+
+            case 'admin_autotags':
+                $propbag->add('type',        'boolean');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT);
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT_DESC);
+                $propbag->add('default',     'false');
+                break;
+
+            case 'admin_autotags_llm':
+                $propbag->add('type',        'string');
+                $propbag->add('name',        PLUGIN_EVENT_FREETAG_AUTOTAGS_LLM);
+                $propbag->add('description', PLUGIN_EVENT_FREETAG_AUTOTAGS_LLM_DESC);
+                $propbag->add('default',     '');
                 break;
 
             case 'admin_ftayt':
@@ -1039,6 +1053,52 @@ class serendipity_event_freetag extends serendipity_event
 
 /* freetag plugin start */
 
+#freetoc {
+  position: static;
+  width: 22.75%;
+  max-width: 25em;
+  max-height: 0px;
+  font-size: small;
+  overflow: auto;
+  border: 1px dashed #383838;
+  color: transparent;
+}
+#freetoc.can-float {
+  position: fixed;
+  top: 1rem;
+  max-height: 45rem;
+  align-self: start;
+  border: 4px double var(--color-alert-info-border);
+  color: initial;
+}
+[data-color-mode="dark"] #freetoc.can-float {
+  border-color: var(--color-alert-info-border);
+  color: var(--color-timeline-text); /*mid-between primary and secondary*/
+}
+#freetoc.can-float::-webkit-scrollbar { display: none; }
+#freetoc.hide { display: none; }
+
+[data-color-mode="dark"] #main_menu #freetoc h3 {
+  background-color: darkgray;
+  background-image: inherit;
+  border-bottom: inherit;
+  color: initial;
+  margin: 0 .25em;
+  padding: .25em;
+}
+#freetoc p {
+  margin: .25em 0;
+  padding: .5rem;
+}
+#freetoc nav a {
+  padding: .5em;
+}
+[data-color-mode="dark"] #main_menu #freetoc nav a {
+  background: var(--color-bg-info);
+  color: var(--color-text-link) !important;
+  border-top: 1px solid var(--color-box-blue-border);
+}
+
 a.button_link.tagview_active {
     box-shadow: 0 4px 6px -3px #0066ff;
     z-index: 1;
@@ -1091,6 +1151,38 @@ a.button_link.tagview_active {
     transform: rotate(180deg);
 }
 
+[data-color-mode="dark"] #properties_freetag_suggested {
+  padding: .25em;
+  border: 1px solid var(--color-border-info);
+  background: linear-gradient(to bottom, rgb(86, 93, 102) 0%,rgb(19, 24, 30) 100%);
+}
+[data-color-mode="dark"] #properties_freetag_suggested label,
+[data-color-mode="dark"] #properties_freetag_suggested .to-right span {
+    color: var(--color-highlight-text);
+}
+[data-color-mode="dark"] #properties_freetag_suggested .to-right {
+  /*background-image: linear-gradient(90deg, #08baa9, var(--color-highlight-text));*/
+  background-image: linear-gradient(90deg, var(--color-scale-blue-0), var(--color-scale-green-1), var(--color-highlight-text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#properties_freetag_suggested .to-right {
+  float: right;
+  margin-top: .15em;
+  padding-right: .25em;
+  font-size: smaller;
+}
+#properties_freetag_suggested .scores {
+  display: block;
+  font-size: smaller;
+  font-variant: all-small-caps;
+}
+#properties_freetag_suggested .scores > span {
+  font-style: italic;
+}
+#properties_freetag_suggested a {
+  padding-right: .5em;
+}
 #backend_freetag_list a.tagzoom {
     font-size: 0.875em;
 }
@@ -1110,10 +1202,12 @@ a.button_link.tagview_active {
   color: var(--color-highlight-text);
   text-shadow: var(--color-autocomplete-shadow);
 }
-
 .plainList.freetags_list .odd {
     background-color: #EEE;
     border: 1px solid #DDD;
+}
+[data-color-mode="dark"] #properties_freetag_tagList {
+  color: var(--color-scale-blue-4);
 }
 
 #edit_entry_freetags .freetag_entry_submit {
@@ -3048,6 +3142,23 @@ document.addEventListener("DOMContentLoaded", function() {
     function backend_display($entryID)
     {
         global $serendipity;
+        static $autotags = !$this->get_config('admin_autotags', false);
+        static $llm = $this->get_config('admin_autotags_llm', ''); // none or empty for NOT SET
+        static $curr_supported_langs = ['en', 'de'];
+
+        // Dismiss handlers if dependency multilingual plugin has changed the current entry lang to something NOT null OR ''. Plugin order is importless.
+        if (!empty($_SESSION['multilingual_selected_lang']) && !in_array($_SESSION['multilingual_selected_lang'], $curr_supported_langs)) {
+            $autotags = false;
+        }
+
+        if ($autotags) {
+            if (empty($llm) || $llm === 'none') {
+                require_once __DIR__ . '/auto/lib/TfIdfTagger.php';
+                require_once __DIR__ . '/auto/lib/HtmlText.php';
+            } else {
+                require_once __DIR__ . '/auto/lib/LlmTagger.php';
+            }
+        }
 
         if (function_exists('mb_internal_encoding')) {
             mb_internal_encoding(LANG_CHARSET);
@@ -3088,6 +3199,350 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         $dir_reverse = (LANG_DIRECTION == 'rtl') ? 'ltr' : 'rtl';
+
+        if ($autotags) {
+            // suggest autotags against $tagList
+            $allTags = $wicktags ?? []; // no array_fill_keys to not build conflicts in merging and unique the array later on
+            $autoTags = $suggestedAutoTags = [];
+            $scores = '';
+            $entry = serendipity_db_query("SELECT id, title, body, extended FROM {$serendipity['dbPrefix']}entries WHERE id = " . (int)$entryID, single: true);
+            $article = [
+                'id' => $entry['id'],
+                'title' => $entry['title'],
+                'body' => $entry['body'] . ' ' . ($entry['extended'] ?? ''),
+                'tags' => $tagList,
+            ];
+
+            // Prepare variables cleanly without double-JSON-encoding them in PHPpreg_replace('#\<(.+?)\>#', ' ', $text);
+            $thisTags = explode(',', $tagList); // array: ["foo", "bar"]
+            $rawTitle = $article['title'];
+            $rawBody  = HtmlText::toPlainText($article['body']);
+
+            // Handle empty body fallback
+            if (empty(rtrim($rawBody))) {
+                $rawBody = PLUGIN_EVENT_FREETAG_AUTOTAGS_SAVEFIRST;
+            }
+
+            function stripPreCodeBlocksDomNumbered(string $html, array|null &$map): string {
+                libxml_use_internal_errors(true);
+                $doc = new DOMDocument();
+                // preserve utf-8 and avoid implicit html/body wrappers
+                $doc->loadHTML('<?xml encoding="utf-8" ?>' . $html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+                libxml_clear_errors();
+
+                // collect <pre> nodes that contain a <code> child (document order)
+                $pres = $doc->getElementsByTagName('pre');
+                $nodes = [];
+                foreach ($pres as $pre) {
+                    if ($pre->getElementsByTagName('code')->length > 0) {
+                        $nodes[] = $pre;
+                    }
+                }
+
+                $map = [];
+                $count = 0;
+                foreach ($nodes as $pre) {
+                    $count++;
+                    $placeholder = "//CODE{$count}//";
+                    // save HTML of the <pre> block for mapping
+                    $map[$placeholder] = $doc->saveHTML($pre);
+                    // replace the <pre> node with a text node placeholder
+                    $textNode = $doc->createTextNode($placeholder);
+                    $pre->parentNode->replaceChild($textNode, $pre);
+                }
+
+                return $doc->saveHTML();
+            }
+
+            // Run for multilingual entry dependency and stripPreCodeBlocksDomNumbered() - [ 'all' value is widely used within Serendipity but not within this context! ]
+            if (!empty($serendipity['POST']['properties']['lang_selected']) && is_numeric($entryID)) {
+                $q = "SELECT * FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = ".(int)$entryID;
+                $newFetch = serendipity_db_query($q, false, "assoc");
+                // Map properties of $newFetch DB result
+                $propsMap = array_column($newFetch, 'value', 'property'); // ['ep_access'=>'public', 'multilingual_body_en'=>'...' etc]
+
+                $check = [];
+
+                // Check selected lang from DB. We either have it set or not.
+                $check['selected_lang'] = $_lang_selected = $propsMap['lang_selected'] ?? null; // 'lang_selected' as stored in DB (and has not disappeared)
+
+                // Function to find the first property that contains a pattern
+                $findFirstByNeedle = function(array $map, string $needle) {
+                    foreach ($map as $prop => $val) {
+                        if (strpos($prop, $needle) !== false) {
+                            return ['prop' => $prop, 'value' => $val];
+                        }
+                    }
+                    return null;
+                };
+
+                // Check Body
+                if ($res = $findFirstByNeedle($propsMap, '_body_')) {
+                    $check['has_body']   = true;
+                    $check['body_prop']  = $res['prop'];
+                    $check['body_value'] = $res['value'];
+                }
+
+                // Check Extended
+                if ($res = $findFirstByNeedle($propsMap, '_extended_')) {
+                    $check['has_ext']   = true;
+                    $check['ext_prop']  = $res['prop'];
+                    $check['ext_value'] = $res['value'];
+                }
+
+                // Check Title
+                if ($res = $findFirstByNeedle($propsMap, '_title_')) {
+                    $check['has_title']   = true;
+                    $check['title_prop']  = $res['prop'];
+                    $check['title_value'] = $res['value'];
+                }
+
+                // Finalize the real checked $newFetch
+                $newFetch = [];
+                if (!empty($check['has_body']) && $check['selected_lang']) {
+                    // extract language i.e. from "multilingual_body_en" -> "en"
+                    $newFetch['selected_lang'] = str_replace('multilingual_body_', '', $check['body_prop']);
+                    $newFetch['checked_new']   = $check['selected_lang'] ?? null;
+                }
+                $lang_selected = $serendipity['POST']['properties']['lang_selected'] ?? $_lang_selected;
+                if (!empty($serendipity['POST']['properties']['lang_selected'])) {
+                    $check['selected_lang'] = $_lang_selected = $serendipity['POST']['properties']['lang_selected'] ?? $propsMap['lang_selected']; // 'lang_selected' as stored in DB (and has not disappeared)
+                }
+
+                if (isset($check['title_value'])) {
+                    $newFetch['title'] = $check['title_value'];
+                }
+                if (isset($check['body_value'])) {
+                    $newFetch['body'] = HtmlText::toPlainText(stripPreCodeBlocksDomNumbered($check['body_value'], $map));
+                }
+                if (isset($check['ext_value'])) {
+                    $newFetch['ext'] = HtmlText::toPlainText(stripPreCodeBlocksDomNumbered($check['ext_value'], $map));
+                }
+
+                if (!empty($lang_selected) && $lang_selected !== $serendipity['lang']) {
+                    $rawBody  = $newFetch['body'] . "\n\n" . ($newFetch['ext'] ?? '');
+                    $rawTitle = $newFetch['title'];
+                }
+            }
+
+            // Effective base language: multilingual_lang (if set and not '')
+            // overrides the system language. Only relevant for the "no freetag_lang
+            // param yet" case - an already-set URL param has the highest priority and
+            // is handled entirely in JS (the toggle branch), untouched by this.
+            $multilingualLang = $lang_selected ?? null;
+            $effectiveLang = (!empty($multilingualLang))
+                ? $multilingualLang
+                : $serendipity['lang'];
+
+            // Single source of truth for "what should the initial switch target be".
+            // Only two real cases exist here: effective lang is 'de', or it isn't -
+            // everything that isn't 'de' (en, es, fr, ...) falls back to the same
+            // target, since the TF-IDF tagger only ever runs in en/de anyway.
+            $initialTarget = $effectiveLang === 'de' ? 'en' : 'de';
+?>
+
+<div id="btoc"
+     class="hide"
+     data-title="<?php echo htmlspecialchars($rawTitle ?? PLUGIN_EVENT_FREETAG_AUTOTAGS_DATATITLE, ENT_QUOTES, 'UTF-8'); ?>"
+     data-text="<?php echo htmlspecialchars($rawBody, ENT_QUOTES, 'UTF-8'); ?>"
+     data-tags="<?php echo htmlspecialchars(json_encode($thisTags), ENT_QUOTES, 'UTF-8'); ?>">
+</div>
+
+<script type="text/javascript">
+// Wrap everything in a block scope to prevent any global variable collisions
+{
+    if (window.innerWidth >= 1024) {
+        const sidebar = document.getElementById("main_menu");
+        const bridgeData = document.getElementById("btoc");
+        const bridgeDataTitle = "<?=PLUGIN_EVENT_FREETAG_AUTOTAGS_DATATITLE;?>";
+
+        if (sidebar && bridgeData) {
+            const newText = bridgeData.dataset.title == bridgeDataTitle;
+            // 1. Create floating container (#freetoc)
+            const freetoc = document.createElement("div");
+            freetoc.id = "freetoc";
+            freetoc.setAttribute("aria-label", "floating Sidebarnavigation");
+
+            // Safely append it to the sidebar
+            const currentToc = document.getElementById("freetoc");
+            if (currentToc) {
+                sidebar.insertBefore(freetoc, currentToc);
+            } else {
+                sidebar.appendChild(freetoc);
+            }
+
+            // 2. Build language toggle suggest element
+            const tocFood = document.createElement("nav");
+            tocFood.id = "tocfood";
+            tocFood.setAttribute("aria-label", "per language suggestions");
+
+            let url = new URL(location.href);
+            const toLang = document.createElement("a");
+            const currentParam = url.searchParams.get("freetag_lang");
+            const nextLang = currentParam
+                ? (currentParam === "en" ? "de" : "en")
+                : "<?=$initialTarget;?>";
+            url.searchParams.set("freetag_lang", nextLang);
+            toLang.href = url.toString();
+
+            const switchLang = "<?=sprintf(
+                PLUGIN_EVENT_FREETAG_AUTOTAGS_SWITCHLANG,
+                $nextLangIsEn = (isset($_GET['freetag_lang'])
+                    ? $_GET['freetag_lang'] === 'de'
+                    : $initialTarget === 'en') ? 'ENGLISH' : 'GERMAN'
+            );?>";
+
+            toLang.textContent = newText ? "" : switchLang;
+            tocFood.append(toLang);
+            freetoc.prepend(tocFood);
+
+            // 3. Extract and parse dataset cleanly
+            const titleVal = bridgeData.dataset.title;
+            const rawText = bridgeData.dataset.text.replace(/\u00a0/g, ' ');
+            const wordsToHighlight = JSON.parse(bridgeData.dataset.tags || "[]");
+
+            // 4. Create Header
+            const head = document.createElement("h3");
+            head.textContent = titleVal;
+            bridgeData.prepend(head);
+
+            // 5. Create Paragraph & Highlight Tags
+            const textElement = document.createElement("p");
+
+            const escapeHTML = (str) => {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            };
+
+            let safeHtml = escapeHTML(rawText);
+
+            if (wordsToHighlight && wordsToHighlight.length > 0) {
+                const sortedTags = wordsToHighlight.slice().sort((a, b) => b.length - a.length);
+
+                sortedTags.forEach(tag => {
+                    const trimmedTag = tag.trim();
+                    if (!trimmedTag) return;
+                    const escapedTag = trimmedTag.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                    const regex = new RegExp(`\\b(${escapedTag})\\b`, 'gi');
+                    safeHtml = safeHtml.replace(regex, '<mark>$1</mark>');
+                });
+            }
+
+            textElement.innerHTML = safeHtml;
+            bridgeData.append(textElement);
+
+            // Move our filled bridge node into the floating container
+            freetoc.append(bridgeData);
+            bridgeData.classList.remove("hide");
+
+            // --- Flicker-Free Floating Logic ---
+            let sidebarContentHeight = 0;
+            let tocHeight = 0;
+            const spacerplus = 140;
+
+            const measure = () => {
+                sidebarContentHeight = 0;
+                const listElements = document.querySelectorAll("#main_menu > ul > li:not(:first-of-type)");
+                listElements.forEach(list => {
+                    sidebarContentHeight += list.offsetHeight;
+                });
+                tocHeight = freetoc.offsetHeight;
+            };
+
+            const updateTocMode = () => {
+                const isDesktop = window.innerWidth >= 1024;
+
+                // 1. Toggle visibility based on desktop screen size
+                freetoc.classList.toggle("hide", !isDesktop);
+
+                if (!isDesktop) return;
+
+                // 2. Perform smooth float calculation inside animation frame (prevents layout lag/flicker)
+                requestAnimationFrame(() => {
+                    const overflow = document.documentElement.scrollTop - sidebarContentHeight;
+                    const shouldFloat = (overflow >= spacerplus && overflow > tocHeight);
+                    freetoc.classList.toggle("can-float", shouldFloat);
+                });
+            };
+
+            // Run initial setup synchronously to match initial page load state
+            measure();
+            updateTocMode();
+
+            // Handle browser resize/loading updates cleanly without high-frequency feedback loops
+            window.addEventListener("load", () => { measure(); updateTocMode(); });
+            window.addEventListener("scroll", updateTocMode, { passive: true });
+            window.addEventListener("resize", () => { measure(); updateTocMode(); });
+        }
+    }
+}
+</script>
+<?php
+            if (empty($llm) || $llm === 'none') {
+                $corpus = array_map(fn($a) => $a['body'], array($article)); // YES, must be a multidimensional array
+                if ($serendipity['lang'] === 'de' || (isset($_GET['freetag_lang']) && $_GET['freetag_lang'] === 'de')) {
+                    $context = 'de';
+                    $tfidf = new TfIdfTagger($corpus, mergeLoanwordPlurals: true); // de -> $corpusTexts, $minWordLength, $useBigrams, $nounsOnly, $excludeGenitiveNames, $language, $mergeLoanwordPlurals
+                } else {
+                    $context = 'en';
+                    $tfidf = new TfIdfTagger($corpus, language: 'en'); // en -> $corpusTexts, $minWordLength, $useBigrams, $nounsOnly, $excludeGenitiveNames, $language, $mergeLoanwordPlurals
+                }
+            } else {
+                $lang = ($serendipity['lang'] === 'de' || (isset($_GET['freetag_lang']) && $_GET['freetag_lang'] === 'de')) ? 'de' : 'en';
+                if (str_contains($llm, 'claude')) {
+                    try {
+                        $tagger = new LlmTagger(new AnthropicProvider(), $lang);
+                    } catch (\Throwable $t) {
+                        $tagger = new LlmTagger(new FakeProvider(), "de");
+                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
+                    }
+                } elseif (str_contains($llm, 'gemini')) {
+                    try {
+                        $tagger = new LlmTagger(new GeminiProvider(), $lang);
+                    } catch (\Throwable $t) {
+                        $tagger = new LlmTagger(new FakeProvider(), "de");
+                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
+                    }
+                } elseif (str_contains($llm, 'gpt')) {
+                    try {
+                        $tagger = new LlmTagger(new OpenAiProvider(), $lang);
+                    } catch (\Throwable $t) {
+                        $tagger = new LlmTagger(new FakeProvider(), "de");
+                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
+                    }
+                } elseif (str_contains($llm, 'gemma') || str_contains($llm, 'localhost')) {
+                    try {
+                        $tagger = new LlmTagger(new OllamaProvider('llama3.2'), $lang);
+                    } catch (\Throwable $t) {
+                        $tagger = new LlmTagger(new FakeProvider(), "de");
+                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
+                    }
+                } else {
+                    #$tagger = "{\"matched\": [\"existing tag\", ...], \"new\": [\"suggested new tag\", ...]}";
+                    $tagger = new LlmTagger(new FakeProvider(), "de");
+                    $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
+                }
+            }
+
+            // This article's own tags go first, so "first seen" in suggest()'s
+            // case-insensitive dedup correctly reflects THIS article's established
+            // spelling - not whichever spelling some other article happened to
+            // contribute first during the $allKnownTags aggregation above.
+            $tagsForThisArticle = array_unique(array_merge($thisTags, $allTags));
+
+            if (empty($llm) || $llm === 'none') {
+                $tfidfResult = $tfidf->suggest($article['body'], $tagsForThisArticle, 6); // concerning priority problem sommer -> Sommer
+            } else {
+                $result = $tagger->suggest($article['body'], $tagsForThisArticle, 6);
+                $tfidfResult = $result;
+            }
+
+            foreach ($tfidfResult['suggested'] as $s) {
+                $scores .= "<span>{$s['tag']}: ({$s['score']})</span>, ";
+                $suggestedAutoTags[] = $s['tag'];
+            }
+        }
 ?>
 
             <a name="tagListAnchor"></a>
@@ -3103,6 +3558,23 @@ document.addEventListener("DOMContentLoaded", function() {
                     <label for="properties_freetag_kill"><?php echo PLUGIN_EVENT_FREETAG_KILL; ?></label>
                     <button class="toggle_info button_link" type="button" data-href="#freetag_delete_info"><span class="icon-info-circled" aria-hidden="true"></span><span class="visuallyhidden"> <?php echo MORE; ?></span></button>
                 </div>
+<?php
+        if ($autotags) {
+?>
+                <div id="properties_freetag_suggested" class="form_field">
+                    <label for="properties_freetag_suggestTags" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS; ?>:<span class="to-right">for context [<span><?=$context?></span>]</span></label>
+<?php
+                foreach ($suggestedAutoTags AS $autoTag) {
+                    $sTag = htmlspecialchars($autoTag);
+                    echo "                    <a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$sTag}')\">{$sTag}</a>\n";
+                }
+?>
+                    <span class="icon-info-circled" aria-hidden="true" title="<?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS_INFO; ?>"></span>
+                    <div class="scores"><u>By Score:</u><br><?php echo rtrim($scores, ', '); ?></div>
+                </div>
+<?php
+        }
+?>
                 <div id="edit_entry_submit" class="jump_to_edit_entry_submit freetag_entry_submit">
                     <a href="#top" class="x-button_link x-button_up" title="<?php echo UP; ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
