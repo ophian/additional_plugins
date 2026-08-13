@@ -3061,9 +3061,31 @@
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2026-08-12</date>
+  <date>2026-08-13</date>
   <filelist>
     <dir name="serendipity_event_freetag">
+      <dir name="auto">
+        <dir name="docs">
+          <file>DEVELOPER_AI_PROMPT.md</file>
+          <file>DISCUSSION_PREAMBLE.md</file>
+          <file>LANGUAGE_GUIDE.de.md</file>
+          <file>LANGUAGE_GUIDE.md</file>
+        </dir>
+        <dir name="lib">
+          <file>HtmlText.php</file>
+          <dir name="llm">
+            <file>AnthropicProvider.php</file>
+            <file>GeminiProvider.php</file>
+            <file>LlmProvider.php</file>
+            <file>OllamaProvider.php</file>
+            <file>OpenAiProvider.php</file>
+          </dir>
+          <file>LlmTagger.php</file>
+          <file>Stopwords.php</file>
+          <file>StopwordsEn.php</file>
+          <file>TfIdfTagger.php</file>
+        </dir>
+      </dir>
       <file>ChangeLog</file>
       <file>documentation_cz.html</file>
       <file>documentation_en.html</file>
@@ -3090,9 +3112,23 @@
       <file>README.txt</file>
       <file>serendipity_event_freetag.php</file>
       <file>serendipity_plugin_freetag.php</file>
-</dir>
+    </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_freetag/auto/docs/DEVELOPER_AI_PROMPT.md</file>
+    <file>serendipity_event_freetag/auto/docs/DISCUSSION_PREAMBLE.md</file>
+    <file>serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.de.md</file>
+    <file>serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md</file>
+    <file>serendipity_event_freetag/auto/lib/HtmlText.php</file>
+    <file>serendipity_event_freetag/auto/lib/llm/AnthropicProvider.php</file>
+    <file>serendipity_event_freetag/auto/lib/llm/GeminiProvider.php</file>
+    <file>serendipity_event_freetag/auto/lib/llm/LlmProvider.php</file>
+    <file>serendipity_event_freetag/auto/lib/llm/OllamaProvider.php</file>
+    <file>serendipity_event_freetag/auto/lib/llm/OpenAiProvider.php</file>
+    <file>serendipity_event_freetag/auto/lib/LlmTagger.php</file>
+    <file>serendipity_event_freetag/auto/lib/Stopwords.php</file>
+    <file>serendipity_event_freetag/auto/lib/StopwordsEn.php</file>
+    <file>serendipity_event_freetag/auto/lib/TfIdfTagger.php</file>
     <file>serendipity_event_freetag/ChangeLog</file>
     <file>serendipity_event_freetag/documentation_cz.html</file>
     <file>serendipity_event_freetag/documentation_en.html</file>
