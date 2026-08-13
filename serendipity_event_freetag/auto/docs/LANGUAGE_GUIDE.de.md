@@ -1,6 +1,6 @@
 # Eine Sprachdatei für das Auto-Tagging-Stopwortsystem bauen
 
-*[English version: LANGUAGE_GUIDE.md](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md)*
+*[English version: LANGUAGE_GUIDE.md](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md)*
 
 Dieses Dokument erklärt die *Prinzipien* hinter `Stopwords.php` (Deutsch) und
 `StopwordsEn.php` (Englisch), damit ein zukünftiger Mitentwickler eine
@@ -304,7 +304,7 @@ Wörter erneut zu verhandeln.
 
 Hier finden Sie eine komprimierte Version der 13 vorhergehenden Abschnitte
 auf eine dichte, imperative Struktur mit eingebautem Selbst-Check am Ende;
-als ein Beispiel was Sie einer KI ihrer Wahl als [`DEVELOPER_AI_PROMPT`](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/DEVELOPER_AI_PROMPT.md),
+als ein Beispiel was Sie einer KI ihrer Wahl als [`DEVELOPER_AI_PROMPT`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/DEVELOPER_AI_PROMPT.md),
 als Richtlinie eingeben können, wenn sie eine neue Sprachdatei im oben
 genannten Sinne mit einer solchen KI entwickeln möchten. Sie müssen nur noch
 die Sprache ihrer Wahl eintragen und die zwei Referenzdateien hinzufügen, sowie

@@ -35,7 +35,7 @@ cost is one missed suggestion, not a lost feature.
 
 **What's useful to include in your suggestion:**
 - The word itself (base form is enough - inflected forms are usually
-  derived automatically, see [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md)).
+  derived automatically, see [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md)).
 - Where you actually saw it cause noise (a specific article, a specific
   auto-suggestion you didn't want) - real examples move faster than
   hypotheticals.
@@ -51,7 +51,7 @@ cost is one missed suggestion, not a lost feature.
 
 If you want the full reasoning behind how this list is built (verb
 inflection strategy, plural handling, why some short words are kept even
-though they never fire, etc.), see [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md) in this repo.
+though they never fire, etc.), see [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md) in this repo.
 
 ---
 
@@ -90,7 +90,7 @@ keine verlorene Funktion.
 
 **Was einem Vorschlag hilft:**
 - Das Wort selbst (Grundform reicht – flektierte Formen werden meist
-  automatisch abgeleitet, siehe [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md)).
+  automatisch abgeleitet, siehe [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md)).
 - Wo du es tatsächlich als Störung erlebt hast (ein konkreter Artikel, ein
   konkreter unerwünschter Auto-Vorschlag) – echte Beispiele sind schneller
   zu klären als Hypothesen.
@@ -106,5 +106,5 @@ keine verlorene Funktion.
 
 Für die komplette Begründung, wie diese Liste aufgebaut ist (Strategie zur
 Verb-Flexion, Umgang mit Plural, warum manche kurzen Wörter trotz
-Wirkungslosigkeit drinbleiben, usw.), siehe [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md) in diesem
+Wirkungslosigkeit drinbleiben, usw.), siehe [`LANGUAGE_GUIDE.md`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md) in diesem
 Repository.

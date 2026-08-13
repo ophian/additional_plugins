@@ -1,6 +1,6 @@
 # Building a Language File for the Auto-Tagging Stopword System
 
-*[Deutsche Version: LANGUAGE_GUIDE.de.md](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.de.md)*
+*[Deutsche Version: LANGUAGE_GUIDE.de.md](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.de.md)*
 
 This document explains the *principles* behind `Stopwords.php` (German) and
 `StopwordsEn.php` (English), so a future contributor can build a stopword
@@ -274,7 +274,7 @@ words that are already covered.
 
 Here you can find some condensed sections with a concise, imperative structure
 of the 13 chapters above and a built-in self-check at the end, as an example
-what to give to an AI system of your choice as a [`DEVELOPER_AI_PROMPT`](https://github.com/ophian/additional_plugins/serendipity_event_freetag/auto/docs/DEVELOPER_AI_PROMPT.md),
+what to give to an AI system of your choice as a [`DEVELOPER_AI_PROMPT`](https://github.com/ophian/additional_plugins/blob/master/serendipity_event_freetag/auto/docs/DEVELOPER_AI_PROMPT.md),
 building a new language file alltogether. All you have to do is to insert your
 preferred language to build, add the two reference files, and explain your real
 intentions to get started. Good luck!
