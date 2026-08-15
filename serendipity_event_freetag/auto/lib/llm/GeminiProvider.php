@@ -1,11 +1,10 @@
 <?php
 
-require_once __DIR__ . '/LlmProvider.php';
-
 /**
  * NOTE ON THE MODEL NAME: same caveat as OpenAiProvider - 'gemini-2.0-flash'
  * may be outdated by the time you use this. Check
  * https://ai.google.dev/gemini-api/docs/models for the current lineup.
+ * Changed to 'gemini-3.1-flash-lite' in August, 13th 2026 for Take I.
  */
 final class GeminiProvider implements LlmProvider
 {

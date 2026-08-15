@@ -1,3 +1,9 @@
+6.6.1:
+------
+ * Changed Auto-Tag enable option to positiv language. YOU have to check you sets again please. It is now vice versa. Sorry.
+ * Changed the lang and descriptions accordingly.
+ * Fixed some issues with AI LLM usage sets. Use autoloader and catch exceptions. (This still is an experimental option since not having been tested LIVE yet.)
+
 6.6.0:
 ------
  * Add NEW auto tag suggestions feature.

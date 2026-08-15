@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/LlmProvider.php';
-
 /**
  * Talks to a local Ollama server (https://ollama.com) - no API key, no
  * per-request cost, runs entirely on your own machine. Relevant if you
@@ -9,6 +7,7 @@ require_once __DIR__ . '/LlmProvider.php';
  * (see the earlier discussion about not wanting to pay just to test).
  * Requires `ollama serve` running locally and a model already pulled
  * (e.g. `ollama pull llama3.2`).
+ * Changed to 'gemma4' in August, 13th 2026 for Take I.
  */
 final class OllamaProvider implements LlmProvider
 {

@@ -1,7 +1,11 @@
 <?php
 
-require_once __DIR__ . '/LlmProvider.php';
-
+/**
+ * NOTE ON THE MODEL NAME: same caveat as OpenAiProvider - 'claude-sonnet-4-20250514'
+ * may be outdated by the time you use this. Check
+ * https://platform.claude.com/docs/en/about-claude/models/overview for the current lineup.
+ * Changed to 'claude-sonnet-5' in August, 13th 2026 for Take I.
+ */
 final class AnthropicProvider implements LlmProvider
 {
     private string $apiKey;

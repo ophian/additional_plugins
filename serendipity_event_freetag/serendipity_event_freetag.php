@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.6.0');
+        $propbag->add('version',       '6.6.1');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -269,7 +269,7 @@ class serendipity_event_freetag extends serendipity_event
                 $propbag->add('type',        'boolean');
                 $propbag->add('name',        PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT);
                 $propbag->add('description', PLUGIN_EVENT_FREETAG_AUTOTAGS_OPT_DESC);
-                $propbag->add('default',     'false');
+                $propbag->add('default',     'true');
                 break;
 
             case 'admin_autotags_llm':
@@ -3142,8 +3142,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function backend_display($entryID)
     {
         global $serendipity;
-        static $autotags = !$this->get_config('admin_autotags', false);
-        static $llm = $this->get_config('admin_autotags_llm', ''); // none or empty for NOT SET
+        static $autotags = serendipity_db_bool($this->get_config('admin_autotags', true));
+        static $llm = trim($this->get_config('admin_autotags_llm', '')); // none or empty for NOT SET
         static $curr_supported_langs = ['en', 'de'];
 
         // Dismiss handlers if dependency multilingual plugin has changed the current entry lang to something NOT null OR ''. Plugin order is importless.
@@ -3156,7 +3156,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 require_once __DIR__ . '/auto/lib/TfIdfTagger.php';
                 require_once __DIR__ . '/auto/lib/HtmlText.php';
             } else {
-                require_once __DIR__ . '/auto/lib/LlmTagger.php';
+                require_once __DIR__ . '/auto/autoload.php';
             }
         }
 
@@ -3479,52 +3479,10 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 </script>
 <?php
-            if (empty($llm) || $llm === 'none') {
-                $corpus = array_map(fn($a) => $a['body'], array($article)); // YES, must be a multidimensional array
-                if ($serendipity['lang'] === 'de' || (isset($_GET['freetag_lang']) && $_GET['freetag_lang'] === 'de')) {
-                    $context = 'de';
-                    $tfidf = new TfIdfTagger($corpus, mergeLoanwordPlurals: true); // de -> $corpusTexts, $minWordLength, $useBigrams, $nounsOnly, $excludeGenitiveNames, $language, $mergeLoanwordPlurals
-                } else {
-                    $context = 'en';
-                    $tfidf = new TfIdfTagger($corpus, language: 'en'); // en -> $corpusTexts, $minWordLength, $useBigrams, $nounsOnly, $excludeGenitiveNames, $language, $mergeLoanwordPlurals
-                }
-            } else {
-                $lang = ($serendipity['lang'] === 'de' || (isset($_GET['freetag_lang']) && $_GET['freetag_lang'] === 'de')) ? 'de' : 'en';
-                if (str_contains($llm, 'claude')) {
-                    try {
-                        $tagger = new LlmTagger(new AnthropicProvider(), $lang);
-                    } catch (\Throwable $t) {
-                        $tagger = new LlmTagger(new FakeProvider(), "de");
-                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
-                    }
-                } elseif (str_contains($llm, 'gemini')) {
-                    try {
-                        $tagger = new LlmTagger(new GeminiProvider(), $lang);
-                    } catch (\Throwable $t) {
-                        $tagger = new LlmTagger(new FakeProvider(), "de");
-                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
-                    }
-                } elseif (str_contains($llm, 'gpt')) {
-                    try {
-                        $tagger = new LlmTagger(new OpenAiProvider(), $lang);
-                    } catch (\Throwable $t) {
-                        $tagger = new LlmTagger(new FakeProvider(), "de");
-                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
-                    }
-                } elseif (str_contains($llm, 'gemma') || str_contains($llm, 'localhost')) {
-                    try {
-                        $tagger = new LlmTagger(new OllamaProvider('llama3.2'), $lang);
-                    } catch (\Throwable $t) {
-                        $tagger = new LlmTagger(new FakeProvider(), "de");
-                        $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
-                    }
-                } else {
-                    #$tagger = "{\"matched\": [\"existing tag\", ...], \"new\": [\"suggested new tag\", ...]}";
-                    $tagger = new LlmTagger(new FakeProvider(), "de");
-                    $result = $tagger->suggest("A test article about PHP.", ["php"], 3); // body - exisisting tag, get 3 suggestion tags
-                }
-            }
-
+            // Entries array text corpus
+            $corpus = array_map(fn($a) => $a['body'], array($article)); // YES, must be a multidimensional array
+            // The corpus context language
+            $ccLang = ($serendipity['lang'] === 'de' || (isset($_GET['freetag_lang']) && $_GET['freetag_lang'] === 'de')) ? 'de' : 'en';
             // This article's own tags go first, so "first seen" in suggest()'s
             // case-insensitive dedup correctly reflects THIS article's established
             // spelling - not whichever spelling some other article happened to
@@ -3532,10 +3490,64 @@ document.addEventListener("DOMContentLoaded", function() {
             $tagsForThisArticle = array_unique(array_merge($thisTags, $allTags));
 
             if (empty($llm) || $llm === 'none') {
+                if ($ccLang === 'de') {
+                    $tfidf = new TfIdfTagger($corpus, mergeLoanwordPlurals: true); // de -> $corpusTexts, $minWordLength, $useBigrams, $nounsOnly, $excludeGenitiveNames, $language, $mergeLoanwordPlurals
+                } else {
+                    $tfidf = new TfIdfTagger($corpus, language: 'en'); // en -> $corpusTexts, $minWordLength, $useBigrams, $nounsOnly, $excludeGenitiveNames, $language, $mergeLoanwordPlurals
+                }
+            } else {
+                $errorMessage = $provider = null;
+                if (str_contains($llm, 'claude')) {
+                    try {
+                        $tagger = new LlmTagger(new AnthropicProvider(), $ccLang);
+                        $result = $tagger->suggest($article['body'], $tagsForThisArticle, 6);
+                    } catch (\Throwable $t) {
+                        $errorMessage = $t->getMessage();
+                        $provider = 'Anthropic';
+                    }
+                } elseif (str_contains($llm, 'gemini')) {
+                    try {
+                        $tagger = new LlmTagger(new GeminiProvider(), $ccLang);
+                        $result = $tagger->suggest($article['body'], $tagsForThisArticle, 6);
+                    } catch (\Throwable $t) {
+                        $errorMessage = $t->getMessage();
+                        $provider = 'Gemini';
+                    }
+                } elseif (str_contains($llm, 'gpt')) {
+                    try {
+                        $tagger = new LlmTagger(new OpenAiProvider(), $ccLang);
+                        $result = $tagger->suggest($article['body'], $tagsForThisArticle, 6);
+                    } catch (\Throwable $t) {
+                        $errorMessage = $t->getMessage();
+                        $provider = 'OpenAi';
+                    }
+                } elseif (str_contains($llm, 'gemma') || str_contains($llm, 'localhost')) {
+                    try {
+                        $tagger = new LlmTagger(new OllamaProvider('llama3.2'), $ccLang);
+                        $result = $tagger->suggest($article['body'], $tagsForThisArticle, 6);
+                    } catch (\Throwable $t) {
+                        $errorMessage = $t->getMessage();
+                        $provider = 'Ollama';
+                    }
+                } else {
+                    // just in case...
+                    #$tagger = "{\"matched\": [\"existing tag\", ...], \"new\": [\"suggested new tag\", ...]}";
+                    $tagger = new LlmTagger(new FakeProvider(), $ccLang);
+                    $result = $tagger->suggest($article['body'], $tagsForThisArticle, 2); // body - existing tag, get 3 suggestion tags
+                }
+
+                // If there is a connection error fall back to the Fake Provider to resume action
+                if ($errorMessage !== null) {
+                    $tagger = new LlmTagger(new FakeProvider(), $ccLang);
+                    $result = $tagger->suggest($article['body'], $tagsForThisArticle, 6);
+                    echo '<span class="msg_error"><span class="icon-attention-circled" aria-hidden="true"></span> Freetag Auto-Tags - returned FakeProvider(). ' . ($provider ?? 'Unknown') . ' Error: "' . $errorMessage . "</span>\n";
+                }
+            }
+
+            if (empty($llm) || $llm === 'none') {
                 $tfidfResult = $tfidf->suggest($article['body'], $tagsForThisArticle, 6); // concerning priority problem sommer -> Sommer
             } else {
-                $result = $tagger->suggest($article['body'], $tagsForThisArticle, 6);
-                $tfidfResult = $result;
+                $tfidfResult = $result; // llm result to array loop
             }
 
             foreach ($tfidfResult['suggested'] as $s) {
@@ -3562,7 +3574,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if ($autotags) {
 ?>
                 <div id="properties_freetag_suggested" class="form_field">
-                    <label for="properties_freetag_suggestTags" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS; ?>:<span class="to-right">for context [<span><?=$context?></span>]</span></label>
+                    <label for="properties_freetag_suggestTags" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS; ?>:<span class="to-right">for context [<span><?=$ccLang?></span>]</span></label>
 <?php
                 foreach ($suggestedAutoTags AS $autoTag) {
                     $sTag = htmlspecialchars($autoTag);

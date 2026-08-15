@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/LlmProvider.php';
-
 /**
  * NOTE ON THE MODEL NAME: 'gpt-4o-mini' below is a placeholder default that
  * was current at one point but may well be outdated by the time you read
@@ -9,6 +7,7 @@ require_once __DIR__ . '/LlmProvider.php';
  * the current state. Check https://platform.openai.com/docs/models and pass
  * whatever model string is current into the constructor rather than relying
  * on the default.
+ * Changed to 'gpt-5.6-luna' in August, 13th 2026 for Take I.
  */
 final class OpenAiProvider implements LlmProvider
 {
