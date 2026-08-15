@@ -187,6 +187,7 @@
   <filelist>
     <dir name="serendipity_event_freetag">
       <dir name="auto">
+        <file>autoload.php</file>
         <dir name="docs">
           <file>DEVELOPER_AI_PROMPT.md</file>
           <file>DISCUSSION_PREAMBLE.md</file>
@@ -197,6 +198,7 @@
           <file>HtmlText.php</file>
           <dir name="llm">
             <file>AnthropicProvider.php</file>
+            <file>FakeProvider.php</file>
             <file>GeminiProvider.php</file>
             <file>LlmProvider.php</file>
             <file>OllamaProvider.php</file>
@@ -237,12 +239,14 @@
     </dir>
   </filelist>
   <serendipityFilelist>
+    <file>serendipity_event_freetag/auto/autoload.php</file>
     <file>serendipity_event_freetag/auto/docs/DEVELOPER_AI_PROMPT.md</file>
     <file>serendipity_event_freetag/auto/docs/DISCUSSION_PREAMBLE.md</file>
     <file>serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.de.md</file>
     <file>serendipity_event_freetag/auto/docs/LANGUAGE_GUIDE.md</file>
     <file>serendipity_event_freetag/auto/lib/HtmlText.php</file>
     <file>serendipity_event_freetag/auto/lib/llm/AnthropicProvider.php</file>
+    <file>serendipity_event_freetag/auto/lib/llm/FakeProvider.php</file>
     <file>serendipity_event_freetag/auto/lib/llm/GeminiProvider.php</file>
     <file>serendipity_event_freetag/auto/lib/llm/LlmProvider.php</file>
     <file>serendipity_event_freetag/auto/lib/llm/OllamaProvider.php</file>
