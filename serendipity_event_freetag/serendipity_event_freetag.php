@@ -1154,6 +1154,8 @@ a.button_link.tagview_active {
 [data-color-mode="dark"] #properties_freetag_suggested {
   padding: .25em;
   border: 1px solid var(--color-border-info);
+  border-bottom-color: var(--color-scale-blue-9);
+  border-right-color: var(--color-scale-blue-9);
   background: linear-gradient(to bottom, rgb(86, 93, 102) 0%,rgb(19, 24, 30) 100%);
 }
 [data-color-mode="dark"] #properties_freetag_suggested label,
