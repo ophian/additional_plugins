@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.6');
+        $propbag->add('version',        '3.3.7');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -306,21 +306,46 @@ class serendipity_event_lightbox extends serendipity_event
 
                 // Detect thumbnail aspect ratio to prevent jumpy opening animations
                 const imgEl = linkEl.querySelector("img");
-                if (imgEl && imgEl.naturalWidth) {
-                    const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
 
-                    // Preserve aspect ratio based on original orientation
-                    if (ratio >= 1) {
-                        // Landscape or square
-                        itemData.w = 1200;
-                        itemData.h = 1200 / ratio;
+                if (imgEl) {
+                    // If thumbnail has loaded, use its natural dimensions
+                    if (imgEl.naturalWidth > 0 && imgEl.naturalHeight > 0) {
+                        const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
+
+                        // Preserve aspect ratio based on original orientation
+                        if (ratio >= 1) {
+                            // Landscape or square
+                            itemData.w = 1200;
+                            itemData.h = 1200 / ratio;
+                        } else {
+                            // Portrait
+                            itemData.h = 1200;
+                            itemData.w = 1200 * ratio;
+                        }
                     } else {
-                        // Portrait
-                        itemData.h = 1200;
-                        itemData.w = 1200 * ratio;
+                        // Thumbnail dimensions not yet available
+                        // Use thumbnail\'s display dimensions to estimate aspect ratio
+                        const thumbWidth = imgEl.width || imgEl.offsetWidth || 600;
+                        const thumbHeight = imgEl.height || imgEl.offsetHeight || 900;
+
+                        if (thumbWidth > 0 && thumbHeight > 0) {
+                            const ratio = thumbWidth / thumbHeight;
+
+                            if (ratio >= 1) {
+                                itemData.w = 1200;
+                                itemData.h = 1200 / ratio;
+                            } else {
+                                itemData.h = 1200;
+                                itemData.w = 1200 * ratio;
+                            }
+                        } else {
+                            // Last resort: assume landscape
+                            itemData.w = 1200;
+                            itemData.h = 900;
+                        }
                     }
                 } else {
-                    // Fallback dimensions if we can\'t get thumbnail dimensions
+                    // No thumbnail img found, assume landscape
                     itemData.w = 1200;
                     itemData.h = 900;
                 }
