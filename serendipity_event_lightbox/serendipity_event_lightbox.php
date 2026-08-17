@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.7');
+        $propbag->add('version',        '3.3.8');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -268,145 +268,145 @@ class serendipity_event_lightbox extends serendipity_event
                             echo '    <script type="module">
         import PhotoSwipeLightbox from "' . $pluginDir . '/photoswipe/photoswipe-lightbox.esm.min.js";
 
-        const lightbox = new PhotoSwipeLightbox({';
+        const preloadAllImages = async (children, timeout = 5000) => {
+            return Promise.all(
+                Array.from(children).map(link => {
+                    return Promise.race([
+                        new Promise((resolve) => {
+                            const src = link.getAttribute("data-pswp-src") || link.getAttribute("href");
+                            const img = new Image();
+                            img.onload = () => {
+                                link.dataset.pswpWidth = img.naturalWidth;
+                                link.dataset.pswpHeight = img.naturalHeight;
+                                resolve();
+                            };
+                            img.onerror = () => resolve();
+                            img.src = src;
+                        }),
+                        new Promise(resolve => setTimeout(resolve, timeout))
+                    ]);
+                })
+            );
+        };
+
+        (async () => {
+            // Preload images before initializing lightbox
+            const children = document.querySelectorAll("a[rel^=\"photoswipe\"]");
+            await preloadAllImages(children);
+
+            // NOW initialize PhotoSwipe with pre-loaded dimensions
+            const lightbox = new PhotoSwipeLightbox({';
                             switch ($navigate) {
                                 case 'page':
                                     echo '
-            gallery: "body",
-            children: "a[rel^=\"photoswipe\"]",';
+                gallery: "body",
+                children: "a[rel^=\"photoswipe\"]",';
                                     break;
                                 // selector is based on [pure]-standard theme usage
                                 case 'entry':
                                     echo '
-            gallery: ".post_content",
-            children: "a[rel^=\"photoswipe\"]",';// check only these with equal ID matches
+                gallery: ".post_content",
+                children: "a[rel^=\"photoswipe\"]",';// check only these with equal ID matches
                                     break;
                                 default:
                                     echo '
-            gallery: "a[rel^=\"photoswipe\"]",';
+                gallery: "a[rel^=\"photoswipe\"]",';
                             }
                             $init_js = $this->get_config('init_js', '');
                             if (!empty($init_js)) {
                                 echo $init_js;
                             }
                             echo '
-            pswpModule: () => import("' . $pluginDir . '/photoswipe/photoswipe.esm.min.js"),
-            wheelToZoom: true,
-            closeOnVerticalDrag: true,
-            // Extra bottom padding to keep image clear of the caption bar
-            padding: { top: 20, bottom: 100, left: 20, right: 20 }
-        });
+                pswpModule: () => import("' . $pluginDir . '/photoswipe/photoswipe.esm.min.js"),
+                wheelToZoom: true,
+                closeOnVerticalDrag: true,
+                // Extra bottom padding to keep image clear of the caption bar
+                padding: { top: 20, bottom: 100, left: 20, right: 20 }
+            });
 
-        lightbox.addFilter("itemData", (itemData) => {
-            const linkEl = itemData.element;
-            if (linkEl) {
-                // Prefer explicit data-pswp-src set by PHP; fallback to href
-                itemData.src = linkEl.getAttribute("data-pswp-src") || linkEl.getAttribute("href");
-                itemData.title = linkEl.getAttribute("title");
+            lightbox.addFilter("itemData", (itemData) => {
+                const linkEl = itemData.element;
+                if (linkEl) {
+                    itemData.src = linkEl.getAttribute("data-pswp-src") || linkEl.getAttribute("href");
+                    itemData.title = linkEl.getAttribute("title");
 
-                // Detect thumbnail aspect ratio to prevent jumpy opening animations
-                const imgEl = linkEl.querySelector("img");
+                    // Use preloaded dimensions from data attributes
+                    let width = parseInt(linkEl.dataset.pswpWidth) || 0;
+                    let height = parseInt(linkEl.dataset.pswpHeight) || 0;
 
-                if (imgEl) {
-                    // If thumbnail has loaded, use its natural dimensions
-                    if (imgEl.naturalWidth > 0 && imgEl.naturalHeight > 0) {
-                        const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
+                    if (width > 0 && height > 0) {
+                        const ratio = width / height;
 
-                        // Preserve aspect ratio based on original orientation
                         if (ratio >= 1) {
-                            // Landscape or square
                             itemData.w = 1200;
                             itemData.h = 1200 / ratio;
                         } else {
-                            // Portrait
                             itemData.h = 1200;
                             itemData.w = 1200 * ratio;
                         }
                     } else {
-                        // Thumbnail dimensions not yet available
-                        // Use thumbnail\'s display dimensions to estimate aspect ratio
-                        const thumbWidth = imgEl.width || imgEl.offsetWidth || 600;
-                        const thumbHeight = imgEl.height || imgEl.offsetHeight || 900;
-
-                        if (thumbWidth > 0 && thumbHeight > 0) {
-                            const ratio = thumbWidth / thumbHeight;
-
-                            if (ratio >= 1) {
-                                itemData.w = 1200;
-                                itemData.h = 1200 / ratio;
-                            } else {
-                                itemData.h = 1200;
-                                itemData.w = 1200 * ratio;
-                            }
-                        } else {
-                            // Last resort: assume landscape
-                            itemData.w = 1200;
-                            itemData.h = 900;
-                        }
+                        itemData.w = 1200;
+                        itemData.h = 900;
                     }
-                } else {
-                    // No thumbnail img found, assume landscape
-                    itemData.w = 1200;
-                    itemData.h = 900;
                 }
-            }
-            return itemData;
-        });
-
-        // Dynamically update true dimensions once the full image has loaded
-        lightbox.on("gettingData", (e) => {
-            const { data } = e;
-            const img = new Image();
-
-            img.onload = () => {
-                // Set actual dimensions from loaded image
-                data.w = img.naturalWidth;
-                data.h = img.naturalHeight;
-
-                // Force PhotoSwipe to recalculate layout with new dimensions
-                if (lightbox.pswp) {
-                    // Clear any cached zoom levels to prevent distortion
-                    lightbox.pswp.currSlide.zoomLevel = null;
-                    lightbox.pswp.updateSize(true);
-                }
-            };
-
-            img.onerror = () => {
-                // If image fails to load, keep estimated dimensions
-                console.warn("Failed to load image for dimensions:", data.src);
-            };
-
-            img.src = data.src;
-        });
-
-         // Register the custom caption element to the Root interface layer
-         lightbox.on("uiRegister", function() {
-            lightbox.pswp.ui.registerElement({
-                name: "custom-caption",
-                order: 9,
-                tagName: "div",
-                appendTo: "root",
-                onInit: (el, pswp) => {
-                    pswp.on("change", () => {
-                        const currSlideElement = lightbox.pswp.currSlide.data.element;
-                        let captionText = null;
-                        if (currSlideElement) {
-                            const hasComment = currSlideElement.parentElement.nextElementSibling;
-                            if (hasComment !== null && hasComment.className == "serendipity_imageComment_txt") {
-                                // get caption from element with class "serendipity_imageComment_txt"
-                                captionText = hasComment.innerText;
-                            } else {
-                                // get caption from title attribute
-                                captionText = currSlideElement.getAttribute("title");
-                            }
-                        }
-                        // or fall back to alt attribute or empty nothing
-                        el.innerHTML = captionText || (currSlideElement.querySelector("img").getAttribute("alt") || "");
-                    });
-                }
+                return itemData;
             });
-        });
-        lightbox.init();
+
+            // Dynamically update true dimensions once the full image has loaded
+            lightbox.on("gettingData", (e) => {
+                const { data } = e;
+                const img = new Image();
+
+                img.onload = () => {
+                    // Set actual dimensions from loaded image
+                    data.w = img.naturalWidth;
+                    data.h = img.naturalHeight;
+
+                    // Force PhotoSwipe to recalculate layout with new dimensions
+                    if (lightbox.pswp) {
+                        // Clear any cached zoom levels to prevent distortion
+                        lightbox.pswp.currSlide.zoomLevel = null;
+                        lightbox.pswp.updateSize(true);
+                    }
+                };
+
+                img.onerror = () => {
+                    // If image fails to load, keep estimated dimensions
+                    console.warn("Failed to load image for dimensions:", data.src);
+                };
+
+                img.src = data.src;
+            });
+
+             // Register the custom caption element to the Root interface layer
+             lightbox.on("uiRegister", function() {
+                lightbox.pswp.ui.registerElement({
+                    name: "custom-caption",
+                    order: 9,
+                    tagName: "div",
+                    appendTo: "root",
+                    onInit: (el, pswp) => {
+                        pswp.on("change", () => {
+                            const currSlideElement = lightbox.pswp.currSlide.data.element;
+                            let captionText = null;
+                            if (currSlideElement) {
+                                const hasComment = currSlideElement.parentElement.nextElementSibling;
+                                if (hasComment !== null && hasComment.className == "serendipity_imageComment_txt") {
+                                    // get caption from element with class "serendipity_imageComment_txt"
+                                    captionText = hasComment.innerText;
+                                } else {
+                                    // get caption from title attribute
+                                    captionText = currSlideElement.getAttribute("title");
+                                }
+                            }
+                            // or fall back to alt attribute or empty nothing
+                            el.innerHTML = captionText || (currSlideElement.querySelector("img").getAttribute("alt") || "");
+                        });
+                    }
+                });
+            });
+            lightbox.init();
+        })();
     </script>' . "\n";
                         }
                     }

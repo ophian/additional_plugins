@@ -1,3 +1,8 @@
+3.3.8:
+------
+ * PhotoSwipe: Fix image dimension handling with preload and top-level await
+   to always ensure correct aspect ratios for portrait and landscape images in galleries.
+
 3.3.7:
 ------
  * PhotoSwipe: Fix dimension setups edge case for portrait images
