@@ -1151,6 +1151,44 @@ a.button_link.tagview_active {
     transform: rotate(180deg);
 }
 
+#properties_freetag_suggested {
+  position: relative;
+  --tags-offset: 552px;
+}
+
+.suggestion-info-tooltip {
+  position: relative;
+  cursor: pointer;
+}
+.suggestion-info-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: max-content;
+  max-width: min(520px, 100vw);
+  background: #1c2128;
+  color: gainsboro;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-inverse);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 9pt;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(calc(-5% - (var(--tags-offset) * 0.5)), -35%);
+  transition: opacity 0.2s ease-in-out;
+  z-index: 1000;
+}
+@media only screen and (min-width: 1320px) {
+  .suggestion-info-tooltip::after {
+    transform: translate(-16%, 6%);
+  }
+}
+.suggestion-info-tooltip:hover::after {
+  opacity: 1;
+}
+
 [data-color-mode="dark"] #properties_freetag_suggested {
   padding: .25em;
   border: 1px solid var(--color-border-info);
@@ -1158,7 +1196,7 @@ a.button_link.tagview_active {
   border-right-color: var(--color-scale-blue-9);
   background: linear-gradient(to bottom, rgb(86, 93, 102) 0%,rgb(19, 24, 30) 100%);
 }
-[data-color-mode="dark"] #properties_freetag_suggested label,
+[data-color-mode="dark"] #properties_freetag_suggested legend,
 [data-color-mode="dark"] #properties_freetag_suggested .to-right span {
     color: var(--color-highlight-text);
 }
@@ -1168,14 +1206,19 @@ a.button_link.tagview_active {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+#properties_freetag_suggested legend {
+  font-weight: bold;
+}
 #properties_freetag_suggested .to-right {
   float: right;
   margin-top: .15em;
   padding-right: .25em;
+  font-weight: normal;
   font-size: smaller;
 }
 #properties_freetag_suggested .scores {
   display: block;
+  font-weight: normal;
   font-size: smaller;
   font-variant: all-small-caps;
 }
@@ -1746,6 +1789,7 @@ document.addEventListener("DOMContentLoaded", function() {
             $this->displayTag = $tag;
         }
         $thistags = is_array($this->displayTag) ? implode(', ', $this->displayTag) : $this->displayTag;
+        if ($thistags === true) return;
         $serendipity['smarty']->assign('freetag_tagTitle', htmlspecialchars($thistags));
 
         if (!empty($tags)) {
@@ -3478,6 +3522,48 @@ document.addEventListener("DOMContentLoaded", function() {
             window.addEventListener("resize", () => { measure(); updateTocMode(); });
         }
     }
+
+    // Left oriented positioning of used data-tooltip layer for issue: Chromium title context limitation of 1024chars
+    function updateTooltipOffset() {
+      const container = document.getElementById('properties_freetag_suggested');
+      const tooltipIcon = container?.querySelector('.suggestion-info-tooltip');
+      const legend = container?.querySelector('legend');
+
+      if (container && tooltipIcon) {
+        const containerRect = container.getBoundingClientRect();
+        const iconRect = tooltipIcon.getBoundingClientRect();
+
+        const hasTags = !!container.querySelector('a');
+
+        if (!hasTags) {
+          // Icon offsetLeft relative to the container + the icon's own width (14px fixed or measured)
+          const iconWidth = tooltipIcon.offsetWidth || 14;
+          const emptyStateOffset = tooltipIcon.offsetLeft + iconWidth;
+
+          tooltipIcon.style.setProperty('--tags-offset', `${Math.round(emptyStateOffset)}px`);
+          return; // immediate end
+        }
+        // Take the Legend-Elements Height to measure the start line to offset (if set)
+        const topBaseline = legend ? legend.offsetHeight : 0;
+
+        // Check whether the icon is on a new line (Y-axis comparison)
+        const isOnFirstLine = tooltipIcon.offsetTop < (topBaseline + 7);
+
+        // Offset from the left edge of the container in pixels
+        const offsetLeft = iconRect.left - containerRect.left;
+
+        // Set a CSS variable directly on the container
+        if (isOnFirstLine || offsetLeft < 16) {
+            container.style.setProperty('--tags-offset', `498px`);
+        } else {
+            container.style.setProperty('--tags-offset', `${Math.round(offsetLeft)+54}px`);
+        }
+      }
+    }
+
+    // Run when loading and when the window size changes
+    document.addEventListener('DOMContentLoaded', updateTooltipOffset);
+    window.addEventListener('resize', updateTooltipOffset);
 }
 </script>
 <?php
@@ -3576,14 +3662,14 @@ document.addEventListener("DOMContentLoaded", function() {
         if ($autotags) {
 ?>
                 <div id="properties_freetag_suggested" class="form_field">
-                    <label for="properties_freetag_suggestTags" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS; ?>:<span class="to-right">for context [<span><?=$ccLang?></span>]</span></label>
+                    <legend for="properties_freetag_suggested" class="block_level"><?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS; ?>:<span class="to-right">for context [<span><?=$ccLang?></span>]</span></legend>
 <?php
                 foreach ($suggestedAutoTags AS $autoTag) {
                     $sTag = htmlspecialchars($autoTag);
                     echo "                    <a {$class}href=\"#tagListAnchor\" onClick=\"addTag('{$sTag}')\">{$sTag}</a>\n";
                 }
 ?>
-                    <span class="icon-info-circled" aria-hidden="true" title="<?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS_INFO; ?>"></span>
+                    <span class="icon-info-circled suggestion-info-tooltip" aria-hidden="true" data-tooltip="<?php echo PLUGIN_EVENT_FREETAG_AUTOTAGS_INFO; ?>"></span>
                     <div class="scores"><u>By Score:</u><br><?php echo rtrim($scores, ', '); ?></div>
                 </div>
 <?php

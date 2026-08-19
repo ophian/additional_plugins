@@ -1,3 +1,14 @@
+6.6.2:
+------
+ * Fix label node name. The label’s for attribute didn’t match any element id.
+   Due to further issues with Chromium turned the label to a legend element.
+ * The auto tag suggestions info buttons long attribute title issues with Chromium too,
+   since this browser and derivates use a display limitation of 1024 chars, ending with ... ellipsis.
+   This cuts valuable information. So instead to have a "Right click examine in DEV tools DOM context"
+   in these browsers we now use a custom styled data-tooltip instead. Safari and Firefox would not have
+   cared since generally limit at over 3000+chars.
+ * Fix a frontend tag exception error on htmlspecialchars when $thistags === true
+
 6.6.1:
 ------
  * Changed Auto-Tag enable option to positiv language. YOU have to check you sets again please. It is now vice versa. Sorry.
