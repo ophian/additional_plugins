@@ -24,7 +24,7 @@ class serendipity_event_lightbox extends serendipity_event
         $propbag->add('name',           PLUGIN_EVENT_LIGHTBOX_NAME);
         $propbag->add('description',    PLUGIN_EVENT_LIGHTBOX_DESC);
         $propbag->add('author',         'Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',        '3.3.8');
+        $propbag->add('version',        '3.3.9');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'php'         => '8.2'
@@ -261,8 +261,10 @@ class serendipity_event_lightbox extends serendipity_event
         .hidden-caption-content, .pswp__custom-caption:empty { display: none; }
     </style>';
                         } else {
-                            // check for staticpage views (and other plugins)
-                            if ($serendipity['view'] == 'plugin') $navigate = 'page';
+                            // check for staticpage views (and other plugins) - but NOT frontend tag views, since that needs gallery: ".post_content" w/ $navigate = entry
+                            if ($serendipity['view'] == 'plugin' && !str_contains($_GET['url'], 'plugin/tag/')) {
+                                $navigate = 'page';
+                            }
                             // remove very old anchors possible onclick handler since we don't need both
                             echo '    <script type="text/javascript"> jQuery(document).ready(function(){ jQuery(\'a[rel^="photoswipe"]\').removeAttr("onclick"); }); </script>' . "\n";
                             echo '    <script type="module">
