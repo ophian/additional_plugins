@@ -1,3 +1,9 @@
+6.6.3:
+------
+ * Fix/Improve some #freetoc and suggested box element rules for Styx light mode
+ * Fix issue with hidden toc element on some distances scrollTop-Maxima coming from page ends,
+   so we better measure the distance to the bottom of the page, which is independent of the viewport.
+
 6.6.2:
 ------
  * Fix label node name. The label’s for attribute didn’t match any element id.

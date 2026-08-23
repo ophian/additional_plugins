@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.6.2');
+        $propbag->add('version',       '6.6.3');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1060,7 +1060,7 @@ class serendipity_event_freetag extends serendipity_event
   max-height: 0px;
   font-size: small;
   overflow: auto;
-  border: 1px dashed #383838;
+  border: 1px dashed transparent;
   color: transparent;
 }
 #freetoc.can-float {
@@ -1068,8 +1068,11 @@ class serendipity_event_freetag extends serendipity_event
   top: 1rem;
   max-height: 45rem;
   align-self: start;
-  border: 4px double var(--color-alert-info-border);
+  border: 4px double darkgray;
   color: initial;
+}
+[data-color-mode="dark"] #freetoc.can-float {
+  border: 4px double var(--color-alert-info-border);
 }
 [data-color-mode="dark"] #freetoc.can-float {
   border-color: var(--color-alert-info-border);
@@ -1078,13 +1081,16 @@ class serendipity_event_freetag extends serendipity_event
 #freetoc.can-float::-webkit-scrollbar { display: none; }
 #freetoc.hide { display: none; }
 
+#freetoc h3 {
+  background-color: darkgray;
+  margin: 0 .25em;
+  padding: .25em;
+}
 [data-color-mode="dark"] #main_menu #freetoc h3 {
   background-color: darkgray;
   background-image: inherit;
   border-bottom: inherit;
   color: initial;
-  margin: 0 .25em;
-  padding: .25em;
 }
 #freetoc p {
   margin: .25em 0;
@@ -1092,6 +1098,11 @@ class serendipity_event_freetag extends serendipity_event
 }
 #freetoc nav a {
   padding: .5em;
+}
+#main_menu #freetoc nav a {
+  background: #f0f8ff;
+  color: #00f !important;
+  border-top: 1px solid #ddd;
 }
 [data-color-mode="dark"] #main_menu #freetoc nav a {
   background: var(--color-bg-info);
@@ -1154,6 +1165,17 @@ a.button_link.tagview_active {
 #properties_freetag_suggested {
   position: relative;
   --tags-offset: 552px;
+  padding: .25em;
+  border: 1px solid #cdcdcd;
+  border-bottom-color: #7b7b7c;
+  border-right-color: #7b7b7c;
+  background: linear-gradient(to bottom, rgb(253, 253, 253) 0%,rgb(189, 189, 189) 100%);
+}
+[data-color-mode="dark"] #properties_freetag_suggested {
+  border-color: var(--color-border-info);
+  border-bottom-color: var(--color-scale-blue-9);
+  border-right-color: var(--color-scale-blue-9);
+  background: linear-gradient(to bottom, rgb(86, 93, 102) 0%,rgb(19, 24, 30) 100%);
 }
 
 .suggestion-info-tooltip {
@@ -1189,22 +1211,17 @@ a.button_link.tagview_active {
   opacity: 1;
 }
 
-[data-color-mode="dark"] #properties_freetag_suggested {
-  padding: .25em;
-  border: 1px solid var(--color-border-info);
-  border-bottom-color: var(--color-scale-blue-9);
-  border-right-color: var(--color-scale-blue-9);
-  background: linear-gradient(to bottom, rgb(86, 93, 102) 0%,rgb(19, 24, 30) 100%);
-}
 [data-color-mode="dark"] #properties_freetag_suggested legend,
 [data-color-mode="dark"] #properties_freetag_suggested .to-right span {
     color: var(--color-highlight-text);
 }
-[data-color-mode="dark"] #properties_freetag_suggested .to-right {
-  /*background-image: linear-gradient(90deg, #08baa9, var(--color-highlight-text));*/
-  background-image: linear-gradient(90deg, var(--color-scale-blue-0), var(--color-scale-green-1), var(--color-highlight-text));
+#properties_freetag_suggested .to-right {
+  background-image: linear-gradient(90deg, #08baa9, #f09f05);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+[data-color-mode="dark"] #properties_freetag_suggested .to-right {
+  background-image: linear-gradient(90deg, var(--color-scale-blue-0), var(--color-scale-green-1), var(--color-highlight-text));
 }
 #properties_freetag_suggested legend {
   font-weight: bold;
@@ -3506,8 +3523,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // 2. Perform smooth float calculation inside animation frame (prevents layout lag/flicker)
                 requestAnimationFrame(() => {
-                    const overflow = document.documentElement.scrollTop - sidebarContentHeight;
-                    const shouldFloat = (overflow >= spacerplus && overflow > tocHeight);
+                    // Fixed positioning: Don't use `scrollTop` directly; instead, use the distance to the bottom of the page, which is independent of the viewport:
+                    const remaining = document.documentElement.scrollHeight - window.innerHeight - document.documentElement.scrollTop;
+                    const shouldFloat = (remaining <= (sidebarContentHeight - spacerplus) && document.documentElement.scrollTop > tocHeight);
+
                     freetoc.classList.toggle("can-float", shouldFloat);
                 });
             };
