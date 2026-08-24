@@ -1,3 +1,8 @@
+6.6.4:
+------
+ * Improve tag suggestion helper tooltip box placement on desktops if the tag suggestions
+   are long and the tooltip inner help content may get cut on the right side.
+
 6.6.3:
 ------
  * Fix/Improve some #freetoc and suggested box element rules for Styx light mode

@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.6.3');
+        $propbag->add('version',       '6.6.4');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -1204,7 +1204,7 @@ a.button_link.tagview_active {
 }
 @media only screen and (min-width: 1320px) {
   .suggestion-info-tooltip::after {
-    transform: translate(-16%, 6%);
+    transform: translate(-28%, 6%);/* on long suggestions neg. increase the first, to move the box left */
   }
 }
 .suggestion-info-tooltip:hover::after {
