@@ -62,7 +62,7 @@ final class GeminiProvider implements LlmProvider
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $error = curl_error($ch);
-        curl_close($ch);
+        $ch = NULL;
 
         if ($response === false) {
             throw new RuntimeException('cURL error during Gemini API call: ' . $error);
