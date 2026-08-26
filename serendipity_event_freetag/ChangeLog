@@ -1,3 +1,7 @@
+6.6.5:
+------
+ * Simply Floated-Text-Element-Box appearance update logic to catch extended tagList vs. few tags heights OR variable plugin properties heights
+
 6.6.4:
 ------
  * Improve tag suggestion helper tooltip box placement on desktops if the tag suggestions

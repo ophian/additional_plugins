@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.6.4');
+        $propbag->add('version',       '6.6.5');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -3435,9 +3435,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             // 2. Build language toggle suggest element
-            const tocFood = document.createElement("nav");
-            tocFood.id = "tocfood";
-            tocFood.setAttribute("aria-label", "per language suggestions");
+            const tocNav = document.createElement("nav");
+            tocNav.id = "toctolang";
+            tocNav.setAttribute("aria-label", "per language suggestions");
 
             let url = new URL(location.href);
             const toLang = document.createElement("a");
@@ -3456,8 +3456,8 @@ document.addEventListener("DOMContentLoaded", function() {
             );?>";
 
             toLang.textContent = newText ? "" : switchLang;
-            tocFood.append(toLang);
-            freetoc.prepend(tocFood);
+            tocNav.append(toLang);
+            freetoc.prepend(tocNav);
 
             // 3. Extract and parse dataset cleanly
             const titleVal = bridgeData.dataset.title;
@@ -3493,25 +3493,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             textElement.innerHTML = safeHtml;
+            const anchor = document.createElement("span");
+            bridgeData.before(anchor); // remains in its original location on the form
             bridgeData.append(textElement);
 
             // Move our filled bridge node into the floating container
             freetoc.append(bridgeData);
             bridgeData.classList.remove("hide");
-
-            // --- Flicker-Free Floating Logic ---
-            let sidebarContentHeight = 0;
-            let tocHeight = 0;
-            const spacerplus = 140;
-
-            const measure = () => {
-                sidebarContentHeight = 0;
-                const listElements = document.querySelectorAll("#main_menu > ul > li:not(:first-of-type)");
-                listElements.forEach(list => {
-                    sidebarContentHeight += list.offsetHeight;
-                });
-                tocHeight = freetoc.offsetHeight;
-            };
 
             const updateTocMode = () => {
                 const isDesktop = window.innerWidth >= 1024;
@@ -3523,22 +3511,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // 2. Perform smooth float calculation inside animation frame (prevents layout lag/flicker)
                 requestAnimationFrame(() => {
-                    // Fixed positioning: Don't use `scrollTop` directly; instead, use the distance to the bottom of the page, which is independent of the viewport:
-                    const remaining = document.documentElement.scrollHeight - window.innerHeight - document.documentElement.scrollTop;
-                    const shouldFloat = (remaining <= (sidebarContentHeight - spacerplus) && document.documentElement.scrollTop > tocHeight);
-
+                    const anchorTop = anchor.getBoundingClientRect().top;
+                    const shouldFloat = anchorTop != 0 && anchorTop <= window.innerHeight * 0.4; // .5 is half of screen - so .4 ~ is when freetag section fills the page viewport bottom quarter
                     freetoc.classList.toggle("can-float", shouldFloat);
                 });
             };
 
             // Run initial setup synchronously to match initial page load state
-            measure();
             updateTocMode();
 
             // Handle browser resize/loading updates cleanly without high-frequency feedback loops
-            window.addEventListener("load", () => { measure(); updateTocMode(); });
+            window.addEventListener("load", () => { updateTocMode(); });
             window.addEventListener("scroll", updateTocMode, { passive: true });
-            window.addEventListener("resize", () => { measure(); updateTocMode(); });
+            window.addEventListener("resize", () => { updateTocMode(); });
         }
     }
 
