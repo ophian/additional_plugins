@@ -1,3 +1,7 @@
+3.3.10:
+------
+ * Improve 3.3.9 for eventually missing (internal written) haystack errors
+
 3.3.9:
 ------
  * Improve/Fix conditional loading case when used with freetags over entries URL containing 'plugin/tag/***'
