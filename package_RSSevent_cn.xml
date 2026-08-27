@@ -437,7 +437,7 @@
 <category>Event Plugins</category>
 <author>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_freetag&lt;br /&gt;Tagging of entries&lt;/b&gt;&lt;br /&gt;Allows freestyle tagging of entries&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 26 Aug 2026 18:01:09 +0200</pubDate>
+<pubDate>Thu, 27 Aug 2026 09:16:56 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_freetag</guid>
 </item>
 <item>
@@ -599,7 +599,7 @@
 <category>Event Plugins</category>
 <author>Thomas Nesges, Andy Hopkins, Lokesh Dhakar, Cody Lindley, Stephan Manske, Grischa Brockhaus, Ian Styx</author>
 <content:encoded>&lt;b&gt;serendipity_event_lightbox&lt;br /&gt;Lightbox for entry images&lt;/b&gt;&lt;br /&gt;Lightbox JS is a script used to overlay images (via Modal Overlay pattern) on the current page. It's a snap to setup and to pop-up images nicely. This plugin searches through your entries, and replaces every image 'a href=&quot;XXX&quot;' link to use the javascript display. So if you want your thumbnail images to popup large, you need to insert your images as links to the large version.&lt;br/&gt;For: Serendipity 5.0</content:encoded>
-<pubDate>Wed, 19 Aug 2026 09:45:12 +0200</pubDate>
+<pubDate>Thu, 27 Aug 2026 13:16:18 +0200</pubDate>
 <guid isPermaLink="false">serendipity_event_lightbox</guid>
 </item>
 <item>
