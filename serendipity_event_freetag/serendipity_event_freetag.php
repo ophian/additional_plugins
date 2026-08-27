@@ -3511,7 +3511,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // 2. Perform smooth float calculation inside animation frame (prevents layout lag/flicker)
                 requestAnimationFrame(() => {
-                    const anchorTop = anchor.getBoundingClientRect().top;
+                    const anchorTop = Math.trunc(anchor.getBoundingClientRect().top);
                     const shouldFloat = anchorTop != 0 && anchorTop <= window.innerHeight * 0.4; // .5 is half of screen - so .4 ~ is when freetag section fills the page viewport bottom quarter
                     freetoc.classList.toggle("can-float", shouldFloat);
                 });
