@@ -262,7 +262,7 @@ class serendipity_event_lightbox extends serendipity_event
     </style>';
                         } else {
                             // check for staticpage views (and other plugins) - but NOT frontend tag views, since that needs gallery: ".post_content" w/ $navigate = entry
-                            if ($serendipity['view'] == 'plugin' && !str_contains(($_GET['url'] ?? ''), 'plugin/tag/')) $navigate = 'page';
+                            if ($serendipity['view'] == 'plugin' && !str_contains(($_GET['url'] ?? ''), 'plugin/tag/')) {
                                 $navigate = 'page';
                             }
                             // remove very old anchors possible onclick handler since we don't need both
