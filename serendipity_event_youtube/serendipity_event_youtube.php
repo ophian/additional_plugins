@@ -25,7 +25,7 @@ class serendipity_event_youtube extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.1.0');
+        $propbag->add('version',       '2.2.0');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body' => true,
@@ -208,13 +208,28 @@ function use_text_<?php echo $func; ?>(item) {
             tinyMCE.execInstanceCommand(instance, 'mceInsertContent', false, item);
             //serendipity.serendipity_imageSelector_addToBody(item, instance);
         } catch(ex0) {
-          try {
-            window.parent.parent.serendipity.serendipity_imageSelector_addToBody(item, instance);
-            window.parent.parent.$.magnificPopup.close();
-          } catch (ex1) {
-            self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
-            self.close();
-          }
+            try {
+                // Resolve best available parent/top window context
+                const targetWin = window.parent.parent || window.parent || window;
+
+                // 1. Insert content into editor
+                targetWin.serendipity.serendipity_imageSelector_addToBody(item, instance);
+
+                // 2. Close Overlay (Styx 5.2 Modal OR Legacy MagnificPopup)
+                if (targetWin.serendipity && typeof targetWin.serendipity.closeMediaModal === 'function') {
+                    targetWin.serendipity.closeMediaModal();
+                } else if (targetWin.StyxModalInstance && typeof targetWin.StyxModalInstance.close === 'function') {
+                    targetWin.StyxModalInstance.close();
+                } else if (targetWin.$ && targetWin.$.magnificPopup) {
+                    targetWin.$.magnificPopup.close();
+                }
+            } catch (ex1) {
+                // Legacy Browser Popup Fallback (window.open)
+                if (self.opener && self.opener.serendipity) {
+                    self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
+                    self.close();
+                }
+            }
         } finally {
             //console.log(item);console.log(instance);
         }
