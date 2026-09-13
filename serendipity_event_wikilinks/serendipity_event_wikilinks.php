@@ -28,7 +28,7 @@ class serendipity_event_wikilinks extends serendipity_event
         $propbag->add('description',   PLUGIN_EVENT_WIKILINKS_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Grischa Brockhaus, Ian Styx');
-        $propbag->add('version',       '2.1.1');
+        $propbag->add('version',       '2.2.0');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -193,12 +193,26 @@ class serendipity_event_wikilinks extends serendipity_event
                 window[use_wikilink] = function (item) {
                     item = item.replace(/'/g, '"'); //convert single to double quote
                     try {
-                        window.parent.parent.serendipity.serendipity_imageSelector_addToBody(item, instance);
-                        window.parent.parent.$.magnificPopup.close();
-                    }
-                    catch (e) {
-                        self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
-                        self.close();
+                        // Resolve best available parent/top window context
+                        const targetWin = window.parent.parent || window.parent || window;
+
+                        // 1. Insert content into editor
+                        targetWin.serendipity.serendipity_imageSelector_addToBody(item, instance);
+
+                        // 2. Close Overlay (Styx 5.2 Modal OR Legacy MagnificPopup)
+                        if (targetWin.serendipity && typeof targetWin.serendipity.closeMediaModal === 'function') {
+                            targetWin.serendipity.closeMediaModal();
+                        } else if (targetWin.StyxModalInstance && typeof targetWin.StyxModalInstance.close === 'function') {
+                            targetWin.StyxModalInstance.close();
+                        } else if (targetWin.$ && targetWin.$.magnificPopup) {
+                            targetWin.$.magnificPopup.close();
+                        }
+                    } catch (ex1) {
+                        // Legacy Browser Popup Fallback (window.open)
+                        if (self.opener && self.opener.serendipity) {
+                            self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
+                            self.close();
+                        }
                     }
                 }
             }
