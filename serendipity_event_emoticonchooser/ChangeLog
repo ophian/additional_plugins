@@ -1,3 +1,7 @@
+4.2.0:
+------
+ * Javascript future compatibility preparation
+
 4.1.4:
 ------
  * Fix condition to prevent frontend output with htmlcomments (TinyMCE) and the load of related js
