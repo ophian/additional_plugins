@@ -1,3 +1,8 @@
+6.6.7:
+------
+ * Minor float to int change improves readability of comparison downscroll checks
+ * Fix a wrong node name for the icon top jump box
+
 6.6.6:
 ------
  * Refactor llm/* Providers files curl_close() doing nothing since PHP 8.0 and now set deprecated with PHP 8.5
