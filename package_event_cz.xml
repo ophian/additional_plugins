@@ -2201,11 +2201,11 @@
 <description>Zobrazí lištu se smajlíky, které je možné vložit do textu příspěvku nebo komentáře.</description>
 <maintainers><maintainer><name>Garvin Hicking, Jay Bertrandt, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>4.1.4</version>
+  <version>4.2.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-12-24</date>
+  <date>2026-09-13</date>
   <filelist>
     <dir name="serendipity_event_emoticonchooser">
       <file>ChangeLog</file>
@@ -3057,11 +3057,11 @@
 <description>Umožňuje libovolné přidávání klíčových slov k příspěvkům</description>
 <maintainers><maintainer><name>Garvin Hicking, Jonathan Arkell, Grischa Brockhaus, Lars Strojny, Malte Paskuda, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>6.6.6</version>
+  <version>6.6.7</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2026-08-27</date>
+  <date>2026-09-13</date>
   <filelist>
     <dir name="serendipity_event_freetag">
       <dir name="auto">
@@ -5171,11 +5171,11 @@
 <description>Umožňuje zkrátit odkaz na Váš blog, podobně jako třeba tr.im, tinyurl.com apod.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.0</version>
+  <version>2.2.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2.0</requirements:phpVersion>
-  <date>2025-09-05</date>
+  <date>2026-09-09</date>
   <filelist>
     <dir name="serendipity_event_linktrimmer">
       <file>ChangeLog</file>
@@ -10168,11 +10168,11 @@
 <description>V příspěvcích můžete zadat odkazy na existující/nové příspěvky pomocí [[nadpis příspěvku]], na statické stránky pomocí ((nadpis stránky)) a na obojí pomocí {{nadpis}}.</description>
 <maintainers><maintainer><name>Garvin Hicking, Grischa Brockhaus, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.1</version>
+  <version>2.2.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
+  <date>2026-09-13</date>
   <filelist>
     <dir name="serendipity_event_wikilinks">
       <file>ChangeLog</file>
@@ -10642,11 +10642,11 @@
 <description>Přidává tlačítka do editačního formuláře pro lehčí vkládání HTML/JS akriptů jako např. Youtube apod.</description>
 <maintainers><maintainer><name>Garvin Hicking, Ian Styx</name><role>lead</role></maintainer></maintainers>
 <release>
-  <version>2.1.0</version>
+  <version>2.2.0</version>
   <requirements:s9yVersion>5.0</requirements:s9yVersion>
   <requirements:smyVersion>4.1</requirements:smyVersion>
   <requirements:phpVersion>8.2</requirements:phpVersion>
-  <date>2025-09-05</date>
+  <date>2026-09-13</date>
   <filelist>
     <dir name="serendipity_event_youtube">
       <file>ChangeLog</file>
