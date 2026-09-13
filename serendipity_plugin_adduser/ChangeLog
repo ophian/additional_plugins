@@ -1,3 +1,7 @@
+3.1.1:
+------
+ * Set enableBackendPopup option deprecated. Its usage is dropped with upcoming Styx 5.2.
+
 3.1.0:
 ------
  * Strict check $_SESSION['serendipityAuthedUser']

@@ -20,7 +20,7 @@ class serendipity_plugin_adduser extends serendipity_plugin
         $propbag->add('description',   PLUGIN_ADDUSER_DESC);
         $propbag->add('stackable',     false);
         $propbag->add('author',        'Garvin Hicking, Ian Styx');
-        $propbag->add('version',       '3.0.0');
+        $propbag->add('version',       '3.1.1');
         $propbag->add('requirements',  array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -158,8 +158,8 @@ class serendipity_plugin_adduser extends serendipity_plugin
 
             case 'enableBackendPopup':
                 $propbag->add('type',        'boolean');
-                $propbag->add('name',        INSTALL_BACKENDPOPUP);
-                $propbag->add('description', INSTALL_BACKENDPOPUP_DESC);
+                $propbag->add('name',        'Enable use of popup windows for the backend');
+                $propbag->add('description', 'Works with Styx 5.1 and below only. This Option will be drooped in not too far future! Shall popup windows be used for some backend functionality? When disabled (default), inline modal dialogs will be used for e.g. the category selector and MediaLibrary. On the other hand this popup-window option only works for some elements, like the MediaLibrary and some plugins. Others, like categories, will show up embedded.'););
                 $propbag->add('default',     'false');
                 break;
 
