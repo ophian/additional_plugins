@@ -69,13 +69,32 @@
 
     {if $linktrimmer_url != '' && $linktrimmer_external}
             <script>
-        {if !$linktrimmer_ispopup}
-                window.parent.parent.serendipity.serendipity_imageSelector_addToBody('<a href="{$linktrimmer_url|escape}" title="{$linktrimmer_origurl|escape}">{$linktrimmer_origurl|escape}</a>', '{$linktrimmer_txtarea|escape}');
-                window.parent.parent.$.magnificPopup.close();
-        {else}
-                self.opener.serendipity.serendipity_imageSelector_addToBody('<a href="{$linktrimmer_url|escape}" title="{$linktrimmer_origurl|escape}">{$linktrimmer_origurl|escape}</a>', '{$linktrimmer_txtarea|escape}');
-                self.close();
-        {/if}
+                try {
+                    // Resolve best available parent/top window context
+                    const targetWin = window.parent.parent || window.parent || window;
+                    const linkTag = '<a href="{$linktrimmer_url|escape}" title="{$linktrimmer_origurl|escape}">{$linktrimmer_origurl|escape}</a>';
+                    const textAreaInstance = '{$linktrimmer_txtarea|escape}';
+
+                    // 1. Insert content into editor
+                    if (targetWin.serendipity && typeof targetWin.serendipity.serendipity_imageSelector_addToBody === 'function') {
+                        targetWin.serendipity.serendipity_imageSelector_addToBody(linkTag, textAreaInstance);
+                    }
+
+                    // 2. Close Overlay (Styx 5.2 Modal OR Legacy MagnificPopup)
+                    if (targetWin.serendipity && typeof targetWin.serendipity.closeMediaModal === 'function') {
+                        targetWin.serendipity.closeMediaModal();
+                    } else if (targetWin.StyxModalInstance && typeof targetWin.StyxModalInstance.close === 'function') {
+                        targetWin.StyxModalInstance.close();
+                    } else if (targetWin.$ && targetWin.$.magnificPopup) {
+                        targetWin.$.magnificPopup.close();
+                    }
+                } catch (ex1) {
+                    // Legacy Browser Popup Fallback (window.open)
+                    if (self.opener && self.opener.serendipity) {
+                        self.opener.serendipity.serendipity_imageSelector_addToBody('<a href="{$linktrimmer_url|escape}" title="{$linktrimmer_origurl|escape}">{$linktrimmer_origurl|escape}</a>', '{$linktrimmer_txtarea|escape}');
+                        self.close();
+                    }
+                }
             </script>
     {elseif $linktrimmer_url != ''}
             <div class="form_field">
