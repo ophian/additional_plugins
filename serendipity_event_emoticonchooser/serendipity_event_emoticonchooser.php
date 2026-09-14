@@ -33,7 +33,7 @@ class serendipity_event_emoticonchooser extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '4.2.0');
+        $propbag->add('version',       '4.3.0');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body'     => true,
@@ -427,12 +427,19 @@ class serendipity_event_emoticonchooser extends serendipity_event
                 case 'backend_header':
                     if (isset($serendipity['wysiwyg']) && $serendipity['wysiwyg']) {
                         $noemojs = true;
+                    } else {
+                        $placeToBackendHeader = true;
                     }
                     // no-BREAK! [PSR-2] - extends frontend_footer
 
                 case 'frontend_footer':
-                    // don't load with allowHtmlComment true for TinyMCE in frontend commentform
-                    if ((empty($serendipity['allowHtmlComment']) && empty($noemojs)) || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments' && empty($serendipity['allowHtmlComment']) && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview'])))) {
+                    // LOAD in backend NO-WYSIWYG case - BUT do NOT LOAD with allowHtmlComment true for TinyMCE in frontend commentform
+                    if (!empty($placeToBackendHeader)
+                    || (empty($serendipity['allowHtmlComment']) && empty($noemojs))
+                    || (isset($serendipity['GET']['adminModule']) && $serendipity['GET']['adminModule'] == 'comments' && empty($serendipity['allowHtmlComment'])
+                            && ($serendipity['GET']['adminAction'] == 'edit' || $serendipity['GET']['adminAction'] == 'reply' || isset($serendipity['POST']['preview']))
+                        )
+                    ) {
 ?>
     <script type="text/javascript" src="<?php echo $serendipity['serendipityHTTPPath'] . 'plugins/serendipity_event_emoticonchooser/emoticonchooser.js'; ?>"></script>
 <?php

@@ -1,3 +1,7 @@
+4.3.0:
+------
+ * Fix logic for Plain Editor backend emoticonchooser.js file placement
+
 4.2.0:
 ------
  * Javascript future compatibility preparation
