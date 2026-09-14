@@ -1,3 +1,7 @@
+7.2.4:
+------
+ * Add compatibility for NEW backend cookie sets with upcoming Styx 5.2 (jQuery independent)
+
 7.2.3:
 2.0.1:
 -----

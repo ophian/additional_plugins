@@ -178,8 +178,17 @@
     </div>
 {if isset($sp_cookie_value)}
 
-    <script type="text/javascript">
-        if (window.jQuery) { jQuery(function ($) { serendipity.SetCookie("backend_template", unescape("{$sp_cookie_value}")); }); } else { serendipity.SetCookie("backend_template", unescape("{$sp_cookie_value}")); }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cName = 'backend_template';
+            const cVal = '{$sp_cookie_value|escape:"javascript"}';
+
+            if (typeof StyxCookie !== 'undefined' && typeof StyxCookie.set === 'function') {
+                StyxCookie.set(cName, cVal);
+            } else if (typeof serendipity !== 'undefined' && typeof serendipity.SetCookie === 'function') {
+                serendipity.SetCookie(cName, cVal);
+            }
+        });
     </script>
 {/if}
 
