@@ -260,16 +260,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-/**
- * Overwrite CKEditor save plugin if registered
- */
-if (typeof CKEDITOR !== 'undefined' && CKEDITOR.plugins && CKEDITOR.plugins.registered['save']) {
-    CKEDITOR.plugins.registered['save'] = {
-        init: function(editor) {
-            editor.addCommand('save', {
-                modes: { wysiwyg: 1, source: 1 }
-            });
-        }
-    };
-}
