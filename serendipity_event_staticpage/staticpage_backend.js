@@ -1,179 +1,275 @@
 /***
- * Staticpage event backend js
- * Last modified: 2021-07-03
+ * Staticpage event backend JS
+ * Refactored to modern Vanilla JS (ES6+)
+ * Last modified: 2026-09-28
  **/
 
 /**
- * setLocalStorage function to store 'remember option' states with modern browsers
- * param: item name
- * param: item value
- **/
-setLocalStorage = (function(name, value) {
-    var storage, fail, uid;
-    try {
-        uid = new Date;
-        (storage = window.localStorage).setItem(uid, uid);
-        fail = storage.getItem(uid) != uid;
-        storage.removeItem(uid);
-        fail && (storage = false);
-    } catch(e) {}
+ * Vanilla JS Pagination for the Staticpage-Entries list
+ */
+function renderStaticpagePagination(containerEl, totalItems, itemsPerPage, onPageChange) {
+    if (!containerEl || totalItems <= 0) return;
 
-    // Remove old items first
-    localStorage.removeItem(name);
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-    // Put the string/array/object into storage
-    localStorage.setItem(name, JSON.stringify(value));
-});
-
-/**
- * setTabBar function to hide top tab navigation bar
- * param: object button
- **/
-setTabBar = (function(b) {
-    if ($('#serendipityStaticpagesNav').is(":visible")) {
-        $('#serendipityStaticpagesNav').fadeOut(function(){
-            $('#sp_navigator').css({'margin-top' : '1.54em'});
-            $(b).text('Show TabBar').removeClass('icon-up-dir').addClass('icon-down-dir');
-            setLocalStorage('staticpageTabBar', true);
-        }); return false;
-    } else {
-        $('#serendipityStaticpagesNav').fadeIn(function(){
-            $('#sp_navigator').removeAttr('style');
-            $(b).text('Hide TabBar').removeClass('icon-down-dir').addClass('icon-up-dir');
-            localStorage.removeItem('staticpageTabBar');
-        }); return false;
-    }
-});
-
-/**
- * saveNewOrder function to save moved sequencers order ids
- **/
-saveNewOrder = (function() {
-    var a = [];
-    $('#sequence').children().each(function (i) {
-        a.push($(this).attr('id'));
-    });
-    var s = a.join(',');
-    $.ajax({
-        url: '?serendipity[adminModule]=staticpages&serendipity[moveto]=move&serendipity[pagemoveorder]='+s+'&serendipity[adminModule]=event_display&serendipity[adminAction]=staticpages&serendipity[staticpagecategory]=pageorder',
-        context: document.body,
-        success: function() {
-            $('#splistorder').html('<span class=\"icon-ok\"></span> New staticpage pageorder list '+s+' successfully saved');
-        }
-    });
-});
-
-/**
- * staticpage entrieslist simplePagination executor
- **/
-$(function() {
-
-    var items    = $('#step > .sp_entries_pane');
-    var numItems = items.length;
-    var perPage  = (typeof(spconfig_listPerPage) != 'undefined') ? spconfig_listPerPage : 6;
-    var sp_class = { 'border-bottom' : '1px solid #CCC', 'margin-bottom' : '1em' };
-
-    $('.sp_entries_pane').hide();
-    $('#step').css(sp_class);
-
-    // only show the first 6 items initially and hide the rest
-    items.show().slice(perPage).hide();
-
-    if (numItems == 0) return;
-    // now setup pagination
-    $('#sp_entry_pagination').pagination({
-        items: numItems,
-        itemsOnPage: perPage,
-        cssStyle: 'light-theme',
-        onPageClick: function(pageNumber) { // this is where the magic happens
-            // someone changed page, lets hide/show entries appropriately
-            var showFrom = perPage * (pageNumber - 1);
-            var showTo = showFrom + perPage;
-
-            // first hide everything, then show for the new page
-            items.hide().slice(showFrom, showTo).show();
-            if (pageNumber == Math.ceil(numItems / perPage)) {
-                $('#step').css({'border-bottom' : '', 'margin-bottom' : ''});
-            } else {
-                $('#step').css(sp_class);
-            }
-        }
-    });
-    if (numItems <= perPage) {
-        $('#sp_entry_pagination.simple-pagination ul li.disabled').hide();
-        $('#sp_entry_pagination.simple-pagination ul li.active .current').html('Page 1');
+    // Break if only page 1
+    if (totalPages <= 1) {
+        containerEl.innerHTML = '';
         return;
     }
-});
 
-/**
- * add dialog to change page selector, to avoid page changes before saving current page
- **/
-$(function() {
-    var prev_value;
-    $('#staticpage_dropdown').focus(function() {
-        prev_value = $(this).val();
-    }).change(function(){
-        $(this).unbind('focus');
-        if (!confirm(dropdown_dialog)){
-            $(this).val(prev_value);
-            $(this).bind('focus');
-            return false;
+    let currentPage = 1;
+
+    const draw = () => {
+        let html = '<ul class="simple-pagination light-theme">';
+
+        // Previous Button
+        if (currentPage > 1) {
+            html += `<li><a href="#page-${currentPage - 1}" class="page-link prev" data-page="${currentPage - 1}">Prev</a></li>`;
         } else {
-            $(this.form.elements['serendipity[staticSubmit]']).click();
+            html += '<li class="disabled"><span class="current prev">Prev</span></li>';
         }
-    });
-});
 
-/**
- * collapsible box executor for staticpage entry forms
- **/
-Object.keys(localStorage).forEach(function(key) {
-    if (/^(staticpage_mobileform_)|(staticpage_defaultform_)/.test(key)) {
-        var k   = key.split('_');
-        var $id = '#'+k[2];
-        var $el = $id.replace('option','');
-        if (localStorage.getItem(key) !== null) {
-            $($id + ' > .icon-right-dir').removeClass('icon-right-dir').addClass('icon-down-dir');
-            $($el).removeClass('additional_info');
+        // Page Links
+        for (let i = 1; i <= totalPages; i++) {
+            if (i === currentPage) {
+                html += `<li class="active"><span class="current">${i}</span></li>`;
+            } else {
+                html += `<li><a href="#page-${i}" class="page-link" data-page="${i}">${i}</a></li>`;
+            }
         }
-    }
-});
 
-/**
- * overwrite CKE save button in all nugget instances, see extending smarty note in backend_staticpage.tpl
- **/
-if (typeof(CKEDITOR) != 'undefined' && CKEDITOR.plugins.registered['save']) {
-    CKEDITOR.plugins.registered['save'] = {
-        init: function (editor) {
-            var command = editor.addCommand('save',
-            {
-                modes: { wysiwyg: 1, source: 1 }
+        // Next Button
+        if (currentPage < totalPages) {
+            html += `<li><a href="#page-${currentPage + 1}" class="page-link next" data-page="${currentPage + 1}">Next</a></li>`;
+        } else {
+            html += '<li class="disabled"><span class="current next">Next</span></li>';
+        }
+
+        html += '</ul>';
+        containerEl.innerHTML = html;
+
+        // Click Event Handler Delegation
+        containerEl.querySelectorAll('a.page-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const selectedPage = parseInt(link.getAttribute('data-page'), 10);
+                if (selectedPage && selectedPage !== currentPage) {
+                    currentPage = selectedPage;
+                    draw();
+                    onPageChange(currentPage, totalPages);
+                }
             });
-        }
-    }
+        });
+    };
+
+    // First Render-Loop initiation
+    draw();
 }
 
 /**
- * pageorder drag and drop handler
- **/
-$(function() {
-    $('#sp_sequencer form').submit(function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        saveNewOrder();
-        $('html, body').animate({
-             scrollTop: $("#splistorder").offset().top
-        }, 1000);
-        return false;
+ * Stores 'remember option' states in localStorage
+ * @param {string} name
+ * @param {any} value
+ */
+window.setLocalStorage = function(name, value) {
+    try {
+        localStorage.removeItem(name);
+        localStorage.setItem(name, JSON.stringify(value));
+    } catch (e) {
+        console.warn('LocalStorage unavailable:', e);
+    }
+};
+
+/**
+ * Toggles visibility of top tab navigation bar
+ * @param {HTMLElement} b - Button element
+ */
+window.setTabBar = function(b) {
+    const nav = document.getElementById('serendipityStaticpagesNav');
+    const spNav = document.getElementById('sp_navigator');
+    if (!nav) return false;
+
+    const isVisible = window.getComputedStyle(nav).display !== 'none';
+
+    if (isVisible) {
+        nav.style.display = 'none';
+        if (spNav) spNav.style.marginTop = '1.54em';
+
+        if (b) {
+            b.textContent = 'Show TabBar';
+            b.classList.remove('icon-up-dir');
+            b.classList.add('icon-down-dir');
+        }
+        window.setLocalStorage('staticpageTabBar', true);
+    } else {
+        nav.style.display = '';
+        if (spNav) spNav.style.removeProperty('margin-top');
+
+        if (b) {
+            b.textContent = 'Hide TabBar';
+            b.classList.remove('icon-down-dir');
+            b.classList.add('icon-up-dir');
+        }
+        localStorage.removeItem('staticpageTabBar');
+    }
+    return false;
+};
+
+/**
+ * Saves moved sequencers order IDs via Fetch API
+ */
+window.saveNewOrder = function() {
+    const sequenceContainer = document.getElementById('sequence');
+    if (!sequenceContainer) return;
+
+    const ids = Array.from(sequenceContainer.children)
+        .map(child => child.id)
+        .filter(Boolean);
+
+    const idList = ids.join(',');
+    const url = `?serendipity[adminModule]=staticpages&serendipity[moveto]=move&serendipity[pagemoveorder]=${encodeURIComponent(idList)}&serendipity[adminModule]=event_display&serendipity[adminAction]=staticpages&serendipity[staticpagecategory]=pageorder`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            const targetEl = document.getElementById('splistorder');
+            if (targetEl) {
+                targetEl.innerHTML = `<span class="icon-ok"></span> New staticpage pageorder list ${idList} successfully saved`;
+            }
+        })
+        .catch(err => console.error('Failed to save page order:', err));
+};
+
+/**
+ * Main Initializer on DOM Ready
+ */
+document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Staticpage entries list Pagination executor
+    const stepEl = document.getElementById('step');
+    const items = stepEl ? Array.from(stepEl.querySelectorAll('.sp_entries_pane')) : [];
+    const numItems = items.length;
+    const perPage = (typeof spconfig_listPerPage !== 'undefined') ? spconfig_listPerPage : 6;
+    const paginationEl = document.getElementById('sp_entry_pagination');
+
+    if (stepEl && numItems > 0) {
+        const updateBorders = (pageNumber, totalPages) => {
+            if (pageNumber === totalPages) {
+                stepEl.style.borderBottom = '';
+                stepEl.style.marginBottom = '';
+            } else {
+                stepEl.style.borderBottom = '1px solid #CCC';
+                stepEl.style.marginBottom = '1em';
+            }
+        };
+
+        // Initial styling for the wrapper
+        updateBorders(1, Math.ceil(numItems / perPage));
+
+        // Hide all, then show first page
+        items.forEach((item, idx) => {
+            item.style.display = (idx < perPage) ? '' : 'none';
+        });
+
+        // Integrated Pagination Execution
+        renderStaticpagePagination(paginationEl, numItems, perPage, (pageNumber, totalPages) => {
+            const showFrom = perPage * (pageNumber - 1);
+            const showTo = showFrom + perPage;
+
+            items.forEach((item, idx) => {
+                item.style.display = (idx >= showFrom && idx < showTo) ? '' : 'none';
+            });
+
+            updateBorders(pageNumber, totalPages);
+        });
+    }
+
+    // 2. Dropdown confirmation handler before page switch
+    const dropdown = document.getElementById('staticpage_dropdown');
+    if (dropdown) {
+        let prevValue = dropdown.value;
+
+        dropdown.addEventListener('focus', () => {
+            prevValue = dropdown.value;
+        });
+
+        dropdown.addEventListener('change', () => {
+            const confirmMsg = typeof dropdown_dialog !== 'undefined' ? dropdown_dialog : 'Discard unsaved changes?';
+            if (!confirm(confirmMsg)) {
+                dropdown.value = prevValue;
+                return false;
+            } else if (dropdown.form && dropdown.form.elements['serendipity[staticSubmit]']) {
+                dropdown.form.elements['serendipity[staticSubmit]'].click();
+            }
+        });
+    }
+
+    // 3. Collapsible box state executor for entry forms
+    Object.keys(localStorage).forEach(key => {
+        if (/^(staticpage_mobileform_)|(staticpage_defaultform_)/.test(key)) {
+            const parts = key.split('_');
+            const targetId = parts[2];
+            if (!targetId) return;
+
+            const targetBtn = document.getElementById(targetId);
+            const containerId = targetId.replace('option', '');
+            const containerEl = document.getElementById(containerId);
+
+            if (localStorage.getItem(key) !== null) {
+                if (targetBtn) {
+                    const icon = targetBtn.querySelector('.icon-right-dir');
+                    if (icon) {
+                        icon.classList.remove('icon-right-dir');
+                        icon.classList.add('icon-down-dir');
+                    }
+                }
+                if (containerEl) {
+                    containerEl.classList.remove('additional_info');
+                }
+            }
+        }
+    });
+
+    // 4. Pageorder drag and drop form handler
+    const sequencerForm = document.querySelector('#sp_sequencer form');
+    if (sequencerForm) {
+        sequencerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.saveNewOrder();
+
+            const target = document.getElementById('splistorder');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // 5. Toggle helper for active configuration group styling
+    const optionGroups = document.querySelectorAll('.config_optiongroup:not(.additional_info)');
+    optionGroups.forEach(group => {
+        let prev = group.previousElementSibling;
+        while (prev && !prev.classList.contains('configuration_group')) {
+            prev = prev.previousElementSibling;
+        }
+        if (prev) {
+            const btn = prev.querySelector('button.toggle_info.show_config_option.sp_toggle');
+            if (btn) btn.classList.add('active');
+        }
     });
 });
 
 /**
- * Toggle helper for styling
+ * Overwrite CKEditor save plugin if registered
  */
-$(function() {
-    var activebox = $('.config_optiongroup').not($(".config_optiongroup.additional_info"));
-    //console.log(activebox);
-    $(activebox).prev('.configuration_group').find('button.toggle_info.show_config_option.sp_toggle').addClass('active');
-});
+if (typeof CKEDITOR !== 'undefined' && CKEDITOR.plugins && CKEDITOR.plugins.registered['save']) {
+    CKEDITOR.plugins.registered['save'] = {
+        init: function(editor) {
+            editor.addCommand('save', {
+                modes: { wysiwyg: 1, source: 1 }
+            });
+        }
+    };
+}

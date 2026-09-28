@@ -218,44 +218,78 @@
     </div>
 
     <script>
-        $('.sp_toggle').click(function () {
-            var $id   = $(this).attr('id');
-            var $name = 'staticpage_mobileform_' + $id;
-            var cb    = localStorage.getItem($name);
-            if ( cb !== null ) {
-                $('#'+$id+' > .icon-down-dir').removeClass('icon-down-dir').addClass('icon-right-dir');
-                localStorage.removeItem($name);
-            } else {
-                $('#'+$id+' > .icon-right-dir').removeClass('icon-right-dir').addClass('icon-down-dir');
-                setLocalStorage($name, true);
-            }
-        });
+        (() => {
+            'use strict';
 
-        const TOPNAV = '.sp_toggle_navigator > .toggle_info';
+            // Helper for LocalStorage
+            const setLS = (key, val) => {
+                if (typeof setLocalStorage === 'function') {
+                    setLocalStorage(key, val);
+                } else {
+                    localStorage.setItem(key, String(val));
+                }
+            };
 
-        // remember stored top nav toggled true
-        // console.log('LS topnav: '+localStorage.getItem('staticpage_topnav_toggle'));
-        if (localStorage.getItem('staticpage_topnav_toggle') !== null) {
-            $('#sp_navigator').removeClass('additional_info');
-            $(TOPNAV+' > .icon-right-dir').removeClass('icon-right-dir').addClass('icon-up-dir');
-        }
-        $(TOPNAV).click(function () {
-            var $tnt  = 'staticpage_topnav_toggle';
-            var nb    = localStorage.getItem($tnt);
-            console.log(TOPNAV);
-            console.log($tnt);
-            console.log(nb);
-            // on click true case
-            if ( nb !== null ) {
-                $(TOPNAV+' > .icon-up-dir').removeClass('icon-up-dir').addClass('icon-right-dir');
-                localStorage.removeItem($tnt);
-                console.log('remove LS '+$tnt);
-            } else {
-                $(TOPNAV+' > .icon-right-dir').removeClass('icon-right-dir').addClass('icon-up-dir');
-                setLocalStorage($tnt, true);
-                console.log('add LS '+$tnt);
+            // Helper to replace CSS-Classes
+            const replaceClass = (element, removeClass, addClass) => {
+                if (!element) return;
+                element.classList.remove(removeClass);
+                element.classList.add(addClass);
+            };
+
+            // 1. Mobile-Form Toggle-Buttons (.sp_toggle)
+            document.querySelectorAll('.sp_toggle').forEach(toggleBtn => {
+                toggleBtn.addEventListener('click', (e) => {
+                    const currentTarget = e.currentTarget;
+                    const id = currentTarget.id;
+                    if (!id) return;
+
+                    const storageKey = 'staticpage_mobileform_' + id;
+                    const targetContainer = document.getElementById(id);
+                    if (!targetContainer) return;
+
+                    if (localStorage.getItem(storageKey) !== null) {
+                        const icon = targetContainer.querySelector('.icon-down-dir');
+                        replaceClass(icon, 'icon-down-dir', 'icon-right-dir');
+                        localStorage.removeItem(storageKey);
+                    } else {
+                        const icon = targetContainer.querySelector('.icon-right-dir');
+                        replaceClass(icon, 'icon-right-dir', 'icon-down-dir');
+                        setLS(storageKey, true);
+                    }
+                });
+            });
+
+            // 2. Top-Navigator Toggle
+            const TOPNAV_SELECTOR = '.sp_toggle_navigator > .toggle_info';
+            const topNavToggleKey = 'staticpage_topnav_toggle';
+            const topNavElement = document.querySelector(TOPNAV_SELECTOR);
+            const spNavigator = document.getElementById('sp_navigator');
+
+            // Initial Checkup on Load
+            if (localStorage.getItem(topNavToggleKey) !== null) {
+                spNavigator?.classList.remove('additional_info');
+                if (topNavElement) {
+                    const icon = topNavElement.querySelector('.icon-right-dir');
+                    replaceClass(icon, 'icon-right-dir', 'icon-up-dir');
+                }
             }
-        });
+
+            // Click-Event for Top-Nav
+            topNavElement?.addEventListener('click', () => {
+                const isStored = localStorage.getItem(topNavToggleKey) !== null;
+
+                if (isStored) {
+                    const icon = topNavElement.querySelector('.icon-up-dir');
+                    replaceClass(icon, 'icon-up-dir', 'icon-right-dir');
+                    localStorage.removeItem(topNavToggleKey);
+                } else {
+                    const icon = topNavElement.querySelector('.icon-right-dir');
+                    replaceClass(icon, 'icon-right-dir', 'icon-up-dir');
+                    setLS(topNavToggleKey, true);
+                }
+            });
+        })();
     </script>
 
     <!-- RESPONSIVE_TEMPLATE.TPL end -->

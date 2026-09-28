@@ -350,10 +350,8 @@
 
 {if $switch_spcat == 'pageedit' OR !$switch_spcat}
 <script>
-    var spconfig_listPerPage = {$sp_listpp|default:6};
+    const spconfig_listPerPage = {$sp_listpp|default:6};
 </script>
-<script src="{$serendipityHTTPPath}plugins/serendipity_event_staticpage/jquery.simplePagination.js"></script>
 {/if}
-<script src="{$serendipityHTTPPath}plugins/serendipity_event_staticpage/staticpage_backend.js"></script>
 
 <!-- backend_staticpage.tpl END -->

@@ -96,13 +96,14 @@ class serendipity_event_staticpage extends serendipity_event
             'frontend_fetchentries'                             => true,
             'frontend_rss'                                      => true,
             'backend_header'                                    => true,
+            'backend_footer'                                    => true,
             'frontend_header'                                   => true
         ));
 
         $propbag->add('page_configuration', $this->config);
         $propbag->add('type_configuration', $this->config_types);
         $propbag->add('author', 'Marco Rinck, Garvin Hicking, David Rolston, Falk Doering, Stephan Manske, Pascal Uhlmann, Ian Styx, Don Chambers');
-        $propbag->add('version', '7.2.4');
+        $propbag->add('version', '7.3.0');
         $propbag->add('requirements', array(
             'serendipity' => '5.0',
             'smarty'      => '4.1',
@@ -3795,6 +3796,15 @@ class serendipity_event_staticpage extends serendipity_event
     <link rel="stylesheet" href="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_event_staticpage/staticpage_backend.css">
 <?php
                     }
+                    break;
+
+                case 'backend_footer':
+                    if (!$access_granted) {
+                        break;
+                    }
+?>
+    <script src="<?php echo $serendipity['serendipityHTTPPath']; ?>plugins/serendipity_event_staticpage/staticpage_backend.js"></script>
+<?php
                     break;
 
                 case 'frontend_header':
