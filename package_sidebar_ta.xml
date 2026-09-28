@@ -760,7 +760,6 @@
         <file>plus.gif</file>
         <file>plusbottom.gif</file>
       </dir>
-      <file>jquery.simplePagination.js</file>
       <file>lang_bg.inc.php</file>
       <file>lang_cz.inc.php</file>
       <file>lang_de.inc.php</file>
@@ -817,7 +816,6 @@
     <file>serendipity_event_staticpage/img/page.png</file>
     <file>serendipity_event_staticpage/img/plus.gif</file>
     <file>serendipity_event_staticpage/img/plusbottom.gif</file>
-    <file>serendipity_event_staticpage/jquery.simplePagination.js</file>
     <file>serendipity_event_staticpage/lang_bg.inc.php</file>
     <file>serendipity_event_staticpage/lang_cz.inc.php</file>
     <file>serendipity_event_staticpage/lang_de.inc.php</file>
