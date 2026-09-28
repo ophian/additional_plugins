@@ -1,3 +1,8 @@
+2.3.0:
+------
+ * Modernise Javascript to ES6 and
+ * Javascript now uses the "js_backend" hook and writes into the dynamically created serendipity_admin.js file
+
 2.2.0:
 ------
  * Javascript future compatibility preparation

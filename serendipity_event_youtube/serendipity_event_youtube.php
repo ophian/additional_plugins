@@ -25,11 +25,12 @@ class serendipity_event_youtube extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '2.2.0');
+        $propbag->add('version',       '2.3.0');
         $propbag->add('event_hooks',    array(
             'backend_entry_toolbar_extended' => true,
             'backend_entry_toolbar_body' => true,
-            'backend_wysiwyg' => true,
+            'js_backend' => true,
+            'backend_wysiwyg' => true
         ));
         $propbag->add('groups', array('BACKEND_EDITOR'));
         $propbag->add('configuration', array('youtube_server', 'youtube_iframe', 'youtube_width', 'youtube_height', 'youtube_rel', 'youtube_border', 'youtube_color1', 'youtube_color2'));
@@ -149,99 +150,144 @@ class serendipity_event_youtube extends serendipity_event
                             $func = 'body';
                         }
                     }
-                    // RT-EDITORs and plain text editor need this little switch
-                    if (preg_match('/(nugget|quick)/i', $func)) {
-                        $area_instance = $func;
-                    } else {
-                        $area_instance = $txtarea;
-                    }
 
-?>
-<script type="text/javascript">
-<!--
-var youtube_server = '<?php echo $this->get_config('youtube_server'); ?>';
-var youtube_width  = '<?php echo $this->get_config('youtube_width'); ?>';
-var youtube_height = '<?php echo $this->get_config('youtube_height'); ?>';
-var youtube_rel    = '<?php echo (serendipity_db_bool($this->get_config('youtube_rel', 'true')) ? '1' : '0'); ?>';
-var youtube_border = '<?php echo (serendipity_db_bool($this->get_config('youtube_border', 'false')) ? '1' : '0'); ?>';
-var youtube_color1 = '<?php echo $this->get_config('youtube_color1'); ?>';
-var youtube_color2 = '<?php echo $this->get_config('youtube_color2'); ?>';
-var youtube_iframe = '<?php echo (serendipity_db_bool($this->get_config('youtube_iframe')) ? '1' : '0'); ?>';
-
-function use_text_<?php echo $func; ?>(item) {
-
-    videoid = prompt('<?php echo PLUGIN_EVENT_YOUTUBE_ID; ?>', '');
-    
-    if (videoid == '') {
-        return;
-    }
-
-    youtube_url = youtube_server + videoid + '&amp;fs=1&amp;rel=' + youtube_rel + '&amp;border=' + youtube_border + '&amp;color1=' + youtube_color1 + '&amp;color2=' + youtube_color2;
-    if (youtube_border == 1) {
-        youtube_width  += 20;
-        youtube_height += 20;
-    }
-
-    if (youtube_iframe) {
-        //item = "\n" + '<div class="youtube_player youtube_player_iframe"><iframe allow="encrypted-media" frameborder="0" height="' + youtube_height + '" src="https://www.youtube-nocookie.com/embed/' + videoid + '" width="' + youtube_width + '"><' + '/iframe></div>';
-        item = '<div class="youtube_player youtube_player_iframe"><iframe allow="encrypted-media" frameborder="0" height="' + youtube_height + '" src="https://www.youtube-nocookie.com/embed/' + videoid + '" width="' + youtube_width + '"><' + '/iframe></div>';
-    } else {
-        item = "\n" + '<div class="youtube_player"><object width="' + youtube_width + '" height="' + youtube_height + '">'
-            + '<param name="movie" value="' + youtube_url + '"></param>'
-            + '<param name="allowFullScreen" value="true"></param>'
-            + '<param name="allowscriptaccess" value="always">'
-            + '</param>'
-            + '<embed src="' + youtube_url + '" type="application/x-shockwave-flash" '
-            + '  allowscriptaccess="always" allowfullscreen="true" width="' + youtube_width + '" height="' + youtube_height + '">'
-            + '</embed></object></div>'
-            + '<noscript><a href="https://www.youtube.com/watch?v='+ videoid + '"></a></noscript>'
-            + "\n";
-    }
-
-    const use_youtube = 'use_youtube<?php echo $func; ?>';
-    const instance = '<?php echo $area_instance; ?>';
-
-    // works on both: enableBackendPopup or MFP- layer
-    window[use_youtube] = function (item) {
-        try {
-            // both do...
-            tinyMCE.execInstanceCommand(instance, 'mceInsertContent', false, item);
-            //serendipity.serendipity_imageSelector_addToBody(item, instance);
-        } catch(ex0) {
-            try {
-                // Resolve best available parent/top window context
-                const targetWin = window.parent.parent || window.parent || window;
-
-                // 1. Insert content into editor
-                targetWin.serendipity.serendipity_imageSelector_addToBody(item, instance);
-
-                // 2. Close Overlay (Styx 5.2 Modal OR Legacy MagnificPopup)
-                if (targetWin.serendipity && typeof targetWin.serendipity.closeMediaModal === 'function') {
-                    targetWin.serendipity.closeMediaModal();
-                } else if (targetWin.StyxModalInstance && typeof targetWin.StyxModalInstance.close === 'function') {
-                    targetWin.StyxModalInstance.close();
-                } else if (targetWin.$ && targetWin.$.magnificPopup) {
-                    targetWin.$.magnificPopup.close();
-                }
-            } catch (ex1) {
-                // Legacy Browser Popup Fallback (window.open)
-                if (self.opener && self.opener.serendipity) {
-                    self.opener.serendipity.serendipity_imageSelector_addToBody(item, instance);
-                    self.close();
-                }
-            }
-        } finally {
-            //console.log(item);console.log(instance);
-        }
-    }
-    if (item) use_youtube<?php echo $func; ?>(item); // normally already placed in eventData['buttons'] but used here since this is a JS popup
-}
-//-->
-</script>
-<?php
                     if ($serendipity['wysiwyg'] === false) {
                         echo '<a class="serendipityPrettyButton serendipityExtButton" href="javascript:use_text_' . $func . '()" title="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '"><input class="input_button" name="serendipity[addYouTubeID]" value="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '" type="button"></a>&nbsp;';
                     }
+                    break;
+
+                case 'js_backend':
+                    // Pre-calculate configuration variables
+                    $yt_server   = addslashes($this->get_config('youtube_server'));
+                    $yt_width    = (int)$this->get_config('youtube_width', 560);
+                    $yt_height   = (int)$this->get_config('youtube_height', 315);
+                    $yt_rel      = serendipity_db_bool($this->get_config('youtube_rel', 'true')) ? '1' : '0';
+                    $yt_border   = serendipity_db_bool($this->get_config('youtube_border', 'false')) ? '1' : '0';
+                    $yt_color1   = addslashes($this->get_config('youtube_color1'));
+                    $yt_color2   = addslashes($this->get_config('youtube_color2'));
+                    $yt_iframe   = serendipity_db_bool($this->get_config('youtube_iframe', 'true')) ? 'true' : 'false';
+                    $yt_prompt   = addslashes(PLUGIN_EVENT_YOUTUBE_ID);
+
+                    // Append JS payload directly to $eventData instead of echoing to avoid Headers already sent problems
+                    $eventData .= "
+/* YouTube Plugin Scriptlet Start */
+
+(() => {
+
+    'use strict';
+
+    // Configuration
+    const ytConfig = {
+        server: '{$yt_server}',
+        width: {$yt_width},
+        height: {$yt_height},
+        rel: {$yt_rel},
+        border: {$yt_border},
+        color1: '{$yt_color1}',
+        color2: '{$yt_color2}',
+        useIframe: {$yt_iframe}
+    };
+
+    /**
+     * Extracts a YouTube Video ID even if a full URL was entered.
+     * @param {string} input
+     * @returns {string|null}
+     */
+    const parseVideoId = (input) => {
+        if (!input) return null;
+        const trimmed = input.trim();
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = trimmed.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : trimmed;
+    };
+
+    /**
+     * Register insertion handlers for a given suffix & target textarea instance
+     * @param {string} funcSuffix (e.g. 'body', 'extended', 'nugget')
+     * @param {string} instance (e.g. 'serendipity_textarea_body')
+     */
+    const registerYouTubeHandler = (funcSuffix, instance) => {
+
+        const useYoutubeHandler = function(itemToInsert) {
+            try {
+                // 1. Try direct TinyMCE Command
+                if (typeof tinyMCE !== 'undefined' && tinyMCE.execInstanceCommand) {
+                    tinyMCE.execInstanceCommand(instance, 'mceInsertContent', false, itemToInsert);
+                    return;
+                }
+                throw new Error('TinyMCE not available directly, attempting fallback.');
+            } catch (ex0) {
+                try {
+                    // Resolve best available parent/top window context
+                    const targetWin = window.parent?.parent || window.parent || window;
+
+                    // 1. Insert content into editor via Serendipity standard callback
+                    if (targetWin.serendipity?.serendipity_imageSelector_addToBody) {
+                        targetWin.serendipity.serendipity_imageSelector_addToBody(itemToInsert, instance);
+                    }
+
+                    // 2. Close Overlay (Styx Modal OR Legacy MagnificPopup)
+                    if (typeof targetWin.serendipity?.closeMediaModal === 'function') {
+                        targetWin.serendipity.closeMediaModal();
+                    } else if (typeof targetWin.StyxModalInstance?.close === 'function') {
+                        targetWin.StyxModalInstance.close();
+                    } else if (targetWin.$?.magnificPopup) {
+                        targetWin.$.magnificPopup.close();
+                    }
+                } catch (ex1) {
+                    // Legacy Browser Popup Fallback (window.open)
+                    if (self.opener?.serendipity) {
+                        self.opener.serendipity.serendipity_imageSelector_addToBody(itemToInsert, instance);
+                        self.close();
+                    }
+                }
+            }
+        };
+
+        // Assign `use_youtube_{suffix}` to window
+        window[`use_youtube\${funcSuffix}`] = useYoutubeHandler;
+
+        // Assign `use_text_{suffix}` to window
+        window[`use_text_\${funcSuffix}`] = function(presetItem) {
+            let rawInput = prompt('{$yt_prompt}', '');
+            if (!rawInput) return;
+
+            const videoId = parseVideoId(rawInput);
+            if (!videoId) return;
+
+            let width = ytConfig.width;
+            let height = ytConfig.height;
+
+            if (ytConfig.border === 1) {
+                width += 20;
+                height += 20;
+            }
+
+            const embedUrl = `https://www.youtube-nocookie.com/embed/\${videoId}?rel=\${ytConfig.rel}`;
+            const generatedItem = `<div class=\"youtube_player youtube_player_iframe\"><iframe src=\"\${embedUrl}\" width=\"\${width}\" height=\"\${height}\" frameborder=\"0\" allow=\"accelerated-execution; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen loading=\"lazy\"></iframe></div>`;
+
+            const finalMarkup = presetItem || generatedItem;
+            if (finalMarkup) {
+                useYoutubeHandler(finalMarkup);
+            }
+        };
+    };
+
+    // Register all active instances directly
+    const instances = [
+        { suffix: 'body', instance: 'serendipity_textarea_body' },
+        { suffix: 'extended', instance: 'serendipity_textarea_extended' },
+        { suffix: 'nugget', instance: 'nugget' },
+        { suffix: 'quick', instance: 'quick' },
+        { suffix: 'nuggets15', instance: 'nuggets15' },
+        { suffix: 'nuggets51', instance: 'nuggets51' }
+    ];
+
+    instances.forEach(item => registerYouTubeHandler(item.suffix, item.instance));
+})();
+
+/* YouTube Plugin Scriptlet End */
+\n";
                     break;
 
                 case 'backend_wysiwyg':
