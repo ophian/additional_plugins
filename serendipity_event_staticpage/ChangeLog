@@ -6,6 +6,7 @@
  * Move javascript includes to end of page using the "js_backend" hook
  * Give up simplePagination jQuery Plugin
  * Modernize the staticpage_backend.js for ES6 and integrated pagination
+ * Fix a style issue with last modified entry date when staticpage list pagination bar is empty
 
 7.2.3:
 7.2.4:
