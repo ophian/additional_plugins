@@ -152,7 +152,7 @@ class serendipity_event_youtube extends serendipity_event
                     }
 
                     if ($serendipity['wysiwyg'] === false) {
-                        echo '<a class="serendipityPrettyButton serendipityExtButton" href="javascript:use_text_' . $func . '()" title="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '"><input class="input_button" name="serendipity[addYouTubeID]" value="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '" type="button"></a>&nbsp;';
+                        echo '<a class="serendipityExtButton" href="javascript:use_text_' . $func . '()" title="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '"><input class="input_button" name="serendipity[addYouTubeID]" value="' . PLUGIN_EVENT_YOUTUBE_BUTTON . '" type="button"></a>&nbsp;';
                     }
                     break;
 
