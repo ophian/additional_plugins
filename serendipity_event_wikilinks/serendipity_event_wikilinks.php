@@ -348,7 +348,7 @@ class serendipity_event_wikilinks extends serendipity_event
                         echo '      <a href="' . serendipity_archiveUrl($ref['entryid'], $entry['title']) . '">' . $entry['title'] . '</a>';
                         echo '    </div>';
 
-                        echo '    <p><a class="serendipityPrettyButton" href="?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . $entry['id'] . '&amp;' . serendipity_setFormToken('url') . '"><span class="icon-edit" aria-hidden="true"></span> ' . EDIT_ENTRY . '</a></p>';
+                        echo '    <p><a class="link_button" href="?serendipity[action]=admin&amp;serendipity[adminModule]=entries&amp;serendipity[adminAction]=edit&amp;serendipity[id]=' . $entry['id'] . '&amp;' . serendipity_setFormToken('url') . '"><span class="icon-edit" aria-hidden="true"></span> ' . EDIT_ENTRY . '</a></p>';
                     }
                     echo '</entry>';
                     echo "</form>\n";
