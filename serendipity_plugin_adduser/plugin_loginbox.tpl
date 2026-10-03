@@ -32,7 +32,7 @@ if (window && window.opener && window.opener.focus)
 
         <table cellspacing="10" cellpadding="0" border="0" align="center">
             <tr>
-                <td colspan="2" align="right"><input type="submit" name="serendipity[submit]" value="{$CONST.LOGOUT} &gt;" class="serendipityPrettyButton" /></td>
+                <td colspan="2" align="right"><input type="submit" name="serendipity[submit]" value="{$CONST.LOGOUT} &gt;" class="input_button state_submit" /></td>
             </tr>
         </table>
     </form>
@@ -63,7 +63,7 @@ if (window && window.opener && window.opener.focus)
                 <td colspan="2"><input id="autologin" type="checkbox" name="serendipity[auto]"><label for="autologin"> {$CONST.AUTOMATIC_LOGIN}</label></td>
             </tr>
             <tr>
-                <td colspan="2" align="right"><input type="submit" name="submit" value="{$CONST.LOGIN} &gt;" class="serendipityPrettyButton" /></td>
+                <td colspan="2" align="right"><input type="submit" name="submit" value="{$CONST.LOGIN} &gt;" class="input_button state_submit"></td>
             </tr>
             {$loginform_add.table}
         </table>
