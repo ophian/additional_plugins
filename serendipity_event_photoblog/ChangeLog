@@ -1,6 +1,7 @@
 2.2.0:
 ------
  * Prepare for Styx 5.2 new Modal dialog
+ * Remove legacy class selector (serendipityPrettyButton)
 
 2.1.0:
 ------
