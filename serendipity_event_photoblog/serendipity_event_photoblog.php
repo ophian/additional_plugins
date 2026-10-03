@@ -6,7 +6,7 @@ if (IN_serendipity !== true) {
     die ("Don't hack!");
 }
 
-@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '2.1.0');// necessary, as used for db install checkScheme
+@define('PLUGIN_EVENT_PHOTOBLOG_VERSION', '2.2.0');// necessary, as used for db install checkScheme
 
 @serendipity_plugin_api::load_language(dirname(__FILE__));
 
@@ -187,9 +187,13 @@ class serendipity_event_photoblog extends serendipity_event
                 <span class="wrap_legend"><legend><?php echo PLUGIN_EVENT_PHOTOBLOG_TITLE; ?></legend></span>
                 <span class="msg_notice"><span class="icon-info-circled" aria-hidden="true"></span> <?php echo PLUGIN_EVENT_PHOTOBLOG_SELECTPHOTO; ?></span>
                 <div class="form_field">
-                    <input class="input_textbox" id="photoname" type="text" name="serendipity[properties][photoname]" readonly="true" size="30" value="<?php echo $photoname; ?>" />
-                    <input class="serendipityPrettyButton input_button" type="button" name="addPhoto" value="Photo" onclick="<?=$window?>('serendipity_admin.php?serendipity[adminModule]=media&serendipity[filename_only]=true&serendipity[htmltarget]=photoname&serendipity[noBanner]=true&serendipity[noSidebar]=true&serendipity[noFooter]=true&serendipity[showMediaToolbar]=false&serendipity[showUpload]=false', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');" />
-                    <input class="serendipityPrettyButton input_button" type="button" name="delPhoto" value="Clear" onclick="document.getElementById('photoname').value = '';" />
+                    <input class="input_textbox" id="photoname" type="text" name="serendipity[properties][photoname]" readonly="true" size="30" value="<?php echo $photoname; ?>">
+<?php if (version_compare($serendipity['version'], '5.1.1', '>')) { ?>
+                    <input class="serendipityPrettyButton input_button" type="button" name="addPhoto" value="Photo" onclick="serendipity.choose_media('photoname')">
+<?php } else { ?>
+                    <input class="serendipityPrettyButton input_button" type="button" name="addPhoto" value="Photo" onclick="<?=$window?>('serendipity_admin.php?serendipity[adminModule]=media&serendipity[filename_only]=true&serendipity[htmltarget]=photoname&serendipity[noBanner]=true&serendipity[noSidebar]=true&serendipity[noFooter]=true&serendipity[showMediaToolbar]=false&serendipity[showUpload]=false', 'ImageSel', 'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1');">
+<?php } ?>
+                    <input class="serendipityPrettyButton input_button" type="button" name="delPhoto" value="Clear" onclick="document.getElementById('photoname').value = '';">
                 </div>
             </fieldset>
 
