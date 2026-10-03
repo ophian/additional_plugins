@@ -235,7 +235,7 @@ class serendipity_event_newsbox extends serendipity_event
                             foreach(explode(',', $news_cats) AS $cat) {
                                 $more .= '<input type="hidden" name="serendipity[multiCat][]" value="' . $cat . '">';
                             }
-                            $more .= '<input class="serendipityPrettyButton input_button" type="submit" name="serendipity[isMultiCat]" value="' . MORE . ' ' . $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE) . '"></form>';
+                            $more .= '<input class="input_button" type="submit" name="serendipity[isMultiCat]" value="' . MORE . ' ' . $this->get_config('title', PLUGIN_EVENT_NEWSBOX_DEFAULT_TITLE) . '"></form>';
                             $serendipity['smarty']->assign('footer_info', $more);
                         }
 
