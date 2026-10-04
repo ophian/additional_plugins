@@ -139,11 +139,11 @@ class serendipity_event_cpgselector extends serendipity_event
             $link = $serendipity['indexFile'] . '?/plugin/cpgselector&amp;';
             if ($event == 'backend_entry_toolbar_body') {
 
-                echo '<input type="button" name="insImage" value="' . $button_title . '" class="serendipityPrettyButton input_button" onclick="window.open(\'' . $link . 'textarea=body\', \'ImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />';
+                echo '<input type="button" name="insImage" value="' . $button_title . '" class="input_button" onclick="window.open(\'' . $link . 'textarea=body\', \'ImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />';
 
             } elseif ($event == 'backend_entry_toolbar_extended') {
 
-                echo '<input type="button" name="insImage" value="' . $button_title . '" class="serendipityPrettyButton input_button" onclick="window.open(\'' . $link . 'textarea=extended\', \'ImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />';
+                echo '<input type="button" name="insImage" value="' . $button_title . '" class="input_button" onclick="window.open(\'' . $link . 'textarea=extended\', \'ImageSel\', \'width=800,height=600,toolbar=no,scrollbars=1,scrollbars,resize=1,resizable=1\');" />';
 
             } elseif ($event == 'external_plugin' && substr($eventData,0,strlen(CPG_EVENT)) == CPG_EVENT) {
 
