@@ -212,7 +212,7 @@ class serendipity_event_prettify extends serendipity_event
             }
             if ($this->get_config('convertangle') == true) {
 ?>
-                <input type="button" class="serendipityPrettyButton input_button" name="convertangle" value="&lt;&gt;" onclick="html_entity_decode('<?php echo $txtarea ?>')" />
+                <input type="button" class="input_button" name="convertangle" value="&lt;&gt;" onclick="html_entity_decode('<?php echo $txtarea ?>')" />
                 <script type="text/javascript">
                     function html_entity_decode(textarea) {
                         var textarea = document.getElementById(textarea);
