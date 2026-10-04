@@ -369,7 +369,7 @@ class serendipity_event_mymood extends serendipity_event
         echo '
                 <tr>
                     <td colspan="4"><br />
-                        <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[mymoodAction]" value="' . GO . '" />
+                        <input class="input_button" type="submit" name="serendipity[mymoodAction]" value="' . GO . '" />
                     </td>
                 </tr>
               </table>
@@ -387,7 +387,7 @@ class serendipity_event_mymood extends serendipity_event
                 <input type="hidden" name="serendipity[adminModule]" value="event_display" />
                 <input type="hidden" name="serendipity[adminAction]" value="mymood" />
                 <input type="hidden" name="serendipity[mymood_resetdb]" value="true" />
-                <input type="button" class="serendipityPrettyButton input_button" value="' . PLUGIN_MYMOOD_CONFIRM_RESET_BUTTON . '" onclick="confirm_reset()" />
+                <input type="button" class="input_button" value="' . PLUGIN_MYMOOD_CONFIRM_RESET_BUTTON . '" onclick="confirm_reset()" />
               </form>
               ';
     }
@@ -517,7 +517,7 @@ class serendipity_event_mymood extends serendipity_event
                 </div>
                 <div id="mymood_new_mood_'.$id.'"></div>
                 <div class="form_field">
-                    <input type="button" class="serendipityPrettyButton input_button" value="'.$new_moods.'" onClick="javascript:mymood_new_entry()" />
+                    <input type="button" class="input_button" value="'.$new_moods.'" onClick="javascript:mymood_new_entry()" />
                 </div>
             </fieldset>
 ';
