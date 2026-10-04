@@ -313,7 +313,7 @@ class serendipity_event_versioning extends serendipity_event
                         }
 ?>
                     </select>
-                    <input class="serendipityPrettyButton input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", htmlspecialchars(VERSIONING_CHANGE_WARNING)); ?>');" />
+                    <input class="input_button" type="submit" name="serendipity[versioning_change]" value="<?php echo VERSIONING_CHANGE; ?>" onclick="return confirm('<?php echo str_replace("'", "\'", htmlspecialchars(VERSIONING_CHANGE_WARNING)); ?>');" />
                 </div>
             </fieldset>
 
