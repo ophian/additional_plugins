@@ -73,8 +73,8 @@
                             <td class="serendipity_commentsValue">
                               <script type="text/javascript">
                                     document.write('<div class="toolbar">');
-                                    document.write('<input type="button" class="serendipityPrettyButton" name="insB"   value="B"   accesskey="b" style="font-weight: bold" onclick="wrapSelection(document.getElementById(\'serendipity_suggest_article\'), \'<strong>\', \'</strong>\')" />');
-                                    document.write('<input type="button" class="serendipityPrettyButton" name="insURL" value="URL" accesskey="l" onclick="wrapSelectionWithLink(document.getElementById(\'serendipity_suggest_article\'))" />');
+                                    document.write('<input type="button" class="input_button" name="insB"   value="B"   accesskey="b" style="font-weight: bold" onclick="wrapSelection(document.getElementById(\'serendipity_suggest_article\'), \'<strong>\', \'</strong>\')" />');
+                                    document.write('<input type="button" class="input_button" name="insURL" value="URL" accesskey="l" onclick="wrapSelectionWithLink(document.getElementById(\'serendipity_suggest_article\'))" />');
                                     document.write('</div>');
                               </script>
 
