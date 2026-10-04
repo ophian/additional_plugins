@@ -316,7 +316,7 @@ class serendipity_event_mimetex extends serendipity_event
         }
 ?>
      <script type="text/javascript" src="<?php echo $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : ''); ?>plugin/mimetex.js"></script>
-     <input type="button" class="serendipityPrettyButton input_button"  name="insMimetex" value="<?php echo PLUGIN_EVENT_MIMETEX_NAME_BUTTON; ?>" style="" onclick="serendipity_insTex('<?php echo $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : ''); ?>plugin/mimetex.php','<?php echo $txtarea; ?>')" />
+     <input type="button" class="input_button"  name="insMimetex" value="<?php echo PLUGIN_EVENT_MIMETEX_NAME_BUTTON; ?>" style="" onclick="serendipity_insTex('<?php echo $serendipity['baseURL'] . ($serendipity['rewrite'] == 'none' ? $serendipity['indexFile'] . '?/' : ''); ?>plugin/mimetex.php','<?php echo $txtarea; ?>')" />
 <?php
     }
 
