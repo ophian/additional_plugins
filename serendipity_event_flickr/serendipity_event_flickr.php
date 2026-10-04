@@ -127,7 +127,7 @@ class serendipity_event_flickr extends serendipity_event
 
                     <input type="hidden" name="serendipity[flickr_page]" value="1" />
                     Flickr username: <input class="input_textbox" name="serendipity[flickr_username]" value="<?php echo  htmlspecialchars($serendipity['POST']['flickr_username']) ?>" />
-                    <input type="submit" value="<?php echo GO; ?>" class="serendipityPrettyButton input_button" /><br /><br />
+                    <input type="submit" value="<?php echo GO; ?>" class="input_button" /><br /><br />
                     <a style="border: 0pt none ; text-decoration: none;" href="#" onclick="flickr_toggleExtended(); return false"
                          title="<?php echo  TOGGLE_OPTION ?>">
                     <img border="0" src="<?php echo serendipity_getTemplateFile('img/plus.png') ?>" /> <?php echo  TOGGLE_ALL ?></a>
