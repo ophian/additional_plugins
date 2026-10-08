@@ -270,7 +270,7 @@ class serendipity_event_phoneblogz extends serendipity_event
 
             echo "</table>";
             echo "<br/>";
-            echo "<input class='serendipityPrettyButton input_button' type='submit' name='submitusersedit' value='Update Users' />";
+            echo "<input class='input_button' type='submit' name='submitusersedit' value='Update Users' />";
             echo "</form>";
             echo "</center>";
         }
@@ -317,7 +317,7 @@ class serendipity_event_phoneblogz extends serendipity_event
                     $status = "not posted";
                     $action = "<form action='?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=phoneblogz' method='POST'>" .
                               "<input type='hidden' name='pbuserid' value='" . $msg["userno"] . "'>" .
-                              "<input type='hidden' name='id' value='" . $msg["messageid"] . "'><input class='serendipityPrettyButton input_button' type='submit' name='submitdopost' value='post now'></form>";
+                              "<input type='hidden' name='id' value='" . $msg["messageid"] . "'><input class='input_button' type='submit' name='submitdopost' value='post now'></form>";
                 } else {
                     $status = "posted";
                     if ($postid > 0) {
@@ -325,7 +325,7 @@ class serendipity_event_phoneblogz extends serendipity_event
                     }
                     $action = "<form action='?serendipity[adminModule]=event_display&amp;serendipity[adminAction]=phoneblogz' method='POST'>" .
                               "<input type='hidden' name='pbuserid' value='" . $msg["userno"] . "'>" .
-                              "<input type='hidden' name='id' value='" . $msg["messageid"] . "'><input class='serendipityPrettyButton input_button' type='submit' name='submitdopost' value='repost'></form>";
+                              "<input type='hidden' name='id' value='" . $msg["messageid"] . "'><input class='input_button' type='submit' name='submitdopost' value='repost'></form>";
                 }
 
                 $posturl = "<a href='http://www.phoneblogz.com/listen.php?user=" . $this->get_config("phoneblogz_accesscode") . "&id=" . $msg["messageid"] . "'>Click here</a>";
