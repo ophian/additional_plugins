@@ -195,7 +195,7 @@ class serendipity_event_filter_entries extends serendipity_event
             </td>
         </tr>
         <tr>
-            <td align="right" colspan="6"><input type="submit" name="go" value="<?php echo GO ?>" class="serendipityPrettyButton" /></td>
+            <td align="right" colspan="6"><input type="submit" name="go" value="<?php echo GO ?>" class="input_button state_submit" /></td>
         </tr>
     </table>
 </form>
