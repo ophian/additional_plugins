@@ -1,3 +1,7 @@
+6.6.8:
+------
+ * Improve Javascript for upcoming Styx 5.2 changes
+
 6.6.7:
 ------
  * Minor float to int change improves readability of comparison downscroll checks

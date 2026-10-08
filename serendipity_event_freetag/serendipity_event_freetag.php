@@ -44,7 +44,7 @@ class serendipity_event_freetag extends serendipity_event
             'smarty'      => '4.1',
             'php'         => '8.2'
         ));
-        $propbag->add('version',       '6.6.7');
+        $propbag->add('version',       '6.6.8');
         $propbag->add('event_hooks',    array(
             'frontend_fetchentries'                             => true,
             'frontend_fetchentry'                               => true,
@@ -837,7 +837,7 @@ class serendipity_event_freetag extends serendipity_event
         if ($useRotCanvas) {
             echo '                        </ul>
                     </div>
-                    <script type="text/javascript">
+                    <script>
                         document.addEventListener("DOMContentLoaded", function() {
                             if (typeof jQuery.fn.tagcanvas !== "function") { return false; }
                             // check B53+ theme color mode
@@ -864,7 +864,7 @@ class serendipity_event_freetag extends serendipity_event
             $grid = ($multiply == 3) ? 3 : 9; // reverse for the grid to reduce render slowdowns with too many tags
             $grid = ($multiply == 2) ? 6 : $grid;  // with a small amount of tags grid could be set to 1 too
             echo '                    </div>
-                    <script type="text/javascript">
+                    <script>
                         document.addEventListener("DOMContentLoaded", function() {
                             if (typeof jQuery.fn.awesomeCloud !== "function") { return false; }
                             // check B53+ theme color mode
@@ -964,12 +964,12 @@ class serendipity_event_freetag extends serendipity_event
                     if (serendipity_db_bool($this->get_config('show_tagcloud', 'true')) && (serendipity_db_bool($this->get_config('use_wordcloud', 'true')) || serendipity_db_bool($this->get_config('use_rotacloud', 'true')) || class_exists('serendipity_plugin_freetag'))) {
                         if ($jquery) {
                         echo '
-    <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery-1.11.3.min.js"></script>
+    <script src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery-1.11.3.min.js"></script>
 ';
                         }
                         echo '
-    <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery.tagcanvas.min.js"></script>
-    <script type="text/javascript" src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery.awesomeCloud-0.2.js"></script>
+    <script src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery.tagcanvas.min.js"></script>
+    <script src="'.$serendipity['serendipityHTTPPath'].'plugins/serendipity_event_freetag/jquery.awesomeCloud-0.2.js"></script>
 ';
                     }
 
@@ -2529,13 +2529,15 @@ document.addEventListener("DOMContentLoaded", function() {
     </ul>
 </div>
 
-<script type="text/javascript">
-    var deftitle = "<?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?>";
-    $('.freetagMenu .button_link').mouseover( function() {
-      $('#freetag_adminer_title').empty().append( '<span>' + this.title + '</span>' );
-    });
-    $('.freetagMenu .button_link').mouseout( function() {
-      $('#freetag_adminer_title').empty().append( '<span>' + deftitle + '</span>' );
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const deftitle = "<?php echo (empty($freetag_section) ? PLUGIN_EVENT_FREETAG_MANAGETAGS : $freetag_section); ?>";
+        $('.freetagMenu .button_link').mouseover( function() {
+          $('#freetag_adminer_title').empty().append( '<span>' + this.title + '</span>' );
+        });
+        $('.freetagMenu .button_link').mouseout( function() {
+          $('#freetag_adminer_title').empty().append( '<span>' + deftitle + '</span>' );
+        });
     });
 </script>
 
@@ -2933,7 +2935,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if ($to < $total) {
 ?>
 
-            <script type="text/javascript">
+            <script>
                 if (confirm("<?php echo htmlspecialchars(PLUGIN_EVENT_FREETAG_REBUILD_FETCHNEXT, ENT_COMPAT, LANG_CHARSET); ?>")) {
                     location.href = "?serendipity[adminModule]=event_display&serendipity[adminAction]=managetags&serendipity[tagview]=tagupdate&serendipity[page]=<?php echo (int)($page+1); ?>";
                 } else {
@@ -3255,9 +3257,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 $wicktags[] = '\'' . addslashes((string)$k) . '\''; // cast integer tags to string
             }
             echo '            <link rel="stylesheet" type="text/css" href="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.css">
-            <script type="text/javascript" src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.js"></script>
-            <script type="text/javascript">
-                var tags = [' . implode(',', $wicktags) . '];
+            <script src="' . $serendipity['baseURL'] . 'plugins/serendipity_event_freetag/jquery.autocomplete.min.js"></script>
+            <script>
+                const tags = [' . implode(',', $wicktags) . '];
             </script>'."\n";
         }
 
@@ -3411,7 +3413,7 @@ document.addEventListener("DOMContentLoaded", function() {
      data-tags="<?php echo htmlspecialchars(json_encode($thisTags), ENT_QUOTES, 'UTF-8'); ?>">
 </div>
 
-<script type="text/javascript">
+<script>
 // Wrap everything in a block scope to prevent any global variable collisions
 {
     if (window.innerWidth >= 1024) {
